@@ -1,0 +1,47 @@
+print("Welcome to denis troller the admin that trolls denis, Enjoy! also say cmds for commands to troll denis")
+local cmd = ":cmds"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		print(":adiosdenis")
+	end
+end)
+
+
+local cmd = ":adiosdenis"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local ididntask=SplitMsg[2]
+		local denis=game.Workspace:FindFirstChild(denispitu06)
+		game.workspace.denis:Destroy()
+	end
+end)
+
+local cmd = ":sitdenis"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local ididntask=SplitMsg[2]
+		local denis=game.Workspace:FindFirstChild(denispitu06)
+		game.workspace.denis.Humanoid.Sit = true
+	end
+end)
+
+local cmd = ":dontjumpdenis"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local ididntask=SplitMsg[2]
+		local denis=game.Workspace:FindFirstChild(denispitu06)
+		game.workspace.denis.Humanoid.JumpPower = -150
+	end
+end)
