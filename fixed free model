@@ -1,0 +1,602 @@
+--[[NOTES]]--
+--[[
+
+This minigame script takes all of the minigames under game.Lighting.Choices as models.
+The minigames need to have the following things:
+
+**A wait time of 7 seconds at the beginning in the game's game script. (states stuff to players)
+**A miniature game script (obviously)
+**An StringValue called Winner (tells who won this thingy)
+**A script or some method that can tell who won, and adds the winner's name to the StringValue "Winner"
+**A Color3 Value called Ambience (change the theme/element of the place)
+**A part(s) called Spawn (players will spawn here)
+**A StringValue called Objective (a game message)
+**A StringValue called Instructions (a hint)
+**An IntValue called TimeLimit (a time limit)
+**A BoolValue called KillAllIfNotFinished (check this if you want everyone to fail if time runs out)
+
+Other things:
+
+**People who are playing the minigames have the intvalue called "Playing" in their character.
+**Comes with a minigame choice system
+]]--
+--[[DECLARATIONS]]--
+
+chooser = game.Workspace.ChosenMinigame
+chooserdebounce = game.Workspace.MinigameChoices.Debounce
+elevator = game.Workspace["Choose Next Minigame (50 Coins)"].Head
+elevatordebounce = false
+
+choosing = false
+finished = false
+
+--toys = game.Workspace.Toys:clone()
+
+local SlashSound = Instance.new("Sound")
+SlashSound.SoundId = "rbxasset://sounds\\swordslash.wav"
+SlashSound.Parent = game.Workspace
+SlashSound.Volume = .1
+SlashSound.Name = "Slash"
+
+local Yay = Instance.new("Sound")
+Yay.SoundId = "http://www.roblox.com/asset/?id=1079839"
+Yay.Parent = game.Workspace
+Yay.Volume = .3
+Yay.Name = "Trumpets"
+
+minigames = {}
+factor = 100
+
+mm = game.Lighting.Choices:GetChildren()
+for i=1,#mm do
+	if mm[i].className == "Model" and mm[i]:findFirstChild("PickMe") == nil then
+		table.insert(minigames,mm[i])
+		end
+	end
+
+numplayers = game.Workspace.NumPlayers
+
+--[[STANDARD STATEMENTS]]--
+
+function displayMSG(string, parent, time)
+	local msg = Instance.new("Message")
+	msg.Parent = parent
+	msg.Text = string
+	wait(time)
+	msg:remove()
+	end
+
+function displayHINT(string, parent, time)
+	local msg = Instance.new("Hint")
+	msg.Parent = parent
+	msg.Text = string
+	if time ~= nil then
+	wait(time)
+	msg:remove()
+	end
+	end
+
+function deleteTools()
+	local stuff = game.Workspace:GetChildren()
+	for i=1,#stuff do
+		if stuff[i].className == "Tool" or stuff[i].className == "Hopperbin" then
+			stuff[i]:remove()
+			end
+		end
+	end
+
+function deleteMSG()
+	local stuff = game.Workspace:GetChildren()
+	for i=1,#stuff do
+		if stuff[i].className == "Message" or stuff[i].className == "Hint" then
+			stuff[i]:remove()
+			end
+		end
+	local players = game.Players:GetChildren()
+	for i=1,#players do
+		local m = players[i]:findFirstChild("Message")
+		local h = players[i]:findFirstChild("Hint")
+		local things = players[i]:GetChildren()
+		for i=1,#things do
+			if things[i].className == "Hint" or things[i].className == "Message" then
+				things[i]:remove()
+				end
+			end
+		if m ~= nil then m:remove() end
+		if h ~= nil then h:remove() end
+		end
+	end
+
+
+--[[PLAYER STATEMENTS--]]
+
+
+function getWillingPlayers(places)
+	local count = 0
+	local players = game.Players:GetChildren()
+	for i=1,#players do
+		if players[i].Character ~= nil then
+		if players[i].Character:findFirstChild("Spectating") == nil then
+			count = count + 1
+			local s = Instance.new("IntValue")
+			s.Parent = players[i].Character
+			s.Name = "Playing"
+			local placenum = #places
+			local u = i
+			if u > placenum then u = 1 end
+				players[i].Character:moveTo(Vector3.new(places[u].Position.x + math.random(-places[u].Size.x/3, places[u].Size.x/3), places[u].Position.y + 10, places[u].Position.z + math.random(-places[u].Size.z/3, places[u].Size.z/3)))
+				players[i].Character.Torso.Velocity = Vector3.new(0,0,0)
+
+				local hoppers = players[i].Backpack:GetChildren()
+				for x=1,#hoppers do
+					local cams = hoppers[x]:findFirstChild("SpectateScript")
+					if cams ~= nil then
+						cams.Parent:remove()
+						end
+					end
+
+				if players[i]:findFirstChild("Reminder") then
+					players[i].Reminder:remove()
+					end
+				--wait()
+			end
+		end
+		end
+
+
+	numplayers.Value = count
+	end
+
+
+function checkPlayers()
+	local count = 0
+	print("Checking")
+	local players = game.Players:GetChildren()
+	for i=1,#players do
+		if players[i].Character ~= nil then 
+			print("Past a threshold")
+			if players[i].Character:findFirstChild("Playing") ~= nil then
+				count = count + 1
+				end
+			end
+		end
+
+	print("There are " .. count .. " players playing")
+		if count < 1 or count == nil then
+			print("Case 1")
+			return 0
+			elseif count > 1 then
+			print("Case 2")
+			return 1
+			else 
+			print("Case 3")
+			return 2
+			end
+	end
+
+function getMultiplePlayers()
+
+	local playersleft = {}
+
+	local players = game.Players:GetChildren()
+	for i=1,#players do
+		if players[i].Character ~= nil then 
+		if players[i].Character:findFirstChild("Playing") ~= nil then
+			table.insert(playersleft, players[i])
+			--players[i].leaderstats.Coins.Value = players[i].leaderstats.Coins.Value + (numplayers.Value * 5)
+			end
+			end
+		end
+
+	local prize = math.ceil((factor/#playersleft) * (math.random(100, 140) * .01))
+
+	displayMSG("Multiple users have beaten the minigame!", game.Workspace, 3)
+	displayMSG("They each get " .. prize .. " coins!", game.Workspace, 3)
+
+	for i=1,#playersleft do
+		if playersleft[i] ~= nil then
+		playersleft[i].leaderstats.Coins.Value = playersleft[i].leaderstats.Coins.Value + (prize)
+		end
+		end
+
+	end
+
+function killAll()
+	print("Kill em all!")
+	local players = game.Players:GetChildren()
+	for i=1,#players do
+		if players[i].Character ~= nil then 
+		if players[i].Character:findFirstChild("Playing") ~= nil then
+			print("...")
+			players[i].Character.Humanoid.Health = 0
+			end
+			end
+			end
+		end
+
+function reachForPlayers()
+	if game.Players:findFirstChild("Player") ~= nil and game.Workspace.TestingMode.Value == true then return true end
+
+	local guys = {}
+
+	local players = game.Players:GetChildren()
+	for i=1,#players do
+		if players[i].Character ~= nil then 
+			if players[i].Character:findFirstChild("Spectating") == nil then
+				table.insert(guys, players[i])
+				end
+			end
+		end
+
+	for i=1,#guys do
+		print("There are " .. #guys .. " players here.")
+		if #guys < 2 or #guys == nil then
+			displayHINT("Two or more people are needed to play minigames.", game.Workspace, 3)
+			return false
+			else
+			return true
+			end
+		end
+	end
+
+function checkNumber() --This function tells the amount of players that are playing the minigame every second. If it's 1 player, the player wins.
+	local count = 0
+	local players = game.Players:GetChildren()
+	for i=1,#players do
+		if players[i].Character ~= nil then 
+		--if players[i].Name == "Player" then break end
+		--print("??")
+		--print(#players)
+		if players[i].Character:findFirstChild("Playing") ~= nil then
+			--print("?")
+			count = count + 1
+		end
+
+		end
+	end
+
+	if count < 1 or count == nil then --Everyone lost...
+		time.Value = 0
+	elseif count < 2 then--Someone is left
+		for i=1,#players do--Find that player
+			if players[i].Character ~= nil then
+			if players[i].Character:findFirstChild("Playing") ~= nil then
+				win.Value = players[i].Name
+				end
+				end
+			end
+	end
+
+
+
+	end
+
+function checkPlayerSubScores()
+	local players = game.Players:GetChildren()
+	for i=1,#players do
+		if players[i].Character ~= nil then
+		--if players[i].Name == "Player" then break end
+		end
+		end
+	end
+
+--[[MINIGAME STATEMENTS]]--
+
+
+function chooseMinigame()
+
+	--print(table.maxn(minigames))
+	--if table.maxn(minigames) < 1 then
+		--refill list
+		minigames = {}
+
+		mm = game.Lighting.Choices:GetChildren()
+		for i=1,#mm do
+			if mm[i].className == "Model" and mm[i]:findFirstChild("PickMe") == nil then
+				table.insert(minigames,mm[i])
+				end
+			end
+		--end
+
+	if game.Workspace.ChosenMinigame.Value == "None" then
+		local randommultiplier = math.random(80,100)
+		local t = .01
+		local pick = math.random(1,#minigames)
+		local times = 0
+		while true do  -- The following just makes minigame picking fun
+			SlashSound:play()
+			if pick > #minigames then
+				pick = 1
+				end
+
+			local m = (minigames[pick]) -- (colors[math.random(1,#colors)])
+			displayHINT("--> " .. m.Name .. " <--", game.Workspace, t)
+			times = times + 1
+
+			if times > 15 then
+				t = t*2
+				times = 0
+				print("Slower")
+				end
+
+			randommultiplier = randommultiplier - 1
+
+			if randommultiplier < 1 then 
+			print(minigames[pick].Name .. ", " .. m.Name)
+			table.remove(minigames, pick) --no repeating
+			return m 
+			end
+
+			pick = pick + 1
+
+			--SlashSound:stop()
+			end
+		else 
+
+		local m = game.Lighting.Choices:findFirstChild(game.Workspace.ChosenMinigame.Value)
+		return m
+		end
+	end
+
+function loadMinigame(mg)
+	local m = mg:clone()
+	m.GameScript.Disabled = false
+	m.Parent = game.Workspace
+	m:makeJoints()
+	game.Lighting.Ambient = m.Ambience.Value
+	game.Lighting.TimeOfDay = m.TimeOfDay.Value
+	displayMSG(m.Objective.Value, game.Workspace, 4) -- Objective
+	displayHINT(m.Instructions.Value, game.Workspace) -- Instructions
+	return m
+	end
+
+function deleteMinigame(mg)
+	if mg ~= nil then
+		mg:remove()
+		end
+	game.Lighting.Ambient = Color3.new(100,100,100)
+	game.Lighting.TimeOfDay = "14:00:00"
+	game.Lighting.Brightness = 1
+	end
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function playMinigame(mg)
+	local time = mg.TimeLimit.Value
+	game.Workspace.Timer.Value = time
+	local time = game.Workspace.Timer
+	win = mg.Winner
+	win.Changed:connect(function(string) endMinigame(string) end)
+	finished = false
+	while time.Value > 0 do
+		time.Value = time.Value - 1
+		wait(1)
+		--[[if win.Value ~= "?" then
+			endMinigame(win.Value)
+			break
+			end]]
+		--print("!")
+		if game.Workspace.TestingMode.Value == false then
+		checkNumber()
+		end
+		end
+		if finished == false then
+		if mg.KillAllIfNotFinished.Value == false then
+		print("Don't kill everyone")
+		wait(1)
+		endMinigame(win.Value)
+		else
+		print("Kill everyone")
+		killAll()
+		wait(1)
+		endMinigame("")
+		end
+		finished = true
+		end
+	end
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function endMinigame(winner) --winner is a string
+	print("Woot")
+	finished = true
+	time.Value = 0
+	--deleteMSG()
+	print(winner)
+	local guy = game.Players:findFirstChild(winner)
+	if guy ~= nil then
+		print("1 person has won")
+		guy.leaderstats.Coins.Value = guy.leaderstats.Coins.Value + factor
+		displayMSG(winner .. " has beaten the minigame! Yay!", game.Workspace, 2)
+		print("Give him/her coins")
+		displayMSG(winner .. " has won " .. factor .. " coins!", game.Workspace, 3)
+		else
+		--checkPlayerSubScores()
+		local q = checkPlayers() -- is there more than one winner, or is there none?
+		if q == 0 then
+			displayMSG("Everyone has lost the game!", game.Workspace, 2)
+			displayMSG("Coins are not awarded to anyone...", game.Workspace, 2)
+			elseif q == 1 then
+			getMultiplePlayers()
+			print("There really are multiple players")
+			else
+			getMultiplePlayers()
+			print("I hope that you're just testing...")
+			end
+		end
+	end
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--[[ THE FOLLOWING IS FOR CHOOSING A MINIGAME INSTEAD OF RANDOM SELECTION. COMMENT OUT IF IT IS NOT NEEDED--]]
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function noMoreChoosing()
+	elevatordebounce = true
+	chooserdebounce.Value = true
+	elevator.BrickColor = BrickColor.new(26)
+	elevator.Parent.Part1.BrickColor = BrickColor.new(26)
+	elevator.Parent.Part2.BrickColor = BrickColor.new(26)
+	elevator.Parent.Part3.BrickColor = BrickColor.new(26)
+	elevator.Parent.Name = ""
+	end
+
+function allowChoosing()
+	elevatordebounce = false
+	chooserdebounce.Value = false
+	elevator.BrickColor = BrickColor.new(1)
+	elevator.Parent.Part1.BrickColor = BrickColor.new(1)
+	elevator.Parent.Part2.BrickColor = BrickColor.new(1)
+	elevator.Parent.Part3.BrickColor = BrickColor.new(1)
+	elevator.Parent.Name = "Choose Next Minigame (50 Coins)"
+	end
+
+function onChanged()
+	if chooserdebounce.Value == true then
+	local guy = elevator.Guy.Value
+	if guy ~= nil then
+		if guy.Character ~= nil then
+			local player = game.Players:findFirstChild(guy.Name)
+			if player then
+			guy.Character:moveTo(game.Workspace.Z.Position)
+			player.leaderstats.Coins.Value = player.leaderstats.Coins.Value - 50
+			elevator.Guy.Value = nil
+			end
+			end
+		end
+		end
+	end
+
+game.Workspace.MinigameChoices.Debounce.Changed:connect(onChanged)
+
+function onTouch(part)
+	if part.Parent ~= nil then
+		h = part.Parent:findFirstChild("Humanoid")
+		if h ~= nil and elevatordebounce == false then
+			if h.Parent:findFirstChild("Torso") ~= nil then
+				player = game.Players:findFirstChild(h.Parent.Name)
+				if player ~= nil then
+					if player.leaderstats.Coins.Value >=50 then
+
+						elevatordebounce = true
+						elevator.BrickColor = BrickColor.new(26)
+						elevator.Parent.Part1.BrickColor = BrickColor.new(26)
+						elevator.Parent.Part2.BrickColor = BrickColor.new(26)
+						elevator.Parent.Part3.BrickColor = BrickColor.new(26)
+						elevator.Parent.Name = ""
+						chooserdebounce.Value = false
+
+						local bp = Instance.new("BodyPosition")
+						bp.Parent = h.Parent.Torso
+						bp.position = elevator.Position + Vector3.new(0,20,0)
+						bp.maxForce = Vector3.new(1000000000,1000000000,1000000000)
+						elevator.Parent.Barrier.CanCollide = false
+						elevator.Parent.Barrier.Transparency = 1
+
+						elevator.Guy.Value = player
+
+						wait(1)
+						if player ~= nil then
+
+						bp:remove()
+						elevator.Parent.Barrier.CanCollide = true
+						elevator.Parent.Barrier.Transparency = .5
+
+						local hinty = Instance.new("Message")
+						hinty.Parent = game.Workspace
+						hinty.Text = h.Parent.Name .. " is choosing the next minigame..."
+						wait(4)
+						hinty:remove()
+						end
+
+						end
+					end
+				end
+			end
+		end
+	end
+
+elevator.Touched:connect(onTouch)
+
+
+function onControllerChanged()
+	if game.Workspace.Controller.Value == nil then
+		game.Workspace.Timer.Value = 0
+		end
+	end
+
+game.Workspace.Controller.Changed:connect(onControllerChanged)
+
+--[[ THE MAIN LOOP ]]--
+
+allowChoosing()
+
+while true do
+	wait(3)
+	if reachForPlayers() == true then
+		wait(1)
+
+		if chooserdebounce.Value == false and elevatordebounce == true then
+			displayHINT("The next minigame is being chosen by a player (20 more seconds for him/her to choose)...", game.Workspace, 20)
+			noMoreChoosing()
+			else
+			noMoreChoosing()
+			displayHINT("Choosing a minigame...", game.Workspace, 2)
+			end
+
+		local m = chooseMinigame()
+		game.Workspace.ChosenMinigame.Value = "None"
+		displayHINT(" --> " .. m.Name .. " <-- ", game.Workspace, .8) -- sound laggg
+		Yay:play()
+		displayHINT("-->   " .. m.Name .. "   <--", game.Workspace, .4)
+		displayHINT(" --> " .. m.Name .. " <-- ", game.Workspace, .4)
+		displayHINT("-->   " .. m.Name .. "   <--", game.Workspace, .4) -- Just showing that it picked a minigame
+		displayHINT(" --> " .. m.Name .. " <-- ", game.Workspace, .4)
+		displayHINT("-->   " .. m.Name .. "   <--", game.Workspace, .4)
+		displayHINT(" --> " .. m.Name .. " <-- ", game.Workspace, .4)
+		wait(1)
+		displayMSG(m.Name .. " will start soon.", game.Workspace, 3)
+		--Hint(m.Name .. " ~~ Origin: " .. m.Origin.Value .. ".
+
+		if game.Workspace:findFirstChild("Toys") ~= nil then game.Workspace.Toys:remove() end
+
+		wait(1)
+		print("Getting teh minigame")
+		m = loadMinigame(m)
+		print("Getting teh players")
+		wait(1)
+
+		sp = {}
+		local spawns = m:GetChildren()
+		for i=1,#spawns do
+			if spawns[i].Name == "Spawn" then
+				table.insert(sp,spawns[i])
+				end
+			end
+
+		game.Workspace.Controller.Value = nil
+
+		getWillingPlayers(sp)
+
+		displayMSG("Ready?", game.Workspace, 2)
+		displayMSG("Go!", game.Workspace, .5)
+		wait(1) --The game script in the minigame would go now
+
+		--local t = toys:clone()
+		--t.Parent = game.Workspace
+
+		allowChoosing()
+
+		playMinigame(m)
+
+		deleteMinigame(m)
+
+		game.Workspace.Controller.Value = nil
+
+		killAll()
+
+		deleteMSG()
+
+		deleteTools()
+
+		displayHINT("The next minigame will begin shortly.", game.Workspace, 30)
+		print("Rinse, lather, and repeat")
+
+		game.Workspace.NumPlayers.Value = 0
+		end
+	end
