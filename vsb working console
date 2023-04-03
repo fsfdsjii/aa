@@ -1,0 +1,459 @@
+print([[keyboard console by mechaxyz
+    c/ (code) to run a script
+    x/ (code) to run a local script
+
+    i like the bash]])
+
+
+if owner.Character:WaitForChild("Humanoid").RigType == Enum.HumanoidRigType.R15 then -- // check if rigtype is r15 and change it to r6 since this script isn't for r15
+	local id = owner.UserId
+	owner.CharacterAppearanceId = 32065 -- // change character appearance into an r6 user
+	local old = owner.Character.HumanoidRootPart.CFrame -- // store the hrp cframe
+	owner:LoadCharacter() -- // reload character
+	owner.Character.HumanoidRootPart.CFrame = old -- // :LoadCharacter() makes you go back to spawn so set hrp cframe to old
+	owner.Character.Humanoid:ApplyDescription(game:GetService("Players"):GetHumanoidDescriptionFromUserId(id)) -- // change appearance back to normal
+	task.wait()
+	owner.CharacterAppearanceId = id -- // change char appearance id back to normal
+	print("You must be R6 to use this script! Automatically turned your RigType to R6.") -- // let them know
+end
+
+local NormalName = string.lower(owner.DisplayName) .. "@vsb:~$ "
+local Name = '<font color="rgb(133,255,197)">' .. NormalName .. "</font>"
+local Hand = "Left"
+local CurrentLine = string.len(Name) + 1
+local Typing = false
+local TweenService = game:GetService("TweenService")
+local Info = TweenInfo.new(.25, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut)
+local Character = owner.Character
+local Torso = Character.Torso
+local Neck = Torso.Neck
+local OldNeckC0 = Neck.C0
+local OldNeckC1 = Neck.C1
+local RightArm = Character["Right Arm"]
+local LeftArm = Character["Left Arm"]
+
+local RightShoulder = Instance.new("Weld", Torso)
+RightShoulder.Part0 = Torso
+RightShoulder.Part1 = RightArm
+
+local LeftShoulder = Instance.new("Weld", Torso)
+LeftShoulder.Part0 = Torso
+LeftShoulder.Part1 = LeftArm
+
+RightShoulder.C1 = CFrame.new(-.5, .5, 0)
+LeftShoulder.C1 = CFrame.new(.5, .5, 0)
+
+RightShoulder.Enabled = false
+LeftShoulder.Enabled = false
+
+local Keyboard = Instance.new("SpawnLocation")
+Keyboard.BrickColor = BrickColor.new("Really black")
+Keyboard.Material = Enum.Material.Neon
+Keyboard.Size = Vector3.new(5, 0, 2)
+Keyboard.CanCollide = false
+Keyboard.Enabled = false
+Keyboard.Locked = true
+Keyboard.Parent = script
+
+local KeyboardWeld = Instance.new("Weld")
+KeyboardWeld.Part0 = Torso
+KeyboardWeld.Part1 = Keyboard
+KeyboardWeld.C0 = CFrame.new(0, 0, -2) * CFrame.Angles(.25, 0, 0)
+KeyboardWeld.Parent = Keyboard
+
+local Light = Instance.new("PointLight")
+Light.Brightness = 1.5
+Light.Range = 12
+Light.Parent = Keyboard
+
+local Screen = Instance.new("SpawnLocation")
+Screen.BrickColor = BrickColor.new("Really black")
+Screen.Material = Enum.Material.Neon
+Screen.Massless = true
+Screen.Name = "Screen"
+Screen.Size = Vector3.new(10, 5, 0)
+Screen.CanCollide = false
+Screen.Enabled = false
+Screen.Locked = true
+Screen.Parent = script
+
+local ScreenWeld = Instance.new("Weld")
+ScreenWeld.Part0 = Torso
+ScreenWeld.Part1 = Screen
+ScreenWeld.C0 = CFrame.new(0, 3.5, -4.5) * CFrame.Angles(.1, 0, 0)
+ScreenWeld.Parent = Screen
+
+local Gui = Instance.new("SurfaceGui")
+Gui.Face = "Back"
+Gui.Adornee = Screen
+Gui.ClipsDescendants = true
+Gui.Parent = Screen
+Gui.ZOffset = 50
+Gui.Brightness = 2
+
+local Text = Instance.new("TextBox")
+Text.BackgroundTransparency = 1
+Text.Position = UDim2.new(0, 0, 0, 0)
+Text.Size = UDim2.new(.95, 0, .95, 0)
+Text.TextColor3 = Color3.new(1, 1, 1)
+Text.Font = Enum.Font.Code
+Text.MultiLine = true
+Text.RichText = true
+Text.TextEditable = false
+Text.TextWrapped = true
+Text.TextSize = 23
+Text.TextXAlignment = Enum.TextXAlignment.Left
+Text.TextYAlignment = Enum.TextYAlignment.Top
+Text.Text = Name
+Text.Parent = Gui
+
+local TypeSound = Instance.new("Sound")
+TypeSound.SoundId = "rbxassetid://265970978"
+TypeSound.PlaybackSpeed = 1.15
+TypeSound.Volume = .5
+TypeSound.Parent = Keyboard
+TypeSound.EmitterSize = 10
+TypeSound.PlayOnRemove = true
+
+Character.Humanoid.Died:Connect(function()
+    Screen.Parent = nil -- // parent console to nil so it won't fall into the void and despawn
+    Keyboard.Parent = nil
+    ScreenWeld:Destroy() -- // destroy the past welds
+    KeyboardWeld:Destroy()
+end)
+
+owner.CharacterAdded:Connect(function() -- // my script works even after you die, but the welds parented to the character gets destroyed
+    Character = owner.Character -- // re-define Character
+    RightArm = Character:WaitForChild("Right Arm") -- // use :WaitForChild() because when CharacterAdded fires, it doesn't wait for the full body to load, only the model instance
+    LeftArm = Character:WaitForChild("Left Arm")
+    Torso = Character:WaitForChild("Torso")
+    Neck = Torso:WaitForChild("Neck")
+    OldNeckC0 = Neck.C0
+    OldNeckC1 = Neck.C1
+
+    Screen.Parent = script -- // re-parent console
+    Keyboard.Parent = script
+
+    Screen.CFrame = Torso.CFrame * CFrame.new(0, 3.5, -4.5) * CFrame.Angles(.1, 0, 0)
+    Keyboard.CFrame = Torso.CFrame * CFrame.new(0, 0, -2) * CFrame.Angles(.25, 0, 0)
+
+    KeyboardWeld = Instance.new("Weld") -- // create new welds
+    KeyboardWeld.Part0 = Torso
+    KeyboardWeld.Part1 = Keyboard
+    KeyboardWeld.C0 = CFrame.new(0, 0, -2) * CFrame.Angles(.25, 0, 0)
+    KeyboardWeld.Parent = Keyboard
+
+    ScreenWeld = Instance.new("Weld")
+    ScreenWeld.Part0 = Torso
+    ScreenWeld.Part1 = Screen
+    ScreenWeld.C0 = CFrame.new(0, 3.5, -4.5) * CFrame.Angles(.1, 0, 0)
+
+    RightShoulder = Instance.new("Weld", Torso)
+    RightShoulder.Part0 = Torso
+    RightShoulder.Part1 = RightArm
+
+    LeftShoulder = Instance.new("Weld", Torso)
+    LeftShoulder.Part0 = Torso
+    LeftShoulder.Part1 = LeftArm
+
+    RightShoulder.C1 = CFrame.new(-.5, .5, 0)
+    LeftShoulder.C1 = CFrame.new(.5, .5, 0)
+
+    RightShoulder.Enabled = false
+    LeftShoulder.Enabled = false
+end)
+
+local longparagraph = [[
+🚨 STOP! 🚨 YES, STOP RIGHT NOW! GIVE ME YOUR ⚠️ ATTENTION ⚠️FOR 50 SECONDS ⏱️ and I will show you how you can get unlimited Robux 💵 on Roblox. Yes, you can generate UNLIMITED Robux 💵right now! All you would need to do is click the link 🔗 below ⬇️to open the generator. After that, you will need to fill in your username, and select the Robux! Then, you are ready to go ✅! This will ONLY work today 📅. Yes, ONLY today. So, if you want to generate an unlimited amount of Robux 💵, click the link 🔗below ⬇️right now. This process will ONLY take one minute of your time, and will give you unlimited Robux 💵without ANY risk ⛔. Click the link 🔗below ⬇️right now, and enjoy it! The instructions will be on the link 🔗below ⬇️. Click on it RIGHT now ⏲️. Goodbye!
+Wanna know how to get 99999999 robux! WARNING: THIS IS NOT A SCAM THIS IS NOT A SCAM! 1. Copy and paste this comment on only 2 games 2. Press F5 3. Logout and login 4. Look at your robux You have 9k
+guess 🤔 what guys 🤯 never ❌ever ❗ restart 📴 your phone 🤳 or whatever electronics 💻 you are using 🤷‍♀️ bc you'll restart 😱 everything 😢 Check out RBX.COM 💹 to claim 👉 your free 🤑 prize 😭😭 oh okay 😐 btw I'm a real person 🙆‍♂️ not ❌ a bot 🤖🤖 my name 😤 is jimmy🙂
+]] -- // i used this funny paragraph to test my console, but i forgot where i got it from. i'll just keep this here just in case
+
+local GUI = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local TextButton2 = Instance.new("TextButton")
+local TextBox = Instance.new("TextBox")
+GUI.Name = "TextGUI"
+GUI.Parent = owner.PlayerGui
+
+Frame.Parent = GUI
+Frame.BackgroundColor3 = BrickColor.new("Really black").Color
+Frame.Position = UDim2.new(1, -187, 1, -116)
+Frame.AnchorPoint = Vector2.new(.5, .5)
+Frame.Size = UDim2.new(0, 300, 0, 150)
+Frame.Active = true
+Frame.BorderColor3 = Color3.new(1, 1, 1)
+Frame.BorderSizePixel = 2
+Frame.Draggable = true
+
+TextBox.RichText = true
+TextBox.Parent = Frame
+TextBox.BackgroundTransparency = 1
+TextBox.TextStrokeTransparency = 0
+TextBox.TextStrokeColor3 = Color3.new(.7, .7, .7)
+TextBox.TextColor3 = Color3.new(1, 1, 1)
+TextBox.Position = UDim2.new(0, 50, 0, 20)
+TextBox.Size = UDim2.new(0, 200, 0, 30)
+TextBox.Font = Enum.Font.Code
+TextBox.Text = "Insert Text Here"
+TextBox.TextSize = 30
+TextBox.TextScaled = true
+TextBox.TextWrapped = true
+
+TextButton.Parent = Frame
+TextButton.BackgroundTransparency = 1
+TextButton.TextStrokeTransparency = 0
+TextButton.TextStrokeColor3 = Color3.new(.7, .7, .7)
+TextButton.TextColor3 = Color3.new(1, 1, 1)
+TextButton.Position = UDim2.new(0, 50, 0, 90)
+TextButton.Size = UDim2.new(0, 200, 0, 50)
+TextButton.Font = Enum.Font.Code
+TextButton.TextSize = 30
+TextButton.Text = "Run"
+TextButton.Name = "RunText"
+
+local Value = Instance.new("ObjectValue")
+Value.Parent = owner.Character
+Value.Value = Text
+Value.Name = "RealTextValue"
+
+local Value = Instance.new("StringValue")
+Value.Parent = owner.Character
+Value.Value = Name
+Value.Name = "NameValue"
+
+local Value = Instance.new("ObjectValue")
+Value.Parent = owner.Character
+Value.Value = GUI
+Value.Name = "TextValue"
+
+local Remote = Instance.new("RemoteEvent", Value)
+Remote.Name = "TypeEvent"
+
+local Remote2 = Instance.new("RemoteEvent", Value)
+Remote2.Name = "RunTextEvent"
+
+Remote.OnServerEvent:Connect(function(plr, txt, type)
+    if type == true then
+        Typing = true
+        RightShoulder.Enabled = true
+        LeftShoulder.Enabled = true
+        RightShoulder.C0 = owner.Character.Torso["Right Shoulder"].C0
+        LeftShoulder.C0 = owner.Character.Torso["Left Shoulder"].C0
+        local Sine = math.sin(tick() * 8) / 8
+        TweenService:Create(Neck, TweenInfo.new(0), {C0 = CFrame.new(0, 1, 0) * CFrame.Angles(.2 + Sine / 4, (math.random() - .5) / 2, 0)}):Play()
+        TweenService:Create(Neck, TweenInfo.new(0), {C1 = CFrame.new(0, -.5, 0)}):Play()
+        TweenService:Create(RightShoulder, TweenInfo.new(0), {C0 = CFrame.new(1, .6 + math.random() / 4, -(math.random()) * .7) * CFrame.Angles(1.5 + Sine * math.random(), -(Sine) / 4, -(.5 + 2 * Sine * math.random()))}):Play()
+        TweenService:Create(LeftShoulder, TweenInfo.new(0), {C0 = CFrame.new(-1, .6 + math.random() / 4, -(math.random()) * .7) * CFrame.Angles(1.5 - Sine * math.random(), Sine / 4, .5 + 2 * Sine * math.random())}):Play()
+    elseif type == false then
+        Typing = false
+        RightShoulder.Enabled = false
+        LeftShoulder.Enabled = false
+        for i = 1, 5 do
+            Neck.C0 = OldNeckC0
+            Neck.C1 = OldNeckC1
+        end
+    end
+    if type == nil or type == "Output" then
+        Text.Text = txt
+        if type == "Output" then
+            CurrentLine = string.len(Text.Text) + 1
+        end
+        TypeSound.Pitch = .5 + math.random() / 5
+        TypeSound.Parent = Keyboard
+        TypeSound.Parent = nil
+        if Typing == true then
+            if Hand == "Left" and Typing == true then
+                Hand = "Right"
+                local Sine = math.sin(tick() * 8) / 8
+                TweenService:Create(Neck, Info, {C0 = CFrame.new(0, 1, 0) * CFrame.Angles(.2 + Sine / 4, (math.random() - .5) / 2, 0)}):Play()
+                TweenService:Create(LeftShoulder, Info, {C0 = CFrame.new(-1, .6 + math.random() / 4, -(math.random()) * .7) * CFrame.Angles(1.5 - Sine * math.random(), Sine / 4, .5 + 2 * Sine * math.random())}):Play()
+            elseif Hand == "Right" and Typing == true then
+                Hand = "Left"
+                local Sine = math.sin(tick() * 8) / 8
+                TweenService:Create(Neck, Info, {C0 = CFrame.new(0, 1, 0) * CFrame.Angles(.2 + Sine / 4, (math.random() - .5) / 2, 0)}):Play()
+                TweenService:Create(RightShoulder, Info, {C0 = CFrame.new(1, .6 + math.random() / 4, -(math.random()) * .7)* CFrame.Angles(1.5 + Sine * math.random(), -(Sine) / 4, -(.5 + 2 * Sine * math.random()))}):Play()
+            end
+        end
+    end
+end)
+
+Remote2.OnServerEvent:Connect(function(plr, txt)
+    if string.lower(string.sub(txt, CurrentLine, (CurrentLine + 1))) == 'c/' then
+        loadstring(string.sub(txt, (CurrentLine + 2), string.len(txt)))()
+    elseif string.lower(string.sub(txt, CurrentLine, (CurrentLine + 1))) == 'x/' then
+        NLS(string.sub(txt, (CurrentLine + 2), string.len(txt)), owner.PlayerGui)
+    end
+end)
+
+NLS([[
+    local UDim2_new = UDim2.new
+    local UserInputService = game:GetService("UserInputService")
+    local DraggableObject       = {}
+    DraggableObject.__index     = DraggableObject
+    -- // sets up a new draggable object
+    function DraggableObject.new(Object)
+        local self          = {}
+        self.Object         = Object
+        self.DragStarted    = nil
+        self.DragEnded      = nil
+        self.Dragged        = nil
+        self.Dragging       = false
+        
+        setmetatable(self, DraggableObject)
+        
+        return self
+    end
+    
+    -- // enables dragging
+    function DraggableObject:Enable()
+        local object            = self.Object
+        local dragInput         = nil
+        local dragStart         = nil
+        local startPos          = nil
+        local preparingToDrag   = false
+        
+        -- // Updates the element
+        local function update(input)
+            local delta         = input.Position - dragStart
+            local newPosition   = UDim2_new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+            object.Position     = newPosition
+        
+            return newPosition
+        end
+        
+        self.InputBegan = object.InputBegan:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                preparingToDrag = true
+                
+                
+                local connection 
+                connection = input.Changed:Connect(function()
+                    if input.UserInputState == Enum.UserInputState.End and (self.Dragging or preparingToDrag) then
+                        self.Dragging = false
+                        connection:Disconnect()
+                        
+                        if self.DragEnded and not preparingToDrag then
+                            self.DragEnded()
+                        end
+                        
+                        preparingToDrag = false
+                    end
+                end)
+            end
+        end)
+        
+        self.InputChanged = object.InputChanged:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+                dragInput = input
+            end
+        end)
+        
+        self.InputChanged2 = UserInputService.InputChanged:Connect(function(input)
+            if object.Parent == nil then
+                self:Disable()
+                return
+            end
+            
+            if preparingToDrag then
+                preparingToDrag = false
+                
+                if self.DragStarted then
+                    self.DragStarted()
+                end
+                
+                self.Dragging   = true
+                dragStart       = input.Position
+                startPos        = object.Position
+            end
+            
+            if input == dragInput and self.Dragging then
+                local newPosition = update(input)
+                
+                if self.Dragged then
+                    self.Dragged(newPosition)
+                end
+            end
+        end)
+    end
+    
+    -- // disables dragging
+    function DraggableObject:Disable()
+        self.InputBegan:Disconnect()
+        self.InputChanged:Disconnect()
+        self.InputChanged2:Disconnect()
+        
+        if self.Dragging then
+            self.Dragging = false
+            
+            if self.DragEnded then
+                self.DragEnded()
+            end
+        end
+    end
+
+    local LastOuput
+    local OutputEntries = owner.PlayerGui.SB_OutputGUI.Main.Output.Entries -- // get the output from vsb guis for code execution, rather than using logservice as it is locked by vsb
+    local Remote = script.Parent.TypeEvent
+    local Remote2 = script.Parent.RunTextEvent
+    local GUI = script.Parent.Value
+    local TextBox = GUI.Frame.TextBox
+    local TextButton = GUI.Frame.RunText
+    local RealText = script.Parent.Parent.RealTextValue.Value
+    local Name = script.Parent.Parent.NameValue.Value
+	 local CanRun = true
+    local Drag = DraggableObject.new(GUI.Frame)
+    Drag:Enable() -- // add drag to the textbot
+    TextBox.Text = Name
+    TextBox.PlaceholderText = "Insert Text"
+    TextBox.ClearTextOnFocus = false
+
+    owner.Chatted:Connect(function(Message)
+        if Message == "clear/" or Message == "clr/" then
+            TextBox.Text = Name
+        end
+    end)
+
+    TextBox.Focused:Connect(function()
+        Remote:FireServer("StartType", true)
+    end)
+
+    TextBox.FocusLost:Connect(function(EnterPressed)
+        if EnterPressed then
+            TextBox.Text = TextBox.Text.. "\n" -- // add new line
+            TextBox:CaptureFocus()
+        else
+            Remote:FireServer("StopType", false)
+        end
+    end)
+
+    TextBox:GetPropertyChangedSignal("Text"):Connect(function()
+        Remote:FireServer(TextBox.Text)
+    end)
+
+    TextButton.MouseButton1Click:Connect(function()
+        if CanRun == true then
+	        CanRun = false
+            Remote2:FireServer(TextBox.Text)
+            task.wait(.25) -- // wait a bit
+            for i, v in pairs (OutputEntries:GetChildren()) do
+                if i == table.getn(OutputEntries:GetChildren()) then -- // check if i is the last output entry
+                    LastOutput = v
+                    Remote:FireServer(TextBox.Text .. "\n" .. LastOutput.Text .. "\n" .. Name, "Output") -- // add the output
+                end
+            end
+            task.wait(.25)
+            TextBox.Text = RealText.Text
+			task.wait(.05)
+			CanRun = true
+		end
+    end)
+]], Value)
+
+coroutine.wrap(function()
+    for i = 1, string.len(longparagraph) do
+        Text.Text = string.sub(longparagraph, 1, i)
+        task.wait(1 / 50)
+    end
+end)
