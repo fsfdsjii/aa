@@ -22,6 +22,12 @@ Other things:
 ]]--
 --[[DECLARATIONS]]--
 
+Part = Instance.new("Part" , workspace)
+Instance.new("Part" , workspace)
+Part.Name = "ChosenMinigame"
+Pare = Instance.new("Part" , Part)
+Pare.Parent = game.workspace.ChosenMinigame
+Pare.Name = "Debounce"
 chooser = game.Workspace.ChosenMinigame
 chooserdebounce = game.Workspace.MinigameChoices.Debounce
 elevator = game.Workspace["Choose Next Minigame (50 Coins)"].Head
@@ -863,3 +869,5 @@ if (#stands > 0) then CTF_mode = true end]]
 
 		end
 	end
+
+		
