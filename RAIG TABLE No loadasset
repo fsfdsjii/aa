@@ -1,0 +1,143 @@
+-- [[ SETUP ]] --
+
+local tl = Instance.new("Tool", owner.Backpack)
+tl.Name = "RageTable"
+tl.ToolTip = "Flip Out"
+tl.TextureId = "rbxassetid://111900204"
+tl.Grip = CFrame.new(0, 0, .3)
+
+local h = Instance.new("SpawnLocation", tl)
+h.Name = "Handle"
+h.Enabled = false
+h.Size = Vector3.new(1.2, .67, .67)
+
+local msh = Instance.new("SpecialMesh", h)
+msh.MeshId = "rbxassetid://111868131"
+msh.TextureId = "rbxassetid://111867655"
+msh.Scale *= .2
+
+local scream = Instance.new("Sound", h)
+scream.SoundId = "rbxassetid://111896685"
+scream.Volume = 1
+scream.EmitterSize = 5
+
+local function findhum(p)
+    if p:FindFirstAncestorOfClass("Model") then
+        if p:FindFirstAncestorOfClass("Model"):FindFirstChildOfClass("Humanoid") then
+            return p:FindFirstAncestorOfClass("Model"):FindFirstChildOfClass("Humanoid")
+        else
+            return nil
+        end
+    else
+        return nil
+    end
+end
+
+local tbl = Instance.new("SpawnLocation")
+
+tbl.Enabled = false
+tbl.Size = Vector3.new(4.8, 2.43, 3.63)
+tbl.CanCollide = true
+
+local msh = Instance.new("SpecialMesh", tbl)
+msh.MeshId = "rbxassetid://111868131"
+msh.TextureId = "rbxassetid://111867655"
+
+local bg = Instance.new("BodyGyro")
+bg.MaxTorque = Vector3.new(0, math.huge, 0) 
+
+tl.Activated:Connect(function()
+	local char = tl.Parent
+
+	local hum = char:WaitForChild("Humanoid")
+	local tors = char:WaitForChild("HumanoidRootPart")
+	local hd = char:WaitForChild("Head")
+	local face = hd:FindFirstChild("face")
+	local of = char:GetAttribute("OldFace")
+    
+
+    if char:GetAttribute("OldFace") == nil then
+        if face then
+            char:SetAttribute("OldFace", face.Texture)
+            of = face.Texture
+        end
+    end
+
+	-- // hum.WalkSpeed = 0
+	bg.CFrame = tors.CFrame - tors.CFrame.Position
+	bg.Parent = tors
+	
+	local ntbl =  tbl:Clone()
+	ntbl.CFrame = tors.CFrame + (tors.CFrame.lookVector * 3)
+	ntbl.Parent = script
+	
+    local anim = Instance.new("Animation")
+    anim.AnimationId = "rbxassetid://111898867"
+	hum.Animator:LoadAnimation(anim):Play()
+
+	task.wait(.5)
+
+	scream:Play()
+
+	task.wait(.5)
+
+	if face then
+		face.Texture = "rbxassetid://111882478"
+	end
+	
+	local bav = Instance.new("BodyAngularVelocity", ntbl)
+	bav.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
+	bav.AngularVelocity = (tors.CFrame * CFrame.Angles(0, math.pi / 2,0)).lookVector * 10
+	
+	local bv = Instance.new("BodyVelocity", ntbl)
+	bv.MaxForce = Vector3.new(math.huge, 0, math.huge)
+	bv.Velocity = tors.CFrame.lookVector * 25
+
+	ntbl.Touched:Connect(function(hit)
+		coroutine.wrap(function()
+			local hhum = findhum(hit)
+
+			if hhum and hhum ~= hum then
+				hhum.PlatformStand = true
+            elseif not hhum and hit.Name ~= "Base" then
+                for _, v in pairs(hit:GetDescendants()) do
+                    if v:IsA("JointInstance") then
+                        v:Destroy()
+                    end
+                end
+                
+                hit:BreakJoints()
+                hit.Anchored = false
+			end
+
+            if hit.Name ~= "Base" then
+			    hit.Velocity = Vector3.new((math.random() - .5) * 2, math.random(), (math.random() - .5 * 2)).Unit * 150
+            end
+
+			task.wait(3)
+
+			if hhum and hhum ~= hum then
+				hhum.PlatformStand = false 
+				hhum.Jump = true 
+			end
+		end)()
+	end)
+
+	task.wait(6)
+
+	bg.Parent = nil
+	-- // hum.WalkSpeed = 16
+
+	if face then	
+		face.Texture = of
+	end
+
+	ntbl.CanCollide = false
+
+	coroutine.wrap(function()
+        task.wait(5)
+        if ntbl then
+            ntbl:Destroy()
+        end
+    end)()
+end)
