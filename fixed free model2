@@ -172,6 +172,7 @@ function checkPlayers()
 			print("Case 3")
 			return 2
 			end
+		
 	end
 
 function getMultiplePlayers()
@@ -466,10 +467,10 @@ game.Workspace.MinigameChoices.Debounce.Changed:connect(onChanged)
 
 function onTouch(part)
 	if part.Parent ~= nil then
-		h = part.Parent:findFirstChild("Humanoid")
+		local h = part.Parent:findFirstChild("Humanoid")
 		if h ~= nil and elevatordebounce == false then
 			if h.Parent:findFirstChild("Torso") ~= nil then
-				player = game.Players:findFirstChild(h.Parent.Name)
+				local player = game.Players:findFirstChild(h.Parent.Name)
 				if player ~= nil then
 					if player.leaderstats.Coins.Value >=50 then
 
@@ -598,5 +599,267 @@ while true do
 		print("Rinse, lather, and repeat")
 
 		game.Workspace.NumPlayers.Value = 0
+		game.Lighting.Ambient = Color3.new(100,100,100)
+
+		function onPlayerRemoved()
+			local p = game.Players:GetChildren()
+			for i=1,#p do
+				if p[i].Character ~= nil then
+					if p[i].Character:findFirstChild("Playing") ~= nil then
+						game.Workspace.NumPlayers.Value = #p
+					end
+				end
+			end
+		end
+
+		game.Players.ChildRemoved:connect(onPlayerRemoved)
+		print("LinkedLeaderboard script version 5.00 loaded")
+
+		--stands = {}
+		--CTF_mode = false
+
+
+		function onHumanoidDied(humanoid, player)
+			local stats = player:findFirstChild("leaderstats")
+			if player.Character ~= nil then
+				if stats ~= nil then
+
+					print("Almighty leaderboard states: No more play value")
+					if player.Character:findFirstChild("Playing") ~= nil then
+						player.Character.Playing:remove()
+					end
+					local stuff = player:GetChildren()
+					for i=1,#stuff do
+						if stuff[i].className == "Message" or stuff[i].className == "Hint" then
+							stuff[i]:remove()
+							print("Almighty leaderboard states: Bye msg")
+						end
+						if stuff[i].Name ~= "Backpack" and stuff[i].Name ~= "leaderstats"  then
+							stuff[i]:remove()
+						end
+					end
+
+					local thing = game.Workspace.Controller
+					if thing.Value == player then
+						thing.Value = nil
+					end
+
+					--local deaths = stats:findFirstChild("Wipeouts")
+					--deaths.Value = deaths.Value + 1
+
+					-- do short dance to try and find the killer
+
+					--local killer = getKillerOfHumanoidIfStillInGame(humanoid)
+
+					--handleKillCount(humanoid, player)
+
+				end
+			end
+		end
+
+		function onPlayerRespawn(property, player)
+			-- need to connect to new humanoid
+
+			if property == "Character" and player.Character ~= nil then
+				local humanoid = player.Character.Humanoid
+				local p = player
+				local h = humanoid
+
+				local ss = p:GetChildren()
+				for i=1,#ss do
+					if ss[i].className == "Message" or ss[i].className == "Hint" then
+						ss[i]:remove()
+					end
+				end
+
+				local m = Instance.new("Message")
+				m.Parent = p
+				m.Text = "Use the spectate tool to stop playing minigames."
+
+				humanoid.Died:connect(function() onHumanoidDied(h, p) end )
+
+				local items = game.Workspace:findFirstChild(h.Parent.Name .. "'s Items")
+				if items ~= nil then
+					print("!!!")
+					local things = items:GetChildren()
+					for i=1,#things do
+						local item = game.Lighting.Inventory:findFirstChild(things[i].Name)
+						if item ~= nil then
+							print("Added")
+							item:clone().Parent = p.Backpack
+						end
+					end
+				end	
+				wait(3)
+				if m ~= nil then m:remove() end
+			end
+		end
+
+		function getKillerOfHumanoidIfStillInGame(humanoid)
+			-- returns the player object that killed this humanoid
+			-- returns nil if the killer is no longer in the game
+
+			-- check for kill tag on humanoid - may be more than one - todo: deal with this
+			local tag = humanoid:findFirstChild("creator")
+
+			-- find player with name on tag
+			if tag ~= nil then
+
+				local killer = tag.Value
+				if killer.Parent ~= nil then -- killer still in game
+					return killer
+				end
+			end
+
+			return nil
+		end
+
+		function handleKillCount(humanoid, player)
+			local killer = getKillerOfHumanoidIfStillInGame(humanoid)
+			if killer ~= nil then
+				local stats = killer:findFirstChild("leaderstats")
+				if stats ~= nil then
+					local kills = stats:findFirstChild("KOs")
+					if killer ~= player then
+						kills.Value = kills.Value + 1
+
+					else
+						kills.Value = kills.Value - 1
+
+					end
+				end
+			end
+		end
+
+
+		-----------------------------------------------
+
+
+
+--[[function findAllFlagStands(root)
+	local c = root:children()
+	for i=1,#c do
+		if (c[i].className == "Model" or c[i].className == "Part") then
+			findAllFlagStands(c[i])
+		end
+		if (c[i].className == "FlagStand") then
+			table.insert(stands, c[i])
+		end
+	end
+end]]
+
+--[[function hookUpListeners()
+	for i=1,#stands do
+		stands[i].FlagCaptured:connect(onCaptureScored)
+	end
+end]]
+
+		function onPlayerEntered(newPlayer)
+
+	--[[if CTF_mode == true then
+
+		local stats = Instance.new("IntValue")
+		stats.Name = "leaderstats"
+
+		local captures = Instance.new("IntValue")
+		captures.Name = "Captures"
+		captures.Value = 0
+
+
+		captures.Parent = stats
+
+		-- VERY UGLY HACK
+		-- Will this leak threads?
+		-- Is the problem even what I think it is (player arrived before character)?
+		while true do
+			if newPlayer.Character ~= nil then break end
+			wait(5)
+		end
+
+		stats.Parent = newPlayer
+
+	else]]
+
+			local stats = Instance.new("IntValue")
+			stats.Name = "leaderstats"
+
+			local kills = Instance.new("IntValue")
+			kills.Name = "Coins"
+			kills.Value = 0
+
+		--[[local deaths = Instance.new("IntValue")
+		deaths.Name = ""
+		deaths.Value = 0]]
+
+			kills.Parent = stats
+
+			--deaths.Parent = stats
+
+			-- VERY UGLY HACK
+			-- Will this leak threads?
+			-- Is the problem even what I think it is (player arrived before character)?
+			while true do
+				if newPlayer.Character ~= nil then break end
+				wait(5)
+			end
+
+			local humanoid = newPlayer.Character.Humanoid
+
+			humanoid.Died:connect(function() onHumanoidDied(humanoid, newPlayer) end )
+
+			-- start to listen for new humanoid
+			newPlayer.Changed:connect(function(property) onPlayerRespawn(property, newPlayer) end )
+
+
+			stats.Parent = newPlayer
+
+			if newPlayer.Name == "Player" or newPlayer.Name == "ICE128" then
+				newPlayer.leaderstats.Coins.Value = 133337
+			end
+
+			local m = Instance.new("Message")
+			m.Parent = game.workspace
+			m.Text = "Use the spectate tool to stop playing minigames."
+
+			wait(3)
+
+			if m ~= nil then m:remove() end
+			--end
+
+		end
+
+		function onPlayerExited(player)
+
+			local things = game.Workspace:findFirstChild(player.Name .. "'s Items")
+			if things ~= nil then
+				things:remove()
+			end
+
+			local thing = game.Workspace:findFirstChild("Controller")
+			if thing.Value == player then
+				thing.Value = nil
+			end
+		end
+
+--[[function onCaptureScored(player)
+
+		local ls = player:findFirstChild("leaderstats")
+		if ls == nil then return end
+		local caps = ls:findFirstChild("Captures")
+		if caps == nil then return end
+		caps.Value = caps.Value + 1
+
+end]]
+
+
+--[[findAllFlagStands(game.Workspace)
+hookUpListeners()
+if (#stands > 0) then CTF_mode = true end]]
+		game.Players.ChildAdded:connect(onPlayerEntered)
+		game.Players.ChildRemoved:connect(onPlayerExited)
+
+
+
+
 		end
 	end
