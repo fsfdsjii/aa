@@ -1,0 +1,91 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: TouchTransmitter
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Model")
+o2 = Instance.new("Tool")
+o3 = Instance.new("Part")
+o4 = Instance.new("Weld")
+o5 = Instance.new("Part")
+o6 = Instance.new("Sound")
+o7 = Instance.new("SpecialMesh")
+o8 = Instance.new("Decal")
+o9 = Instance.new("Sound")
+o10 = Instance.new("PointLight")
+o11 = Instance.new("Decal")
+o13 = Instance.new("Script")
+o14 = Instance.new("Decal")
+o15 = Instance.new("Camera")
+o1.Parent = mas
+o2.Name = "Szemtelen Manó Plush"
+o2.Parent = owner.Backpack
+o2.TextureId = "http://www.roblox.com/asset/?id=6449877274"
+o2.ToolTip = "support the cause (search mugen in groups with spaces)"
+o3.Name = "Handle"
+o3.Parent = o2
+o3.Material = Enum.Material.Slate
+o3.BrickColor = BrickColor.new("Med. bluish green")
+o3.Rotation = Vector3.new(-180, 0, -180)
+o3.CanCollide = false
+o3.Shape = Enum.PartType.Ball
+o3.Size = Vector3.new(1.2624616622924805, 1.2624616622924805, 1.2624616622924805)
+o3.CFrame = CFrame.new(9.64308167, 0.63123107, 109.427216, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+o3.BottomSurface = Enum.SurfaceType.Smooth
+o3.TopSurface = Enum.SurfaceType.Smooth
+o3.Color = Color3.new(0.270588, 0.611765, 0.756863)
+o3.Color = Color3.new(0.270588, 0.611765, 0.756863)
+o4.Parent = o3
+o4.C1 = CFrame.new(5.39381872e-05, -0.606029987, -4.81590905e-06, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+o5.Name = "ChatBubble"
+o5.Parent = o3
+o5.BrickColor = BrickColor.new("Really red")
+o5.Transparency = 1
+o5.Rotation = Vector3.new(-180, 0, -180)
+o5.CanCollide = false
+o5.Size = Vector3.new(0.12624616920948029, 0.12624616920948029, 0.12624616920948029)
+o5.CFrame = CFrame.new(9.64313602, 1.23726106, 109.427208, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+o5.BottomSurface = Enum.SurfaceType.Smooth
+o5.TopSurface = Enum.SurfaceType.Smooth
+o5.Color = Color3.new(1, 0, 0)
+o5.Color = Color3.new(1, 0, 0)
+o6.Name = "vine"
+o6.Parent = o3
+o6.SoundId = "rbxassetid://6427058280"
+o6.Volume = 1
+o7.Parent = o3
+o7.MeshType = Enum.MeshType.Sphere
+o8.Parent = o3
+o8.Transparency = -1.5
+o8.Texture = "http://www.roblox.com/asset/?id=7055097186"
+o9.Name = "theme"
+o9.Parent = o3
+o9.Pitch = 1.2000000476837158
+o9.SoundId = "rbxassetid://745540082"
+o9.Volume = 1
+o9.Looped = true
+o10.Name = "Funny"
+o10.Parent = o3
+o10.Color = Color3.new(1, 0, 0)
+o10.Range = 0
+o10.Color = Color3.new(1, 0, 0)
+o11.Name = "FUNNIER"
+o11.Parent = o3
+o11.Transparency = 1
+o11.Texture = "rbxassetid://7081940602"
+o11.ZIndex = 2
+o13.Name = "Chat"
+o13.Parent = o2
+o14.Name = "Cheeky"
+o14.Parent = o2
+o14.Texture = "http://www.roblox.com/asset/?id=903375932"
+o15.Name = "ThumbnailCamera"
+o14.Parent = o1
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
