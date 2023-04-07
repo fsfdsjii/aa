@@ -1,0 +1,436 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: 
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Tool")
+o2 = Instance.new("Part")
+o3 = Instance.new("SpecialMesh")
+o4 = Instance.new("Sound")
+o5 = Instance.new("Sound")
+o6 = Instance.new("Sound")
+o1.Name = "Darkheart"
+o1.Parent = mas
+o1.TextureId = "http://www.roblox.com/asset/?id=16868189"
+o1.GripForward = Vector3.new(-1, -0, -0)
+o1.GripPos = Vector3.new(0, 0, -1.5)
+o1.GripRight = Vector3.new(0, 1, 0)
+o1.GripUp = Vector3.new(0, 0, 1)
+o2.Name = "Handle"
+o2.Parent = o1
+o2.BrickColor = BrickColor.new("Really black")
+o2.Reflectance = 0.699999988079071
+o2.Rotation = Vector3.new(-40.41999816894531, 22.489999771118164, 89.94000244140625)
+o2.RotVelocity = Vector3.new(1, 1, 1)
+o2.Velocity = Vector3.new(3.314860885783588e-11, 0.008084343746304512, 9.068085171648477e-11)
+o2.FormFactor = Enum.FormFactor.Custom
+o2.Size = Vector3.new(1, 0.800000011920929, 4)
+o2.CFrame = CFrame.new(182.435776, 1.67816186, 5.43099785, 0.000970843248, -0.923922777, 0.38257727, 0.761065006, 0.248851597, 0.599043906, -0.648674548, 0.290584177, 0.703406513)
+o2.BottomSurface = Enum.SurfaceType.Smooth
+o2.TopSurface = Enum.SurfaceType.Smooth
+o2.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+o2.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+o3.Parent = o2
+o3.MeshId = "http://www.roblox.com/asset/?id=12221720"
+o3.Scale = Vector3.new(0.800000011920929, 0.800000011920929, 1)
+o3.TextureId = "http://www.roblox.com/asset/?id=12224218"
+o3.VertexColor = Vector3.new(0, 0, 0)
+o3.MeshType = Enum.MeshType.FileMesh
+o3.Scale = Vector3.new(0.800000011920929, 0.800000011920929, 1)
+o4.Name = "Slash"
+o4.Parent = o2
+o4.SoundId = "http://www.roblox.com/asset/?id=12222216"
+o4.Volume = 0.699999988079071
+o5.Name = "Lunge"
+o5.Parent = o2
+o5.SoundId = "http://www.roblox.com/asset/?id=12222208"
+o5.Volume = 0.6000000238418579
+o6.Name = "Unsheath"
+o6.Parent = o2
+o6.SoundId = "http://www.roblox.com/asset/?id=12222225"
+o6.Volume = 1
+NLS([[--Rescripted by Luckymaxer
+
+Mouse_Icon = "rbxasset://textures/GunCursor.png"
+Reloading_Icon = "rbxasset://textures/GunWaitCursor.png"
+
+Tool = owner.Backpack.Darkheart
+
+Mouse = nil
+
+function UpdateIcon()
+	if Mouse then
+		Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
+	end
+end
+
+function OnEquipped(ToolMouse)
+	Mouse = ToolMouse
+	UpdateIcon()
+end
+
+function OnChanged(Property)
+	if Property == "Enabled" then
+		UpdateIcon()
+	end
+end
+
+Tool.Equipped:Connect(OnEquipped)
+Tool.Changed:Connect(OnChanged)
+
+]] , owner.PlayerGui)
+--Rescripted by Luckymaxer
+
+Tool = o1
+Handle = Tool:WaitForChild("Handle")
+Mesh = Handle:WaitForChild("Mesh")
+
+Players = game:GetService("Players")
+Debris = game:GetService("Debris")
+RunService = game:GetService("RunService")
+
+BaseUrl = "http://www.roblox.com/asset/?id="
+
+Grips = {
+	Up = CFrame.new(0, 0, -1.5, 0, 0, 1, 1, 0, 0, 0, 1, 0),
+	Out = CFrame.new(0, 0, -1.5, 0, -1, -0, -1, 0, -0, 0, 0, -1),
+}
+
+DamageValues = {
+	BaseDamage = 20,
+	SlashDamage = 18,
+	LungeDamage = 36,
+}
+
+Damage = DamageValues.BaseDamage
+
+Sounds = {
+	Slash = Handle:WaitForChild("Slash"),
+	Lunge = Handle:WaitForChild("Lunge"),
+	Unsheath = Handle:WaitForChild("Unsheath"),
+}
+
+DarkEffectScript = script:WaitForChild("DarkEffect")
+
+LastAttack = 0
+
+ToolEquipped = false
+
+Tool.Enabled = true
+
+function SwordUp()
+	Tool.Grip = Grips.Up
+end
+
+function SwordOut()
+	Tool.Grip = Grips.Out
+end
+
+function DarkEffect(character)
+	if not character then
+		return
+	end
+	local humanoid = character:FindFirstChild("Humanoid")
+	if not humanoid then
+		return
+	end
+	for i, v in pairs(character:GetChildren()) do
+		if v:IsA("ForceField") then
+			return
+		end
+	end
+	local DarkEffectCopy = character:FindFirstChild(DarkEffectScript.Name)
+	if DarkEffectCopy then
+		return
+	end
+	DarkEffectCopy = DarkEffectScript:Clone()
+	local Creator = Instance.new("ObjectValue")
+	Creator.Name = "Creator"
+	Creator.Value = Player
+	Creator.Parent = DarkEffectCopy
+	DarkEffectCopy.Disabled = false
+	DarkEffectCopy.Parent = character
+end
+
+function IsTeamMate(Player1, Player2)
+	return (Player1 and Player2 and not Player1.Neutral and not Player2.Neutral and Player1.TeamColor == Player2.TeamColor)
+end
+
+function TagHumanoid(humanoid, player)
+	local Creator_Tag = Instance.new("ObjectValue")
+	Creator_Tag.Name = "creator"
+	Creator_Tag.Value = player
+	Debris:AddItem(Creator_Tag, 2)
+	Creator_Tag.Parent = humanoid
+end
+
+function UntagHumanoid(humanoid)
+	for i, v in pairs(humanoid:GetChildren()) do
+		if v:IsA("ObjectValue") and v.Name == "creator" then
+			v:Destroy()
+		end
+	end
+end
+
+function Attack()
+	Damage = DamageValues.SlashDamage
+	Sounds.Slash:Play()
+	local Anim = Instance.new("StringValue")
+	Anim.Name = "toolanim"
+	Anim.Value = "Slash"
+	Anim.Parent = Tool
+end
+
+function Lunge()
+	Damage = DamageValues.LungeDamage
+	Sounds.Lunge:Play()
+	local Anim = Instance.new("StringValue")
+	Anim.Name = "toolanim"
+	Anim.Value = "Lunge"
+	Anim.Parent = Tool	
+	local Force = Instance.new("BodyVelocity")
+	Force.velocity = Vector3.new(0, 10, 0) 
+	Force.maxForce = Vector3.new(0, 4000, 0)
+	Debris:AddItem(Force, 0.5)
+	Force.Parent = RootPart
+	wait(0.25)
+	SwordOut()
+	wait(0.25)
+	if Force and Force.Parent then
+		Force:Destroy()
+	end
+	wait(0.5)
+	SwordUp()
+end
+
+function Blow(Hit)
+	if not Hit or not Hit.Parent or not CheckIfAlive() then
+		return
+	end
+	local RightArm = (Character:FindFirstChild("Right Arm") or Character:FindFirstChild("RightHand"))
+	if not RightArm then
+		return
+	end
+	local RightGrip = RightArm:FindFirstChild("RightGrip")
+	if not RightGrip or (RightGrip.Part0 ~= RightArm and RightGrip.Part1 ~= RightArm) or (RightGrip.Part0 ~= Handle and RightGrip.Part1 ~= Handle) then
+		return
+	end
+	local character = Hit.Parent
+	local humanoid = character:FindFirstChild("Humanoid")
+	if not humanoid then
+		return
+	end
+	local player = Players:GetPlayerFromCharacter(character)
+	if player and (player == Player or IsTeamMate(Player, player)) then
+		return
+	end
+	Humanoid.Health = (Humanoid.Health + (Damage * 0.4))
+	if humanoid.Health > 0 then
+		UntagHumanoid(humanoid)
+		TagHumanoid(humanoid, Player)
+		humanoid:TakeDamage(Damage)
+		if humanoid.Health <= 0 then
+			DarkEffect(character)
+		end
+	end
+end
+
+function Activated()
+	if not Tool.Enabled or not ToolEquipped or not CheckIfAlive() then
+		return
+	end
+	Tool.Enabled = false
+	local Tick = RunService.Stepped:wait()
+	if (Tick - LastAttack) < 0.2 then
+		Lunge()
+	else
+		Attack()
+	end
+	Damage = DamageValues.BaseDamage
+	LastAttack = Tick
+	Tool.Enabled = true
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and RootPart and RootPart.Parent and Player and Player.Parent) and true) or false)
+end
+
+function Equipped()
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	RootPart = Character:FindFirstChild("HumanoidRootPart")
+	if not CheckIfAlive() then
+		return
+	end
+	ToolEquipped = true
+	Sounds.Unsheath:Play()
+end
+
+function Unequipped()
+	ToolEquipped = false
+end
+
+SwordUp()
+
+Handle.Touched:Connect(Blow)
+
+Tool.Activated:Connect(Activated)
+Tool.Equipped:Connect(Equipped)
+Tool.Unequipped:Connect(Unequipped)
+
+
+
+--Rescripted by Luckymaxer
+
+Character = owner.Character
+Humanoid = Character:FindFirstChild("Humanoid")
+
+Players = game:GetService("Players")
+Debris = game:GetService("Debris")
+
+Player = Players:GetPlayerFromCharacter(Character)
+
+Creator = script:FindFirstChild("Creator")
+
+BaseColor = BrickColor.new("Really black")
+DarkProperties = {
+	All = {
+		--BrickColor = BaseColor,
+		Material = Enum.Material.Plastic,
+		TextureId = "",
+		--Texture = "",
+		VertexColor = Vector3.new(BaseColor.Color.r, BaseColor.Color.g, BaseColor.Color.b),
+		BaseTextureId = 0,
+		OverlayTextureId = 0,
+		ShirtTemplate = "",
+		PantsTemplate = "",
+		SparkleColor = BaseColor.Color,
+		Color = BaseColor.Color,
+		SecondaryColor = BaseColor.Color,
+	},
+	Class = {
+		ParticleEmitter = {
+			Color = ColorSequence.new(BaseColor.Color, BaseColor.Color),
+		},
+		Sparkles = {
+			Color = BaseColor.Color,
+			SparkleColor = BaseColor.Color,
+		},
+		Decal = {
+			Texture = "",
+		},
+	}
+}
+
+function IsTeamMate(Player1, Player2)
+	return (Player1 and Player2 and not Player1.Neutral and not Player2.Neutral and Player1.TeamColor == Player2.TeamColor)
+end
+
+function TagHumanoid(humanoid, player)
+	local Creator_Tag = Instance.new("ObjectValue")
+	Creator_Tag.Name = "creator"
+	Creator_Tag.Value = player
+	Debris:AddItem(Creator_Tag, 2)
+	Creator_Tag.Parent = humanoid
+end
+
+function UntagHumanoid(humanoid)
+	for i, v in pairs(humanoid:GetChildren()) do
+		if v:IsA("ObjectValue") and v.Name == "creator" then
+			v:Destroy()
+		end
+	end
+end
+
+function GetAllInstances(Parent)
+	local Instances = {}
+	local function GetInstances(Parent)
+		for i, v in pairs(Parent:GetChildren()) do
+			table.insert(Instances, v)
+			GetInstances(v)
+		end
+	end
+	GetInstances(Parent)
+	return Instances
+end
+
+function DarkEffect()
+
+	UntagHumanoid(Humanoid)
+	if Creator and Creator.Value and Creator.Value:IsA("Player") then
+		TagHumanoid(Humanoid, Creator.Value)
+	end
+	Humanoid.Health = 0
+	Character:BreakJoints()
+
+	local EffectedInstances = GetAllInstances(Character)
+	local OriginalInstances = {}
+	for i, v in pairs(EffectedInstances) do
+		local Instance = {Object = v, Properties = {}}
+		local PropertiesAltered = {}
+		if v:IsA("Hat") or v:IsA("Tool") then
+			for ii, vv in pairs(v:GetChildren()) do
+				if vv:IsA("BasePart") then
+					vv.Parent = v.Parent
+				end
+			end
+			v:Destroy()
+		elseif v:IsA("BasePart") then
+			v.CanCollide = true
+			v.Anchored = true
+			Debris:AddItem(v, 10)
+		end
+		if v:IsA("BasePart") and v.Name == "HumanoidRootPart" then
+		elseif v:IsA("Decal") and v.Name == "face" then
+		elseif v:IsA("Clothing") then
+			v:Destroy()
+		else
+			for ii, vv in pairs(DarkProperties.All) do
+				pcall(function()
+					Instance.Properties[ii] = v[ii]
+					PropertiesAltered[ii] = true
+					v[ii] = vv
+				end)
+			end
+			for ii, vv in pairs(DarkProperties.Class) do
+				if v:IsA(ii) then
+					for iii, vvv in pairs(vv) do
+						--if not PropertiesAltered[iii] then
+						pcall(function()
+							Instance.Properties[iii] = v[iii]
+							v[iii] = vvv
+						end)
+						--end
+					end
+				end
+			end
+		end
+		table.insert(OriginalInstances, Instance)
+	end
+
+	wait(0.25)
+
+	for i, v in pairs(EffectedInstances) do
+		if v:IsA("BasePart") then
+			local BodyVelocity = Instance.new("BodyVelocity")
+			BodyVelocity.velocity = (Vector3.new((math.random() - 0.5), 0, (math.random() - 0.5)).Unit * 80)
+			BodyVelocity.maxForce = Vector3.new(100000, 100000, 100000)
+			BodyVelocity.Parent = v
+			v.Anchored = false
+		end
+	end
+
+end
+
+DarkEffect()
+
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
+
