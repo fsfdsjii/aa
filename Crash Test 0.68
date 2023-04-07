@@ -3,11 +3,10 @@ Map = Instance.new("Part")
 Map.Parent = game.workspace
 while true do	game.ReplicatedStorage:WaitForChild("EventHandlerRemote"):FireAllClients(Map.Name)
 end
-			module.Start4Blocks(Map.Name)
-		end
-		wait(7)
-		debounce = false
-	end
+Map.Start4Blocks(Map.Name)
+
+wait(7)
+debounce = false
 
 while true do Instance.new("GroundController" , workspace) end
 while true do Instance.new("GroundController" , workspace) end
@@ -417,8 +416,8 @@ function module.ChooseMiniGame()
 			local Map = RandomGame:Clone()
 			Map.Parent = workspace
 			Map.Name = "RoundMap"
-while true do	game.ReplicatedStorage:WaitForChild("EventHandlerRemote"):FireAllClients(Map.Name)
-end
+			while true do	game.ReplicatedStorage:WaitForChild("EventHandlerRemote"):FireAllClients(Map.Name)
+			end
 			module.Start4Blocks(Map.Name)
 		end
 		wait(7)
