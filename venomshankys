@@ -1,0 +1,487 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: TouchTransmitter
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Tool")
+o3 = Instance.new("Part")
+o4 = Instance.new("SpecialMesh")
+o6 = Instance.new("LocalScript")
+o7 = Instance.new("Script")
+o1.Name = "Venomshank"
+o1.Parent = owner.Character
+o1.GripForward = Vector3.new(-1, -0, -0)
+o1.GripPos = Vector3.new(0, 0, -2)
+o1.GripRight = Vector3.new(0, 1, 0)
+o1.GripUp = Vector3.new(0, 0, 1)
+-------- OMG HAX
+
+r = game:GetService('RunService')
+
+
+local damage = 5
+
+
+local slash_damage = 10
+local lunge_damage = 20
+
+sword = o3
+Tool = o1
+
+
+local SlashSound = Instance.new("Sound")
+SlashSound.SoundId = "rbxasset://sounds\\swordslash.wav"
+SlashSound.Parent = sword
+SlashSound.Volume = .7
+
+local LungeSound = Instance.new("Sound")
+LungeSound.SoundId = "rbxasset://sounds\\swordlunge.wav"
+LungeSound.Parent = sword
+LungeSound.Volume = .6
+
+local UnsheathSound = Instance.new("Sound")
+UnsheathSound.SoundId = "rbxasset://sounds\\unsheath.wav"
+UnsheathSound.Parent = sword
+UnsheathSound.Volume = 1
+
+function Poison(humanoid, character, attacker)
+
+	if (character:FindFirstChild("ForceField") ~= nil) then return end
+	if (character:FindFirstChild("Poison") == nil ) then
+		local s = script.Parent.Poison:clone()
+		tagPoison(s, player)
+		s.Disabled = false
+		s.Parent = character
+
+
+	end
+
+end
+
+
+
+
+function blow(hit)
+	local humanoid = hit.Parent:FindFirstChild("Humanoid")
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+	local hum = vCharacter:FindFirstChild("Humanoid") -- non-nil if tool held by a character
+	if humanoid~=nil and humanoid ~= hum and hum ~= nil then
+		-- final check, make sure sword is in-hand
+
+		local right_arm = vCharacter:FindFirstChild("Right Arm")
+		if (right_arm ~= nil) then
+			local joint = right_arm:FindFirstChild("RightGrip")
+			if (joint ~= nil and (joint.Part0 == sword or joint.Part1 == sword)) then
+				Poison(humanoid, humanoid.Parent, attacker)	
+				tagHumanoid(humanoid, vPlayer)
+				humanoid:TakeDamage(damage)
+			end
+		end
+
+
+	end
+end
+
+
+
+function tagHumanoid(humanoid, player)
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = player
+	creator_tag.Name = "creator"
+	creator_tag.Parent = humanoid
+	game.Debris:AddItem(creator_tag, 1)
+end
+
+function tagPoison(s, player)
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = player
+	creator_tag.Name = "poisoner"
+	creator_tag.Parent = s
+end
+
+
+function attack()
+	damage = slash_damage
+	SlashSound:play()
+	local anim = Instance.new("StringValue")
+	anim.Name = "toolanim"
+	anim.Value = "Slash"
+	anim.Parent = Tool
+end
+
+function lunge()
+	damage = lunge_damage
+
+	LungeSound:play()
+
+	local anim = Instance.new("StringValue")
+	anim.Name = "toolanim"
+	anim.Value = "Lunge"
+	anim.Parent = Tool
+
+
+	local force = Instance.new("BodyVelocity")
+	force.velocity = Vector3.new(0,10,0) --Tool.Parent.Torso.CFrame.lookVector * 80
+	force.Parent = Tool.Parent.Torso
+	wait(.25)
+	swordOut()
+	wait(.25)
+	force.Parent = nil
+	wait(.5)
+	swordUp()
+
+	damage = slash_damage
+end
+
+function swordUp()
+	Tool.GripForward = Vector3.new(-1,0,0)
+	Tool.GripRight = Vector3.new(0,1,0)
+	Tool.GripUp = Vector3.new(0,0,1)
+end
+
+function swordOut()
+	Tool.GripForward = Vector3.new(0,0,1)
+	Tool.GripRight = Vector3.new(0,-1,0)
+	Tool.GripUp = Vector3.new(-1,0,0)
+end
+
+function swordAcross()
+	-- parry
+end
+
+
+Tool.Enabled = true
+local last_attack = 0
+function onActivated()
+
+	if not Tool.Enabled then
+		return
+	end
+
+	Tool.Enabled = false
+
+	local character = Tool.Parent;
+	local humanoid = character.Humanoid
+	if humanoid == nil then
+		print("Humanoid not found")
+		return 
+	end
+
+	local t = r.Stepped:wait()
+
+	if (t - last_attack < 2) then
+		lunge()
+	else
+		attack()
+	end
+
+	last_attack = t
+
+	--wait(.5)
+
+	Tool.Enabled = true
+end
+
+
+function onEquipped()
+	UnsheathSound:play()
+end
+
+o1.Activated:Connect(onActivated)
+o1.Equipped:Connect(onEquipped)
+
+
+connection = sword.Touched:Connect(blow)
+
+
+
+--Rescripted by Luckymaxer
+--EUROCOW WAS HERE BECAUSE I MADE THE PARTICLES AND THEREFORE THIS ENTIRE SWORD PRETTY AND LOOK PRETTY WORDS AND I'D LIKE TO DEDICATE THIS TO MY FRIENDS AND HI LUCKYMAXER PLS FIX SFOTH SWORDS TY LOVE Y'ALl
+--Updated for R15 avatars by StarWars
+--Re-updated by TakeoHonorable
+
+Tool = o1
+Handle = o3
+
+function Create(ty)
+	return function(data)
+		local obj = Instance.new(ty)
+		for k, v in pairs(data) do
+			if type(k) == 'number' then
+				v.Parent = obj
+			else
+				obj[k] = v
+			end
+		end
+		return obj
+	end
+end
+
+local BaseUrl = "rbxassetid://"
+
+Players = game:GetService('Players')
+Debris = game:GetService('Debris')
+RunService = game:GetService('RunService')
+
+DamageValues = {
+	BaseDamage = 5,
+	SlashDamage = 10,
+	LungeDamage = 20
+}
+
+--For R15 avatars
+Animations = {
+	R15Slash = 522635514,
+	R15Lunge = 522638767
+}
+
+Damage = DamageValues.BaseDamage
+
+Grips = {
+	Up = CFrame.new(0, 0, -1.70000005, 0, 0, 1, 1, 0, 0, 0, 1, 0),
+	Out = CFrame.new(0, 0, -1.70000005, 0, 1, 0, 1, -0, 0, 0, 0, -1)
+}
+
+Sounds = {
+	Slash = Handle:WaitForChild("SwordSlash"),
+	Lunge = Handle:WaitForChild("SwordLunge"),
+	Unsheath = Handle:WaitForChild("Unsheath")
+}
+
+ToolEquipped = false
+
+--For Omega Rainbow Katana thumbnail to display a lot of particles.
+for i, v in pairs(Handle:GetChildren()) do
+	if v:IsA("ParticleEmitter") then
+		v.Rate = 20
+	end
+end
+
+Tool.Grip = Grips.Up
+Tool.Enabled = true
+
+function IsTeamMate(Player1, Player2)
+	return (Player1 and Player2 and not Player1.Neutral and not Player2.Neutral and Player1.TeamColor == Player2.TeamColor)
+end
+
+function TagHumanoid(humanoid, player)
+	local Creator_Tag = Instance.new("ObjectValue")
+	Creator_Tag.Name = "creator"
+	Creator_Tag.Value = player
+	Debris:AddItem(Creator_Tag, 2)
+	Creator_Tag.Parent = humanoid
+end
+
+function UntagHumanoid(humanoid)
+	for i, v in pairs(humanoid:GetChildren()) do
+		if v:IsA("ObjectValue") and v.Name == "creator" then
+			v:Destroy()
+		end
+	end
+end
+
+function Blow(Hit)
+	if not Hit or not Hit.Parent or not CheckIfAlive() or not ToolEquipped then
+		return
+	end
+	local RightArm = Character:FindFirstChild("Right Arm") or Character:FindFirstChild("RightHand")
+	if not RightArm then
+		return
+	end
+	local RightGrip = RightArm:FindFirstChild("RightGrip")
+	if not RightGrip or (RightGrip.Part0 ~= Handle and RightGrip.Part1 ~= Handle) then
+		return
+	end
+	local character = Hit.Parent
+	if character == Character then
+		return
+	end
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+	if not humanoid or humanoid.Health == 0 then
+		return
+	end
+	local player = Players:GetPlayerFromCharacter(character)
+	if player and (player == Player or IsTeamMate(Player, player)) then
+		return
+	end
+	UntagHumanoid(humanoid)
+	TagHumanoid(humanoid, Player)
+	humanoid:TakeDamage(Damage)	
+end
+
+
+function Attack()
+	Damage = DamageValues.SlashDamage
+	Sounds.Slash:Play()
+
+	if Humanoid then
+		if Humanoid.RigType == Enum.HumanoidRigType.R6 then
+			local Anim = Instance.new("StringValue")
+			Anim.Name = "toolanim"
+			Anim.Value = "Slash"
+			Anim.Parent = Tool
+		elseif Humanoid.RigType == Enum.HumanoidRigType.R15 then
+			local Anim = Tool:FindFirstChild("R15Slash")
+			if Anim then
+				local Track = Humanoid:LoadAnimation(Anim)
+				Track:Play(0)
+			end
+		end
+	end	
+end
+
+function Lunge()
+	Damage = DamageValues.LungeDamage
+
+	Sounds.Lunge:Play()
+
+	if Humanoid then
+		if Humanoid.RigType == Enum.HumanoidRigType.R6 then
+			local Anim = Instance.new("StringValue")
+			Anim.Name = "toolanim"
+			Anim.Value = "Lunge"
+			Anim.Parent = Tool
+		elseif Humanoid.RigType == Enum.HumanoidRigType.R15 then
+			local Anim = Tool:FindFirstChild("R15Lunge")
+			if Anim then
+				local Track = Humanoid:LoadAnimation(Anim)
+				Track:Play(0)
+			end
+		end
+	end	
+	--[[
+	if CheckIfAlive() then
+		local Force = Instance.new("BodyVelocity")
+		Force.velocity = Vector3.new(0, 10, 0) 
+		Force.maxForce = Vector3.new(0, 4000, 0)
+		Debris:AddItem(Force, 0.4)
+		Force.Parent = Torso
+	end
+	]]
+
+	wait(0.2)
+	Tool.Grip = Grips.Out
+	wait(0.6)
+	Tool.Grip = Grips.Up
+
+	Damage = DamageValues.SlashDamage
+end
+
+Tool.Enabled = true
+LastAttack = 0
+
+function Activated()
+	if not Tool.Enabled or not ToolEquipped or not CheckIfAlive() then
+		return
+	end
+	Tool.Enabled = false
+	local Tick = RunService.Stepped:wait()
+	if (Tick - LastAttack < 0.2) then
+		Lunge()
+	else
+		Attack()
+	end
+	LastAttack = Tick
+	--wait(0.5)
+	Damage = DamageValues.BaseDamage
+	local SlashAnim = (Tool:FindFirstChild("R15Slash") or Create("Animation"){
+		Name = "R15Slash",
+		AnimationId = BaseUrl .. Animations.R15Slash,
+		Parent = Tool
+	})
+
+	local LungeAnim = (Tool:FindFirstChild("R15Lunge") or Create("Animation"){
+		Name = "R15Lunge",
+		AnimationId = BaseUrl .. Animations.R15Lunge,
+		Parent = Tool
+	})
+	Tool.Enabled = true
+end
+
+function CheckIfAlive()
+	return (((Player and Player.Parent and Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Torso and Torso.Parent) and true) or false)
+end
+
+function Equipped()
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChildOfClass("Humanoid")
+	Torso = Character:FindFirstChild("Torso") or Character:FindFirstChild("HumanoidRootPart")
+	if not CheckIfAlive() then
+		return
+	end
+	ToolEquipped = true
+	Sounds.Unsheath:Play()
+end
+
+function Unequipped()
+	Tool.Grip = Grips.Up
+	ToolEquipped = false
+end
+
+Tool.Activated:Connect(Activated)
+Tool.Equipped:Connect(Equipped)
+Tool.Unequipped:Connect(Unequipped)
+
+Connection = Handle.Touched:Connect(Blow)
+o3.Name = "Handle"
+o3.Parent = o1
+o3.BrickColor = BrickColor.new("Dark stone grey")
+o3.Reflectance = 0.699999988079071
+o3.Rotation = Vector3.new(90, 0, 90)
+o3.FormFactor = Enum.FormFactor.Plate
+o3.Size = Vector3.new(1, 0.800000011920929, 6)
+o3.CFrame = CFrame.new(152.103165, 3.00000548, -17.5450821, 0, -1, -0, 0, -0, -1, 1, -0, -0)
+o3.BottomSurface = Enum.SurfaceType.Smooth
+o3.TopSurface = Enum.SurfaceType.Smooth
+o3.Color = Color3.new(0.388235, 0.372549, 0.384314)
+o3.Color = Color3.new(0.388235, 0.372549, 0.384314)
+o4.Parent = o3
+o4.MeshId = "http://www.roblox.com/asset/?id=12221720"
+o4.Scale = Vector3.new(1.5, 1.5, 1.5)
+o4.TextureId = "http://www.roblox.com/asset/?id=12224218"
+o4.VertexColor = Vector3.new(0.30000001192092896, 1, 0.30000001192092896)
+o4.MeshType = Enum.MeshType.FileMesh
+o4.Scale = Vector3.new(1.5, 1.5, 1.5)
+NLS([[local Tool = owner.Backpack.Venomshank;
+
+enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(.5)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:Connect(function() onButton1Down(mouse) end)
+end
+
+
+Tool.Equipped:Connect(onEquippedLocal)
+]] , owner.PlayerGui)
+
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
+
