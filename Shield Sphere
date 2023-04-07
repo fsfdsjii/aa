@@ -1,0 +1,124 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: TouchTransmitter
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Tool")
+o3 = Instance.new("Part")
+o4 = Instance.new("Sound")
+o1.Name = "ShieldSphere"
+o1.Parent = owner.Backpack
+o1.TextureId = "rbxasset://Textures/CameraZoomIn.png"
+Tool = o1
+
+local field = nil
+
+function shieldsUp()
+
+	if (field == nil) then
+		Tool.Handle.Boing:play()
+
+		local vCharacter = Tool.Parent
+
+		Tool.Handle.BrickColor = BrickColor.new(24) -- yellow
+
+		field = Instance.new("ForceField")
+		field.Parent = vCharacter
+
+	end
+
+end
+
+function shieldsDown()
+	if (field ~= nil) then
+		field.Parent = nil
+		field = nil
+		Tool.Handle.BrickColor = BrickColor.new(104) -- purple
+	end
+end
+
+
+Tool.Enabled = true
+function onActivated()
+
+	if not Tool.Enabled then
+		return
+	end
+
+	Tool.Enabled = false
+
+	shieldsUp()
+
+	wait(8)
+
+	shieldsDown()
+
+	wait(2)
+
+	Tool.Enabled = true
+end
+
+
+Tool.Activated:Connect(onActivated)
+Tool.Unequipped:Connect(shieldsDown)
+
+
+
+o3.Name = "Handle"
+o3.Parent = o1
+o3.BrickColor = BrickColor.new("Bright violet")
+o3.Transparency = 0.5
+o3.Rotation = Vector3.new(-90, 0, -90)
+o3.Elasticity = 1
+o3.Friction = 0
+o3.Shape = Enum.PartType.Ball
+o3.Size = Vector3.new(2, 2, 2)
+o3.CFrame = CFrame.new(134.605408, 3.40002632, 1.16062927, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+o3.BottomSurface = Enum.SurfaceType.Smooth
+o3.TopSurface = Enum.SurfaceType.Smooth
+o3.Color = Color3.new(0.419608, 0.196078, 0.486275)
+o3.Color = Color3.new(0.419608, 0.196078, 0.486275)
+o4.Name = "Boing"
+o4.Parent = o3
+o4.SoundId = "rbxasset://sounds//short spring sound.wav"
+o4.Volume = 1
+NLS([[local Tool = owner.Backpack.ShieldSphere;
+
+enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(10)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+end
+
+
+Tool.Equipped:Connect(onEquippedLocal)
+]] , owner.PlayerGui)
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
+
