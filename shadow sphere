@@ -1,0 +1,196 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: TouchTransmitter
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Tool")
+o3 = Instance.new("Part")
+o1.Name = "ShadowSphere"
+o1.Parent = owner.Backpack
+Tool = o1
+
+local field = nil
+
+local face, shirt = nil
+
+local isVisible = true
+
+local invisibleChar = nil
+
+local pants, fullshirt = nil
+
+
+function setTrans(trans, character)
+	local childs = character:GetChildren()
+
+
+	for i=1,#childs do
+		if (childs[i].className == "Part") then
+			childs[i].Transparency = trans
+		end
+		if (childs[i].className == "Hat" or childs[i].className == "Tool") then
+			if (childs[i].Name == "ShadowSphere" and trans == 0) then 
+				childs[i].Handle.Transparency = .5 
+			else
+				childs[i].Handle.Transparency = trans
+			end
+		end
+	end
+end
+
+function invisible()
+	isVisible = false
+	invisibleChar = Tool.Parent
+
+	setTrans(1, Tool.Parent)
+	face = Tool.Parent.Head.face:Clone()
+	shirt = Tool.Parent.Torso.roblox:Clone()
+
+	Tool.Parent.Head.face.Parent = nil
+	Tool.Parent.Torso.roblox.Parent = nil
+
+	pants = nil
+	fullshirt = nil
+
+	local childs = invisibleChar:GetChildren()
+	for i=1,#childs do
+		if (childs[i].className == "Pants") then
+			pants = childs[i]
+			pants.Parent = nil
+		end
+		if (childs[i].className == "Shirt") then
+			fullshirt = childs[i]
+			fullshirt.Parent = nil
+		end
+	end
+
+
+end
+
+function visible()
+
+	if (isVisible == true) then return end
+	isVisible = true
+
+
+	--local char = nil
+	--if (Tool.Parent.className == "Backpack") then
+	--	char = Tool.Parent.Parent.Character
+	--else
+	--	char = Tool.Parent
+	--end
+	if (invisibleChar ~= nil) then
+
+
+		setTrans(0, invisibleChar)
+
+		if (face ~= nil) then 
+			face:clone().Parent = invisibleChar.Head
+		end
+
+		if (shirt ~= nil) then 
+			shirt:clone().Parent = invisibleChar.Torso
+		end
+
+		if (pants ~= nil) then
+			pants.Parent = invisibleChar
+		end
+
+		if (fullshirt ~= nil) then
+			fullshirt.Parent = invisibleChar
+		end
+
+		Tool.Handle.Transparency = .5
+	end
+
+
+	invisibleChar = nil
+
+end
+
+
+
+
+Tool.Enabled = true
+function onActivated()
+
+	if not Tool.Enabled then
+		return
+	end
+
+	Tool.Enabled = false
+
+	invisible()
+
+	wait(6)
+
+	visible()
+
+	wait(4)
+
+	Tool.Enabled = true
+
+
+end
+
+
+
+
+Tool.Activated:Connect(onActivated)
+Tool.Unequipped:Connect(visible)
+
+
+o3.Name = "Handle"
+o3.Parent = o1
+o3.BrickColor = BrickColor.new("Black")
+o3.Transparency = 0.5
+o3.Rotation = Vector3.new(-90, 0, -90)
+o3.Elasticity = 1
+o3.Friction = 0
+o3.Shape = Enum.PartType.Ball
+o3.Size = Vector3.new(2, 2, 2)
+o3.CFrame = CFrame.new(133.998108, 3.40004158, -5.49725342, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+o3.BottomSurface = Enum.SurfaceType.Smooth
+o3.TopSurface = Enum.SurfaceType.Smooth
+o3.Color = Color3.new(0.105882, 0.164706, 0.207843)
+o3.Color = Color3.new(0.105882, 0.164706, 0.207843)
+NLS([[local Tool = owner.Backpack.ShadowSphere;
+
+enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(10)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:Connect(function() onButton1Down(mouse) end)
+end
+
+
+Tool.Equipped:Connect(onEquippedLocal)
+]] , owner.PlayerGui)
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
+
