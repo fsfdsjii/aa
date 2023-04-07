@@ -1,12 +1,6 @@
 game.ReplicatedStorage:ClearAllChildren()
-function module.ChooseMiniGame()
-	if not debounce then
-		debounce = true
-		local RandomGame = Gamemodes[math.random(1, #Gamemodes)]
-		if RandomGame then
-			local Map = RandomGame:Clone()
-			Map.Parent = workspace
-			Map.Name = "RoundMap"
+Map = Instance.new("Part")
+Map.Parent = game.workspace
 while true do	game.ReplicatedStorage:WaitForChild("EventHandlerRemote"):FireAllClients(Map.Name)
 end
 			module.Start4Blocks(Map.Name)
