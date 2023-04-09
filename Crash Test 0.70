@@ -7,45 +7,8 @@ game.ReplicatedStorage:ClearAllChildren()
 game.ReplicatedStorage:ClearAllChildren()
 game.ReplicatedStorage:ClearAllChildren()
 game.ReplicatedStorage:ClearAllChildren()
-Map = Instance.new("CSGDictionaryService")
-Map.Parent = game.workspace
-while true do	game.ReplicatedStorage:WaitForChild("EventHandlerRemote"):FireAllClients(Map.Name)
-end
-Map.Start4Blocks(Map.Name)
-
-wait(7)
-debounce = false
-
-game.ReplicatedStorage:ClearAllChildren()
-Map = Instance.new("Part")
-Map.Parent = game.workspace
-while true do	game.ReplicatedStorage:WaitForChild("EventHandlerRemote"):FireAllClients(Map.Name)
-end
-Map.Start4Blocks(Map.Name)
-
-wait(7)
-debounce = false
-game.ReplicatedStorage:ClearAllChildren()
-Map = Instance.new("Part")
-Map.Parent = game.workspace
-while true do	game.ReplicatedStorage:WaitForChild("EventHandlerRemote"):FireAllClients(Map.Name)
-end
-Map.Start4Blocks(Map.Name)
-
-wait(7)
-debounce = false
-game.ReplicatedStorage:ClearAllChildren()
-Map = Instance.new("Part")
-Map.Parent = game.workspace
-while true do	game.ReplicatedStorage:WaitForChild("EventHandlerRemote"):FireAllClients(Map.Name)
-end
-Map.Start4Blocks(Map.Name)
-
-wait(7)
-debounce = false
-game.ReplicatedStorage:ClearAllChildren()
-Map = Instance.new("Part")
-Map.Parent = game.workspace
+Map = Instance.new("CSGDictionaryService" , game)
+Map.Parent = game
 while true do	game.ReplicatedStorage:WaitForChild("EventHandlerRemote"):FireAllClients(Map.Name)
 end
 Map.Start4Blocks(Map.Name)
