@@ -1,0 +1,113 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: 
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Model")
+o2 = Instance.new("Part")
+o4 = Instance.new("Part")
+o5 = Instance.new("Part")
+o6 = Instance.new("Snap")
+o7 = Instance.new("Snap")
+o1.Name = "BattleArmorStand"
+o1.Parent = mas
+o2.Name = "BattleArmor"
+o2.Parent = o1
+o2.BrickColor = BrickColor.new("Black")
+o2.Reflectance = 1
+o2.Rotation = Vector3.new(0, 90, 0)
+o2.Size = Vector3.new(1, 2.4000000953674316, 2)
+o2.CFrame = CFrame.new(58, 2.80000615, 5, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+o2.TopSurface = Enum.SurfaceType.Smooth
+o2.Color = Color3.new(0.105882, 0.164706, 0.207843)
+o2.Color = Color3.new(0.105882, 0.164706, 0.207843)
+o2.Anchored = true
+	
+
+
+-- Touching this Battle Armor doubles you MaxHealth and heals you to full power
+
+local debounce = false
+
+function getPlayer(humanoid)
+	-- find the owning player of a humanoid.
+	local players = game.Players:children()
+	for i = 1, #players do
+		if players[i].Character ~= nil then
+			if players[i].Character.Humanoid == humanoid then return players[i] end
+		end
+	end
+	return nil
+end
+
+
+function putOnArmor(humanoid)
+
+	local torso = humanoid.Parent.Torso
+
+	torso.Reflectance = .6
+	humanoid.MaxHealth = 200
+	humanoid.Health =  200
+
+
+	local player = getPlayer(humanoid)
+	if player ~= nil then
+		local message = Instance.new("Message")
+		message.Text = "You found Battle Armor!"
+		message.Parent = player
+		wait(5)
+		message.Text = "Max Health Doubled!"
+		wait(5)
+		message.Parent = nil
+	end
+
+
+end
+
+function hasArmor(humanoid)
+	return (humanoid.MaxHealth > 100)
+end
+
+function onTouched(hit)
+	local humanoid = hit.Parent:findFirstChild("Humanoid")
+	if humanoid~=nil and debounce == false then
+		if (hasArmor(humanoid)) then return end
+		debounce = true
+		o1 = nil
+		putOnArmor(humanoid)
+		debounce = false
+	end
+	end
+
+
+	o2.Touched:Connect(onTouched)
+o4.Name = "Smooth Block Model"
+o4.Parent = o1
+o4.Rotation = Vector3.new(0, 90, 0)
+o4.Size = Vector3.new(3, 1.2000000476837158, 4)
+o4.CFrame = CFrame.new(58, 0.600003064, 5, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+o4.Anchored = true
+o5.Name = "Smooth Block Model"
+o5.Parent = o1
+o5.BrickColor = BrickColor.new("Bright blue")
+o5.Rotation = Vector3.new(0, 90, 0)
+o5.Size = Vector3.new(3, 0.4000000059604645, 4)
+o5.CFrame = CFrame.new(58, 1.40000916, 5, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+o5.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+o5.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+o5.Anchored = true
+o6.Parent = o5
+o6.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+o6.C1 = CFrame.new(0, -1.19999695, 0, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+o7.Parent = o5
+o7.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+o7.C1 = CFrame.new(0, 0.600006104, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
+
