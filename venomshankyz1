@@ -15,7 +15,7 @@ o10 = Instance.new("Script")
 o11 = Instance.new("Script")
 o12 = Instance.new("LocalScript")
 o1.Name = "Venomshank"
-o1.Parent = mas
+o1.Parent = owner.Backpack
 o1.GripForward = Vector3.new(-1, -0, -0)
 o1.GripPos = Vector3.new(0, 0, -2)
 o1.GripRight = Vector3.new(0, 1, 0)
@@ -369,7 +369,7 @@ function onButton1Down(mouse)
 		return
 	end
 
-	NLS([[enabled = false
+	enabled = false
 	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
 
 	wait(.5)
@@ -387,7 +387,7 @@ function onEquippedLocal(mouse)
 
 	mouse.Icon = "rbxasset://textures\\GunCursor.png"
 	mouse.Button1Down:Connect(function() onButton1Down(mouse) end)
-end]] , owner.PlayerGui)
+end
 
 
 Tool.Equipped:Connect(onEquippedLocal)
@@ -401,4 +401,3 @@ for i=1,#mas1 do
 end
 mas:Destroy()
 print('Loaded M2S')
-
