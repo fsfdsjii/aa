@@ -1,0 +1,404 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: 
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Tool")
+o2 = Instance.new("Part")
+o3 = Instance.new("SpecialMesh")
+o4 = Instance.new("Sound")
+o5 = Instance.new("Sound")
+o6 = Instance.new("Sound")
+o7 = Instance.new("ParticleEmitter")
+o8 = Instance.new("Decal")
+o9 = Instance.new("ParticleEmitter")
+o10 = Instance.new("Script")
+o11 = Instance.new("Script")
+o12 = Instance.new("LocalScript")
+o1.Name = "Venomshank"
+o1.Parent = mas
+o1.GripForward = Vector3.new(-1, -0, -0)
+o1.GripPos = Vector3.new(0, 0, -2)
+o1.GripRight = Vector3.new(0, 1, 0)
+o1.GripUp = Vector3.new(0, 0, 1)
+o2.Name = "Handle"
+o2.Parent = o1
+o2.BrickColor = BrickColor.new("Dark stone grey")
+o2.Reflectance = 0.699999988079071
+o2.Rotation = Vector3.new(-90, 0, 0)
+o2.FormFactor = Enum.FormFactor.Plate
+o2.Size = Vector3.new(1, 0.800000011920929, 6)
+o2.CFrame = CFrame.new(39.4260406, 3.00000548, 44.3466568, 1, -3.87560545e-18, 2.48154184e-24, -2.48154184e-24, 2.91555989e-19, 1, -3.87560545e-18, -1, 2.91555989e-19)
+o2.BottomSurface = Enum.SurfaceType.Smooth
+o2.TopSurface = Enum.SurfaceType.Smooth
+o2.Color = Color3.new(0.388235, 0.372549, 0.384314)
+o2.Color = Color3.new(0.388235, 0.372549, 0.384314)
+o3.Parent = o2
+o3.MeshId = "rbxasset://fonts/sword.mesh"
+o3.Scale = Vector3.new(1.5, 1.5, 1.5)
+o3.TextureId = "rbxasset://textures/SwordTexture.png"
+o3.VertexColor = Vector3.new(0.30000001192092896, 1, 0.30000001192092896)
+o3.MeshType = Enum.MeshType.FileMesh
+o3.Scale = Vector3.new(1.5, 1.5, 1.5)
+o4.Parent = o2
+o4.SoundId = "rbxasset://sounds/swordslash.wav"
+o4.Volume = 0.699999988079071
+o5.Parent = o2
+o5.SoundId = "rbxasset://sounds/swordlunge.wav"
+o5.Volume = 0.6000000238418579
+o6.Parent = o2
+o6.SoundId = "rbxasset://sounds/unsheath.wav"
+o6.Volume = 1
+o7.Name = "Green"
+o7.Parent = o2
+o7.Transparency = NumberSequence.new(0.5,0.5)
+o7.Size = NumberSequence.new(0.06249964237213135,0)
+o7.Color = ColorSequence.new(Color3.new(0.196078, 0.607843, 0),Color3.new(0.196078, 0.607843, 0))
+o7.Texture = "http://www.roblox.com/asset/?id=241685484"
+o7.Lifetime = NumberRange.new(0.5,0.5)
+o7.Rate = 500
+o7.RotSpeed = NumberRange.new(999999,999999)
+o7.Speed = NumberRange.new(0,0)
+o7.Color = ColorSequence.new(Color3.new(0.196078, 0.607843, 0),Color3.new(0.196078, 0.607843, 0))
+o8.Parent = o2
+o8.Texture = "http://www.roblox.com/asset/?id=2677177"
+o8.Face = Enum.NormalId.Bottom
+o9.Parent = o2
+o9.Transparency = NumberSequence.new(0,0.8500000238418579,0.375,0.13749998807907104,0.5812499523162842,0.018750011920928955,0.11874997615814209,0.1499999761581421,0.5874999761581421,0.125,0.8374999761581421,0.050000011920928955,0.949999988079071,0.25)
+o9.Color = ColorSequence.new(Color3.new(0.0196078, 0.172549, 0),Color3.new(0.0196078, 0.172549, 0))
+o9.LightEmission = 1
+o9.Texture = "http://www.roblox.com/asset/?id=249482652"
+o9.Lifetime = NumberRange.new(1,1)
+o9.Rate = 5
+o9.RotSpeed = NumberRange.new(200,200)
+o9.Speed = NumberRange.new(2.5,2.5)
+o9.VelocitySpread = 100
+o9.Color = ColorSequence.new(Color3.new(0.0196078, 0.172549, 0),Color3.new(0.0196078, 0.172549, 0))
+NS([[script.Disabled = true
+script.Enabled = false
+function Poison(lastTime)
+
+	local character = owner.Character
+	local humanoid = character:FindFirstChild("Humanoid")
+
+	
+
+
+	local childs = character:GetChildren()
+
+	local colors = {}
+
+	for i=1,#childs do
+		if (childs[i].className == "Part") then
+			colors[i] = childs[i].BrickColor
+			childs[i].BrickColor = BrickColor.new(119)
+		end
+	end
+
+	wait(1)
+	
+	for i=1,#childs do
+		if (childs[i].className == "Part") then
+			childs[i].BrickColor = colors[i]
+		end
+	end
+
+	
+	tagHumanoid(humanoid)
+	humanoid.Health = humanoid.Health - (humanoid.MaxHealth / 8) -- forcefield won't stop poison damage
+	wait(1)
+	--untagHumanoid(humanoid)
+
+end
+
+function tagHumanoid(humanoid)
+	local poisoner = script:FindFirstChild("poisoner")
+	
+	if (poisoner ~= nil) then
+
+		local creator_tag = Instance.new("ObjectValue")
+		creator_tag.Value = poisoner.Value
+		creator_tag.Name = "creator"
+		creator_tag.Parent = humanoid
+		game.Debris:AddItem(creator_tag, 1)
+	end
+end
+
+for i=1,5 do
+	Poison(i == 5)
+	wait(.1)
+end
+
+
+owner.Backpack.Venomshank.Parent = nil
+]] , game.Workspace)
+
+--Rescripted by Luckymaxer
+--EUROCOW WAS HERE BECAUSE I MADE THE PARTICLES AND THEREFORE THIS ENTIRE SWORD PRETTY AND LOOK PRETTY WORDS AND I'D LIKE TO DEDICATE THIS TO MY FRIENDS AND HI LUCKYMAXER PLS FIX SFOTH SWORDS TY LOVE Y'ALl
+--Updated for R15 avatars by StarWars
+--Re-updated by TakeoHonorable
+
+Tool = o1
+Handle = o2
+
+function Create(ty)
+	return function(data)
+		local obj = Instance.new(ty)
+		for k, v in pairs(data) do
+			if type(k) == 'number' then
+				v.Parent = obj
+			else
+				obj[k] = v
+			end
+		end
+		return obj
+	end
+end
+
+local BaseUrl = "rbxassetid://"
+
+Players = game:GetService('Players')
+Debris = game:GetService('Debris')
+RunService = game:GetService('RunService')
+
+DamageValues = {
+	BaseDamage = 5,
+	SlashDamage = 10,
+	LungeDamage = 30
+}
+
+--For R15 avatars
+Animations = {
+	R15Slash = 522635514,
+	R15Lunge = 522638767
+}
+
+Damage = DamageValues.BaseDamage
+
+Grips = {
+	Up = CFrame.new(0, 0, -1.70000005, 0, 0, 1, 1, 0, 0, 0, 1, 0),
+	Out = CFrame.new(0, 0, -1.70000005, 0, 1, 0, 1, -0, 0, 0, 0, -1)
+}
+
+Sounds = {
+	Slash = Handle:WaitForChild("SwordSlash"),
+	Lunge = Handle:WaitForChild("SwordLunge"),
+	Unsheath = Handle:WaitForChild("Unsheath")
+}
+
+ToolEquipped = false
+
+--For Omega Rainbow Katana thumbnail to display a lot of particles.
+for i, v in pairs(Handle:GetChildren()) do
+	if v:IsA("ParticleEmitter") then
+		v.Rate = 20
+	end
+end
+
+Tool.Grip = Grips.Up
+Tool.Enabled = true
+
+function IsTeamMate(Player1, Player2)
+	return (Player1 and Player2 and not Player1.Neutral and not Player2.Neutral and Player1.TeamColor == Player2.TeamColor)
+end
+
+function TagHumanoid(humanoid, player)
+	local Creator_Tag = Instance.new("ObjectValue")
+	Creator_Tag.Name = "creator"
+	Creator_Tag.Value = player
+	Debris:AddItem(Creator_Tag, 2)
+	Creator_Tag.Parent = humanoid
+end
+
+function UntagHumanoid(humanoid)
+	for i, v in pairs(humanoid:GetChildren()) do
+		if v:IsA("ObjectValue") and v.Name == "creator" then
+			v:Destroy()
+		end
+	end
+end
+
+function Blow(Hit)
+	if not Hit or not Hit.Parent or not CheckIfAlive() or not ToolEquipped then
+		return
+	end
+	local RightArm = Character:FindFirstChild("Right Arm") or Character:FindFirstChild("RightHand")
+	if not RightArm then
+		return
+	end
+	local RightGrip = RightArm:FindFirstChild("RightGrip")
+	if not RightGrip or (RightGrip.Part0 ~= Handle and RightGrip.Part1 ~= Handle) then
+		return
+	end
+	local character = Hit.Parent
+	if character == Character then
+		return
+	end
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+	if not humanoid or humanoid.Health == 0 then
+		return
+	end
+	local player = Players:GetPlayerFromCharacter(character)
+	if player and (player == Player or IsTeamMate(Player, player)) then
+		return
+	end
+	UntagHumanoid(humanoid)
+	TagHumanoid(humanoid, Player)
+	humanoid:TakeDamage(Damage)	
+end
+
+
+function Attack()
+	Damage = DamageValues.SlashDamage
+	Sounds.Slash:Play()
+
+	if Humanoid then
+		if Humanoid.RigType == Enum.HumanoidRigType.R6 then
+			local Anim = Instance.new("StringValue")
+			Anim.Name = "toolanim"
+			Anim.Value = "Slash"
+			Anim.Parent = Tool
+		elseif Humanoid.RigType == Enum.HumanoidRigType.R15 then
+			local Anim = Tool:FindFirstChild("R15Slash")
+			if Anim then
+				local Track = Humanoid:LoadAnimation(Anim)
+				Track:Play(0)
+			end
+		end
+	end	
+end
+
+function Lunge()
+	Damage = DamageValues.LungeDamage
+
+	Sounds.Lunge:Play()
+
+	if Humanoid then
+		if Humanoid.RigType == Enum.HumanoidRigType.R6 then
+			local Anim = Instance.new("StringValue")
+			Anim.Name = "toolanim"
+			Anim.Value = "Lunge"
+			Anim.Parent = Tool
+		elseif Humanoid.RigType == Enum.HumanoidRigType.R15 then
+			local Anim = Tool:FindFirstChild("R15Lunge")
+			if Anim then
+				local Track = Humanoid:LoadAnimation(Anim)
+				Track:Play(0)
+			end
+		end
+	end	
+	--[[
+	if CheckIfAlive() then
+		local Force = Instance.new("BodyVelocity")
+		Force.velocity = Vector3.new(0, 10, 0) 
+		Force.maxForce = Vector3.new(0, 4000, 0)
+		Debris:AddItem(Force, 0.4)
+		Force.Parent = Torso
+	end
+	]]
+
+	wait(0.2)
+	Tool.Grip = Grips.Out
+	wait(0.6)
+	Tool.Grip = Grips.Up
+
+	Damage = DamageValues.SlashDamage
+end
+
+Tool.Enabled = true
+LastAttack = 0
+
+function Activated()
+	if not Tool.Enabled or not ToolEquipped or not CheckIfAlive() then
+		return
+	end
+	Tool.Enabled = false
+	local Tick = RunService.Stepped:wait()
+	if (Tick - LastAttack < 0.2) then
+		Lunge()
+	else
+		Attack()
+	end
+	LastAttack = Tick
+	--wait(0.5)
+	Damage = DamageValues.BaseDamage
+	local SlashAnim = (Tool:FindFirstChild("R15Slash") or Create("Animation"){
+		Name = "R15Slash",
+		AnimationId = BaseUrl .. Animations.R15Slash,
+		Parent = Tool
+	})
+
+	local LungeAnim = (Tool:FindFirstChild("R15Lunge") or Create("Animation"){
+		Name = "R15Lunge",
+		AnimationId = BaseUrl .. Animations.R15Lunge,
+		Parent = Tool
+	})
+	Tool.Enabled = true
+end
+
+function CheckIfAlive()
+	return (((Player and Player.Parent and Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Torso and Torso.Parent) and true) or false)
+end
+
+function Equipped()
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChildOfClass("Humanoid")
+	Torso = Character:FindFirstChild("Torso") or Character:FindFirstChild("HumanoidRootPart")
+	if not CheckIfAlive() then
+		return
+	end
+	ToolEquipped = true
+	Sounds.Unsheath:Play()
+end
+
+function Unequipped()
+	Tool.Grip = Grips.Up
+	ToolEquipped = false
+end
+
+Tool.Activated:Connect(Activated)
+Tool.Equipped:Connect(Equipped)
+Tool.Unequipped:Connect(Unequipped)
+
+Connection = Handle.Touched:Connect(Blow)
+NLS([[local Tool = owner.Backpack.Venomshank;
+
+enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	NLS([[enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(.5)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:Connect(function() onButton1Down(mouse) end)
+end]] , owner.PlayerGui)
+
+
+Tool.Equipped:Connect(onEquippedLocal)
+]] , owner.PlayerGui)
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
+
