@@ -1,0 +1,35 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: 
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Part")
+o2 = Instance.new("BodyPosition")
+o4 = Instance.new("BodyGyro")
+o1.Name = "Wobbly"
+o1.Parent = mas
+o1.BrickColor = BrickColor.new("Bright orange")
+o1.Rotation = Vector3.new(-180, 0, 180)
+o1.RotVelocity = Vector3.new(1.8409615390706544e-24, 1.2130093157555841e-20, 1.8409615390706544e-24)
+o1.Velocity = Vector3.new(0.12166471779346466, 0.020935451611876488, 0.12166471779346466)
+o1.Size = Vector3.new(18, 1.2000000476837158, 18)
+o1.CFrame = CFrame.new(-20, 0.600000024, 1, -1, -1.29629243e-20, -1.95029295e-18, -1.29629243e-20, 1, 1.29629243e-20, 1.95029295e-18, 1.29629243e-20, -1)
+o1.Color = Color3.new(0.854902, 0.521569, 0.254902)
+o1.Color = Color3.new(0.854902, 0.521569, 0.254902)
+o2.Parent = o1
+o2.position = Vector3.new(-117, 263.3999938964844, -86)
+o2.P = 100000
+o2.D = 125000
+o4.Parent = o1
+o4.P = 1
+o4.D = 2
+o1.BodyPosition.Position = o1.Position
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
+
