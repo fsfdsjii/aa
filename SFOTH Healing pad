@@ -1,0 +1,76 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: 
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Model")
+o2 = Instance.new("Part")
+o3 = Instance.new("Snap")
+o4 = Instance.new("Snap")
+o5 = Instance.new("Part")
+o1.Name = "HealPad"
+o1.Parent = game.Workspace
+o1.PrimaryPart = o2
+o2.Name = "Smooth Block Model"
+o2.Parent = o1
+o2.BrickColor = BrickColor.new("Black")
+o2.Rotation = Vector3.new(-180, 0, -180)
+o2.Size = Vector3.new(8, 0.4000000059604645, 8)
+o2.CFrame = CFrame.new(16, 0.199999809, -13, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+o2.Color = Color3.new(0.105882, 0.164706, 0.207843)
+o2.Color = Color3.new(0.105882, 0.164706, 0.207843)
+o3.Parent = o2
+o3.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+o3.C1 = CFrame.new(16, 10, -13, -1, 0, 0, 0, 0, -1, 0, -1, 0)
+o4.Parent = o2
+o4.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+o4.C1 = CFrame.new(0, -0.199996948, 0, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+o5.Name = "Pad"
+o5.Parent = o1
+o5.BrickColor = BrickColor.new("Bright green")
+o5.Rotation = Vector3.new(-180, 0, -180)
+o5.Size = Vector3.new(6, 0.4000000059604645, 6)
+o5.CFrame = CFrame.new(16, 0.599996746, -13, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+o5.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o5.Color = Color3.new(0.294118, 0.592157, 0.294118)
+local onColor = BrickColor.new(37)
+local offColor = BrickColor.new(21)
+
+local cooldown = 30
+local connection = nil
+local isOn = true
+
+function turnOff()
+	o1.Pad.BrickColor = offColor
+	isOn = false
+end
+
+function turnOn()
+	o1.Pad.BrickColor = onColor
+	isOn = true
+end
+
+function onTouch(hit)
+	if (isOn == false) then return end
+	local human = hit.Parent:FindFirstChild("Humanoid")
+	if (human ~= nil) then
+		human.Health = human.MaxHealth
+		turnOff()
+	end
+end
+
+connection = o1.Pad.Touched:Connect(onTouch)
+
+
+while true do
+	wait(cooldown)
+	if (isOn == false) then turnOn() end
+end
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
