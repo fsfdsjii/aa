@@ -1,0 +1,174 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: RotateV
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Model")
+o2 = Instance.new("Part")
+o3 = Instance.new("Part")
+o4 = Instance.new("Snap")
+o5 = Instance.new("Snap")
+o6 = Instance.new("Part")
+o8 = Instance.new("Part")
+o9 = Instance.new("Snap")
+o10 = Instance.new("Part")
+o13 = Instance.new("Part")
+o14 = Instance.new("Part")
+o16 = Instance.new("Snap")
+o17 = Instance.new("RotateV")
+o1.Parent = game.Workspace
+o2.Parent = o1
+o2.BrickColor = BrickColor.new("Bright green")
+o2.Anchored = true
+o2.Size = Vector3.new(2, 1.2000000476837158, 10)
+o2.CFrame = CFrame.new(62, 0.600006104, -33, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+o2.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o2.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o3.Parent = o1
+o3.BrickColor = BrickColor.new("Bright green")
+o3.Anchored = true
+o3.Size = Vector3.new(2, 18, 2)
+o3.CFrame = CFrame.new(62, 10.2000122, -29, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+o3.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o3.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o4.Parent = o3
+o4.C0 = CFrame.new(0, -9, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+o4.C1 = CFrame.new(0, 0.600006104, 4, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+o5.Parent = o3
+o5.C0 = CFrame.new(0, 9, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+o5.C1 = CFrame.new(0, -0.600006104, 4, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+o6.Parent = o1
+o6.BrickColor = BrickColor.new("Bright green")
+o6.Anchored = true
+o6.Size = Vector3.new(2, 1.2000000476837158, 10)
+o6.CFrame = CFrame.new(62, 19.8000183, -33, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+o6.RightSurface = Enum.SurfaceType.Motor
+o6.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o6.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o8.Parent = o1
+o8.BrickColor = BrickColor.new("Bright green")
+o8.Anchored = true
+o8.Size = Vector3.new(2, 1.2000000476837158, 10)
+o8.CFrame = CFrame.new(66, 0.600006104, -33, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+o8.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o8.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o9.Parent = o8
+o9.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+o9.C1 = CFrame.new(0, -9, -4, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+o10.Name = "Awesome Lava!"
+o10.Parent = o1
+o10.BrickColor = BrickColor.new("Bright red")
+o10.Rotation = Vector3.new(90, 90, 0)
+o10.Anchored = true
+o10.Size = Vector3.new(33, 1.2000000476837158, 2)
+o10.CFrame = CFrame.new(64, 19.7000122, -33.4000015, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+o10.BottomSurface = Enum.SurfaceType.Weld
+o10.TopSurface = Enum.SurfaceType.Smooth
+o10.Color = Color3.new(0.768627, 0.156863, 0.109804)
+o10.Color = Color3.new(0.768627, 0.156863, 0.109804)
+function stick(x, y)
+
+	local weld = Instance.new("Weld") 
+
+
+
+	weld.Part0 = x
+
+	weld.Part1 = y
+
+
+
+	local HitPos = x.Position
+
+
+
+	local CJ = CFrame.new(HitPos) 
+
+	local C0 = x.CFrame:inverse() *CJ 
+
+	local C1 = y.CFrame:inverse() * CJ 
+
+
+
+	weld.C0 = C0 
+
+	weld.C1 = C1 
+
+
+
+	weld.Parent = x
+
+end
+
+
+
+function onTouched(part)
+
+	local h = part.Parent:FindFirstChild("Humanoid")
+
+	if h~=nil then
+
+		wait(0.001)
+		h.Health = 0
+		local children = h.Parent:GetChildren()
+
+		for i=1,#children do
+
+			if(children[i].className == "Part" and children[i].Name ~= "Torso") then stick(children[i], h.Parent.Torso) end
+
+			if(children[i].className == "Hat") then stick(children[i].Handle, h.Parent.Torso) end
+
+		end
+
+		h.Parent.Head.Velocity = h.Parent.Head.Velocity + Vector3.new(5,0,0)
+
+	end
+
+end
+
+
+
+o10.Touched:Connect(onTouched)
+bin = o10
+
+function onTouched(part)
+	part.BrickColor = BrickColor.new(26)
+	wait(.3)
+	part.Transparency = .2
+	wait(.1)
+	part.Transparency = .4
+	wait(.1)
+	part.Transparency = .6
+	wait(.1)
+	part.Transparency = .8
+	wait(.1)
+	part.Parent = nil
+end
+
+connection = bin.Touched:Connect(onTouched)
+o13.Parent = o1
+o13.BrickColor = BrickColor.new("Bright green")
+o13.Anchored = true
+o13.Size = Vector3.new(2, 18, 2)
+o13.CFrame = CFrame.new(66, 10.2000122, -29, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+o13.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o13.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o14.Parent = o1
+o14.BrickColor = BrickColor.new("Bright green")
+o14.Anchored = true
+o14.Size = Vector3.new(2, 1.2000000476837158, 10)
+o14.CFrame = CFrame.new(66, 19.8000183, -33, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+o14.LeftSurface = Enum.SurfaceType.Motor
+o14.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o14.Color = Color3.new(0.294118, 0.592157, 0.294118)
+o16.Parent = o14
+o16.C0 = CFrame.new(0, -0.600000024, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+o16.C1 = CFrame.new(0, 9, -4, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
