@@ -1,0 +1,55 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: Glue
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Part")
+o2 = Instance.new("SurfaceGui")
+o3 = Instance.new("TextLabel")
+o5 = Instance.new("Configuration")
+o6 = Instance.new("IntValue")
+o7 = Instance.new("Glue")
+o1.Name = "Trampoline"
+o1.Parent = game.Workspace
+o1.BrickColor = BrickColor.new("Bright orange")
+o1.Rotation = Vector3.new(0, -90, 0)
+o1.Anchored = true
+o1.FormFactor = Enum.FormFactor.Symmetric
+o1.Size = Vector3.new(6, 1, 6)
+o1.CFrame = CFrame.new(47.9257851, 0.5, 88.8236694, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+o1.BackSurface = Enum.SurfaceType.Glue
+o1.BottomSurface = Enum.SurfaceType.Glue
+o1.FrontSurface = Enum.SurfaceType.Glue
+o1.LeftSurface = Enum.SurfaceType.Glue
+o1.RightSurface = Enum.SurfaceType.Glue
+o1.TopSurface = Enum.SurfaceType.Glue
+o1.Color = Color3.new(0.854902, 0.521569, 0.254902)
+o1.Color = Color3.new(0.854902, 0.521569, 0.254902)
+o2.Parent = o1
+o2.Enabled = false
+o2.Face = Enum.NormalId.Top
+o2.CanvasSize = Vector2.new(200, 200)
+o3.Parent = o2
+o3.Size = UDim2.new(1,0,1,0)
+o3.Text = "TRAMPOLINE"
+o3.BackgroundColor3 = Color3.new(1, 1, 1)
+o3.BackgroundTransparency = 1
+o3.Font = Enum.Font.SourceSans
+o3.FontSize = Enum.FontSize.Size36
+o5.Parent = o1
+o6.Name = "BounceSpeed"
+o6.Parent = o5
+o6.Value = 283
+o7.Parent = o1
+local trampoline = o1
+trampoline.Velocity = Vector3.new(0, trampoline.Configuration.BounceSpeed.Value, 0)
+trampoline.SurfaceGui.Enabled = false
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
+
