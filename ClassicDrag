@@ -1,0 +1,425 @@
+--Originally by PenguinAnonymous. Simplified by WaverlyCole
+--Errors: TouchTransmitter
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "Model2Script"
+o1 = Instance.new("Tool")
+o2 = Instance.new("Part")
+o3 = Instance.new("SpecialMesh")
+o5 = Instance.new("LocalScript")
+o1.Name = "ClassicDrag"
+o1.Parent = mas
+o1.TextureId = "rbxassetid://5408784835"
+o1.GripForward = Vector3.new(-8.742277657347586e-08, -1, 4.371138828673793e-08)
+o1.GripPos = Vector3.new(-0.19999992847442627, 0.20000003278255463, -0.007750511635094881)
+o1.GripRight = Vector3.new(-0.9999999403953552, 8.74227694680485e-08, 0)
+o1.GripUp = Vector3.new(3.82137093032941e-15, 4.371138828673793e-08, 1)
+o1.ToolTip = "Drags models"
+o2.Name = "Handle"
+o2.Parent = o1
+o2.Material = Enum.Material.Brick
+o2.BrickColor = BrickColor.new("Electric blue")
+o2.Rotation = Vector3.new(-90, 0, 0)
+o2.Size = Vector3.new(1, 2, 1)
+o2.CFrame = CFrame.new(31.6381836, 0.500030518, -52.8078613, 1, -1.20172872e-05, -7.87493627e-06, 7.87476529e-06, -1.41771043e-05, 1, -1.20173991e-05, -1, -1.41770097e-05)
+o2.BottomSurface = Enum.SurfaceType.Smooth
+o2.TopSurface = Enum.SurfaceType.Smooth
+o2.Color = Color3.new(0.0352941, 0.537255, 0.811765)
+o2.Color = Color3.new(0.0352941, 0.537255, 0.811765)
+o3.Parent = o2
+o3.MeshId = "http://www.roblox.com/asset/?id=32054761"
+o3.Scale = Vector3.new(0.5, 0.5, 1)
+o3.MeshType = Enum.MeshType.FileMesh
+o3.Scale = Vector3.new(0.5, 0.5, 1)
+NLS([[local contextActionService = game:GetService('ContextActionService')
+local runService = game:GetService('RunService')
+
+local tool = owner.Backpack.ClassicDrag
+local player = owner
+local char = nil
+local mouse = nil
+
+local dragging = false
+
+local mouseDownConnection, mouseMoveConnection, mouseUpConnection
+local updateConnection
+
+local dragger = Instance.new("Dragger")
+local currentParts = {}
+local realParts = {}
+
+local startRemote = tool:WaitForChild("StartDrag")
+local moveRemote = tool:WaitForChild("DragMove")
+local endRemote = tool:WaitForChild("EndDrag")
+--local rotateRemote = tool:WaitForChild("DragRotate")
+
+local userFuncsModule = tool:FindFirstChild("Configuration") --custom functions for dragger
+local canDragMultiple = false
+local showSelectionBox = true
+
+local normalCursor = nil
+local overCursor = "rbxasset://textures/dragcursor.png"
+local downCursor = nil
+local dragCursor = "rbxasset://textures/grabrotatecursor.png"
+local maxDist = 60
+
+local mouseMovingQuestionMarkQuestionMarkIDontKnowWhyThisHappensButItDoesSoIMustAddItIn = false
+--very clear and concise variable name
+--thanks
+--that was sarcasm
+--i hate you
+
+local function collectBaseParts(model)
+	local collection = {}
+	
+	for _, child in pairs(model:GetDescendants()) do
+		if child:IsA("BasePart") then
+			table.insert(collection, child)
+		end
+	end
+	
+	return collection
+end
+
+local function getMouseTarget()
+	local target = mouse.Target
+	
+	if target ~= nil and target:IsA("Part") and (not target.Locked) and (char.Head.Position - target.Position).magnitude < maxDist then
+		return target
+	end
+	
+	return nil
+end
+
+local function dragUpdate()
+	local cfs = {}
+	
+	for i, part in ipairs(currentParts) do
+		cfs[i] = part.CFrame
+	end
+	
+	moveRemote:FireServer(cfs)
+end
+
+local function rotate(name, state)
+	if state == Enum.UserInputState.Begin then
+--		rotateRemote:FireServer(0)
+		--		moveRemote:FireServer(mouse.UnitRay)
+		dragger:AxisRotate(#currentParts > 1 and Enum.Axis.Y or Enum.Axis.Z)
+		dragUpdate()
+	end
+end
+
+local function tilt(name, state)
+	if state == Enum.UserInputState.Begin then
+--		rotateRemote:FireServer(1)
+		--		moveRemote:FireServer(mouse.UnitRay)
+		dragger:AxisRotate(#currentParts > 1 and Enum.Axis.Z or Enum.Axis.Y)
+		dragUpdate()
+	end
+end
+
+local function mouseMove()
+	mouseMovingQuestionMarkQuestionMarkIDontKnowWhyThisHappensButItDoesSoIMustAddItIn = true
+end
+
+local function update()
+	if dragging then
+		--		moveRemote:FireServer(mouse.UnitRay)
+		dragger:MouseMove(mouse.UnitRay)
+		
+		mouse.Icon = dragCursor or downCursor or overCursor or normalCursor or ""
+		
+		dragUpdate()
+	else
+		mouse.Icon = normalCursor or ""
+			
+		if getMouseTarget() ~= nil and overCursor ~= nil then
+			mouse.Icon = overCursor
+		end
+	end
+end
+
+local function mouseUp(mouse)
+	if mouse ~= nil then
+		mouse.Icon = overCursor or normalCursor or ""
+	end
+	
+	dragging = false
+	
+	dragger:MouseUp()
+	
+	--parent the real parts to their previous parents
+	for i, p in ipairs(realParts) do
+		p[1].Parent = p[2]
+		realParts[i] = nil
+	end
+	
+	--do away with the fake parts
+	for i, p in ipairs(currentParts) do
+		p:Destroy()
+		currentParts[i] = nil
+	end
+	
+	--unbind key events
+	contextActionService:UnbindAction("DraggerRotate")
+	contextActionService:UnbindAction("DraggerTilt")
+	
+	endRemote:FireServer()
+	
+	--unbind mouse events
+	mouseUpConnection:Disconnect()
+	mouseUpConnection = nil
+end
+
+local function mouseDown(mouse)
+	local mousePart = getMouseTarget()
+	
+	if getMouseTarget() ~= nil then
+		local model = mousePart:FindFirstAncestorOfClass("Model")
+		
+		local parts
+		if model == nil then --means not in a model
+			parts = {mousePart}
+		else
+			parts = collectBaseParts(model)
+		end
+		
+		local offset = (mousePart.CFrame:inverse() * mouse.hit).p
+		
+		local allowed
+		
+		mousePart, allowed = startRemote:InvokeServer(mousePart, offset, parts) --pointOnMousePart is relative to the part
+		
+		if not allowed then return end
+		
+		--make clones of part to prevent replication from server, which would break stuff
+		--then set real parts parent to nil until mouse up
+		for i, p in ipairs(parts) do
+			local clone = p:Clone()
+			
+			if p == mousePart then mousePart = clone end
+			
+			currentParts[i] = clone
+			realParts[i] = {p, p.Parent}
+			
+			p.Parent = nil
+			clone.Parent = workspace.CurrentCamera
+		end
+		
+		dragger:MouseDown(mousePart, offset, currentParts)
+		
+		mouseMovingQuestionMarkQuestionMarkIDontKnowWhyThisHappensButItDoesSoIMustAddItIn = false
+		
+		dragging = true
+		mouse.Icon = downCursor or overCursor or ""
+		
+		--mouse up connection
+		if mouseUpConnection ~= nil then
+			mouseUpConnection:Disconnect()
+		end
+		
+		mouseUpConnection = mouse.Button1Up:Connect(function() mouseUp(mouse) end)
+		
+		--key connections
+		contextActionService:BindAction("DraggerRotate", rotate, false, Enum.KeyCode.R)
+		contextActionService:BindAction("DraggerTilt", tilt, false, Enum.KeyCode.T)
+	end
+end
+
+tool.Equipped:Connect(function(m)
+	mouse = m
+	char = tool.Parent
+	
+	mouseDownConnection = mouse.Button1Down:Connect(function() mouseDown(mouse) end)
+	mouseMoveConnection = mouse.Move:Connect(function() mouseMove(mouse) end)
+	updateConnection = runService.Stepped:Connect(update)
+	
+	mouse.Icon = normalCursor or ""
+end)
+
+tool.Unequipped:Connect(function()
+	mouseDownConnection:Disconnect()
+	mouseMoveConnection:Disconnect()
+	updateConnection:Disconnect()
+	
+	mouseDownConnection = nil
+	mouseMoveConnection = nil
+	updateConnection = nil
+	
+	if dragging then --if unequipped while dragging
+		mouseUp()
+	end
+end)]] , owner.Backpack)
+local tool = o1
+local char, myPlayer
+
+local userFuncsModule = tool:FindFirstChild("Configuration")
+local maxDist = 60
+
+local startRemote = Instance.new("RemoteFunction")
+startRemote.Name = "StartDrag"
+startRemote.Parent = tool
+
+local moveRemote = Instance.new("RemoteEvent")
+moveRemote.Name = "DragMove"
+moveRemote.Parent = tool
+
+local endRemote = Instance.new("RemoteEvent")
+endRemote.Name = "EndDrag"
+endRemote.Parent = tool
+
+--local rotateRemote = Instance.new("RemoteEvent")
+--rotateRemote.Name = "DragRotate"
+--rotateRemote.Parent = tool
+
+--local dragger = Instance.new("Dragger")
+local dragging = false
+local currentParts = {}
+local partsAnchored = {}
+local numParts
+
+local debounce = false
+
+local function isItemInTable(t, item)
+	for _, v in pairs(t) do
+		if v == item then
+			return true
+		end
+	end
+
+	return false
+end
+
+tool.Equipped:Connect(function() --register character
+	char = tool.Parent
+	myPlayer = game.Players:GetPlayerFromCharacter(char)
+end)
+
+--rotateRemote.OnServerEvent:Connect(function(player, axis)
+--	if myPlayer ~= player then return end --only owning player can fire
+--	
+--	print(numParts)
+--	
+--	if dragging then
+--		local s, err = pcall(function()
+--			if axis == 0 then --Rotate
+--				dragger:AxisRotate(numParts > 1 and Enum.Axis.Y or Enum.Axis.Z)
+--			elseif axis == 1 then --Tilt
+--				dragger:AxisRotate(numParts > 1 and Enum.Axis.Z or Enum.Axis.X)
+--			end
+--		end)
+--		
+--		if not s then
+--			warn(err)
+--		end
+--	end
+--end)
+
+moveRemote.OnServerEvent:Connect(function(player, cframes)
+	if debounce then return end
+	if myPlayer ~= player then return end
+
+	if dragging then
+		--		local s, err = pcall(function()
+		--			dragger:MouseMove(ray)
+		--		end)
+		--		
+		--		if not s then
+		--			warn(err)
+		--		end
+
+		debounce = true
+
+		for i, cf in ipairs(cframes) do
+			if currentParts[i] == nil then break end
+
+			currentParts[i].CFrame = cf
+		end
+
+		debounce = false
+	end
+end)
+
+startRemote.OnServerInvoke = function(player, mousePart, offset, parts)
+	if myPlayer ~= player then return end --only owning player can fire
+
+	numParts = #parts
+
+	for i, p in ipairs(parts) do		
+		--destroy outgoing joints
+		--this is so i can drag characters without them dying
+		for _, weld in pairs(p:GetChildren()) do
+			if weld:IsA("JointInstance") or weld:IsA("Glue") then
+				if (not isItemInTable(parts, weld.Part1)) or (not isItemInTable(parts, weld.Part0)) then
+					weld:Destroy()
+				end
+			end
+		end
+
+		--the weld object might be in the connected part
+		for _, connectedPart in pairs(p:GetConnectedParts()) do
+			if isItemInTable(parts, connectedPart) then continue end
+
+			for _, weld in pairs(connectedPart:GetChildren()) do
+				if weld:IsA("JointInstance") or weld:IsA("Glue") then
+					if weld.Part1 == p or weld.Part0 == p then
+						weld:Destroy()
+					end
+				end
+			end
+		end
+
+		partsAnchored[i] = p.Anchored
+		p.Anchored = true
+	end
+
+	if not dragging and mousePart ~= nil and mousePart:IsA("Part") and not mousePart.Locked and (player.Character.Head.Position - mousePart.Position).magnitude < maxDist then
+		dragging = true
+		currentParts = parts
+
+		--		local s, err = pcall(function()
+		--			dragger:MouseDown(mousePart, pointOnMousePart, parts)
+		--		end)
+		--		
+		--		if not s then
+		--			warn(err)
+		--			dragging = false
+		--		end
+
+		return mousePart, true
+	end
+
+	return nil, false
+end
+
+endRemote.OnServerEvent:Connect(function(player)
+	if myPlayer ~= player then return end
+
+	if dragging then
+		--		dragger:MouseUp()
+		while debounce do wait() end --wait for operation to complete
+
+		for i, part in ipairs(currentParts) do
+			if part == nil then break end
+
+			part.Anchored = partsAnchored[i]
+
+			part:MakeJoints()
+		end
+
+		currentParts = {}
+		partsAnchored = {}
+		dragging = false
+		numParts = nil
+	end
+end)
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = workspace 
+	pcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+print('Loaded M2S')
+
