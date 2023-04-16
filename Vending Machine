@@ -1,0 +1,3039 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Script2 = Instance.new("Script")
+Part3 = Instance.new("Part")
+Part4 = Instance.new("Part")
+Part5 = Instance.new("Part")
+Part6 = Instance.new("Part")
+Part7 = Instance.new("Part")
+Weld8 = Instance.new("Weld")
+Weld9 = Instance.new("Weld")
+Part10 = Instance.new("Part")
+Part11 = Instance.new("Part")
+Weld12 = Instance.new("Weld")
+Weld13 = Instance.new("Weld")
+Weld14 = Instance.new("Weld")
+Part15 = Instance.new("Part")
+ClickDetector16 = Instance.new("ClickDetector")
+Decal17 = Instance.new("Decal")
+Script18 = Instance.new("Script")
+Weld19 = Instance.new("Weld")
+Weld20 = Instance.new("Weld")
+Part21 = Instance.new("Part")
+Part22 = Instance.new("Part")
+Part23 = Instance.new("Part")
+Part24 = Instance.new("Part")
+Weld25 = Instance.new("Weld")
+Weld26 = Instance.new("Weld")
+Weld27 = Instance.new("Weld")
+Weld28 = Instance.new("Weld")
+Weld29 = Instance.new("Weld")
+Weld30 = Instance.new("Weld")
+Weld31 = Instance.new("Weld")
+Weld32 = Instance.new("Weld")
+Weld33 = Instance.new("Weld")
+Part34 = Instance.new("Part")
+Script35 = Instance.new("Script")
+Part36 = Instance.new("Part")
+Part37 = Instance.new("Part")
+Part38 = Instance.new("Part")
+Part39 = Instance.new("Part")
+Part40 = Instance.new("Part")
+Weld41 = Instance.new("Weld")
+Weld42 = Instance.new("Weld")
+Tool43 = Instance.new("Tool")
+Part44 = Instance.new("Part")
+Decal45 = Instance.new("Decal")
+Sound46 = Instance.new("Sound")
+Sound47 = Instance.new("Sound")
+SpecialMesh48 = Instance.new("SpecialMesh")
+Script49 = Instance.new("Script")
+Tool50 = Instance.new("Tool")
+Part51 = Instance.new("Part")
+SpecialMesh52 = Instance.new("SpecialMesh")
+LocalScript53 = Instance.new("LocalScript")
+Part54 = Instance.new("Part")
+Script55 = Instance.new("Script")
+Weld56 = Instance.new("Weld")
+Weld57 = Instance.new("Weld")
+Weld58 = Instance.new("Weld")
+Weld59 = Instance.new("Weld")
+Weld60 = Instance.new("Weld")
+Weld61 = Instance.new("Weld")
+Weld62 = Instance.new("Weld")
+Weld63 = Instance.new("Weld")
+Weld64 = Instance.new("Weld")
+Weld65 = Instance.new("Weld")
+Tool66 = Instance.new("Tool")
+Part67 = Instance.new("Part")
+StringValue68 = Instance.new("StringValue")
+Weld69 = Instance.new("Weld")
+Weld70 = Instance.new("Weld")
+Weld71 = Instance.new("Weld")
+Weld72 = Instance.new("Weld")
+Weld73 = Instance.new("Weld")
+Weld74 = Instance.new("Weld")
+Weld75 = Instance.new("Weld")
+Weld76 = Instance.new("Weld")
+Weld77 = Instance.new("Weld")
+Weld78 = Instance.new("Weld")
+Weld79 = Instance.new("Weld")
+Weld80 = Instance.new("Weld")
+Weld81 = Instance.new("Weld")
+Weld82 = Instance.new("Weld")
+Weld83 = Instance.new("Weld")
+Weld84 = Instance.new("Weld")
+Weld85 = Instance.new("Weld")
+Weld86 = Instance.new("Weld")
+Weld87 = Instance.new("Weld")
+Weld88 = Instance.new("Weld")
+Weld89 = Instance.new("Weld")
+Weld90 = Instance.new("Weld")
+Weld91 = Instance.new("Weld")
+Weld92 = Instance.new("Weld")
+Weld93 = Instance.new("Weld")
+Weld94 = Instance.new("Weld")
+Weld95 = Instance.new("Weld")
+Weld96 = Instance.new("Weld")
+Weld97 = Instance.new("Weld")
+Weld98 = Instance.new("Weld")
+Weld99 = Instance.new("Weld")
+Weld100 = Instance.new("Weld")
+Weld101 = Instance.new("Weld")
+Weld102 = Instance.new("Weld")
+Weld103 = Instance.new("Weld")
+Weld104 = Instance.new("Weld")
+Weld105 = Instance.new("Weld")
+Weld106 = Instance.new("Weld")
+Weld107 = Instance.new("Weld")
+Weld108 = Instance.new("Weld")
+Weld109 = Instance.new("Weld")
+Weld110 = Instance.new("Weld")
+Weld111 = Instance.new("Weld")
+Weld112 = Instance.new("Weld")
+Weld113 = Instance.new("Weld")
+Weld114 = Instance.new("Weld")
+Weld115 = Instance.new("Weld")
+Weld116 = Instance.new("Weld")
+Weld117 = Instance.new("Weld")
+Weld118 = Instance.new("Weld")
+Weld119 = Instance.new("Weld")
+Weld120 = Instance.new("Weld")
+Weld121 = Instance.new("Weld")
+Weld122 = Instance.new("Weld")
+Weld123 = Instance.new("Weld")
+Weld124 = Instance.new("Weld")
+Weld125 = Instance.new("Weld")
+Weld126 = Instance.new("Weld")
+Weld127 = Instance.new("Weld")
+Weld128 = Instance.new("Weld")
+Weld129 = Instance.new("Weld")
+Weld130 = Instance.new("Weld")
+Weld131 = Instance.new("Weld")
+Weld132 = Instance.new("Weld")
+Weld133 = Instance.new("Weld")
+Weld134 = Instance.new("Weld")
+Weld135 = Instance.new("Weld")
+Weld136 = Instance.new("Weld")
+Weld137 = Instance.new("Weld")
+Weld138 = Instance.new("Weld")
+Weld139 = Instance.new("Weld")
+Weld140 = Instance.new("Weld")
+Weld141 = Instance.new("Weld")
+Sound142 = Instance.new("Sound")
+SpecialMesh143 = Instance.new("SpecialMesh")
+NumberValue144 = Instance.new("NumberValue")
+StringValue145 = Instance.new("StringValue")
+Script146 = Instance.new("Script")
+Script147 = Instance.new("Script")
+Tool148 = Instance.new("Tool")
+Part149 = Instance.new("Part")
+SpecialMesh150 = Instance.new("SpecialMesh")
+Sound151 = Instance.new("Sound")
+Sound152 = Instance.new("Sound")
+Script153 = Instance.new("Script")
+Tool154 = Instance.new("Tool")
+Part155 = Instance.new("Part")
+SpecialMesh156 = Instance.new("SpecialMesh")
+Sound157 = Instance.new("Sound")
+Sound158 = Instance.new("Sound")
+Script159 = Instance.new("Script")
+Tool160 = Instance.new("Tool")
+Part161 = Instance.new("Part")
+SpecialMesh162 = Instance.new("SpecialMesh")
+Sound163 = Instance.new("Sound")
+Sound164 = Instance.new("Sound")
+Script165 = Instance.new("Script")
+Part166 = Instance.new("Part")
+ClickDetector167 = Instance.new("ClickDetector")
+Decal168 = Instance.new("Decal")
+Script169 = Instance.new("Script")
+Weld170 = Instance.new("Weld")
+Weld171 = Instance.new("Weld")
+Weld172 = Instance.new("Weld")
+Weld173 = Instance.new("Weld")
+Weld174 = Instance.new("Weld")
+Weld175 = Instance.new("Weld")
+Tool176 = Instance.new("Tool")
+Part177 = Instance.new("Part")
+Decal178 = Instance.new("Decal")
+LocalScript179 = Instance.new("LocalScript")
+Tool180 = Instance.new("Tool")
+Part181 = Instance.new("Part")
+SpecialMesh182 = Instance.new("SpecialMesh")
+Sound183 = Instance.new("Sound")
+Sound184 = Instance.new("Sound")
+Script185 = Instance.new("Script")
+Tool186 = Instance.new("Tool")
+Part187 = Instance.new("Part")
+SpecialMesh188 = Instance.new("SpecialMesh")
+Sound189 = Instance.new("Sound")
+Sound190 = Instance.new("Sound")
+Script191 = Instance.new("Script")
+Part192 = Instance.new("Part")
+ClickDetector193 = Instance.new("ClickDetector")
+Decal194 = Instance.new("Decal")
+Script195 = Instance.new("Script")
+Weld196 = Instance.new("Weld")
+Weld197 = Instance.new("Weld")
+Weld198 = Instance.new("Weld")
+Weld199 = Instance.new("Weld")
+Weld200 = Instance.new("Weld")
+Part201 = Instance.new("Part")
+ClickDetector202 = Instance.new("ClickDetector")
+Decal203 = Instance.new("Decal")
+Script204 = Instance.new("Script")
+Weld205 = Instance.new("Weld")
+Weld206 = Instance.new("Weld")
+Weld207 = Instance.new("Weld")
+Part208 = Instance.new("Part")
+ClickDetector209 = Instance.new("ClickDetector")
+Decal210 = Instance.new("Decal")
+Script211 = Instance.new("Script")
+Weld212 = Instance.new("Weld")
+Weld213 = Instance.new("Weld")
+Weld214 = Instance.new("Weld")
+Weld215 = Instance.new("Weld")
+Part216 = Instance.new("Part")
+Decal217 = Instance.new("Decal")
+ClickDetector218 = Instance.new("ClickDetector")
+Script219 = Instance.new("Script")
+Weld220 = Instance.new("Weld")
+Weld221 = Instance.new("Weld")
+Weld222 = Instance.new("Weld")
+Weld223 = Instance.new("Weld")
+Part224 = Instance.new("Part")
+ClickDetector225 = Instance.new("ClickDetector")
+Decal226 = Instance.new("Decal")
+Script227 = Instance.new("Script")
+Weld228 = Instance.new("Weld")
+Weld229 = Instance.new("Weld")
+Part230 = Instance.new("Part")
+ClickDetector231 = Instance.new("ClickDetector")
+Decal232 = Instance.new("Decal")
+Script233 = Instance.new("Script")
+Weld234 = Instance.new("Weld")
+Weld235 = Instance.new("Weld")
+Weld236 = Instance.new("Weld")
+Weld237 = Instance.new("Weld")
+Part238 = Instance.new("Part")
+ClickDetector239 = Instance.new("ClickDetector")
+Decal240 = Instance.new("Decal")
+Script241 = Instance.new("Script")
+Weld242 = Instance.new("Weld")
+Weld243 = Instance.new("Weld")
+Weld244 = Instance.new("Weld")
+Weld245 = Instance.new("Weld")
+Weld246 = Instance.new("Weld")
+Weld247 = Instance.new("Weld")
+Weld248 = Instance.new("Weld")
+Weld249 = Instance.new("Weld")
+Weld250 = Instance.new("Weld")
+Weld251 = Instance.new("Weld")
+Weld252 = Instance.new("Weld")
+Weld253 = Instance.new("Weld")
+Weld254 = Instance.new("Weld")
+Weld255 = Instance.new("Weld")
+Weld256 = Instance.new("Weld")
+Weld257 = Instance.new("Weld")
+Part258 = Instance.new("Part")
+ClickDetector259 = Instance.new("ClickDetector")
+Decal260 = Instance.new("Decal")
+Script261 = Instance.new("Script")
+Weld262 = Instance.new("Weld")
+Weld263 = Instance.new("Weld")
+Weld264 = Instance.new("Weld")
+Weld265 = Instance.new("Weld")
+Tool266 = Instance.new("Tool")
+Part267 = Instance.new("Part")
+Sound268 = Instance.new("Sound")
+Sound269 = Instance.new("Sound")
+SpecialMesh270 = Instance.new("SpecialMesh")
+Script271 = Instance.new("Script")
+Part272 = Instance.new("Part")
+ClickDetector273 = Instance.new("ClickDetector")
+Decal274 = Instance.new("Decal")
+Script275 = Instance.new("Script")
+Weld276 = Instance.new("Weld")
+Weld277 = Instance.new("Weld")
+Weld278 = Instance.new("Weld")
+Weld279 = Instance.new("Weld")
+Weld280 = Instance.new("Weld")
+Weld281 = Instance.new("Weld")
+Part282 = Instance.new("Part")
+ClickDetector283 = Instance.new("ClickDetector")
+Decal284 = Instance.new("Decal")
+Script285 = Instance.new("Script")
+Weld286 = Instance.new("Weld")
+Weld287 = Instance.new("Weld")
+Weld288 = Instance.new("Weld")
+Weld289 = Instance.new("Weld")
+Weld290 = Instance.new("Weld")
+Weld291 = Instance.new("Weld")
+Weld292 = Instance.new("Weld")
+Weld293 = Instance.new("Weld")
+Weld294 = Instance.new("Weld")
+Weld295 = Instance.new("Weld")
+Weld296 = Instance.new("Weld")
+Weld297 = Instance.new("Weld")
+Weld298 = Instance.new("Weld")
+Weld299 = Instance.new("Weld")
+Weld300 = Instance.new("Weld")
+Weld301 = Instance.new("Weld")
+Weld302 = Instance.new("Weld")
+Weld303 = Instance.new("Weld")
+Weld304 = Instance.new("Weld")
+Tool305 = Instance.new("Tool")
+Part306 = Instance.new("Part")
+Sound307 = Instance.new("Sound")
+Sound308 = Instance.new("Sound")
+SpecialMesh309 = Instance.new("SpecialMesh")
+Script310 = Instance.new("Script")
+Tool311 = Instance.new("Tool")
+Part312 = Instance.new("Part")
+Sound313 = Instance.new("Sound")
+Sound314 = Instance.new("Sound")
+SpecialMesh315 = Instance.new("SpecialMesh")
+Script316 = Instance.new("Script")
+Model0.Name = "Vending Machine"
+Model0.Parent = mas
+Part1.Name = "trans"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(-0.947593689, 1.40000308, -1.53665924, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part1.Orientation = Vector3.new(0, 180, 0)
+Part1.Position = Vector3.new(-0.9475936889648438, 1.4000030755996704, -1.5366592407226562)
+Part1.Rotation = Vector3.new(-180, 0, -180)
+Part1.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part1.Size = Vector3.new(3, 0.4000000059604645, 3)
+Part1.Anchored = true
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Black")
+Part1.FrontSurface = Enum.SurfaceType.Weld
+Part1.Material = Enum.Material.SmoothPlastic
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Black")
+Part1.FormFactor = Enum.FormFactor.Plate
+Part1.formFactor = Enum.FormFactor.Plate
+Script2.Name = "Force Script"
+Script2.Parent = Part1
+table.insert(cors,sandbox(Script2,function()
+--SoundStudioRoblox--
+
+while true do
+script.Parent.Velocity = script.Parent.CFrame.lookVector *60
+wait(0.1)
+end
+
+end))
+Part3.Parent = Model0
+Part3.CFrame = CFrame.new(1.05240631, 2.20000315, -2.03665924, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part3.Orientation = Vector3.new(0, -90, 0)
+Part3.Position = Vector3.new(1.0524063110351562, 2.200003147125244, -2.0366592407226562)
+Part3.Rotation = Vector3.new(0, -90, 0)
+Part3.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part3.Size = Vector3.new(2, 2, 1)
+Part3.Anchored = true
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.BrickColor = BrickColor.new("Institutional white")
+Part3.Material = Enum.Material.SmoothPlastic
+Part3.Reflectance = 0.30000001192092896
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Part3.brickColor = BrickColor.new("Institutional white")
+Part3.FormFactor = Enum.FormFactor.Plate
+Part3.formFactor = Enum.FormFactor.Plate
+Part4.Parent = Model0
+Part4.CFrame = CFrame.new(-0.947593689, 0.600004077, -0.0366592407, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part4.Orientation = Vector3.new(0, -90, 0)
+Part4.Position = Vector3.new(-0.9475936889648438, 0.6000040769577026, -0.03665924072265625)
+Part4.Rotation = Vector3.new(0, -90, 0)
+Part4.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part4.Size = Vector3.new(8, 1.2000000476837158, 5)
+Part4.Anchored = true
+Part4.BottomSurface = Enum.SurfaceType.Smooth
+Part4.BrickColor = BrickColor.new("Really black")
+Part4.Material = Enum.Material.SmoothPlastic
+Part4.TopSurface = Enum.SurfaceType.Smooth
+Part4.brickColor = BrickColor.new("Really black")
+Part4.FormFactor = Enum.FormFactor.Plate
+Part4.formFactor = Enum.FormFactor.Plate
+Part5.Name = "Tray"
+Part5.Parent = Model0
+Part5.CFrame = CFrame.new(-1.44759369, 3.00000191, -0.0366592407, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part5.Orientation = Vector3.new(0, -90, 0)
+Part5.Position = Vector3.new(-1.4475936889648438, 3.000001907348633, -0.03665924072265625)
+Part5.Rotation = Vector3.new(0, -90, 0)
+Part5.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part5.Size = Vector3.new(6, 0.4000000059604645, 2)
+Part5.Anchored = true
+Part5.BottomSurface = Enum.SurfaceType.Smooth
+Part5.BrickColor = BrickColor.new("Dark stone grey")
+Part5.Material = Enum.Material.SmoothPlastic
+Part5.TopSurface = Enum.SurfaceType.Smooth
+Part5.brickColor = BrickColor.new("Dark stone grey")
+Part5.FormFactor = Enum.FormFactor.Plate
+Part5.formFactor = Enum.FormFactor.Plate
+Part6.Parent = Model0
+Part6.CFrame = CFrame.new(1.05240631, 2.00000286, -0.536659241, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part6.Orientation = Vector3.new(0, -90, 0)
+Part6.Position = Vector3.new(1.0524063110351562, 2.000002861022949, -0.5366592407226562)
+Part6.Rotation = Vector3.new(0, -90, 0)
+Part6.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part6.Size = Vector3.new(1, 1.600000023841858, 1)
+Part6.Anchored = true
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.BrickColor = BrickColor.new("Really black")
+Part6.Material = Enum.Material.SmoothPlastic
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part6.brickColor = BrickColor.new("Really black")
+Part6.FormFactor = Enum.FormFactor.Plate
+Part6.formFactor = Enum.FormFactor.Plate
+Part7.Parent = Model0
+Part7.CFrame = CFrame.new(-0.947593689, 9.7999897, -0.0366592407, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part7.Orientation = Vector3.new(0, -90, 0)
+Part7.Position = Vector3.new(-0.9475936889648438, 9.799989700317383, -0.03665924072265625)
+Part7.Rotation = Vector3.new(0, -90, 0)
+Part7.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part7.Size = Vector3.new(8, 0.4000000059604645, 5)
+Part7.Anchored = true
+Part7.BottomSurface = Enum.SurfaceType.Smooth
+Part7.BrickColor = BrickColor.new("Really black")
+Part7.Material = Enum.Material.SmoothPlastic
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Part7.brickColor = BrickColor.new("Really black")
+Part7.FormFactor = Enum.FormFactor.Plate
+Part7.formFactor = Enum.FormFactor.Plate
+Weld8.Parent = Part7
+Weld8.C0 = CFrame.new(0, 0, -2.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld8.C1 = CFrame.new(3.5, -0.200012207, 0.5, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Weld8.Part0 = Part7
+Weld8.Part1 = Part272
+Weld8.part1 = Part272
+Weld9.Parent = Part7
+Weld9.C0 = CFrame.new(0, 0, -2.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld9.C1 = CFrame.new(2.5, -0.200012207, 0.5, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Weld9.Part0 = Part7
+Weld9.Part1 = Part282
+Weld9.part1 = Part282
+Part10.Parent = Model0
+Part10.CFrame = CFrame.new(1.05240631, 3.00000191, 0.963340759, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part10.Orientation = Vector3.new(0, -90, 0)
+Part10.Position = Vector3.new(1.0524063110351562, 3.000001907348633, 0.9633407592773438)
+Part10.Rotation = Vector3.new(0, -90, 0)
+Part10.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part10.Size = Vector3.new(4, 0.4000000059604645, 1)
+Part10.Anchored = true
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.BrickColor = BrickColor.new("Really black")
+Part10.Material = Enum.Material.SmoothPlastic
+Part10.TopSurface = Enum.SurfaceType.Smooth
+Part10.brickColor = BrickColor.new("Really black")
+Part10.FormFactor = Enum.FormFactor.Plate
+Part10.formFactor = Enum.FormFactor.Plate
+Part11.Parent = Model0
+Part11.CFrame = CFrame.new(1.05240631, 5.00000143, -2.53665924, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part11.Orientation = Vector3.new(0, -90, 0)
+Part11.Position = Vector3.new(1.0524063110351562, 5.000001430511475, -2.5366592407226562)
+Part11.Rotation = Vector3.new(0, -90, 0)
+Part11.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part11.Size = Vector3.new(1, 3.6000001430511475, 1)
+Part11.Anchored = true
+Part11.BottomSurface = Enum.SurfaceType.Smooth
+Part11.BrickColor = BrickColor.new("Institutional white")
+Part11.Material = Enum.Material.SmoothPlastic
+Part11.Reflectance = 0.20000000298023224
+Part11.TopSurface = Enum.SurfaceType.Smooth
+Part11.brickColor = BrickColor.new("Institutional white")
+Part11.FormFactor = Enum.FormFactor.Plate
+Part11.formFactor = Enum.FormFactor.Plate
+Weld12.Parent = Part11
+Weld12.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld12.C1 = CFrame.new(0, -0.200012207, 0.700001717, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld12.Part0 = Part11
+Weld12.Part1 = Part201
+Weld12.part1 = Part201
+Weld13.Parent = Part11
+Weld13.C0 = CFrame.new(0, 0, -0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld13.C1 = CFrame.new(0, -0.200012207, -0.300000191, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Weld13.Part0 = Part11
+Weld13.Part1 = Part15
+Weld13.part1 = Part15
+Weld14.Parent = Part11
+Weld14.C0 = CFrame.new(0, 0, -0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld14.C1 = CFrame.new(0, -0.200012207, -1.30000019, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Weld14.Part0 = Part11
+Weld14.Part1 = Part166
+Weld14.part1 = Part166
+Part15.Name = "SpriteB"
+Part15.Parent = Model0
+Part15.CFrame = CFrame.new(1.75241852, 5.29999971, -2.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part15.Orientation = Vector3.new(-90, -90, 0)
+Part15.Position = Vector3.new(1.7524185180664062, 5.299999713897705, -2.5366592407226562)
+Part15.Rotation = Vector3.new(-90, 0, -90)
+Part15.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part15.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part15.Anchored = true
+Part15.BackSurface = Enum.SurfaceType.Weld
+Part15.BottomSurface = Enum.SurfaceType.Weld
+Part15.BrickColor = BrickColor.new("White")
+Part15.FrontSurface = Enum.SurfaceType.Weld
+Part15.LeftSurface = Enum.SurfaceType.Weld
+Part15.Material = Enum.Material.SmoothPlastic
+Part15.RightSurface = Enum.SurfaceType.Weld
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.brickColor = BrickColor.new("White")
+Part15.FormFactor = Enum.FormFactor.Plate
+Part15.formFactor = Enum.FormFactor.Plate
+ClickDetector16.Parent = Part15
+Decal17.Parent = Part15
+Decal17.Texture = "http://www.roblox.com/asset/?id=34402643"
+Decal17.Face = Enum.NormalId.Top
+Script18.Parent = Part15
+table.insert(cors,sandbox(Script18,function()
+local drink = script.Parent.Parent.Sprite
+local spot = script.Parent.Parent.Holder
+local db = false
+
+function onClick()
+	if db == false then
+		db = true
+		local d = drink:clone()
+		d.Handle.Position = spot.Position
+		d.Parent = game.Workspace
+		d.Handle.Anchored = false
+		d.Name = "7up"
+		wait(5)
+		db = false
+	end
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClick)
+
+end))
+Weld19.Parent = Part15
+Weld19.C0 = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld19.C1 = CFrame.new(0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld19.Part0 = Part15
+Weld19.Part1 = Part166
+Weld19.part1 = Part166
+Weld20.Parent = Part15
+Weld20.C0 = CFrame.new(-0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld20.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld20.Part0 = Part15
+Weld20.Part1 = Part192
+Weld20.part1 = Part192
+Part21.Parent = Model0
+Part21.CFrame = CFrame.new(1.05240631, 6.40000153, 0.463340759, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part21.Orientation = Vector3.new(0, -90, 0)
+Part21.Position = Vector3.new(1.0524063110351562, 6.400001525878906, 0.46334075927734375)
+Part21.Rotation = Vector3.new(0, -90, 0)
+Part21.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part21.Transparency = 0.699999988079071
+Part21.Size = Vector3.new(5, 6.400000095367432, 1)
+Part21.Anchored = true
+Part21.BottomSurface = Enum.SurfaceType.Smooth
+Part21.BrickColor = BrickColor.new("White")
+Part21.Material = Enum.Material.SmoothPlastic
+Part21.TopSurface = Enum.SurfaceType.Smooth
+Part21.brickColor = BrickColor.new("White")
+Part21.FormFactor = Enum.FormFactor.Plate
+Part21.formFactor = Enum.FormFactor.Plate
+Part22.Name = "Tray"
+Part22.Parent = Model0
+Part22.CFrame = CFrame.new(-1.44759369, 4.60000038, -0.0366592407, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part22.Orientation = Vector3.new(0, -90, 0)
+Part22.Position = Vector3.new(-1.4475936889648438, 4.600000381469727, -0.03665924072265625)
+Part22.Rotation = Vector3.new(0, -90, 0)
+Part22.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part22.Size = Vector3.new(6, 0.4000000059604645, 2)
+Part22.Anchored = true
+Part22.BottomSurface = Enum.SurfaceType.Smooth
+Part22.BrickColor = BrickColor.new("Dark stone grey")
+Part22.Material = Enum.Material.SmoothPlastic
+Part22.TopSurface = Enum.SurfaceType.Smooth
+Part22.brickColor = BrickColor.new("Dark stone grey")
+Part22.FormFactor = Enum.FormFactor.Plate
+Part22.formFactor = Enum.FormFactor.Plate
+Part23.Name = "Tray"
+Part23.Parent = Model0
+Part23.CFrame = CFrame.new(-1.44759369, 6.20000267, -0.0366592407, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part23.Orientation = Vector3.new(0, -90, 0)
+Part23.Position = Vector3.new(-1.4475936889648438, 6.200002670288086, -0.03665924072265625)
+Part23.Rotation = Vector3.new(0, -90, 0)
+Part23.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part23.Size = Vector3.new(6, 0.4000000059604645, 2)
+Part23.Anchored = true
+Part23.BottomSurface = Enum.SurfaceType.Smooth
+Part23.BrickColor = BrickColor.new("Dark stone grey")
+Part23.Material = Enum.Material.SmoothPlastic
+Part23.TopSurface = Enum.SurfaceType.Smooth
+Part23.brickColor = BrickColor.new("Dark stone grey")
+Part23.FormFactor = Enum.FormFactor.Plate
+Part23.formFactor = Enum.FormFactor.Plate
+Part24.Parent = Model0
+Part24.CFrame = CFrame.new(1.05240631, 5.40000153, -3.53665924, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part24.Orientation = Vector3.new(0, -90, 0)
+Part24.Position = Vector3.new(1.0524063110351562, 5.400001525878906, -3.5366592407226562)
+Part24.Rotation = Vector3.new(0, -90, 0)
+Part24.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part24.Size = Vector3.new(1, 8.40000057220459, 1)
+Part24.Anchored = true
+Part24.BottomSurface = Enum.SurfaceType.Smooth
+Part24.BrickColor = BrickColor.new("Really black")
+Part24.Material = Enum.Material.SmoothPlastic
+Part24.TopSurface = Enum.SurfaceType.Smooth
+Part24.brickColor = BrickColor.new("Really black")
+Part24.FormFactor = Enum.FormFactor.Plate
+Part24.formFactor = Enum.FormFactor.Plate
+Weld25.Parent = Part24
+Weld25.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld25.C1 = CFrame.new(0, -0.200012207, -3.89998817, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld25.Part0 = Part24
+Weld25.Part1 = Part272
+Weld25.part1 = Part272
+Weld26.Parent = Part24
+Weld26.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld26.C1 = CFrame.new(0, -0.200012207, -2.89999676, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld26.Part0 = Part24
+Weld26.Part1 = Part224
+Weld26.part1 = Part224
+Weld27.Parent = Part24
+Weld27.C0 = CFrame.new(0, 0, -0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld27.C1 = CFrame.new(0, -0.200012207, -1.90000057, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Weld27.Part0 = Part24
+Weld27.Part1 = Part238
+Weld27.part1 = Part238
+Weld28.Parent = Part24
+Weld28.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld28.C1 = CFrame.new(0, -0.200012207, 0.100001812, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld28.Part0 = Part24
+Weld28.Part1 = Part192
+Weld28.part1 = Part192
+Weld29.Parent = Part24
+Weld29.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld29.C1 = CFrame.new(0, -0.200012207, -2.89999676, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld29.Part0 = Part24
+Weld29.Part1 = Part224
+Weld29.part1 = Part224
+Weld30.Parent = Part24
+Weld30.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld30.C1 = CFrame.new(0, -0.200012207, 0.100001812, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld30.Part0 = Part24
+Weld30.Part1 = Part192
+Weld30.part1 = Part192
+Weld31.Parent = Part24
+Weld31.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld31.C1 = CFrame.new(0, -0.200012207, -3.89998817, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld31.Part0 = Part24
+Weld31.Part1 = Part272
+Weld31.part1 = Part272
+Weld32.Parent = Part24
+Weld32.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld32.C1 = CFrame.new(0, -0.200012207, 1.10000181, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld32.Part0 = Part24
+Weld32.Part1 = Part208
+Weld32.part1 = Part208
+Weld33.Parent = Part24
+Weld33.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld33.C1 = CFrame.new(0, -0.200012207, 1.10000181, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld33.Part0 = Part24
+Weld33.Part1 = Part208
+Weld33.part1 = Part208
+Part34.Name = "trans"
+Part34.Parent = Model0
+Part34.CFrame = CFrame.new(-0.447593689, 1.40000308, 2.46334076, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part34.Position = Vector3.new(-0.44759368896484375, 1.4000030755996704, 2.4633407592773438)
+Part34.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part34.Size = Vector3.new(4, 0.4000000059604645, 1)
+Part34.Anchored = true
+Part34.BottomSurface = Enum.SurfaceType.Smooth
+Part34.BrickColor = BrickColor.new("Institutional white")
+Part34.FrontSurface = Enum.SurfaceType.Weld
+Part34.Material = Enum.Material.SmoothPlastic
+Part34.TopSurface = Enum.SurfaceType.Smooth
+Part34.brickColor = BrickColor.new("Institutional white")
+Part34.FormFactor = Enum.FormFactor.Plate
+Part34.formFactor = Enum.FormFactor.Plate
+Script35.Name = "Force Script"
+Script35.Parent = Part34
+table.insert(cors,sandbox(Script35,function()
+--SoundStudioRoblox--
+
+while true do
+script.Parent.Velocity = script.Parent.CFrame.lookVector *60
+wait(0.1)
+end
+
+end))
+Part36.Parent = Model0
+Part36.CFrame = CFrame.new(-2.94759369, 5.40000153, -0.0366592407, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part36.Orientation = Vector3.new(0, -90, 0)
+Part36.Position = Vector3.new(-2.9475936889648438, 5.400001525878906, -0.03665924072265625)
+Part36.Rotation = Vector3.new(0, -90, 0)
+Part36.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part36.Size = Vector3.new(6, 8.40000057220459, 1)
+Part36.Anchored = true
+Part36.BottomSurface = Enum.SurfaceType.Smooth
+Part36.BrickColor = BrickColor.new("Institutional white")
+Part36.Material = Enum.Material.SmoothPlastic
+Part36.TopSurface = Enum.SurfaceType.Smooth
+Part36.brickColor = BrickColor.new("Institutional white")
+Part36.FormFactor = Enum.FormFactor.Plate
+Part36.formFactor = Enum.FormFactor.Plate
+Part37.Parent = Model0
+Part37.CFrame = CFrame.new(-1.44759369, 5.40000153, -3.53665924, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part37.Orientation = Vector3.new(0, -90, 0)
+Part37.Position = Vector3.new(-1.4475936889648438, 5.400001525878906, -3.5366592407226562)
+Part37.Rotation = Vector3.new(0, -90, 0)
+Part37.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part37.Size = Vector3.new(1, 8.40000057220459, 4)
+Part37.Anchored = true
+Part37.BottomSurface = Enum.SurfaceType.Smooth
+Part37.BrickColor = BrickColor.new("Really black")
+Part37.Material = Enum.Material.SmoothPlastic
+Part37.Reflectance = 0.30000001192092896
+Part37.TopSurface = Enum.SurfaceType.Smooth
+Part37.brickColor = BrickColor.new("Really black")
+Part37.FormFactor = Enum.FormFactor.Plate
+Part37.formFactor = Enum.FormFactor.Plate
+Part38.Name = "Tray"
+Part38.Parent = Model0
+Part38.CFrame = CFrame.new(-1.44759369, 7.80000019, -0.0366592407, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part38.Orientation = Vector3.new(0, -90, 0)
+Part38.Position = Vector3.new(-1.4475936889648438, 7.800000190734863, -0.03665924072265625)
+Part38.Rotation = Vector3.new(0, -90, 0)
+Part38.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part38.Size = Vector3.new(6, 0.4000000059604645, 2)
+Part38.Anchored = true
+Part38.BottomSurface = Enum.SurfaceType.Smooth
+Part38.BrickColor = BrickColor.new("Dark stone grey")
+Part38.Material = Enum.Material.SmoothPlastic
+Part38.TopSurface = Enum.SurfaceType.Smooth
+Part38.brickColor = BrickColor.new("Dark stone grey")
+Part38.FormFactor = Enum.FormFactor.Plate
+Part38.formFactor = Enum.FormFactor.Plate
+Part39.Parent = Model0
+Part39.CFrame = CFrame.new(-0.947593689, 5.40000153, 3.46334076, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part39.Orientation = Vector3.new(0, -90, 0)
+Part39.Position = Vector3.new(-0.9475936889648438, 5.400001525878906, 3.4633407592773438)
+Part39.Rotation = Vector3.new(0, -90, 0)
+Part39.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part39.Size = Vector3.new(1, 8.40000057220459, 5)
+Part39.Anchored = true
+Part39.BottomSurface = Enum.SurfaceType.Smooth
+Part39.BrickColor = BrickColor.new("Really black")
+Part39.Material = Enum.Material.SmoothPlastic
+Part39.TopSurface = Enum.SurfaceType.Smooth
+Part39.brickColor = BrickColor.new("Really black")
+Part39.FormFactor = Enum.FormFactor.Plate
+Part39.formFactor = Enum.FormFactor.Plate
+Part40.Parent = Model0
+Part40.CFrame = CFrame.new(1.05240631, 8.1999979, -2.53665924, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part40.Orientation = Vector3.new(0, -90, 0)
+Part40.Position = Vector3.new(1.0524063110351562, 8.199997901916504, -2.5366592407226562)
+Part40.Rotation = Vector3.new(0, -90, 0)
+Part40.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part40.Size = Vector3.new(1, 2.799999952316284, 1)
+Part40.Anchored = true
+Part40.BottomSurface = Enum.SurfaceType.Smooth
+Part40.BrickColor = BrickColor.new("Institutional white")
+Part40.Material = Enum.Material.SmoothPlastic
+Part40.TopSurface = Enum.SurfaceType.Smooth
+Part40.brickColor = BrickColor.new("Institutional white")
+Part40.FormFactor = Enum.FormFactor.Plate
+Part40.formFactor = Enum.FormFactor.Plate
+Weld41.Parent = Part40
+Weld41.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld41.C1 = CFrame.new(0, -0.200012207, -0.100000381, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld41.Part0 = Part40
+Weld41.Part1 = Part216
+Weld41.part1 = Part216
+Weld42.Parent = Part40
+Weld42.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld42.C1 = CFrame.new(0, -0.200012207, -0.100000381, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld42.Part0 = Part40
+Weld42.Part1 = Part216
+Weld42.part1 = Part216
+Tool43.Name = "Doritos"
+Tool43.Parent = Model0
+Part44.Name = "Handle"
+Part44.Parent = Tool43
+Part44.CFrame = CFrame.new(-1.94759369, 8.59999371, 2.46334076, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part44.Orientation = Vector3.new(0, -90, 0)
+Part44.Position = Vector3.new(-1.9475936889648438, 8.599993705749512, 2.4633407592773438)
+Part44.Rotation = Vector3.new(0, -90, 0)
+Part44.Color = Color3.new(0.992157, 0.917647, 0.552941)
+Part44.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part44.Anchored = true
+Part44.BottomSurface = Enum.SurfaceType.Smooth
+Part44.BrickColor = BrickColor.new("Cool yellow")
+Part44.Material = Enum.Material.SmoothPlastic
+Part44.TopSurface = Enum.SurfaceType.Smooth
+Part44.brickColor = BrickColor.new("Cool yellow")
+Part44.FormFactor = Enum.FormFactor.Plate
+Part44.formFactor = Enum.FormFactor.Plate
+Decal45.Parent = Part44
+Decal45.Texture = "http://www.roblox.com/asset/?id=7997660"
+Sound46.Name = "DrinkSound"
+Sound46.Parent = Part44
+Sound46.SoundId = "http://www.roblox.com/asset/?id=15047813"
+Sound46.Volume = 1
+Sound47.Name = "OpenSound"
+Sound47.Parent = Part44
+Sound47.SoundId = "http://www.roblox.com/asset/?id=16213987"
+Sound47.Volume = 1
+SpecialMesh48.Parent = Part44
+SpecialMesh48.MeshId = "http://www.roblox.com/asset/?id=19106014"
+SpecialMesh48.Scale = Vector3.new(0.699999988079071, 0.699999988079071, 0.699999988079071)
+SpecialMesh48.TextureId = "http://www.roblox.com/asset/?id=37305301"
+SpecialMesh48.MeshType = Enum.MeshType.FileMesh
+Script49.Name = "SandwichScript"
+Script49.Parent = Tool43
+table.insert(cors,sandbox(Script49,function()
+local Tool = script.Parent;
+
+enabled = true
+
+
+
+
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	Tool.GripForward = Vector3.new(0.675, -0.675, -0.3)
+	Tool.GripPos = Vector3.new(0.4, -0.9, 0.9)
+	Tool.GripRight = Vector3.new(0.212, -0.212, 0.954)
+	Tool.GripUp = Vector3.new(0.707, 0.707, 0)
+
+
+	Tool.Handle.DrinkSound:Play()
+
+	wait(.8)
+	
+	local h = Tool.Parent:FindFirstChild("Humanoid")
+	if (h ~= nil) then
+		if (h.MaxHealth > h.Health + 1.6) then
+			h.Health = h.Health + 1.6
+		else	
+			h.Health = h.MaxHealth
+		end
+	end
+
+	Tool.GripForward = Vector3.new(-1, 0, 0)
+	Tool.GripPos = Vector3.new(.2, 0, 0)
+	Tool.GripRight = Vector3.new(0, 0, -1)
+	Tool.GripUp = Vector3.new(0,1,0)
+
+
+	enabled = true
+
+end
+
+function onEquipped()
+	Tool.Handle.OpenSound:play()
+end
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+
+end))
+Tool50.Name = "Waffle"
+Tool50.Parent = Model0
+Part51.Name = "Handle"
+Part51.Parent = Tool50
+Part51.CFrame = CFrame.new(-1.94759369, 8.59999371, 0.463340759, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part51.Position = Vector3.new(-1.9475936889648438, 8.599993705749512, 0.46334075927734375)
+Part51.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part51.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part51.Anchored = true
+Part51.BottomSurface = Enum.SurfaceType.Smooth
+Part51.BrickColor = BrickColor.new("Bright blue")
+Part51.Material = Enum.Material.SmoothPlastic
+Part51.TopSurface = Enum.SurfaceType.Smooth
+Part51.brickColor = BrickColor.new("Bright blue")
+Part51.FormFactor = Enum.FormFactor.Plate
+Part51.formFactor = Enum.FormFactor.Plate
+SpecialMesh52.Parent = Part51
+SpecialMesh52.MeshId = "http://www.roblox.com/asset/?id=20939848"
+SpecialMesh52.Scale = Vector3.new(0.699999988079071, 0.699999988079071, 0.699999988079071)
+SpecialMesh52.TextureId = "http://www.roblox.com/asset/?id=20939838"
+SpecialMesh52.MeshType = Enum.MeshType.FileMesh
+LocalScript53.Name = "Local Gui"
+LocalScript53.Parent = Tool50
+table.insert(cors,sandbox(LocalScript53,function()
+local Tool = script.Parent;
+
+enabled = true
+
+function onButton1Down(mouse)
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	Tool.GripForward = Vector3.new(-0,-0,1)
+	Tool.GripPos = Vector3.new(-1.5, -0.7, -0.3)
+	Tool.GripRight = Vector3.new(-1, 0, 0)
+	Tool.GripUp = Vector3.new(0, 1, 0)
+	wait(1)
+	Tool.GripForward = Vector3.new(-0,-0,1)
+	Tool.GripPos = Vector3.new(-1.5, -0.7, 0.2)
+	Tool.GripRight = Vector3.new(-1, 0, 0)
+	Tool.GripUp = Vector3.new(0, 1, 0)
+	wait(1)
+	Tool.GripForward = Vector3.new(-0,-0,1)
+	Tool.GripPos = Vector3.new(-1.5, -0.7, 0.6)
+	Tool.GripRight = Vector3.new(-1, 0, 0)
+	Tool.GripUp = Vector3.new(0, 1, 0)
+	wait(1)
+	Tool.Parent.Humanoid.Health = Tool.Parent.Humanoid.Health - 0
+	script.Parent:remove()
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\ArrowCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)
+
+end))
+Part54.Name = "Holder"
+Part54.Parent = Model0
+Part54.CFrame = CFrame.new(-0.447593689, 1.40000308, 0.963340759, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part54.Orientation = Vector3.new(0, -90, 0)
+Part54.Position = Vector3.new(-0.44759368896484375, 1.4000030755996704, 0.9633407592773438)
+Part54.Rotation = Vector3.new(0, -90, 0)
+Part54.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part54.Size = Vector3.new(2, 0.4000000059604645, 4)
+Part54.Anchored = true
+Part54.BottomSurface = Enum.SurfaceType.Smooth
+Part54.BrickColor = BrickColor.new("Institutional white")
+Part54.Material = Enum.Material.SmoothPlastic
+Part54.TopSurface = Enum.SurfaceType.Smooth
+Part54.brickColor = BrickColor.new("Institutional white")
+Part54.FormFactor = Enum.FormFactor.Plate
+Part54.formFactor = Enum.FormFactor.Plate
+Script55.Name = "Force Script"
+Script55.Parent = Part54
+table.insert(cors,sandbox(Script55,function()
+--SoundStudioRoblox--
+
+while true do
+script.Parent.Velocity = script.Parent.CFrame.lookVector *60
+wait(0.1)
+end
+
+end))
+Weld56.Parent = Part54
+Weld56.C0 = CFrame.new(-1, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld56.C1 = CFrame.new(-0.5, 0, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld56.Part0 = Part54
+Weld56.Part1 = Part1
+Weld56.part1 = Part1
+Weld57.Parent = Part54
+Weld57.C0 = CFrame.new(1, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld57.C1 = CFrame.new(0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld57.Part0 = Part54
+Weld57.Part1 = Part34
+Weld57.part1 = Part34
+Weld58.Parent = Part54
+Weld58.C0 = CFrame.new(-1, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld58.C1 = CFrame.new(-0.5, 0, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld58.Part0 = Part54
+Weld58.Part1 = Part1
+Weld58.part1 = Part1
+Weld59.Parent = Part54
+Weld59.C0 = CFrame.new(1, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld59.C1 = CFrame.new(0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld59.Part0 = Part54
+Weld59.Part1 = Part34
+Weld59.part1 = Part34
+Weld60.Parent = Part54
+Weld60.C0 = CFrame.new(-1, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld60.C1 = CFrame.new(-0.5, 0, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld60.Part0 = Part54
+Weld60.Part1 = Part1
+Weld60.part1 = Part1
+Weld61.Parent = Part54
+Weld61.C0 = CFrame.new(1, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld61.C1 = CFrame.new(0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld61.Part0 = Part54
+Weld61.Part1 = Part34
+Weld61.part1 = Part34
+Weld62.Parent = Part54
+Weld62.C0 = CFrame.new(1, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld62.C1 = CFrame.new(0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld62.Part0 = Part54
+Weld62.Part1 = Part34
+Weld62.part1 = Part34
+Weld63.Parent = Part54
+Weld63.C0 = CFrame.new(1, 0, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Weld63.C1 = CFrame.new(0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld63.Part0 = Part54
+Weld63.Part1 = Part34
+Weld63.part1 = Part34
+Weld64.Parent = Part54
+Weld64.C0 = CFrame.new(-1, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld64.C1 = CFrame.new(-0.5, 0, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld64.Part0 = Part54
+Weld64.Part1 = Part1
+Weld64.part1 = Part1
+Weld65.Parent = Part54
+Weld65.C0 = CFrame.new(-1, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld65.C1 = CFrame.new(-0.5, 0, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld65.Part0 = Part54
+Weld65.Part1 = Part1
+Weld65.part1 = Part1
+Tool66.Name = "Cookie"
+Tool66.Parent = Model0
+Tool66.TextureId = "http://www.roblox.com/asset/?id=21616307"
+Tool66.Grip = CFrame.new(0.100000001, -0.300000012, 0, 0, 1, 0, 0, 0, -1, -1, 0, 0)
+Tool66.GripForward = Vector3.new(-0, 1, -0)
+Tool66.GripPos = Vector3.new(0.10000000149011612, -0.30000001192092896, 0)
+Tool66.GripRight = Vector3.new(0, 0, -1)
+Tool66.GripUp = Vector3.new(1, 0, 0)
+Part67.Name = "Handle"
+Part67.Parent = Tool66
+Part67.CFrame = CFrame.new(-2.04769135, 8.49002171, -1.53665924, -1.25169754e-06, -0.99999994, -1.43051147e-06, 0.99999994, -1.1920929e-06, 2.32458115e-06, -2.38418579e-06, -1.37090683e-06, 0.99999994)
+Part67.Orientation = Vector3.new(0, 0, 90)
+Part67.Position = Vector3.new(-2.0476913452148438, 8.490021705627441, -1.5366592407226562)
+Part67.Rotation = Vector3.new(0, 0, 90)
+Part67.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part67.Size = Vector3.new(1, 0.800000011920929, 1)
+Part67.BottomSurface = Enum.SurfaceType.Smooth
+Part67.BrickColor = BrickColor.new("Mid gray")
+Part67.Material = Enum.Material.SmoothPlastic
+Part67.TopSurface = Enum.SurfaceType.Smooth
+Part67.brickColor = BrickColor.new("Mid gray")
+Part67.FormFactor = Enum.FormFactor.Plate
+Part67.formFactor = Enum.FormFactor.Plate
+StringValue68.Name = "Type"
+StringValue68.Parent = Part67
+StringValue68.Value = "Cookie"
+Weld69.Parent = Part67
+Weld69.C0 = CFrame.new(-4.71828389e-06, -1.06949216e-07, 6.73912837e-08, -1.96380037e-10, -7.15101578e-06, 1, -3.45956111e-11, 1, 9.53468771e-06, -1, 4.01852024e-11, -2.64911593e-10)
+Weld69.C1 = CFrame.new(-4.71828389e-06, -1.06949216e-07, 6.73912837e-08, -1.96380037e-10, -7.15101578e-06, 1, -3.45956111e-11, 1, 9.53468771e-06, -1, 4.01852024e-11, -2.64911593e-10)
+Weld70.Parent = Part67
+Weld70.C0 = CFrame.new(-1.34138972e-07, -6.91051537e-06, 0, -3.91537502e-21, 0.999999106, -0.00133771845, 2.81109586e-22, 0.00133771845, 0.999999106, 1, 3.91499535e-21, -2.86346992e-22)
+Weld70.C1 = CFrame.new(-1.34138972e-07, -6.91051537e-06, 0, -3.91537502e-21, 0.999999106, -0.00133771845, 2.81109586e-22, 0.00133771845, 0.999999106, 1, 3.91499535e-21, -2.86346992e-22)
+Weld71.Parent = Part67
+Weld71.C0 = CFrame.new(3.64912034e-06, -1.13236744e-07, -2.01656292e-08, -7.08486672e-11, 0.000798657886, -0.999999702, 1.55140234e-10, 0.999999702, 0.000793890678, 1, 1.55083765e-10, 7.09721865e-11)
+Weld71.C1 = CFrame.new(3.64912034e-06, -1.13236744e-07, -2.01656292e-08, -7.08486672e-11, 0.000798657886, -0.999999702, 1.55140234e-10, 0.999999702, 0.000793890678, 1, 1.55083765e-10, 7.09721865e-11)
+Weld72.Parent = Part67
+Weld72.C0 = CFrame.new(1.6321755e-07, 3.49538391e-06, 0, -3.9252309e-21, 0.996502578, -0.0835621059, -4.1799742e-23, 0.0835621059, 0.996502578, 1, 3.91499535e-21, -2.86346992e-22)
+Weld72.C1 = CFrame.new(1.6321755e-07, 3.49538391e-06, 0, -3.9252309e-21, 0.996502578, -0.0835621059, -4.1799742e-23, 0.0835621059, 0.996502578, 1, 3.91499535e-21, -2.86346992e-22)
+Weld73.Parent = Part67
+Weld73.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld73.C1 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld74.Parent = Part67
+Weld74.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld74.C1 = CFrame.new(0.533214211, 4.09488493e-05, -0.399536163, -6.19143847e-10, 0.000817726948, -0.999999702, 8.15887191e-10, 0.999999702, 0.000817726948, 1, -8.15380652e-10, -6.19810758e-10)
+Weld75.Parent = Part67
+Weld75.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld75.C1 = CFrame.new(-1.12273511e-07, 2.60849974e-05, -0.533189535, 1, -8.33252689e-10, -3.96865235e-10, 8.3357371e-10, 0.999999702, 0.000809622463, 3.96190469e-10, -0.000809622463, 0.999999702)
+Weld76.Parent = Part67
+Weld76.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld76.C1 = CFrame.new(0.533214211, 0.373362005, -4.18045545e-08, -6.20301976e-10, 0.000817726948, -0.999999702, 8.56068161e-10, 0.999999702, 0.000817726948, 1, -8.55560567e-10, -6.21001806e-10)
+Weld77.Parent = Part67
+Weld77.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld77.C1 = CFrame.new(-5.43287024e-06, 0.132771105, 0.400390655, 8.48401349e-10, 0.999999702, 0.000801041257, -6.20273943e-10, 0.000801041257, -0.999999702, -1, 8.47904247e-10, 6.20953344e-10)
+Weld78.Parent = Part67
+Weld78.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld78.C1 = CFrame.new(-2.92850495e-06, -0.400390595, -0.132823572, 8.56068161e-10, 0.999999702, 0.000817726948, -1, 8.55560678e-10, 6.21001806e-10, 6.20301976e-10, -0.000817726948, 0.999999702)
+Weld79.Parent = Part67
+Weld79.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld79.C1 = CFrame.new(1.20404536e-07, 1.7940567e-05, 0.132805407, -1, 8.50133963e-10, 4.23458879e-10, 8.50476911e-10, 0.999999702, 0.000810576021, -4.22769625e-10, 0.000810576021, -0.999999702)
+Weld80.Parent = Part67
+Weld80.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld80.C1 = CFrame.new(5.96581813e-05, -0.400390744, 0.9335953, 8.14806722e-10, 0.999999702, 0.000811847276, 1, -8.1443452e-10, -4.58876631e-10, -4.58215271e-10, 0.000811847276, -0.999999702)
+Weld81.Parent = Part67
+Weld81.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld81.C1 = CFrame.new(2.33017072e-05, -0.933604836, 0.400390595, 8.35977676e-10, 0.999999702, 0.000817726948, 6.19722884e-10, -0.000817726948, 0.999999702, 1, -8.35470693e-10, -6.20406282e-10)
+Weld82.Parent = Part67
+Weld82.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld82.C1 = CFrame.new(-1.52226988e-07, -0.373301029, -0.533214867, 1, -9.17886822e-10, -2.52556698e-10, 9.18089604e-10, 0.999999702, 0.000804378418, 2.51818288e-10, -0.000804378418, 0.999999702)
+Weld83.Parent = Part67
+Weld83.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld83.C1 = CFrame.new(-0.533214211, 4.09488493e-05, -0.400390595, 6.19143847e-10, -0.000817726948, 0.999999702, 8.15887191e-10, 0.999999702, 0.000817726948, -1, 8.15380652e-10, 6.19810758e-10)
+Weld84.Parent = Part67
+Weld84.C0 = CFrame.new(5.25072437e-06, -9.04979558e-08, -6.02840373e-08, -2.12544884e-10, 0.000803425093, -0.999999702, 4.65420175e-10, 0.999999702, 0.000803425093, 1, -4.65249311e-10, -2.12918752e-10)
+Weld84.C1 = CFrame.new(3.85732619e-08, 1.708794e-06, -0.933600962, 1, 2.30016242e-10, -1.24190033e-10, 2.3550692e-10, 0.999999702, 0.000801041722, 3.36916911e-10, -0.000808192533, 0.999999702)
+Weld85.Parent = Part67
+Weld85.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld85.C1 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld86.Parent = Part67
+Weld86.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld86.C1 = CFrame.new(0.533207953, 4.02465412e-05, -0.399536252, -4.0660561e-10, 0.997999609, 0.0632200539, 3.50466517e-10, -0.0632200539, 0.997999668, 1, 4.2794876e-10, -3.24059835e-10)
+Weld87.Parent = Part67
+Weld87.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld87.C1 = CFrame.new(-3.86806875e-07, 4.67300815e-05, -0.533184648, 1, 6.89605151e-10, -1.25792432e-09, 1.29899103e-09, -0.0631973371, 0.998001039, 6.08729123e-10, -0.998001099, -0.0631973371)
+Weld88.Parent = Part67
+Weld88.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld88.C1 = CFrame.new(0.533224404, 0.373393357, -3.90072529e-07, -8.32836911e-10, 0.998000622, 0.0632058904, 1.32148736e-09, -0.0632058978, 0.998000503, 1, 9.1469754e-10, -1.26620492e-09)
+Weld89.Parent = Part67
+Weld89.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld89.C1 = CFrame.new(-1.24499784e-05, 0.132795051, 0.400390744, 3.829842e-10, -0.0632034019, 0.998000741, -4.07727963e-10, 0.998000681, 0.0632034019, -1, -4.31118696e-10, 3.56448732e-10)
+Weld90.Parent = Part67
+Weld90.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld90.C1 = CFrame.new(9.7206248e-06, -0.400390506, -0.132816374, 3.90647487e-10, -0.0632200539, 0.997999668, -1, -4.31644803e-10, 3.64087233e-10, 4.07763739e-10, -0.997999609, -0.0632200539)
+Weld91.Parent = Part67
+Weld91.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld91.C1 = CFrame.new(1.12741731e-07, 1.47659775e-05, 0.132799253, -1, -2.34147424e-10, 3.70999564e-10, 3.85058263e-10, -0.0632105544, 0.998000205, -2.10228071e-10, 0.998000264, 0.0632105544)
+Weld92.Parent = Part67
+Weld92.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld92.C1 = CFrame.new(3.39694889e-05, -0.400390744, 0.933587611, 3.49388324e-10, -0.0632092953, 0.998000324, 1, 2.67267597e-10, -3.33160693e-10, -2.45674314e-10, 0.998000324, 0.0632092878)
+Weld93.Parent = Part67
+Weld93.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld93.C1 = CFrame.new(9.72479302e-06, -0.933596671, 0.400390506, 3.70557002e-10, -0.0632200539, 0.997999668, 4.07184675e-10, -0.997999609, -0.0632200539, 1, 4.29796781e-10, -3.44073547e-10)
+Weld94.Parent = Part67
+Weld94.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld94.C1 = CFrame.new(-9.38037488e-08, -0.37332812, -0.533202708, 1, 6.78072321e-11, -4.49284138e-10, 4.52671733e-10, -0.0632067397, 0.998000443, 3.92738446e-11, -0.998000562, -0.0632067248)
+Weld95.Parent = Part67
+Weld95.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld95.C1 = CFrame.new(-0.533207953, 4.02465412e-05, -0.400390506, 4.0660561e-10, -0.997999609, -0.0632200539, 3.50466517e-10, -0.0632200539, 0.997999668, -1, -4.2794876e-10, 3.24059835e-10)
+Weld96.Parent = Part67
+Weld96.C0 = CFrame.new(4.58660736e-07, -1.05566846e-06, 0, -3.88906235e-21, 0.997999787, 0.0632176325, 5.33270982e-22, -0.0632176325, 0.997999787, 1, 3.91499535e-21, -2.86346992e-22)
+Weld96.C1 = CFrame.new(-7.07679817e-08, 2.65414451e-06, -0.933581531, 1, 1.09589553e-10, 2.37319969e-10, 2.3550692e-10, -0.0632223934, 0.997999489, 3.36916911e-10, -0.997999012, -0.0632295236)
+Weld97.Parent = Part67
+Weld97.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld97.C1 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld98.Parent = Part67
+Weld98.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld98.C1 = CFrame.new(0.533212543, 4.33809255e-05, -0.399536133, -4.77452022e-10, 0.000812952989, -0.999999702, 5.0560689e-10, 0.999999702, 0.000812952989, 1, -5.05218589e-10, -4.77862916e-10)
+Weld99.Parent = Part67
+Weld99.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld99.C1 = CFrame.new(-2.3357552e-07, 5.55160077e-05, -0.533165157, 1, -1.76372972e-09, -8.22718005e-10, 1.76440684e-09, 0.999999702, 0.000823921058, 8.21264445e-10, -0.000823920942, 0.999999762)
+Weld100.Parent = Part67
+Weld100.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld100.C1 = CFrame.new(0.533225417, 0.37339133, -1.62893741e-07, -1.04536846e-09, 0.000832025486, -0.999999642, 1.78690496e-09, 0.999999702, 0.000832025427, 1, -1.78603476e-09, -1.04685483e-09)
+Weld101.Parent = Part67
+Weld101.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld101.C1 = CFrame.new(-4.40306758e-06, 0.132771388, 0.400390655, 8.48401349e-10, 0.999999702, 0.000801038579, -6.20273943e-10, 0.000801038579, -0.999999702, -1, 8.47904247e-10, 6.20953344e-10)
+Weld102.Parent = Part67
+Weld102.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld102.C1 = CFrame.new(1.28626851e-07, -0.400390595, -0.13282387, 8.56068161e-10, 0.999999702, 0.000817724678, -1, 8.55560678e-10, 6.21001806e-10, 6.20301976e-10, -0.000817724678, 0.999999702)
+Weld103.Parent = Part67
+Weld103.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld103.C1 = CFrame.new(1.20785018e-07, 3.03727884e-05, 0.132775158, -1, 8.50133963e-10, 4.23458851e-10, 8.50476911e-10, 0.999999702, 0.000810569618, -4.22769625e-10, 0.000810569618, -0.999999702)
+Weld104.Parent = Part67
+Weld104.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld104.C1 = CFrame.new(6.63429382e-05, -0.400390744, 0.933595598, 8.14806722e-10, 0.999999702, 0.000811841746, 1, -8.14434464e-10, -4.58876631e-10, -4.58215271e-10, 0.000811841746, -0.999999702)
+Weld105.Parent = Part67
+Weld105.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld105.C1 = CFrame.new(2.15904674e-05, -0.933605134, 0.400390595, 8.35977676e-10, 0.999999702, 0.000817724678, 6.19722884e-10, -0.000817724678, 0.999999702, 1, -8.35470693e-10, -6.20406337e-10)
+Weld106.Parent = Part67
+Weld106.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld106.C1 = CFrame.new(-1.52702455e-07, -0.373297483, -0.533215165, 1, -9.17886822e-10, -2.52556753e-10, 9.18089604e-10, 0.999999702, 0.000804377254, 2.51818288e-10, -0.000804377254, 0.999999702)
+Weld107.Parent = Part67
+Weld107.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld107.C1 = CFrame.new(-0.533214509, 4.16217954e-05, -0.400390595, 6.19143847e-10, -0.000817724678, 0.999999702, 8.15887191e-10, 0.999999702, 0.000817724678, -1, 8.15380652e-10, 6.19810814e-10)
+Weld108.Parent = Part67
+Weld108.C0 = CFrame.new(5.53692553e-06, 2.04514564e-07, -6.04753154e-08, -2.12544884e-10, 0.00080342195, -0.999999702, 4.65420175e-10, 0.999999702, 0.00080342195, 1, -4.65249311e-10, -2.12918766e-10)
+Weld108.C1 = CFrame.new(3.86851866e-08, 1.33582325e-05, -0.93360126, 1, 2.30016242e-10, -1.24190033e-10, 2.3550692e-10, 0.999999702, 0.000801045971, 3.36916911e-10, -0.000808193639, 0.999999702)
+Weld109.Parent = Part67
+Weld109.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld109.C1 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld110.Parent = Part67
+Weld110.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld110.C1 = CFrame.new(0.533207655, 4.00506069e-05, -0.399536133, -2.64911593e-10, 0.997566879, -0.069715552, 4.01852024e-11, 0.0697179288, 0.9975667, 1, 1.98314268e-10, 2.08188033e-11)
+Weld111.Parent = Part67
+Weld111.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld111.C1 = CFrame.new(-4.09776021e-07, 5.64174661e-05, -0.533183694, 1, 5.16648224e-10, -1.33828371e-09, 1.29899103e-09, 0.0697453171, 0.997564912, 6.08729123e-10, -0.997564912, 0.0697453246)
+Weld112.Parent = Part67
+Weld112.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld112.C1 = CFrame.new(0.53322345, 0.373397857, -4.03579065e-07, -8.32836911e-10, 0.997565448, -0.0697367489, 1.32148736e-09, 0.0697367489, 0.997565448, 1, 7.38653139e-10, -1.37634937e-09)
+Weld113.Parent = Part67
+Weld113.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld113.C1 = CFrame.new(-9.81253652e-06, 0.132794693, 0.400390744, 3.829842e-10, 0.0697392747, 0.997565329, -4.07727963e-10, 0.997565329, -0.0697392747, -1, -3.80026233e-10, 4.10486423e-10)
+Weld114.Parent = Part67
+Weld114.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld114.C1 = CFrame.new(2.00291402e-06, -0.400390506, -0.132815465, 3.90647487e-10, 0.0697226226, 0.997566521, -1, -3.79534459e-10, 4.18127227e-10, 4.07763739e-10, -0.997566402, 0.0697226301)
+Weld115.Parent = Part67
+Weld115.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld115.C1 = CFrame.new(1.20755828e-07, 4.99412226e-06, 0.132797584, -1, -1.82865389e-10, 3.9878062e-10, 3.85058263e-10, 0.0697321221, 0.997565806, -2.10228071e-10, 0.997565746, -0.0697321221)
+Weld116.Parent = Part67
+Weld116.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld116.C1 = CFrame.new(4.74962835e-05, -0.400390744, 0.933588088, 3.49388324e-10, 0.0697333813, 0.997565746, 1, 2.20712254e-10, -3.65669495e-10, -2.45674314e-10, 0.997565746, -0.0697333887)
+Weld117.Parent = Part67
+Weld117.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld117.C1 = CFrame.new(2.00708268e-06, -0.933598638, 0.400390506, 3.70557002e-10, 0.0697226226, 0.997566521, 4.07184675e-10, -0.997566402, 0.0697226301, 1, 3.80357551e-10, -3.98045263e-10)
+Weld118.Parent = Part67
+Weld118.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld118.C1 = CFrame.new(-1.0609989e-07, -0.373298496, -0.533198833, 1, 7.61074016e-12, -4.54308563e-10, 4.52671733e-10, 0.0697359443, 0.997565567, 3.92738446e-11, -0.997565567, 0.0697359443)
+Weld119.Parent = Part67
+Weld119.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld119.C1 = CFrame.new(-0.533206105, 3.25288311e-05, -0.400390536, 4.0660561e-10, -0.997566402, 0.0697226301, 3.50466517e-10, 0.0697226226, 0.997566521, -1, -3.8118067e-10, 3.77963272e-10)
+Weld120.Parent = Part67
+Weld120.C0 = CFrame.new(-3.95431243e-07, 7.30769489e-06, 0, -3.92543285e-21, 0.997566223, -0.069725059, 1.26768054e-23, 0.069725059, 0.997566223, 1, 3.91499535e-21, -2.86346992e-22)
+Weld120.C1 = CFrame.new(-6.55530812e-08, 2.72896377e-05, -0.933581114, 1, 1.40101444e-10, 2.20685789e-10, 2.3550692e-10, 0.0697202981, 0.997566581, 3.36916911e-10, -0.997567058, 0.0697131678)
+Weld121.Parent = Part67
+Weld121.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld121.C1 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld122.Parent = Part67
+Weld122.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld122.C1 = CFrame.new(0.5332008, 8.52442608e-05, -0.399536431, -1.4692636e-09, 0.000846330251, -0.999999642, 2.67755484e-09, 0.999999702, 0.000846330193, 1, -2.67631073e-09, -1.47152912e-09)
+Weld123.Parent = Part67
+Weld123.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld123.C1 = CFrame.new(-3.54604822e-07, 7.10747918e-05, -0.533170998, 1, -2.69418865e-09, -1.24858379e-09, 2.69523404e-09, 0.999999702, 0.000838225707, 1.24632515e-09, -0.000838225707, 0.999999642)
+Weld124.Parent = Part67
+Weld124.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld124.C1 = CFrame.new(0.533231318, 0.373406291, -2.83906502e-07, -1.47042167e-09, 0.000846330251, -0.999999642, 2.71773581e-09, 0.999999702, 0.000846330193, 1, -2.71649037e-09, -1.47272128e-09)
+Weld125.Parent = Part67
+Weld125.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld125.C1 = CFrame.new(5.93345294e-06, 0.132752568, 0.400390923, 2.71005463e-09, 0.999999702, 0.000829644501, -1.47042467e-09, 0.000829644501, -0.999999642, -1, 2.70883382e-09, 1.47267265e-09)
+Weld126.Parent = Part67
+Weld126.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld126.C1 = CFrame.new(8.4651374e-06, -0.400390327, -0.132810175, 2.71773581e-09, 0.999999702, 0.000846330193, -1, 2.71649037e-09, 1.47272128e-09, 1.47042167e-09, -0.000846330251, 0.999999642)
+Weld127.Parent = Part67
+Weld127.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld127.C1 = CFrame.new(3.62762336e-07, 2.95230384e-05, 0.132817402, -1, 2.71106715e-09, 1.27517807e-09, 2.71213629e-09, 0.999999702, 0.000839179265, -1.27290256e-09, 0.000839179265, -0.999999642)
+Weld128.Parent = Part67
+Weld128.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld128.C1 = CFrame.new(0.000142092002, -0.400391012, 0.93360728, 2.67646505e-09, 0.999999702, 0.000840450521, 1, -2.6753646e-09, -1.31059485e-09, -1.30834588e-09, 0.000840450521, -0.999999642)
+Weld129.Parent = Part67
+Weld129.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld129.C1 = CFrame.new(0.000101452555, -0.933591425, 0.400390327, 2.69764522e-09, 0.999999702, 0.000846330193, 1.46984258e-09, -0.000846330251, 0.999999642, 1, -2.69640044e-09, -1.47212509e-09)
+Weld130.Parent = Part67
+Weld130.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld130.C1 = CFrame.new(-3.94687646e-07, -0.373256177, -0.533165812, 1, -2.77882695e-09, -1.10427789e-09, 2.77974577e-09, 0.999999702, 0.000832981663, 1.10196274e-09, -0.000832981663, 0.999999642)
+Weld131.Parent = Part67
+Weld131.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld131.C1 = CFrame.new(-0.5332008, 8.52442608e-05, -0.400390327, 1.4692636e-09, -0.000846330251, 0.999999642, 2.67755484e-09, 0.999999702, 0.000846330193, -1, 2.67631073e-09, 1.47152912e-09)
+Weld132.Parent = Part67
+Weld132.C0 = CFrame.new(1.14122267e-05, 2.31042439e-08, -1.81467669e-07, -6.37624675e-10, 0.000817726715, -0.999999762, 1.396256e-09, 0.999999702, 0.000817726832, 1, -1.39573431e-09, -6.38766207e-10)
+Weld132.C1 = CFrame.new(-2.17958132e-08, 2.16124681e-05, -0.933588922, 1, -7.00479896e-10, -5.50027579e-10, 7.00928149e-10, 0.999999702, 0.000815343345, 5.49456258e-10, -0.000815343345, 0.999999702)
+Weld133.Parent = Part67
+Weld133.C0 = CFrame.new(2.73681553e-06, -7.9203943e-08, -1.32984567e-07, -1, 4.29049651e-05, 1.27289645e-09, 4.29049651e-05, 1, -2.71216405e-09, -1.27303168e-09, -2.7121092e-09, -1)
+Weld133.C1 = CFrame.new(2.73681553e-06, -7.9203943e-08, -1.32984567e-07, -1, 4.29049651e-05, 1.27289645e-09, 4.29049651e-05, 1, -2.71216405e-09, -1.27303168e-09, -2.7121092e-09, -1)
+Weld134.Parent = Part67
+Weld134.C0 = CFrame.new(2.58500165e-07, 1.47510104e-06, 9.1201764e-07, -0.0304826926, -0.998224854, 0.0511664115, -0.997482359, 0.027100971, -0.0655324385, 0.0640294328, -0.0530351698, -0.996537805)
+Weld134.C1 = CFrame.new(2.58500165e-07, 1.47510104e-06, 9.1201764e-07, -0.0304826926, -0.998224854, 0.0511664115, -0.997482359, 0.027100971, -0.0655324385, 0.0640294328, -0.0530351698, -0.996537805)
+Weld135.Parent = Part67
+Weld135.C0 = CFrame.new(5.81937775e-06, 3.66444342e-09, 4.0117655e-07, -1, 1.83190277e-05, 1.62574338e-07, 1.82680233e-05, 1, -5.43802935e-06, -1.05692934e-07, -5.39845632e-06, -1.00000012)
+Weld135.C1 = CFrame.new(5.81937775e-06, 3.66444342e-09, 4.0117655e-07, -1, 1.83190277e-05, 1.62574338e-07, 1.82680233e-05, 1, -5.43802935e-06, -1.05692934e-07, -5.39845632e-06, -1.00000012)
+Weld136.Parent = Part67
+Weld136.C0 = CFrame.new(5.19993637e-06, -2.07580495e-08, -4.3925632e-09, -0.99999994, -7.85102384e-06, 1.626222e-07, -7.9020283e-06, 1, -7.75445642e-06, -1.05581343e-07, -7.71488703e-06, -1.00000012)
+Weld136.C1 = CFrame.new(5.19993637e-06, -2.07580495e-08, -4.3925632e-09, -0.99999994, -7.85102384e-06, 1.626222e-07, -7.9020283e-06, 1, -7.75445642e-06, -1.05581343e-07, -7.71488703e-06, -1.00000012)
+Weld137.Parent = Part67
+Weld137.C0 = CFrame.new(-4.51719643e-07, 1.87397453e-09, -3.76758157e-06, -0.999999821, -3.77100787e-06, -6.00899241e-09, -3.82201188e-06, 1, -4.80523522e-06, 6.30072776e-08, -4.76566538e-06, -1.00000012)
+Weld137.C1 = CFrame.new(-4.51719643e-07, 1.87397453e-09, -3.76758157e-06, -0.999999821, -3.77100787e-06, -6.00899241e-09, -3.82201188e-06, 1, -4.80523522e-06, 6.30072776e-08, -4.76566538e-06, -1.00000012)
+Weld138.Parent = Part67
+Weld138.C0 = CFrame.new(1.26816673e-07, -2.34453221e-08, 5.90223294e-07, -0.999999762, -1.85550198e-05, -5.83594151e-09, -1.86060279e-05, 1, -8.11173049e-06, 6.29660306e-08, -8.07215929e-06, -1.00000012)
+Weld138.C1 = CFrame.new(1.26816673e-07, -2.34453221e-08, 5.90223294e-07, -0.999999762, -1.85550198e-05, -5.83594151e-09, -1.86060279e-05, 1, -8.11173049e-06, 6.29660306e-08, -8.07215929e-06, -1.00000012)
+Weld139.Parent = Part67
+Weld139.C0 = CFrame.new(8.01678993e-07, -1.1426212e-08, -1.10775409e-06, -0.999999702, -1.59489209e-05, -5.85270321e-09, -1.5999929e-05, 1, -9.83655082e-06, 6.29892654e-08, -9.79697961e-06, -1.00000012)
+Weld139.C1 = CFrame.new(8.01678993e-07, -1.1426212e-08, -1.10775409e-06, -0.999999702, -1.59489209e-05, -5.85270321e-09, -1.5999929e-05, 1, -9.83655082e-06, 6.29892654e-08, -9.79697961e-06, -1.00000012)
+Weld140.Parent = Part67
+Weld140.C0 = CFrame.new(1.07855703e-06, -1.98978043e-08, -4.36352309e-07, -0.999999642, -1.87142232e-05, -3.42939558e-07, -1.87652277e-05, 1, -1.32089617e-05, 4.00166499e-07, -1.31693841e-05, -1.00000012)
+Weld140.C1 = CFrame.new(1.07855703e-06, -1.98978043e-08, -4.36352309e-07, -0.999999642, -1.87142232e-05, -3.42939558e-07, -1.87652277e-05, 1, -1.32089617e-05, 4.00166499e-07, -1.31693841e-05, -1.00000012)
+Weld141.Parent = Part67
+Weld141.C0 = CFrame.new(-2.96131202e-06, 1.15200116e-08, -5.08313747e-08, -0.999999583, -2.1935306e-05, -3.42888029e-07, -2.19863105e-05, 1, -1.28208176e-05, 4.00148849e-07, -1.27812382e-05, -1.00000012)
+Weld141.C1 = CFrame.new(-2.96131202e-06, 1.15200116e-08, -5.08313747e-08, -0.999999583, -2.1935306e-05, -3.42888029e-07, -2.19863105e-05, 1, -1.28208176e-05, 4.00148849e-07, -1.27812382e-05, -1.00000012)
+Sound142.Name = "EatSound"
+Sound142.Parent = Part67
+Sound142.SoundId = "http://www.roblox.com/asset/?id=15047813"
+SpecialMesh143.Parent = Part67
+SpecialMesh143.MeshId = "http://www.roblox.com/asset/?id=20939848"
+SpecialMesh143.Scale = Vector3.new(0.4000000059604645, 0.4000000059604645, 0.4000000059604645)
+SpecialMesh143.TextureId = "http://www.roblox.com/asset/?id=21456464"
+SpecialMesh143.MeshType = Enum.MeshType.FileMesh
+NumberValue144.Name = "Bites"
+NumberValue144.Parent = Tool66
+NumberValue144.Value = 5
+StringValue145.Name = "Info"
+StringValue145.Parent = Tool66
+StringValue145.Value = "Cookie"
+Script146.Name = "CookieScript"
+Script146.Parent = Tool66
+table.insert(cors,sandbox(Script146,function()
+local Tool = script.Parent
+
+enabled = true
+
+
+
+
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	Tool.GripForward = Vector3.new(0.439, 0.878, 0.189)
+	Tool.GripPos = Vector3.new(-0.3, 1.2, -1.3)
+	Tool.GripRight = Vector3.new(0.0844, 0.169, -0.982)
+	Tool.GripUp = Vector3.new(0.894, -0.347, 0)
+
+
+	Tool.Handle.EatSound:Play()
+
+script.Parent.Bites.Value = script.Parent.Bites.Value + 1
+	wait(.8)
+	
+Eable()
+	local h = Tool.Parent:FindFirstChild("Humanoid")
+	if (h ~= nil) then
+		if (h.MaxHealth > h.Health + 1.6) then
+			h.Health = h.Health + 1.6
+		else	
+			h.Health = h.MaxHealth
+		end
+	end
+
+	Tool.GripForward = Vector3.new(-1, 1, -0)
+	Tool.GripPos = Vector3.new(0.1, -0.3, 0)
+	Tool.GripRight = Vector3.new(0,0, -1)
+	Tool.GripUp = Vector3.new(1,0,0)
+
+
+	enabled = true
+
+end
+
+function onEquipped()
+
+end
+
+script.Parent.Activated:Connect(onActivated)
+script.Parent.Equipped:Connect(onEquipped)
+
+
+script.Parent.Handle.Touched:Connect(onTouch)
+
+function Eable()
+if (script.Parent.Bites.Value) > 2 then 
+script.Parent:Remove()
+end
+end
+
+
+end))
+Script147.Name = "PUT THIS IN THE WEAPON"
+Script147.Parent = Tool66
+table.insert(cors,sandbox(Script147,function()
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end))
+Tool148.Name = "DrPepper"
+Tool148.Parent = Model0
+Tool148.TextureId = "http://www.roblox.com/asset/?id="
+Tool148.Grip = CFrame.new(-0.150000006, 0, -0.300000012, 0.217036352, 0, 0.976163507, 0, 1, -0, -0.976163507, 0, 0.217036352)
+Tool148.GripForward = Vector3.new(-0.9761635065078735, 0, -0.21703635156154633)
+Tool148.GripPos = Vector3.new(-0.15000000596046448, 0, -0.30000001192092896)
+Tool148.GripRight = Vector3.new(0.21703635156154633, 0, -0.9761635065078735)
+Part149.Name = "Handle"
+Part149.Parent = Tool148
+Part149.CFrame = CFrame.new(-0.947593689, 5.38993168, 0.463340759, -0.999999881, 8.63809305e-07, 2.70009041e-05, 8.6371108e-07, 1, -3.66249242e-06, -2.70009041e-05, -3.66246923e-06, -0.999999881)
+Part149.Orientation = Vector3.new(0, 180, 0)
+Part149.Position = Vector3.new(-0.9475936889648438, 5.389931678771973, 0.46334075927734375)
+Part149.Rotation = Vector3.new(180, 0, -180)
+Part149.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part149.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part149.BottomSurface = Enum.SurfaceType.Smooth
+Part149.BrickColor = BrickColor.new("Mid gray")
+Part149.Material = Enum.Material.SmoothPlastic
+Part149.TopSurface = Enum.SurfaceType.Smooth
+Part149.brickColor = BrickColor.new("Mid gray")
+Part149.FormFactor = Enum.FormFactor.Plate
+Part149.formFactor = Enum.FormFactor.Plate
+SpecialMesh150.Parent = Part149
+SpecialMesh150.MeshId = "http://www.roblox.com/asset/?id=10470609"
+SpecialMesh150.Scale = Vector3.new(1.2000000476837158, 1.2000000476837158, 1.2000000476837158)
+SpecialMesh150.TextureId = "http://www.roblox.com/asset/?id=38857290"
+SpecialMesh150.MeshType = Enum.MeshType.FileMesh
+Sound151.Name = "DrinkSound"
+Sound151.Parent = Part149
+Sound151.SoundId = "http://www.roblox.com/asset/?id=10722059"
+Sound152.Name = "OpenSound"
+Sound152.Parent = Part149
+Sound152.SoundId = "http://www.roblox.com/asset/?id=10721950"
+Script153.Name = "BloxyColaScript"
+Script153.Parent = Tool148
+table.insert(cors,sandbox(Script153,function()
+local Tool = script.Parent;
+
+enabled = true
+
+
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.8,0.5,-0.1) * CFrame.Angles(0.4,2.4,0)
+
+	Tool.Handle.DrinkSound:Play()
+
+	for i = 1,30 do
+	wait(0.1)
+	Player.Humanoid.Health = Player.Humanoid.Health + 1
+	end
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+	wait(0.5)
+	enabled = true
+end
+
+function onEquipped()
+	Player = script.Parent.Parent
+	Tool.Handle.OpenSound:play()
+end
+
+function onEnequipped()
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+end
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+script.Parent.Unequipped:connect(onEnequipped)
+
+end))
+Tool154.Name = "MountainDew"
+Tool154.Parent = Model0
+Tool154.TextureId = "http://www.roblox.com/asset/?id="
+Tool154.Grip = CFrame.new(-0.150000006, 0, -0.300000012, 0.217036352, 0, 0.976163507, 0, 1, -0, -0.976163507, 0, 0.217036352)
+Tool154.GripForward = Vector3.new(-0.9761635065078735, 0, -0.21703635156154633)
+Tool154.GripPos = Vector3.new(-0.15000000596046448, 0, -0.30000001192092896)
+Tool154.GripRight = Vector3.new(0.21703635156154633, 0, -0.9761635065078735)
+Part155.Name = "Handle"
+Part155.Parent = Tool154
+Part155.CFrame = CFrame.new(-0.947349548, 5.38993454, 2.4635849, 7.41414333e-05, 9.81240078e-07, -1, 1.11201075e-06, 1, 9.81322614e-07, 1, -1.11208351e-06, 7.41414333e-05)
+Part155.Orientation = Vector3.new(0, -90, 0)
+Part155.Position = Vector3.new(-0.9473495483398438, 5.389934539794922, 2.4635848999023438)
+Part155.Rotation = Vector3.new(0, -90, 0)
+Part155.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part155.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part155.BottomSurface = Enum.SurfaceType.Smooth
+Part155.BrickColor = BrickColor.new("Mid gray")
+Part155.Material = Enum.Material.SmoothPlastic
+Part155.TopSurface = Enum.SurfaceType.Smooth
+Part155.brickColor = BrickColor.new("Mid gray")
+Part155.FormFactor = Enum.FormFactor.Plate
+Part155.formFactor = Enum.FormFactor.Plate
+SpecialMesh156.Parent = Part155
+SpecialMesh156.MeshId = "http://www.roblox.com/asset/?id=10470609"
+SpecialMesh156.Scale = Vector3.new(1.2000000476837158, 1.2000000476837158, 1.2000000476837158)
+SpecialMesh156.TextureId = "http://www.roblox.com/asset/?id=29796694"
+SpecialMesh156.MeshType = Enum.MeshType.FileMesh
+Sound157.Name = "DrinkSound"
+Sound157.Parent = Part155
+Sound157.SoundId = "http://www.roblox.com/asset/?id=10722059"
+Sound158.Name = "OpenSound"
+Sound158.Parent = Part155
+Sound158.SoundId = "http://www.roblox.com/asset/?id=10721950"
+Script159.Name = "BloxyColaScript"
+Script159.Parent = Tool154
+table.insert(cors,sandbox(Script159,function()
+local Tool = script.Parent;
+
+enabled = true
+
+
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.8,0.5,-0.1) * CFrame.Angles(0.4,2.4,0)
+
+	Tool.Handle.DrinkSound:Play()
+
+	for i = 1,30 do
+	wait(0.1)
+	Player.Humanoid.Health = Player.Humanoid.Health + 1
+	end
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+	wait(0.5)
+	enabled = true
+end
+
+function onEquipped()
+	Player = script.Parent.Parent
+	Tool.Handle.OpenSound:play()
+end
+
+function onEnequipped()
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+end
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+script.Parent.Unequipped:connect(onEnequipped)
+
+end))
+Tool160.Name = "Sprite"
+Tool160.Parent = Model0
+Tool160.TextureId = "http://www.roblox.com/asset/?id="
+Tool160.Grip = CFrame.new(-0.150000006, 0, -0.300000012, 0.217036352, 0, 0.976163507, 0, 1, -0, -0.976163507, 0, 0.217036352)
+Tool160.GripForward = Vector3.new(-0.9761635065078735, 0, -0.21703635156154633)
+Tool160.GripPos = Vector3.new(-0.15000000596046448, 0, -0.30000001192092896)
+Tool160.GripRight = Vector3.new(0.21703635156154633, 0, -0.9761635065078735)
+Part161.Name = "Handle"
+Part161.Parent = Tool160
+Part161.CFrame = CFrame.new(-0.947593689, 3.79008007, 2.4635849, -3.0147803e-05, 5.71552221e-07, -1, 1.2934554e-06, 1, 5.71513226e-07, 1, -1.29343812e-06, -3.0147803e-05)
+Part161.Orientation = Vector3.new(0, -90, 0)
+Part161.Position = Vector3.new(-0.9475936889648438, 3.7900800704956055, 2.4635848999023438)
+Part161.Rotation = Vector3.new(0, -90, 0)
+Part161.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part161.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part161.BottomSurface = Enum.SurfaceType.Smooth
+Part161.BrickColor = BrickColor.new("Mid gray")
+Part161.Material = Enum.Material.SmoothPlastic
+Part161.TopSurface = Enum.SurfaceType.Smooth
+Part161.brickColor = BrickColor.new("Mid gray")
+Part161.FormFactor = Enum.FormFactor.Plate
+Part161.formFactor = Enum.FormFactor.Plate
+SpecialMesh162.Parent = Part161
+SpecialMesh162.MeshId = "http://www.roblox.com/asset/?id=10470609"
+SpecialMesh162.Scale = Vector3.new(1.2000000476837158, 1.2000000476837158, 1.2000000476837158)
+SpecialMesh162.TextureId = "http://www.roblox.com/asset/?id=19444172"
+SpecialMesh162.MeshType = Enum.MeshType.FileMesh
+Sound163.Name = "DrinkSound"
+Sound163.Parent = Part161
+Sound163.SoundId = "http://www.roblox.com/asset/?id=10722059"
+Sound164.Name = "OpenSound"
+Sound164.Parent = Part161
+Sound164.SoundId = "http://www.roblox.com/asset/?id=10721950"
+Script165.Name = "BloxyColaScript"
+Script165.Parent = Tool160
+table.insert(cors,sandbox(Script165,function()
+local Tool = script.Parent;
+
+enabled = true
+
+
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.8,0.5,-0.1) * CFrame.Angles(0.4,2.4,0)
+
+	Tool.Handle.DrinkSound:Play()
+
+	for i = 1,30 do
+	wait(0.1)
+	Player.Humanoid.Health = Player.Humanoid.Health + 1
+	end
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+	wait(0.5)
+	enabled = true
+end
+
+function onEquipped()
+	Player = script.Parent.Parent
+	Tool.Handle.OpenSound:play()
+end
+
+function onEnequipped()
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+end
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+script.Parent.Unequipped:connect(onEnequipped)
+
+end))
+Part166.Name = "AWB"
+Part166.Parent = Model0
+Part166.CFrame = CFrame.new(1.75241852, 6.29999971, -2.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part166.Orientation = Vector3.new(-90, -90, 0)
+Part166.Position = Vector3.new(1.7524185180664062, 6.299999713897705, -2.5366592407226562)
+Part166.Rotation = Vector3.new(-90, 0, -90)
+Part166.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part166.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part166.Anchored = true
+Part166.BackSurface = Enum.SurfaceType.Weld
+Part166.BottomSurface = Enum.SurfaceType.Weld
+Part166.BrickColor = BrickColor.new("White")
+Part166.FrontSurface = Enum.SurfaceType.Weld
+Part166.LeftSurface = Enum.SurfaceType.Weld
+Part166.Material = Enum.Material.SmoothPlastic
+Part166.RightSurface = Enum.SurfaceType.Weld
+Part166.TopSurface = Enum.SurfaceType.Smooth
+Part166.brickColor = BrickColor.new("White")
+Part166.FormFactor = Enum.FormFactor.Plate
+Part166.formFactor = Enum.FormFactor.Plate
+ClickDetector167.Parent = Part166
+Decal168.Parent = Part166
+Decal168.Texture = "http://www.roblox.com/asset/?id=27158173"
+Decal168.Face = Enum.NormalId.Top
+Script169.Parent = Part166
+table.insert(cors,sandbox(Script169,function()
+local drink = script.Parent.Parent.DrPepper
+local spot = script.Parent.Parent.Holder
+local db = false
+
+function onClick()
+	if db == false then
+		db = true
+		local d = drink:clone()
+		d.Handle.Position = spot.Position
+		d.Parent = game.Workspace
+		d.Handle.Anchored = false
+		wait(5)
+		db = false
+	end
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClick)
+
+end))
+Weld170.Parent = Part166
+Weld170.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld170.C1 = CFrame.new(0, 1.29999828, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld170.Part0 = Part166
+Weld170.Part1 = Part11
+Weld170.part1 = Part11
+Weld171.Parent = Part166
+Weld171.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld171.C1 = CFrame.new(0, 1.29999828, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld171.Part0 = Part166
+Weld171.Part1 = Part11
+Weld171.part1 = Part11
+Weld172.Parent = Part166
+Weld172.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld172.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld172.Part0 = Part166
+Weld172.Part1 = Part15
+Weld172.part1 = Part15
+Weld173.Parent = Part166
+Weld173.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld173.C1 = CFrame.new(0, 1.29999828, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld173.Part0 = Part166
+Weld173.Part1 = Part11
+Weld173.part1 = Part11
+Weld174.Parent = Part166
+Weld174.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld174.C1 = CFrame.new(0, 1.29999828, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld174.Part0 = Part166
+Weld174.Part1 = Part11
+Weld174.part1 = Part11
+Weld175.Parent = Part166
+Weld175.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld175.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld175.Part0 = Part166
+Weld175.Part1 = Part15
+Weld175.part1 = Part15
+Tool176.Name = "EpicSnack"
+Tool176.Parent = Model0
+Part177.Name = "Handle"
+Part177.Parent = Tool176
+Part177.CFrame = CFrame.new(-0.947593689, 7.00000238, -0.536659241, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part177.Orientation = Vector3.new(0, -90, 0)
+Part177.Position = Vector3.new(-0.9475936889648438, 7.000002384185791, -0.5366592407226562)
+Part177.Rotation = Vector3.new(0, -90, 0)
+Part177.Color = Color3.new(1, 1, 0)
+Part177.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part177.Anchored = true
+Part177.BottomSurface = Enum.SurfaceType.Smooth
+Part177.BrickColor = BrickColor.new("New Yeller")
+Part177.Material = Enum.Material.SmoothPlastic
+Part177.TopSurface = Enum.SurfaceType.Smooth
+Part177.brickColor = BrickColor.new("New Yeller")
+Part177.FormFactor = Enum.FormFactor.Plate
+Part177.formFactor = Enum.FormFactor.Plate
+Decal178.Parent = Part177
+Decal178.Texture = "http://www.roblox.com/asset/?id=22644329"
+LocalScript179.Name = "Local Gui"
+LocalScript179.Parent = Tool176
+table.insert(cors,sandbox(LocalScript179,function()
+local Tool = script.Parent;
+
+enabled = true
+
+function onButton1Down(mouse)
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	Tool.GripForward = Vector3.new(-0,-0,1)
+	Tool.GripPos = Vector3.new(-1.5, -0.7, -0.3)
+	Tool.GripRight = Vector3.new(-1, 0, 0)
+	Tool.GripUp = Vector3.new(0, 1, 0)
+	wait(1)
+	Tool.GripForward = Vector3.new(-0,-0,1)
+	Tool.GripPos = Vector3.new(-1.5, -0.7, 0.2)
+	Tool.GripRight = Vector3.new(-1, 0, 0)
+	Tool.GripUp = Vector3.new(0, 1, 0)
+	wait(1)
+	Tool.GripForward = Vector3.new(-0,-0,1)
+	Tool.GripPos = Vector3.new(-1.5, -0.7, 0.6)
+	Tool.GripRight = Vector3.new(-1, 0, 0)
+	Tool.GripUp = Vector3.new(0, 1, 0)
+	wait(1)
+	Tool.Parent.Humanoid.Health = Tool.Parent.Humanoid.Health - 0
+	script.Parent:remove()
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\ArrowCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)
+
+end))
+Tool180.Name = "Coke"
+Tool180.Parent = Model0
+Tool180.TextureId = "http://www.roblox.com/asset/?id="
+Tool180.Grip = CFrame.new(-0.150000006, 0, -0.300000012, 0.217036352, 0, 0.976163507, 0, 1, -0, -0.976163507, 0, 0.217036352)
+Tool180.GripForward = Vector3.new(-0.9761635065078735, 0, -0.21703635156154633)
+Tool180.GripPos = Vector3.new(-0.15000000596046448, 0, -0.30000001192092896)
+Tool180.GripRight = Vector3.new(0.21703635156154633, 0, -0.9761635065078735)
+Part181.Name = "Handle"
+Part181.Parent = Tool180
+Part181.CFrame = CFrame.new(-0.947593689, 5.38993454, -1.53665924, 2.73479704e-21, 9.64831407e-16, -1, -9.64751786e-16, 1, 9.64831407e-16, 1, 9.64751786e-16, 2.73479704e-21)
+Part181.Orientation = Vector3.new(0, -90, 0)
+Part181.Position = Vector3.new(-0.9475936889648438, 5.389934539794922, -1.5366592407226562)
+Part181.Rotation = Vector3.new(0, -90, 0)
+Part181.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part181.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part181.BottomSurface = Enum.SurfaceType.Smooth
+Part181.BrickColor = BrickColor.new("Mid gray")
+Part181.Material = Enum.Material.SmoothPlastic
+Part181.TopSurface = Enum.SurfaceType.Smooth
+Part181.brickColor = BrickColor.new("Mid gray")
+Part181.FormFactor = Enum.FormFactor.Plate
+Part181.formFactor = Enum.FormFactor.Plate
+SpecialMesh182.Parent = Part181
+SpecialMesh182.MeshId = "http://www.roblox.com/asset/?id=10470609"
+SpecialMesh182.Scale = Vector3.new(1.2000000476837158, 1.2000000476837158, 1.2000000476837158)
+SpecialMesh182.TextureId = "http://www.roblox.com/asset/?id=41631664"
+SpecialMesh182.MeshType = Enum.MeshType.FileMesh
+Sound183.Name = "DrinkSound"
+Sound183.Parent = Part181
+Sound183.SoundId = "http://www.roblox.com/asset/?id=10722059"
+Sound184.Name = "OpenSound"
+Sound184.Parent = Part181
+Sound184.SoundId = "http://www.roblox.com/asset/?id=10721950"
+Script185.Name = "BloxyColaScript"
+Script185.Parent = Tool180
+table.insert(cors,sandbox(Script185,function()
+local Tool = script.Parent;
+
+enabled = true
+
+
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.8,0.5,-0.1) * CFrame.Angles(0.4,2.4,0)
+
+	Tool.Handle.DrinkSound:Play()
+
+	for i = 1,30 do
+	wait(0.1)
+	Player.Humanoid.Health = Player.Humanoid.Health + 1
+	end
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+	wait(0.5)
+	enabled = true
+end
+
+function onEquipped()
+	Player = script.Parent.Parent
+	Tool.Handle.OpenSound:play()
+end
+
+function onEnequipped()
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+end
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+script.Parent.Unequipped:connect(onEnequipped)
+
+end))
+Tool186.Name = "Pepsi"
+Tool186.Parent = Model0
+Tool186.TextureId = "http://www.roblox.com/asset/?id="
+Tool186.Grip = CFrame.new(-0.150000006, 0, -0.300000012, 0.217036352, 0, 0.976163507, 0, 1, -0, -0.976163507, 0, 0.217036352)
+Tool186.GripForward = Vector3.new(-0.9761635065078735, 0, -0.21703635156154633)
+Tool186.GripPos = Vector3.new(-0.15000000596046448, 0, -0.30000001192092896)
+Tool186.GripRight = Vector3.new(0.21703635156154633, 0, -0.9761635065078735)
+Part187.Name = "Handle"
+Part187.Parent = Tool186
+Part187.CFrame = CFrame.new(-0.947105408, 6.98993444, -1.53665924, -3.09184834e-05, -2.50413734e-07, -1, -2.01861371e-06, 1, -2.5035132e-07, 1, 2.01860598e-06, -3.09184834e-05)
+Part187.Orientation = Vector3.new(0, -90, 0)
+Part187.Position = Vector3.new(-0.9471054077148438, 6.98993444442749, -1.5366592407226562)
+Part187.Rotation = Vector3.new(0, -90, 0)
+Part187.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part187.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part187.BottomSurface = Enum.SurfaceType.Smooth
+Part187.BrickColor = BrickColor.new("Mid gray")
+Part187.Material = Enum.Material.SmoothPlastic
+Part187.TopSurface = Enum.SurfaceType.Smooth
+Part187.brickColor = BrickColor.new("Mid gray")
+Part187.FormFactor = Enum.FormFactor.Plate
+Part187.formFactor = Enum.FormFactor.Plate
+SpecialMesh188.Parent = Part187
+SpecialMesh188.MeshId = "http://www.roblox.com/asset/?id=10470609"
+SpecialMesh188.Scale = Vector3.new(1.2000000476837158, 1.2000000476837158, 1.2000000476837158)
+SpecialMesh188.TextureId = "http://www.roblox.com/asset/?id=38857026"
+SpecialMesh188.MeshType = Enum.MeshType.FileMesh
+Sound189.Name = "DrinkSound"
+Sound189.Parent = Part187
+Sound189.SoundId = "http://www.roblox.com/asset/?id=10722059"
+Sound190.Name = "OpenSound"
+Sound190.Parent = Part187
+Sound190.SoundId = "http://www.roblox.com/asset/?id=10721950"
+Script191.Name = "BloxyColaScript"
+Script191.Parent = Tool186
+table.insert(cors,sandbox(Script191,function()
+local Tool = script.Parent;
+
+enabled = true
+
+
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.8,0.5,-0.1) * CFrame.Angles(0.4,2.4,0)
+
+	Tool.Handle.DrinkSound:Play()
+
+	for i = 1,30 do
+	wait(0.1)
+	Player.Humanoid.Health = Player.Humanoid.Health + 1
+	end
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+	wait(0.5)
+	enabled = true
+end
+
+function onEquipped()
+	Player = script.Parent.Parent
+	Tool.Handle.OpenSound:play()
+end
+
+function onEnequipped()
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+end
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+script.Parent.Unequipped:connect(onEnequipped)
+
+end))
+Part192.Name = "ColaB"
+Part192.Parent = Model0
+Part192.CFrame = CFrame.new(1.75241852, 5.29999971, -3.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part192.Orientation = Vector3.new(-90, -90, 0)
+Part192.Position = Vector3.new(1.7524185180664062, 5.299999713897705, -3.5366592407226562)
+Part192.Rotation = Vector3.new(-90, 0, -90)
+Part192.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part192.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part192.Anchored = true
+Part192.BackSurface = Enum.SurfaceType.Weld
+Part192.BottomSurface = Enum.SurfaceType.Weld
+Part192.BrickColor = BrickColor.new("White")
+Part192.FrontSurface = Enum.SurfaceType.Weld
+Part192.LeftSurface = Enum.SurfaceType.Weld
+Part192.Material = Enum.Material.SmoothPlastic
+Part192.RightSurface = Enum.SurfaceType.Weld
+Part192.TopSurface = Enum.SurfaceType.Smooth
+Part192.brickColor = BrickColor.new("White")
+Part192.FormFactor = Enum.FormFactor.Plate
+Part192.formFactor = Enum.FormFactor.Plate
+ClickDetector193.Parent = Part192
+Decal194.Parent = Part192
+Decal194.Texture = "http://www.roblox.com/asset/?id=12804183"
+Decal194.Face = Enum.NormalId.Top
+Script195.Parent = Part192
+table.insert(cors,sandbox(Script195,function()
+local drink = script.Parent.Parent.Coke
+local spot = script.Parent.Parent.Holder
+local db = false
+
+function onClick()
+	if db == false then
+		db = true
+		local d = drink:clone()
+		d.Handle.Position = spot.Position
+		d.Parent = game.Workspace
+		d.Handle.Anchored = false
+		wait(5)
+		db = false
+	end
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClick)
+
+end))
+Weld196.Parent = Part192
+Weld196.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld196.C1 = CFrame.new(-0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Weld196.Part0 = Part192
+Weld196.Part1 = Part15
+Weld196.part1 = Part15
+Weld197.Parent = Part192
+Weld197.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld197.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld197.Part0 = Part192
+Weld197.Part1 = Part208
+Weld197.part1 = Part208
+Weld198.Parent = Part192
+Weld198.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld198.C1 = CFrame.new(-0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Weld198.Part0 = Part192
+Weld198.Part1 = Part15
+Weld198.part1 = Part15
+Weld199.Parent = Part192
+Weld199.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld199.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld199.Part0 = Part192
+Weld199.Part1 = Part208
+Weld199.part1 = Part208
+Weld200.Parent = Part192
+Weld200.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld200.C1 = CFrame.new(0, -0.0999994278, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld200.Part0 = Part192
+Weld200.Part1 = Part24
+Weld200.part1 = Part24
+Part201.Name = "LaysB"
+Part201.Parent = Model0
+Part201.CFrame = CFrame.new(1.75241852, 4.29999971, -2.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part201.Orientation = Vector3.new(-90, -90, 0)
+Part201.Position = Vector3.new(1.7524185180664062, 4.299999713897705, -2.5366592407226562)
+Part201.Rotation = Vector3.new(-90, 0, -90)
+Part201.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part201.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part201.Anchored = true
+Part201.BackSurface = Enum.SurfaceType.Weld
+Part201.BottomSurface = Enum.SurfaceType.Weld
+Part201.BrickColor = BrickColor.new("White")
+Part201.FrontSurface = Enum.SurfaceType.Weld
+Part201.LeftSurface = Enum.SurfaceType.Weld
+Part201.Material = Enum.Material.SmoothPlastic
+Part201.RightSurface = Enum.SurfaceType.Weld
+Part201.TopSurface = Enum.SurfaceType.Smooth
+Part201.brickColor = BrickColor.new("White")
+Part201.FormFactor = Enum.FormFactor.Plate
+Part201.formFactor = Enum.FormFactor.Plate
+ClickDetector202.Parent = Part201
+Decal203.Parent = Part201
+Decal203.Texture = "http://www.roblox.com/asset/?id=7997610"
+Decal203.Face = Enum.NormalId.Top
+Script204.Parent = Part201
+table.insert(cors,sandbox(Script204,function()
+local drink = script.Parent.Parent.Doritos
+local spot = script.Parent.Parent.Holder
+local db = false
+
+function onClick()
+	if db == false then
+		db = true
+		local d = drink:clone()
+		d.Handle.Position = spot.Position
+		d.Parent = game.Workspace
+		d.Handle.Anchored = false
+		wait(5)
+		db = false
+	end
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClick)
+
+end))
+Weld205.Parent = Part201
+Weld205.C0 = CFrame.new(-0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld205.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld205.Part0 = Part201
+Weld205.Part1 = Part208
+Weld205.part1 = Part208
+Weld206.Parent = Part201
+Weld206.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld206.C1 = CFrame.new(0, -0.699999809, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld206.Part0 = Part201
+Weld206.Part1 = Part11
+Weld206.part1 = Part11
+Weld207.Parent = Part201
+Weld207.C0 = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld207.C1 = CFrame.new(0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld207.Part0 = Part201
+Weld207.Part1 = Part15
+Weld207.part1 = Part15
+Part208.Name = "WAFFLEB"
+Part208.Parent = Model0
+Part208.CFrame = CFrame.new(1.75241852, 4.29999971, -3.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part208.Orientation = Vector3.new(-90, -90, 0)
+Part208.Position = Vector3.new(1.7524185180664062, 4.299999713897705, -3.5366592407226562)
+Part208.Rotation = Vector3.new(-90, 0, -90)
+Part208.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part208.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part208.Anchored = true
+Part208.BackSurface = Enum.SurfaceType.Weld
+Part208.BottomSurface = Enum.SurfaceType.Weld
+Part208.BrickColor = BrickColor.new("White")
+Part208.FrontSurface = Enum.SurfaceType.Weld
+Part208.LeftSurface = Enum.SurfaceType.Weld
+Part208.Material = Enum.Material.SmoothPlastic
+Part208.RightSurface = Enum.SurfaceType.Weld
+Part208.TopSurface = Enum.SurfaceType.Smooth
+Part208.brickColor = BrickColor.new("White")
+Part208.FormFactor = Enum.FormFactor.Plate
+Part208.formFactor = Enum.FormFactor.Plate
+ClickDetector209.Parent = Part208
+Decal210.Parent = Part208
+Decal210.Texture = "http://www.roblox.com/asset/?id=22495881"
+Decal210.Face = Enum.NormalId.Top
+Script211.Parent = Part208
+table.insert(cors,sandbox(Script211,function()
+local drink = script.Parent.Parent.Waffle
+local spot = script.Parent.Parent.Holder
+local db = false
+
+function onClick()
+	if db == false then
+		db = true
+		local d = drink:clone()
+		d.Handle.Position = spot.Position
+		d.Parent = game.Workspace
+		d.Handle.Anchored = false
+		wait(5)
+		db = false
+	end
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClick)
+
+end))
+Weld212.Parent = Part208
+Weld212.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld212.C1 = CFrame.new(-0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Weld212.Part0 = Part208
+Weld212.Part1 = Part201
+Weld212.part1 = Part201
+Weld213.Parent = Part208
+Weld213.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld213.C1 = CFrame.new(0, -1.09999943, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld213.Part0 = Part208
+Weld213.Part1 = Part24
+Weld213.part1 = Part24
+Weld214.Parent = Part208
+Weld214.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld214.C1 = CFrame.new(-0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Weld214.Part0 = Part208
+Weld214.Part1 = Part201
+Weld214.part1 = Part201
+Weld215.Parent = Part208
+Weld215.C0 = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld215.C1 = CFrame.new(0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld215.Part0 = Part208
+Weld215.Part1 = Part192
+Weld215.part1 = Part192
+Part216.Name = "CookiesB"
+Part216.Parent = Model0
+Part216.CFrame = CFrame.new(1.75241852, 8.29999828, -2.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part216.Orientation = Vector3.new(-90, -90, 0)
+Part216.Position = Vector3.new(1.7524185180664062, 8.29999828338623, -2.5366592407226562)
+Part216.Rotation = Vector3.new(-90, 0, -90)
+Part216.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part216.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part216.Anchored = true
+Part216.BackSurface = Enum.SurfaceType.Weld
+Part216.BottomSurface = Enum.SurfaceType.Weld
+Part216.BrickColor = BrickColor.new("White")
+Part216.FrontSurface = Enum.SurfaceType.Weld
+Part216.LeftSurface = Enum.SurfaceType.Weld
+Part216.Material = Enum.Material.SmoothPlastic
+Part216.RightSurface = Enum.SurfaceType.Weld
+Part216.TopSurface = Enum.SurfaceType.Smooth
+Part216.brickColor = BrickColor.new("White")
+Part216.FormFactor = Enum.FormFactor.Plate
+Part216.formFactor = Enum.FormFactor.Plate
+Decal217.Parent = Part216
+Decal217.Texture = "http://www.roblox.com/asset/?id=7511720"
+Decal217.Face = Enum.NormalId.Top
+ClickDetector218.Parent = Part216
+Script219.Parent = Part216
+table.insert(cors,sandbox(Script219,function()
+local drink = script.Parent.Parent.Cookie
+local spot = script.Parent.Parent.Holder
+local db = false
+
+function onClick()
+	if db == false then
+		db = true
+		local d = drink:clone()
+		d.Handle.Position = spot.Position
+		d.Parent = game.Workspace
+		d.Handle.Anchored = false
+		wait(5)
+		db = false
+	end
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClick)
+
+end))
+Weld220.Parent = Part216
+Weld220.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld220.C1 = CFrame.new(0, 0.100000381, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld220.Part0 = Part216
+Weld220.Part1 = Part40
+Weld220.part1 = Part40
+Weld221.Parent = Part216
+Weld221.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld221.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld221.Part0 = Part216
+Weld221.Part1 = Part224
+Weld221.part1 = Part224
+Weld222.Parent = Part216
+Weld222.C0 = CFrame.new(-0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld222.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld222.Part0 = Part216
+Weld222.Part1 = Part224
+Weld222.part1 = Part224
+Weld223.Parent = Part216
+Weld223.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld223.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld223.Part0 = Part216
+Weld223.Part1 = Part224
+Weld223.part1 = Part224
+Part224.Name = "TwixB"
+Part224.Parent = Model0
+Part224.CFrame = CFrame.new(1.75241852, 8.29999828, -3.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part224.Orientation = Vector3.new(-90, -90, 0)
+Part224.Position = Vector3.new(1.7524185180664062, 8.29999828338623, -3.5366592407226562)
+Part224.Rotation = Vector3.new(-90, 0, -90)
+Part224.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part224.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part224.Anchored = true
+Part224.BackSurface = Enum.SurfaceType.Weld
+Part224.BottomSurface = Enum.SurfaceType.Weld
+Part224.BrickColor = BrickColor.new("White")
+Part224.FrontSurface = Enum.SurfaceType.Weld
+Part224.LeftSurface = Enum.SurfaceType.Weld
+Part224.Material = Enum.Material.SmoothPlastic
+Part224.RightSurface = Enum.SurfaceType.Weld
+Part224.TopSurface = Enum.SurfaceType.Smooth
+Part224.brickColor = BrickColor.new("White")
+Part224.FormFactor = Enum.FormFactor.Plate
+Part224.formFactor = Enum.FormFactor.Plate
+ClickDetector225.Parent = Part224
+Decal226.Parent = Part224
+Decal226.Texture = "http://www.roblox.com/asset/?id=7919845"
+Decal226.Face = Enum.NormalId.Top
+Script227.Parent = Part224
+table.insert(cors,sandbox(Script227,function()
+local drink = script.Parent.Parent.Hersheys
+local spot = script.Parent.Parent.Holder
+local db = false
+
+function onClick()
+	if db == false then
+		db = true
+		local d = drink:clone()
+		d.Handle.Position = spot.Position
+		d.Parent = game.Workspace
+		d.Handle.Anchored = false
+		wait(5)
+		db = false
+	end
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClick)
+
+end))
+Weld228.Parent = Part224
+Weld228.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld228.C1 = CFrame.new(0, 2.90000057, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld228.Part0 = Part224
+Weld228.Part1 = Part24
+Weld228.part1 = Part24
+Weld229.Parent = Part224
+Weld229.C0 = CFrame.new(0, 0, -0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld229.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld229.Part0 = Part224
+Weld229.Part1 = Part238
+Weld229.part1 = Part238
+Part230.Name = "EpicSnackB"
+Part230.Parent = Model0
+Part230.CFrame = CFrame.new(1.75241852, 6.29999971, -3.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part230.Orientation = Vector3.new(-90, -90, 0)
+Part230.Position = Vector3.new(1.7524185180664062, 6.299999713897705, -3.5366592407226562)
+Part230.Rotation = Vector3.new(-90, 0, -90)
+Part230.Color = Color3.new(1, 1, 0)
+Part230.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part230.Anchored = true
+Part230.BackSurface = Enum.SurfaceType.Weld
+Part230.BottomSurface = Enum.SurfaceType.Weld
+Part230.BrickColor = BrickColor.new("New Yeller")
+Part230.FrontSurface = Enum.SurfaceType.Weld
+Part230.LeftSurface = Enum.SurfaceType.Weld
+Part230.Material = Enum.Material.SmoothPlastic
+Part230.RightSurface = Enum.SurfaceType.Weld
+Part230.TopSurface = Enum.SurfaceType.Smooth
+Part230.brickColor = BrickColor.new("New Yeller")
+Part230.FormFactor = Enum.FormFactor.Plate
+Part230.formFactor = Enum.FormFactor.Plate
+ClickDetector231.Parent = Part230
+Decal232.Parent = Part230
+Decal232.Texture = "http://www.roblox.com/asset/?id=22644329"
+Decal232.Face = Enum.NormalId.Top
+Script233.Parent = Part230
+table.insert(cors,sandbox(Script233,function()
+local drink = script.Parent.Parent.EpicSnack
+local spot = script.Parent.Parent.Holder
+local db = false
+
+function onClick()
+	if db == false then
+		db = true
+		local d = drink:clone()
+		d.Handle.Position = spot.Position
+		d.Parent = game.Workspace
+		d.Handle.Anchored = false
+		wait(5)
+		db = false
+	end
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClick)
+
+end))
+Weld234.Parent = Part230
+Weld234.C0 = CFrame.new(0, 0, -0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld234.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld234.Part0 = Part230
+Weld234.Part1 = Part192
+Weld234.part1 = Part192
+Weld235.Parent = Part230
+Weld235.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld235.C1 = CFrame.new(0, 0.900000572, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld235.Part0 = Part230
+Weld235.Part1 = Part24
+Weld235.part1 = Part24
+Weld236.Parent = Part230
+Weld236.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Weld236.C1 = CFrame.new(-0.5, 0, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Weld236.Part0 = Part230
+Weld236.Part1 = Part166
+Weld236.part1 = Part166
+Weld237.Parent = Part230
+Weld237.C0 = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld237.C1 = CFrame.new(0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld237.Part0 = Part230
+Weld237.Part1 = Part238
+Weld237.part1 = Part238
+Part238.Name = "PepsiB"
+Part238.Parent = Model0
+Part238.CFrame = CFrame.new(1.75241852, 7.29999971, -3.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part238.Orientation = Vector3.new(-90, -90, 0)
+Part238.Position = Vector3.new(1.7524185180664062, 7.299999713897705, -3.5366592407226562)
+Part238.Rotation = Vector3.new(-90, 0, -90)
+Part238.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part238.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part238.Anchored = true
+Part238.BackSurface = Enum.SurfaceType.Weld
+Part238.BottomSurface = Enum.SurfaceType.Weld
+Part238.BrickColor = BrickColor.new("White")
+Part238.FrontSurface = Enum.SurfaceType.Weld
+Part238.LeftSurface = Enum.SurfaceType.Weld
+Part238.Material = Enum.Material.SmoothPlastic
+Part238.RightSurface = Enum.SurfaceType.Weld
+Part238.TopSurface = Enum.SurfaceType.Smooth
+Part238.brickColor = BrickColor.new("White")
+Part238.FormFactor = Enum.FormFactor.Plate
+Part238.formFactor = Enum.FormFactor.Plate
+ClickDetector239.Parent = Part238
+Decal240.Parent = Part238
+Decal240.Texture = "http://www.roblox.com/asset/?id=9862093"
+Decal240.Face = Enum.NormalId.Top
+Script241.Parent = Part238
+table.insert(cors,sandbox(Script241,function()
+local drink = script.Parent.Parent.Pepsi
+local spot = script.Parent.Parent.Holder
+local db = false
+
+function onClick()
+	if db == false then
+		db = true
+		local d = drink:clone()
+		d.Handle.Position = spot.Position
+		d.Parent = game.Workspace
+		d.Handle.Anchored = false
+		wait(5)
+		db = false
+	end
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClick)
+
+end))
+Weld242.Parent = Part238
+Weld242.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld242.C1 = CFrame.new(0, 1.89999819, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld242.Part0 = Part238
+Weld242.Part1 = Part24
+Weld242.part1 = Part24
+Weld243.Parent = Part238
+Weld243.C0 = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld243.C1 = CFrame.new(0, 0, -0.499998569, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld243.Part0 = Part238
+Weld243.Part1 = Part224
+Weld243.part1 = Part224
+Weld244.Parent = Part238
+Weld244.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld244.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld244.Part0 = Part238
+Weld244.Part1 = Part230
+Weld244.part1 = Part230
+Weld245.Parent = Part238
+Weld245.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld245.C1 = CFrame.new(-0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Weld245.Part0 = Part238
+Weld245.Part1 = Part258
+Weld245.part1 = Part258
+Weld246.Parent = Part238
+Weld246.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld246.C1 = CFrame.new(0, 1.89999819, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld246.Part0 = Part238
+Weld246.Part1 = Part24
+Weld246.part1 = Part24
+Weld247.Parent = Part238
+Weld247.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld247.C1 = CFrame.new(0, 1.89999819, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld247.Part0 = Part238
+Weld247.Part1 = Part24
+Weld247.part1 = Part24
+Weld248.Parent = Part238
+Weld248.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld248.C1 = CFrame.new(0, 1.89999819, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld248.Part0 = Part238
+Weld248.Part1 = Part24
+Weld248.part1 = Part24
+Weld249.Parent = Part238
+Weld249.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld249.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld249.Part0 = Part238
+Weld249.Part1 = Part230
+Weld249.part1 = Part230
+Weld250.Parent = Part238
+Weld250.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld250.C1 = CFrame.new(-0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Weld250.Part0 = Part238
+Weld250.Part1 = Part258
+Weld250.part1 = Part258
+Weld251.Parent = Part238
+Weld251.C0 = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld251.C1 = CFrame.new(0, 0, -0.499998569, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld251.Part0 = Part238
+Weld251.Part1 = Part224
+Weld251.part1 = Part224
+Weld252.Parent = Part238
+Weld252.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld252.C1 = CFrame.new(-0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Weld252.Part0 = Part238
+Weld252.Part1 = Part258
+Weld252.part1 = Part258
+Weld253.Parent = Part238
+Weld253.C0 = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld253.C1 = CFrame.new(0, 0, -0.499998569, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld253.Part0 = Part238
+Weld253.Part1 = Part224
+Weld253.part1 = Part224
+Weld254.Parent = Part238
+Weld254.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld254.C1 = CFrame.new(-0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Weld254.Part0 = Part238
+Weld254.Part1 = Part258
+Weld254.part1 = Part258
+Weld255.Parent = Part238
+Weld255.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld255.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld255.Part0 = Part238
+Weld255.Part1 = Part230
+Weld255.part1 = Part230
+Weld256.Parent = Part238
+Weld256.C0 = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld256.C1 = CFrame.new(0, 0, -0.499998569, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld256.Part0 = Part238
+Weld256.Part1 = Part224
+Weld256.part1 = Part224
+Weld257.Parent = Part238
+Weld257.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld257.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld257.Part0 = Part238
+Weld257.Part1 = Part230
+Weld257.part1 = Part230
+Part258.Name = "MDB"
+Part258.Parent = Model0
+Part258.CFrame = CFrame.new(1.75241852, 7.29999971, -2.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part258.Orientation = Vector3.new(-90, -90, 0)
+Part258.Position = Vector3.new(1.7524185180664062, 7.299999713897705, -2.5366592407226562)
+Part258.Rotation = Vector3.new(-90, 0, -90)
+Part258.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part258.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part258.Anchored = true
+Part258.BackSurface = Enum.SurfaceType.Weld
+Part258.BottomSurface = Enum.SurfaceType.Weld
+Part258.BrickColor = BrickColor.new("White")
+Part258.FrontSurface = Enum.SurfaceType.Weld
+Part258.LeftSurface = Enum.SurfaceType.Weld
+Part258.Material = Enum.Material.SmoothPlastic
+Part258.RightSurface = Enum.SurfaceType.Weld
+Part258.TopSurface = Enum.SurfaceType.Smooth
+Part258.brickColor = BrickColor.new("White")
+Part258.FormFactor = Enum.FormFactor.Plate
+Part258.formFactor = Enum.FormFactor.Plate
+ClickDetector259.Parent = Part258
+Decal260.Parent = Part258
+Decal260.Texture = "http://www.roblox.com/asset/?id=16035971"
+Decal260.Face = Enum.NormalId.Top
+Script261.Parent = Part258
+table.insert(cors,sandbox(Script261,function()
+local drink = script.Parent.Parent.MountainDew
+local spot = script.Parent.Parent.Holder
+local db = false
+
+function onClick()
+	if db == false then
+		db = true
+		local d = drink:clone()
+		d.Handle.Position = spot.Position
+		d.Parent = game.Workspace
+		d.Handle.Anchored = false
+		wait(5)
+		db = false
+	end
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClick)
+
+end))
+Weld262.Parent = Part258
+Weld262.C0 = CFrame.new(0, 0, -0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld262.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld262.Part0 = Part258
+Weld262.Part1 = Part166
+Weld262.part1 = Part166
+Weld263.Parent = Part258
+Weld263.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld263.C1 = CFrame.new(0, -0.899999619, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld263.Part0 = Part258
+Weld263.Part1 = Part40
+Weld263.part1 = Part40
+Weld264.Parent = Part258
+Weld264.C0 = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld264.C1 = CFrame.new(0, 0, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld264.Part0 = Part258
+Weld264.Part1 = Part216
+Weld264.part1 = Part216
+Weld265.Parent = Part258
+Weld265.C0 = CFrame.new(-0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld265.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld265.Part0 = Part258
+Weld265.Part1 = Part238
+Weld265.part1 = Part238
+Tool266.Name = "Hersheys"
+Tool266.Parent = Model0
+Tool266.TextureId = "http://www.roblox.com/asset/?id=12510145"
+Tool266.Grip = CFrame.new(0.300000012, 0, 0, 0.217036337, 0, 0.976163507, -0, 1, -0, -0.976163507, 0, 0.217036337)
+Tool266.GripForward = Vector3.new(-0.9761635065078735, 0, -0.21703633666038513)
+Tool266.GripPos = Vector3.new(0.30000001192092896, 0, 0)
+Tool266.GripRight = Vector3.new(0.21703633666038513, -0, -0.9761635065078735)
+Part267.Name = "Handle"
+Part267.Parent = Tool266
+Part267.CFrame = CFrame.new(-0.947349548, 6.98993444, 1.46334076, 1.42065569e-12, 1.68604322e-06, 1, -2.27748207e-15, -1, 1.68604322e-06, 1, -2.27987748e-15, -1.42065569e-12)
+Part267.Orientation = Vector3.new(0, 90, -180)
+Part267.Position = Vector3.new(-0.9473495483398438, 6.98993444442749, 1.4633407592773438)
+Part267.Rotation = Vector3.new(-180, 90, 0)
+Part267.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part267.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part267.BottomSurface = Enum.SurfaceType.Smooth
+Part267.BrickColor = BrickColor.new("Mid gray")
+Part267.Material = Enum.Material.SmoothPlastic
+Part267.TopSurface = Enum.SurfaceType.Smooth
+Part267.brickColor = BrickColor.new("Mid gray")
+Part267.FormFactor = Enum.FormFactor.Plate
+Part267.formFactor = Enum.FormFactor.Plate
+Sound268.Name = "DrinkSound"
+Sound268.Parent = Part267
+Sound268.SoundId = "http://www.roblox.com/asset/?id=12544690"
+Sound268.Volume = 0.30000001192092896
+Sound269.Name = "OpenSound"
+Sound269.Parent = Part267
+Sound269.SoundId = "http://www.roblox.com/asset/?id=12517136"
+Sound269.Volume = 1
+SpecialMesh270.Parent = Part267
+SpecialMesh270.MeshId = "http://www.roblox.com/asset/?id=38160912 "
+SpecialMesh270.Scale = Vector3.new(2, 3.5, 2)
+SpecialMesh270.TextureId = "http://www.roblox.com/asset/?id=39399523"
+SpecialMesh270.MeshType = Enum.MeshType.FileMesh
+Script271.Name = "SandwichScript"
+Script271.Parent = Tool266
+table.insert(cors,sandbox(Script271,function()
+local Tool = script.Parent;
+
+enabled = true
+
+local counter = 5
+
+
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	counter = counter - 1
+	Tool.GripForward = Vector3.new(-0.976,0,-0.217)
+	Tool.GripPos = Vector3.new(.95,-0.76,1.4)
+	Tool.GripRight = Vector3.new(0.217,0, 0.976)
+	Tool.GripUp = Vector3.new(0,1,0)
+
+
+	Tool.Handle.DrinkSound:Play()
+
+	wait(.8)
+	
+	local h = Tool.Parent:FindFirstChild("Humanoid")
+	if (h ~= nil) then
+		if (h.MaxHealth > h.Health + 5) then
+			h.Health = h.Health + 5
+		else	
+			h.Health = h.MaxHealth
+		end
+	end
+
+	Tool.GripForward = Vector3.new(-0.976,0,-0.217)
+	Tool.GripPos = Vector3.new(0.3,0,0)
+	Tool.GripRight = Vector3.new(0.217,0,-0.976)
+	Tool.GripUp = Vector3.new(0,1,0)
+	if counter == 0 then
+	Tool:remove()
+	end
+
+	enabled = true
+
+end
+
+function onEquipped()
+	Tool.Handle.OpenSound:play()
+end
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+
+end))
+Part272.Name = "MilkB"
+Part272.Parent = Model0
+Part272.CFrame = CFrame.new(1.75241852, 9.2999897, -3.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part272.Orientation = Vector3.new(-90, -90, 0)
+Part272.Position = Vector3.new(1.7524185180664062, 9.299989700317383, -3.5366592407226562)
+Part272.Rotation = Vector3.new(-90, 0, -90)
+Part272.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part272.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part272.Anchored = true
+Part272.BackSurface = Enum.SurfaceType.Weld
+Part272.BottomSurface = Enum.SurfaceType.Weld
+Part272.BrickColor = BrickColor.new("White")
+Part272.FrontSurface = Enum.SurfaceType.Weld
+Part272.LeftSurface = Enum.SurfaceType.Weld
+Part272.Material = Enum.Material.SmoothPlastic
+Part272.RightSurface = Enum.SurfaceType.Weld
+Part272.TopSurface = Enum.SurfaceType.Smooth
+Part272.brickColor = BrickColor.new("White")
+Part272.FormFactor = Enum.FormFactor.Plate
+Part272.formFactor = Enum.FormFactor.Plate
+ClickDetector273.Parent = Part272
+Decal274.Parent = Part272
+Decal274.Texture = "http://www.roblox.com/asset/?id=3792032"
+Decal274.Face = Enum.NormalId.Top
+Script275.Parent = Part272
+table.insert(cors,sandbox(Script275,function()
+local drink = script.Parent.Parent.Milk
+local spot = script.Parent.Parent.Holder
+local db = false
+
+function onClick()
+	if db == false then
+		db = true
+		local d = drink:clone()
+		d.Handle.Position = spot.Position
+		d.Parent = game.Workspace
+		d.Handle.Anchored = false
+		wait(5)
+		db = false
+	end
+end
+
+script.Parent.ClickDetector.MouseClick:Connect(onClick)
+
+end))
+Weld276.Parent = Part272
+Weld276.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld276.C1 = CFrame.new(0, 3.90000057, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld276.Part0 = Part272
+Weld276.Part1 = Part24
+Weld276.part1 = Part24
+Weld277.Parent = Part272
+Weld277.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld277.C1 = CFrame.new(-3.5, -0.5, -2.50001216, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld277.Part0 = Part272
+Weld277.Part1 = Part7
+Weld277.part1 = Part7
+Weld278.Parent = Part272
+Weld278.C0 = CFrame.new(0, 0, -0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld278.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld278.Part0 = Part272
+Weld278.Part1 = Part224
+Weld278.part1 = Part224
+Weld279.Parent = Part272
+Weld279.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld279.C1 = CFrame.new(-3.5, -0.5, -2.50001216, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld279.Part0 = Part272
+Weld279.Part1 = Part7
+Weld279.part1 = Part7
+Weld280.Parent = Part272
+Weld280.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld280.C1 = CFrame.new(0, 0, 0.499991417, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld280.Part0 = Part272
+Weld280.Part1 = Part224
+Weld280.part1 = Part224
+Weld281.Parent = Part272
+Weld281.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld281.C1 = CFrame.new(0, 0, 0.499991417, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld281.Part0 = Part272
+Weld281.Part1 = Part224
+Weld281.part1 = Part224
+Part282.Name = "OrangeJuiceB"
+Part282.Parent = Model0
+Part282.CFrame = CFrame.new(1.75241852, 9.2999897, -2.53665924, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part282.Orientation = Vector3.new(-90, -90, 0)
+Part282.Position = Vector3.new(1.7524185180664062, 9.299989700317383, -2.5366592407226562)
+Part282.Rotation = Vector3.new(-90, 0, -90)
+Part282.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part282.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part282.Anchored = true
+Part282.BackSurface = Enum.SurfaceType.Weld
+Part282.BottomSurface = Enum.SurfaceType.Weld
+Part282.BrickColor = BrickColor.new("White")
+Part282.FrontSurface = Enum.SurfaceType.Weld
+Part282.LeftSurface = Enum.SurfaceType.Weld
+Part282.Material = Enum.Material.SmoothPlastic
+Part282.RightSurface = Enum.SurfaceType.Weld
+Part282.TopSurface = Enum.SurfaceType.Smooth
+Part282.brickColor = BrickColor.new("White")
+Part282.FormFactor = Enum.FormFactor.Plate
+Part282.formFactor = Enum.FormFactor.Plate
+ClickDetector283.Parent = Part282
+Decal284.Parent = Part282
+Decal284.Texture = "http://www.roblox.com/asset/?id=10025912"
+Decal284.Face = Enum.NormalId.Top
+Script285.Parent = Part282
+table.insert(cors,sandbox(Script285,function()
+	local drink = script.Parent.Parent.OrangeJuice
+	local spot = script.Parent.Parent.Holder
+	local db = false
+
+	function onClick()
+		if db == false then
+			db = true
+			local d = drink:clone()
+			d.Handle.Position = spot.Position
+			d.Parent = game.Workspace
+			d.Handle.Anchored = false
+			wait(5)
+			db = false
+		end
+	end
+
+	script.Parent.ClickDetector.MouseClick:connect(onClick)
+
+end))
+Weld286.Parent = Part282
+Weld286.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld286.C1 = CFrame.new(-2.5, -0.5, -2.50001216, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld286.Part0 = Part282
+Weld286.Part1 = Part7
+Weld286.part1 = Part7
+Weld287.Parent = Part282
+Weld287.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld287.C1 = CFrame.new(0, 1.0999918, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld287.Part0 = Part282
+Weld287.Part1 = Part40
+Weld287.part1 = Part40
+Weld288.Parent = Part282
+Weld288.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld288.C1 = CFrame.new(0, 0, 0.499991417, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld288.Part0 = Part282
+Weld288.Part1 = Part216
+Weld288.part1 = Part216
+Weld289.Parent = Part282
+Weld289.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld289.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld289.Part0 = Part282
+Weld289.Part1 = Part272
+Weld289.part1 = Part272
+Weld290.Parent = Part282
+Weld290.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld290.C1 = CFrame.new(0, 0, 0.499991417, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld290.Part0 = Part282
+Weld290.Part1 = Part216
+Weld290.part1 = Part216
+Weld291.Parent = Part282
+Weld291.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld291.C1 = CFrame.new(0, 1.10000038, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld291.Part0 = Part282
+Weld291.Part1 = Part40
+Weld291.part1 = Part40
+Weld292.Parent = Part282
+Weld292.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld292.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld292.Part0 = Part282
+Weld292.Part1 = Part272
+Weld292.part1 = Part272
+Weld293.Parent = Part282
+Weld293.C0 = CFrame.new(-0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld293.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld293.Part0 = Part282
+Weld293.Part1 = Part272
+Weld293.part1 = Part272
+Weld294.Parent = Part282
+Weld294.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld294.C1 = CFrame.new(0, 0, 0.499991417, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld294.Part0 = Part282
+Weld294.Part1 = Part216
+Weld294.part1 = Part216
+Weld295.Parent = Part282
+Weld295.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld295.C1 = CFrame.new(0, 1.0999918, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld295.Part0 = Part282
+Weld295.Part1 = Part40
+Weld295.part1 = Part40
+Weld296.Parent = Part282
+Weld296.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld296.C1 = CFrame.new(0, 1.0999918, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld296.Part0 = Part282
+Weld296.Part1 = Part40
+Weld296.part1 = Part40
+Weld297.Parent = Part282
+Weld297.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld297.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld297.Part0 = Part282
+Weld297.Part1 = Part272
+Weld297.part1 = Part272
+Weld298.Parent = Part282
+Weld298.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld298.C1 = CFrame.new(0, 1.0999918, -0.500012159, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld298.Part0 = Part282
+Weld298.Part1 = Part40
+Weld298.part1 = Part40
+Weld299.Parent = Part282
+Weld299.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld299.C1 = CFrame.new(-2.5, -0.5, -2.50001216, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld299.Part0 = Part282
+Weld299.Part1 = Part7
+Weld299.part1 = Part7
+Weld300.Parent = Part282
+Weld300.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld300.C1 = CFrame.new(0, 0, 0.499991417, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld300.Part0 = Part282
+Weld300.Part1 = Part216
+Weld300.part1 = Part216
+Weld301.Parent = Part282
+Weld301.C0 = CFrame.new(0, 0, -0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld301.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld301.Part0 = Part282
+Weld301.Part1 = Part216
+Weld301.part1 = Part216
+Weld302.Parent = Part282
+Weld302.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld302.C1 = CFrame.new(-2.5, -0.5, -2.50001216, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld302.Part0 = Part282
+Weld302.Part1 = Part7
+Weld302.part1 = Part7
+Weld303.Parent = Part282
+Weld303.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld303.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Weld303.Part0 = Part282
+Weld303.Part1 = Part272
+Weld303.part1 = Part272
+Weld304.Parent = Part282
+Weld304.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld304.C1 = CFrame.new(-2.5, -0.5, -2.50001216, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld304.Part0 = Part282
+Weld304.Part1 = Part7
+Weld304.part1 = Part7
+Tool305.Name = "OrangeJuice"
+Tool305.Parent = Model0
+Tool305.TextureId = "http://www.roblox.com/asset/?id="
+Tool305.Grip = CFrame.new(-0.150000006, 0, -0.300000012, 0.217036352, 0, 0.976163507, 0, 1, -0, -0.976163507, 0, 0.217036352)
+Tool305.GripForward = Vector3.new(-0.9761635065078735, 0, -0.21703635156154633)
+Tool305.GripPos = Vector3.new(-0.15000000596046448, 0, -0.30000001192092896)
+Tool305.GripRight = Vector3.new(0.21703635156154633, 0, -0.9761635065078735)
+Part306.Name = "Handle"
+Part306.Parent = Tool305
+Part306.CFrame = CFrame.new(-0.947593689, 3.79007626, 0.463340759, -2.09200459e-21, 1.26225877e-15, 1, 1.26217671e-15, 1, -1.26225877e-15, -1, 1.26217671e-15, -2.09200459e-21)
+Part306.Orientation = Vector3.new(0, 90, 0)
+Part306.Position = Vector3.new(-0.9475936889648438, 3.79007625579834, 0.46334075927734375)
+Part306.Rotation = Vector3.new(0, 90, 0)
+Part306.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part306.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part306.BottomSurface = Enum.SurfaceType.Smooth
+Part306.BrickColor = BrickColor.new("Mid gray")
+Part306.Material = Enum.Material.SmoothPlastic
+Part306.TopSurface = Enum.SurfaceType.Smooth
+Part306.brickColor = BrickColor.new("Mid gray")
+Part306.FormFactor = Enum.FormFactor.Plate
+Part306.formFactor = Enum.FormFactor.Plate
+Sound307.Name = "DrinkSound"
+Sound307.Parent = Part306
+Sound307.SoundId = "http://www.roblox.com/asset/?id=10722059"
+Sound308.Name = "OpenSound"
+Sound308.Parent = Part306
+Sound308.SoundId = "http://www.roblox.com/asset/?id="
+SpecialMesh309.Parent = Part306
+SpecialMesh309.MeshId = "http://www.roblox.com/asset/?id=17230208"
+SpecialMesh309.TextureId = "http://www.roblox.com/asset/?id=18463869"
+SpecialMesh309.MeshType = Enum.MeshType.FileMesh
+Script310.Name = "BloxyColaScript"
+Script310.Parent = Tool305
+table.insert(cors,sandbox(Script310,function()
+	local Tool = script.Parent;
+
+	enabled = true
+
+
+	function onActivated()
+		if not enabled  then
+			return
+		end
+
+		enabled = false
+		Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+		wait(0.05)
+		Player.Torso["Right Shoulder"].C0 = CFrame.new(0.8,0.5,-0.1) * CFrame.Angles(0.4,2.4,0)
+
+		Tool.Handle.DrinkSound:Play()
+
+		for i = 1,30 do
+			wait(0.1)
+			Player.Humanoid.Health = Player.Humanoid.Health + 1
+		end
+		Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+		wait(0.05)
+		Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+		wait(0.5)
+		enabled = true
+	end
+
+	function onEquipped()
+		Player = script.Parent.Parent
+		Tool.Handle.OpenSound:Play()
+	end
+
+	function onEnequipped()
+		Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+	end
+
+	script.Parent.Activated:Connect(onActivated)
+	script.Parent.Equipped:Connect(onEquipped)
+	script.Parent.Unequipped:Connect(onEnequipped)
+
+end))
+Tool311.Name = "Milk"
+Tool311.Parent = Model0
+Tool311.TextureId = "http://www.roblox.com/asset/?id="
+Tool311.Grip = CFrame.new(-0.150000006, 0, -0.300000012, 0.217036352, 0, 0.976163507, 0, 1, -0, -0.976163507, 0, 0.217036352)
+Tool311.GripForward = Vector3.new(-0.9761635065078735, 0, -0.21703635156154633)
+Tool311.GripPos = Vector3.new(-0.15000000596046448, 0, -0.30000001192092896)
+Tool311.GripRight = Vector3.new(0.21703635156154633, 0, -0.9761635065078735)
+Part312.Name = "Handle"
+Part312.Parent = Tool311
+Part312.CFrame = CFrame.new(-0.947105408, 3.79008007, -1.5364151, -0.999999881, 8.93425522e-07, 5.60283661e-05, 8.93232709e-07, 1, -3.44726209e-06, -5.60283661e-05, -3.44721207e-06, -0.999999881)
+Part312.Orientation = Vector3.new(0, 180, 0)
+Part312.Position = Vector3.new(-0.9471054077148438, 3.7900800704956055, -1.5364151000976562)
+Part312.Rotation = Vector3.new(180, 0, -180)
+Part312.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part312.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part312.BottomSurface = Enum.SurfaceType.Smooth
+Part312.BrickColor = BrickColor.new("Mid gray")
+Part312.Material = Enum.Material.SmoothPlastic
+Part312.TopSurface = Enum.SurfaceType.Smooth
+Part312.brickColor = BrickColor.new("Mid gray")
+Part312.FormFactor = Enum.FormFactor.Plate
+Part312.formFactor = Enum.FormFactor.Plate
+Sound313.Name = "DrinkSound"
+Sound313.Parent = Part312
+Sound313.SoundId = "http://www.roblox.com/asset/?id=10722059"
+Sound314.Name = "OpenSound"
+Sound314.Parent = Part312
+Sound314.SoundId = "http://www.roblox.com/asset/?id="
+SpecialMesh315.Parent = Part312
+SpecialMesh315.MeshId = "http://www.roblox.com/asset/?id=17230208"
+SpecialMesh315.TextureId = "http://www.roblox.com/asset/?id=26024079"
+SpecialMesh315.MeshType = Enum.MeshType.FileMesh
+Script316.Name = "BloxyColaScript"
+Script316.Parent = Tool311
+table.insert(cors,sandbox(Script316,function()
+	local Tool = script.Parent;
+
+	enabled = true
+
+
+	function onActivated()
+		if not enabled  then
+			return
+		end
+
+		enabled = false
+		Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+		wait(0.05)
+		Player.Torso["Right Shoulder"].C0 = CFrame.new(0.8,0.5,-0.1) * CFrame.Angles(0.4,2.4,0)
+
+		Tool.Handle.DrinkSound:Play()
+
+		for i = 1,30 do
+			wait(0.1)
+			Player.Humanoid.Health = Player.Humanoid.Health + 1
+		end
+		Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+		wait(0.05)
+		Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+		wait(0.5)
+		enabled = true
+	end
+
+	function onEquipped()
+		Player = script.Parent.Parent
+		Tool.Handle.OpenSound:play()
+	end
+
+	function onEnequipped()
+		Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+	end
+
+	script.Parent.Activated:Connect(onActivated)
+	script.Parent.Equipped:Connect(onEquipped)
+	script.Parent.Unequipped:Connect(onEnequipped)
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
