@@ -1,0 +1,337 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+UnionOperation1 = Instance.new("UnionOperation")
+Part2 = Instance.new("Part")
+SpecialMesh3 = Instance.new("SpecialMesh")
+Part4 = Instance.new("Part")
+SpecialMesh5 = Instance.new("SpecialMesh")
+UnionOperation6 = Instance.new("UnionOperation")
+Part7 = Instance.new("Part")
+SpecialMesh8 = Instance.new("SpecialMesh")
+Part9 = Instance.new("Part")
+SpecialMesh10 = Instance.new("SpecialMesh")
+Part11 = Instance.new("Part")
+SpecialMesh12 = Instance.new("SpecialMesh")
+UnionOperation13 = Instance.new("UnionOperation")
+Part14 = Instance.new("Part")
+SpecialMesh15 = Instance.new("SpecialMesh")
+Part16 = Instance.new("Part")
+SpecialMesh17 = Instance.new("SpecialMesh")
+Part18 = Instance.new("Part")
+SpecialMesh19 = Instance.new("SpecialMesh")
+Part20 = Instance.new("Part")
+SpecialMesh21 = Instance.new("SpecialMesh")
+Script22 = Instance.new("Script")
+LocalScript23 = Instance.new("LocalScript")
+Tool0.Name = "Handcuffs"
+Tool0.Parent = owner.Backpack
+Tool0.CanBeDropped = false
+Tool0.Grip = CFrame.new(0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, -1)
+Tool0.GripForward = Vector3.new(-0, -0, 1)
+Tool0.GripRight = Vector3.new(0, 1, 0)
+Tool0.GripUp = Vector3.new(1, 0, 0)
+UnionOperation1.Name = "Handle"
+UnionOperation1.Parent = Tool0
+UnionOperation1.CFrame = CFrame.new(13.695611, 0.403600156, -19.2538185, 0.000305518857, -0.999922693, 0.0124292728, 0.999704957, 3.51736935e-06, -0.0242903717, 0.0242884494, 0.012433026, 0.99962765)
+UnionOperation1.Orientation = Vector3.new(1.3899999856948853, 0.7099999785423279, 90)
+UnionOperation1.Position = Vector3.new(13.695611000061035, 0.40360015630722046, -19.25381851196289)
+UnionOperation1.Rotation = Vector3.new(1.3899999856948853, 0.7099999785423279, 89.9800033569336)
+UnionOperation1.Color = Color3.new(0.639216, 0.635294, 0.647059)
+UnionOperation1.Transparency = 1
+UnionOperation1.Size = Vector3.new(0.8000061511993408, 2.000000476837158, 0.42001956701278687)
+UnionOperation1.BrickColor = BrickColor.new("Medium stone grey")
+UnionOperation1.CanCollide = false
+UnionOperation1.Reflectance = 0.10000000149011612
+UnionOperation1.brickColor = BrickColor.new("Medium stone grey")
+UnionOperation1.UsePartColor = true
+Part2.Parent = Tool0
+Part2.CFrame = CFrame.new(13.7780704, 1.03642607, -19.1451225, -0.999999821, -2.17167099e-06, 7.12275505e-06, 7.39097595e-06, 1.05146069e-06, 0.999999821, -2.13916155e-06, 0.999999702, -1.09081725e-06)
+Part2.Orientation = Vector3.new(-90, 180, 0)
+Part2.Position = Vector3.new(13.778070449829102, 1.036426067352295, -19.145122528076172)
+Part2.Rotation = Vector3.new(-90, 0, 180)
+Part2.Size = Vector3.new(0.265064001083374, 0.20000000298023224, 0.26506462693214417)
+Part2.Anchored = true
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.CanCollide = false
+Part2.Material = Enum.Material.SmoothPlastic
+Part2.Reflectance = 0.10000000149011612
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.FormFactor = Enum.FormFactor.Custom
+Part2.formFactor = Enum.FormFactor.Custom
+SpecialMesh3.Parent = Part2
+SpecialMesh3.MeshId = "http://www.roblox.com/asset/?id=3270017"
+SpecialMesh3.Scale = Vector3.new(0.132532000541687, 0.13253191113471985, 0.13253231346607208)
+SpecialMesh3.MeshType = Enum.MeshType.FileMesh
+Part4.Parent = Tool0
+Part4.CFrame = CFrame.new(13.3055048, 0.939489126, -19.1451225, -0.866025388, 0.5, 0, 0.5, 0.866025388, 0, 0, 0, -1)
+Part4.Orientation = Vector3.new(0, 180, 30)
+Part4.Position = Vector3.new(13.30550479888916, 0.9394891262054443, -19.145122528076172)
+Part4.Rotation = Vector3.new(-180, 0, -150)
+Part4.Size = Vector3.new(0.265064001083374, 0.20000000298023224, 0.26506462693214417)
+Part4.Anchored = true
+Part4.BottomSurface = Enum.SurfaceType.Smooth
+Part4.CanCollide = false
+Part4.Material = Enum.Material.SmoothPlastic
+Part4.Reflectance = 0.10000000149011612
+Part4.TopSurface = Enum.SurfaceType.Smooth
+Part4.FormFactor = Enum.FormFactor.Custom
+Part4.formFactor = Enum.FormFactor.Custom
+SpecialMesh5.Parent = Part4
+SpecialMesh5.MeshId = "http://www.roblox.com/asset/?id=3270017"
+SpecialMesh5.Scale = Vector3.new(0.132532000541687, 0.13253191113471985, 0.13253231346607208)
+SpecialMesh5.MeshType = Enum.MeshType.FileMesh
+UnionOperation6.Parent = Tool0
+UnionOperation6.CFrame = CFrame.new(14.3419123, 0.459924161, -19.1434517, 0.866025567, -0.499999046, 1.13248825e-06, 0.499999136, 0.866025627, -1.89244747e-06, -5.96046448e-08, 2.24717314e-06, 0.999999702)
+UnionOperation6.Orientation = Vector3.new(0, 0, 30)
+UnionOperation6.Position = Vector3.new(14.341912269592285, 0.4599241614341736, -19.143451690673828)
+UnionOperation6.Rotation = Vector3.new(0, 0, 30)
+UnionOperation6.Color = Color3.new(0.639216, 0.635294, 0.647059)
+UnionOperation6.Size = Vector3.new(0.8603200912475586, 0.9936102032661438, 0.07452152669429779)
+UnionOperation6.Anchored = true
+UnionOperation6.BrickColor = BrickColor.new("Medium stone grey")
+UnionOperation6.CanCollide = false
+UnionOperation6.Material = Enum.Material.SmoothPlastic
+UnionOperation6.Reflectance = 0.10000000149011612
+UnionOperation6.brickColor = BrickColor.new("Medium stone grey")
+Part7.Parent = Tool0
+Part7.CFrame = CFrame.new(13.499383, 1.00007415, -19.1451225, -0.866025388, 0.5, 0, 0.5, 0.866025388, 0, 0, 0, -1)
+Part7.Orientation = Vector3.new(0, 180, 30)
+Part7.Position = Vector3.new(13.499382972717285, 1.0000741481781006, -19.145122528076172)
+Part7.Rotation = Vector3.new(-180, 0, -150)
+Part7.Size = Vector3.new(0.265064001083374, 0.20000000298023224, 0.26506462693214417)
+Part7.Anchored = true
+Part7.BottomSurface = Enum.SurfaceType.Smooth
+Part7.CanCollide = false
+Part7.Material = Enum.Material.SmoothPlastic
+Part7.Reflectance = 0.10000000149011612
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Part7.FormFactor = Enum.FormFactor.Custom
+Part7.formFactor = Enum.FormFactor.Custom
+SpecialMesh8.Parent = Part7
+SpecialMesh8.MeshId = "http://www.roblox.com/asset/?id=3270017"
+SpecialMesh8.Scale = Vector3.new(0.132532000541687, 0.13253191113471985, 0.13253231346607208)
+SpecialMesh8.MeshType = Enum.MeshType.FileMesh
+Part9.Parent = Tool0
+Part9.CFrame = CFrame.new(13.9719477, 0.975840092, -19.1451225, -0.866021752, -2.02655792e-06, 0.500006139, 0.500006318, 1.04308128e-06, 0.866021633, -2.26811608e-06, 0.999999702, 5.96046448e-08)
+Part9.Orientation = Vector3.new(-60, 90, 90)
+Part9.Position = Vector3.new(13.97194766998291, 0.9758400917053223, -19.145122528076172)
+Part9.Rotation = Vector3.new(-90, 30, 180)
+Part9.Size = Vector3.new(0.265064001083374, 0.20000000298023224, 0.26506462693214417)
+Part9.Anchored = true
+Part9.BottomSurface = Enum.SurfaceType.Smooth
+Part9.CanCollide = false
+Part9.Material = Enum.Material.SmoothPlastic
+Part9.Reflectance = 0.10000000149011612
+Part9.TopSurface = Enum.SurfaceType.Smooth
+Part9.FormFactor = Enum.FormFactor.Custom
+Part9.formFactor = Enum.FormFactor.Custom
+SpecialMesh10.Parent = Part9
+SpecialMesh10.MeshId = "http://www.roblox.com/asset/?id=3270017"
+SpecialMesh10.Scale = Vector3.new(0.132532000541687, 0.13253191113471985, 0.13253231346607208)
+SpecialMesh10.MeshType = Enum.MeshType.FileMesh
+Part11.Parent = Tool0
+Part11.CFrame = CFrame.new(13.5963068, 1.03642607, -19.1451225, -0.999999821, -2.17167099e-06, 7.12275505e-06, 7.39097595e-06, 1.05146069e-06, 0.999999821, -2.13916155e-06, 0.999999702, -1.09081725e-06)
+Part11.Orientation = Vector3.new(-90, 180, 0)
+Part11.Position = Vector3.new(13.596306800842285, 1.036426067352295, -19.145122528076172)
+Part11.Rotation = Vector3.new(-90, 0, 180)
+Part11.Size = Vector3.new(0.265064001083374, 0.20000000298023224, 0.26506462693214417)
+Part11.Anchored = true
+Part11.BottomSurface = Enum.SurfaceType.Smooth
+Part11.CanCollide = false
+Part11.Material = Enum.Material.SmoothPlastic
+Part11.Reflectance = 0.10000000149011612
+Part11.TopSurface = Enum.SurfaceType.Smooth
+Part11.FormFactor = Enum.FormFactor.Custom
+Part11.formFactor = Enum.FormFactor.Custom
+SpecialMesh12.Parent = Part11
+SpecialMesh12.MeshId = "http://www.roblox.com/asset/?id=3270017"
+SpecialMesh12.Scale = Vector3.new(0.132532000541687, 0.13253191113471985, 0.13253231346607208)
+SpecialMesh12.MeshType = Enum.MeshType.FileMesh
+UnionOperation13.Parent = Tool0
+UnionOperation13.CFrame = CFrame.new(13.0574894, 0.459924161, -19.1434517, -0.866025388, 0.5, 0, 0.5, 0.866025388, 0, 0, 0, -1)
+UnionOperation13.Orientation = Vector3.new(0, 180, 30)
+UnionOperation13.Position = Vector3.new(13.057489395141602, 0.4599241614341736, -19.143451690673828)
+UnionOperation13.Rotation = Vector3.new(-180, 0, -150)
+UnionOperation13.Color = Color3.new(0.639216, 0.635294, 0.647059)
+UnionOperation13.Size = Vector3.new(0.8603200912475586, 0.9936102032661438, 0.07452152669429779)
+UnionOperation13.Anchored = true
+UnionOperation13.BrickColor = BrickColor.new("Medium stone grey")
+UnionOperation13.CanCollide = false
+UnionOperation13.Material = Enum.Material.SmoothPlastic
+UnionOperation13.Reflectance = 0.10000000149011612
+UnionOperation13.brickColor = BrickColor.new("Medium stone grey")
+Part14.Parent = Tool0
+Part14.CFrame = CFrame.new(13.8750238, 1.00007415, -19.1451225, -0.866025388, 0.5, 0, 0.5, 0.866025388, 0, 0, 0, -1)
+Part14.Orientation = Vector3.new(0, 180, 30)
+Part14.Position = Vector3.new(13.87502384185791, 1.0000741481781006, -19.145122528076172)
+Part14.Rotation = Vector3.new(-180, 0, -150)
+Part14.Size = Vector3.new(0.265064001083374, 0.20000000298023224, 0.26506462693214417)
+Part14.Anchored = true
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.CanCollide = false
+Part14.Material = Enum.Material.SmoothPlastic
+Part14.Reflectance = 0.10000000149011612
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Part14.FormFactor = Enum.FormFactor.Custom
+Part14.formFactor = Enum.FormFactor.Custom
+SpecialMesh15.Parent = Part14
+SpecialMesh15.MeshId = "http://www.roblox.com/asset/?id=3270017"
+SpecialMesh15.Scale = Vector3.new(0.132532000541687, 0.13253191113471985, 0.13253231346607208)
+SpecialMesh15.MeshType = Enum.MeshType.FileMesh
+Part16.Parent = Tool0
+Part16.CFrame = CFrame.new(13.4024286, 0.975840092, -19.1451225, -0.866028726, -7.63972878e-07, -0.499993682, -0.499993414, 1.02147726e-06, 0.866028845, -1.03043845e-07, 0.999999702, -1.28444913e-06)
+Part16.Orientation = Vector3.new(-60, -90, -90)
+Part16.Position = Vector3.new(13.40242862701416, 0.9758400917053223, -19.145122528076172)
+Part16.Rotation = Vector3.new(-90, -30, 180)
+Part16.Size = Vector3.new(0.265064001083374, 0.20000000298023224, 0.26506462693214417)
+Part16.Anchored = true
+Part16.BottomSurface = Enum.SurfaceType.Smooth
+Part16.CanCollide = false
+Part16.Material = Enum.Material.SmoothPlastic
+Part16.Reflectance = 0.10000000149011612
+Part16.TopSurface = Enum.SurfaceType.Smooth
+Part16.FormFactor = Enum.FormFactor.Custom
+Part16.formFactor = Enum.FormFactor.Custom
+SpecialMesh17.Parent = Part16
+SpecialMesh17.MeshId = "http://www.roblox.com/asset/?id=3270017"
+SpecialMesh17.Scale = Vector3.new(0.132532000541687, 0.13253191113471985, 0.13253231346607208)
+SpecialMesh17.MeshType = Enum.MeshType.FileMesh
+Part18.Parent = Tool0
+Part18.CFrame = CFrame.new(13.6871881, 1.04854417, -19.1451225, -0.866025388, 0.5, 0, 0.5, 0.866025388, 0, 0, 0, -1)
+Part18.Orientation = Vector3.new(0, 180, 30)
+Part18.Position = Vector3.new(13.687188148498535, 1.04854416847229, -19.145122528076172)
+Part18.Rotation = Vector3.new(-180, 0, -150)
+Part18.Size = Vector3.new(0.265064001083374, 0.20000000298023224, 0.26506462693214417)
+Part18.Anchored = true
+Part18.BottomSurface = Enum.SurfaceType.Smooth
+Part18.CanCollide = false
+Part18.Material = Enum.Material.SmoothPlastic
+Part18.Reflectance = 0.10000000149011612
+Part18.TopSurface = Enum.SurfaceType.Smooth
+Part18.FormFactor = Enum.FormFactor.Custom
+Part18.formFactor = Enum.FormFactor.Custom
+SpecialMesh19.Parent = Part18
+SpecialMesh19.MeshId = "http://www.roblox.com/asset/?id=3270017"
+SpecialMesh19.Scale = Vector3.new(0.132532000541687, 0.13253191113471985, 0.13253231346607208)
+SpecialMesh19.MeshType = Enum.MeshType.FileMesh
+Part20.Parent = Tool0
+Part20.CFrame = CFrame.new(14.0567875, 0.927370071, -19.1451225, -0.866025388, 0.5, 0, 0.5, 0.866025388, 0, 0, 0, -1)
+Part20.Orientation = Vector3.new(0, 180, 30)
+Part20.Position = Vector3.new(14.056787490844727, 0.9273700714111328, -19.145122528076172)
+Part20.Rotation = Vector3.new(-180, 0, -150)
+Part20.Size = Vector3.new(0.265064001083374, 0.20000000298023224, 0.26506462693214417)
+Part20.Anchored = true
+Part20.BottomSurface = Enum.SurfaceType.Smooth
+Part20.CanCollide = false
+Part20.Material = Enum.Material.SmoothPlastic
+Part20.Reflectance = 0.10000000149011612
+Part20.TopSurface = Enum.SurfaceType.Smooth
+Part20.FormFactor = Enum.FormFactor.Custom
+Part20.formFactor = Enum.FormFactor.Custom
+SpecialMesh21.Parent = Part20
+SpecialMesh21.MeshId = "http://www.roblox.com/asset/?id=3270017"
+SpecialMesh21.Scale = Vector3.new(0.132532000541687, 0.13253191113471985, 0.13253231346607208)
+SpecialMesh21.MeshType = Enum.MeshType.FileMesh
+Script22.Name = "Weld 2.2"
+Script22.Parent = Tool0
+table.insert(cors,sandbox(Script22,function()
+
+local P			= script.Parent
+
+function CreateWeld(x, y)
+	local weld = Instance.new("Weld") 
+	weld.Part0 = x
+	weld.Part1 = y
+	weld.C0 = x.CFrame:inverse() * x.CFrame  
+	weld.C1 = y.CFrame:inverse() * x.CFrame  
+	weld.Parent = x
+	return weld
+end
+
+-- A recursive function (google it) which traverses all parts in a model to weld them.
+function WeldAll(instance, mainPart, list)
+	if instance:IsA("BasePart") then
+		table.insert(list, CreateWeld(mainPart, instance))
+	end
+	for _,v in pairs(instance:GetChildren()) do	
+		WeldAll(v, mainPart, list)
+	end	
+end
+
+-- Unanchores all parts in a weld list.
+function UnanchorWeldList(weldList)
+	for i,v in pairs(weldList) do
+		v.Part0.Anchored = false
+		v.Part1.Anchored = false
+	end
+end
+
+
+function WeldAllToPart(model, mainPart)
+	local welds = {}
+	WeldAll(model, mainPart, welds)
+	return welds
+end
+
+----- EXAMPLE CODE -----
+local weldList1 = WeldAllToPart(P, P.Part) -- Weld a model, returns a list of welds.
+UnanchorWeldList(weldList1) -- Unanchores the list of welds given.
+
+script:Destroy() -- Clean up this script.
+end))
+LocalScript23.Parent = Tool0
+table.insert(cors,sandbox(LocalScript23,function()
+NLS([[local prisons = game.Workspace.Prison:GetChildren()
+
+owner.Backpack.Handcuffs.Equipped:Connect(function(mouse)
+	mouse.Button1Down:Connect(function()
+		if mouse then
+			if (script.Parent.Parent.Head.Position - mouse.Target.Parent.Parent.Head.Position).magnitude <= 10 then -- Change "10" if you want to. This is the range of the arrest tool. The higher the number the longer the range you can arrest the player
+				if mouse.Target.Parent:isA("Accessory") then
+					local char = mouse.Target.Parent.Parent
+					char.HumanoidRootPart.CFrame = prisons[math.random(1,#prisons)].CFrame + Vector3.new(0,3,0) -- Randomly Puts the Prisoner to the Cell
+				end
+			end
+			if mouse.Target:isA("Part") then
+				if mouse.Target.Parent.Humanoid then
+					local char = mouse.Target.Parent
+					char.HumanoidRootPart.CFrame = prisons[math.random(1,#prisons)].CFrame + Vector3.new(0,3,0) -- Same as this
+				end
+			end
+ 		end
+	end)
+end) cors = {}
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end]] , owner.PlayerGui)
+
+--If you want to test it this in Roblox Studio, Change the LocalScript to Script
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
