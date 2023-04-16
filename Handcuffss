@@ -302,7 +302,7 @@ NLS([[local prisons = game.Workspace.Prison:GetChildren()
 owner.Backpack.Handcuffs.Equipped:Connect(function(mouse)
 	mouse.Button1Down:Connect(function()
 		if mouse then
-			if (script.Parent.Parent.Head.Position - mouse.Target.Parent.Parent.Head.Position).magnitude <= 10 then -- Change "10" if you want to. This is the range of the arrest tool. The higher the number the longer the range you can arrest the player
+			if (script.Parent.Parent.Character.Head.Position - mouse.Target.Parent.Parent.Head.Position).magnitude <= 10 then -- Change "10" if you want to. This is the range of the arrest tool. The higher the number the longer the range you can arrest the player
 				if mouse.Target.Parent:isA("Accessory") then
 					local char = mouse.Target.Parent.Parent
 					char.HumanoidRootPart.CFrame = prisons[math.random(1,#prisons)].CFrame + Vector3.new(0,3,0) -- Randomly Puts the Prisoner to the Cell
