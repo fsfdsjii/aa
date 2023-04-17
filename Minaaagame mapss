@@ -1,0 +1,1653 @@
+-- Converted using Mokiros's Model to Script Version 3
+-- Converted string size: 91820 characters
+
+local ScriptFunctions = {
+function(script,require)
+item = script.Parent.Item
+price = script.Parent.Price
+debounce = false
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onTouch(part)
+	h = part.Parent:findFirstChild("Humanoid")
+	if h ~= nil then
+		player = game.Players:findFirstChild(h.Parent.Name)
+		if player ~= nil then
+			stats = player:findFirstChild("leaderstats")
+			if stats ~= nil then
+				points = stats:findFirstChild("Coins")
+				if points ~= nil then
+					if points.Value >= price.Value and debounce == false and player.Backpack:findFirstChild(item.Value) == nil then
+						debounce = true
+						print("Go!")
+
+						points.Value = points.Value - price.Value
+
+						script.Parent.Head.BrickColor = BrickColor.new(21)
+
+						bin = game.Lighting.Inventory:findFirstChild(item.Value):clone()
+						bin.Parent = player.Backpack
+
+						m = game.Workspace:findFirstChild(h.Parent.Name .. "'s Items")
+						if m == nil then
+							print("Making inventory")
+							m = Instance.new("Model")
+							m.Parent = game.Workspace
+							m.Name = h.Parent.Name .. "'s Items"
+							end
+
+						i = item:clone()
+						i.Parent = m
+						i.Name = item.Value
+						i.Value = ""
+
+						print("Finished...")
+
+						wait(3)
+
+						script.Parent.Head.BrickColor = original
+						debounce = false
+
+						print("Kk")
+						end
+					end
+				end
+			end
+		end
+	end
+
+script.Parent.Head.Touched:connect(onTouch)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+minigames = {}
+
+local m = game.Lighting.Choices:GetChildren()
+for i=1,#m do
+	table.insert(minigames, m[i])
+	end
+
+things = script.Parent:GetChildren()
+for i=1,#things do
+	if things[i].className == "Model" then
+		s = script.ClickScript:clone()
+		s.Disabled = false
+		s.Parent = things[i]
+		local thing = Instance.new("ClickDetector")
+		thing.MaxActivationDistance = 10
+		thing.Parent = things[i].Head
+
+		things[i].Name = minigames[i].Name
+
+		things[i].Head.Size = Vector3.new(3,1,3)
+
+		end
+	end
+
+
+end,
+function(script,require)
+wait(1)
+
+debounce = script.Parent.Parent.Debounce
+original = script.Parent.Head.BrickColor
+--print("Hello World! Shopping script started")
+
+function onClick(part)
+	if script.Parent.Parent.Debounce.Value == false then
+		script.Parent.Parent.Debounce.Value = true
+		script.Parent.Head.BrickColor = BrickColor.new(21)
+		game.Workspace.ChosenMinigame.Value = script.Parent.Name
+		m = Instance.new("Message")
+		m.Parent = game.Workspace
+		m.Text = "The player has chosen " .. script.Parent.Name .. " as the next minigame"
+		wait(3)
+		m:remove()
+		script.Parent.Head.BrickColor = original
+		end
+	end
+
+script.Parent.Head.ClickDetector.MouseClick:connect(onClick)
+--script.Parent.Head.Touched:connect(onClick)
+end,
+function(script,require)
+local Tool = script.Parent;
+
+enabled = true
+
+
+
+s1 = Instance.new("Sound")
+s1.SoundId = "http://www.roblox.com/asset/?id=12844799"
+s1.Parent = Tool.Handle
+
+s2 = Instance.new("Sound")
+s2.SoundId = "http://www.roblox.com/asset/?id=12844794"
+s2.Parent = Tool.Handle
+
+s3 = Instance.new("Sound")
+s3.SoundId = "http://www.roblox.com/asset/?id=12803520"
+s3.Parent = Tool.Handle
+
+s4 = Instance.new("Sound")
+s4.SoundId = "http://www.roblox.com/asset/?id=12803507"
+s4.Parent = Tool.Handle
+
+s5 = Instance.new("Sound")
+s5.SoundId = "http://www.roblox.com/asset/?id=12803498"
+s5.Parent = Tool.Handle
+
+local sayings = {s1,s2,s3,s4,s5}
+
+
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	
+	Tool.GripForward = Vector3.new(1,0,0)
+	Tool.GripPos = Vector3.new(.5,-1.5,-1.56)
+	Tool.GripRight = Vector3.new(0,-.707,-.707)
+	Tool.GripUp = Vector3.new(0,-.707,.707)
+
+	sayings[math.random(1,#sayings)]:Play()
+	wait(2)
+
+	Tool.GripForward = Vector3.new(-1,0,0)
+	Tool.GripPos = Vector3.new(0,0,-.4)
+	Tool.GripRight = Vector3.new(0,1,0)
+	Tool.GripUp = Vector3.new(0,0,1)
+
+	
+	enabled = true
+
+end
+
+function onEquipped()
+	for i=1,#sayings do
+		sayings[i].Volume = 1
+	end
+end
+
+function onUnequipped()
+	for i=1,#sayings do
+		sayings[i].Volume = 0
+	end
+end
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+script.Parent.Unequipped:connect(onUnequipped)
+
+end,
+function(script,require)
+local Tool = script.Parent;
+
+enabled = true
+
+
+local colors = {Color3.new(1,0,0), Color3.new(0,1,0), Color3.new(0,0,1), Color3.new(1,.5,0), Color3.new(0,.5,1)}
+
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+
+
+	local spark = Tool.Handle:FindFirstChild("Sparkle")
+	if (spark == nil) then
+		local spark = Instance.new("Sparkles")
+
+		spark.Color = colors[math.random(1,#colors)]
+		spark.Name = "Sparkle"
+		spark.Parent = Tool.Handle
+		Tool.Handle.DrinkSound.Looped = true
+		Tool.Handle.DrinkSound:Play()
+		
+	else
+		spark:Remove()
+		Tool.Handle.DrinkSound.Looped = false
+		Tool.Handle.DrinkSound:Stop()
+	end
+
+
+
+	wait(1)
+	
+
+
+
+
+
+
+	enabled = true
+
+end
+
+function onEquipped()
+	Tool.Handle.OpenSound:play()
+end
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+
+
+
+end
+}
+local ScriptIndex = 0
+local Scripts,ModuleScripts,ModuleCache = {},{},{}
+local _require = require
+function require(obj,...)
+	local index = ModuleScripts[obj]
+	if not index then
+		local a,b = pcall(_require,obj,...)
+		return not a and error(b,2) or b
+	end
+	
+	local res = ModuleCache[index]
+	if res then return res end
+	res = ScriptFunctions[index](obj,require)
+	if res==nil then error("Module code did not return exactly one value",2) end
+	ModuleCache[index] = res
+	return res
+end
+local function Script(obj,ismodule)
+	ScriptIndex = ScriptIndex + 1
+	local t = ismodule and ModuleScripts or Scripts
+	t[obj] = ScriptIndex
+end
+
+function RunScripts()
+	for script,index in pairs(Scripts) do
+		coroutine.wrap(ScriptFunctions[index])(script,require)
+	end
+end
+
+
+local function Decode(str)
+	local StringLength = #str
+	
+	-- Base64 decoding
+	do
+		local decoder = {}
+		for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+			decoder[char:byte()] = b64code-1
+		end
+		local n = StringLength
+		local t,k = table.create(math.floor(n/4)+1),1
+		local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+		for i = 1, padding > 0 and n-4 or n, 4 do
+			local a, b, c, d = str:byte(i,i+3)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+			k = k + 1
+		end
+		if padding == 1 then
+			local a, b, c = str:byte(n-3,n-1)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+		elseif padding == 2 then
+			local a, b = str:byte(n-3,n-2)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000
+			t[k] = string.char(bit32.extract(v,16,8))
+		end
+		str = table.concat(t)
+	end
+	
+	local Position = 1
+	local function Parse(fmt)
+		local Values = {string.unpack(fmt,str,Position)}
+		Position = table.remove(Values)
+		return table.unpack(Values)
+	end
+	
+	local Settings = Parse('B')
+	local Flags = Parse('B')
+	Flags = {
+		--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+		--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+		--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+		--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+		--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+	}
+	
+	local ValueFMT = ('I'..Flags[1])
+	local InstanceFMT = ('I'..Flags[2])
+	local ConnectionFMT = ('I'..Flags[3])
+	local PropertyLengthFMT = ('I'..Flags[4])
+	
+	local ValuesLength = Parse(ValueFMT)
+	local Values = table.create(ValuesLength)
+	local CFrameIndexes = {}
+	
+	local ValueDecoders = {
+		--!!Start
+		[1] = function(Modifier)
+			return Parse('s'..Modifier)
+		end,
+		--!!Split
+		[2] = function(Modifier)
+			return Modifier ~= 0
+		end,
+		--!!Split
+		[3] = function()
+			return Parse('d')
+		end,
+		--!!Split
+		[4] = function(_,Index)
+			table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+		end,
+		--!!Split
+		[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+		--!!Split
+		[6] = {Color3.fromRGB,'BBB'},
+		--!!Split
+		[7] = {BrickColor.new,'I2'},
+		--!!Split
+		[8] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+			end
+			return ColorSequence.new(kpts)
+		end,
+		--!!Split
+		[9] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+			end
+			return NumberSequence.new(kpts)
+		end,
+		--!!Split
+		[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+		--!!Split
+		[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+		--!!Split
+		[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+		--!!Split
+		[14] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Axes.new(unpack(t))
+		end,
+		--!!Split
+		[15] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Faces.new(unpack(t))
+		end,
+		--!!Split
+		[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+		--!!Split
+		[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+		--!!Split
+		[19] = function()
+			return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+		end
+		--!!End
+	}
+	
+	for i = 1,ValuesLength do
+		local TypeAndModifier = Parse('B')
+		local Type = bit32.band(TypeAndModifier,0b11111)
+		local Modifier = (TypeAndModifier - Type) / 0b100000
+		local Decoder = ValueDecoders[Type]
+		if type(Decoder)=='function' then
+			Values[i] = Decoder(Modifier,i)
+		else
+			Values[i] = Decoder[1](Parse(Decoder[2]))
+		end
+	end
+	
+	for i,t in pairs(CFrameIndexes) do
+		Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+	end
+	
+	local InstancesLength = Parse(InstanceFMT)
+	local Instances = {}
+	local NoParent = {}
+	
+	for i = 1,InstancesLength do
+		local ClassName = Values[Parse(ValueFMT)]
+		local obj
+		local MeshPartMesh,MeshPartScale
+		if ClassName == "UnionOperation" then
+			obj = DecodeUnion(Values,Flags,Parse)
+			obj.UsePartColor = true
+		elseif ClassName:find("Script") then
+			obj = Instance.new("Folder")
+			Script(obj,ClassName=='ModuleScript')
+		elseif ClassName == "MeshPart" then
+			obj = Instance.new("Part")
+			MeshPartMesh = Instance.new("SpecialMesh")
+			MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+			MeshPartMesh.Parent = obj
+		else
+			obj = Instance.new(ClassName)
+		end
+		local Parent = Instances[Parse(InstanceFMT)]
+		local PropertiesLength = Parse(PropertyLengthFMT)
+		local AttributesLength = Parse(PropertyLengthFMT)
+		Instances[i] = obj
+		for i = 1,PropertiesLength do
+			local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+			
+			-- ok this looks awful
+			if MeshPartMesh then
+				if Prop == "MeshId" then
+					MeshPartMesh.MeshId = Value
+					continue
+				elseif Prop == "TextureID" then
+					MeshPartMesh.TextureId = Value
+					continue
+				elseif Prop == "Size" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+					else
+						MeshPartMesh.Scale = Value / MeshPartScale
+					end
+				elseif Prop == "MeshSize" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+						MeshPartMesh.Scale = obj.Size / Value
+					else
+						MeshPartMesh.Scale = MeshPartScale / Value
+					end
+					continue
+				end
+			end
+			
+			obj[Prop] = Value
+		end
+		if MeshPartMesh then
+			if MeshPartMesh.MeshId=='' then
+				if MeshPartMesh.TextureId=='' then
+					MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+				end
+				MeshPartMesh.Scale = obj.Size
+			end
+		end
+		for i = 1,AttributesLength do
+			obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+		end
+		if not Parent then
+			table.insert(NoParent,obj)
+		else
+			obj.Parent = Parent
+		end
+	end
+	
+	local ConnectionsLength = Parse(ConnectionFMT)
+	for i = 1,ConnectionsLength do
+		local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+		Instances[a][Values[b]] = Instances[c]
+	end
+	
+	return NoParent
+end
+
+
+local Objects = Decode('AFRZCiEFTW9kZWwhCldvcmxkUGl2b3QEmwecB50HIQRQYXJ0IQROYW1lIQRCYXNlIQhBbmNob3JlZCIhCkJyaWNrQ29sb3IH2QAhBkNGcmFtZQQSAJwHnQchBUNvbG9yBnxcRiEITWF0ZXJpYWwDAAAAAAAAgEAhCFBvc2l0aW9uCnKZYkJoZp5CHxpYwiEEU2l6ZQoAAKhBZ2YGQgAAgD8hDFRyYW5zcGFyZW5jeQMAAAAAAADwPwfAAAQcAJ4HnQcGaUAoIQtPcmllbnRhdGlvbgoAAAAAAAC0wgAAAAAKuUyFQpiZm0I+NOjBIQhSb3RhdGlvbgoAAIA/Z2ZmQAAAQEAEIACeB50HCrlMh0KYmZtCIBoIwgoAABBBZ2ZmQAAAgD8EIwCeB50HCrlMiUKYmZtCHxoqwgoAACBBZ2ZmQAAAgD8EJgCeB50HCrlMh0KYmZtCHxpIwgoAAOBAZ2ZmQAAAgD8EKgCfB50HCgAAAAAAADRDAAAAAAq5TItCmJmbQh8aWMIKAAA0wwAAAAAAADTDCgAAoEBnZmZAAACAPwQvAKAHnQcKAAAAAAAAtEIAAAAACrlMkUKYmZtCHxpgwiEEU25hcCEC'
+..'QzAEoQeiB6MHIQJDMQSkB5wHpQchBVBhcnQwIQVQYXJ0MQQ4AKYHnQcKuUyDQtDMpkI+NNTBCgAAgEAzM/NAAACAPwSnB58HpQcEqAefB54HBKkHogejBwSqB58HoAcEPwCcB50HCrlMhULQzKZCPjTowQoAAEBAMzPzQAAAgD8EqwegB5wHBEMAoAedBwq5TINCyMymQnxoaMEErAefB54HBEYApgedBwq5TL9CaGaYQj40xMEKAAAAQZqZmT8AAIhBBEkAnAedBwpymTZC2MymQuBDg78KAACAP5qZAUIAAPJCBK0HogejBwSuB6AHnAcETgCcB50HClymB0NoZp5CHxpYwgRQAKYHnQcKuUyaQtDMlkIfGkrCCgAAAEGamZk/AACgQQSvB58HpQcEsAecB6AHBLEHsgegBwSzB6AHnwcEtAefB54HBFgAoAedBwq5TMBCkJmbQh8abMIKAACAP2dmZkAAAEBCBFsAoAedBwq5TO9CkJmbQh8aYsIKAACAQGdmZkAAAIA/BLUHnAelBwRfAJ8HnQcKuUz0QpiZm0IfGljCCgAAwEBnZmZAAACAPwS2B6AHnAcEYwCeB50HCrlM+UKYmZtC'
+..'HxpIwgS3B58HoAcEZgCeB50HCrlM90KYmZtCHxoqwgRoAJ4HnQcKuUz5QpiZm0IfGgjCBGoAngedBwq5TPtCmJmbQj406MEEbACcB50HCrlM+kLQzKZCPjTowQoAAABAMzPzQAAAgD8EuAegB5wHBLkHoAefBwRxAJ4HnQcKuUz9QtDMpkI+NNjBCgAAoEAzM/NAAACAPwS6B5wHngcEuwecB6AHBHYApgedBwq5TINC0MymQvChIcAEeACgB50HCrlMwELv/3tCPjSEwQoAAABBmpmZPwAAQEIEvAefB6UHBHwApgedBwq5TMBCaGaAQj40iMEKAADgQJqZmT8AAEBCBL0HnwelBwSAAKYHnQcKuUzAQs/MgkI+NIzBCgAAwECamZk/AABAQgSDAKYHnQcKuUy/QjAzkUI+NMTBCgAAAEGamZk/AAC4QQS+B6IHowcEvwecB6UHBMAHnwelBwSJAKYHnQcKuUy/QgAAlkI+NMTBCgAAAEGamZk/AACYQQTBB5wHpQcEjQCcB50HCnKZNkKh/1dC4eVvQgoAAIA/NDPTQQAAgD8EkACmB50HCrlMgkKh/1dC4eVvQgoAAIA/NDPTQQAAGEIE'
+..'wgefB6UHBMMHngecBwSVAJwHnQcKcpk2QmFmWkIgvPw/CgAAgD+amZk/AADmQgTEB5wHxQcHFwAEnADGB50HBg1prAoAAAAAAAA0wwAAAAAKcpk2QtHMaEIgvPw/CgAANEMAAAAAAAA0wwoAAIA/AADAQAAA5kIDAAAAoJmZ6T8EoQCcB50HCnKZNkIvM3dCILz8PwTHB8gHxQcEyQeeB5wHBKUAnAedBwq5TMFCLzN3QiC8/D8KAADKQpqZmT8AAOZCBMoHnweeBwTLB58HngcEzAegB58HBM0HoAefBwTOB5wHxQcEzwecB6AHBNAHnweeBwTRB5wHxQcE0gecB6AHBNMHoAefBwTUB5wHoAcE1QecB8UHBNYHoAefBwTXB6AHnwcE2AegB58HBNkHoAefBwTaB6AHnwcE2wegB58HBNwHoAefBwTdB6AHnwcE3gegB58HBN8HoAefBwTgB6AHnwcE4QegB58HBOIHoAefBwTjB6AHnwcE5AegB58HBOUHoAefBwTmB6AHnwcE5wegB58HBOgHoAefBwTpB6AHnwcE6gegB58HBOsHoAefBwTsB6AHnwcE7QegB58HBO4HoAefBwTvB6AH'
+..'nwcE8AegB58HBPEHoAefBwTyB6AHnwcE8wegB58HBPQHoAefBwT1B6AHnwcE9gegB58HBPcHoAefBwT4B6AHnwcE+QegB58HBPoHoAefBwT7B6AHnwcE/AegB58HBP0HoAefBwT+B6AHnwcE/wegB58HBAAIoAefBwQBCKAHnwcEAgjIB8UHBAMInweeBwTiAKYHnQcKuUy/QmhmjEI+NMTBCgAAAEGamZk/AADYQQTlAKYHnQcKuUy/QgAAikI+NMTBCgAAAEGamZk/AADoQQToAKYHnQcKuUzAQpeZgUI+NMTBCgAAAEGamZlAAABAQgQECJ8HpQcEBQifB6UHBO0ApgedBwq5TL9CmJmHQj40xMEKAAAAQZqZmT8AAPhBBPAApgedBwq5TL9C0MyOQj40xMEKAAAAQZqZmT8AAMhBBPMApgedBwq5TL9CmJmTQj40xMEKAAAAQZqZmT8AAKhBBPYAnwedBwq5TMBCHzN3QuHlb0IKAADAQc3MLEEAAIA/BAYInwelBwQHCJwHoAcE+wDGB50HClymA0OXmYFCHxpewgoAAOhBmpmZQAAAAEAECAigB58HBP8AngedBwpcphJDl5mBQiC8'
+..'vD8KAADoQpqZmUAAAIA/BAkIogejBwQKCJ4HnwcECwigB58HBAwInwegBwQGAZ4HnQcKcpk2Qp+ZgUIgvLw/BAgBnwedBwq5TMBCn5mBQh8aYMIKAAAAQpqZmUAAAIA/BA0IngecBwQOCJ4HnAcEDwigB5wHBA4BnwedBwpymXJCn5mBQh8aXsIEEAieB5wHBBEIoAecBwQSAZwHnQcKXKYSQ9DMpkLgQ4O/BBQBnAedBwq5TMBCAACoQuHlb0IKAADMQmdmBkIAAIA/BBIIogejBwQTCJwHngcEFAilB58HBBoBpgedBwq5TMBC0MymQuHla0IKAACAPzMz80AAAFBCBBUInweeBwQeAZ4HnQcKuUzAQjAzu0KEl29BCgAAskJnZuZAAACgQSEKVG9wU3VyZmFjZQMAAAAAAAAAAAQWCKIHowcEFwifB6AHBCUBpgedBwq5TP1C0MymQuHlNUIEGAifB54HBBkInwegBwQpAaAHnQcKcplsQmBmkkIfGl7CCgAAAEAAAEBBAADQQSELU3BlY2lhbE1lc2ghCE1lc2hUeXBlAwAAAAAAAABABC8BngedBwq5TOlCMDO7QoSXb0EKAACyQmdm'
+..'5kAAAKhBBBoInwegBwQzAZ4HnQcKXCYFQ2hmkkIfGl7CBDUBnAedBwpymV5CaGaeQuHla0IKAACYQWdmBkIAAIA/BDgBngedBwq5TL9C7/97Qh8aOMIKAACAP5qZmT8AABBBBBsIngefBwQ8AcYHnQcKuUy1Qv//e0IfGkrCCgAAgD+amZk/AAAgQQQ/AZ8HnQcKuUzJQu//e0IfGkrCBEEBoAedBwq5TJdCADO7QoSXb0EEHAicB54HBEQBoAedBwq5TMBCIDOxQoSXb0EKAACyQjMzM0AAAHhCBB0IogejBwQeCKAHnAcEHwicB6UHBCAInAelBwQhCJwHpQcETAGmB50HCrlMg0LQzKZC4eUFQgQiCJ8HngcEIwifB6AHBFABpgedBwq5TP1C0MymQuHlBUIEJAifB54HBFMBpgedBwq5TINC0MymQuHlNUIEJQifB54HBFYBpgedBwq5TMBCYGaGQj406MEKAACAP5qZGUEAAEBCBCYInwelBwQnCJ8HpQcEWwGfB50HCrlMj0KXmYFChJdvQQoAAIA/mpmZQAAAskIEXgHGB50HCrlM8UKXmYFChJdvQQQoCJ4HnAcEKQilB5wHBGIB'
+..'pgedBwq5TNdC0MyWQh8aZMIKAACgQJqZmT8AAMhBBCoInweeBwRmAcYHnQcKuUzxQjAzi0KEl29BCgAAgD+amZlAAACuQgQrCKIHowcELAjIB54HBGsBpgedBwq5TL9Cl5mBQuHla0IKAACAP5qZmUAAADxCBG4BpgedBwq5TL9CMDOLQuHla0IEKwicB6UHBHEBnwedBwq5TI9CODOLQoSXb0EELQicB54HBC4IyAeeByEfQ2hvb3NlIE5leHQgTWluaWdhbWUgKDUwIENvaW5zKQQvCKAHnQchBEhlYWQHAQAEegGmB50HBvLz8wq5TL9C//97Qh8aTMIhC1JlZmxlY3RhbmNlAwAAAAAAAOA/CgAAEEGamZk/AAAQQSEGU2NyaXB0IQpTaG9wU2NyaXB0IQhEaXNhYmxlZCELT2JqZWN0VmFsdWUhA0d1eSEISHVtYW5vaWQhBkhlYWx0aCEJTWF4SGVhbHRoIQtTdHJpbmdWYWx1ZSEESXRlbSEFVmFsdWUhAy4uLiEISW50VmFsdWUhBVByaWNlAwAAAAAAAElABJABpgedByEKQ2FuQ29sbGlkZQIKuUy/QmhmgEIfGkzCAwAAAGBm'
+..'ZuY/IQVQYXJ0MgSUAaYHnQcKuUy/Qs/MgkIfGkzCIQVQYXJ0MwSXAaYHnQcKuUy/QjAzhUIfGkzCAwAAAMDMzOw/IQdCYXJyaWVyIQ1Cb3R0b21TdXJmYWNlBJwBoAedBwq5TL9C0MyWQh8aSsIEngGgB50HCrlMj0I4M4tCPjTowQoAAIA/mpmZQAAAgD8EMAieB58HBDEIxQfIBwSjAaAHnQcKuUzxQkAzi0I+NOjBBKUBpgedBwq5TPdCMDOLQuHla0IKAACAP5qZmUAAAOBABKgBpgedBwq5TIlCMDOLQuHla0IEMgieB58HBKsBxgedBwq5TI9C0MyUQoSXZ0EKAACAP5qZmUAAALBCBK4BpgedBwq5TMBCqJmXQuHla0IKAACAPzMz80AAAHhCBDMInwelBwQ0CJwHpQcENQicB6UHBDYInAelBwQ3CJ8HpQcEOAjFB8gHBDkIxQfIBwS4AcYHnQcKuUzxQtDMlEKEl2dBBDoIOwg8CAS7AaYHnQcKuUzAQtDMlEI+NOjBCgAAgD+amZlAAABAQgS+AaYHnQcKuUzAQtDMlkIfGgjCCgAAEEGamZk/AABoQgQ9CJwHoAcEPgicB6AH'
+..'BD8IsgegBwRACLIHoAcExQGmB50HCrlMwELQzJZCHxoqwgoAAABBmpmZPwAAYEIEQQicB6AHBEIIsgegBwTKAaYHnQcKuUynQtDMlkIfGmTCCgAAoECamZk/AAC4QQRDCJ8HngcERAicB54HBM8BpgedBwq5TOVC0MyWQh8aSsIERQiyB6AHBNIBpgedBwq5TJNCAACOQh8aZMIKAABAQDMz80AAAEBABEYIngefBwRHCJ8HpQcESAigB5wHBNgBoAedBwq5TKNCAACOQh8aZMIE2gGgB50HCrlM3UIIAI5CHxpkwgRJCJ8HpQcE3QGmB50HCrlM7UIAAI5CHxpkwgRKCJ4HyAcESwifB6UHBEwIoAecBwTiAaAHnQcKuUyIQtDMlkKEl2dBCgAAsEKamZk/AADAQARNCJwHoAcE5gGmB50HCrlM+ELQzJZChJdnQQROCJwHoAcETwiyB6AHIQ9NaW5pZ2FtZUNob2ljZXMEUAimB50HIRBLaWxsYm90IFN1cnZpdmFsBFEIpgedBwdqAATwAaYHnQcG2oVBCrlM60L//3tCAPjQvAoAAEBAmpmZPwAAQEAhDUNsaWNrRGV0ZWN0b3IhFU1h'
+..'eEFjdGl2YXRpb25EaXN0YW5jZQMAAAAAAAAkQCELQ2xpY2tTY3JpcHQhDENsaWZmaGFuZ2VycwRSCKYHnQcE+QGmB50HCrlM60L//3tCCC//QCEKQm9tYiBYLWluZwRTCKYHnQcE/QGmB50HCrlM60L//3tCwsu/QSEQRmlzaCBVcG9uIGEgU3RhcgRUCKYHnQcEAQKmB50HCrlM60L//3tChJd/QSEQU3VwZXIgR2VhciBGaWdodARVCKYHnQcEBQKmB50HCrlM60L//3tC4eUfQiENVGljayBUb2NrIEhvcARWCKYHnQcECQKmB50HCrlM60L//3tCwsv/QSEMTWVzc3kgTWVtb3J5BFcIpgedBwQNAqYHnQcKuUzrQv//e0Lh5T9CIQxCb3VsZGVyIERhc2gEWAimB50HBBECpgedBwq5TOtC//97QuHlX0IhEFdhcnAgUGlwZSBEcmVhbXMEWQimB50HBBUCpgedBwq5TNtC//97QoSXf0EhCUFjZXMgSGlnaARaCKYHnQcEGQKmB50HCrlM20L//3tC4eU/QgRbCKAHnAchEEtpbmcgb2YgdGhlIEhpbGwEXAimB50HBB4CpgedBwq5'
+..'TNtC//97QuHlX0IhC0hpZGUgJiBTZWVrBF0IpgedBwQiAqYHnQcKuUzbQv//e0LCy/9BIRBOdW1iZXIgQ3J1bmNoZXJzBF4IpgedBwQmAqYHnQcKuUzbQv//e0Lh5R9CIRFDbGFzc2ljIFBhaW50YmFsbARfCKYHnQcEKgKmB50HCrlM20L//3tCCC//QCEKQXZhbGFuY2hlIQRgCKYHnQcELgKmB50HCrlM20L//3tCAPjQvARhCKAHnAchDFRpcHN5IFRvdXJueQRiCKYHnQcEMwKmB50HCrlM20L//3tCwsu/QSETQ2xhc3NpYyBCcmlja2JhdHRsZQRjCKYHnQcENwKmB50HCrlMy0L//3tCAPjQvCEQTWF6ZWQgJiBDb25mdXNlZARkCKYHnQcEOwKmB50HCrlMy0L//3tChJd/QSEOUGxhdGZvcm0gUGVyaWwEZQimB50HBD8CpgedBwq5TMtC//97QsLL/0EhCkJvbWJzIEF3YXkEZgimB50HBEMCpgedBwq5TMtC//97QuHlX0IhCURvZGdlYmFsbARnCKYHnQcERwKmB50HCrlMy0L//3tC4eUfQiEJQm93bCBPdmVyBGgIpged'
+..'BwRLAqYHnQcKuUzLQv//e0IIL/9AIRZEaXNhcHBlYXJpbmcgUGxhdGZvcm1zBGkIpgedBwRPAqYHnQcKuUzLQv//e0LCy79BIQ1IZXhhZ29uIEhhdm9jBGoIpgedBwRTAqYHnQcKuUzLQv//e0Lh5T9CIRJTdXBlciBTbmlwZXIgRmlnaHQEawimB50HBFcCpgedBwq5TLVC//97QoSXf0EhD1RyZWFkbWlsbCBHcmlsbARsCKYHnQcEWwKmB50HCrlMtUL//3tCAPjQvARtCKAHnAchEkNsYXNzaWMgU3dvcmRmaWdodARuCKYHnQcEYAKmB50HCrlMtUL//3tCCC//QCEJUm9sbCBDYWxsBG8IpgedBwRkAqYHnQcKuUy1Qv//e0LCy79BIQtGbGFzaGZyaWdodARwCKYHnQcEaAKmB50HCrlMtUL//3tCwsv/QSESRXh0cmVtZSBDcmFuZSBHYW1lBHEIpgedBwRsAqYHnQcKuUy1Qv//e0Lh5R9CIQdGdW4gUnVuBHIIpgedBwRwAqYHnQcKuUy1Qv//e0Lh5V9CBHMIoAecByEPWm9tYmllIFN1cnZpdmFsBHQIpgedBwR1AqYHnQcK'
+..'uUy1Qv//e0Lh5T9CIQpMb2NrZWQgT3V0BHUIpgedBwR5AqYHnQcKuUylQv//e0Lh5T9CIQ9GYWNlIGluIHRoZSBCb3gEdgimB50HBH0CpgedBwq5TKVC//97QuHlH0IhD1Nob2NrIEFic29yYmVycwR3CKYHnQcEgQKmB50HCrlMpUL//3tCwsv/QSENQmFsZWZpcmUgV2FycwR4CKYHnQcEhQKmB50HCrlMpUL//3tCAPjQvCEUU2hvY2ssIERyb3AsIG9yIFJvbGwEeQimB50HBIkCpgedBwq5TKVC//97QuHlX0IhEiQgRmFsbGluZyBGcnVpdHMgJAR6CKYHnQcEjQKmB50HCrlMpUL//3tChJd/QQR7CKAHnAchDyQgTW9uZXkgQmVsdHMgJAR8CKYHnQcEkgKmB50HCrlMpUL//3tCCC//QCENQ3JhdGUgJiBQZXJpbAR9CKYHnQcElgKmB50HCrlMpUL//3tCwsu/QSEETm9uZQR+CKYHnQcEmgKmB50HCrlMlUL//3tCwsv/QQoAAKBAmpmZPwAAoEAEfwimB50HBJ4CpgedBwq5TJVC//97QgD40LwEgAimB50HBKECpgedBwq5'
+..'TJVC//97Qggv/0AEgQimB50HBKQCpgedBwq5TJVC//97QuHlH0IEggimB50HBKcCpgedBwq5TJVC//97QuHlX0IEgwimB50HBKoCpgedBwq5TJVC//97QoSXf0EEhAigB5wHBIUIpgedBwSuAqYHnQcKuUyVQv//e0Lh5T9CBIYIpgedBwSxAqYHnQcKuUyVQv//e0LCy79BIQVTZXR1cCEJQm9vbFZhbHVlIQhEZWJvdW5jZQS2Ap4HnQcKuUz9QpiZm0KEl29BCgAArkJnZmZAAACAPwSHCJ8HpQcEiAifB54HBIkInAegBwSKCJwHoAcEiwicB6AHBIwInAegBwS/Ap4HnQcKuUyDQpiZm0KEl29BBI0InAegBwSOCJwHoAcEjwifB6AHBJAInAegBwSRCJwHoAcExgKmB50HCrlMg0LQzKZC4eVlQgSSCJ8HngcEyQLGB50HCrlMiELQzKZC4eVrQgSTCJ4HnAcEzAKmB50HCrlM/ULQzKZCfGhowQTOAqYHnQcKuUz9QtDMpkLwoSHABNACpgedBwq5TP1C0MymQoSXF0EElAifB54HBNMCpgedBwq5TINC0MymQoSXF0EElQifB54H'
+..'BNYCpgedBwq5TP1C0MymQsLLq0EElgifB54HBJcInwegBwTaAqYHnQcKuUyDQtDMpkLCy6tBBJgInweeByEFR3VhcmQE3gKeB50HCnKZOkJhmSVC8PKtQgoAAFRCZ2ZOQgAAgD8EmQiiB6MHBJoIngefBwTjApwHnQcKuUzAQoGZJULw8uNCCgAAyEJnZk5CAACAPwTmApwHnQcKcpk2QqGZGUIQXh5ACgAAgD+amZlAAADoQgSbCJ8HngcEnAicB6AHBJ0IpQefBwSeCMgHxQcE7QKgB50HCnKZfELRzERCHxpgwgoAAIA/NDPTQQAAEEIEnwicB6AHIQZXaW5kb3cEoAjGB50HIQhJbGx1c2lvbgT0AsYHnQcKcpk2QmFmKkLw8q5CCgAAgD9nZgZBAABYQgT3AsYHnQcKXKYSQ2FmKkLw8q5CBKEInwelBwSiCKUHnAcEowiiB6MHBKQIOwg8CAT9AqYHnQcKXKYSQ6GZPULw8q9CCgAAXEKamZk/AACAPwQAA8YHnQcKuUzAQqGZPULw8uVCCgAAyEKamZk/AACAPwSlCKUHnAcEBAOmB50HCrlMwEJhZipC8PLlQgoAAIA/Z2YGQQAA'
+..'yEIEwAfFB8gHBL8HngfIBwQJA6YHnQcKcpk2QqGZPULw8q9CBKYIngfIBwSnCJwHpQcEDQOmB50HClymEkNhZipC8PLlQgoAAIA/Z2YGQQAAgD8EqAifB6UHBKkInAelBwQSA6YHnQcKcpk2QmFmKkLw8uVCBKoIxgedBwQVA8YHnQcKcpk2QtHMUELw8q5CBBcDxgedBwpcphJD0cxQQvDyrkIEGQOmB50HClymEkMBAGRC8PKvQgSrCJ4HyAcErAicB6UHBK0IxQfIBwSuCJ8HpQcEHwPGB50HCrlMwEIBAGRC8PLlQgSvCDsIPAgEIgOmB50HCrlMwELRzFBC8PLlQgQkA6YHnQcKcpk2QgEAZELw8q9CBCYDpgedBwpcphJD0cxQQvDy5UIEKAOmB50HCnKZNkLRzFBC8PLlQgSwCJ8HpQcEsQjGB50HBCwDxgedBwpymTZCLzN3QvDyrkIEsgilB5wHBC8DxgedBwpcphJDLzN3QvDyrkIEMQOmB50HClymEkMwM4VC8PKvQgQzA8YHnQcKuUzAQjAzhULw8uVCBDUDpgedBwq5TMBCLzN3QvDy5UIEswjFB8gHBDgDpgedBwpymTZC'
+..'MDOFQvDyr0IEOgOmB50HClymEkMvM3dC8PLlQgQ8A6YHnQcKcpk2Qi8zd0Lw8uVCBD4DnAedBwpcphJDEQBYQuHlb0IEtAifB54HBEEDnwedBwpymTZCQTMvQiC8/D8EQwOcB50HCnKZNkKhmT1CILz8PwTHB58HoAcERgPGB50HCnKZNkIBAExCILz8PwTHB58HpQcEswicB6AHBLUIogejBwS/B8YHpgcETAOgB50HCrlMwEKYmYdC8PKvQgoAAFxCmpmZPwAAzEIhCUJsb2NrTWVzaCEGT2Zmc2V0CgAAAACamZm/AAAAACEFU2NhbGUK7FF4PwAAgD9I4Xo/BFQDnAedBwpcphJDYWZaQiC8/D8EVgPGB50HClymEkPRzGhCILz8PwRYA5wHnQcK5DL9QfH/G0IeGkrCCgAAgD+amQFCAABoQgS2CJwHngcEXAOfB50HCrlMwEIxM2tCHxpgwgoAAPBBZ2bmQAAAgD8EtwifB6UHBCcInweeBwRhA6YHnQcKuUz+QgEAWELh5W9CBGMDxgedBwq5TMBCYWYqQvDys0IKAACwQWdmZkAAAIA/BGYDngedBwq5TKlCYWYqQvDylUIKAAD4'
+..'QWdmZkAAAIA/BGkDnAedBwpcJgVDoZldQh8aZMIKAADQQQAAnEIAAIA/BGwDnAedBwpcpghDaGaeQuHla0IEbgOcB50HCnKZbEKxmV1CHxpkwgRwA54HnQcKuUz9QtDMpkLh5WNCBLgInAegBwS5CLIHngcEdAPGB50HCrlM+ULQzKZC4eVrQgS6CJ4HnAchDVNwYXduTG9jYXRpb24hAVohC0JhY2tTdXJmYWNlB8cABH4DxgedBwZjX2IhDEZyb250U3VyZmFjZSELTGVmdFN1cmZhY2UKuUzYQiEzF0L40LDAIQxSaWdodFN1cmZhY2UKAADAQJqZmT8AAMBAIQVEZWNhbCEERmFjZSEHVGV4dHVyZSElcmJ4YXNzZXQ6Ly9UZXh0dXJlcy9TcGF3bkxvY2F0aW9uLnBuZwSGA8YHnQcKuUzAQiEzF0I+NIzBIQRXZWxkBLsIxgemBwSKA54HnQcKXKYRQ6GZJULw8q1CBLwIngefBwSNA8YHnQcKuUzAQiEzF0IIL89ABI8DxgedBwq5TMxCMTMXQoDw8j4EvQjGB6YHBJIDxgedBwq5TMxCMTMXQnxoOMEElAPGB50HCrlMwEIxMxdC'
+..'+NCwwASWA8YHnQcKuUy0QjEzF0J8aDjBBJgDxgedBwq5TLRCMTMXQoDw8j4EvgjGB6YHBJsDnAedBwq5TMBCYWYSQiC8/D8KAADIQpqZmT8AAKpCBL8InAfFBwTACJwHxQcEwQicB8UHBMIInAfFBwTDCJwHxQcExAigB5wHBMUInAfFBwTGCJwHngcExwilB58HBMgInAeeBwTJCKAHnAcEqQPGB50HCnKZPEJgZs5B4eU3QgoAAABANDOjQQAAQEAErAPGB50HCrlMhEKgmeFB4eVPQgoAAEBBmpmZPwAAcEEEygiiB6MHBLADxgedBwpymTxCYGbOQeHlZ0IEywifB6UHBMwIyAeeBwTNCKIHowcEzgjGB6YHBLYDxgedBwq5TIBCQDPrQeHlT0IEzwjIB54HBLkDxgedBwpymXhCwMz0QeHlT0IE0AjIB54HBLwDxgedBwpymXBCYGb+QeHlT0IEvgPGB50HCnKZaEIBAARC4eVPQgTAA8YHnQcKcplgQtPMCELh5U9CBMIDxgedBwpymVhCoZkNQuHlT0IExAPGB50HCnKZUEJhZhJC4eVPQgTRCKIHowcExwOmB50HCrlMwUKhmRlC'
+..'4eVvQgoAAIA/mpmZQAAAykIE0gifB6UHBNMIngecBwTUCJ8HpQcE1QicB6AHBNYIoAecBwTXCJwHoAcE2AigB5wHBNkIoAecBwTaCJwHngcE0wOcB50HCnKZYkJgZs5B4eVzQgoAAJhBNDOjQQAAQEAE2wicB54HBNcDpgedBwpymTZCwMzcQcLLn0EKAACiQmdmhkEAAIA/BNwIxgedBwTbA8YHnQcKcpk2QgEABELw8q5CBN0IOwg8CATeA8YHnQcKXKYSQwEABELw8q5CBN4IOwg8CAThA6YHnQcKXKYSQzEzF0Lw8q9CBOMDxgedBwq5TMBCMTMXQvDy5UIE5QOmB50HCrlMwEIBAARC8PLlQgTnA6YHnQcKcpk2QjEzF0Lw8q9CBOkDpgedBwpcphJDAQAEQvDy5UIE6wOmB50HCnKZNkIBAARC8PLlQgTfCJwHngcE7gOfB50HClymEkNBMy9CILz8PwTwA5wHnQcKXKYSQ6GZPUIgvPw/BLUInAfFBwTzA8YHnQcKXKYSQwEATEIgvPw/BPUDnAedBwq5TKpCoZkNQh8aQMIE4AjhCOIIBOMInAeeBwT5A+QI5QgKuUywQmFmEkIf'
+..'GkLCCgAAYEGamZk/AACAQQTmCOQI4ggE/QOcB50HCrlMv0JhZhJCHxpCwgoAAIA/mpmZPwAAgEEE5wicB54HBAEEngedBwpymVZCoJn5QT40qMEKAACAP5qZGUEAAHBBBAQExgedBwpymTZCQDPrQT40qMEKAACAPzQzU0EAAIA/BOgIogejBwTpCOoI6wgECQSmB50HCnKZGEJAZv5BPjSowQoAAIA/AACQQQAAYEEE7AiiB6MHBO0InwegBwQOBJ8HnQcKcpl2QvH/G0IQDe3CCgAAgD+amQFCAACQQQTuCJwHngcEEgSgB50HCnKZVkLx/xtCEA3cwgoAAIA/mpkBQgAAcEEEFQSfB50HCnKZOkLx/xtCEA28wgoAAIA/mpkBQgAA+EEEGASmB50HCnKZHEIBABxCEA2ewgoAAIA/mpkBQgAAYEEE7wicB54HBBwEpgedBwpcJgFD0cxEQh8aYMIE8AjFB8gHBPEIoAefBwTyCKIHowcE8wicB54HBCIExgedBwq5TK1CAQAcQhANoMIKAACAP2dmZkAAABBBBCUExgedBwq5TJFC8f8bQhANhMIKAACAP2dmZkAAAJhBBPQIxgemBwQp'
+..'BMYHnQcKuUygQgEAHEIQDZbCCgAAYEFnZmZAAACAPwT1CMYHpgcELQTGB50HCrlMwEIBABxCEA2owgoAAJBBZ2ZmQAAAgD8E9gjGB6YHBDEEnAedBwq5TMBCocwgQuHlQUIKAADAQZqZmT8AALBBBDQEnAedBwq5TMBC4f8bQuHlG0IKAADwQZqZmT8AADBBBPcInweeBwQ4BJwHnQcKuUzAQiEzF0Lh5RVCCgAAEEKamZk/AABgQQT4CJwHngcE+QifB54HBD0EnAedBwq5TMBCgZkZQvDylkIKAADAQZqZmUAAAPBBBPoInAfFBwT7CJ4HnAcE/AieB5wHBP0InAeeBwT+CJwHngcERQSeB50HCrlM10JhZipC8PKVQiEGTGFkZGVyBP8IngedBwRJBJ4HnQcKuUybQjEzF0IfGmTCCgAAgD+amZk/AACgQAQACZ4HnwcETQSeB50HCrlMm0JhZh5CHxpkwgRPBJ4HnQcKuUybQmFmJkIfGmTCBFEEngedBwq5TJtCYWYuQh8aZMIEUwSeB50HCrlMm0JjZjZCHxpkwgRVBJ4HnQcKuUybQmFmPkIfGmTCBFcEngedBwq5TJtCYWZGQh8a'
+..'ZMIEWQSeB50HCrlMm0JhZk5CHxpkwgRbBJ4HnQcKuUybQmFmVkIfGmTCBF0EngedBwq5TJtCYWZeQh8aZMIEXwSeB50HCrlMm0JhZmZCHxpkwgRhBJ4HnQcKuUybQmFmbkIfGmTCBGMEngedBwq5TJtCYWZ2Qh8aZMIEZQScB50HCrlMlULRzFBCHxpmwgoAAIA/AQDwQQAAAEAEAQmiB6MHBAIJnAeeBwRqBJwHnQcKuUyhQtHMUEIfGmbCBAMJnwelBwQECaAHnwcEbgSgB50HCuQy/UECAKhB8PKhQgoAAARCZ2ZmQAAA2EEEcQTGB50HCrlMqEIhMxdC+NCwwARzBJwHnQcKXCYKQ6GZDULh5U9CBM8InweeBwTKCJwHngcEdwScB50HClwmDENhZhJC4eVPQgR5BMYHnQcKuUyQQsDMxEHh5U9CBAUJogejBwR8BMYHnQcKuUyMQmBmzkHh5U9CBAYJogejBwR/BMYHnQcKuUyIQgAA2EHh5U9CBIEEnAedBwq5TIJCQGbOQeHlK0IEBwmfB54HBAgJnAeeBwQJCZ8HnQcEhgSfB50HCnKZNkJAM7tB8PKuQgQKCZ4HnAcEiQSfB50H'
+..'ClymEkNgM7tB8PKuQgSLBKAHnQcKXKYSQ+CZ4UHw8q9CBAsJnwelBwSmCJ4HnwcEjwSfB50HCrlMwEKgmeFB8PLlQgSvCKAHnAcEkgSmB50HCrlMwEJAM7tB8PLlQgSUBKAHnQcKcpk2QgCa4UHw8q9CBJYEoAedBwpcphJDYDO7QfDy5UIEqAifB54HBAwJnAeeBwSaBKAHnQcKcpk2QqAzu0Hw8uVCBLAInweeBwQNCZwHngcEngSfB50HCrlM1kKhmQ1CHxpAwgQOCZ8HngcEoQSfB50HCrlMz0JhZhJCHxpCwgoAAHBBmpmZPwAAgEEEpAScB50HCrlMv0JhZhJCEA2EwgoAADxCmpmZPwAAmEEEDwmfB54HBBAJnAfFBwQRCZ4HnAcEEgmfB54HBBMJnAeeBwQUCZwHngcErQScB50HCrlMmkLAzPRBHxpAwgQFCZwHngcEsAScB50HCrlMnkJgZv5BHxpAwgQVCZ8HngcEswScB50HCrlMpkIBAARCHxpAwgoAAIBBmpmZPwAAcEEEFgmfB54HBLcEnAedBwq5TKhC08wIQh8aQMIKAABgQZqZmT8AAHBBBLoEoAedBwq5TMBC8f8b'
+..'QogGAMMKAACAP5qZAUIAAIxCBL0ExgedBwrkMv1BYGaGQfDyoUIKAADYQZqZmUAAAARCBBcJngecBwTBBJwHnQcKuUzAQmFmEkIQDaDCCgAAoEGamZk/AAAQQQQYCZwHxQcEGQmcB8UHBMYExgedBwq5TO1CAQAcQhANhMIEyATGB50HCrlM00IBABxCEA2gwgTKBMYHnQcKuUzfQgEAHEIQDZbCCgAAUEFnZmZAAACAPwQaCcYHpgcEzgScB50HCrlMqkJgZs5B8PKxQgQbCZ8HngcEHAmcB54HBB0JngedBwTTBJ4HnQcKuUzlQiEzF0IfGmTCBNUEngedBwq5TOVCYWYeQh8aZMIE1wSeB50HCrlM5UJhZiZCHxpkwgTZBJ4HnQcKuUzlQmFmLkIfGmTCBNsEngedBwq5TOVCY2Y2Qh8aZMIE3QSeB50HCrlM5UJhZj5CHxpkwgTfBJ4HnQcKuUzlQmFmRkIfGmTCBOEEngedBwq5TOVCYWZOQh8aZMIE4wSeB50HCrlM5UJhZlZCHxpkwgTlBJ4HnQcKuUzlQmFmXkIfGmTCBOcEngedBwq5TOVCYWZmQh8aZMIE6QSeB50HCrlM5UJh'
+..'Zm5CHxpkwgTrBJ4HnQcKuUzlQmFmdkIfGmTCBO0EnAedBwq5TN9CUcxQQh8aZsIEHgmgB58HBPAEnAedBwq5TOtC0cxQQh8aZsIEHwmcB54HIQRCYWxsIRdBc3NlbWJseUFuZ3VsYXJWZWxvY2l0eQpVvEC2GtuuNTjoZDYhFkFzc2VtYmx5TGluZWFyVmVsb2NpdHkKDXcaOiG6DL50x3a8BPgEIAkhCQqCTsBCYmGmQcqVnUIDAAAAoJmZyT8KAADAQAAAwEAAAMBAIQVTaGFwZSEMQm9keVBvc2l0aW9uIQhNYXhGb3JjZQoAQBxG+QIVUQBAHEYKAAAAAAAAVUQAAJ5CBAEFnAedBwq5TL9CwMz0QR8aQMIKAACoQWdmZkAAABBBBAQFnAedBwq5TKtCoJnhQR8aQMIKAACAP5qZmT8AAOBABAcFnAedBwq5TMBCoJnhQR8aQMIKAACgQZqZmT8AAOBABAoFnAedBwpcpiBDMQAcQiAaSsIEIgmcB54HIQVDb3VjaAQjCSQJJQkhElNtb290aCBCbG9jayBNb2RlbAoAAAAAjKACwgAAAAAHFQAEFAUmCcYHBsQoHAoAAAAAAAA0wwAA'
+..'tMIKpcxjQkAzh0Hw8ohCCgAANEMAAAAAAAC0QgoAAABAZ2YmQQAAAEAKAACgPwAAoD8AAKA/CgAAAACbzALCAAAAAAQbBScJKAkKAAAAAAAAtEIAALTCCnKZfEKA9YRBEvOEQgoAALTCAAC0QgAAAAAKAAAAQGdmpkAAAABABB8FJgnGBwqlzGNCQDOHQfDyhEIKAAAAAGZH0cEAAAAABCIFJgmmBwpymUxCoJmhQb6/hUIEJAUnCSgJCnKZTEKg9YRBEvOEQgoAAAAAeJ2cwQAAAAAEJwUpCSUJCnKZTEIC9JVB8PKEQgoAAMBAMzMzQAAAAEAEKgUpCSUJCnKZfEIC9JVB8PKEQgQsBSYJpgcKcpl8QqCZoUG+v4VCBC4FJAklCQpymWRCQvyQQfDyg0IKAACgQM3MzD4AAEBBBDEFJgnGBwqlzGNCQDOHQfDygEIKAAAAAFNHUcIAAAAABDQFKgkrCQpymXxCIoKTQeHlfUIKAAAAQM3MjEAAAABABDcFLAklCQpymWRCIsmdQeHlf0IKAAA0wwAAAAAAADRDCgAAIEEzMzNAAACAPwoAAAAAlvWcwQAAAAAEPAUmCcYHCnKZZEKimalB'
+..'4eV9QgoAAABAAAAgQQAAAEAELQmfB6UHBC4J6widBwRBBSwJJQkKcplkQiLJlUHh5XtCCgAAQEEzMzNAAACAPwREBS8JJQkKcplMQsJik0Hh5X1CBKAHyAcwCQQxCTIJMwkESAWcB50HCrlM/EKgmeFB4eVPQgRKBZwHnQcKXCYAQ0Az60Hh5U9CBEwFnAedBwpcJgRDYGb+QeHlT0IE0AifB54HBE8FnAedBwpcJgJDwMz0QeHlT0IEUQWcB50HClwmBkMBAARC4eVPQgRTBZwHnQcKXCYIQ9PMCELh5U9CBFUFnAedBwq5TPhCAADYQeHlT0IEVwWcB50HCrlM9EJgZs5B4eVPQgRZBcYHnQcKuUyCQkAzo0Hh5TdCCgAAAECamRlBAABAQAQ0CaIHowcENQnGB6YHBF4FxgedBwq5TJhCopmxQeHlT0IEYAXGB50HCrlMlEJAM7tB4eVPQgRiBcYHnQcKuUyCQkAzo0Hh5WdCBDYJxgemBwRlBcYHnQcKuUycQgIAqEHh5U9CBGcFxgedBwq5TKBCYmaeQeHlT0IEaQXGB50HCrlMpELCzJRB4eVPQgRrBZwHnQcKuUzWQoBmzkHh5StC'
+..'BDcJnweeBwQ4CZwHngcEbwWcB50HCrlMqkJgZs5B4eUrQgRxBZwHnQcKcpk2QmBmhkHh5TtCCgAAgD+amZlAAAAHQwQ5CaAHnwcEOgmcB6AHBHYFpgedBwq5TMBCoJnJQT40qMEKAACAP83MrEEAAIxCBHkFnAedBwpcphJDoZkZQiC8/D8KAACAP5qZmUAAAOZCBLUInAegBwQ7CZ4HnwcEfgWcB50HCrlMqkJgZs5B4eVzQgSABZwHnQcKuUzWQmBmzkHh5XNCBIIFnwedBwq5TOZCwMz0QR8aQMIEhAWfB50HCrlM4kJgZv5BHxpAwgSGBZ8HnQcKuUzaQgEABEIfGkDCBDwJnAeeBwSJBZ8HnQcKuUzYQtPMCEIfGkDCBIsFnAedBwq5TI5CAADYQR8aQMIEjQWcB50HCrlMikJgZs5BHxpAwgQGCZwHngcEPQmcB54HBJEFnAedBwpymXxCopmxQR8aQMIEkwWcB50HCrlMgkJAM7tBHxpAwgSVBZwHnQcKuUyGQsDMxEEfGkDCBJcFnAedBwpymXRCAgCoQR8aQMIEmQWcB50HCrlMkkKgmeFBHxpAwgSbBZwHnQcKuUyWQkAz60Ef'
+..'GkDCBJ0FngedBwpymRpCIpmZQT40qMEKAACAP2dm5kAAAHBBBKAFnAedBwrkMv1BgpmZQR8aSsIKAACAP2dm5kAAAGhCBKMFoAedBwpcJhlD8f8bQhANnsIEpQWgB50HCnKZHkKCmZlBEA2ewgQ+CaAHnwcEqAWcB50HCuQywUGAZoZBHxoUwgoAAGBBmpmZQAAABEIEPwmgB58HBKwFnAedBwq5TNZCYGbOQfDysUIEQAmfB54HBEEJnAeeBwSwBZwHnQcKuUySQmBmzkEQDZTCCsgikTZYJIC2bDKWsgoKvai2IboMvglJBbwHGAAEtgVCCUMJBvXNMAp2UcBCYmGmQRibkkIKAACgQAAAoEAAAKBACmfEnR/spem1drlMIQpFbYo7IboMvkuIHDwEvAVECUUJCgAAAAAK1yO8AAAAAAoqJ7VCYmGmQVrylkIKAADgQAAA4EAAAOBABL8FoAedBwrkMsFBQgCoQR8aFMIKAAAEQmdmZkAAAGBBBMIFnAedBwpymRpCAgCoQRANvsIKAABwQWdmZkAAAPhBBMUFnAedBwq5TMBCoJnhQR8aUMIKAACwQZqZmT8AAIA/BMgFRglHCQq5TMBC'
+..'wJnhQSAaMMIEygWcB50HCrlMqUIgM7tBHxpGwgoAAIA/mpl5QQAAQEEEzQWcB50HCrlMsEICAJBBHxpQwgoAAIBAmpmZQAAAgD8E0AXGB50HCrlMqEJAM4tB4eVPQgTSBZwHnQcKuUzVQqCZ4UEfGkDCBNQFnAedBwq5TKtCAADAQR8aMMIKAACAP2dm5kAAAIA/BNcFnAedBwq5TNVCAADAQR8aQMIKAACAP2dm5kAAAOBABNoFoAedBwq5TLVCosysQR8aQMIKAADgQJqZGUAAAIA/BN0FnAedBwq5TKtCAADAQR8aQMIE3wWcB50HCrlMwELg/79BHxowwgoAAKBBZ2bmQAAAgD8E4gXGB50HCrlMqEKimYFBwsu7QQRICcYHpgcE5QWcB50HCrlM1EKimYFB4eVPQgRJCZwHngcE6AWcB50HClwmEUNgZs5B4eU3QgTMCJ8HngcESgmcB54HBOwFnAedBwpcJhFDYGbOQeHlZ0IESwmfB54HBEwJnAeeBwTwBZwHnQcKuUzAQgQAcEHh5TtCCgAAyEKamZk/AAAHQwRNCZ8HngcETgmcB8UHBE8JnweeBwRQCZ8HngcEUQmfB54HBFIJ'
+..'nweeBwRTCZwHxQcE+gWcB50HCrlM2EJAM4tB4eVPQgT8BZwHnQcKuUzcQsLMlEHh5U9CBP4FnAedBwq5TOBCYmaeQeHlT0IEAAacB50HCrlM5EICAKhB4eVPQgQCBpwHnQcKuUzoQqKZsUHh5U9CBAQGnAedBwq5TOxCQDO7QeHlT0IEBgacB50HCrlM8ELAzMRB4eVPQgQIBpwHnQcKuUz+QkAzo0Hh5WdCBFQJnAeeBwQLBpwHnQcKuUz+QkAzo0Hh5TdCBFUJnAeeBwQOBsYHnQcKuUysQqKZgUHh5U9CBFYJxgemBwQRBpwHnQcKuUz+QoBmzkHh5StCBBMGoAedBwq5TMBCgGaGQfDy5UIKAACAP5qZmUAAAMxCBFcJnwelBwQXBpwHnQcKXKYHQ2BmzkHh5XNCBFgJoAefBwRZCZwHngcEGwagB50HClymEkPgzNxBwsufQQQdBp8HnQcKuUz2QmBmzkEfGkDCBB8GnwedBwq5TPJCAADYQR8aQMIEIQafB50HCrlM6kJAM+tBHxpAwgQjBp8HnQcKuUzuQqCZ4UEfGkDCBCUGnwedBwq5TMVCYGbOQR8aWMIKAACgQDQzo0EAAEBA'
+..'BFoJnweeBwQpBpwHnQcKcplsQmJmnkEfGkDCBCsGnAedBwpymWRCwsyUQR8aQMIELQacB50HCnKZXEJAM4tBHxpAwgQvBpwHnQcKcplUQqKZgUEfGkDCBDEGnAedBwq5TJRCQDOjQR8aKMIEMwacB50HCrlMlEJAM6NBHxpYwgQ1BpwHnQcKuUy7QmBmzkEfGljCBDcGoAedBwpxmThCRABwQT40qMEKAACAP5qZmT8AAPBBBFsJnAegBwQ7Bp4HnQcKXKYKQ4CZ+UE+NKjBBD0GngedBwpcJhpDQGb+QT40qMEEXAmcB54HBEAGnAedBwpcphJDIDPrQT40qMEEXQmfB6UHBF4JnweeBwRfCaAHnAcERQagB50HCrlMwEJgZs5BHxpgwgoAAIA/NDOjQQAAzEIEYAmfB54HBGEJ4gjkCARiCZ4HnAcEYwmgB58HBEwGoAedBwpymVpCgpmZQRAN3MIEZAmgB58HBGUJnweeBwRQBp8HnQcKcpl2QoKZmUEQDe7CCgAAgD9nZuZAAACIQQRTBp8HnQcKcpk6QoKZmUEQDb7CCgAAgD9nZuZAAAD4QQRmCZ4HnAcKtiqfImTJEB9z852iClG3'
+..'iyM5v4u9bD+MIwRaBmcJaAkDAAAAAAAAiUAKuUyJQuK4mEEQDbrCBFwGnAedBwq5TNJCYGbOQRANpsIEaQmfB54HBF8GnAedBwq5TK5CYGbOQRANpsIEagmfB54HBGIGnAedBwq5TOxCYGbOQRANlMIhBk1hZ25ldARlBsYHnQcKuUzAQqKZgUHw8pZCCgAAIEGamZk/AAAgQQRrCcYHpgcEaQbGB50HCrlMqEKimYFBwIcGvwRsCcYHpgcEbAacB50HCnKZGkJgZoZBEA2+wgoAAHBBmpmZQAAA+EEEbwacB50HCrlMq0ICAJBBHxpAwgoAAIA/mpmZQAAAEEEEcgacB50HCrlMwEIAAMBBHxpQwgR0BpwHnQcKuUywQkJmnkEfGjDCCgAAgECamZk/AACAPwR3BpwHnQcKuUzVQgAAwEEfGlDCBHkGnAedBwq5TNVCAADAQR8aMMIEewacB50HCrlMq0LA/79BHxpQwgR9Bm0JbgkKuUzXQiAzu0EfGkbCBH8GnAedBwq5TMBCAADAQR8aLMIKAACwQZqZGUEAAIA/IQRUb29sIQ1UZWRkeSBCbG94cGluBG8JcAlxCSELVGVkZHlTY3Jp'
+..'cHQhBkhhbmRsZQrr13G7G5dJPcZlLDsKJx/Wu1Bes7qI3YK8BIoGcAlxCQoAAAAAw3XZQh8FtEIKXhK9QuIep0FqpjfCAwAAAKCZmdk/CgAANMM9io5C4fqzwgoAAIA/zczMPwAAQEAhBk1lc2hJZCEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMjIxODMyMSEJVGV4dHVyZUlkIShodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTEyMjE4MDc3AwAAAAAAABRAIQVTb3VuZCEHU291bmRJZCEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMjg0NDc5OSEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMjg0NDc5NCEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMjgwMzUyMCEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMjgwMzUwNyEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMjgwMzQ5OCEGQ2FtZXJhIQ9UaHVtYm5h'
+..'aWxDYW1lcmEEcglzCXQJIQVGb2N1cwR1CZwHnQcK84GkO7sVRLuWlBq7ChI1V7pTkFe8bpJruwSjBnYJdwkKAAC0QqRwncIAAAAACtIMz0LgIa9BG004wgoAALRCAAAAAKRwnUIKFdfQPGHUAT3VOEi7CpwooruqSJw8z927vASpBngJeQkKAAAAAGZmx0IAALRCCtoCxUKCHqdBhrs/wgoAADRDmpmgQgAAtMIhCFNwYXJrbGVyBHoJewl8CQrtQxI8kkafu3COXLsKjjvcvEj9C71i5ti7B+oDBLMGewl8CQbNzc0KAAAAAGZm4cIAADTDCr/5xULC66dBuwQ4wgpx/TPDmpmGwgrXIzwKAACAP5qZmT8AAABACgAAgD8AAIA/AABAQCEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMjUxNTU0NiEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMjUxNTUzNAR9CX4JfwkEgAmBCYIJBIMJhAmFCQSGCYcJiAkEiQmKCYsJBIwJjQmOCQSPCZAJkQkEkgmTCZQJBJUJlgmXCQSYCZkJmgkEmwmcCZ0JBJ4J'
+..'nwmgCQShCaIJowkEpAmlCaYJBKcJqAmpCQSqCasJrAkErQmuCa8JBLAJsQmyCQSzCbQJtQkEtgm3CbgJBLkJugm7CQS8Cb0JvgkEvwnACcEJBMIJwwnECQTFCcYJxwkEyAnJCcoJBMsJzAnNCQTOCasJzwkE0AmKCdEJBNIJ0wnUCQTVCdYJ1wkE2AnZCdoJBNsJlgncCQTdCZkJ3gkE3wmcCeAJBOEJnwniCQTjCaIJ5AkE5QmlCeYJBOcJqAnoCQTpCasJ6gkE6wnsCe0JBO4J7wnwCQTxCbQJ8gkE8wm3CfQJBPUJugn2CQT3Cb0J+AkE+QnACfoJBPsJwwn8CQT9CcYJ/gkE/wnJCQAKBAEKzAkCCgQDCqsJBAoEBQoGCgcKBAgKCQoKCgQLCgwKDQoEDgoPChAKBBEKEgoTCgQUChUKFgoEFwoYChkKBBoKGwocCgQdCh4KHwoEIAohCiIKBCMKJAolCgQmCicKKAoEKQoqCisKBCwKLQouCgQvCjAKMQoEMgozCjQKBDUKNgo3CgQ4CjkKOgoEOwo8Cj0KBD4KPwpACgRBCkIKQwohCU9wZW5Tb3VuZCEoaHR0cDovL3d3dy5yb2Js'
+..'b3guY29tL2Fzc2V0Lz9pZD0xMjU1NTU4OSEGVm9sdW1lIQpEcmlua1NvdW5kIQZMb29wZWQhKGh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MTI1NTU1OTQhCFNwYXJrbGVzIQdTcGFya2xlIQxTcGFya2xlQ29sb3IGAA3/IRBTcGFya2xlcnMxU2NyaXB0CkodiDwqO/y8vT2SvAqzdYU9+iHQPXRpKzsEEQdECkUKCo/CdT3DNSrD1yO0wgoueMpCYOuuQWpZScIKpPAzQ9ejHMEK17NCCotGs7wOxz66xfLkuwon8KM50YisvY4xkLsEFwdGCkcKCgrXI7z2qLDCpPCzQgp+usFCgiGnQQw5RsIK16PwvvaosMIfBbNCBBoHnwedBwq5TPpCwMzEQR8aQMIEHAdnCWgJCrlMp0LiuJhBEA3awgQeB8YHnQcKuUzYQqKZgUHCy7tBBEgKxgemByEEVGlsdAQjB0kKSgoKAAAAAAAAtEIpXLdBCrlMsELgJotBtPE9wgopXLdBAAC0QgAAAAAKAAAAQc3MzD4AAIBABEsKJAklCQQoByYJxgcKKfMHQ0Azh0Hw8ohCBCoHJwko'
+..'CQpcJg5D4PaEQRLzhEIELAcmCcYHCinzB0NAM4dB8PKEQgQuByYJpgcKXCYCQ6CZoUG+v4VCBJ4HnAedBwRMCpwHngcEMgcnCSgJClwmAkMA94RBEvOEQgQ0BykJJQkKXCYCQ2L1lUHw8oRCBDYHKQklCQpcJg5DYvWVQfDyhEIEOAcmCaYHClwmDkOgmaFBvr+FQgQ6ByQJJQkKXCYIQ6L9kEHw8oNCBDwHJgnGBwop8wdDQDOHQfDygEIEPgcqCSsJClwmDkOCg5NB4eV9QgRABywJJQkKXCYIQ4LKnUHh5X9CBEIHJgnGBwpcJghDopmpQeHlfUIERAcsCSUJClwmCEOCypVB4eV7QgRGBy8JJQkKXCYCQyJkk0Hh5X1CBE0KMgkzCQRJB58HnQcKXKYSQ4BmhkHh5TtCBDoJnweeBwQ5CZ4HnAcETQefB50HClwmA0MCAKhBHxpAwgRPB58HnQcKXCYHQ8LMlEEfGkDCBFEHnwedBwpcJgVDYmaeQR8aQMIEUwefB50HClwmAUOimbFBHxpAwgRVB58HnQcKuUz+QkAzu0EfGkDCBFcHnwedBwq5TOxCQDOjQR8aWMIEWQefB50HCrlM'
+..'7EJAM6NBHxoowgRcB54HTgoKAAAAAAAAtEIAADRDCnKZckIOaOZAEF4eQAoAADRDAAC0QgAAAAAKAABiQ2dmZkEAAPhBBGAHngedBwq5TMBCgpmZQYgGAMMKAACAP2dm5kAAAIxCBE8KnAegBwRkB8YHnQcKuUzYQqKZgUHAhwa/BGYHnAedBwpcpiBDYGaGQfDyoUIKZSefImTJEB9E8J2iCrO4iyPHSwu+w0CMIwcSAARsB1AKUQoGzI5pCrlM70LCuJhBEA2gwgRuB54HnQcKXKYgQwIAqEHw8qFCBHAHnAedBwq5TMVC4v+PQR8aQMIKAACIQZqZmUAAABBBBHQHoAdOCgoAAAAAAAC0wgAANEMKXKYDQ45m5kAQXh5ACgAANMMAALTCAAAAAAqhKJ8iZMkQH2XxnaIKNbiLI1UYZr1NQIwjByUABHsHUgpTCgZLl0sKuUzvQuK4mEEQDeTCBH0HnwedBwpcJgtDopmBQR8aQMIEfwefB50HClwmCUNAM4tBHxpAwgSBB6YHnQcKXCYSQwQAcEE+NKjBBFQKnAegBwSEB54HnQcKXKYZQwKamUE+NKjBBIYHnAedBwpcpiBDwpmZQR8a'
+..'SsIEiAegB50HCrlMwEKOZuZA+NDQwAoAAHRDZ2ZmQQAAIEIEVQqfB6UHBFYKnwelBwRXCp4HnAcEWAqfB54HBI8HoAedBwpcphhDgpmZQRANnsIEWQqfB54HBJIHnAedBwpcJihDgGaGQR8aFMIElAecB50HClymGUNgZoZBEA2+wgQXCZ8HngcElweeB50HClwmKEMiAKhBHxoUwgQtCJ4HnwcEmgecB50HClymGUMCAKhBEA2+wgq5TMBCoJlJQvjQ0MAKAACAPwAAAAAAAAAACgAAAAAAAIA/AAAAAAoAAAAAAAAAAAAAgD8KAACAvwAAAAAAAAAACgAAAAAAAAAAAACAvwoAAAAAZ2bmvwAAAAAKAACAPwAAAIAAAAAACgAAAAAAAACAAACAPwoAAIC/AJgZPwAAMMEKAAAAgAAAAAAAAIA/CgAAAIAAAACAAACAvwoAAAAAMzNzQAAAAAAKAAAmQgAus78AAPTBCgAAAAAzM3PAAAAAAAoAACbCAGjmPwAAAAAKAAAAAABo5j8AAAAACgAA7EEAMLO/AAD0wQoAAAAAmpmBwQAAAAAKAAAgwACaGUAAAAAACgAAAACamRk/AAAAAAoA'
+..'AADBAGbmvwAACMEKAAAAvwBm5r8AABjBCgAAgD8AAAAAAAAAgAoAAPDAAGbmvwAAYMAKAACwwABm5r8AAJBACgAAAL8AlBk/AABAQQoAAGBAAJgZPwAA8EAKAAAAvwCYGT8AACBBCgAAAAAAaOY/AAAAPwoAADBCAC6zvwAA6EEKAAAAQABo5j8AAIC/CgAAKEIALrO/AAD0QQoAAAC/AKAZvwAAAAAKAAAAvwCcGb8AAAAACgAAAACamRm/AAAAAAoAAAAAAJgZPwAAAAAKAAAAAACcGb8AAAAACgAAAAAAnBk/AAAAAAoAAAAANDNTQQAAAAAKAAD4wSBnhsEAAAAACgAAAAAAAUDAAAAAAAoAAACAAAAAAAAAgL8KAACAvwAAAIAAAACACgAAAAAAAEBAAAAAAAoAAIC/AAAAAAAAAIAKAAAAPwCbGcAAAAAACgAAIEKAZobBAABgQgoAABzCgGaGwQAAYEIKAACUwQCYGb8AAAA/CgAA1MEAmhnAAAAAPwoAAAxCAJoZwAAAZsIKAAAQwgCbGcAAAGbCCgAAJEKAZobBAABkwgoAAMDAAJwZvwAAUsIKAACAQACYGb8AAFLCCgAA+MGA'
+..'mZnAAAAAPwoAAMjBAJoZwAAAUEEKAADAQQCaGcAAAFBBCgAAZEIAmhnAAACAPwoAAFTCAJwZvwAAgD8KAAAAwACcGb8AAKjBCgAAwEAAnBm/AACowQoAALBBAJwZvwAAqMEKAABgQQCcGb8AAKjBCgAAGEIAnBm/AACowQoAAPBBAJwZvwAAqMEKAAA4QgCcGb8AAKjBCgAAWEIAnBm/AACowQoAAGBBAJwZvwAAUMEKAABYQgCcGb8AAFDBCgAA8EEAnBm/AABQwQoAABhCAJwZvwAAUMEKAADAQACcGb8AAFDBCgAAsEEAnBm/AABQwQoAAADAAJwZvwAAoMAKAABgQQCcGb8AAKDACgAA8EEAnBm/AACgwAoAAFhCAJwZvwAAoMAKAAAYQgCcGb8AAKDACgAAwEAAnBm/AACgwAoAALBBAJwZvwAAoMAKAAA4QgCcGb8AAKDACgAAYEEAnBm/AADAQAoAAMBAAJwZvwAAwEAKAACwQQCcGb8AAMBACgAA8EEAnBm/AADAQAoAABhCAJwZvwAAwEAKAAA4QgCcGb8AAMBACgAAOEIAnBm/AABgQQoAABhCAJwZvwAAYEEKAADwQQCcGb8A'
+..'AGBBCgAAAMAAnBm/AABgQQoAAFhCAJwZvwAAYEEKAADAQACcGb8AAGBBCgAAsEEAnBm/AABgQQoAAPBBAJwZvwAAsEEKAAAAwACcGb8AALBBCgAAwEAAnBm/AACwQQoAABhCAJwZvwAAsEEKAABYQgCcGb8AALBBCgAAOEIAnBm/AACwQQoAALBBAJwZvwAAsEEKAABIQgAAQEAAAAAACgAAIMKAZobBAABkwgoAAAAAmpkZQAAAAAAKAAAAAACYGb8AAAA/CgAAAADNzKxAAAAAAAoAAAAAgGaGwQAAAAAKAAAAAAAAwMAAAMA/CgAAAACamRnAAAAAAAoAAEhCAJgZPwAAAL8KAAAAAKCZgcEAACBACgAAZsIAM1NBAACMQQoAAIC/ADJzwAAAaEEKAACAvwAzc8AAAGjBCgAAAABAM1NBAAAEQgoAAAAAAP+/wAAAwD8KAAAAv0AzU0EAACDACgAAAABnZobBAAAAAAoAAEpCwDRTQQAAAAAKAAAAAEAzU0EAAPjBCgAAMMIALrO/AAAAAAoAAAAAZ2ZmwAAAAAAKAAAAAAA4sz8AAAAACgAA9MEALrO/AAD0QQoAAPRBAGjmPwAAAAAK'
+..'AAAAAAA4sz8AAKRBCgAAgL8AmBk/AABAwgoAAAAAACyzPwAApMEKAAAAADMzs78AAAAACgAA7EEAMHNAAAAwQgoAAIzBADBzQAAA9EEKAADswQAwc0AAAPTBCgAAjMEAMHNAAAD0wQoAAJTBAC6zvwAA9MEKAACUQQBo5j8AAAAACgAAlMEALrO/AAD0QQoAAPTBAC6zvwAA9MEKAAAAAJqZmUAAAAAACgAAAAAAmxnAAAAAAAoAADDCAJsZwAAAAAAKAAAwQgCZGcAAAEDACgAAAMAAZOa/AAA4QQoAAAAAAJkZQAAAAAAKAAAAAACaGcAAAAC/CgAAAAAAmhlAAAAAAAoAAAAAAJkZwAAAAL8KuUy/QmhmikIfGkzCCgAAAAAAmhlAAAAwQgoAAAAAAJkZwAAALkIKAABAQACZGUAAADDCCgAAAAAAMnPAAAAAAAoAAAAAAJwZQAAAAD8KAAAAAACcGUAAANzBCgAAAAAAnBlAAADcQQoAAMC/ADJzwAAA9EEKAADgwQAyc8AAAAAACgAA5EEAMnPAAAAAAAoAAC7CAJgZQAAAAAAKAAAAAAAAAIAAAIC/CgAAgD8AAACAAAAAgAoAAAA2'
+..'AGbmvwAA5MEKAAAIQQBm5r8AANzBCgAACEEAZua/AADcQQoAAAAAAGbmvwAA5EEKAAAAAABm5r8AANzBCgAAAAAAZua/AADcQQoAAADAAGTmvwAASMEKAAAAAAA0c0AAAABACgAAAMEAZua/AAAQQQoAAFDBAJkZQAAAwD8KAAAAAACcGb8AACDBCgAAgL8AAHBBAAAAPwoAAAAAAJgZvwAAQEAKAABQQQCaGUAAAMA/CgAAAAAAnBm/AAAwQQoAAIA/AABwQQAAAD8KAAAuQgBm5r8AAMC/CgAALkIAZua/AADAPwoAAAC/AGbmvwAAIEAKuUy/QgAAfELCy99BCrlM60IAAHxCAPjQvAq5TOtCAAB8Qggv/0AKuUzrQgAAfELCy79BCrlM60IAAHxChJd/QQq5TOtCAAB8QuHlH0IKuUzrQgAAfELCy/9BCrlM60IAAHxC4eU/Qgq5TOtCAAB8QuHlX0IKuUzbQgAAfEKEl39BCrlM20IAAHxC4eU/QgoAAFBBAJwZPwAAOEIKuUzbQgAAfELh5V9CCrlM20IAAHxCwsv/QQq5TNtCAAB8QuHlH0IKuUzbQgAAfEIIL/9ACrlM20IAAHxC'
+..'APjQvAoAAFBBAJwZPwAAAMAKuUzbQgAAfELCy79BCrlMy0IAAHxCAPjQvAq5TMtCAAB8QoSXf0EKuUzLQgAAfELCy/9BCrlMy0IAAHxC4eVfQgq5TMtCAAB8QuHlH0IKuUzLQgAAfEIIL/9ACrlMy0IAAHxCwsu/QQq5TMtCAAB8QuHlP0IKuUy1QgAAfEKEl39BCrlMtUIAAHxCAPjQvAoAAMDAAJwZPwAAAMAKuUy1QgAAfEIIL/9ACrlMtUIAAHxCwsu/QQq5TLVCAAB8QsLL/0EKuUy1QgAAfELh5R9CCrlMtUIAAHxC4eVfQgoAAMDAAJwZPwAAWEIKuUy1QgAAfELh5T9CCrlMpUIAAHxC4eU/Qgq5TKVCAAB8QuHlH0IKuUylQgAAfELCy/9BCrlMpUIAAHxCAPjQvAq5TKVCAAB8QuHlX0IKuUylQgAAfEKEl39BCgAAYMEAnBk/AABgQQq5TKVCAAB8Qggv/0AKuUylQgAAfELCy79BCrlMlUIAAHxCwsv/QQq5TJVCAAB8QgD40LwKuUyVQgAAfEIIL/9ACrlMlUIAAHxC4eUfQgq5TJVCAAB8QuHlX0IKuUyVQgAAfEKEl39B'
+..'CgAAsMEAnBk/AABgQQq5TJVCAAB8QuHlP0IKuUyVQgAAfELCy79BCgAAAABnZuY/AAAAAAoAAChCADRzwAAAAAAKAACUQQA0c8AAAAAACgAA7MEANHPAAAAAAAoAAIzBADRzwAAAAAAKAACwwAA0c8AAAAAACgAA7MEAM3PAAAAAAAoAAPRBADRzwAAAAAAKAAAAvwCYGT8AACDACgAAKkIANHPAAAAAAAoAANBAADRzwAAAAAAKAAAqwgAus78AAPTBCgAAMMIALrO/AADgwQoAALBAAC6zvwAA9EEKAACwQAAus78AAPTBCgAA0MAALrO/AAD0QQoAANBAAGjmPwAAAAAKAADQwAAus78AAPTBCgAAAABnZs7BAAAAAAoAAEbCAIwZPwAAIEIKAAAAAIAxU8EAAGbCCgAAAAAAAEDAAAAAvwoAAIxBgGYGQQAAAAAKAAAAAAAz00AAALzBCgAAZsIAmhnAAACMwQq5TMBC0MwsQvDyr0IKAAAAAGdmhkAAAAAACgAAAD8AnBm/AAAAAAoAAAAAZ2aGwAAAAAAKAAAAPwCYGT8AAAAACgAAAACAZobAAAAAAAoAAAAAAGeGQAAAAL8KAADY'
+..'QQBnhkAAAAAACgAA2MEAnBm/AAAAAAoAANjBAJgZPwAAAAAKuUzAQjAzU0Lw8q9CCgAAAACAZoZAAAAAvwoAANhBgGaGQAAAAAAKAAAAAIBmhsAAAAC/CgAA2EGAZobAAAAAAAoAAAAAgGaGQAAAAAAKAADYwQCYGb8AAAAACrlMwEKQmXlC8PKvQgoAAAA/AJgZvwAAAAAKAAAAAACYGb8AAAAACgAASkJAZobBAAAAAAoAAAAAAABAwAAAAAAKAAAAAABmZkAAAIA2CgAAAABnZmZAAAAAAAoAACjCAC6zvwAA9EEKAAAoQgBo5j8AAAAACgAAMMIALrO/AADkQQoAAIAzAJgZPwAAnMEKAABGQgCcGT8AACBCCgAAwEAAnBk/AADAvwoAAMDAAJwZPwAAwL8KAABAQQCYGb8AAPDACgAAgDMAmBm/AACQQAoAAMBAAJwZvwAAWMEKAAAAgACcGb8AAPDACgAAwMAAnBm/AABYwQoAALhBgJmZQAAAKsIKAABAwQCYGb8AAPDACgAAMEFAMyNBAAAkwgoAALjBwMwsQQAAwLUKAAD4wQAzI0EAACTCCgAAuEEAmplAAAAqQgoAAABAAJwZ'
+..'PwAAAAAKAAAAADQzI0EAAAAACgAAoEAAmBm/AADAwAoAAAAANDMjwQAAAAAKAABEwgCYGT8AADBBCgAAAMAAmBm/AAAAAAoAAADAAJwZvwAAAAAKAACgwEAzI0EAAMDACgAAAACAMVPBAAD8QQoAAEjCQDNTwQAAAAAKAAAAAAAzU8EAAPTBCgAAcMEAZOa/AABAwQoAACBCQDMjQQAAgL8KAABwwQBk5r8AADBBCgAAOEFAMyNBAACAvwoAACjBQDMjQQAAgL8KAAAgwkBmBkEAAEjCCgAAHsIAmBk/AABgQQq5TMBCYGYGQvDyr0IKAAAAPwCMGT8AAAAACgAAAD8AkBk/AAAAAAoAANjBAIwZPwAAAAAKAABAwACYGb8AAAA/CgAAgL/MHyCx+Ky8sAr4rLwwmGUcsgAAgD8KAACAPwCcGT8AAAAACgAAgD/MHyAx+Ky8MArMHyAxAACAP5hlHLIKAACwwEAzI0EAALBACgAAAEBAMyNBAACwQAoAAAAANDPTwAAAAAAKAAAAAABrZkAAAODACgAAAIAAAACAAACAPwoAAIC/AAAAgAAAAAAKAAAAAAAAEMEAAAAACgAAAAAAaWZAAAAA'
+..'PwoAAAAAAGZmQAAAAL8KAAAAAABnZkAAAAC/CgAAIEAAmRnAAAAAPwoAAATCAJoZwAAAAAAKAAAAADQzU8EAAAAACgAAAABAMyNBAAAEQgoAALjBAJgZPwAAAAAKAAB4wQCcGT8AABDBCgAAADUAnBk/AACAwAoAAAAAAJgZvwAAGMEKAAAAAACYGT8AAA5CCgAAAAAAmBm/AADAvwoAAAC1AGjmvwAAaEEKAAAAPwBo5r8AADjBCgAAAD8AaOa/AAA4QQoAADBBwDIjQQAAaEEKAAAwwcAyI0EAAGhBCrlMm0LQzFBCHxpmwgoAAJDBAJwZPwAAEEEKAAAAAAEAcMEAAAAACgAAqMEAnBk/AAAIQQoAAAAAAQBwQQAAAAAKAAAAPwAzc8AAAIC/CgAAAEAAmBk/AAAAAAoAAKDAgJmZQAAAwMAKAAD4wQCcGb8AACRCCgAA+MEAlBk/AACAwAq5TMBCQADAQfDyr0IKAAAAPwCkGb8AAAAACgAA2EGAZYbAAAAAAAoAAAAAAJoZQAAASkIKAAAAAACcGUAAAErCCgAAYMAAmBm/AAAAvwoAAHBBQABwwQAACMEKAAC4QQBo5r8AAAAACgAA'
+..'EMEAmBm/AACYQQoAAIDBQP5vwQAACMEKAAC0QUAzI0EAAABBCgAAtMFAMyNBAAAAQQoAAIDAAJwZvwAAAAAKAACAvwCcGb8AAAAACgAAAAAAZua/AAAAAAoAABjBAGjmvwAAAAAKAAAYQQBo5r8AAAAACgAAgEEAnBk/AAAQwQoAADDBAJgZwAAAWEEKAAAwwQCYGT8AAChCCrlM5UKQzFBCHxpmwgoAAAA/ADxzwAAAgD8KAACwQQCcGT8AAAhBCgAAgD/9LkE4duKPNQrxLkG4AACAP/3iKLgKAAAAAABoZkAAAIC2CnKZZEKAR5dB8PKDQgpPu7syFBU9NAAAgL8K/v9/swAAgD8TFT00CgAAAIAAAIC/AAAAgAo/RMS2//9/v49hK7QKlZKJM6JiSjT//3+/ChuUVLITFT00//9/vwpT4HCzEQY3tAAAgD8KlNWLtAAAgD8PBjc0CgAAgL+rAhOzWbu7sgoAAAAAAACgQAAAAAAKAACAv6CZWUAAAIA/Ck+7u7IUFT20AACAPwoAAACAAACAPwAAAIAKALcxQAAAoEAAAAAAChQVPbRPu7uyAACAPwoAAIC//v9/MxMVPbQKAAAAAJqZ'
+..'mcAAAAAACgAA+MEAnBk/AACAvwoAAPjBAJwZPwAAMEEKAAAwQQCUGb8AACRCCgAAMEEAnBk/AACAwAoAANjBQGYGwQAAAAAKAAAAAIBmhsAAACJCCgAAkEFAZgZBAAAAAAoAAIBAAJwZPwAAAAAKAACgwICZmUAAAMBACgAA4ECgmYHBAABwwQoAAAAAAGjmvwAAAAAKAAAwQQCYGcAAAFhBCgAAMEEAmBk/AAAoQgoAAIA/0p8mtTPhwzYKtIsmNQAAgD8LU1I4CgAAgD81NMC35knSOAoVMsA3AACAP1KyJTcKAACAP3nvOzXPj7S0CnnvOzUAAIA/c8cftgoAAEDBAJwZPwAAvMEKAAAgQQCcGT8AAKBACgAAREIAmBk/AACAvwoAAKBAAJgZvwAAwEAKAABEQgCYGT8AADBBCgAAgLVAZs7BAACGwgoAAETCQDMjwQAAgL8KAAAwQUAzI8EAAIBACgAAMEFAMyPBAABgwQoAADDBQDMjwQAAYMEKAAD4wYAzI8EAAIBACgAAQEEAnBm/AAA+wgoAAPhBAJwZPwAAMEEKAAD4QQCcGT8AAIC/CgAAIMEAnBk/AACgQAoAAAAAAGaGwAAA'
+..'AAAKAACAvwCaGcAAABxCCgAAHkIAmBk/AABgQQoAAKBAAJgZvwAAsEAKAAAAAABiZsD4/+/ACgAAAAAAYmZAAAAAvwoAAAAANDPTQAAAAAAKAAAAAACbGcAAALjBCgAAAAAAY2ZAAADgQAoAAAAAQDNTwQAABEIKAAAAQQCYGb8AAPDACgAAAD8AmBm/AADwwAoAAPBAAJgZvwAA8EAKAADgQKCZgcEAAAjBCgAAAACgmYHBAACAPwoAAHDBoJmBwQAA4MAKAACAP6SBoaFVq0WeCqSBoSEAAIA/gIOiIQoAABBBAJgZvwAAQMAKAAAQwQCYGb8AAEDACgAAAAAAnBk/AADkQQoAAEDBAJwZPwAAPsIKAACAP6VhMjJqxcqzCqVhMjIAAIA/i0ruNAqMrz5D1pNKxInARcIKAMA4OP//fz8AmBc5CnZlpD4AQB652nFyPwoJXIXApjGFP7jvUD4KAExIPUkeWy+ZsX8/CoiAaz1Vk38/1Xo4uwoAAIW5QM1MPwAAgDcK+FJIPgBgdzi0DXs/CrQNe78AwJu48FJIPgoAAIC0/v9/PwAA7bcKqoQsPgAA6zc4V3w/CjwjQ0NvjUrE2h5GwgqK'
+..'jMU+L99MuFMtbL8KHQJduAAAgL/9ogE4CsBRnrb0q+WzwLiQMwoR7FevMicYrgAAgL8KwvLvtgAAgD+EvDAuCtcHELTg4Oe2AAAAAAov65OdmuupGwAAgD8K8f9/P2JWrzqD55MdCmnjdDaPLPOzsDitsgpBzJuuGJQqLwAAgD8KBl1ROvv/fz8zhCovCuZALzQ9kmo2AAAAAAqBSpSdkyFKmgAAgD8Kyxp/P5wiqz2D55MdCmEvsDbHV8KzgHWBswoRsmmvEd7/LwAAgD8K8pxSOvv/fz8Fxv+vCrqACD9+wCs4AZDMvgpgMCqw9URgMAAAgD8KulxWOvv/fz9QIWCwCgQb8bMb0do3HH8IvwoAAIA/iSFlMNrO2S8K8gplsPv/fz/YPFS6CrqACD9OKb8+mIwzswrfgSqwcVBrMAAAgD8KulxWOvv/fz+5LGuwCgBMtrYm9Qc+AQDNPgrwNGkw5n8qsAAAgL8K+/9/P/j8UTr1EWkwClWHRLb//8y+5wIIvgpxUGswAACAv9+BKjAK+/9/P7ssazC6XFa6CoxIATQTf5Y3JP4HPgoAAIC//sZpMIlr6K8K3K5pMPv/fz/WfFQ6Cnw5ejgE'
+..'AM2+GgBvPwrt+F8wAACAPxHo+68K+/9/P7zeX7Am0lQ6Cgl4wze6AG+////MPgqzymUwH1kqMAAAgD8K+/9/P7pcVroGp2WwCtZzI7RQIb++xYAIvwoAAIA/0Fx8MEZwii8Ki058sPv/fz/s3FK6CrqACL9+wCs4///MvgpgMCow9URgMAAAgL8KulxWuvv/fz9QIWAwCsCrJTO3WeU1eQBvvwoAAIA/p3iBL9c4uS8K0ed8L/v/fz/i3FO6Cto99jR+sI21AAAAAAq07JKd2CshHAAAgD8K6nx/Pz94gb2D55MdClGACD9lzig4BJDMvgqniN+vx6vALwAAgD8K53x/P4R5gb1vROsvClWqz7QLAEQ4yn4IvwoAAIA/L4iyMIFTJzAKpo49MJttgb0AfX+/CmWBCD9qLb8+KWvRtAqw7WSwtJ+1MAAAgD8K+Hx/Pxhygb0ebnswCkDgULdt+wc+BADNPgo8jNIvnCbgrwAAgL8KyXCBvfl8fz+QAu2vCsQVIzf8/8y+BAEIvgq/wtYvAACAv6Ur4C8KhHmBvZtM7a/nfH+/Cmwc8jNku3c3h/wHPgoAAIC/IrDTL/ElZ68KUrmAr4l0gb3y'
+..'fH8/CnZ6DjgEAM2+mf9uPwoJFMAvAACAP5YPh68K4HOBvZLuki/zfH8/CqsnIzcxAG+//P/MPgpDt8svJtrfLwAAgD8KhHmBved8f7+FSOwvCihxybPdJL+++X8IvwoAAIA/4tv4L2u6LC4KFByVLolygb33fH+/ClGACL9lzig4/P/MvgqniN8vx6vALwAAgL8K53x/v4R5gb1vROuvChz5l7PbHTI2M/9uvwpv/fAuvnqBvd18f78K1Mm5NomYWzSo3oGzCrycUjr7/38/Bcb/rwqegAg/6vM1OACQzL4Ksz0DsOz6CjAAAIA/ClocVTr7/38/md8KsArAzHq03NloOIN9CL8KAACAP4x/8jBZv2EwCrln8rD7/38/ZvxXugp2gQg/Ji2/PuTnLrQKoqyPsCGX9TAAAIA/CkkcWjr7/38/g3j1sAoQvpO2OfUHPgEAzT4K+/9/P8r8UTr1EWkwCq4cCjT//8y++wIIvgr7/38/uyxrMJNcVroKIrEBNBHJ/jc29gc+CtyuaTD7/38/aHxUOgqYIYs4BADNvh8Abz8K+/9/P7veX7DH0VQ6Ci0dtTe/AG+////MPgr7/38/k1xWuganZbAK'
+..'iPYjtNkgv77KgAi/CotOfLD7/38/2NxSugq/gAi/EJMuOP//zL4Kk1xWuvv/fz9QIWAwCtAmJjMsHWA3fgBvvwrR53wv+/9/P/XcU7oKqEvUtJ809TYAAAAACnVMlJ2ANHUZAACAPwqAYH8/A8yOPYPnkx0KTIAIPwP8JzgAkMy+Cv6ika+EvDAuAACAPwqLYH8/RsiOPYEMWi8KMP/btMuhbDi6fgi/CuMDDjCi1o49amB/vwpVgQg/AS6/Pnyr2LQKc2B/PyTSjj0YCkswCoagJLdV+wc+BADNPgp30449cWB/P/Dr0K8KzWkGNvz/zL7HAAi+CrzKjj26ptCvg2B/vwocqQE0L5OnNhf8Bz4KCBBJr7fPjj14YH8/Cr82RzgEAM2+of9uPwpg0I49+qxyL3hgfz8Ka7EGNlIAb7/8/8w+CrzKjj2DYH+/kRrRLwoI2eOz+yC/vrh/CL8KuuMFLbjRjj11YH+/CjKACL+Rbwg4/f/MvgqDYH+/vMqOPWmO0a8KMMaMsw3s5Dcs/26/Cg0LGi+EyY49jmB/vwokdz83xXbGMnTZQrQK2UQvsGTmvzAAAIA/CrZcVjr7/38/CdS/sArZfwg/'
+..'KsWyOAqQzL4KHu/JsAsAODEAAIA/CkPcXTr7/38/KOo3sQqEYL60/Q2VOOV9CL8KAACAPw83OTErS6swCqskObH7/38/YLxbugrZgQg/HC+/PtBrmLQK3RfKsOrCOjEAAIA/CkPcXTr7/38/Aa06sQr5F8c2SvAHPgoAzT4KyTs6MfgXyrAAAIC/Cvv/fz+AfFk6TyY6MQp9BQ439v/MvmT/B74K6sI6MQAAgL/dF8owCvv/fz8BrToxQ9xdugqtwcI0Pqj3N0kBCD4KAACAv2hgOjFH8q6wCplNOjH7/38/XvxbOgqI/hQ5DQDNvuMAbz8K3+w3MQAAgD9U0bOwCvv/fz+D2TexrlFcOgrtwtQ42f9uv/b/zD4KemE5MX0DyjAAAIA/Cvv/fz9D3F26lEs5sQp15dO0bxu/vo59CL8KAACAP84FPzHec5cwCqT1PrH7/38/dFxaugrZfwi/KsWyOPb/zL4KHu/JMAsAODEAAIC/CkPcXbr7/38/KOo3MQqAObuybEy1N6//br8KAACAP2+rQDCMCBcwCuSLQLD7/38/xLxVugoiqjc21Baqs4XKDrQKAACAv9v0MzjS9q6wCtv0MzgAAIA/'
+..'7l86sQr+x4o0FvzFNWDRdDUK17b5vAFbf7/dIYM9CqqLf7/bAt48aDtZvQoTRMM2ktF7MUlh1zQKAACAv0g+mTdO+eKzCtCrmTcAAIA/YyS1tgode642b0+ysmXtlrEK//9/v/SSBLf1u+KzCuS3A7cAAIA/MG8Btwrgg/K0T8cAMY/WfLYK/f9/v9U+gLaeToczCmwRfbYAAIA/weiftgoaKwg0z2TJstZvHjUK/P9/vyQUnLfxN4czCpqmm7cAAIA/qW0Htwr2Mlc1A01EsiSulLUK+/9/v5Y3hre3RIczCgzKhbcAAIA/tV0ktwrwwpA1vOuqss5D6rQK+v9/vwVqnbd31tY0Cn38nLcAAIA/E/Jctwr0uka2jOlFMrBRWrMK+f9/vz5vuLcK1NY0CrYBuLcAAIA/AG9WtwoAhrc67P9/v4ANRzoK4kR8vwDso7qoLi4+CgCggzn+/38/ADj1OQpQZe68AAD5OTzkf78KAABAQQCcGT8AALzBCgAAAADXYcc+qMprvwoAAAAAqMprP9dhxz4KXCYIQ0BIl0Hw8oNCCgAAgD8AAKBAoJlZwAoArDFAAACgQAAAAAAKAAAAAAAAgL8AAAAA'
+..'CgAAAACgmYHBAAAAAAoAAIA/zIGhoVWrRZ4KzIGhIQAAgD+7g6IhCgAAgD+5gaGhVatFngq5gaEhAACAP5KDoiEKAAAAAABqZsAAAPBACgAAAABnZuZAAAAAAAoAAGjBwMwswQAAwLUKAAAAAACYGb8AAFbCCgAA80IAmhnAAAAAAAoAAAAAoJmBwQAAAL+hBQEAAAABAAIAAwAEAAEACQAFAAYABwAIAAkACgALAAwADQAOAA8AEAARABIAEwAUABUAFgAEAAEACQAHAAgACQAXAAsAGAANABkADwAQABoAGwARABwAHQAbABMAHgAEAAEACQAHAAgACQAXAAsAHwANABkADwAQABoAGwARACAAHQAbABMAIQAEAAEACQAHAAgACQAXAAsAIgANABkADwAQABoAGwARACMAHQAbABMAJAAEAAEACQAHAAgACQAXAAsAJQANABkADwAQABoAGwARACYAHQAbABMAJwAEAAEACQAHAAgACQAXAAsAKAANABkADwAQABoAKQARACoAHQArABMALAAEAAEACQAHAAgACQAXAAsALQANABkADwAQABoALgARAC8AHQAuABMALAAwAAgAAgAxADIA'
+..'MwA0AAQAAQAJAAcACAAJAAoACwA3AA0ADgAPABAAGgAuABEAOAAdAC4AEwA5ADAACgACADEAOgAzADsAMAAKAAIAMQA8ADMAPQAEAAEABwAHAAgACQAKAAsAPgANAA4ADwAQABEAPwATAEAAMAANAAIAMQA8ADMAQQAEAAEACQAHAAgACQAKAAsAQgANAA4ADwAQABoALgARAEMAHQAuABMAOQAwAA8AAgAxADoAMwBEAAQAAQAJAAcACAAJAAoACwBFAA0ADgAPABAAGgAuABEARgAdAC4AEwBHAAQAAQAJAAUABgAHAAgACQAKAAsASAANAA4ADwAQABEASQATAEoAFQAWADAAEgACADEASwAzAEwABAABAAkABQAGAAcACAAJAAoACwBNAA0ADgAPABAAEQBOABMAFAAVABYABAABAAkABwAIAAkACgALAE8ADQAOAA8AEAAaAC4AEQBQAB0ALgATAFEAMAAVAAIAMQBSADMAUwAwABUAAgAxAFIAMwBUADAAFQACADEAUgAzAFUAMAAVAAIAMQBSADMAVgAEAAEACQAHAAgACQAXAAsAVwANABkADwAQABoALgARAFgAHQAuABMAWQAE'
+..'AAEACQAHAAgACQAXAAsAWgANABkADwAQABoALgARAFsAHQAuABMAXAAwABsAAgAxADIAMwBdAAQAAQAJAAcACAAJABcACwBeAA0AGQAPABAAGgApABEAXwAdACsAEwBgADAAHQACADEAMgAzAGEABAABAAkABwAIAAkAFwALAGIADQAZAA8AEAAaABsAEQBjAB0AGwATACcAMAAfAAIAMQAyADMAZAAEAAEACQAHAAgACQAXAAsAZQANABkADwAQABoAGwARAGYAHQAbABMAJAAEAAEACQAHAAgACQAXAAsAZwANABkADwAQABoAGwARAGgAHQAbABMAIQAEAAEACQAHAAgACQAXAAsAaQANABkADwAQABoAGwARAGoAHQAbABMAHgAEAAEABwAHAAgACQAKAAsAawANAA4ADwAQABEAbAATAG0AMAAkAAIAMQA8ADMAbgAwACQAAgAxADoAMwBvAAQAAQAJAAcACAAJAAoACwBwAA0ADgAPABAAGgAbABEAcQAdABsAEwByADAAJwACADEAPAAzAHMAMAAnAAIAMQA6ADMAdAAEAAEACQAHAAgACQAKAAsAdQANAA4ADwAQABoALgARAHYA'
+..'HQAuABMAOQAEAAEACQAHAAgACQAKAAsAdwANAA4ADwAQABoALgARAHgAHQAuABMAeQAwACsAAgAxAFIAMwB6AAQAAQAJAAcACAAJABcACwB7AA0AGQAPABAAGgAuABEAfAAdAC4AEwB9ADAALQACADEAUgAzAH4ABAABAAkABwAIAAkACgALAH8ADQAOAA8AEAAaAC4AEQCAAB0ALgATAIEABAABAAkABwAIAAkAFwALAIIADQAZAA8AEAAaAC4AEQCDAB0ALgATAIQAMAAwAAIAMQCFADMAhgAwADAAAgAxAFIAMwCHAAQAAQAJAAcACAAJABcACwCIAA0AGQAPABAAGgAuABEAiQAdAC4AEwCKADAAMwACADEAUgAzAIcAMAAzAAIAMQCFADMAiwAEAAEACAAFAAYABwAIAAkACgALAIwADQAOAA8AEAARAI0AEwCOAAQAAQAKAAUABgAHAAgACQAKAAsAjwANAA4ADwAQABoALgARAJAAHQAuABMAkQAwADcAAgAxAJIAMwCTAAQAAQAHAAcACAAJAAoACwCUAA0ADgAPABAAEQCVABMAlgAwADkAAgAxAFIAMwCXAAQAAQAJAAcACAAJ'
+..'AJgACwCZAA0AmgAaAJsAEQCcAB0AnQATAJ4AFQCfAAQAAQAHAAcACAAJAAoACwCgAA0ADgAPABAAEQChABMAlgAwADwAAgAxAIUAMwCiADAAPAACADEAUgAzAKMABAABAAcABwAIAAkAFwALAKQADQAZAA8AEAARAKUAEwCmADAAPwACADEAUgAzAKcAMAA/AAIAMQBSADMAqAAwAD8AAgAxAFIAMwCpADAAPwACADEAUgAzAKoAMAA/AAIAMQBSADMAqwAwAD8AAgAxAFIAMwCsADAAPwACADEAUgAzAK0AMAA/AAIAMQBSADMArgAwAD8AAgAxAFIAMwCvADAAPwACADEAUgAzALAAMAA/AAIAMQBSADMAsQAwAD8AAgAxAFIAMwCyADAAPwACADEAUgAzALMAMAA/AAIAMQBSADMAtAAwAD8AAgAxAFIAMwC1ADAAPwACADEAUgAzALYAMAA/AAIAMQBSADMAtwAwAD8AAgAxAFIAMwC4ADAAPwACADEAUgAzALkAMAA/AAIAMQBSADMAugAwAD8AAgAxAFIAMwC7ADAAPwACADEAUgAzALwAMAA/AAIAMQBSADMAvQAwAD8AAgAxAFIA'
+..'MwC+ADAAPwACADEAUgAzAL8AMAA/AAIAMQBSADMAwAAwAD8AAgAxAFIAMwDBADAAPwACADEAUgAzAMIAMAA/AAIAMQBSADMAwwAwAD8AAgAxAFIAMwDEADAAPwACADEAUgAzAMUAMAA/AAIAMQBSADMAxgAwAD8AAgAxAFIAMwDHADAAPwACADEAUgAzAMgAMAA/AAIAMQBSADMAyQAwAD8AAgAxAFIAMwDKADAAPwACADEAUgAzAMsAMAA/AAIAMQBSADMAzAAwAD8AAgAxAFIAMwDNADAAPwACADEAUgAzAM4AMAA/AAIAMQBSADMAzwAwAD8AAgAxAFIAMwDQADAAPwACADEAUgAzANEAMAA/AAIAMQBSADMA0gAwAD8AAgAxAFIAMwDTADAAPwACADEAUgAzANQAMAA/AAIAMQBSADMA1QAwAD8AAgAxAFIAMwDWADAAPwACADEAUgAzANcAMAA/AAIAMQBSADMA2AAwAD8AAgAxAFIAMwDZADAAPwACADEAUgAzANoAMAA/AAIAMQBSADMA2wAwAD8AAgAxAFIAMwDcADAAPwACADEAUgAzAN0AMAA/AAIAMQBSADMA3gAwAD8AAgAx'
+..'AIUAMwDfADAAPwACADEAUgAzAOAABAABAAkABwAIAAkAFwALAOEADQAZAA8AEAAaAC4AEQDiAB0ALgATAOMABAABAAkABwAIAAkACgALAOQADQAOAA8AEAAaAC4AEQDlAB0ALgATAOYAMAB7AAIAMQBSADMAhwAwAHsAAgAxAIUAMwCLAAQAAQAJAAcACAAJAAoACwDnAA0ADgAPABAAGgAuABEA6AAdAC4AEwDpADAAfgACADEA6gAzAOsABAABAAkABwAIAAkAFwALAOwADQAZAA8AEAAaAC4AEQDtAB0ALgATAO4ABAABAAkABwAIAAkACgALAO8ADQAOAA8AEAAaAC4AEQDwAB0ALgATAPEAMACBAAIAMQCFADMAiwAEAAEACQAHAAgACQAKAAsA8gANAA4ADwAQABoALgARAPMAHQAuABMA9AAEAAEACgAFAAYABwAIAAkACgALAPUADQAOAA8AEAAaACkAEQD2AB0AKwATAPcAMACEAAIAMQD4ADMA+QAEAAEACgAFAAYABwAIAAkACgALAPoADQAOAA8AEAAaAJsAEQD7AB0AnQATAPwAMACGAAIAMQDqADMA/QAEAAEACgAFAAYA'
+..'BwAIAAkACgALAP4ADQAOAA8AEAAaABsAEQD/AB0AGwATAAABMACIAAIAMQABATMAAgEwAIgAAgAxAOoAMwADATAAiAACADEAAQEzAAQBBAABAAoABQAGAAcACAAJAAoACwAFAQ0ADgAPABAAGgAbABEABgEdABsAEwAAAQQAAQAKAAUABgAHAAgACQAKAAsABwENAA4ADwAQABoAKQARAAgBHQArABMACQEwAI0AAgAxAOoAMwAKATAAjQACADEA6gAzAAsBMACNAAIAMQABATMADAEEAAEACgAFAAYABwAIAAkACgALAA0BDQAOAA8AEAAaACkAEQAOAR0AKwATAPwAMACRAAIAMQDqADMADwEwAJEAAgAxAAEBMwAQAQQAAQAJAAUABgAHAAgACQAKAAsAEQENAA4ADwAQABEAEgETAEoAFQAWAAQAAQAJAAUABgAHAAgACQAKAAsAEwENAA4ADwAQABEAFAETABUBFQAWADAAlQACADEAFgEzABcBMACVAAIAMQAWATMAGAEEAAEACQAHAAgACQCYAAsAGQENAJoAGgAuABEAGgEdAC4AEwAbARUAnwAwAJgAAgAxADoAMwAcAQQAAQAK'
+..'AAcACAAJABcACwAdAQ0AGQAPABAAGgAbABEAHgEdABsAEwAfASABIQEwAJoAAgAxACIBMwAjAQQAAQAJAAcACAAJAAoACwAkAQ0ADgAPABAAGgAuABEAJQEdAC4AEwA5ADAAnAACADEAOgAzACYBMACcAAIAMQA8ADMAJwEEAAEACgAFAAYABwAIAAkACgALACgBDQAOAA8AEAAaAC4AEQApAR0ALgATACoBKwGfAAEALAEtAQQAAQAKAAcACAAJABcACwAuAQ0AGQAPABAAGgAbABEALwEdABsAEwAwASABIQErAaEAAQAsAS0BMAChAAIAMQAiATMAMQEEAAEACgAFAAYABwAIAAkACgALADIBDQAOAA8AEAAaABsAEQAzAR0AGwATACoBKwGkAAEALAEtAQQAAQAJAAUABgAHAAgACQAKAAsANAENAA4ADwAQABEANQETADYBFQAWAAQAAQAKAAUABgAHAAgACQAKAAsANwENAA4ADwAQABoAGwARADgBHQAbABMAOQEwAKcAAgAxAIUAMwA6AQQAAQAKAAUABgAHAAgACQAKAAsAOwENAA4ADwAQABoAmwARADwBHQCdABMAPQEEAAEA'
+..'CgAFAAYABwAIAAkACgALAD4BDQAOAA8AEAAaACkAEQA/AR0AKwATAD0BBAABAAoABwAIAAkAFwALAEABDQAZAA8AEAAaAC4AEQBBAR0ALgATADABIAEhASsBqwABACwBLQEwAKsAAgAxACIBMwBCAQQAAQAJAAcACAAJABcACwBDAQ0AGQAPABAAGgAuABEARAEdAC4AEwBFATAArgACADEARgEzAEcBMACuAAIAMQBGATMASAEwAK4AAgAxAEYBMwBJATAArgACADEARgEzAEoBBAABAAkABwAIAAkACgALAEsBDQAOAA8AEAAaAC4AEQBMAR0ALgATADkAMACzAAIAMQA6ADMATQEwALMAAgAxADwAMwBOAQQAAQAJAAcACAAJAAoACwBPAQ0ADgAPABAAGgAuABEAUAEdAC4AEwA5ADAAtgACADEAOgAzAFEBBAABAAkABwAIAAkACgALAFIBDQAOAA8AEAAaAC4AEQBTAR0ALgATADkAMAC4AAIAMQA6ADMAVAEEAAEACQAHAAgACQAKAAsAVQENAA4ADwAQABoALgARAFYBHQAuABMAVwEwALoAAgAxAFgBMwBZAQQAAQAJAAcACAAJ'
+..'AAoACwBaAQ0ADgAPABAAGgApABEAWwEdACsAEwBcAQQAAQAJAAcACAAJAAoACwBdAQ0ADgAPABAAGgCbABEAXgEdAJ0AEwBcATAAvQACADEA6gAzAF8BMAC9AAIAMQDqADMAYAEEAAEACQAHAAgACQAKAAsAYQENAA4ADwAQABoALgARAGIBHQAuABMAYwEwAMAAAgAxAFIAMwBkAQQAAQAJAAcACAAJAJgACwBlAQ0AmgAaAJsAEQBmAR0AnQATAGcBFQCfADAAwgACADEAAQEzAGgBMADCAAIAMQDqADMAaQEEAAEACQAHAAgACQAKAAsAagENAA4ADwAQABoALgARAGsBHQAuABMAbAEEAAEACQAHAAgACQCYAAsAbQENAJoAGgAuABEAbgEdAC4AEwBsARUAnwAwAMYAAgAxAAEBMwBvAQQAAQAJAAcACAAJAJgACwBwAQ0AmgAaACkAEQBxAR0AKwATAGcBFQCfADAAyAACADEAAQEzAHIBMADIAAIAMQDqADMAcwEBAAEAAgAFAHQBAgB1AQQAywALAAUAdgEHAAgACQB3AQsAeAENAHkBGgAuABEAegF7AXwBHQAuABMAfQEgASEB'
+..'fgHMAAIABQB/AYABCACBAcwAAQAFAIIBgwHLAAIAhAEhAYUBIQGGAcsAAgAFAIcBiAGJAYoBywACAAUAiwGIAYwBBADLAAwABQA2AAcACAAJAHcBCwCNAY4BjwENAHkBGgAuABEAkAEdAC4AEwB9ASABIQEVAJEBBADLAAwABQCSAQcACAAJAHcBCwCTAY4BjwENAHkBGgAuABEAlAEdAC4AEwB9ASABIQEVAJ8ABADLAAwABQCVAQcACAAJAHcBCwCWAY4BjwENAHkBGgAuABEAlwEdAC4AEwB9ASABIQEVAJgBBADLAAwABQCZAQcACACaASEBCQCYAAsAmwENAJoAGgAuABEAnAEdAC4AEwBHACABIQEVAHwBBAABAAkABwAIAAkACgALAJ0BDQAOAA8AEAAaAC4AEQCeAR0ALgATAJ8BMADWAAIAMQABATMAoAEwANYAAgAxAOoAMwChAQQAAQAJAAcACAAJAAoACwCiAQ0ADgAPABAAGgAuABEAowEdAC4AEwCfAQQAAQAJAAcACAAJAAoACwCkAQ0ADgAPABAAGgAuABEApQEdAC4AEwCmAQQAAQAJAAcACAAJAAoACwCnAQ0ADgAP'
+..'ABAAGgAuABEAqAEdAC4AEwCmATAA2wACADEAAQEzAKkBBAABAAkABwAIAAkACgALAKoBDQAOAA8AEAAaAJsAEQCrAR0AnQATAKwBBAABAAkABwAIAAkAFwALAK0BDQAZAA8AEAAaAC4AEQCuAR0ALgATAK8BMADeAAIAMQA6ADMAsAEwAN4AAgAxADwAMwCxATAA3gACADEAPAAzALIBMADeAAIAMQA8ADMAswEwAN4AAgAxADoAMwC0ATAA3gACADEAOgAzALUBMADeAAIAMQA6ADMAtgEEAAEACQAHAAgACQAKAAsAtwENAA4ADwAQABoAmwARALgBHQCdABMArAEwAOYAAgAxAAEBMwC5AQQAAQAJAAcACAAJAAoACwC6AQ0ADgAPABAAGgAuABEAuwEdAC4AEwC8AQQAAQAJAAcACAAJAAoACwC9AQ0ADgAPABAAGgAuABEAvgEdAC4AEwC/ATAA6QACADEAUgAzAMABMADpAAIAMQBSADMAwQEwAOkAAgAxAFIAMwDCATAA6QACADEAUgAzAMMBBAABAAkABwAIAAkACgALAMQBDQAOAA8AEAAaAC4AEQDFAR0ALgATAMYBMADuAAIA'
+..'MQBSADMAxwEwAO4AAgAxAFIAMwDIAQQAAQAJAAcACAAJAAoACwDJAQ0ADgAPABAAGgAuABEAygEdAC4AEwDLATAA8QACADEAUgAzAMwBMADxAAIAMQCFADMAzQEEAAEACQAHAAgACQAKAAsAzgENAA4ADwAQABoALgARAM8BHQAuABMA9AAwAPQAAgAxAFIAMwDQAQQAAQAJAAcACAAJAAoACwDRAQ0ADgAPABAAGgAuABEA0gEdAC4AEwDTATAA9gACADEAPAAzANQBMAD2AAIAMQA6ADMA1QEwAPYAAgAxADwAMwDWAQQAAQAJAAcACAAJAAoACwDXAQ0ADgAPABAAGgAuABEA2AEdAC4AEwDTAQQAAQAJAAcACAAJAAoACwDZAQ0ADgAPABAAGgAuABEA2gEdAC4AEwDTATAA+wACADEAOgAzANsBBAABAAkABwAIAAkACgALANwBDQAOAA8AEAAaAC4AEQDdAR0ALgATANMBMAD9AAIAMQA8ADMA3gEwAP0AAgAxADoAMwDfATAA/QACADEAPAAzAOABBAABAAkABwAIAAkACgALAOEBDQAOAA8AEAAaAC4AEQDiAR0ALgATAOMBMAAB'
+..'AQIAMQBSADMA5AEEAAEACQAHAAgACQAKAAsA5QENAA4ADwAQABoALgARAOYBHQAuABMA4wEwAAMBAgAxAFIAMwDnATAAAwECADEAUgAzAOgBAQABAAIABQDpAQIA6gEBAAYBAgAFAOsBAgDsAQQABwEKAAUAdgEHAAgACQDtAQsA7gENAO8BGgAuABEA8AEdAC4AEwDxASABIQHyAQgBAQDzAfQBgwEHAQIAhAEhAYUBIQF+AQcBAQAFAPUBAQAGAQIABQD2AQIA9wEEAAwBCgAFAHYBBwAIAAkA7QELAPgBDQDvARoALgARAPkBHQAuABMA8QEgASEB8gENAQEA8wH0AYMBDAECAIQBIQGFASEBfgEMAQEABQD1AQEABgECAAUA+gECAPsBBAARAQoABQB2AQcACAAJAO0BCwD8AQ0A7wEaAC4AEQD9AR0ALgATAPEBIAEhAfIBEgEBAPMB9AGDAREBAgCEASEBhQEhAX4BEQEBAAUA9QEBAAYBAgAFAP4BAgD/AQQAFgEKAAUAdgEHAAgACQDtAQsAAAINAO8BGgAuABEAAQIdAC4AEwDxASABIQHyARcBAQDzAfQBgwEWAQIAhAEhAYUB'
+..'IQF+ARYBAQAFAPUBAQAGAQIABQACAgIAAwIEABsBCgAFAHYBBwAIAAkA7QELAAQCDQDvARoALgARAAUCHQAuABMA8QEgASEB8gEcAQEA8wH0AYMBGwECAIQBIQGFASEBfgEbAQEABQD1AQEABgECAAUABgICAAcCBAAgAQoABQB2AQcACAAJAO0BCwAIAg0A7wEaAC4AEQAJAh0ALgATAPEBIAEhAfIBIQEBAPMB9AGDASABAgCEASEBhQEhAX4BIAEBAAUA9QEBAAYBAgAFAAoCAgALAgQAJQEKAAUAdgEHAAgACQDtAQsADAINAO8BGgAuABEADQIdAC4AEwDxASABIQHyASYBAQDzAfQBgwElAQIAhAEhAYUBIQF+ASUBAQAFAPUBAQAGAQIABQAOAgIADwIEACoBCgAFAHYBBwAIAAkA7QELABACDQDvARoALgARABECHQAuABMA8QEgASEB8gErAQEA8wH0AYMBKgECAIQBIQGFASEBfgEqAQEABQD1AQEABgECAAUAEgICABMCBAAvAQoABQB2AQcACAAJAO0BCwAUAg0A7wEaAC4AEQAVAh0ALgATAPEBIAEhAfIBMAEBAPMB9AGD'
+..'AS8BAgCEASEBhQEhAX4BLwEBAAUA9QEBAAYBAgAFABYCAgAXAgQANAEKAAUAdgEHAAgACQDtAQsAGAINAO8BGgAuABEAGQIdAC4AEwDxASABIQHyATUBAQDzAfQBMAA1AQIAMQCFADMAGgKDATQBAgCEASEBhQEhAX4BNAEBAAUA9QEBAAYBAgAFABsCAgAcAgQAOgEKAAUAdgEHAAgACQDtAQsAHQINAO8BGgAuABEAHgIdAC4AEwDxASABIQHyATsBAQDzAfQBgwE6AQIAhAEhAYUBIQF+AToBAQAFAPUBAQAGAQIABQAfAgIAIAIEAD8BCgAFAHYBBwAIAAkA7QELACECDQDvARoALgARACICHQAuABMA8QEgASEB8gFAAQEA8wH0AYMBPwECAIQBIQGFASEBfgE/AQEABQD1AQEABgECAAUAIwICACQCBABEAQoABQB2AQcACAAJAO0BCwAlAg0A7wEaAC4AEQAmAh0ALgATAPEBIAEhAfIBRQEBAPMB9AGDAUQBAgCEASEBhQEhAX4BRAEBAAUA9QEBAAYBAgAFACcCAgAoAgQASQEKAAUAdgEHAAgACQDtAQsAKQINAO8BGgAuABEA'
+..'KgIdAC4AEwDxASABIQHyAUoBAQDzAfQBgwFJAQIAhAEhAYUBIQF+AUkBAQAFAPUBAQAGAQIABQArAgIALAIEAE4BCgAFAHYBBwAIAAkA7QELAC0CDQDvARoALgARAC4CHQAuABMA8QEgASEB8gFPAQEA8wH0ATAATwECADEAhQAzAC8CgwFOAQIAhAEhAYUBIQF+AU4BAQAFAPUBAQAGAQIABQAwAgIAMQIEAFQBCgAFAHYBBwAIAAkA7QELADICDQDvARoALgARADMCHQAuABMA8QEgASEB8gFVAQEA8wH0AYMBVAECAIQBIQGFASEBfgFUAQEABQD1AQEABgECAAUANAICADUCBABZAQoABQB2AQcACAAJAO0BCwA2Ag0A7wEaAC4AEQA3Ah0ALgATAPEBIAEhAfIBWgEBAPMB9AGDAVkBAgCEASEBhQEhAX4BWQEBAAUA9QEBAAYBAgAFADgCAgA5AgQAXgEKAAUAdgEHAAgACQDtAQsAOgINAO8BGgAuABEAOwIdAC4AEwDxASABIQHyAV8BAQDzAfQBgwFeAQIAhAEhAYUBIQF+AV4BAQAFAPUBAQAGAQIABQA8AgIAPQIEAGMBCgAF'
+..'AHYBBwAIAAkA7QELAD4CDQDvARoALgARAD8CHQAuABMA8QEgASEB8gFkAQEA8wH0AYMBYwECAIQBIQGFASEBfgFjAQEABQD1AQEABgECAAUAQAICAEECBABoAQoABQB2AQcACAAJAO0BCwBCAg0A7wEaAC4AEQBDAh0ALgATAPEBIAEhAfIBaQEBAPMB9AGDAWgBAgCEASEBhQEhAX4BaAEBAAUA9QEBAAYBAgAFAEQCAgBFAgQAbQEKAAUAdgEHAAgACQDtAQsARgINAO8BGgAuABEARwIdAC4AEwDxASABIQHyAW4BAQDzAfQBgwFtAQIAhAEhAYUBIQF+AW0BAQAFAPUBAQAGAQIABQBIAgIASQIEAHIBCgAFAHYBBwAIAAkA7QELAEoCDQDvARoALgARAEsCHQAuABMA8QEgASEB8gFzAQEA8wH0AYMBcgECAIQBIQGFASEBfgFyAQEABQD1AQEABgECAAUATAICAE0CBAB3AQoABQB2AQcACAAJAO0BCwBOAg0A7wEaAC4AEQBPAh0ALgATAPEBIAEhAfIBeAEBAPMB9AGDAXcBAgCEASEBhQEhAX4BdwEBAAUA9QEBAAYBAgAFAFAC'
+..'AgBRAgQAfAEKAAUAdgEHAAgACQDtAQsAUgINAO8BGgAuABEAUwIdAC4AEwDxASABIQHyAX0BAQDzAfQBgwF8AQIAhAEhAYUBIQF+AXwBAQAFAPUBAQAGAQIABQBUAgIAVQIEAIEBCgAFAHYBBwAIAAkA7QELAFYCDQDvARoALgARAFcCHQAuABMA8QEgASEB8gGCAQEA8wH0AYMBgQECAIQBIQGFASEBfgGBAQEABQD1AQEABgECAAUAWAICAFkCBACGAQoABQB2AQcACAAJAO0BCwBaAg0A7wEaAC4AEQBbAh0ALgATAPEBIAEhAfIBhwEBAPMB9AEwAIcBAgAxAIUAMwBcAoMBhgECAIQBIQGFASEBfgGGAQEABQD1AQEABgECAAUAXQICAF4CBACMAQoABQB2AQcACAAJAO0BCwBfAg0A7wEaAC4AEQBgAh0ALgATAPEBIAEhAfIBjQEBAPMB9AGDAYwBAgCEASEBhQEhAX4BjAEBAAUA9QEBAAYBAgAFAGECAgBiAgQAkQEKAAUAdgEHAAgACQDtAQsAYwINAO8BGgAuABEAZAIdAC4AEwDxASABIQHyAZIBAQDzAfQBgwGRAQIAhAEh'
+..'AYUBIQF+AZEBAQAFAPUBAQAGAQIABQBlAgIAZgIEAJYBCgAFAHYBBwAIAAkA7QELAGcCDQDvARoALgARAGgCHQAuABMA8QEgASEB8gGXAQEA8wH0AYMBlgECAIQBIQGFASEBfgGWAQEABQD1AQEABgECAAUAaQICAGoCBACbAQoABQB2AQcACAAJAO0BCwBrAg0A7wEaAC4AEQBsAh0ALgATAPEBIAEhAfIBnAEBAPMB9AGDAZsBAgCEASEBhQEhAX4BmwEBAAUA9QEBAAYBAgAFAG0CAgBuAgQAoAEKAAUAdgEHAAgACQDtAQsAbwINAO8BGgAuABEAcAIdAC4AEwDxASABIQHyAaEBAQDzAfQBMAChAQIAMQCFADMAcQKDAaABAgCEASEBhQEhAX4BoAEBAAUA9QEBAAYBAgAFAHICAgBzAgQApgEKAAUAdgEHAAgACQDtAQsAdAINAO8BGgAuABEAdQIdAC4AEwDxASABIQHyAacBAQDzAfQBgwGmAQIAhAEhAYUBIQF+AaYBAQAFAPUBAQAGAQIABQB2AgIAdwIEAKsBCgAFAHYBBwAIAAkA7QELAHgCDQDvARoALgARAHkCHQAuABMA'
+..'8QEgASEB8gGsAQEA8wH0AYMBqwECAIQBIQGFASEBfgGrAQEABQD1AQEABgECAAUAegICAHsCBACwAQoABQB2AQcACAAJAO0BCwB8Ag0A7wEaAC4AEQB9Ah0ALgATAPEBIAEhAfIBsQEBAPMB9AGDAbABAgCEASEBhQEhAX4BsAEBAAUA9QEBAAYBAgAFAH4CAgB/AgQAtQEKAAUAdgEHAAgACQDtAQsAgAINAO8BGgAuABEAgQIdAC4AEwDxASABIQHyAbYBAQDzAfQBgwG1AQIAhAEhAYUBIQF+AbUBAQAFAPUBAQAGAQIABQCCAgIAgwIEALoBCgAFAHYBBwAIAAkA7QELAIQCDQDvARoALgARAIUCHQAuABMA8QEgASEB8gG7AQEA8wH0AYMBugECAIQBIQGFASEBfgG6AQEABQD1AQEABgECAAUAhgICAIcCBAC/AQoABQB2AQcACAAJAO0BCwCIAg0A7wEaAC4AEQCJAh0ALgATAPEBIAEhAfIBwAEBAPMB9AGDAb8BAgCEASEBhQEhAX4BvwEBAAUA9QEBAAYBAgAFAIoCAgCLAgQAxAEKAAUAdgEHAAgACQDtAQsAjAINAO8BGgAu'
+..'ABEAjQIdAC4AEwDxASABIQHyAcUBAQDzAfQBMADFAQIAMQCFADMAjgKDAcQBAgCEASEBhQEhAX4BxAEBAAUA9QEBAAYBAgAFAI8CAgCQAgQAygEKAAUAdgEHAAgACQDtAQsAkQINAO8BGgAuABEAkgIdAC4AEwDxASABIQHyAcsBAQDzAfQBgwHKAQIAhAEhAYUBIQF+AcoBAQAFAPUBAQAGAQIABQCTAgIAlAIEAM8BCgAFAHYBBwAIAAkA7QELAJUCDQDvARoALgARAJYCHQAuABMA8QEgASEB8gHQAQEA8wH0AYMBzwECAIQBIQGFASEBfgHPAQEABQD1AQEABgECAAUAlwICAJgCBADUAQoABQB2AQcACAAJAO0BCwCZAg0A7wEaAC4AEQCaAh0ALgATAJsCIAEhAfIB1QEBAPMB9AGDAdQBAgCEASEBhQEhAX4B1AEBAAUA9QEBAAYBAgAFAJcCAgCcAgQA2QEKAAUAdgEHAAgACQDtAQsAnQINAO8BGgAuABEAngIdAC4AEwCbAiABIQGDAdkBAgCEASEBhQEhAQEABgECAAUAlwICAJ8CBADcAQoABQB2AQcACAAJAO0BCwCgAg0A'
+..'7wEaAC4AEQChAh0ALgATAJsCIAEhAYMB3AECAIQBIQGFASEBAQAGAQIABQCXAgIAogIEAN8BCgAFAHYBBwAIAAkA7QELAKMCDQDvARoALgARAKQCHQAuABMAmwIgASEBgwHfAQIAhAEhAYUBIQEBAAYBAgAFAJcCAgClAgQA4gEKAAUAdgEHAAgACQDtAQsApgINAO8BGgAuABEApwIdAC4AEwCbAiABIQGDAeIBAgCEASEBhQEhAQEABgECAAUAlwICAKgCBADlAQoABQB2AQcACAAJAO0BCwCpAg0A7wEaAC4AEQCqAh0ALgATAJsCIAEhATAA5gECADEAhQAzAKsCgwHlAQIAhAEhAYUBIQEBAAYBAgAFAJcCAgCsAgQA6QEKAAUAdgEHAAgACQDtAQsArQINAO8BGgAuABEArgIdAC4AEwCbAiABIQGDAekBAgCEASEBhQEhAQEABgECAAUAlwICAK8CBADsAQoABQB2AQcACAAJAO0BCwCwAg0A7wEaAC4AEQCxAh0ALgATAJsCIAEhAYMB7AECAIQBIQGFASEBfgEGAQEABQCyAn4B7wECAAUA9QGAAQgAswIGAQEABQC0AgQAAQAJ'
+..'AAcACAAJABcACwC1Ag0AGQAPABAAGgAbABEAtgIdABsAEwC3AjAA8gECADEAuAIzALkCMADyAQIAMQC4AjMAugIwAPIBAgAxALgCMwC7AjAA8gECADEAuAIzALwCMADyAQIAMQC4AjMAvQIEAAEACQAHAAgACQAXAAsAvgINABkADwAQABoAGwARAL8CHQAbABMAtwIwAPgBAgAxALgCMwDAAjAA+AECADEAuAIzALwCMAD4AQIAMQC4AjMAwQIwAPgBAgAxADIAMwDCAjAA+AECADEAuAIzAMMCMAD4AQIAMQC4AjMAvQIwAPgBAgAxALgCMwDEAgQAAQAJAAcACAAJAAoACwDFAg0ADgAPABAAGgAuABEAxgIdAC4AEwA5ADAAAAICADEAOgAzAMcCBAABAAkABwAIAAkACgALAMgCDQAOAA8AEAAaAJsAEQDJAh0AnQATADkAMAACAgIAMQA6ADMAygIEAAEACQAHAAgACQAKAAsAywINAA4ADwAQABoALgARAMwCHQAuABMAOQAEAAEACQAHAAgACQAKAAsAzQINAA4ADwAQABoALgARAM4CHQAuABMAOQAEAAEACQAHAAgACQAKAAsA'
+..'zwINAA4ADwAQABoALgARANACHQAuABMAOQAwAAYCAgAxADoAMwDRAgQAAQAJAAcACAAJAAoACwDSAg0ADgAPABAAGgAuABEA0wIdAC4AEwA5ADAACAICADEAOgAzANQCBAABAAkABwAIAAkACgALANUCDQAOAA8AEAAaAC4AEQDWAh0ALgATADkAMAAKAgIAMQA6ADMA1wIwAAoCAgAxADwAMwDYAgQAAQAJAAcACAAJAAoACwDZAg0ADgAPABAAGgAuABEA2gIdAC4AEwA5ADAADQICADEAOgAzANsCBAABAAsABQDcAgcACAAJAAoACwDdAg0ADgAPABAAGgAbABEA3gIdABsAEwDfAhUAFgAwAA8CAgAxAOACMwDhAgQAAQAJAAUA3AIHAAgACQAKAAsA4gINAA4ADwAQABEA4wITAOQCFQAWAAQAAQAIAAUABgAHAAgACQAKAAsA5QINAA4ADwAQABEA5gITAOcCMAASAgIAMQDqADMA6AIwABICAgAxAOoAMwDpAjAAEgICADEAAQEzAOoCMAASAgIAMQABATMA6wIEAAEACgAFAAYABwAIAAkACgALAOwCDQAOAA8AEAAaAC4AEQDt'
+..'Ah0ALgATAO4CMAAXAgIAMQCSADMA7wIBAAEAAgAFAPACAgDxAgQAGQILAAUA8gIHAAgACQCYAAsA8wKOAY8BDQCaABoAmwARAPQCHQCdABMA9QIVAJ8ABAAZAgsABQDyAgcACAAJAJgACwD2Ao4BjwENAJoAGgCbABEA9wIdAJ0AEwD1AhUAnwAwABsCAgAxAPgCMwD5AjAAGwICADEA+gIzAPsCBAAZAgsABQDyAgcACAAJAAoACwD8Ao4BjwENAA4ADwAQABoALgARAP0CHQAuABMA/gIEABkCCwAFAPICBwAIAAkACgALAP8CjgGPAQ0ADgAPABAAGgCbABEAAAMdAJ0AEwABAzAAHwICADEAUgAzAAIDBAAZAgsABQDyAgcACAAJAJgACwADA44BjwENAJoAGgAuABEABAMdAC4AEwAFAxUAnwAwACECAgAxAPgCMwAGAzAAIQICADEA+gIzAAcDBAAZAgsABQDyAgcACAAJAAoACwAIA44BjwENAA4ADwAQABoALgARAAkDHQAuABMA/gIwACQCAgAxAIUAMwAKAzAAJAICADEAhQAzAAsDBAAZAgsABQDyAgcACAAJAAoACwAMA44B'
+..'jwENAA4ADwAQABoALgARAA0DHQAuABMADgMwACcCAgAxAPgCMwAPAzAAJwICADEA+gIzABADBAAZAgsABQDyAgcACAAJAAoACwARA44BjwENAA4ADwAQABoALgARABIDHQAuABMADgMBAAEAAgAFAPACAgATAwQAKwILAAUA8gIHAAgACQCYAAsAFAOOAY8BDQCaABoAmwARABUDHQCdABMA9QIVAJ8AMAAsAgIAMQD6AjMA+wIEACsCCwAFAPICBwAIAAkAmAALABYDjgGPAQ0AmgAaAJsAEQAXAx0AnQATAPUCFQCfADAALgICADEA+gIzAPsCBAArAgsABQDyAgcACAAJAAoACwAYA44BjwENAA4ADwAQABoALgARABkDHQAuABMA/gIwADACAgAxAIUAMwAaAzAAMAICADEAhQAzABsDMAAwAgIAMQBSADMAHAMwADACAgAxAFIAMwAdAwQAKwILAAUA8gIHAAgACQAKAAsAHgOOAY8BDQAOAA8AEAAaAJsAEQAfAx0AnQATAAEDMAA1AgIAMQCFADMAIAMwADUCAgAxAFIAMwACAwQAKwILAAUA8gIHAAgACQCYAAsAIQOOAY8BDQCa'
+..'ABoALgARACIDHQAuABMABQMVAJ8ABAArAgsABQDyAgcACAAJAAoACwAjA44BjwENAA4ADwAQABoALgARACQDHQAuABMA/gIwADkCAgAxAIUAMwAaAzAAOQICADEAUgAzABwDMAA5AgIAMQBSADMAHQMEACsCCwAFAPICBwAIAAkACgALACUDjgGPAQ0ADgAPABAAGgAuABEAJgMdAC4AEwAOAzAAPQICADEA+gIzABADBAArAgsABQDyAgcACAAJAAoACwAnA44BjwENAA4ADwAQABoALgARACgDHQAuABMADgMwAD8CAgAxAPoCMwAQAzAAPwICADEA+AIzACkDAQABAAIABQDwAgIAKgMEAEICCwAFAPICBwAIAAkAmAALACsDjgGPAQ0AmgAaAJsAEQAsAx0AnQATAPUCFQCfADAAQwICADEA+AIzAC0DBABCAgsABQDyAgcACAAJAJgACwAuA44BjwENAJoAGgCbABEALwMdAJ0AEwD1AhUAnwAwAEUCAgAxAPgCMwAtAwQAQgILAAUA8gIHAAgACQAKAAsAMAOOAY8BDQAOAA8AEAAaAC4AEQAxAx0ALgATAP4CBABCAgsABQDyAgcA'
+..'CAAJAAoACwAyA44BjwENAA4ADwAQABoAmwARADMDHQCdABMAAQMEAEICCwAFAPICBwAIAAkAmAALADQDjgGPAQ0AmgAaAC4AEQA1Ax0ALgATAAUDFQCfADAASQICADEA+AIzADYDBABCAgsABQDyAgcACAAJAAoACwA3A44BjwENAA4ADwAQABoALgARADgDHQAuABMA/gIEAEICCwAFAPICBwAIAAkACgALADkDjgGPAQ0ADgAPABAAGgAuABEAOgMdAC4AEwAOAzAATAICADEA+AIzACkDBABCAgsABQDyAgcACAAJAAoACwA7A44BjwENAA4ADwAQABoALgARADwDHQAuABMADgMwAE4CAgAxAPgCMwApAwQAAQAIAAUABgAHAAgACQAKAAsAPQMNAA4ADwAQABEAPgMTAI4AMABQAgIAMQCSADMAPwMEAAEACQAHAAgACQCYAAsAQAMNAJoAGgApABEAQQMdACsAEwCeABUAnwAEAAEABwAHAAgACQAKAAsAQgMNAA4ADwAQABEAQwMTAJYAMABTAgIAMQCFADMARAMEAAEACQAHAAgACQCYAAsARQMNAJoAGgCbABEARgMdAJ0AEwCe'
+..'ABUAnwAwAFUCAgAxAEcDMwBIAzAAVQICADEASQMzAEoDBAABAA0ABQDyAgcACACaASEBCQCYAAsASwOOAY8BDQCaABoALgARAEwDHQAuABMATQMgASEBFQCfAE4DWAICAE8DUANRA1IDBAABAAcABwAIAAkACgALAFMDDQAOAA8AEAARAFQDEwCWADAAWgICADEAUgAzAJcAMABaAgIAMQCFADMAogAEAAEACQAHAAgACQCYAAsAVQMNAJoAGgCbABEAVgMdAJ0AEwCeABUAnwAEAAEACQAFAAYABwAIAAkACgALAFcDDQAOAA8AEAARAFgDEwBZAxUAFgAwAF4CAgAxAEsAMwBaAwQAAQAKAAUABgAHAAgACQAKAAsAWwMNAA4ADwAQABoAKQARAFwDHQArABMAXQMwAGACAgAxAF4DMwBfAwQAAQAKAAUABgAHAAgACQAKAAsAYAMNAA4ADwAQABoALgARAGEDHQAuABMAkQAEAAEACgAFAAYABwAIAAkACgALAGIDDQAOAA8AEAAaAJsAEQBjAx0AnQATAGQDBAABAAoABQAGAAcACAAJAAoACwBlAw0ADgAPABAAGgAbABEAZgMdABsA'
+..'EwBnAwQAAQAJAAUABgAHAAgACQAKAAsAaAMNAA4ADwAQABEAaQMTAGoDFQAWAAQAAQAJAAUABgAHAAgACQAKAAsAawMNAA4ADwAQABEAbAMTADYBFQAWAAQAAQAJAAUABgAHAAgACQAKAAsAbQMNAA4ADwAQABEAbgMTAGoDFQAWAAQAAQAJAAcACAAJAAoACwBvAw0ADgAPABAAGgAbABEAcAMdABsAEwBAADAAaAICADEAOgAzAHEDMABoAgIAMQA8ADMAcgMEAAEACQAHAAgACQAKAAsAcwMNAA4ADwAQABoAmwARAHQDHQCdABMAcgAwAGsCAgAxADoAMwB1A3YDAQAQAAUAdwMHAAgAeAMtAZoBLQEJAHkDCwB6Aw0AewN8Ay0BfQMtARoAmwARAH4DfwMtAR0AnQATAIADIAEhARUAnwCBA20CAgCCAxYAgwOEA3YDAQAQAAUAdwMHAAgAeAMtAZoBLQEJAHkDCwCFAw0AewN8Ay0BfQMtARoAmwARAIYDfwMtAR0AnQATAIADIAEhARUAnwCBA28CAgCCAxYAgwOEA4cDbwICADEAhQAzAIgDBAABAAsABQDcAgcACAAJAAoACwCJ'
+..'Aw0ADgAPABAAGgAbABEAigMdABsAEwDfAhUAFgAwAHICAgAxAOACMwCLA3YDAQAQAAUAdwMHAAgAeAMtAZoBLQEJAHkDCwCMAw0AewN8Ay0BfQMtARoAmwARAI0DfwMtAR0AnQATAIADIAEhARUAnwCBA3QCAgCCAxYAgwOEA3YDAQAQAAUAdwMHAAgAeAMtAZoBLQEJAHkDCwCOAw0AewN8Ay0BfQMtARoAmwARAI8DfwMtAR0AnQATAIADIAEhARUAnwCBA3YCAgCCAxYAgwOEA4cDdgICADEAhQAzAJADdgMBABAABQB3AwcACAB4Ay0BmgEtAQkAeQMLAJEDDQB7A3wDLQF9Ay0BGgCbABEAkgN/Ay0BHQCdABMAgAMgASEBFQCfAIEDeQICAIIDFgCDA4QDdgMBABAABQB3AwcACAB4Ay0BmgEtAQkAeQMLAJMDDQB7A3wDLQF9Ay0BGgCbABEAlAN/Ay0BHQCdABMAgAMgASEBFQCfAIEDewICAIIDFgCDA4QDdgMBABAABQB3AwcACAB4Ay0BmgEtAQkAeQMLAJUDDQB7A3wDLQF9Ay0BGgCbABEAlgN/Ay0BHQCdABMAgAMgASEB'
+..'FQCfAIEDfQICAIIDFgCDA4QDdgMBABAABQB3AwcACAB4Ay0BmgEtAQkAeQMLAJcDDQB7A3wDLQF9Ay0BGgCbABEAmAN/Ay0BHQCdABMAgAMgASEBFQCfAIEDfwICAIIDFgCDA4QDhwN/AgIAMQCFADMAmQMEAAEACAAFAAYABwAIAAkAFwALAJoDDQAZAA8AEAARAJsDEwCcA4cDggICADEAUgAzAJ0DhwOCAgIAMQBSADMAngOHA4ICAgAxAFIAMwCfA4cDggICADEAUgAzAKADhwOCAgIAMQBSADMAoQMwAIICAgAxAIUAMwCiA4cDggICADEAUgAzAKMDMACCAgIAMQCFADMApAMwAIICAgAxAIUAMwClAzAAggICADEAhQAzAKYDMACCAgIAMQCFADMApwMEAAEACgAFAAYABwAIAAkACgALAKgDDQAOAA8AEAAaAJsAEQCpAx0AnQATAKoDBAABAAoABQAGAAcACAAJAAoACwCrAw0ADgAPABAAGgCbABEArAMdAJ0AEwCtAzAAjwICADEAhQAzAK4DBAABAAoABQAGAAcACAAJAAoACwCvAw0ADgAPABAAGgCbABEAsAMdAJ0AEwCq'
+..'AzAAkQICADEAsQMzALIDMACRAgIAMQCzAzMAtAMEAAEACgAFAAYABwAIAAkACgALALUDDQAOAA8AEAAaAJsAEQC2Ax0AnQATAK0DMACUAgIAMQCFADMArgMwAJQCAgAxAFIAMwC3AwQAAQAKAAUABgAHAAgACQAKAAsAuAMNAA4ADwAQABoAmwARALkDHQCdABMArQMwAJcCAgAxAFIAMwC6AwQAAQAKAAUABgAHAAgACQAKAAsAuwMNAA4ADwAQABoAmwARALwDHQCdABMArQMEAAEACgAFAAYABwAIAAkACgALAL0DDQAOAA8AEAAaAJsAEQC+Ax0AnQATAK0DMACaAgIAMQCFADMArgMwAJoCAgAxAFIAMwC6AwQAAQAKAAUABgAHAAgACQAKAAsAvwMNAA4ADwAQABoAmwARAMADHQCdABMArQMEAAEACgAFAAYABwAIAAkACgALAMEDDQAOAA8AEAAaAJsAEQDCAx0AnQATAK0DMACeAgIAMQCFADMArgMwAJ4CAgAxAFIAMwC3AwQAAQAKAAUABgAHAAgACQAKAAsAwwMNAA4ADwAQABoAmwARAMQDHQCdABMArQMwAKECAgAxAIUA'
+..'MwDFAwQAAQAKAAUABgAHAAgACQAKAAsAxgMNAA4ADwAQABoALgARAMcDHQAuABMAyAMwAKMCAgAxAOoAMwDJAzAAowICADEA6gAzAMoDMACjAgIAMQDqADMAywMwAKMCAgAxAOoAMwDMAzAAowICADEAAQEzAM0DMACjAgIAMQDqADMAzgMwAKMCAgAxAAEBMwDPAzAAowICADEAAQEzANADMACjAgIAMQABATMA0QMEAAEACAAFAAYABwAIAAkAFwALANIDDQAZAA8AEAARANMDEwDUAzAArQICADEAswMzANUDBAABAAoABQAGAAcACAAJABcACwDWAw0AGQAPABAAGgAuABEA1wMdAC4AEwDYAwEAAQACAAUA8AICANkDBACwAgsABQDyAgcACAAJAJgACwDaA44BjwENAJoAGgCbABEA2wMdAJ0AEwD1AhUAnwAwALECAgAxAPgCMwAtAzAAsQICADEA+gIzANwDBACwAgsABQDyAgcACAAJAJgACwDdA44BjwENAJoAGgCbABEA3gMdAJ0AEwD1AhUAnwAwALQCAgAxAPoCMwDfAwQAsAILAAUA8gIHAAgACQAKAAsA4AOOAY8BDQAO'
+..'AA8AEAAaAC4AEQDhAx0ALgATAP4CMAC2AgIAMQCFADMAGgMwALYCAgAxAIUAMwAbAwQAsAILAAUA8gIHAAgACQAKAAsA4gOOAY8BDQAOAA8AEAAaAJsAEQDjAx0AnQATAAEDBACwAgsABQDyAgcACAAJAJgACwDkA44BjwENAJoAGgAuABEA5QMdAC4AEwAFAxUAnwAwALoCAgAxAPgCMwA2AwQAsAILAAUA8gIHAAgACQAKAAsA5gOOAY8BDQAOAA8AEAAaAC4AEQDnAx0ALgATAP4CMAC8AgIAMQBSADMAHAMwALwCAgAxAFIAMwAdAwQAsAILAAUA8gIHAAgACQAKAAsA6AOOAY8BDQAOAA8AEAAaAC4AEQDpAx0ALgATAA4DBACwAgsABQDyAgcACAAJAAoACwDqA44BjwENAA4ADwAQABoALgARAOsDHQAuABMADgMwAMACAgAxAPgCMwApAzAAwAICADEA+gIzAOwDBAABAAkABwAIAAkAmAALAO0DDQCaABoAKQARAO4DHQArABMAngAVAJ8ABAABAAcABwAIAAkACgALAO8DDQAOAA8AEAARAPADEwCWADAAxAICADEAhQAzAEQD'
+..'MADEAgIAMQBSADMA8QMEAAEACQAHAAgACQCYAAsA8gMNAJoAGgCbABEA8wMdAJ0AEwCeABUAnwAEAAEACAAFAAYABwAIAAkACgALAPQDDQAOAA8AEAARAPUDEwCtAzAAyAICADEAUgAzAPYDMADIAgIAMQCFADMA9wMEAAEACAAFAAYABwAIAAkACgALAPgDDQAOAA8AEAARAPkDEwD6AzAAywICADEAhQAzAPsDBAABAAgABQAGAAcACAAJAAoACwD8Aw0ADgAPABAAEQD9AxMA/gMwAM0CAgAxAIUAMwD/AwQAAQAKAAUABgAHAAgACQAKAAsAAAQNAA4ADwAQABoAGwARAAEEHQAbABMAAgQEAAEACgAFAAYABwAIAAkACgALAAMEDQAOAA8AEAAaAJsAEQAEBB0AnQATAAUEMADQAgIAMQAGBDMABwQEAAEACgAFAAYABwAIAAkACgALAAgEDQAOAA8AEAAaAC4AEQAJBB0ALgATAAoEKwHSAgEALAEtATAA0gICADEACwQzAAwEBAABAAsABQAGAAcACAAJAAoACwANBA0ADgAPABAAGgApABEADgQdACsAEwAPBBUAFgAwANUCAgAx'
+..'AEsAMwAQBAQAAQALAAUABgAHAAgACQAKAAsAEQQNAA4ADwAQABoALgARABIEHQAuABMAEwQVABYABAABAAsABQAGAAcACAAJAAoACwAUBA0ADgAPABAAGgApABEAFQQdACsAEwAWBBUAFgAEAAEACwAFAAYABwAIAAkACgALABcEDQAOAA8AEAAaAC4AEQAYBB0ALgATABkEFQAWADAA2QICADEASwAzABoEBAABAAoABQAGAAcACAAJAAoACwAbBA0ADgAPABAAGgAuABEAHAQdAC4AEwDuAjAA2wICADEAkgAzAB0EMADbAgIAMQCSADMAHgQwANsCAgAxAB8EMwAgBAQAAQAKAAUABgAHAAgACQAKAAsAIQQNAA4ADwAQABoAmwARACIEHQCdABMAIwQEAAEACgAFAAYABwAIAAkACgALACQEDQAOAA8AEAAaAJsAEQAlBB0AnQATACYEMADgAgIAMQAyADMAJwQEAAEACgAFAAYABwAIAAkACgALACgEDQAOAA8AEAAaAJsAEQApBB0AnQATACoEMADiAgIAMQAyADMAKwQEAAEACgAFAAYABwAIAAkACgALACwEDQAOAA8AEAAaAJsA'
+..'EQAtBB0AnQATAC4EMADkAgIAMQAyADMALwQEAAEACAAFAAYABwAIAAkACgALADAEDQAOAA8AEAARADEEEwAyBAQAAQAIAAUABgAHAAgACQAKAAsAMwQNAA4ADwAQABEANAQTADUEMADnAgIAMQBSADMANgQEAAEACAAFAAYABwAIAAkACgALADcEDQAOAA8AEAARADgEEwA5BDAA6QICADEAhQAzADoEMADpAgIAMQBSADMAOwQEAAEACAAFAAYABwAIAAkACgALADwEDQAOAA8AEAARAD0EEwA+BDAA7AICADEA6gAzAD8EMADsAgIAMQDqADMAQAQwAOwCAgAxAOoAMwBBBDAA7AICADEAAQEzAEIEMADsAgIAMQABATMAQwQEAAEACgAFAAYABwAIAAkACgALAEQEDQAOAA8AEAAaABsAEQBFBB0AGwATAGcDAQABAAIABQBGBAIARwQEAPMCCgAFAAYABwAIAAkAFwALAEgEDQAZAA8AEAAaABsAEQBJBB0AGwATAEoEMAD0AgIAMQCFADMASwQEAPMCCgAFAAYABwAIAAkAFwALAEwEDQAZAA8AEAAaABsAEQBNBB0AGwATAEoEBADz'
+..'AgoABQAGAAcACAAJABcACwBOBA0AGQAPABAAGgAbABEATwQdABsAEwBKBAQA8wIKAAUABgAHAAgACQAXAAsAUAQNABkADwAQABoAGwARAFEEHQAbABMASgQEAPMCCgAFAAYABwAIAAkAFwALAFIEDQAZAA8AEAAaABsAEQBTBB0AGwATAEoEBADzAgoABQAGAAcACAAJABcACwBUBA0AGQAPABAAGgAbABEAVQQdABsAEwBKBAQA8wIKAAUABgAHAAgACQAXAAsAVgQNABkADwAQABoAGwARAFcEHQAbABMASgQEAPMCCgAFAAYABwAIAAkAFwALAFgEDQAZAA8AEAAaABsAEQBZBB0AGwATAEoEBADzAgoABQAGAAcACAAJABcACwBaBA0AGQAPABAAGgAbABEAWwQdABsAEwBKBAQA8wIKAAUABgAHAAgACQAXAAsAXAQNABkADwAQABoAGwARAF0EHQAbABMASgQEAPMCCgAFAAYABwAIAAkAFwALAF4EDQAZAA8AEAAaABsAEQBfBB0AGwATAEoEBADzAgoABQAGAAcACAAJABcACwBgBA0AGQAPABAAGgAbABEAYQQdABsAEwBKBAQA'
+..'8wIKAAUABgAHAAgACQAXAAsAYgQNABkADwAQABoAGwARAGMEHQAbABMASgQEAPMCCAAFAAYABwAIAAkAFwALAGQEDQAZAA8AEAARAGUEEwBmBDAAAgMCADEAZwQzAGgEBADzAggABQAGAAcACAAJABcACwBpBA0AGQAPABAAEQBqBBMAZgQwAAQDAgAxAGsEMwBsBAQAAQALAAUABgAHAAgACQAKAAsAbQQNAA4ADwAQABoALgARAG4EHQAuABMAbwQgASEBKwEGAwEALAEtAXYDAQAQAAUAdwMHAAgAeAMtAZoBLQEJAHkDCwBwBA0AewN8Ay0BfQMtARoAmwARAHEEfwMtAR0AnQATAIADIAEhARUAnwCBAwgDAgCCAxYAgwOEAwQAAQAIAAUABgAHAAgACQAKAAsAcgQNAA4ADwAQABEAcwQTAK0DMAAKAwIAMQBSADMAdAQwAAoDAgAxAIUAMwB1BAQAAQAIAAUABgAHAAgACQAKAAsAdgQNAA4ADwAQABEAdwQTAK0DBAABAAoABQAGAAcACAAJAAoACwB4BA0ADgAPABAAGgCbABEAeQQdAJ0AEwCtAzAADgMCADEAUgAzALoDMAAO'
+..'AwIAMQCFADMAegQEAAEACgAFAAYABwAIAAkACgALAHsEDQAOAA8AEAAaAJsAEQB8BB0AnQATAK0DMAARAwIAMQBSADMAugMwABEDAgAxAIUAMwB9BAQAAQAKAAUABgAHAAgACQAKAAsAfgQNAA4ADwAQABoAmwARAH8EHQCdABMArQMEAAEACAAFAAYABwAIAAkACgALAIAEDQAOAA8AEAARAIEEEwCqAzAAFQMCADEAsQMzAIIEMAAVAwIAMQCzAzMAgwQBAAEAAgAFAPACAgCEBAQAGAMLAAUA8gIHAAgACQCYAAsAhQSOAY8BDQCaABoAKQARAIYEHQArABMA9QIVAJ8AMAAZAwIAMQD4AjMAhwQEABgDCwAFAPICBwAIAAkAmAALAIgEjgGPAQ0AmgAaACkAEQCJBB0AKwATAPUCFQCfAAQAGAMLAAUA8gIHAAgACQAKAAsAigSOAY8BDQAOAA8AEAAaAC4AEQCLBB0ALgATAP4CMAAcAwIAMQBSADMAjAQwABwDAgAxAIUAMwCNBAQAGAMLAAUA8gIHAAgACQAKAAsAjgSOAY8BDQAOAA8AEAAaACkAEQCPBB0AKwATAAEDMAAfAwIA'
+..'MQBSADMAAgMwAB8DAgAxAIUAMwCQBAQAGAMLAAUA8gIHAAgACQCYAAsAkQSOAY8BDQCaABoALgARAJIEHQAuABMABQMVAJ8ABAAYAwsABQDyAgcACAAJAAoACwCTBI4BjwENAA4ADwAQABoALgARAJQEHQAuABMA/gIEABgDCwAFAPICBwAIAAkACgALAJUEjgGPAQ0ADgAPABAAGgAuABEAlgQdAC4AEwAOAzAAJAMCADEA+AIzAJcEMAAkAwIAMQD6AjMAmAQEABgDCwAFAPICBwAIAAkACgALAJkEjgGPAQ0ADgAPABAAGgAuABEAmgQdAC4AEwAOAzAAJwMCADEA+AIzAJsEMAAnAwIAMQD6AjMAnAQEAAEACgAFAAYABwAIAAkACgALAJ0EDQAOAA8AEAAaACkAEQCeBB0AKwATAK0DMAAqAwIAMQBSADMAnwQwACoDAgAxAIUAMwD3AwQAAQAKAAUABgAHAAgACQAKAAsAoAQNAA4ADwAQABoAKQARAKEEHQArABMAogQEAAEACAAFAAYABwAIAAkACgALAKMEDQAOAA8AEAARAKQEEwClBDAALgMCADEAUgAzAKYEMAAuAwIAMQBS'
+..'ADMApwQwAC4DAgAxAFIAMwCoBDAALgMCADEAUgAzAKkEMAAuAwIAMQCFADMAqgQwAC4DAgAxAIUAMwCrBAQAAQAIAAUABgAHAAgACQAKAAsArAQNAA4ADwAQABEArQQTAK0DMAA1AwIAMQCFADMArgQEAAEACAAFAAYABwAIAAkACgALAK8EDQAOAA8AEAARALAEEwCtAzAANwMCADEAhQAzAHUEMAA3AwIAMQBSADMAsQQEAAEACAAFAAYABwAIAAkACgALALIEDQAOAA8AEAARALMEEwC0BDAAOgMCADEAUgAzALUEBAABAAgABQAGAAcACAAJAAoACwC2BA0ADgAPABAAEQC3BBMAuAQEAAEACwAFAAYABwAIAAkACgALALkEDQAOAA8AEAAaAC4AEQC6BB0ALgATALsEFQAWAAQAAQAKAAUABgAHAAgACQAKAAsAvAQNAA4ADwAQABoAmwARAL0EHQCdABMAvgQwAD4DAgAxAOoAMwC/BAQAAQAIAAUABgAHAAgACQAKAAsAwAQNAA4ADwAQABEAwQQTAMIEMABAAwIAMQBSADMAwwQwAEADAgAxAFIAMwDEBAQAAQAKAAUABgAHAAgA'
+..'CQAKAAsAxQQNAA4ADwAQABoAmwARAMYEHQCdABMAJgQEAAEACgAFAAYABwAIAAkACgALAMcEDQAOAA8AEAAaAJsAEQDIBB0AnQATACMEBAABAAoABQAGAAcACAAJAAoACwDJBA0ADgAPABAAGgCbABEAygQdAJ0AEwDLBDAARQMCADEAMgAzAMwEBAABAAgABQAGAAcACAAJAAoACwDNBA0ADgAPABAAEQDOBBMAqgMwAEcDAgAxALEDMwDPBDAARwMCADEAswMzANAEAQABAAIABQBGBAIA0QQEAEoDCgAFAAYABwAIAAkAFwALANIEDQAZAA8AEAAaABsAEQDTBB0AGwATAEoEBABKAwoABQAGAAcACAAJABcACwDUBA0AGQAPABAAGgAbABEA1QQdABsAEwBKBAQASgMKAAUABgAHAAgACQAXAAsA1gQNABkADwAQABoAGwARANcEHQAbABMASgQEAEoDCgAFAAYABwAIAAkAFwALANgEDQAZAA8AEAAaABsAEQDZBB0AGwATAEoEBABKAwoABQAGAAcACAAJABcACwDaBA0AGQAPABAAGgAbABEA2wQdABsAEwBKBAQASgMKAAUABgAH'
+..'AAgACQAXAAsA3AQNABkADwAQABoAGwARAN0EHQAbABMASgQEAEoDCgAFAAYABwAIAAkAFwALAN4EDQAZAA8AEAAaABsAEQDfBB0AGwATAEoEBABKAwoABQAGAAcACAAJABcACwDgBA0AGQAPABAAGgAbABEA4QQdABsAEwBKBAQASgMKAAUABgAHAAgACQAXAAsA4gQNABkADwAQABoAGwARAOMEHQAbABMASgQEAEoDCgAFAAYABwAIAAkAFwALAOQEDQAZAA8AEAAaABsAEQDlBB0AGwATAEoEBABKAwoABQAGAAcACAAJABcACwDmBA0AGQAPABAAGgAbABEA5wQdABsAEwBKBAQASgMKAAUABgAHAAgACQAXAAsA6AQNABkADwAQABoAGwARAOkEHQAbABMASgQEAEoDCgAFAAYABwAIAAkAFwALAOoEDQAZAA8AEAAaABsAEQDrBB0AGwATAEoEBABKAwgABQAGAAcACAAJABcACwDsBA0AGQAPABAAEQDtBBMAZgQwAFgDAgAxAGsEMwDuBAQASgMIAAUABgAHAAgACQAXAAsA7wQNABkADwAQABEA8AQTAGYEMABaAwIAMQBnBDMA'
+..'8QQEAAEADAAFAPIE8wT0BPUE9gSaASEBCQDtAQsA9wQNAO8BEQD4BHsB+QQTAPoEIAEhAfsEIQH8BFwDAgD9BP4EEQD/BAQAAQAKAAUABgAHAAgACQAKAAsAAAUNAA4ADwAQABEAAQUTAAIFIAEhARUAFgAEAAEACQAFAAYABwAIAAkACgALAAMFDQAOAA8AEAARAAQFEwAFBSABIQEEAAEACgAFAAYABwAIAJoBIQEJAJgACwAGBQ0AmgARAAcFEwAIBSABIQEVAJ8ABAABAAkABQAGAAcACAAJAAoACwAJBQ0ADgAPABAAEQAKBRMAWQMVABYAMABhAwIAMQBLADMACwUBAAEAAgAFAAwFAgANBQQAYwMMAAUADgUHAAgA9QQPBZoBIQEJABAFCwARBQ0AEgUaABMFEQAUBR0AFQUTABYFIAEtASsBZAMBAFEDFwUEAGMDDAAFAA4FBwAIAPUEGAWaASEBCQAQBQsAGQUNABIFGgAaBREAGwUdABwFEwAdBSABLQErAWYDAQBRAxcFBABjAwwABQAOBQcACAD1BA8FmgEhAQkAEAULAB4FDQASBRoAEwURAB8FHQAVBRMAFgUgAS0BKwFo'
+..'AwEAUQMXBQQAYwMMAAUADgUHAAgA9QQgBZoBIQEJABAFCwAhBQ0AEgUaABoFEQAiBR0AHAUTAB0FIAEtASsBagMBAFEDFwUEAGMDDAAFAA4FBwAIAPUEGAWaASEBCQAQBQsAIwUNABIFGgAaBREAJAUdABwFEwAdBSABLQErAWwDAQBRAxcFBABjAwsABQAOBQcACAD1BCUFCQAQBQsAJgUNABIFGgAuABEAJwUdAC4AEwAoBSABIQEEAGMDCwAFAA4FBwAIAPUEJQUJABAFCwApBQ0AEgUaAC4AEQAqBR0ALgATACgFIAEhAQQAYwMMAAUADgUHAAgA9QQgBZoBIQEJABAFCwArBQ0AEgUaABoFEQAsBR0AHAUTAB0FIAEtASsBcAMBAFEDFwUEAGMDCgAFAA4FBwAIAAkAEAULAC0FDQASBRoALgARAC4FHQAuABMALwUgASEBBABjAwwABQAOBQcACAD1BA8FmgEhAQkAEAULADAFDQASBRoAEwURADEFHQAVBRMAFgUgAS0BKwFzAwEAUQMXBQQAYwMMAAUADgUHAAgA9QQyBZoBIQEJABAFCwAzBQ0AEgUaABsAEQA0BR0AGwATADUF'
+..'IAEtASsBdQMBAFEDFwUEAGMDCgAFAA4FBwAIAAkAEAULADYFDQASBRoAKQARADcFHQA4BRMAOQUgASEBBABjAwwABQAOBQcACAD1BDoFmgEhAQkAEAULADsFDQASBRoAEwURADwFHQAVBRMAPQUgAS0BKwF4AwEAUQMXBYcDeAMCADEAPgUzAD8FBABjAwoABQAOBQcACAAJABAFCwBABQ0AEgUaACkAEQBBBR0AOAUTAEIFIAEhAQQAYwMMAAUADgUHAAgA9QQyBZoBIQEJABAFCwBDBQ0AEgUaABsAEQBEBR0AGwATADUFIAEtASsBfAMBAFEDFwWHA3wDAgAxAEUFMwBGBQQAAQAIAAUABgAHAAgACQAKAAsARwUNAA4ADwAQABEASAUTAK0DBAABAAgABQAGAAcACAAJAAoACwBJBQ0ADgAPABAAEQBKBRMArQMwAIADAgAxAIUAMwB1BDAAgAMCADEAUgAzAHQEBAABAAgABQAGAAcACAAJAAoACwBLBQ0ADgAPABAAEQBMBRMArQMwAIMDAgAxAFIAMwBNBQQAAQAIAAUABgAHAAgACQAKAAsATgUNAA4ADwAQABEATwUTAK0DMACF'
+..'AwIAMQBSADMATQUEAAEACAAFAAYABwAIAAkACgALAFAFDQAOAA8AEAARAFEFEwCtAwQAAQAIAAUABgAHAAgACQAKAAsAUgUNAA4ADwAQABEAUwUTAK0DMACIAwIAMQCFADMAdQQEAAEACAAFAAYABwAIAAkACgALAFQFDQAOAA8AEAARAFUFEwCtAzAAigMCADEAUgAzAE0FMACKAwIAMQCFADMAdQQEAAEACAAFAAYABwAIAAkACgALAFYFDQAOAA8AEAARAFcFEwCtAwQAAQAKAAUABgAHAAgACQAKAAsAWAUNAA4ADwAQABoAmwARAFkFHQCdABMAWgUwAI4DAgAxAFsFMwBcBQQAAQAKAAUABgAHAAgACQAKAAsAXQUNAA4ADwAQABoAmwARAF4FHQCdABMArQMwAJADAgAxAFIAMwC6AzAAkAMCADEAhQAzAK4DBAABAAoABQAGAAcACAAJAAoACwBfBQ0ADgAPABAAGgCbABEAYAUdAJ0AEwCtAwQAAQAKAAUABgAHAAgACQAKAAsAYQUNAA4ADwAQABoAmwARAGIFHQCdABMAWgUwAJQDAgAxAFgBMwCyAzAAlAMCADEAWwUzAGMF'
+..'BAABAAoABQAGAAcACAAJAAoACwBkBQ0ADgAPABAAGgCbABEAZQUdAJ0AEwCtAwQAAQAKAAUABgAHAAgACQAKAAsAZgUNAA4ADwAQABoAmwARAGcFHQCdABMArQMwAJgDAgAxAFIAMwC6AwQAAQAKAAUABgAHAAgACQAKAAsAaAUNAA4ADwAQABoAmwARAGkFHQCdABMArQMwAJoDAgAxAFIAMwC6AzAAmgMCADEAhQAzAHoEBAABAAgABQAGAAcACAAJAAoACwBqBQ0ADgAPABAAEQBrBRMAqgMwAJ0DAgAxALEDMwBsBTAAnQMCADEAswMzAG0FBAABAAgABQAGAAcACAAJAAoACwBuBQ0ADgAPABAAEQBvBRMAqgMEAAEACAAFAAYABwAIAAkACgALAHAFDQAOAA8AEAARAHEFEwByBTAAoQMCADEA6gAzAHMFMAChAwIAMQDqADMAdAUEAAEACgAFAAYABwAIAAkAFwALAHUFDQAZAA8AEAAaAC4AEQB2BR0ALgATAHcFBAABAAgABQAGAAcACAAJAAoACwB4BQ0ADgAPABAAEQB5BRMAegUwAKUDAgAxAOoAMwB7BTAApQMCADEAAQEz'
+..'AHwFBAABAAgABQAGAAcACAAJAAoACwB9BQ0ADgAPABAAEQB+BRMAqgMEAAEACAAFAAYABwAIAAkACgALAH8FDQAOAA8AEAARAIAFEwCqAwQAAQAKAAUABgAHAAgACQAKAAsAgQUNAA4ADwAQABoAKQARAIIFHQArABMArQMwAKoDAgAxAFIAMwBNBQQAAQAKAAUABgAHAAgACQAKAAsAgwUNAA4ADwAQABoAKQARAIQFHQArABMArQMEAAEACgAFAAYABwAIAAkACgALAIUFDQAOAA8AEAAaACkAEQCGBR0AKwATALQEMACtAwIAMQCFADMAhwUwAK0DAgAxAFIAMwC1BAQAAQAKAAUABgAHAAgACQAKAAsAiAUNAA4ADwAQABoAKQARAIkFHQArABMAuAQEAAEACAAFAAYABwAIAAkACgALAIoFDQAOAA8AEAARAIsFEwCtAzAAsQMCADEAUgAzAE0FBAABAAgABQAGAAcACAAJAAoACwCMBQ0ADgAPABAAEQCNBRMArQMwALMDAgAxAFIAMwBNBTAAswMCADEAhQAzAHUEMACzAwIAMQCFADMAjgUwALMDAgAxAIUAMwCPBQQAAQAIAAUA'
+..'BgAHAAgACQAKAAsAkAUNAA4ADwAQABEAkQUTAK0DMAC4AwIAMQCFADMAdQQEAAEACAAFAAYABwAIAAkACgALAJIFDQAOAA8AEAARAJMFEwCtAzAAugMCADEAhQAzAHUEMAC6AwIAMQBSADMAdAQEAAEACAAFAAYABwAIAAkACgALAJQFDQAOAA8AEAARAJUFEwCtAwQAAQAIAAUABgAHAAgACQAKAAsAlgUNAA4ADwAQABEAlwUTAK0DBAABAAgABQAGAAcACAAJAAoACwCYBQ0ADgAPABAAEQCZBRMArQMwAL8DAgAxAFIAMwBNBQQAAQAIAAUABgAHAAgACQAKAAsAmgUNAA4ADwAQABEAmwUTAK0DBAABAAoABQAGAAcACAAJAAoACwCcBQ0ADgAPABAAGgAbABEAnQUdABsAEwCeBQQAAQAIAAUABgAHAAgACQAKAAsAnwUNAA4ADwAQABEAoAUTAKEFBAABAAsABQAGAAcACAAJAAoACwCiBQ0ADgAPABAAGgAuABEAowUdAC4AEwAZBBUAFgAEAAEACgAFAAYABwAIAAkACgALAKQFDQAOAA8AEAAaAC4AEQClBR0ALgATAJ4FMADF'
+..'AwIAMQBeAzMApgUEAAEACAAFAAYABwAIAAkACgALAKcFDQAOAA8AEAARAKgFEwCpBTAAxwMCADEA6gAzAKoFBAABAAgABQAGAAcACAAJAAoACwCrBQ0ADgAPABAAEQCsBRMAqgMwAMkDAgAxALEDMwCtBTAAyQMCADEAswMzAK4FBAABAAgABQAGAAcACAAJAAoACwCvBQ0ADgAPABAAEQCwBRMAqgMEAAEADAAFAPIE8wSxBfUEsgWaASEBCQCzBQsAtAUNALUFEQC2BXsB+QQTALcFIAEhAfsEIQH8BM0DAgD9BP4EEQD/BAQAAQAOAAUA8gTzBLgF9QS5BZoBIQEJABAFCwC6BQ0AEgUaALsFEQC8BXsB+QQdALsFEwC9BSABIQH7BCEB/ATPAwIA/QT+BBEA/wQEAAEACwAFAAYABwAIAAkACgALAL4FDQAOAA8AEAAaAC4AEQC/BR0ALgATAMAFIAEhASsB0QMBACwBLQEEAAEACQAFAAYABwAIAAkACgALAMEFDQAOAA8AEAARAMIFEwDDBSABIQErAdMDAQAsAS0BMADTAwIAMQAyADMAcgEEAAEACQAFAAYABwAIAAkACgALAMQF'
+..'DQAOAA8AEAARAMUFEwDGBSABIQEEAAEACQAFAAYABwAIAAkACgALAMcFDQAOAA8AEAARAMgFEwDGBSABIQEEAAEACgAFAAYABwAIAAkACgALAMkFDQAOAA8AEAARAMoFEwDLBSABIQEVABYABAABAAkABQAGAAcACAAJAAoACwDMBQ0ADgAPABAAEQDNBRMAzgUgASEBBAABAAoABQAGAAcACAAJAAoACwDPBQ0ADgAPABAAGgCbABEA0AUdAJ0AEwCtAwQAAQAJAAUABgAHAAgACQAKAAsA0QUNAA4ADwAQABEA0gUTAAUFIAEhAQQAAQAJAAUABgAHAAgACQAKAAsA0wUNAA4ADwAQABEA1AUTANUFIAEhAQQAAQAJAAUABgAHAAgACQCYAAsA1gUNAJoAEQDXBRMA2AUgASEBFQCfAAQAAQALAAUABgAHAAgACQAKAAsA2QUNAA4ADwAQABoALgARANoFHQAuABMA2wUgASEBBAABAAkABQAGAAcACAAJAJgACwDcBQ0AmgARAN0FEwDYBSABIQEVAJ8ABAABAAkABQAGAAcACAAJAJgACwDeBQ0AmgARAN8FEwDgBSABIQEVAJ8AdgMB'
+..'ABAABQB3AwcACAB4Ay0BmgEtAQkAeQMLAOEFDQB7A3wDLQF9Ay0BGgCbABEA4gV/Ay0BHQCdABMAgAMgASEBFQCfAIED4QMCAIIDFgCDA4QDhwPhAwIAMQCFADMA4wUEAAEACAAFAAYABwAIAAkACgALAOQFDQAOAA8AEAARAOUFEwCtAzAA5AMCADEAhQAzAOYFMADkAwIAMQBSADMATQUEAAEACAAFAAYABwAIAAkACgALAOcFDQAOAA8AEAARAOgFEwCqAzAA5wMCADEAsQMzAOkFMADnAwIAMQCzAzMA6gUEAAEACAAFAAYABwAIAAkACgALAOsFDQAOAA8AEAARAOwFEwCqAzAA6gMCADEAsQMzAO0FMADqAwIAMQCzAzMA7gUEAAEACAAFAAYABwAIAAkAFwALAO8FDQAZAA8AEAARAPAFEwDxBTAA7QMCADEAUgAzAPIFMADtAwIAMQBSADMA8wUwAO0DAgAxAFIAMwD0BTAA7QMCADEAUgAzAPUFMADtAwIAMQBSADMA9gUwAO0DAgAxAFIAMwD3BYcD7QMCADEAUgAzAPgFBAABAAgABQAGAAcACAAJAAoACwD5BQ0ADgAPABAA'
+..'EQD6BRMArQMEAAEACAAFAAYABwAIAAkACgALAPsFDQAOAA8AEAARAPwFEwCtAzAA9gMCADEAhQAzAK4EMAD2AwIAMQBSADMATQUEAAEACAAFAAYABwAIAAkACgALAP0FDQAOAA8AEAARAP4FEwCtAwQAAQAIAAUABgAHAAgACQAKAAsA/wUNAA4ADwAQABEAAAYTAK0DMAD6AwIAMQCFADMAdQQwAPoDAgAxAFIAMwBNBQQAAQAIAAUABgAHAAgACQAKAAsAAQYNAA4ADwAQABEAAgYTAK0DBAABAAgABQAGAAcACAAJAAoACwADBg0ADgAPABAAEQAEBhMArQMwAP4DAgAxAIUAMwB1BDAA/gMCADEAUgAzAHQEBAABAAgABQAGAAcACAAJAAoACwAFBg0ADgAPABAAEQAGBhMArQMwAAEEAgAxAFIAMwBNBQQAAQAIAAUABgAHAAgACQAKAAsABwYNAA4ADwAQABEACAYTAFoFMAADBAIAMQBYATMA7QUwAAMEAgAxAFsFMwAJBgQAAQAIAAUABgAHAAgACQAKAAsACgYNAA4ADwAQABEACwYTAFoFMAAGBAIAMQBYATMA6QUwAAYEAgAx'
+..'AFsFMwAMBgQAAQAKAAUABgAHAAgACQAKAAsADQYNAA4ADwAQABoAmwARAA4GHQCdABMArQMwAAkEAgAxAFIAMwC6AzAACQQCADEAhQAzAA8GBAABAAgABQAGAAcACAAJAAoACwAQBg0ADgAPABAAEQARBhMAqgMEAAEACgAFAAYABwAIAAkACgALABIGDQAOAA8AEAAaAC4AEQATBh0ALgATABQGMAANBAIAMQDqADMAFQYEAAEACAAFAAYABwAIAAkAFwALABYGDQAZAA8AEAARABcGEwDUAzAADwQCADEAsQMzABgGMAAPBAIAMQCzAzMAGQYEAAEACgAFAAYABwAIAAkAFwALABoGDQAZAA8AEAAaAC4AEQAbBh0ALgATANgDBAABAAoABQAGAAcACAAJAAoACwAcBg0ADgAPABAAGgApABEAHQYdACsAEwCtAzAAEwQCADEAUgAzAE0FBAABAAoABQAGAAcACAAJAAoACwAeBg0ADgAPABAAGgApABEAHwYdACsAEwCtAwQAAQAKAAUABgAHAAgACQAKAAsAIAYNAA4ADwAQABoAKQARACEGHQArABMArQMwABYEAgAxAFIAMwB0BDAA'
+..'FgQCADEAhQAzAHUEBAABAAoABQAGAAcACAAJAAoACwAiBg0ADgAPABAAGgApABEAIwYdACsAEwCtAzAAGQQCADEAhQAzAHUEBAABAAoABQAGAAcACAAJAAoACwAkBg0ADgAPABAAGgApABEAJQYdACsAEwAmBjAAGwQCADEAsQMzACcGBAABAAgABQAGAAcACAAJAAoACwAoBg0ADgAPABAAEQApBhMArQMwAB0EAgAxAFIAMwBNBQQAAQAIAAUABgAHAAgACQAKAAsAKgYNAA4ADwAQABEAKwYTAK0DMAAfBAIAMQBSADMATQUwAB8EAgAxAIUAMwCuBAQAAQAIAAUABgAHAAgACQAKAAsALAYNAA4ADwAQABEALQYTAK0DBAABAAgABQAGAAcACAAJAAoACwAuBg0ADgAPABAAEQAvBhMArQMwACMEAgAxAFIAMwBNBQQAAQAIAAUABgAHAAgACQAKAAsAMAYNAA4ADwAQABEAMQYTAFoFBAABAAgABQAGAAcACAAJAAoACwAyBg0ADgAPABAAEQAzBhMAWgUEAAEACAAFAAYABwAIAAkACgALADQGDQAOAA8AEAARADUGEwAmBgQAAQAK'
+..'AAUABgAHAAgACQAKAAsANgYNAA4ADwAQABoALgARADcGHQAuABMAOAYwACgEAgAxAFIAMwA5BgQAAQAKAAUABgAHAAgACQAKAAsAOgYNAA4ADwAQABoAGwARADsGHQAbABMAAgQEAAEACgAFAAYABwAIAAkACgALADwGDQAOAA8AEAAaABsAEQA9Bh0AGwATAAoEKwErBAEALAEtATAAKwQCADEACwQzAD4GBAABAAgABQAGAAcACAAJAAoACwA/Bg0ADgAPABAAEQBABhMABQQwAC4EAgAxAEEGMwBCBjAALgQCADEABgQzAEMGBAABAAoABQAGAAcACAAJABcACwBEBg0AGQAPABAAGgAuABEARQYdAC4AEwBGBjAAMQQCADEAsQMzAEcGMAAxBAIAMQCxAzMASAYwADEEAgAxALEDMwBJBjAAMQQCADEAsQMzAEoGBAABAAoABQAGAAcACAAJAAoACwBLBg0ADgAPABAAGgAuABEATAYdAC4AEwCeBTAANgQCADEAXgMzAE0GMAA2BAIAMQBeAzMATgYEAAEACgAFAAYABwAIAAkACgALAE8GDQAOAA8AEAAaACkAEQBQBh0AKwATAFEG'
+..'BAABAAoABQAGAAcACAAJAAoACwBSBg0ADgAPABAAGgApABEAUwYdACsAEwBUBjAAOgQCADEAXgMzAFUGMAA6BAIAMQBeAzMATgYEAAEACgAFAPIE8wRWBvUEVwaaASEBCwBYBg8AWQYRAFoGEwC9BSABIQH7BCEBBAABAAgABQAGAAcACAAJAAoACwBbBg0ADgAPABAAEQBcBhMAqgMwAD4EAgAxALEDMwBdBgQAAQAIAAUABgAHAAgACQAKAAsAXgYNAA4ADwAQABEAXwYTAKoDMABABAIAMQCxAzMAYAYEAAEACAAFAAYABwAIAAkACgALAGEGDQAOAA8AEAARAGIGEwCqAwQAAQAKAAUAYwYHAAgACQAKAAsAZAYNAA4AGgCbABEAZQYdAJ0AEwBmBiABIQEwAEMEAgAxAIUAMwBnBnYDAQAQAAUAdwMHAAgAeAMtAZoBLQEJAHkDCwBoBg0AewN8Ay0BfQMtARoAmwARAGkGfwMtAR0AnQATAIADIAEhARUAnwCBA0UEAgCCAxYAgwOEA4cDRQQCADEAhQAzAGoGBAABAAgABQAGAAcACAAJAAoACwBrBg0ADgAPABAAEQBsBhMAbQYE'
+..'AAEACQAFAAYABwAIAAkACgALAG4GDQAOAA8AEAARAG8GEwBwBiABIQEEAAEACQAFAAYABwAIAAkAmAALAHEGDQCaABEAcgYTAOAFIAEhARUAnwAEAAEACQAFAAYABwAIAAkACgALAHMGDQAOAA8AEAARAHQGEwB1BiABIQEEAAEACQAFAAYABwAIAAkACgALAHYGDQAOAA8AEAARAHcGEwDVBSABIQEEAAEACQAFAAYABwAIAAkACgALAHgGDQAOAA8AEAARAHkGEwDVBSABIQEEAAEACQAFAAYABwAIAAkACgALAHoGDQAOAA8AEAARAHsGEwDVBSABIQEEAAEACgAFAAYABwAIAAkACgALAHwGDQAOAA8AEAARAH0GEwDLBSABIQEVABYABAABAAoABQAGAAcACAAJAAoACwB+Bg0ADgAPABAAEQB/BhMAgAYgASEBFQAWAH4BAAABAAUAhAYEAAAADQAFAIUG8wSGBvUEhwaaASEBCQB5AwsAiAYNAHsDGgCJBhEAigZ7AYsGHQCMBhMAjQYgASEBKwFSBAMAjgaPBpAGkQYsAZIGkwZSBAEAlAaVBpMGUgQBAJQGlgaTBlIEAQCUBpcG'
+..'kwZSBAEAlAaYBpMGUgQBAJQGmQaaBgAAAwAFAJsGCwCcBp0GngYEAAEADQAFAIUG8wSfBvUEoAaaASEBCQB5AwsAoQYNAHsDGgCiBhEAowZ7AYsGHQCkBhMAjQYgASEBKwFaBAMAjgaPBpAGkQYsAZIGBAABAA0ABQCFBvMEpQb1BKYGmgEhAQkAeQMLAKcGDQB7AxoAqAYRAKkGewGLBh0AqgYTAI0GIAEhASsBXAQDAI4GjwaQBpEGLAGSBgQAAAAMAAUAhQbzBK0G9QSuBpoBIQEJAK8GCwCwBg0AsQYaALIGEQCzBh0AtAYTALUGIAEhASsBXgQEAFEDtgaOBrcGkAa4BiwBkgaHA14EAgAxALkGMwC5BocDXgQCADEAugYzALoGhwNeBAIAMQC7BjMAuwaHA14EAgAxALwGMwC8BocDXgQCADEAvQYzAL0GhwNeBAIAMQC9BjMAvgaHA14EAgAxAL0GMwC/BocDXgQCADEAvQYzAMAGhwNeBAIAMQC9BjMAwQaHA14EAgAxAL0GMwDCBocDXgQCADEAvQYzAMMGhwNeBAIAMQC9BjMAxAaHA14EAgAxAL0GMwDFBocDXgQCADEAvQYz'
+..'AMYGhwNeBAIAMQC9BjMAxwaHA14EAgAxAL0GMwDIBocDXgQCADEAyQYzAMkGhwNeBAIAMQDJBjMAygaHA14EAgAxAMkGMwDLBocDXgQCADEAyQYzAMwGhwNeBAIAMQDJBjMAzQaHA14EAgAxAMkGMwDOBocDXgQCADEAyQYzAM8GhwNeBAIAMQDJBjMA0AaHA14EAgAxAMkGMwDRBocDXgQCADEAyQYzANIGhwNeBAIAMQDJBjMA0waHA14EAgAxAMkGMwDUBocDXgQCADEA1QYzANUGhwNeBAIAMQDVBjMA1gaHA14EAgAxANUGMwDXBocDXgQCADEA1QYzANgGhwNeBAIAMQDVBjMA2QaHA14EAgAxANUGMwDaBocDXgQCADEA1QYzANsGhwNeBAIAMQDVBjMA3AaHA14EAgAxANUGMwDdBocDXgQCADEA1QYzAN4GhwNeBAIAMQDVBjMA3waHA14EAgAxANUGMwDgBocDXgQCADEA4QYzAOEGhwNeBAIAMQDhBjMA4gaHA14EAgAxAOEGMwDjBocDXgQCADEA4QYzAOQGhwNeBAIAMQDhBjMA5QaHA14EAgAxAOEGMwDmBocDXgQCADEA'
+..'4QYzAOcGhwNeBAIAMQDhBjMA6AaHA14EAgAxAOEGMwDpBocDXgQCADEA4QYzAOoGhwNeBAIAMQDhBjMA6waHA14EAgAxAOEGMwDsBocDXgQCADEA7QYzAO0GhwNeBAIAMQDtBjMA7gaHA14EAgAxAO0GMwDvBocDXgQCADEA7QYzAPAGhwNeBAIAMQDtBjMA8QaHA14EAgAxAO0GMwDyBocDXgQCADEA7QYzAPMGhwNeBAIAMQDtBjMA9AaHA14EAgAxAO0GMwD1BocDXgQCADEA7QYzAPYGhwNeBAIAMQDtBjMA9waHA14EAgAxAO0GMwD4BocDXgQCADEA+QYzAPkGhwNeBAIAMQD6BjMA+gaHA14EAgAxAPsGMwD7BocDXgQCADEA/AYzAPwGhwNeBAIAMQD9BjMA/QaHA14EAgAxAP4GMwD+BocDXgQCADEA/wYzAP8GhwNeBAIAMQAABzMAAAeHA14EAgAxAAEHMwABB5MGXgQDAAUAAgeUBgMHBAcWAJMGXgQEAAUABQcGBwgAlAYHBwQHFgAIB14EAgAFAAkHCgcLB34BAAABAAUADAcEAAEADAAFAIUG8wQNB/UEDgeaASEBCQCv'
+..'BgsADwcNALEGGgAQBxEAEQcdABIHEwC1BiABIQErAa0EBABRA7YGjga3BpAGuAYsAZIGhwOtBAIAMQC5BjMAuQaHA60EAgAxALoGMwC6BocDrQQCADEAuwYzALsGhwOtBAIAMQC8BjMAvAaHA60EAgAxAL0GMwC9BocDrQQCADEAvQYzAL4GhwOtBAIAMQC9BjMAvwaHA60EAgAxAL0GMwDABocDrQQCADEAvQYzAMEGhwOtBAIAMQC9BjMAwgaHA60EAgAxAL0GMwDDBocDrQQCADEAvQYzAMQGhwOtBAIAMQC9BjMAxQaHA60EAgAxAL0GMwDGBocDrQQCADEAvQYzAMcGhwOtBAIAMQC9BjMAyAaHA60EAgAxAMkGMwDJBocDrQQCADEAyQYzAMoGhwOtBAIAMQDJBjMAywaHA60EAgAxAMkGMwDMBocDrQQCADEAyQYzAM0GhwOtBAIAMQDJBjMAzgaHA60EAgAxAMkGMwDPBocDrQQCADEAyQYzANAGhwOtBAIAMQDJBjMA0QaHA60EAgAxAMkGMwDSBocDrQQCADEAyQYzANMGhwOtBAIAMQDJBjMA1AaHA60EAgAxANUGMwDVBocD'
+..'rQQCADEA1QYzANYGhwOtBAIAMQDVBjMA1waHA60EAgAxANUGMwDYBocDrQQCADEA1QYzANkGhwOtBAIAMQDVBjMA2gaHA60EAgAxANUGMwDbBocDrQQCADEA1QYzANwGhwOtBAIAMQDVBjMA3QaHA60EAgAxANUGMwDeBocDrQQCADEA1QYzAN8GhwOtBAIAMQDVBjMA4AaHA60EAgAxAOEGMwDhBocDrQQCADEA4QYzAOIGhwOtBAIAMQDhBjMA4waHA60EAgAxAOEGMwDkBocDrQQCADEA4QYzAOUGhwOtBAIAMQDhBjMA5gaHA60EAgAxAOEGMwDnBocDrQQCADEA4QYzAOgGhwOtBAIAMQDhBjMA6QaHA60EAgAxAOEGMwDqBocDrQQCADEA4QYzAOsGhwOtBAIAMQDhBjMA7AaHA60EAgAxAO0GMwDtBocDrQQCADEA7QYzAO4GhwOtBAIAMQDtBjMA7waHA60EAgAxAO0GMwDwBocDrQQCADEA7QYzAPEGhwOtBAIAMQDtBjMA8gaHA60EAgAxAO0GMwDzBocDrQQCADEA7QYzAPQGhwOtBAIAMQDtBjMA9QaHA60EAgAxAO0GMwD2'
+..'BocDrQQCADEA7QYzAPcGhwOtBAIAMQDtBjMA+AaHA60EAgAxAPkGMwD5BocDrQQCADEA+gYzAPoGhwOtBAIAMQD7BjMA+waHA60EAgAxAPwGMwD8BocDrQQCADEA/QYzAP0GhwOtBAIAMQD+BjMA/gaHA60EAgAxAP8GMwD/BocDrQQCADEAAAczAAAHhwOtBAIAMQABBzMAAQeTBq0EAwAFAAIHlAYDBwQHFgCTBq0EBAAFAAUHBgcIAJQGBwcEBxYACAetBAIABQAJBwoHCwcEAAEADAAFAIUG8wQTB/UEFAeaASEBCQCvBgsAFQcNALEGGgAWBxEAFwcdABgHEwC1BiABIQErAfsEBABRA7YGjga3BpAGuAYsAZIGhwP7BAIAMQC5BjMAuQaHA/sEAgAxALoGMwC6BocD+wQCADEAuwYzALsGhwP7BAIAMQC8BjMAvAaHA/sEAgAxAL0GMwC9BocD+wQCADEAvQYzAL4GhwP7BAIAMQC9BjMAvwaHA/sEAgAxAL0GMwDABocD+wQCADEAvQYzAMEGhwP7BAIAMQC9BjMAwgaHA/sEAgAxAL0GMwDDBocD+wQCADEAvQYzAMQGhwP7BAIA'
+..'MQC9BjMAxQaHA/sEAgAxAL0GMwDGBocD+wQCADEAvQYzAMcGhwP7BAIAMQC9BjMAyAaHA/sEAgAxAMkGMwDJBocD+wQCADEAyQYzAMoGhwP7BAIAMQDJBjMAywaHA/sEAgAxAMkGMwDMBocD+wQCADEAyQYzAM0GhwP7BAIAMQDJBjMAzgaHA/sEAgAxAMkGMwDPBocD+wQCADEAyQYzANAGhwP7BAIAMQDJBjMA0QaHA/sEAgAxAMkGMwDSBocD+wQCADEAyQYzANMGhwP7BAIAMQDJBjMA1AaHA/sEAgAxANUGMwDVBocD+wQCADEA1QYzANYGhwP7BAIAMQDVBjMA1waHA/sEAgAxANUGMwDYBocD+wQCADEA1QYzANkGhwP7BAIAMQDVBjMA2gaHA/sEAgAxANUGMwDbBocD+wQCADEA1QYzANwGhwP7BAIAMQDVBjMA3QaHA/sEAgAxANUGMwDeBocD+wQCADEA1QYzAN8GhwP7BAIAMQDVBjMA4AaHA/sEAgAxAOEGMwDhBocD+wQCADEA4QYzAOIGhwP7BAIAMQDhBjMA4waHA/sEAgAxAOEGMwDkBocD+wQCADEA4QYzAOUGhwP7'
+..'BAIAMQDhBjMA5gaHA/sEAgAxAOEGMwDnBocD+wQCADEA4QYzAOgGhwP7BAIAMQDhBjMA6QaHA/sEAgAxAOEGMwDqBocD+wQCADEA4QYzAOsGhwP7BAIAMQDhBjMA7AaHA/sEAgAxAO0GMwDtBocD+wQCADEA7QYzAO4GhwP7BAIAMQDtBjMA7waHA/sEAgAxAO0GMwDwBocD+wQCADEA7QYzAPEGhwP7BAIAMQDtBjMA8gaHA/sEAgAxAO0GMwDzBocD+wQCADEA7QYzAPQGhwP7BAIAMQDtBjMA9QaHA/sEAgAxAO0GMwD2BocD+wQCADEA7QYzAPcGhwP7BAIAMQDtBjMA+AaHA/sEAgAxAPkGMwD5BocD+wQCADEA+gYzAPoGhwP7BAIAMQD7BjMA+waHA/sEAgAxAPwGMwD8BocD+wQCADEA/QYzAP0GhwP7BAIAMQD+BjMA/gaHA/sEAgAxAP8GMwD/BocD+wQCADEAAAczAAAHhwP7BAIAMQABBzMAAQeTBvsEAwAFAAIHlAYDBwQHFgCTBvsEBAAFAAUHBgcIAJQGBwcEBxYACAf7BAIABQAJBwoHCwcEAAEACgAFAAYABwAIAAkA'
+..'CgALABkHDQAOAA8AEAAaACkAEQAaBx0AKwATAK0DMABJBQIAMQBSADMATQUwAEkFAgAxAIUAMwCuBAQAAQAMAAUA8gTzBFYG9QRXBpoBIQEJAJgACwAbBw0AmgARABwHewGRARMAvQUgASEB+wQhAXYDAQAQAAUAdwMHAAgAeAMtAZoBLQEJAHkDCwAdBw0AewN8Ay0BfQMtARoAmwARAB4HfwMtAR0AnQATAIADIAEhARUAnwCBA00FAgCCAxYAgwOEA4cDTQUCADEAhQAzAB8HBAABAAoABQAgBwcACAAJAAoACwAhBw0ADgAaACIHEQAjBx0AJAcTACUHIAGSBgEAAQACAAUADAUCACYHBABRBQwABQAOBQcACAD1BA8FmgEhAQkAEAULACcHDQASBRoAEwURACgHHQAVBRMAFgUgAS0BKwFSBQEAUQMXBQQAUQUMAAUADgUHAAgA9QQYBZoBIQEJABAFCwApBw0AEgUaABoFEQAqBx0AHAUTAB0FIAEtASsBVAUBAFEDFwUEAFEFDAAFAA4FBwAIAPUEDwWaASEBCQAQBQsAKwcNABIFGgATBREALAcdABUFEwAWBSABLQErAVYFAQBR'
+..'AxcFBABRBQwABQAOBQcACAD1BCAFmgEhAQkAEAULAC0HDQASBRoAGgURAC4HHQAcBRMAHQUgAS0BKwFYBQEAUQMXBYcDWAUCADEALwczADAHBABRBQwABQAOBQcACAD1BBgFmgEhAQkAEAULADEHDQASBRoAGgURADIHHQAcBRMAHQUgAS0BKwFbBQEAUQMXBQQAUQULAAUADgUHAAgA9QQlBQkAEAULADMHDQASBRoALgARADQHHQAuABMAKAUgASEBBABRBQsABQAOBQcACAD1BCUFCQAQBQsANQcNABIFGgAuABEANgcdAC4AEwAoBSABIQEEAFEFDAAFAA4FBwAIAPUEIAWaASEBCQAQBQsANwcNABIFGgAaBREAOAcdABwFEwAdBSABLQErAV8FAQBRAxcFBABRBQoABQAOBQcACAAJABAFCwA5Bw0AEgUaAC4AEQA6Bx0ALgATAC8FIAEhAQQAUQUMAAUADgUHAAgA9QQPBZoBIQEJABAFCwA7Bw0AEgUaABMFEQA8Bx0AFQUTABYFIAEtASsBYgUBAFEDFwUEAFEFDAAFAA4FBwAIAPUEMgWaASEBCQAQBQsAPQcNABIFGgAbABEA'
+..'PgcdABsAEwA1BSABLQErAWQFAQBRAxcFBABRBQoABQAOBQcACAAJABAFCwA/Bw0AEgUaACkAEQBABx0AOAUTADkFIAEhAQQAUQUMAAUADgUHAAgA9QQ6BZoBIQEJABAFCwBBBw0AEgUaABMFEQBCBx0AFQUTAD0FIAEtASsBZwUBAFEDFwUEAFEFCgAFAA4FBwAIAAkAEAULAEMHDQASBRoAKQARAEQHHQA4BRMAQgUgASEBBABRBQwABQAOBQcACAD1BDIFmgEhAQkAEAULAEUHDQASBRoAGwARAEYHHQAbABMANQUgAS0BKwFqBQEAUQMXBYcDagUCADEARQUzAEcHBAABAAoABQAGAAcACAAJAAoACwBIBw0ADgAPABAAGgApABEASQcdACsAEwByBTAAbQUCADEA6gAzAEoHMABtBQIAMQDqADMASwcEAAEACgAFAAYABwAIAAkACgALAEwHDQAOAA8AEAAaACkAEQBNBx0AKwATAK0DMABwBQIAMQBSADMATQUEAAEACgAFAAYABwAIAAkACgALAE4HDQAOAA8AEAAaACkAEQBPBx0AKwATAK0DMAByBQIAMQCFADMArgQEAAEACgAF'
+..'AAYABwAIAAkACgALAFAHDQAOAA8AEAAaACkAEQBRBx0AKwATAK0DMAB0BQIAMQBSADMATQUwAHQFAgAxAIUAMwB1BAQAAQAKAAUABgAHAAgACQAKAAsAUgcNAA4ADwAQABoAKQARAFMHHQArABMArQMEAAEACgAFAAYABwAIAAkACgALAFQHDQAOAA8AEAAaACkAEQBVBx0AKwATAK0DMAB4BQIAMQCFADMAdQQEAAEACgAFAAYABwAIAAkACgALAFYHDQAOAA8AEAAaACkAEQBXBx0AKwATAFoFMAB6BQIAMQBYATMA7QUEAAEACgAFAAYABwAIAAkACgALAFgHDQAOAA8AEAAaACkAEQBZBx0AKwATAFoFMAB8BQIAMQBYATMA6QUEAAEADAAFAAYABwAIAJoBIQEJAAoACwBaBw0ADgAPABAAGgBbBxEAXAcdAF0HEwBeByABIQErAX4FAQAsAS0BBAABAAoABQAGAAcACAAJAAoACwBfBw0ADgAPABAAGgAbABEAYAcdABsAEwBhBzAAgAUCADEAXgMzAGIHdgMBABAABQB3AwcACAB4Ay0BmgEtAQkAeQMLAGMHDQB7A3wDLQF9Ay0B'
+..'GgCbABEAZAd/Ay0BHQCdABMAgAMgASEBFQCfAIEDggUCAIIDFgCDA4QDBAABAAgABQAGAAcACAAJAAoACwBlBw0ADgAPABAAEQBmBxMAvgQwAIQFAgAxAOoAMwC/BAQAAQAMAAUA8gTzBGcH9QRoB5oBIQEJAGkHCwBqBw0AawcPABAAEQBsBxMAvQUgASEB+wQhAQQAAQALAAUABgAHAAgACQAKAAsAbQcNAA4ADwAQABoAGwARAG4HHQAbABMAbwQgASEBKwGHBQEALAEtAQQAAQAJAAUABgAHAAgACQAKAAsAbwcNAA4ADwAQABEAcAcTAHEHIAEhAQQAAQAMAAUABgAHAAgAmgEhAQkACgALAHIHDQAOAA8AEAAaAHMHEQB0Bx0AdQcTAF4HIAEhASsBigUBACwBLQEEAAEACwAFAPIE8wR2B/UEdweaASEBCQB4BwsAeQcNAHoHEQB7BxMAvQUgASEB+wQhAQQAAQAKAAUABgAHAAgACQAKAAsAfAcNAA4ADwAQABoAKQARAH0HHQArABMArQMwAI0FAgAxAFIAMwBNBQQAAQAKAAUABgAHAAgACQAKAAsAfgcNAA4ADwAQABoAKQAR'
+..'AH8HHQArABMArQMEAAEACgAFAAYABwAIAAkACgALAIAHDQAOAA8AEAAaAC4AEQCBBx0ALgATADgGMACQBQIAMQBSADMAggcEAAEACgAFAAYABwAIAAkACgALAIMHDQAOAA8AEAAaABsAEQCEBx0AGwATAJ4FBAABAAgABQAGAAcACAAJAAoACwCFBw0ADgAPABAAEQCGBxMAoQUEAAEACgAFAAYABwAIAAkACgALAIcHDQAOAA8AEAAaAC4AEQCIBx0ALgATAIkHMACUBQIAMQCKBzMAiwcwAJQFAgAxAIoHMwCMBzAAlAUCADEAigczAI0HBAABAAoABQAGAAcACAAJAAoACwCOBw0ADgAPABAAGgAuABEAjwcdAC4AEwCeBTAAmAUCADEAXgMzAJAHBAABAAgABQAGAAcACAAJAAoACwCRBw0ADgAPABAAEQCSBxMAqQUEAAEACAAFAAYABwAIAAkACgALAJMHDQAOAA8AEAARAJQHEwBtBjAAmwUCADEA6gAzAJUHBAABAAsABQAGAAcACAAJAAoACwCWBw0ADgAPABAAGgAbABEAlwcdABsAEwDABSABIQErAZ0FAQAsAS0BMACdBQIA'
+..'MQAyADMAmAcEAAEACQAFAAYABwAIAAkACgALAJkHDQAOAA8AEAARAJoHEwDDBSABIQErAaAFAQAsAS0BjgMJADUACAAJADYA8QALADUACgALADYArgAMADUACgAMADYA+AEOADUADQAOADYAAwAQADUADwAQADYArgATADUAEgATADYAjAAWADUAFQAWADYABQAXADUAFQAXADYABgAYADUAFQAYADYABwAZADUAFQAZADYACAAcADUAGwAcADYAwAAeADUAHQAeADYA9AAgADUAHwAgADYA9AAlADUAJAAlADYAIwAmADUAJAAmADYArgAoADUAJwAoADYAIwApADUAJwApADYArgAsADUAKwAsADYALQAuADUALQAuADYALwAxADUAMAAxADYAgQAyADUAMAAyADYAgwA0ADUAMwA0ADYAEQA1ADUAMwA1ADYAgwA4ADUANwA4ADYAlQA6ADUAOQA6ADYAOwA9ADUAPAA9ADYAOwA+ADUAPAA+ADYAjABAADUAPwBAADYAAgBBADUAPwBBADYAFABCADUAPwBCADYAKwBDADUAPwBDADYAfgBEADUAPwBEADYAhgBFADUAPwBFADYAkQBG'
+..'ADUAPwBGADYApgBHADUAPwBHADYAqQBIADUAPwBIADYAqgBJADUAPwBJADYAugBKADUAPwBKADYAvABLADUAPwBLADYAvQBMADUAPwBMADYAxQBNADUAPwBNADYAzABOADUAPwBOADYACAFPADUAPwBPADYADQFQADUAPwBQADYAEgFRADUAPwBRADYAFwFSADUAPwBSADYAHAFTADUAPwBTADYAIQFUADUAPwBUADYAJgFVADUAPwBVADYAKwFWADUAPwBWADYAMAFXADUAPwBXADYAOwFYADUAPwBYADYAQAFZADUAPwBZADYARQFaADUAPwBaADYASgFbADUAPwBbADYAVQFcADUAPwBcADYAWgFdADUAPwBdADYAXwFeADUAPwBeADYAZAFfADUAPwBfADYAaQFgADUAPwBgADYAbgFhADUAPwBhADYAcwFiADUAPwBiADYAeAFjADUAPwBjADYAfQFkADUAPwBkADYAggFlADUAPwBlADYAjQFmADUAPwBmADYAkgFnADUAPwBnADYAlwFoADUAPwBoADYAnAFpADUAPwBpADYApwFqADUAPwBqADYArAFrADUAPwBrADYAsQFsADUA'
+..'PwBsADYAtgFtADUAPwBtADYAuwFuADUAPwBuADYAwAFvADUAPwBvADYAywFwADUAPwBwADYA0AFxADUAPwBxADYA1QFyADUAPwByADYA2gFzADUAPwBzADYA3QF0ADUAPwB0ADYA4AF1ADUAPwB1ADYA4wF2ADUAPwB2ADYA6gF3ADUAPwB3ADYA7QF4ADUAPwB4ADYAXQJ5ADUAPwB5ADYAZgJ8ADUAewB8ADYAegB9ADUAewB9ADYAgAB/ADUAfgB/ADYAgACCADUAgQCCADYAegCFADUAhACFADYAlQCHADUAhgCHADYApACJADUAiACJADYAPwCKADUAiACKADYAlACLADUAiACLADYA2wKOADUAjQCOADYA+gCPADUAjQCPADYA+wCQADUAjQCQADYAFwKSADUAkQCSADYAnwCTADUAkQCTADYAFwKWADUAlQCWADYANgCXADUAlQCXADYAYgKZADUAmACZADYArgCbADUAmgCbADYArgCdADUAnACdADYArgCeADUAnACeADYA8gGjADUAoQCjADYArgCoADUApwCoADYAPwCtADUAqwCtADYArgCvADUArgCvADYADQCwADUArgCw'
+..'ADYAKgCxADUArgCxADYABAKyADUArgCyADYABQK0ADUAswC0ADYArgC1ADUAswC1ADYA+AG3ADUAtgC3ADYArgC5ADUAuAC5ADYArgC7ADUAugC7ADYA6AC+ADUAvQC+ADYA2QC/ADUAvQC/ADYA2gDBADUAwADBADYAGgDDADUAwgDDADYAvQDEADUAwgDEADYA5gDHADUAxgDHADYAxQDJADUAyADJADYAvADKADUAyADKADYA3QDXADUA1gDXADYAvADYADUA1gDYADYA3QDcADUA2wDcADYAvADfADUA3gDfADYAmADgADUA3gDgADYAxgDhADUA3gDhADYA2gDiADUA3gDiADYA2wDjADUA3gDjADYAAALkADUA3gDkADYAAgLlADUA3gDlADYAawLnADUA5gDnADYA2QDqADUA6QDqADYABADrADUA6QDrADYABQDsADUA6QDsADYAIQDtADUA6QDtADYAIgDvADUA7gDvADYABQDwADUA7gDwADYAIQDyADUA8QDyADYAGgDzADUA8QDzADYA+gD1ADUA9AD1ADYAIQD3ADUA9gD3ADYAkQD4ADUA9gD4ADYA8QD5ADUA9gD5ADYA'
+..'AgP8ADUA+wD8ADYAwAD+ADUA/QD+ADYAhgD/ADUA/QD/ADYAwAAAATUA/QAAATYAWgMCATUAAQECATYAAwAEATUAAwEEATYAIwAFATUAAwEFATYA8gE3ATUANQE3ATYAPwBRATUATwFRATYAPwCJATUAhwGJATYAPwCjATUAoQGjATYAPwDHATUAxQHHATYAPwDnATUA5gHnATYAPwDzATUA8gHzATYAJwD0ATUA8gH0ATYAtgD1ATUA8gH1ATYABAL2ATUA8gH2ATYABQL3ATUA8gH3ATYABgL5ATUA+AH5ATYADwD6ATUA+AH6ATYAKgD7ATUA+AH7ATYAuAD8ATUA+AH8ATYAAQH9ATUA+AH9ATYAAAL+ATUA+AH+ATYACAL/ATUA+AH/ATYADQIBAjUAAAIBAjYArgADAjUAAgIDAjYArgAHAjUABgIHAjYArgAJAjUACAIJAjYArgALAjUACgILAjYArgAMAjUACgIMAjYA8gEOAjUADQIOAjYArgAQAjUADwIQAjYA7QMTAjUAEgITAjYANgAUAjUAEgIUAjYAUgIVAjUAEgIVAjYArwIWAjUAEgIWAjYA0AIYAjUAFwIYAjYAjAAc'
+..'AjUAGwIcAjYAHgIdAjUAGwIdAjYAtgIgAjUAHwIgAjYAOAIiAjUAIQIiAjYAHwIjAjUAIQIjAjYAuQIlAjUAJAIlAjYAGgImAjUAJAImAjYAKgIoAjUAJwIoAjYAHgIpAjUAJwIpAjYAtgItAjUALAItAjYAJAIvAjUALgIvAjYAHgIxAjUAMAIxAjYALgIyAjUAMAIyAjYAPQIzAjUAMAIzAjYARQI0AjUAMAI0AjYATAI2AjUANQI2AjYAOAI3AjUANQI3AjYASQI6AjUAOQI6AjYALAI7AjUAOQI7AjYAQwI8AjUAOQI8AjYATgI+AjUAPQI+AjYAHgJAAjUAPwJAAjYAJAJBAjUAPwJBAjYAOQJEAjUAQwJEAjYASwJGAjUARQJGAjYARwJKAjUASQJKAjYASAJNAjUATAJNAjYARwJPAjUATgJPAjYASwJRAjUAUAJRAjYAlQBUAjUAUwJUAjYAUgJWAjUAVQJWAjYAOQBXAjUAVQJXAjYAUwJbAjUAWgJbAjYAXQJcAjUAWgJcAjYAxwJfAjUAXgJfAjYAwwNhAjUAYAJhAjYAjQBpAjUAaAJpAjYArgBqAjUAaAJqAjYA8gFsAjUA'
+..'awJsAjYArgBxAjUAbwJxAjYAggJzAjUAcgJzAjYA7QN4AjUAdgJ4AjYAggKBAjUAfwKBAjYAggKDAjUAggKDAjYAbQKEAjUAggKEAjYAdAKFAjUAggKFAjYAeQKGAjUAggKGAjYAewKHAjUAggKHAjYAfQKIAjUAggKIAjYAzwKJAjUAggKJAjYACAOKAjUAggKKAjYAoAOLAjUAggKLAjYApAOMAjUAggKMAjYADASNAjUAggKNAjYAKgSQAjUAjwKQAjYAFAOSAjUAkQKSAjYAoQKTAjUAkQKTAjYA7QOVAjUAlAKVAjYAjwKWAjUAlAKWAjYAlwKYAjUAlwKYAjYAmQKbAjUAmgKbAjYAmQKcAjUAmgKcAjYAnQKfAjUAngKfAjYAnQKgAjUAngKgAjYAoQKiAjUAoQKiAjYAjgKkAjUAowKkAjYANwClAjUAowKlAjYAUAKmAjUAowKmAjYAYgKnAjUAowKnAjYAZAKoAjUAowKoAjYArQKpAjUAowKpAjYA8gKqAjUAowKqAjYAqAOrAjUAowKrAjYAqQOsAjUAowKsAjYAEgSuAjUArQKuAjYA7QOyAjUAsQKyAjYAvAKzAjUAsQKz'
+..'AjYAIwO1AjUAtAK1AjYAHAO3AjUAtgK3AjYAtAK4AjUAtgK4AjYAvwK7AjUAugK7AjYAuQK9AjUAvAK9AjYAGgK+AjUAvAK+AjYAKgLBAjUAwALBAjYAvALCAjUAwALCAjYAIwPFAjUAxALFAjYAwwLGAjUAxALGAjYAxwLJAjUAyALJAjYAywLKAjUAyALKAjYAPAPMAjUAywLMAjYAJwTOAjUAzQLOAjYAJwTRAjUA0ALRAjYAwgPUAjUA0gLUAjYAwgPWAjUA1QLWAjYAOQTaAjUA2QLaAjYAxQPcAjUA2wLcAjYAhgDdAjUA2wLdAjYAjQDeAjUA2wLeAjYAMQThAjUA4ALhAjYALgPjAjUA4gLjAjYALgPlAjUA5ALlAjYAQAPoAjUA5wLoAjYA5gLqAjUA6QLqAjYAggLrAjUA6QLrAjYA5wLtAjUA7ALtAjYAYwLuAjUA7ALuAjYAZALvAjUA7ALvAjYA8gLwAjUA7ALwAjYAqAPxAjUA7ALxAjYAqQP1AjUA9AL1AjYALgMDAzUAAgMDAzYALgMFAzUABAMFAzYA+gALAzUACgMLAzYADQMMAzUACgMMAzYAiAMPAzUADgMPAzYA'
+..'EQMQAzUADgMQAzYAkwMSAzUAEQMSAzYAFAMTAzUAEQMTAzYAjgMWAzUAFQMWAzYAggIXAzUAFQMXAzYA7QMaAzUAGQMaAzYAIwMdAzUAHAMdAzYAvwIeAzUAHAMeAzYAGwMgAzUAHwMgAzYAugIhAzUAHwMhAzYAIgMlAzUAJAMlAzYAHAMmAzUAJAMmAzYADQQoAzUAJwMoAzYAIwMpAzUAJwMpAzYADQQrAzUAKgMrAzYALQMsAzUAKgMsAzYAsAMvAzUALgMvAzYABAMwAzUALgMwAzYAQwMxAzUALgMxAzYASwMyAzUALgMyAzYAWAMzAzUALgMzAzYAzAM0AzUALgM0AzYAQgQ2AzUANQM2AzYAwQM4AzUANwM4AzYANQM5AzUANwM5AzYAOgM7AzUAOgM7AzYAPAM/AzUAPgM/AzYABgNBAzUAQANBAzYA3wJCAzUAQANCAzYARANGAzUARQNGAzYALgNIAzUARwNIAzYA7AJJAzUARwNJAzYA7QNZAzUAWANZAzYA+wBbAzUAWgNbAzYALgNiAzUAYQNiAzYAkwV6AzUAeAN6AzYAagN+AzUAfAN+AzYAeAOBAzUAgAOBAzYAfwOC'
+..'AzUAgAOCAzYAhQOEAzUAgwOEAzYAhwOGAzUAhQOGAzYAgwOJAzUAiAOJAzYAhwOLAzUAigOLAzYAfwOMAzUAigOMAzYAjQOPAzUAjgOPAzYA7QORAzUAkAORAzYAkwOSAzUAkAOSAzYAlwOVAzUAlAOVAzYAEQOWAzUAlAOWAzYA7QOZAzUAmAOZAzYAlwObAzUAmgObAzYAmAOcAzUAmgOcAzYA2gOeAzUAnQOeAzYAggKfAzUAnQOfAzYA7QOiAzUAoQOiAzYArwKjAzUAoQOjAzYAGQOmAzUApQOmAzYAwwKnAzUApQOnAzYAEgSrAzUAqgOrAzYArAOuAzUArQOuAzYArAOvAzUArQOvAzYAsAOyAzUAsQOyAzYAvwO0AzUAswO0AzYAsQO1AzUAswO1AzYAvQO2AzUAswO2AzYAJQS3AzUAswO3AzYAJgS5AzUAuAO5AzYAvgO7AzUAugO7AzYAuAO8AzUAugO8AzYAvQPAAzUAvwPAAzYAwQPGAzUAxQPGAzYA2ALIAzUAxwPIAzYA0QPKAzUAyQPKAzYA7ALLAzUAyQPLAzYA7QPVAzUA0wPVAzYASATjAzUA4QPjAzYA7QPlAzUA'
+..'5APlAzYA7QPmAzUA5APmAzYA9QPoAzUA5wPoAzYADQPpAzUA5wPpAzYA7QPrAzUA6gPrAzYADQPsAzUA6gPsAzYA7QPuAzUA7QPuAzYAEQLvAzUA7QPvAzYAjgLwAzUA7QPwAzYAoAPxAzUA7QPxAzYAqAPyAzUA7QPyAzYAqQPzAzUA7QPzAzYADAT0AzUA7QP0AzYAggX3AzUA9gP3AzYA9QP4AzUA9gP4AzYA+QP7AzUA+gP7AzYA+QP8AzUA+gP8AzYA/QP/AzUA/gP/AzYA/QMABDUA/gMABDYAAQQCBDUAAQQCBDYAjQMEBDUAAwQEBDYAjQMFBDUAAwQFBDYA7QMHBDUABgQHBDYAjQMIBDUABgQIBDYA7QMKBDUACQQKBDYA2gMLBDUACQQLBDYA7QMOBDUADQQOBDYAIgMQBDUADwQQBDYAowIRBDUADwQRBDYA7QMUBDUAEwQUBDYAFQQXBDUAFgQXBDYAqgMYBDUAFgQYBDYAGQQaBDUAGQQaBDYAFQQcBDUAGwQcBDYALQMeBDUAHQQeBDYAvgMgBDUAHwQgBDYAHQQhBDUAHwQhBDYAIgQkBDUAIwQkBDYAIgQpBDUAKAQp'
+..'BDYAwgMtBDUAKwQtBDYAkgUvBDUALgQvBDYApQMwBDUALgQwBDYAkgUyBDUAMQQyBDYAFwIzBDUAMQQzBDYAywI0BDUAMQQ0BDYAzQI1BDUAMQQ1BDYALQM3BDUANgQ3BDYA1QI4BDUANgQ4BDYA1wI7BDUAOgQ7BDYA1wI8BDUAOgQ8BDYA2AI/BDUAPgQ/BDYAQANBBDUAQARBBDYAQANEBDUAQwREBDYA7QNHBDUARQRHBDYA7QNKBTUASQVKBTYAEwRLBTUASQVLBTYAeAVPBTUATQVPBTYA7QNaBTUAWAVaBTYAZwVsBTUAagVsBTYAZwVuBTUAbQVuBTYAGwNvBTUAbQVvBTYAEgRxBTUAcAVxBTYAdwVzBTUAcgVzBTYAjwV1BTUAdAV1BTYAcAV2BTUAdAV2BTYAcgV5BTUAeAV5BTYAdwV7BTUAegV7BTYAEwR9BTUAfAV9BTYAEwSBBTUAgAWBBTYAPQOFBTUAhAWFBTYAhwWOBTUAjQWOBTYAjwWRBTUAkAWRBTYAkgWVBTUAlAWVBTYApAOWBTUAlAWWBTYA7QOXBTUAlAWXBTYADQSZBTUAmAWZBTYAxAOcBTUAmwWcBTYA'
+..'oAWfBTUAnQWfBTYAmgU=')
+for _,obj in pairs(Objects) do
+	obj.Parent = script or workspace
+end
+
+RunScripts()
