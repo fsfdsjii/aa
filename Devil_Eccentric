@@ -1,0 +1,620 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Decal3 = Instance.new("Decal")
+Part4 = Instance.new("Part")
+Decal5 = Instance.new("Decal")
+Motor6D6 = Instance.new("Motor6D")
+Motor6D7 = Instance.new("Motor6D")
+Motor6D8 = Instance.new("Motor6D")
+Motor6D9 = Instance.new("Motor6D")
+Motor6D10 = Instance.new("Motor6D")
+Part11 = Instance.new("Part")
+Part12 = Instance.new("Part")
+Part13 = Instance.new("Part")
+Part14 = Instance.new("Part")
+Humanoid15 = Instance.new("Humanoid")
+Part16 = Instance.new("Part")
+Sound17 = Instance.new("Sound")
+Sound18 = Instance.new("Sound")
+Sound19 = Instance.new("Sound")
+Sound20 = Instance.new("Sound")
+Sound21 = Instance.new("Sound")
+Sound22 = Instance.new("Sound")
+Sound23 = Instance.new("Sound")
+Sound24 = Instance.new("Sound")
+Sound25 = Instance.new("Sound")
+Motor6D26 = Instance.new("Motor6D")
+Shirt27 = Instance.new("Shirt")
+Pants28 = Instance.new("Pants")
+BodyColors29 = Instance.new("BodyColors")
+Script30 = Instance.new("Script")
+Folder31 = Instance.new("Folder")
+BoolValue32 = Instance.new("BoolValue")
+BoolValue33 = Instance.new("BoolValue")
+BoolValue34 = Instance.new("BoolValue")
+Script35 = Instance.new("Script")
+Model0.Name = "Devil_Eccentric"
+Model0.Parent = mas
+Model0.PrimaryPart = Part1
+Part1.Name = "Head"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(0.00696372986, 4.5, 21.4999523, 0.999903023, 0, 0.0139266187, 0, 1, 0, -0.0139266187, 0, 0.999903023)
+Part1.Orientation = Vector3.new(0, 0.800000011920929, 0)
+Part1.Position = Vector3.new(0.0069637298583984375, 4.5, 21.49995231628418)
+Part1.Rotation = Vector3.new(0, 0.800000011920929, 0)
+Part1.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part1.Size = Vector3.new(2, 1, 1)
+Part1.BrickColor = BrickColor.new("Institutional white")
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Institutional white")
+Part1.FormFactor = Enum.FormFactor.Symmetric
+Part1.formFactor = Enum.FormFactor.Symmetric
+SpecialMesh2.Parent = Part1
+SpecialMesh2.Scale = Vector3.new(1.25, 1.25, 1.25)
+Decal3.Name = "face"
+Decal3.Parent = Part1
+Decal3.Texture = "rbxasset://textures/face.png"
+Part4.Name = "Torso"
+Part4.Parent = Model0
+Part4.CFrame = CFrame.new(0.00696372986, 3, 21.4999523, 0.999903023, 0, 0.0139266187, 0, 1, 0, -0.0139266187, 0, 0.999903023)
+Part4.Orientation = Vector3.new(0, 0.800000011920929, 0)
+Part4.Position = Vector3.new(0.0069637298583984375, 3, 21.49995231628418)
+Part4.Rotation = Vector3.new(0, 0.800000011920929, 0)
+Part4.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part4.Size = Vector3.new(2, 2, 1)
+Part4.BrickColor = BrickColor.new("Institutional white")
+Part4.LeftParamA = 0
+Part4.LeftParamB = 0
+Part4.LeftSurface = Enum.SurfaceType.Weld
+Part4.RightParamA = 0
+Part4.RightParamB = 0
+Part4.RightSurface = Enum.SurfaceType.Weld
+Part4.brickColor = BrickColor.new("Institutional white")
+Part4.FormFactor = Enum.FormFactor.Symmetric
+Part4.formFactor = Enum.FormFactor.Symmetric
+Decal5.Name = "roblox"
+Decal5.Parent = Part4
+Motor6D6.Name = "Right Shoulder"
+Motor6D6.Parent = Part4
+Motor6D6.MaxVelocity = 0.10000000149011612
+Motor6D6.C0 = CFrame.new(1, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D6.C1 = CFrame.new(-0.5, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D6.Part0 = Part4
+Motor6D6.Part1 = Part12
+Motor6D6.part1 = Part12
+Motor6D7.Name = "Left Shoulder"
+Motor6D7.Parent = Part4
+Motor6D7.MaxVelocity = 0.10000000149011612
+Motor6D7.C0 = CFrame.new(-1, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D7.C1 = CFrame.new(0.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D7.Part0 = Part4
+Motor6D7.Part1 = Part11
+Motor6D7.part1 = Part11
+Motor6D8.Name = "Right Hip"
+Motor6D8.Parent = Part4
+Motor6D8.MaxVelocity = 0.10000000149011612
+Motor6D8.C0 = CFrame.new(1, -1, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D8.C1 = CFrame.new(0.5, 1, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D8.Part0 = Part4
+Motor6D8.Part1 = Part14
+Motor6D8.part1 = Part14
+Motor6D9.Name = "Left Hip"
+Motor6D9.Parent = Part4
+Motor6D9.MaxVelocity = 0.10000000149011612
+Motor6D9.C0 = CFrame.new(-1, -1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D9.C1 = CFrame.new(-0.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D9.Part0 = Part4
+Motor6D9.Part1 = Part13
+Motor6D9.part1 = Part13
+Motor6D10.Name = "Neck"
+Motor6D10.Parent = Part4
+Motor6D10.MaxVelocity = 0.10000000149011612
+Motor6D10.C0 = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D10.C1 = CFrame.new(0, -0.5, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D10.Part0 = Part4
+Motor6D10.Part1 = Part1
+Motor6D10.part1 = Part1
+Part11.Name = "Left Arm"
+Part11.Parent = Model0
+Part11.CFrame = CFrame.new(-1.49289083, 3, 21.5208416, 0.999903023, 0, 0.0139266187, 0, 1, 0, -0.0139266187, 0, 0.999903023)
+Part11.Orientation = Vector3.new(0, 0.800000011920929, 0)
+Part11.Position = Vector3.new(-1.4928908348083496, 3, 21.520841598510742)
+Part11.Rotation = Vector3.new(0, 0.800000011920929, 0)
+Part11.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part11.Size = Vector3.new(1, 2, 1)
+Part11.BrickColor = BrickColor.new("Institutional white")
+Part11.CanCollide = false
+Part11.brickColor = BrickColor.new("Institutional white")
+Part11.FormFactor = Enum.FormFactor.Symmetric
+Part11.formFactor = Enum.FormFactor.Symmetric
+Part12.Name = "Right Arm"
+Part12.Parent = Model0
+Part12.CFrame = CFrame.new(1.50681829, 3, 21.479063, 0.999903023, 0, 0.0139266187, 0, 1, 0, -0.0139266187, 0, 0.999903023)
+Part12.Orientation = Vector3.new(0, 0.800000011920929, 0)
+Part12.Position = Vector3.new(1.5068182945251465, 3, 21.479063034057617)
+Part12.Rotation = Vector3.new(0, 0.800000011920929, 0)
+Part12.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part12.Size = Vector3.new(1, 2, 1)
+Part12.BrickColor = BrickColor.new("Institutional white")
+Part12.CanCollide = false
+Part12.brickColor = BrickColor.new("Institutional white")
+Part12.FormFactor = Enum.FormFactor.Symmetric
+Part12.formFactor = Enum.FormFactor.Symmetric
+Part13.Name = "Left Leg"
+Part13.Parent = Model0
+Part13.CFrame = CFrame.new(-0.492987782, 1, 21.506916, 0.999903023, 0, 0.0139266187, 0, 1, 0, -0.0139266187, 0, 0.999903023)
+Part13.Orientation = Vector3.new(0, 0.800000011920929, 0)
+Part13.Position = Vector3.new(-0.4929877817630768, 1, 21.506916046142578)
+Part13.Rotation = Vector3.new(0, 0.800000011920929, 0)
+Part13.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part13.Size = Vector3.new(1, 2, 1)
+Part13.BottomSurface = Enum.SurfaceType.Smooth
+Part13.BrickColor = BrickColor.new("Institutional white")
+Part13.CanCollide = false
+Part13.brickColor = BrickColor.new("Institutional white")
+Part13.FormFactor = Enum.FormFactor.Symmetric
+Part13.formFactor = Enum.FormFactor.Symmetric
+Part14.Name = "Right Leg"
+Part14.Parent = Model0
+Part14.CFrame = CFrame.new(0.506915212, 1, 21.4929886, 0.999903023, 0, 0.0139266187, 0, 1, 0, -0.0139266187, 0, 0.999903023)
+Part14.Orientation = Vector3.new(0, 0.800000011920929, 0)
+Part14.Position = Vector3.new(0.5069152116775513, 1, 21.49298858642578)
+Part14.Rotation = Vector3.new(0, 0.800000011920929, 0)
+Part14.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part14.Size = Vector3.new(1, 2, 1)
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.BrickColor = BrickColor.new("Institutional white")
+Part14.CanCollide = false
+Part14.brickColor = BrickColor.new("Institutional white")
+Part14.FormFactor = Enum.FormFactor.Symmetric
+Part14.formFactor = Enum.FormFactor.Symmetric
+Humanoid15.Parent = Model0
+Humanoid15.LeftLeg = Part13
+Humanoid15.RightLeg = Part14
+Humanoid15.Torso = Part16
+Humanoid15.MaxHealth = 1000
+Humanoid15.Health = 1000
+Humanoid15.WalkSpeed = 100
+Part16.Name = "HumanoidRootPart"
+Part16.Parent = Model0
+Part16.CFrame = CFrame.new(0.00696372986, 3, 21.4999523, 0.999903023, 0, 0.0139266187, 0, 1, 0, -0.0139266187, 0, 0.999903023)
+Part16.Orientation = Vector3.new(0, 0.800000011920929, 0)
+Part16.Position = Vector3.new(0.0069637298583984375, 3, 21.49995231628418)
+Part16.Rotation = Vector3.new(0, 0.800000011920929, 0)
+Part16.Transparency = 1
+Part16.Size = Vector3.new(2, 2, 1)
+Part16.BottomSurface = Enum.SurfaceType.Smooth
+Part16.CanCollide = false
+Part16.LeftParamA = 0
+Part16.LeftParamB = 0
+Part16.RightParamA = 0
+Part16.RightParamB = 0
+Part16.TopSurface = Enum.SurfaceType.Smooth
+Part16.FormFactor = Enum.FormFactor.Symmetric
+Part16.formFactor = Enum.FormFactor.Symmetric
+Sound17.Name = "Climbing"
+Sound17.Parent = Part16
+Sound17.Looped = true
+Sound17.MaxDistance = 150
+Sound17.EmitterSize = 5
+Sound17.MinDistance = 5
+Sound17.SoundId = "rbxasset://sounds/action_footsteps_plastic.mp3"
+Sound17.Volume = 0.6499999761581421
+Sound18.Name = "Died"
+Sound18.Parent = Part16
+Sound18.MaxDistance = 150
+Sound18.EmitterSize = 5
+Sound18.MinDistance = 5
+Sound18.SoundId = "rbxasset://sounds/uuhhh.mp3"
+Sound18.Volume = 0.6499999761581421
+Sound19.Name = "GettingUp"
+Sound19.Parent = Part16
+Sound19.MaxDistance = 150
+Sound19.EmitterSize = 5
+Sound19.MinDistance = 5
+Sound19.SoundId = "rbxasset://sounds/action_get_up.mp3"
+Sound19.Volume = 0.6499999761581421
+Sound20.Name = "Swimming"
+Sound20.Parent = Part16
+Sound20.Looped = true
+Sound20.MaxDistance = 150
+Sound20.EmitterSize = 5
+Sound20.MinDistance = 5
+Sound20.Pitch = 1.600000023841858
+Sound20.PlaybackSpeed = 1.600000023841858
+Sound20.SoundId = "rbxasset://sounds/action_swim.mp3"
+Sound20.Volume = 0.6499999761581421
+Sound21.Name = "Jumping"
+Sound21.Parent = Part16
+Sound21.MaxDistance = 150
+Sound21.EmitterSize = 5
+Sound21.MinDistance = 5
+Sound21.SoundId = "rbxasset://sounds/action_jump.mp3"
+Sound21.Volume = 0.6499999761581421
+Sound22.Name = "Landing"
+Sound22.Parent = Part16
+Sound22.MaxDistance = 150
+Sound22.EmitterSize = 5
+Sound22.MinDistance = 5
+Sound22.SoundId = "rbxasset://sounds/action_jump_land.mp3"
+Sound22.Volume = 1
+Sound23.Name = "Splash"
+Sound23.Parent = Part16
+Sound23.MaxDistance = 150
+Sound23.EmitterSize = 5
+Sound23.MinDistance = 5
+Sound23.SoundId = "rbxasset://sounds/impact_water.mp3"
+Sound23.Volume = 0.6499999761581421
+Sound24.Name = "FreeFalling"
+Sound24.Parent = Part16
+Sound24.Looped = true
+Sound24.MaxDistance = 150
+Sound24.EmitterSize = 5
+Sound24.MinDistance = 5
+Sound24.SoundId = "rbxasset://sounds/action_falling.mp3"
+Sound24.Volume = 0.8250002264976501
+Sound25.Name = "Running"
+Sound25.Parent = Part16
+Sound25.Looped = true
+Sound25.TimePosition = 0.7410892118623967
+Sound25.MaxDistance = 150
+Sound25.EmitterSize = 5
+Sound25.MinDistance = 5
+Sound25.Pitch = 1.850000023841858
+Sound25.PlaybackSpeed = 1.850000023841858
+Sound25.SoundId = "rbxasset://sounds/action_footsteps_plastic.mp3"
+Sound25.Volume = 0.6499999761581421
+Motor6D26.Name = "RootJoint"
+Motor6D26.Parent = Part16
+Motor6D26.MaxVelocity = 0.10000000149011612
+Motor6D26.C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D26.C1 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D26.Part0 = Part16
+Motor6D26.Part1 = Part4
+Motor6D26.part1 = Part4
+Shirt27.Name = "Shirt"
+Shirt27.Parent = Model0
+Shirt27.ShirtTemplate = "http://www.roblox.com/asset/?id=5513188732"
+Pants28.Name = "Pants"
+Pants28.Parent = Model0
+Pants28.PantsTemplate = "http://www.roblox.com/asset/?id=5513189411"
+BodyColors29.Parent = Model0
+BodyColors29.HeadColor = BrickColor.new("Institutional white")
+BodyColors29.HeadColor3 = Color3.new(0.972549, 0.972549, 0.972549)
+BodyColors29.LeftArmColor = BrickColor.new("Institutional white")
+BodyColors29.LeftArmColor3 = Color3.new(0.972549, 0.972549, 0.972549)
+BodyColors29.LeftLegColor = BrickColor.new("Institutional white")
+BodyColors29.LeftLegColor3 = Color3.new(0.972549, 0.972549, 0.972549)
+BodyColors29.RightArmColor = BrickColor.new("Institutional white")
+BodyColors29.RightArmColor3 = Color3.new(0.972549, 0.972549, 0.972549)
+BodyColors29.RightLegColor = BrickColor.new("Institutional white")
+BodyColors29.RightLegColor3 = Color3.new(0.972549, 0.972549, 0.972549)
+BodyColors29.TorsoColor = BrickColor.new("Institutional white")
+BodyColors29.TorsoColor3 = Color3.new(0.972549, 0.972549, 0.972549)
+Script30.Name = "AI"
+Script30.Parent = Model0
+table.insert(cors,sandbox(Script30,function()
+--DuruTeru
+wait(1)
+--[[
+
+____________________________________________________________________________________________________________________
+																					i smell leik beef
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-	
+____________________________________________________________________________________________________________________
+                      ___       ___                                            
+                     (   )     (   )      .-.                                  
+    .--.      .--.    | |_      | |_     ( __)  ___ .-.     .--.       .--.    
+  /  _  \    /    \  (   __)   (   __)   (''") (   )   \   /    \    /  _  \   
+ . .' `. ;  |  .-. ;  | |       | |       | |   |  .-. .  ;  ,-. '  . .' `. ;  
+ | '   | |  |  | | |  | | ___   | | ___   | |   | |  | |  | |  | |  | '   | |  
+ _\_`.(___) |  |/  |  | |(   )  | |(   )  | |   | |  | |  | |  | |  _\_`.(___) 
+(   ). '.   |  ' _.'  | | | |   | | | |   | |   | |  | |  | |  | | (   ). '.   
+ | |  `\ |  |  .'.-.  | ' | |   | ' | |   | |   | |  | |  | '  | |  | |  `\ |  
+ ; '._,' '  '  `-' /  ' `-' ;   ' `-' ;   | |   | |  | |  '  `-' |  ; '._,' '  
+  '.___.'    `.__.'    `.__.     `.__.   (___) (___)(___)  `.__. |   '.___.'   
+                                                           ( `-' ;             
+                                                            `.__.              
+____________________________________________________________________________________________________________________
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-	
+____________________________________________________________________________________________________________________
+
+--]]	
+	
+	
+local SearchDistance = 	6666666666666666666666666 	-- How far a player can be before it detects you
+
+local ZombieDamage = 	6666666666666666		-- How much damage the Zombie inficts towards the player
+local DamageWait = 		1		-- How many seconds to wait before it can damage the player again
+
+local WanderX, WanderZ = 66, 66
+-- 	How many studs the zombie can wander on the x and z axis in studs ; 0, 0 to stay still
+
+--[[	
+____________________________________________________________________________________________________________________
+ 
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-	
+____________________________________________________________________________________________________________________
+
+--]]
+
+
+function getHumanoid(model)
+	for _, v in pairs(model:GetChildren())do
+		if v:IsA'Humanoid' then
+			return v
+		end
+	end
+end
+
+
+local zombie = script.Parent
+local human = getHumanoid(zombie)
+local hroot = zombie.HumanoidRootPart
+local zspeed = hroot.Velocity.magnitude
+local head = zombie:FindFirstChild'Head'
+local vars = script.vars
+
+local pfs = game:GetService("PathfindingService")
+local players = game:GetService('Players')
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+local path
+local waypoint
+
+local chaseName = nil
+
+function GetTorso(part)
+	local chars = game.Workspace:GetChildren()
+	local chaseRoot = nil
+	local chaseTorso = nil
+	local chasePlr = nil
+	local chaseHuman = nil
+	local mag = SearchDistance
+	for i = 1, #chars do
+		chasePlr = chars[i]
+		if chasePlr:IsA'Model' and chasePlr ~= zombie then
+			chaseHuman = getHumanoid(chasePlr)
+			chaseRoot = chasePlr:FindFirstChild'HumanoidRootPart'
+			if chaseRoot ~= nil and chaseHuman ~= nil and chaseHuman.Health > 0 and chaseHuman.Name ~= "Zombie" then
+				if (chaseRoot.Position - part).magnitude < mag then
+					chaseName = chasePlr.Name
+					chaseTorso = chaseRoot
+					mag = (chaseRoot.Position - part).magnitude
+				end
+			end
+		end
+	end
+	return chaseTorso
+end
+
+function GetPlayersBodyParts(t)
+	local torso = t
+	if torso then
+		local figure = torso.Parent
+		for _, v in pairs(figure:GetChildren())do
+			if v:IsA'Part' then
+				return v.Name
+			end
+		end
+	else
+		return "HumanoidRootPart"
+	end
+end
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+local damagetime
+local damagedb = false
+
+for _, zambieparts in pairs(zombie:GetChildren())do
+	if zambieparts:IsA'Part' and human.Health > 0 then
+		zambieparts.Touched:connect(function(p)
+			if p.Parent.Name == chaseName and p.Parent.Name ~= zombie.Name and not damagedb then -- damage
+				damagedb = true
+				damagetime = time()
+				local enemy = p.Parent
+				local enemyhuman = getHumanoid(enemy)
+				vars.Attacking.Value = true
+				enemyhuman:TakeDamage(ZombieDamage)
+				vars.Attacking.Value = false
+				while wait() do
+					if damagetime ~= nil and time() >= (damagetime + DamageWait) then
+						damagedb = false
+						damagetime = nil
+					end
+				end
+			end
+		end)
+	end
+end
+
+-- wandering 
+spawn(function()
+	while vars.Wandering.Value == false and human.Health > 0 do	
+		vars.Chasing.Value = false	
+		vars.Wandering.Value = true
+		local desgx, desgz = hroot.Position.x+math.random(-WanderX,WanderX), hroot.Position.z+math.random(-WanderZ,WanderZ)
+		local function checkw(t)
+			local ci = 3
+			if ci > #t then
+				ci = 3
+			end
+			if t[ci] == nil and ci < #t then
+				repeat ci = ci + 1 wait() until t[ci] ~= nil
+				return Vector3.new(1,0,0) + t[ci]
+			else
+				ci = 3
+				return t[ci]
+			end
+		end
+		
+		path = pfs:FindPathAsync(hroot.Position, Vector3.new(desgx, 0, desgz))
+		waypoint = path:GetWaypoints()
+		local connection;
+		
+		local direct = Vector3.FromNormalId(Enum.NormalId.Front)
+		local ncf = hroot.CFrame * CFrame.new(direct)
+		direct = ncf.p.unit
+		local rootr = Ray.new(hroot.Position, direct)
+		local phit, ppos = game.Workspace:FindPartOnRay(rootr, hroot)
+		
+		if path and waypoint or checkw(waypoint) then
+			if checkw(waypoint) ~= nil and checkw(waypoint).Action == Enum.PathWaypointAction.Walk then
+				human:MoveTo( checkw(waypoint).Position )
+				human.Jump = false
+			end
+			
+			if checkw(waypoint) ~= nil and checkw(waypoint).Action == Enum.PathWaypointAction.Jump then
+				connection = human.Changed:connect(function()
+					human.Jump = true
+				end)
+				human:MoveTo( waypoint[4].Position )
+			else
+				human.Jump = false
+			end
+			
+			if connection then
+				connection:Disconnect()
+			end
+			
+		else
+			for i = 3, #waypoint do
+				human:MoveTo( waypoint[i].Position )	
+			end
+		end
+		wait(math.random(4,6))
+		vars.Wandering.Value = false
+	end
+end)
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+while wait() do
+	local nrstt = GetTorso(hroot.Position)
+	if nrstt ~= nil and human.Health > 0 then -- if player detected	
+		vars.Wandering.Value = false
+		vars.Chasing.Value = true
+		local function checkw(t)
+			local ci = 3
+			if ci > #t then
+				ci = 3
+			end
+			if t[ci] == nil and ci < #t then
+				repeat ci = ci + 1 wait() until t[ci] ~= nil
+				return Vector3.new(1,0,0) + t[ci]
+			else
+				ci = 3
+				return t[ci]
+			end
+		end
+		
+		path = pfs:FindPathAsync(hroot.Position, nrstt.Position)
+		waypoint = path:GetWaypoints()
+		local connection;
+		
+		local direct = Vector3.FromNormalId(Enum.NormalId.Front)
+		local ncf = hroot.CFrame * CFrame.new(direct)
+		direct = ncf.p.unit
+		local rootr = Ray.new(hroot.Position, direct)
+		local phit, ppos = game.Workspace:FindPartOnRay(rootr, hroot)
+		
+		if path and waypoint or checkw(waypoint) then
+			if checkw(waypoint) ~= nil and checkw(waypoint).Action == Enum.PathWaypointAction.Walk then
+				human:MoveTo( checkw(waypoint).Position )
+				human.Jump = false
+			end
+			
+			if checkw(waypoint) ~= nil and checkw(waypoint).Action == Enum.PathWaypointAction.Jump then
+				connection = human.Changed:connect(function()
+					human.Jump = true
+				end)
+				human:MoveTo( waypoint[4].Position )
+			else
+				human.Jump = false
+			end
+			
+			hroot.Touched:connect(function(p)
+				local bodypartnames = GetPlayersBodyParts(nrstt)
+				if p:IsA'Part' and not p.Name == bodypartnames and phit and phit.Name ~= bodypartnames and phit:IsA'Part' and rootr:Distance(phit.Position) < 5 then
+					connection = human.Changed:connect(function()
+						human.Jump = true
+					end)
+				else
+					human.Jump = false
+				end
+			end)
+			
+			if connection then
+				connection:Disconnect()
+			end
+			
+		else
+			for i = 3, #waypoint do
+				human:MoveTo( waypoint[i].Position )	
+			end
+		end
+		path = nil
+		waypoint = nil
+	elseif nrstt == nil then -- if player not detected
+		vars.Wandering.Value = false
+		vars.Chasing.Value = false
+		CchaseName = nil
+		path = nil
+		waypoint = nil
+		human.MoveToFinished:Wait()
+	end
+end
+
+-- Base script for NPC enemy movement,
+-- still a work in progress
+end))
+Folder31.Name = "vars"
+Folder31.Parent = Script30
+BoolValue32.Name = "Wandering"
+BoolValue32.Parent = Folder31
+BoolValue33.Name = "Attacking"
+BoolValue33.Parent = Folder31
+BoolValue34.Name = "Chasing"
+BoolValue34.Parent = Folder31
+Script35.Name = "Respawn"
+Script35.Parent = Model0
+table.insert(cors,sandbox(Script35,function()
+local Backup = script.Parent:Clone()
+script.Parent.Humanoid.Died:connect(function()
+wait(5)
+Backup.Parent = script.Parent.Parent
+Backup:MakeJoints()
+script.Parent:Remove()
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
