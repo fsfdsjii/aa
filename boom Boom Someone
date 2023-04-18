@@ -1,0 +1,357 @@
+-- big explosion
+
+-- @darkceius
+
+local debris = game:GetService("Debris")
+
+local tweenService = game:GetService("TweenService")
+
+local radius = 60
+
+local waitTime = 3.6
+
+local function createSound(props, parent, autoplay, autoDelete)
+
+	props = props or {}	parent = parent or script
+
+	local s = Instance.new("Sound")
+
+	for i,v in pairs(props) do
+
+		s[i]=v
+
+	end
+
+	s.Parent = parent
+
+	task.spawn(function()
+
+		repeat task.wait() until s.TimeLength > 0
+
+		if autoplay then
+
+			s:Play()
+
+		end
+
+		if autoDelete then
+
+			debris:AddItem(s, s.TimeLength + 0.5)
+
+		end
+
+	end)
+
+	return s
+
+end
+
+local function doAlertThing(cf, tim)
+
+	local Model = Instance.new("Model")
+
+	Model.WorldPivot = CFrame.new(3.2300000190734863, 26.715099334716797, 62.56999969482422)
+
+	local Alert = Instance.new("Part")
+
+	Alert.Name = "Alert"
+
+	Alert.BottomSurface = Enum.SurfaceType.Smooth
+
+	Alert.TopSurface = Enum.SurfaceType.Smooth
+
+	Alert.Color = Color3.fromRGB(255, 0, 0)
+
+	Alert.Material = Enum.Material.Neon
+
+	Alert.Size = Vector3.new(5, 5, 5)
+
+	Alert.CFrame = CFrame.new(3.2300000190734863, 12.890359878540039, 62.56999969482422)
+
+	Alert.Anchored = true
+
+	Alert.CanCollide = false
+
+	Alert.Parent = Model
+
+	Alert.CastShadow = false
+
+	local Alert1 = Instance.new("Part")
+
+	Alert1.Name = "Alert"
+
+	Alert1.BottomSurface = Enum.SurfaceType.Smooth
+
+	Alert1.TopSurface = Enum.SurfaceType.Smooth
+
+	Alert1.Color = Color3.fromRGB(255, 0, 0)
+
+	Alert1.Material = Enum.Material.Neon
+
+	Alert1.Size = Vector3.new(5, 25.58303451538086, 5)
+
+	Alert1.Anchored = true
+
+	Alert1.CanCollide = false
+
+	Alert1.CFrame = CFrame.new(3.2300000190734863, 30.248319625854492, 62.56999969482422)
+
+	Alert1.Parent = Model
+
+	Alert1.CastShadow = false
+
+	Alert.CFrame = cf * CFrame.new(0, 18, 0)
+
+	Alert1.CFrame = cf * CFrame.new(0, 38, 0)
+
+	debris:AddItem(Model, tim+2)
+
+	Model.Parent = script
+
+	local start = tick()
+
+	task.spawn(function()
+
+		repeat
+
+			Alert.CFrame *= CFrame.Angles(0, math.rad(4), 0)
+
+			Alert1.CFrame *= CFrame.Angles(0, math.rad(4), 0)
+
+			task.wait()
+
+		until tick()-start>=tim
+
+	end)
+
+	local function doTween(part)
+
+		if tick()-start >= tim then
+
+			return
+
+		end
+
+		local b = tweenService:Create(part, TweenInfo.new(.5, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Color = Color3.fromRGB(255, 255, 255)})
+
+		b:Play()
+
+		b.Completed:Connect(function()
+
+			local c = tweenService:Create(part, TweenInfo.new(.5, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Color = Color3.fromRGB(255, 0, 0)})
+
+			c:Play()
+
+			c.Completed:Connect(function()
+
+				doTween(part)
+
+			end)
+
+		end)
+
+	end
+
+	doTween(Alert)
+
+	doTween(Alert1)
+
+	createSound({SoundId = "rbxassetid://6533835180", Volume = 10, PlaybackSpeed = 2}, Alert, true, true)
+
+	local alertSounds = {"rbxassetid://12643333699", "rbxassetid://12508431706",     "rbxassetid://454309758","rbxassetid://7140291397","rbxassetid://5603534974", "rbxassetid://1002834205", "rbxassetid://5681392074"}
+
+	local alertSound = createSound({SoundId = alertSounds[math.random(1,#alertSounds)], Volume = 10, Looped = true}, Alert1, true, false)
+
+	debris:AddItem(alertSound, tim+.3)
+
+	task.spawn(function()
+
+		wait(tim)
+
+		tweenService:Create(Alert, TweenInfo.new(.4, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency=1}):Play()
+
+		tweenService:Create(Alert1, TweenInfo.new(.4, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency=1}):Play()
+
+	end)
+
+end
+
+local randomSounds = {"rbxassetid://12518664954",         "rbxassetid://7645129254","rbxassetid://8449305114", "rbxassetid://4809574295", "rbxassetid://1391727615", "rbxassetid://2543445541", "rbxassetid://9111926008", "rbxassetid://9104558193", "rbxassetid://2978605361" ,"rbxassetid://8509804480", "rbxassetid://186670246", "rbxassetid://131060145","rbxassetid://5502274288", "rbxassetid://151776180", "rbxassetid://6737582037"}
+
+local function spawnBomb(cf)
+
+	doAlertThing(cf, waitTime-0.1)
+
+	for i,v in pairs(workspace:GetDescendants()) do
+
+		if v:IsA("Part") and v.CanQuery == false then
+
+			pcall(function()
+
+				v.CanQuery = true
+
+			end)
+
+		end
+
+	end
+
+	wait(waitTime)
+
+	for i,v in pairs(workspace:GetDescendants()) do
+
+		if v:IsA("Part") and v.CanQuery == false then
+
+			pcall(function()
+
+				v.CanQuery = true
+
+			end)
+
+		end
+
+	end
+
+	local explosionZone = Instance.new("Part")
+
+	explosionZone.Anchored = true
+
+	explosionZone.Size = Vector3.new(1,1,1)*5
+
+	explosionZone.CanCollide = false
+
+	explosionZone.CFrame = cf
+
+	explosionZone.Transparency = 1
+
+	explosionZone.Parent = script
+
+	debris:AddItem(explosionZone, 9)
+
+	createSound({SoundId = "rbxassetid://2689242256", Volume = 10}, explosionZone, true, true)
+
+	createSound({SoundId = randomSounds[math.random(1,#randomSounds)], Volume = 10}, explosionZone, true, true)
+
+	--8449305114
+
+	local params = OverlapParams.new()
+
+	params.FilterType = Enum.RaycastFilterType.Blacklist
+
+	params.FilterDescendantsInstances = {script}
+
+	local nearParts = workspace:GetPartBoundsInBox(cf, Vector3.new(1,1,1)*(radius), params)
+
+	local explosion = Instance.new("Explosion")
+
+	explosion.BlastRadius = radius
+
+	explosion.Position = cf.Position
+
+	explosion.Parent = script
+
+	explosion.Hit:Connect(function(part)
+
+		if part:IsDescendantOf(script) then
+
+			return
+
+		end
+
+		pcall(function()
+
+			part.Anchored = false
+
+			part.CanCollide = true
+
+			part.Massless = true
+
+			part.CanQuery = true
+
+		end)
+
+	end)
+
+end
+
+local tool = Instance.new("Tool")
+
+tool.Name = "Boom-boom toy"
+
+tool.Parent = owner.Backpack
+
+tool.CanBeDropped = false
+
+tool.RequiresHandle = false
+
+local ev = Instance.new("RemoteFunction", owner.PlayerGui)
+
+local clientSide = NLS([[
+script.Parent.OnClientInvoke = function()
+	return owner:GetMouse().Hit
+end
+]], ev)
+
+tool.Activated:Connect(function()
+
+	spawnBomb(CFrame.new(ev:InvokeClient(owner).Position))
+
+end)
+
+owner.Chatted:Connect(function(msg: string)
+
+	if string.sub(msg, 1, 3) == "/e " then
+
+		msg = string.sub(msg, 4)
+
+	end
+
+	if string.sub(msg, 1, #"!setRadius ") == "!setRadius " then
+
+		local newRadius = string.sub(msg, #"!setRadius "+1)
+
+		if newRadius == "math.huge" or newRadius == "inf" then
+
+			newRadius = math.huge
+
+		end
+
+		if tonumber(newRadius) == nil then
+
+			warn("Argument must be a valid number.")
+
+			return
+
+		end
+
+		radius = tonumber(newRadius)
+
+		warn("Successfully set explosion radius to", newRadius)
+
+	end
+
+	
+
+	if string.sub(msg, 1, #"!setWait ") == "!setWait " then
+
+		local balls = string.sub(msg, #"!setWait "+1)
+
+		if tonumber(balls) == nil then
+
+			warn("Argument must be a valid number.")
+
+			return
+
+		end
+
+		waitTime = tonumber(balls)
+
+		warn("Successfully set wait time to", balls)
+
+	end
+
+end)
+
+warn("Dark's Bombing Script Loaded!\nCurrent Radius is:", radius)
+
+print("Chat Commands:\n!setRadius <radius: number>\n!setWait <wait-time: number>")
