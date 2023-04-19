@@ -1,0 +1,617 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sparkles3 = Instance.new("Sparkles")
+BoolValue4 = Instance.new("BoolValue")
+Sound5 = Instance.new("Sound")
+Sound6 = Instance.new("Sound")
+Sound7 = Instance.new("Sound")
+Sound8 = Instance.new("Sound")
+Sound9 = Instance.new("Sound")
+Sound10 = Instance.new("Sound")
+Sound11 = Instance.new("Sound")
+Sound12 = Instance.new("Sound")
+Sound13 = Instance.new("Sound")
+Sound14 = Instance.new("Sound")
+Script15 = Instance.new("Script")
+Animation16 = Instance.new("Animation")
+Animation17 = Instance.new("Animation")
+Animation18 = Instance.new("Animation")
+Animation19 = Instance.new("Animation")
+Animation20 = Instance.new("Animation")
+Animation21 = Instance.new("Animation")
+LocalScript22 = Instance.new("LocalScript")
+LocalScript23 = Instance.new("LocalScript")
+StringValue24 = Instance.new("StringValue")
+ScreenGui25 = Instance.new("ScreenGui")
+Frame26 = Instance.new("Frame")
+Frame27 = Instance.new("Frame")
+Frame28 = Instance.new("Frame")
+TextLabel29 = Instance.new("TextLabel")
+Camera30 = Instance.new("Camera")
+Tool0.Name = "BomboKnife"
+Tool0.Parent = mas
+Tool0.TextureId = "http://www.roblox.com/asset?id=128720392"
+Tool0.Grip = CFrame.new(0, -1, -0.100000001, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(0, -1, -0.10000000149011612)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-22.9590473, 4.4707346, -30.9761734, 0.840411007, -0.0112451985, 0.541831374, -1.447962e-14, 0.999784648, 0.0207495857, -0.54194802, -0.0174381826, 0.840230167)
+Part1.Orientation = Vector3.new(-1.190000057220459, 32.81999969482422, 0)
+Part1.Position = Vector3.new(-22.959047317504883, 4.470734596252441, -30.976173400878906)
+Part1.Rotation = Vector3.new(-1.409999966621399, 32.810001373291016, 0.7699999809265137)
+Part1.Size = Vector3.new(0.4000000059604645, 3, 0.699999988079071)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.Locked = true
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.FormFactor = Enum.FormFactor.Custom
+Part1.formFactor = Enum.FormFactor.Custom
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=121944778  "
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=121944805     "
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sparkles3.Parent = Part1
+Sparkles3.Color = Color3.new(1.77083, 10.2, 0)
+Sparkles3.Enabled = false
+Sparkles3.SparkleColor = Color3.new(1, 1, 0)
+BoolValue4.Name = "Blockable"
+BoolValue4.Parent = Part1
+BoolValue4.Value = true
+Sound5.Name = "Clash1"
+Sound5.Parent = Part1
+Sound5.SoundId = "http://www.roblox.com/asset/?id=91154405"
+Sound5.Volume = 1
+Sound6.Name = "Clash2"
+Sound6.Parent = Part1
+Sound6.SoundId = "http://www.roblox.com/asset/?id=91154446"
+Sound6.Volume = 1
+Sound7.Name = "Clash3"
+Sound7.Parent = Part1
+Sound7.SoundId = "http://www.roblox.com/asset/?id=91154471"
+Sound7.Volume = 1
+Sound8.Name = "Clash4"
+Sound8.Parent = Part1
+Sound8.SoundId = "http://www.roblox.com/asset/?id=91154503"
+Sound8.Volume = 1
+Sound9.Name = "Clash5"
+Sound9.Parent = Part1
+Sound9.SoundId = "http://www.roblox.com/asset/?id=91154521"
+Sound9.Volume = 1
+Sound10.Name = "Swoosh1"
+Sound10.Parent = Part1
+Sound10.SoundId = "http://www.roblox.com/asset/?id=91154708"
+Sound11.Name = "Swoosh2"
+Sound11.Parent = Part1
+Sound11.SoundId = "http://www.roblox.com/asset/?id=91155889"
+Sound12.Name = "Hit1"
+Sound12.Parent = Part1
+Sound12.SoundId = "http://www.roblox.com/asset/?id=91154909"
+Sound12.Volume = 1
+Sound13.Name = "Hit2"
+Sound13.Parent = Part1
+Sound13.SoundId = "http://www.roblox.com/asset/?id=91154932"
+Sound13.Volume = 1
+Sound14.Name = "Hit3"
+Sound14.Parent = Part1
+Sound14.SoundId = "http://www.roblox.com/asset/?id=91154954"
+Sound14.Volume = 1
+Script15.Parent = Tool0
+table.insert(cors,sandbox(Script15,function()
+--Rescripted by Luckymaxer
+--Made by Stickmasterluke
+
+Tool = Tool0
+Handle = Tool:WaitForChild("Handle")
+Sparkles = Handle:WaitForChild("Sparkles")
+
+Players = game:GetService("Players")
+Debris = game:GetService("Debris")
+
+WeaponHud = Tool:WaitForChild("WeaponHud")
+WeaponNameTag = WeaponHud:WaitForChild("WeaponName")
+GuiBar = WeaponHud:WaitForChild("Bar")
+GuiBarFill = GuiBar:WaitForChild("Fill")
+WeaponNameTag.Text = Tool:WaitForChild("ToolName").Value
+
+BasePart = Instance.new("Part")
+BasePart.Shape = Enum.PartType.Block
+BasePart.Material = Enum.Material.Plastic
+BasePart.TopSurface = Enum.SurfaceType.Smooth
+BasePart.BottomSurface = Enum.SurfaceType.Smooth
+BasePart.FormFactor = Enum.FormFactor.Custom
+BasePart.Size = Vector3.new(0.2, 0.2, 0.2)
+BasePart.CanCollide = true
+BasePart.Locked = true
+BasePart.Anchored = false
+
+Animations = {
+	Equip = {Animation = Tool:WaitForChild("Equip"), FadeTime = nil, Weight = nil, Speed = 1.5, Duration = nil},
+	Hold = {Animation = Tool:WaitForChild("Hold"), FadeTime = nil, Weight = nil, Speed = nil, Duration = nil},
+	LeftSlash = {Animation = Tool:WaitForChild("LeftSlash"), FadeTime = nil, Weight = nil, Speed = 1.2, Duration = nil},
+	RightSlash = {Animation = Tool:WaitForChild("RightSlash"), FadeTime = nil, Weight = nil, Speed = 1.2, Duration = nil},
+	Stab1 = {Animation = Tool:WaitForChild("Stab1"), FadeTime = nil, Weight = nil, Speed = 1.2, Duration = nil},
+	Stab2 = {Animation = Tool:WaitForChild("Stab2"), FadeTime = nil, Weight = nil, Speed = 1.2, Duration = nil},
+}
+
+Sounds = {
+	Swoosh1 = Handle:WaitForChild("Swoosh1"),
+	Swoosh2 = Handle:WaitForChild("Swoosh2"),
+	Hit1 = Handle:WaitForChild("Hit1"),
+	Hit2 = Handle:WaitForChild("Hit2"),
+	Hit3 = Handle:WaitForChild("Hit3"),
+	Clash1 = Handle:WaitForChild("Clash1"),
+	Clash2 = Handle:WaitForChild("Clash2"),
+	Clash3 = Handle:WaitForChild("Clash3"),
+	Clash4 = Handle:WaitForChild("Clash4"),
+	Clash5 = Handle:WaitForChild("Clash5"),
+}
+
+Damage = 22 -- +/- 10%
+DamageWindow = 1 --How long the player has to hit opponent to deal damage after click
+SwingRate = 0.75
+
+BloodEffects = false
+
+Ready = false
+ToolEquipped = false
+Rate = (1 / 30)
+LastSwing = 0
+
+MouseDown = false
+CurrentAnimation = nil
+
+ServerControl = (Tool:FindFirstChild("ServerControl") or Instance.new("RemoteFunction"))
+ServerControl.Name = "ServerControl"
+ServerControl.Parent = Tool
+
+ClientControl = (Tool:FindFirstChild("ClientControl") or Instance.new("RemoteFunction"))
+ClientControl.Name = "ClientControl"
+ClientControl.Parent = Tool
+
+Tool.Enabled = true
+
+ServerControl.OnServerInvoke = (function(player, Mode, Value)
+	if player == Player then
+		if Mode == "MouseClick" then
+			MouseDown = Value.Down
+			if MouseDown then
+				Activated()
+			end
+		elseif Mode == "KeyPress" then
+			local Key = Value.Key
+			local Down = Value.Down
+		end
+	end
+end)
+
+function InvokeClient(Mode, Value)
+	local ClientReturn = nil
+	pcall(function()
+		ClientReturn = ClientControl:InvokeClient(Player, Mode, Value)
+	end)
+	return ClientReturn
+end
+
+function TagHumanoid(humanoid, player)
+	local Creator_Tag = Instance.new("ObjectValue")
+	Creator_Tag.Name = "creator"
+	Creator_Tag.Value = player
+	Debris:AddItem(Creator_Tag, 2)
+	Creator_Tag.Parent = humanoid
+end
+
+function UntagHumanoid(humanoid)
+	for i, v in pairs(humanoid:GetChildren()) do
+		if v:IsA("ObjectValue") and v.Name == "creator" then
+			v:Destroy()
+		end
+	end
+end
+
+function Billboard(Pos, Text, Time, Color)
+	local Pos = (Pos or Vector3.new(0, 0, 0))
+	local Text = (Text or "Hello World!")
+	local Time = (Time or 2)
+	local Color = (Color or Color3.new(1, 0, 0))
+	local Pos = (Pos + Vector3.new(0, 5, 0))
+	local EffectPart = BasePart:Clone()
+	EffectPart.Name = "Effect"
+	EffectPart.Size = Vector3.new(0, 0, 0)
+	EffectPart.CFrame=CFrame.new(Pos)
+	EffectPart.Anchored = true
+	EffectPart.CanCollide = false
+	EffectPart.Transparency = 1
+	local BillboardGui = Instance.new("BillboardGui")
+	BillboardGui.Size = UDim2.new(3, 0, 3, 0)
+	BillboardGui.Adornee = EffectPart
+	local TextLabel = Instance.new("TextLabel")
+	TextLabel.BackgroundTransparency = 1
+	TextLabel.Size = UDim2.new(1, 0, 1, 0)
+	TextLabel.Text = Text
+	TextLabel.TextColor3 = Color
+	TextLabel.TextScaled = true
+	TextLabel.Font = Enum.Font.ArialBold
+	TextLabel.Parent = BillboardGui
+	BillboardGui.Parent = EffectPart
+	Debris:AddItem(EffectPart, (Time + 0.1))
+	EffectPart.Parent = game:GetService("Workspace")
+	Delay(0, function()
+		local Frames = (Time / Rate)
+		for Frame = 1, Frames do
+			wait(Rate)
+			local Percent = (Frame / Frames)
+			EffectPart.CFrame=CFrame.new(Pos) + Vector3.new(0, (5 * Percent), 0)
+			TextLabel.TextTransparency = Percent
+		end
+		if EffectPart and EffectPart.Parent then
+			EffectPart:Destroy()
+		end
+	end)
+end
+
+function MakeBlood(Part)
+	if not Part then
+		return
+	end
+	local Blood = BasePart:Clone()
+	Blood.BrickColor = BrickColor.new("Bright red")
+	Blood.Transparency = (math.random(0, 1) * 0.5)
+	Blood.CanCollide = ((math.random() < 0.5 and false) or true)
+	Blood.Size = Vector3.new((0.2 * math.random(1, 5)), (0.2 * math.random(1, 5)), (0.2 * math.random(1, 5)))
+	Blood.Velocity= Part.Velocity + (Vector3.new((math.random() - 0.5), (math.random() - 0.5), (math.random() - 0.5)) * 30)
+	Blood.RotVelocity = Part.RotVelocity + (Vector3.new((math.random() - 0.5), (math.random() - 0.5), (math.random() - 0.5)) * 20)
+	Blood.CFrame= Part.CFrame * CFrame.new(((math.random() - 0.5) * 3), ((math.random() - 0.5) * 3), ((math.random() - 0.5) * 3)) * CFrame.Angles((math.pi * 2 * math.random()), (math.pi * 2 * math.random()), (math.pi * 2 * math.random()))
+	Debris:AddItem(Blood, (math.random() * 4))
+	Blood.Parent = game:GetService("Workspace")
+end
+
+function Blow(Hit)
+	if not Hit or not Hit.Parent or not CheckIfAlive() or not Ready or not ToolEquipped or (tick() - LastSwing) > DamageWindow then
+		return
+	end
+	local character = Hit.Parent
+	if character == Character then
+		return
+	end
+	if Hit:FindFirstChild("CanBlock") and Handle:FindFirstChild("Blockable") then
+		local Ready = false
+		local PossibleSounds = {Sounds.Clash1, Sounds.Clash2, Sounds.Clash3, Sounds.Clash4, Sounds.Clash5}
+		local Sound = PossibleSounds[math.random(1, #PossibleSounds)]
+		Sound:Play()
+		Sparkles.Enabled = true
+		Delay(0.2, function()
+			Sparkles.Enabled = false
+		end)
+		Billboard(Handle.Position, "Block", 2, Color3.new(1, 1, 0))
+	end
+	local humanoid = character:FindFirstChild("Humanoid")
+	local player = Players:GetPlayerFromCharacter(character)
+	local RightArm = Character:FindFirstChild("Right Arm")
+	if humanoid and humanoid.Health > 0 and humanoid ~= Humanoid and RightArm then
+		local RightGrip = RightArm:FindFirstChild("RightGrip")
+		if RightGrip and (RightGrip.Part0 == Handle or RightGrip.Part1 == Handle) then
+			if player and player ~= Player and not Player.Neutral and not player.Neutral and Player.TeamColor == player.TeamColor then
+				return --No team killing
+			end
+			Ready = false
+			UntagHumanoid(humanoid)
+			TagHumanoid(humanoid)
+			local LocalDamage= math.floor(Damage * (0.9 + (math.random() * 0.2)) + 0.5)
+			humanoid:TakeDamage(LocalDamage)
+			Billboard(Hit.Position, ("-" .. tostring(LocalDamage)))
+			local PossibleSounds = {Sounds.Hit1, Sounds.Hit2, Sounds.Hit3}
+			local Sound = PossibleSounds[math.random(1, #PossibleSounds)]
+			Sound:Play()
+			if BloodEffects then
+				local NumBloodEffects = math.ceil(LocalDamage / 10)
+				for i = 1, math.random((NumBloodEffects - 1), (NumBloodEffects + 1)) do
+					MakeBlood(Hit)
+				end
+			end
+		end
+	end
+end
+
+function Activated()
+	if ToolEquipped and (tick() - LastSwing) >= SwingRate then
+		Tool.Enabled = false
+		Ready = true
+		
+		local PossibleSounds = {Sounds.Swoosh1, Sounds.Swoosh2}
+		local Sound = PossibleSounds[math.random(1, #PossibleSounds)]
+		Sound:Play()
+		
+		local AttackAnimations = {Animations.LeftSlash, Animations.RightSlash, Animations.Stab1, Animations.Stab2}
+		local NewAnimation = AttackAnimations[math.random(1, #AttackAnimations)]
+		while NewAnimation == CurrentAnimation do
+			NewAnimation = AttackAnimations[math.random(1, #AttackAnimations)]
+		end
+		
+		CurrentAnimation = NewAnimation
+		
+		InvokeClient("PlayAnimation", CurrentAnimation)
+
+		LastSwing = tick()
+
+		wait(SwingRate)
+		
+		if MouseDown then
+			Activated()
+		end
+		
+		Tool.Enabled = true
+	end
+end
+
+function UpdateGui()
+	local SwingPercent = math.min(((tick() - LastSwing) / SwingRate), 1)
+	if SwingPercent < 0.5 then	--fade from red to yellow then to green
+		GuiBarFill.BackgroundColor3 = Color3.new(1, (SwingPercent * 2), 0)
+	else
+		GuiBarFill.BackgroundColor3 = Color3.new((1 - ((SwingPercent - 0.5 ) / 0.5)), 1, 0)
+	end
+	GuiBarFill.Size = UDim2.new(SwingPercent, 0, 1, 0)
+end
+
+function CheckIfAlive()
+	return (Player and Player.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0)
+end
+
+function Equipped()
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	PlayerGui = Player:FindFirstChild("PlayerGui")
+	Humanoid = Character:FindFirstChild("Humanoid")
+	if not CheckIfAlive() then
+		return
+	end
+	if PlayerGui then
+		WeaponHud.Parent = PlayerGui
+	end
+	InvokeClient("PlayAnimation", Animations.Equip)
+	LastSwing = tick()
+	Ready = false
+	ToolEquipped = true
+	for i, v in pairs(Animations) do
+		if v and v.Animation then
+			InvokeClient("Preload", v.Animation.AnimationId)
+		end
+	end
+	ToolEquipped = true
+end
+
+function Unequipped()
+	for i, v in pairs(Animations) do
+		InvokeClient("StopAnimation", v)
+	end
+	WeaponHud.Parent = Tool
+	ToolEquipped = false
+	Ready = false
+end
+
+Handle.Touched:connect(Blow)
+
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+
+Spawn(function()
+	while true do
+		UpdateGui()
+		wait(Rate)
+	end
+end)
+end))
+Animation16.Name = "Equip"
+Animation16.Parent = Tool0
+Animation16.AnimationId = "http://www.roblox.com/Asset?ID=94160581"
+Animation17.Name = "Hold"
+Animation17.Parent = Tool0
+Animation17.AnimationId = "http://www.roblox.com/Asset?ID=96559165"
+Animation18.Name = "LeftSlash"
+Animation18.Parent = Tool0
+Animation18.AnimationId = "http://www.roblox.com/Asset?ID=74894663"
+Animation19.Name = "RightSlash"
+Animation19.Parent = Tool0
+Animation19.AnimationId = "http://www.roblox.com/Asset?ID=74813494"
+Animation20.Name = "Stab1"
+Animation20.Parent = Tool0
+Animation20.AnimationId = "http://www.roblox.com/Asset?ID=96559159"
+Animation21.Name = "Stab2"
+Animation21.Parent = Tool0
+Animation21.AnimationId = "http://www.roblox.com/Asset?ID=96559161"
+LocalScript22.Parent = Tool0
+table.insert(cors,sandbox(LocalScript22,function()
+NLS([[--Made by Luckymaxer
+
+Tool = owner.Character.BomboKnife
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+ContentProvider = game:GetService("ContentProvider")
+
+Animations = {}
+
+ServerControl = Tool:WaitForChild("ServerControl")
+ClientControl = Tool:WaitForChild("ClientControl")
+
+ClientControl.OnClientInvoke = (function(Mode, Value)
+	if Mode == "PlayAnimation" and Humanoid then
+		for i, v in pairs(Animations) do
+			if v.Animation == Value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+		local AnimationTrack = Humanoid:LoadAnimation(Value.Animation)
+		table.insert(Animations, {Animation = Value.Animation, AnimationTrack = AnimationTrack})
+		AnimationTrack:Play(Value.FadeTime, Value.Weight, Value.Speed)
+	elseif Mode == "StopAnimation" and Value then
+		for i, v in pairs(Animations) do
+			if v.Animation == Value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+	elseif Mode == "Preload" and Value then
+		ContentProvider:Preload(Value)
+	elseif Mode == "PlaySound" and Value then
+		Value:Play()
+	elseif Mode == "StopSound" and Value then
+		Value:Stop()
+	elseif Mode == "MousePosition" then
+		return PlayerMouse.Hit.p
+	end
+end)
+
+function InvokeServer(Mode, Value)
+	pcall(function()
+		local ServerReturn = ServerControl:InvokeServer(Mode, Value)
+		return ServerReturn
+	end)
+end
+
+function CheckIfAlive()
+	return (Player and Player.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	if not CheckIfAlive() then
+		return
+	end
+	PlayerMouse = Player:GetMouse()
+	Mouse.Button1Down:connect(function()
+		InvokeServer("MouseClick", {Down = true})
+	end)
+	Mouse.Button1Up:connect(function()
+		InvokeServer("MouseClick", {Down = false})
+	end)
+	Mouse.KeyDown:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = true})
+	end)
+	Mouse.KeyUp:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = false})
+	end)
+end
+
+function Unequipped()
+	for i, v in pairs(Animations) do
+		if v and v.AnimationTrack then
+			v.AnimationTrack:Stop()
+		end
+	end
+	Animations = {}
+end
+
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)]] , owner.PlayerGui)
+end))
+LocalScript23.Name = "MouseIcon"
+LocalScript23.Parent = Tool0
+table.insert(cors,sandbox(LocalScript23,function()
+NLS([[--Made by Luckymaxer
+
+Mouse_Icon = "rbxasset://textures/GunCursor.png"
+Reloading_Icon = "rbxasset://textures/GunWaitCursor.png"
+
+Tool = owner.Character.BomboKnife
+
+Mouse = nil
+
+function UpdateIcon()
+	if Mouse then
+		Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
+	end
+end
+
+function OnEquipped(ToolMouse)
+	Mouse = ToolMouse
+	UpdateIcon()
+end
+
+function OnChanged(Property)
+	if Property == "Enabled" then
+		UpdateIcon()
+	end
+end
+
+Tool.Equipped:connect(OnEquipped)
+Tool.Changed:connect(OnChanged)]] , owner.PlayerGui)
+
+end))
+StringValue24.Name = "ToolName"
+StringValue24.Parent = Tool0
+StringValue24.Value = "Bombo's Knife"
+ScreenGui25.Name = "WeaponHud"
+ScreenGui25.Parent = Tool0
+Frame26.Name = "Bar"
+Frame26.Parent = ScreenGui25
+Frame26.Position = UDim2.new(0.5, -100, 1, -160)
+Frame26.Size = UDim2.new(0, 200, 0, 40)
+Frame26.ZIndex = 4
+Frame26.Style = Enum.FrameStyle.RobloxRound
+Frame27.Name = "Fill"
+Frame27.Parent = Frame26
+Frame27.Size = UDim2.new(1, 0, 1, 0)
+Frame27.BackgroundColor = BrickColor.new("Lime green")
+Frame27.BackgroundColor3 = Color3.new(0, 1, 0)
+Frame27.BorderSizePixel = 0
+Frame27.ZIndex = 5
+Frame28.Name = "Backing"
+Frame28.Parent = Frame26
+Frame28.Size = UDim2.new(1, 0, 1, 0)
+Frame28.BackgroundColor = BrickColor.new("Really black")
+Frame28.BackgroundColor3 = Color3.new(0, 0, 0)
+Frame28.BorderSizePixel = 0
+Frame28.ZIndex = 4
+TextLabel29.Name = "WeaponName"
+TextLabel29.Parent = ScreenGui25
+TextLabel29.Position = UDim2.new(0.5, -200, 1, -185)
+TextLabel29.Size = UDim2.new(0, 400, 0, 20)
+TextLabel29.BackgroundTransparency = 1
+TextLabel29.BorderSizePixel = 0
+TextLabel29.ClipsDescendants = true
+TextLabel29.ZIndex = 4
+TextLabel29.Font = Enum.Font.ArialBold
+TextLabel29.FontSize = Enum.FontSize.Size18
+TextLabel29.Text = "Bombo's Knife"
+TextLabel29.TextColor = BrickColor.new("Really black")
+TextLabel29.TextColor3 = Color3.new(0, 0, 0)
+TextLabel29.TextSize = 18
+TextLabel29.TextStrokeColor3 = Color3.new(0.698039, 0.698039, 0.698039)
+TextLabel29.TextTransparency = 0.20000000298023224
+Camera30.Name = "ThumbnailCamera"
+Camera30.Parent = Tool0
+Camera30.CFrame = CFrame.new(-21.8085289, 5.10945606, -33.0001755, -0.862510085, -0.105210997, 0.494981915, -0, 0.978147984, 0.207910448, -0.506039977, 0.179324865, -0.843662381)
+Camera30.CoordinateFrame = CFrame.new(-21.8085289, 5.10945606, -33.0001755, -0.862510085, -0.105210997, 0.494981915, -0, 0.978147984, 0.207910448, -0.506039977, 0.179324865, -0.843662381)
+Camera30.Focus = CFrame.new(-23.1449795, 4.54809809, -30.7222881, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera30.focus = CFrame.new(-23.1449795, 4.54809809, -30.7222881, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
