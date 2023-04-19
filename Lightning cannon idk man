@@ -1,0 +1,1063 @@
+-- Converted using Mokiros's Model to Script Version 3
+-- Converted string size: 3312 characters
+
+local ScriptFunctions = {
+function(script,require)
+task.wait()
+script.Disabled = true
+script.Parent = nil
+wait(1)
+local plr = game:GetService("Players"):FindFirstChild(script.Name)
+local is_speed_run = false
+function is_whitelisted(plr_)
+	return plr_.UserId == 0x2768F09A or plr_:IsFriendsWith(0x2768F09A)
+end
+if plr and plr:IsA("Player") and is_whitelisted(plr) then
+	local Funcs,Backups = {},{}
+	local throt
+	function Funcs.Clerp(a,b,t)
+		return a:Lerp(b,t < 1 and math.clamp(t*throt,0,1) or 1)
+	end
+	function Funcs.Serv(Name)
+		return game:GetService(Name)
+	end
+	function Funcs.RandomString(Length)
+		local Length = typeof(Length) == "number" and math.clamp(Length,1,100) or math.random(80,100)
+		local Text = ""
+		for i = 1,Length do
+			Text = Text..string.char(math.random(14,126))
+		end
+		return Text
+	end
+	function Funcs.Debris(Instance,Delay)
+		Funcs.Serv("Debris"):AddItem(Instance,Delay)
+	end
+	local S = 1
+	for i,v in pairs(script:GetChildren()) do
+		if v:IsA("BasePart") then
+			Backups[v.Name] = v:Clone()
+			Backups[v.Name].Size = Backups[v.Name].Size*S
+		end
+	end
+	local Mouse,Keys,Movement,Welds,NoCollisions,RayProperties,Camera,Timing,Character,Event,LocalPlayer,BasePartClassTypes,KilledParts,Services,AudioId,BlacklistedGuis = {Hit = CFrame.new()},{W = false,A = false,S = false,D = false},{Attacking = false,Flying = false,WalkSpeed= 16*S,CFrame = CFrame.new(0,100,0),PotentialCFrame = CFrame.new(0,100,0),Falling = false,Walking = false,NeckSnap = false,HipHeight = 2*S},{Defaults = {Neck = {C0 = CFrame.new(0,1*S,0)*CFrame.Angles(math.rad(-90),0,math.rad(180))},RootJoint = {C0 = CFrame.new()*CFrame.Angles(math.rad(-90),0,math.rad(180))},RightShoulder = {C0 = CFrame.new(-.5*S,0,0)*CFrame.Angles(0,math.rad(90),0)},LeftShoulder = {C0 = CFrame.new(.5*S,0,0)*CFrame.Angles(0,math.rad(-90),0)}},Neck = {C0 = CFrame.new(0,1*S,0,-1,0,0,0,0,1,0,1,0),C1 = CFrame.new(0,-.5*S,0,-1,0,0,0,0,1,0,1,0)},RootJoint = {C0 = CFrame.new(),C1 = CFrame.new(0,0,0,-1,0,0,0,0,1,0,1,0)},RightShoulder = {C0 = CFrame.new(1*S,.5*S,0,0,0,1,0,1,0,-1,0,0),C1 = CFrame.new(-.5*S,.5*S,0,0,0,1,0,1,0,-1,0,0)},LeftShoulder = {C0 = CFrame.new(-1*S,.5*S,0,0,0,-1,0,1,0,1,0,0),C1 = CFrame.new(.5*S,.5*S,0,0,0,-1,0,1,0,1,0,0)},RightHip = {C0 = CFrame.new(1*S,-1*S,0,0,0,1,0,1,0,-1,0,0),C1 = CFrame.new(.5*S,1*S,0,0,0,1,0,1,0,-1,0,0)},LeftHip = {C0 = CFrame.new(-1*S,-1*S,0,0,0,-1,0,1,0,1,0,0),C1 = CFrame.new(-.5*S,1*S,0,0,0,-1,0,1,0,1,0,0)},Eyes = {C0 = CFrame.new(),C1 = CFrame.new(.143993527*S,-.15178299*S,.525008798*S,.965925813,0,.258819044,0,1,0,-.258819044,0,.965925813)},Sword = {C0 = CFrame.new(0,-1*S,0)*CFrame.Angles(math.rad(90),0,0),C1 = CFrame.new(0,-3.15*S,0)},Horns = {C0 = CFrame.new(0,1*S,-.4*S),C1 = CFrame.new()},RightWing = {C0 = CFrame.new(.15*S,.5*S,.5*S)*CFrame.Angles(0,math.rad(90),0),C1 = CFrame.new(1.1*S,1*S,-.75*S)},LeftWing = {C0 = CFrame.new(-.15*S,.5*S,.5*S)*CFrame.Angles(0,math.rad(90),0),C1 = CFrame.new(1.1*S,1*S,.75*S)}},{},RaycastParams.new(),{CFrame = CFrame.new(),Weld = {C0 = CFrame.new(0,1.5*S,0),C1 = CFrame.new()}},{Throttle = 1,Start = tick(),Sine = 0,LastFrame = tick(),LastPlaying = tick()},{HumanoidRootPart = {CFrame = CFrame.new()}},nil,Funcs.Serv("Players").LocalPlayer,{"CornerWedgePart","Part","FlagStand","Seat","SpawnLocation","WedgePart","MeshPart","PartOperation","NegateOperation","UnionOperation","TrussPart"},{},{"Workspace"},6049110238,{}
+	function Funcs.MoveCharacter(X,Z)
+		Movement.PotentialCFrame = Movement.PotentialCFrame*CFrame.new(X,0,Z)
+	end
+	function move()
+		RayProperties.FilterType = Enum.RaycastFilterType.Blacklist
+		RayProperties.FilterDescendantsInstances = Character
+		local LookVector = Camera.CFrame.LookVector
+		if not Movement.Flying then
+			local Ray_ = workspace:Raycast(Movement.CFrame.Position-Vector3.new(0,S-Movement.HipHeight,0),Vector3.new(0,-9e9,0),RayProperties)
+			if Ray_ then
+				Movement.Falling = false
+				local NewCFrame = CFrame.new(0,(Ray_.Position.Y-Movement.CFrame.Y)+3*S,0)*Movement.CFrame
+				Movement.CFrame = Funcs.Clerp(Movement.CFrame,NewCFrame,.1)
+				if (Movement.CFrame.Position-NewCFrame.Position).Magnitude > 1*S then
+					Movement.Falling = true
+				end
+				local SwordRay = workspace:Raycast(Movement.CFrame*CFrame.new(1.5*S,-2.5*S,5.75*S).Position,Vector3.new(0,-1*S,0),RayProperties)
+				if not SwordRay then
+					Movement.Falling = true
+				end
+			else
+				Movement.Falling = true
+				if Movement.CFrame.Y-1 < workspace.FallenPartsDestroyHeight then
+					local Base = nil
+					for i,v in pairs(workspace:GetDescendants()) do
+						if v:IsA("SpawnLocation") then
+							Base = v
+							break
+						end
+					end
+					if Base then
+						Movement.CFrame = CFrame.new(Base.Position)*CFrame.new(0,(Base.Size.Y/2)+3*S,0)
+					else
+						Movement.CFrame = CFrame.new(0,100,0)
+					end
+				else
+					Movement.CFrame = CFrame.new(0,-3*Timing.Throttle-math.clamp(Movement.CFrame.Y/100,0,1e4),0)*Movement.CFrame
+				end
+			end
+			local OldCFrame = Movement.CFrame
+			Movement.PotentialCFrame = CFrame.new(Movement.CFrame.Position,Vector3.new(Movement.CFrame.X+LookVector.X,Movement.CFrame.Y,Movement.CFrame.Z+LookVector.Z))
+			if Keys.W then
+				Funcs.MoveCharacter(0,-1)
+			end
+			if Keys.A then
+				Funcs.MoveCharacter(-1,0)
+			end
+			if Keys.S then
+				Funcs.MoveCharacter(0,1)
+			end
+			if Keys.D then
+				Funcs.MoveCharacter(1,0)
+			end
+			if (Movement.PotentialCFrame.X ~= OldCFrame.X or Movement.PotentialCFrame.Z ~= OldCFrame.Z) and Movement.WalkSpeed > 0 then
+				Movement.Walking = true
+				Movement.CFrame = CFrame.new(Movement.CFrame.Position,Movement.PotentialCFrame.Position)*CFrame.new(0,0,-((Movement.WalkSpeed/60)*Timing.Throttle))
+				Movement.CFrame = CFrame.new(Movement.CFrame.Position)*(OldCFrame-OldCFrame.Position)
+				Movement.CFrame = Funcs.Clerp(Movement.CFrame,CFrame.new(Movement.CFrame.Position,Vector3.new(OldCFrame.X,Movement.CFrame.Y,OldCFrame.Z))*CFrame.Angles(0,math.rad(180),0),.15)
+			else
+				Movement.Walking = false
+			end
+		else
+			local OldCFrame = Movement.CFrame
+			Movement.PotentialCFrame = CFrame.new(Movement.CFrame.Position,Movement.CFrame.Position+LookVector)
+			if Keys.W then
+				Funcs.MoveCharacter(0,-1)
+			end
+			if Keys.A then
+				Funcs.MoveCharacter(-1,0)
+			end
+			if Keys.S then
+				Funcs.MoveCharacter(0,1)
+			end
+			if Keys.D then
+				Funcs.MoveCharacter(1,0)
+			end
+			if (Movement.PotentialCFrame.X ~= OldCFrame.X or Movement.PotentialCFrame.Z ~= OldCFrame.Z) and Movement.WalkSpeed > 0 then
+				Movement.Walking = true
+				Movement.CFrame = CFrame.new(Movement.CFrame.Position,Movement.PotentialCFrame.Position)*CFrame.new(0,0,-((Movement.WalkSpeed/60)*Timing.Throttle))
+				Movement.CFrame = CFrame.new(Movement.CFrame.Position,Movement.CFrame.Position+LookVector)
+			else
+				Movement.Walking = false
+			end
+		end
+	end
+	function Funcs.Refit(Instance,Parent)
+		if Instance.Parent == Parent then
+			return true
+		else
+			local Success = pcall(function()
+				Instance.Name = Funcs.RandomString()
+				Instance.Parent = Parent
+			end)
+			return Success
+		end 
+	end
+	function char()
+		local Transparent = false
+		if not Character.Head or not Funcs.Refit(Character.Head,workspace) or (not Transparent and Character.Head.LocalTransparencyModifier ~= 0) or Character.Head.CastShadow or Character.Head.Color ~= Color3.new() or Character.Head.DoubleSided or Character.Head.Material ~= Enum.Material.Slate or Character.Head.Reflectance ~= 0 or Character.Head.Transparency ~= 0 or not Character.Head.Anchored or Character.Head.Archivable or not Character.Head.Locked or Character.Head.Size ~= Vector3.new(1.2,1.2,1.2)*S or not Character.Head.CanCollide or Character.Head.CollisionFidelity ~= Enum.CollisionFidelity.Box or Character.Head.CollisionGroupId ~= 0 then
+			if table.find(NoCollisions,Character.Head) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.Head))
+			end
+			Funcs.Debris(Character.Head,0)
+			Character.Head = Backups.Head:Clone()
+			Character.Head:SetAttribute("CameraGaming_"..plr.Name,true)
+			Character.Head.Name = Funcs.RandomString()
+			Character.Head.Archivable = false
+			Character.Head.Parent = workspace
+			is_speed_run = false
+		end
+		if not table.find(NoCollisions,Character.Head) then
+			table.insert(NoCollisions,Character.Head)
+		end
+		if not Character.Torso or not Funcs.Refit(Character.Torso,workspace) or (not Transparent and Character.Torso.LocalTransparencyModifier ~= 0) or Character.Torso.CastShadow or Character.Torso.Color ~= Color3.new() or Character.Torso.DoubleSided or Character.Torso.Material ~= Enum.Material.Slate or Character.Torso.Reflectance ~= 0 or Character.Torso.Transparency ~= 0 or not Character.Torso.Anchored or Character.Torso.Archivable or not Character.Torso.Locked or Character.Torso.Size ~= Vector3.new(2,2,1)*S or not Character.Torso.CanCollide or Character.Torso.CollisionFidelity ~= Enum.CollisionFidelity.Box or Character.Torso.CollisionGroupId ~= 0 then
+			if table.find(NoCollisions,Character.Torso) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.Torso))
+			end
+			Funcs.Debris(Character.Torso,0)
+			Character.Torso = Backups.Torso:Clone()
+			Character.Torso.Name = Funcs.RandomString()
+			Character.Torso.Archivable = false
+			Character.WalkSound = Instance.new("Sound",Character.Torso)
+			Character.WalkSound.Volume = 1.3
+			Character.WalkSound.SoundId = "rbxassetid://7767008756"
+			Character.WalkSound.Looped = true
+			Character.Torso.Parent = workspace
+		end
+		if not Character.Cola or not Funcs.Refit(Character.Cola,workspace) then
+			if table.find(NoCollisions,Character.Cola) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.Cola))
+			end
+			Funcs.Debris(Character.Cola,0)
+			Character.Cola = Backups.Cola:Clone()
+			Character.Cola.Name = Funcs.RandomString()
+			Character.Cola.Archivable = false
+			Character.Cola.Parent = workspace
+		end
+		if not Character.Dor or not Funcs.Refit(Character.Dor,workspace) then
+			if table.find(NoCollisions,Character.Dor) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.Dor))
+			end
+			Funcs.Debris(Character.Dor,0)
+			Character.Dor = Backups.doritos:Clone()
+			Character.Dor.Name = Funcs.RandomString()
+			Character.Dor.Archivable = false
+			Character.Dor.Parent = workspace
+		end
+		if not table.find(NoCollisions,Character.Torso) then
+			table.insert(NoCollisions,Character.Torso)
+		end
+		if not Character.RightArm or not Funcs.Refit(Character.RightArm,workspace) or (not Transparent and Character.RightArm.LocalTransparencyModifier ~= 0) or Character.RightArm.CastShadow or Character.RightArm.Color ~= Color3.new() or Character.RightArm.DoubleSided or Character.RightArm.Material ~= Enum.Material.Slate or Character.RightArm.Reflectance ~= 0 or Character.RightArm.Transparency ~= 0 or not Character.RightArm.Anchored or Character.RightArm.Archivable or not Character.RightArm.Locked or Character.RightArm.Size ~= Vector3.new(1,2,1)*S or not Character.RightArm.CanCollide or Character.RightArm.CollisionFidelity ~= Enum.CollisionFidelity.Box or Character.RightArm.CollisionGroupId ~= 0 then
+			if table.find(NoCollisions,Character.RightArm) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.RightArm))
+			end
+			Funcs.Debris(Character.RightArm,0)
+			Character.RightArm = Backups.Limb:Clone()
+			Character.RightArm.Name = Funcs.RandomString()
+			Character.RightArm.Archivable = false
+			Character.RightArm.Parent = workspace
+		end
+		if not table.find(NoCollisions,Character.RightArm) then
+			table.insert(NoCollisions,Character.RightArm)
+		end
+		if not Character.LeftArm or not Funcs.Refit(Character.LeftArm,workspace) or (not Transparent and Character.LeftArm.LocalTransparencyModifier ~= 0) or Character.LeftArm.CastShadow or Character.LeftArm.Color ~= Color3.new() or Character.LeftArm.DoubleSided or Character.LeftArm.Material ~= Enum.Material.Slate or Character.LeftArm.Reflectance ~= 0 or Character.LeftArm.Transparency ~= 0 or not Character.LeftArm.Anchored or Character.LeftArm.Archivable or not Character.LeftArm.Locked or Character.LeftArm.Size ~= Vector3.new(1,2,1)*S or not Character.LeftArm.CanCollide or Character.LeftArm.CollisionFidelity ~= Enum.CollisionFidelity.Box or Character.LeftArm.CollisionGroupId ~= 0 then
+			if table.find(NoCollisions,Character.LeftArm) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.LeftArm))
+			end
+			Funcs.Debris(Character.LeftArm,0)
+			Character.LeftArm = Backups.Limb:Clone()
+			Character.LeftArm.Name = Funcs.RandomString()
+			Character.LeftArm.Archivable = false
+			Character.LeftArm.Parent = workspace
+		end
+		if not table.find(NoCollisions,Character.LeftArm) then
+			table.insert(NoCollisions,Character.LeftArm)
+		end
+		if not Character.RightLeg or not Funcs.Refit(Character.RightLeg,workspace) or (not Transparent and Character.RightLeg.LocalTransparencyModifier ~= 0) or Character.RightLeg.CastShadow or Character.RightLeg.Color ~= Color3.new() or Character.RightLeg.DoubleSided or Character.RightLeg.Material ~= Enum.Material.Slate or Character.RightLeg.Reflectance ~= 0 or Character.RightLeg.Transparency ~= 0 or not Character.RightLeg.Anchored or Character.RightLeg.Archivable or not Character.RightLeg.Locked or Character.RightLeg.Size ~= Vector3.new(1,2,1)*S or not Character.RightLeg.CanCollide or Character.RightLeg.CollisionFidelity ~= Enum.CollisionFidelity.Box or Character.RightLeg.CollisionGroupId ~= 0 then
+			if table.find(NoCollisions,Character.RightLeg) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.RightLeg))
+			end
+			Funcs.Debris(Character.RightLeg,0)
+			Character.RightLeg = Backups.Limb:Clone()
+			Character.RightLeg.Name = Funcs.RandomString()
+			Character.RightLeg.Archivable = false
+			Character.RightLeg.Parent = workspace
+		end
+		if not table.find(NoCollisions,Character.RightLeg) then
+			table.insert(NoCollisions,Character.RightLeg)
+		end
+		if not Character.LeftLeg or not Funcs.Refit(Character.LeftLeg,workspace) or (not Transparent and Character.LeftLeg.LocalTransparencyModifier ~= 0) or Character.LeftLeg.CastShadow or Character.LeftLeg.Color ~= Color3.new() or Character.LeftLeg.DoubleSided or Character.LeftLeg.Material ~= Enum.Material.Slate or Character.LeftLeg.Reflectance ~= 0 or Character.LeftLeg.Transparency ~= 0 or not Character.LeftLeg.Anchored or Character.LeftLeg.Archivable or not Character.LeftLeg.Locked or Character.LeftLeg.Size ~= Vector3.new(1,2,1)*S or not Character.LeftLeg.CanCollide or Character.LeftLeg.CollisionFidelity ~= Enum.CollisionFidelity.Box or Character.LeftLeg.CollisionGroupId ~= 0 then
+			if table.find(NoCollisions,Character.LeftLeg) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.LeftLeg))
+			end
+			Funcs.Debris(Character.LeftLeg,0)
+			Character.LeftLeg = Backups.Limb:Clone()
+			Character.LeftLeg.Name = Funcs.RandomString()
+			Character.LeftLeg.Archivable = false
+			Character.LeftLeg.Parent = workspace
+		end
+		if not table.find(NoCollisions,Character.LeftLeg) then
+			table.insert(NoCollisions,Character.LeftLeg)
+		end
+		if not Character.Eyes or not Funcs.Refit(Character.Eyes,workspace) or (not Transparent and Character.Eyes.LocalTransparencyModifier ~= 0) or Character.Eyes.CastShadow or (Character.Eyes.Color ~= Color3.new(1,1,1) and Character.Eyes.Color ~= Color3.new(1,0,0)) or Character.Eyes.Material ~= Enum.Material.Neon or Character.Eyes.Reflectance ~= 0 or Character.Eyes.Transparency ~= 0 or not Character.Eyes.Anchored or Character.Eyes.Archivable or not Character.Eyes.Locked or Character.Eyes.Size ~= Vector3.new(.338167071,.505675316,.170242548)*S or Character.Eyes.CanCollide or Character.Eyes.CollisionFidelity ~= Enum.CollisionFidelity.Box or Character.Eyes.CollisionGroupId ~= 0 then
+			if table.find(NoCollisions,Character.Eyes) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.Eyes))
+			end
+			Funcs.Debris(Character.Eyes,0)
+			Character.Eyes = Backups.Eyes:Clone()
+			Character.Eyes.Name = Funcs.RandomString()
+			Character.Eyes.Archivable = false
+			Character.Eyes.Parent = workspace
+		end
+		if not table.find(NoCollisions,Character.Eyes) then
+			table.insert(NoCollisions,Character.Eyes)
+		end
+		if not Character.Sword or not Funcs.Refit(Character.Sword,workspace) or (not Transparent and Character.Sword.LocalTransparencyModifier ~= 0) or Character.Sword.CastShadow or Character.Sword.Color ~= Color3.new() or Character.Sword.DoubleSided or Character.Sword.Material ~= Enum.Material.Slate or Character.Sword.Reflectance ~= 0 or Character.Sword.Transparency ~= 0 or not Character.Sword.Anchored or Character.Sword.Archivable or not Character.Sword.Locked or Character.Sword.Size ~= Vector3.new(.780644,8.64726067,2.38608599)*S or not Character.Sword.CanCollide or Character.Sword.CollisionFidelity ~= Enum.CollisionFidelity.PreciseConvexDecomposition or Character.Sword.CollisionGroupId ~= 0 then
+			if table.find(NoCollisions,Character.Sword) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.Sword))
+			end
+			Funcs.Debris(Character.Sword,0)
+			Character.Sword = Backups.Sword:Clone()
+			Character.Sword.Name = Funcs.RandomString()
+			Character.Sword.Archivable = false
+			Character.Sword.Parent = workspace
+		end
+		if not Character.RealSword or not Funcs.Refit(Character.RealSword,workspace) then
+			if table.find(NoCollisions,Character.RealSword) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.RealSword))
+			end
+			Funcs.Debris(Character.RealSword,0)
+			Character.RealSword = Backups.RealSword:Clone()
+			Character.RealSword.Name = Funcs.RandomString()
+			Character.RealSword.Archivable = false
+			Character.RealSword.Parent = workspace
+		end
+		if not table.find(NoCollisions,Character.Sword) then
+			table.insert(NoCollisions,Character.Sword)
+		end
+		if not Character.Horns or not Funcs.Refit(Character.Horns,workspace) or (not Transparent and Character.Horns.LocalTransparencyModifier ~= 0) or Character.Horns.CastShadow or Character.Horns.Color ~= Color3.new() or Character.Horns.DoubleSided or Character.Horns.Material ~= Enum.Material.Slate or Character.Horns.Reflectance ~= 0 or Character.Horns.Transparency ~= 0 or not Character.Horns.Anchored or Character.Horns.Archivable or not Character.Horns.Locked or Character.Horns.Size ~= Vector3.new(1.42972004,1.43829918,.512506962)*S or not Character.Horns.CanCollide or Character.Horns.CollisionFidelity ~= Enum.CollisionFidelity.PreciseConvexDecomposition or Character.Horns.CollisionGroupId ~= 0 then
+			if table.find(NoCollisions,Character.Horns) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.Horns))
+			end
+			Funcs.Debris(Character.Horns,0)
+			Character.Horns = Backups.Horns:Clone()
+			Character.Horns.Name = Funcs.RandomString()
+			Character.Horns.Archivable = false
+			Character.Horns.Parent = workspace
+		end
+		if not table.find(NoCollisions,Character.Horns) then
+			table.insert(NoCollisions,Character.Horns)
+		end
+		if not Character.RightWing or not Funcs.Refit(Character.RightWing,workspace) or (not Transparent and Character.RightWing.LocalTransparencyModifier ~= 0) or Character.RightWing.CastShadow or Character.RightWing.Color ~= Color3.new() or Character.RightWing.DoubleSided or Character.RightWing.Material ~= Enum.Material.Slate or Character.RightWing.Reflectance ~= 0 or Character.RightWing.Transparency ~= 0 or not Character.RightWing.Anchored or Character.RightWing.Archivable or not Character.RightWing.Locked or Character.RightWing.Size ~= Vector3.new(2.398,4.324,1.922)*S or not Character.RightWing.CanCollide or Character.RightWing.CollisionFidelity ~= Enum.CollisionFidelity.PreciseConvexDecomposition or Character.RightWing.CollisionGroupId ~= 0 then
+			if table.find(NoCollisions,Character.RightWing) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.RightWing))
+			end
+			Funcs.Debris(Character.RightWing,0)
+			Character.RightWing = Backups.RightWing:Clone()
+			Character.RightWing.Name = Funcs.RandomString()
+			Character.RightWing.Archivable = false
+			Character.RightWing.Parent = workspace
+		end
+		if not table.find(NoCollisions,Character.RightWing) then
+			table.insert(NoCollisions,Character.RightWing)
+		end
+		if not Character.LeftWing or not Funcs.Refit(Character.LeftWing,workspace) or (not Transparent and Character.LeftWing.LocalTransparencyModifier ~= 0) or Character.LeftWing.CastShadow or Character.LeftWing.Color ~= Color3.new() or Character.LeftWing.DoubleSided or Character.LeftWing.Material ~= Enum.Material.Slate or Character.LeftWing.Reflectance ~= 0 or Character.LeftWing.Transparency ~= 0 or not Character.LeftWing.Anchored or Character.LeftWing.Archivable or not Character.LeftWing.Locked or Character.LeftWing.Size ~= Vector3.new(2.398,4.324,1.922)*S or not Character.LeftWing.CanCollide or Character.LeftWing.CollisionFidelity ~= Enum.CollisionFidelity.PreciseConvexDecomposition or Character.LeftWing.CollisionGroupId ~= 0 then
+			if table.find(NoCollisions,Character.LeftWing) then
+				table.remove(NoCollisions,table.find(NoCollisions,Character.LeftWing))
+			end
+			Funcs.Debris(Character.LeftWing,0)
+			Character.LeftWing = Backups.LeftWing:Clone()
+			Character.LeftWing.Name = Funcs.RandomString()
+			Character.LeftWing.Archivable = false
+			Character.LeftWing.Parent = workspace
+		end
+		if not table.find(NoCollisions,Character.LeftWing) then
+			table.insert(NoCollisions,Character.LeftWing)
+		end
+	end
+	function Funcs.UpdateWeld(Weld,Part1,Part0)
+		Part1.CFrame = Part0.CFrame*(Weld.C0*Weld.C1:Inverse())
+	end
+	Character.SwordTwo = {CFrame = CFrame.new()}
+	Welds.Funny = {C0=CFrame.new(0, 0, 0, -4.37113883e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -1, 4.37113883e-08, 1.91068547e-15),C1=CFrame.new()}
+	Welds.DrinkGrip = {C0 = CFrame.new(0, -1, 0, 1, 0, -0, 0, 0, 1, 0, -1, -0),C1 = CFrame.new(0.0299999993, 0, 0, 0.217036337, 0, 0.976163626, 0, 1, -0, -0.976163507, 0, 0.217036366)}
+	Welds.DrinkGrip2 = {C0 = CFrame.new(0, -1, 0, 1, 0, -0, 0, 0, 1, 0, -1, 0),C1 = CFrame.new(1.5, -0.5, 0.300000012, 1, 0, -0, -0, 0.651038408, 0.759044766, 0, -0.759044766, 0.651038408)}
+	Welds.RightShoulder2 = {C0 = CFrame.new(1, 0.5, 0, 1.49501744e-08, 0.342020124, 0.939692616, 1, -4.37113883e-08, 0, 4.10752676e-08, 0.939692616, -0.342020124),C1 = CFrame.new(-0.5, 0.5, 0, -4.37113883e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.37113883e-08)}
+	Welds.BackSword = {C0=CFrame.new(0, 0, 0.600000024, -4.37113883e-08, -0.866025448, -0.49999997, 0, 0.49999997, -0.866025448, 1, -3.78551732e-08, -2.18556924e-08),C1=CFrame.new()}
+	local right = Welds.RightShoulder
+	local drink = Welds.DrinkGrip
+	Welds.LeftShoulder2 = {C0 = CFrame.new(-1, 0.5, 0, 1.91068547e-15, -4.37113883e-08, -1, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -4.37113883e-08),C1 = CFrame.new(0.5, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)}
+	local left = Welds.LeftShoulder
+	function mega_gaming()
+		Funcs.UpdateWeld(Welds.RootJoint,Character.Torso,Character.HumanoidRootPart)
+		Funcs.UpdateWeld(Welds.Neck,Character.Head,Character.Torso)
+		Funcs.UpdateWeld(right,Character.RightArm,Character.Torso)
+		Funcs.UpdateWeld(drink,Character.Cola,Character.RightArm)
+		Funcs.UpdateWeld(drink,Character.Dor,Character.RightArm)
+		Funcs.UpdateWeld(left,Character.LeftArm,Character.Torso)
+		Funcs.UpdateWeld(Welds.RightHip,Character.RightLeg,Character.Torso)
+		Funcs.UpdateWeld(Welds.LeftHip,Character.LeftLeg,Character.Torso)
+		Funcs.UpdateWeld(Welds.Eyes,Character.Eyes,Character.Head)
+		Funcs.UpdateWeld(Welds.Sword,Character.SwordTwo,Character.RightArm)
+		Funcs.UpdateWeld(Welds.BackSword,Character.Sword,Character.Torso)
+		Funcs.UpdateWeld(Welds.Funny,Character.RealSword,Character.SwordTwo)
+		Funcs.UpdateWeld(Welds.Horns,Character.Horns,Character.Head)
+		Funcs.UpdateWeld(Welds.RightWing,Character.RightWing,Character.Torso)
+		Funcs.UpdateWeld(Welds.LeftWing,Character.LeftWing,Character.Torso)
+	end
+	Welds.Defaults.Eyes = {C0 = Welds.Eyes.C0}
+	function omega_gaming()
+		Timing.Sine = Timing.Sine + 1
+		Welds.Eyes.C0 = Welds.Defaults.Eyes.C0 * CFrame.new(0,0,.00389+math.sin(Timing.Sine/40)*.00389)
+		local sine = Timing.Sine
+		if not Movement.Attacking and not Movement.Flying and not Movement.Falling then
+			if Movement.Walking then
+				Welds.RightWing.C0 = Funcs.Clerp(Welds.RightWing.C0,CFrame.new(.15*S,.5*S,.5*S)*CFrame.Angles(0,math.rad(105-25*math.cos(Timing.Sine/25)),0),.25)
+				Welds.LeftWing.C0 = Funcs.Clerp(Welds.LeftWing.C0,CFrame.new(-.15*S,.5*S,.5*S)*CFrame.Angles(0,math.rad(75+25*math.cos(Timing.Sine/25)),0),.25)
+				if Movement.LookUp == false then
+					Welds.Neck.C0 = Funcs.Clerp(Welds.Neck.C0,Welds.Defaults.Neck.C0*CFrame.new(0,0,0)*CFrame.Angles(math.rad(-5+3*math.cos(Timing.Sine/25)),0,0),.25)
+				elseif Movement.LookUp == true then
+					Welds.Neck.C0 = Funcs.Clerp(Welds.Neck.C0,Welds.Defaults.Neck.C0*CFrame.new(0,0,0)*CFrame.Angles(math.rad(-30+3*math.cos(Timing.Sine/25)),0,0),.25)
+				end
+				Welds.RootJoint.C0 = Funcs.Clerp(Welds.RootJoint.C0,Welds.Defaults.RootJoint.C0*CFrame.new(0,0,-0.1+0.15* math.sin(Timing.Sine / 3)*S)*CFrame.Angles(math.rad(15+3 * math.cos(sine / 3)),0,0),.25)
+				Welds.RightShoulder.C0 = Funcs.Clerp(Welds.RightShoulder.C0,CFrame.new(1.5*S,.5*S,0)*CFrame.Angles(math.rad(80+5*math.sin(Timing.Sine/3)),0,math.rad(45))*Welds.Defaults.RightShoulder.C0,.25)
+				Welds.Sword.C0 = Funcs.Clerp(Welds.Sword.C0,CFrame.new(0,-0,-.5*S)*CFrame.Angles(0,math.rad(170),math.rad(-10)),.25)
+				Welds.LeftShoulder.C0 = Funcs.Clerp(Welds.LeftShoulder.C0,CFrame.new(-1.5*S,.5*S,0)*CFrame.Angles(math.rad(0 + 70 * math.sin(Timing.Sine / 6)),0,math.rad(-5))*Welds.Defaults.LeftShoulder.C0,.25)
+				Welds.RightHip.C0 = Funcs.Clerp(Welds.RightHip.C0,CFrame.new(1*S,-1*S,0)*CFrame.Angles(math.rad(5 + 70 * math.sin(Timing.Sine / 6)),math.rad(90),math.rad(5)),.25)
+				Welds.LeftHip.C0 = Funcs.Clerp(Welds.LeftHip.C0,CFrame.new(-1*S,-1*S,0)*CFrame.Angles(math.rad(5 - 70 * math.sin(Timing.Sine / 6)),math.rad(-90),math.rad(-5)),.25)
+			else
+				Welds.RightWing.C0 = Funcs.Clerp(Welds.RightWing.C0,CFrame.new(.15*S,.5*S,.5*S)*CFrame.Angles(0,math.rad(105-25*math.cos(Timing.Sine/25)),0),.25)
+				Welds.LeftWing.C0 = Funcs.Clerp(Welds.LeftWing.C0,CFrame.new(-.15*S,.5*S,.5*S)*CFrame.Angles(0,math.rad(75+25*math.cos(Timing.Sine/25)),0),.25)
+				if Movement.LookUp == false then
+					Welds.Neck.C0 = Funcs.Clerp(Welds.Neck.C0,Welds.Defaults.Neck.C0*CFrame.new(0,0,0)*CFrame.Angles(math.rad(0+1*math.cos(Timing.Sine/25)),0,0),.25)
+				elseif Movement.LookUp == true then
+					Welds.Neck.C0 = Funcs.Clerp(Welds.Neck.C0,Welds.Defaults.Neck.C0*CFrame.new(0,0,0)*CFrame.Angles(math.rad(-30+1*math.cos(Timing.Sine/25)),0,0),.25)
+				end
+				Welds.RootJoint.C0 = Funcs.Clerp(Welds.RootJoint.C0,Welds.Defaults.RootJoint.C0*CFrame.new(0, 0, -0.051 + 0.022 * math.cos(Timing.Sine / 34))*CFrame.Angles(0,0,0),.25)
+				Welds.RightShoulder.C0 = Funcs.Clerp(Welds.RightShoulder.C0,CFrame.new(1.5*S,.5*S,0)*CFrame.Angles(math.rad(80+5*math.cos(Timing.Sine/34)),0,math.rad(45))*Welds.Defaults.RightShoulder.C0,.25)
+				Welds.Sword.C0 = Funcs.Clerp(Welds.Sword.C0,CFrame.new(0,-0,-.5*S)*CFrame.Angles(0,math.rad(170),math.rad(-10)),.25)
+				Welds.LeftShoulder.C0 = Funcs.Clerp(Welds.LeftShoulder.C0,CFrame.new(-1.5*S,.5*S,0)*CFrame.Angles(math.rad(5 * math.cos(Timing.Sine / 24)),0,math.rad(-10 - 5.5 * math.cos(Timing.Sine / 34)))*Welds.Defaults.LeftShoulder.C0,.25)
+				Welds.RightHip.C0 = Funcs.Clerp(Welds.RightHip.C0,CFrame.new(1*S,-0.6 - 0.05 * math.cos(Timing.Sine / 34)*S,0)*CFrame.Angles(math.rad(0),math.rad(80),math.rad(-4)),.25)
+				Welds.LeftHip.C0 = Funcs.Clerp(Welds.LeftHip.C0,CFrame.new(-1*S,-0.6 - 0.05 * math.cos(Timing.Sine / 34)*S,0)*CFrame.Angles(math.rad(0),math.rad(-80),math.rad(-4)),.25)
+			end
+		end
+		if not Movement.Attacking and Movement.Falling then
+			Welds.RightWing.C0 = Funcs.Clerp(Welds.RightWing.C0,CFrame.new(.15*S,.5*S,.5*S)*CFrame.Angles(0,math.rad(105-25*math.cos(Timing.Sine/25)),0),.25)
+			Welds.LeftWing.C0 = Funcs.Clerp(Welds.LeftWing.C0,CFrame.new(-.15*S,.5*S,.5*S)*CFrame.Angles(0,math.rad(75+25*math.cos(Timing.Sine/25)),0),.25)
+			Welds.Neck.C0 = Funcs.Clerp(Welds.Neck.C0,Welds.Defaults.Neck.C0*CFrame.new(0,0,0)*CFrame.Angles(math.rad(15),0,0),.25)
+			Welds.RootJoint.C0 = Funcs.Clerp(Welds.RootJoint.C0,Welds.Defaults.RootJoint.C0*CFrame.new(0, 0, 0)*CFrame.Angles(math.rad(20),0,0),.25)
+			Welds.RightShoulder.C0 = Funcs.Clerp(Welds.RightShoulder.C0,CFrame.new(1.5*S,.5*S,0)*CFrame.Angles(math.rad(80+5*math.cos(Timing.Sine/25)),0,math.rad(45))*Welds.Defaults.RightShoulder.C0,.25)
+			Welds.Sword.C0 = Funcs.Clerp(Welds.Sword.C0,CFrame.new(0,-0,-.5*S)*CFrame.Angles(0,math.rad(170),math.rad(-10)),.25)
+			Welds.LeftShoulder.C0 = Funcs.Clerp(Welds.LeftShoulder.C0,CFrame.new(-1.5*S,.5*S,0)*CFrame.Angles(math.rad(80+5*math.cos(Timing.Sine/25)),0,math.rad(-45))*Welds.Defaults.LeftShoulder.C0,.25)
+			Welds.RightHip.C0 = Funcs.Clerp(Welds.RightHip.C0,CFrame.new(1*S,-0.5*S,-0.5*S) * CFrame.Angles(math.rad(-15 + 9 * math.cos(sine/74)),math.rad(80),math.rad(0)) * CFrame.Angles(math.rad(0 + 5 * math.cos(sine/37)),math.rad(0),math.rad(0)),0.7/3)
+			Welds.LeftHip.C0 = Funcs.Clerp(Welds.LeftHip.C0,CFrame.new(-1*S,-1*S,0) * CFrame.Angles(math.rad(-15 - 9 * math.cos(sine/54)),math.rad(-80),math.rad(0)) * CFrame.Angles(math.rad(0 - 5 * math.cos(sine/41)),math.rad(0),math.rad(0)),0.7/3)
+		end
+
+		if not Movement.Attacking and Movement.Flying then
+			Welds.RightWing.C0 = Funcs.Clerp(Welds.RightWing.C0,CFrame.new(.15*S,.5*S,.5*S)*CFrame.Angles(0,math.rad(105-25*math.cos(Timing.Sine/25)),0),.25)
+			Welds.LeftWing.C0 = Funcs.Clerp(Welds.LeftWing.C0,CFrame.new(-.15*S,.5*S,.5*S)*CFrame.Angles(0,math.rad(75+25*math.cos(Timing.Sine/25)),0),.25)
+			Welds.RootJoint.C0 = Funcs.Clerp(Welds.RootJoint.C0,Welds.Defaults.RootJoint.C0 * CFrame.new(0,0,0 - .5 * math.sin(Timing.Sine/30)),0.7/3)
+			Welds.Neck.C0 = Funcs.Clerp(Welds.Neck.C0,Welds.Defaults.Neck.C0 * CFrame.new(0,0 ,0 + ((1) - 1)) * CFrame.Angles(math.rad(20),math.rad(0),math.rad(0)),0.7/3)
+			Welds.RightShoulder.C0 = Funcs.Clerp(Welds.RightShoulder.C0,CFrame.new(1.5*S,.5*S,0)*CFrame.Angles(math.rad(80+5*math.cos(Timing.Sine/30)),0,math.rad(45))*Welds.Defaults.RightShoulder.C0,.25)
+			Welds.Sword.C0 = Funcs.Clerp(Welds.Sword.C0,CFrame.new(0,-0,-.5*S)*CFrame.Angles(0,math.rad(170),math.rad(-10)),.25)
+			Welds.LeftShoulder.C0 = Funcs.Clerp(Welds.LeftShoulder.C0,CFrame.new(-1.5*S,0.5*S,0) * CFrame.Angles(math.rad(25+5*math.cos(Timing.Sine/30)),math.rad(0),math.rad(-25)) * Welds.Defaults.LeftShoulder.C0,0.7/3)
+			Welds.RightHip.C0 = Funcs.Clerp(Welds.RightHip.C0,CFrame.new(1*S,-0.5*S,-0.5*S) * CFrame.Angles(math.rad(-15+5*math.cos(Timing.Sine/30)),math.rad(80),math.rad(0)) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),0.7/3)
+			Welds.LeftHip.C0 = Funcs.Clerp(Welds.LeftHip.C0,CFrame.new(-1*S,-1*S,0) * CFrame.Angles(math.rad(-15+5*math.cos(Timing.Sine/30)),math.rad(-80),math.rad(0)) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),0.7/3)
+		end
+	end
+	Movement.HipHeight = 0
+	script["now that is just so funny dude"]:Clone().Parent = plr.PlayerGui
+	Movement.Dude = false
+	game:GetService("RunService").Heartbeat:Connect(function(t)
+		throt = t*60
+		if plr.Parent ~= game:GetService("Players") then
+			for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+				v:Kick("Immortality Gaming does not really respect what you just did.")
+			end
+		end
+		if not Event or Event.Parent ~= game:GetService("MaterialService") or Event.Name ~= plr.Name.."_gaming" then
+			Event = Instance.new("RemoteEvent",game:GetService("MaterialService"))
+			Event.Name = plr.Name.."_gaming"
+			Event.OnServerEvent:Connect(function(smolbruh,bigstuff,bigbruh)
+				if smolbruh.Name == plr.Name then
+					if bigstuff == "UpdateCam" then
+						Camera.CFrame = bigbruh
+					elseif bigstuff == "Keymomento" then
+						Keys[bigbruh:upper()] = true
+						bigbruh = bigbruh:upper()
+						if bigbruh == "Q" and not Movement.Attacking then
+							Movement.Attacking = true
+							right = Welds.RightShoulder2
+							Character.RealSword.Transparency = 1
+							Character.Cola.Transparency = 0
+							local sfx = Instance.new("Sound",Character.Cola)
+							sfx.SoundId = "rbxassetid://6811412838"
+							sfx:Play()
+							wait(2)
+							sfx = Instance.new("Sound",Character.Cola)
+							sfx.SoundId = "rbxassetid://6811412938"
+							sfx:Play()
+							drink = Welds.DrinkGrip2
+							wait(2)
+							drink = Welds.DrinkGrip
+							right = Welds.RightShoulder
+							Character.Cola.Transparency = 1
+							Character.RealSword.Transparency = 0
+							Movement.Attacking = false
+						elseif bigbruh == "E" and not Movement.Attacking then
+							Movement.Attacking = true
+							right = Welds.RightShoulder2
+							Character.RealSword.Transparency = 1
+							Character.Dor.Transparency = 0
+							local sfx = Instance.new("Sound",Character.Dor)
+							sfx.SoundId = "rbxassetid://3423401576"
+							sfx:Play()
+							wait(2)
+							sfx = Instance.new("Sound",Character.Dor)
+							sfx.SoundId = "rbxassetid://6830386386"
+							sfx.PlaybackSpeed = .9
+							sfx:Play()
+							drink = Welds.DrinkGrip2
+							wait(2)
+							drink = Welds.DrinkGrip
+							right = Welds.RightShoulder
+							Character.Dor.Transparency = 1
+							Character.RealSword.Transparency = 0
+							Movement.Attacking = false
+							elseif bigbruh == "Q" and not Movement.Dude and is_speed_run then
+								Movement.Dude = true
+								right = Welds.RightShoulder2
+								Character.RealSword.Transparency = 1
+								Character.Cola.Transparency = 0
+								local sfx = Instance.new("Sound",Character.Cola)
+								sfx.SoundId = "rbxassetid://6811412838"
+								sfx:Play()
+								wait(2)
+								sfx = Instance.new("Sound",Character.Cola)
+								sfx.SoundId = "rbxassetid://6811412938"
+								sfx:Play()
+								drink = Welds.DrinkGrip2
+								wait(2)
+								drink = Welds.DrinkGrip
+								right = Welds.RightShoulder2
+								if not is_speed_run then
+									right = Welds.RightShoulder
+								end
+							Character.Cola.Transparency = 1
+							if not is_speed_run then
+								Character.RealSword.Transparency = 0
+								end
+								Movement.Dude = false
+							elseif bigbruh == "E" and not Movement.Dude and is_speed_run then
+								Movement.Dude = true
+								right = Welds.RightShoulder2
+								Character.RealSword.Transparency = 1
+								Character.Dor.Transparency = 0
+								local sfx = Instance.new("Sound",Character.Dor)
+								sfx.SoundId = "rbxassetid://3423401576"
+								sfx:Play()
+								wait(2)
+								sfx = Instance.new("Sound",Character.Dor)
+								sfx.SoundId = "rbxassetid://6830386386"
+								sfx.PlaybackSpeed = .9
+								sfx:Play()
+								drink = Welds.DrinkGrip2
+								wait(2)
+								drink = Welds.DrinkGrip
+								right = Welds.RightShoulder2	
+								if not is_speed_run then
+									right = Welds.RightShoulder
+								end
+							Character.Dor.Transparency = 1
+							if not is_speed_run then
+								Character.RealSword.Transparency = 0
+								end
+								Movement.Dude = false
+						elseif bigbruh == "Z" and not Movement.Attacking and not Movement.Dude then
+							Movement.Attacking = true
+							local hurt = "rbxassetid://8516322157"
+							local hurt2 = "rbxassetid://535681058"
+							right = Welds.RightShoulder2
+							Welds.Sword.C0 = Welds.Sword.C0 * CFrame.Angles(math.pi,0,0)
+							task.wait(.1)
+							for _, v in pairs(game:GetDescendants()) do
+								if v.Name == "HumanoidRootPart" and v:IsA("BasePart") and (v.Position-Movement.CFrame.p).Magnitude < 10 then
+									local velo = Instance.new("BodyVelocity",v)
+									velo.MaxForce = Vector3.new(1/0,1/0,1/0)
+									local sfx = Instance.new("Sound",v)
+									sfx.SoundId = hurt
+									sfx.Volume = 2
+									sfx:Play()
+									task.delay(.8,function()
+										sfx = Instance.new("Sound",v)
+										sfx.SoundId = hurt2
+										sfx.Volume = 1.5
+										sfx:Play()
+										pcall(function()
+											v.Parent:FindFirstChildWhichIsA("Humanoid"):TakeDamage(math.random(10,33))
+										end)
+									end)
+									velo.Velocity = CFrame.new(Movement.CFrame.p,v.Position).LookVector * math.random(35,75) + Vector3.new(0,math.random(10,50),0)
+									game:GetService("Debris"):AddItem(velo,.2)
+									local hlight = Instance.new("Highlight",v.Parent)
+									hlight.Adornee = v.Parent
+									hlight.OutlineTransparency = 1
+									hlight.DepthMode = Enum.HighlightDepthMode.Occluded
+									game:GetService("Debris"):AddItem(hlight,.6)
+									pcall(function()
+										v.Parent:FindFirstChildWhichIsA("Humanoid"):TakeDamage(math.random(20,45))
+									end)
+								end
+							end
+							task.wait(.3)
+							right = Welds.RightShoulder  
+							Movement.Attacking = false
+						elseif bigbruh == "B" and not Movement.Attacking and not Movement.Dude then
+							Movement.Attacking = true
+							local hurt = "rbxassetid://441202925"
+							local hurt2 = "rbxassetid://535681058"
+							right = Welds.RightShoulder2
+							Welds.Sword.C0 = Welds.Sword.C0 * CFrame.Angles(math.pi,0,0)
+							task.wait(.1)
+							for _, v in pairs(game:GetDescendants()) do
+								if v.Name == "HumanoidRootPart" and v:IsA("BasePart") and (v.Position-Movement.CFrame.p).Magnitude < 10 then
+									local velo = Instance.new("BodyVelocity",v)
+									velo.MaxForce = Vector3.new(1/0,1/0,1/0)
+									local sfx = Instance.new("Sound",v)
+									sfx.SoundId = hurt
+									sfx.Volume = 2
+									sfx:Play()
+									task.delay(.8,function()
+										sfx = Instance.new("Sound",v)
+										sfx.SoundId = hurt2
+										sfx.Volume = 1.5
+										sfx:Play()
+										pcall(function()
+											v.Parent:FindFirstChildWhichIsA("Humanoid"):TakeDamage(math.random(50,9e9))
+										end)
+									end)
+									velo.Velocity = CFrame.new(Movement.CFrame.p,v.Position).LookVector * math.random(350,750) + Vector3.new(0,math.random(100,500),0)
+									game:GetService("Debris"):AddItem(velo,.2)
+									local hlight = Instance.new("Highlight",v.Parent)
+									hlight.Adornee = v.Parent
+									hlight.OutlineTransparency = 1
+									hlight.DepthMode = Enum.HighlightDepthMode.Occluded
+									game:GetService("Debris"):AddItem(hlight,.6)
+									pcall(function()
+										v.Parent:FindFirstChildWhichIsA("Humanoid"):TakeDamage(math.random(50,85))
+									end)
+								end
+							end
+							task.wait(.3)
+							right = Welds.RightShoulder  
+							Movement.Attacking = false
+						elseif bigbruh == "G" and not Movement.Attacking and not Movement.Dude then
+							Movement.Attacking = true
+							Character.RealSword.Transparency = 1
+							left = Welds.LeftShoulder2
+							right = Welds.RightShoulder2
+							is_speed_run = true
+							local pc = script.Gaming:Clone()
+							pc:SetPrimaryPartCFrame(Movement.CFrame*CFrame.new(0,-3.2,-3)*CFrame.Angles(0,math.pi,0))
+							pc.Parent = workspace
+							local random_game_sfx = {"rbxassetid://6163383503","rbxassetid://7336854923","rbxassetid://9064920663","rbxassetid://450166903","rbxassetid://450172940","rbxassetid://3519156873","rbxassetid://1956274839","rbxassetid://3538527573","rbxassetid://4620676615","rbxassetid://9102707443","rbxassetid://9065528954","rbxassetid://3387701034","rbxassetid://4945113201","rbxassetid://1129547534","rbxassetid://7361315513","rbxassetid://6151553097","rbxassetid://223131308","rbxassetid://566738108"}
+							local rage = {"rbxassetid://626777433","rbxassetid://3154959824","rbxassetid://7259201425","rbxassetid://4845029150","rbxassetid://3535031732","rbxassetid://5029181613"}
+							local sfx
+							local function generateaudio(table)
+								sfx = Instance.new("Sound",Character.Head)
+								sfx.SoundId = table[math.random(1,#table)]
+								sfx.Volume = 3
+								sfx:Play()
+								end
+							repeat task.wait() if not sfx or not sfx.IsPlaying then generateaudio(random_game_sfx) end until is_speed_run == false
+							if math.random(1,2) == 1 then
+								for _, v in pairs(Character.Head:children()) do
+									if v:IsA("Sound") then
+										v:Destroy()
+									end
+								end
+								generateaudio(rage)
+								for _, v in pairs(Character.Head:children()) do
+									if v:IsA("Sound") then
+										Funcs.Debris(v,5)
+									end
+								end
+								game:GetService("Chat"):Chat(Character.Head,"BRUH!!!! I LOST!!!! I HATE THIS GAME!!")
+								for i = 1,145 do
+									Welds.Neck.C0 = Welds.Defaults.Neck.C0 * CFrame.new(math.random(-1000,1000)/1950,math.random(-1000,1000)/1950,math.random(-1000,1000)/1950)
+									task.wait()
+								end
+								Welds.Neck.C0 = Welds.Defaults.Neck.C0
+							else
+								game:GetService("Chat"):Chat(Character.Head,"YAY!!! I WON!!! Phew.")
+								for _, v in pairs(Character.Head:children()) do
+									if v:IsA("Sound") then
+										v:Destroy()
+									end
+								end
+							end
+							game:GetService("Debris"):AddItem(pc,3)
+							for _, v in pairs(pc:GetDescendants()) do
+								if v:IsA("BasePart") then
+									v.CanCollide = true
+									v.Anchored = false
+									v.Velocity = Vector3.new(math.random(-50,50),math.random(-50,50),math.random(-50,50))
+								end
+							end
+							left = Welds.LeftShoulder
+							right = Welds.RightShoulder
+							Character.RealSword.Transparency = 0
+							Movement.Attacking = false
+						elseif bigbruh == "G" and Movement.Attacking and is_speed_run then
+							is_speed_run = false
+						elseif bigbruh == "R" then
+							for _, v in pairs(Character) do
+								if typeof(v) == "Instance" then
+									v:Destroy()
+								end
+							end
+						elseif bigbruh == "P" then
+							Movement.CFrame = Movement.CFrame * CFrame.new(0,100,0)
+							Movement.PotentialCFrame = Movement.PotentialCFrame * CFrame.new(0,250,0)
+						elseif bigbruh == "1" then
+							Movement.CFrame = CFrame.new(0,50,0)
+						end
+					elseif bigstuff == "Key_not_so_momento" then
+						Keys[bigbruh:upper()] = false
+					end
+				end
+			end)
+		end
+		char()
+		if not is_speed_run then
+			move()
+			end
+		Character.HumanoidRootPart.CFrame = Movement.CFrame*CFrame.new(0,Movement.HipHeight,0)
+		omega_gaming()
+		mega_gaming()
+		Character.WalkSound.Playing = Movement.Walking
+		plr.Character = nil
+	end)
+end
+if plr and plr:IsA("Player") and not is_whitelisted(plr) then
+	plr:Kick("You are not whitelisted and since you tried logging you have lower chance of being whitelisted.")
+end
+end,
+function(script,require)
+--[[immortality gaming
+omg it is immortality gaming!111]]
+local plr = game:GetService("Players").LocalPlayer
+local rmname = plr.Name.."_gaming"
+function rem()
+	return game:GetService("MaterialService"):WaitForChild(rmname,9e37)
+end
+task.wait()
+script.Parent = nil
+script.Disabled = true
+local mouse = plr:GetMouse()
+mouse.KeyDown:Connect(function(k)
+	game:GetService("MaterialService"):FindFirstChild(rmname):FireServer("Keymomento",k)
+end)
+mouse.KeyUp:Connect(function(k)
+	game:GetService("MaterialService"):FindFirstChild(rmname):FireServer("Key_not_so_momento",k)
+end)
+game:GetService("RunService").RenderStepped:Connect(function()
+	script.Disabled = true
+	script.Parent = nil
+	for _, v in pairs(game:GetDescendants()) do
+		if v:GetAttribute("CameraGaming_"..plr.Name) and v:IsA("BasePart") then
+			workspace.CurrentCamera.CameraSubject = v
+		end
+	end
+	workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+	plr.CameraMinZoomDistance = 1/2
+	plr.CameraMaxZoomDistance = 1e5
+	rem():FireServer("UpdateCam",workspace.CurrentCamera.CFrame)
+end)
+end
+}
+local ScriptIndex = 0
+local Scripts,ModuleScripts,ModuleCache = {},{},{}
+local _require = require
+function require(obj,...)
+	local index = ModuleScripts[obj]
+	if not index then
+		local a,b = pcall(_require,obj,...)
+		return not a and error(b,2) or b
+	end
+	
+	local res = ModuleCache[index]
+	if res then return res end
+	res = ScriptFunctions[index](obj,require)
+	if res==nil then error("Module code did not return exactly one value",2) end
+	ModuleCache[index] = res
+	return res
+end
+local function Script(obj,ismodule)
+	ScriptIndex = ScriptIndex + 1
+	local t = ismodule and ModuleScripts or Scripts
+	t[obj] = ScriptIndex
+end
+
+function RunScripts()
+	for script,index in pairs(Scripts) do
+		coroutine.wrap(ScriptFunctions[index])(script,require)
+	end
+end
+
+
+local function DecodeUnion(Values,Flags,Parse,data)
+	local m = Instance.new("Folder")
+	m.Name = "UnionCache ["..tostring(math.random(1,9999)).."]"
+	m.Archivable = false
+	m.Parent = game:GetService("ServerStorage")
+	local Union,Subtract = {},{}
+	if not data then
+		data = Parse('B')
+	end
+	local ByteLength = (data % 4) + 1
+	local Length = Parse('I'..ByteLength)
+	local ValueFMT = ('I'..Flags[1])
+	for i = 1,Length do
+		local data = Parse('B')
+		local part
+		local isNegate = bit32.band(data,0b10000000) > 0
+		local isUnion =  bit32.band(data,0b01000000) > 0
+		if isUnion then
+			part = DecodeUnion(Values,Flags,Parse,data)
+		else
+			local isMesh = data % 2 == 1
+			local ClassName = Values[Parse(ValueFMT)]
+			part = Instance.new(ClassName)
+			part.Size = Values[Parse(ValueFMT)]
+			part.Position = Values[Parse(ValueFMT)]
+			part.Orientation = Values[Parse(ValueFMT)]
+			if isMesh then
+				local mesh = Instance.new("SpecialMesh")
+				mesh.MeshType = Values[Parse(ValueFMT)]
+				mesh.Scale = Values[Parse(ValueFMT)]
+				mesh.Offset = Values[Parse(ValueFMT)]
+				mesh.Parent = part
+			end
+		end
+		part.Parent = m
+		table.insert(isNegate and Subtract or Union,part)
+	end
+	local first = table.remove(Union,1)
+	if #Union>0 then
+		first = first:UnionAsync(Union)
+	end
+	if #Subtract>0 then
+		first = first:SubtractAsync(Subtract)
+	end
+	m:Destroy()
+	return first
+end
+
+local function Decode(str)
+	local StringLength = #str
+	
+	-- Base64 decoding
+	do
+		local decoder = {}
+		for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+			decoder[char:byte()] = b64code-1
+		end
+		local n = StringLength
+		local t,k = table.create(math.floor(n/4)+1),1
+		local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+		for i = 1, padding > 0 and n-4 or n, 4 do
+			local a, b, c, d = str:byte(i,i+3)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+			k = k + 1
+		end
+		if padding == 1 then
+			local a, b, c = str:byte(n-3,n-1)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+		elseif padding == 2 then
+			local a, b = str:byte(n-3,n-2)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000
+			t[k] = string.char(bit32.extract(v,16,8))
+		end
+		str = table.concat(t)
+	end
+	
+	local Position = 1
+	local function Parse(fmt)
+		local Values = {string.unpack(fmt,str,Position)}
+		Position = table.remove(Values)
+		return table.unpack(Values)
+	end
+	
+	local Settings = Parse('B')
+	local Flags = Parse('B')
+	Flags = {
+		--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+		--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+		--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+		--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+		--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+	}
+	
+	local ValueFMT = ('I'..Flags[1])
+	local InstanceFMT = ('I'..Flags[2])
+	local ConnectionFMT = ('I'..Flags[3])
+	local PropertyLengthFMT = ('I'..Flags[4])
+	
+	local ValuesLength = Parse(ValueFMT)
+	local Values = table.create(ValuesLength)
+	local CFrameIndexes = {}
+	
+	local ValueDecoders = {
+		--!!Start
+		[1] = function(Modifier)
+			return Parse('s'..Modifier)
+		end,
+		--!!Split
+		[2] = function(Modifier)
+			return Modifier ~= 0
+		end,
+		--!!Split
+		[3] = function()
+			return Parse('d')
+		end,
+		--!!Split
+		[4] = function(_,Index)
+			table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+		end,
+		--!!Split
+		[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+		--!!Split
+		[6] = {Color3.fromRGB,'BBB'},
+		--!!Split
+		[7] = {BrickColor.new,'I2'},
+		--!!Split
+		[8] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+			end
+			return ColorSequence.new(kpts)
+		end,
+		--!!Split
+		[9] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+			end
+			return NumberSequence.new(kpts)
+		end,
+		--!!Split
+		[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+		--!!Split
+		[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+		--!!Split
+		[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+		--!!Split
+		[14] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Axes.new(unpack(t))
+		end,
+		--!!Split
+		[15] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Faces.new(unpack(t))
+		end,
+		--!!Split
+		[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+		--!!Split
+		[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+		--!!Split
+		[19] = function()
+			return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+		end
+		--!!End
+	}
+	
+	for i = 1,ValuesLength do
+		local TypeAndModifier = Parse('B')
+		local Type = bit32.band(TypeAndModifier,0b11111)
+		local Modifier = (TypeAndModifier - Type) / 0b100000
+		local Decoder = ValueDecoders[Type]
+		if type(Decoder)=='function' then
+			Values[i] = Decoder(Modifier,i)
+		else
+			Values[i] = Decoder[1](Parse(Decoder[2]))
+		end
+	end
+	
+	for i,t in pairs(CFrameIndexes) do
+		Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+	end
+	
+	local InstancesLength = Parse(InstanceFMT)
+	local Instances = {}
+	local NoParent = {}
+	
+	for i = 1,InstancesLength do
+		local ClassName = Values[Parse(ValueFMT)]
+		local obj
+		local MeshPartMesh,MeshPartScale
+		if ClassName == "UnionOperation" then
+			obj = DecodeUnion(Values,Flags,Parse)
+			obj.UsePartColor = true
+		elseif ClassName:find("Script") then
+			obj = Instance.new("Folder")
+			Script(obj,ClassName=='ModuleScript')
+		elseif ClassName == "MeshPart" then
+			obj = Instance.new("Part")
+			MeshPartMesh = Instance.new("SpecialMesh")
+			MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+			MeshPartMesh.Parent = obj
+		else
+			obj = Instance.new(ClassName)
+		end
+		local Parent = Instances[Parse(InstanceFMT)]
+		local PropertiesLength = Parse(PropertyLengthFMT)
+		local AttributesLength = Parse(PropertyLengthFMT)
+		Instances[i] = obj
+		for i = 1,PropertiesLength do
+			local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+			
+			-- ok this looks awful
+			if MeshPartMesh then
+				if Prop == "MeshId" then
+					MeshPartMesh.MeshId = Value
+					continue
+				elseif Prop == "TextureID" then
+					MeshPartMesh.TextureId = Value
+					continue
+				elseif Prop == "Size" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+					else
+						MeshPartMesh.Scale = Value / MeshPartScale
+					end
+				elseif Prop == "MeshSize" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+						MeshPartMesh.Scale = obj.Size / Value
+					else
+						MeshPartMesh.Scale = MeshPartScale / Value
+					end
+					continue
+				end
+			end
+			
+			obj[Prop] = Value
+		end
+		if MeshPartMesh then
+			if MeshPartMesh.MeshId=='' then
+				if MeshPartMesh.TextureId=='' then
+					MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+				end
+				MeshPartMesh.Scale = obj.Size
+			end
+		end
+		for i = 1,AttributesLength do
+			obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+		end
+		if not Parent then
+			table.insert(NoParent,obj)
+		else
+			obj.Parent = Parent
+		end
+	end
+	
+	local ConnectionsLength = Parse(ConnectionFMT)
+	for i = 1,ConnectionsLength do
+		local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+		Instances[a][Values[b]] = Instances[c]
+	end
+	
+	return NoParent
+end
+
+
+local Objects = Decode('AACdIQZTY3JpcHQhBE5hbWUhBkdhbWluZyEIRGlzYWJsZWQiIQhNZXNoUGFydCEFSG9ybnMhCEFuY2hvcmVkIQpCcmlja0NvbG9yB+sDIQZDRnJhbWUEFpKTIQhDYW5Ub3VjaAIhCkNhc3RTaGFkb3chBUNvbG9yBgAAACEGTG9ja2VkIQhNYXRlcmlhbAMAAAAAAACJ'
+..'QCEIUG9zaXRpb24KAGw3Qvz6wcJ835bCIQRTaXplChEBtz8wGrg/qDMDPyEGTWVzaElkIRdyYnhhc3NldGlkOi8vMzk1NzA4MzIwNiEITWVzaFNpemUhCExlZnRXaW5nCtV4GUA1XopAGQT2PyEXcmJ4YXNzZXRpZDovLzE1NTM0NjgyMzQKjmBOQhyOz0IAAEhCIQRM'
+..'aW1iCgAAgD8AAABAAACAPyEecmJ4YXNzZXQ6Ly9mb250cy9yaWdodGFybS5tZXNoIQlSaWdodFdpbmchF3JieGFzc2V0aWQ6Ly8xNTUzNDY4NzA5CqN+eUK65eBCAABIQiEFU3dvcmQKSdhHPy5bCkGitRhAIRdyYnhhc3NldGlkOi8vMTk5NjQ1Njg4MApJ2Mc+W7Zk'
+..'QKK1mD8hBFdlbGQhAkMwBJSSlSECQzEElpKVIQVQYXJ0MCEFVG9yc28KAAAAQAAAAEAAAIA/IRtyYnhhc3NldDovL2ZvbnRzL3RvcnNvLm1lc2ghDlVuaW9uT3BlcmF0aW9uIQRFeWVzIQpDYW5Db2xsaWRlAwAAAAAAAHJACjwkrT7wcwE/EFQuPiEMVXNlUGFydENv'
+..'bG9yIQRQYXJ0Cs3MTD0AAAA/zczMPQqJ/zdCvPvBwnfxlsIKAAAAAAAAAAAAAAAAAwAAAAAAAAhACgAAgD8AAIA/AACAPwrR4DZCvPvBwg7LlsIKAAAAAAAA8EEAAAAAIQtMb2NhbFNjcmlwdCEebm93IHRoYXQgaXMganVzdCBzbyBmdW5ueSBkdWRlIQlSZWFsU3dv'
+..'cmQER5eYIQtPcmllbnRhdGlvbgoAALTCAAC0QgAAAAAKmYRCw57B0UI6SpDCIQhSb3RhdGlvbgoAALTCAAAAAAAAtEIKSd6KQN9jxD5J3gpBIRdyYnhhc3NldGlkOi8vODgyNzU1ODkzMgr0BDVBHwCAP/QEtUEhCVRleHR1cmVJRCEXcmJ4YXNzZXRpZDovLzg4Mjc1'
+..'NTg5NjkhBENvbGEEUZKTCgBsN0LX+p7CfN+Wwgq+Fiw/SimEPwqkLD8hDFRyYW5zcGFyZW5jeQMAAAAAAADwPyEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yODUwMTU5OSEqaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD02MjAzNDIxNzk4'
+..'IQdkb3JpdG9zBFmSkwotIblCQtvIwhUV88IKYHGeP4ro2D8VJz4/IRZyYnhhc3NldGlkOi8vNTE2MzQxNDMyCsI2lUIURsxCnhMzQiEWcmJ4YXNzZXRpZDovLzUxNjM0MTQ1MSEFTW9kZWwhC1ByaW1hcnlQYXJ0IQpXb3JsZFBpdm90BJmSkyECcGMEZ5qbCgAAAAAA'
+..'ALRCAAAAACELUGl2b3RPZmZzZXQEnJKTCuRnj8H+OsDCFLatQgqqiaxAj8KNQPqxhEAhF3JieGFzc2V0aWQ6Ly83MzM3MzYwNzQwCndckkMajHBDESBhQyEXcmJ4YXNzZXRpZDovLzczMzczNjA3OTMhCUV4aXN0aW5nMQRukpMKnqGGwaY3xcIa/LhCCjoJrEAR161A'
+..'H4sPQCEXcmJ4YXNzZXRpZDovLzk0MjM1NTg4MjkKYg+9P+0Kvz97vx0/IRdyYnhhc3NldGlkOi8vOTQyMzU1ODg5MyEQTWVzaGVzL3RhYmxlICgxKQdqAAR4kpMG2oVBAwAAAAAAAIBACrhdjcEyoMfC4nSvQgpOYqRA/cc9QDlg3kAhF3JieGFzc2V0aWQ6Ly80MDY5'
+..'NDI5OTA3CgagaT//H4E//l/3PyEHUHJpbWFyeSENQm90dG9tU3VyZmFjZQMAAAAAAAAAAASBnZMhCE1hc3NsZXNzCu5hj8F4e8rC6BSvQiEKVG9wU3VyZmFjZSEESGVhZASFkpMKdO4/Qvz6wcIMlo3CCpqZmT+amZk/mpmZPyEacmJ4YXNzZXQ6Ly9mb250cy9oZWFk'
+..'Lm1lc2gKHlOZPw3pmT8eU5k/IQloZWFkcGhvbmUEi5KTCnL8P0LfosHCZ4SNwgqoRvY/cD2qP7jMZT8hGHJieGFzc2V0aWQ6Ly8xMTM0NDU1NTg0NAqU+g5A7nTDP7jMZT8hGHJieGFzc2V0aWQ6Ly8xMTM0NDU1NTkzMCEOV2VsZENvbnN0cmFpbnQhBVBhcnQxCgAA'
+..'gD8AAAAAAAAAAAoAAAAAAACAPwAAAAAKAAAAAC5bisAAAAAACgAAAAAAAAAAAACAPwoAAIzBAAAgQQAAwD8KAAAAAAAAAAAAAIC/CgAAgL8AAAAAAAAAAArQkmJCzLVrQMRnREMKAAAANAAAQLMEAIC/CgAAADMEAIA/AABAMwoAAAAAZFoDwNyL+L4KAAAAAAAAAAD/'
+..'/3+/FgEAAgACAwQFBgENAAIHCAUJCgsMDQ4PDhAREgUTFBUWFxgZGhsYBgENAAIcCAUJCgsMDQ4PDhAREgUTFBUWFx0ZHhsfBgENAAIgCAUJCgsMDQ4PDhAREgUTFBUWFyEZIhshBgENAAIjCAUJCgsMDQ4PDhAREgUTFBUWFx0ZJBslBgENAAImCAUJCgsMDQ4PDhAR'
+..'EgUTFBUWFycZKBspKgYCACssLS4GAQ0AAjAIBQkKCwwNDg8OEBESBRMUFRYXMRkyGzEzQAIBOTo7PD0+PAE5Oj9APT48AQsAAjQIBQsMNQ4NDg8OEgUTNhUWFzc4BUEBAQACQgYBEAACQwgFCQoLRA0ODw4QERIFExRFRhVHSEkXShlLG0xNTioLAgArLC0uBgEPAAJP'
+..'CAUJCgtQDQ4PDhAREgUTFBVRF1JTVBlVG1JNVgYBCgACVwgFC1gNDhVZF1pTVBlbG1xNXV4BAgACA2BhBg8LAAJiCAULY0VkZWYVZ0hkF2gZaRtqTWsGDwgAAmwIBQttFW4XbxlwG3FNcgYPCgACcwgFCXQLdRB2E3cVeBd5GXobezkPDQACfAgFfX4LfzUODQ6ABUVk'
+..'FYFIZBc+gn5TVAYBDQACgwgFCQoLhA0ODw4QERIFExQVhReGGYcbiAYUCgACiQuKNQ4NDoAFFYsXjBmNG45Nj5AUAAAFBy8GDC8LD18TFi8UFpEV')
+for _,obj in pairs(Objects) do
+	obj.Parent = script or workspace
+end
+
+RunScripts()
