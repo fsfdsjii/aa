@@ -1,0 +1,1204 @@
+local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Debris = game:GetService("Debris")
+local TweenService = game:GetService("TweenService")
+local HttpService = game:GetService("HttpService")
+
+local Player = owner
+local Terrain = Workspace:FindFirstChildWhichIsA("Terrain")
+
+local wait = task.wait
+
+function GenerateString()
+	return HttpService:GenerateGUID(false)
+end
+
+script.Name = GenerateString()
+wait()
+script:Destroy()
+script.Name = GenerateString()
+
+local Client = nil
+
+function GetRoot(c)
+	local r = c:FindFirstChild("HumanoidRootPart") or c:FindFirstChild("Torso") or c:FindFirstChild("UpperTorso") or c:FindFirstChild("LowerTorso") or c:FindFirstChild("Head")
+	if not r or not r:IsA("BasePart") then
+		r = c:FindFirstChildWhichIsA("BasePart",true)
+	end
+	return r
+end
+function GetNonRoot(c)
+	local r = c:FindFirstChild("Torso") or c:FindFirstChild("UpperTorso") or c:FindFirstChild("LowerTorso") or c:FindFirstChild("Head")
+	if not r or not r:IsA("BasePart") then
+		r = c:FindFirstChildWhichIsA("BasePart",true)
+	end
+	return r
+end
+
+local ArrowState = "Equipped"
+
+local Arrow = nil
+local Handle = nil
+local Top = nil
+local Trail = nil
+local EquipWeld = nil
+local BodyPosition = nil
+local BodyGyro = nil
+
+local IgnoreNetwork = false
+local IgnoreNetworkTimer = tick()
+
+local RemoteName = GenerateString()
+local RemoteKey = GenerateString()
+
+local Remote = nil
+local ClientReady = false
+local RemoteEvents = {}
+function are(e) table.insert(RemoteEvents,e) return e end
+function FixRemote()
+	ClientReady = false
+
+	for _,e in ipairs(RemoteEvents) do e:Disconnect() end table.clear(RemoteEvents)
+	if Remote then
+		Debris:AddItem(Remote,0)
+	end
+
+	RunService.Heartbeat:Wait()
+
+	Remote = Instance.new("RemoteEvent")
+	Remote.Name = RemoteName
+
+	are(Remote.DescendantAdded:Connect(FixRemote))
+	are(Remote:GetPropertyChangedSignal("Name"):Connect(FixRemote))
+	are(Remote.AncestryChanged:Connect(function()
+		if Remote.Parent ~= Player then
+			FixRemote()
+		end
+	end))
+
+	are(Remote.OnServerEvent:Connect(function(plr,Key,Action,Data)
+		if plr.UserId == Player.UserId and Key == RemoteKey then
+			if Action == "Ready" then
+				if Client then Client:Destroy() end
+				ClientReady = true
+			elseif Action == "SetState" and Data and typeof(Data) == "string" then
+				if (ArrowState == "Equipped" and Data ~= "Equipped") or (ArrowState ~= "Equipped" and Data == "Equipped") then
+					IgnoreNetwork = true
+					IgnoreNetworkTimer = tick()
+
+					if Arrow then
+						coroutine.wrap(function()
+							for _,d in ipairs(Arrow:GetDescendants()) do
+								if d:IsA("BasePart") then
+									pcall(function()
+										d:SetNetworkOwner(Player)
+									end)
+								end
+							end
+							for i = 1,3 do
+								RunService.Heartbeat:Wait()
+							end
+							for _,d in ipairs(Arrow:GetDescendants()) do
+								if d:IsA("BasePart") then
+									pcall(function()
+										d:SetNetworkOwner(Player)
+									end)
+								end
+							end
+						end)()
+					end
+				end
+				ArrowState = Data
+			elseif Action == "Kill" and Data and typeof(Data) == "Instance" then
+				xpcall(function()
+					Data.Archivable = true
+					local Body = Data:Clone()
+					Debris:AddItem(Body,15)
+					Data:BreakJoints()
+					local Root = nil
+					for _,d in ipairs(Data:GetDescendants()) do
+						if d:IsA("BasePart") then
+							if d.Name == "HumanoidRootPart" then
+								Root = d
+								d.Anchored = false
+								d.CanCollide = false
+								d.Transparency = 1
+								d.Size = Vector3.new(0,0,0)
+
+								pcall(function()
+									Root:SetNetworkOwner(Player)
+								end)
+							else
+								d:Destroy()
+							end
+						elseif d:IsA("Accessory") or d:IsA("Hat") then
+							d:Destroy()
+						end
+					end
+					Body.Parent = Workspace
+					pcall(function()
+						Body:FindFirstChildOfClass("Humanoid").RequiresNeck = false
+						Body:FindFirstChildOfClass("Humanoid").PlatformStand = true
+						Body:FindFirstChildOfClass("Humanoid"):SetAttribute("Dead", true)
+					end)
+					for i,v in ipairs(Body:GetDescendants()) do
+						if v:IsA("Motor6D") and v.Parent.Name ~= "HumanoidRootPart" then
+							local Socket = Instance.new("BallSocketConstraint")
+							local a1 = Instance.new("Attachment")
+							local a2 = Instance.new("Attachment")
+							a1.Parent = v.Part0
+							a2.Parent = v.Part1
+							Socket.Parent = v.Parent
+							Socket.Attachment0 = a1
+							Socket.Attachment1 = a2
+							a1.CFrame = v.C0
+							a2.CFrame = v.C1
+							Socket.LimitsEnabled = true
+							Socket.TwistLimitsEnabled = true
+							v:Destroy()
+						end
+					end
+					local Colliders = {}
+					for i,v in ipairs(Body:GetChildren()) do
+						if v:IsA("BasePart") then
+							if v.Name == "HumanoidRootPart" then
+								pcall(function()
+									local Weld = Instance.new("Weld",Root)
+									Weld.Part0 = v
+									Weld.Part1 = Root
+								end)
+							end
+							pcall(function()
+								v:SetNetworkOwner(Player)
+
+								if not v.CanCollide then
+									local Collider = Instance.new("Part",v)
+									Collider.Transparency = 1
+									Collider.Massless = true
+									Collider.CustomPhysicalProperties = PhysicalProperties.new(0,0,0,0,0)
+									Collider.Size = v.Size
+									Collider.CFrame = v.CFrame
+									Collider:SetNetworkOwner(Player)
+
+									local Weld = Instance.new("Weld",v)
+									Weld.Part0 = v
+									Weld.Part1 = Collider
+
+									table.insert(Colliders,Collider)
+
+									pcall(function()
+										local NCC = Instance.new("NoCollisionConstraint",Collider)
+										NCC.Enabled = true
+										NCC.Part0 = Collider
+										NCC.Part1 = Root
+									end)
+								else
+									pcall(function()
+										local NCC = Instance.new("NoCollisionConstraint",v)
+										NCC.Enabled = true
+										NCC.Part0 = v
+										NCC.Part1 = Root
+									end)
+								end
+
+								v.Anchored = false
+
+								local CF = Handle.CFrame * CFrame.Angles(0,math.rad(-90),0)
+								if Data and typeof(Data) == "CFrame" then
+									CF = Data
+								end
+								v.Velocity = CF.LookVector * 15
+							end)
+						end
+					end
+
+					for _,c in ipairs(Colliders) do
+						for _,d in ipairs(Body:GetDescendants()) do
+							pcall(function()
+								if d:IsA("BasePart") then
+									local NCC = Instance.new("NoCollisionConstraint",c)
+									NCC.Enabled = true
+									NCC.Part0 = c
+									NCC.Part1 = d
+								end
+							end)
+						end
+					end
+				end,function()
+					Data:BreakJoints()
+				end)
+			elseif Action == "Refit" then
+				FixArrow()
+			end
+		end
+	end))
+
+	Remote.Parent = Player
+end
+FixRemote()
+
+function FireClient(...)
+	coroutine.wrap(function(...)
+		repeat RunService.Heartbeat:Wait() until Remote and Remote.Parent == Player and ClientReady
+		pcall(function(...)
+			Remote:FireClient(Player,RemoteKey,...)
+		end,...)
+	end)(...)
+end
+
+local ArrowTemplate = nil
+do
+
+	--Converted with ttyyuu12345's model to script plugin v4 (Edit by ew_001)
+	local inst = {}
+	inst['Model0'] = Instance.new("Model")
+	inst['Part1'] = Instance.new("Part")
+	inst['Part2'] = Instance.new("Part")
+	inst['SpecialMesh3'] = Instance.new("SpecialMesh")
+	inst['ManualWeld4'] = Instance.new("ManualWeld")
+	inst['Model5'] = Instance.new("Model")
+	inst['Model6'] = Instance.new("Model")
+	inst['Part7'] = Instance.new("Part")
+	inst['ManualWeld8'] = Instance.new("ManualWeld")
+	inst['Part9'] = Instance.new("Part")
+	inst['ManualWeld10'] = Instance.new("ManualWeld")
+	inst['Part11'] = Instance.new("Part")
+	inst['ManualWeld12'] = Instance.new("ManualWeld")
+	inst['Part13'] = Instance.new("Part")
+	inst['ManualWeld14'] = Instance.new("ManualWeld")
+	inst['WedgePart15'] = Instance.new("WedgePart")
+	inst['ManualWeld16'] = Instance.new("ManualWeld")
+	inst['WedgePart17'] = Instance.new("WedgePart")
+	inst['ManualWeld18'] = Instance.new("ManualWeld")
+	inst['WedgePart19'] = Instance.new("WedgePart")
+	inst['ManualWeld20'] = Instance.new("ManualWeld")
+	inst['WedgePart21'] = Instance.new("WedgePart")
+	inst['ManualWeld22'] = Instance.new("ManualWeld")
+	inst['Part23'] = Instance.new("Part")
+	inst['SpecialMesh24'] = Instance.new("SpecialMesh")
+	inst['ManualWeld25'] = Instance.new("ManualWeld")
+	inst['Part26'] = Instance.new("Part")
+	inst['ManualWeld27'] = Instance.new("ManualWeld")
+	inst['Model28'] = Instance.new("Model")
+	inst['Part29'] = Instance.new("Part")
+	inst['ManualWeld30'] = Instance.new("ManualWeld")
+	inst['Part31'] = Instance.new("Part")
+	inst['ManualWeld32'] = Instance.new("ManualWeld")
+	inst['Part33'] = Instance.new("Part")
+	inst['ManualWeld34'] = Instance.new("ManualWeld")
+	inst['Attachment35'] = Instance.new("Attachment")
+	inst['Attachment36'] = Instance.new("Attachment")
+	inst['Trail37'] = Instance.new("Trail")
+	inst['Model0'].Name = "Arrow"
+	inst['Model0'].Parent = nil
+	inst['Part1'].Name = "Handle"
+	inst['Part1'].Parent = inst['Model0']
+	inst['Part1'].CFrame = CFrame.new(-58.9350014, 2, -82.7749939, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+	inst['Part1'].Orientation = Vector3.new(0, 90, 0)
+	inst['Part1'].Position = Vector3.new(-58.935001373291, 2, -82.774993896484)
+	inst['Part1'].Rotation = Vector3.new(0, 90, 0)
+	inst['Part1'].Massless = true
+	inst['Part1'].Size = Vector3.new(1.4499999284744, 0.099999964237213, 0.099999904632568)
+	inst['Part1'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['Part1'].CanCollide = false
+	inst['Part1'].Material = Enum.Material.Metal
+	inst['Part1'].TopSurface = Enum.SurfaceType.Smooth
+	inst['Part1'].Shape = Enum.PartType.Cylinder
+	inst['Part2'].Name = "Top"
+	inst['Part2'].Parent = inst['Model0']
+	inst['Part2'].CFrame = CFrame.new(-58.9350014, 1.9999975, -83.8499985, 0, 0, 1, -1, 0, 0, 0, -1, 0)
+	inst['Part2'].Orientation = Vector3.new(0, 90, -90)
+	inst['Part2'].Position = Vector3.new(-58.935001373291, 1.9999974966049, -83.849998474121)
+	inst['Part2'].Rotation = Vector3.new(-90, 90, 0)
+	inst['Part2'].Color = Color3.new(0.47451, 0.470588, 0.478431)
+	inst['Part2'].Massless = true
+	inst['Part2'].Size = Vector3.new(0.099999904632568, 0.099999964237213, 0.099999904632568)
+	inst['Part2'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['Part2'].CanCollide = false
+	inst['Part2'].Material = Enum.Material.Metal
+	inst['Part2'].TopSurface = Enum.SurfaceType.Smooth
+	inst['Part2'].Shape = Enum.PartType.Cylinder
+	inst['SpecialMesh3'].Parent = inst['Part2']
+	inst['SpecialMesh3'].MeshId = "rbxassetid://6588153045"
+	inst['SpecialMesh3'].Scale = Vector3.new(0.075000002980232, 0.30000001192093, 0.075000002980232)
+	inst['SpecialMesh3'].MeshType = Enum.MeshType.FileMesh
+	inst['ManualWeld4'].Name = "Weld"
+	inst['ManualWeld4'].Parent = inst['Part2']
+	inst['ManualWeld4'].C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0, 0, -1, 1, 0, 0)
+	inst['ManualWeld4'].C1 = CFrame.new(1.07500458, -2.50339508e-06, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld4'].Part0 = inst['Part2']
+	inst['ManualWeld4'].Part1 = inst['Part1']
+	inst['ManualWeld4'].part1 = inst['Part1']
+	inst['Model5'].Name = "Decoration"
+	inst['Model5'].Parent = inst['Model0']
+	inst['Model6'].Name = "Parts"
+	inst['Model6'].Parent = inst['Model5']
+	inst['Part7'].Parent = inst['Model6']
+	inst['Part7'].CFrame = CFrame.new(-58.9350014, 2, -81.75, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+	inst['Part7'].Orientation = Vector3.new(0, 90, 0)
+	inst['Part7'].Position = Vector3.new(-58.935001373291, 2, -81.75)
+	inst['Part7'].Rotation = Vector3.new(0, 90, 0)
+	inst['Part7'].Massless = true
+	inst['Part7'].Size = Vector3.new(0.10000000149012, 0.12999999523163, 0.12999999523163)
+	inst['Part7'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['Part7'].CanCollide = false
+	inst['Part7'].Material = Enum.Material.Metal
+	inst['Part7'].TopSurface = Enum.SurfaceType.Smooth
+	inst['Part7'].Shape = Enum.PartType.Cylinder
+	inst['ManualWeld8'].Name = "Weld"
+	inst['ManualWeld8'].Parent = inst['Part7']
+	inst['ManualWeld8'].C0 = CFrame.new(0, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld8'].C1 = CFrame.new(-1.0249939, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld8'].Part0 = inst['Part7']
+	inst['ManualWeld8'].Part1 = inst['Part1']
+	inst['ManualWeld8'].part1 = inst['Part1']
+	inst['Part9'].Parent = inst['Model6']
+	inst['Part9'].CFrame = CFrame.new(-58.9350014, 2, -81.5500031, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+	inst['Part9'].Orientation = Vector3.new(0, 90, 0)
+	inst['Part9'].Position = Vector3.new(-58.935001373291, 2, -81.550003051758)
+	inst['Part9'].Rotation = Vector3.new(0, 90, 0)
+	inst['Part9'].Massless = true
+	inst['Part9'].Size = Vector3.new(0.10000000149012, 0.12999999523163, 0.12999999523163)
+	inst['Part9'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['Part9'].CanCollide = false
+	inst['Part9'].Material = Enum.Material.Metal
+	inst['Part9'].TopSurface = Enum.SurfaceType.Smooth
+	inst['Part9'].Shape = Enum.PartType.Cylinder
+	inst['ManualWeld10'].Name = "Weld"
+	inst['ManualWeld10'].Parent = inst['Part9']
+	inst['ManualWeld10'].C0 = CFrame.new(0, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld10'].C1 = CFrame.new(-1.22499084, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld10'].Part0 = inst['Part9']
+	inst['ManualWeld10'].Part1 = inst['Part1']
+	inst['ManualWeld10'].part1 = inst['Part1']
+	inst['Part11'].Parent = inst['Model6']
+	inst['Part11'].CFrame = CFrame.new(-58.9350014, 2, -81.4000092, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+	inst['Part11'].Orientation = Vector3.new(0, 90, 0)
+	inst['Part11'].Position = Vector3.new(-58.935001373291, 2, -81.400009155273)
+	inst['Part11'].Rotation = Vector3.new(0, 90, 0)
+	inst['Part11'].Massless = true
+	inst['Part11'].Size = Vector3.new(0.10000000149012, 0.12999999523163, 0.12999999523163)
+	inst['Part11'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['Part11'].CanCollide = false
+	inst['Part11'].Material = Enum.Material.Metal
+	inst['Part11'].TopSurface = Enum.SurfaceType.Smooth
+	inst['Part11'].Shape = Enum.PartType.Cylinder
+	inst['ManualWeld12'].Name = "Weld"
+	inst['ManualWeld12'].Parent = inst['Part11']
+	inst['ManualWeld12'].C0 = CFrame.new(0, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld12'].C1 = CFrame.new(-1.37498474, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld12'].Part0 = inst['Part11']
+	inst['ManualWeld12'].Part1 = inst['Part1']
+	inst['ManualWeld12'].part1 = inst['Part1']
+	inst['Part13'].Parent = inst['Model6']
+	inst['Part13'].CFrame = CFrame.new(-58.9350014, 2, -82.1000061, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+	inst['Part13'].Orientation = Vector3.new(0, 90, 0)
+	inst['Part13'].Position = Vector3.new(-58.935001373291, 2, -82.100006103516)
+	inst['Part13'].Rotation = Vector3.new(0, 90, 0)
+	inst['Part13'].Massless = true
+	inst['Part13'].Size = Vector3.new(0.10000000149012, 0.12999999523163, 0.12999999523163)
+	inst['Part13'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['Part13'].CanCollide = false
+	inst['Part13'].Material = Enum.Material.Metal
+	inst['Part13'].TopSurface = Enum.SurfaceType.Smooth
+	inst['Part13'].Shape = Enum.PartType.Cylinder
+	inst['ManualWeld14'].Name = "Weld"
+	inst['ManualWeld14'].Parent = inst['Part13']
+	inst['ManualWeld14'].C0 = CFrame.new(0, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld14'].C1 = CFrame.new(-0.674987793, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld14'].Part0 = inst['Part13']
+	inst['ManualWeld14'].Part1 = inst['Part1']
+	inst['ManualWeld14'].part1 = inst['Part1']
+	inst['WedgePart15'].Parent = inst['Model6']
+	inst['WedgePart15'].CFrame = CFrame.new(-58.9350014, 2.06249905, -82.2250214, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	inst['WedgePart15'].Position = Vector3.new(-58.935001373291, 2.0624990463257, -82.225021362305)
+	inst['WedgePart15'].Massless = true
+	inst['WedgePart15'].Size = Vector3.new(0.075000002980232, 0.071000009775162, 1.5499999523163)
+	inst['WedgePart15'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['WedgePart15'].CanCollide = false
+	inst['WedgePart15'].Material = Enum.Material.Metal
+	inst['ManualWeld16'].Name = "Weld"
+	inst['ManualWeld16'].Parent = inst['WedgePart15']
+	inst['ManualWeld16'].C1 = CFrame.new(-0.549972534, 0.0624990463, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld16'].Part0 = inst['WedgePart15']
+	inst['ManualWeld16'].Part1 = inst['Part1']
+	inst['ManualWeld16'].part1 = inst['Part1']
+	inst['WedgePart17'].Parent = inst['Model6']
+	inst['WedgePart17'].CFrame = CFrame.new(-58.9350014, 1.93749905, -82.2250214, -1, 0, 0, 0, -1, 0, 0, 0, 1)
+	inst['WedgePart17'].Orientation = Vector3.new(0, 0, 180)
+	inst['WedgePart17'].Position = Vector3.new(-58.935001373291, 1.9374990463257, -82.225021362305)
+	inst['WedgePart17'].Rotation = Vector3.new(0, 0, -180)
+	inst['WedgePart17'].Massless = true
+	inst['WedgePart17'].Size = Vector3.new(0.075000002980232, 0.071000002324581, 1.5499999523163)
+	inst['WedgePart17'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['WedgePart17'].CanCollide = false
+	inst['WedgePart17'].Material = Enum.Material.Metal
+	inst['ManualWeld18'].Name = "Weld"
+	inst['ManualWeld18'].Parent = inst['WedgePart17']
+	inst['ManualWeld18'].C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, 1)
+	inst['ManualWeld18'].C1 = CFrame.new(-0.549972534, -0.0625009537, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld18'].Part0 = inst['WedgePart17']
+	inst['ManualWeld18'].Part1 = inst['Part1']
+	inst['ManualWeld18'].part1 = inst['Part1']
+	inst['WedgePart19'].Parent = inst['Model6']
+	inst['WedgePart19'].CFrame = CFrame.new(-58.9350014, 2.06249905, -81.3000183, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	inst['WedgePart19'].Orientation = Vector3.new(0, 180, 0)
+	inst['WedgePart19'].Position = Vector3.new(-58.935001373291, 2.0624990463257, -81.300018310547)
+	inst['WedgePart19'].Rotation = Vector3.new(-180, 0, -180)
+	inst['WedgePart19'].Massless = true
+	inst['WedgePart19'].Size = Vector3.new(0.075000002980232, 0.071000002324581, 0.29999989271164)
+	inst['WedgePart19'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['WedgePart19'].CanCollide = false
+	inst['WedgePart19'].Material = Enum.Material.Metal
+	inst['ManualWeld20'].Name = "Weld"
+	inst['ManualWeld20'].Parent = inst['WedgePart19']
+	inst['ManualWeld20'].C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	inst['ManualWeld20'].C1 = CFrame.new(-1.47497559, 0.0624990463, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld20'].Part0 = inst['WedgePart19']
+	inst['ManualWeld20'].Part1 = inst['Part1']
+	inst['ManualWeld20'].part1 = inst['Part1']
+	inst['WedgePart21'].Parent = inst['Model6']
+	inst['WedgePart21'].CFrame = CFrame.new(-58.9350014, 1.93749905, -81.3000183, 1, 0, 0, 0, -1, 0, 0, 0, -1)
+	inst['WedgePart21'].Orientation = Vector3.new(0, 180, 180)
+	inst['WedgePart21'].Position = Vector3.new(-58.935001373291, 1.9374990463257, -81.300018310547)
+	inst['WedgePart21'].Rotation = Vector3.new(-180, 0, 0)
+	inst['WedgePart21'].Massless = true
+	inst['WedgePart21'].Size = Vector3.new(0.075000002980232, 0.071000002324581, 0.29999989271164)
+	inst['WedgePart21'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['WedgePart21'].CanCollide = false
+	inst['WedgePart21'].Material = Enum.Material.Metal
+	inst['ManualWeld22'].Name = "Weld"
+	inst['ManualWeld22'].Parent = inst['WedgePart21']
+	inst['ManualWeld22'].C0 = CFrame.new(0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0, -1)
+	inst['ManualWeld22'].C1 = CFrame.new(-1.47497559, -0.0625009537, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld22'].Part0 = inst['WedgePart21']
+	inst['ManualWeld22'].Part1 = inst['Part1']
+	inst['ManualWeld22'].part1 = inst['Part1']
+	inst['Part23'].Parent = inst['Model6']
+	inst['Part23'].CFrame = CFrame.new(-58.9350014, 1.9999975, -80.6999969, 0, 0, -1, -1, 0, 0, 0, 1, 0)
+	inst['Part23'].Orientation = Vector3.new(0, -90, -90)
+	inst['Part23'].Position = Vector3.new(-58.935001373291, 1.9999974966049, -80.699996948242)
+	inst['Part23'].Rotation = Vector3.new(90, -90, 0)
+	inst['Part23'].Color = Color3.new(0.47451, 0.470588, 0.478431)
+	inst['Part23'].Massless = true
+	inst['Part23'].Size = Vector3.new(0.099999904632568, 0.099999964237213, 0.099999904632568)
+	inst['Part23'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['Part23'].CanCollide = false
+	inst['Part23'].Material = Enum.Material.Metal
+	inst['Part23'].TopSurface = Enum.SurfaceType.Smooth
+	inst['Part23'].Shape = Enum.PartType.Cylinder
+	inst['SpecialMesh24'].Parent = inst['Part23']
+	inst['SpecialMesh24'].MeshId = "rbxassetid://2720161649"
+	inst['SpecialMesh24'].Scale = Vector3.new(0.03999999910593, 0.10000000149012, 0.03999999910593)
+	inst['SpecialMesh24'].MeshType = Enum.MeshType.FileMesh
+	inst['ManualWeld25'].Name = "Weld"
+	inst['ManualWeld25'].Parent = inst['Part23']
+	inst['ManualWeld25'].C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0, 0, 1, -1, 0, 0)
+	inst['ManualWeld25'].C1 = CFrame.new(-2.07499695, -2.50339508e-06, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld25'].Part0 = inst['Part23']
+	inst['ManualWeld25'].Part1 = inst['Part1']
+	inst['ManualWeld25'].part1 = inst['Part1']
+	inst['Part26'].Parent = inst['Model6']
+	inst['Part26'].CFrame = CFrame.new(-58.9350014, 2, -81.0999908, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+	inst['Part26'].Orientation = Vector3.new(0, 90, 0)
+	inst['Part26'].Position = Vector3.new(-58.935001373291, 2, -81.099990844727)
+	inst['Part26'].Rotation = Vector3.new(0, 90, 0)
+	inst['Part26'].Massless = true
+	inst['Part26'].Size = Vector3.new(0.5, 0.12999999523163, 0.12999999523163)
+	inst['Part26'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['Part26'].CanCollide = false
+	inst['Part26'].Material = Enum.Material.Metal
+	inst['Part26'].TopSurface = Enum.SurfaceType.Smooth
+	inst['Part26'].Shape = Enum.PartType.Cylinder
+	inst['ManualWeld27'].Name = "Weld"
+	inst['ManualWeld27'].Parent = inst['Part26']
+	inst['ManualWeld27'].C0 = CFrame.new(0, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld27'].C1 = CFrame.new(-1.67500305, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld27'].Part0 = inst['Part26']
+	inst['ManualWeld27'].Part1 = inst['Part1']
+	inst['ManualWeld27'].part1 = inst['Part1']
+	inst['Model28'].Name = "Neon"
+	inst['Model28'].Parent = inst['Model5']
+	inst['Part29'].Parent = inst['Model28']
+	inst['Part29'].CFrame = CFrame.new(-58.9350014, 2, -83.5250092, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+	inst['Part29'].Orientation = Vector3.new(0, 90, 0)
+	inst['Part29'].Position = Vector3.new(-58.935001373291, 2, -83.525009155273)
+	inst['Part29'].Rotation = Vector3.new(0, 90, 0)
+	inst['Part29'].Color = Color3.new(1, 0, 0)
+	inst['Part29'].Massless = true
+	inst['Part29'].Size = Vector3.new(0.050000000745058, 0.079999998211861, 0.079999998211861)
+	inst['Part29'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['Part29'].CanCollide = false
+	inst['Part29'].Material = Enum.Material.Neon
+	inst['Part29'].TopSurface = Enum.SurfaceType.Smooth
+	inst['Part29'].Shape = Enum.PartType.Cylinder
+	inst['ManualWeld30'].Name = "Weld"
+	inst['ManualWeld30'].Parent = inst['Part29']
+	inst['ManualWeld30'].C0 = CFrame.new(0, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld30'].C1 = CFrame.new(0.750015259, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld30'].Part0 = inst['Part29']
+	inst['ManualWeld30'].Part1 = inst['Part1']
+	inst['ManualWeld30'].part1 = inst['Part1']
+	inst['Part31'].Parent = inst['Model28']
+	inst['Part31'].CFrame = CFrame.new(-58.9350014, 2, -81.7500076, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+	inst['Part31'].Orientation = Vector3.new(0, 90, 0)
+	inst['Part31'].Position = Vector3.new(-58.935001373291, 2, -81.750007629395)
+	inst['Part31'].Rotation = Vector3.new(0, 90, 0)
+	inst['Part31'].Color = Color3.new(1, 0, 0)
+	inst['Part31'].Massless = true
+	inst['Part31'].Size = Vector3.new(0.59999990463257, 0.099999964237213, 0.099999904632568)
+	inst['Part31'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['Part31'].CanCollide = false
+	inst['Part31'].Material = Enum.Material.Neon
+	inst['Part31'].TopSurface = Enum.SurfaceType.Smooth
+	inst['Part31'].Shape = Enum.PartType.Cylinder
+	inst['ManualWeld32'].Name = "Weld"
+	inst['ManualWeld32'].Parent = inst['Part31']
+	inst['ManualWeld32'].C0 = CFrame.new(0, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld32'].C1 = CFrame.new(-1.02498627, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld32'].Part0 = inst['Part31']
+	inst['ManualWeld32'].Part1 = inst['Part1']
+	inst['ManualWeld32'].part1 = inst['Part1']
+	inst['Part33'].Parent = inst['Model28']
+	inst['Part33'].CFrame = CFrame.new(-58.9350014, 2, -80.8250122, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+	inst['Part33'].Orientation = Vector3.new(0, 90, 0)
+	inst['Part33'].Position = Vector3.new(-58.935001373291, 2, -80.825012207031)
+	inst['Part33'].Rotation = Vector3.new(0, 90, 0)
+	inst['Part33'].Color = Color3.new(1, 0, 0)
+	inst['Part33'].Massless = true
+	inst['Part33'].Size = Vector3.new(0.050000000745058, 0.10000000149012, 0.10000000149012)
+	inst['Part33'].BottomSurface = Enum.SurfaceType.Smooth
+	inst['Part33'].CanCollide = false
+	inst['Part33'].Material = Enum.Material.Neon
+	inst['Part33'].TopSurface = Enum.SurfaceType.Smooth
+	inst['Part33'].Shape = Enum.PartType.Cylinder
+	inst['ManualWeld34'].Name = "Weld"
+	inst['ManualWeld34'].Parent = inst['Part33']
+	inst['ManualWeld34'].C0 = CFrame.new(0, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld34'].C1 = CFrame.new(-1.94998169, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	inst['ManualWeld34'].Part0 = inst['Part33']
+	inst['ManualWeld34'].Part1 = inst['Part1']
+	inst['ManualWeld34'].part1 = inst['Part1']
+	inst['Attachment35'].Name = "Attachment0"
+	inst['Attachment35'].Parent = inst['Part33']
+	inst['Attachment35'].CFrame = CFrame.new(0, 0, 0.0250015259, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	inst['Attachment35'].Position = Vector3.new(0, 0, 0.025001525878906)
+	inst['Attachment35'].WorldAxis = Vector3.new(0, 0, -1)
+	inst['Attachment35'].WorldCFrame = CFrame.new(-58.9099998, 2, -80.8250122, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+	inst['Attachment35'].WorldOrientation = Vector3.new(0, 90, 0)
+	inst['Attachment35'].WorldPosition = Vector3.new(-58.909999847412, 2, -80.825012207031)
+	inst['Attachment36'].Name = "Attachment1"
+	inst['Attachment36'].Parent = inst['Part33']
+	inst['Attachment36'].CFrame = CFrame.new(0, 0, -0.0250015259, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	inst['Attachment36'].Position = Vector3.new(0, 0, -0.025001525878906)
+	inst['Attachment36'].WorldAxis = Vector3.new(0, 0, -1)
+	inst['Attachment36'].WorldCFrame = CFrame.new(-58.9600029, 2, -80.8250122, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+	inst['Attachment36'].WorldOrientation = Vector3.new(0, 90, 0)
+	inst['Attachment36'].WorldPosition = Vector3.new(-58.96000289917, 2, -80.825012207031)
+	inst['Trail37'].Parent = inst['Model0']
+	inst['Trail37'].Attachment0 = inst['Attachment35']
+	inst['Trail37'].Attachment1 = inst['Attachment36']
+	inst['Trail37'].Color = ColorSequence.new(Color3.new(1, 0, 0),Color3.new(1, 0, 0))
+	inst['Trail37'].FaceCamera = true
+	inst['Trail37'].Enabled = false
+	inst['Trail37'].LightInfluence = 1
+	inst['Trail37'].Transparency = NumberSequence.new(0,1)
+	inst['Trail37'].Lifetime = 0.5
+
+	local Handle = inst["Part1"]
+
+	for _,d in ipairs(inst["Model0"]:GetDescendants()) do
+		pcall(function()
+			if d:IsA("BasePart") then
+				d.CustomPhysicalProperties = PhysicalProperties.new(0,0,0,0,0)
+				d.Massless = true
+				d.CanCollide = false
+				d.Locked = true
+				d.CanTouch = false
+			end
+		end)
+	end
+
+	local BodyPosition = Instance.new("BodyPosition",Handle)
+	BodyPosition.MaxForce = Vector3.new(5000,5000,5000)
+	BodyPosition.D = 1000
+	BodyPosition.P = 25000
+	BodyPosition.Position = Vector3.new(10,4,10)
+
+	local BodyGyro = Instance.new("BodyGyro",Handle)
+	BodyGyro.MaxTorque = Vector3.new(400000,400000,400000)
+	BodyGyro.D = 125
+	BodyGyro.P = 7500
+	BodyGyro.CFrame = CFrame.new()
+
+	local Weld = Instance.new("Weld",Handle)
+	Weld.Name = "EquipWeld"
+	Weld.Part1 = Handle
+	Weld.C0 = CFrame.new(1.06499863, -1, -0.474990845, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Weld.C1 = CFrame.new(0, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+
+	ArrowTemplate = inst["Model0"]
+end
+
+local ArrowEvents = {}
+local Refitting = false
+function aae(e) table.insert(ArrowEvents,e) return e end
+function FixArrow()
+	Refitting = true
+
+	for _,e in ipairs(ArrowEvents) do e:Disconnect() end table.clear(ArrowEvents)
+	if Arrow then
+		Debris:AddItem(Arrow,0)
+	end
+
+	RunService.Heartbeat:Wait()
+
+	Arrow = ArrowTemplate:Clone()
+	Handle = Arrow:WaitForChild("Handle")
+	Top = Arrow:WaitForChild("Top")
+	Trail = Arrow:WaitForChild("Trail")
+	if Handle then
+		EquipWeld = Handle:WaitForChild("EquipWeld")
+		BodyPosition = Handle:WaitForChild("BodyPosition")
+		BodyGyro = Handle:WaitForChild("BodyGyro")
+	end
+
+	Arrow.PrimaryPart = Handle
+	xpcall(function()
+		Arrow:SetPrimaryPartCFrame(GetRoot(Player.Character).CFrame * CFrame.Angles(0,math.rad(90),0))
+	end,function()
+		Arrow:SetPrimaryPartCFrame(CFrame.new() * CFrame.Angles(0,math.rad(90),0))
+	end)
+
+	BodyPosition.Position = Handle.Position
+	BodyGyro.CFrame = Handle.CFrame
+
+	local function Apply(d)
+		d.Archivable = false
+		--d.Name = tostring(GenerateString())
+
+		aae(d.Changed:Connect(function(Property)
+			if Refitting or Property == "NetworkOwnerV3" or Property == "NetworkIsSleeping" or Property == "NetworkOwnershipRuleBool" or Property == "NetworkOwnershipRule" then return end
+
+			if Property == "Parent" and d == Arrow then
+				if d.Parent ~= Terrain then
+					FixArrow()
+				end
+			elseif Property == "Part0" and d == EquipWeld then
+				if ArrowState == "Equipped" then
+					if d.Part0 ~= GetNonRoot(Player.Character) then
+						FixArrow()
+					end
+				else
+					if d.Part0 ~= nil then
+						FixArrow()
+					end
+				end
+			elseif Property == "Enabled" and d == Trail then
+				if ArrowState == "Attacking" or ArrowState == "ToIdle" or ArrowState == "Equipping1" or ArrowState == "Equipping2" then
+					if d.Enabled ~= true then
+						FixArrow()
+					end
+				else
+					if d.Enabled ~= false then
+						FixArrow()
+					end
+				end
+			else
+				FixArrow()
+			end
+		end))
+	end
+
+	Arrow.Name = tostring(GenerateString())
+	Apply(Arrow)
+	aae(Arrow.DescendantAdded:Connect(function()
+		FixArrow()
+	end))
+	for _,d in ipairs(Arrow:GetDescendants()) do
+		pcall(function()
+			Apply(d)
+		end)
+	end
+
+	Refitting = false
+	Arrow.Parent = Terrain
+	FireClient("SetArrow",Arrow)
+
+	for _,d in ipairs(Arrow:GetDescendants()) do
+		if d:IsA("BasePart") then
+			pcall(function()
+				d:SetNetworkOwner(Player)
+			end)
+		end
+	end
+
+	coroutine.wrap(function()
+		repeat RunService.Heartbeat:Wait()
+			if ArrowState ~= "Equipped" and not IgnoreNetwork then
+				for _,d in ipairs(Arrow:GetDescendants()) do
+					if Arrow.Parent ~= Terrain or Refitting then break end
+
+					if d:IsA("BasePart") then
+						pcall(function()
+							if d:GetNetworkOwner() ~= Player or d:GetNetworkOwnershipAuto() then
+								FixArrow()
+							end
+						end)
+						RunService.Heartbeat:Wait()
+					end
+				end
+			elseif IgnoreNetwork and tick() - IgnoreNetworkTimer >= 1 then
+				IgnoreNetwork = false
+			end
+		until Arrow.Parent ~= Terrain or Refitting
+	end)()
+end
+FixArrow()
+
+Player.Chatted:Connect(function(m)
+	if string.sub(m,1,3) == "/e " then
+		m = string.sub(m,4)
+	end
+	if string.sub(m,1,5) == "g/no." then
+		for _,e in ipairs(ArrowEvents) do e:Disconnect() end table.clear(ArrowEvents)
+		Arrow:Destroy()
+	end
+end)
+
+RunService.Heartbeat:Connect(function()
+	if Trail then
+		Trail.Enabled = ArrowState == "Attacking" or ArrowState == "ToIdle" or ArrowState == "Equipping1" or ArrowState == "Equipping2"
+	end
+	if ArrowState == "Equipped" then
+		if EquipWeld then
+			EquipWeld.Part0 = GetNonRoot(Player.Character)
+		end
+	else
+		if EquipWeld then
+			EquipWeld.Part0 = nil
+		end
+	end
+end)
+
+coroutine.wrap(function()
+	while wait(1) do
+		FireClient("SetArrow",Arrow)
+	end
+end)()
+
+Client = NLS([==[
+local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Debris = game:GetService("Debris")
+local TweenService = game:GetService("TweenService")
+local HttpService = game:GetService("HttpService")
+local UIS = game:GetService("UserInputService")
+
+local Player = Players.LocalPlayer
+local Mouse = Player:GetMouse()
+
+repeat RunService.RenderStepped:Wait() until script:FindFirstChildWhichIsA("Fire")
+local RemoteName = tostring(script:FindFirstChild("rn").Value)
+local RemoteKey = tostring(script:FindFirstChild("rk").Value)
+
+local wait = task.wait
+
+function GenerateString()
+	return HttpService:GenerateGUID(false)
+end
+
+script.Name = GenerateString()
+wait()
+script:Destroy()
+script.Name = GenerateString()
+
+local OldArrowPosition = Vector3.new()
+local ArrowPosition = Vector3.new()
+
+local ArrowRotation = CFrame.new()
+
+local ArrowState = "Equipped"
+local OldArrowState = ArrowState
+
+local CharacterCFrame = CFrame.new()
+
+local Target = nil
+
+local SwitchArrowDirection = true
+
+local Arrow = nil
+local Handle = nil
+local Top = nil
+local Trail = nil
+local EquipWeld = nil
+local BodyPosition = nil
+local BodyGyro = nil
+
+local raycastParams = RaycastParams.new()
+raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+raycastParams.IgnoreWater = true
+
+function FireServer(...)
+	coroutine.wrap(function(...)
+		repeat RunService.RenderStepped:Wait()
+			local Remote = nil
+			for _,c in ipairs(Player:GetChildren()) do
+				if c:IsA("RemoteEvent") and c.Name == RemoteName then
+					Remote = c
+					break
+				end
+			end
+		until Remote
+		for _,c in ipairs(Player:GetChildren()) do
+			if c:IsA("RemoteEvent") and c.Name == RemoteName then
+				pcall(function(...)
+					c:FireServer(RemoteKey,...)
+				end,...)
+			end
+		end
+	end)(...)
+end
+function CheckRemote(c)
+	pcall(function()
+		if c:IsA("RemoteEvent") and c.Name == RemoteName then
+			local Connection
+			Connection = c.OnClientEvent:Connect(function(Key,Action,Data)
+				if Key == RemoteKey then
+					if Action == "SetArrow" and Data and typeof(Data) == "Instance" then
+						if not Data.Parent then repeat Workspace.AncestryChanged:Wait() until Data.Parent end
+
+						Arrow = Data
+						Handle = Arrow:WaitForChild("Handle")
+						Top = Arrow:WaitForChild("Top")
+						Trail = Arrow:WaitForChild("Trail")
+						if Handle then
+							EquipWeld = Handle:WaitForChild("EquipWeld")
+							BodyPosition = Handle:WaitForChild("BodyPosition")
+							BodyGyro = Handle:WaitForChild("BodyGyro")
+						end
+					end
+				end
+			end)
+			local Parent
+			Parent = c.AncestryChanged:Connect(function()
+				if c.Parent ~= Player then
+					Connection:Disconnect()
+					Parent:Disconnect()
+				end
+			end)
+
+			c:FireServer(RemoteKey,"Ready")
+		end
+	end)
+end
+for _,c in ipairs(Player:GetChildren()) do CheckRemote(c) end
+Player.ChildAdded:Connect(CheckRemote)
+
+function GetRoot(c)
+	local r = c:FindFirstChild("HumanoidRootPart") or c:FindFirstChild("Torso") or c:FindFirstChild("UpperTorso") or c:FindFirstChild("LowerTorso") or c:FindFirstChild("Head")
+	if not r or not r:IsA("BasePart") then
+		r = c:FindFirstChildWhichIsA("BasePart",true)
+	end
+	return r
+end
+function GetNonRoot(c)
+	local r = c:FindFirstChild("Torso") or c:FindFirstChild("UpperTorso") or c:FindFirstChild("LowerTorso") or c:FindFirstChild("Head")
+	if not r or not r:IsA("BasePart") then
+		r = c:FindFirstChildWhichIsA("BasePart",true)
+	end
+	return r
+end
+function GetMaxPlayer(i)
+	if not i then return nil end
+	local p = i
+	local pl = Players:GetPlayerFromCharacter(p)
+	if not pl then
+		repeat
+			p = p.Parent
+			pl = Players:GetPlayerFromCharacter(p)
+		until not p or p.Parent == nil or p.Parent == game or pl ~= nil
+	end
+	if pl ~= nil and pl:IsA("Player") then
+		return pl
+	else
+		return nil
+	end
+end
+function GetMaxCharacter(i)
+	if not i then return nil end
+	local p = i
+	local h = p:FindFirstChildOfClass("Humanoid")
+	if not h then
+		repeat
+			p = p.Parent
+			h = p:FindFirstChildOfClass("Humanoid")
+		until not p or p.Parent == nil or p.Parent == game or h ~= nil
+	end
+	if p ~= nil and h ~= nil then
+		return p
+	else
+		return nil
+	end
+end
+function MoveTo(Position,dt)
+	if not dt then dt = 1/60 end
+	
+	ArrowRotation = ArrowRotation:Lerp(CFrame.new(Handle.Position,Position),math.clamp(60 - (ArrowPosition - Position).Magnitude, 7, 60) * dt)
+	
+	local CF = Handle.CFrame * CFrame.Angles(0,math.rad(-90),0)
+	ArrowPosition = (CF + CF.LookVector * (1200 * dt)).Position
+end
+
+local Equip1Offset, HeldE = Vector3.new(math.random(-5, 5), 0, math.random(-5, 5)), false
+RunService.RenderStepped:Connect(function(dt)
+	pcall(function()
+		CharacterCFrame = GetRoot(Player.Character).CFrame
+	end)
+
+	if ArrowState == "Equipped" then
+		if Handle then
+			ArrowPosition = Handle.Position
+			ArrowRotation = Handle.CFrame
+		end
+		if BodyPosition then
+			BodyPosition.MaxForce = Vector3.new(0,0,0)
+			BodyPosition.P = 0
+			BodyPosition.Position = ArrowPosition
+		end
+		if BodyGyro then
+			BodyGyro.MaxTorque = Vector3.new(0,0,0)
+			BodyGyro.P = 0
+			BodyGyro.CFrame = ArrowRotation * CFrame.Angles(0,math.rad(90),0)
+		end
+		
+		if Trail then
+			Trail.Enabled = false
+		end
+		if EquipWeld then
+			EquipWeld.Part0 = GetNonRoot(Player.Character)
+		end
+	else
+		if ArrowState == "Attacking" then
+			if Target and Target:IsDescendantOf(Workspace) then
+				local TargetRoot = GetRoot(Target)
+				if TargetRoot then
+					MoveTo(TargetRoot.Position,dt)
+
+					local Ignore = {Arrow, owner.Character}
+					local RaycastResult = nil
+
+					local Origin = Handle.Position
+					local Direction = (OldArrowPosition - Handle.Position).Unit * (OldArrowPosition - Handle.Position).Magnitude
+
+					local Cast
+					Cast = function()
+						raycastParams.FilterDescendantsInstances = Ignore
+
+						local res = Workspace:Raycast(Origin,Direction,raycastParams)
+						if res and res.Instance then
+							if not res.Instance:IsDescendantOf(Target) then
+								table.insert(Ignore,res.Instance)
+								Cast()
+							else
+								RaycastResult = res
+							end
+						end
+					end
+					Cast()
+					if RaycastResult and RaycastResult.Instance then
+						FireServer("Kill",Target,Handle.CFrame * CFrame.Angles(0,math.rad(-90),0))
+						
+						Target = nil
+						ArrowState = "ToIdle"
+					end
+				else
+					Target = nil
+					ArrowState = "ToIdle"
+				end
+			else
+				Target = nil
+				ArrowState = "ToIdle"
+			end
+			
+			if Trail then
+				Trail.Enabled = true
+			end
+		elseif ArrowState == "ToIdle" then
+			local CF = CharacterCFrame + CharacterCFrame.RightVector * 1.5 + CharacterCFrame.UpVector * 1.5
+			MoveTo(CF.Position, dt)
+			
+			if (Handle.Position - CF.Position).Magnitude <= 5 then
+				ArrowState = "Idle"
+			end
+			
+			if Trail then
+				Trail.Enabled = true
+			end
+		else
+			if ArrowState == "Idle" then
+				if Trail then
+					Trail.Enabled = false
+				end
+				
+				local CF = CharacterCFrame + CharacterCFrame.RightVector * 1.5 + CharacterCFrame.UpVector * 1.5
+				ArrowPosition = CF.Position
+				ArrowRotation = CF
+			elseif ArrowState == "Equipping1" then
+				if Trail then
+					Trail.Enabled = true
+				end
+				
+				local CharCF = CharacterCFrame
+				xpcall(function()
+					CharCF = GetNonRoot(Player.Character).CFrame
+				end,function()
+					CharCF = CharacterCFrame
+				end)
+
+				local CF = CharacterCFrame + CharacterCFrame.LookVector * 30 + CharacterCFrame.RightVector * 1.5 + CharacterCFrame.UpVector * 0.5
+				MoveTo(CF.Position + Equip1Offset)
+				
+				if UIS:IsKeyDown(Enum.KeyCode.E) then
+					local Ignore = {Arrow, owner.Character}
+					local Humanoid
+
+					local Origin = Handle.Position
+					local Direction = (OldArrowPosition - Handle.Position).Unit * (OldArrowPosition - Handle.Position).Magnitude
+
+					local Cast
+					Cast = function()
+						raycastParams.FilterDescendantsInstances = Ignore
+
+						local res = Workspace:Raycast(Origin,Direction,raycastParams)
+						if res and res.Instance then
+							Humanoid = res.Instance.Parent:FindFirstChildOfClass("Humanoid")
+							if not Humanoid then
+								table.insert(Ignore,res.Instance)
+								Cast()
+							end
+						end
+					end
+					Cast()
+					
+					if Humanoid and not Humanoid:GetAttribute("Dead") then
+						Humanoid:SetAttribute("Dead", true)
+						FireServer("Kill",Humanoid.Parent,Handle.CFrame * CFrame.Angles(0,math.rad(-90),0))
+					end
+				end
+				
+				if (Handle.Position - CF.Position).Magnitude <= 2 then
+					if UIS:IsKeyDown(Enum.KeyCode.E) then
+						HeldE = true
+						Equip1Offset = Vector3.new(math.random(-5, 5), 0, math.random(-5, 5))
+					else
+						if HeldE then
+							HeldE = false
+							ArrowState = "ToIdle"
+						else
+							ArrowState = "Equipping2"
+						end
+					end
+				end
+			elseif ArrowState == "Equipping2" then
+				if Trail then
+					Trail.Enabled = true
+				end
+				
+				local CharCF = CharacterCFrame
+				xpcall(function()
+					CharCF = GetNonRoot(Player.Character).CFrame
+				end,function()
+					CharCF = CharacterCFrame
+				end)
+				
+				local CF = CharacterCFrame + CharacterCFrame.LookVector * 0.5 + CharacterCFrame.RightVector * 1.5 + CharacterCFrame.UpVector * -0.5
+				MoveTo(CF.Position)
+
+				if (Handle.Position - CF.Position).Magnitude <= 2 then
+					ArrowState = "Equipped"
+				end
+			else
+				ArrowState = "ToIdle"
+			end
+		end
+
+		if BodyPosition then
+			BodyPosition.MaxForce = Vector3.new(5000,5000,5000)
+			BodyPosition.D = 1000
+			BodyPosition.P = 25000
+			BodyPosition.Position = ArrowPosition
+		end
+		if BodyGyro then
+			BodyGyro.MaxTorque = Vector3.new(400000,400000,400000)
+			BodyGyro.D = 125
+			BodyGyro.P = 7500
+			BodyGyro.CFrame = ArrowRotation * CFrame.Angles(0,math.rad(90),0)
+		end
+		if EquipWeld then
+			EquipWeld.Part0 = nil
+		end
+	end
+
+	if ArrowState ~= OldArrowState then
+		OldArrowState = ArrowState
+		FireServer("SetState",ArrowState)
+	end
+
+	if Handle then
+		OldArrowPosition = Handle.Position
+	end
+end)
+
+UIS.InputBegan:Connect(function(io)
+	if UIS:GetFocusedTextBox() ~= nil then return end
+	local KeyCode = io.KeyCode
+	if KeyCode then
+		if KeyCode == Enum.KeyCode.E then
+			if ArrowState == "Equipped" or ArrowState == "Equipping" then
+				ArrowState = "Idle"
+			else
+				ArrowState = "Equipping1"
+			end
+		elseif KeyCode == Enum.KeyCode.Q then
+			if Target then
+				Target = nil
+			elseif Mouse.Target then
+				local MaxPlayer = GetMaxPlayer(Mouse.Target)
+				if MaxPlayer and MaxPlayer.Character then
+					Target = MaxPlayer.Character
+					ArrowState = "Attacking"
+				else
+					local MaxCharacter = GetMaxCharacter(Mouse.Target)
+					if MaxCharacter then
+						Target = MaxCharacter
+						ArrowState = "Attacking"
+					end
+				end
+			end
+		elseif KeyCode == Enum.KeyCode.R then
+			FireServer("Refit")
+		end
+	end
+end)
+
+coroutine.wrap(function()
+	while task.wait() do
+		if OldArrowState ~= ArrowState then
+			OldArrowState = ArrowState
+			FireServer("SetState",ArrowState)
+		end
+	end
+end)()
+]==],Player:FindFirstChildWhichIsA("PlayerGui") or Player:FindFirstChildWhichIsA("Backpack") or Instance.new("Backpack",Player))
+Client.Name = GenerateString()
+
+local rn = Instance.new("StringValue",Client)
+rn.Name = "rn"
+rn.Value = RemoteName
+local rk = Instance.new("StringValue",Client)
+rk.Name = "rk"
+rk.Value = RemoteKey
+Instance.new("Fire",Client)
