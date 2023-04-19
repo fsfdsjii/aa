@@ -38,19 +38,10 @@ SpecialMesh2.Parent = Part1
 SpecialMesh2.MeshId = "rbxassetid://442168669"
 SpecialMesh2.Scale = Vector3.new(0.04500000178813934, 0.04500000178813934, 0.023000000044703484)
 SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+ForceField111 = Instance.new("ForceField")
+ForceField111.Parent = owner.Character
+ForceField111.Visible = false
 Script3.Parent = Part1
-table.insert(cors,sandbox(Script3,function()
-Part1.Touched:Connect(function(hit)
-	local force = Instance.new("Beam")
-	force = Part1.Position
-	force.Parent = workspace
-local Sound = Instance.new("Sound")
-	Sound.SoundId = "rbxassetid://4920015271" or "rbxassetid://198581763" or "rbxassetid://5659916160"
-	Sound.Volume = "2.4"
-	Sound.Pitch = "1.3"
-	Sound.Looped = false
-end)
-end))
 Script4.Parent = Tool0
 table.insert(cors,sandbox(Script4,function()
 Part1.Touched:Connect(function(hit)
