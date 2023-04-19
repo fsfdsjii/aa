@@ -1,0 +1,775 @@
+-- Converted using Mokiros's Model to Script Version 3
+-- Converted string size: 10712 characters
+
+local ScriptFunctions = {
+function(script,require)
+system = script.Parent
+
+model = system.Station --
+
+backup = model:Clone()
+
+regen = system.Regen
+
+
+
+function checkRegen()
+
+	if regen.Value == 1 then
+
+		model:remove()
+
+		wait(1)
+
+		model = backup:Clone()
+
+		model.Parent = system
+
+		model:MakeJoints()
+
+	end
+
+end
+
+regen.Changed:connect(checkRegen)
+end,
+function(script,require)
+button = script.Parent
+
+regen = button.Parent.Regen
+
+
+
+local debounce = false
+
+
+
+function onTouch(hit)
+
+	local h = hit.Parent:FindFirstChild("Humanoid")
+
+	if h ~= nil and debounce == false then
+
+		debounce = true
+
+		button.BrickColor = BrickColor.Black()
+
+		regen.Value = 1
+
+		wait(1)
+
+		regen.Value = 0
+
+		wait(5)
+
+		button.BrickColor = BrickColor.new(104)
+
+		debounce = false
+
+	end
+
+end
+
+button.Touched:connect(onTouch)
+end,
+function(script,require)
+--Scripted by DermonDarble
+
+local car = script.Parent
+local stats = car.Configurations
+local Raycast = require(script.RaycastModule)
+
+local mass = 0
+
+for i, v in pairs(car:GetChildren()) do
+	if v:IsA("BasePart") then
+		mass = mass + (v:GetMass() * 196.2)
+	end
+end
+
+local bodyPosition = car.Chassis.BodyPosition
+local bodyGyro = car.Chassis.BodyGyro
+
+--local bodyPosition = Instance.new("BodyPosition", car.Chassis)
+--bodyPosition.MaxForce = Vector3.new()
+--local bodyGyro = Instance.new("BodyGyro", car.Chassis)
+--bodyGyro.MaxTorque = Vector3.new()
+
+local function UpdateThruster(thruster)
+	-- Raycasting
+	local hit, position = Raycast.new(thruster.Position, thruster.CFrame:vectorToWorldSpace(Vector3.new(0, -1, 0)) * stats.Height.Value) --game.Workspace:FindPartOnRay(ray, car)
+	local thrusterHeight = (position - thruster.Position).magnitude
+	
+	-- Wheel
+	local wheelWeld = thruster:FindFirstChild("WheelWeld")
+	wheelWeld.C0 = CFrame.new(0, -math.min(thrusterHeight, stats.Height.Value * 0.8) + (wheelWeld.Part1.Size.Y / 2), 0)
+	-- Wheel turning
+	local offset = car.Chassis.CFrame:inverse() * thruster.CFrame
+	local speed = car.Chassis.CFrame:vectorToObjectSpace(car.Chassis.Velocity)
+	if offset.Z < 0 then
+		local direction = 1
+		if speed.Z > 0 then
+			direction = -1
+		end
+		wheelWeld.C0 = wheelWeld.C0 * CFrame.Angles(0, (car.Chassis.RotVelocity.Y / 2) * direction, 0)
+	end
+	
+	-- Particles
+	if hit and thruster.Velocity.magnitude >= 5 then
+		wheelWeld.Part1.ParticleEmitter.Enabled = true
+	else
+		wheelWeld.Part1.ParticleEmitter.Enabled = false
+	end
+end
+
+car.DriveSeat.Changed:connect(function(property)
+	if property == "Occupant" then
+		if car.DriveSeat.Occupant then
+			car.EngineBlock.Running.Pitch = 1
+			car.EngineBlock.Running:Play()
+			local player = game.Players:GetPlayerFromCharacter(car.DriveSeat.Occupant.Parent)
+			if player then
+				car.DriveSeat:SetNetworkOwner(player)
+				local localCarScript = script.LocalCarScript:Clone()
+				localCarScript.Parent = player.PlayerGui
+				localCarScript.Car.Value = car
+				localCarScript.Disabled = false
+			end
+		else
+			car.EngineBlock.Running:Stop()
+		end
+	end
+end)
+
+--spawn(function()
+	while true do
+		game:GetService("RunService").Stepped:wait()
+		for i, part in pairs(car:GetChildren()) do
+			if part.Name == "Thruster" then
+				UpdateThruster(part)
+			end
+		end
+		if car.DriveSeat.Occupant then
+			local ratio = car.DriveSeat.Velocity.magnitude / stats.Speed.Value
+			car.EngineBlock.Running.Pitch = 1 + ratio / 4
+			bodyPosition.MaxForce = Vector3.new()
+			bodyGyro.MaxTorque = Vector3.new()
+		else
+			local hit, position, normal = Raycast.new(car.Chassis.Position, car.Chassis.CFrame:vectorToWorldSpace(Vector3.new(0, -1, 0)) * stats.Height.Value)
+			if hit and hit.CanCollide then
+				bodyPosition.MaxForce = Vector3.new(mass / 5, math.huge, mass / 5)
+				bodyPosition.Position = (CFrame.new(position, position + normal) * CFrame.new(0, 0, -stats.Height.Value + 0.5)).p
+				bodyGyro.MaxTorque = Vector3.new(math.huge, 0, math.huge)
+				bodyGyro.CFrame = CFrame.new(position, position + normal) * CFrame.Angles(-math.pi/2, 0, 0)
+			else
+				bodyPosition.MaxForce = Vector3.new()
+				bodyGyro.MaxTorque = Vector3.new()
+			end
+		end
+	end
+--end)
+end,
+function(script,require)
+--local camera = game.Workspace.CurrentCamera
+local player = game.Players.LocalPlayer
+local character = player.Character
+local humanoidRootPart = character.HumanoidRootPart
+local car = script:WaitForChild("Car").Value
+local stats = car:WaitForChild("Configurations")
+local Raycast = require(car.CarScript.RaycastModule)
+
+--local cameraType = Enum.CameraType.Follow
+
+local movement = Vector2.new()
+local gamepadDeadzone = 0.14
+
+car.DriveSeat.Changed:connect(function(property)
+	if property == "Steer" then
+		movement = Vector2.new(car.DriveSeat.Steer, movement.Y)
+	elseif property == "Throttle" then
+		movement = Vector2.new(movement.X, car.DriveSeat.Throttle)
+	end
+end)
+
+-- Input begin
+--game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameProcessedEvent)
+--	if not gameProcessedEvent then
+--		if inputObject.KeyCode == Enum.KeyCode.W then
+--			movement = Vector2.new(movement.X, 1)
+--		elseif inputObject.KeyCode == Enum.KeyCode.A then
+--			movement = Vector2.new(-1, movement.Y)
+--		elseif inputObject.KeyCode == Enum.KeyCode.S then
+--			movement = Vector2.new(movement.X, -1)
+--		elseif inputObject.KeyCode == Enum.KeyCode.D then
+--			movement = Vector2.new(1, movement.Y)
+--		end
+--	end
+--end)
+--
+--game:GetService("UserInputService").InputChanged:connect(function(inputObject, gameProcessedEvent)
+--	--if not gameProcessedEvent then
+--		if inputObject.KeyCode == Enum.KeyCode.Thumbstick1 then
+--			--Gamepad support because yay
+--			if inputObject.Position.magnitude >= gamepadDeadzone then
+--				movement = Vector2.new(movement.X, inputObject.Position.Y)
+--			else
+--				movement = Vector2.new(movement.X, 0)
+--			end
+--		elseif inputObject.KeyCode == Enum.KeyCode.Thumbstick2 then
+--			if inputObject.Position.magnitude >= gamepadDeadzone then
+--				movement = Vector2.new(inputObject.Position.X, movement.Y)
+--			else
+--				movement = Vector2.new(0, movement.Y)
+--			end
+--		end
+--	--end
+--end)
+--
+---- Input end
+--game:GetService("UserInputService").InputEnded:connect(function(inputObject, gameProcessedEvent)
+--	if inputObject.KeyCode == Enum.KeyCode.W then
+--		if movement.Y == 1 then
+--			movement = Vector2.new(movement.X, 0)
+--		end
+--	elseif inputObject.KeyCode == Enum.KeyCode.A then
+--		if movement.X == -1 then
+--			movement = Vector2.new(0, movement.Y)
+--		end
+--	elseif inputObject.KeyCode == Enum.KeyCode.S then
+--		if movement.Y == -1 then
+--			movement = Vector2.new(movement.X, 0)
+--		end
+--	elseif inputObject.KeyCode == Enum.KeyCode.D then
+--		if movement.X == 1 then
+--			movement = Vector2.new(0, movement.Y)
+--		end
+--	end
+--end)
+
+local force = 0
+local damping = 0
+
+local mass = 0
+
+for i, v in pairs(car:GetChildren()) do
+	if v:IsA("BasePart") then
+		mass = mass + (v:GetMass() * 196.2)
+	end
+end
+
+force = mass * stats.Suspension.Value
+damping = force / stats.Bounce.Value
+
+local bodyVelocity = Instance.new("BodyVelocity", car.Chassis)
+bodyVelocity.velocity = Vector3.new(0, 0, 0)
+bodyVelocity.maxForce = Vector3.new(0, 0, 0)
+
+local bodyAngularVelocity = Instance.new("BodyAngularVelocity", car.Chassis)
+bodyAngularVelocity.angularvelocity = Vector3.new(0, 0, 0)
+bodyAngularVelocity.maxTorque = Vector3.new(0, 0, 0)
+
+local rotation = 0
+
+local function UpdateThruster(thruster)
+	--Make sure we have a bodythrust to move the wheel
+	local bodyThrust = thruster:FindFirstChild("BodyThrust")
+	if not bodyThrust then
+		bodyThrust = Instance.new("BodyThrust", thruster)
+	end
+	--Do some raycasting to get the height of the wheel
+	local hit, position = Raycast.new(thruster.Position, thruster.CFrame:vectorToWorldSpace(Vector3.new(0, -1, 0)) * stats.Height.Value)
+	local thrusterHeight = (position - thruster.Position).magnitude
+	if hit and hit.CanCollide then
+		--If we're on the ground, apply some forces to push the wheel up
+		bodyThrust.force = Vector3.new(0, ((stats.Height.Value - thrusterHeight)^2) * (force / stats.Height.Value^2), 0)
+		local thrusterDamping = thruster.CFrame:toObjectSpace(CFrame.new(thruster.Velocity + thruster.Position)).p * damping
+		bodyThrust.force = bodyThrust.force - Vector3.new(0, thrusterDamping.Y, 0)
+	else
+		bodyThrust.force = Vector3.new(0, 0, 0)
+	end
+	
+	--Wheels
+	local wheelWeld = thruster:FindFirstChild("WheelWeld")
+	if wheelWeld then
+		wheelWeld.C0 = CFrame.new(0, -math.min(thrusterHeight, stats.Height.Value * 0.8) + (wheelWeld.Part1.Size.Y / 2), 0)
+		-- Wheel turning
+		local offset = car.Chassis.CFrame:inverse() * thruster.CFrame
+		local speed = car.Chassis.CFrame:vectorToObjectSpace(car.Chassis.Velocity)
+		if offset.Z < 0 then
+			local direction = 1
+			if speed.Z > 0 then
+				direction = -1
+			end
+			wheelWeld.C0 = wheelWeld.C0 * CFrame.Angles(0, (car.Chassis.RotVelocity.Y / 2) * direction, 0)
+		end
+		wheelWeld.C0 = wheelWeld.C0 * CFrame.Angles(rotation, 0, 0)
+	end
+end
+
+--A simple function to check if the car is grounded
+local function IsGrounded()
+	local hit, position = Raycast.new((car.Chassis.CFrame * CFrame.new(0, 0, (car.Chassis.Size.Z / 2) - 1)).p, car.Chassis.CFrame:vectorToWorldSpace(Vector3.new(0, -1, 0)) * (stats.Height.Value + 0.2))
+	if hit and hit.CanCollide then
+		return(true)
+	end
+	return(false)
+end
+
+--local oldCameraType = camera.CameraType
+--camera.CameraType = cameraType
+
+--spawn(function()
+	while game:GetService("RunService").Heartbeat:wait() and car:FindFirstChild("DriveSeat") and character.Humanoid.SeatPart == car.DriveSeat do
+		--game:GetService("RunService").RenderStepped:wait()
+		if IsGrounded() then
+			if movement.Y ~= 0 then
+				local velocity = humanoidRootPart.CFrame.lookVector * movement.Y * stats.Speed.Value
+				humanoidRootPart.Velocity = humanoidRootPart.Velocity:Lerp(velocity, 0.1)
+				bodyVelocity.maxForce = Vector3.new(0, 0, 0)
+			else
+				bodyVelocity.maxForce = Vector3.new(mass / 2, mass / 4, mass / 2)
+			end
+			local rotVelocity = humanoidRootPart.CFrame:vectorToWorldSpace(Vector3.new(movement.Y * stats.Speed.Value / 50, 0, -humanoidRootPart.RotVelocity.Y * 5 * movement.Y))
+			local speed = -humanoidRootPart.CFrame:vectorToObjectSpace(humanoidRootPart.Velocity).unit.Z
+			rotation = rotation + math.rad((-stats.Speed.Value / 5) * movement.Y)
+			if math.abs(speed) > 0.1 then
+				rotVelocity = rotVelocity + humanoidRootPart.CFrame:vectorToWorldSpace((Vector3.new(0, -movement.X * speed * stats.TurnSpeed.Value, 0)))
+				bodyAngularVelocity.maxTorque = Vector3.new(0, 0, 0)
+			else
+				bodyAngularVelocity.maxTorque = Vector3.new(mass / 4, mass / 2, mass / 4)
+			end
+			humanoidRootPart.RotVelocity = humanoidRootPart.RotVelocity:Lerp(rotVelocity, 0.1)
+			
+			--bodyVelocity.maxForce = Vector3.new(mass / 3, mass / 6, mass / 3)
+			--bodyAngularVelocity.maxTorque = Vector3.new(mass / 6, mass / 3, mass / 6)
+		else
+			bodyVelocity.maxForce = Vector3.new(0, 0, 0)
+			bodyAngularVelocity.maxTorque = Vector3.new(0, 0, 0)
+		end
+		
+		for i, part in pairs(car:GetChildren()) do
+			if part.Name == "Thruster" then
+				UpdateThruster(part)
+			end
+		end
+	end
+	for i, v in pairs(car:GetChildren()) do
+		if v:FindFirstChild("BodyThrust") then
+			v.BodyThrust:Destroy()
+		end
+	end
+	bodyVelocity:Destroy()
+	bodyAngularVelocity:Destroy()
+	--camera.CameraType = oldCameraType
+	script:Destroy()
+--end)
+end,
+function(script,require)
+local module = {}
+
+function module.new(startPosition, startDirection)
+	local maxDistance = startDirection.magnitude
+	local direction = startDirection.unit
+	local lastPosition = startPosition
+	local distance = 0
+	local ignore = {}
+	
+	local hit, position, normal
+	
+	repeat
+		local ray = Ray.new(lastPosition, direction * (maxDistance - distance))
+		hit, position, normal = game.Workspace:FindPartOnRayWithIgnoreList(ray, ignore, false, true)
+		if hit then
+			if not hit.CanCollide then
+				table.insert(ignore, hit)
+			end
+		end
+		distance = (startPosition - position).magnitude
+		lastPosition = position
+	until distance >= maxDistance - 0.1 or (hit and hit.CanCollide)
+	return hit, position, normal
+end
+
+return module
+
+end
+}
+local ScriptIndex = 0
+local Scripts,ModuleScripts,ModuleCache = {},{},{}
+local _require = require
+function require(obj,...)
+	local index = ModuleScripts[obj]
+	if not index then
+		local a,b = pcall(_require,obj,...)
+		return not a and error(b,2) or b
+	end
+	
+	local res = ModuleCache[index]
+	if res then return res end
+	res = ScriptFunctions[index](obj,require)
+	if res==nil then error("Module code did not return exactly one value",2) end
+	ModuleCache[index] = res
+	return res
+end
+local function Script(obj,ismodule)
+	ScriptIndex = ScriptIndex + 1
+	local t = ismodule and ModuleScripts or Scripts
+	t[obj] = ScriptIndex
+end
+
+function RunScripts()
+	for script,index in pairs(Scripts) do
+		coroutine.wrap(ScriptFunctions[index])(script,require)
+	end
+end
+
+
+local function DecodeUnion(Values,Flags,Parse,data)
+	local m = Instance.new("Folder")
+	m.Name = "UnionCache ["..tostring(math.random(1,9999)).."]"
+	m.Archivable = false
+	m.Parent = game:GetService("ServerStorage")
+	local Union,Subtract = {},{}
+	if not data then
+		data = Parse('B')
+	end
+	local ByteLength = (data % 4) + 1
+	local Length = Parse('I'..ByteLength)
+	local ValueFMT = ('I'..Flags[1])
+	for i = 1,Length do
+		local data = Parse('B')
+		local part
+		local isNegate = bit32.band(data,0b10000000) > 0
+		local isUnion =  bit32.band(data,0b01000000) > 0
+		if isUnion then
+			part = DecodeUnion(Values,Flags,Parse,data)
+		else
+			local isMesh = data % 2 == 1
+			local ClassName = Values[Parse(ValueFMT)]
+			part = Instance.new(ClassName)
+			part.Size = Values[Parse(ValueFMT)]
+			part.Position = Values[Parse(ValueFMT)]
+			part.Orientation = Values[Parse(ValueFMT)]
+			if isMesh then
+				local mesh = Instance.new("SpecialMesh")
+				mesh.MeshType = Values[Parse(ValueFMT)]
+				mesh.Scale = Values[Parse(ValueFMT)]
+				mesh.Offset = Values[Parse(ValueFMT)]
+				mesh.Parent = part
+			end
+		end
+		part.Parent = m
+		table.insert(isNegate and Subtract or Union,part)
+	end
+	local first = table.remove(Union,1)
+	if #Union>0 then
+		first = first:UnionAsync(Union)
+	end
+	if #Subtract>0 then
+		first = first:SubtractAsync(Subtract)
+	end
+	m:Destroy()
+	return first
+end
+
+local function Decode(str)
+	local StringLength = #str
+	
+	-- Base64 decoding
+	do
+		local decoder = {}
+		for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+			decoder[char:byte()] = b64code-1
+		end
+		local n = StringLength
+		local t,k = table.create(math.floor(n/4)+1),1
+		local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+		for i = 1, padding > 0 and n-4 or n, 4 do
+			local a, b, c, d = str:byte(i,i+3)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+			k = k + 1
+		end
+		if padding == 1 then
+			local a, b, c = str:byte(n-3,n-1)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+		elseif padding == 2 then
+			local a, b = str:byte(n-3,n-2)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000
+			t[k] = string.char(bit32.extract(v,16,8))
+		end
+		str = table.concat(t)
+	end
+	
+	local Position = 1
+	local function Parse(fmt)
+		local Values = {string.unpack(fmt,str,Position)}
+		Position = table.remove(Values)
+		return table.unpack(Values)
+	end
+	
+	local Settings = Parse('B')
+	local Flags = Parse('B')
+	Flags = {
+		--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+		--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+		--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+		--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+		--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+	}
+	
+	local ValueFMT = ('I'..Flags[1])
+	local InstanceFMT = ('I'..Flags[2])
+	local ConnectionFMT = ('I'..Flags[3])
+	local PropertyLengthFMT = ('I'..Flags[4])
+	
+	local ValuesLength = Parse(ValueFMT)
+	local Values = table.create(ValuesLength)
+	local CFrameIndexes = {}
+	
+	local ValueDecoders = {
+		--!!Start
+		[1] = function(Modifier)
+			return Parse('s'..Modifier)
+		end,
+		--!!Split
+		[2] = function(Modifier)
+			return Modifier ~= 0
+		end,
+		--!!Split
+		[3] = function()
+			return Parse('d')
+		end,
+		--!!Split
+		[4] = function(_,Index)
+			table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+		end,
+		--!!Split
+		[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+		--!!Split
+		[6] = {Color3.fromRGB,'BBB'},
+		--!!Split
+		[7] = {BrickColor.new,'I2'},
+		--!!Split
+		[8] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+			end
+			return ColorSequence.new(kpts)
+		end,
+		--!!Split
+		[9] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+			end
+			return NumberSequence.new(kpts)
+		end,
+		--!!Split
+		[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+		--!!Split
+		[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+		--!!Split
+		[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+		--!!Split
+		[14] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Axes.new(unpack(t))
+		end,
+		--!!Split
+		[15] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Faces.new(unpack(t))
+		end,
+		--!!Split
+		[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+		--!!Split
+		[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+		--!!Split
+		[19] = function()
+			return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+		end
+		--!!End
+	}
+	
+	for i = 1,ValuesLength do
+		local TypeAndModifier = Parse('B')
+		local Type = bit32.band(TypeAndModifier,0b11111)
+		local Modifier = (TypeAndModifier - Type) / 0b100000
+		local Decoder = ValueDecoders[Type]
+		if type(Decoder)=='function' then
+			Values[i] = Decoder(Modifier,i)
+		else
+			Values[i] = Decoder[1](Parse(Decoder[2]))
+		end
+	end
+	
+	for i,t in pairs(CFrameIndexes) do
+		Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+	end
+	
+	local InstancesLength = Parse(InstanceFMT)
+	local Instances = {}
+	local NoParent = {}
+	
+	for i = 1,InstancesLength do
+		local ClassName = Values[Parse(ValueFMT)]
+		local obj
+		local MeshPartMesh,MeshPartScale
+		if ClassName == "UnionOperation" then
+			obj = DecodeUnion(Values,Flags,Parse)
+			obj.UsePartColor = true
+		elseif ClassName:find("Script") then
+			obj = Instance.new("Folder")
+			Script(obj,ClassName=='ModuleScript')
+		elseif ClassName == "MeshPart" then
+			obj = Instance.new("Part")
+			MeshPartMesh = Instance.new("SpecialMesh")
+			MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+			MeshPartMesh.Parent = obj
+		else
+			obj = Instance.new(ClassName)
+		end
+		local Parent = Instances[Parse(InstanceFMT)]
+		local PropertiesLength = Parse(PropertyLengthFMT)
+		local AttributesLength = Parse(PropertyLengthFMT)
+		Instances[i] = obj
+		for i = 1,PropertiesLength do
+			local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+			
+			-- ok this looks awful
+			if MeshPartMesh then
+				if Prop == "MeshId" then
+					MeshPartMesh.MeshId = Value
+					continue
+				elseif Prop == "TextureID" then
+					MeshPartMesh.TextureId = Value
+					continue
+				elseif Prop == "Size" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+					else
+						MeshPartMesh.Scale = Value / MeshPartScale
+					end
+				elseif Prop == "MeshSize" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+						MeshPartMesh.Scale = obj.Size / Value
+					else
+						MeshPartMesh.Scale = MeshPartScale / Value
+					end
+					continue
+				end
+			end
+			
+			obj[Prop] = Value
+		end
+		if MeshPartMesh then
+			if MeshPartMesh.MeshId=='' then
+				if MeshPartMesh.TextureId=='' then
+					MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+				end
+				MeshPartMesh.Scale = obj.Size
+			end
+		end
+		for i = 1,AttributesLength do
+			obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+		end
+		if not Parent then
+			table.insert(NoParent,obj)
+		else
+			obj.Parent = Parent
+		end
+	end
+	
+	local ConnectionsLength = Parse(ConnectionFMT)
+	for i = 1,ConnectionsLength do
+		local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+		Instances[a][Values[b]] = Instances[c]
+	end
+	
+	return NoParent
+end
+
+
+local Objects = Decode('AECcASEFTW9kZWwhBE5hbWUhC2NhciBTcGF3bmUgIQpXb3JsZFBpdm90BFIBUwFUASEGU2NyaXB0IQhJbnRWYWx1ZSEFUmVnZW4hBFBhcnQhBkJ1dHRvbiEIQW5jaG9yZWQiIQ1Cb3R0b21TdXJmYWNlAwAAAAAAAAAAIQpCcmlja0NvbG9yB2gAIQZDRnJhbWUEHABV'
+..'AVYBIQpDYW5Db2xsaWRlAiEFQ29sb3IGazJ8IRhDdXN0b21QaHlzaWNhbFByb3BlcnRpZXMQMzMzPwAAgD8AAAAAAACAPwAAgD8hC09yaWVudGF0aW9uCgAAAAAAADTDAAAAACEIUG9zaXRpb24K4MNIwtihTL7Y3B1CIQhSb3RhdGlvbgoAADTDAAAAAAAANMMhBFNp'
+..'emUKAAAAQM3MzD4AAABAIQpUb3BTdXJmYWNlIQhBY3RpdmF0ZSEMQ3lsaW5kZXJNZXNoIQdTcGF3bmVyBFcBVQFWASEESGVhZAfHAAQrAFUBVgEGY19iEDMzMz8AAIA/AAAAPwAAgD8AAIA/CuDDSMJoz0w+2NwdQiEMVHJhbnNwYXJlbmN5AwAAAAApXO8/IQhIdW1h'
+..'bm9pZCEGSGVhbHRoIQlNYXhIZWFsdGghDU5hbWVPY2NsdXNpb24hCVdhbGtTcGVlZCEHU3RhdGlvbgRYAVMBVAEhBEplZXAhCFRocnVzdGVyBDkAUwFUAQoAAAAAAAA0QwrXIzwKtIUhwmUdAUCzCiVCCgAANMMAAAAAcf0zwwoAAIA/AACAPwAAAEADAAAAAAAA8D8h'
+..'BFdlbGQhAkMwBFkBWgFbASEFUGFydDAhBVBhcnQxIQlXaGVlbFdlbGQEXAFaAVsBIQ5Vbmlvbk9wZXJhdGlvbiELRW5naW5lQmxvY2sESABTAVQBBvj4+AqKhSvCrCJRQLYKI0IKBACgQAYAIEABAIBAIQxVc2VQYXJ0Q29sb3IKAACAQAAAAEAAAGBACoKFK8K3ImFA'
+..'twoiQiEJV2VkZ2VQYXJ0CgAAYEAAAAA/AAAAPwpphTTCp5OIQLkKJEIKCtcjPAAAtEIAAAAACgAAAD8AAAA/AABgQAp5hTTCTSdxQLcKJEIKAAAAAAAAAAAK1yO8CgAAYEAAAMA/AAAAPwqbhTTCTScxQLUKJEIKCtcjPAAAtEIAADTDCgAAgEAAACBAAAAAPwqKhSvC'
+..'XyJRQLYKKkIKaYUiwvqOiEC5CiRCCgrXI7wAALTCAAAAAAp5hSLC9B1xQLcKJEIKm4UiwvQdMUC1CiRCCgrXI7wAALTCAAA0QwoAAAA/AADAPwAAwD8Km4UiwiAeMUC1CiBCCgAAAAAAADRDcf0zwwqbhTTCeScxQLUKIEIEXQFaAVsBIQVTb3VuZCEHUnVubmluZyEG'
+..'TG9vcGVkIRJSb2xsT2ZmTWluRGlzdGFuY2UhB1NvdW5kSWQhKWh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MzkxODI0NTY4IQZWb2x1bWUH6wMEbQBTAVQBBhEREQq8hSvCv0TiP7IKKkIKAACgQAAAAD8AAAA/BF4BWgFbAQRxAFMBVAEKtIU1wsgnAUCz'
+..'CiVCBF8BWgFbAQR0AFMBVAEKioU0wpgoUUC2CgZCCg4AAD8EACBAAQBgQAoAAAA/AADAPwAAYEAKeYU0wpcocUC3CgZCCgAAAD8AAIA/AACAPwqjhTTCYCghQLQKC0IKAAAAAAAAAABx/TNDCgAAAD8AAIA/AAAAPwqjhTTC2CghQLQKAEIKo4U0wrgoIUC0CgNCBGAB'
+..'WgFbASEKTWFudWFsV2VsZCEaVW5pb24tdG8tUGFydCBTdHJvbmcgSm9pbnQEYQFiAVsBIQJDMQRjAWQBZQEEhQBTAVQBCrSFNcIPKQFAswoHQgRmAVoBWwEhB0NoYXNzaXMEiQBTAVQBCrSFK8JFIwFAswoVQgoAAIBAAACAPwAAIEEhIUNoYXNzaXMtdG8tRHJpdmVT'
+..'ZWF0IFN0cm9uZyBKb2ludARnAWgBYgEEaQFqAWsBIQxCb2R5UG9zaXRpb24hCE1heEZvcmNlCgAAAAAAAAAAAAAAACEIQm9keUd5cm8hCU1heFRvcnF1ZSEcQ2hhc3Npcy10by1QYXJ0IFN0cm9uZyBKb2ludARsAVoBWwEEbQFuAWUBB+kDBJgAUwFUAQqKhSvC3iNR'
+..'QLYKB0IKAACAQAAAwD8AAEBABG8BWgFbASEZUGFydC10by1QYXJ0IFN0cm9uZyBKb2ludARwAVoBWwEEcQFyAXMBBJ8AUwFUAQqThSLCmB5BQLYKFUIKDgAAPwIAQEABAIBACpuFIsKjHjFAtQoUQgoAAAA/AACAPwAAwD8KcoUiwjyPgEC5ChhCCgAAAD8AACBAAAAA'
+..'PwqLhSLCTB5RQLcKHEIKAAAAPwAAAD8AAIA/Cr2FIsKtPOI/swobQgoAAAA/AAAAPwAAAEAKvYUiwjA94j+zChVCCr2FIsKzPeI/swoPQgpyhSLCZ4+AQLkKEEIEdAFaAVsBBK4AUwFUAQqThTTC8idBQLYKFUIKm4U0wv0nMUC1ChRCCnKFNMLpk4BAuQoYQgqLhTTC'
+..'pidRQLcKHEIKvYU0wmFP4j+zChtCCr2FNMLkT+I/swoVQgq9hTTCZ1DiP7MKD0IKcoU0whSUgEC5ChBCBHUBWgFbAQS4AFMBVAEKtIUhwqweAUCzCgdCBHYBWgFbAQS7AFMBVAEKioUiwj4fUUC2CgZCCnmFIsI9H3FAtwoGQgqjhSLCBh8hQLQKC0IKo4Uiwn4fIUC0'
+..'CgBCCqOFIsJeHyFAtAoDQgR3AVoBWwEEeAF5AVsBBHoBewF8ASELQmFja1N1cmZhY2UDAAAAAAAAJEAExgB9AX4BCnqFK8IiJFFAtgoAQgTIAFMBVAEKvIUrwlVI4j+yCgBCBH8BWgFbAQSAAWgBYgEEgQGCAWQBBM4AgwGEAQrXo2DBAAAAAArXI7wKO4UrwmSotECY'
+..'eBpCCggAoEACACBAzJmZPgrMzIxAmJmZPpmZmT4KGIUrwo/O1kBqZxlCCpCZmT4AACBAmZmZPgrUHiLC9KW0QJh4GkIKmpmZPszMDECZmZk+CkCFK8JHALBA2Z0aQgqi6zTC1aq0QJh4GkIEhQFoAYYBIQ1CYWNrTGVmdFdoZWVsBxoABNwAhwGIAQYbKjUK3YUhwmo9'
+..'gj+wCgdCCgAAwD8AAEBAAABAQAr7//8+//8fQP7/H0AK1JMdwqKPgj/HBgdCCtSTJcLyl4I/xwYHQgr9/x9A//8/QP3/P0AK1JMhwsqTgj/HBgdCAwAAAAAAAAhACgAAgD8AAIA/AACAPwr7/78/+///P/z/vz8KQ5Mhwng9gj+NCgdCAwAAAAAAABBACv7/vz9iZqY/'
+..'/v+/PwoAAAAAAAA0Q+H6s8IhB1RleHR1cmUhBEZhY2UhKWh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MjU5MTQ5MjU2AwAAAAAAAOA/IQ1TdHVkc1BlclRpbGVVIQ1TdHVkc1BlclRpbGVWAwAAAAAAAABAIQ9QYXJ0aWNsZUVtaXR0ZXIhDEFjY2VsZXJh'
+..'dGlvbgoAAAAAAACgwAAAAAAoAgAAAAAfHx8AAIA/Hx8fIQdFbmFibGVkIQhMaWZldGltZRHNzEw/mpmZPyENTGlnaHRFbWlzc2lvbgMAAACgmZnJPyEEUmF0ZQMAAAAAAABJQCEIUm90U3BlZWQRAABIwwAASEMRAAAAAAAAtEMpBAAAAAAAAAAAAAAAANCXCj9iogk/'
+..'AAAAADlHXT+Tc04/AAAAAAAAgD92+mk/AAAAACEFU3BlZWQRAAAAAAAAAAAhC1NwcmVhZEFuZ2xlCwAAIEIAACBCIRZyYnhhc3NldGlkOi8vMjg3MjU5NjE5KQYAAAAAAACAPwAAAADmseY9zcxMPwAAAAAPt5M+MzMrPwAAAAArFTQ/zcwsPwAAAACGVl8/AABQPwAA'
+..'AAAAAIA/AACAPwAAAAAhIkJhY2tMZWZ0V2hlZWwtdG8tUGFydCBTdHJvbmcgSm9pbnQEiQFaAVsBBIoBiwF8ASEFTGlnaHQEDAGMAY0BCgAAAAAAADTDPQo0QgqChTHCeSVhQB5xKkIKAAA0wwAAAABx/QbDCgAAgD8AAIA/AAAAPyEKU3VyZmFjZUd1aSEKQ2FudmFz'
+..'U2l6ZQsAAMhCAADIQiEFRnJhbWUhEEJhY2tncm91bmRDb2xvcjMG////IQxCb3JkZXJDb2xvcjMhD0JvcmRlclNpemVQaXhlbAzNzMw9AADNzMw9AAAMzcxMPwAAzcxMPwAAIQxTdXJmYWNlTGlnaHQhCkJyaWdodG5lc3MhBUFuZ2xlAwAAAAAAAE5AIQVSYW5nZQMA'
+..'AAAAAABAQASOAY8BkAEEIgGRAZIBCgAAAAAAADRDPQo0QgqChSXCPh9hQB5xKkIEkwGUAZUBIQ1Db25maWd1cmF0aW9uIQ5Db25maWd1cmF0aW9ucyELTnVtYmVyVmFsdWUhBkJvdW5jZSEFVmFsdWUDAAAAAAAAWUAhBkhlaWdodAMAAAAAAIBBQCEKU3VzcGVuc2lv'
+..'biEJVHVyblNwZWVkIQlDYXJTY3JpcHQhC0xvY2FsU2NyaXB0IQ5Mb2NhbENhclNjcmlwdCEIRGlzYWJsZWQhC09iamVjdFZhbHVlIQNDYXIhDE1vZHVsZVNjcmlwdCENUmF5Y2FzdE1vZHVsZSEPRnJvbnRSaWdodFdoZWVsBDgBUwFUAQrVhTXCkE+CP7AKJUIKzJMx'
+..'wsihgj/HBiVCCsyTOcIYqoI/xwYlQgrMkzXC8KWCP8cGJUIKO5M1wp5Pgj+NCiVCIQ5CYWNrUmlnaHRXaGVlbAQ/AZYBlwEKzYU1whBSgj+wCgdCCsSTMcJIpII/xwYHQgrEkznCmKyCP8cGB0IKxJM1wnCogj/HBgdCCjOTNcIeUoI/jQoHQiEjQmFja1JpZ2h0V2hl'
+..'ZWwtdG8tUGFydCBTdHJvbmcgSm9pbnQEmAGZAZoBIQ5Gcm9udExlZnRXaGVlbARIAVMBVAEK1YUhwso6gj+wCiVCCsyTHcICjYI/xwYlQgrMkyXCUpWCP8cGJUIKzJMhwiqRgj/HBiVCCjuTIcLYOoI/jQolQiELVmVoaWNsZVNlYXQhCURyaXZlU2VhdARQAZsBnAEK'
+..'oIUrwuaJJ0AccRNCCgAAAEDNzEw+AAAAQAqIpDXCsDdNQOg9FUIKAACAvyjzBDmI/EOyCijzBDkAAIA/67wuNwoAAIC/h4QSqiCPgK8Ku1MdKgAAgD9gEhe1CuDDSMIA20w+2NwdQgqQhSvCsDJNQOg9FUIKAAAgwAAAAAAAAIDACgAAgD8AAAAAAAAAAAoAAAAAAACA'
+..'PwAAAAAKAAAAAAAAgL8AAAAACgAAAAAAAKA/AABgwAoAAAAAAACAvgAAqMAKAAAgQAAAAAAAAIDACgAAEEAEAKA/AABwQAoOAIC+BACgvwEA4L8KAAAAAAAAAAAAAIA/CoAAAEDw/5+/AABQwAoAvK8tAKQdswAAgD8KjRXnKgAAgD8ApB2zCgAAIEAAAAAAAABgQAoA'
+..'AADAAAAAPwAAoEAKAACAvwAAAAAAAAAACgAAAMAAu8y9QDOTQAoAAIC/oL6mter+Q7IKyDVEsm96KDcAAIA/CgAAAMAAAAC/AACgQAoA/v+/8P/fvwAAgL4KAACAP5Go5ioAvK8tCgAAAAAAAKA/AABgQAoAAADAAABAvwAAwD8KAP//v/D/P78AAIC+CgAAgD/ByuYq'
+..'AFBqLQo/AecqAACAPwAw0rIKAAAQwAAAgD8AAAAACgAAEEAAAIA/AAAAAAoAACDAAAAAAAAAYEAKAAAQwAQAoD8AAHBACg4AgD4EAKC/AQDgPwoAAAAAAAAAAAAAgL8KAP7/v+j/n78AAIA+CgBQ6q0AMFIzAACAvwraKecqAACAPwAwUrMKAACAvyjzBDlmVESyCijz'
+..'BDkAAIA/j1ovNwoAAAAAAACAvgAAqEAKAAAgwAAAgD4AAIA+CoD/H8Dw/5+/AACAPgoAAIC/kajmqgC8r60KAACAPyjzBLmI/EMyCsj7ADltW3g/kFh4vgoAAAC2vi1oQGC7rb8KAAAAAENbeD82W3g+CgAAgL8o8wQ5jslEsgoo8wQ5AACAP78sMDcKAABAvwAAwL8A'
+..'AMA/CoD+T8Dw/2/AAACAvgoAAIA/YIbmKgBQ6i0KE/80v9MKNT+BBPY2CtMKNT8T/zQ/ImP1NgoAAMA/AADAPzQzq8AK8wQ1P/MENT/mGdQyCvMENb/zBDU/rgOAMwoT/zS/0wo1PwTM9zYK0wo1PxP/ND/Vrvk2CgAAwL8AAMA/NDOrwArzBDU/8wQ1P4Jo87IK8wQ1'
+..'v/MENT/s6JKzCgAAgL8o8wQ5sHFEsgoo8wQ5AACAPxuPLzcKAAHgPwAAcMAAAIC+CgAAgD/y7OYqAFDqLAry7OYqAACAPwAwUrIKAACAv6ulAzkAALApCqulAzkAAIA/gE/INGMBAAACAAIAAwAEAAUABgABAAAHAAEBAAIACAAJAAENAAIACgALAAwADQAOAA8AEAAR'
+..'ABIAEwAUABUAFgAXABgAGQAaABsAHAAdAB4AHwAgACEADgAGAAQBAAIAIgAjAAQAAAEAAQIAAgAkAAQAJQAJAAcNAAIAJgALAAwADQAOAA8AJwARACgAFQApABcAKgAZABoAGwArAB0AHgAfACAAIQAOACwALQAuAAcEAC8ADgAwAA4AMQAOADIADgABAAECAAIAMwAE'
+..'ADQAAQAKAgACADUABAA0AAkACwoAAgA2AA0ADgARADcAEwAUABkAOAAbADkAHQA6AB8AOwAhAA4ALAA8AD0ADAEAPgA/AD0ADAIAAgBCAD4AQwBEAEAKAAkASwBMADgAAE0ATgBPAFAAAAkAUQBSAFMAAE0AVABVAFYAAAkAVwBYAFMAAE0ATgBZAFoAAAkAUQBbADgA'
+..'AE0AVABcAF0AAE0AXgBfAGAAAE0AXgBhAGAACwgAAgBFABEARgAVAEcAGQA4ABsASAAdADoAHwBJAEoADAA9AA8BAD4AYgBjAA8FAAIAZABlAAwAZgAOAGcAaABpADwACQALCQANAA4ADwBqABEAawAVAGwAGQA4ABsAbQAdADoAHwBuACEADgA9ABIBAD4AbwAJAAsK'
+..'AAIANgANAA4AEQBwABMAFAAZADgAGwBxAB0AOgAfADsAIQAOACwAPAA9ABQBAD4AcgA9ABQCAAIAQgA+AEMARABABAAJAHYAdwA4AABNAHgAeQB6AAAJAHsAfABTAABNAHgAfQBgAAsHABEAcwAVAEcAGQA4ABsAdAAdADoAHwB1AEoADAA9ABcBAD4AfgB/ABcDAAIA'
+..'gAA+AIEAggCDAAkACwoAAgA2AA0ADgARAIQAEwAUABkAOAAbAIUAHQA6AB8AOwAhAA4ALAA8AD0AGgEAPgCGAD0AGgIAAgBCAD4AQwAJAAsKAAIAhwANAA4ADwBqABEAiAAVAGwAGQA4ABsAiQAdADoAHwCKACEADgB/AB0DAAIAiwA+AIwAggCNAI4AHQEAjwCQAJEA'
+..'HQEAkgCQAH8AHQMAAgCTAD4AlACCAJUACQALCQANAA4ADwCWABEAlwAVAEcAGQA4ABsAmAAdADoAHwCZACEADgA9ACIBAD4AmgB/ACIDAAIAmwA+AJwAggCdAEQAQAcACQB2AKEAOAAATQCiAKMAUwAACQCkAKUAUwAATQCmAKcAYAAACQCoAKkAUwAATQCmAKoAegAA'
+..'TQCiAKsAOAALBwARAJ4AFQBHABkAOAAbAJ8AHQA6AB8AoABKAAwAPQAlAQA+AKwARABABwAJAHYArwA4AABNAKIAsABTAAAJAKQAsQBTAABNAKYAsgBgAAAJAKgAswBTAABNAKYAtAB6AABNAKIAtQA4AAsHABEArQAVAEcAGQA4ABsArgAdADoAHwCgAEoADAA9ACcB'
+..'AD4AtgAJAAsKAAIANgANAA4AEQC3ABMAFAAZADgAGwC4AB0AOgAfADsAIQAOACwAPAA9ACkBAD4AuQA9ACkCAAIAQgA+AEMARABABAAJAHYAvAA4AABNAHgAvQB6AAAJAHsAvgBTAABNAHgAvwBgAAsHABEAugAVAEcAGQA4ABsAuwAdADoAHwB1AEoADAA9ACwBAD4A'
+..'wAB/ACwDAAIAgAA+AMEAggDCAAkACwoAwwDEAA0ADgAPAJYAEQDFABUARwAZADgAGwDGAB0AOgAfAFcAIQAOAAkACwkADQAOAA8AagARAMcAFQBsABkAOAAbAMgAHQA6AB8AbgAhAA4APQAwAQA+AMkAfwAwAwACAJsAPgDKAIIAywBEAEAEAAkA0ADRAM0AAAkA0gDT'
+..'AM0AAAkA1ADVAM0AAAkA0gDWAM0ACwgAEQDMABMAFAAVAEcAGQDNABsAzgAdAM0AHwDPAEoADAA9ADMBAD4A1wBEAEACQAJAA4AJAN4A3wA4AIAJAN4A4AA4AAEJAOEA4gA4AOMA5ACQAIEJAOUA5gBgAOcA5ACQAAEJAOgA3ADpAOcA5ACQAAsJAAIA2AAPANkAEQDa'
+..'ABMAFAAVANsAGQA4ABsA3AAdADoAHwDdAOoANQUA6wA8AOoA7AAsAO0A7gDjAO8A4wDqADUEAOoA7AAsAO0A7gDjAO8A4wDqADUFAOsA8ADqAOwALADtAO4A4wDvAOMA6gA1BQDrAOcA6gDsACwA7QDuAOMA7wDjAPEANQ0A8gDzABUA9AD1ABQA9gD3APgA+QD6APsA'
+..'/AD9AB0A/gAfAP8AAAEBAQIBAwHqAAQBLAAFAX8ANQMAAgAGAT4ABwGCAAgBCQALCgACAAkBDQAOAA8AagARAAoBFQBsABkACwEbAAwBHQANAR8ADgEhAA4ADwE8AQAQAREBEgE9BQATARQBFQHbABYBDgAbABcBHwAYARkBPAMAGgHtABsBHAEdAR4BPQA8AQA+AB8B'
+..'CQALCgACAAkBDQAOAA8AagARACABFQBsABkAIQEbACIBHQANAR8ADgEhAA4ADwFBAQAQAREBEgFCBQATARQBFQHbABYBDgAbABcBHwAYARkBQQMAGgHtABsBHAEdAR4BPQBBAQA+ACMBJAELAQACACUBJgFGAgACACcBKAEpASYBRgIAAgAqASgB4wAmAUYCAAIAAAEo'
+..'ASsBJgFGAgACACwBKAHnACYBRgIAAgAtASgB8AAGAAsBAAIALgEvAUwCAAIAMAExAQwAMgFNAQACADMBNAFMAQACADUBRABAAkACQAOACQDeADkBOACACQDeADoBOAABCQDhADsBOADjAOQAkACBCQDlADwBYADnAOQAkAABCQDoADgB6QDnAOQAkAALCQACADYBDwDZ'
+..'ABEANwETABQAFQDbABkAOAAbADgBHQA6AB8A3QDqAFAFAOsAPADqAOwALADtAO4A4wDvAOMA6gBQBADqAOwALADtAO4A4wDvAOMA6gBQBQDrAPAA6gDsACwA7QDuAOMA7wDjAOoAUAUA6wDnAOoA7AAsAO0A7gDjAO8A4wDxAFANAPIA8wAVAPQA9QAUAPYA9wD4APkA'
+..'+gD7APwA/QAdAP4AHwD/AAABAQECAQMB6gAEASwABQFEAEACQAJAA4AJAN4AQAE4AIAJAN4AQQE4AAEJAOEAQgE4AOMA5ACQAIEJAOUAQwFgAOcA5ACQAAEJAOgAPwHpAOcA5ACQAAsJAAIAPQEPANkAEQA+ARMAFAAVANsAGQA4ABsAPwEdADoAHwDdAOoAVgUA6wA8'
+..'AOoA7AAsAO0A7gDjAO8A4wDqAFYEAOoA7AAsAO0A7gDjAO8A4wDqAFYFAOsA8ADqAOwALADtAO4A4wDvAOMA6gBWBQDrAOcA6gDsACwA7QDuAOMA7wDjAPEAVg0A8gDzABUA9AD1ABQA9gD3APgA+QD6APsA/AD9AB0A/gAfAP8AAAEBAQIBAwHqAAQBLAAFAX8AVgMA'
+..'AgBEAT4ABwGCAEUBRABAAkACQAOACQDeAEkBOACACQDeAEoBOAABCQDhAEsBOADjAOQAkACBCQDlAEwBYADnAOQAkAABCQDoAEgB6QDnAOQAkAALCQACAEYBDwDZABEARwETABQAFQDbABkAOAAbAEgBHQA6AB8A3QDqAF0FAOsAPADqAOwALADtAO4A4wDvAOMA6gBd'
+..'BADqAOwALADtAO4A4wDvAOMA6gBdBQDrAPAA6gDsACwA7QDuAOMA7wDjAOoAXQUA6wDnAOoA7AAsAO0A7gDjAO8A4wDxAF0NAPIA8wAVAPQA9QAUAPYA9wD4APkA+gD7APwA/QAdAP4AHwD/AAABAQECAQMB6gAEASwABQFNAQsJAAIATgEPANkAEQBPARUA2wAZADgA'
+..'GwBQAR0AOgAfAFEBIQAOADYNQAAdDUEADA5AAAwOQQBdEEAAHRBBAA8TQAAdE0EAEhVAAB0VQQAUFkAAFBZBAFAYQAAdGEEAFxlAABcZQQAvG0AAHRtBABocQAAaHEEAVh5AAB0eQQBjIUAAHSFBAC8jQAAdI0EAIiRAACIkQQAvJkAAHSZBACUoQAAdKEEAJypAAB0q'
+..'QQApK0AAKStBADUtQAAdLUEALC5AACwuQQAvMUAAHTFBADAyQAAwMkEALzRAAB00QQAzO0AANTtBAC9AQAAdQEEAPEVAAB1FQQBBXEAAVlxBAC8=')
+for _,obj in pairs(Objects) do
+	obj.Parent = script or workspace
+end
+
+RunScripts()
