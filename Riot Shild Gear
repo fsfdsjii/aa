@@ -1,0 +1,450 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Animation1 = Instance.new("Animation")
+Animation2 = Instance.new("Animation")
+Animation3 = Instance.new("Animation")
+LocalScript4 = Instance.new("LocalScript")
+NumberValue5 = Instance.new("NumberValue")
+Script6 = Instance.new("Script")
+NumberValue7 = Instance.new("NumberValue")
+Script8 = Instance.new("Script")
+LocalScript9 = Instance.new("LocalScript")
+Part10 = Instance.new("Part")
+SpecialMesh11 = Instance.new("SpecialMesh")
+Camera12 = Instance.new("Camera")
+Tool0.Name = "Riot Shield by GamerX123211"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=82265194"
+Tool0.Grip = CFrame.new(0, 0, 0, 1, 0, -8.74199984e-08, -0, 1, -0, 8.74199984e-08, 0, 1)
+Tool0.GripForward = Vector3.new(8.741999835137904e-08, 0, -1)
+Tool0.GripRight = Vector3.new(1, -0, 8.741999835137904e-08)
+Animation1.Name = "QuickSlash"
+Animation1.Parent = Tool0
+Animation1.AnimationId = "http://www.roblox.com/Asset?ID=51158666"
+Animation2.Name = "ShieldBash"
+Animation2.Parent = Tool0
+Animation2.AnimationId = "http://www.roblox.com/Asset?ID=49907410"
+Animation3.Name = "ShieldWalk"
+Animation3.Parent = Tool0
+Animation3.AnimationId = "http://www.roblox.com/Asset?ID=49763871"
+LocalScript4.Name = "Local Gui"
+LocalScript4.Parent = Tool0
+table.insert(cors,sandbox(LocalScript4,function()
+NLS([[Tool = owner.Character["Riot Shield by GamerX123211"] 
+
+local stillEquipped = true
+
+function onEquippedLocal(mouse)
+	stillEquipped = true
+	if mouse == nil then
+		print("Mouse not found")
+		return
+	end
+	while stillEquipped do 
+		print("Setting Mouse to go")
+		mouse.Icon = "rbxasset://textures\\GunCursor.png"
+		while Tool.Enabled and stillEquipped do
+			wait(0.01)
+		end
+		print("Setting Mouse to wait")
+		mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+		while not Tool.Enabled and stillEquipped do
+			wait(0.01)
+		end		
+	end
+end
+
+function onUnequippedLocal()
+	stillEquipped = false
+end
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal)]] , owner.PlayerGui)
+
+end))
+NumberValue5.Name = "ShieldActive"
+NumberValue5.Parent = Tool0
+Script6.Name = "SlowScript"
+Script6.Parent = Tool0
+Script6.Enabled = false
+table.insert(cors,sandbox(Script6,function()
+NS([[vChar = owner.Character
+myHumanoid = vChar:FindFirstChild("Humanoid")
+
+slow = script.Slow
+
+if myHumanoid then 
+	myHumanoid.WalkSpeed = 16 - slow.Value
+	wait(3.0)
+	myHumanoid.WalkSpeed = 16 
+end
+
+wait(1.0)
+script:Remove()]] , owner.Character["Riot Shield by GamerX123211"])
+
+end))
+Script6.Disabled = true
+NumberValue7.Name = "Slow"
+NumberValue7.Parent = Script6
+Script8.Name = "SwordScript"
+Script8.Parent = Tool0
+Script8.Enabled = false
+table.insert(cors,sandbox(Script8,function()
+-- Sword and shield
+-- shield damage 12, sword damage 18
+-- health increased by 50
+-- Slows enemies based off their maximum health
+
+local Tool = script.Parent
+local Sword = Tool.Handle
+
+local shield
+local shieldMesh
+
+local vCharacter
+
+local damage = 18
+local judgement
+
+Tool.Enabled = true
+
+function blow(hit)   -- For the Sword
+	humanoid = hit.Parent:FindFirstChild("Humanoid")
+	vCharacter = Tool.Parent
+	myHumanoid = vCharacter:FindFirstChild("Humanoid")
+	vPlayer = game.Players:GetPlayerFromCharacter(vCharacter)
+	if humanoid ~= nil and myHumanoid ~= nil and myHumanoid ~= humanoid then
+		rightArm = vCharacter:FindFirstChild("Right Arm")
+		if rightArm then 
+			rightGrip = rightArm:FindFirstChild("RightGrip")
+			if rightGrip and (rightGrip.Part0 == Sword or rightGrip.Part1 == Sword) then 
+				tagHumanoid(humanoid, vPlayer)
+				judgement = humanoid.Health/humanoid.MaxHealth
+				if judgement <= 0.75 then 
+					existingScript = humanoid.Parent:FindFirstChild("SlowScript")
+					if existingScript then 
+						print("Removing Script")
+						existingScript:Remove()
+					end				
+					newScript = Tool.SlowScript:Clone()
+					newScript.Parent = humanoid.Parent
+					Tool.SlowScript.Slow.Value = (1- judgement) * 12.0		
+					newScript.Disabled = false								
+				end
+				humanoid:TakeDamage(damage)
+				wait(1.0)
+				untagHumanoid(humanoid)			
+			end
+		end
+	end
+end
+
+
+function tagHumanoid(humanoid, player)
+	if humanoid ~= nil then 
+		creatorTag = Instance.new("ObjectValue")
+		creatorTag.Name = "creator"
+		creatorTag.Value = player
+		creatorTag.Parent = humanoid 
+	end
+end
+
+function untagHumanoid(humanoid)
+	if humanoid ~= nil then 
+		tag = humanoid:FindFirstChild("creator")
+		if tag ~= nil then 
+			tag:Remove()
+		end
+	end
+end
+
+function onActivated()
+	if Tool.Enabled == false then
+		return 
+	end
+	Tool.Enabled = false
+	vCharacter = Tool.Parent
+	myTorso = vCharacter:FindFirstChild("Torso")
+	if myTorso == nil then 
+		return
+	end
+	
+	wait(0.5)
+	Tool.Enabled = true
+
+end
+
+function onEquipped()
+	print("On Equip")
+	vCharacter = Tool.Parent
+	Tool.Grip = CFrame.new(0, -0.5, 0.800000012, -4.37113883e-008, -1, 0, 1, -4.37113883e-008, 0, 0, 0, 1)
+	while Sword:FindFirstChild("Mesh") == nil do wait() end 
+	Sword.Mesh.MeshId = "http://www.roblox.com/asset/?id=82264918"
+	Sword.Mesh.TextureId = "http://www.roblox.com/asset/?id=82265067" 
+	torso = vCharacter:FindFirstChild("Torso")	
+	if vCharacter:FindFirstChild("Shield") == nil and torso ~= nil then
+
+		shield = Instance.new("Part")
+		shield.FormFactor = 3
+		shield.Name = "Shield"
+		shield.Size = Vector3.new(2, 0.2, 2.5)
+		shield.Shape = "Block"	
+		shield.Parent = vCharacter
+		shield.CanCollide = false
+
+		shieldMesh = Instance.new("SpecialMesh")
+		shieldMesh.MeshId = "http://www.roblox.com/asset/?id=82265009"
+		shieldMesh.Scale = Vector3.new(1.1, 1.1, 1.1)
+		shieldMesh.Name = "Mesh"
+		shieldMesh.TextureId = "http://www.roblox.com/asset/?id=82265116"
+		shieldMesh.Parent = shield		
+
+		shieldWeld = Instance.new("Weld")
+		shieldWeld.Part0 = torso
+		shieldWeld.Part1 = shield
+		shieldWeld.Name = "ShieldHolder"
+		--shieldWeld.C1 = CFrame.new(Vector3.new(0, -0.7, 0)) * CFrame.Angles(math.pi/2, math.pi, 0)
+		shieldWeld.C1 = CFrame.new(Vector3.new(0, 0, 0)) * CFrame.Angles(0, math.pi, 0)
+		shieldWeld.Parent = torso			
+	end
+end
+
+function onUnequipped()
+	torso = vCharacter:FindFirstChild("Torso")
+	if torso then 
+		shield = vCharacter:FindFirstChild("Shield") 
+		shieldWeld = torso:FindFirstChild("ShieldHolder")
+	end
+	if shield then shield:Remove() end
+	if shieldWeld then shieldWeld:Remove() end
+	
+end
+
+Tool.Equipped:connect(onEquipped)
+Tool.Unequipped:connect(onUnequipped)
+Tool.Activated:connect(onActivated)
+Sword.Touched:connect(blow)
+end))
+Script8.Disabled = true
+LocalScript9.Name = "AnimateScript"
+LocalScript9.Parent = Tool0
+table.insert(cors,sandbox(LocalScript9,function()
+NLS([[-- Sword and shield
+
+local Tool = owner.Character["Riot Shield by GamerX123211"]
+local Sword = Tool.Handle
+
+local vCharacter
+local shieldWeld
+
+local shieldWalkAnim
+local slashAnim
+local bashAnim
+local time
+
+local shieldActive
+local lastAttack = 0
+
+local bashDamage = 8
+local connection
+
+function bash(hit)
+	print("Bashing")
+	if hit.Anchored == false then 
+		humanoid = hit.Parent:FindFirstChild("Humanoid")
+		vCharacter = Tool.Parent 
+		myHumanoid = vCharacter:FindFirstChild("Humanoid")
+		local opponent = hit.Parent:FindFirstChild("Torso")
+		myTorso = vCharacter:FindFirstChild("Torso")
+		vPlayer = game.Players:GetPlayerFromCharacter(vCharacter)
+		if humanoid ~=nil and myHumanoid ~= nil and myHumanoid ~= humanoid then 
+			leftArm = vCharacter:FindFirstChild("Left Arm")
+			if leftArm then 
+				shieldGrip = leftArm:FindFirstChild("ShieldHolder")
+				if shieldGrip and shieldGrip.Part1 == shield then
+					tagHumanoid(humanoid, vPlayer)
+					humanoid:TakeDamage(bashDamage)											
+					wait(1.0)
+					if bv then bv:Remove() end
+					untagHumanoid(humanoid)
+					if connection then connection:disconnect() end
+				end
+			end
+		end
+	end
+end
+
+function tagHumanoid(humanoid, player)
+	if humanoid ~= nil then 
+		creatorTag = Instance.new("ObjectValue")
+		creatorTag.Name = "creator"
+		creatorTag.Value = player
+		creatorTag.Parent = humanoid 
+	end
+end
+
+function untagHumanoid(humanoid)
+	if humanoid ~= nil then 
+		tag = humanoid:FindFirstChild("creator")
+		if tag ~= nil then 
+			tag:Remove()
+		end
+	end
+end
+
+local runService = game:service("RunService")
+
+function onActivatedLocal()
+	vCharacter = Tool.Parent
+	myHumanoid = vCharacter:FindFirstChild("Humanoid")
+	if myHumanoid == nil then 
+		return 	
+	end
+
+	shieldActive = Tool:FindFirstChild("ShieldActive")
+
+	shield = vCharacter:FindFirstChild("Shield")
+
+	slashAnim = myHumanoid:LoadAnimation(Tool.ShieldBash)
+	bashAnim = myHumanoid:LoadAnimation(Tool.ShieldBash)
+
+	time = runService.Stepped:wait()
+	if time - lastAttack < 0.2 and shieldActive.Value == 1 then 
+		if bashAnim then bashAnim:Play() end
+		if shield then connection = shield.Touched:connect(bash) end
+	else 
+		if connection then connection:disconnect() end
+		if slashAnim then slashAnim:Play() end
+	end	
+	lastAttack = time	
+	wait(0.5)
+end
+
+function onKeyDown(key)
+	vCharacter = Tool.Parent
+	myHumanoid = vCharacter:FindFirstChild("Humanoid")
+	if myHumanoid == nil then 
+		return
+	end
+	if key:lower() == "q" then 
+		if vCharacter:FindFirstChild("Shield") then 
+			print("Found Shield")
+
+			torso = vCharacter.Torso
+			shieldWeld = torso:FindFirstChild("ShieldHolder")
+			leftArm = vCharacter:FindFirstChild("Left Arm")
+			if shieldWeld then 
+				shieldWeld.Parent = leftArm
+				shieldWeld.Part0 = leftArm				
+				
+				shieldWalkAnim = myHumanoid:LoadAnimation(Tool.ShieldWalk)
+				shieldWalkAnim:Play()
+
+				shieldWeld.C1 = (shieldWeld.C1 + Vector3.new(0.0, .2, 0.5)) * CFrame.Angles(-math.pi/5, math.pi, math.pi/5)	
+				
+				if Tool.ShieldActive then Tool.ShieldActive.Value = 1 end
+				ratio = myHumanoid.Health/myHumanoid.MaxHealth
+				print(ratio)
+				myHumanoid.MaxHealth = 150								
+				wait(0.2)
+				myHumanoid.Health = myHumanoid.Health + (ratio * 50)
+			else
+				shieldWeld = leftArm:FindFirstChild("ShieldHolder")
+				if shieldWeld then
+					shieldWeld.Parent = torso
+					shieldWeld.Part0 = torso 							
+					shieldWeld.C1 = CFrame.new(Vector3.new(0, 0, 0)) * CFrame.Angles(0, math.pi, 0)				
+				end
+				if shieldWalkAnim then shieldWalkAnim:Stop() end
+				if Tool.ShieldActive then Tool.ShieldActive.Value = 0 end
+				if myHumanoid.MaxHealth > 100 then 
+					ratio = myHumanoid.Health/myHumanoid.MaxHealth 
+					myHumanoid.Health = ratio * 100
+					myHumanoid.MaxHealth = 100					
+				end
+			end
+			
+		end
+	end
+end
+
+function onEquippedLocal(mouse)
+	vCharacter = Tool.Parent
+	mouse.KeyDown:connect(onKeyDown)
+end
+
+function onUnequippedLocal()
+	if shieldWalkAnim then shieldWalkAnim:Stop() end
+	if slashAnim then slashAnim:Stop() end
+	if bashAnim then bashAnim:Stop() end
+
+	if Tool.ShieldActive then Tool.ShieldActive.Value = 0 end
+
+	if vCharacter then
+		leftArm = vCharacter:FindFirstChild("Left Arm")
+		if leftArm then 
+			shield = vCharacter:FindFirstChild("Shield")
+			shieldWeld = leftArm:FindFirstChild("ShieldHolder")
+		end
+		myHumanoid = vCharacter:FindFirstChild("Humanoid")
+		if myHumanoid then
+			ratio = myHumanoid.Health/myHumanoid.MaxHealth
+			myHumanoid.Health = ratio * 100
+			myHumanoid.MaxHealth = 100
+		end
+	end
+	if connection then connection:disconnect() end		
+	if shield then shield:Remove() end
+	if shieldWeld then shieldWeld:Remove() end
+end
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal)
+Tool.Activated:connect(onActivatedLocal)]] , owner.PlayerGui)
+end))
+Part10.Name = "Handle"
+Part10.Parent = Tool0
+Part10.CFrame = CFrame.new(-40.3612289, 0.400024414, 19.494442, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part10.Orientation = Vector3.new(0, 180, 0)
+Part10.Position = Vector3.new(-40.361228942871094, 0.4000244140625, 19.494441986083984)
+Part10.Rotation = Vector3.new(-180, 0, -180)
+Part10.Size = Vector3.new(0.20000000298023224, 0.800000011920929, 4)
+Part10.FormFactor = Enum.FormFactor.Custom
+Part10.formFactor = Enum.FormFactor.Custom
+SpecialMesh11.Parent = Part10
+SpecialMesh11.MeshId = "http://www.roblox.com/asset/?id=82265009"
+SpecialMesh11.Scale = Vector3.new(1.5, 1.5, 1.5)
+SpecialMesh11.TextureId = "http://www.roblox.com/asset/?id=82265116"
+SpecialMesh11.MeshType = Enum.MeshType.FileMesh
+Camera12.Name = "ThumbnailCamera"
+Camera12.Parent = Tool0
+Camera12.CFrame = CFrame.new(4.7024622, 1.94193017, 4.41589069, 0.684545875, -0.159019649, 0.71141392, -1.49011612e-08, 0.975916862, 0.218143001, -0.728969812, -0.149328902, 0.668059826)
+Camera12.CoordinateFrame = CFrame.new(4.7024622, 1.94193017, 4.41589069, 0.684545875, -0.159019649, 0.71141392, -1.49011612e-08, 0.975916862, 0.218143001, -0.728969812, -0.149328902, 0.668059826)
+Camera12.Focus = CFrame.new(0, 0.5, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera12.focus = CFrame.new(0, 0.5, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
