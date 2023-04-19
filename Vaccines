@@ -19,9 +19,10 @@ Tool0 = Instance.new("Tool")
 Part1 = Instance.new("Part")
 SpecialMesh2 = Instance.new("SpecialMesh")
 Script3 = Instance.new("Script")
+Script4 = Instance.new("Script")
 Tool0.Name = "Medicine"
-Tool0.Parent = owner.Backpack
-Tool0.TextureId = "rbxassetid://5592526305"
+Tool0.Parent = mas
+Tool0.TextureId = "rbxassetid://13185930070"
 Tool0.ToolTip = "Remember to inject correctly!"
 Part1.Name = "Handle"
 Part1.Parent = Tool0
@@ -33,9 +34,6 @@ Part1.BottomSurface = Enum.SurfaceType.Smooth
 Part1.BrickColor = BrickColor.new("Lime green")
 Part1.TopSurface = Enum.SurfaceType.Smooth
 Part1.brickColor = BrickColor.new("Lime green")
-Forceffield34 = Instance.new("ForceField")
-Forceffield34.Parent = owner.Character
-Forceffield34.Visible = false
 SpecialMesh2.Parent = Part1
 SpecialMesh2.MeshId = "rbxassetid://442168669"
 SpecialMesh2.Scale = Vector3.new(0.04500000178813934, 0.04500000178813934, 0.023000000044703484)
@@ -43,25 +41,39 @@ SpecialMesh2.MeshType = Enum.MeshType.FileMesh
 Script3.Parent = Part1
 table.insert(cors,sandbox(Script3,function()
 Part1.Touched:Connect(function(hit)
-		local part = Part1
-
-	   part.Touched:Connect(function(hit)
-			local explosion = Instance.new("Explosion")
-			explosion.Position = part.Position
-			explosion.Parent = workspace
-			local Sound = Instance.new("Sound")
-			Sound.Parent = Part1
-	        Sound.SoundId = "rbxassetid://4920015271" or "rbxassetid://198581763" or "rbxassetid://5659916160"
-	        Sound.Volume = "2.53"
-	        Sound.Pitch = "1"
-	        Sound.Looped = false
-	
-			if part.Touched then
-		Sound:Play()
-end
-end)
+	local force = Instance.new("Beam")
+	force = Part1.Position
+	force.Parent = workspace
+local Sound = Instance.new("Sound")
+	Sound.SoundId = "rbxassetid://4920015271" or "rbxassetid://198581763" or "rbxassetid://5659916160"
+	Sound.Volume = "2.4"
+	Sound.Pitch = "1.3"
+	Sound.Looped = false
 end)
 end))
+Script4.Parent = Tool0
+table.insert(cors,sandbox(Script4,function()
+Part1.Touched:Connect(function(hit)
+	local part = Part1
+
+	part.Touched:Connect(function(hit)
+		local explosion = Instance.new("Explosion")
+		explosion.Position = part.Position
+		explosion.Parent = workspace
+		local Sound = Instance.new("Sound")
+		Sound.Parent = Part1
+		Sound.SoundId = "rbxassetid://4920015271" or "rbxassetid://198581763" or "rbxassetid://5659916160"
+		Sound.Volume = "2.53"
+		Sound.Pitch = "1"
+		Sound.Looped = false
+
+		if part.Touched then
+			Sound:Play()
+		end
+	end)
+end)
+end))
+
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
