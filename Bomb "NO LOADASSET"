@@ -1,0 +1,36 @@
+local User = owner -- change this to your username
+local Tool = Instance.new("Tool", User.Backpack) -- create a tool object
+Tool.Name = "Bomb" -- name the tool
+local Handle = Instance.new("Part", Tool) -- create a part object as the handle of the tool
+Handle.Name = "Handle"
+Handle.Shape = "Ball"
+Handle.BrickColor = BrickColor.new("Really black")
+Handle.Size = Vector3.new(1,1,1)
+local Light = Instance.new("PointLight", Handle) -- create a light effect for the bomb
+Light.Range = 15
+Light.Brightness = 5
+Light.Color = Color3.new(1,0,0)
+local Beep = Instance.new("Sound", Handle) -- create a sound effect for the bomb
+Beep.SoundId = "http://www.roblox.com/asset/?id=282035551"
+local ExplodeSound = Instance.new("Sound", Handle) -- create another sound effect for the explosion
+ExplodeSound.SoundId = "http://www.roblox.com/asset/?id=144507765"
+ExplodeSound.Pitch = 2.8
+ExplodeSound.Volume = 100
+
+Tool.Activated:Connect(function() -- when the user clicks with the tool
+    local Bomb = Handle:Clone() -- clone the handle as the bomb
+    Bomb.Parent = workspace -- put it in the workspace
+    Bomb.Name = "Bomb"
+    Bomb.CFrame = Handle.CFrame + Vector3.new(0,2,0) -- move it slightly above the handle
+    Bomb.CanCollide = true -- make it collide with other objects
+    Beep:Play() -- play the beep sound
+    wait(3) -- wait for 3 seconds
+    local Explosion = Instance.new("Explosion", workspace) -- create an explosion object
+    Explosion.Position = Bomb.Position -- set its position to the bomb's position
+    Explosion.BlastRadius = 10 -- set its blast radius
+    Explosion.BlastPressure = 100000 -- set its blast pressure
+    Bomb.Transparency = 1 -- make the bomb invisible
+    ExplodeSound:Play() -- play the explosion sound
+    wait(2) -- wait for 2 seconds
+    Bomb:Destroy() -- destroy the bomb object
+end)
