@@ -1,0 +1,1376 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+BodyColors1 = Instance.new("BodyColors")
+Script2 = Instance.new("Script")
+Humanoid3 = Instance.new("Humanoid")
+Script4 = Instance.new("Script")
+LocalScript5 = Instance.new("LocalScript")
+StringValue6 = Instance.new("StringValue")
+Animation7 = Instance.new("Animation")
+NumberValue8 = Instance.new("NumberValue")
+Animation9 = Instance.new("Animation")
+NumberValue10 = Instance.new("NumberValue")
+StringValue11 = Instance.new("StringValue")
+Animation12 = Instance.new("Animation")
+StringValue13 = Instance.new("StringValue")
+Animation14 = Instance.new("Animation")
+StringValue15 = Instance.new("StringValue")
+Animation16 = Instance.new("Animation")
+StringValue17 = Instance.new("StringValue")
+Animation18 = Instance.new("Animation")
+StringValue19 = Instance.new("StringValue")
+Animation20 = Instance.new("Animation")
+StringValue21 = Instance.new("StringValue")
+Animation22 = Instance.new("Animation")
+StringValue23 = Instance.new("StringValue")
+Animation24 = Instance.new("Animation")
+Part25 = Instance.new("Part")
+SpecialMesh26 = Instance.new("SpecialMesh")
+Decal27 = Instance.new("Decal")
+Part28 = Instance.new("Part")
+Motor6D29 = Instance.new("Motor6D")
+Part30 = Instance.new("Part")
+Part31 = Instance.new("Part")
+Part32 = Instance.new("Part")
+Part33 = Instance.new("Part")
+Part34 = Instance.new("Part")
+Decal35 = Instance.new("Decal")
+Script36 = Instance.new("Script")
+Snap37 = Instance.new("Snap")
+Weld38 = Instance.new("Weld")
+Snap39 = Instance.new("Snap")
+Weld40 = Instance.new("Weld")
+Snap41 = Instance.new("Snap")
+Motor6D42 = Instance.new("Motor6D")
+Weld43 = Instance.new("Weld")
+Weld44 = Instance.new("Weld")
+Motor6D45 = Instance.new("Motor6D")
+Motor6D46 = Instance.new("Motor6D")
+Motor6D47 = Instance.new("Motor6D")
+Motor6D48 = Instance.new("Motor6D")
+Script49 = Instance.new("Script")
+Model0.Name = "Path Finding Noob"
+Model0.Parent = mas
+BodyColors1.Parent = Model0
+BodyColors1.HeadColor = BrickColor.new("White")
+BodyColors1.HeadColor3 = Color3.new(0.94902, 0.952941, 0.952941)
+BodyColors1.LeftArmColor = BrickColor.new("White")
+BodyColors1.LeftArmColor3 = Color3.new(0.94902, 0.952941, 0.952941)
+BodyColors1.LeftLegColor = BrickColor.new("White")
+BodyColors1.LeftLegColor3 = Color3.new(0.94902, 0.952941, 0.952941)
+BodyColors1.RightArmColor = BrickColor.new("White")
+BodyColors1.RightArmColor3 = Color3.new(0.94902, 0.952941, 0.952941)
+BodyColors1.RightLegColor = BrickColor.new("White")
+BodyColors1.RightLegColor3 = Color3.new(0.94902, 0.952941, 0.952941)
+BodyColors1.TorsoColor = BrickColor.new("Deep blue")
+BodyColors1.TorsoColor3 = Color3.new(0.129412, 0.329412, 0.72549)
+Script2.Name = "Health"
+Script2.Parent = Model0
+table.insert(cors,sandbox(Script2,function()
+--Responsible for regening a player's humanoid's health
+
+-- declarations
+local Figure = script.Parent
+local Head = Figure:WaitForChild("Head")
+local Humanoid = Figure:WaitForChild("Humanoid")
+local regening = false
+
+-- regeneration
+function regenHealth()
+	if regening then return end
+	regening = true
+	
+	while Humanoid.Health < Humanoid.MaxHealth do
+		local s = wait(1)
+		local health = Humanoid.Health
+		if health > 0 and health < Humanoid.MaxHealth then
+			local newHealthDelta = 0.01 * s * Humanoid.MaxHealth
+			health = health + newHealthDelta
+			Humanoid.Health = math.min(health,Humanoid.MaxHealth)
+		end
+	end
+	
+	if Humanoid.Health > Humanoid.MaxHealth then
+		Humanoid.Health = Humanoid.MaxHealth
+	end
+	
+	regening = false
+end
+
+Humanoid.HealthChanged:connect(regenHealth)
+  
+end))
+Humanoid3.Parent = Model0
+Humanoid3.LeftLeg = Part31
+Humanoid3.NameOcclusion = Enum.NameOcclusion.NoOcclusion
+Humanoid3.RightLeg = Part33
+Humanoid3.Torso = Part28
+Humanoid3.WalkSpeed = 17
+Script4.Name = "Sound"
+Script4.Parent = Model0
+table.insert(cors,sandbox(Script4,function()
+-- util
+
+function waitForChild(parent, childName)
+	local child = parent:findFirstChild(childName)
+	if child then return child end
+	while true do
+		child = parent.ChildAdded:wait()
+		if child.Name==childName then return child end
+	end
+end
+
+function newSound(id)
+	local sound = Instance.new("Sound")
+	sound.SoundId = id
+	sound.archivable = false
+	sound.Parent = script.Parent.Head
+	return sound
+end
+
+-- declarations
+
+local sFallingDown = newSound("rbxasset://sounds/splat.wav")
+local sGettingUp = newSound("rbxasset://sounds/action_get_up.mp3")
+local sDied = newSound("rbxasset://sounds/uuhhh.mp3") 
+local sFreeFalling = newSound("rbxasset://sounds/action_falling.mp3")
+local sJumping = newSound("rbxasset://sounds/action_jump.mp3")
+local sLanding = newSound("rbxasset://sounds/action_jump_land.mp3")
+local sSplash = newSound("rbxasset://sounds/impact_water.mp3")
+local sRunning = newSound("rbxasset://sounds/action_footsteps_plastic.mp3")
+sRunning.Looped = true
+local sSwimming = newSound("rbxasset://sounds/action_swim.mp3")
+sSwimming.Looped = true
+local sClimbing = newSound("rbxasset://sounds/action_footsteps_plastic.mp3")
+sClimbing.Looped = true
+
+local Figure = script.Parent
+local Head = waitForChild(Figure, "Head")
+local Humanoid = waitForChild(Figure, "Humanoid")
+
+local prevState = "None"
+
+-- functions
+
+function onDied()
+	stopLoopedSounds()
+	sDied:Play()
+end
+
+local fallCount = 0
+local fallSpeed = 0
+function onStateFall(state, sound)
+	fallCount = fallCount + 1
+	if state then
+		sound.Volume = 0
+		sound:Play()
+		Spawn( function()
+			local t = 0
+			local thisFall = fallCount
+			while t < 1.5 and fallCount == thisFall do
+				local vol = math.max(t - 0.3 , 0)
+				sound.Volume = vol
+				wait(0.1)
+				t = t + 0.1
+			end
+		end)
+	else
+		sound:Stop()
+	end
+	fallSpeed = math.max(fallSpeed, math.abs(Head.Velocity.Y))
+end
+
+
+function onStateNoStop(state, sound)
+	if state then
+		sound:Play()
+	end
+end
+
+
+function onRunning(speed)
+	sClimbing:Stop()
+	sSwimming:Stop()
+	if (prevState == "FreeFall" and fallSpeed > 0.1) then
+		local vol = math.min(1.0, math.max(0.0, (fallSpeed - 50) / 110))
+		sLanding.Volume = vol
+		sLanding:Play()
+		fallSpeed = 0
+	end
+	if speed>0.5 then
+		sRunning:Play()
+		sRunning.Pitch = 1.6
+	else
+		sRunning:Stop()
+	end
+	prevState = "Run"
+end
+
+function onSwimming(speed)
+	if (prevState ~= "Swim" and speed > 0.1) then
+		local volume = math.min(1.0, speed / 350)
+		sSplash.Volume = volume
+		sSplash:Play()
+		prevState = "Swim"
+	end
+	sClimbing:Stop()
+	sRunning:Stop()
+	sSwimming.Pitch = 1.6
+	sSwimming:Play()
+end
+
+function onClimbing(speed)
+	sRunning:Stop()
+	sSwimming:Stop()	
+	if speed>0.01 then
+		sClimbing:Play()
+		sClimbing.Pitch = speed / 5.5
+	else
+		sClimbing:Stop()
+	end
+	prevState = "Climb"
+end
+-- connect up
+
+function stopLoopedSounds()
+	sRunning:Stop() 
+	sClimbing:Stop()
+	sSwimming:Stop()
+end
+
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Swimming:connect(onSwimming)
+Humanoid.Climbing:connect(onClimbing)
+Humanoid.Jumping:connect(function(state) onStateNoStop(state, sJumping) prevState = "Jump" end)
+Humanoid.GettingUp:connect(function(state) stopLoopedSounds() onStateNoStop(state, sGettingUp) prevState = "GetUp" end)
+Humanoid.FreeFalling:connect(function(state) stopLoopedSounds() onStateFall(state, sFreeFalling) prevState = "FreeFall" end)
+Humanoid.FallingDown:connect(function(state) stopLoopedSounds() onStateNoStop(state, sFallingDown) prevState = "Falling" end)
+Humanoid.StateChanged:connect(function(old, new) 
+	if not (new.Name == "Dead" or 
+			new.Name == "Running" or 
+			new.Name == "RunningNoPhysics" or 
+			new.Name == "Swimming" or 
+			new.Name == "Jumping" or 
+			new.Name == "GettingUp" or 
+			new.Name == "Freefall" or 
+			new.Name == "FallingDown") then
+		stopLoopedSounds()
+	end
+end)
+
+end))
+LocalScript5.Name = "Animate"
+LocalScript5.Parent = Model0
+table.insert(cors,sandbox(LocalScript5,function()
+function   waitForChild(parent, childName)
+	local child = parent:findFirstChild(childName)
+	if child then return child end
+	while true do
+		child = parent.ChildAdded:wait()
+		if child.Name==childName then return child end
+	end
+end
+
+local Figure = script.Parent
+local Torso = waitForChild(Figure, "Torso")
+local RightShoulder = waitForChild(Torso, "Right Shoulder")
+local LeftShoulder = waitForChild(Torso, "Left Shoulder")
+local RightHip = waitForChild(Torso, "Right Hip")
+local LeftHip = waitForChild(Torso, "Left Hip")
+local Neck = waitForChild(Torso, "Neck")
+local Humanoid = waitForChild(Figure, "Humanoid")
+local pose = "Standing"
+
+local currentAnim = ""
+local currentAnimInstance = nil
+local currentAnimTrack = nil
+local currentAnimKeyframeHandler = nil
+local currentAnimSpeed = 1.0
+local animTable = {}
+local animNames = { 
+	idle = 	{	
+				{ id = "http://www.roblox.com/asset/?id=180435571", weight = 9 },
+				{ id = "http://www.roblox.com/asset/?id=180435792", weight = 1 }
+			},
+	walk = 	{ 	
+				{ id = "http://www.roblox.com/asset/?id=180426354", weight = 10 } 
+			}, 
+	run = 	{
+				{ id = "run.xml", weight = 10 } 
+			}, 
+	jump = 	{
+				{ id = "http://www.roblox.com/asset/?id=125750702", weight = 10 } 
+			}, 
+	fall = 	{
+				{ id = "http://www.roblox.com/asset/?id=180436148", weight = 10 } 
+			}, 
+	climb = {
+				{ id = "http://www.roblox.com/asset/?id=180436334", weight = 10 } 
+			}, 
+	sit = 	{
+				{ id = "http://www.roblox.com/asset/?id=178130996", weight = 10 } 
+			},	
+	toolnone = {
+				{ id = "http://www.roblox.com/asset/?id=182393478", weight = 10 } 
+			},
+	toolslash = {
+				{ id = "http://www.roblox.com/asset/?id=129967390", weight = 10 } 
+--				{ id = "slash.xml", weight = 10 } 
+			},
+	toollunge = {
+				{ id = "http://www.roblox.com/asset/?id=129967478", weight = 10 } 
+			},
+	wave = {
+				{ id = "http://www.roblox.com/asset/?id=128777973", weight = 10 } 
+			},
+	point = {
+				{ id = "http://www.roblox.com/asset/?id=128853357", weight = 10 } 
+			},
+	dance = {
+				{ id = "http://www.roblox.com/asset/?id=182435998", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491037", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491065", weight = 10 } 
+			},
+	dance2 = {
+				{ id = "http://www.roblox.com/asset/?id=182436842", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491248", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491277", weight = 10 } 
+			},
+	dance3 = {
+				{ id = "http://www.roblox.com/asset/?id=182436935", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491368", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491423", weight = 10 } 
+			},
+	laugh = {
+				{ id = "http://www.roblox.com/asset/?id=129423131", weight = 10 } 
+			},
+	cheer = {
+				{ id = "http://www.roblox.com/asset/?id=129423030", weight = 10 } 
+			},
+}
+
+-- Existance in this list signifies that it is an emote, the value indicates if it is a looping emote
+local emoteNames = { wave = false, point = false, dance = true, dance2 = true, dance3 = true, laugh = false, cheer = false}
+
+math.randomseed(tick())
+
+function configureAnimationSet(name, fileList)
+	if (animTable[name] ~= nil) then
+		for _, connection in pairs(animTable[name].connections) do
+			connection:disconnect()
+		end
+	end
+	animTable[name] = {}
+	animTable[name].count = 0
+	animTable[name].totalWeight = 0	
+	animTable[name].connections = {}
+
+	-- check for config values
+	local config = script:FindFirstChild(name)
+	if (config ~= nil) then
+--		print("Loading anims " .. name)
+		table.insert(animTable[name].connections, config.ChildAdded:connect(function(child) configureAnimationSet(name, fileList) end))
+		table.insert(animTable[name].connections, config.ChildRemoved:connect(function(child) configureAnimationSet(name, fileList) end))
+		local idx = 1
+		for _, childPart in pairs(config:GetChildren()) do
+			if (childPart:IsA("Animation")) then
+				table.insert(animTable[name].connections, childPart.Changed:connect(function(property) configureAnimationSet(name, fileList) end))
+				animTable[name][idx] = {}
+				animTable[name][idx].anim = childPart
+				local weightObject = childPart:FindFirstChild("Weight")
+				if (weightObject == nil) then
+					animTable[name][idx].weight = 1
+				else
+					animTable[name][idx].weight = weightObject.Value
+				end
+				animTable[name].count = animTable[name].count + 1
+				animTable[name].totalWeight = animTable[name].totalWeight + animTable[name][idx].weight
+	--			print(name .. " [" .. idx .. "] " .. animTable[name][idx].anim.AnimationId .. " (" .. animTable[name][idx].weight .. ")")
+				idx = idx + 1
+			end
+		end
+	end
+
+	-- fallback to defaults
+	if (animTable[name].count <= 0) then
+		for idx, anim in pairs(fileList) do
+			animTable[name][idx] = {}
+			animTable[name][idx].anim = Instance.new("Animation")
+			animTable[name][idx].anim.Name = name
+			animTable[name][idx].anim.AnimationId = anim.id
+			animTable[name][idx].weight = anim.weight
+			animTable[name].count = animTable[name].count + 1
+			animTable[name].totalWeight = animTable[name].totalWeight + anim.weight
+--			print(name .. " [" .. idx .. "] " .. anim.id .. " (" .. anim.weight .. ")")
+		end
+	end
+end
+
+-- Setup animation objects
+function scriptChildModified(child)
+	local fileList = animNames[child.Name]
+	if (fileList ~= nil) then
+		configureAnimationSet(child.Name, fileList)
+	end	
+end
+
+script.ChildAdded:connect(scriptChildModified)
+script.ChildRemoved:connect(scriptChildModified)
+
+
+for name, fileList in pairs(animNames) do 
+	configureAnimationSet(name, fileList)
+end	
+
+-- ANIMATION
+
+-- declarations
+local toolAnim = "None"
+local toolAnimTime = 0
+
+local jumpAnimTime = 0
+local jumpAnimDuration = 0.3
+
+local toolTransitionTime = 0.1
+local fallTransitionTime = 0.3
+local jumpMaxLimbVelocity = 0.75
+
+-- functions
+
+function stopAllAnimations()
+	local oldAnim = currentAnim
+
+	-- return to idle if finishing an emote
+	if (emoteNames[oldAnim] ~= nil and emoteNames[oldAnim] == false) then
+		oldAnim = "idle"
+	end
+
+	currentAnim = ""
+	currentAnimInstance = nil
+	if (currentAnimKeyframeHandler ~= nil) then
+		currentAnimKeyframeHandler:disconnect()
+	end
+
+	if (currentAnimTrack ~= nil) then
+		currentAnimTrack:Stop()
+		currentAnimTrack:Destroy()
+		currentAnimTrack = nil
+	end
+	return oldAnim
+end
+
+function setAnimationSpeed(speed)
+	if speed ~= currentAnimSpeed then
+		currentAnimSpeed = speed
+		currentAnimTrack:AdjustSpeed(currentAnimSpeed)
+	end
+end
+
+function keyFrameReachedFunc(frameName)
+	if (frameName == "End") then
+--		print("Keyframe : ".. frameName)
+
+		local repeatAnim = currentAnim
+		-- return to idle if finishing an emote
+		if (emoteNames[repeatAnim] ~= nil and emoteNames[repeatAnim] == false) then
+			repeatAnim = "idle"
+		end
+		
+		local animSpeed = currentAnimSpeed
+		playAnimation(repeatAnim, 0.0, Humanoid)
+		setAnimationSpeed(animSpeed)
+	end
+end
+
+-- Preload animations
+function playAnimation(animName, transitionTime, humanoid) 
+		
+	local roll = math.random(1, animTable[animName].totalWeight) 
+	local origRoll = roll
+	local idx = 1
+	while (roll > animTable[animName][idx].weight) do
+		roll = roll - animTable[animName][idx].weight
+		idx = idx + 1
+	end
+--		print(animName .. " " .. idx .. " [" .. origRoll .. "]")
+	local anim = animTable[animName][idx].anim
+
+	-- switch animation		
+	if (anim ~= currentAnimInstance) then
+		
+		if (currentAnimTrack ~= nil) then
+			currentAnimTrack:Stop(transitionTime)
+			currentAnimTrack:Destroy()
+		end
+
+		currentAnimSpeed = 1.0
+	
+		-- load it to the humanoid; get AnimationTrack
+		currentAnimTrack = humanoid:LoadAnimation(anim)
+		 
+		-- play the animation
+		currentAnimTrack:Play(transitionTime)
+		currentAnim = animName
+		currentAnimInstance = anim
+
+		-- set up keyframe name triggers
+		if (currentAnimKeyframeHandler ~= nil) then
+			currentAnimKeyframeHandler:disconnect()
+		end
+		currentAnimKeyframeHandler = currentAnimTrack.KeyframeReached:connect(keyFrameReachedFunc)
+		
+	end
+
+end
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+local toolAnimName = ""
+local toolAnimTrack = nil
+local toolAnimInstance = nil
+local currentToolAnimKeyframeHandler = nil
+
+function toolKeyFrameReachedFunc(frameName)
+	if (frameName == "End") then
+--		print("Keyframe : ".. frameName)	
+		playToolAnimation(toolAnimName, 0.0, Humanoid)
+	end
+end
+
+
+function playToolAnimation(animName, transitionTime, humanoid)	 
+		
+		local roll = math.random(1, animTable[animName].totalWeight) 
+		local origRoll = roll
+		local idx = 1
+		while (roll > animTable[animName][idx].weight) do
+			roll = roll - animTable[animName][idx].weight
+			idx = idx + 1
+		end
+--		print(animName .. " * " .. idx .. " [" .. origRoll .. "]")
+		local anim = animTable[animName][idx].anim
+
+		if (toolAnimInstance ~= anim) then
+			
+			if (toolAnimTrack ~= nil) then
+				toolAnimTrack:Stop()
+				toolAnimTrack:Destroy()
+				transitionTime = 0
+			end
+					
+			-- load it to the humanoid; get AnimationTrack
+			toolAnimTrack = humanoid:LoadAnimation(anim)
+			 
+			-- play the animation
+			toolAnimTrack:Play(transitionTime)
+			toolAnimName = animName
+			toolAnimInstance = anim
+
+			currentToolAnimKeyframeHandler = toolAnimTrack.KeyframeReached:connect(toolKeyFrameReachedFunc)
+		end
+end
+
+function stopToolAnimations()
+	local oldAnim = toolAnimName
+
+	if (currentToolAnimKeyframeHandler ~= nil) then
+		currentToolAnimKeyframeHandler:disconnect()
+	end
+
+	toolAnimName = ""
+	toolAnimInstance = nil
+	if (toolAnimTrack ~= nil) then
+		toolAnimTrack:Stop()
+		toolAnimTrack:Destroy()
+		toolAnimTrack = nil
+	end
+
+
+	return oldAnim
+end
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+function onRunning(speed)
+	if speed>0.01 then
+		playAnimation("walk", 0.1, Humanoid)
+		pose = "Running"
+	else
+		playAnimation("idle", 0.1, Humanoid)
+		pose = "Standing"
+	end
+end
+
+function onDied()
+	pose = "Dead"
+end
+
+function onJumping()
+	playAnimation("jump", 0.1, Humanoid)
+	jumpAnimTime = jumpAnimDuration
+	pose = "Jumping"
+end
+
+function onClimbing(speed)
+	playAnimation("climb", 0.1, Humanoid)
+	setAnimationSpeed(speed / 12.0)
+	pose = "Climbing"
+end
+
+function onGettingUp()
+	pose = "GettingUp"
+end
+
+function onFreeFall()
+	if (jumpAnimTime <= 0) then
+		playAnimation("fall", fallTransitionTime, Humanoid)
+	end
+	pose = "FreeFall"
+end
+
+function onFallingDown()
+	pose = "FallingDown"
+end
+
+function onSeated()
+	pose = "Seated"
+end
+
+function onPlatformStanding()
+	pose = "PlatformStanding"
+end
+
+function onSwimming(speed)
+	if speed>0 then
+		pose = "Running"
+	else
+		pose = "Standing"
+	end
+end
+
+function getTool()	
+	for _, kid in ipairs(Figure:GetChildren()) do
+		if kid.className == "Tool" then return kid end
+	end
+	return nil
+end
+
+function getToolAnim(tool)
+	for _, c in ipairs(tool:GetChildren()) do
+		if c.Name == "toolanim" and c.className == "StringValue" then
+			return c
+		end
+	end
+	return nil
+end
+
+function animateTool()
+	
+	if (toolAnim == "None") then
+		playToolAnimation("toolnone", toolTransitionTime, Humanoid)
+		return
+	end
+
+	if (toolAnim == "Slash") then
+		playToolAnimation("toolslash", 0, Humanoid)
+		return
+	end
+
+	if (toolAnim == "Lunge") then
+		playToolAnimation("toollunge", 0, Humanoid)
+		return
+	end
+end
+
+function moveSit()
+	RightShoulder.MaxVelocity = 0.15
+	LeftShoulder.MaxVelocity = 0.15
+	RightShoulder:SetDesiredAngle(3.14 /2)
+	LeftShoulder:SetDesiredAngle(-3.14 /2)
+	RightHip:SetDesiredAngle(3.14 /2)
+	LeftHip:SetDesiredAngle(-3.14 /2)
+end
+
+local lastTick = 0
+
+function move(time)
+	local amplitude = 1
+	local frequency = 1
+  	local deltaTime = time - lastTick
+  	lastTick = time
+
+	local climbFudge = 0
+	local setAngles = false
+
+  	if (jumpAnimTime > 0) then
+  		jumpAnimTime = jumpAnimTime - deltaTime
+  	end
+
+	if (pose == "FreeFall" and jumpAnimTime <= 0) then
+		playAnimation("fall", fallTransitionTime, Humanoid)
+	elseif (pose == "Seated") then
+		playAnimation("sit", 0.5, Humanoid)
+		return
+	elseif (pose == "Running") then
+		playAnimation("walk", 0.1, Humanoid)
+	elseif (pose == "Dead" or pose == "GettingUp" or pose == "FallingDown" or pose == "Seated" or pose == "PlatformStanding") then
+--		print("Wha " .. pose)
+		stopAllAnimations()
+		amplitude = 0.1
+		frequency = 1
+		setAngles = true
+	end
+
+	if (setAngles) then
+		desiredAngle = amplitude * math.sin(time * frequency)
+
+		RightShoulder:SetDesiredAngle(desiredAngle + climbFudge)
+		LeftShoulder:SetDesiredAngle(desiredAngle - climbFudge)
+		RightHip:SetDesiredAngle(-desiredAngle)
+		LeftHip:SetDesiredAngle(-desiredAngle)
+	end
+
+	-- Tool Animation handling
+	local tool = getTool()
+	if tool then
+	
+		animStringValueObject = getToolAnim(tool)
+
+		if animStringValueObject then
+			toolAnim = animStringValueObject.Value
+			-- message recieved, delete StringValue
+			animStringValueObject.Parent = nil
+			toolAnimTime = time + .3
+		end
+
+		if time > toolAnimTime then
+			toolAnimTime = 0
+			toolAnim = "None"
+		end
+
+		animateTool()		
+	else
+		stopToolAnimations()
+		toolAnim = "None"
+		toolAnimInstance = nil
+		toolAnimTime = 0
+	end
+end
+
+-- connect events
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(onJumping)
+Humanoid.Climbing:connect(onClimbing)
+Humanoid.GettingUp:connect(onGettingUp)
+Humanoid.FreeFalling:connect(onFreeFall)
+Humanoid.FallingDown:connect(onFallingDown)
+Humanoid.Seated:connect(onSeated)
+Humanoid.PlatformStanding:connect(onPlatformStanding)
+Humanoid.Swimming:connect(onSwimming)
+
+-- setup emote chat hook
+Game.Players.LocalPlayer.Chatted:connect(function(msg)
+	local emote = ""
+	if (string.sub(msg, 1, 3) == "/e ") then
+		emote = string.sub(msg, 4)
+	elseif (string.sub(msg, 1, 7) == "/emote ") then
+		emote = string.sub(msg, 8)
+	end
+	
+	if (pose == "Standing" and emoteNames[emote] ~= nil) then
+		playAnimation(emote, 0.1, Humanoid)
+	end
+--	print("===> " .. string.sub(msg, 1, 3) .. "(" .. emote .. ")")
+end)
+
+
+-- main program
+
+local runService = game:service("RunService");
+
+-- initialize to idle
+playAnimation("idle", 0.1, Humanoid)
+pose = "Standing"
+
+while Figure.Parent~=nil do
+	local _, time = wait(0.1)
+	move(time)
+end
+
+
+
+end))
+StringValue6.Name = "Idle"
+StringValue6.Parent = LocalScript5
+Animation7.Name = "Animation1"
+Animation7.Parent = StringValue6
+Animation7.AnimationId = "http://www.roblox.com/asset/?id=180435571"
+NumberValue8.Name = "Weight"
+NumberValue8.Parent = Animation7
+NumberValue8.Value = 9
+Animation9.Name = "Animation2"
+Animation9.Parent = StringValue6
+Animation9.AnimationId = "http://www.roblox.com/asset/?id=180435792"
+NumberValue10.Name = "Weight"
+NumberValue10.Parent = Animation9
+NumberValue10.Value = 1
+StringValue11.Name = "Walk"
+StringValue11.Parent = LocalScript5
+Animation12.Name = "WalkAnim"
+Animation12.Parent = StringValue11
+Animation12.AnimationId = "http://www.roblox.com/asset/?id=180426354"
+StringValue13.Name = "Run"
+StringValue13.Parent = LocalScript5
+Animation14.Name = "RunAnim"
+Animation14.Parent = StringValue13
+Animation14.AnimationId = "http://www.roblox.com/asset/?id=180426354"
+StringValue15.Name = "Jump"
+StringValue15.Parent = LocalScript5
+Animation16.Name = "JumpAnim"
+Animation16.Parent = StringValue15
+Animation16.AnimationId = "http://www.roblox.com/asset/?id=125750702"
+StringValue17.Name = "Climb"
+StringValue17.Parent = LocalScript5
+Animation18.Name = "ClimbAnim"
+Animation18.Parent = StringValue17
+Animation18.AnimationId = "http://www.roblox.com/asset/?id=180436334"
+StringValue19.Name = "ToolNone"
+StringValue19.Parent = LocalScript5
+Animation20.Name = "ToolNoneAnim"
+Animation20.Parent = StringValue19
+Animation20.AnimationId = "http://www.roblox.com/asset/?id=182393478"
+StringValue21.Name = "Fall"
+StringValue21.Parent = LocalScript5
+Animation22.Name = "FallAnim"
+Animation22.Parent = StringValue21
+Animation22.AnimationId = "http://www.roblox.com/asset/?id=180436148"
+StringValue23.Name = "Sit"
+StringValue23.Parent = LocalScript5
+Animation24.Name = "SitAnim"
+Animation24.Parent = StringValue23
+Animation24.AnimationId = "http://www.roblox.com/asset/?id=178130996"
+Part25.Name = "Head"
+Part25.Parent = Model0
+Part25.CFrame = CFrame.new(-9.49951935, 4.5, 36.8333282, 0, 0, 1, -2.27565513e-34, 1, 0, -1, 2.27565513e-34, 0)
+Part25.Orientation = Vector3.new(0, 90, 0)
+Part25.Position = Vector3.new(-9.499519348144531, 4.5, 36.83332824707031)
+Part25.Rotation = Vector3.new(0, 90, 0)
+Part25.Color = Color3.new(0.992157, 0.917647, 0.552941)
+Part25.Size = Vector3.new(2, 1, 1)
+Part25.BrickColor = BrickColor.new("Cool yellow")
+Part25.TopSurface = Enum.SurfaceType.Smooth
+Part25.brickColor = BrickColor.new("Cool yellow")
+Part25.FormFactor = Enum.FormFactor.Symmetric
+Part25.formFactor = Enum.FormFactor.Symmetric
+SpecialMesh26.Parent = Part25
+SpecialMesh26.Scale = Vector3.new(1.25, 1.25, 1.25)
+Decal27.Name = "Smile"
+Decal27.Parent = Part25
+Decal27.Texture = "http://www.roblox.com/asset/?id=144080495 "
+Part28.Name = "HumanoidRootPart"
+Part28.Parent = Model0
+Part28.CFrame = CFrame.new(-9.49951935, 3, 36.8333282, 0, 0, 1, -1.40873895e-34, 1, 0, -1, 1.40873895e-34, 0)
+Part28.Orientation = Vector3.new(0, 90, 0)
+Part28.Position = Vector3.new(-9.499519348144531, 3, 36.83332824707031)
+Part28.Rotation = Vector3.new(0, 90, 0)
+Part28.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part28.Transparency = 1
+Part28.Size = Vector3.new(2, 2, 1)
+Part28.BottomSurface = Enum.SurfaceType.Smooth
+Part28.BrickColor = BrickColor.new("Bright blue")
+Part28.CanCollide = false
+Part28.LeftParamA = 0
+Part28.LeftParamB = 0
+Part28.RightParamA = 0
+Part28.RightParamB = 0
+Part28.TopSurface = Enum.SurfaceType.Smooth
+Part28.brickColor = BrickColor.new("Bright blue")
+Part28.FormFactor = Enum.FormFactor.Symmetric
+Part28.formFactor = Enum.FormFactor.Symmetric
+Motor6D29.Name = "RootJoint"
+Motor6D29.Parent = Part28
+Motor6D29.MaxVelocity = 0.10000000149011612
+Motor6D29.C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D29.C1 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D29.Part0 = Part28
+Motor6D29.Part1 = Part34
+Motor6D29.part1 = Part34
+Part30.Name = "Left Arm"
+Part30.Parent = Model0
+Part30.CFrame = CFrame.new(-9.49951935, 3, 38.3333282, 0, 0, 1, -2.27565513e-34, 1, 0, -1, 2.27565513e-34, 0)
+Part30.Orientation = Vector3.new(0, 90, 0)
+Part30.Position = Vector3.new(-9.499519348144531, 3, 38.33332824707031)
+Part30.Rotation = Vector3.new(0, 90, 0)
+Part30.Color = Color3.new(0.992157, 0.917647, 0.552941)
+Part30.Size = Vector3.new(1, 2, 1)
+Part30.BrickColor = BrickColor.new("Cool yellow")
+Part30.CanCollide = false
+Part30.brickColor = BrickColor.new("Cool yellow")
+Part30.FormFactor = Enum.FormFactor.Symmetric
+Part30.formFactor = Enum.FormFactor.Symmetric
+Part31.Name = "Left Leg"
+Part31.Parent = Model0
+Part31.CFrame = CFrame.new(-9.49951935, 1, 37.3333282, 0, 0, 1, -2.27565513e-34, 1, 0, -1, 2.27565513e-34, 0)
+Part31.Orientation = Vector3.new(0, 90, 0)
+Part31.Position = Vector3.new(-9.499519348144531, 1, 37.33332824707031)
+Part31.Rotation = Vector3.new(0, 90, 0)
+Part31.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part31.Size = Vector3.new(1, 2, 1)
+Part31.BottomSurface = Enum.SurfaceType.Smooth
+Part31.BrickColor = BrickColor.new("Bright blue")
+Part31.CanCollide = false
+Part31.brickColor = BrickColor.new("Bright blue")
+Part31.FormFactor = Enum.FormFactor.Symmetric
+Part31.formFactor = Enum.FormFactor.Symmetric
+Part32.Name = "Right Arm"
+Part32.Parent = Model0
+Part32.CFrame = CFrame.new(-9.49951935, 3, 35.3333282, 0, 0, 1, -2.27565513e-34, 1, 0, -1, 2.27565513e-34, 0)
+Part32.Orientation = Vector3.new(0, 90, 0)
+Part32.Position = Vector3.new(-9.499519348144531, 3, 35.33332824707031)
+Part32.Rotation = Vector3.new(0, 90, 0)
+Part32.Color = Color3.new(0.992157, 0.917647, 0.552941)
+Part32.Size = Vector3.new(1, 2, 1)
+Part32.BrickColor = BrickColor.new("Cool yellow")
+Part32.CanCollide = false
+Part32.brickColor = BrickColor.new("Cool yellow")
+Part32.FormFactor = Enum.FormFactor.Symmetric
+Part32.formFactor = Enum.FormFactor.Symmetric
+Part33.Name = "Right Leg"
+Part33.Parent = Model0
+Part33.CFrame = CFrame.new(-9.49951935, 1, 36.3333282, 0, 0, 1, -2.27565513e-34, 1, 0, -1, 2.27565513e-34, 0)
+Part33.Orientation = Vector3.new(0, 90, 0)
+Part33.Position = Vector3.new(-9.499519348144531, 1, 36.33332824707031)
+Part33.Rotation = Vector3.new(0, 90, 0)
+Part33.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part33.Size = Vector3.new(1, 2, 1)
+Part33.BottomSurface = Enum.SurfaceType.Smooth
+Part33.BrickColor = BrickColor.new("Bright blue")
+Part33.CanCollide = false
+Part33.brickColor = BrickColor.new("Bright blue")
+Part33.FormFactor = Enum.FormFactor.Symmetric
+Part33.formFactor = Enum.FormFactor.Symmetric
+Part34.Name = "Torso"
+Part34.Parent = Model0
+Part34.CFrame = CFrame.new(-9.49951935, 3, 36.8333282, 0, 0, 1, -1.40873895e-34, 1, 0, -1, 1.40873895e-34, 0)
+Part34.Orientation = Vector3.new(0, 90, 0)
+Part34.Position = Vector3.new(-9.499519348144531, 3, 36.83332824707031)
+Part34.Rotation = Vector3.new(0, 90, 0)
+Part34.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part34.Size = Vector3.new(2, 2, 1)
+Part34.BrickColor = BrickColor.new("Dark green")
+Part34.LeftParamA = 0
+Part34.LeftParamB = 0
+Part34.LeftSurface = Enum.SurfaceType.Weld
+Part34.RightParamA = 0
+Part34.RightParamB = 0
+Part34.RightSurface = Enum.SurfaceType.Weld
+Part34.brickColor = BrickColor.new("Dark green")
+Part34.FormFactor = Enum.FormFactor.Symmetric
+Part34.formFactor = Enum.FormFactor.Symmetric
+Decal35.Name = "roblox"
+Decal35.Parent = Part34
+Script36.Parent = Part34
+table.insert(cors,sandbox(Script36,function()
+game.Workspace.ChildAdded:connect(function(touch)
+	if touch:FindFirstChild("Humanoid")  then
+local pathFinder = game:GetService("PathfindingService")
+while true do
+local path = pathFinder:CreatePath()
+path:ComputeAsync(script.Parent.Position,touch:FindFirstChild("HumanoidRootPart").Position)	
+local pathPoints = path:GetWaypoints()
+for i = 1, 5 do	
+	if i <= #pathPoints then
+	if pathPoints[i].Action == Enum.PathWaypointAction.Jump then
+	script.Parent.Parent.Humanoid.Jump = true
+	else script.Parent.Parent.Humanoid.Jump = false
+end
+script.Parent.Parent.Humanoid:MoveTo(pathPoints[i].Position)
+script.Parent.Parent.Humanoid.MoveToFinished:Wait(.1)
+end
+end
+end
+	
+	end
+end)
+
+end))
+Snap37.Parent = Part34
+Snap37.C0 = CFrame.new(0, 1, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap37.C1 = CFrame.new(0, -0.5, 0, -1, 0, -8.66916293e-35, 8.66916293e-35, 0, 1, 0, 1, 0)
+Snap37.Part0 = Part34
+Snap37.Part1 = Part25
+Snap37.part1 = Part25
+Weld38.Parent = Part34
+Weld38.C0 = CFrame.new(-1, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld38.C1 = CFrame.new(0.5, 0, 0, 0, -8.66916293e-35, -1, 0, 1, 8.66916293e-35, 1, 0, 0)
+Weld38.Part0 = Part34
+Weld38.Part1 = Part30
+Weld38.part1 = Part30
+Snap39.Parent = Part34
+Snap39.C0 = CFrame.new(0, -1, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap39.C1 = CFrame.new(0.5, 1, 0, 1, 0, 8.66916293e-35, -8.66916293e-35, 0, -1, 0, 1, 0)
+Snap39.Part0 = Part34
+Snap39.Part1 = Part31
+Snap39.part1 = Part31
+Weld40.Parent = Part34
+Weld40.C0 = CFrame.new(1, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld40.C1 = CFrame.new(-0.5, 0, 0, -0, -8.66916293e-35, 1, 0, 1, -8.66916293e-35, -1, 0, 0)
+Weld40.Part0 = Part34
+Weld40.Part1 = Part32
+Weld40.part1 = Part32
+Snap41.Parent = Part34
+Snap41.C0 = CFrame.new(0, -1, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap41.C1 = CFrame.new(-0.5, 1, 0, 1, 0, 8.66916293e-35, -8.66916293e-35, 0, -1, 0, 1, 0)
+Snap41.Part0 = Part34
+Snap41.Part1 = Part33
+Snap41.part1 = Part33
+Motor6D42.Name = "Left Hip"
+Motor6D42.Parent = Part34
+Motor6D42.MaxVelocity = 0.10000000149011612
+Motor6D42.C0 = CFrame.new(-1, -1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D42.C1 = CFrame.new(-0.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D42.Part0 = Part34
+Motor6D42.Part1 = Part31
+Motor6D42.part1 = Part31
+Weld43.Parent = Part34
+Weld43.C0 = CFrame.new(-1, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld43.C1 = CFrame.new(0.5, 0, 0, 0, -2.16729073e-35, -1, 0, 1, 2.16729073e-35, 1, 0, 0)
+Weld43.Part0 = Part34
+Weld43.Part1 = Part30
+Weld43.part1 = Part30
+Weld44.Parent = Part34
+Weld44.C0 = CFrame.new(1, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld44.C1 = CFrame.new(-0.5, 0, 0, -0, -2.16729073e-35, 1, 0, 1, -2.16729073e-35, -1, 0, 0)
+Weld44.Part0 = Part34
+Weld44.Part1 = Part32
+Weld44.part1 = Part32
+Motor6D45.Name = "Right Shoulder"
+Motor6D45.Parent = Part34
+Motor6D45.MaxVelocity = 0.10000000149011612
+Motor6D45.C0 = CFrame.new(1, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D45.C1 = CFrame.new(-0.5, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D45.Part0 = Part34
+Motor6D45.Part1 = Part32
+Motor6D45.part1 = Part32
+Motor6D46.Name = "Right Hip"
+Motor6D46.Parent = Part34
+Motor6D46.MaxVelocity = 0.10000000149011612
+Motor6D46.C0 = CFrame.new(1, -1, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D46.C1 = CFrame.new(0.5, 1, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D46.Part0 = Part34
+Motor6D46.Part1 = Part33
+Motor6D46.part1 = Part33
+Motor6D47.Name = "Left Shoulder"
+Motor6D47.Parent = Part34
+Motor6D47.MaxVelocity = 0.10000000149011612
+Motor6D47.C0 = CFrame.new(-1, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D47.C1 = CFrame.new(0.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D47.Part0 = Part34
+Motor6D47.Part1 = Part30
+Motor6D47.part1 = Part30
+Motor6D48.Name = "Neck"
+Motor6D48.Parent = Part34
+Motor6D48.MaxVelocity = 0.10000000149011612
+Motor6D48.C0 = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D48.C1 = CFrame.new(0, -0.5, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D48.Part0 = Part34
+Motor6D48.Part1 = Part25
+Motor6D48.part1 = Part25
+Script49.Name = "Animate"
+Script49.Parent = Model0
+table.insert(cors,sandbox(Script49,function()
+-- Now with exciting TeamColors HACK!
+
+function waitForChild(parent, childName)
+	while true do
+		local child = parent:findFirstChild(childName)
+		if child then
+			return child
+		end
+		parent.ChildAdded:wait()
+	end
+end
+
+
+----------------------------- TEAM COLORS
+
+
+----------------------------- ANIMATION
+
+-- declarations
+
+local Figure = script.Parent
+local Torso = waitForChild(Figure, "Torso")
+local RightShoulder = waitForChild(Torso, "Right Shoulder")
+local LeftShoulder = waitForChild(Torso, "Left Shoulder")
+local RightHip = waitForChild(Torso, "Right Hip")
+local LeftHip = waitForChild(Torso, "Left Hip")
+local Neck = waitForChild(Torso, "Neck")
+local Humanoid = waitForChild(Figure, "Humanoid")
+local pose = "Standing"
+
+local toolAnim = "None"
+local toolAnimTime = 0
+
+local isSeated = false
+
+-- functions
+
+function onRunning(speed)
+	if isSeated then return end
+
+	if speed>0 then
+		pose = "Running"
+	else
+		pose = "Standing"
+	end
+end
+
+function onDied()
+	pose = "Dead"
+end
+
+function onJumping()
+	isSeated = false
+	pose = "Jumping"
+end
+
+function onClimbing()
+	pose = "Climbing"
+end
+
+function onGettingUp()
+	pose = "GettingUp"
+end
+
+function onFreeFall()
+	pose = "FreeFall"
+end
+
+function onFallingDown()
+	pose = "FallingDown"
+end
+
+function onSeated()
+	isSeated = true
+	pose = "Seated"
+	print("Seated")
+end
+
+
+
+function moveJump()
+	RightShoulder.MaxVelocity = 0.5
+	LeftShoulder.MaxVelocity = 0.5
+	RightShoulder.DesiredAngle = 3.14
+	LeftShoulder.DesiredAngle = -3.14
+	RightHip.DesiredAngle = 0
+	LeftHip.DesiredAngle = 0
+end
+
+function moveFreeFall()
+	RightShoulder.MaxVelocity = 0.5
+	LeftShoulder.MaxVelocity = 0.5
+	RightShoulder.DesiredAngle = 1
+	LeftShoulder.DesiredAngle = -1
+	RightHip.DesiredAngle = 0
+	LeftHip.DesiredAngle = 0
+end
+
+
+function moveClimb()
+	RightShoulder.MaxVelocity = 0.5
+	LeftShoulder.MaxVelocity = 0.5
+	RightShoulder.DesiredAngle = -3.14
+	LeftShoulder.DesiredAngle = 3.14
+	RightHip.DesiredAngle = 0
+	LeftHip.DesiredAngle = 0
+end
+
+function moveSit()
+	print("Move Sit")
+	RightShoulder.MaxVelocity = 0.15
+	LeftShoulder.MaxVelocity = 0.15
+	RightShoulder.DesiredAngle = 3.14 /2
+	LeftShoulder.DesiredAngle = -3.14 /2
+	RightHip.DesiredAngle = 3.14 /2
+	LeftHip.DesiredAngle = -3.14 /2
+end
+
+function getTool()
+	
+	kidTable = Figure:children()
+	if (kidTable ~= nil) then
+		numKids = #kidTable
+		for i=1,numKids do
+			if (kidTable[i].className == "Tool") then return kidTable[i] end
+		end
+	end
+	
+	return nil
+end
+
+function getToolAnim(tool)
+
+	c = tool:children()
+	for i=1,#c do
+		if (c[i].Name == "toolanim" and c[i].className == "StringValue") then
+			return c[i]
+		end
+	end
+	return nil
+end
+
+function animateTool()
+	
+	if (toolAnim == "None") then
+		RightShoulder.DesiredAngle = 1.57
+		return
+	end
+
+	if (toolAnim == "Slash") then
+		RightShoulder.MaxVelocity = 0.5
+		RightShoulder.DesiredAngle = 0
+		return
+	end
+
+	if (toolAnim == "Lunge") then
+		RightShoulder.MaxVelocity = 0.5
+		LeftShoulder.MaxVelocity = 0.5
+		RightHip.MaxVelocity = 0.5
+		LeftHip.MaxVelocity = 0.5
+		RightShoulder.DesiredAngle = 1.57
+		LeftShoulder.DesiredAngle = 1.0
+		RightHip.DesiredAngle = 1.57
+		LeftHip.DesiredAngle = 1.0
+		return
+	end
+end
+
+function move(time)
+	local amplitude
+	local frequency
+
+	if (pose == "Jumping") then
+		moveJump()
+		return
+	end
+
+	if (pose == "FreeFall") then
+		moveFreeFall()
+		return
+	end
+
+	if (pose == "Climbing") then
+		moveClimb()
+		return
+	end
+
+	if (pose == "Seated") then
+		moveSit()
+		return
+	end
+
+
+	RightShoulder.MaxVelocity = 0.15
+	LeftShoulder.MaxVelocity = 0.15
+	if (pose == "Running") then
+		amplitude = 1
+		frequency = 9
+	else
+		amplitude = 0.1
+		frequency = 1
+	end
+
+	desiredAngle = amplitude * math.sin(time*frequency)
+
+	RightShoulder.DesiredAngle = desiredAngle
+	LeftShoulder.DesiredAngle = desiredAngle
+	RightHip.DesiredAngle = -desiredAngle
+	LeftHip.DesiredAngle = -desiredAngle
+
+
+	local tool = getTool()
+
+	if tool ~= nil then
+	
+		animStringValueObject = getToolAnim(tool)
+
+		if animStringValueObject ~= nil then
+			toolAnim = animStringValueObject.Value
+			-- message recieved, delete StringValue
+			animStringValueObject.Parent = nil
+			toolAnimTime = time + .3
+		end
+
+		if time > toolAnimTime then
+			toolAnimTime = 0
+			toolAnim = "None"
+		end
+
+		animateTool()
+
+		
+	else
+		toolAnim = "None"
+		toolAnimTime = 0
+	end
+end
+
+
+-- connect events
+
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(onJumping)
+Humanoid.Climbing:connect(onClimbing)
+Humanoid.GettingUp:connect(onGettingUp)
+Humanoid.FreeFalling:connect(onFreeFall)
+Humanoid.FallingDown:connect(onFallingDown)
+Humanoid.Seated:connect(onSeated)
+
+-- main program
+
+local nextTime = 0
+local runService = game:service("RunService");
+
+while Figure.Parent~=nil do
+	time = runService.Stepped:wait()
+	if time > nextTime then
+		move(time)
+		nextTime = time + 0.1
+	end
+end
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
