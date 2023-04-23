@@ -1,0 +1,226 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Script1 = Instance.new("Script")
+BillboardGui2 = Instance.new("BillboardGui")
+TextLabel3 = Instance.new("TextLabel")
+Script4 = Instance.new("Script")
+Camera5 = Instance.new("Camera")
+Part6 = Instance.new("Part")
+Decal7 = Instance.new("Decal")
+Decal8 = Instance.new("Decal")
+Script9 = Instance.new("Script")
+PointLight10 = Instance.new("PointLight")
+Model0.Name = "Owner Title by bendarobloxian (OPEN ME!)"
+Model0.Parent = mas
+Script1.Name = "READ ME"
+Script1.Parent = Model0
+table.insert(cors,sandbox(Script1,function()
+--Made by bendarobloxian. If you see this script created by anyone else, it's a copy. Please report them to roblox and message bendarobloxian about it.
+--PLEASE READ THE WHOLE SCRIPT. IT MIGHT NOT WORK AS INTENDED IF YOU DO NOT READ COMPLETELY.
+--SORRY IF THIS SEEMS AGGRESSIVE, IT'S JUST A LOT OF PEOPLE COMPLAIN ABOUT IT AND DON'T KNOW WHY IT HAPPENS.
+--ALWAYS BE CAREFUL USING FREE MODELS. NOT ALL OF THEM ARE TRUSTED.
+--Thanks for using my script!
+script.Parent = game.ServerScriptService
+local billboard = script.BillboardGui
+--Don't touch anything above this line or it will NOT work.
+
+--CHANGE THIS TO FALSE IF YOU DO NOT WANT TO SUPPORT THE CREATOR WITH ADVERTISEMENTS.
+local doModelAdvertisement = true
+--CHANGE THIS TO FALSE IF YOU DO NOT WANT TO SUPPORT THE CREATOR WITH ADVERTISEMENTS.
+
+--CHANGE THIS TO TRUE IF YOU WANT TO SET THE USERNAME BY YOURSELF. IF FALSE, THE SCRIPT WILL AUTOMATICALLY USE THE GAME OWNER'S NAME.
+local defaultOwnerOverride = false
+--CHANGE THIS TO TRUE IF YOU WANT TO SET THE USERNAME BY YOURSELF. IF FALSE, THE SCRIPT WILL AUTOMATICALLY USE THE GAME OWNER'S NAME.
+
+local playername = "bendarobloxian" --Change this to the name of the player you want to give the title to. ONLY WORKS IF DEFAULTOWNEROVERRIDE IS TRUE.
+local text = "Owner" --Set this to the text you want in the title.
+
+--Color Settings
+
+--Special Colors
+--Using these options will override the RGB Colors section. Make sure that your setup is correct.
+--You may only use one of these options.
+local stillRainbow = false --Change this to true in order to enable still rainbow colors (Gradient.)
+local dynamicRainbow = false --Change this to true in order to enable dynamic rainbow colors (Changes over time.)
+
+--RGB Colors
+local redV = 255 --If you want a different color change this. (Must understand RGB)
+local greenV = 0
+local blueV = 0
+
+--This will apply your settings to the player. Don't change what's below.
+game.Players.PlayerAdded:Connect(function(player)
+	player.CharacterAdded:Connect(function(char)
+		if defaultOwnerOverride == false then
+			print("Default Owner Override is not active. The Owner Title will automatically be given to the place's owner. Change the setting in the READ ME script if you wish to toggle this.")
+			if game.CreatorType == Enum.CreatorType.User then
+				playername = game.Players:GetNameFromUserIdAsync(game.CreatorId)
+			else
+				local groupOwnerName = game:GetService("GroupService"):GetGroupInfoAsync(game.CreatorId).Owner.Name
+				playername = groupOwnerName
+			end
+		else
+			print("Default Owner Override is active. The Owner Title will be given to the name specified in the READ ME script inside of the Owner TItle by bendarobloxian model. Change the setting in the READ ME script if you wish to toggle this.")
+		end
+		if player.Name == playername then
+			local newgui = billboard:Clone()
+			newgui.Parent = char.Head
+			local txtColor
+			if dynamicRainbow == true then
+				txtColor = Color3.new(1,1,1)
+				newgui.TextLabel.dynamicRainbow.Disabled = false
+			elseif stillRainbow == true then
+				txtColor = Color3.new(1,1,1)
+				local newGrad = script.UIGradient:Clone()
+				newGrad.Parent = newgui.TextLabel
+			else
+				txtColor = Color3.fromRGB(redV, greenV, blueV)
+			end
+			newgui.TextLabel.TextColor3 = txtColor
+			newgui.TextLabel.Text = text
+		end
+	end)
+end)
+--You can copy this full model and modify the values to do it to multiple players.
+print("Owner Title Script by bendarobloxian has succesfully been loaded. If this is not the case and I am wrong, as it has NOT succesfully loaded, please message bendarobloxian about it to report a bug or give a suggestion.")
+--Update Checker
+if game:GetService("MarketplaceService"):GetProductInfo(1445530615, "Asset")["Name"] ~= "Owner Title Script V4.2" then
+	warn("THIS VERSION OF OWNER TITLE SCRIPT BY BENDAROBLOXIAN IS NOT UPDATED. PLEASE MAKE SURE TO REPLACE THIS OLD VERSION OF THE MODEL WITH A NEW ONE. THIS MIGHT FIX PROBLEMS! THANKS.")
+end
+
+--Made by bendarobloxian. If you see this script created by anyone else, it's a copy. Please report them to roblox and message bendarobloxian about it.
+--The code below this line is to support the creator (bendarobloxian).
+--You can remove it if you want to, or just change the setting above. Bye :)
+if doModelAdvertisement then
+	print("Owner Title Script Advertisements are active in this game. Go to the READ ME script inside of your Owner Title Script model if you wish to toggle this.")
+	while wait() do
+		local market = game:GetService("MarketplaceService")
+		local modelid = 1445530615
+		for i,v in pairs(game.Players:GetChildren()) do
+			if not market:PlayerOwnsAsset(v, modelid) then
+				if game.CreatorId ~= v.UserId then
+					market:PromptPurchase(v, modelid)
+				end
+			end
+		end
+		--Update Checker
+		if game:GetService("MarketplaceService"):GetProductInfo(1445530615, "Asset")["Name"] ~= "Owner Title Script V4.2" then
+			warn("THIS VERSION OF OWNER TITLE SCRIPT BY BENDAROBLOXIAN IS NOT UPDATED. PLEASE MAKE SURE TO REPLACE THIS OLD VERSION OF THE MODEL WITH A NEW ONE. THIS MIGHT FIX PROBLEMS! THANKS.")
+		end
+		wait(200)
+	end
+else
+	print("Owner Title Script Advertisements are NOT active. If users receive a pop-up, it does not come from here and you should probably check your game. Go to the READ ME script inside of your Owner Title Script model if you wish to toggle this.")
+end
+--bendarobloxian 2020, Owner Title Script Version 4.2 | Now supporting rainbow colors, but with a less colorful and more simplistic icon.
+end))
+BillboardGui2.Parent = Script1
+BillboardGui2.LightInfluence = 1
+BillboardGui2.Size = UDim2.new(0, 200, 0, 50)
+BillboardGui2.StudsOffset = Vector3.new(0, 3.5, 0)
+TextLabel3.Parent = BillboardGui2
+TextLabel3.Size = UDim2.new(0, 200, 0, 50)
+TextLabel3.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel3.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel3.BackgroundTransparency = 1
+TextLabel3.Font = Enum.Font.SourceSansBold
+TextLabel3.FontSize = Enum.FontSize.Size14
+TextLabel3.Text = "Owner"
+TextLabel3.TextColor = BrickColor.new("Institutional white")
+TextLabel3.TextColor3 = Color3.new(1, 1, 1)
+TextLabel3.TextScaled = true
+TextLabel3.TextSize = 14
+TextLabel3.TextStrokeColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+TextLabel3.TextStrokeTransparency = 0
+TextLabel3.TextWrap = true
+TextLabel3.TextWrapped = true
+Script4.Name = "dynamicRainbow"
+Script4.Parent = TextLabel3
+Script4.Enabled = false
+table.insert(cors,sandbox(Script4,function()
+local steps = 51
+local rgbchange = 255 / steps
+while wait() do
+	script.Parent.TextColor3 = Color3.new(1,0,0)
+	otherthing = Color3.new(1,0,0)
+	for i=1,steps do
+		game:GetService("RunService").Heartbeat:wait()
+		script.Parent.TextColor3 = Color3.new(script.Parent.TextColor3.r,script.Parent.TextColor3.g+(rgbchange/255),script.Parent.TextColor3.b)
+	end
+	for i=1,steps do
+		game:GetService("RunService").Heartbeat:wait()
+		script.Parent.TextColor3 = Color3.new(script.Parent.TextColor3.r-(rgbchange/255),script.Parent.TextColor3.g,script.Parent.TextColor3.b)
+	end
+	for i=1,steps do
+		game:GetService("RunService").Heartbeat:wait()
+		script.Parent.TextColor3 = Color3.new(script.Parent.TextColor3.r,script.Parent.TextColor3.g,script.Parent.TextColor3.b+(rgbchange/255))
+	end
+	for i=1,steps do
+		game:GetService("RunService").Heartbeat:wait()
+		script.Parent.TextColor3 = Color3.new(script.Parent.TextColor3.r,script.Parent.TextColor3.g-(rgbchange/255),script.Parent.TextColor3.b)
+	end
+	for i=1,steps do
+		game:GetService("RunService").Heartbeat:wait()
+		script.Parent.TextColor3 = Color3.new(script.Parent.TextColor3.r+(rgbchange/255),script.Parent.TextColor3.g,script.Parent.TextColor3.b)
+	end
+	for i=1,steps do
+		game:GetService("RunService").Heartbeat:wait()
+		script.Parent.TextColor3 = Color3.new(script.Parent.TextColor3.r,script.Parent.TextColor3.g,script.Parent.TextColor3.b-(rgbchange/255))
+	end
+end
+end))
+Script4.Disabled = true
+Camera5.Name = "ThumbnailCamera"
+Camera5.Parent = Model0
+Camera5.CFrame = CFrame.new(1.5, 3.5, -6.02499962, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera5.CameraSubject = Part6
+Camera5.CoordinateFrame = CFrame.new(1.5, 3.5, -6.02499962, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera5.Focus = CFrame.new(1.5, 3.5, -11.0249996, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera5.focus = CFrame.new(1.5, 3.5, -11.0249996, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part6.Parent = Camera5
+Part6.CFrame = CFrame.new(21.1067257, 3.50003123, 17.3144188, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part6.Position = Vector3.new(21.106725692749023, 3.5000312328338623, 17.31441879272461)
+Part6.Color = Color3.new(0, 0, 0)
+Part6.Size = Vector3.new(7, 7, 0.05000000074505806)
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.BrickColor = BrickColor.new("Really black")
+Part6.Material = Enum.Material.Neon
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part6.brickColor = BrickColor.new("Really black")
+Decal7.Parent = Part6
+Decal7.Texture = "http://www.roblox.com/asset/?id=5079566758"
+Decal8.Parent = Part6
+Decal8.Texture = "http://www.roblox.com/asset/?id=5079566758"
+Decal8.Face = Enum.NormalId.Back
+Script9.Parent = Part6
+table.insert(cors,sandbox(Script9,function()
+script.Parent.Parent:Destroy()
+end))
+PointLight10.Parent = Part6
+PointLight10.Range = 50
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
