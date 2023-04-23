@@ -1,0 +1,841 @@
+local Player = game:GetService("Players").Nothingis_Nothing101 --REPLACE YOUR NAME!!
+local Mouse,mouse,UserInputService,ContextActionService
+do
+	script.Parent = Player.Character
+	local CAS = {Actions={}}
+	local Event = Instance.new("RemoteEvent")
+	Event.Name = "UserInput_Event"
+	Event.Parent = Player.Character
+	local fakeEvent = function()
+		local t = {_fakeEvent=true}
+		t.Connect = function(self,f)self.Function=f end
+		t.connect = t.Connect
+		return t
+	end
+    local m = {Target=nil,Hit=CFrame.new(),KeyUp=fakeEvent(),KeyDown=fakeEvent(),Button1Up=fakeEvent(),Button1Down=fakeEvent()}
+	local UIS = {InputBegan=fakeEvent(),InputEnded=fakeEvent()}
+	function CAS:BindAction(name,fun,touch,...)
+		CAS.Actions[name] = {Name=name,Function=fun,Keys={...}}
+	end
+	function CAS:UnbindAction(name)
+		CAS.Actions[name] = nil
+	end
+	local function te(self,ev,...)
+		local t = m[ev]
+		if t and t._fakeEvent and t.Function then
+			t.Function(...)
+		end
+	end
+	m.TrigEvent = te
+	UIS.TrigEvent = te
+	Event.OnServerEvent:Connect(function(plr,io)
+	    if plr~=Player then return end
+		if io.isMouse then
+			m.Target = io.Target
+			m.Hit = io.Hit
+		elseif io.UserInputType == Enum.UserInputType.MouseButton1 then
+	        if io.UserInputState == Enum.UserInputState.Begin then
+				m:TrigEvent("Button1Down")
+			else
+				m:TrigEvent("Button1Up")
+			end
+		else
+			for n,t in pairs(CAS.Actions) do
+				for _,k in pairs(t.Keys) do
+					if k==io.KeyCode then
+						t.Function(t.Name,io.UserInputState,io)
+					end
+				end
+			end
+	        if io.UserInputState == Enum.UserInputState.Begin then
+	            m:TrigEvent("KeyDown",io.KeyCode.Name:lower())
+				UIS:TrigEvent("InputBegan",io,false)
+			else
+				m:TrigEvent("KeyUp",io.KeyCode.Name:lower())
+				UIS:TrigEvent("InputEnded",io,false)
+	        end
+	    end
+	end)
+	Mouse,mouse,UserInputService,ContextActionService = m,m,UIS,CAS
+end
+
+
+local plr = game.Players.Violeteers
+ 
+if game.ReplicatedStorage:FindFirstChild("NekoGUI") == nil then
+local scr = Instance.new("ScreenGui")
+scr.Parent = game.ReplicatedStorage scr.Name = "NekoGUI"
+local fr = Instance.new("Frame")
+fr.Parent = scr fr.Active = true fr.Draggable = true
+fr.Size = UDim2.new(0,390,.8,0) fr.BackgroundColor3 = Color3.fromRGB(250,250,250)
+fr.Position = UDim2.new(1,-390,.2,0) fr.BackgroundTransparency = 0.3 fr.BorderSizePixel = 2
+local header1 = Instance.new("TextLabel",fr) header1.Name = "this script was originally made by Crabway"
+header1.Position = UDim2.new(0.02,0,0,0) header1.TextSize = 75 header1.Text = "?????"
+header1.Size = UDim2.new(0.9,0,0.1,0) header1.BackgroundTransparency = 1 header1.TextXAlignment = "Left"
+header1.Font = "ArialBold"
+local header2 = Instance.new("TextLabel",fr)
+header2.Position = UDim2.new(0.06,0,0,-3) header2.TextSize = 24 header2.Text = "script by \n Crabway"
+header2.Size = UDim2.new(0.92,0,0.1,0) header2.BackgroundTransparency = 1 header2.TextXAlignment = "Right"
+header2.Font = "ArialBold"
+local close = Instance.new("TextButton",fr) close.BackgroundColor3 = Color3.fromRGB(255, 164, 164)
+close.Size = UDim2.new(1,0,0,25) close.Position = UDim2.new(0,0,.1,5) close.Font = "ArialBold"
+close.TextSize = 16 close.Text = "Minimize GUI" close.BackgroundTransparency = 0.2 close.Name = "close"
+local desc = Instance.new("TextLabel",fr) desc.BackgroundTransparency = 1
+desc.Size = UDim2.new(1,0,.15,0) desc.Position = UDim2.new(0.02,0,.1,30) desc.Font = "SourceSans"
+desc.TextXAlignment = "Left" desc.TextYAlignment = "Top" desc.TextWrapped = true
+desc.TextSize = 26 desc.Text = "You are an adorable floating neko ball of destruction! This GUI can be dragged anywhere on your screen (or minimized)."
+local fl = Instance.new("TextButton",fr) fl.Name = "f1"
+fl.Size = UDim2.new(0,25,0,100) fl.Position = UDim2.new(0.02,0,.25,22) fl.Text = "<" fl.TextSize = 27
+fl.Font = "ArialBold" fl.BackgroundColor3 = Color3.fromRGB(250,250,250) fl.BackgroundTransparency = 0.6
+local f2 = Instance.new("TextButton",fr) f2.Name = "f2"
+f2.Size = UDim2.new(0,25,0,100) f2.Position = UDim2.new(0.02,125,.25,22) f2.Text = ">" f2.TextSize = 27
+f2.Font = "ArialBold" f2.BackgroundColor3 = Color3.fromRGB(250,250,250) f2.BackgroundTransparency = 0.6
+local face = Instance.new("ImageLabel",fr) face.Name = "Face"
+face.Size = UDim2.new(0,100,0,100) face.Position = UDim2.new(0.02,25,.25,22)
+face.BackgroundColor3 = Color3.fromRGB(250,250,250) face.BackgroundTransparency = 0.6
+--face.Image = plr.Character.Head:FindFirstChildOfClass("Decal").Texture
+local fl = Instance.new("TextLabel",face)
+fl.Size = UDim2.new(1,0,0,20) fl.Position = UDim2.new(0,0,1,-20) fl.TextSize = 15
+fl.BackgroundTransparency = 1 fl.Text = "Current Face" fl.Font = "ArialBold"
+local fc = Instance.new("TextLabel",face) fc.Name = "fc"
+fc.Size = UDim2.new(0,15,0,15) fc.Position = UDim2.new(0,7,0,0) fc.TextSize = 15
+fc.BackgroundTransparency = 1 fc.Text = "1/7" fc.Font = "ArialBold"
+local s1 = Instance.new("TextLabel",fr) s1.Name = "s1"
+s1.Size = UDim2.new(0,50,0,45) s1.Position = UDim2.new(0.02,160,.25,22) s1.Text = "< E" s1.TextSize = 27
+s1.Font = "ArialBold" s1.BackgroundColor3 = Color3.fromRGB(250,250,250) s1.BackgroundTransparency = 0.6
+local speed = Instance.new("TextLabel",fr) speed.Name = "speed"
+speed.Size = UDim2.new(0,110,0,45) speed.Position = UDim2.new(0.02,210,.25,22) speed.Text = "1" speed.TextSize = 27
+speed.Font = "ArialBold" speed.BackgroundColor3 = Color3.fromRGB(250,250,250) speed.BackgroundTransparency = 0.6
+local sl = Instance.new("TextLabel",speed) speed.TextYAlignment = "Top"
+sl.Size = UDim2.new(1,0,0,20) sl.Position = UDim2.new(0,0,1,-20) sl.TextSize = 15
+sl.BackgroundTransparency = 1 sl.Text = "Current Speed" sl.Font = "ArialBold"
+local s2 = Instance.new("TextLabel",fr) s2.Name = "s2"
+s2.Size = UDim2.new(0,50,0,45) s2.Position = UDim2.new(0.02,320,.25,22) s2.Text = "Q >" s2.TextSize = 27
+s2.Font = "ArialBold" s2.BackgroundColor3 = Color3.fromRGB(250,250,250) s2.BackgroundTransparency = 0.6
+local rain = Instance.new("TextLabel",fr)
+rain.Size = UDim2.new(0,120,0,45) rain.Position = UDim2.new(0.02,160,.25,76) rain.Text = "Disco Mode" rain.TextSize = 18
+rain.Font = "ArialBold" rain.BackgroundColor3 = Color3.fromRGB(250,250,250) rain.BackgroundTransparency = 0.6
+local ron = Instance.new("TextButton",fr) ron.Name = "ron"
+ron.Size = UDim2.new(0,45,0,45) ron.Position = UDim2.new(0.02,280,.25,76) ron.Text = "On" ron.TextSize = 24
+ron.Font = "ArialBold" ron.BackgroundColor3 = Color3.fromRGB(250,250,250) ron.BackgroundTransparency = 0.6
+local roff = Instance.new("TextButton",fr) roff.Name = "roff"
+roff.Size = UDim2.new(0,45,0,45) roff.Position = UDim2.new(0.02,325,.25,76) roff.Text = "Off" roff.TextSize = 24
+roff.Font = "ArialBold" roff.BackgroundColor3 = Color3.fromRGB(250,250,250) roff.BackgroundTransparency = 0.6
+local bc = Instance.new("TextLabel",fr)
+bc.Size = UDim2.new(0,120,0,45) bc.Position = UDim2.new(0,0,.25,125) bc.Text = "Ball Color" bc.TextSize = 22
+bc.Font = "ArialBold" bc.BackgroundColor3 = Color3.fromRGB(250,250,250) bc.BackgroundTransparency = 1
+local c1 = Instance.new("TextButton",fr) c1.Name = "c1"
+c1.Size = UDim2.new(0,35,0,35) c1.Position = UDim2.new(0,120,.25,130)
+c1.BackgroundColor3 = Color3.fromRGB(248,248,248) c1.Text = "" c1.BorderSizePixel = 0
+local c2 = Instance.new("TextButton",fr) c2.Name = "c2"
+c2.Size = UDim2.new(0,35,0,35) c2.Position = UDim2.new(0,155,.25,130)
+c2.BackgroundColor3 = Color3.fromRGB(241,231,199) c2.Text = "" c2.BorderSizePixel = 0
+local c3 = Instance.new("TextButton",fr) c3.Name = "c3"
+c3.Size = UDim2.new(0,35,0,35) c3.Position = UDim2.new(0,190,.25,130)
+c3.BackgroundColor3 = Color3.fromRGB(215,197,154) c3.Text = "" c3.BorderSizePixel = 0
+local c4 = Instance.new("TextButton",fr) c4.Name = "c4"
+c4.Size = UDim2.new(0,35,0,35) c4.Position = UDim2.new(0,225,.25,130)
+c4.BackgroundColor3 = Color3.fromRGB(255,201,201) c4.Text = "" c4.BorderSizePixel = 0
+local c5 = Instance.new("TextButton",fr) c5.Name = "c5"
+c5.Size = UDim2.new(0,35,0,35) c5.Position = UDim2.new(0,260,.25,130)
+c5.BackgroundColor3 = Color3.fromRGB(220,196,255) c5.Text = "" c5.BorderSizePixel = 0
+local c6 = Instance.new("TextButton",fr) c6.Name = "c6"
+c6.Size = UDim2.new(0,35,0,35) c6.Position = UDim2.new(0,295,.25,130)
+c6.BackgroundColor3 = Color3.fromRGB(180,210,228) c6.Text = "" c6.BorderSizePixel = 0
+local c7 = Instance.new("TextButton",fr) c7.Name = "c7"
+c7.Size = UDim2.new(0,35,0,35) c7.Position = UDim2.new(0,330,.25,130)
+c7.BackgroundColor3 = Color3.fromRGB(213,255,201) c7.Text = "" c7.BorderSizePixel = 0
+local sep = Instance.new("ImageLabel",fr) sep.Name = "Divider"
+sep.Image = "rbxassetid://546990373" sep.Size = UDim2.new(.9,0,0,1) sep.Position = UDim2.new(.05,0,.25,175)
+sep.ImageTransparency = 0.5 sep.BorderSizePixel = 0
+---------------------------------------------------
+local hl = Instance.new("TextLabel",fr)
+hl.Size = UDim2.new(0,120,0,45) hl.Position = UDim2.new(0,0,.25,175) hl.Text = "Health" hl.TextSize = 24
+hl.Font = "ArialBold" hl.BackgroundColor3 = Color3.fromRGB(250,250,250) hl.BackgroundTransparency = 1
+local hb = Instance.new("TextLabel",fr)
+hb.Size = UDim2.new(0,245,0,20) hb.Position = UDim2.new(0,120,.25,188)
+hb.BackgroundTransparency = 0.2 hb.Text = "" hb.BackgroundColor3 = Color3.fromRGB(255, 164, 164)
+local bar = Instance.new("TextLabel",fr) bar.Name = "bar"
+bar.Size = UDim2.new(0,245,0,20) bar.Position = UDim2.new(0,120,.25,188)
+bar.BackgroundTransparency = 0.2 bar.Text = "" bar.BackgroundColor3 = Color3.fromRGB(171, 255, 148)
+local hp = Instance.new("TextLabel",fr) hp.Name = "hp"
+hp.Size = UDim2.new(0,245,0,20) hp.Position = UDim2.new(0,120,.25,188) hp.TextSize = 18
+hp.BackgroundTransparency = 1 hp.Text = "6900 / 6900 HP" hp.Font = "Arial"
+ 
+local skills = Instance.new("Folder",fr) skills.Name = "skills"
+local sk1 = Instance.new("TextLabel",skills)
+sk1.Size = UDim2.new(0,120,0,35) sk1.Position = UDim2.new(0.02,0,.25,230) sk1.Text = "Click" sk1.TextSize = 24
+sk1.Font = "Code" sk1.BackgroundColor3 = Color3.fromRGB(250,250,250) sk1.BackgroundTransparency = 0.6
+local sk2 = Instance.new("TextLabel",skills)
+sk2.Size = UDim2.new(0,120,0,35) sk2.Position = UDim2.new(0.02,0,.25,275) sk2.Text = "Spacebar" sk2.TextSize = 24
+sk2.Font = "Code" sk2.BackgroundColor3 = Color3.fromRGB(250,250,250) sk2.BackgroundTransparency = 0.6
+local sk3 = Instance.new("TextLabel",skills)
+sk3.Size = UDim2.new(0,120,0,35) sk3.Position = UDim2.new(0.02,0,.25,320) sk3.Text = "Press X" sk3.TextSize = 24
+sk3.Font = "Code" sk3.BackgroundColor3 = Color3.fromRGB(250,250,250) sk3.BackgroundTransparency = 0.6
+local sk4 = Instance.new("TextLabel",skills)
+sk4.Size = UDim2.new(0,120,0,35) sk4.Position = UDim2.new(0.02,0,.25,365) sk4.Text = "Press C" sk4.TextSize = 24
+sk4.Font = "Code" sk4.BackgroundColor3 = Color3.fromRGB(250,250,250) sk4.BackgroundTransparency = 0.6
+local d1 = Instance.new("TextLabel",skills) d1.Name = "d1"
+d1.Size = UDim2.new(0,240,0,35) d1.Position = UDim2.new(0.02,120,.25,230) d1.Text = "Super Lasers" d1.TextSize = 24
+d1.Font = "ArialBold" d1.BackgroundColor3 = Color3.fromRGB(250,250,250) d1.BackgroundTransparency = 0.6
+local d2 = Instance.new("TextLabel",skills) d2.Name = "d2"
+d2.Size = UDim2.new(0,240,0,35) d2.Position = UDim2.new(0.02,120,.25,275) d2.Text = "Gift Drop" d2.TextSize = 24
+d2.Font = "ArialBold" d2.BackgroundColor3 = Color3.fromRGB(250,250,250) d2.BackgroundTransparency = 0.6
+local d3 = Instance.new("TextLabel",skills) d3.Name = "d3"
+d3.Size = UDim2.new(0,240,0,35) d3.Position = UDim2.new(0.02,120,.25,320) d3.Text = "Weeb Attack" d3.TextSize = 24
+d3.Font = "ArialBold" d3.BackgroundColor3 = Color3.fromRGB(250,250,250) d3.BackgroundTransparency = 0.6
+local d4 = Instance.new("TextLabel",skills) d4.Name = "d4"
+d4.Size = UDim2.new(0,240,0,35) d4.Position = UDim2.new(0.02,120,.25,365) d4.Text = "Fish Slap" d4.TextSize = 24
+d4.Font = "ArialBold" d4.BackgroundColor3 = Color3.fromRGB(250,250,250) d4.BackgroundTransparency = 0.6
+ 
+local txt = Instance.new("TextBox",fr) txt.Name = "Chat"
+txt.Size = UDim2.new(0,310,0,35) txt.Position = UDim2.new(0.02,0,.25,410) txt.Text = "" txt.TextSize = 28
+txt.Font = "SourceSansItalic" txt.BackgroundColor3 = Color3.fromRGB(250,250,250) txt.BackgroundTransparency = 0.6
+txt.TextTransparency = 0.3 txt.TextYAlignment = "Top" txt.PlaceholderText = "Type here"
+local say = Instance.new("TextButton",fr) say.Name = "Say"
+say.Size = UDim2.new(0,55,0,35) say.Position = UDim2.new(0.02,310,.25,410) say.Text = "Say" say.TextSize = 28
+say.Font = "ArialBold" say.BackgroundColor3 = Color3.fromRGB(171, 255, 148) say.BackgroundTransparency = 0.2
+say.TextTransparency = 0.2
+end
+if plr.PlayerGui:FindFirstChild("NekoGUI") == nil then
+    local revive = game.ReplicatedStorage:FindFirstChild("NekoGUI"):Clone() revive.Parent = plr.PlayerGui
+end
+ 
+repeat wait(1/44) until plr and plr.Character and
+plr.Character:findFirstChild("Humanoid") and
+plr.Character:findFirstChild("Head") and plr:GetMouse() and
+game.Workspace.CurrentCamera and plr.PlayerGui.NekoGUI and
+plr.Character:findFirstChild("Humanoid").Health >= (plr.Character.Humanoid.Health)/3
+ 
+local gui = plr.PlayerGui:FindFirstChild("NekoGUI").Frame
+local children = plr.Character:GetChildren()
+for i = 1, #children do
+    if children[i].Name ~= "Head" and children[i]:IsA("BasePart") or children[i]:IsA("MeshPart") then
+    children[i].Transparency = 1
+     elseif children[i]:IsA("Accessory") then
+    children[i]:Destroy()
+    end
+end if plr.Character.Head:FindFirstChildOfClass("BillboardGui") ~= nil then
+       plr.Character.Head.BillboardGui:Destroy() end
+game.Workspace:FindFirstChild(""..plr.Name.."").Archivable = true
+if game.ReplicatedStorage:FindFirstChild("Dummy") ~= nil then print("ok") else
+    --and plr.Character.Humanoid.Health >= (plr.Character.Humanoid.Health)/3  then
+local dummy = game.Workspace:FindFirstChild(""..plr.Name..""):Clone() dummy.Parent = game.ReplicatedStorage dummy.Name = "Dummy" --copy a dummy
+local human = game.ReplicatedStorage:FindFirstChild("Dummy",true)
+ 
+for i,child in pairs(human:GetChildren()) do
+    if child:IsA("Pants") or child:IsA("Shirt") or child:IsA("ShirtGraphic") or child:IsA("Accessory") or child:IsA("ForceField") or child:IsA("BillboardGui") then
+        child:Destroy()
+    end
+end
+ 
+local config = {BrickColor.new("Pastel brown"),"rbxassetid://617393449","rbxassetid://1189026152",
+    "rbxassetid://366273095","rbxassetid://1018844485","rbxassetid://1018847510",0}
+ 
+human.Name = "Dummy"
+human.Head.BrickColor = config[1]
+human.Torso.BrickColor = config[1] human.Torso.Transparency = config[7]
+human:FindFirstChild("Left Arm").BrickColor = config[1] human:FindFirstChild("Left Arm").Transparency = config[7]
+human:FindFirstChild("Right Arm").BrickColor = config[1] human:FindFirstChild("Right Arm").Transparency = config[7]
+human:FindFirstChild("Left Leg").BrickColor = config[1] human:FindFirstChild("Left Leg").Transparency = config[7]
+human:FindFirstChild("Right Leg").BrickColor = config[1] human:FindFirstChild("Right Leg").Transparency = config[7]
+end
+ 
+hair2 = function(Character)
+local Hair = Instance.new("Part")
+Hair.Parent = Character
+Hair.Name = "anime"
+Hair.Size = Vector3.new(0.1, 0.1, 0.1)
+Hair.CFrame = Character.Head.CFrame
+Hair:BreakJoints()
+Hair.CanCollide = false
+Hair.BrickColor = BrickColor.new("New Yeller")
+Hair.TopSurface = "Smooth"
+Hair.BottomSurface = "Smooth"
+local Weld = Instance.new("Weld")
+Weld.Name = "Weld"
+Weld.Part0 = Character.Head
+Weld.Part1 = Hair
+Weld.Parent = Character.Head
+Weld.C0 = CFrame.new(0, -1.4, 0.2)*CFrame.fromEulerAnglesXYZ(0.1, 0, 0)
+local Mesh = Instance.new("SpecialMesh")
+Mesh.Parent = Hair Mesh.Name = "HairMesh"
+Mesh.MeshId = "rbxassetid://1389678629"
+Mesh.TextureId = "rbxassetid://73139980"
+Mesh.Scale = Vector3.new(0.050, 0.050, 0.050)
+end
+ 
+local ball = plr.Character.Head:FindFirstChildOfClass("SpecialMesh")
+ball.MeshType = "Sphere" ball.Parent.Transparency = 0.9
+ball.Parent.BrickColor = BrickColor.new("Institutional white") ball.Parent.Material = "SmoothPlastic"
+for i = 1,9 do
+wait() ball.Scale = Vector3.new(0.8*(1+i),0.8*(2+(2*i)),0.8*(2+(2*i)))
+ball.Parent.Transparency = ball.Parent.Transparency - 0.1
+end if gui:FindFirstChildOfClass("TextLabel") ~= nil then print("successfully became neko!") end
+plr.Character.Humanoid.DisplayDistanceType = "None"
+ball.Parent:FindFirstChildOfClass("Decal").Texture = "rbxassetid://260195370"
+plr.Character:FindFirstChild("Body Colors").HeadColor = BrickColor.new("Institutional white")
+local faces = {260195370,207366753,604931496,317101586,317101448,617393449,299971458}
+plr.Character.Humanoid.MaxHealth = 6900 plr.Character.Humanoid.Health = plr.Character.Humanoid.MaxHealth
+ 
+local ears = Instance.new("Part",ball.Parent.Parent) ears.Name = "Handle" ears.Anchored = true
+ears.CanCollide = false ears.Transparency = 0.3 ears.Size = Vector3.new(1, 0.8, 1)
+ears.Size = Vector3.new(15, 14.8, 16.4)
+ 
+local mesh = Instance.new("SpecialMesh",ears) mesh.MeshId = "http://www.roblox.com/asset/?id=1374148"
+mesh.TextureId = "http://www.roblox.com/asset/?id=413143035" mesh.MeshType = "FileMesh"
+mesh.Scale = Vector3.new(12,12,9) mesh.Offset = Vector3.new(0,6,0)
+if plr.Character.Head:FindFirstChild("pack") == nil then
+local imagechoice = Instance.new("StringValue",plr.Character.Head) imagechoice.Value = "vec"
+imagechoice.Name = "pack" end
+if plr.Character.Head:FindFirstChild("panda") == nil then
+local pandas = Instance.new("BoolValue",plr.Character.Head) pandas.Value = true
+pandas.Name = "panda" end
+local sounds = {"rbxassetid://225020499","rbxassetid://426232201","rbxassetid://777598950"}
+if plr.Character.Head:FindFirstChild("nya1") == nil then
+for ny = 1,3 do
+local sound1 = Instance.new("Sound",plr.Character.Head) sound1.Name = "nya" .. ny sound1.EmitterSize = 16
+sound1.SoundId = sounds[ny]
+end
+end plr.Character.Head.nya3.PlaybackSpeed = 1.4
+ 
+local f = 1
+gui.Face.Image = plr.Character:FindFirstChild("Head"):FindFirstChildOfClass("Decal").Texture
+gui.f1.MouseButton1Down:connect(function()
+    f = f - 1
+    if f == 1 then gui.Face.Image = "rbxassetid://" .. faces[1]
+    elseif f == 2 then gui.Face.Image = "rbxassetid://" .. faces[2]
+    elseif f == 3 then gui.Face.Image = "rbxassetid://" .. faces[3]
+    elseif f == 4 then gui.Face.Image = "rbxassetid://" .. faces[4]
+    elseif f == 5 then gui.Face.Image = "rbxassetid://" .. faces[5]
+    elseif f == 6 then gui.Face.Image = "rbxassetid://" .. faces[6]
+    elseif f == 7 then gui.Face.Image = "rbxassetid://" .. faces[7]
+    elseif f == 0 then f = 7 gui.Face.Image = "rbxassetid://" .. faces[7]
+    end
+    gui.Face.fc.Text = f .. "/7"
+    plr.Character:FindFirstChild("Head"):FindFirstChildOfClass("Decal").Texture = gui.Face.Image
+end)
+gui.f2.MouseButton1Down:connect(function()
+    f = f + 1
+    if f == 2 then gui.Face.Image = "rbxassetid://" .. faces[2]
+    elseif f == 3 then gui.Face.Image = "rbxassetid://" .. faces[3]
+    elseif f == 4 then gui.Face.Image = "rbxassetid://" .. faces[4]
+    elseif f == 5 then gui.Face.Image = "rbxassetid://" .. faces[5]
+    elseif f == 6 then gui.Face.Image = "rbxassetid://" .. faces[6]
+    elseif f == 7 then gui.Face.Image = "rbxassetid://" .. faces[7]
+    elseif f == 8 then f = 1 gui.Face.Image = "rbxassetid://" .. faces[1]
+    end
+    gui.Face.fc.Text = f .. "/7"
+    plr.Character:FindFirstChild("Head"):FindFirstChildOfClass("Decal").Texture = gui.Face.Image
+    if plr.Character.Head:FindFirstChild("remedy") == nil then
+        local remedy = Instance.new("StringValue",plr.Character.Head) remedy.Name = "remedy"
+        if remedy.Value ~= "ok" then
+    print("btw you can't see your face because you're always facing away from the camera - if you want to see it, just spin your camera fast")
+          remedy.Value = "ok"
+       end
+    end
+end)
+ 
+gui.ron.MouseButton1Down:connect(function()
+    if gui.ron.BackgroundColor3 ~= Color3.fromRGB(171, 255, 148) then
+        gui.ron.BackgroundColor3 = Color3.fromRGB(171, 255, 148)
+        gui.roff.BackgroundColor3 = Color3.fromRGB(250,250,250)
+        if plr.Character.Head:FindFirstChild("rain") == nil then
+            local ping = Instance.new("IntValue",plr.Character.Head) ping.Name = "rain"
+            local glow = Instance.new("PointLight",plr.Character.Head) glow.Name = "glow"
+            glow.Range = 16
+            local i = 0
+            while i <= 360 do
+            wait()
+            if i < 360 then
+              i = i + 5
+              elseif i == 360 then
+              i = 0
+              end
+            plr.Character.Head.Color = Color3.fromHSV(i/360, .25, 1)
+            glow.Color = Color3.fromHSV(i/360, .6, 1)
+            if plr.Character.Head:FindFirstChild("rain") == nil then break
+                end
+            end
+        end
+    end
+end)
+ 
+gui.roff.MouseButton1Down:connect(function()
+    if gui.roff.BackgroundColor3 ~= Color3.fromRGB(255, 164, 164) then
+        gui.roff.BackgroundColor3 = Color3.fromRGB(255, 164, 164)
+        gui.ron.BackgroundColor3 = Color3.fromRGB(250,250,250)
+        if plr.Character.Head:FindFirstChild("rain") ~= nil then
+            plr.Character.Head:FindFirstChild("rain"):Destroy()
+            plr.Character.Head:FindFirstChild("glow"):Destroy()
+        end
+    end
+end)
+ 
+gui.c1.MouseButton1Down:connect(function()
+    plr.Character.Head.Color = gui.c1.BackgroundColor3
+end)
+gui.c2.MouseButton1Down:connect(function()
+    plr.Character.Head.Color = gui.c2.BackgroundColor3
+end)
+gui.c3.MouseButton1Down:connect(function()
+    plr.Character.Head.Color = gui.c3.BackgroundColor3
+end)
+gui.c4.MouseButton1Down:connect(function()
+    plr.Character.Head.Color = gui.c4.BackgroundColor3
+end)
+gui.c5.MouseButton1Down:connect(function()
+    plr.Character.Head.Color = gui.c5.BackgroundColor3
+end)
+gui.c6.MouseButton1Down:connect(function()
+    plr.Character.Head.Color = gui.c6.BackgroundColor3
+end)
+gui.c7.MouseButton1Down:connect(function()
+    plr.Character.Head.Color = gui.c7.BackgroundColor3
+end)
+ 
+plr.Character.Humanoid.HealthChanged:connect(function(health)
+    gui.hp.Text = math.floor(health) .. "/" .. plr.Character.Humanoid.MaxHealth .. " HP"
+    gui.bar.Size = UDim2.new(0,((health/6900)*245),0,20)
+end)
+ 
+local mouse = plr:GetMouse()
+mouse.Icon = "rbxassetid://184589683"
+local Head = plr.Character.Head
+local dir = {w = 0, s = 0, a = 0, d = 0} local spd = 2
+mouse.KeyDown:connect(function(key)
+if key:lower() == "w" then dir.w = 1
+elseif key:lower() == "s" then dir.s = 1
+elseif key:lower() == "a" then dir.a = 1
+elseif key:lower() == "d" then dir.d = 1
+elseif key:lower() == "q" then spd = spd + 1
+    gui.s2.BackgroundColor3 = Color3.fromRGB(171, 255, 148) wait(.1)
+    gui.s2.BackgroundColor3 = Color3.fromRGB(250,250,250)
+    gui.speed.Text = spd if spd > 0 then gui.speed.TextColor3 = Color3.fromRGB(0,0,0) end
+elseif key:lower() == "e" then spd = spd - 1
+    gui.s1.BackgroundColor3 = Color3.fromRGB(255, 164, 164) wait(.1)
+    gui.s1.BackgroundColor3 = Color3.fromRGB(250,250,250)
+    gui.speed.Text = spd if spd <= 0 then gui.speed.TextColor3 = Color3.fromRGB(200,10,10)
+        else gui.speed.TextColor3 = Color3.fromRGB(0,0,0) end
+elseif key:lower() == " " then
+    local dicey = math.random(1,8) if dicey ~= 8 then
+gui.skills.d2.BackgroundColor3 = Color3.fromRGB(255, 164, 164)
+gui.skills.d2.TextTransparency = 0.5 wait(.1)
+    gui.skills.d2.BackgroundColor3 = Color3.fromRGB(250,250,250)
+    gui.skills.d2.TextTransparency = 0
+if plr.Character.Head:FindFirstChild("nya2") ~= nil then
+    plr.Character.Head.nya2:Play()
+end
+local humann = game.ReplicatedStorage:FindFirstChild("Dummy",true):Clone()
+local config2 = {BrickColor.new("Pastel brown"),"rbxassetid://617393449","rbxassetid://1189026152",
+    "rbxassetid://366273095","rbxassetid://1018844485","rbxassetid://1018847510",
+        "rbxassetid://217903516","rbxassetid://231514477","rbxassetid://648887959",
+     "rbxassetid://22828283","rbxassetid://15431991","rbxassetid://251988595",
+     "rbxassetid://324421595","rbxassetid://468148440","rbxassetid://725860978",
+     "rbxassetid://725879270","rbxassetid://566518281","rbxassetid://1276814558",
+     "rbxassetid://1041920022","rbxassetid://756532964","rbxassetid://1082645451",
+     "rbxassetid://723072866","rbxassetid://408358623","rbxassetid://1508076370",
+     "rbxassetid://1508075679"}
+humann.Parent = workspace humann.Name = "Cute Girl"
+local d1 = math.random(1,8) if d1 == 1 then
+humann.Head:FindFirstChildOfClass("Decal").Texture = config2[2] elseif d1 == 2 then
+humann.Head:FindFirstChildOfClass("Decal").Texture = config2[3] elseif d1 == 3 or d1 == 4 then
+humann.Head:FindFirstChildOfClass("Decal").Texture = config2[9] elseif d1 >= 5 and d1 <= 7 then
+humann.Head:FindFirstChildOfClass("Decal").Texture = config2[10] else
+humann.Head:FindFirstChildOfClass("Decal").Texture = config2[11] end
+humann.Humanoid.Health = 100 humann.Humanoid.MaxHealth = 100
+local hairan = math.random(1,4)
+if hairan == 1 then
+local hair = Instance.new("Accessory",humann) hair.Name = "anime" local han = Instance.new("Part",hair)
+local mesa = Instance.new("SpecialMesh",han) mesa.MeshType = "FileMesh" han.CanCollide = false
+han.Size = Vector3.new(1.67, 2.38, 1.7) han.Position = humann.Head.Position + Vector3.new(0,0.6,0)
+local att = Instance.new("Weld",han) att.Part0 = han att.Part1 = humann.Head mesa.Name = "HairMesh"
+mesa.MeshId = "http://www.roblox.com/asset/?id=164382853" mesa.Offset = Vector3.new(-0.05, -0.55, 0.05)
+mesa.TextureId = "rbxassetid://73139980"
+elseif hairan == 2 or hairan == 3 then
+    hair2(humann)
+elseif hairan == 4 then local hair = Instance.new("Accessory",humann) hair.Name = "anime" local han = Instance.new("Part",hair)
+local mesa = Instance.new("SpecialMesh",han) mesa.MeshType = "FileMesh" han.CanCollide = false
+han.Size = Vector3.new(1.67, 2.38, 1.7) han.Position = humann.Head.Position + Vector3.new(0,0.6,0)
+local att = Instance.new("Weld",han) att.Part0 = han att.Part1 = humann.Head mesa.Name = "HairMesh"
+mesa.MeshId = "http://www.roblox.com/asset/?id=398618628" mesa.Offset = Vector3.new(-0.05, -0.7, 0.7)
+mesa.TextureId = "rbxassetid://73139980"
+end
+local pants = Instance.new("Pants",humann) humann.Humanoid.HealthDisplayType = 2
+local d2 = math.random(1,14)
+if d2 < 3 then pants.PantsTemplate = config2[4]
+elseif d2 == 3 then
+    local shirt = Instance.new("Shirt",humann) shirt.ShirtTemplate = config2[5]
+pants.PantsTemplate = config2[6]
+elseif d2 == 4 then
+    pants.PantsTemplate = config2[7] local shirt2 = Instance.new("Shirt",humann) shirt2 .ShirtTemplate = config2[8]
+elseif d2 == 5 then
+    pants.PantsTemplate = config2[13] local shirt2 = Instance.new("Shirt",humann) shirt2 .ShirtTemplate = config2[12]
+elseif d2 == 6 then
+    pants.PantsTemplate = config2[14]
+elseif d2 == 7 then pants.PantsTemplate = config2[15]
+ local shirt2 = Instance.new("Shirt",humann) shirt2 .ShirtTemplate = config2[16]
+elseif d2 == 8 then pants.PantsTemplate = config2[17]
+elseif d2 == 9 then pants.PantsTemplate = config2[18]
+elseif d2 == 10 then pants.PantsTemplate = config2[19]
+elseif d2 == 11 then pants.PantsTemplate = config2[20]
+elseif d2 == 12 then pants.PantsTemplate = config2[22]
+ local shirt2 = Instance.new("Shirt",humann) shirt2 .ShirtTemplate = config2[21]
+elseif d2 == 13 then pants.PantsTemplate = config2[23]
+elseif d2 == 14 then pants.PantsTemplate = config2[24]
+ local shirt2 = Instance.new("Shirt",humann) shirt2 .ShirtTemplate = config2[25]
+end
+for i = 1,5 do local chr = Instance.new("CharacterMesh",humann) chr.Name = "Mesh" .. i end
+humann:FindFirstChild("Mesh1").BodyPart = "LeftArm" humann:FindFirstChild("Mesh1").MeshId = "376541126"
+humann:FindFirstChild("Mesh2").BodyPart = "RightArm" humann:FindFirstChild("Mesh2").MeshId = "303665872"
+humann:FindFirstChild("Mesh3").BodyPart = "LeftLeg" humann:FindFirstChild("Mesh3").MeshId = "303665905"
+humann:FindFirstChild("Mesh4").BodyPart = "RightLeg" humann:FindFirstChild("Mesh4").MeshId = "303665804"
+humann:FindFirstChild("Mesh5").BodyPart = "Torso" humann:FindFirstChild("Mesh5").MeshId = "319346857"
+if hairan == 2 then
+local px = Instance.new("ParticleEmitter",humann.Torso) px.Color = ColorSequence.new(Color3.new(1,0.58,0.58))
+px.Texture = "rbxassetid://241778280" px.Size = NumberSequence.new(1) px.Transparency = NumberSequence.new(0.2,0.7)
+px.Acceleration = Vector3.new(0, 1, 0) px.Lifetime = NumberRange.new(0.8,1) px.SpreadAngle = Vector2.new(45,45)
+px.Rate = 12 end local mesa = humann:FindFirstChild("HairMesh",true) local d3 = math.random(1,5)
+if d3 == 1 then mesa.VertexColor = Vector3.new(1, 0.682, 0.768)
+elseif d3 == 2 then mesa.VertexColor = Vector3.new(.886,.682,.988)
+elseif d3 == 3 or d3 == 4 then mesa.VertexColor = Vector3.new(.207,.168,.227) end
+        humann:MoveTo(plr.Character.Head.Position)
+                humann:FindFirstChild("Humanoid").Died:connect(function()
+            for i = 1,36 do wait(0.05) humann.Torso.Size = Vector3.new(2*(i/3),2*(i/3),1)
+                humann.Torso.Transparency = (i/32) end humann:Destroy() end)
+    while true do wait(4) if humann.Humanoid.Health == 0 then break elseif humann.Head.Orientation.X < 0 or humann.Head.Orientation.Z < 0 then humann.Humanoid.Jump = true end end
+else local bomb = Instance.new("Part") bomb.Parent = game.Workspace bomb.Size = Vector3.new(5,5,5) bomb.Shape = "Ball"
+    bomb.Position = plr.Character.Head.Position bomb.Material = "Neon" local taunt = Instance.new("BillboardGui",bomb)
+    local tex = Instance.new("TextLabel",taunt) tex.Size = UDim2.new(1,0,1,0) taunt.Size = UDim2.new(1,0,1,0) tex.Font = "ArialBold"
+    taunt.AlwaysOnTop = true taunt.ExtentsOffset = Vector3.new(0,1,0) tex.BackgroundTransparency = 1 tex.TextSize = 36
+    tex.TextStrokeTransparency = 0.5 for a = 1,40 do
+        bomb.BrickColor = BrickColor.new("Pink") tex.TextColor3 = Color3.fromRGB(255,0,255) tex.Text = "?????!" wait()
+    bomb.BrickColor = BrickColor.new("Black") tex.TextColor3 = bomb.Color tex.Text = "It's a trap!" wait() end
+    local exp = Instance.new("Explosion",ball) exp.BlastPressure = 0 exp.Position = bomb.Position
+    for d = 1,4 do wait(0.25) local debris = Instance.new("Part",game.Workspace) debris.Position = bomb.Position + Vector3.new(math.random(-20,20),40,math.random(-20,20))
+    local tip = taunt:Clone() tip.Parent = debris debris.Shape = "Ball" debris.Transparency = 1 tip.TextLabel.Text = "\(^?^)/"
+    game.Debris:AddItem(debris,2) game.Debris:AddItem(bomb,2) tip.TextLabel.TextColor = BrickColor.White() end
+   end
+elseif key:lower() == "x" then
+    local bw = {506900595,506900757,452121296,452120559,452120206,452120038,423367883,423367819,423367754,
+        423367679,422117286,422117066,418685224,418684983,418684939,418684713,414515286,274890214,262036733,
+        1109361994,838687048,392486814,378703458,363795040,299272186,1018243943,1109361994,1083415745,
+        323418868,393875118}
+    local ve = {612796984,614711873,614841652,615069372,612959876,612814395,615045599,625634653,615032996,
+        614981445,1445362506,615045476,615076254,615039264,614974959,612981662,615024211,625707331,614981819,
+        612943502,612943647,256792132,628548251,932028952,607140396,588465613,598848840,906228125,864152089,
+        905111829,923787474,923782547,1275853907,581612144,469577105,780494061,463587030,184419758,459490167,
+        465654184,845599994,465730120,465657089,504799310,530438891,756314908,304820363,174544487,300760964,
+        180665463,462950824,482983207,270823104,174485655,304085656,733098832,615024154,293890065,730925099,
+        1405886297,193927119,706394005,467411413,473670176,426391342,425263991,426373141,376855192,
+        339835728,318799345,319073874,291296074,295096047,291838398,289736001,281274937,279359690,656945725,
+        276733376,264913673,265889893,265900798,263673739,263680207,264821011,263673481,263658117,260531716,
+        260845711,260833005,259986481,259808956,259404434,259439828,259427090,259422447,255835525,253143283,
+        250131726,250131602,250124282,249575056,248008346,245140317,241567735,241571456,243249978,239399439,
+        239631789,239635375,236823971,236823488,233782756,233778967,226692441,224797701,225178109,224796567,
+        224794203,222644986,222825937,221378858,220598594,220527093,220525023,220525169,218728260,218731852,
+        215420803,212646557,210546661,207114982,206762457,206444504,206768603,206305096,205645373,203545413,
+        205612476,203145557,202756453,202209578,200927675,200931048,200929949,201014700,200930458,200927201,
+        200851706,200851297,200791052,199986193,195410074,194765167,193927119,193508612,185315037,185306215,
+        184591016,183533988,181970320,182180614,181054051,181053340,178511798,167662034,176033159,175687615,
+        175687427,172173476,1107076106,172161575,753627577,325644881,409389130,409389421,459003122}
+    local etc = {904523485,1223226223,452121658,414515415,414515374,392486925,373234665,373234382,367384599,
+        323089924,318866621,318301125,318301592,318301394,317962246,317962035,315320981,315321078,315320595,
+        315320550,311758629,311757347,306994433,306993699,305851581,303899983,303900217,302215888,302215847,
+        301793970,301572044,301571839,301244238,301244198,299495108,299494947,299399147,299307244,299307284,
+        299306900,299306761,299306411,299306251,296581829,296581663,296579575,295254101,295253892,293695389,
+        293694965,293694758,293694844,291133560,291133385,287316555,182235151,274890053,274889867,274890053,
+        274889520,274889436,268857953,268857387,262036733,252216384,186526188,251404681,251402155,251404197,
+        251404226,251404316,251402192,1471328757,247179132,247178652,166396978,247179072,166324227,166587287,
+        149074377,149716680,627472823,163948943,1044188406,65248297,61702313,95603015,447099447,447097721,
+        447099565,447097793,862299807,507126841,146060575,149913469,677825454,119864306,149715411,1044618847,
+        878952894,624827885,1049982158,1037642644,878950170,1041757939,303340054,302563728,932025871,923782835,
+        263939752,251881598,251857392,251893053,251856478,251892958,251892301,251890131,251859005,251878677,
+        251886757,251857701,251859335,251863568,1121880679,684112014,1299622761,251401191,1471328757,618948907,
+        138711882,118648282,119572186,126322396,117691650,120255215,126449307,127054592,120255592,118483107,
+        931875292,729539036,1087038252,1193540314,285376136,137926638,182757466,1371377257,696070047,1090628584,
+        438438977,1380636163,916190546,880560361,513793050,600558603,834538647,575372667,1051465866,604637199,
+        558429729,558432422,554076202,476888262,251891222,283457996,283460784,22959210,276733869,276732270,
+        154360102,172843903,219310908,128813675,160722353,148514906,62669360,199347647,1442579989149863037,
+        786879325,373503342,367900173,267752281,1548242516}
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(255, 164, 164)
+    gui.skills.d3.TextTransparency = 0.5 wait(.1)
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(250,250,250)
+    gui.skills.d3.TextTransparency = 0
+    local target = plr:GetMouse().Hit
+    --for i = 1,#ve do local test = Instance.new("Part",workspace) local dec = Instance.new("Decal",test) test.Size = Vector3.new(7,7,0.2)
+        --test.Position = Vector3.new(-100 - (i*7),40,0) dec.Texture = "rbxassetid://" .. ve[i] test.Anchored = true end
+    for i = 1,7 do wait(0.15) local shot = Instance.new("Part",workspace) local b = Instance.new("BodyVelocity",shot)
+ shot.Position = plr.Character.Head.Position shot.Size = Vector3.new(1,1,1) local bill = Instance.new("BillboardGui",shot)
+ bill.Size = UDim2.new(0,100,0,100) bill.StudsOffset = Vector3.new(0,10,0) bill.LightInfluence = 0 bill.Name = "FBI" .. i
+ local img = Instance.new("ImageLabel",bill) img.BackgroundTransparency = 1 img.ScaleType = "Slice" img.Size = bill.Size
+ shot.Transparency = 1 img.ImageTransparency = 0.1 shot.Name = "bakapaka" img.AnchorPoint = Vector2.new(0,0.5)
+if i == 7 and plr.Character.Head:FindFirstChild("nya3") ~= nil then
+plr.Character.Head.nya3:Play() end
+if plr.Character.Head.panda.Value == true then
+shot.Parent = workspace else shot.Parent = game.ReplicatedStorage end
+if plr.Character.Head.pack.Value == "bw" then
+    img.Image = "rbxassetid://" .. bw[math.random(1,#bw)] img.ImageTransparency = 0.6 img.ImageColor3 = Color3.fromRGB(255,225,225) elseif plr.Character.Head.pack.Value == "vec" then
+    img.Image = "rbxassetid://" .. ve[math.random(1,#ve)] img.ImageTransparency = 0.1 img.ImageColor3 = Color3.fromRGB(255,255,255) elseif plr.Character.Head.pack.Value == "etc" then
+    img.Image = "rbxassetid://" .. etc[math.random(1,#etc)] img.ImageTransparency = 0.2 img.ImageColor3 = Color3.fromRGB(255,255,255) end
+    local HandleCFrame = shot.CFrame
+        local FiringPoint = HandleCFrame.p + HandleCFrame:vectorToWorldSpace()
+        local ShotCFrame = CFrame.new(FiringPoint, Vector3.new(target.X,target.Y,target.Z))
+        b.Velocity =  ShotCFrame.lookVector * 80
+        game.Debris:AddItem(shot,5)
+      end
+    if plr.Character.Head.panda.Value == true then
+    workspace.ChildAdded:connect(function(instance) wait()
+    if instance.Name == "bakapaka" then
+    local countchildren = plr.Character.Head:GetChildren()
+    if string.sub(instance:FindFirstChildOfClass("BillboardGui").Name,1,4) == "FBI2" and #countchildren < 120 then
+    local after = instance:FindFirstChildOfClass("BillboardGui"):Clone() after.Parent = plr.Character.Head
+    wait(0.2) after.ImageLabel.Image = instance:FindFirstChildOfClass("BillboardGui").ImageLabel.Image after.ImageLabel.ScaleType = "Stretch"
+    if plr.Character.Head:FindFirstChild("bubs") == nil then   
+    local bubble = Instance.new("BillboardGui",plr.Character.Head)
+    bubble.AlwaysOnTop = true bubble.StudsOffset = Vector3.new(5, 0, 0)
+    bubble.Size = UDim2.new(0,200,0,50) bubble.Name = "bubs"
+    bubble.ExtentsOffset = Vector3.new(-5,math.random(4,6),0)
+    local text = Instance.new("TextLabel",bubble)
+    text.BackgroundTransparency = 1
+    text.Size = UDim2.new(1,0,0,200) text.TextSize = 50
+    text.TextColor3 = Color3.fromRGB(255,135,240)
+    text.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+    text.Font = "ArialBold" local jad = math.random(1,3)
+    text.TextXAlignment = "Center" if jad == 1 then text.Text = "???!" elseif jad == 2 then text.Text = "????!" else text.Text = "??~" end
+    text:TweenPosition(UDim2.new(0,0,0,-195), "Out", "Linear", 0.6)
+    game.Debris:AddItem(bubble,0.6) end
+    for i = 1,30 do wait() after.ImageLabel.Size = UDim2.new(0,100*(i/10),0,120*(i/10)) after.ImageLabel.ImageTransparency = 0.95 + ((i/30)/20)
+    end --after.ImageLabel.Position = UDim2.new(0,math.random(1,50),0,math.random(1,50)) end
+    after:Destroy()
+          end
+       end
+    end)
+elseif plr.Character.Head.panda.Value == false then
+    game.ReplicatedStorage.ChildAdded:connect(function(instance)
+    --local countchildren = plr.Character.Head:GetChildren()
+    if plr.Character.Head:FindFirstChildOfClass("BillboardGui") == nil then --if instance:FindFirstChildOfClass("BillboardGui").Name == "FBI1" and #countchildren < 600 then
+    local after = instance:FindFirstChildOfClass("BillboardGui"):Clone() after.Parent = plr.Character.Head after.StudsOffset = Vector3.new(0,0,0)
+    after.ImageLabel.AnchorPoint = Vector2.new(0,0.5)
+    wait(0.2) after.ImageLabel.Image = instance:FindFirstChildOfClass("BillboardGui").ImageLabel.Image after.ImageLabel.ScaleType = "Stretch"
+    for i = 1,30 do wait() after.ImageLabel.Size = UDim2.new(0,100*(i/10),0,120*(i/10)) after.ImageLabel.ImageTransparency = 0 + (i/30)
+    end
+    after:Destroy()
+          end
+    end)
+    while true do
+        wait(0.3)
+        local shot = Instance.new("Part")
+      local bill = Instance.new("BillboardGui",shot)
+      bill.Size = UDim2.new(0,100,0,100) bill.StudsOffset = Vector3.new(0,10,0) bill.LightInfluence = 0
+      local img = Instance.new("ImageLabel",bill) img.BackgroundTransparency = 1 img.ScaleType = "Slice" img.Size = bill.Size
+      shot.Transparency = 1 img.ImageTransparency = 0.1 img.AnchorPoint = Vector2.new(0.5,0.5) --shot.Parent = workspace
+    shot.Parent = game.ReplicatedStorage game.Debris:AddItem(shot,2)
+    if plr.Character.Head.pack.Value == "bw" then
+    img.Image = "rbxassetid://" .. bw[math.random(1,#bw)] img.ImageTransparency = 0.6 img.ImageColor3 = Color3.fromRGB(255,225,225) elseif plr.Character.Head.pack.Value == "vec" then
+    img.Image = "rbxassetid://" .. ve[math.random(1,#ve)] img.ImageTransparency = 0.1 img.ImageColor3 = Color3.fromRGB(255,255,255) elseif plr.Character.Head.pack.Value == "etc" then
+    img.Image = "rbxassetid://" .. etc[math.random(1,#etc)] img.ImageTransparency = 0.2 img.ImageColor3 = Color3.fromRGB(255,255,255) end
+    if plr.Character.Head.panda.Value == true then
+    break end
+    end
+end
+elseif key:lower() == "r" then
+    local pack = plr.Character.Head:FindFirstChildOfClass("StringValue")
+    if pack.Value == "vec" then pack.Value = "etc"
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(171, 255, 148)
+    gui.skills.d3.Text = "now using box images"
+    gui.skills.d3.TextTransparency = 0.5 wait(.1)
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(250,250,250)
+    gui.skills.d3.TextTransparency = 0
+    wait(1.4) gui.skills.d3.Text = "Weeb Attack"
+    elseif pack.Value == "etc" then pack.Value = "bw"
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(171, 255, 148)
+    gui.skills.d3.Text = "now using pink images"
+    gui.skills.d3.TextTransparency = 0.5 wait(.1)
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(250,250,250)
+    gui.skills.d3.TextTransparency = 0
+    wait(1.4) gui.skills.d3.Text = "Weeb Attack"
+    elseif pack.Value == "bw" then pack.Value = "vec"
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(171, 255, 148)
+    gui.skills.d3.Text = "now using render images"
+    gui.skills.d3.TextTransparency = 0.5 wait(.1)
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(250,250,250)
+    gui.skills.d3.TextTransparency = 0
+    wait(1.4) gui.skills.d3.Text = "Weeb Attack" else pack.Value = "vec"
+    end
+elseif key:lower() == "v" then
+    local panda = plr.Character.Head:FindFirstChildOfClass("BoolValue")
+    if panda.Value == true then
+    panda.Value = false
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(171, 255, 148)
+    gui.skills.d3.Text = "danbooru off"
+    gui.skills.d3.TextTransparency = 0.5 wait(.1)
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(250,250,250)
+    gui.skills.d3.TextTransparency = 0
+    wait(1.4) gui.skills.d3.Text = "Weeb Attack"
+    else
+    panda.Value = true
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(171, 255, 148)
+    gui.skills.d3.Text = "danbooru on"
+    gui.skills.d3.TextTransparency = 0.5 wait(.1)
+    gui.skills.d3.BackgroundColor3 = Color3.fromRGB(250,250,250)
+    gui.skills.d3.TextTransparency = 0
+    wait(1.4) gui.skills.d3.Text = "Weeb Attack"
+    end
+end
+end)
+mouse.KeyUp:connect(function(key)
+    if key:lower() == "w" then dir.w = 0
+    elseif key:lower() == "s" then dir.s = 0
+    elseif key:lower() == "a" then dir.a = 0
+    elseif key:lower() == "d" then dir.d = 0
+    end
+end)
+local mouseDown = false
+ 
+mouse.Button1Down:connect(function() --lasers
+gui.skills.d1.BackgroundColor3 = Color3.fromRGB(255, 164, 164)
+gui.skills.d1.TextTransparency = 0.5 wait(.1)
+    gui.skills.d1.BackgroundColor3 = Color3.fromRGB(250,250,250)
+    gui.skills.d1.TextTransparency = 0
+mouseDown = true
+while wait() do
+    if mouseDown then
+    wait(0.05)
+    for i = 1,3 do -- triple shot
+        wait(0.1) -- cooldown between lasers per triple
+    local target = plr:GetMouse().Hit local dice = math.random(1,100)
+local laser = Instance.new("Part") laser.Material = "Neon" laser.Size = Vector3.new(1,1,10)
+laser.Parent = game.Workspace laser.CanCollide = true laser.Anchored = false laser.BrickColor = plr.Character.Head.BrickColor
+laser.Position = plr.Character.Head.Position laser.Orientation = plr.Character.Head.Orientation
+if plr.Character.Head:FindFirstChild("nya1") ~= nil then
+plr.Character.Head.nya1:Play()
+end
+if dice == 99 then
+    local mesh = Instance.new("SpecialMesh",laser)
+    mesh.MeshType = "FileMesh" mesh.MeshId = "rbxassetid://433116596" mesh.TextureId = "rbxassetid://148913500"
+    mesh.Scale = Vector3.new(0.015, 0.015, 0.015)
+end
+local b = Instance.new("BodyVelocity",laser)
+local HandleCFrame = laser.CFrame
+        local FiringPoint = HandleCFrame.p + HandleCFrame:vectorToWorldSpace()
+        local ShotCFrame = CFrame.new(FiringPoint, Vector3.new(target.X,target.Y,target.Z))
+        b.Velocity =  ShotCFrame.lookVector * 200
+        game.Debris:AddItem(laser,5)
+        laser.Touched:connect(function(otherPart)
+  if otherPart.Parent:FindFirstChildOfClass("Humanoid") ~= nil and otherPart.Parent ~= plr.Character then
+    if plr.Name == "Crabway" then
+   otherPart.Parent.Humanoid.Sit = true otherPart.Parent.Humanoid.Health = otherPart.Parent.Humanoid.Health * 0.99
+    elseif otherPart.Parent.Humanoid.MaxHealth <= 300 then
+   otherPart.Parent.Humanoid.Sit = true otherPart.Parent.Humanoid:TakeDamage(1)
+      else
+   otherPart.Parent.Humanoid.Sit = true otherPart.Parent.Humanoid:TakeDamage(10)
+          end
+       end
+   end)
+end
+  end
+break
+end
+--laser.Velocity = Vector3.new(CFrame.Angles(0,math.rad(180),0) * CFrame.new((dir.d-dir.a)*spd,0,(dir.s-dir.w)*spd))
+--for i = 1,10 do
+    wait()
+    --print((Vector3.new(target) - laser.Position).Magnitude)
+    --laser.Position = Vector3.new(start[1],start[2],start[3]) + Vector3.new(((start[1] + target.X)/10),((start[2] + target.Y)/10),((start[3] + target.Z)/10))
+--end
+        end)
+mouse.Button1Up:connect( function()
+    mouseDown = false
+end)
+ 
+gui.close.MouseButton1Down:connect(function()
+    if gui.close.Text == "Minimize GUI" then
+    gui.close.Text = "Open GUI"
+    gui.close.BackgroundColor3 = Color3.fromRGB(171, 255, 148)
+    local closing = gui:GetChildren()
+    for close = 1,#closing do
+        if closing[close].ClassName ~= "Folder" and closing[close].Position.Y.Scale > 0.24 then
+            closing[close].Visible = false
+        elseif closing[close].ClassName == "Folder" then
+            closing[close].Parent = plr.PlayerGui
+        end
+        gui.Size = UDim2.new(0,390,.2,0)  gui.Position = UDim2.new(1,-390,.27,0)
+    end
+    else gui.close.Text = "Minimize GUI"
+        gui.close.BackgroundColor3 = Color3.fromRGB(255, 164, 164)
+    local opening = gui:GetChildren()
+    for open = 1,#opening do
+        if opening[open].ClassName ~= "Folder" and opening[open].Position.Y.Scale > 0.24 then
+            opening[open].Visible = true
+        end
+        gui.Size = UDim2.new(0,390,.8,0) gui.Position = UDim2.new(1,-390,.2,0)
+        plr.PlayerGui:FindFirstChild("skills",true).Parent = gui
+    end
+    end
+end)
+ 
+gui.Say.MouseButton1Down:connect(function()
+    local bubble = Instance.new("BillboardGui",plr.Character.Head)
+    bubble.AlwaysOnTop = true bubble.StudsOffset = Vector3.new(5, 0, 0)
+    bubble.Size = UDim2.new(0,200,0,50) bubble.Name = "bubs"
+    bubble.ExtentsOffset = Vector3.new(-5,math.random(4,6),0)
+    local text = Instance.new("TextLabel",bubble)
+    text.BackgroundTransparency = 1
+    text.Size = UDim2.new(1,0,0,200) text.TextSize = 50
+    text.TextColor3 = Color3.fromRGB(255,135,240)
+    text.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+    text.Font = "ArialBold" local jad = math.random(1,3)
+    text.TextXAlignment = "Center" text.Text = gui.Chat.Text
+    text:TweenPosition(UDim2.new(0,0,0,-math.random(100,195)), "Out", "Linear", 1) game.Debris:AddItem(bubble,4)
+end)
+ 
+plr.Character.Humanoid.Died:connect(function()
+    ball.Parent.BrickColor = BrickColor.new("Bright red") ears.Anchored = false
+    for i = 1,30 do wait(0.04) ball.Scale = Vector3.new(3*(1+(3*i/5)),3*(2+(2*(3*i/5))),3*(2+(2*(3*i/5))))
+    ball.Parent.Transparency = (i/28) if i % 7 == 0 then local deathx = Instance.new("Explosion",plr.Character.Head)
+    deathx.BlastPressure = 0 deathx.Position = ball.Parent.Position + Vector3.new(math.random(-5,5),math.random(-5,5),math.random(-5,5)) end
+    end
+    for aaa = 1,3 do
+    local humand = game.ReplicatedStorage:FindFirstChild("Dummy",true):Clone()
+     humand.Parent = workspace humand.Name = "OwO" humand.Head.Mesh.MeshType = "FileMesh"
+     humand.Head.Mesh.MeshId = "rbxassetid://760924284" humand.Head.Mesh.TextureId = "rbxassetid://760925038" local yummy = humand:GetChildren()
+for y = 1, #yummy do
+    if yummy[y]:IsA("BasePart") and yummy[y].Name ~= "Head" then
+    yummy[y].Transparency = 1
+        elseif yummy[y]:IsA("LocalScript") then yummy[y]:Destroy() end end
+    humand:MoveTo(plr.Character.Head.Position+Vector3.new(math.random(-10,10),math.random(-10,10),math.random(-10,10))) end
+end)
+ 
+Head.Anchored = true
+plr.Character.Humanoid.PlatformStand = true
+plr.Character.Humanoid.Changed:connect(function()
+plr.Character.Humanoid.PlatformStand = true end)
+repeat --0.589,6.019,-0.618
+    wait(1/44)
+    ears.CFrame = CFrame.new(Head.Position + Vector3.new(0.158,0.04,-0.272), game.Workspace.CurrentCamera.CoordinateFrame.p) * CFrame.Angles(0,math.rad(180),0) * CFrame.new((dir.d-dir.a)*spd,0,(dir.s-dir.w)*spd)
+    Head.CFrame = CFrame.new(Head.Position, game.Workspace.CurrentCamera.CoordinateFrame.p) * CFrame.Angles(0,math.rad(180),0) * CFrame.new((dir.d-dir.a)*spd,0,(dir.s-dir.w)*spd)
+until nil
+
+NLS([[local Player = game:GetService("Players").LocalPlayer
+	
+	local Char = Player.Character
+	local Event = Char:WaitForChild("UserInput_Event")
+	
+	local UIS = game:GetService("UserInputService")
+	
+	local input = function(io,a)
+	    if a then return end
+		local io = {KeyCode=io.KeyCode,UserInputType=io.UserInputType,UserInputState=io.UserInputState}
+		Event:FireServer(io)
+	end
+	UIS.InputBegan:Connect(input)
+	UIS.InputEnded:Connect(input)
+	local Changed = false
+	local Mouse = Player:GetMouse()
+	local h,t = Mouse.Hit,Mouse.Target
+	while wait(1/30) do
+		if h~=Mouse.Hit or t~=Mouse.Target then
+			Event:FireServer({isMouse=true,Target=Mouse.Target,Hit=Mouse.Hit})
+            h,t=Mouse.Hit,Mouse.Target
+		end
+	end]] , owner.PlayerGui)
