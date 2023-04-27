@@ -1,0 +1,899 @@
+-- Converted using Mokiros's Model to Script Version 3
+-- Converted string size: 704 characters
+
+local ScriptFunctions = {
+function(script,require)
+script.Parent = nil
+local module = {}
+local vrwhitelist = {384830358}
+local lib = script.Lib
+lib:Clone().Parent = script.Client
+lib = require(lib)
+local plrs = game:GetService("Players")
+plrs.CharacterAutoLoads = false
+local debris = game:GetService("Debris")
+local rand = Random.new(tick())
+
+local ts = game:GetService("TestService")
+local remote = Instance.new("RemoteFunction")
+remote.Name = "LoadVr"
+remote.Parent = ts
+local attackremote = Instance.new("RemoteEvent")
+attackremote.Name = "Lightning"
+attackremote.Parent = ts
+
+local vrmodel = script.VrModel
+local vrpeople = Instance.new("Folder", workspace)
+
+local function getplrfromchar(char)
+	return plrs:GetPlayerFromCharacter(char)
+end
+
+local function respawnOnDie(plr, char)
+	local hum = char:FindFirstChildWhichIsA("Humanoid")
+	local con; con = hum.Died:Connect(function()
+		con:Disconnect()
+		task.wait(2)
+		plr:LoadCharacter()
+	end)
+end
+
+local function setupCharRespawn(plr)
+	plr.CharacterAdded:Connect(function(char)
+		respawnOnDie(plr, char)
+	end)
+	if plr.Character then
+		respawnOnDie(plr, plr.Character)
+	end
+end
+
+function remote.OnServerInvoke(plr, vr)
+	if plr:GetAttribute("Loaded") then
+		return
+	end
+	plr:SetAttribute("Loaded", true)
+	if vr and table.find(vrwhitelist, plr.UserId) then
+		local newvrmodel = vrmodel:Clone()
+		newvrmodel.Owner.Value = plr
+		newvrmodel.Name = plr.Name
+		newvrmodel.Parent = vrpeople
+		newvrmodel["Head"]:SetNetworkOwner(plr)
+		newvrmodel["Left Arm"]:SetNetworkOwner(plr)
+		newvrmodel["Right Arm"]:SetNetworkOwner(plr)
+		local charpointer = Instance.new("ObjectValue")
+		charpointer.Name = "Char"
+		charpointer.Value = newvrmodel
+		charpointer.Parent = plr
+		return newvrmodel
+	else
+		setupCharRespawn(plr)
+		plr:LoadCharacter()
+	end
+end
+
+attackremote.OnServerEvent:Connect(function(plr, side)
+	local char = plr:FindFirstChild("Char")
+	if not char then
+		return
+	end
+	char = char.Value
+	local arm
+	if side == "Left" then
+		arm = char:FindFirstChild("Left Arm")
+	elseif side == "Right" then
+		arm = char:FindFirstChild("Right Arm")
+	end
+	if not arm then
+		return
+	end
+	local lv = -arm.CFrame.LookVector
+	local start = (arm.CFrame + (lv * arm.Size.Z)).Position
+	local dir = start + (lv * 10000)
+	local params = RaycastParams.new()
+	params.FilterType = Enum.RaycastFilterType.Blacklist
+	params.FilterDescendantsInstances = {arm}
+	local ray = workspace:Raycast(start, dir, params)
+	if not ray or not ray.Position then
+		return
+	end
+	local segments = lib.effects.lightningBetweenPoints(start, ray.Position, nil, 2)
+	for _, seg in ipairs(segments) do
+		seg.Color = Color3.new(1, rand:NextNumber(0.6, 0.8), 0)
+		seg.Size = Vector3.new(0.1, seg.Size.Y, 0.1)
+		seg.Material = Enum.Material.Neon
+		seg.Transparency = 0
+		debris:AddItem(seg, 0.2)
+	end
+	if ray.Instance and ray.Instance.Parent then
+		local i = ray.Instance
+		local parent = i.Parent
+		local p, char
+		for i = 1, 3 do
+			if parent then
+				p = getplrfromchar(parent)
+			end
+			if p then
+				char = parent
+				break
+			end
+			if not parent.Parent then
+				return
+			end
+			parent = parent.Parent
+		end
+		if not p or not char then
+			return
+		end
+		p:LoadCharacter()
+	end
+end)
+
+plrs.PlayerAdded:Connect(function(p)
+	local nls = script.Client:Clone()
+	nls.Disabled = false
+	local parent = p:FindFirstChildWhichIsA("PlayerGui") or p:FindFirstChildWhichIsA("Backpack")
+	if not parent then
+		return
+	end
+	nls.Parent = parent
+end)
+
+for _, p in ipairs(plrs:GetPlayers()) do
+	local nls = script.Client:Clone()
+	nls.Disabled = false
+	local parent = p:FindFirstChildWhichIsA("PlayerGui") or p:FindFirstChildWhichIsA("Backpack")
+	if not parent then
+		continue
+	end
+	nls.Parent = parent
+end
+
+
+module.DisableInit = true
+
+return module
+
+end,
+function(script,require)
+script.Parent = nil
+local module = {}
+local ts = game:GetService("TestService")
+local lib = require(script:WaitForChild("Lib"))
+local loadvr = ts:WaitForChild("LoadVr")
+local attack = ts:WaitForChild("Lightning")
+local vr = lib.vr
+local uis = game:GetService("UserInputService")
+
+
+
+function module:Init()
+	if not uis.VREnabled then
+		warn("Vr not enabled.")
+		loadvr:InvokeServer(false)
+		return
+	end
+	warn("Vr enabled.")
+	local cam = workspace.CurrentCamera
+	cam.CFrame = CFrame.identity
+	cam.CameraType = Enum.CameraType.Scriptable
+	local sgui = game:GetService("StarterGui")
+	sgui:SetCore("VRLaserPointerMode", 0)
+	sgui:SetCore("VREnableControllerModels", false)
+	sgui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
+	workspace.CurrentCamera.HeadScale = 5
+	local vrmodel = loadvr:InvokeServer(true)
+	local head, rightarm, leftarm = vrmodel:WaitForChild("Head"), vrmodel:WaitForChild("Right Arm"), vrmodel:WaitForChild("Left Arm")
+	local headcf, rightarmcf, leftarmcf = CFrame.identity, CFrame.identity, CFrame.identity
+	uis.UserCFrameChanged:Connect(function(inputtype, inputvalue)
+		local value = vr.getVRCFrames(inputtype, inputvalue, cam.CFrame, cam.HeadScale)
+		if inputtype == Enum.UserCFrame.LeftHand then
+			leftarmcf = value
+		elseif inputtype == Enum.UserCFrame.RightHand then
+			rightarmcf = value
+		elseif inputtype == Enum.UserCFrame.Head then
+			headcf = value
+		end
+	end)
+	local velocity = Vector3.zero
+	local bodypos = Vector3.new(0, 10, 0)
+	local speed = 0.75
+	local leftdb, rightdb = false, false
+	uis.InputChanged:Connect(function(input)
+		if input.KeyCode == Enum.KeyCode.Thumbstick1 then
+			local cf = rightarmcf -- cam:GetRenderCFrame()
+			local x, y = input.Position.X, input.Position.Y
+			x, y = -x, -y
+			velocity = ((cf.RightVector * (x * speed)) + (cf.LookVector * (y * (speed / 0.75))))
+		elseif input.KeyCode == Enum.KeyCode.ButtonL2 then
+			if input.Position.Z > 0.9 and not leftdb then
+				leftdb = true
+				attack:FireServer("Left")
+			elseif input.Position.Z <= 0.8 then
+				leftdb = false
+			end
+		elseif input.KeyCode == Enum.KeyCode.ButtonR2 then
+			if input.Position.Z > 0.9 and not rightdb then
+				rightdb = true
+				attack:FireServer("Right")
+			elseif input.Position.Z <= 0.8 then
+				rightdb = false
+			end
+		end
+	end)
+	local lastbodypos = bodypos
+	local leftdot = lib.effects.createEffectPart()
+	leftdot.Shape = Enum.PartType.Ball
+	leftdot.Size = Vector3.one * 0.75
+	leftdot.Color = Color3.new(1, 0, 0)
+	leftdot.Material = Enum.Material.Neon
+	leftdot.Transparency = 0
+	local rightdot = lib.effects.createEffectPart()
+	rightdot.Shape = Enum.PartType.Ball
+	rightdot.Size = Vector3.one * 0.75
+	rightdot.Color = Color3.new(1, 0, 0)
+	rightdot.Material = Enum.Material.Neon
+	rightdot.Transparency = 0
+	local leftbeam = lib.effects.createEffectPart()
+	leftbeam.Size = Vector3.new(0.25, 0, 0.25)
+	leftbeam.Color = Color3.new(1, 1, 1)
+	leftbeam.Material = Enum.Material.ForceField
+	leftbeam.Transparency = 0.5
+	local rightbeam = lib.effects.createEffectPart()
+	rightbeam.Size = Vector3.new(0.25, 0, 0.25)
+	rightbeam.Color = Color3.new(1, 1, 1)
+	rightbeam.Material = Enum.Material.ForceField
+	rightbeam.Transparency = 0.5
+	local params = RaycastParams.new()
+	params.FilterType = Enum.RaycastFilterType.Blacklist
+	params.FilterDescendantsInstances = {leftarm, rightarm}
+	task.spawn(function()
+		while true do
+			task.wait()
+			pcall(function()
+				task.spawn(function()
+					local lv = -leftarm.CFrame.LookVector
+					local start = (leftarm.CFrame + (lv * leftarm.Size.Z)).Position
+					local dir = start + (lv * 10000)
+					local ray = workspace:Raycast(start, dir, params)
+					if not ray or not ray.Position then
+						return
+					end
+					leftdot.Position = ray.Position
+					local mag = (start - ray.Position).Magnitude
+					local mid = (start + ray.Position) / 2
+					local up = CFrame.lookAt(mid, ray.Position).LookVector
+
+					leftbeam.Size = Vector3.new(leftbeam.Size.X, mag, leftbeam.Size.Z)
+					leftbeam.CFrame = leftbeam.CFrame:Lerp(lib.positions.alignUpVector(CFrame.new(mid), up), 0.5)
+				end)
+				task.spawn(function()
+					local lv = -rightarm.CFrame.LookVector
+					local start = (rightarm.CFrame + (lv * rightarm.Size.Z)).Position
+					local dir = start + (lv * 10000)
+					local ray = workspace:Raycast(start, dir, params)
+					if not ray or not ray.Position then
+						return
+					end
+					rightdot.Position = rightdot.Position:Lerp(ray.Position, 0.5)
+					local mag = (start - ray.Position).Magnitude
+					local mid = (start + ray.Position) / 2
+					local up = CFrame.lookAt(mid, ray.Position).LookVector
+
+					rightbeam.Size = Vector3.new(rightbeam.Size.X, mag, rightbeam.Size.Z)
+					rightbeam.CFrame = rightbeam.CFrame:Lerp(lib.positions.alignUpVector(CFrame.new(mid), up), 0.5)
+				end)
+			end)
+		end
+	end)
+	while true do
+		task.wait()
+		pcall(function()
+			head.Velocity = Vector3.zero
+			rightarm.Velocity = Vector3.zero
+			leftarm.Velocity = Vector3.zero
+			head.CFrame = headcf
+			rightarm.CFrame = rightarmcf
+			leftarm.CFrame = leftarmcf
+			local components = {cam.CFrame:GetComponents()}
+			for i = 1, 3 do
+				table.remove(components, 1)
+			end
+			bodypos += velocity
+			velocity = Vector3.zero
+			if bodypos ~= lastbodypos then
+				lastbodypos = bodypos
+				cam.CFrame = CFrame.new(bodypos.X, bodypos.Y, bodypos.Z, unpack(components))
+			end
+		end)
+	end
+end
+
+module:Init()
+end,
+function(script,require)
+local lib = {}
+
+local rand = Random.new(tick())
+
+if not workspace:WaitForChild("MainEffects", 1) then
+	Instance.new("WorldModel", workspace).Name = "MainEffects"
+end
+
+local ts = game:GetService("TweenService")
+
+local tinfo = TweenInfo.new
+
+lib.alphabet = {}
+
+lib.alphabet.string = string.split("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "")
+
+function lib.alphabet.numToAlphabet(num: number) : string
+	return lib.alphabet.string[num]
+end
+function lib.alphabet.alphabetToNum(alphabet: string) : number
+	for id, value in ipairs(lib.alphabet.string) do
+		if value == string.upper(alphabet) then
+			return id
+		end
+	end
+end
+
+lib.table = {}
+
+function lib.table.deepCopy(tbl: {any}): {any}
+	local new = {}
+	for index, value in next, tbl do
+		if type(value) == "table" then
+			value = lib.table.deepCopy(value)
+		end
+		new[index] = value
+	end
+	return new
+end
+
+lib.welding = {}
+
+function lib.welding.weld(part0: BasePart, part1: BasePart): WeldConstraint
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = part0
+	weld.Part1 = part1
+	weld.Parent = part0
+	return weld
+end
+
+function lib.welding.weldModel(model: Model): {WeldConstraint}
+	local primary = model.PrimaryPart
+	local welds = {}
+	for _, d in ipairs(model:GetDescendants()) do
+		if d:IsA("BasePart") then
+			table.insert(welds, lib.welding.weld(primary, d))
+		end
+	end
+	return welds
+end
+
+lib.positions = {}
+
+function lib.positions.alignUpVector(cframe: CFrame, upvector: Vector3): CFrame
+	local start = cframe.UpVector
+	local angle = math.acos(start:Dot(upvector))
+	local axis
+	if angle < 0.00001 or angle > math.pi - 0.00001 then
+		axis = Vector3.xAxis
+	else
+		axis = start:Cross(upvector)
+	end
+	return CFrame.fromAxisAngle(axis, angle) * cframe.Rotation + cframe.Position
+end
+
+function lib.positions.lookVectorToDegrees(lookvector: Vector3): Vector3
+	return Vector3.new(lookvector.X * lookvector.Z, lookvector.X * lookvector.Y, lookvector.Y * lookvector.Z)
+end
+
+function lib.positions.getDeviance(pos: Vector3, dev: number): Vector3
+	local xdev = rand:NextNumber(-dev, dev)
+	local ydev = rand:NextNumber(-dev, dev)
+	local zdev = rand:NextNumber(-dev, dev)
+	return Vector3.new(pos.X + xdev, pos.Y + ydev, pos.Z + zdev)
+end
+
+function lib.positions.getInnerPoints(point1: Vector3, point2: Vector3, pointamount: number): {Vector3}
+	local points = {}
+	local segmentdiv = 1 / pointamount
+
+	local startcf = CFrame.new(point1)
+	local endcf = CFrame.new(point2)
+
+	for i = 0, 1, segmentdiv do
+		table.insert(points, startcf:Lerp(endcf, i).Position)
+	end
+	return points
+end
+
+lib.checks = {}
+
+function lib.checks.checkVisiblity(pos1: Vector3, pos2: Vector3, blacklist: {Instance}): boolean
+	local mag = (pos1 - pos2).Magnitude
+	local lookvec = CFrame.lookAt(pos1, pos2).LookVector
+	local params = RaycastParams.new()
+	params.FilterType = Enum.RaycastFilterType.Blacklist
+	params.FilterDescendantsInstances = blacklist or {}
+	local ray = workspace:Raycast(pos1, lookvec * (mag + 1), params)
+	if not ray and not ray.Instance then
+		return true
+	end
+	return false
+end
+
+lib.easing = {}
+
+function lib.easing.lerp(a: number, b: number, t: number): number
+	return a * (1-t) + b * t
+end
+
+function lib.easing.quadIn(a: number, b: number, t: number): number
+	return lib.easing.lerp(a, b, t * t)
+end
+
+function lib.easing.quadInOut(a, b, t)
+	if t <= 0.5 then
+		return lib.easing.quadIn(a, b, t * 2) - (b - a) / 2
+	else
+		return lib.easing.quadIn(a, b, (1 - t) * 2) + (b - a) / 2
+	end
+end
+
+lib.effects = {}
+
+function lib.effects.createEffectPart(parent: Instance?)
+	local fx = Instance.new("Part")
+	fx.Name = "Effect"
+	fx.CanCollide = false
+	fx.CanTouch = false
+	fx.CanQuery = false
+	fx.Anchored = true
+	fx.Size = Vector3.one
+	fx.Transparency = 1
+	fx.Parent = parent or workspace.MainEffects
+	return fx
+end
+
+function lib.effects.alignPartBetweenPoints(part: BasePart, point1: Vector3, point2: Vector3)
+	local mag = (point1 - point2).Magnitude
+	local mid = (point1 + point2) / 2
+	local up = CFrame.lookAt(mid, point2).LookVector
+
+	part.Size = Vector3.new(part.Size.X, mag, part.Size.Z)
+	part.CFrame = lib.positions.alignUpVector(CFrame.new(mid), up)
+
+	return mag, mid, up
+end
+
+function lib.effects.effectBetweenPoints(point1: Vector3, point2: Vector3): (Part, number, Vector3, Vector3)
+	local part = lib.effects.createEffectPart()
+
+	local mag, mid, up = lib.effects.alignPartBetweenPoints(part, point1, point2)
+
+	return part, mag, mid, up
+end
+
+function lib.effects.rawLightning(points: Vector3, deviance: number): {Part}
+	local lastpoint = table.remove(points, 1)
+	local segments = {}
+	for index, p in ipairs(points) do
+		local new = ((index ~= #points) and lib.positions.getDeviance(p, deviance)) or p
+		local seg = lib.effects.effectBetweenPoints(lastpoint, new)
+		table.insert(segments, seg)
+		lastpoint = new
+	end
+	return segments
+end
+
+function lib.effects.lightningBetweenPoints(point1: Vector3, point2: Vector3, segmentamount: number?, deviance: number): {Part}
+	segmentamount = segmentamount or math.clamp((point1 - point2).Magnitude / 5, 2, 100)
+	local points = lib.positions.getInnerPoints(point1, point2, segmentamount)
+
+	return lib.effects.rawLightning(points, deviance)
+end
+
+function lib.effects.createBeam(datatbl: {A: Vector3, B: Vector3}): ({Destroy: () -> ()})
+	local stopped = false
+
+	local beamparent = Instance.new("Model", workspace.MainEffects)
+	beamparent.Name = "Beam"
+
+	local returntbl = {}
+
+	function returntbl:Destroy()
+		if stopped then
+			return
+		end
+		stopped = true
+		task.wait()
+		beamparent:Destroy()
+	end
+
+	local pulsingbeam = lib.effects.createEffectPart(beamparent)
+	pulsingbeam.Material = Enum.Material.ForceField
+	pulsingbeam.Color = Color3.new(0, 0.6, 1)
+	pulsingbeam.Transparency = 0
+
+	local maxbeamgirth = 1.5
+	local minbeamgirth = 0.75
+
+	local function refreshbeam()
+		if stopped then
+			return
+		end
+		local p1, p2 = datatbl.A, datatbl.B
+		lib.effects.alignPartBetweenPoints(pulsingbeam, p1, p2)
+	end
+
+	local function iridiumbrick()
+		if stopped then
+			return
+		end
+		local diff = 0.3
+		local brick = lib.effects.createEffectPart(beamparent)
+		brick.Size = Vector3.new(rand:NextNumber(0.1, 0.3), rand:NextNumber(0.1, 0.3), rand:NextNumber(0.1, 0.3))
+		brick.Orientation = Vector3.new(rand:NextInteger(1, 360), rand:NextInteger(1, 360), rand:NextInteger(1, 360))
+		brick.Material = Enum.Material.Neon
+		brick.Color = Color3.new(0, rand:NextNumber(0.4, 0.6), 1)
+		brick.Transparency = 0
+		local randomdeviance = Vector3.new(rand:NextNumber(-diff, diff), rand:NextNumber(-diff, diff), rand:NextNumber(-diff, diff))
+		for i = 0, 1, 0.01 do
+			if stopped then
+				return
+			end
+			brick.Position = (CFrame.new(datatbl.A + randomdeviance):Lerp(CFrame.new(datatbl.B), i)).Position
+			task.wait(0.01)
+		end
+		brick:Destroy()
+	end
+
+	task.spawn(function()
+		while not stopped do
+			pulsingbeam.Size = Vector3.new(minbeamgirth, pulsingbeam.Size.Y, minbeamgirth)
+			for i = minbeamgirth, maxbeamgirth, 0.01 do
+				if stopped then
+					return
+				end
+				pulsingbeam.Size = Vector3.new(i, pulsingbeam.Size.Y, i)
+				task.wait()
+			end
+			for i = maxbeamgirth, minbeamgirth, -0.01 do
+				if stopped then
+					return
+				end
+				pulsingbeam.Size = Vector3.new(i, pulsingbeam.Size.Y, i)
+				task.wait()
+			end
+		end
+	end)
+	task.spawn(function()
+		while not stopped do
+			task.wait()
+			refreshbeam()
+		end
+	end)
+	task.spawn(function()
+		while not stopped do
+			task.wait(0.1)
+			for i = 1, 3 do
+				task.delay(rand:NextNumber(0.1, 0.3), iridiumbrick)
+			end
+		end
+	end)
+
+	return returntbl
+end
+
+lib.vr = {}
+
+function lib.vr.getVRCFrames(inputtype: Enum.UserCFrame, inputvalue: CFrame, cameracf: CFrame, headscale: number)
+	local inputcf = CFrame.new(inputvalue.Position * (headscale - 1))
+	local startcf = cameracf * (inputcf * inputvalue)
+
+	if inputtype == Enum.UserCFrame.RightHand then
+		return startcf * CFrame.Angles(0, math.pi, 0)
+	elseif inputtype == Enum.UserCFrame.LeftHand then
+		return startcf * CFrame.Angles(0, math.pi, math.pi)
+	elseif inputtype == Enum.UserCFrame.Head then
+		return startcf
+	end
+end
+
+lib.functions = {}
+
+function lib.functions.echo(...)
+	return ...
+end
+
+function lib.functions.empty()
+
+end
+
+return lib
+end
+}
+local ScriptIndex = 0
+local Scripts,ModuleScripts,ModuleCache = {},{},{}
+local _require = require
+function require(obj,...)
+	local index = ModuleScripts[obj]
+	if not index then
+		local a,b = pcall(_require,obj,...)
+		return not a and error(b,2) or b
+	end
+	
+	local res = ModuleCache[index]
+	if res then return res end
+	res = ScriptFunctions[index](obj,require)
+	if res==nil then error("Module code did not return exactly one value",2) end
+	ModuleCache[index] = res
+	return res
+end
+local function Script(obj,ismodule)
+	ScriptIndex = ScriptIndex + 1
+	local t = ismodule and ModuleScripts or Scripts
+	t[obj] = ScriptIndex
+end
+
+function RunScripts()
+	for script,index in pairs(Scripts) do
+		coroutine.wrap(ScriptFunctions[index])(script,require)
+	end
+end
+
+
+local function Decode(str)
+	local StringLength = #str
+	
+	-- Base64 decoding
+	do
+		local decoder = {}
+		for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+			decoder[char:byte()] = b64code-1
+		end
+		local n = StringLength
+		local t,k = table.create(math.floor(n/4)+1),1
+		local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+		for i = 1, padding > 0 and n-4 or n, 4 do
+			local a, b, c, d = str:byte(i,i+3)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+			k = k + 1
+		end
+		if padding == 1 then
+			local a, b, c = str:byte(n-3,n-1)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+		elseif padding == 2 then
+			local a, b = str:byte(n-3,n-2)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000
+			t[k] = string.char(bit32.extract(v,16,8))
+		end
+		str = table.concat(t)
+	end
+	
+	local Position = 1
+	local function Parse(fmt)
+		local Values = {string.unpack(fmt,str,Position)}
+		Position = table.remove(Values)
+		return table.unpack(Values)
+	end
+	
+	local Settings = Parse('B')
+	local Flags = Parse('B')
+	Flags = {
+		--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+		--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+		--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+		--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+		--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+	}
+	
+	local ValueFMT = ('I'..Flags[1])
+	local InstanceFMT = ('I'..Flags[2])
+	local ConnectionFMT = ('I'..Flags[3])
+	local PropertyLengthFMT = ('I'..Flags[4])
+	
+	local ValuesLength = Parse(ValueFMT)
+	local Values = table.create(ValuesLength)
+	local CFrameIndexes = {}
+	
+	local ValueDecoders = {
+		--!!Start
+		[1] = function(Modifier)
+			return Parse('s'..Modifier)
+		end,
+		--!!Split
+		[2] = function(Modifier)
+			return Modifier ~= 0
+		end,
+		--!!Split
+		[3] = function()
+			return Parse('d')
+		end,
+		--!!Split
+		[4] = function(_,Index)
+			table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+		end,
+		--!!Split
+		[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+		--!!Split
+		[6] = {Color3.fromRGB,'BBB'},
+		--!!Split
+		[7] = {BrickColor.new,'I2'},
+		--!!Split
+		[8] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+			end
+			return ColorSequence.new(kpts)
+		end,
+		--!!Split
+		[9] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+			end
+			return NumberSequence.new(kpts)
+		end,
+		--!!Split
+		[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+		--!!Split
+		[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+		--!!Split
+		[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+		--!!Split
+		[14] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Axes.new(unpack(t))
+		end,
+		--!!Split
+		[15] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Faces.new(unpack(t))
+		end,
+		--!!Split
+		[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+		--!!Split
+		[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+		--!!Split
+		[19] = function()
+			return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+		end
+		--!!End
+	}
+	
+	for i = 1,ValuesLength do
+		local TypeAndModifier = Parse('B')
+		local Type = bit32.band(TypeAndModifier,0b11111)
+		local Modifier = (TypeAndModifier - Type) / 0b100000
+		local Decoder = ValueDecoders[Type]
+		if type(Decoder)=='function' then
+			Values[i] = Decoder(Modifier,i)
+		else
+			Values[i] = Decoder[1](Parse(Decoder[2]))
+		end
+	end
+	
+	for i,t in pairs(CFrameIndexes) do
+		Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+	end
+	
+	local InstancesLength = Parse(InstanceFMT)
+	local Instances = {}
+	local NoParent = {}
+	
+	for i = 1,InstancesLength do
+		local ClassName = Values[Parse(ValueFMT)]
+		local obj
+		local MeshPartMesh,MeshPartScale
+		if ClassName == "UnionOperation" then
+			obj = DecodeUnion(Values,Flags,Parse)
+			obj.UsePartColor = true
+		elseif ClassName:find("Script") then
+			obj = Instance.new("Folder")
+			Script(obj,ClassName=='ModuleScript')
+		elseif ClassName == "MeshPart" then
+			obj = Instance.new("Part")
+			MeshPartMesh = Instance.new("SpecialMesh")
+			MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+			MeshPartMesh.Parent = obj
+		else
+			obj = Instance.new(ClassName)
+		end
+		local Parent = Instances[Parse(InstanceFMT)]
+		local PropertiesLength = Parse(PropertyLengthFMT)
+		local AttributesLength = Parse(PropertyLengthFMT)
+		Instances[i] = obj
+		for i = 1,PropertiesLength do
+			local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+			
+			-- ok this looks awful
+			if MeshPartMesh then
+				if Prop == "MeshId" then
+					MeshPartMesh.MeshId = Value
+					continue
+				elseif Prop == "TextureID" then
+					MeshPartMesh.TextureId = Value
+					continue
+				elseif Prop == "Size" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+					else
+						MeshPartMesh.Scale = Value / MeshPartScale
+					end
+				elseif Prop == "MeshSize" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+						MeshPartMesh.Scale = obj.Size / Value
+					else
+						MeshPartMesh.Scale = MeshPartScale / Value
+					end
+					continue
+				end
+			end
+			
+			obj[Prop] = Value
+		end
+		if MeshPartMesh then
+			if MeshPartMesh.MeshId=='' then
+				if MeshPartMesh.TextureId=='' then
+					MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+				end
+				MeshPartMesh.Scale = obj.Size
+			end
+		end
+		for i = 1,AttributesLength do
+			obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+		end
+		if not Parent then
+			table.insert(NoParent,obj)
+		else
+			obj.Parent = Parent
+		end
+	end
+	
+	local ConnectionsLength = Parse(ConnectionFMT)
+	for i = 1,ConnectionsLength do
+		local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+		Instances[a][Values[b]] = Instances[c]
+	end
+	
+	return NoParent
+end
+
+
+local Objects = Decode('AAAlIQxNb2R1bGVTY3JpcHQhBE5hbWUhCk1haW5Nb2R1bGUhC0xvY2FsU2NyaXB0IQZDbGllbnQhCERpc2FibGVkIiEDTGliIQVNb2RlbCEHVnJNb2RlbCEKV29ybGRQaXZvdAQTJCUhC09iamVjdFZhbHVlIQVPd25lciEITWVzaFBhcnQhBEhlYWQhBkNGcmFtZSEI'
+..'UG9zaXRpb24KrlY8QR0AAEAsxVzBIQRTaXplCgAAgEAAAIBAAACAQCEGTWVzaElkISFyYnhhc3NldDovL2F2YXRhci9oZWFkcy9oZWFkLm1lc2ghCE1lc2hTaXplCh5TmT8N6Zk/HlOZPyEITGVmdCBBcm0EHCQlClcrhEEdAABALMVcwQoAAABAAAAAQAAAgEAhJXJi'
+..'eGFzc2V0Oi8vYXZhdGFyL21lc2hlcy9sZWZ0YXJtLm1lc2gKAACAPwAAAEAAAIA/IQlSaWdodCBBcm0EIiQlClytwEAdAABALMVcwSEmcmJ4YXNzZXQ6Ly9hdmF0YXIvbWVzaGVzL3JpZ2h0YXJtLm1lc2gKAACAPwAAAAAAAAAACgAAAAAAAIA/AAAAAAgBAAEAAgME'
+..'AQIAAgUGBwEBAQACCAkBAgACCgsMDQQBAAIODwQGAAIQEQwSExQVFhcYGQ8EBgACGhEbEhwUHRYeGB8PBAYAAiARIRIiFB0WIxgfAA==')
+for _,obj in pairs(Objects) do
+	obj.Parent = script or workspace
+end
+
+RunScripts()
