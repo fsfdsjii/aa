@@ -1,0 +1,899 @@
+-- Converted using Mokiros's Model to Script Version 3
+-- Converted string size: 296 characters
+
+local ScriptFunctions = {
+function(script,require)
+local Gr = script:FindFirstChild("Ground")
+if Gr then
+	Gr:Destroy()
+end
+local HC = Instance.new("Part")
+HC.Name = "HitboxCheck"
+HC.Anchored = true
+HC.Locked = true
+HC.Transparency = 1
+HC.CanCollide = false
+HC.Touched:Connect(function()
+end)
+local PartA = Instance.new("Part")
+PartA.Transparency = 1
+PartA.CanCollide = false
+local SA = Instance.new("Sound",PartA)
+SA.SoundId = "rbxasset://sounds/bass.mp3"
+SA.PlayOnRemove = true
+SA.TimePosition = 0.2
+local PartB = Instance.new("Part")
+PartB.Transparency = 1
+PartB.CanCollide = false
+local SB = Instance.new("Sound",PartB)
+SB.SoundId = "rbxasset://sounds/electronicpingshort.wav"
+SB.PlayOnRemove = true
+SB.TimePosition = 0.2
+local PartC = Instance.new("Part")
+PartC.Transparency = 1
+PartC.CanCollide = false
+local SC = Instance.new("Sound",PartC)
+SC.SoundId = "rbxasset://sounds/snap.mp3"
+SC.PlayOnRemove = true
+SC.TimePosition = 0.2
+PartA.Anchored = true
+PartB.Anchored = true
+PartC.Anchored = true
+function PlayFX(type,pitch,vol,pos)
+	local Part,Sound
+	if type == "A" then
+		Part,Sound = PartA,SA
+	elseif type == "B" then
+		Part,Sound = PartB,SB
+	elseif type == "C" then
+		Part,Sound = PartC,SC
+	end
+	Sound.PlaybackSpeed = pitch
+	Sound.Volume = vol
+	Part.Position = pos
+	Part.Parent = script
+	Part.Parent = nil
+end
+function Whoosh()
+	spawn(function()
+		for i = 1,20 do
+			PlayFX("B",0.1*i,4,Vector3.new())
+			PlayFX("C",0.8,0.2*i,Vector3.new())
+			wait(0.02)
+		end
+		for i = 1,20 do
+			PlayFX("B",2.1-0.1*i,4,Vector3.new())
+			PlayFX("C",0.35,4.2-0.2*i,Vector3.new())
+			wait(0.02)
+		end
+	end)
+end
+function Splash()
+	spawn(function()
+		for i = 1,3 do
+			PlayFX("C",0.55-i*0.075,4,Vector3.new())
+			wait(0.05)
+		end
+		PlayFX("C",0.95,4,Vector3.new())
+		wait(0.05)
+		for i = 1,5 do
+			PlayFX("C",1.5,4-i*0.6,Vector3.new())
+			wait(0.05)
+		end
+		for i = 1,5 do
+			PlayFX("C",1.5,1+i*0.6,Vector3.new())
+			wait(0.05)
+		end
+		for i = 1,20 do
+			PlayFX("C",1.5,4-i*0.19,Vector3.new())
+			wait(0.05)
+		end
+	end)
+end
+local Ground
+local LastGround
+local Objects = {}
+local Type = math.random(0,3)
+function Make(num)
+	if math.random(1,20) == 1 then
+		local Set
+		local Hit
+		for i = 1,100 do
+			Hit = false
+			Set = Vector3.new(math.random(-230,230),0.6,math.random(-230,230))
+			HC.Position = Set+Vector3.new(0,10.5,0)
+			HC.Size = Vector3.new(30,22,20)
+			HC.Parent = script
+			local T = HC:GetTouchingParts()
+			HC.Parent = nil
+			for i = 1,#T do
+				if T[i].CanCollide and T[i] ~= Ground then
+					Hit = true
+				end
+			end
+			if not Hit then
+				break
+			end
+		end
+		local P1 = Instance.new("Part",script)
+		P1.Size = Vector3.new(30,1,20)
+		P1.Position = Set
+		P1.Locked = true
+		P1.BrickColor = BrickColor.new("Dark orange")
+		P1.Material = Enum.Material.WoodPlanks
+		PlayFX("B",0.8+0.025*num,2,Set)
+		table.insert(Objects,P1)
+		local W1 = Instance.new("Weld",P1)
+		W1.Part0 = Ground
+		W1.Part1 = P1
+		W1.C0 = CFrame.new(Set.X,Set.Y+4.9,Set.Z)
+		local P2 = Instance.new("Part",script)
+		P2.Size = Vector3.new(1,16,18)
+		P2.Position = Set+Vector3.new(-14.5,8.5,0)
+		P2.Locked = true
+		P2.BrickColor = BrickColor.new("Dark orange")
+		P2.Material = Enum.Material.WoodPlanks
+		table.insert(Objects,P2)
+		local W2 = Instance.new("Weld",P1)
+		W2.Part0 = P1
+		W2.Part1 = P2
+		W2.C0 = CFrame.new(-14.5,8.5,0)
+		local P3 = Instance.new("Part",script)
+		P3.Size = Vector3.new(1,16,18)
+		P3.Position = Set+Vector3.new(14.5,8.5,0)
+		P3.Locked = true
+		P3.BrickColor = BrickColor.new("Dark orange")
+		P3.Material = Enum.Material.WoodPlanks
+		table.insert(Objects,P3)
+		local W3 = Instance.new("Weld",P1)
+		W3.Part0 = P1
+		W3.Part1 = P3
+		W3.C0 = CFrame.new(14.5,8.5,0)
+		local P4 = Instance.new("Part",script)
+		P4.Size = Vector3.new(30,16,1)
+		P4.Position = Set+Vector3.new(0,8.5,-9.5)
+		P4.Locked = true
+		P4.BrickColor = BrickColor.new("Dark orange")
+		P4.Material = Enum.Material.WoodPlanks
+		table.insert(Objects,P4)
+		local W4 = Instance.new("Weld",P1)
+		W4.Part0 = P1
+		W4.Part1 = P4
+		W4.C0 = CFrame.new(0,8.5,-9.5)
+		local P5 = Instance.new("Part",script)
+		P5.Size = Vector3.new(20,16,1)
+		P5.Position = Set+Vector3.new(-5,8.5,9.5)
+		P5.Locked = true
+		P5.BrickColor = BrickColor.new("Dark orange")
+		P5.Material = Enum.Material.WoodPlanks
+		table.insert(Objects,P5)
+		local W5 = Instance.new("Weld",P1)
+		W5.Part0 = P1
+		W5.Part1 = P5
+		W5.C0 = CFrame.new(-5,8.5,9.5)
+		local P6 = Instance.new("Part",script)
+		P6.Size = Vector3.new(4,16,1)
+		P6.Position = Set+Vector3.new(13,8.5,9.5)
+		P6.Locked = true
+		P6.BrickColor = BrickColor.new("Dark orange")
+		P6.Material = Enum.Material.WoodPlanks
+		table.insert(Objects,P6)
+		local W6 = Instance.new("Weld",P1)
+		W6.Part0 = P1
+		W6.Part1 = P6
+		W6.C0 = CFrame.new(13,8.5,9.5)
+		local P7 = Instance.new("Part",script)
+		P7.Size = Vector3.new(6,6,1)
+		P7.Position = Set+Vector3.new(8,13.5,9.5)
+		P7.Locked = true
+		P7.BrickColor = BrickColor.new("Dark orange")
+		P7.Material = Enum.Material.WoodPlanks
+		table.insert(Objects,P7)
+		local W7 = Instance.new("Weld",P5)
+		W7.Part0 = P5
+		W7.Part1 = P7
+		W7.C0 = CFrame.new(13,5,0)
+		local P8 = Instance.new("Part",script)
+		P8.Size = Vector3.new(28,1,18)
+		P8.Position = Set+Vector3.new(0,16,0)
+		P8.Locked = true
+		P8.BrickColor = BrickColor.new("Dark orange")
+		P8.Material = Enum.Material.WoodPlanks
+		table.insert(Objects,P8)
+		local W8 = Instance.new("Weld",P3)
+		W8.Part0 = P3
+		W8.Part1 = P8
+		W8.C0 = CFrame.new(-14.5,7.5,0)
+		local P9 = Instance.new("WedgePart",script)
+		P9.Size = Vector3.new(20,5,30)
+		P9.Position = Set+Vector3.new(0,19,0)
+		P9.Orientation = Vector3.new(0,90,0)
+		P9.Locked = true
+		P9.BrickColor = BrickColor.new("Brown")
+		P9.Material = Enum.Material.WoodPlanks
+		table.insert(Objects,P9)
+		local W9 = Instance.new("Weld",P8)
+		W9.Part0 = P8
+		W9.Part1 = P9
+		W9.C0 = CFrame.new(0,3,0,0,1,0,1)
+		local P10 = Instance.new("Part",script)
+		P10.Size = Vector3.new(5,4,18)
+		P10.Position = Set+Vector3.new(-11.5,2.5,0)
+		P10.Locked = true
+		P10.BrickColor = BrickColor.new("Linen")
+		P10.Material = Enum.Material.Wood
+		table.insert(Objects,P10)
+		local W10 = Instance.new("Weld",P1)
+		W10.Part0 = P1
+		W10.Part1 = P10
+		W10.C0 = CFrame.new(-11.5,2.5,0)
+		local P11 = Instance.new("Part",script)
+		P11.Size = Vector3.new(12,1,8)
+		P11.Position = Set+Vector3.new(7,1,-4)
+		P11.Locked = true
+		P11.Material = Enum.Material.Fabric
+		table.insert(Objects,P11)
+		local W11 = Instance.new("Weld",P1)
+		W11.Part0 = P1
+		W11.Part1 = P11
+		W11.C0 = CFrame.new(7,1,-4)
+		local P12 = Instance.new("TrussPart",script)
+		P12.Size = Vector3.new(2,18,2)
+		P12.Position = Set+Vector3.new(0,8.5,-11)
+		P12.Locked = true
+		P12.BrickColor = BrickColor.new("Brown")
+		P12.Material = Enum.Material.Wood
+		table.insert(Objects,P12)
+		local W12 = Instance.new("Weld",P4)
+		W12.Part0 = P4
+		W12.Part1 = P12
+		W12.C0 = CFrame.new(0,0,-1.5)
+		local Select = math.random(1,6)
+		if Select == 1 then
+			P11.BrickColor = BrickColor.new("Bright red")
+		elseif Select == 2 then
+			P11.BrickColor = BrickColor.new("Bright green")
+		elseif Select == 3 then
+			P11.BrickColor = BrickColor.new("Bright blue")
+		elseif Select == 4 then
+			P11.BrickColor = BrickColor.new("Bright violet")
+		elseif Select == 5 then
+			P11.BrickColor = BrickColor.new("Bright yellow")
+		else
+			P11.BrickColor = BrickColor.new("White")
+		end
+		if Hit then
+			P1:BreakJoints()
+			P2:BreakJoints()
+			P3:BreakJoints()
+			P4:BreakJoints()
+			P5:BreakJoints()
+			P6:BreakJoints()
+			P7:BreakJoints()
+			P8:BreakJoints()
+			P9:BreakJoints()
+			P10:BreakJoints()
+			P11:BreakJoints()
+			P12:BreakJoints()
+			PlayFX("C",0.2,2,Set)
+		end
+	else
+		local Set
+		local Hit
+		for i = 1,100 do
+			Hit = false
+			Set = Vector3.new(math.random(-240,240),7.1,math.random(-240,240))
+			HC.Position = Set
+			HC.Size = Vector3.new(2,14,2)
+			HC.Parent = script
+			local T = HC:GetTouchingParts()
+			HC.Parent = nil
+			for i = 1,#T do
+				if T[i].CanCollide and T[i] ~= Ground then
+					Hit = true
+				end
+			end
+			if not Hit then
+				break
+			end
+		end
+		local P1 = Instance.new("Part",script)
+		P1.Size = Vector3.new(2,14,2)
+		P1.Position = Set
+		P1.Locked = true
+		P1.BrickColor = BrickColor.new("Brown")
+		P1.Material = Enum.Material.Wood
+		PlayFX("B",0.8+0.025*num,2,Set)
+		table.insert(Objects,P1)
+		local W1 = Instance.new("Weld",P1)
+		W1.Part0 = Ground
+		W1.Part1 = P1
+		W1.C0 = CFrame.new(Set.X,Set.Y+4.9,Set.Z)
+		local P2 = Instance.new("Part",script)
+		P2.Position = Set+Vector3.new(0,7,0)
+		P2.Locked = true
+		P2.Material = Enum.Material.Grass
+		table.insert(Objects,P2)
+		local W2 = Instance.new("Weld",P1)
+		W2.Part0 = P1
+		W2.Part1 = P2
+		local Select = math.random(1,2)
+		local Color = BrickColor.new("Bright green")
+		if Type == 1 then
+			Color = BrickColor.new("Neon orange")
+		elseif Type == 2 then
+			Select = 2
+		elseif Type == 3 then
+			Color = BrickColor.new("Shamrock")
+		else
+			Color = BrickColor.new("Forest green")
+		end
+		if Select == 1 then
+			P2.BrickColor = Color
+			local Width = math.random(700,1100)/100
+			P2.Size = Vector3.new(Width,math.random(650,1400)/100,Width)
+			W2.C0 = CFrame.new(0,7,0)
+		else
+			P2.BrickColor = BrickColor.new("Bright green")
+			P2.Size = Vector3.new(4,3,4)
+			W2.C0 = CFrame.new(0,10,0)
+			for i = 1,3 do
+				local P = Instance.new("Part",script)
+				P.BrickColor = BrickColor.new("Bright green")
+				P.Size = Vector3.new(4+2*i,3,4+2*i)
+				P.Position = Set+Vector3.new(0,10-i*3,0)
+				P.Locked = true
+				P.Material = Enum.Material.Grass
+				table.insert(Objects,P)
+				local W = Instance.new("Weld",P1)
+				W.Part0 = P1
+				W.Part1 = P
+				W.C0 = CFrame.new(0,10-i*3,0)
+			end
+		end
+		if Hit then
+			P1:BreakJoints()
+			PlayFX("C",0.2,2,Set)
+		end
+	end
+end
+function Generate()
+	Type = Type + 1
+	if Type > 4 then
+		Type = 1
+	end
+	LastGround = Ground
+	if LastGround then
+		for i = 1,10 do
+			PlayFX("A",0.75,3,Vector3.new())
+			for a = 1,5 do
+				LastGround.Transparency = 0.5-a*0.1
+				wait(0.05)
+			end
+			PlayFX("A",1.5,1,Vector3.new())
+			wait(0.75)
+		end
+	end
+	Ground = Instance.new("Part",script)
+	Ground.Name = "Ground"
+	Ground.Anchored = true
+	Ground.Locked = true
+	if Type == 1 then
+		Ground.BrickColor = BrickColor.new("Br. yellowish orange")
+		Ground.Material = Enum.Material.Grass
+	elseif Type == 2 then
+		Ground.BrickColor = BrickColor.new("White")
+		Ground.Material = Enum.Material.Sand
+	elseif Type == 3 then
+		Ground.BrickColor = BrickColor.new("Shamrock")
+		Ground.Material = Enum.Material.Grass
+	else
+		Ground.BrickColor = BrickColor.new("Forest green")
+		Ground.Material = Enum.Material.Grass
+	end
+	Whoosh()
+	local SetTime = game:GetService("Lighting").ClockTime + 5
+	for i = 1,25 do
+		game:GetService("Lighting").ClockTime = game:GetService("Lighting").ClockTime + 0.2
+		Ground.Size = Vector3.new(20*i,10,500)
+		Ground.Position = Vector3.new(-250+10*i,-4.9,0)
+		for a = 1,#Objects do
+			if Objects[a].Parent then
+				Objects[a].Anchored = true
+				Objects[a].CanCollide = false
+				Objects[a]:BreakJoints()
+				Objects[a].Position = Objects[a].Position + Vector3.new(20,0,0)
+				if Objects[a].Position.X > 250 then
+					Objects[a]:Destroy()
+				end
+			end
+		end
+		if LastGround then
+			LastGround.Size = Vector3.new(500-20*i,10,500)
+			LastGround.Position = Vector3.new(10*i,-4.9,0)
+			wait(0.05)
+		end
+	end
+	game:GetService("Lighting").ClockTime = SetTime
+	for a = 1,#Objects do
+		Objects[a]:Destroy()
+	end
+	if LastGround then
+		LastGround:Destroy()
+	end
+	Objects = {}
+	if math.random(1,3) == 1 then
+		for i = 1,20 do
+			local R = Vector3.new(math.random(-240,240),120,math.random(-240,240))
+			local function Create(Pos,Size)
+				local P = Instance.new("Part",script)
+				P.Locked = true
+				P.Material = Enum.Material.WoodPlanks
+				P.Name = "BoxPart"
+				P.BrickColor = BrickColor.new("Brown")
+				P.Position = Pos
+				P.Size = Size
+				P.Velocity = Vector3.new(0,-50,0)
+				return(P)
+			end
+			local P1 = Create(R+Vector3.new(0,-2.4,0),Vector3.new(6,1,6))
+			local P2 = Create(R+Vector3.new(2.5,0.1,0),Vector3.new(1,4,6))
+			local P3 = Create(R+Vector3.new(-2.5,0.1,0),Vector3.new(1,4,6))
+			local P4 = Create(R+Vector3.new(0,0.1,2.5),Vector3.new(4,4,1))
+			local P5 = Create(R+Vector3.new(0,0.1,-2.5),Vector3.new(4,4,1))
+			Instance.new("BodyGyro",P1).MaxTorque = Vector3.new(400,0,400)
+			P1:MakeJoints()
+			P2:MakeJoints()
+			P3:MakeJoints()
+			P4:MakeJoints()
+			P5:MakeJoints()
+			table.insert(Objects,P1)
+			table.insert(Objects,P2)
+			table.insert(Objects,P3)
+			table.insert(Objects,P4)
+			table.insert(Objects,P5)
+			local SoundD = Instance.new("Sound",P1)
+			SoundD.SoundId = "rbxasset://sounds/electronicpingshort.wav"
+			SoundD.Looped = true
+			local SoundX = Instance.new("Sound",P1)
+			SoundX.SoundId = "rbxasset://sounds/snap.mp3"
+			SoundX.Looped = true
+			local Stopped = true
+			local Stopped2 = true
+			local Touching = false
+			local LandTimer = 0
+			local SpinTimer = 0
+			local Shift = 0
+			local Up = true
+			local function Play(sound,pitch,vol)
+				sound.TimePosition = 0.2
+				sound.PlaybackSpeed = pitch
+				sound.Volume = vol
+				sound:Play()
+			end
+			P1.Touched:Connect(function(hit)
+				if (not hit:IsA("Terrain") or table.find(P1:GetTouchingParts(),hit)) and hit.CanCollide then
+					Touching = true
+				end
+			end)
+			spawn(function()
+				while P1.Parent do
+					local Collide = false
+					if Touching then
+						Collide = true
+					else
+						local T = P1:GetTouchingParts()
+						for i = 1,#T do
+							if T[i].CanCollide then
+								Collide = true
+							end
+						end
+					end
+					Touching = false
+					local Thud = false
+					if Collide then
+						if LandTimer <= 0 then
+							Thud = true
+							Stopped = false
+							Play(SoundX,0.6,1)
+							wait(0.05)
+						end
+						LandTimer = 3
+					else
+						LandTimer = LandTimer - 1
+					end
+					if not Thud and LandTimer > 0 and P1.Velocity.Magnitude >= 4 then
+						Stopped = false
+						Play(SoundX,0.4+(P1.Velocity*Vector3.new(1,0,1)).Magnitude/200,math.min((P1.Velocity*Vector3.new(1,0,1)).Magnitude/400,1))
+					elseif not Stopped then
+						Stopped = true
+						SoundX:Stop()
+					end
+					if Up then
+						Shift = Shift + 1
+						if Shift >= 1 then
+							Up = false
+						end
+					else
+						Shift = Shift - 1
+						if Shift <= -1 then
+							Up = true
+						end
+					end
+					SpinTimer = SpinTimer - 1
+					if LandTimer > 0 and math.abs(P1.RotVelocity.Y) >= 10 then
+						Stopped2 = false
+						local Pit = 2.15+Shift*0.05
+						if math.abs(P1.RotVelocity.Y) >= 40 then
+							SpinTimer = 30
+						end
+						if SpinTimer > 0 then
+							Pit = 1.66+Shift*0.05
+						end
+						Play(SoundD,Pit,math.min((math.abs(P1.RotVelocity.Y)-10)/10,1.5))
+					elseif not Stopped2 then
+						Stopped2 = true
+						SoundD:Stop()
+					end
+					wait(0.05)
+				end
+			end)
+			wait(0.2)
+		end
+		Ground.Velocity = Vector3.new(0,15,0)
+		for i = 1,60 do
+			PlayFX("C",0.6,math.min(i * 0.04,2),Ground.Position)
+			if i%2 == 1 then
+				Ground.Position = Vector3.new(0,-4.4,0)
+			else
+				Ground.Position = Vector3.new(0,-4.9,0)
+			end
+			wait(0.05)
+		end
+		Splash()
+		for i = 1,25 do
+			workspace.Terrain:FillBlock(CFrame.new(-250+10*i,0,0),Vector3.new(20*i+4,10,500+4),Enum.Material.Water)
+			if i%2 == 0 then
+				Ground.Position = Vector3.new(0,-4.4,0)
+			else
+				Ground.Position = Vector3.new(0,-4.9,0)
+			end
+			wait(0.05)
+		end
+		for i = 1,30 do
+			workspace.Terrain:FillBlock(CFrame.new(0,i/3,0),Vector3.new(500+4,10+i/1.5,500+4),Enum.Material.Water)
+			if i%2 == 0 then
+				Ground.Position = Vector3.new(0,-4.4,0)
+			else
+				Ground.Position = Vector3.new(0,-4.9,0)
+			end
+			wait(0.05)
+		end
+		Ground.Velocity = Vector3.new()
+		wait(60)
+		Ground.Velocity = Vector3.new(0,15,0)
+		for i = 1,60 do
+			PlayFX("C",0.6,math.min(i * 0.04,2),Ground.Position)
+			if i%2 == 1 then
+				Ground.Position = Vector3.new(0,-4.4,0)
+			else
+				Ground.Position = Vector3.new(0,-4.9,0)
+			end
+			wait(0.05)
+		end
+		Splash()
+		for i = 1,25 do
+			workspace.Terrain:FillBlock(CFrame.new(-250+10*i,10,0),Vector3.new(20*i+4,30,500+4),Enum.Material.Air)
+			if i%2 == 0 then
+				Ground.Position = Vector3.new(0,-4.4,0)
+			else
+				Ground.Position = Vector3.new(0,-4.9,0)
+			end
+			wait(0.05)
+		end
+		for i = 1,30 do
+			PlayFX("C",0.3,math.min((31-i) * 0.04,2),Ground.Position)
+			if i%2 == 1 then
+				Ground.Position = Vector3.new(0,-4.4,0)
+			else
+				Ground.Position = Vector3.new(0,-4.9,0)
+			end
+			wait(0.05)
+		end
+		Ground.Velocity = Vector3.new()
+	end
+	local Count = math.random(50,120)
+	if Type == 4 then
+		Count = Count + 60
+	end
+	for i = 1,Count do
+		Make(i)
+		wait(0.05)
+	end
+	warn(#Objects)
+end
+while true do
+	Generate()
+	wait(230)
+end
+end
+}
+local ScriptIndex = 0
+local Scripts,ModuleScripts,ModuleCache = {},{},{}
+local _require = require
+function require(obj,...)
+	local index = ModuleScripts[obj]
+	if not index then
+		local a,b = pcall(_require,obj,...)
+		return not a and error(b,2) or b
+	end
+	
+	local res = ModuleCache[index]
+	if res then return res end
+	res = ScriptFunctions[index](obj,require)
+	if res==nil then error("Module code did not return exactly one value",2) end
+	ModuleCache[index] = res
+	return res
+end
+local function Script(obj,ismodule)
+	ScriptIndex = ScriptIndex + 1
+	local t = ismodule and ModuleScripts or Scripts
+	t[obj] = ScriptIndex
+end
+
+function RunScripts()
+	for script,index in pairs(Scripts) do
+		coroutine.wrap(ScriptFunctions[index])(script,require)
+	end
+end
+
+
+local function Decode(str)
+	local StringLength = #str
+	
+	-- Base64 decoding
+	do
+		local decoder = {}
+		for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+			decoder[char:byte()] = b64code-1
+		end
+		local n = StringLength
+		local t,k = table.create(math.floor(n/4)+1),1
+		local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+		for i = 1, padding > 0 and n-4 or n, 4 do
+			local a, b, c, d = str:byte(i,i+3)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+			k = k + 1
+		end
+		if padding == 1 then
+			local a, b, c = str:byte(n-3,n-1)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+		elseif padding == 2 then
+			local a, b = str:byte(n-3,n-2)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000
+			t[k] = string.char(bit32.extract(v,16,8))
+		end
+		str = table.concat(t)
+	end
+	
+	local Position = 1
+	local function Parse(fmt)
+		local Values = {string.unpack(fmt,str,Position)}
+		Position = table.remove(Values)
+		return table.unpack(Values)
+	end
+	
+	local Settings = Parse('B')
+	local Flags = Parse('B')
+	Flags = {
+		--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+		--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+		--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+		--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+		--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+	}
+	
+	local ValueFMT = ('I'..Flags[1])
+	local InstanceFMT = ('I'..Flags[2])
+	local ConnectionFMT = ('I'..Flags[3])
+	local PropertyLengthFMT = ('I'..Flags[4])
+	
+	local ValuesLength = Parse(ValueFMT)
+	local Values = table.create(ValuesLength)
+	local CFrameIndexes = {}
+	
+	local ValueDecoders = {
+		--!!Start
+		[1] = function(Modifier)
+			return Parse('s'..Modifier)
+		end,
+		--!!Split
+		[2] = function(Modifier)
+			return Modifier ~= 0
+		end,
+		--!!Split
+		[3] = function()
+			return Parse('d')
+		end,
+		--!!Split
+		[4] = function(_,Index)
+			table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+		end,
+		--!!Split
+		[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+		--!!Split
+		[6] = {Color3.fromRGB,'BBB'},
+		--!!Split
+		[7] = {BrickColor.new,'I2'},
+		--!!Split
+		[8] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+			end
+			return ColorSequence.new(kpts)
+		end,
+		--!!Split
+		[9] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+			end
+			return NumberSequence.new(kpts)
+		end,
+		--!!Split
+		[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+		--!!Split
+		[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+		--!!Split
+		[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+		--!!Split
+		[14] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Axes.new(unpack(t))
+		end,
+		--!!Split
+		[15] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Faces.new(unpack(t))
+		end,
+		--!!Split
+		[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+		--!!Split
+		[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+		--!!Split
+		[19] = function()
+			return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+		end
+		--!!End
+	}
+	
+	for i = 1,ValuesLength do
+		local TypeAndModifier = Parse('B')
+		local Type = bit32.band(TypeAndModifier,0b11111)
+		local Modifier = (TypeAndModifier - Type) / 0b100000
+		local Decoder = ValueDecoders[Type]
+		if type(Decoder)=='function' then
+			Values[i] = Decoder(Modifier,i)
+		else
+			Values[i] = Decoder[1](Parse(Decoder[2]))
+		end
+	end
+	
+	for i,t in pairs(CFrameIndexes) do
+		Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+	end
+	
+	local InstancesLength = Parse(InstanceFMT)
+	local Instances = {}
+	local NoParent = {}
+	
+	for i = 1,InstancesLength do
+		local ClassName = Values[Parse(ValueFMT)]
+		local obj
+		local MeshPartMesh,MeshPartScale
+		if ClassName == "UnionOperation" then
+			obj = DecodeUnion(Values,Flags,Parse)
+			obj.UsePartColor = true
+		elseif ClassName:find("Script") then
+			obj = Instance.new("Folder")
+			Script(obj,ClassName=='ModuleScript')
+		elseif ClassName == "MeshPart" then
+			obj = Instance.new("Part")
+			MeshPartMesh = Instance.new("SpecialMesh")
+			MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+			MeshPartMesh.Parent = obj
+		else
+			obj = Instance.new(ClassName)
+		end
+		local Parent = Instances[Parse(InstanceFMT)]
+		local PropertiesLength = Parse(PropertyLengthFMT)
+		local AttributesLength = Parse(PropertyLengthFMT)
+		Instances[i] = obj
+		for i = 1,PropertiesLength do
+			local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+			
+			-- ok this looks awful
+			if MeshPartMesh then
+				if Prop == "MeshId" then
+					MeshPartMesh.MeshId = Value
+					continue
+				elseif Prop == "TextureID" then
+					MeshPartMesh.TextureId = Value
+					continue
+				elseif Prop == "Size" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+					else
+						MeshPartMesh.Scale = Value / MeshPartScale
+					end
+				elseif Prop == "MeshSize" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+						MeshPartMesh.Scale = obj.Size / Value
+					else
+						MeshPartMesh.Scale = MeshPartScale / Value
+					end
+					continue
+				end
+			end
+			
+			obj[Prop] = Value
+		end
+		if MeshPartMesh then
+			if MeshPartMesh.MeshId=='' then
+				if MeshPartMesh.TextureId=='' then
+					MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+				end
+				MeshPartMesh.Scale = obj.Size
+			end
+		end
+		for i = 1,AttributesLength do
+			obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+		end
+		if not Parent then
+			table.insert(NoParent,obj)
+		else
+			obj.Parent = Parent
+		end
+	end
+	
+	local ConnectionsLength = Parse(ConnectionFMT)
+	for i = 1,ConnectionsLength do
+		local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+		Instances[a][Values[b]] = Instances[c]
+	end
+	
+	return NoParent
+end
+
+
+local Objects = Decode('AAAWIQZTY3JpcHQhBE5hbWUhD015c3RlcmlvdXNQbGFjZSEEUGFydCEGR3JvdW5kIQhBbmNob3JlZCIhCkJyaWNrQ29sb3IHaQAhBkNGcmFtZQQSFRYhBUNvbG9yBuKbQCEGTG9ja2VkIQhNYXRlcmlhbAMAAAAAAACUQCEIUG9zaXRpb24KAAAAAM3MnMAAAAAAIQRT'
+..'aXplCgAA+kMAACBBAAD6QwoAAIA/AAAAAAAAAAAKAAAAAAAAgD8AAAAAAgEAAQACAwQBCQACBQYHCAkKCwwNDgcPEBESExQA')
+for _,obj in pairs(Objects) do
+	obj.Parent = script or workspace
+end
+
+RunScripts()
