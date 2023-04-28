@@ -1,0 +1,638 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Decal3 = Instance.new("Decal")
+Snap4 = Instance.new("Snap")
+Weld5 = Instance.new("Weld")
+Weld6 = Instance.new("Weld")
+Weld7 = Instance.new("Weld")
+Part8 = Instance.new("Part")
+Decal9 = Instance.new("Decal")
+Motor6D10 = Instance.new("Motor6D")
+Motor6D11 = Instance.new("Motor6D")
+Motor6D12 = Instance.new("Motor6D")
+Motor6D13 = Instance.new("Motor6D")
+Motor6D14 = Instance.new("Motor6D")
+Part15 = Instance.new("Part")
+Part16 = Instance.new("Part")
+Part17 = Instance.new("Part")
+Part18 = Instance.new("Part")
+Humanoid19 = Instance.new("Humanoid")
+Script20 = Instance.new("Script")
+Script21 = Instance.new("Script")
+Script22 = Instance.new("Script")
+BodyColors23 = Instance.new("BodyColors")
+Hat24 = Instance.new("Hat")
+Part25 = Instance.new("Part")
+SpecialMesh26 = Instance.new("SpecialMesh")
+Pants27 = Instance.new("Pants")
+Hat28 = Instance.new("Hat")
+Part29 = Instance.new("Part")
+SpecialMesh30 = Instance.new("SpecialMesh")
+Shirt31 = Instance.new("Shirt")
+ShirtGraphic32 = Instance.new("ShirtGraphic")
+Hat33 = Instance.new("Hat")
+Part34 = Instance.new("Part")
+SpecialMesh35 = Instance.new("SpecialMesh")
+Model0.Name = "alakazard"
+Model0.Parent = mas
+Model0.PrimaryPart = Part1
+Part1.Name = "Head"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(74.4402161, 4.50001335, -7.16105032, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part1.Orientation = Vector3.new(0, 180, 0)
+Part1.Position = Vector3.new(74.44021606445312, 4.50001335144043, -7.161050319671631)
+Part1.Rotation = Vector3.new(-180, 0, -180)
+Part1.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part1.Size = Vector3.new(2, 1, 1)
+Part1.BrickColor = BrickColor.new("Really black")
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Really black")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.Scale = Vector3.new(1.25, 1.25, 1.25)
+Decal3.Name = "face"
+Decal3.Parent = Part1
+Decal3.Texture = "http://www.roblox.com/asset/?id=13038247"
+Snap4.Parent = Part1
+Snap4.C0 = CFrame.new(0, -0.5, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap4.C1 = CFrame.new(0, 1, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Snap4.Part0 = Part1
+Snap4.Part1 = Part8
+Snap4.part1 = Part8
+Weld5.Name = "HeadWeld"
+Weld5.Parent = Part1
+Weld5.C0 = CFrame.new(0, 0.5, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld5.C1 = CFrame.new(0, -0.150000006, 0.289999992, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld5.Part0 = Part1
+Weld5.Part1 = Part29
+Weld5.part1 = Part29
+Weld6.Name = "HeadWeld"
+Weld6.Parent = Part1
+Weld6.C0 = CFrame.new(0, 0.5, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld6.C1 = CFrame.new(0, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld6.Part0 = Part1
+Weld6.Part1 = Part25
+Weld6.part1 = Part25
+Weld7.Name = "HeadWeld"
+Weld7.Parent = Part1
+Weld7.C0 = CFrame.new(0, 0.5, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld7.C1 = CFrame.new(1, 0.400000006, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld7.Part0 = Part1
+Weld7.Part1 = Part34
+Weld7.part1 = Part34
+Part8.Name = "Torso"
+Part8.Parent = Model0
+Part8.CFrame = CFrame.new(74.4402161, 3.00001335, -7.16105032, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part8.Orientation = Vector3.new(0, 180, 0)
+Part8.Position = Vector3.new(74.44021606445312, 3.0000133514404297, -7.161050319671631)
+Part8.Rotation = Vector3.new(-180, 0, -180)
+Part8.Color = Color3.new(0.843137, 0.772549, 0.603922)
+Part8.Size = Vector3.new(2, 2, 1)
+Part8.BrickColor = BrickColor.new("Brick yellow")
+Part8.LeftParamA = 0
+Part8.LeftParamB = 0
+Part8.LeftSurface = Enum.SurfaceType.Weld
+Part8.RightParamA = 0
+Part8.RightParamB = 0
+Part8.RightSurface = Enum.SurfaceType.Weld
+Part8.brickColor = BrickColor.new("Brick yellow")
+Decal9.Name = "roblox"
+Decal9.Parent = Part8
+Decal9.Texture = "http://www.roblox.com/asset/?id=41045617"
+Motor6D10.Name = "Neck"
+Motor6D10.Parent = Part8
+Motor6D10.MaxVelocity = 0.10000000149011612
+Motor6D10.C0 = CFrame.new(0, 1, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Motor6D10.C1 = CFrame.new(0, -0.5, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Motor6D10.Part0 = Part8
+Motor6D10.Part1 = Part1
+Motor6D10.part1 = Part1
+Motor6D11.Name = "Right Hip"
+Motor6D11.Parent = Part8
+Motor6D11.MaxVelocity = 0.10000000149011612
+Motor6D11.C0 = CFrame.new(1, -1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Motor6D11.C1 = CFrame.new(0.5, 1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Motor6D11.Part0 = Part8
+Motor6D11.Part1 = Part18
+Motor6D11.part1 = Part18
+Motor6D12.Name = "Right Shoulder"
+Motor6D12.Parent = Part8
+Motor6D12.MaxVelocity = 0.10000000149011612
+Motor6D12.C0 = CFrame.new(1, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Motor6D12.C1 = CFrame.new(-0.5, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Motor6D12.Part0 = Part8
+Motor6D12.Part1 = Part16
+Motor6D12.part1 = Part16
+Motor6D13.Name = "Left Shoulder"
+Motor6D13.Parent = Part8
+Motor6D13.MaxVelocity = 0.10000000149011612
+Motor6D13.C0 = CFrame.new(-1, 0.5, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D13.C1 = CFrame.new(0.5, 0.5, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D13.Part0 = Part8
+Motor6D13.Part1 = Part15
+Motor6D13.part1 = Part15
+Motor6D14.Name = "Left Hip"
+Motor6D14.Parent = Part8
+Motor6D14.MaxVelocity = 0.10000000149011612
+Motor6D14.C0 = CFrame.new(-1, -1, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D14.C1 = CFrame.new(-0.5, 1, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Motor6D14.Part0 = Part8
+Motor6D14.Part1 = Part17
+Motor6D14.part1 = Part17
+Part15.Name = "Left Arm"
+Part15.Parent = Model0
+Part15.CFrame = CFrame.new(75.9402161, 3.00001335, -7.16105032, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part15.Orientation = Vector3.new(0, 180, 0)
+Part15.Position = Vector3.new(75.94021606445312, 3.0000133514404297, -7.161050319671631)
+Part15.Rotation = Vector3.new(-180, 0, -180)
+Part15.Color = Color3.new(0.843137, 0.772549, 0.603922)
+Part15.Size = Vector3.new(1, 2, 1)
+Part15.BrickColor = BrickColor.new("Brick yellow")
+Part15.CanCollide = false
+Part15.brickColor = BrickColor.new("Brick yellow")
+Part16.Name = "Right Arm"
+Part16.Parent = Model0
+Part16.CFrame = CFrame.new(72.9402161, 3.00001335, -7.16105032, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part16.Orientation = Vector3.new(0, 180, 0)
+Part16.Position = Vector3.new(72.94021606445312, 3.0000133514404297, -7.161050319671631)
+Part16.Rotation = Vector3.new(-180, 0, -180)
+Part16.Color = Color3.new(0.843137, 0.772549, 0.603922)
+Part16.Size = Vector3.new(1, 2, 1)
+Part16.BrickColor = BrickColor.new("Brick yellow")
+Part16.CanCollide = false
+Part16.brickColor = BrickColor.new("Brick yellow")
+Part17.Name = "Left Leg"
+Part17.Parent = Model0
+Part17.CFrame = CFrame.new(74.9402161, 1.00001335, -7.16105032, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part17.Orientation = Vector3.new(0, 180, 0)
+Part17.Position = Vector3.new(74.94021606445312, 1.0000133514404297, -7.161050319671631)
+Part17.Rotation = Vector3.new(-180, 0, -180)
+Part17.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part17.Size = Vector3.new(1, 2, 1)
+Part17.BottomSurface = Enum.SurfaceType.Smooth
+Part17.BrickColor = BrickColor.new("Really black")
+Part17.CanCollide = false
+Part17.brickColor = BrickColor.new("Really black")
+Part18.Name = "Right Leg"
+Part18.Parent = Model0
+Part18.CFrame = CFrame.new(73.9402161, 1.00001335, -7.16105032, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part18.Orientation = Vector3.new(0, 180, 0)
+Part18.Position = Vector3.new(73.94021606445312, 1.0000133514404297, -7.161050319671631)
+Part18.Rotation = Vector3.new(-180, 0, -180)
+Part18.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part18.Size = Vector3.new(1, 2, 1)
+Part18.BottomSurface = Enum.SurfaceType.Smooth
+Part18.BrickColor = BrickColor.new("Really black")
+Part18.CanCollide = false
+Part18.brickColor = BrickColor.new("Really black")
+Humanoid19.Parent = Model0
+Humanoid19.LeftLeg = Part17
+Humanoid19.RightLeg = Part18
+Humanoid19.Torso = Part8
+Script20.Name = "Sound"
+Script20.Parent = Model0
+table.insert(cors,sandbox(Script20,function()
+-- util
+
+function waitForChild(parent, childName)
+	local child = parent:findFirstChild(childName)
+	if child then return child end
+	while true do
+		child = parent.ChildAdded:wait()
+		if child.Name==childName then return child end
+	end
+end
+
+function newSound(id)
+	local sound = Instance.new("Sound")
+	sound.SoundId = id
+	sound.archivable = false
+	sound.Parent = script.Parent.Head
+	return sound
+end
+
+-- declarations
+
+local sDied = newSound("rbxasset://sounds/uuhhh.wav")
+local sFallingDown = newSound("rbxasset://sounds/splat.wav")
+local sFreeFalling = newSound("rbxasset://sounds/swoosh.wav")
+local sGettingUp = newSound("rbxasset://sounds/hit.wav")
+local sJumping = newSound("rbxasset://sounds/button.wav")
+local sRunning = newSound("rbxasset://sounds/bfsl-minifigfoots1.mp3")
+sRunning.Looped = true
+
+local Figure = script.Parent
+local Head = waitForChild(Figure, "Head")
+local Humanoid = waitForChild(Figure, "Humanoid")
+
+-- functions
+
+function onDied()
+	sDied:Play()
+end
+
+function onState(state, sound)
+	if state then
+		sound:Play()
+	else
+		sound:Pause()
+	end
+end
+
+function onRunning(speed)
+	if speed>0 then
+		sRunning:Play()
+	else
+		sRunning:Pause()
+	end
+end
+
+-- connect up
+
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(function(state) onState(state, sJumping) end)
+Humanoid.GettingUp:connect(function(state) onState(state, sGettingUp) end)
+Humanoid.FreeFalling:connect(function(state) onState(state, sFreeFalling) end)
+Humanoid.FallingDown:connect(function(state) onState(state, sFallingDown) end)
+
+end))
+Script21.Name = "RobloxTeam"
+Script21.Parent = Model0
+table.insert(cors,sandbox(Script21,function()
+function waitForChild(parent, childName)
+	local child = parent:findFirstChild(childName)
+	if child then return child end
+	while true do
+		child = parent.ChildAdded:wait()
+		if child.Name==childName then return child end
+	end
+end
+
+-- ANIMATION
+
+-- declarations
+
+local Figure = script.Parent
+local Torso = waitForChild(Figure, "Torso")
+local RightShoulder = waitForChild(Torso, "Right Shoulder")
+local LeftShoulder = waitForChild(Torso, "Left Shoulder")
+local RightHip = waitForChild(Torso, "Right Hip")
+local LeftHip = waitForChild(Torso, "Left Hip")
+local Neck = waitForChild(Torso, "Neck")
+local Humanoid = waitForChild(Figure, "Humanoid")
+local pose = "Standing"
+
+local toolAnim = "None"
+local toolAnimTime = 0
+
+-- functions
+
+function onRunning(speed)
+	if speed>0 then
+		pose = "Running"
+	else
+		pose = "Standing"
+	end
+end
+
+function onDied()
+	pose = "Dead"
+end
+
+function onJumping()
+	pose = "Jumping"
+end
+
+function onClimbing()
+	pose = "Climbing"
+end
+
+function onGettingUp()
+	pose = "GettingUp"
+end
+
+function onFreeFall()
+	pose = "FreeFall"
+end
+
+function onFallingDown()
+	pose = "FallingDown"
+end
+
+function onSeated()
+	pose = "Seated"
+end
+
+function onPlatformStanding()
+	pose = "PlatformStanding"
+end
+
+function moveJump()
+	RightShoulder.MaxVelocity = 0.5
+	LeftShoulder.MaxVelocity = 0.5
+	RightShoulder.DesiredAngle = 3.14
+	LeftShoulder.DesiredAngle = -3.14
+	RightHip.DesiredAngle = 0
+	LeftHip.DesiredAngle = 0
+end
+
+
+-- same as jump for now
+
+function moveFreeFall()
+	RightShoulder.MaxVelocity = 0.5
+	LeftShoulder.MaxVelocity = 0.5
+	RightShoulder.DesiredAngle = 3.14
+	LeftShoulder.DesiredAngle = -3.14
+	RightHip.DesiredAngle = 0
+	LeftHip.DesiredAngle = 0
+end
+
+function moveSit()
+	RightShoulder.MaxVelocity = 0.15
+	LeftShoulder.MaxVelocity = 0.15
+	RightShoulder.DesiredAngle = 3.14 /2
+	LeftShoulder.DesiredAngle = -3.14 /2
+	RightHip.DesiredAngle = 3.14 /2
+	LeftHip.DesiredAngle = -3.14 /2
+end
+
+function getTool()	
+	for _, kid in ipairs(Figure:GetChildren()) do
+		if kid.className == "Tool" then return kid end
+	end
+	return nil
+end
+
+function getToolAnim(tool)
+	for _, c in ipairs(tool:GetChildren()) do
+		if c.Name == "toolanim" and c.className == "StringValue" then
+			return c
+		end
+	end
+	return nil
+end
+
+function animateTool()
+	
+	if (toolAnim == "None") then
+		RightShoulder.DesiredAngle = 1.57
+		return
+	end
+
+	if (toolAnim == "Slash") then
+		RightShoulder.MaxVelocity = 0.5
+		RightShoulder.DesiredAngle = 0
+		return
+	end
+
+	if (toolAnim == "Lunge") then
+		RightShoulder.MaxVelocity = 0.5
+		LeftShoulder.MaxVelocity = 0.5
+		RightHip.MaxVelocity = 0.5
+		LeftHip.MaxVelocity = 0.5
+		RightShoulder.DesiredAngle = 1.57
+		LeftShoulder.DesiredAngle = 1.0
+		RightHip.DesiredAngle = 1.57
+		LeftHip.DesiredAngle = 1.0
+		return
+	end
+end
+
+function move(time)
+	local amplitude
+	local frequency
+  
+	if (pose == "Jumping") then
+		moveJump()
+		return
+	end
+
+	if (pose == "FreeFall") then
+		moveFreeFall()
+		return
+	end
+ 
+	if (pose == "Seated") then
+		moveSit()
+		return
+	end
+
+	local climbFudge = 0
+	
+	if (pose == "Running") then
+		RightShoulder.MaxVelocity = 0.15
+		LeftShoulder.MaxVelocity = 0.15
+		amplitude = 1
+		frequency = 9
+	elseif (pose == "Climbing") then
+		RightShoulder.MaxVelocity = 0.5 
+		LeftShoulder.MaxVelocity = 0.5
+		amplitude = 1
+		frequency = 9
+		climbFudge = 3.14
+	else
+		amplitude = 0.1
+		frequency = 1
+	end
+
+	desiredAngle = amplitude * math.sin(time*frequency)
+
+	RightShoulder.DesiredAngle = desiredAngle + climbFudge
+	LeftShoulder.DesiredAngle = desiredAngle - climbFudge
+	RightHip.DesiredAngle = -desiredAngle
+	LeftHip.DesiredAngle = -desiredAngle
+
+
+	local tool = getTool()
+
+	if tool then
+	
+		animStringValueObject = getToolAnim(tool)
+
+		if animStringValueObject then
+			toolAnim = animStringValueObject.Value
+			-- message recieved, delete StringValue
+			animStringValueObject.Parent = nil
+			toolAnimTime = time + .3
+		end
+
+		if time > toolAnimTime then
+			toolAnimTime = 0
+			toolAnim = "None"
+		end
+
+		animateTool()
+
+		
+	else
+		toolAnim = "None"
+		toolAnimTime = 0
+	end
+end
+
+
+-- connect events
+
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(onJumping)
+Humanoid.Climbing:connect(onClimbing)
+Humanoid.GettingUp:connect(onGettingUp)
+Humanoid.FreeFalling:connect(onFreeFall)
+Humanoid.FallingDown:connect(onFallingDown)
+Humanoid.Seated:connect(onSeated)
+Humanoid.PlatformStanding:connect(onPlatformStanding)
+
+-- main program
+
+local runService = game:service("RunService");
+
+while Figure.Parent~=nil do
+	local _, time = wait(0.1)
+	move(time)
+end
+
+end))
+Script22.Name = "Health"
+Script22.Parent = Model0
+table.insert(cors,sandbox(Script22,function()
+function waitForChild(parent, childName)
+        local child = parent:findFirstChild(childName)
+        if child then return child end
+        while true do
+        child = parent.ChildAdded:wait()
+        if child.Name==childName then return child end
+        end
+        end
+
+        -- declarations
+
+        local Figure = script.Parent
+        local Head = waitForChild(Figure, "Head")
+        local Humanoid = waitForChild(Figure, "Humanoid")
+
+        -- regeneration
+        while true do
+        local s = wait(1)
+        local health = Humanoid.Health
+        if health > 0 and health < Humanoid.MaxHealth then
+        health = health + 0.01 * s * Humanoid.MaxHealth
+        if health * 1.05 < Humanoid.MaxHealth then
+        Humanoid.Health = health
+        else
+        Humanoid.Health = Humanoid.MaxHealth
+        end
+        end
+        end
+      
+end))
+BodyColors23.Parent = Model0
+BodyColors23.HeadColor = BrickColor.new("Really black")
+BodyColors23.HeadColor3 = Color3.new(0.0666667, 0.0666667, 0.0666667)
+BodyColors23.LeftArmColor = BrickColor.new("Brick yellow")
+BodyColors23.LeftArmColor3 = Color3.new(0.843137, 0.772549, 0.603922)
+BodyColors23.LeftLegColor = BrickColor.new("Really black")
+BodyColors23.LeftLegColor3 = Color3.new(0.0666667, 0.0666667, 0.0666667)
+BodyColors23.RightArmColor = BrickColor.new("Brick yellow")
+BodyColors23.RightArmColor3 = Color3.new(0.843137, 0.772549, 0.603922)
+BodyColors23.RightLegColor = BrickColor.new("Really black")
+BodyColors23.RightLegColor3 = Color3.new(0.0666667, 0.0666667, 0.0666667)
+BodyColors23.TorsoColor = BrickColor.new("Brick yellow")
+BodyColors23.TorsoColor3 = Color3.new(0.843137, 0.772549, 0.603922)
+Hat24.Name = "Future Bandit"
+Hat24.Parent = Model0
+Hat24.AttachmentPoint = CFrame.new(0, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Hat24.AttachmentPos = Vector3.new(0, 0.699999988079071, 0)
+Part25.Name = "Handle"
+Part25.Parent = Hat24
+Part25.CFrame = CFrame.new(74.4402161, 4.30001354, -7.16105032, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part25.Orientation = Vector3.new(0, 180, 0)
+Part25.Position = Vector3.new(74.44021606445312, 4.300013542175293, -7.161050319671631)
+Part25.Rotation = Vector3.new(-180, 0, -180)
+Part25.Size = Vector3.new(2, 2, 2)
+Part25.BottomSurface = Enum.SurfaceType.Smooth
+Part25.CanCollide = false
+Part25.Locked = true
+Part25.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh26.Parent = Part25
+SpecialMesh26.MeshId = "http://www.roblox.com/asset/?id=17424903"
+SpecialMesh26.Scale = Vector3.new(1.0499999523162842, 1.0499999523162842, 1.0499999523162842)
+SpecialMesh26.TextureId = "http://www.roblox.com/asset/?id= 17424892"
+SpecialMesh26.MeshType = Enum.MeshType.FileMesh
+Pants27.Name = "Pants"
+Pants27.Parent = Model0
+Pants27.PantsTemplate = "http://www.roblox.com/asset/?id=18870125"
+Hat28.Name = "Lua Cap"
+Hat28.Parent = Model0
+Hat28.AttachmentPoint = CFrame.new(0, -0.150000006, 0.289999992, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Hat28.AttachmentPos = Vector3.new(0, -0.15000000596046448, 0.28999999165534973)
+Part29.Name = "Handle"
+Part29.Parent = Hat28
+Part29.CFrame = CFrame.new(74.4402161, 5.15001345, -6.87105036, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part29.Orientation = Vector3.new(0, 180, 0)
+Part29.Position = Vector3.new(74.44021606445312, 5.150013446807861, -6.8710503578186035)
+Part29.Rotation = Vector3.new(-180, 0, -180)
+Part29.Size = Vector3.new(1, 1, 2)
+Part29.BottomSurface = Enum.SurfaceType.Smooth
+Part29.CanCollide = false
+Part29.Locked = true
+Part29.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh30.Parent = Part29
+SpecialMesh30.MeshId = "http://www.roblox.com/asset/?id=22944290"
+SpecialMesh30.Scale = Vector3.new(1, 1, 0.9700000286102295)
+SpecialMesh30.TextureId = "http://www.roblox.com/asset/?id=22944281"
+SpecialMesh30.MeshType = Enum.MeshType.FileMesh
+Shirt31.Name = "Shirt"
+Shirt31.Parent = Model0
+Shirt31.ShirtTemplate = "http://www.roblox.com/asset/?id=30620060"
+ShirtGraphic32.Parent = Model0
+ShirtGraphic32.Graphic = "http://www.roblox.com/asset/?id=41045617"
+Hat33.Name = "xmas past"
+Hat33.Parent = Model0
+Hat33.AttachmentPoint = CFrame.new(1, 0.400000006, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Hat33.AttachmentPos = Vector3.new(1, 0.4000000059604645, 0)
+Part34.Name = "Handle"
+Part34.Parent = Hat33
+Part34.CFrame = CFrame.new(75.4402161, 4.60001326, -7.16105032, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part34.Orientation = Vector3.new(0, 180, 0)
+Part34.Position = Vector3.new(75.44021606445312, 4.600013256072998, -7.161050319671631)
+Part34.Rotation = Vector3.new(-180, 0, -180)
+Part34.Size = Vector3.new(1, 1, 2)
+Part34.BottomSurface = Enum.SurfaceType.Smooth
+Part34.CanCollide = false
+Part34.Locked = true
+Part34.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh35.Parent = Part34
+SpecialMesh35.MeshId = "http://www.roblox.com/asset/?id=42578654"
+SpecialMesh35.Scale = Vector3.new(1.5, 1.5, 1.5)
+SpecialMesh35.TextureId = "http://www.roblox.com/asset/?id=42578631"
+SpecialMesh35.MeshType = Enum.MeshType.FileMesh
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
