@@ -1,0 +1,53 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+Decal2 = Instance.new("Decal")
+Script3 = Instance.new("Script")
+Tool0.Parent = owner.Backpack
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-96.9000015, 2.50001287, 122.299995, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(-96.9000015258789, 2.5000128746032715, 122.29999542236328)
+Part1.Size = Vector3.new(5, 5, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Decal2.Name = "Void Script Builder Rip Off"
+Decal2.Parent = Part1
+Decal2.Texture = "http://www.roblox.com/asset/?id=1356919294"
+Script3.Name = "Damage Script"
+Script3.Parent = Part1
+table.insert(cors,sandbox(Script3,function()
+function onTouched(hit)
+        local human = hit.Parent:findFirstChild("Humanoid")
+        if (human ~= nil) then
+                human.Health = human.Health - 1000000000000000 -- Change the amount to change the damage.
+        end
+end
+script.Parent.Touched:connect(onTouched)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
