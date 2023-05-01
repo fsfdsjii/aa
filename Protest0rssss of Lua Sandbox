@@ -1,0 +1,409 @@
+local blacklisted = nil
+local canhurt = false
+local function chatfunc(text)
+local chat = coroutine.wrap(function()
+if owner.Character.Head:FindFirstChild("TalkingBillBoard")~= nil then
+owner.Character.Head:FindFirstChild("TalkingBillBoard"):destroy()
+end
+local naeeym2 = Instance.new("BillboardGui",owner.Character.Head)
+naeeym2.Size = UDim2.new(0, 500, 0, 500)
+naeeym2.StudsOffset = Vector3.new(0,3,0)
+naeeym2.Name = "TalkingBillBoard"
+local tecks2 = Instance.new("TextBox",naeeym2)
+tecks2.BackgroundTransparency = 1
+tecks2.BorderSizePixel = 0
+tecks2.Text = ""
+tecks2.Font = "Bodoni"
+tecks2.TextScaled = true
+tecks2.TextSize = 35
+tecks2.TextStrokeTransparency = 0
+tecks2.TextColor3 = Color3.new(1,1,1)
+tecks2.TextStrokeColor3 = Color3.new()
+tecks2.Size = UDim2.new(1,0,0.5,0)
+for c = 1,string.len(text),1 do
+tecks2.Text = string.sub(text,1,c)
+task.wait(.05)
+end
+task.wait(1.75)
+for i = 1, 50 do
+task.wait()
+tecks2.TextTransparency += .04
+tecks2.TextStrokeTransparency += .04
+end
+naeeym2:Destroy()
+end)
+chat()
+end
+
+local function getplr(stringg)
+    for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+         if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+               return v
+         end
+    end
+end
+owner.Chatted:Connect(function(msg)
+if string.lower(string.sub(msg, 1, 4)) == "!get" then
+local bl = string.lower(string.sub(msg, 6, 100))
+local guy = getplr(bl)
+if guy then
+pcall(function()
+chatfunc("GUYS " ..guy.Name.. " IS SUPPORTING EW_001 GET EM!!")
+end)
+blacklisted = guy
+end
+elseif string.lower(msg) == "okay guys stop attacking" then
+chatfunc(string.lower(msg).. " " ..blacklisted.Name)
+blacklisted = nil
+elseif string.lower(msg) == "swarm mode" then
+canhurt = false
+pcall(function()
+chatfunc("guys dont hurt em just swarm em")
+end)
+elseif string.lower(msg) == "hurt mode" then
+canhurt = true
+pcall(function()
+chatfunc("guys hurt em")
+end)
+end
+end)
+local HttpService = game:GetService("HttpService")
+local cfs = {}
+local hums = {}
+local idiot = game:GetService("Players"):GetNameFromUserIdAsync(1282751190)
+local anim = HttpService:GetAsync("https://pastebin.com/raw/9m1uKhtc", true)
+local a = Instance.new("Animation")
+a.AnimationId = 'rbxassetid://182393478'
+local a2 = Instance.new("Animation")
+a2.AnimationId = 'rbxassetid://129967390'
+local function createplr(msg)
+local randomplr = math.random(1, 1000000000)
+local name
+pcall(function()
+name = game:GetService("Players"):GetNameFromUserIdAsync(randomplr)
+end)
+if name == nil then name = "angry mob guy" end
+ local Model0 = Instance.new("Model")
+    local Part1 = Instance.new("SpawnLocation")
+    local SpecialMesh2 = Instance.new("SpecialMesh")
+    local Part4 = Instance.new("SpawnLocation")
+    local Part5 = Instance.new("SpawnLocation")
+    local Part6 = Instance.new("SpawnLocation")
+    local Part7 = Instance.new("SpawnLocation")
+    local Part8 = Instance.new("SpawnLocation")
+    Part1.Enabled = false
+    Part4.Enabled = false
+    Part5.Enabled = false
+    Part6.Enabled = false
+    Part7.Enabled = false
+    Part8.Enabled = false
+    local Humanoid9 = Instance.new("Humanoid")
+    Model0.Name = name
+    Model0.Parent = script
+    Model0.PrimaryPart = Part1
+    Part1.Name = "Head"
+    Part1.Parent = Model0
+    Part1.CFrame = CFrame.new(14.4682684, 4.49999714, 13.7751303, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    Part1.Position = Vector3.new(14.4682684, 4.49999714, 13.7751303)
+    Part1.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+    Part1.Size = Vector3.new(2, 1, 1)
+    Part1.BrickColor = BrickColor.new("Really black")
+    Part1.CanCollide = true
+    Part1.TopSurface = Enum.SurfaceType.Smooth
+    Part1.brickColor = BrickColor.new("Really red")
+    Part1.FormFactor = Enum.FormFactor.Symmetric
+    Part1.formFactor = Enum.FormFactor.Symmetric
+    SpecialMesh2.Parent = Part1
+    SpecialMesh2.Scale = Vector3.new(1.25, 1.25, 1.25)
+    Part4.Name = "Torso"
+    Part4.Parent = Model0
+    Part4.CFrame = CFrame.new(14.4682684, 2.99999905, 13.7751303, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    Part4.Position = Vector3.new(14.4682684, 2.99999905, 13.7751303)
+    Part4.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+    Part4.Size = Vector3.new(2, 2, 1)
+    Part4.BrickColor = BrickColor.new("Brown")
+    Part4.CanCollide = true
+    Part4.LeftParamA = 0
+    Part4.LeftParamB = 0
+    Part4.LeftSurface = Enum.SurfaceType.Smooth
+    Part4.RightParamA = 0
+    Part4.RightParamB = 0
+    Part4.RightSurface = Enum.SurfaceType.Smooth
+    Part4.brickColor = BrickColor.new("Really red")
+    Part4.FormFactor = Enum.FormFactor.Symmetric
+    Part4.formFactor = Enum.FormFactor.Symmetric
+    Part5.Name = "Left Arm"
+    Part5.Parent = Model0
+    Part5.CFrame = CFrame.new(12.9682684, 2.99999905, 13.7751303, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    Part5.Position = Vector3.new(12.9682684, 2.99999905, 13.7751303)
+    Part5.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+    Part5.Size = Vector3.new(1, 2, 1)
+    Part5.BrickColor = BrickColor.new("Really black")
+    Part5.CanCollide = true
+    Part5.brickColor = BrickColor.new("Really red")
+    Part5.FormFactor = Enum.FormFactor.Symmetric
+    Part5.formFactor = Enum.FormFactor.Symmetric
+    Part6.Name = "Right Arm"
+    Part6.Parent = Model0
+    Part6.CFrame = CFrame.new(15.9682684, 2.99999905, 13.7751303, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    Part6.Position = Vector3.new(15.9682684, 2.99999905, 13.7751303)
+    Part6.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+    Part6.Size = Vector3.new(1, 2, 1)
+    Part6.BrickColor = BrickColor.new("Really black")
+    Part6.CanCollide = true
+    Part6.brickColor = BrickColor.new("Really red")
+    Part6.FormFactor = Enum.FormFactor.Symmetric
+    Part6.formFactor = Enum.FormFactor.Symmetric
+    Part7.Name = "Left Leg"
+    Part7.Parent = Model0
+    Part7.CFrame = CFrame.new(13.9682684, 1, 13.7751303, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    Part7.Position = Vector3.new(13.9682684, 1, 13.7751303)
+    Part7.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+    Part7.Size = Vector3.new(1, 2, 1)
+    Part7.BottomSurface = Enum.SurfaceType.Smooth
+    Part7.BrickColor = BrickColor.new("Really black")
+    Part7.CanCollide = true
+    Part7.brickColor = BrickColor.new("Really red")
+    Part7.FormFactor = Enum.FormFactor.Symmetric
+    Part7.formFactor = Enum.FormFactor.Symmetric
+    Part8.Name = "Right Leg"
+    Part8.Parent = Model0
+    Part8.CFrame = CFrame.new(14.9682684, 1, 13.7751303, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    Part8.Position = Vector3.new(14.9682684, 1, 13.7751303)
+    Part8.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+    Part8.Size = Vector3.new(1, 2, 1)
+    Part8.BottomSurface = Enum.SurfaceType.Smooth
+    Part8.BrickColor = BrickColor.new("Really black")
+    Part8.CanCollide = true
+    Part8.brickColor = BrickColor.new("Really red")
+    Part8.FormFactor = Enum.FormFactor.Symmetric
+    Part8.formFactor = Enum.FormFactor.Symmetric
+local rl = Part8
+local ll = Part7
+local ra = Part6
+local la = Part5
+local tors = Part4
+local head = Part1
+local gr = CFrame.new(math.random(-50,50),0,math.random(-50,50))
+tors.CFrame = owner.Character.HumanoidRootPart.CFrame * gr
+local nc = Instance.new("Motor6D" , tors)
+nc.Name = 'Neck'
+nc.Part0 = tors
+nc.Part1 = head
+nc.C0 = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+nc.C1 = CFrame.new(0, -0.5, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+nc.MaxVelocity = 0.10000000149012
+local rs = Instance.new("Motor6D" , tors)
+rs.Name = 'Right Shoulder'
+rs.Part0 = tors
+rs.Part1 = ra
+rs.C0 = CFrame.new(1, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+rs.C1 = CFrame.new(-0.5, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+rs.MaxVelocity = 0.15000000596046
+local ls = Instance.new("Motor6D" , tors)
+ls.Name = 'Left Shoulder'
+ls.Part0 = tors
+ls.Part1 = la
+ls.C0 = CFrame.new(-1, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+ls.C1 = CFrame.new(0.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+ls.MaxVelocity = 0.15000000596046
+local rh = Instance.new("Motor6D" , tors)
+rh.Name = 'Right Hip'
+rh.Part0 = tors
+rh.Part1 = rl
+rh.C0 = CFrame.new(1, -1, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+rh.C1 = CFrame.new(0.5, 1, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+rh.MaxVelocity = 0.10000000149012
+local lh = Instance.new("Motor6D" , tors)
+lh.Name = 'Left Hip'
+lh.Part0 = tors
+lh.Part1 = ll
+lh.C0 = CFrame.new(-1, -1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+lh.C1 = CFrame.new(-0.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+lh.MaxVelocity = 0.10000000149012
+Humanoid9.Parent = Model0
+Humanoid9.LeftLeg = ll
+Humanoid9.RightLeg = rl
+Humanoid9.DisplayName = name
+pcall(function()
+Humanoid9:ApplyDescription(game:GetService("Players"):GetHumanoidDescriptionFromUserId(randomplr))
+end)
+Humanoid9.Torso = Part4
+local died = false
+workspace.DescendantRemoving:Connect(function(g)
+if g == Humanoid9 and died == false then
+died = true
+game:GetService("Debris"):AddItem(Model0, 3)
+for i , v in pairs(hums) do
+if v == Humanoid9 then
+table.remove(hums, i)
+table.remove(cfs, i)
+end
+end
+end
+end)
+Humanoid9.Died:Connect(function()
+died = true
+game:GetService("Debris"):AddItem(Model0, 3)
+for i , v in pairs(hums) do
+if v == Humanoid9 then
+table.remove(hums, i)
+table.remove(cfs, i)
+end
+end
+end)
+local tn = Humanoid9:LoadAnimation(a)
+local ts = Humanoid9:LoadAnimation(a2)
+tn:Play()
+local db = false
+for i, v in pairs(Model0:GetDescendants()) do
+if v:IsA("BasePart") then
+v.Touched:Connect(function(hit)
+pcall(function()
+if hit:FindFirstAncestorOfClass("Model") and hit:FindFirstAncestorOfClass("Model"):FindFirstChildOfClass("Humanoid") and (hit:FindFirstAncestorOfClass("Model").Name == idiot or hit:FindFirstAncestorOfClass("Model").Name == blacklisted.Name) and db == false then
+if canhurt == true then
+db = true
+hit:FindFirstAncestorOfClass("Model"):FindFirstChildOfClass("Humanoid").Health -= 10
+ts:Play()
+task.wait(3)
+db = false
+end
+end
+end)
+end)
+end
+end
+pcall(function()
+local face = Instance.new("Texture", Model0.Head)
+face.Texture = owner.Character.Head.face.Texture
+face.StudsPerTileU = 100
+face.StudsPerTileV = 100
+end)
+local g = Instance.new("SpawnLocation" , Model0)
+g.Enabled = false
+g.Material = "WoodPlanks"
+g.BrickColor = BrickColor.new("Reddish brown")
+g.Size = Vector3.new(0.4, 4.8, 0.2)
+local g2 = Instance.new("SpawnLocation" , Model0)
+g2.Enabled = false
+g2.Material = "WoodPlanks"
+g2.BrickColor = BrickColor.new("Reddish brown")
+g2.Size = Vector3.new(4, 2.2, 0.2)
+local w = Instance.new("Weld" , g2)
+w.Part0 = g
+w.Part1 = g2
+w.C0 = CFrame.new(0.2, -2.4, -0.1)
+w.C1 = CFrame.new(0.2, -3.5, 0.1)
+local w = Instance.new("Weld" , Model0)
+w.Part0 = g
+w.Part1 = ra
+w.C0 = CFrame.new(0,-2,1) * CFrame.Angles(math.rad(90),0,0)
+pcall(function()
+local ga = Instance.new("SurfaceGui")
+ga.Parent = g2
+ga.Adornee = g2
+ga.Face = 'Front'
+ga.Name = owner.Name.. "'s Protest GUI"
+ga.Active = true
+ga.CanvasSize = Vector2.new(375, 195)
+local ack = Instance.new("TextBox" , ga)
+ack.BackgroundTransparency = 1
+ack.BackgroundColor3 = Color3.new(1,1,1)
+ack.Font = 'Fantasy'
+ack.Text = msg
+ack.TextScaled = true
+ack.AnchorPoint = Vector2.new(.5,.5)
+ack.Position = UDim2.new(.5,0,.5,0)
+ack.Size = UDim2.new(0, 350, 0, 170)
+ack.TextStrokeTransparency = 0
+ack.TextColor3 = Color3.new(1,1,1)
+ack.TextStrokeColor3 = Color3.new()
+ack.MultiLine = true
+end)
+NS(anim, Model0)
+for i ,v in pairs(Model0:GetChildren()) do
+if v:IsA("BasePart") then
+v.CanTouch = false
+end
+end
+return gr, Humanoid9
+end
+local angrymessages = {"stop logging people!!" , "ban those bad vsb users!!" , "fix raycasts!!", "ban those fakechars!!", "ew_001 fix your game!!" , "ew_001 is fat!!"}
+local sign = Instance.new("Tool" , owner.Backpack)
+sign.Name = "protest sign"
+sign.ToolTip = angrymessages[math.random(1, #angrymessages)]
+sign.Grip = CFrame.new(0,-2,0)
+local g = Instance.new("SpawnLocation" , sign)
+g.Enabled = false
+g.Material = "WoodPlanks"
+g.BrickColor = BrickColor.new("Reddish brown")
+g.Size = Vector3.new(0.4, 4.8, 0.2)
+g.Name = "Handle"
+local g2 = Instance.new("SpawnLocation" , g)
+g2.Enabled = false
+g2.Material = "WoodPlanks"
+g2.BrickColor = BrickColor.new("Reddish brown")
+g2.Size = Vector3.new(4, 2.2, 0.2)
+local w = Instance.new("Weld" , g2)
+w.Part0 = g
+w.Part1 = g2
+w.C0 = CFrame.new(0.2, -2.4, -0.1)
+w.C1 = CFrame.new(0.2, -3.5, 0.1)
+pcall(function()
+local ga = Instance.new("SurfaceGui")
+ga.Parent = g2
+ga.Adornee = g2
+ga.Face = 'Front'
+ga.Name = 'GUI'
+ga.Active = true
+ga.CanvasSize = Vector2.new(375, 195)
+local ack = Instance.new("TextBox" , ga)
+ack.BackgroundTransparency = 1
+ack.BackgroundColor3 = Color3.new(1,1,1)
+ack.Font = 'Fantasy'
+ack.Text = angrymessages[math.random(1, #angrymessages)]
+ack.TextScaled = true
+ack.AnchorPoint = Vector2.new(.5,.5)
+ack.Position = UDim2.new(.5,0,.5,0)
+ack.Size = UDim2.new(0, 350, 0, 170)
+ack.TextStrokeTransparency = 0
+ack.TextColor3 = Color3.new(1,1,1)
+ack.TextStrokeColor3 = Color3.new()
+ack.MultiLine = true
+end)
+local angrymob = Instance.new("Sound" , owner.Character.HumanoidRootPart)
+angrymob.SoundId = 'rbxassetid://243318563'
+angrymob.EmitterSize = 35
+angrymob.Volume = 2
+angrymob.Looped = true
+angrymob:Play()
+local amount = 30
+local guis = {}
+local doing = true
+for i = 1, amount do
+local cf, hum = createplr(angrymessages[math.random(1, #angrymessages)])
+table.insert(cfs, cf)
+table.insert(hums, hum)
+end
+doing = false
+while task.wait() do 
+pcall(function()
+if #hums ~= amount and doing == false then
+local cf, hum = createplr(angrymessages[math.random(1, #angrymessages)])
+table.insert(cfs, cf)
+table.insert(hums, hum)
+end
+for i, v in pairs(hums) do
+if blacklisted and workspace:FindFirstChild(blacklisted.Name, true) then
+v:MoveTo(workspace:FindFirstChild(blacklisted.Name, true):FindFirstChildWhichIsA("BasePart").Position)
+else
+v:MoveTo(owner.Character.HumanoidRootPart.Position + cfs[i].p)
+end
+v.Jump = owner.Character.Humanoid.Jump
+v.PlatformStand = false
+v.WalkSpeed = owner.Character.Humanoid.WalkSpeed
+v.JumpPower = owner.Character.Humanoid.JumpPower
+v.JumpHeight = owner.Character.Humanoid.JumpHeight
+end
+end)
+end
