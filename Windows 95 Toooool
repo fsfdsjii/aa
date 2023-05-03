@@ -1,0 +1,308 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Model1 = Instance.new("Model")
+Part2 = Instance.new("Part")
+Decal3 = Instance.new("Decal")
+ManualWeld4 = Instance.new("ManualWeld")
+ManualWeld5 = Instance.new("ManualWeld")
+ManualWeld6 = Instance.new("ManualWeld")
+PointLight7 = Instance.new("PointLight")
+SpotLight8 = Instance.new("SpotLight")
+Part9 = Instance.new("Part")
+ManualWeld10 = Instance.new("ManualWeld")
+ManualWeld11 = Instance.new("ManualWeld")
+PointLight12 = Instance.new("PointLight")
+SpotLight13 = Instance.new("SpotLight")
+Part14 = Instance.new("Part")
+Decal15 = Instance.new("Decal")
+ManualWeld16 = Instance.new("ManualWeld")
+ManualWeld17 = Instance.new("ManualWeld")
+ManualWeld18 = Instance.new("ManualWeld")
+PointLight19 = Instance.new("PointLight")
+SpotLight20 = Instance.new("SpotLight")
+Part21 = Instance.new("Part")
+PointLight22 = Instance.new("PointLight")
+SpotLight23 = Instance.new("SpotLight")
+Part24 = Instance.new("Part")
+PointLight25 = Instance.new("PointLight")
+SpotLight26 = Instance.new("SpotLight")
+Part27 = Instance.new("Part")
+Decal28 = Instance.new("Decal")
+PointLight29 = Instance.new("PointLight")
+SpotLight30 = Instance.new("SpotLight")
+Part31 = Instance.new("Part")
+PointLight32 = Instance.new("PointLight")
+SpotLight33 = Instance.new("SpotLight")
+Part34 = Instance.new("Part")
+Weld35 = Instance.new("Weld")
+Weld36 = Instance.new("Weld")
+Weld37 = Instance.new("Weld")
+Weld38 = Instance.new("Weld")
+Weld39 = Instance.new("Weld")
+Weld40 = Instance.new("Weld")
+Weld41 = Instance.new("Weld")
+PointLight42 = Instance.new("PointLight")
+SpotLight43 = Instance.new("SpotLight")
+Tool0.Parent = owner.Backpack
+Model1.Parent = Tool0
+Part2.Parent = Model1
+Part2.CFrame = CFrame.new(-26.0671139, 1.74500465, -25.9037247, -1, 0, -1.80300208e-06, 0, 1, 0, 1.80300208e-06, 0, -1)
+Part2.Orientation = Vector3.new(0, -180, 0)
+Part2.Position = Vector3.new(-26.067113876342773, 1.745004653930664, -25.903724670410156)
+Part2.Rotation = Vector3.new(-180, 0, -180)
+Part2.Size = Vector3.new(4, 3.490000009536743, 0.20000000298023224)
+Part2.Material = Enum.Material.SmoothPlastic
+Decal3.Parent = Part2
+Decal3.Texture = "http://www.roblox.com/asset/?id=727536319"
+Decal3.Face = Enum.NormalId.Back
+ManualWeld4.Name = "Part-to-Part Strong Joint"
+ManualWeld4.Parent = Part2
+ManualWeld4.C0 = CFrame.new(2, -1.745, 0.100000001, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+ManualWeld4.C1 = CFrame.new(0.114994049, -1.75, -0.750008583, 1.80300208e-06, 0, -1, 0, 1, 0, 1, 0, 1.80300208e-06)
+ManualWeld4.Part0 = Part2
+ManualWeld4.Part1 = Part31
+ManualWeld4.part1 = Part31
+ManualWeld5.Name = "Part-to-Part Strong Joint"
+ManualWeld5.Parent = Part2
+ManualWeld5.C0 = CFrame.new(2, -1.745, -0.100000001, -0.99999994, 0, 0, 0, 1, 0, 0, 0, -0.99999994)
+ManualWeld5.C1 = CFrame.new(-2.03000879, -0.100000001, -0.600008965, 0.999999821, 0, 1.80300174e-06, 0, 1, 0, -1.80300174e-06, 0, 0.999999821)
+ManualWeld5.Part0 = Part2
+ManualWeld5.Part1 = Part21
+ManualWeld5.part1 = Part21
+ManualWeld6.Name = "Part-to-Part Strong Joint"
+ManualWeld6.Parent = Part2
+ManualWeld6.C0 = CFrame.new(2, -1.745, -0.100000001, -0.99999994, 0, 0, 0, 1, 0, 0, 0, -0.99999994)
+ManualWeld6.C1 = CFrame.new(-2.03001213, -3.48000097, -0.600008011, 0.999999344, 0, 1.80300094e-06, 0, 1, 0, -1.80300094e-06, 0, 0.999999344)
+ManualWeld6.Part0 = Part2
+ManualWeld6.Part1 = Part24
+ManualWeld6.part1 = Part24
+PointLight7.Parent = Part2
+PointLight7.Range = 30
+PointLight7.Brightness = 0.30000001192092896
+SpotLight8.Parent = Part2
+SpotLight8.Range = 20
+SpotLight8.Brightness = 0.8999999761581421
+SpotLight8.Angle = 100
+Part9.Parent = Model1
+Part9.CFrame = CFrame.new(-23.932106, 1.75000441, -25.2336941, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part9.Position = Vector3.new(-23.932106018066406, 1.7500044107437134, -25.233694076538086)
+Part9.Size = Vector3.new(0.21000000834465027, 3.5, 1.5800000429153442)
+Part9.Material = Enum.Material.SmoothPlastic
+ManualWeld10.Name = "Part-to-Part Strong Joint"
+ManualWeld10.Parent = Part9
+ManualWeld10.C0 = CFrame.new(-0.105000004, -1.75, -0.790000021, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+ManualWeld10.C1 = CFrame.new(1.99999523, -0.100000001, -0.819980621, 0, 0, -0.999999881, 0, 1, 0, 0.999999881, 0, 0)
+ManualWeld10.Part0 = Part9
+ManualWeld10.Part1 = Part21
+ManualWeld10.part1 = Part21
+ManualWeld11.Name = "Part-to-Part Strong Joint"
+ManualWeld11.Parent = Part9
+ManualWeld11.C0 = CFrame.new(-0.105000004, -1.75, -0.790000021, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+ManualWeld11.C1 = CFrame.new(1.99999475, -3.48000097, -0.819979668, 0, 0, -0.999999523, 0, 1, 0, 0.999999523, 0, 0)
+ManualWeld11.Part0 = Part9
+ManualWeld11.Part1 = Part24
+ManualWeld11.part1 = Part24
+PointLight12.Parent = Part9
+PointLight12.Range = 30
+PointLight12.Brightness = 0.30000001192092896
+SpotLight13.Parent = Part9
+SpotLight13.Range = 20
+SpotLight13.Brightness = 0.8999999761581421
+SpotLight13.Angle = 100
+Part14.Parent = Model1
+Part14.CFrame = CFrame.new(-26.0271034, 1.74500835, -24.5137138, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part14.Position = Vector3.new(-26.027103424072266, 1.7450083494186401, -24.513713836669922)
+Part14.Size = Vector3.new(4, 3.490000009536743, 0.20000000298023224)
+Part14.Material = Enum.Material.SmoothPlastic
+Decal15.Parent = Part14
+Decal15.Texture = "http://www.roblox.com/asset/?id=727536319"
+Decal15.Face = Enum.NormalId.Back
+ManualWeld16.Name = "Part-to-Part Strong Joint"
+ManualWeld16.Parent = Part14
+ManualWeld16.C0 = CFrame.new(2, -1.745, 0.100000001, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+ManualWeld16.C1 = CFrame.new(-0.0949969292, -1.74999607, 0.819980621, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+ManualWeld16.Part0 = Part14
+ManualWeld16.Part1 = Part9
+ManualWeld16.part1 = Part9
+ManualWeld17.Name = "Part-to-Part Strong Joint"
+ManualWeld17.Parent = Part14
+ManualWeld17.C0 = CFrame.new(2, -1.745, -0.100000001, -0.99999994, 0, 0, 0, 1, 0, 0, 0, -0.99999994)
+ManualWeld17.C1 = CFrame.new(2.00999832, -0.0999960676, 0.589999199, -0.999999821, 0, 0, 0, 1, 0, 0, 0, -0.999999821)
+ManualWeld17.Part0 = Part14
+ManualWeld17.Part1 = Part21
+ManualWeld17.part1 = Part21
+ManualWeld18.Name = "Part-to-Part Strong Joint"
+ManualWeld18.Parent = Part14
+ManualWeld18.C0 = CFrame.new(2, -1.745, -0.100000001, -0.99999994, 0, 0, 0, 1, 0, 0, 0, -0.99999994)
+ManualWeld18.C1 = CFrame.new(2.00999594, -3.47999716, 0.590001106, -0.999999464, 0, 0, 0, 1, 0, 0, 0, -0.999999464)
+ManualWeld18.Part0 = Part14
+ManualWeld18.Part1 = Part24
+ManualWeld18.part1 = Part24
+PointLight19.Parent = Part14
+PointLight19.Range = 30
+PointLight19.Brightness = 0.30000001192092896
+SpotLight20.Parent = Part14
+SpotLight20.Range = 20
+SpotLight20.Brightness = 0.8999999761581421
+SpotLight20.Angle = 100
+Part21.Parent = Model1
+Part21.CFrame = CFrame.new(-26.0371017, 0.100004435, -25.2037125, 0.999999762, 0, 0, 0, 1, 0, 0, 0, 0.999999762)
+Part21.Position = Vector3.new(-26.03710174560547, 0.10000443458557129, -25.203712463378906)
+Part21.Size = Vector3.new(4, 0.20000000298023224, 1.1799999475479126)
+Part21.Material = Enum.Material.SmoothPlastic
+PointLight22.Parent = Part21
+PointLight22.Range = 30
+PointLight22.Brightness = 0.30000001192092896
+SpotLight23.Parent = Part21
+SpotLight23.Range = 20
+SpotLight23.Brightness = 0.8999999761581421
+SpotLight23.Angle = 100
+Part24.Parent = Model1
+Part24.CFrame = CFrame.new(-26.0370979, 3.4800055, -25.2037144, 0.999999404, 0, 0, 0, 1, 0, 0, 0, 0.999999404)
+Part24.Position = Vector3.new(-26.037097930908203, 3.4800055027008057, -25.20371437072754)
+Part24.Size = Vector3.new(4, 0.20000000298023224, 1.1799999475479126)
+Part24.Material = Enum.Material.SmoothPlastic
+PointLight25.Parent = Part24
+PointLight25.Range = 30
+PointLight25.Brightness = 0.30000001192092896
+SpotLight26.Parent = Part24
+SpotLight26.Range = 20
+SpotLight26.Brightness = 0.8999999761581421
+SpotLight26.Angle = 100
+Part27.Parent = Model1
+Part27.CFrame = CFrame.new(-26.4471111, 1.88000441, -25.2237167, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part27.Position = Vector3.new(-26.447111129760742, 1.8800044059753418, -25.223716735839844)
+Part27.Transparency = 1
+Part27.Size = Vector3.new(1, 1, 0.20000000298023224)
+Part27.Material = Enum.Material.SmoothPlastic
+Decal28.Parent = Part27
+Decal28.Texture = "http://www.roblox.com/asset/?id=727538699"
+Decal28.Face = Enum.NormalId.Back
+PointLight29.Parent = Part27
+PointLight29.Range = 30
+PointLight29.Brightness = 0.30000001192092896
+SpotLight30.Parent = Part27
+SpotLight30.Range = 20
+SpotLight30.Brightness = 0.8999999761581421
+SpotLight30.Angle = 100
+Part31.Parent = Model1
+Part31.CFrame = CFrame.new(-28.1821079, 1.75000465, -25.2537117, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part31.Position = Vector3.new(-28.18210792541504, 1.7500046491622925, -25.253711700439453)
+Part31.Size = Vector3.new(0.21000000834465027, 3.5, 1.5800000429153442)
+Part31.Material = Enum.Material.SmoothPlastic
+PointLight32.Parent = Part31
+PointLight32.Range = 30
+PointLight32.Brightness = 0.30000001192092896
+SpotLight33.Parent = Part31
+SpotLight33.Range = 20
+SpotLight33.Brightness = 0.8999999761581421
+SpotLight33.Angle = 100
+Part34.Name = "Handle"
+Part34.Parent = Tool0
+Part34.CFrame = CFrame.new(-26, 4.08001518, -26, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part34.Position = Vector3.new(-26, 4.080015182495117, -26)
+Part34.Transparency = 1
+Part34.Size = Vector3.new(4, 1, 2)
+Part34.BottomSurface = Enum.SurfaceType.Smooth
+Part34.CanCollide = false
+Part34.TopSurface = Enum.SurfaceType.Smooth
+Weld35.Name = "BTWeld"
+Weld35.Parent = Part34
+Weld35.C1 = CFrame.new(0.0271034241, 2.33500671, -1.48628616, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld35.Part0 = Part34
+Weld35.Part1 = Part14
+Weld35.part1 = Part14
+Weld36.Name = "BTWeld"
+Weld36.Parent = Part34
+Weld36.C1 = CFrame.new(0.0371017456, 0.600009918, -0.796283722, 0.999999285, 0, 0, 0, 1, 0, 0, 0, 0.999999285)
+Weld36.Part0 = Part34
+Weld36.Part1 = Part24
+Weld36.part1 = Part24
+Weld37.Name = "BTWeld"
+Weld37.Parent = Part34
+Weld37.C1 = CFrame.new(2.18210602, 2.33001089, -0.746286392, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld37.Part0 = Part34
+Weld37.Part1 = Part31
+Weld37.part1 = Part31
+Weld38.Name = "BTWeld"
+Weld38.Parent = Part34
+Weld38.C1 = CFrame.new(0.44711113, 2.20001078, -0.776283264, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Weld38.Part0 = Part34
+Weld38.Part1 = Part27
+Weld38.part1 = Part27
+Weld39.Name = "BTWeld"
+Weld39.Parent = Part34
+Weld39.C1 = CFrame.new(-2.06789398, 2.33001089, -0.766305923, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld39.Part0 = Part34
+Weld39.Part1 = Part9
+Weld39.part1 = Part9
+Weld40.Name = "BTWeld"
+Weld40.Parent = Part34
+Weld40.C1 = CFrame.new(-0.0671138763, 2.33501053, 0.0962753296, -1, 0, 1.80300208e-06, 0, 1, 0, -1.80300208e-06, 0, -1)
+Weld40.Part0 = Part34
+Weld40.Part1 = Part2
+Weld40.part1 = Part2
+Weld41.Name = "BTWeld"
+Weld41.Parent = Part34
+Weld41.C1 = CFrame.new(0.037103653, 3.98001051, -0.796287537, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Weld41.Part0 = Part34
+Weld41.Part1 = Part21
+Weld41.part1 = Part21
+PointLight42.Parent = Part34
+PointLight42.Range = 30
+PointLight42.Brightness = 0.30000001192092896
+SpotLight43.Parent = Part34
+SpotLight43.Range = 20
+SpotLight43.Brightness = 0.8999999761581421
+SpotLight43.Angle = 100
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+local Tool = Tool0
+
+local function onEquipped(_mouse)
+local Sound = Instance.new("Sound")
+Sound.SoundId = "rbxassetid://573639200"
+Sound.Parent = Part2
+Sound.Pitch = 1
+Sound:Play()
+end
+
+Tool.Equipped:Connect(onEquipped)
+local part = Part2
+
+local numTouchingParts = 0
+
+local function onTouch(otherPart)
+	local Sound = Instance.new("Sound")
+	Sound.SoundId = "rbxassetid://263105619"
+	Sound.Parent = Part2
+	Sound.Pitch = 1
+	Sound:Play()
+	numTouchingParts = numTouchingParts + 1
+end
+
+part.Touched:Connect(onTouch)
