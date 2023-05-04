@@ -1,0 +1,58 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+SurfaceGui2 = Instance.new("SurfaceGui")
+TextBox3 = Instance.new("TextBox")
+Model0.Parent = game.Workspace
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(6, 5.5, 13.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(6, 5.5, 13.5)
+Part1.Size = Vector3.new(14, 11, 1)
+Part1.Anchored = true
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.Locked = true
+Part1.TopSurface = Enum.SurfaceType.Smooth
+SurfaceGui2.Parent = Part1
+SurfaceGui2.LightInfluence = 1
+SurfaceGui2.ClipsDescendants = true
+SurfaceGui2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextBox3.Parent = SurfaceGui2
+TextBox3.Size = UDim2.new(0, 800, 0, 630)
+TextBox3.BackgroundColor = BrickColor.new("Institutional white")
+TextBox3.BackgroundColor3 = Color3.new(1, 1, 1)
+TextBox3.Font = Enum.Font.SourceSans
+TextBox3.FontSize = Enum.FontSize.Size96
+TextBox3.Text = "e"
+TextBox3.TextColor = BrickColor.new("Really black")
+TextBox3.TextColor3 = Color3.new(0, 0, 0)
+TextBox3.TextScaled = true
+TextBox3.TextSize = 100
+TextBox3.TextWrap = true
+TextBox3.TextWrapped = true
+while task.wait() do TextBox3.Text = task.wait(0) end
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
