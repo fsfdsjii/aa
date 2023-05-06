@@ -21,6 +21,7 @@ Part1 = Instance.new("Part")
 SurfaceGui2 = Instance.new("SurfaceGui")
 TextBox3 = Instance.new("TextBox")
 UICorner4 = Instance.new("UICorner")
+UIStroke5 = Instance.new("UIStroke")
 Humanoid0.Parent = game.Workspace
 Model0.Parent = Humanoid0
 Part1.Parent = Model0
@@ -31,6 +32,7 @@ Part1.Anchored = true
 Part1.BottomSurface = Enum.SurfaceType.Smooth
 Part1.Locked = true
 Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.Transparency = 1
 SurfaceGui2.Parent = Part1
 SurfaceGui2.LightInfluence = 1
 SurfaceGui2.ClipsDescendants = true
@@ -49,6 +51,9 @@ TextBox3.TextSize = 100
 TextBox3.TextWrap = true
 TextBox3.TextWrapped = true
 UICorner4.Parent = TextBox3
+UICorner4.CornerRadius = UDim.new(0, 310)
+UIStroke5.Parent = TextBox3
+UIStroke5.Thickness = 0.25
 while task.wait() do TextBox3.Text = task.wait(0) end
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
@@ -60,3 +65,5 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
+
