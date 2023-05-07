@@ -1,0 +1,134 @@
+if workspace:FindFirstChild('Parts') then
+	workspace:FindFirstChild('Parts'):Destroy()
+end
+local size = 1
+local canx = 200
+local canz = 200
+local multiply = 15
+local divide = 50*size
+local parts = {}
+local folder = Instance.new('Folder',workspace)
+folder.Name = "Parts"
+local colors = {
+	[1] = {
+		AppearAt = .1,
+		DontAppearAt = .3,
+		Func = function(part)
+			part.Color = Color3.new(0, 0.454902, 0.113725)
+			part.Material = Enum.Material.Grass
+			coroutine.wrap(function()
+				wait(.1)
+				local trunk = Instance.new('Part',part)
+				trunk.Anchored = true
+				trunk.CanCollide = true
+				trunk.Color = Color3.new(0.427451, 0.282353, 0.141176)
+				trunk.Material = Enum.Material.Wood
+				trunk.Size = Vector3.new(1,7,1)*size
+				trunk.Position = part.Position + Vector3.new(0,part.Size.Y/2,0) + Vector3.new(0,trunk.Size.Y/2,0)
+				trunk.Orientation = Vector3.new(0,math.random(-360,360),0)
+				trunk.Name = "Tree"
+				local leaves = Instance.new('Part',trunk)
+				leaves.Anchored = true
+				leaves.CanCollide = true
+				leaves.Color = part.Color
+				leaves.Material = Enum.Material.Grass
+				leaves.Size = Vector3.new(5,5,5)*size
+				leaves.Position = trunk.Position + Vector3.new(0,leaves.Size.Y/2,0)
+				leaves.Orientation = Vector3.new(math.random(-360,360),math.random(-360,360),math.random(-360,360))
+				leaves.Name = "Tree"
+				local leaves2 = Instance.new('Part',trunk)
+				leaves2.Anchored = true
+				leaves2.CanCollide = true
+				leaves2.Color = part.Color
+				leaves2.Material = Enum.Material.Grass
+				leaves2.Size = Vector3.new(5,5,5)*size
+				leaves2.Position = trunk.Position + Vector3.new(0,leaves.Size.Y/2,0)
+				leaves2.Orientation = Vector3.new(math.random(-360,360),math.random(-360,360),math.random(-360,360))
+				leaves2.Name = "Tree"
+				for i,v in next, workspace:FindPartsInRegion3WithIgnoreList(Region3.new(leaves.Position - (Vector3.new(7,7,7)*size),leaves.Position + (Vector3.new(7,7,7)*size)),{trunk,leaves,leaves2},99999) do
+					if v.Name == "Tree" then
+						trunk:Destroy()
+						break
+					end
+				end
+			end)()
+		end,
+	},
+	[2] = {
+		AppearAt = -5,
+		DontAppearAt = .1,
+		Func = function(part)
+			part.Color = Color3.new(1, 0.964706, 0.470588)
+			part.Material = Enum.Material.Sand
+		end,
+	},
+	[3] = {
+		AppearAt = .3,
+		DontAppearAt = .4,
+		Func = function(part)
+			part.Color = Color3.new(0.380392, 0.380392, 0.380392)
+			part.Material = Enum.Material.Slate
+		end,
+	},
+	[4] = {
+		AppearAt = .4,
+		DontAppearAt = .465,
+		Func = function(part)
+			part.Color = Color3.new(1,1,1)
+			part.Material = Enum.Material.Snow
+		end,
+	},
+	[5] = {
+		AppearAt = .465,
+		Func = function(part)
+			part.Color = Color3.new(.7,.9,.9)
+			part.Material = Enum.Material.Ice
+		end,
+	}
+}
+
+local water = Instance.new('Part',folder)
+water.Name = "Water"
+water.Position = Vector3.new(canz*size,0,canx*size)/2
+water.Size = Vector3.new(canx*size,0,canz*size)
+water.Anchored = true
+water.CanCollide = false
+water.Material = Enum.Material.Glass
+water.Reflectance = .4
+water.Transparency = .6
+water.Color = Color3.new(0.415686, 0.921569, 0.862745)
+
+local count = 0
+for x = 1,canx do
+	for z = 1,canz do
+		count += 1
+		local part = Instance.new('Part',folder)
+		part.Size = Vector3.new(size,size,size)
+		part.Position = Vector3.new(x*size,0,z*size)
+		part.Anchored = true
+		part.CanCollide = true
+		parts[count] = part
+	end
+	game:GetService('RunService').Heartbeat:wait()
+end
+
+function BlendColors(Color1,Color2,Alpha)
+	local blendPos = Vector3.new(Color1.r,Color1.g,Color1.b):Lerp(Vector3.new(Color2.r,Color2.g,Color2.b),math.clamp(Alpha,.01,9999))
+	return Color3.new(blendPos.X,blendPos.Y,blendPos.Z)
+end
+
+for i,v in next, parts do
+	local noise = math.noise(v.Position.X/divide,0,v.Position.Z/divide)*multiply
+	v.Size = Vector3.new(size,math.clamp(size*noise,size,99999),size)
+	v.Position = Vector3.new(v.Position.X,noise*(math.clamp(v.Size.Y/2,size,99999)),v.Position.Z)
+	for z = 1,#colors do
+		if noise/multiply >= colors[z].AppearAt and noise/multiply <= (colors[z].DontAppearAt or 99999) then
+			colors[z].Func(v)
+			break
+		end
+	end
+end
+
+for i,v in next, parts do
+	v.Color = BlendColors((parts[i-1] or parts[i]).Color,(parts[i+1] or parts[i]).Color,.1)
+end
