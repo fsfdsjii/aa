@@ -1,0 +1,430 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Folder1 = Instance.new("Folder")
+Script2 = Instance.new("Script")
+Part3 = Instance.new("Part")
+Part4 = Instance.new("Part")
+Model5 = Instance.new("Model")
+Part6 = Instance.new("Part")
+Part7 = Instance.new("Part")
+Part8 = Instance.new("Part")
+Part9 = Instance.new("Part")
+Part10 = Instance.new("Part")
+Part11 = Instance.new("Part")
+Part12 = Instance.new("Part")
+Part13 = Instance.new("Part")
+Part14 = Instance.new("Part")
+Part15 = Instance.new("Part")
+Part16 = Instance.new("Part")
+Part17 = Instance.new("Part")
+Part18 = Instance.new("Part")
+Part19 = Instance.new("Part")
+Part20 = Instance.new("Part")
+Part21 = Instance.new("Part")
+Part22 = Instance.new("Part")
+Part23 = Instance.new("Part")
+Part24 = Instance.new("Part")
+Texture25 = Instance.new("Texture")
+Folder26 = Instance.new("Folder")
+LocalScript27 = Instance.new("LocalScript")
+Folder28 = Instance.new("Folder")
+RemoteEvent29 = Instance.new("RemoteEvent")
+Model0.Parent = mas
+Folder1.Name = "workspace"
+Folder1.Parent = workspace
+Script2.Name = "Handle Character"
+Script2.Parent = Folder1
+table.insert(cors,sandbox(Script2,function()
+repeat wait() until game:GetService('Players'):FindFirstChildOfClass('Player')
+local plr = game:GetService('Players'):FindFirstChildOfClass('Player')
+local remote = game:GetService('ReplicatedStorage').KeyRemote
+local w = false
+local a = false
+local s = false
+local d = false
+local ball = workspace.Ball
+local Hit = CFrame.new()
+local Target = nil
+local CameraCF = CFrame.new()
+remote.OnServerEvent:Connect(function(_,k,up,hit,target)
+	if k == "HitUpdate" then
+		Hit = hit
+		return
+	end
+	if k == "CameraUpdate" then
+		CameraCF = hit
+		return
+	end
+	if up == false then
+		if k == "w" then
+			w = true
+		end
+		if k == "a" then
+			a = true
+		end
+		if k == "s" then
+			s = true
+		end
+		if k == "d" then
+			d = true
+		end
+	elseif up == true then
+		if k == "w" then
+			w = false
+		end
+		if k == "a" then
+			a = false
+		end
+		if k == "s" then
+			s = false
+		end
+		if k == "d" then
+			d = false
+		end
+	end
+end)
+local forcew = -0
+local forces = 0
+local forcea = -0
+local forced = 0
+local force = nil
+game:GetService('RunService').Heartbeat:Connect(function()
+	if plr.Character then
+		plr.Character:Destroy()
+	end
+	if not ball:FindFirstChild('Force') then
+		force = Instance.new('BodyVelocity',ball)
+		force.Velocity = Vector3.new(0,0,0)
+		force.Name = "Force"
+	end
+	ball.Part.Position = ball.Position
+	force.Velocity = Vector3.new(forcea + forced,0,forcew + forces)
+	if w and not s and not d and not a then
+		forcew -= .2
+	elseif w and s and not a and not d then
+		forcew -= .2
+		forces += .2
+	elseif s and not w and not a and not d then
+		forces += .2
+	elseif w and d and not a and not s then
+		forced += .2
+		forcew -= .2
+	elseif w and a and not d and not s then
+		forcea -= .2
+		forcew -= .2
+	elseif s and a and not d and not w then
+		forcea -= .2
+		forces += .2
+	elseif s and d and not a and not w then
+		forced += .2
+		forces += .2
+	elseif d and not a and not w and not s then
+		forced += .2
+	elseif a and not s and not w and not d then
+		forcea -= .2
+	elseif a and d and not s and not w then
+		forcea -= .2
+		forced += .2
+	end
+	if not w then
+		if forcew > 0 then
+			forcew -= .2
+		elseif forcew < 0 then
+			forcew += .2
+		end
+	end
+	if not a then
+		if forcea > 0 then
+			forcea -= .2
+		elseif forcea < 0 then
+			forcea += .2
+		end
+	end
+	if not s then
+		if forces > 0 then
+			forces -= .2
+		elseif forces < 0 then
+			forces += .2
+		end
+	end
+	if not d then
+		if forced > 0 then
+			forced -= .2
+		elseif forced < 0 then
+			forced += .2
+		end
+	end
+end)
+end))
+Part3.Name = "Ball"
+Part3.Parent = Folder1
+Part3.CFrame = CFrame.new(61.6767654, 17.5000515, -111.160645, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part3.Position = Vector3.new(61.67676544189453, 17.500051498413086, -111.16064453125)
+Part3.Size = Vector3.new(2, 2, 2)
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.Material = Enum.Material.DiamondPlate
+Part3.Reflectance = 1
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Part3.Shape = Enum.PartType.Ball
+Part4.Parent = Part3
+Part4.CFrame = CFrame.new(64.0867615, 18.9121532, -110.990639, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part4.Position = Vector3.new(64.08676147460938, 18.912153244018555, -110.99063873291016)
+Part4.Transparency = 1
+Part4.Size = Vector3.new(0.0010000000474974513, 0.0010000000474974513, 0.0010000000474974513)
+Part4.Anchored = true
+Part4.BottomSurface = Enum.SurfaceType.Smooth
+Part4.CanCollide = false
+Part4.TopSurface = Enum.SurfaceType.Smooth
+Model5.Name = "Map"
+Model5.Parent = Folder1
+Part6.Parent = Model5
+Part6.CFrame = CFrame.new(59.9916992, 18.0000439, -120.721031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part6.Position = Vector3.new(59.99169921875, 18.000043869018555, -120.72103118896484)
+Part6.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part6.Size = Vector3.new(1, 1, 1)
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.BrickColor = BrickColor.new("Dark stone grey")
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part6.brickColor = BrickColor.new("Dark stone grey")
+Part7.Parent = Model5
+Part7.CFrame = CFrame.new(61.4916992, 18.0000439, -120.721031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part7.Position = Vector3.new(61.49169921875, 18.000043869018555, -120.72103118896484)
+Part7.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part7.Size = Vector3.new(1, 1, 1)
+Part7.BottomSurface = Enum.SurfaceType.Smooth
+Part7.BrickColor = BrickColor.new("Dark stone grey")
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Part7.brickColor = BrickColor.new("Dark stone grey")
+Part8.Parent = Model5
+Part8.CFrame = CFrame.new(61.4916992, 18.0000439, -119.221031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part8.Position = Vector3.new(61.49169921875, 18.000043869018555, -119.22103118896484)
+Part8.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part8.Size = Vector3.new(1, 1, 1)
+Part8.BottomSurface = Enum.SurfaceType.Smooth
+Part8.BrickColor = BrickColor.new("Dark stone grey")
+Part8.TopSurface = Enum.SurfaceType.Smooth
+Part8.brickColor = BrickColor.new("Dark stone grey")
+Part9.Parent = Model5
+Part9.CFrame = CFrame.new(59.9916992, 18.0000439, -119.221031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part9.Position = Vector3.new(59.99169921875, 18.000043869018555, -119.22103118896484)
+Part9.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part9.Size = Vector3.new(1, 1, 1)
+Part9.BottomSurface = Enum.SurfaceType.Smooth
+Part9.BrickColor = BrickColor.new("Dark stone grey")
+Part9.TopSurface = Enum.SurfaceType.Smooth
+Part9.brickColor = BrickColor.new("Dark stone grey")
+Part10.Parent = Model5
+Part10.CFrame = CFrame.new(60.7416992, 19.0000515, -119.971031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part10.Position = Vector3.new(60.74169921875, 19.000051498413086, -119.97103118896484)
+Part10.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part10.Size = Vector3.new(1, 1, 1)
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.BrickColor = BrickColor.new("Dark stone grey")
+Part10.TopSurface = Enum.SurfaceType.Smooth
+Part10.brickColor = BrickColor.new("Dark stone grey")
+Part11.Parent = Model5
+Part11.CFrame = CFrame.new(62.2416992, 17.0000439, -119.971031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part11.Position = Vector3.new(62.24169921875, 17.000043869018555, -119.97103118896484)
+Part11.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part11.Size = Vector3.new(1, 1, 1)
+Part11.BottomSurface = Enum.SurfaceType.Smooth
+Part11.BrickColor = BrickColor.new("Dark stone grey")
+Part11.TopSurface = Enum.SurfaceType.Smooth
+Part11.brickColor = BrickColor.new("Dark stone grey")
+Part12.Name = "Wall"
+Part12.Parent = Model5
+Part12.CFrame = CFrame.new(7.25821686, 112.500053, 84.5502625, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part12.Position = Vector3.new(7.258216857910156, 112.50005340576172, 84.55026245117188)
+Part12.Color = Color3.new(0.356863, 0.356863, 0.356863)
+Part12.Size = Vector3.new(400, 193, 2)
+Part12.Anchored = true
+Part12.BottomSurface = Enum.SurfaceType.Smooth
+Part12.BrickColor = BrickColor.new("Dark grey metallic")
+Part12.TopSurface = Enum.SurfaceType.Smooth
+Part12.brickColor = BrickColor.new("Dark grey metallic")
+Part13.Parent = Model5
+Part13.CFrame = CFrame.new(60.7416992, 17.0000439, -118.471031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part13.Position = Vector3.new(60.74169921875, 17.000043869018555, -118.47103118896484)
+Part13.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part13.Size = Vector3.new(1, 1, 1)
+Part13.BottomSurface = Enum.SurfaceType.Smooth
+Part13.BrickColor = BrickColor.new("Dark stone grey")
+Part13.TopSurface = Enum.SurfaceType.Smooth
+Part13.brickColor = BrickColor.new("Dark stone grey")
+Part14.Parent = Model5
+Part14.CFrame = CFrame.new(60.7416992, 17.0000439, -119.971031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part14.Position = Vector3.new(60.74169921875, 17.000043869018555, -119.97103118896484)
+Part14.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part14.Size = Vector3.new(1, 1, 1)
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.BrickColor = BrickColor.new("Dark stone grey")
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Part14.brickColor = BrickColor.new("Dark stone grey")
+Part15.Parent = Model5
+Part15.CFrame = CFrame.new(59.2416992, 17.0000439, -121.471031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part15.Position = Vector3.new(59.24169921875, 17.000043869018555, -121.47103118896484)
+Part15.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part15.Size = Vector3.new(1, 1, 1)
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.BrickColor = BrickColor.new("Dark stone grey")
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.brickColor = BrickColor.new("Dark stone grey")
+Part16.Parent = Model5
+Part16.CFrame = CFrame.new(62.2416992, 17.0000439, -121.471031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part16.Position = Vector3.new(62.24169921875, 17.000043869018555, -121.47103118896484)
+Part16.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part16.Size = Vector3.new(1, 1, 1)
+Part16.BottomSurface = Enum.SurfaceType.Smooth
+Part16.BrickColor = BrickColor.new("Dark stone grey")
+Part16.TopSurface = Enum.SurfaceType.Smooth
+Part16.brickColor = BrickColor.new("Dark stone grey")
+Part17.Parent = Model5
+Part17.CFrame = CFrame.new(62.2416992, 17.0000439, -118.471031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part17.Position = Vector3.new(62.24169921875, 17.000043869018555, -118.47103118896484)
+Part17.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part17.Size = Vector3.new(1, 1, 1)
+Part17.BottomSurface = Enum.SurfaceType.Smooth
+Part17.BrickColor = BrickColor.new("Dark stone grey")
+Part17.TopSurface = Enum.SurfaceType.Smooth
+Part17.brickColor = BrickColor.new("Dark stone grey")
+Part18.Parent = Model5
+Part18.CFrame = CFrame.new(60.7416992, 17.0000439, -121.471031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part18.Position = Vector3.new(60.74169921875, 17.000043869018555, -121.47103118896484)
+Part18.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part18.Size = Vector3.new(1, 1, 1)
+Part18.BottomSurface = Enum.SurfaceType.Smooth
+Part18.BrickColor = BrickColor.new("Dark stone grey")
+Part18.TopSurface = Enum.SurfaceType.Smooth
+Part18.brickColor = BrickColor.new("Dark stone grey")
+Part19.Name = "Wall"
+Part19.Parent = Model5
+Part19.CFrame = CFrame.new(7.25821686, 112.500053, -317.449738, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part19.Position = Vector3.new(7.258216857910156, 112.50005340576172, -317.4497375488281)
+Part19.Color = Color3.new(0.356863, 0.356863, 0.356863)
+Part19.Size = Vector3.new(400, 193, 2)
+Part19.Anchored = true
+Part19.BottomSurface = Enum.SurfaceType.Smooth
+Part19.BrickColor = BrickColor.new("Dark grey metallic")
+Part19.TopSurface = Enum.SurfaceType.Smooth
+Part19.brickColor = BrickColor.new("Dark grey metallic")
+Part20.Name = "Wall"
+Part20.Parent = Model5
+Part20.CFrame = CFrame.new(208.258209, 112.500053, -116.449738, 1.19248806e-08, 0, -1, 0, 1, 0, 1, 0, 1.19248806e-08)
+Part20.Orientation = Vector3.new(0, -90, 0)
+Part20.Position = Vector3.new(208.25820922851562, 112.50005340576172, -116.44973754882812)
+Part20.Rotation = Vector3.new(0, -90, 0)
+Part20.Color = Color3.new(0.356863, 0.356863, 0.356863)
+Part20.Size = Vector3.new(400, 193, 2)
+Part20.Anchored = true
+Part20.BottomSurface = Enum.SurfaceType.Smooth
+Part20.BrickColor = BrickColor.new("Dark grey metallic")
+Part20.TopSurface = Enum.SurfaceType.Smooth
+Part20.brickColor = BrickColor.new("Dark grey metallic")
+Part21.Parent = Model5
+Part21.CFrame = CFrame.new(59.2416992, 17.0000439, -119.971031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part21.Position = Vector3.new(59.24169921875, 17.000043869018555, -119.97103118896484)
+Part21.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part21.Size = Vector3.new(1, 1, 1)
+Part21.BottomSurface = Enum.SurfaceType.Smooth
+Part21.BrickColor = BrickColor.new("Dark stone grey")
+Part21.TopSurface = Enum.SurfaceType.Smooth
+Part21.brickColor = BrickColor.new("Dark stone grey")
+Part22.Name = "Wall"
+Part22.Parent = Model5
+Part22.CFrame = CFrame.new(-193.741791, 112.500053, -116.449738, 1.19248806e-08, 0, -1, 0, 1, 0, 1, 0, 1.19248806e-08)
+Part22.Orientation = Vector3.new(0, -90, 0)
+Part22.Position = Vector3.new(-193.74179077148438, 112.50005340576172, -116.44973754882812)
+Part22.Rotation = Vector3.new(0, -90, 0)
+Part22.Color = Color3.new(0.356863, 0.356863, 0.356863)
+Part22.Size = Vector3.new(400, 193, 2)
+Part22.Anchored = true
+Part22.BottomSurface = Enum.SurfaceType.Smooth
+Part22.BrickColor = BrickColor.new("Dark grey metallic")
+Part22.TopSurface = Enum.SurfaceType.Smooth
+Part22.brickColor = BrickColor.new("Dark grey metallic")
+Part23.Parent = Model5
+Part23.CFrame = CFrame.new(59.2416992, 17.0000439, -118.471031, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part23.Position = Vector3.new(59.24169921875, 17.000043869018555, -118.47103118896484)
+Part23.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part23.Size = Vector3.new(1, 1, 1)
+Part23.BottomSurface = Enum.SurfaceType.Smooth
+Part23.BrickColor = BrickColor.new("Dark stone grey")
+Part23.TopSurface = Enum.SurfaceType.Smooth
+Part23.brickColor = BrickColor.new("Dark stone grey")
+Part24.Name = "Baseplate"
+Part24.Parent = Folder1
+Part24.CFrame = CFrame.new(7.17676544, 8.50004768, -116.500641, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part24.Position = Vector3.new(7.176765441894531, 8.50004768371582, -116.50064086914062)
+Part24.Color = Color3.new(0.356863, 0.356863, 0.356863)
+Part24.Size = Vector3.new(400, 16, 400)
+Part24.Anchored = true
+Part24.BottomSurface = Enum.SurfaceType.Smooth
+Part24.BrickColor = BrickColor.new("Dark grey metallic")
+Part24.Locked = true
+Part24.TopSurface = Enum.SurfaceType.Smooth
+Part24.brickColor = BrickColor.new("Dark grey metallic")
+Part24.FormFactor = Enum.FormFactor.Symmetric
+Part24.formFactor = Enum.FormFactor.Symmetric
+Texture25.Parent = Part24
+Texture25.Texture = "rbxassetid://6372755229"
+Texture25.Transparency = 0.800000011920929
+Texture25.Face = Enum.NormalId.Top
+Texture25.Color3 = Color3.new(0, 0, 0)
+Texture25.StudsPerTileU = 8
+Texture25.StudsPerTileV = 8
+Folder26.Name = "StarterGui"
+Folder26.Parent = game.StarterGui
+LocalScript27.Name = "CharacterHandler"
+LocalScript27.Parent = Folder26
+table.insert(cors,sandbox(LocalScript27,function()
+local plr = game:GetService('Players').LocalPlayer
+local mouse = plr:GetMouse()
+local w = false
+local a = false
+local s = false
+local d = false
+local ball = workspace.Ball
+local remote = game:GetService('ReplicatedStorage').KeyRemote
+mouse.KeyDown:Connect(function(k)
+	remote:FireServer(tostring(k),false,mouse.Hit,mouse.Target)
+end)
+mouse.KeyUp:Connect(function(k)
+	remote:FireServer(tostring(k),true,mouse.Hit,mouse.Target)
+end)
+game:GetService('RunService').RenderStepped:Connect(function()
+	workspace.CurrentCamera.CameraSubject = ball.Part
+	workspace.CurrentCamera.CameraType = Enum.CameraType.Attach
+	remote:FireServer("HitUpdate",false,mouse.Hit,mouse.Target)
+	remote:FireServer("CameraUpdate",false,workspace.CurrentCamera.CFrame,nil)
+end)
+end))
+Folder28.Name = "ReplicatedStorage"
+Folder28.Parent = game.ReplicatedStorage
+RemoteEvent29.Name = "KeyRemote"
+RemoteEvent29.Parent = Folder28
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
