@@ -345,9 +345,6 @@ Dialog35.Purpose = Enum.DialogPurpose.Quest
 DialogChoice36.Parent = Dialog35
 DialogChoice36.GoodbyeDialog = "Goodbye!"
 DialogChoice36.UserDialog = "Ok" and  "No"
-if DialogChoice36.UserDialog == "No" then
-Model0:Destroy()	
-end
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
