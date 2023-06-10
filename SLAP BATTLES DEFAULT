@@ -1,0 +1,284 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Animation3 = Instance.new("Animation")
+LocalScript4 = Instance.new("LocalScript")
+RemoteEvent5 = Instance.new("RemoteEvent")
+NumberValue6 = Instance.new("NumberValue")
+NumberValue7 = Instance.new("NumberValue")
+Script8 = Instance.new("Script")
+NumberValue9 = Instance.new("NumberValue")
+ScreenGui10 = Instance.new("ScreenGui")
+TextButton11 = Instance.new("TextButton")
+Part12 = Instance.new("Part")
+SpecialMesh13 = Instance.new("SpecialMesh")
+WeldConstraint14 = Instance.new("WeldConstraint")
+Sound15 = Instance.new("Sound")
+Part16 = Instance.new("Part")
+Sound17 = Instance.new("Sound")
+Part18 = Instance.new("Part")
+SpecialMesh19 = Instance.new("SpecialMesh")
+ParticleEmitter20 = Instance.new("ParticleEmitter")
+WeldConstraint21 = Instance.new("WeldConstraint")
+Part22 = Instance.new("Part")
+SpecialMesh23 = Instance.new("SpecialMesh")
+Tool0.Name = "Default"
+Tool0.Parent = owner.Backpack
+Tool0.CanBeDropped = false
+Tool0.Grip = CFrame.new(-0.103803158, 2.94576597, 0.0754342079, 0.0300199296, 0.999549329, -1.21942449e-07, 1.82394061e-07, 1.16519502e-07, 1, 0.999549329, -0.0300199296, -1.78813963e-07)
+Tool0.GripForward = Vector3.new(1.2194244902730134e-07, -1, 1.788139627478813e-07)
+Tool0.GripPos = Vector3.new(-0.10380315780639648, 2.945765972137451, 0.07543420791625977)
+Tool0.GripRight = Vector3.new(0.030019929632544518, 1.82394060743718e-07, 0.9995493292808533)
+Tool0.GripUp = Vector3.new(0.9995493292808533, 1.1651950160285196e-07, -0.030019929632544518)
+Tool0.ToolTip = "Slap"
+Part1.Name = "stick"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(13.2596359, 0.583873272, 17.8979874, 1, -1.30934357e-08, -1.78696325e-07, -1.78696325e-07, -5.78378234e-08, -1, 1.30934241e-08, 1, -5.7837827e-08)
+Part1.Orientation = Vector3.new(90, 0, 0)
+Part1.Position = Vector3.new(13.259635925292969, 0.5838732719421387, 17.897987365722656)
+Part1.Rotation = Vector3.new(90, 0, 0)
+Part1.Color = Color3.new(0, 0, 0)
+Part1.Size = Vector3.new(0.3830747604370117, 0.28952810168266296, 1.6573668718338013)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Really black")
+Part1.CanCollide = false
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Really black")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.Scale = Vector3.new(0.5600000023841858, 0.5600000023841858, 0.9430000185966492)
+SpecialMesh2.MeshType = Enum.MeshType.Brick
+Animation3.Name = "Swing"
+Animation3.Parent = Tool0
+Animation3.AnimationId = "rbxassetid://10982261338"
+LocalScript4.Name = "CLIENT"
+LocalScript4.Parent = Tool0
+table.insert(cors,sandbox(LocalScript4,function()
+NLS([[local tool=owner.Character.Default
+local handle=tool:WaitForChild("Handle")
+local mouse=game.Players.LocalPlayer:GetMouse()
+local canslap=false
+local cd=false
+local abilitycd=false
+local abilitycooldown=1
+local equipped=false
+local abilityactivategui=tool:WaitForChild("AbilityActivateButton")
+abilityactivategui:WaitForChild("Button").MouseButton1Down:Connect(function()
+	if equipped==true then
+		if abilitycd==false then
+			abilitycd=true
+			tool:WaitForChild("Event"):FireServer("glove")
+			wait(abilitycooldown)
+			abilitycd=false
+		end
+	end
+end)
+tool.Equipped:Connect(function()
+	equipped=true
+	abilityactivategui.Parent=game.Players.LocalPlayer:WaitForChild("PlayerGui")
+end)
+tool.Unequipped:Connect(function()
+	equipped=false
+	abilityactivategui.Parent=tool
+end)
+tool.Activated:Connect(function()
+	if cd==false then
+		cd=true
+		local multiplier=2.25
+		local char=game.Players.LocalPlayer.Character
+		char:FindFirstChildOfClass("Humanoid"):LoadAnimation(tool:WaitForChild("Swing")):Play()
+		canslap=true
+		wait(tool:WaitForChild("Speed").Value/multiplier)
+		canslap=false
+		wait(tool:WaitForChild("Speed").Value-tool:WaitForChild("Speed").Value/multiplier)
+		cd=false
+	end
+end)
+mouse.KeyDown:Connect(function(key)
+	if key=="e" then
+		if equipped==true then
+			if abilitycd==false then
+				abilitycd=true
+				tool:WaitForChild("Event"):FireServer("glove")
+				wait(abilitycooldown)
+				abilitycd=false
+			end
+		end
+	end
+end)
+handle.Touched:Connect(function(part)
+	if canslap==true then
+		if part.Parent:FindFirstChildOfClass("Humanoid") then
+			canslap=false
+			local char=game.Players.LocalPlayer.Character
+			local velocity=char:WaitForChild("HumanoidRootPart").CFrame.LookVector*tool:WaitForChild("Power").Value
+			tool:WaitForChild("Event"):FireServer("slash",part.Parent,velocity)
+		end
+	end
+end)]] , owner.PlayerGui)
+
+end))
+RemoteEvent5.Name = "Event"
+RemoteEvent5.Parent = Tool0
+NumberValue6.Name = "Power"
+NumberValue6.Parent = Tool0
+NumberValue6.Value = 10
+NumberValue7.Name = "Speed"
+NumberValue7.Parent = Tool0
+NumberValue7.Value = 0.91
+Script8.Name = "SERVER"
+Script8.Parent = Tool0
+table.insert(cors,sandbox(Script8,function()
+local tool=Tool0
+local handle=tool:WaitForChild("Handle")
+tool:WaitForChild("Event").OnServerEvent:Connect(function(plr,mode,target,velocity)
+	if mode=="slash" then
+		local flingvelocity=velocity*5
+		local spinvelocity=velocity*0.5
+		local multipliervelocity=tool:WaitForChild("Power").Value*3
+		target:FindFirstChildOfClass("Humanoid").PlatformStand=true
+		local bv=Instance.new("BodyVelocity")
+		bv.Parent=target:WaitForChild("HumanoidRootPart")
+		bv.MaxForce=Vector3.new(1e8,1e8,1e8)
+		bv.Velocity=flingvelocity+Vector3.new(0,multipliervelocity,0)
+		local bav=Instance.new("BodyAngularVelocity")
+		bav.Parent=target:WaitForChild("HumanoidRootPart")
+		bav.AngularVelocity=flingvelocity+Vector3.new(0,multipliervelocity,0)
+		script.Parent.Handle.MeshPart.hit.Enabled = true
+		wait(0.1)
+		script.Parent.Handle.MeshPart.hit.Enabled = false
+		local sound=Instance.new("Sound")
+		sound.Parent=target:WaitForChild("HumanoidRootPart")
+		sound.Volume=3
+		sound.SoundId="rbxassetid://7195270254"
+		sound:Play()
+		wait(tool:WaitForChild("FlightSpeed").Value)
+		bv:Destroy()
+		bav:Destroy()
+		target:FindFirstChildOfClass("Humanoid").PlatformStand=false
+		sound:Destroy()
+	elseif mode=="glove" then
+		tool.Handle.funny_fart1:Play()
+	end
+end)
+
+end))
+NumberValue9.Name = "FlightSpeed"
+NumberValue9.Parent = Tool0
+NumberValue9.Value = 0.495
+ScreenGui10.Name = "AbilityActivateButton"
+ScreenGui10.Parent = Tool0
+ScreenGui10.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextButton11.Name = "Button"
+TextButton11.Parent = ScreenGui10
+TextButton11.Position = UDim2.new(0.885937512, 0, 0.51043117, 0)
+TextButton11.Size = UDim2.new(0.0720858946, 0, 0.128254145, 0)
+TextButton11.BackgroundColor = BrickColor.new("Really red")
+TextButton11.BackgroundColor3 = Color3.new(1, 0, 0)
+TextButton11.BackgroundTransparency = 0.20000000298023224
+TextButton11.BorderColor = BrickColor.new("Really black")
+TextButton11.BorderColor3 = Color3.new(0, 0, 0)
+TextButton11.BorderSizePixel = 3
+TextButton11.Font = Enum.Font.Nunito
+TextButton11.FontSize = Enum.FontSize.Size14
+TextButton11.Text = "E"
+TextButton11.TextColor = BrickColor.new("Institutional white")
+TextButton11.TextColor3 = Color3.new(1, 1, 1)
+TextButton11.TextScaled = true
+TextButton11.TextSize = 14
+TextButton11.TextStrokeTransparency = 0
+TextButton11.TextWrap = true
+TextButton11.TextWrapped = true
+Part12.Name = "Handle"
+Part12.Parent = Tool0
+Part12.CFrame = CFrame.new(13.243782, 2.87205124, 18.0263443, 0, 0, 1, 0, -1, 0, 1, 0, -0)
+Part12.Orientation = Vector3.new(0, 90, 180)
+Part12.Position = Vector3.new(13.243782043457031, 2.872051239013672, 18.026344299316406)
+Part12.Rotation = Vector3.new(180, 90, 0)
+Part12.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part12.Size = Vector3.new(2.4600000381469727, 3.2559545040130615, 0.9158446788787842)
+Part12.BrickColor = BrickColor.new("White")
+Part12.brickColor = BrickColor.new("White")
+SpecialMesh13.Parent = Part12
+SpecialMesh13.MeshId = "http://www.roblox.com/asset/?id=32054761"
+SpecialMesh13.Scale = Vector3.new(0.6207403540611267, 0.7179581522941589, 0.6699521541595459)
+SpecialMesh13.MeshType = Enum.MeshType.FileMesh
+WeldConstraint14.Parent = Part12
+WeldConstraint14.Enabled = false
+WeldConstraint14.Part0 = Part1
+WeldConstraint14.Part1 = Part22
+Sound15.Name = "Smack"
+Sound15.Parent = Part12
+Sound15.SoundId = "rbxassetid://7195270254"
+Sound15.Volume = 3
+Part16.Parent = Part12
+Part16.CFrame = CFrame.new(13.2858582, 2.25001001, 18.0463295, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part16.Position = Vector3.new(13.285858154296875, 2.2500100135803223, 18.046329498291016)
+Part16.Transparency = 1
+Part16.Size = Vector3.new(1, 4.5, 2.5)
+Part16.BottomSurface = Enum.SurfaceType.Smooth
+Part16.TopSurface = Enum.SurfaceType.Smooth
+Sound17.Name = "funny_fart1"
+Sound17.Parent = Part12
+Sound17.SoundId = "rbxassetid://5274463739"
+Part18.Name = "MeshPart"
+Part18.Parent = Part12
+Part18.CFrame = CFrame.new(13.2858582, 2.0000329, 18.2963295, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part18.Position = Vector3.new(13.285858154296875, 2.000032901763916, 18.296329498291016)
+Part18.Transparency = 1
+Part18.Size = Vector3.new(1, 1, 1)
+Part18.CanCollide = false
+SpecialMesh19.Parent = Part18
+SpecialMesh19.Scale = Vector3.new(0, 0, 0)
+ParticleEmitter20.Name = "hit"
+ParticleEmitter20.Parent = Part18
+ParticleEmitter20.Rotation = NumberRange.new(-100, 100)
+ParticleEmitter20.Enabled = false
+ParticleEmitter20.LightEmission = 1
+ParticleEmitter20.Texture = "rbxassetid://5755091589"
+ParticleEmitter20.Size = NumberSequence.new(0,3,0)
+ParticleEmitter20.Lifetime = NumberRange.new(0.25, 0.25)
+ParticleEmitter20.Rate = 30
+WeldConstraint21.Parent = Part18
+WeldConstraint21.Part0 = Part12
+WeldConstraint21.Part1 = Part18
+Part22.Name = "Handle"
+Part22.Parent = Tool0
+Part22.CFrame = CFrame.new(13.243782, 2.87205124, 18.0263443, 0, 0, 1, 0, -1, 0, 1, 0, -0)
+Part22.Orientation = Vector3.new(0, 90, 180)
+Part22.Position = Vector3.new(13.243782043457031, 2.872051239013672, 18.026344299316406)
+Part22.Rotation = Vector3.new(180, 90, 0)
+Part22.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part22.Size = Vector3.new(2.4600000381469727, 3.2559545040130615, 0.9158446788787842)
+Part22.BrickColor = BrickColor.new("White")
+Part22.brickColor = BrickColor.new("White")
+SpecialMesh23.Parent = Part22
+SpecialMesh23.MeshId = "http://www.roblox.com/asset/?id=32054761"
+SpecialMesh23.Scale = Vector3.new(0.6207403540611267, 0.7179581522941589, 0.6699521541595459)
+SpecialMesh23.MeshType = Enum.MeshType.FileMesh
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
