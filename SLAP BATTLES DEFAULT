@@ -70,7 +70,7 @@ Animation3.AnimationId = "rbxassetid://10982261338"
 LocalScript4.Name = "CLIENT"
 LocalScript4.Parent = Tool0
 table.insert(cors,sandbox(LocalScript4,function()
-NLS([[local tool=owner.Character.Default
+NLS([[local tool=owner.Character:WaitForChild('Default')
 local handle=tool:WaitForChild("Handle")
 local mouse=game.Players.LocalPlayer:GetMouse()
 local canslap=false
