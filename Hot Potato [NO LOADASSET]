@@ -1,0 +1,231 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Sound4 = Instance.new("Sound")
+Script5 = Instance.new("Script")
+ScreenGui6 = Instance.new("ScreenGui")
+TextBox7 = Instance.new("TextBox")
+Tool0.Name = "HotPotato"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=25268602"
+Tool0.Grip = CFrame.new(0.200000003, -0.100000001, 0, 0.44522047, 0, 0.895421028, 0.895421028, 0, -0.44522047, -0, 1, 0)
+Tool0.GripForward = Vector3.new(-0.895421028137207, 0.4452204704284668, -0)
+Tool0.GripPos = Vector3.new(0.20000000298023224, -0.10000000149011612, 0)
+Tool0.GripRight = Vector3.new(0.4452204704284668, 0.895421028137207, -0)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(10, 5, -4, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Part1.Orientation = Vector3.new(90, 0, 0)
+Part1.Position = Vector3.new(10, 5, -4)
+Part1.Rotation = Vector3.new(90, 0, 0)
+Part1.Size = Vector3.new(1, 1, 1)
+Part1.Locked = true
+Part1.Material = Enum.Material.Wood
+Part1.FormFactor = Enum.FormFactor.Symmetric
+Part1.formFactor = Enum.FormFactor.Symmetric
+Part1.Shape = Enum.PartType.Ball
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=25268275"
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=25268352"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "IHasABucket"
+Sound3.Parent = Part1
+Sound3.SoundId = "http://www.roblox.com/asset/?id=25320997"
+Sound4.Name = "StealingBucket"
+Sound4.Parent = Part1
+Sound4.SoundId = "http://www.roblox.com/asset/?id=25270310"
+Script5.Name = "StealBucketScript"
+Script5.Parent = Tool0
+table.insert(cors,sandbox(Script5,function()
+local Tool = Tool0
+local canStealBucket = 0
+local gameStart = false
+local stopStealingBucket = true
+local e = Instance.new("Explosion")
+e.BlastRadius = 2
+e.BlastPressure = 10000
+	local enabled = true
+local player = nil
+local redColor = Vector3.new(1,0,0)
+
+local function onEquipped()
+
+	Tool.Handle.StealingBucket:Stop()
+	player = Tool.Parent
+local p = game.Players:GetPlayerFromCharacter(player)
+	if p ~= nil and gameStart == false then
+		local gui = Tool.HotPotatoGui:Clone()
+		gui.Parent = p.PlayerGui
+	end
+	if gameStart then
+		Tool.Handle.IHasABucket.Looped = true
+		Tool.Handle.IHasABucket:Play()
+	end
+end
+
+local function onUnequipped()
+
+	if Tool.Parent.Parent.className ==  "Player" and gameStart == false then
+local localGui = Tool.Parent.Parent.PlayerGui
+local toRemove = localGui:FindFirstChild("HotPotatoGui")
+		if toRemove ~= nil then
+			toRemove:remove()
+		end
+	end
+	if gameStart == false then
+		Tool.Handle.IHasABucket.Looped = false
+		Tool.Handle.IHasABucket:Stop()
+	end
+end
+
+local function onActivated()
+
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+
+	player = Tool.Parent
+local p = game.Players:GetPlayerFromCharacter(player)
+	if p ~= nil then
+local hpGui = p.PlayerGui:FindFirstChild("HotPotatoGui")
+		if hpGui ~= nil then
+			hpGui:remove()
+		end
+	end
+
+	gameStart = true
+	Tool.Handle.IHasABucket.Looped = true
+	Tool.Handle.IHasABucket:Play()
+
+	enabled = true
+
+end
+
+
+Tool.Equipped:Connect(onEquipped)
+Tool.Unequipped:Connect(onUnequipped)
+Tool.Activated:Connect(onActivated)
+
+
+local function onTouched(part)
+	
+	task.wait(0.1)
+local humanoid = part.Parent:findFirstChild("Humanoid")
+
+	if humanoid ~= nil and humanoid ~= Tool.Parent:FindFirstChild("Humanoid") and canStealBucket == 0 and gameStart == true then
+local objects = humanoid.Parent:getChildren()
+
+		for i = 1,#objects do
+			if objects[i].className == "Tool" then
+				objects[i].Parent = game.Workspace
+			end
+		end
+
+		Tool.Parent = humanoid.Parent
+			Tool.Handle.IHasABucket.Looped = true
+			Tool.Handle.IHasABucket:Play()
+		canStealBucket  = 2
+
+	end
+
+end
+
+
+Tool.Handle.Touched:Connect(onTouched)
+
+while true do
+
+	if gameStart then
+
+		if Tool.Handle.Mesh.VertexColor == redColor then
+			Tool.Handle.Mesh.VertexColor = Vector3.new(1,1,1)
+		else
+			Tool.Handle.Mesh.VertexColor = redColor
+		end
+
+		if player ~= nil and Tool.Parent ~= player then
+local otherTools = player:GetChildren()
+			for i = 1,#otherTools do
+				if otherTools[i].className == "Tool" then
+					otherTools[i].Parent = game.Workspace
+				end
+			end
+			Tool.Parent = player
+		end
+		
+local fate = math.random(1,15)
+		if fate == 5 and Tool.Parent ~= game.Workspace and gameStart == true then
+			
+			Tool.Handle.StealingBucket:Play()
+			Tool.Handle.IHasABucket:Stop()
+			Tool.Handle.IHasABucket.Looped = false
+			e.Position = Tool.Handle.Position
+			local origPosition = Tool.Handle.Position
+			Tool.Handle.Position = Vector3.new(0,100000,0)
+			Tool.Handle.Transparency = 1
+			Tool.Parent = game.Workspace
+			e.Parent = game.Workspace
+			gameStart = false
+			fate = 0
+
+			task.wait(4)
+
+			e.Parent = nil
+			task.wait(1)
+			
+			Tool.Handle.Transparency = 0
+			Tool.Handle.Position = origPosition
+			Tool.Handle.Mesh.VertexColor = Vector3.new(1,1,1)
+
+		end
+
+		if canStealBucket > 0 then
+			canStealBucket = canStealBucket - 1
+		end
+	end
+	task.wait(1)
+
+end
+
+end))
+ScreenGui6.Name = "HotPotatoGui"
+ScreenGui6.Parent = Tool0
+TextBox7.Parent = ScreenGui6
+TextBox7.Position = UDim2.new(0.0399999991, 0, 0.75, 0)
+TextBox7.Size = UDim2.new(0.200001493, 0, 0.100000001, 0)
+TextBox7.BackgroundColor = BrickColor.new("Really red")
+TextBox7.BackgroundColor3 = Color3.new(0.815686, 0, 0)
+TextBox7.Text = "Left Click to Activate Hot Potato!"
+TextBox7.TextColor = BrickColor.new("Institutional white")
+TextBox7.TextColor3 = Color3.new(1, 1, 1)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
