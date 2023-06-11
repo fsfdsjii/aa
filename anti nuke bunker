@@ -828,4 +828,6 @@ for _,obj in pairs(Objects) do
 end
 
 RunScripts()
-print(script:GetDescendants())
+for _, v in next, script["Anti nuke bunker"]:GetDescendants() do
+v.Position = owner.Character.Torso.Position
+end
