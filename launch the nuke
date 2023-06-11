@@ -1,0 +1,938 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Model1 = Instance.new("Model")
+Part2 = Instance.new("Part")
+Decal3 = Instance.new("Decal")
+Decal4 = Instance.new("Decal")
+Part5 = Instance.new("Part")
+SpecialMesh6 = Instance.new("SpecialMesh")
+Part7 = Instance.new("Part")
+SpecialMesh8 = Instance.new("SpecialMesh")
+Part9 = Instance.new("Part")
+SpecialMesh10 = Instance.new("SpecialMesh")
+Part11 = Instance.new("Part")
+Fire12 = Instance.new("Fire")
+Smoke13 = Instance.new("Smoke")
+Part14 = Instance.new("Part")
+SpecialMesh15 = Instance.new("SpecialMesh")
+Part16 = Instance.new("Part")
+Part17 = Instance.new("Part")
+Part18 = Instance.new("Part")
+SpecialMesh19 = Instance.new("SpecialMesh")
+Part20 = Instance.new("Part")
+SpecialMesh21 = Instance.new("SpecialMesh")
+Part22 = Instance.new("Part")
+SpecialMesh23 = Instance.new("SpecialMesh")
+Part24 = Instance.new("Part")
+SpecialMesh25 = Instance.new("SpecialMesh")
+Part26 = Instance.new("Part")
+SpecialMesh27 = Instance.new("SpecialMesh")
+Part28 = Instance.new("Part")
+SpecialMesh29 = Instance.new("SpecialMesh")
+Part30 = Instance.new("Part")
+SpecialMesh31 = Instance.new("SpecialMesh")
+Part32 = Instance.new("Part")
+SpecialMesh33 = Instance.new("SpecialMesh")
+Part34 = Instance.new("Part")
+SpecialMesh35 = Instance.new("SpecialMesh")
+Part36 = Instance.new("Part")
+SpecialMesh37 = Instance.new("SpecialMesh")
+Script38 = Instance.new("Script")
+Part39 = Instance.new("Part")
+Part40 = Instance.new("Part")
+Model41 = Instance.new("Model")
+Part42 = Instance.new("Part")
+SpotLight43 = Instance.new("SpotLight")
+Part44 = Instance.new("Part")
+SpotLight45 = Instance.new("SpotLight")
+Part46 = Instance.new("Part")
+SpotLight47 = Instance.new("SpotLight")
+Part48 = Instance.new("Part")
+SpotLight49 = Instance.new("SpotLight")
+Part50 = Instance.new("Part")
+Part51 = Instance.new("Part")
+Part52 = Instance.new("Part")
+Part53 = Instance.new("Part")
+Part54 = Instance.new("Part")
+Part55 = Instance.new("Part")
+Part56 = Instance.new("Part")
+Part57 = Instance.new("Part")
+Part58 = Instance.new("Part")
+Part59 = Instance.new("Part")
+Part60 = Instance.new("Part")
+Part61 = Instance.new("Part")
+Part62 = Instance.new("Part")
+Part63 = Instance.new("Part")
+ClickDetector64 = Instance.new("ClickDetector")
+Sound65 = Instance.new("Sound")
+Sound66 = Instance.new("Sound")
+Sound67 = Instance.new("Sound")
+Sound68 = Instance.new("Sound")
+Script69 = Instance.new("Script")
+Camera70 = Instance.new("Camera")
+Model0.Name = "Nuke"
+Model0.Parent = mas
+Model1.Name = "Missle"
+Model1.Parent = Model0
+Part2.Name = "Smooth Block Model"
+Part2.Parent = Model1
+Part2.CFrame = CFrame.new(-4.02772045, 12.0011625, -270.763916, -3.76690795e-25, 1, 0, 1, -3.76690795e-25, 0, 0, 0, -1)
+Part2.Orientation = Vector3.new(0, 180, 90)
+Part2.Position = Vector3.new(-4.0277204513549805, 12.0011625289917, -270.763916015625)
+Part2.Rotation = Vector3.new(-180, 0, -90)
+Part2.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part2.Size = Vector3.new(4, 4, 4)
+Part2.Anchored = true
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.BrickColor = BrickColor.new("Dark stone grey")
+Part2.Material = Enum.Material.Metal
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.brickColor = BrickColor.new("Dark stone grey")
+Part2.FormFactor = Enum.FormFactor.Symmetric
+Part2.formFactor = Enum.FormFactor.Symmetric
+Part2.Shape = Enum.PartType.Cylinder
+Decal3.Parent = Part2
+Decal3.Texture = "http://www.roblox.com/asset/?id=4740155"
+Decal3.Transparency = 0.5
+Decal3.Face = Enum.NormalId.Bottom
+Decal4.Parent = Part2
+Decal4.Texture = "http://www.roblox.com/asset/?id=4740155"
+Decal4.Transparency = 0.5
+Decal4.Face = Enum.NormalId.Top
+Part5.Name = "Smooth Block Model"
+Part5.Parent = Model1
+Part5.CFrame = CFrame.new(-4.02772045, 6.00104713, -270.763916, 0, 3.76690795e-25, -1, 0, -1, 3.76690795e-25, -1, 0, 0)
+Part5.Orientation = Vector3.new(0, -90, 180)
+Part5.Position = Vector3.new(-4.0277204513549805, 6.001047134399414, -270.763916015625)
+Part5.Rotation = Vector3.new(-180, -90, 0)
+Part5.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part5.Size = Vector3.new(4, 1.600000023841858, 4)
+Part5.Anchored = true
+Part5.BottomSurface = Enum.SurfaceType.Smooth
+Part5.BrickColor = BrickColor.new("Dark stone grey")
+Part5.Material = Enum.Material.Metal
+Part5.TopSurface = Enum.SurfaceType.Smooth
+Part5.brickColor = BrickColor.new("Dark stone grey")
+Part5.FormFactor = Enum.FormFactor.Custom
+Part5.formFactor = Enum.FormFactor.Custom
+SpecialMesh6.Parent = Part5
+SpecialMesh6.Scale = Vector3.new(1, 2.799999952316284, 1)
+SpecialMesh6.MeshType = Enum.MeshType.Sphere
+Part7.Name = "Smooth Block Model"
+Part7.Parent = Model1
+Part7.CFrame = CFrame.new(-2.22772121, 3.20105815, -270.763916, 0, -3.76690795e-25, -1, 0, 1, 3.76690795e-25, 1, 0, 0)
+Part7.Orientation = Vector3.new(0, -90, 0)
+Part7.Position = Vector3.new(-2.2277212142944336, 3.2010581493377686, -270.763916015625)
+Part7.Rotation = Vector3.new(0, -90, 0)
+Part7.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part7.Size = Vector3.new(2, 2.4000000953674316, 1.600000023841858)
+Part7.Anchored = true
+Part7.BottomSurface = Enum.SurfaceType.Smooth
+Part7.BrickColor = BrickColor.new("Dark stone grey")
+Part7.Material = Enum.Material.Metal
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Part7.brickColor = BrickColor.new("Dark stone grey")
+Part7.FormFactor = Enum.FormFactor.Custom
+Part7.formFactor = Enum.FormFactor.Custom
+SpecialMesh8.Parent = Part7
+SpecialMesh8.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh8.MeshType = Enum.MeshType.Wedge
+Part9.Name = "Smooth Block Model"
+Part9.Parent = Model1
+Part9.CFrame = CFrame.new(-2.42772198, 1.00000882, -270.763916, 0, -1, 3.76690795e-25, 0, 3.76690795e-25, -1, 1, 0, 0)
+Part9.Orientation = Vector3.new(90, -90, 0)
+Part9.Position = Vector3.new(-2.4277219772338867, 1.0000088214874268, -270.763916015625)
+Part9.Rotation = Vector3.new(90, 0, 90)
+Part9.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part9.Size = Vector3.new(2, 1.2000000476837158, 2)
+Part9.Anchored = true
+Part9.BottomSurface = Enum.SurfaceType.Smooth
+Part9.BrickColor = BrickColor.new("Dark stone grey")
+Part9.Material = Enum.Material.Metal
+Part9.TopSurface = Enum.SurfaceType.Smooth
+Part9.brickColor = BrickColor.new("Dark stone grey")
+Part9.FormFactor = Enum.FormFactor.Custom
+Part9.formFactor = Enum.FormFactor.Custom
+SpecialMesh10.Parent = Part9
+SpecialMesh10.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh10.MeshType = Enum.MeshType.Brick
+Part11.Name = "Base"
+Part11.Parent = Model1
+Part11.CFrame = CFrame.new(-4.02772045, 1.00000882, -270.763916, 3.76690795e-25, -1, 0, -1, 3.76690795e-25, 0, 0, 0, -1)
+Part11.Orientation = Vector3.new(0, 180, -90)
+Part11.Position = Vector3.new(-4.0277204513549805, 1.0000088214874268, -270.763916015625)
+Part11.Rotation = Vector3.new(-180, 0, 90)
+Part11.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part11.Size = Vector3.new(2, 2, 2)
+Part11.Anchored = true
+Part11.BottomSurface = Enum.SurfaceType.Smooth
+Part11.BrickColor = BrickColor.new("Dark stone grey")
+Part11.Material = Enum.Material.Metal
+Part11.TopSurface = Enum.SurfaceType.Smooth
+Part11.brickColor = BrickColor.new("Dark stone grey")
+Part11.FormFactor = Enum.FormFactor.Symmetric
+Part11.formFactor = Enum.FormFactor.Symmetric
+Part11.Shape = Enum.PartType.Cylinder
+Fire12.Parent = Part11
+Fire12.Enabled = false
+Fire12.Size = 10
+Fire12.Heat = 0
+Fire12.SecondaryColor = Color3.new(0.545098, 0.313726, 0.215686)
+Fire12.size = 10
+Smoke13.Parent = Part11
+Smoke13.Enabled = false
+Smoke13.Opacity = 0.10000000149011612
+Part14.Name = "Smooth Block Model"
+Part14.Parent = Model1
+Part14.CFrame = CFrame.new(-1.62771893, 1.00000882, -270.763916, -3.76690795e-25, 1, 0, 1, -3.76690795e-25, 0, 0, 0, -1)
+Part14.Orientation = Vector3.new(0, 180, 90)
+Part14.Position = Vector3.new(-1.6277189254760742, 1.0000088214874268, -270.763916015625)
+Part14.Rotation = Vector3.new(-180, 0, -90)
+Part14.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part14.Size = Vector3.new(2, 0.4000000059604645, 4)
+Part14.Anchored = true
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.BrickColor = BrickColor.new("Dark stone grey")
+Part14.Material = Enum.Material.Metal
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Part14.brickColor = BrickColor.new("Dark stone grey")
+Part14.FormFactor = Enum.FormFactor.Custom
+Part14.formFactor = Enum.FormFactor.Custom
+SpecialMesh15.Parent = Part14
+SpecialMesh15.Scale = Vector3.new(1, 1, 1.2999999523162842)
+SpecialMesh15.MeshType = Enum.MeshType.Brick
+Part16.Name = "Smooth Block Model"
+Part16.Parent = Model1
+Part16.CFrame = CFrame.new(-4.02772045, 8.00107098, -270.763916, -3.76690795e-25, 1, 0, 1, -3.76690795e-25, 0, 0, 0, -1)
+Part16.Orientation = Vector3.new(0, 180, 90)
+Part16.Position = Vector3.new(-4.0277204513549805, 8.001070976257324, -270.763916015625)
+Part16.Rotation = Vector3.new(-180, 0, -90)
+Part16.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part16.Size = Vector3.new(4, 4, 4)
+Part16.Anchored = true
+Part16.BottomSurface = Enum.SurfaceType.Smooth
+Part16.BrickColor = BrickColor.new("Dark stone grey")
+Part16.Material = Enum.Material.Metal
+Part16.TopSurface = Enum.SurfaceType.Smooth
+Part16.brickColor = BrickColor.new("Dark stone grey")
+Part16.FormFactor = Enum.FormFactor.Symmetric
+Part16.formFactor = Enum.FormFactor.Symmetric
+Part16.Shape = Enum.PartType.Cylinder
+Part17.Name = "Smooth Block Model"
+Part17.Parent = Model1
+Part17.CFrame = CFrame.new(-4.02772045, 3.00103879, -270.763916, 3.76690795e-25, -1, 0, -1, 3.76690795e-25, 0, 0, 0, -1)
+Part17.Orientation = Vector3.new(0, 180, -90)
+Part17.Position = Vector3.new(-4.0277204513549805, 3.0010387897491455, -270.763916015625)
+Part17.Rotation = Vector3.new(-180, 0, 90)
+Part17.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part17.Size = Vector3.new(2, 2, 2)
+Part17.Anchored = true
+Part17.BottomSurface = Enum.SurfaceType.Smooth
+Part17.BrickColor = BrickColor.new("Dark stone grey")
+Part17.Material = Enum.Material.Metal
+Part17.TopSurface = Enum.SurfaceType.Smooth
+Part17.brickColor = BrickColor.new("Dark stone grey")
+Part17.FormFactor = Enum.FormFactor.Symmetric
+Part17.formFactor = Enum.FormFactor.Symmetric
+Part17.Shape = Enum.PartType.Cylinder
+Part18.Name = "Smooth Block Model"
+Part18.Parent = Model1
+Part18.CFrame = CFrame.new(-4.02772045, 3.20105815, -268.963928, -1, -3.76690795e-25, 0, 3.76690795e-25, 1, 0, 0, 0, -1)
+Part18.Orientation = Vector3.new(0, 180, 0)
+Part18.Position = Vector3.new(-4.0277204513549805, 3.2010581493377686, -268.96392822265625)
+Part18.Rotation = Vector3.new(-180, 0, 180)
+Part18.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part18.Size = Vector3.new(2, 2.4000000953674316, 1.600000023841858)
+Part18.Anchored = true
+Part18.BottomSurface = Enum.SurfaceType.Smooth
+Part18.BrickColor = BrickColor.new("Dark stone grey")
+Part18.Material = Enum.Material.Metal
+Part18.TopSurface = Enum.SurfaceType.Smooth
+Part18.brickColor = BrickColor.new("Dark stone grey")
+Part18.FormFactor = Enum.FormFactor.Custom
+Part18.formFactor = Enum.FormFactor.Custom
+SpecialMesh19.Parent = Part18
+SpecialMesh19.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh19.MeshType = Enum.MeshType.Wedge
+Part20.Name = "Smooth Block Model"
+Part20.Parent = Model1
+Part20.CFrame = CFrame.new(-4.02772045, 1.00000882, -272.363922, 1, 0, 3.76690795e-25, -3.76690795e-25, 0, -1, 0, 1, 0)
+Part20.Orientation = Vector3.new(90, 0, 0)
+Part20.Position = Vector3.new(-4.0277204513549805, 1.0000088214874268, -272.3639221191406)
+Part20.Rotation = Vector3.new(90, 0, 0)
+Part20.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part20.Size = Vector3.new(2, 1.2000000476837158, 2)
+Part20.Anchored = true
+Part20.BottomSurface = Enum.SurfaceType.Smooth
+Part20.BrickColor = BrickColor.new("Dark stone grey")
+Part20.Material = Enum.Material.Metal
+Part20.TopSurface = Enum.SurfaceType.Smooth
+Part20.brickColor = BrickColor.new("Dark stone grey")
+Part20.FormFactor = Enum.FormFactor.Custom
+Part20.formFactor = Enum.FormFactor.Custom
+SpecialMesh21.Parent = Part20
+SpecialMesh21.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh21.MeshType = Enum.MeshType.Brick
+Part22.Name = "Smooth Block Model"
+Part22.Parent = Model1
+Part22.CFrame = CFrame.new(-5.82771969, 3.20105815, -270.763916, 0, -3.76690795e-25, 1, 0, 1, -3.76690795e-25, -1, 0, 0)
+Part22.Orientation = Vector3.new(0, 90, 0)
+Part22.Position = Vector3.new(-5.827719688415527, 3.2010581493377686, -270.763916015625)
+Part22.Rotation = Vector3.new(0, 90, 0)
+Part22.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part22.Size = Vector3.new(2, 2.4000000953674316, 1.600000023841858)
+Part22.Anchored = true
+Part22.BottomSurface = Enum.SurfaceType.Smooth
+Part22.BrickColor = BrickColor.new("Dark stone grey")
+Part22.Material = Enum.Material.Metal
+Part22.TopSurface = Enum.SurfaceType.Smooth
+Part22.brickColor = BrickColor.new("Dark stone grey")
+Part22.FormFactor = Enum.FormFactor.Custom
+Part22.formFactor = Enum.FormFactor.Custom
+SpecialMesh23.Parent = Part22
+SpecialMesh23.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh23.MeshType = Enum.MeshType.Wedge
+Part24.Name = "Smooth Block Model"
+Part24.Parent = Model1
+Part24.CFrame = CFrame.new(-4.02772045, 3.20105815, -272.563904, 1, -3.76690795e-25, 0, -3.76690795e-25, 1, 0, 0, 0, 1)
+Part24.Position = Vector3.new(-4.0277204513549805, 3.2010581493377686, -272.56390380859375)
+Part24.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part24.Size = Vector3.new(2, 2.4000000953674316, 1.600000023841858)
+Part24.Anchored = true
+Part24.BottomSurface = Enum.SurfaceType.Smooth
+Part24.BrickColor = BrickColor.new("Dark stone grey")
+Part24.Material = Enum.Material.Metal
+Part24.TopSurface = Enum.SurfaceType.Smooth
+Part24.brickColor = BrickColor.new("Dark stone grey")
+Part24.FormFactor = Enum.FormFactor.Custom
+Part24.formFactor = Enum.FormFactor.Custom
+SpecialMesh25.Parent = Part24
+SpecialMesh25.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh25.MeshType = Enum.MeshType.Wedge
+Part26.Name = "Smooth Block Model"
+Part26.Parent = Model1
+Part26.CFrame = CFrame.new(-4.02772045, 1.00000882, -273.16391, 3.76690795e-25, 0, 1, -1, 0, -3.76690795e-25, 0, -1, 0)
+Part26.Orientation = Vector3.new(0, 90, -90)
+Part26.Position = Vector3.new(-4.0277204513549805, 1.0000088214874268, -273.1639099121094)
+Part26.Rotation = Vector3.new(-90, 90, 0)
+Part26.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part26.Size = Vector3.new(2, 0.4000000059604645, 4)
+Part26.Anchored = true
+Part26.BottomSurface = Enum.SurfaceType.Smooth
+Part26.BrickColor = BrickColor.new("Dark stone grey")
+Part26.Material = Enum.Material.Metal
+Part26.TopSurface = Enum.SurfaceType.Smooth
+Part26.brickColor = BrickColor.new("Dark stone grey")
+Part26.FormFactor = Enum.FormFactor.Custom
+Part26.formFactor = Enum.FormFactor.Custom
+SpecialMesh27.Parent = Part26
+SpecialMesh27.Scale = Vector3.new(1, 1, 1.2999999523162842)
+SpecialMesh27.MeshType = Enum.MeshType.Brick
+Part28.Name = "Smooth Block Model"
+Part28.Parent = Model1
+Part28.CFrame = CFrame.new(-4.02772045, 1.00000882, -268.363922, -3.76690795e-25, 0, 1, 1, 0, -3.76690795e-25, 0, 1, 0)
+Part28.Orientation = Vector3.new(0, 90, 90)
+Part28.Position = Vector3.new(-4.0277204513549805, 1.0000088214874268, -268.3639221191406)
+Part28.Rotation = Vector3.new(90, 90, 0)
+Part28.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part28.Size = Vector3.new(2, 0.4000000059604645, 4)
+Part28.Anchored = true
+Part28.BottomSurface = Enum.SurfaceType.Smooth
+Part28.BrickColor = BrickColor.new("Dark stone grey")
+Part28.Material = Enum.Material.Metal
+Part28.TopSurface = Enum.SurfaceType.Smooth
+Part28.brickColor = BrickColor.new("Dark stone grey")
+Part28.FormFactor = Enum.FormFactor.Custom
+Part28.formFactor = Enum.FormFactor.Custom
+SpecialMesh29.Parent = Part28
+SpecialMesh29.Scale = Vector3.new(1, 1, 1.2999999523162842)
+SpecialMesh29.MeshType = Enum.MeshType.Brick
+Part30.Name = "Smooth Block Model"
+Part30.Parent = Model1
+Part30.CFrame = CFrame.new(-4.02772045, 1.00000882, -269.16391, 1, 0, 3.76690795e-25, -3.76690795e-25, 0, -1, 0, 1, 0)
+Part30.Orientation = Vector3.new(90, 0, 0)
+Part30.Position = Vector3.new(-4.0277204513549805, 1.0000088214874268, -269.1639099121094)
+Part30.Rotation = Vector3.new(90, 0, 0)
+Part30.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part30.Size = Vector3.new(2, 1.2000000476837158, 2)
+Part30.Anchored = true
+Part30.BottomSurface = Enum.SurfaceType.Smooth
+Part30.BrickColor = BrickColor.new("Dark stone grey")
+Part30.Material = Enum.Material.Metal
+Part30.TopSurface = Enum.SurfaceType.Smooth
+Part30.brickColor = BrickColor.new("Dark stone grey")
+Part30.FormFactor = Enum.FormFactor.Custom
+Part30.formFactor = Enum.FormFactor.Custom
+SpecialMesh31.Parent = Part30
+SpecialMesh31.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh31.MeshType = Enum.MeshType.Brick
+Part32.Name = "Smooth Block Model"
+Part32.Parent = Model1
+Part32.CFrame = CFrame.new(-5.62771893, 1.00000882, -270.763916, 0, -1, 3.76690795e-25, 0, 3.76690795e-25, -1, 1, 0, 0)
+Part32.Orientation = Vector3.new(90, -90, 0)
+Part32.Position = Vector3.new(-5.627718925476074, 1.0000088214874268, -270.763916015625)
+Part32.Rotation = Vector3.new(90, 0, 90)
+Part32.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part32.Size = Vector3.new(2, 1.2000000476837158, 2)
+Part32.Anchored = true
+Part32.BottomSurface = Enum.SurfaceType.Smooth
+Part32.BrickColor = BrickColor.new("Dark stone grey")
+Part32.Material = Enum.Material.Metal
+Part32.TopSurface = Enum.SurfaceType.Smooth
+Part32.brickColor = BrickColor.new("Dark stone grey")
+Part32.FormFactor = Enum.FormFactor.Custom
+Part32.formFactor = Enum.FormFactor.Custom
+SpecialMesh33.Parent = Part32
+SpecialMesh33.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh33.MeshType = Enum.MeshType.Brick
+Part34.Name = "Smooth Block Model"
+Part34.Parent = Model1
+Part34.CFrame = CFrame.new(-6.42772198, 1.00000882, -270.763916, 3.76690795e-25, -1, 0, -1, 3.76690795e-25, 0, 0, 0, -1)
+Part34.Orientation = Vector3.new(0, 180, -90)
+Part34.Position = Vector3.new(-6.427721977233887, 1.0000088214874268, -270.763916015625)
+Part34.Rotation = Vector3.new(-180, 0, 90)
+Part34.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part34.Size = Vector3.new(2, 0.4000000059604645, 4)
+Part34.Anchored = true
+Part34.BottomSurface = Enum.SurfaceType.Smooth
+Part34.BrickColor = BrickColor.new("Dark stone grey")
+Part34.Material = Enum.Material.Metal
+Part34.TopSurface = Enum.SurfaceType.Smooth
+Part34.brickColor = BrickColor.new("Dark stone grey")
+Part34.FormFactor = Enum.FormFactor.Custom
+Part34.formFactor = Enum.FormFactor.Custom
+SpecialMesh35.Parent = Part34
+SpecialMesh35.Scale = Vector3.new(1, 1, 1.2999999523162842)
+SpecialMesh35.MeshType = Enum.MeshType.Brick
+Part36.Name = "Tip"
+Part36.Parent = Model1
+Part36.CFrame = CFrame.new(-4.02772045, 18.3521652, -270.763916, -1, -3.76690795e-25, 0, 3.76690795e-25, 1, 0, 0, 0, -1)
+Part36.Orientation = Vector3.new(0, 180, 0)
+Part36.Position = Vector3.new(-4.0277204513549805, 18.35216522216797, -270.763916015625)
+Part36.Rotation = Vector3.new(-180, 0, 180)
+Part36.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part36.Size = Vector3.new(4, 1.5000001192092896, 4)
+Part36.Anchored = true
+Part36.BottomSurface = Enum.SurfaceType.Smooth
+Part36.BrickColor = BrickColor.new("Bright yellow")
+Part36.Material = Enum.Material.Foil
+Part36.Reflectance = 0.20000000298023224
+Part36.TopSurface = Enum.SurfaceType.Smooth
+Part36.brickColor = BrickColor.new("Bright yellow")
+Part36.FormFactor = Enum.FormFactor.Custom
+Part36.formFactor = Enum.FormFactor.Custom
+SpecialMesh37.Parent = Part36
+SpecialMesh37.Scale = Vector3.new(1, 5, 1)
+SpecialMesh37.MeshType = Enum.MeshType.Sphere
+Script38.Name = "Boom"
+Script38.Parent = Part36
+Script38.Enabled = false
+table.insert(cors,sandbox(Script38,function()
+while true do
+c = game.Workspace:GetChildren()
+for i =1,#c do
+if ((c[i].className == "Part" or c[i].className == "TrussPart" or c[i].className == "WedgePart" or c[i].className == "Seat" or c[i].className == "VehicleSeat") and (c[i].Position - script.Parent.Position).magnitude < (script.Parent.Size.X / 2.1) - 5) then
+if c[i].Locked == false then
+c[i].Material = Enum.Material.CorrodedMetal
+c[i].Anchored = false
+c[i]:BreakJoints()
+local miniboom = script.Parent.Parent.Parent.Button.SmallBoom:Clone()
+miniboom.Parent=c[i]
+miniboom:Play()
+game.Debris:AddItem(miniboom,1)
+end
+end
+if (c[i].className == "Model") then
+end
+g = c[i]:GetChildren()
+for j =1,#g do
+if ((g[j].className == "Part" or g[j].className == "TrussPart" or g[j].className == "WedgePart" or g[j].className == "Seat" or g[j].className == "VehicleSeat") and g[j].Name ~= script.Parent.Name and g[j].Name ~= "Glow" and (g[j].Position - script.Parent.Position).magnitude < (script.Parent.Size.X / 2.1) - 5) then
+g[j].Material = Enum.Material.CorrodedMetal
+g[j].Anchored = false
+g[j]:BreakJoints()
+local miniboom = script.Parent.Parent.Parent.Button.SmallBoom:Clone()
+miniboom.Parent=c[i]
+miniboom:Play()
+game.Debris:AddItem(miniboom,1)
+end
+if (g[j].className == "Model") then
+end
+t = g[j]:GetChildren()
+for s =1,#t do
+if ((t[s].className == "Part" or t[s].className == "TrussPart" or t[s].className == "WedgePart" or t[s].className == "Seat" or t[s].className == "VehicleSeat") and t[s].Name ~= script.Parent.Name and t[s].Name ~= "Glow" and (t[s].Position - script.Parent.Position).magnitude < (script.Parent.Size.X / 2.1) - 5) then
+t[s].Material = Enum.Material.CorrodedMetal
+t[s].Anchored = false
+t[s]:BreakJoints()
+end
+if (t[s].className == "Model") then
+end
+a = t[s]:GetChildren()
+for z =1,#a do
+if ((a[z].className == "Part" or a[z].className == "TrussPart" or a[z].className == "WedgePart" or a[z].className == "Seat" or a[z].className == "VehicleSeat") and a[z].Name ~= script.Parent.Name and a[z].Name ~= "Glow" and (a[z].Position - script.Parent.Position).magnitude < (script.Parent.Size.X / 2.1) - 5) then
+a[z].Material = Enum.Material.CorrodedMetal
+a[z].Anchored = false
+a[z]:BreakJoints()
+end
+if (a[z].className == "Model") then
+end
+p = a[z]:GetChildren()
+for l =1,#p do
+if ((p[l].className == "Part" or p[l].className == "TrussPart" or p[l].className == "WedgePart" or p[l].className == "Seat" or p[l].className == "VehicleSeat") and p[l].Name ~= script.Parent.Name and p[l].Name ~= "Glow" and (p[l].Position - script.Parent.Position).magnitude < (script.Parent.Size.X / 2.1) - 5) then
+p[l].Material = Enum.Material.CorrodedMetal
+p[l].Anchored = false
+p[l]:BreakJoints()
+end
+end
+end
+end
+end
+end
+wait(.3)
+end
+
+end))
+Script38.Disabled = true
+Part39.Name = "Smooth Block Model"
+Part39.Parent = Model1
+Part39.CFrame = CFrame.new(-4.02772045, 5.00100136, -270.763916, 3.76690795e-25, -1, 0, -1, 3.76690795e-25, 0, 0, 0, -1)
+Part39.Orientation = Vector3.new(0, 180, -90)
+Part39.Position = Vector3.new(-4.0277204513549805, 5.001001358032227, -270.763916015625)
+Part39.Rotation = Vector3.new(-180, 0, 90)
+Part39.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part39.Size = Vector3.new(2, 2, 2)
+Part39.Anchored = true
+Part39.BottomSurface = Enum.SurfaceType.Smooth
+Part39.BrickColor = BrickColor.new("Dark stone grey")
+Part39.Material = Enum.Material.Metal
+Part39.TopSurface = Enum.SurfaceType.Smooth
+Part39.brickColor = BrickColor.new("Dark stone grey")
+Part39.FormFactor = Enum.FormFactor.Symmetric
+Part39.formFactor = Enum.FormFactor.Symmetric
+Part39.Shape = Enum.PartType.Cylinder
+Part40.Name = "Smooth Block Model"
+Part40.Parent = Model1
+Part40.CFrame = CFrame.new(-4.02772045, 16.0021877, -270.763916, -3.76690795e-25, 1, 0, 1, -3.76690795e-25, 0, 0, 0, -1)
+Part40.Orientation = Vector3.new(0, 180, 90)
+Part40.Position = Vector3.new(-4.0277204513549805, 16.002187728881836, -270.763916015625)
+Part40.Rotation = Vector3.new(-180, 0, -90)
+Part40.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part40.Size = Vector3.new(4, 4, 4)
+Part40.Anchored = true
+Part40.BottomSurface = Enum.SurfaceType.Smooth
+Part40.BrickColor = BrickColor.new("Dark stone grey")
+Part40.Material = Enum.Material.Metal
+Part40.TopSurface = Enum.SurfaceType.Smooth
+Part40.brickColor = BrickColor.new("Dark stone grey")
+Part40.FormFactor = Enum.FormFactor.Symmetric
+Part40.formFactor = Enum.FormFactor.Symmetric
+Part40.Shape = Enum.PartType.Cylinder
+Model41.Name = "Lights"
+Model41.Parent = Model0
+Part42.Name = "Light"
+Part42.Parent = Model41
+Part42.CFrame = CFrame.new(-8.32771969, 0.605720639, -270.763916, 1, -2.82302426e-09, 5.19082066e-16, 2.82302426e-09, 1, -7.256864e-10, -5.17033411e-16, 7.256864e-10, 1)
+Part42.Position = Vector3.new(-8.327719688415527, 0.6057206392288208, -270.763916015625)
+Part42.Size = Vector3.new(3.3999998569488525, 1.1999998092651367, 12)
+Part42.Anchored = true
+Part42.BottomSurface = Enum.SurfaceType.Smooth
+Part42.TopSurface = Enum.SurfaceType.Smooth
+Part42.FormFactor = Enum.FormFactor.Custom
+Part42.formFactor = Enum.FormFactor.Custom
+SpotLight43.Parent = Part42
+SpotLight43.Color = Color3.new(1, 0, 0.0156863)
+SpotLight43.Enabled = false
+SpotLight43.Face = Enum.NormalId.Left
+SpotLight43.Brightness = 100
+Part44.Name = "Light"
+Part44.Parent = Model41
+Part44.CFrame = CFrame.new(-4.02772045, 0.605720639, -266.463928, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part44.Orientation = Vector3.new(0, -90, 0)
+Part44.Position = Vector3.new(-4.0277204513549805, 0.6057206392288208, -266.46392822265625)
+Part44.Rotation = Vector3.new(0, -90, 0)
+Part44.Size = Vector3.new(3.3999998569488525, 1.1999998092651367, 5.200000286102295)
+Part44.Anchored = true
+Part44.BottomSurface = Enum.SurfaceType.Smooth
+Part44.TopSurface = Enum.SurfaceType.Smooth
+Part44.FormFactor = Enum.FormFactor.Custom
+Part44.formFactor = Enum.FormFactor.Custom
+SpotLight45.Parent = Part44
+SpotLight45.Color = Color3.new(1, 0, 0.0156863)
+SpotLight45.Enabled = false
+SpotLight45.Face = Enum.NormalId.Right
+SpotLight45.Brightness = 100
+Part46.Name = "Light"
+Part46.Parent = Model41
+Part46.CFrame = CFrame.new(-4.02772045, 0.605720639, -275.063904, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part46.Orientation = Vector3.new(0, -90, 0)
+Part46.Position = Vector3.new(-4.0277204513549805, 0.6057206392288208, -275.06390380859375)
+Part46.Rotation = Vector3.new(0, -90, 0)
+Part46.Size = Vector3.new(3.3999998569488525, 1.1999998092651367, 5.200000286102295)
+Part46.Anchored = true
+Part46.BottomSurface = Enum.SurfaceType.Smooth
+Part46.TopSurface = Enum.SurfaceType.Smooth
+Part46.FormFactor = Enum.FormFactor.Custom
+Part46.formFactor = Enum.FormFactor.Custom
+SpotLight47.Parent = Part46
+SpotLight47.Color = Color3.new(1, 0, 0.0156863)
+SpotLight47.Enabled = false
+SpotLight47.Face = Enum.NormalId.Left
+SpotLight47.Brightness = 100
+Part48.Name = "Light"
+Part48.Parent = Model41
+Part48.CFrame = CFrame.new(0.2722826, 0.605720639, -270.763916, 1, -2.82302426e-09, 5.19082066e-16, 2.82302426e-09, 1, -7.256864e-10, -5.17033411e-16, 7.256864e-10, 1)
+Part48.Position = Vector3.new(0.27228260040283203, 0.6057206392288208, -270.763916015625)
+Part48.Size = Vector3.new(3.3999998569488525, 1.1999998092651367, 12)
+Part48.Anchored = true
+Part48.BottomSurface = Enum.SurfaceType.Smooth
+Part48.TopSurface = Enum.SurfaceType.Smooth
+Part48.FormFactor = Enum.FormFactor.Custom
+Part48.formFactor = Enum.FormFactor.Custom
+SpotLight49.Parent = Part48
+SpotLight49.Color = Color3.new(1, 0, 0.0156863)
+SpotLight49.Enabled = false
+SpotLight49.Face = Enum.NormalId.Right
+SpotLight49.Brightness = 100
+Part50.Parent = Model0
+Part50.CFrame = CFrame.new(-8.32771969, 5.60674381, -270.763916, 1, -2.82302426e-09, 5.19082066e-16, 2.82302426e-09, 1, -7.256864e-10, -5.17033411e-16, 7.256864e-10, 1)
+Part50.Position = Vector3.new(-8.327719688415527, 5.606743812561035, -270.763916015625)
+Part50.Transparency = 0.5
+Part50.Size = Vector3.new(3.3999998569488525, 8.799999237060547, 5.199999809265137)
+Part50.Anchored = true
+Part50.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part50.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part50.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part50.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part50.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part50.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part50.FormFactor = Enum.FormFactor.Custom
+Part50.formFactor = Enum.FormFactor.Custom
+Part51.Parent = Model0
+Part51.CFrame = CFrame.new(-4.02772045, 5.60674381, -266.463928, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part51.Orientation = Vector3.new(0, -90, 0)
+Part51.Position = Vector3.new(-4.0277204513549805, 5.606743812561035, -266.46392822265625)
+Part51.Rotation = Vector3.new(0, -90, 0)
+Part51.Transparency = 0.5
+Part51.Size = Vector3.new(3.3999998569488525, 8.799999237060547, 5.200000286102295)
+Part51.Anchored = true
+Part51.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part51.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part51.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part51.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part51.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part51.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part51.FormFactor = Enum.FormFactor.Custom
+Part51.formFactor = Enum.FormFactor.Custom
+Part52.Parent = Model0
+Part52.CFrame = CFrame.new(-4.02772045, 5.60674381, -275.063904, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part52.Orientation = Vector3.new(0, -90, 0)
+Part52.Position = Vector3.new(-4.0277204513549805, 5.606743812561035, -275.06390380859375)
+Part52.Rotation = Vector3.new(0, -90, 0)
+Part52.Transparency = 0.5
+Part52.Size = Vector3.new(3.3999998569488525, 8.799999237060547, 5.200000286102295)
+Part52.Anchored = true
+Part52.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part52.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part52.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part52.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part52.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part52.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part52.FormFactor = Enum.FormFactor.Custom
+Part52.formFactor = Enum.FormFactor.Custom
+Part53.Parent = Model0
+Part53.CFrame = CFrame.new(0.2722826, 5.60674381, -270.763916, 1, -2.82302426e-09, 5.19082066e-16, 2.82302426e-09, 1, -7.256864e-10, -5.17033411e-16, 7.256864e-10, 1)
+Part53.Position = Vector3.new(0.27228260040283203, 5.606743812561035, -270.763916015625)
+Part53.Transparency = 0.5
+Part53.Size = Vector3.new(3.3999998569488525, 8.799999237060547, 5.199999809265137)
+Part53.Anchored = true
+Part53.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part53.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part53.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part53.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part53.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part53.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part53.FormFactor = Enum.FormFactor.Custom
+Part53.formFactor = Enum.FormFactor.Custom
+Part54.Parent = Model0
+Part54.CFrame = CFrame.new(0.2722826, 5.60674381, -275.063904, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part54.Orientation = Vector3.new(0, -90, 0)
+Part54.Position = Vector3.new(0.27228260040283203, 5.606743812561035, -275.06390380859375)
+Part54.Rotation = Vector3.new(0, -90, 0)
+Part54.Size = Vector3.new(3.3999998569488525, 8.799999237060547, 3.4000003337860107)
+Part54.Anchored = true
+Part54.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part54.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part54.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part54.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part54.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part54.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part54.FormFactor = Enum.FormFactor.Custom
+Part54.formFactor = Enum.FormFactor.Custom
+Part55.Parent = Model0
+Part55.CFrame = CFrame.new(0.2722826, 5.60674381, -266.463928, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part55.Orientation = Vector3.new(0, -90, 0)
+Part55.Position = Vector3.new(0.27228260040283203, 5.606743812561035, -266.46392822265625)
+Part55.Rotation = Vector3.new(0, -90, 0)
+Part55.Size = Vector3.new(3.3999998569488525, 8.799999237060547, 3.4000003337860107)
+Part55.Anchored = true
+Part55.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part55.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part55.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part55.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part55.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part55.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part55.FormFactor = Enum.FormFactor.Custom
+Part55.formFactor = Enum.FormFactor.Custom
+Part56.Parent = Model0
+Part56.CFrame = CFrame.new(-8.32771969, 5.60674381, -275.063904, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part56.Orientation = Vector3.new(0, -90, 0)
+Part56.Position = Vector3.new(-8.327719688415527, 5.606743812561035, -275.06390380859375)
+Part56.Rotation = Vector3.new(0, -90, 0)
+Part56.Size = Vector3.new(3.3999998569488525, 8.799999237060547, 3.4000003337860107)
+Part56.Anchored = true
+Part56.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part56.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part56.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part56.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part56.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part56.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part56.FormFactor = Enum.FormFactor.Custom
+Part56.formFactor = Enum.FormFactor.Custom
+Part57.Parent = Model0
+Part57.CFrame = CFrame.new(-8.32771969, 5.60674381, -266.463928, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part57.Orientation = Vector3.new(0, -90, 0)
+Part57.Position = Vector3.new(-8.327719688415527, 5.606743812561035, -266.46392822265625)
+Part57.Rotation = Vector3.new(0, -90, 0)
+Part57.Size = Vector3.new(3.3999998569488525, 8.799999237060547, 3.4000003337860107)
+Part57.Anchored = true
+Part57.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part57.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part57.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part57.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part57.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part57.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part57.FormFactor = Enum.FormFactor.Custom
+Part57.formFactor = Enum.FormFactor.Custom
+Part58.Parent = Model0
+Part58.CFrame = CFrame.new(-8.32771969, 10.6069059, -270.763916, 1, -2.82302426e-09, 5.19082066e-16, 2.82302426e-09, 1, -7.256864e-10, -5.17033411e-16, 7.256864e-10, 1)
+Part58.Position = Vector3.new(-8.327719688415527, 10.606905937194824, -270.763916015625)
+Part58.Size = Vector3.new(3.3999998569488525, 1.1999998092651367, 12)
+Part58.Anchored = true
+Part58.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part58.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part58.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part58.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part58.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part58.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part58.FormFactor = Enum.FormFactor.Custom
+Part58.formFactor = Enum.FormFactor.Custom
+Part59.Parent = Model0
+Part59.CFrame = CFrame.new(-4.02772045, 10.6069059, -266.463928, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part59.Orientation = Vector3.new(0, -90, 0)
+Part59.Position = Vector3.new(-4.0277204513549805, 10.606905937194824, -266.46392822265625)
+Part59.Rotation = Vector3.new(0, -90, 0)
+Part59.Size = Vector3.new(3.3999998569488525, 1.1999998092651367, 5.200000286102295)
+Part59.Anchored = true
+Part59.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part59.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part59.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part59.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part59.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part59.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part59.FormFactor = Enum.FormFactor.Custom
+Part59.formFactor = Enum.FormFactor.Custom
+Part60.Parent = Model0
+Part60.CFrame = CFrame.new(0.2722826, 10.6069059, -270.763916, 1, -2.82302426e-09, 5.19082066e-16, 2.82302426e-09, 1, -7.256864e-10, -5.17033411e-16, 7.256864e-10, 1)
+Part60.Position = Vector3.new(0.27228260040283203, 10.606905937194824, -270.763916015625)
+Part60.Size = Vector3.new(3.3999998569488525, 1.1999998092651367, 12)
+Part60.Anchored = true
+Part60.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part60.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part60.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part60.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part60.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part60.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part60.FormFactor = Enum.FormFactor.Custom
+Part60.formFactor = Enum.FormFactor.Custom
+Part61.Parent = Model0
+Part61.CFrame = CFrame.new(-4.02772045, 10.6069059, -275.063904, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part61.Orientation = Vector3.new(0, -90, 0)
+Part61.Position = Vector3.new(-4.0277204513549805, 10.606905937194824, -275.06390380859375)
+Part61.Rotation = Vector3.new(0, -90, 0)
+Part61.Size = Vector3.new(3.3999998569488525, 1.1999998092651367, 5.200000286102295)
+Part61.Anchored = true
+Part61.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part61.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part61.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part61.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part61.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part61.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part61.FormFactor = Enum.FormFactor.Custom
+Part61.formFactor = Enum.FormFactor.Custom
+Part62.Parent = Model0
+Part62.CFrame = CFrame.new(-10.0277205, 5.60674381, -275.963928, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part62.Orientation = Vector3.new(0, -90, 0)
+Part62.Position = Vector3.new(-10.02772045135498, 5.606743812561035, -275.96392822265625)
+Part62.Rotation = Vector3.new(0, -90, 0)
+Part62.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part62.Size = Vector3.new(3.3999998569488525, 3.8999991416931152, 0.20000004768371582)
+Part62.Anchored = true
+Part62.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part62.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part62.BrickColor = BrickColor.new("Dark stone grey")
+Part62.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part62.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Part62.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Part62.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part62.brickColor = BrickColor.new("Dark stone grey")
+Part62.FormFactor = Enum.FormFactor.Custom
+Part62.formFactor = Enum.FormFactor.Custom
+Part63.Name = "Button"
+Part63.Parent = Model0
+Part63.CFrame = CFrame.new(-10.2277212, 5.60674381, -275.963928, -4.37113883e-08, -2.82302426e-09, -1, -7.25686511e-10, 1, -2.82302426e-09, 1, 7.256864e-10, -4.37113883e-08)
+Part63.Orientation = Vector3.new(0, -90, 0)
+Part63.Position = Vector3.new(-10.227721214294434, 5.606743812561035, -275.96392822265625)
+Part63.Rotation = Vector3.new(0, -90, 0)
+Part63.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part63.Size = Vector3.new(2.0999999046325684, 2.599999189376831, 0.20000004768371582)
+Part63.Anchored = true
+Part63.BottomSurface = Enum.SurfaceType.Smooth
+Part63.BrickColor = BrickColor.new("Bright red")
+Part63.TopSurface = Enum.SurfaceType.Smooth
+Part63.brickColor = BrickColor.new("Bright red")
+Part63.FormFactor = Enum.FormFactor.Custom
+Part63.formFactor = Enum.FormFactor.Custom
+ClickDetector64.Parent = Part63
+Sound65.Parent = Part63
+Sound65.Looped = true
+Sound65.SoundId = "http://roblox.com/asset?id=188088048"
+Sound65.Volume = 1
+Sound66.Name = "Boom"
+Sound66.Parent = Part63
+Sound66.Pitch = 0.699999988079071
+Sound66.PlaybackSpeed = 0.699999988079071
+Sound66.SoundId = "http://roblox.com/asset?id=165969964"
+Sound66.Volume = 1
+Sound67.Name = "Siren"
+Sound67.Parent = Part63
+Sound67.Looped = true
+Sound67.SoundId = "http://roblox.com/asset?id=149666616"
+Sound67.Volume = 1
+Sound68.Name = "SmallBoom"
+Sound68.Parent = Part63
+Sound68.SoundId = "http://roblox.com/asset?id=180120107"
+Script69.Name = "BerezaaGamesNuclearScript"
+Script69.Parent = Model0
+table.insert(cors,sandbox(Script69,function()
+-- Fun nuke by berezaa
+-- Credit to FriendlyBiscuit/eric for uploading the loopable alarm sound for me
+
+wait(1)
+
+script.Parent.Missle.Base.Anchored = true
+
+local debounce = false
+
+script.Parent.Button.ClickDetector.MouseClick:connect(function()
+	if debounce == false then
+		debounce = true
+		script.Parent.Button.Sound:Play()
+		
+		local siren = script.Parent.Button.Siren
+		siren.Parent = workspace
+		siren:Play()
+		
+		coroutine.resume(coroutine.create(function()
+			local lights = script.Parent.Lights:GetChildren()
+			for i=1,100 do
+				for i,v in pairs(lights) do
+					v.SpotLight.Enabled = true
+				end
+				wait(0.54)
+				for i,v in pairs(lights) do
+					v.SpotLight.Enabled = false
+				end
+				wait(0.54)			
+			end
+		end))
+		
+		wait(2)
+		
+		script.Parent.Missle.Base.Fire.Enabled = true
+		script.Parent.Missle.Base.Smoke.Enabled = true
+		
+		wait(3)
+		
+		script.Parent.Missle.PrimaryPart = script.Parent.Missle.Base	
+		for i=1,320 do
+			script.Parent.Missle:SetPrimaryPartCFrame(script.Parent.Missle:GetPrimaryPartCFrame()+Vector3.new(0,0.05*((1.1^(i/5))/3),0))
+			wait()
+		end
+		wait()
+		for i=1,100 do
+			script.Parent.Missle:SetPrimaryPartCFrame(script.Parent.Missle:GetPrimaryPartCFrame()+Vector3.new(0,0.05*(1.1^((250-i)/5)/3),0))
+				script.Parent.Missle:SetPrimaryPartCFrame(script.Parent.Missle:GetPrimaryPartCFrame()*CFrame.Angles(0,math.pi/100,0))
+				script.Parent.Missle:SetPrimaryPartCFrame(script.Parent.Missle:GetPrimaryPartCFrame()+Vector3.new(0,0,-i/100))	
+			wait()
+		end
+		wait()
+		for i=200,120,-1 do
+			script.Parent.Missle:SetPrimaryPartCFrame(script.Parent.Missle:GetPrimaryPartCFrame()-Vector3.new(0,0.1*((1.1^(i/2.95))/4),0))
+			wait()
+		end	
+		
+		script.Parent.Missle.Tip.Transparency = 0.5
+		script.Parent.Missle.Tip.CanCollide = false
+		script.Parent.Missle.Tip.Mesh.Scale = Vector3.new(1,1,1)
+		local boom = script.Parent.Button.Boom
+		boom.Parent=workspace
+		boom:Play()
+		local frame = script.Parent.Missle.Tip.CFrame
+		
+		script.Parent.Missle.Tip.Boom.Disabled = false	
+		
+		for i=1,400 do
+			script.Parent.Missle.Tip.Size=script.Parent.Missle.Tip.Size+Vector3.new(3,3,3)
+			script.Parent.Missle.Tip.CFrame=frame
+			wait()
+		end
+		script.Parent.Missle.Tip.Boom.Disabled=true
+		script.Parent.Missle:Destroy()
+		siren:Stop()
+		boom:Stop()
+		
+		
+	end
+end)
+end))
+Camera70.Name = "ThumbnailCamera"
+Camera70.Parent = Model0
+Camera70.CFrame = CFrame.new(-24.5252228, 16.4304733, 33.4278069, 0.0989291072, 0.451767176, -0.886633754, 3.7252903e-09, 0.891004562, 0.453994244, 0.995094478, -0.0449132472, 0.0881462917)
+Camera70.CoordinateFrame = CFrame.new(-24.5252228, 16.4304733, 33.4278069, 0.0989291072, 0.451767176, -0.886633754, 3.7252903e-09, 0.891004562, 0.453994244, 0.995094478, -0.0449132472, 0.0881462917)
+Camera70.Focus = CFrame.new(-22.7519569, 15.5224857, 33.2515144, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera70.focus = CFrame.new(-22.7519569, 15.5224857, 33.2515144, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
