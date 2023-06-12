@@ -1,0 +1,717 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Decal2 = Instance.new("Decal")
+Decal3 = Instance.new("Decal")
+Decal4 = Instance.new("Decal")
+Decal5 = Instance.new("Decal")
+Weld6 = Instance.new("Weld")
+Weld7 = Instance.new("Weld")
+Part8 = Instance.new("Part")
+SpecialMesh9 = Instance.new("SpecialMesh")
+Script10 = Instance.new("Script")
+Script11 = Instance.new("Script")
+Script12 = Instance.new("Script")
+Script13 = Instance.new("Script")
+Script14 = Instance.new("Script")
+Part15 = Instance.new("Part")
+SpecialMesh16 = Instance.new("SpecialMesh")
+Weld17 = Instance.new("Weld")
+Weld18 = Instance.new("Weld")
+Weld19 = Instance.new("Weld")
+Weld20 = Instance.new("Weld")
+Weld21 = Instance.new("Weld")
+Part22 = Instance.new("Part")
+Decal23 = Instance.new("Decal")
+Decal24 = Instance.new("Decal")
+Decal25 = Instance.new("Decal")
+Decal26 = Instance.new("Decal")
+Part27 = Instance.new("Part")
+SpecialMesh28 = Instance.new("SpecialMesh")
+Part29 = Instance.new("Part")
+Weld30 = Instance.new("Weld")
+Weld31 = Instance.new("Weld")
+Weld32 = Instance.new("Weld")
+Weld33 = Instance.new("Weld")
+Weld34 = Instance.new("Weld")
+Part35 = Instance.new("Part")
+SpecialMesh36 = Instance.new("SpecialMesh")
+Part37 = Instance.new("Part")
+SpecialMesh38 = Instance.new("SpecialMesh")
+Weld39 = Instance.new("Weld")
+Part40 = Instance.new("Part")
+SpecialMesh41 = Instance.new("SpecialMesh")
+Part42 = Instance.new("Part")
+Weld43 = Instance.new("Weld")
+Weld44 = Instance.new("Weld")
+Part45 = Instance.new("Part")
+SpecialMesh46 = Instance.new("SpecialMesh")
+Weld47 = Instance.new("Weld")
+Weld48 = Instance.new("Weld")
+Weld49 = Instance.new("Weld")
+Part50 = Instance.new("Part")
+SpecialMesh51 = Instance.new("SpecialMesh")
+Part52 = Instance.new("Part")
+SpecialMesh53 = Instance.new("SpecialMesh")
+Weld54 = Instance.new("Weld")
+Weld55 = Instance.new("Weld")
+Weld56 = Instance.new("Weld")
+Part57 = Instance.new("Part")
+SpecialMesh58 = Instance.new("SpecialMesh")
+Part59 = Instance.new("Part")
+SpecialMesh60 = Instance.new("SpecialMesh")
+Part61 = Instance.new("Part")
+SpecialMesh62 = Instance.new("SpecialMesh")
+Weld63 = Instance.new("Weld")
+Weld64 = Instance.new("Weld")
+Part65 = Instance.new("Part")
+SpecialMesh66 = Instance.new("SpecialMesh")
+Part67 = Instance.new("Part")
+SpecialMesh68 = Instance.new("SpecialMesh")
+Weld69 = Instance.new("Weld")
+Model0.Name = "Strong nuke"
+Model0.Parent = mas
+Part1.Name = "Smooth Block Model"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(25.8000031, 12, 15.3999939, 0, -1, 0, 1, 0, 0, 0, 0, 1)
+Part1.Orientation = Vector3.new(0, 0, 90)
+Part1.Position = Vector3.new(25.800003051757812, 12, 15.399993896484375)
+Part1.Rotation = Vector3.new(0, 0, 90)
+Part1.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part1.Velocity = Vector3.new(-0.6871351599693298, -0.048847898840904236, 0.036426134407520294)
+Part1.Size = Vector3.new(4, 4, 4)
+Part1.BackSurface = Enum.SurfaceType.Weld
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Bright yellow")
+Part1.FrontSurface = Enum.SurfaceType.Weld
+Part1.LeftSurface = Enum.SurfaceType.Weld
+Part1.RightSurface = Enum.SurfaceType.Weld
+Part1.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Bright yellow")
+Part1.Shape = Enum.PartType.Cylinder
+Decal2.Parent = Part1
+Decal2.Texture = "http://www.roblox.com/asset/?id=33848597"
+Decal3.Parent = Part1
+Decal3.Texture = "http://www.roblox.com/asset/?id=33848597"
+Decal3.Face = Enum.NormalId.Bottom
+Decal4.Parent = Part1
+Decal4.Texture = "http://www.roblox.com/asset/?id=33848597"
+Decal4.Face = Enum.NormalId.Top
+Decal5.Parent = Part1
+Decal5.Texture = "http://www.roblox.com/asset/?id=33848597"
+Decal5.Face = Enum.NormalId.Back
+Weld6.Parent = Part1
+Weld6.C0 = CFrame.new(2, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld6.C1 = CFrame.new(0, -0.599999428, 0, 0, -1, 0, 0, 0, 1, -1, 0, 0)
+Weld6.Part0 = Part1
+Weld6.Part1 = Part8
+Weld6.part1 = Part8
+Weld7.Parent = Part1
+Weld7.C0 = CFrame.new(-2, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld7.C1 = CFrame.new(2, 0, 0, 0, 0, -1, -0, 1, 0, 1, 0, 0)
+Weld7.Part0 = Part1
+Weld7.Part1 = Part22
+Weld7.part1 = Part22
+Part8.Name = "Tip"
+Part8.Parent = Model0
+Part8.CFrame = CFrame.new(25.8000031, 14.5999994, 15.3999939, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part8.Position = Vector3.new(25.800003051757812, 14.59999942779541, 15.399993896484375)
+Part8.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part8.Velocity = Vector3.new(-0.741393506526947, -0.048847898840904236, 0.03446609154343605)
+Part8.Size = Vector3.new(4, 1.2000000476837158, 4)
+Part8.BottomSurface = Enum.SurfaceType.Smooth
+Part8.BrickColor = BrickColor.new("Bright yellow")
+Part8.Reflectance = 0.5
+Part8.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part8.TopSurface = Enum.SurfaceType.Smooth
+Part8.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh9.Parent = Part8
+SpecialMesh9.Scale = Vector3.new(1, 5, 1)
+SpecialMesh9.MeshType = Enum.MeshType.Sphere
+Script10.Name = "Touch"
+Script10.Parent = Part8
+table.insert(cors,sandbox(Script10,function()
+shockRing = Instance.new("Part")
+shockRing.formFactor = 2
+shockRing.Size = Vector3.new(50, 0.4, 50)
+shockRing.Anchored = true
+shockRing.Locked = true
+shockRing.CanCollide = false
+shockRing.archivable = false
+shockRing.TopSurface = 0
+shockRing.BottomSurface = 0
+shockRing.Transparency = 1
+local decal = Instance.new("Decal")
+decal.Face = 1
+decal.Texture = "http://www.roblox.com/asset/?version=1&id=1280730"
+decal.Parent = shockRing
+
+local bottomDecal = decal:Clone()
+bottomDecal.Face = 4
+bottomDecal.Parent = shockRing
+
+
+debounce = true
+function activate(hit)
+if debounce == false then return end
+debounce = false
+script.Parent.Anchored = true
+wait(0.05)
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 9999999999999999999
+Boom2.Parent = game.Workspace
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+Boom = Instance.new("Part")
+Boom.Parent = game.Workspace
+Boom.formFactor = 0
+Boom.Shape = 0
+Boom.BrickColor = BrickColor:Yellow()
+Boom.Position = script.Parent.Position
+Boom.Transparency = 0.3
+Boom.Size = Vector3.new(1, 1, 1)
+Boom.Anchored = true
+Boom.TopSurface = "Smooth"
+Boom.BottomSurface = "Smooth"
+script.Parent.Transparency = 1
+Script = script.Parent.Explosion
+SC = Script:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Grow = script.Parent.Grow
+GC = Grow:clone()
+GC.Disabled = false
+GC.Parent = Boom
+Stay = script.Parent.Stay
+SC = Stay:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 99999999999999999999999
+Boom2.Position = script.Parent.Position
+pos = script.Parent.Position
+shockRing.Position = pos
+shockRing.Parent = game.Workspace
+Grow2 = script.Parent.Grow2
+G2C = Grow2:clone()
+G2C.Disabled = false
+G2C.Parent = shockRing
+Script2 = script.Parent.Explosion
+S2C = Script2:clone()
+S2C.Disabled = false
+S2C.Parent = shockRing
+Stay2 = script.Parent.Stay
+S2C = Stay:clone()
+S2C.Disabled = false
+S2C.Parent = shockRing
+wait(0.5)
+Boom2:Remove()
+wait(5)
+script.Parent.Parent:Remove()
+wait(100)
+end
+
+script.Parent.Touched:connect(activate)
+
+end))
+Script11.Name = "Stay"
+Script11.Parent = Part8
+Script11.Enabled = false
+table.insert(cors,sandbox(Script11,function()
+wait(9999999999999999999999999999999999)
+pos = script.Parent.CFrame
+while true do
+script.Parent.CFrame = pos
+wait(9999999999999999999999999999999999)
+end
+
+end))
+Script11.Disabled = true
+Script12.Name = "Grow"
+Script12.Parent = Part8
+Script12.Enabled = false
+table.insert(cors,sandbox(Script12,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 200 do
+Boom.Size = Boom.Size + Vector3.new(99999, 99999, 99999)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script12.Disabled = true
+Script13.Name = "Explosion"
+Script13.Parent = Part8
+Script13.Enabled = false
+table.insert(cors,sandbox(Script13,function()
+wait(0.1)
+function destroy(hit)
+Boom = Instance.new("Explosion")
+Boom.Parent = game.Workspace
+Boom.Position = hit.Position
+wait(1)
+Boom:Remove()
+end
+
+script.Parent.Touched:connect(destroy)
+
+end))
+Script13.Disabled = true
+Script14.Name = "Grow2"
+Script14.Parent = Part8
+Script14.Enabled = false
+table.insert(cors,sandbox(Script14,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 200 do
+Boom.Size = Boom.Size + Vector3.new(99999, 99999, 99999)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script14.Disabled = true
+Part15.Name = "Smooth Block Model"
+Part15.Parent = Model0
+Part15.CFrame = CFrame.new(25.8000031, 5.19999981, 15.3999939, 0, -0, 1, 0, -1, 0, 1, 0, 0)
+Part15.Orientation = Vector3.new(0, 90, 180)
+Part15.Position = Vector3.new(25.800003051757812, 5.199999809265137, 15.399993896484375)
+Part15.Rotation = Vector3.new(180, 90, 0)
+Part15.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part15.Velocity = Vector3.new(-0.5452287197113037, -0.048847898840904236, 0.04155240207910538)
+Part15.Size = Vector3.new(4, 1.600000023841858, 4)
+Part15.BottomSurface = Enum.SurfaceType.Weld
+Part15.BrickColor = BrickColor.new("Bright yellow")
+Part15.LeftSurface = Enum.SurfaceType.Weld
+Part15.RightSurface = Enum.SurfaceType.Weld
+Part15.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part15.TopSurface = Enum.SurfaceType.Weld
+Part15.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh16.Parent = Part15
+SpecialMesh16.Scale = Vector3.new(1, 2.799999952316284, 1)
+SpecialMesh16.MeshType = Enum.MeshType.Sphere
+Weld17.Parent = Part15
+Weld17.C0 = CFrame.new(0, -0.800000012, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld17.C1 = CFrame.new(-2, 0, 0, 0, 0, 1, -0, -1, -0, 1, 0, 0)
+Weld17.Part0 = Part15
+Weld17.Part1 = Part22
+Weld17.part1 = Part22
+Weld18.Parent = Part15
+Weld18.C0 = CFrame.new(0, 0.800000012, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld18.C1 = CFrame.new(0, 1.19999981, 1.5, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld18.Part0 = Part15
+Weld18.Part1 = Part27
+Weld18.part1 = Part27
+Weld19.Parent = Part15
+Weld19.C0 = CFrame.new(0, 0.800000012, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld19.C1 = CFrame.new(0, 1.19999981, 1.5, 0, 1, 0, 0, 0, -1, -1, 0, 0)
+Weld19.Part0 = Part15
+Weld19.Part1 = Part35
+Weld19.part1 = Part35
+Weld20.Parent = Part15
+Weld20.C0 = CFrame.new(0, 0.800000012, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld20.C1 = CFrame.new(0, 1.19999981, 1.5, -1, 0, 0, 0, 0, -1, 0, -1, 0)
+Weld20.Part0 = Part15
+Weld20.Part1 = Part37
+Weld20.part1 = Part37
+Weld21.Parent = Part15
+Weld21.C0 = CFrame.new(0, 0.800000012, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld21.C1 = CFrame.new(0, 1.19999981, 1.5, 0, -1, -0, 0, 0, -1, 1, 0, -0)
+Weld21.Part0 = Part15
+Weld21.Part1 = Part40
+Weld21.part1 = Part40
+Part22.Name = "Smooth Block Model"
+Part22.Parent = Model0
+Part22.CFrame = CFrame.new(25.8000031, 8, 15.3999939, 0, -1, 0, 1, 0, 0, 0, 0, 1)
+Part22.Orientation = Vector3.new(0, 0, 90)
+Part22.Position = Vector3.new(25.800003051757812, 8, 15.399993896484375)
+Part22.Rotation = Vector3.new(0, 0, 90)
+Part22.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part22.Velocity = Vector3.new(-0.6036607623100281, -0.048847898840904236, 0.039441585540771484)
+Part22.Size = Vector3.new(4, 4, 4)
+Part22.BackSurface = Enum.SurfaceType.Weld
+Part22.BottomSurface = Enum.SurfaceType.Smooth
+Part22.BrickColor = BrickColor.new("Bright yellow")
+Part22.FrontSurface = Enum.SurfaceType.Weld
+Part22.RightSurface = Enum.SurfaceType.Weld
+Part22.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part22.TopSurface = Enum.SurfaceType.Smooth
+Part22.brickColor = BrickColor.new("Bright yellow")
+Part22.Shape = Enum.PartType.Cylinder
+Decal23.Parent = Part22
+Decal23.Texture = "http://www.roblox.com/asset/?id=33848597"
+Decal23.Face = Enum.NormalId.Top
+Decal24.Parent = Part22
+Decal24.Texture = "http://www.roblox.com/asset/?id=33848597"
+Decal24.Face = Enum.NormalId.Back
+Decal25.Parent = Part22
+Decal25.Texture = "http://www.roblox.com/asset/?id=33848597"
+Decal25.Face = Enum.NormalId.Bottom
+Decal26.Parent = Part22
+Decal26.Texture = "http://www.roblox.com/asset/?id=33848597"
+Part27.Name = "Smooth Block Model"
+Part27.Parent = Model0
+Part27.CFrame = CFrame.new(24.3000031, 3.20000005, 15.3999939, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Part27.Orientation = Vector3.new(0, 90, 0)
+Part27.Position = Vector3.new(24.300003051757812, 3.200000047683716, 15.399993896484375)
+Part27.Rotation = Vector3.new(0, 90, 0)
+Part27.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part27.Velocity = Vector3.new(-0.5034915208816528, -0.0801507905125618, -0.009632304310798645)
+Part27.Size = Vector3.new(2, 2.4000000953674316, 1)
+Part27.BackSurface = Enum.SurfaceType.Weld
+Part27.BottomSurface = Enum.SurfaceType.Weld
+Part27.BrickColor = BrickColor.new("Bright yellow")
+Part27.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part27.TopSurface = Enum.SurfaceType.Weld
+Part27.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh28.Parent = Part27
+SpecialMesh28.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh28.MeshType = Enum.MeshType.Wedge
+Part29.Name = "Smooth Block Model"
+Part29.Parent = Model0
+Part29.CFrame = CFrame.new(25.8000031, 3, 15.3999939, 0, 1, 0, -1, 0, 0, 0, 0, 1)
+Part29.Orientation = Vector3.new(0, 0, -90)
+Part29.Position = Vector3.new(25.800003051757812, 3, 15.399993896484375)
+Part29.Rotation = Vector3.new(0, 0, -90)
+Part29.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part29.Velocity = Vector3.new(-0.49931785464286804, -0.048847898840904236, 0.04321090131998062)
+Part29.Size = Vector3.new(2, 2, 2)
+Part29.BottomSurface = Enum.SurfaceType.Smooth
+Part29.BrickColor = BrickColor.new("Bright yellow")
+Part29.RightSurface = Enum.SurfaceType.Weld
+Part29.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part29.TopSurface = Enum.SurfaceType.Smooth
+Part29.brickColor = BrickColor.new("Bright yellow")
+Part29.Shape = Enum.PartType.Cylinder
+Weld30.Parent = Part29
+Weld30.C0 = CFrame.new(0, -1, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld30.C1 = CFrame.new(0, -0.200000048, 0.5, 0, -1, 0, -1, 0, 0, 0, 0, -1)
+Weld30.Part0 = Part29
+Weld30.Part1 = Part27
+Weld30.part1 = Part27
+Weld31.Parent = Part29
+Weld31.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld31.C1 = CFrame.new(0, -0.200000048, 0.5, 0, 1, 0, 1, 0, 0, 0, 0, -1)
+Weld31.Part0 = Part29
+Weld31.Part1 = Part35
+Weld31.part1 = Part35
+Weld32.Parent = Part29
+Weld32.C0 = CFrame.new(0, 1, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld32.C1 = CFrame.new(0, -0.200000048, 0.5, 0, 1, 0, 1, 0, 0, 0, 0, -1)
+Weld32.Part0 = Part29
+Weld32.Part1 = Part37
+Weld32.part1 = Part37
+Weld33.Parent = Part29
+Weld33.C0 = CFrame.new(0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld33.C1 = CFrame.new(0, -0.200000048, 0.5, -0, -1, 0, -1, 0, 0, -0, 0, -1)
+Weld33.Part0 = Part29
+Weld33.Part1 = Part40
+Weld33.part1 = Part40
+Weld34.Parent = Part29
+Weld34.C0 = CFrame.new(1, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld34.C1 = CFrame.new(-1, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Weld34.Part0 = Part29
+Weld34.Part1 = Part42
+Weld34.part1 = Part42
+Part35.Name = "Smooth Block Model"
+Part35.Parent = Model0
+Part35.CFrame = CFrame.new(25.8000031, 3.20000005, 13.8999939, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part35.Position = Vector3.new(25.800003051757812, 3.200000047683716, 13.899993896484375)
+Part35.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part35.Velocity = Vector3.new(-0.4507991075515747, -0.04997869208455086, 0.04306012764573097)
+Part35.Size = Vector3.new(2, 2.4000000953674316, 1)
+Part35.BackSurface = Enum.SurfaceType.Weld
+Part35.BottomSurface = Enum.SurfaceType.Weld
+Part35.BrickColor = BrickColor.new("Bright yellow")
+Part35.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part35.TopSurface = Enum.SurfaceType.Weld
+Part35.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh36.Parent = Part35
+SpecialMesh36.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh36.MeshType = Enum.MeshType.Wedge
+Part37.Name = "Smooth Block Model"
+Part37.Parent = Model0
+Part37.CFrame = CFrame.new(27.3000031, 3.20000005, 15.3999939, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part37.Orientation = Vector3.new(0, -90, 0)
+Part37.Position = Vector3.new(27.300003051757812, 3.200000047683716, 15.399993896484375)
+Part37.Rotation = Vector3.new(0, -90, 0)
+Part37.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part37.Velocity = Vector3.new(-0.5034915208816528, -0.017545007169246674, 0.09575255960226059)
+Part37.Size = Vector3.new(2, 2.4000000953674316, 1)
+Part37.BackSurface = Enum.SurfaceType.Weld
+Part37.BottomSurface = Enum.SurfaceType.Weld
+Part37.BrickColor = BrickColor.new("Bright yellow")
+Part37.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part37.TopSurface = Enum.SurfaceType.Weld
+Part37.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh38.Parent = Part37
+SpecialMesh38.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh38.MeshType = Enum.MeshType.Wedge
+Weld39.Parent = Part37
+Weld39.C0 = CFrame.new(0, -1.20000005, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld39.C1 = CFrame.new(0, -0.100000381, -1, -1, -0, 0, 0, -1, 0, 0, -0, 1)
+Weld39.Part0 = Part37
+Weld39.Part1 = Part65
+Weld39.part1 = Part65
+Part40.Name = "Smooth Block Model"
+Part40.Parent = Model0
+Part40.CFrame = CFrame.new(25.8000031, 3.20000005, 16.8999939, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part40.Orientation = Vector3.new(0, 180, 0)
+Part40.Position = Vector3.new(25.800003051757812, 3.200000047683716, 16.899993896484375)
+Part40.Rotation = Vector3.new(-180, 0, -180)
+Part40.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part40.Velocity = Vector3.new(-0.5561839938163757, -0.047717105597257614, 0.04306012764573097)
+Part40.Size = Vector3.new(2, 2.4000000953674316, 1)
+Part40.BackSurface = Enum.SurfaceType.Weld
+Part40.BottomSurface = Enum.SurfaceType.Weld
+Part40.BrickColor = BrickColor.new("Bright yellow")
+Part40.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part40.TopSurface = Enum.SurfaceType.Weld
+Part40.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh41.Parent = Part40
+SpecialMesh41.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh41.MeshType = Enum.MeshType.Wedge
+Part42.Name = "Smooth Block Model"
+Part42.Parent = Model0
+Part42.CFrame = CFrame.new(25.8000031, 1, 15.3999939, 0, 1, 0, -1, 0, 0, 0, 0, 1)
+Part42.Orientation = Vector3.new(0, 0, -90)
+Part42.Position = Vector3.new(25.800003051757812, 1, 15.399993896484375)
+Part42.Rotation = Vector3.new(0, 0, -90)
+Part42.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part42.Velocity = Vector3.new(-0.4575806260108948, -0.048847898840904236, 0.04471862316131592)
+Part42.Size = Vector3.new(2, 2, 2)
+Part42.BottomSurface = Enum.SurfaceType.Smooth
+Part42.BrickColor = BrickColor.new("Bright yellow")
+Part42.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part42.TopSurface = Enum.SurfaceType.Smooth
+Part42.brickColor = BrickColor.new("Bright yellow")
+Part42.Shape = Enum.PartType.Cylinder
+Weld43.Parent = Part42
+Weld43.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld43.C1 = CFrame.new(0, -0.599999905, 0, 0, -1, 0, 0, 0, 1, -1, 0, 0)
+Weld43.Part0 = Part42
+Weld43.Part1 = Part61
+Weld43.part1 = Part61
+Weld44.Parent = Part42
+Weld44.C0 = CFrame.new(0, 1, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld44.C1 = CFrame.new(0, -0.600000381, 0, 0, -1, 0, 0, 0, 1, -1, 0, 0)
+Weld44.Part0 = Part42
+Weld44.Part1 = Part65
+Weld44.part1 = Part65
+Part45.Name = "Smooth Block Model"
+Part45.Parent = Model0
+Part45.CFrame = CFrame.new(24.2000027, 1, 15.3999939, 0, 1, 0, 0, 0, -1, -1, 0, -0)
+Part45.Orientation = Vector3.new(90, 90, 0)
+Part45.Position = Vector3.new(24.200002670288086, 1, 15.399993896484375)
+Part45.Rotation = Vector3.new(90, 0, -90)
+Part45.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part45.Velocity = Vector3.new(-0.4575806260108948, -0.08223766088485718, -0.011486648581922054)
+Part45.Size = Vector3.new(2, 1.2000000476837158, 2)
+Part45.BottomSurface = Enum.SurfaceType.Weld
+Part45.BrickColor = BrickColor.new("Bright yellow")
+Part45.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part45.TopSurface = Enum.SurfaceType.Weld
+Part45.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh46.Parent = Part45
+SpecialMesh46.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh46.MeshType = Enum.MeshType.Brick
+Weld47.Parent = Part45
+Weld47.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld47.C1 = CFrame.new(0, -1.20000005, -0.100000381, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld47.Part0 = Part45
+Weld47.Part1 = Part27
+Weld47.part1 = Part27
+Weld48.Parent = Part45
+Weld48.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld48.C1 = CFrame.new(0, -1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Weld48.Part0 = Part45
+Weld48.Part1 = Part42
+Weld48.part1 = Part42
+Weld49.Parent = Part45
+Weld49.C0 = CFrame.new(0, -0.600000024, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld49.C1 = CFrame.new(0, -0.199998856, 0, -0, -1, 0, -0, 0, 1, -1, 0, 0)
+Weld49.Part0 = Part45
+Weld49.Part1 = Part50
+Weld49.part1 = Part50
+Part50.Name = "Smooth Block Model"
+Part50.Parent = Model0
+Part50.CFrame = CFrame.new(23.4000034, 1, 15.3999939, 0, -1, 0, 1, 0, 0, 0, -0, 1)
+Part50.Orientation = Vector3.new(0, 0, 90)
+Part50.Position = Vector3.new(23.40000343322754, 1, 15.399993896484375)
+Part50.Rotation = Vector3.new(0, 0, 90)
+Part50.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part50.Velocity = Vector3.new(-0.4575806260108948, -0.09893251955509186, -0.039589252322912216)
+Part50.Size = Vector3.new(2, 0.4000000059604645, 4)
+Part50.BottomSurface = Enum.SurfaceType.Weld
+Part50.BrickColor = BrickColor.new("Bright yellow")
+Part50.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part50.TopSurface = Enum.SurfaceType.Smooth
+Part50.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh51.Parent = Part50
+SpecialMesh51.Scale = Vector3.new(1, 1, 1.2999999523162842)
+SpecialMesh51.MeshType = Enum.MeshType.Brick
+Part52.Name = "Smooth Block Model"
+Part52.Parent = Model0
+Part52.CFrame = CFrame.new(25.8000031, 1, 16.9999943, -1, 0, -0, 0, 0, -1, 0, -1, 0)
+Part52.Orientation = Vector3.new(90, 180, 0)
+Part52.Position = Vector3.new(25.800003051757812, 1, 16.9999942779541)
+Part52.Rotation = Vector3.new(90, 0, -180)
+Part52.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part52.Velocity = Vector3.new(-0.5137859582901001, -0.04764172062277794, 0.044718626886606216)
+Part52.Size = Vector3.new(2, 1.2000000476837158, 2)
+Part52.BottomSurface = Enum.SurfaceType.Weld
+Part52.BrickColor = BrickColor.new("Bright yellow")
+Part52.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part52.TopSurface = Enum.SurfaceType.Weld
+Part52.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh53.Parent = Part52
+SpecialMesh53.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh53.MeshType = Enum.MeshType.Brick
+Weld54.Parent = Part52
+Weld54.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld54.C1 = CFrame.new(0, -1.20000005, -0.0999999046, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Weld54.Part0 = Part52
+Weld54.Part1 = Part40
+Weld54.part1 = Part40
+Weld55.Parent = Part52
+Weld55.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld55.C1 = CFrame.new(0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, -1)
+Weld55.Part0 = Part52
+Weld55.Part1 = Part42
+Weld55.part1 = Part42
+Weld56.Parent = Part52
+Weld56.C0 = CFrame.new(0, -0.600000024, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld56.C1 = CFrame.new(0, -0.199999928, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Weld56.Part0 = Part52
+Weld56.Part1 = Part57
+Weld56.part1 = Part57
+Part57.Name = "Smooth Block Model"
+Part57.Parent = Model0
+Part57.CFrame = CFrame.new(25.8000031, 1, 17.7999935, -0, -0, -1, -1, 0, 0, 0, 1, 0)
+Part57.Orientation = Vector3.new(0, -90, -90)
+Part57.Position = Vector3.new(25.800003051757812, 1, 17.79999351501465)
+Part57.Rotation = Vector3.new(90, -90, 0)
+Part57.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part57.Velocity = Vector3.new(-0.5418885350227356, -0.04703862965106964, 0.044718626886606216)
+Part57.Size = Vector3.new(2, 0.4000000059604645, 4)
+Part57.BottomSurface = Enum.SurfaceType.Weld
+Part57.BrickColor = BrickColor.new("Bright yellow")
+Part57.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part57.TopSurface = Enum.SurfaceType.Smooth
+Part57.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh58.Parent = Part57
+SpecialMesh58.Scale = Vector3.new(1, 1, 1.2999999523162842)
+SpecialMesh58.MeshType = Enum.MeshType.Brick
+Part59.Name = "Smooth Block Model"
+Part59.Parent = Model0
+Part59.CFrame = CFrame.new(25.8000031, 1, 12.9999933, 0, 0, -1, 1, 0, 0, 0, -1, 0)
+Part59.Orientation = Vector3.new(0, -90, 90)
+Part59.Position = Vector3.new(25.800003051757812, 1, 12.999993324279785)
+Part59.Rotation = Vector3.new(-90, -90, 0)
+Part59.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part59.Velocity = Vector3.new(-0.37327271699905396, -0.05065716803073883, 0.044718626886606216)
+Part59.Size = Vector3.new(2, 0.4000000059604645, 4)
+Part59.BottomSurface = Enum.SurfaceType.Weld
+Part59.BrickColor = BrickColor.new("Bright yellow")
+Part59.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part59.TopSurface = Enum.SurfaceType.Smooth
+Part59.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh60.Parent = Part59
+SpecialMesh60.Scale = Vector3.new(1, 1, 1.2999999523162842)
+SpecialMesh60.MeshType = Enum.MeshType.Brick
+Part61.Name = "Smooth Block Model"
+Part61.Parent = Model0
+Part61.CFrame = CFrame.new(25.8000031, 1, 13.7999935, -1, 0, 0, 0, 0, -1, 0, -1, 0)
+Part61.Orientation = Vector3.new(90, 180, 0)
+Part61.Position = Vector3.new(25.800003051757812, 1, 13.799993515014648)
+Part61.Rotation = Vector3.new(90, 0, -180)
+Part61.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part61.Velocity = Vector3.new(-0.40137535333633423, -0.05005407705903053, 0.044718626886606216)
+Part61.Size = Vector3.new(2, 1.2000000476837158, 2)
+Part61.BottomSurface = Enum.SurfaceType.Weld
+Part61.BrickColor = BrickColor.new("Bright yellow")
+Part61.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part61.TopSurface = Enum.SurfaceType.Weld
+Part61.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh62.Parent = Part61
+SpecialMesh62.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh62.MeshType = Enum.MeshType.Brick
+Weld63.Parent = Part61
+Weld63.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld63.C1 = CFrame.new(0, -1.20000005, -0.0999999046, 1, 0, 0, 0, 0, 1, 0, -1, 0)
+Weld63.Part0 = Part61
+Weld63.Part1 = Part35
+Weld63.part1 = Part35
+Weld64.Parent = Part61
+Weld64.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld64.C1 = CFrame.new(0, -0.200000286, 0, 0, -1, 0, 0, 0, 1, -1, 0, -0)
+Weld64.Part0 = Part61
+Weld64.Part1 = Part59
+Weld64.part1 = Part59
+Part65.Name = "Smooth Block Model"
+Part65.Parent = Model0
+Part65.CFrame = CFrame.new(27.4000034, 1, 15.3999939, 0, 1, 0, 0, 0, -1, -1, 0, 0)
+Part65.Orientation = Vector3.new(90, 90, 0)
+Part65.Position = Vector3.new(27.40000343322754, 1, 15.399993896484375)
+Part65.Rotation = Vector3.new(90, 0, -90)
+Part65.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part65.Velocity = Vector3.new(-0.4575806260108948, -0.015458139590919018, 0.10092389583587646)
+Part65.Size = Vector3.new(2, 1.2000000476837158, 2)
+Part65.BottomSurface = Enum.SurfaceType.Weld
+Part65.BrickColor = BrickColor.new("Bright yellow")
+Part65.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part65.TopSurface = Enum.SurfaceType.Weld
+Part65.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh66.Parent = Part65
+SpecialMesh66.Scale = Vector3.new(0.20000000298023224, 1, 1)
+SpecialMesh66.MeshType = Enum.MeshType.Brick
+Part67.Name = "Smooth Block Model"
+Part67.Parent = Model0
+Part67.CFrame = CFrame.new(28.2000027, 1, 15.3999939, 0, 1, 0, -1, 0, 0, 0, 0, 1)
+Part67.Orientation = Vector3.new(0, 0, -90)
+Part67.Position = Vector3.new(28.200002670288086, 1, 15.399993896484375)
+Part67.Rotation = Vector3.new(0, 0, -90)
+Part67.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part67.Velocity = Vector3.new(-0.4575806260108948, 0.0012367190793156624, 0.12902650237083435)
+Part67.Size = Vector3.new(2, 0.4000000059604645, 4)
+Part67.BottomSurface = Enum.SurfaceType.Weld
+Part67.BrickColor = BrickColor.new("Bright yellow")
+Part67.RotVelocity = Vector3.new(-0.0007538626668974757, -0.035128287971019745, 0.020868593826889992)
+Part67.TopSurface = Enum.SurfaceType.Smooth
+Part67.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh68.Parent = Part67
+SpecialMesh68.Scale = Vector3.new(1, 1, 1.2999999523162842)
+SpecialMesh68.MeshType = Enum.MeshType.Brick
+Weld69.Parent = Part67
+Weld69.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld69.C1 = CFrame.new(0, 0.599998474, 0, 0, -1, -0, 0, 0, -1, 1, 0, -0)
+Weld69.Part0 = Part67
+Weld69.Part1 = Part65
+Weld69.part1 = Part65
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
