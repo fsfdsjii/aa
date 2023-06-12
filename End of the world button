@@ -1,0 +1,447 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Model1 = Instance.new("Model")
+Part2 = Instance.new("Part")
+ClickDetector3 = Instance.new("ClickDetector")
+Smoke4 = Instance.new("Smoke")
+Script5 = Instance.new("Script")
+Sound6 = Instance.new("Sound")
+Color3Value7 = Instance.new("Color3Value")
+Color3Value8 = Instance.new("Color3Value")
+SpecialMesh9 = Instance.new("SpecialMesh")
+Script10 = Instance.new("Script")
+Smoke11 = Instance.new("Smoke")
+ForceField12 = Instance.new("ForceField")
+ScreenGui13 = Instance.new("ScreenGui")
+ImageLabel14 = Instance.new("ImageLabel")
+LocalScript15 = Instance.new("LocalScript")
+Script16 = Instance.new("Script")
+Fire17 = Instance.new("Fire")
+Script18 = Instance.new("Script")
+IntValue19 = Instance.new("IntValue")
+Script20 = Instance.new("Script")
+CylinderMesh21 = Instance.new("CylinderMesh")
+Script22 = Instance.new("Script")
+Humanoid23 = Instance.new("Humanoid")
+Part24 = Instance.new("Part")
+Decal25 = Instance.new("Decal")
+Part26 = Instance.new("Part")
+Snap27 = Instance.new("Snap")
+Part28 = Instance.new("Part")
+Decal29 = Instance.new("Decal")
+Model0.Name = "nuke"
+Model0.Parent = mas
+Model1.Name = ""
+Model1.Parent = Model0
+Part2.Name = "Head"
+Part2.Parent = Model1
+Part2.CFrame = CFrame.new(-36.2421112, 2.90000439, -58.028389, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part2.Position = Vector3.new(-36.24211120605469, 2.9000043869018555, -58.02838897705078)
+Part2.Color = Color3.new(1, 0, 0)
+Part2.Size = Vector3.new(2, 1, 2)
+Part2.Anchored = true
+Part2.BrickColor = BrickColor.new("Really red")
+Part2.TopSurface = Enum.SurfaceType.Glue
+Part2.brickColor = BrickColor.new("Really red")
+Part2.FormFactor = Enum.FormFactor.Symmetric
+Part2.formFactor = Enum.FormFactor.Symmetric
+ClickDetector3.Parent = Part2
+ClickDetector3.MaxActivationDistance = 10000000000
+Smoke4.Parent = Part2
+Smoke4.Color = Color3.new(0, 0, 0)
+Smoke4.Enabled = false
+Smoke4.Size = 100
+Smoke4.Opacity = 1
+Smoke4.RiseVelocity = 0
+Script5.Name = "Blast"
+Script5.Parent = Part2
+Script5.Enabled = false
+table.insert(cors,sandbox(Script5,function()
+---Nuke by samy22
+
+
+EndIn = 60
+Power = 1000000000000000000000000000000000000000000000000
+
+-------DO NOT EDIT BELOW
+char = script.Parent
+Model = char.Parent
+
+
+num1 = 25
+num2 = 25
+char.Smoke.Enabled = true
+script.Blast.Volume = 100
+script.Blast:play()
+script.Save.Value = game.Lighting.Ambient
+game.Lighting.Ambient = script.Ambient.Value
+script.MushroomCloud.Disabled = false 
+script.Parent.Transparency = 1
+script.Parent.Mesh:remove()
+script.Mesh:Clone().Parent = script.Parent
+script.ForceField:Clone().Parent = script.Parent
+script.Radiation.Disabled = false 
+for i = 1,Power do
+wait()
+local booms = 30
+game.Lighting.Brightness = game.Lighting.Brightness + 0.2
+script.Parent.Transparency = script.Parent.Transparency - 0.04
+	for i = 1,booms do
+
+		local a = i * ((3.14156 * 2) / booms) 
+		local x = num1 * math.cos(a)
+		local z = num2 * math.sin(a)
+
+
+		local ex = Instance.new("Explosion")
+		ex.BlastRadius = 200
+		ex.BlastPressure = 4000000
+		ex.Position = Vector3.new(char.CFrame.p.x + x, char.CFrame.p.y, char.CFrame.p.z + z)
+		ex.Parent = game.Workspace
+		ex.Hit:connect(function(hit) 
+f = hit:findFirstChild("ForceField")
+if f == nil then
+ff = hit.Parent:findFirstChild("ForceField")
+if ff == nil then
+d = hit:findFirstChild("Disintegrate")
+if d == nil then
+script.Disintegrate:Clone().Parent = hit
+end
+end
+end
+ end)
+	end
+num1 = num1 + 50
+num2 = num2 + 50
+wait(0.2)
+end 
+for i = 1,Power do
+wait(0.2)
+game.Lighting.Brightness = game.Lighting.Brightness - 0.2
+end 
+wait(EndIn)
+game.Lighting.Ambient = script.Save.Value
+Model:remove()
+
+
+
+end))
+Script5.Disabled = true
+Sound6.Name = "Blast"
+Sound6.Parent = Script5
+Sound6.Pitch = 0.10000000149011612
+Sound6.PlaybackSpeed = 0.10000000149011612
+Sound6.SoundId = "rbxasset://sounds/Rocket shot.wav"
+Sound6.Volume = 0
+Color3Value7.Name = "Ambient"
+Color3Value7.Parent = Script5
+Color3Value7.Value = Color3.new(0.8, 0, 0)
+Color3Value8.Name = "Save"
+Color3Value8.Parent = Script5
+SpecialMesh9.Parent = Script5
+SpecialMesh9.MeshId = "http://www.roblox.com/asset/?id=1527559"
+SpecialMesh9.Scale = Vector3.new(-2000, -2000, -2000)
+SpecialMesh9.TextureId = "http://www.roblox.com/asset/?id="
+SpecialMesh9.MeshType = Enum.MeshType.FileMesh
+Script10.Name = "MushroomCloud"
+Script10.Parent = Script5
+Script10.Enabled = false
+table.insert(cors,sandbox(Script10,function()
+for i = 1,50 do
+wait()
+e = Instance.new("Explosion")
+e.Name = ""
+
+e.Position = script.Parent.Parent.Position + Vector3.new(0,i * 10,0)
+e.Parent = game.Workspace
+		e.BlastRadius = 200
+		e.BlastPressure = 4000000
+ p = Instance.new("Part")
+p.Parent = script.Parent.Parent.Parent
+p.Anchored = true
+p.CanCollide = false
+p.Locked = true
+p.Transparency = 1
+p.CFrame = CFrame.new(e.Position)
+p.Size = Vector3.new(1,1,1)
+s = script.Smoke:Clone()
+s.Parent = p
+s.Size = i + 20
+end
+
+num1 = 25
+num2 = 25
+char = script.Parent.Parent
+
+for i = 1,5 do
+wait()
+local booms = 30
+	for i = 1,booms do
+
+		local a = i * ((3.14156 * 2) / booms) 
+		local x = num1 * math.cos(a)
+		local z = num2 * math.sin(a)
+
+
+		local ex = Instance.new("Explosion")
+		ex.BlastRadius = 200
+		ex.BlastPressure = 4000000
+		ex.Position = Vector3.new(char.CFrame.p.x + x, char.CFrame.p.y + 500, char.CFrame.p.z + z)
+		ex.Parent = game.Workspace
+
+ p = Instance.new("Part")
+p.Parent = script.Parent.Parent.Parent
+p.Anchored = true
+p.CanCollide = false
+p.Locked = true
+p.Transparency = 1
+p.CFrame = CFrame.new(ex.Position)
+p.Size = Vector3.new(1,1,1)
+s = script.Smoke:Clone()
+s.Parent = p
+	end
+num1 = num1 + 50
+num2 = num2 + 50
+wait(0.2)
+end 
+
+
+end))
+Script10.Disabled = true
+Smoke11.Parent = Script10
+Smoke11.Color = Color3.new(0, 0, 0)
+Smoke11.Size = 100
+Smoke11.Opacity = 1
+Smoke11.RiseVelocity = 10
+ForceField12.Parent = Script5
+ScreenGui13.Name = "EffectGui"
+ScreenGui13.Parent = Script5
+ImageLabel14.Name = "s"
+ImageLabel14.Parent = ScreenGui13
+ImageLabel14.Position = UDim2.new(0, 0, -1, 0)
+ImageLabel14.Size = UDim2.new(10, 0, 10, 0)
+ImageLabel14.BackgroundColor = BrickColor.new("Really red")
+ImageLabel14.BackgroundColor3 = Color3.new(0.8, 0, 0)
+ImageLabel14.BackgroundTransparency = 0.8900001049041748
+ImageLabel14.BorderColor = BrickColor.new("Really black")
+ImageLabel14.BorderColor3 = Color3.new(0, 0, 0)
+ImageLabel14.BorderSizePixel = 0
+LocalScript15.Name = "CamShake"
+LocalScript15.Parent = ScreenGui13
+LocalScript15.Enabled = false
+table.insert(cors,sandbox(LocalScript15,function()
+local cam = game.Workspace.CurrentCamera
+while true do
+wait()
+for i = 1, 2 do
+wait()
+local cam_rot = cam.CoordinateFrame - cam.CoordinateFrame.p --* CFrame.fromEulerAnglesXYZ(math.random(-10, 10)/10, math.random(-10, 10)/10, 0)
+local cam_scroll = (cam.CoordinateFrame.p - cam.Focus.p).magnitude
+local ncf = CFrame.new(cam.Focus.p)*cam_rot*CFrame.fromEulerAnglesXYZ(math.random(-1000, 1000)/4000, math.random(-1000, 1000)/4000, 0)
+cam.CoordinateFrame = ncf*CFrame.new(0, 0, cam_scroll)
+end
+end
+
+
+end))
+LocalScript15.Disabled = true
+Script16.Parent = ScreenGui13
+table.insert(cors,sandbox(Script16,function()
+wait()   
+for i = 1,100 do
+wait(0.05)
+script.Parent.s.BackgroundTransparency = script.Parent.s.BackgroundTransparency - 0.01
+h = script.Parent.Parent.Parent.Character.Humanoid
+h.WalkSpeed = h.WalkSpeed - 0.16
+h.Health = h.Health - 1
+end  
+wait(1)
+script.Parent.CamShake.Disabled = false
+h.Health = 0
+a = h.Parent:GetChildren() 
+for i = 1, #a do 
+if a[i].className == "Part" then script.Parent.Disintegrate:Clone().Parent = a[i] 
+script.Fire:Clone().Parent = a[i]
+end   
+end  
+
+for i = 1,50 do
+wait()
+script.Parent.s.BackgroundTransparency = script.Parent.s.BackgroundTransparency + 0.01
+end 
+
+---Let the burning commense! By samy22
+end))
+Fire17.Parent = Script16
+Fire17.Color = Color3.new(1, 0.4, 0)
+Fire17.Heat = 10
+Fire17.SecondaryColor = Color3.new(1, 0, 0)
+Script18.Name = "Disintegrate"
+Script18.Parent = ScreenGui13
+table.insert(cors,sandbox(Script18,function()
+Boost = script.Parent
+Boost:BreakJoints()
+spd = math.random(0,50)-100
+Boost.BrickColor = BrickColor.new("Really black")
+Boost.Material = "CorrodedMetal"
+while true do 
+wait()
+Boost.Velocity = Boost.CFrame.lookVector * spd
+end 
+
+
+
+end))
+IntValue19.Name = "RadiationRadius"
+IntValue19.Parent = Script5
+IntValue19.Value = 2000
+Script20.Name = "Radiation"
+Script20.Parent = Script5
+Script20.Enabled = false
+table.insert(cors,sandbox(Script20,function()
+function findNearestTorso(pos)
+	local list = game.Workspace:children()
+	local torso = nil
+	local dist = script.Parent.RadiationRadius.Value
+	local temp = nil
+	local human = nil
+	local temp2 = nil
+	for x = 1, #list do
+		temp2 = list[x]
+		if (temp2.className == "Model") then
+			temp = temp2:findFirstChild("Torso")
+			human = temp2:findFirstChild("Humanoid")
+			if (temp ~= nil) and (human ~= nil) and (human.Health > 0) then
+				if (temp.Position - pos).magnitude < dist then
+					torso = temp
+					dist = (temp.Position - pos).magnitude
+				end
+			end
+		end
+	end
+	return torso
+end
+
+
+
+
+while true do
+	wait()
+	local target = findNearestTorso(script.Parent.Parent.Position)
+	if target ~= nil then
+h = target.Parent:findFirstChild("Humanoid")
+if h ~= nil then
+ff = h.Parent:findFirstChild("ForceField")
+if ff == nil then
+p = game.Players:findFirstChild(h.Parent.Name)
+if p ~= nil then
+f = p.PlayerGui:findFirstChild("EffectGui")
+if f == nil then
+e = script.Parent.EffectGui:Clone()
+e.Parent = p.PlayerGui	
+
+end
+end
+end
+end
+end 
+end
+
+
+end))
+Script20.Disabled = true
+CylinderMesh21.Parent = Part2
+Script22.Parent = Part2
+table.insert(cors,sandbox(Script22,function()
+function c()
+script.Parent.Blast.Disabled = false 
+m = Instance.new("Message")
+m.Parent = game.Workspace
+	h.Text = "WARNING"
+	wait(.7)
+	h.Text = ""
+	wait(.7)
+	h.Text = "WARNING"
+	wait(.7)
+	h.Text = ""
+	wait(.7)
+	h.Text = "NUCLEAR WARHEAD ARE IMMINENT!"
+	wait(3)
+	h.Text = "3"
+	wait(1)
+	h.Text = "2"
+	wait(1)
+	h.Text = "1"
+	
+end
+script.Parent.ClickDetector.MouseClick:connect(c)
+
+end))
+Humanoid23.Parent = Model1
+Humanoid23.Health = 0
+Humanoid23.MaxHealth = 0
+Humanoid23.NameOcclusion = Enum.NameOcclusion.NoOcclusion
+Humanoid23.WalkSpeed = 0
+Humanoid23.maxHealth = 0
+Part24.Parent = Model0
+Part24.CFrame = CFrame.new(-36.2421112, 5.40000248, -56.528389, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part24.Position = Vector3.new(-36.24211120605469, 5.400002479553223, -56.52838897705078)
+Part24.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part24.Size = Vector3.new(4, 3.6000001430511475, 1)
+Part24.Anchored = true
+Part24.BrickColor = BrickColor.new("Institutional white")
+Part24.TopSurface = Enum.SurfaceType.Smooth
+Part24.brickColor = BrickColor.new("Institutional white")
+Decal25.Parent = Part24
+Decal25.Texture = "http://www.roblox.com/asset/?id=37254869"
+Part26.Parent = Model0
+Part26.CFrame = CFrame.new(-36.2421112, 1.80000424, -56.528389, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part26.Position = Vector3.new(-36.24211120605469, 1.800004243850708, -56.52838897705078)
+Part26.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part26.Size = Vector3.new(4, 3.6000001430511475, 1)
+Part26.Anchored = true
+Part26.BrickColor = BrickColor.new("Institutional white")
+Part26.brickColor = BrickColor.new("Institutional white")
+Snap27.Parent = Part26
+Snap27.C0 = CFrame.new(0, 1.80000007, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap27.C1 = CFrame.new(0, -1.79999995, 0, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap27.Part0 = Part26
+Snap27.Part1 = Part24
+Snap27.part1 = Part24
+Part28.Parent = Model0
+Part28.CFrame = CFrame.new(-36.2421112, 1.2000041, -58.028389, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part28.Position = Vector3.new(-36.24211120605469, 1.2000041007995605, -58.02838897705078)
+Part28.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part28.Size = Vector3.new(4, 2.4000000953674316, 2)
+Part28.Anchored = true
+Part28.BrickColor = BrickColor.new("Institutional white")
+Part28.TopSurface = Enum.SurfaceType.Smooth
+Part28.brickColor = BrickColor.new("Institutional white")
+Decal29.Parent = Part28
+Decal29.Texture = "http://www.roblox.com/asset/?id=30075181"
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
