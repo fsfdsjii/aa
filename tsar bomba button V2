@@ -1,0 +1,806 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+CylinderMesh2 = Instance.new("CylinderMesh")
+Part3 = Instance.new("Part")
+CylinderMesh4 = Instance.new("CylinderMesh")
+Part5 = Instance.new("Part")
+CylinderMesh6 = Instance.new("CylinderMesh")
+Part7 = Instance.new("Part")
+CylinderMesh8 = Instance.new("CylinderMesh")
+Part9 = Instance.new("Part")
+Part10 = Instance.new("Part")
+CylinderMesh11 = Instance.new("CylinderMesh")
+Part12 = Instance.new("Part")
+Part13 = Instance.new("Part")
+CylinderMesh14 = Instance.new("CylinderMesh")
+Part15 = Instance.new("Part")
+CylinderMesh16 = Instance.new("CylinderMesh")
+Part17 = Instance.new("Part")
+CylinderMesh18 = Instance.new("CylinderMesh")
+Part19 = Instance.new("Part")
+Part20 = Instance.new("Part")
+CylinderMesh21 = Instance.new("CylinderMesh")
+Model22 = Instance.new("Model")
+Part23 = Instance.new("Part")
+CylinderMesh24 = Instance.new("CylinderMesh")
+ClickDetector25 = Instance.new("ClickDetector")
+Humanoid26 = Instance.new("Humanoid")
+Script27 = Instance.new("Script")
+Sound28 = Instance.new("Sound")
+Sound29 = Instance.new("Sound")
+Sound30 = Instance.new("Sound")
+Sound31 = Instance.new("Sound")
+Sound32 = Instance.new("Sound")
+Part33 = Instance.new("Part")
+Part34 = Instance.new("Part")
+SpecialMesh35 = Instance.new("SpecialMesh")
+Part36 = Instance.new("Part")
+SpecialMesh37 = Instance.new("SpecialMesh")
+Part38 = Instance.new("Part")
+SpecialMesh39 = Instance.new("SpecialMesh")
+Script40 = Instance.new("Script")
+Sound41 = Instance.new("Sound")
+LocalScript42 = Instance.new("LocalScript")
+Sky43 = Instance.new("Sky")
+Model0.Name = "DoomBomb"
+Model0.Parent = mas
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(-248.21698, 3.49935126, -7.04119873, 0, 0, 1.00000048, -1, 0, 0, 0, -1.00000048, 0)
+Part1.Orientation = Vector3.new(0, 90, -90)
+Part1.Position = Vector3.new(-248.21697998046875, 3.4993512630462646, -7.04119873046875)
+Part1.Rotation = Vector3.new(-90, 90, 0)
+Part1.Size = Vector3.new(1, 7.599996566772461, 1.2000007629394531)
+Part1.Anchored = true
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.FormFactor = Enum.FormFactor.Custom
+Part1.formFactor = Enum.FormFactor.Custom
+CylinderMesh2.Parent = Part1
+Part3.Parent = Model0
+Part3.CFrame = CFrame.new(-248.21698, 3.49935126, -7.04119873, 0, 1.00000024, 6.29276037e-05, -1, 0, 0, 0, -6.29276037e-05, 1.00000024)
+Part3.Orientation = Vector3.new(0, 0, -90)
+Part3.Position = Vector3.new(-248.21697998046875, 3.4993512630462646, -7.04119873046875)
+Part3.Rotation = Vector3.new(0, 0, -90)
+Part3.Size = Vector3.new(1, 7.599996566772461, 1.2000007629394531)
+Part3.Anchored = true
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Part3.FormFactor = Enum.FormFactor.Custom
+Part3.formFactor = Enum.FormFactor.Custom
+CylinderMesh4.Parent = Part3
+Part5.Parent = Model0
+Part5.CFrame = CFrame.new(-248.21698, 4.9993515, -7.04119873, 6.29276037e-05, 0, 1.00000024, 0, -1, 0, 1.00000024, 0, -6.29276037e-05)
+Part5.Orientation = Vector3.new(0, 90, 180)
+Part5.Position = Vector3.new(-248.21697998046875, 4.999351501464844, -7.04119873046875)
+Part5.Rotation = Vector3.new(180, 90, 0)
+Part5.Size = Vector3.new(1.2000000476837158, 4, 1.2000007629394531)
+Part5.Anchored = true
+Part5.BottomSurface = Enum.SurfaceType.Smooth
+Part5.TopSurface = Enum.SurfaceType.Smooth
+Part5.FormFactor = Enum.FormFactor.Custom
+Part5.formFactor = Enum.FormFactor.Custom
+CylinderMesh6.Parent = Part5
+Part7.Parent = Model0
+Part7.CFrame = CFrame.new(-248.21698, 3.499336, -7.04119873, 0.000125914841, 7.92903165e-09, 1.00000036, 6.29872084e-05, -1.00000012, 0, 1.00000048, 6.29872229e-05, -0.000125914841)
+Part7.Orientation = Vector3.new(0, 90.01000213623047, 180)
+Part7.Position = Vector3.new(-248.21697998046875, 3.499336004257202, -7.04119873046875)
+Part7.Rotation = Vector3.new(180, 90, 0)
+Part7.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part7.Size = Vector3.new(5, 0.20000000298023224, 5)
+Part7.Anchored = true
+Part7.BottomSurface = Enum.SurfaceType.Smooth
+Part7.BrickColor = BrickColor.new("Black")
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Part7.brickColor = BrickColor.new("Black")
+Part7.FormFactor = Enum.FormFactor.Custom
+Part7.formFactor = Enum.FormFactor.Custom
+CylinderMesh8.Parent = Part7
+CylinderMesh8.Scale = Vector3.new(1.2999999523162842, 1, 1.2999999523162842)
+Part9.Name = "Sphere"
+Part9.Parent = Model0
+Part9.CFrame = CFrame.new(-248.21698, 3.49973273, -7.04119873, 1.00000024, 0, 6.29276037e-05, 0, 1, 0, -6.29276037e-05, 0, 1.00000024)
+Part9.Position = Vector3.new(-248.21697998046875, 3.499732732772827, -7.04119873046875)
+Part9.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part9.Size = Vector3.new(6, 6, 6)
+Part9.Anchored = true
+Part9.BottomSurface = Enum.SurfaceType.Smooth
+Part9.BrickColor = BrickColor.new("Dark stone grey")
+Part9.TopSurface = Enum.SurfaceType.Smooth
+Part9.brickColor = BrickColor.new("Dark stone grey")
+Part9.FormFactor = Enum.FormFactor.Symmetric
+Part9.formFactor = Enum.FormFactor.Symmetric
+Part9.Shape = Enum.PartType.Ball
+Part10.Name = "Ring"
+Part10.Parent = Model0
+Part10.CFrame = CFrame.new(-248.21698, 5.09934235, -7.04119873, 0.000125914841, 7.92903165e-09, 1.00000036, 6.29872084e-05, -1.00000012, 0, 1.00000048, 6.29872229e-05, -0.000125914841)
+Part10.Orientation = Vector3.new(0, 90.01000213623047, 180)
+Part10.Position = Vector3.new(-248.21697998046875, 5.099342346191406, -7.04119873046875)
+Part10.Rotation = Vector3.new(180, 90, 0)
+Part10.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part10.Size = Vector3.new(5, 0.20000000298023224, 5)
+Part10.Anchored = true
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.BrickColor = BrickColor.new("Black")
+Part10.TopSurface = Enum.SurfaceType.Smooth
+Part10.brickColor = BrickColor.new("Black")
+Part10.FormFactor = Enum.FormFactor.Custom
+Part10.formFactor = Enum.FormFactor.Custom
+CylinderMesh11.Parent = Part10
+CylinderMesh11.Scale = Vector3.new(1.100000023841858, 1, 1.100000023841858)
+Part12.Parent = Model0
+Part12.CFrame = CFrame.new(-248.21698, 1.99958038, -7.04119873, 1.00000024, 0, 6.29276037e-05, 0, 1, 0, -6.29276037e-05, 0, 1.00000024)
+Part12.Position = Vector3.new(-248.21697998046875, 1.9995803833007812, -7.04119873046875)
+Part12.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part12.Size = Vector3.new(7, 3, 7)
+Part12.Anchored = true
+Part12.BottomSurface = Enum.SurfaceType.Smooth
+Part12.BrickColor = BrickColor.new("Dark stone grey")
+Part12.TopSurface = Enum.SurfaceType.Smooth
+Part12.brickColor = BrickColor.new("Dark stone grey")
+Part12.FormFactor = Enum.FormFactor.Custom
+Part12.formFactor = Enum.FormFactor.Custom
+Part13.Name = "Ring"
+Part13.Parent = Model0
+Part13.CFrame = CFrame.new(-248.21698, 5.59932995, -7.04119873, 0.000125914841, 7.92903165e-09, 1.00000036, 6.29872084e-05, -1.00000012, 0, 1.00000048, 6.29872229e-05, -0.000125914841)
+Part13.Orientation = Vector3.new(0, 90.01000213623047, 180)
+Part13.Position = Vector3.new(-248.21697998046875, 5.599329948425293, -7.04119873046875)
+Part13.Rotation = Vector3.new(180, 90, 0)
+Part13.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part13.Size = Vector3.new(5, 0.20000000298023224, 5)
+Part13.Anchored = true
+Part13.BottomSurface = Enum.SurfaceType.Smooth
+Part13.BrickColor = BrickColor.new("Black")
+Part13.TopSurface = Enum.SurfaceType.Smooth
+Part13.brickColor = BrickColor.new("Black")
+Part13.FormFactor = Enum.FormFactor.Custom
+Part13.formFactor = Enum.FormFactor.Custom
+CylinderMesh14.Parent = Part13
+CylinderMesh14.Scale = Vector3.new(0.949999988079071, 1, 0.949999988079071)
+Part15.Parent = Model0
+Part15.CFrame = CFrame.new(-248.21698, 3.49935126, -7.04119873, 0, 1.00000024, -6.29276037e-05, 1, 0, -0, 0, -6.29276037e-05, -1.00000024)
+Part15.Orientation = Vector3.new(0, -180, 90)
+Part15.Position = Vector3.new(-248.21697998046875, 3.4993512630462646, -7.04119873046875)
+Part15.Rotation = Vector3.new(180, 0, -90)
+Part15.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part15.Size = Vector3.new(5, 0.20000000298023224, 5)
+Part15.Anchored = true
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.BrickColor = BrickColor.new("Dark stone grey")
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.brickColor = BrickColor.new("Dark stone grey")
+Part15.FormFactor = Enum.FormFactor.Custom
+Part15.formFactor = Enum.FormFactor.Custom
+CylinderMesh16.Parent = Part15
+CylinderMesh16.Scale = Vector3.new(1.2999999523162842, 1, 1.2999999523162842)
+Part17.Parent = Model0
+Part17.CFrame = CFrame.new(-248.21698, 3.49935126, -7.04119873, 0, 0.000125914841, 1.00000036, 1, 0, 0, 0, 1.00000036, -0.000125914841)
+Part17.Orientation = Vector3.new(0, 90.01000213623047, 90)
+Part17.Position = Vector3.new(-248.21697998046875, 3.4993512630462646, -7.04119873046875)
+Part17.Rotation = Vector3.new(90, 90, 0)
+Part17.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part17.Size = Vector3.new(5, 0.20000000298023224, 5)
+Part17.Anchored = true
+Part17.BottomSurface = Enum.SurfaceType.Smooth
+Part17.BrickColor = BrickColor.new("Dark stone grey")
+Part17.TopSurface = Enum.SurfaceType.Smooth
+Part17.brickColor = BrickColor.new("Dark stone grey")
+Part17.FormFactor = Enum.FormFactor.Custom
+Part17.formFactor = Enum.FormFactor.Custom
+CylinderMesh18.Parent = Part17
+CylinderMesh18.Scale = Vector3.new(1.2999999523162842, 1, 1.2999999523162842)
+Part19.Name = "Core"
+Part19.Parent = Model0
+Part19.CFrame = CFrame.new(-248.21698, 3.49958014, -7.04119873, 1.00000024, 0, 6.29276037e-05, 0, 1, 0, -6.29276037e-05, 0, 1.00000024)
+Part19.Position = Vector3.new(-248.21697998046875, 3.499580144882202, -7.04119873046875)
+Part19.Color = Color3.new(0, 0.12549, 0.376471)
+Part19.Size = Vector3.new(3, 3, 3)
+Part19.Anchored = true
+Part19.BottomSurface = Enum.SurfaceType.Smooth
+Part19.BrickColor = BrickColor.new("Navy blue")
+Part19.Material = Enum.Material.Ice
+Part19.Reflectance = 0.5
+Part19.TopSurface = Enum.SurfaceType.Smooth
+Part19.brickColor = BrickColor.new("Navy blue")
+Part19.FormFactor = Enum.FormFactor.Symmetric
+Part19.formFactor = Enum.FormFactor.Symmetric
+Part19.Shape = Enum.PartType.Ball
+Part20.Name = "Ring"
+Part20.Parent = Model0
+Part20.CFrame = CFrame.new(-248.21698, 4.5993576, -7.04119873, 0.000125914841, 7.92903165e-09, 1.00000036, 6.29872084e-05, -1.00000012, 0, 1.00000048, 6.29872229e-05, -0.000125914841)
+Part20.Orientation = Vector3.new(0, 90.01000213623047, 180)
+Part20.Position = Vector3.new(-248.21697998046875, 4.599357604980469, -7.04119873046875)
+Part20.Rotation = Vector3.new(180, 90, 0)
+Part20.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part20.Size = Vector3.new(5, 0.20000000298023224, 5)
+Part20.Anchored = true
+Part20.BottomSurface = Enum.SurfaceType.Smooth
+Part20.BrickColor = BrickColor.new("Black")
+Part20.TopSurface = Enum.SurfaceType.Smooth
+Part20.brickColor = BrickColor.new("Black")
+Part20.FormFactor = Enum.FormFactor.Custom
+Part20.formFactor = Enum.FormFactor.Custom
+CylinderMesh21.Parent = Part20
+CylinderMesh21.Scale = Vector3.new(1.2000000476837158, 1, 1.2000000476837158)
+Model22.Name = "Tsar"
+Model22.Parent = Model0
+Part23.Name = "Head"
+Part23.Parent = Model22
+Part23.CFrame = CFrame.new(-248.21698, 7.09971046, -7.04119873, 6.29276037e-05, 0, 1.00000024, 0, -1, 0, 1.00000024, 0, -6.29276037e-05)
+Part23.Orientation = Vector3.new(0, 90, 180)
+Part23.Position = Vector3.new(-248.21697998046875, 7.099710464477539, -7.04119873046875)
+Part23.Rotation = Vector3.new(180, 90, 0)
+Part23.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part23.Size = Vector3.new(0.800000011920929, 0.20000000298023224, 0.8000007271766663)
+Part23.Anchored = true
+Part23.BottomSurface = Enum.SurfaceType.Smooth
+Part23.BrickColor = BrickColor.new("Bright green")
+Part23.TopSurface = Enum.SurfaceType.Smooth
+Part23.brickColor = BrickColor.new("Bright green")
+Part23.FormFactor = Enum.FormFactor.Custom
+Part23.formFactor = Enum.FormFactor.Custom
+CylinderMesh24.Parent = Part23
+ClickDetector25.Parent = Part23
+ClickDetector25.MaxActivationDistance = 10
+Humanoid26.Parent = Model22
+Humanoid26.Health = 0
+Humanoid26.MaxHealth = 0
+Humanoid26.NameOcclusion = Enum.NameOcclusion.NoOcclusion
+Humanoid26.maxHealth = 0
+Script27.Name = "Detonate"
+Script27.Parent = Model0
+table.insert(cors,sandbox(Script27,function()
+local Bin = script.Parent
+local Core = Bin.Core
+local TimeDis = Bin.Tsar
+local Button = TimeDis.Head
+local Sphere = Bin.Sphere
+local Atom = Bin.Atom
+
+local opened = false
+local started = false
+local exploded = false
+
+TimeDis.Name = ""
+
+function CountDown(num)
+
+	local blargh = {"FIVE","FOUR","THREE!!","TWO!!","ONE!!!!!"}
+	if num == 1 then
+		script.Five:Play()
+	elseif num == 2 then
+		script.Four:Play()
+	elseif num == 3 then
+		script.Three:Play()
+	elseif num == 4 then
+		script.Two:Play()
+	elseif num == 5 then
+		script.One:Play()
+	end
+	
+	for i , p in ipairs(game.Players:getChildren()) do
+		if p.Character ~= nil then
+			if p.Character:findFirstChild("Head") ~= nil then
+				game:GetService("Chat"):Chat(p.Character.Head,blargh[num],Enum.ChatColor.Red)
+			end
+		end
+	end
+	print(num)
+end
+
+function Explode()
+	local Pos = Instance.new("Vector3Value")
+	Pos.Value = Core.Position
+	Pos.Name = "Position"
+	Pos.Parent = Atom
+	Atom.Parent = game.Workspace
+	Atom.Disabled = false
+	Bin:remove()
+end
+
+
+function Open()
+	if opened == false then
+		opened = true
+		for i = 1, 100 do
+			wait()
+			Button.CFrame = Button.CFrame+Vector3.new(0,-0.005,0)
+		end
+		delay(0,function()
+			while exploded == false do
+				wait()
+				Core.CFrame = Core.CFrame*CFrame.Angles(math.rad(1),math.rad(1),math.rad(1))
+			end
+			Explode()
+		end)
+		for i = 1, 100 do
+			wait()
+			for index, ring in ipairs(Bin:getChildren()) do
+				if ring.Name == "Ring" then
+					ring.CFrame = ring.CFrame+Vector3.new(0,-0.025,0)
+				end
+			end
+			Sphere.Transparency = Sphere.Transparency +0.01
+		end
+		Sphere:remove()
+		for index, ring in ipairs(Bin:getChildren()) do
+			if ring.Name == "Ring" then
+				ring:remove()
+			end
+		end
+
+				
+		delay(0, function()
+			if started == false then
+				started = true
+				for t = 60 , 4, -1 do
+					wait(1)
+					TimeDis.Name = t
+				end
+				TimeDis.Name = "FINAL COUNTDOWN"
+				for c = 1, 5 do
+					CountDown(c)
+					wait(1)
+				end
+				exploded = true
+			end
+		end)
+	end
+end
+
+Button.ClickDetector.MouseClick:connect(function() Open() end)	
+
+end))
+Sound28.Name = "Five"
+Sound28.Parent = Script27
+Sound28.Pitch = 0.5
+Sound28.PlaybackSpeed = 0.5
+Sound28.SoundId = "http://www.roblox.com/asset/?id=29445395"
+Sound28.Volume = 1
+Sound29.Name = "Four"
+Sound29.Parent = Script27
+Sound29.Pitch = 0.5
+Sound29.PlaybackSpeed = 0.5
+Sound29.SoundId = "http://www.roblox.com/asset/?id=29445378"
+Sound29.Volume = 1
+Sound30.Name = "One"
+Sound30.Parent = Script27
+Sound30.Pitch = 0.5
+Sound30.PlaybackSpeed = 0.5
+Sound30.SoundId = "http://www.roblox.com/asset/?id=29445305"
+Sound30.Volume = 1
+Sound31.Name = "Three"
+Sound31.Parent = Script27
+Sound31.Pitch = 0.5
+Sound31.PlaybackSpeed = 0.5
+Sound31.SoundId = "http://www.roblox.com/asset/?id=29445358"
+Sound31.Volume = 1
+Sound32.Name = "Two"
+Sound32.Parent = Script27
+Sound32.Pitch = 0.5
+Sound32.PlaybackSpeed = 0.5
+Sound32.SoundId = "http://www.roblox.com/asset/?id=29445339"
+Sound32.Volume = 1
+Part33.Parent = Model0
+Part33.CFrame = CFrame.new(-248.21698, 0.500002027, -7.04119873, 1.00000024, 0, 6.29276037e-05, 0, 1, 0, -6.29276037e-05, 0, 1.00000024)
+Part33.Position = Vector3.new(-248.21697998046875, 0.5000020265579224, -7.04119873046875)
+Part33.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part33.Size = Vector3.new(14, 1, 14)
+Part33.Anchored = true
+Part33.BottomSurface = Enum.SurfaceType.Smooth
+Part33.BrickColor = BrickColor.new("Dark stone grey")
+Part33.TopSurface = Enum.SurfaceType.Smooth
+Part33.brickColor = BrickColor.new("Dark stone grey")
+Part33.FormFactor = Enum.FormFactor.Custom
+Part33.formFactor = Enum.FormFactor.Custom
+Part34.Name = "CloudMesh"
+Part34.Parent = Model0
+Part34.CFrame = CFrame.new(-248.21698, 1.99958038, -7.04119873, 1.00000024, 0, 6.29276037e-05, 0, 1, 0, -6.29276037e-05, 0, 1.00000024)
+Part34.Position = Vector3.new(-248.21697998046875, 1.9995803833007812, -7.04119873046875)
+Part34.Color = Color3.new(0.854902, 0.521569, 0.254902)
+Part34.Transparency = 1
+Part34.Size = Vector3.new(1, 1, 1)
+Part34.Anchored = true
+Part34.BrickColor = BrickColor.new("Bright orange")
+Part34.CanCollide = false
+Part34.brickColor = BrickColor.new("Bright orange")
+Part34.FormFactor = Enum.FormFactor.Symmetric
+Part34.formFactor = Enum.FormFactor.Symmetric
+SpecialMesh35.Parent = Part34
+SpecialMesh35.MeshId = "http://www.roblox.com/asset/?id=1095708"
+SpecialMesh35.TextureId = "http://www.roblox.com/asset/?ID=1361097"
+SpecialMesh35.MeshType = Enum.MeshType.FileMesh
+Part36.Name = "RingMesh"
+Part36.Parent = Model0
+Part36.CFrame = CFrame.new(-248.21698, 1.99958038, -7.04119873, 1.00000024, 0, 6.29276037e-05, 0, 1, 0, -6.29276037e-05, 0, 1.00000024)
+Part36.Position = Vector3.new(-248.21697998046875, 1.9995803833007812, -7.04119873046875)
+Part36.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part36.Transparency = 1
+Part36.Size = Vector3.new(1, 1, 1)
+Part36.Anchored = true
+Part36.BrickColor = BrickColor.new("Dark stone grey")
+Part36.CanCollide = false
+Part36.brickColor = BrickColor.new("Dark stone grey")
+Part36.FormFactor = Enum.FormFactor.Symmetric
+Part36.formFactor = Enum.FormFactor.Symmetric
+SpecialMesh37.Parent = Part36
+SpecialMesh37.MeshId = "http://www.roblox.com/asset/?id=3270017"
+SpecialMesh37.MeshType = Enum.MeshType.FileMesh
+Part38.Name = "SkyMesh"
+Part38.Parent = Model0
+Part38.CFrame = CFrame.new(-248.21698, 1.99958038, -7.04119873, 1.00000024, 0, 6.29276037e-05, 0, 1, 0, -6.29276037e-05, 0, 1.00000024)
+Part38.Position = Vector3.new(-248.21697998046875, 1.9995803833007812, -7.04119873046875)
+Part38.Transparency = 1
+Part38.Size = Vector3.new(1, 1, 1)
+Part38.Anchored = true
+Part38.CanCollide = false
+Part38.FormFactor = Enum.FormFactor.Symmetric
+Part38.formFactor = Enum.FormFactor.Symmetric
+SpecialMesh39.Parent = Part38
+SpecialMesh39.MeshId = "http://www.roblox.com/asset/?id=1185246"
+SpecialMesh39.MeshType = Enum.MeshType.FileMesh
+Script40.Name = "Atom"
+Script40.Parent = Model0
+Script40.Enabled = false
+table.insert(cors,sandbox(Script40,function()
+print("Nuke Em' All")
+
+local CloudID= "http://www.roblox.com/asset/?id=1095708"
+local ColorTexture = "http://www.roblox.com/asset/?ID=1361097"
+local RingID = "http://www.roblox.com/asset/?id=3270017"
+local SphereID = "http://www.roblox.com/asset/?id=1185246"
+
+while true do
+	wait()
+	if script:findFirstChild("Position") ~= nil then break end
+end
+
+local BasePosition = script.Position.Value
+
+
+local Size = 25
+
+local Exp = Instance.new("Model")
+Exp.Name = "ATOMICEXPLOSION"
+Exp.Parent = game.Workspace
+
+local BasePart = Instance.new("Part")
+BasePart.formFactor = 0
+BasePart.TopSurface = 0
+BasePart.BottomSurface = 0
+BasePart.Anchored = true
+BasePart.Locked = true
+BasePart.CanCollide = false
+
+local BaseMesh = Instance.new("SpecialMesh")
+BaseMesh.MeshType = "FileMesh"
+
+local CloudMesh = BaseMesh:clone()
+CloudMesh.MeshId = CloudID
+CloudMesh.TextureId = ColorTexture
+CloudMesh.VertexColor = Vector3.new(0.9,0.6,0)
+
+local RingMesh = BaseMesh:clone()
+RingMesh.MeshId = RingID
+
+local SphereMesh = BaseMesh:clone()
+SphereMesh.MeshId = SphereID
+
+local Clouds = {}
+local ShockWave = {}
+local Sky = script.Sky
+
+
+function Effects()
+	script.Explode:Play()
+	delay(0,function() 
+		for i = 5, 1,-0.01 do
+			wait()
+			game.Lighting.Brightness = i
+		end
+	end)
+	for i,p in ipairs(game.Players:GetChildren()) do
+		local shake = script.Shake:clone()
+		shake.Parent = p.Backpack
+		shake.Disabled = false
+	end
+end
+
+function Destruction(Pos,Radius)
+	local function Destroy(Model)
+		for i ,v in ipairs(Model:getChildren()) do
+			if v.className == "Part" or v.className == "TrussPart" or v.className == "WedgePart" or v.className == "VehicleSeat" or v.className == "CornorWedgePart" or v.className == "Seat" then
+				if (v.Position-Pos).magnitude < Radius then
+					if v.Anchored == false then
+						v:BreakJoints()
+						v.Velocity = CFrame.new(v.Position,Pos):vectorToWorldSpace(Vector3.new(math.random(-5,5),5,200))
+						v.Material = "CorrodedMetal"
+					end	
+				end
+			elseif v.className == "Model" or v.className == "Hat" or v.className == "Tool" then
+				Destroy(v)
+			end
+		end
+	end
+	for i ,v in ipairs(game.Workspace:GetChildren()) do	
+		Destroy(v)
+	end
+end
+
+function Explode(Pos)
+
+local Base = BasePart:clone()
+Base.Position = Pos
+	
+local Mesh = CloudMesh:clone()
+Mesh.Parent = Base 
+Mesh.Scale = Vector3.new(250,100,450)
+
+local PoleBase = BasePart:clone()
+PoleBase.Position = Pos+Vector3.new(0,10,0)
+
+local PoleBaseMesh = CloudMesh:clone()
+PoleBaseMesh.Scale = Vector3.new(125,200,250)
+PoleBaseMesh.Parent = PoleBase
+
+local Cloud1 = BasePart:clone()
+Cloud1.Position = Pos+Vector3.new(0,75,0)
+
+local Cloud1Mesh = CloudMesh:clone()
+Cloud1Mesh.Scale = Vector3.new(50,300,100)
+Cloud1Mesh.Parent = Cloud1
+	
+local Cloud2 = BasePart:clone()
+Cloud2.Position = Pos+Vector3.new(0,125,0)
+	
+local Cloud2Mesh = CloudMesh:clone()
+Cloud2Mesh.Scale = Vector3.new(50,150,100)
+Cloud2Mesh.Parent = Cloud2
+
+local Cloud3 = BasePart:clone()
+Cloud3.Position = Pos+Vector3.new(0,170,0)
+	
+local Cloud3Mesh = CloudMesh:clone()
+Cloud3Mesh.Scale = Vector3.new(50,150,100)
+Cloud3Mesh.Parent = Cloud3
+
+local PoleRing = BasePart:clone()
+PoleRing.Position = Pos+Vector3.new(0,130,0)
+PoleRing.Transparency = 0.2
+PoleRing.BrickColor = BrickColor.new("Dark stone grey")
+PoleRing.CFrame = PoleRing.CFrame*CFrame.Angles(math.rad(90),0,0)
+
+local Mesh = RingMesh:clone()
+Mesh.Scale = Vector3.new(100,100,100)
+Mesh.Parent = PoleRing
+
+local MushCloud = BasePart:clone()
+MushCloud.Position = Pos+Vector3.new(0,230,0)
+	
+local MushMesh = CloudMesh:clone() -- lol
+MushMesh.Scale = Vector3.new(250,175,350)
+MushMesh.Parent = MushCloud
+
+local TopCloud = BasePart:clone()
+TopCloud.Position = Pos+Vector3.new(0,270,0)
+	
+local TopMesh = CloudMesh:clone()
+TopMesh.Scale = Vector3.new(75,150,150)
+TopMesh.Parent = TopCloud
+
+table.insert(Clouds,Base)
+table.insert(Clouds,TopCloud)
+table.insert(Clouds,MushCloud)
+table.insert(Clouds,Cloud1)
+table.insert(Clouds,Cloud2)
+table.insert(Clouds,Cloud3)
+table.insert(Clouds,PoleBase)
+table.insert(Clouds,PoleRing)
+
+
+local BigRing = BasePart:clone()
+BigRing.Position = Pos
+BigRing.CFrame = BigRing.CFrame*CFrame.Angles(math.rad(90),0,0)
+	
+local BigMesh = RingMesh:clone()
+BigMesh.Scale = Vector3.new(500,500,100)
+BigMesh.Parent = BigRing
+	
+local SmallRing = BasePart:clone()
+SmallRing.Position = Pos
+SmallRing.BrickColor = BrickColor.new("Dark stone grey")
+SmallRing.CFrame = SmallRing.CFrame*CFrame.Angles(math.rad(90),0,0)
+
+local SmallMesh = RingMesh:clone()
+SmallMesh.Scale = Vector3.new(460,460,150)
+SmallMesh.Parent = SmallRing
+
+local InnerSphere = BasePart:clone()
+InnerSphere.Position = Pos
+InnerSphere.BrickColor = BrickColor.new("Bright orange")
+InnerSphere.Transparency = 0.5
+
+local InnerSphereMesh = SphereMesh:clone()	
+InnerSphereMesh.Scale = Vector3.new(-650,-650,-650)
+InnerSphereMesh.Parent = InnerSphere
+	
+local OutterSphere = BasePart:clone()
+OutterSphere.Position = Pos
+OutterSphere.BrickColor = BrickColor.new("Bright orange")
+OutterSphere.Transparency = 0.5
+
+local OutterSphereMesh = SphereMesh:clone()
+OutterSphereMesh.Scale = Vector3.new(650,650,650)
+OutterSphereMesh.Parent = OutterSphere
+
+table.insert(ShockWave,BigRing)	
+table.insert(ShockWave,SmallRing)
+table.insert(ShockWave,OutterSphere)
+table.insert(ShockWave,InnerSphere)
+	Sky.Parent = game.Lighting
+	for i , v in ipairs(ShockWave) do
+		v.Parent = Exp
+	end
+	for i , v in ipairs(Clouds) do
+		v.Parent = Exp
+	end
+	Effects()
+	delay(0,function()
+		for resize = 1, Size*2.2, 0.03 do
+			wait()
+			BigRing.Mesh.Scale = Vector3.new(500*resize,500*resize,100*resize)
+			SmallRing.Mesh.Scale = Vector3.new(460*resize,460*resize,150*resize)
+			InnerSphere.Mesh.Scale = Vector3.new(-650*resize,-650*resize,-650*resize)
+			OutterSphere.Mesh.Scale = Vector3.new(650*resize,650*resize,650*resize)
+			Destruction(Pos,270*resize)
+		end
+		for fade = 1, 1.1, 0.001 do
+			wait()
+			BigRing.Mesh.Scale = Vector3.new(500*Size*2*fade,500*Size*2*fade,100*Size*2*fade)
+			SmallRing.Mesh.Scale = Vector3.new(460*Size*2*fade,460*Size*2*fade,150*Size*2*fade)
+			InnerSphere.Mesh.Scale = Vector3.new(-600*Size*2*fade,-600*Size*2*fade,-600*Size*2*fade)
+			OutterSphere.Mesh.Scale = Vector3.new(600*Size*2*fade,600*Size*2*fade,600*Size*2*fade)
+			for i ,v in ipairs(ShockWave) do
+				v.Transparency = v.Transparency+0.01
+			end
+		end
+		for i ,v in ipairs(ShockWave) do
+			v:Remove()
+		end
+	end)
+	delay(0,function()
+		for resize = 0.5, Size*1.5, 0.02 do
+			wait()
+			Base.Mesh.Scale = Vector3.new(250*resize,100*resize,450*resize)
+			TopCloud.Mesh.Scale = Vector3.new(75*resize,150*resize,150*resize)
+			MushCloud.Mesh.Scale = Vector3.new(250*resize,175*resize,350*resize)
+			Cloud1.Mesh.Scale = Vector3.new(50*resize,300*resize,100*resize)
+			Cloud2.Mesh.Scale = Vector3.new(50*resize,150*resize,100*resize)
+			Cloud3.Mesh.Scale = Vector3.new(50*resize,150*resize,100*resize)
+			PoleBase.Mesh.Scale = Vector3.new(125*resize,200*resize,250*resize)
+			PoleRing.Mesh.Scale = Vector3.new(100*resize,100*resize,100*resize)
+
+			Base.Position = Pos+Vector3.new(0,5*resize,0)
+			TopCloud.Position = Pos+Vector3.new(0,270*resize,0)
+			MushCloud.Position = Pos+Vector3.new(0,230*resize,0)
+			Cloud1.Position = Pos+Vector3.new(0,75*resize,0)
+			Cloud2.Position = Pos+Vector3.new(0,125*resize,0)
+			Cloud3.Position = Pos+Vector3.new(0,170*resize,0)
+			PoleBase.Position = Pos+Vector3.new(0,10*resize,0)
+			PoleRing.Position = Pos+Vector3.new(0,130*resize,0)
+		end
+	end)
+	wait(2)
+	for y = 0.6,0,-0.0025 do
+		wait()
+		for i , v in ipairs(Clouds) do
+			v.Mesh.VertexColor = Vector3.new(0.9,y,0)
+		end
+	end
+	for r = 0.9,0.5,-0.01 do
+		wait()
+		for i , v in ipairs(Clouds) do
+			v.Mesh.VertexColor = Vector3.new(r,0,0)
+		end
+	end
+	for by = 0,0.5,0.005 do
+		wait()
+		for i , v in ipairs(Clouds) do
+			v.Mesh.VertexColor = Vector3.new(0.5,by,by)
+			v.Transparency = by*2
+		end
+		Base.Mesh.Scale = Base.Mesh.Scale+Vector3.new(0.1,0.1,0.1)
+		TopCloud.Mesh.Scale = TopCloud.Mesh.Scale+Vector3.new(0.1,0.1,0.1)
+		MushCloud.Mesh.Scale = MushCloud.Mesh.Scale+Vector3.new(0.1,0.1,0.1)
+		Cloud1.Mesh.Scale = Cloud1.Mesh.Scale+Vector3.new(0.1,0.1,0.1)
+		Cloud2.Mesh.Scale = Cloud2.Mesh.Scale+Vector3.new(0.1,0.1,0.1)
+		Cloud3.Mesh.Scale = Cloud3.Mesh.Scale+Vector3.new(0.1,0.1,0.1)
+		PoleBase.Mesh.Scale = PoleBase.Mesh.Scale+Vector3.new(0.1,0.1,0.1)
+		PoleRing.Mesh.Scale = PoleRing.Mesh.Scale+Vector3.new(0.1,0.1,0.1)
+	end
+	wait(10)
+	Exp:remove()
+	wait(20)
+	Sky:remove()
+end
+
+
+	
+
+Explode(BasePosition)
+
+script:remove()
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+end))
+Script40.Disabled = true
+Sound41.Name = "Explode"
+Sound41.Parent = Script40
+Sound41.Pitch = 0.10000000149011612
+Sound41.PlaybackSpeed = 0.10000000149011612
+Sound41.SoundId = "http://www.roblox.com/asset/?id=16976189"
+Sound41.Volume = 1
+LocalScript42.Name = "Shake"
+LocalScript42.Parent = Script40
+LocalScript42.Enabled = false
+table.insert(cors,sandbox(LocalScript42,function()
+if script.Parent.Parent.className ~= "Player" then return end
+
+local cam = game.Workspace.CurrentCamera
+
+for i = 1, 600 do
+	wait()
+	cam.CoordinateFrame = cam.CoordinateFrame+Vector3.new(math.random(-1,1),math.random(-1,1),math.random(-1,1))
+end
+
+script:remove()
+
+
+end))
+LocalScript42.Disabled = true
+Sky43.Parent = Script40
+Sky43.SkyboxBk = "http://www.roblox.com/asset/?version=1&id=1012890"
+Sky43.SkyboxDn = "http://www.roblox.com/asset/?version=1&id=1012891"
+Sky43.SkyboxFt = "http://www.roblox.com/asset/?version=1&id=1012887"
+Sky43.SkyboxLf = "http://www.roblox.com/asset/?version=1&id=1012889"
+Sky43.SkyboxRt = "http://www.roblox.com/asset/?version=1&id=1012888"
+Sky43.SkyboxUp = "http://www.roblox.com/asset/?version=1&id=1014449"
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
