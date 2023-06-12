@@ -1,0 +1,1681 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Model1 = Instance.new("Model")
+Model2 = Instance.new("Model")
+Part3 = Instance.new("Part")
+Weld4 = Instance.new("Weld")
+Weld5 = Instance.new("Weld")
+Part6 = Instance.new("Part")
+SpecialMesh7 = Instance.new("SpecialMesh")
+Weld8 = Instance.new("Weld")
+Weld9 = Instance.new("Weld")
+Part10 = Instance.new("Part")
+SpecialMesh11 = Instance.new("SpecialMesh")
+Weld12 = Instance.new("Weld")
+Part13 = Instance.new("Part")
+Weld14 = Instance.new("Weld")
+Weld15 = Instance.new("Weld")
+Part16 = Instance.new("Part")
+Weld17 = Instance.new("Weld")
+Part18 = Instance.new("Part")
+Weld19 = Instance.new("Weld")
+Part20 = Instance.new("Part")
+Glue21 = Instance.new("Glue")
+Model22 = Instance.new("Model")
+Model23 = Instance.new("Model")
+Part24 = Instance.new("Part")
+Humanoid25 = Instance.new("Humanoid")
+Part26 = Instance.new("Part")
+ClickDetector27 = Instance.new("ClickDetector")
+Decal28 = Instance.new("Decal")
+Part29 = Instance.new("Part")
+Decal30 = Instance.new("Decal")
+ClickDetector31 = Instance.new("ClickDetector")
+Part32 = Instance.new("Part")
+ClickDetector33 = Instance.new("ClickDetector")
+Part34 = Instance.new("Part")
+ClickDetector35 = Instance.new("ClickDetector")
+Script36 = Instance.new("Script")
+Model37 = Instance.new("Model")
+Part38 = Instance.new("Part")
+SpecialMesh39 = Instance.new("SpecialMesh")
+Script40 = Instance.new("Script")
+Script41 = Instance.new("Script")
+Script42 = Instance.new("Script")
+Script43 = Instance.new("Script")
+Script44 = Instance.new("Script")
+Script45 = Instance.new("Script")
+Script46 = Instance.new("Script")
+Script47 = Instance.new("Script")
+Script48 = Instance.new("Script")
+Model49 = Instance.new("Model")
+Model50 = Instance.new("Model")
+Model51 = Instance.new("Model")
+Model52 = Instance.new("Model")
+Model53 = Instance.new("Model")
+Model54 = Instance.new("Model")
+Model55 = Instance.new("Model")
+Model56 = Instance.new("Model")
+Model57 = Instance.new("Model")
+Model58 = Instance.new("Model")
+VelocityMotor59 = Instance.new("VelocityMotor")
+Model0.Name = "in/out pressure nuke"
+Model0.Parent = mas
+Model1.Name = "Model2"
+Model1.Parent = Model0
+Model2.Parent = Model1
+Part3.Name = "Smooth Block Model"
+Part3.Parent = Model2
+Part3.CFrame = CFrame.new(55.2240906, 5.80000305, 32.6140785, -1, -0, 0, -0, -1, 0, -0, -0, 1)
+Part3.Orientation = Vector3.new(0, 0, -180)
+Part3.Position = Vector3.new(55.224090576171875, 5.8000030517578125, 32.614078521728516)
+Part3.Rotation = Vector3.new(0, 0, 180)
+Part3.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part3.Transparency = 0.6000000238418579
+Part3.Size = Vector3.new(1, 9.199999809265137, 6)
+Part3.Anchored = true
+Part3.BrickColor = BrickColor.new("Bright yellow")
+Part3.LeftSurface = Enum.SurfaceType.Glue
+Part3.brickColor = BrickColor.new("Bright yellow")
+Weld4.Parent = Part3
+Weld4.C0 = CFrame.new(0, 4.5999999, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld4.C1 = CFrame.new(0, 0.600000381, -3.5, -0, -1, 0, 0, 0, -1, 1, 0, 0)
+Weld4.Part0 = Part3
+Weld4.Part1 = Part6
+Weld4.part1 = Part6
+Weld5.Parent = Part3
+Weld5.C0 = CFrame.new(0, -4.5999999, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld5.C1 = CFrame.new(0, 0.600000381, 3.5, 0, -1, -0, 0, -0, -1, 1, -0, -0)
+Weld5.Part0 = Part3
+Weld5.Part1 = Part10
+Weld5.part1 = Part10
+Part6.Name = "Smooth Block Model"
+Part6.Parent = Model2
+Part6.CFrame = CFrame.new(58.7240906, 0.600003362, 32.6140785, -0, 0, 1, -0, 1, 0, -1, 0, 0)
+Part6.Orientation = Vector3.new(0, 90, 0)
+Part6.Position = Vector3.new(58.724090576171875, 0.6000033617019653, 32.614078521728516)
+Part6.Rotation = Vector3.new(0, 90, 0)
+Part6.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part6.Size = Vector3.new(10, 1.2000000476837158, 10)
+Part6.Anchored = true
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.BrickColor = BrickColor.new("Dark stone grey")
+Part6.TopSurface = Enum.SurfaceType.Weld
+Part6.brickColor = BrickColor.new("Dark stone grey")
+SpecialMesh7.Parent = Part6
+Weld8.Parent = Part6
+Weld8.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld8.C1 = CFrame.new(-3.5, 4.60000038, 0, -1, -0, -0, -0, -0, -1, -0, -1, -0)
+Weld8.Part0 = Part6
+Weld8.Part1 = Part16
+Weld8.part1 = Part16
+Weld9.Parent = Part6
+Weld9.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld9.C1 = CFrame.new(-3.5, 4.60000038, 0, 0, 1, 0, -0, -0, -1, -1, -0, -0)
+Weld9.Part0 = Part6
+Weld9.Part1 = Part18
+Weld9.part1 = Part18
+Part10.Name = "Smooth Block Model"
+Part10.Parent = Model2
+Part10.CFrame = CFrame.new(58.7240906, 11.0000038, 32.6140785, -0, -0, -1, -0, -1, -0, -1, -0, -0)
+Part10.Orientation = Vector3.new(0, -90, -180)
+Part10.Position = Vector3.new(58.724090576171875, 11.000003814697266, 32.614078521728516)
+Part10.Rotation = Vector3.new(180, -90, 0)
+Part10.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part10.Size = Vector3.new(10, 1.2000000476837158, 10)
+Part10.Anchored = true
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.BrickColor = BrickColor.new("Dark stone grey")
+Part10.TopSurface = Enum.SurfaceType.Weld
+Part10.brickColor = BrickColor.new("Dark stone grey")
+SpecialMesh11.Parent = Part10
+Weld12.Parent = Part10
+Weld12.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld12.C1 = CFrame.new(-3.5, -4.5999999, 0, 0, -1, 0, -0, 0, 1, -1, 0, 0)
+Weld12.Part0 = Part10
+Weld12.Part1 = Part18
+Weld12.part1 = Part18
+Part13.Name = "Smooth Block Model"
+Part13.Parent = Model2
+Part13.CFrame = CFrame.new(58.7240906, 5.80000305, 36.1140785, 0, -0, 1, 0, -1, 0, 1, -0, 0)
+Part13.Orientation = Vector3.new(0, 90, 180)
+Part13.Position = Vector3.new(58.724090576171875, 5.8000030517578125, 36.114078521728516)
+Part13.Rotation = Vector3.new(180, 90, 0)
+Part13.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part13.Transparency = 0.6000000238418579
+Part13.Size = Vector3.new(1, 9.199999809265137, 6)
+Part13.Anchored = true
+Part13.BrickColor = BrickColor.new("Bright yellow")
+Part13.LeftSurface = Enum.SurfaceType.Glue
+Part13.brickColor = BrickColor.new("Bright yellow")
+Weld14.Parent = Part13
+Weld14.C0 = CFrame.new(0, 4.5999999, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld14.C1 = CFrame.new(-3.5, 0.600000381, 0, 1, -0, 0, 0, 0, -1, 0, 1, 0)
+Weld14.Part0 = Part13
+Weld14.Part1 = Part6
+Weld14.part1 = Part6
+Weld15.Parent = Part13
+Weld15.C0 = CFrame.new(0, -4.5999999, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld15.C1 = CFrame.new(-3.5, 0.600000381, 0, -1, -0, -0, -0, -0, -1, -0, -1, -0)
+Weld15.Part0 = Part13
+Weld15.Part1 = Part10
+Weld15.part1 = Part10
+Part16.Name = "Smooth Block Model"
+Part16.Parent = Model2
+Part16.CFrame = CFrame.new(58.7240906, 5.80000305, 29.1140785, -0, -0, -1, -0, -1, -0, -1, -0, -0)
+Part16.Orientation = Vector3.new(0, -90, -180)
+Part16.Position = Vector3.new(58.724090576171875, 5.8000030517578125, 29.114078521728516)
+Part16.Rotation = Vector3.new(180, -90, 0)
+Part16.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part16.Transparency = 0.6000000238418579
+Part16.Size = Vector3.new(1, 9.199999809265137, 6)
+Part16.Anchored = true
+Part16.BrickColor = BrickColor.new("Bright yellow")
+Part16.LeftSurface = Enum.SurfaceType.Glue
+Part16.brickColor = BrickColor.new("Bright yellow")
+Weld17.Parent = Part16
+Weld17.C0 = CFrame.new(0, -4.5999999, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld17.C1 = CFrame.new(3.5, 0.600000381, 0, 1, 0, -0, 0, 0, -1, 0, 1, -0)
+Weld17.Part0 = Part16
+Weld17.Part1 = Part10
+Weld17.part1 = Part10
+Part18.Name = "Smooth Block Model"
+Part18.Parent = Model2
+Part18.CFrame = CFrame.new(62.2240906, 5.80000305, 32.6140785, 1, -0, -0, 0, -1, -0, 0, -0, -1)
+Part18.Orientation = Vector3.new(0, -180, 180)
+Part18.Position = Vector3.new(62.224090576171875, 5.8000030517578125, 32.614078521728516)
+Part18.Rotation = Vector3.new(180, 0, 0)
+Part18.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part18.Transparency = 0.6000000238418579
+Part18.Size = Vector3.new(1, 9.199999809265137, 6)
+Part18.Anchored = true
+Part18.BrickColor = BrickColor.new("Bright yellow")
+Part18.LeftSurface = Enum.SurfaceType.Glue
+Part18.brickColor = BrickColor.new("Bright yellow")
+Weld19.Parent = Part18
+Weld19.C0 = CFrame.new(0, 0, -3, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld19.C1 = CFrame.new(0.0998110771, 0.0999755859, 0.5, 0, 1, 0, 1, 0, 0, 0, 0, -1)
+Weld19.Part0 = Part18
+Weld19.Part1 = Part24
+Weld19.part1 = Part24
+Part20.Name = "Smooth Block Model"
+Part20.Parent = Model1
+Part20.CFrame = CFrame.new(61.1240921, 5.80000305, 32.6140785, 0, -1, 0, 1, -0, 0, 0, -0, 1)
+Part20.Orientation = Vector3.new(0, 0, 90)
+Part20.Position = Vector3.new(61.12409210205078, 5.8000030517578125, 32.614078521728516)
+Part20.Rotation = Vector3.new(0, 0, 90)
+Part20.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part20.Transparency = 10
+Part20.Size = Vector3.new(2, 1.2000000476837158, 4)
+Part20.BrickColor = BrickColor.new("White")
+Part20.brickColor = BrickColor.new("White")
+Glue21.Parent = Part20
+Glue21.C0 = CFrame.new(0, -0.600000024, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Glue21.C1 = CFrame.new(-0.5, 0, 0, -0, -0, 1, -1, -0, 0, -0, -1, 0)
+Glue21.Part0 = Part20
+Glue21.Part1 = Part18
+Glue21.part1 = Part18
+Glue21.F0 = Vector3.new(-0.9999996423721313, -1.999999761581421, -0)
+Glue21.F1 = Vector3.new(-0.9999998807907104, 2.000000238418579, -0.0000010728836059570312)
+Glue21.F2 = Vector3.new(0.9999999403953552, 2.000000238418579, 5.960464477539062e-07)
+Glue21.F3 = Vector3.new(1.000000238418579, -1.9999996423721313, 0.0000016689300537109375)
+Model22.Parent = Model0
+Model23.Name = "500"
+Model23.Parent = Model22
+Part24.Name = "Head"
+Part24.Parent = Model23
+Part24.CFrame = CFrame.new(62.3240662, 5.89981461, 36.1140785, 0, -1, 0, -1, 0, 0, 0, 0, -1)
+Part24.Orientation = Vector3.new(0, 180, -90)
+Part24.Position = Vector3.new(62.324066162109375, 5.899814605712891, 36.114078521728516)
+Part24.Rotation = Vector3.new(-180, 0, 90)
+Part24.Color = Color3.new(0.427451, 0.431373, 0.423529)
+Part24.Transparency = 0.8999999761581421
+Part24.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part24.Anchored = true
+Part24.BackSurface = Enum.SurfaceType.Weld
+Part24.BrickColor = BrickColor.new("Dark grey")
+Part24.FrontSurface = Enum.SurfaceType.Weld
+Part24.LeftSurface = Enum.SurfaceType.Weld
+Part24.RightSurface = Enum.SurfaceType.Weld
+Part24.brickColor = BrickColor.new("Dark grey")
+Humanoid25.Parent = Model23
+Humanoid25.Health = 0
+Humanoid25.MaxHealth = 0
+Humanoid25.maxHealth = 0
+Part26.Name = "up"
+Part26.Parent = Model23
+Part26.CFrame = CFrame.new(60.2240906, 0.600003362, 39.1140785, -1, 0, -0, -0, 1, -0, -0, 0, -1)
+Part26.Orientation = Vector3.new(0, -180, 0)
+Part26.Position = Vector3.new(60.224090576171875, 0.6000033617019653, 39.114078521728516)
+Part26.Rotation = Vector3.new(180, 0, -180)
+Part26.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part26.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part26.Anchored = true
+Part26.BackSurface = Enum.SurfaceType.Inlet
+Part26.BottomSurface = Enum.SurfaceType.Smooth
+Part26.BrickColor = BrickColor.new("Dark stone grey")
+Part26.TopSurface = Enum.SurfaceType.Inlet
+Part26.brickColor = BrickColor.new("Dark stone grey")
+ClickDetector27.Parent = Part26
+Decal28.Parent = Part26
+Part29.Name = "down"
+Part29.Parent = Model23
+Part29.CFrame = CFrame.new(57.2240906, 0.600003362, 39.1140785, 1, -0, -0, 0, -1, -0, 0, -0, -1)
+Part29.Orientation = Vector3.new(0, -180, 180)
+Part29.Position = Vector3.new(57.224090576171875, 0.6000033617019653, 39.114078521728516)
+Part29.Rotation = Vector3.new(180, 0, 0)
+Part29.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part29.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part29.Anchored = true
+Part29.BackSurface = Enum.SurfaceType.Inlet
+Part29.BrickColor = BrickColor.new("Dark stone grey")
+Part29.TopSurface = Enum.SurfaceType.Smooth
+Part29.brickColor = BrickColor.new("Dark stone grey")
+Decal30.Parent = Part29
+ClickDetector31.Parent = Part29
+Part32.Name = "stop"
+Part32.Parent = Model23
+Part32.CFrame = CFrame.new(59.2240906, 0.600003362, 39.1140785, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part32.Position = Vector3.new(59.224090576171875, 0.6000033617019653, 39.114078521728516)
+Part32.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part32.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part32.Anchored = true
+Part32.BrickColor = BrickColor.new("Bright red")
+Part32.TopSurface = Enum.SurfaceType.Smooth
+Part32.brickColor = BrickColor.new("Bright red")
+ClickDetector33.Parent = Part32
+Part34.Name = "start"
+Part34.Parent = Model23
+Part34.CFrame = CFrame.new(58.2240906, 0.600003362, 39.1140785, -0, 0, 1, -0, 1, 0, -1, 0, 0)
+Part34.Orientation = Vector3.new(0, 90, 0)
+Part34.Position = Vector3.new(58.224090576171875, 0.6000033617019653, 39.114078521728516)
+Part34.Rotation = Vector3.new(0, 90, 0)
+Part34.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part34.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part34.Anchored = true
+Part34.BrickColor = BrickColor.new("Dark green")
+Part34.TopSurface = Enum.SurfaceType.Smooth
+Part34.brickColor = BrickColor.new("Dark green")
+ClickDetector35.Parent = Part34
+Script36.Parent = Model23
+table.insert(cors,sandbox(Script36,function()
+bin = script.Parent
+local time = 10
+
+function update()
+	bin.Name = tostring(time)
+end
+
+function explode()
+script.Parent.Parent.con.con2.BlackHole.Disabled= false
+local a = script.Parent.Parent.con.con2:clone()
+local deb = false
+if deb == true then return end
+deb = true
+local new = a:clone()
+new.Parent = script.Parent.Parent.delete
+wait()
+deb = false
+end
+
+local running = false
+
+function activated()
+
+	running = true
+
+	while (time > 0) do
+		wait(1)
+		if (running == false) then return end
+		time = time - 1
+		update()
+	end
+
+	explode()
+
+end
+
+function deactivated()
+	running = false
+end
+
+function up()
+	if (running == true) then return end
+	time = time + 10
+	update()
+end
+
+function down()
+	if (running == true) then return end
+	time = time - 10
+	update()
+end
+
+
+bin.start.ClickDetector.MouseClick:connect(activated)
+bin.stop.ClickDetector.MouseClick:connect(deactivated)
+bin.up.ClickDetector.MouseClick:connect(up)
+bin.down.ClickDetector.MouseClick:connect(down)
+
+end))
+Model37.Name = "con"
+Model37.Parent = Model22
+Part38.Name = "con2"
+Part38.Parent = Model37
+Part38.CFrame = CFrame.new(58.7240906, 5.60000324, 32.6140785, -0, 0, 1, -0, 1, 0, -1, 0, 0)
+Part38.Orientation = Vector3.new(0, 90, 0)
+Part38.Position = Vector3.new(58.724090576171875, 5.600003242492676, 32.614078521728516)
+Part38.Rotation = Vector3.new(0, 90, 0)
+Part38.Color = Color3.new(1, 0, 0)
+Part38.Size = Vector3.new(2, 2, 2)
+Part38.Anchored = true
+Part38.BottomSurface = Enum.SurfaceType.Smooth
+Part38.BrickColor = BrickColor.new("Really red")
+Part38.CanCollide = false
+Part38.Reflectance = 0.8999999761581421
+Part38.TopSurface = Enum.SurfaceType.Smooth
+Part38.brickColor = BrickColor.new("Really red")
+Part38.Shape = Enum.PartType.Ball
+SpecialMesh39.Parent = Part38
+SpecialMesh39.MeshType = Enum.MeshType.Sphere
+Script40.Name = "BlackHole"
+Script40.Parent = Part38
+Script40.Enabled = false
+table.insert(cors,sandbox(Script40,function()
+local hole = script.Parent
+local childList = {}
+
+local massConstant = 9 -- Generally a good value
+
+local mass = 9999999999999 * massConstant
+
+-- This is basically a function that finds all unanchored parts and adds them to childList.
+-- Note: This should only be run once for each object
+function checkObject(obj)
+	if (obj ~= hole) and (obj.className == "Part") then
+		if (obj.Anchored == false) then
+			table.insert(childList, 1, obj)
+		end
+	elseif (obj.className == "Model") or (obj.className == "Hat") or (obj.className == "Tool") or (obj == workspace) then
+		local child = obj:GetChildren()
+		for x = 1, #child do
+			checkObject(child[x])
+		end
+		obj.ChildAdded:connect(checkObject)
+	end
+end
+
+checkObject(workspace)
+
+print("Black Hole script loaded.")
+
+local n = 0
+while true do
+	if n < #childList then
+		n = n + 1
+		if n % 800 == 0 then
+			wait()
+		end
+	else
+		n = 1
+		wait()
+	end
+
+	local child = childList[n]
+	if (child ~= hole) and (child.className == "Part") and (child.Anchored == false) then
+		local relPos = hole.Position - child.Position
+		local motivator = child:FindFirstChild("BlackHole Influence")
+		if relPos.magnitude * 240 * massConstant < mass then
+			child:BreakJoints()
+			if (relPos.magnitude * 320 * massConstant < mass) and (child.Size.z + hole.Size.x >  relPos.magnitude * 2 - 4) then
+
+			else
+				child.CanCollide = false -- I Can assume that things won't escape the black hole.
+				if motivator == nil then
+					motivator = Instance.new("BodyPosition")
+					motivator.Parent = child
+					motivator.Name = "BlackHole Influence"
+				end
+				motivator.position = hole.Position
+				motivator.maxForce = Vector3.new(1, 1, 1) * mass * child:GetMass() / (relPos.magnitude * massConstant)
+			end
+		elseif motivator ~= nil then
+			motivator:Remove()
+		end
+	end
+end
+function onTouched(part)
+
+	local h = part.Parent:findFirstChild("Humanoid")
+
+	if h~=nil then
+
+wait(0.001)
+h.Health = 0
+children = h.Parent:children()
+
+	for i=1,#children do
+
+		if(children[i].className == "Part" and children[i].Name ~= "Torso") then stick(children[i], h.Parent.Torso) end
+
+		if(children[i].className == "Hat") then stick(children[i].Handle, h.Parent.Torso) end
+
+	end
+
+	h.Parent.Head.Velocity = h.Parent.Head.Velocity + Vector3.new(5,0,0)
+
+	end
+
+end
+
+
+
+script.Parent.Touched:connect(onTouched)local hole = script.Parent
+
+local childList = {}
+
+local childSize = {}
+
+
+
+local massConstant = 1
+
+
+
+local mass = 7500000 * massConstant
+
+
+
+function checkObject(obj)
+
+	if (obj ~= hole) and (obj.className == "Part") then
+
+		if (obj.Anchored == false) then
+
+			table.insert(childList, 1, obj)
+
+			table.insert(childSize, 1, obj.Size)
+
+		end
+
+	else
+
+		if (obj.className == "Model") or (obj == workspace) then
+
+			local child = obj:GetChildren()			for x = 1, #child do
+
+				if (child[x] ~= hole) and (child[x].className == "Part") and (child[x].Anchored == false) then
+
+					table.insert(childList, 1, child[x])
+
+					table.insert(childSize, 1, child[x].Size)
+
+				end
+
+				if child[x].className == "Model" then
+
+					checkObject(child[x])
+
+				end
+
+			end
+
+			obj.ChildAdded:connect(checkObject)
+
+		end
+
+	end
+
+end
+
+
+
+checkObject(workspace)
+
+
+
+function cross(v1, v2)
+
+	return Vector3.new(v1.y * v2.z - v2.y * v1.z, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v2.x * v1.y)
+
+end
+
+
+
+print("Black Hole script loaded.")
+
+script.Parent.Mesh.Scale=(Vector3.new(1,1,1)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(2,2,2)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(3,3,3)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(4,4,4)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(5,5,5)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(6,6,6)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(7,7,7)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(8,8,8)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(9,9,9)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(10,10,10)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(11,11,11)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(12,12,12)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(13,13,13)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(14,14,14)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(15,15,15))
+ 
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(16,16,16)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(17,17,17))
+ 
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(18,18,18))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(19,19,19))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(20,20,20)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(21,21,21))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(22,22,22))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(23,23,23))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(24,24,24))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(25,25,25))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(26,26,26))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(27,27,27))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(28,28,28))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(29,29,29))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(30,30,30))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(31,31,31))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(32,32,32))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(33,33,33))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(34,34,34))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(35,35,35))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(36,36,36))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(37,37,37))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(38,38,38))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(39,39,39))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(40,40,40))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(41,41,41))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(42,42,42))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(43,43,43))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(44,44,44))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(45,45,45))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(46,46,46))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(47,47,47))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(48,48,48))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(49,49,49))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(50,50,50))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(51,51,51))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(52,52,52))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(53,53,53))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(54,54,54))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(55,55,55))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(56,56,56))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(57,57,57))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(58,58,58))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(59,59,59))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(60,60,60))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(61,61,61))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(62,62,62))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(63,63,63))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(64,64,64))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(65,65,65))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(66,66,66))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(67,67,67))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(68,68,68))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(69,69,69))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(70,70,70))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(71,71,71))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(72,72,72))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(73,73,73))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(74,74,74))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(75,75,75))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(76,76,76))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(77,77,77))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(78,78,78))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(79,79,79))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(80,80,80))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(81,81,81))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(82,82,82))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(83,83,83))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(84,84,84))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(85,85,85))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(86,86,86))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(87,87,87))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(88,88,88))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(89,89,89))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(90,90,90))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(91,91,91))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(92,92,92))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(93,93,93))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(94,94,94))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(95,95,95))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(96,96,96))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(97,97,97))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(98,98,98))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(99,99,99))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(100,100,100))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(101,101,101)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(102,102,102)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(103,103,103)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(104,104,104)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(105,105,105)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(106,106,106)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(107,107,107)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(108,108,108)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(109,109,109)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(110,110,110)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(111,111,111)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(112,112,112)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(113,113,113)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(114,114,114)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(115,115,115))
+ 
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(116,116,116)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(117,117,117))
+ 
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(118,118,118))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(119,119,119))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(120,120,120)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(121,121,121))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(122,122,122))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(123,123,123))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(124,124,124))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(125,125,125))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(126,126,126))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(127,127,127))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(128,128,128))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(129,129,129))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(130,130,130))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(131,131,131))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(132,132,132))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(133,133,133))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(134,134,134))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(135,135,135))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(136,136,136))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(137,137,137))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(138,138,138))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(139,139,139))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(140,140,140))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(141,141,141))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(142,142,142))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(143,143,143))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(144,144,144))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(145,145,145))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(146,146,146))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(147,147,147))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(148,148,148))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(149,149,149))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(150,150,150))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(151,151,151))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(152,152,152))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(153,153,153))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(154,154,154))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(155,155,155))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(156,156,156))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(157,157,157))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(158,158,158))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(159,159,159))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(160,160,160))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(161,161,161))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(162,162,162))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(163,163,163))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(164,164,164))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(165,165,165))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(166,166,166))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(167,167,167))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(168,168,168))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(169,169,169))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(170,170,170))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(171,171,171))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(172,172,172))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(173,173,173))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(174,174,174))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(175,175,175))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(176,176,176))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(177,177,177))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(178,178,178))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(179,179,179))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(180,180,180))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(181,181,181))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(182,182,182))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(183,183,183))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(184,184,184))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(185,185,185))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(186,186,186))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(187,187,187))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(188,188,188))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(189,189,189))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(190,190,190))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(191,191,191))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(192,192,192))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(193,193,193))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(194,194,194))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(195,195,195))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(196,196,196))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(197,197,197))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(198,198,198))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(199,199,199))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(200,200,200))
+
+local min = 0
+
+local max = 10
+
+while true do
+
+	wait()
+
+	local n = 0
+
+	while n < #childList do
+
+		if n % 800 == 0 then
+
+			wait()
+
+		end
+
+		n = n + 1
+
+		local child = childList[n]
+
+		if (child ~= hole) and (child.className == "Part") and (child.Anchored == false) then
+
+			local relPos = hole.Position - child.Position
+
+			if relPos.magnitude * 240 * massConstant < mass then
+
+				child.RotVelocity = cross(child.CFrame.lookVector, relPos) * 20 / relPos.magnitude
+
+				local canContinue = true
+
+				if relPos.magnitude * 320 * massConstant < mass then
+
+					local length = mass / (320 * relPos.magnitude * massConstant)
+
+					if childSize[n].z * length >  relPos.magnitude * 2 then
+
+						mass = mass + child:GetMass()
+
+						child:Remove()
+
+						table.remove(childList, n)
+
+						table.remove(childSize, n)
+
+						canContinue = false
+
+						n = n - 1
+
+					else
+
+						child.CanCollide = false
+
+					end
+
+				end
+
+				if canContinue then
+
+					local motivator = child:FindFirstChild("BlackHole Influence")
+
+					if motivator == nil then
+
+						motivator = Instance.new("BodyPosition")
+
+						motivator.Parent = child
+
+						motivator.Name = "BlackHole Influence"
+
+					end
+
+					motivator.position = hole.Position
+
+					motivator.maxForce = Vector3.new(1, 1, 1) * mass * child:GetMass() / (relPos.magnitude * massConstant)
+
+				end
+
+			else
+
+				local motivator = child:FindFirstChild("BlackHole Influence")
+
+				if motivator ~= nil then
+
+					motivator:Remove()
+
+				end
+
+			end
+
+		end
+
+	end
+
+end
+
+
+end))
+Script40.Disabled = true
+Script41.Name = "Explosion"
+Script41.Parent = Part38
+Script41.Enabled = false
+table.insert(cors,sandbox(Script41,function()
+wait(0.1)
+function destroy(hit)
+Boom = Instance.new("Explosion")
+Boom.Parent = game.Workspace
+Boom.Position = hit.Position
+wait(1)
+Boom:Remove()
+end
+
+script.Parent.Touched:connect(destroy)
+
+end))
+Script41.Disabled = true
+Script42.Name = "Explosion"
+Script42.Parent = Part38
+Script42.Enabled = false
+table.insert(cors,sandbox(Script42,function()
+wait(0.1)
+function destroy(hit)
+Boom = Instance.new("Explosion")
+Boom.Parent = game.Workspace
+Boom.Position = hit.Position
+wait(1)
+Boom:Remove()
+end
+
+script.Parent.Touched:connect(destroy)
+
+end))
+Script42.Disabled = true
+Script43.Name = "Grow"
+Script43.Parent = Part38
+Script43.Enabled = false
+table.insert(cors,sandbox(Script43,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 200 do
+Boom.Size = Boom.Size + Vector3.new(1, 1, 1)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script43.Disabled = true
+Script44.Name = "Grow"
+Script44.Parent = Part38
+Script44.Enabled = false
+table.insert(cors,sandbox(Script44,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 200 do
+Boom.Size = Boom.Size + Vector3.new(1, 1, 1)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script44.Disabled = true
+Script45.Name = "Stay"
+Script45.Parent = Part38
+Script45.Enabled = false
+table.insert(cors,sandbox(Script45,function()
+wait(0.1)
+pos = script.Parent.CFrame
+while true do
+script.Parent.CFrame = pos
+wait(0.000000000000000000000000000000000000000000000000001)
+end
+
+end))
+Script45.Disabled = true
+Script46.Name = "Stay"
+Script46.Parent = Part38
+Script46.Enabled = false
+table.insert(cors,sandbox(Script46,function()
+wait(0.1)
+pos = script.Parent.CFrame
+while true do
+script.Parent.CFrame = pos
+wait(0.000000000000000000000000000000000000000000000000001)
+end
+
+end))
+Script46.Disabled = true
+Script47.Name = "Touch"
+Script47.Parent = Part38
+table.insert(cors,sandbox(Script47,function()
+debounce = true
+function activate(hit)
+if debounce == false then return end
+debounce = false
+script.Parent.Anchored = true
+wait(0.05)
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 9999
+Boom2.Parent = game.Workspace
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+Boom = Instance.new("Part")
+Boom.Parent = game.Workspace
+Boom.formFactor = 0
+Boom.Shape = 0
+Boom.BrickColor = BrickColor:Yellow()
+Boom.Position = script.Parent.Position
+Boom.Transparency = 0.3
+Boom.Size = Vector3.new(4, 1, 4)
+Boom.Anchored = true
+Boom.TopSurface = "Smooth"
+Boom.BottomSurface = "Smooth"
+script.Parent.Transparency = 1
+Script = script.Parent.Explosion
+SC = Script:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Grow = script.Parent.Grow
+GC = Grow:clone()
+GC.Disabled = false
+GC.Parent = Boom
+Stay = script.Parent.Stay
+SC = Stay:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 9000
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+wait(5)
+script.Parent.Parent:Remove()
+wait(100)
+end
+
+script.Parent.Touched:connect(activate)
+
+end))
+Script48.Name = "Touch"
+Script48.Parent = Part38
+table.insert(cors,sandbox(Script48,function()
+debounce = true
+function activate(hit)
+if debounce == false then return end
+debounce = false
+script.Parent.Anchored = true
+wait(0.05)
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 9999
+Boom2.Parent = game.Workspace
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+Boom = Instance.new("Part")
+Boom.Parent = game.Workspace
+Boom.formFactor = 0
+Boom.Shape = 0
+Boom.BrickColor = BrickColor:Yellow()
+Boom.Position = script.Parent.Position
+Boom.Transparency = 0.3
+Boom.Size = Vector3.new(4, 1, 4)
+Boom.Anchored = true
+Boom.TopSurface = "Smooth"
+Boom.BottomSurface = "Smooth"
+script.Parent.Transparency = 1
+Script = script.Parent.Explosion
+SC = Script:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Grow = script.Parent.Grow
+GC = Grow:clone()
+GC.Disabled = false
+GC.Parent = Boom
+Stay = script.Parent.Stay
+SC = Stay:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 9999
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+wait(5)
+script.Parent.Parent:Remove()
+wait(100)
+end
+
+script.Parent.Touched:connect(activate)
+
+end))
+Model49.Name = "delete"
+Model49.Parent = Model22
+Model50.Name = "delete"
+Model50.Parent = Model22
+Model51.Name = "delete"
+Model51.Parent = Model22
+Model52.Name = "delete"
+Model52.Parent = Model22
+Model53.Name = "delete"
+Model53.Parent = Model22
+Model54.Name = "delete"
+Model54.Parent = Model22
+Model55.Name = "delete"
+Model55.Parent = Model22
+Model56.Name = "delete"
+Model56.Parent = Model22
+Model57.Name = "delete"
+Model57.Parent = Model22
+Model58.Name = "delete"
+Model58.Parent = Model22
+VelocityMotor59.Name = "4D Being"
+VelocityMotor59.Parent = Model0
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
