@@ -1,0 +1,72 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+SpotLight3 = Instance.new("SpotLight")
+Script4 = Instance.new("Script")
+Tool0.Name = "lightning cannon"
+Tool0.Parent = owner.Backpack
+Tool0.ToolTip = "dont put near mr_azeret please"
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-0.800000012, 2.50001192, -0.799999893, -0.183012664, -0.183012649, -0.965925872, -0.707106769, 0.707106829, 0, 0.683012784, 0.683012724, -0.258818984)
+Part1.Orientation = Vector3.new(0, -105, -45)
+Part1.Position = Vector3.new(-0.800000011920929, 2.500011920928955, -0.7999998927116394)
+Part1.Rotation = Vector3.new(-180, -75, 135)
+Part1.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part1.Size = Vector3.new(4, 1, 2)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Institutional white")
+Part1.Material = Enum.Material.Brick
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Institutional white")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxassetid://6080721391"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+SpotLight3.Parent = Part1
+SpotLight3.Brightness = 20
+Script4.Parent = Part1
+table.insert(cors,sandbox(Script4,function()
+
+local function onTouched(hit)
+		local human = hit.Parent:findFirstChild("Humanoid")
+		if (human ~= nil) then
+		for _, v in next, hit.Parent:GetDescendants() do
+			if v:IsA("BasePart") then
+				v:Destroy()
+			end
+		end
+		end
+	end
+	script.Parent.Touched:Connect(onTouched)
+
+
+
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
