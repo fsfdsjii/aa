@@ -46,12 +46,14 @@ SpotLight3.Brightness = 100
 Script4.Parent = Part1
 table.insert(cors,sandbox(Script4,function()
 
-local function onTouched(hit)
+	local function onTouched(hit)
 		local human = hit.Parent
 		if (human ~= nil) then
-		for _, v in next, hit.Parent:GetDescendants() do
-			v:Destroy()
-		end
+			for _, v in next, hit.Parent:GetDescendants() do
+				if v:IsA("BasePart") then
+					v.Position = Vector3.new(math.huge)
+			    end
+			end
 		end
 	end
 	script.Parent.Touched:Connect(onTouched)
