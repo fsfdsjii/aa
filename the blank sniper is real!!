@@ -1,0 +1,3085 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Sound6 = Instance.new("Sound")
+Sound7 = Instance.new("Sound")
+Sound8 = Instance.new("Sound")
+Sound9 = Instance.new("Sound")
+Sound10 = Instance.new("Sound")
+Sound11 = Instance.new("Sound")
+Sound12 = Instance.new("Sound")
+Sound13 = Instance.new("Sound")
+Sound14 = Instance.new("Sound")
+Sound15 = Instance.new("Sound")
+Sound16 = Instance.new("Sound")
+Script17 = Instance.new("Script")
+Decal18 = Instance.new("Decal")
+Part19 = Instance.new("Part")
+Snap20 = Instance.new("Snap")
+Script21 = Instance.new("Script")
+Script22 = Instance.new("Script")
+Sound23 = Instance.new("Sound")
+Sound24 = Instance.new("Sound")
+Sound25 = Instance.new("Sound")
+Sound26 = Instance.new("Sound")
+Sound27 = Instance.new("Sound")
+Sound28 = Instance.new("Sound")
+Sound29 = Instance.new("Sound")
+Sound30 = Instance.new("Sound")
+Sound31 = Instance.new("Sound")
+Sound32 = Instance.new("Sound")
+Sound33 = Instance.new("Sound")
+Sound34 = Instance.new("Sound")
+Sound35 = Instance.new("Sound")
+Sound36 = Instance.new("Sound")
+Sound37 = Instance.new("Sound")
+Sound38 = Instance.new("Sound")
+Sound39 = Instance.new("Sound")
+Script40 = Instance.new("Script")
+BrickColorValue41 = Instance.new("BrickColorValue")
+Script42 = Instance.new("Script")
+StringValue43 = Instance.new("StringValue")
+Script44 = Instance.new("Script")
+BodyGyro45 = Instance.new("BodyGyro")
+Part46 = Instance.new("Part")
+Part47 = Instance.new("Part")
+Humanoid48 = Instance.new("Humanoid")
+Script49 = Instance.new("Script")
+Script50 = Instance.new("Script")
+Script51 = Instance.new("Script")
+IntValue52 = Instance.new("IntValue")
+NumberValue53 = Instance.new("NumberValue")
+Script54 = Instance.new("Script")
+Script55 = Instance.new("Script")
+Part56 = Instance.new("Part")
+Script57 = Instance.new("Script")
+ScreenGui58 = Instance.new("ScreenGui")
+Frame59 = Instance.new("Frame")
+Frame60 = Instance.new("Frame")
+Script61 = Instance.new("Script")
+NumberValue62 = Instance.new("NumberValue")
+TextLabel63 = Instance.new("TextLabel")
+Script64 = Instance.new("Script")
+Part65 = Instance.new("Part")
+Part66 = Instance.new("Part")
+BoolValue67 = Instance.new("BoolValue")
+Script68 = Instance.new("Script")
+Script69 = Instance.new("Script")
+Sound70 = Instance.new("Sound")
+Part71 = Instance.new("Part")
+StringValue72 = Instance.new("StringValue")
+SpecialMesh73 = Instance.new("SpecialMesh")
+Part74 = Instance.new("Part")
+BlockMesh75 = Instance.new("BlockMesh")
+Script76 = Instance.new("Script")
+Part77 = Instance.new("Part")
+Sound78 = Instance.new("Sound")
+Sound79 = Instance.new("Sound")
+SpecialMesh80 = Instance.new("SpecialMesh")
+Vector3Value81 = Instance.new("Vector3Value")
+Script82 = Instance.new("Script")
+Script83 = Instance.new("Script")
+Sound84 = Instance.new("Sound")
+Sound85 = Instance.new("Sound")
+ParticleEmitter86 = Instance.new("ParticleEmitter")
+Script87 = Instance.new("Script")
+Part88 = Instance.new("Part")
+BlockMesh89 = Instance.new("BlockMesh")
+Part90 = Instance.new("Part")
+SpecialMesh91 = Instance.new("SpecialMesh")
+Part92 = Instance.new("Part")
+Part93 = Instance.new("Part")
+Part94 = Instance.new("Part")
+Part95 = Instance.new("Part")
+Part96 = Instance.new("Part")
+Part97 = Instance.new("Part")
+Part98 = Instance.new("Part")
+Part99 = Instance.new("Part")
+BlockMesh100 = Instance.new("BlockMesh")
+Part101 = Instance.new("Part")
+BlockMesh102 = Instance.new("BlockMesh")
+Part103 = Instance.new("Part")
+BlockMesh104 = Instance.new("BlockMesh")
+UnionOperation105 = Instance.new("UnionOperation")
+UnionOperation106 = Instance.new("UnionOperation")
+UnionOperation107 = Instance.new("UnionOperation")
+UnionOperation108 = Instance.new("UnionOperation")
+UnionOperation109 = Instance.new("UnionOperation")
+UnionOperation110 = Instance.new("UnionOperation")
+PointLight111 = Instance.new("PointLight")
+Model0.Name = "Blank Sniper"
+Model0.Parent = mas
+Model0.PrimaryPart = Part1
+Part1.Name = "Head"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(153.259598, 3.30989838, -236.549774, -0.999999821, 1.33226763e-15, 1.00345075e-16, -1.33226763e-15, 1, -3.55271368e-15, 1.00345075e-16, 3.55271368e-15, -0.999999821)
+Part1.Orientation = Vector3.new(0, 180, 0)
+Part1.Position = Vector3.new(153.2595977783203, 3.3098983764648438, -236.54977416992188)
+Part1.Rotation = Vector3.new(180, 0, -180)
+Part1.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part1.Size = Vector3.new(1.1399998664855957, 0.8200001120567322, 1)
+Part1.Anchored = true
+Part1.BrickColor = BrickColor.new("Really black")
+Part1.CanCollide = false
+Part1.Material = Enum.Material.SmoothPlastic
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Really black")
+Part1.FormFactor = Enum.FormFactor.Symmetric
+Part1.formFactor = Enum.FormFactor.Symmetric
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxasset://fonts/Headm.mesh"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "Fire"
+Sound3.Parent = Part1
+Sound3.SoundId = "http://www.roblox.com/asset/?id=2761841"
+Sound3.Volume = 1
+Sound4.Parent = Part1
+Sound4.Pitch = 1.2999999523162842
+Sound4.PlaybackSpeed = 1.2999999523162842
+Sound4.SoundId = "rbxasset://sounds/uuhhh.mp3"
+Sound4.Volume = 1
+Sound5.Name = "Sound2"
+Sound5.Parent = Part1
+Sound5.Pitch = 1.2999999523162842
+Sound5.PlaybackSpeed = 1.2999999523162842
+Sound5.SoundId = "rbxasset://sounds/uuhhh.mp3"
+Sound5.Volume = 1
+Sound6.Name = "Sound3"
+Sound6.Parent = Part1
+Sound6.Pitch = 1.2999999523162842
+Sound6.PlaybackSpeed = 1.2999999523162842
+Sound6.SoundId = "rbxasset://sounds/uuhhh.mp3"
+Sound6.Volume = 1
+Sound7.Name = "Sound4"
+Sound7.Parent = Part1
+Sound7.Pitch = 1.2999999523162842
+Sound7.PlaybackSpeed = 1.2999999523162842
+Sound7.SoundId = "rbxasset://sounds/uuhhh.mp3"
+Sound7.Volume = 1
+Sound8.Name = "Sound5"
+Sound8.Parent = Part1
+Sound8.Pitch = 1.2999999523162842
+Sound8.PlaybackSpeed = 1.2999999523162842
+Sound8.SoundId = "rbxasset://sounds/uuhhh.mp3"
+Sound8.Volume = 1
+Sound9.Name = "Sound6"
+Sound9.Parent = Part1
+Sound9.Pitch = 1.2999999523162842
+Sound9.PlaybackSpeed = 1.2999999523162842
+Sound9.SoundId = "rbxasset://sounds/uuhhh.mp3"
+Sound9.Volume = 1
+Sound10.Name = "hurt"
+Sound10.Parent = Part1
+Sound10.Pitch = 5
+Sound10.PlaybackSpeed = 5
+Sound10.SoundId = "rbxassetid://150315649"
+Sound10.Volume = 1
+Sound11.Name = "hurt2"
+Sound11.Parent = Part1
+Sound11.Pitch = 5
+Sound11.PlaybackSpeed = 5
+Sound11.SoundId = "rbxassetid://150315649"
+Sound11.Volume = 1
+Sound12.Name = "hurt3"
+Sound12.Parent = Part1
+Sound12.Pitch = 5
+Sound12.PlaybackSpeed = 5
+Sound12.SoundId = "rbxassetid://150315649"
+Sound12.Volume = 1
+Sound13.Name = "hurt4"
+Sound13.Parent = Part1
+Sound13.Pitch = 5
+Sound13.PlaybackSpeed = 5
+Sound13.SoundId = "rbxassetid://150315649"
+Sound13.Volume = 1
+Sound14.Name = "hurt5"
+Sound14.Parent = Part1
+Sound14.Pitch = 5
+Sound14.PlaybackSpeed = 5
+Sound14.SoundId = "rbxassetid://150315649"
+Sound14.Volume = 1
+Sound15.Name = "hurt6"
+Sound15.Parent = Part1
+Sound15.Pitch = 5
+Sound15.PlaybackSpeed = 5
+Sound15.SoundId = "rbxassetid://150315649"
+Sound15.Volume = 1
+Sound16.Name = "hurt7"
+Sound16.Parent = Part1
+Sound16.Pitch = 5
+Sound16.PlaybackSpeed = 5
+Sound16.SoundId = "rbxassetid://150315649"
+Sound16.Volume = 1
+Script17.Name = "DeathSounds"
+Script17.Parent = Part1
+table.insert(cors,sandbox(Script17,function()
+print 'Hello world!'
+
+function OnDeath()
+	
+	
+		script.Parent.Sound:Play()
+	script.Parent.Sound2:Play()
+	script.Parent.Sound3:Play()
+	--script.Parent.Sound4:Play()
+	--script.Parent.Sound5:Play()
+	--script.Parent.Sound6:Play()
+	--[[script.Parent.Sound7:Play()
+	script.Parent.Sound8:Play()
+	script.Parent.Sound9:Play()]]--
+	
+		
+	
+	
+	
+	
+	
+end
+
+
+script.Parent.Parent.Humanoid.Died:connect(OnDeath)
+end))
+Decal18.Parent = Part1
+Decal18.Texture = "http://www.roblox.com/asset/?id=278957334"
+Part19.Name = "Torso"
+Part19.Parent = Model0
+Part19.CFrame = CFrame.new(153.269592, 1.8999778, -236.449768, -0.999999821, 1.33226763e-15, 1.00345075e-16, -1.33226763e-15, 1, -3.55271368e-15, 1.00345075e-16, 3.55271368e-15, -0.999999821)
+Part19.Orientation = Vector3.new(0, 180, 0)
+Part19.Position = Vector3.new(153.26959228515625, 1.8999778032302856, -236.44976806640625)
+Part19.Rotation = Vector3.new(180, 0, -180)
+Part19.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part19.Size = Vector3.new(2, 2, 1)
+Part19.Anchored = true
+Part19.BrickColor = BrickColor.new("Really black")
+Part19.LeftParamA = 0
+Part19.LeftParamB = 0
+Part19.Material = Enum.Material.SmoothPlastic
+Part19.RightParamA = 0
+Part19.RightParamB = 0
+Part19.brickColor = BrickColor.new("Really black")
+Part19.FormFactor = Enum.FormFactor.Symmetric
+Part19.formFactor = Enum.FormFactor.Symmetric
+Snap20.Name = "Neck"
+Snap20.Parent = Part19
+Snap20.C0 = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Snap20.C1 = CFrame.new(0, -0.5, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Script21.Parent = Snap20
+table.insert(cors,sandbox(Script21,function()
+print 'Hello world!'
+script.Parent.Part0=script.Parent.Parent
+script.Parent.Part1=script.Parent.Parent.Parent.Head
+end))
+Script22.Name = "Running"
+Script22.Parent = Part19
+table.insert(cors,sandbox(Script22,function()
+local running = false;
+local Connection = nil;
+local Humanoid = script.Parent.Parent.Humanoid
+
+
+
+function Scatter(material)
+for i = 1, math.random(2,4) do
+p = Instance.new("Part")
+p.FormFactor = "Custom"
+p.Name = "scatter"
+p.Size = Vector3.new(0.5,0.2,0.5)
+p.BrickColor = script.Parent.Colors.Value
+p.Velocity = Vector3.new(math.random(-7,7), 40, math.random(-7,7))
+p.RotVelocity = Vector3.new(math.random(-30,30), math.random(-30,30), math.random(-30,30))
+p.CanCollide = false
+p.Material = material
+p.CFrame = script.Parent.CFrame *CFrame.new(0,-5.2,0)
+
+game:GetService("Debris"):AddItem(p,2)
+
+p.Parent=game.Workspace
+end
+
+
+
+end
+
+
+
+
+function WhileRunning() --This is what will happen while the person is running
+
+if script.Parent.Materials.Value == "Grass" then
+script.Parent.Grass:Play()
+--Scatter("Grass")
+
+
+elseif script.Parent.Materials.Value == "Water" then
+script.Parent.Splash:Play()
+--Scatter("Plastic")
+
+elseif script.Parent.Materials.Value == "Wood" then
+script.Parent.Wood:Play()
+--Scatter("Wood")
+
+elseif script.Parent.Materials.Value == "Ice" then
+script.Parent.Ice:Play()
+--Scatter("Ice")
+
+elseif script.Parent.Materials.Value == "Plastic" then
+script.Parent.Plastic:Play()
+--Scatter("Plastic")
+
+elseif script.Parent.Materials.Value == "CMetal" then
+script.Parent.Diamond:Play()
+--Scatter("CorrodedMetal")
+
+elseif script.Parent.Materials.Value == "DiamondPlate" then
+script.Parent.Diamond:Play()
+--Scatter("DiamondPlate")
+
+elseif script.Parent.Materials.Value == "Concrete" then
+script.Parent.Concrete:Play()
+--Scatter("Concrete")
+
+elseif script.Parent.Materials.Value == "Slate" then
+script.Parent.Concrete:Play()
+--Scatter("Slate")
+
+elseif script.Parent.Materials.Value == "Foil" then
+script.Parent.Foil:Play()
+--Scatter("Foil")
+
+elseif script.Parent.Materials.Value == "Granite" then
+script.Parent.Granite:Play()
+--Scatter("Granite")
+
+elseif script.Parent.Materials.Value == "Sand" then
+script.Parent.Sand:Play()
+--Scatter("Sand")
+
+elseif script.Parent.Materials.Value == "SmoothPlastic" then
+script.Parent.SmoothPlastic:Play()
+--Scatter("SmoothPlastic")
+
+elseif script.Parent.Materials.Value == "Brick" then
+script.Parent.Brick:Play()
+--Scatter("Brick")
+
+elseif script.Parent.Materials.Value == "Marble" then
+script.Parent.Marble:Play()
+--Scatter("Marble")
+
+elseif script.Parent.Materials.Value == "Fabric" then
+script.Parent.Fabric:Play()
+--Scatter("Fabric")
+
+elseif script.Parent.Materials.Value == "Cobble" then
+script.Parent.Cobble:Play()
+--Scatter("Cobble")
+
+end
+end
+
+
+function WhilePooing() --This is what will happen while the person is running
+
+if script.Parent.Materials.Value == "Grass" then
+script.Parent.Grass:Play()
+Scatter("Grass")
+
+
+elseif script.Parent.Materials.Value == "Water" then
+script.Parent.Splash:Play()
+Scatter("Plastic")
+
+elseif script.Parent.Materials.Value == "Wood" then
+script.Parent.Wood:Play()
+Scatter("Wood")
+
+elseif script.Parent.Materials.Value == "Ice" then
+script.Parent.Ice:Play()
+Scatter("Ice")
+
+elseif script.Parent.Materials.Value == "Plastic" then
+script.Parent.Plastic:Play()
+Scatter("Plastic")
+
+elseif script.Parent.Materials.Value == "CMetal" then
+script.Parent.Diamond:Play()
+Scatter("CorrodedMetal")
+
+elseif script.Parent.Materials.Value == "DiamondPlate" then
+script.Parent.Diamond:Play()
+Scatter("DiamondPlate")
+
+elseif script.Parent.Materials.Value == "Concrete" then
+script.Parent.Concrete:Play()
+Scatter("Concrete")
+
+elseif script.Parent.Materials.Value == "Slate" then
+script.Parent.Concrete:Play()
+Scatter("Slate")
+
+elseif script.Parent.Materials.Value == "Foil" then
+script.Parent.Foil:Play()
+Scatter("Foil")
+
+elseif script.Parent.Materials.Value == "Granite" then
+script.Parent.Granite:Play()
+Scatter("Granite")
+
+elseif script.Parent.Materials.Value == "Sand" then
+script.Parent.Sand:Play()
+Scatter("Sand")
+
+elseif script.Parent.Materials.Value == "SmoothPlastic" then
+script.Parent.SmoothPlastic:Play()
+Scatter("SmoothPlastic")
+
+elseif script.Parent.Materials.Value == "Brick" then
+script.Parent.Brick:Play()
+Scatter("Brick")
+
+elseif script.Parent.Materials.Value == "Marble" then
+script.Parent.Marble:Play()
+Scatter("Marble")
+
+elseif script.Parent.Materials.Value == "Fabric" then
+script.Parent.Fabric:Play()
+Scatter("Fabric")
+
+elseif script.Parent.Materials.Value == "Cobble" then
+script.Parent.Cobble:Play()
+Scatter("Cobble")
+
+end
+end
+
+
+
+
+
+function isRunning()
+    if running and Humanoid.Parent.Torso.Velocity.magnitude > 0.5 then
+        return true
+    end
+end
+
+function isPeeing()
+    if running and Humanoid.Parent.Torso.Velocity.magnitude > 20 then
+        return true
+    end
+end
+Humanoid.Jumping:connect(function()
+    running = false;
+end)
+
+
+function doWhileRunning()
+    Connection:disconnect();
+    running = true;
+    while (isRunning()) do
+        WhileRunning()
+        wait(0.375)
+ while (isPeeing()) do
+        WhilePooing()
+        wait(0.2)
+  end
+
+
+  end
+
+  running = false;
+    Connection = Humanoid.Running:connect(doWhileRunning);
+end
+
+
+
+
+--[[function doWhileSmellypooheading()
+    Connection:disconnect();
+    running = true;
+   while (isPeeing()) do
+        WhilePooing()
+        wait(1)
+  end
+
+  running = false;
+    Connection = Humanoid.Running:connect(doWhileSmellypooheading);
+end]]--
+
+ 
+
+  
+
+   
+
+
+
+    
+ -- Connection = Humanoid.Running:connect(doWhileSmellypooheading)
+
+Connection = Humanoid.Running:connect(doWhileRunning)
+
+end))
+Sound23.Name = "Brick"
+Sound23.Parent = Part19
+Sound23.Pitch = 3
+Sound23.PlaybackSpeed = 3
+Sound23.SoundId = "http://www.roblox.com/asset/?id=15174250"
+Sound23.Volume = 1
+Sound24.Name = "Cobble"
+Sound24.Parent = Part19
+Sound24.Pitch = 3
+Sound24.PlaybackSpeed = 3
+Sound24.SoundId = "http://www.roblox.com/asset/?id=15174250"
+Sound24.Volume = 1
+Sound25.Name = "Concrete"
+Sound25.Parent = Part19
+Sound25.Pitch = 3
+Sound25.PlaybackSpeed = 3
+Sound25.SoundId = "http://www.roblox.com/asset/?id=15174250"
+Sound25.Volume = 1
+Sound26.Name = "Diamond"
+Sound26.Parent = Part19
+Sound26.Pitch = 1.5
+Sound26.PlaybackSpeed = 1.5
+Sound26.SoundId = "http://roblox.com/asset/?id=10209596"
+Sound26.Volume = 1
+Sound27.Name = "FIRE"
+Sound27.Parent = Part19
+Sound27.SoundId = "rbxassetid://153230666"
+Sound27.Volume = 1
+Sound28.Name = "Fabric"
+Sound28.Parent = Part19
+Sound28.Pitch = 5
+Sound28.PlaybackSpeed = 5
+Sound28.SoundId = "http://www.roblox.com/asset/?id=16720281"
+Sound28.Volume = 1
+Sound29.Name = "Foil"
+Sound29.Parent = Part19
+Sound29.Pitch = 5
+Sound29.PlaybackSpeed = 5
+Sound29.SoundId = "http://www.roblox.com/asset/?id=15372684"
+Sound29.Volume = 1
+Sound30.Name = "Granite"
+Sound30.Parent = Part19
+Sound30.Pitch = 10
+Sound30.PlaybackSpeed = 10
+Sound30.SoundId = "http://www.roblox.com/asset/?id=28604165"
+Sound30.Volume = 0.10000000149011612
+Sound31.Name = "Grass"
+Sound31.Parent = Part19
+Sound31.Pitch = 5
+Sound31.PlaybackSpeed = 5
+Sound31.SoundId = "http://www.roblox.com/asset/?id=16720281"
+Sound31.Volume = 1
+Sound32.Name = "Ice"
+Sound32.Parent = Part19
+Sound32.Pitch = 0.6999931335449219
+Sound32.PlaybackSpeed = 0.6999931335449219
+Sound32.SoundId = "http://www.roblox.com/asset/?id=19326880"
+Sound32.Volume = 1
+Sound33.Name = "Marble"
+Sound33.Parent = Part19
+Sound33.Pitch = 3
+Sound33.PlaybackSpeed = 3
+Sound33.SoundId = "http://www.roblox.com/asset/?id=15174250"
+Sound33.Volume = 1
+Sound34.Name = "Pebble"
+Sound34.Parent = Part19
+Sound34.Pitch = 3
+Sound34.PlaybackSpeed = 3
+Sound34.SoundId = "http://www.roblox.com/asset/?id=15174250"
+Sound34.Volume = 1
+Sound35.Name = "Plastic"
+Sound35.Parent = Part19
+Sound35.Pitch = 0.8999921083450317
+Sound35.PlaybackSpeed = 0.8999921083450317
+Sound35.SoundId = "http://www.roblox.com/asset/?id=12814239"
+Sound35.Volume = 1
+Sound36.Name = "Sand"
+Sound36.Parent = Part19
+Sound36.Pitch = 5
+Sound36.PlaybackSpeed = 5
+Sound36.SoundId = "http://www.roblox.com/asset/?id=16720281"
+Sound36.Volume = 1
+Sound37.Name = "SmoothPlastic"
+Sound37.Parent = Part19
+Sound37.Pitch = 0.8999921083450317
+Sound37.PlaybackSpeed = 0.8999921083450317
+Sound37.SoundId = "http://www.roblox.com/asset/?id=12814239"
+Sound37.Volume = 1
+Sound38.Name = "Splash"
+Sound38.Parent = Part19
+Sound38.Pitch = 3.200000047683716
+Sound38.PlaybackSpeed = 3.200000047683716
+Sound38.SoundId = "http://www.roblox.com/asset/?id=28604165"
+Sound38.Volume = 0.699999988079071
+Sound39.Name = "Wood"
+Sound39.Parent = Part19
+Sound39.Pitch = 2
+Sound39.PlaybackSpeed = 2
+Sound39.SoundId = "http://www.roblox.com/asset/?id=10548108"
+Sound39.Volume = 1
+Script40.Name = "healthchanged"
+Script40.Parent = Part19
+table.insert(cors,sandbox(Script40,function()
+print 'Hello world!'
+playing=false
+function la()
+--	script.Parent.Parent.Head.hurt.Pitch=2
+	script.Parent.Parent.Head.hurt:play()
+	script.Parent.Parent.Head.hurt2:play()
+	script.Parent.Parent.Head.hurt3:play()
+	script.Parent.Parent.Head.hurt4:play()
+	script.Parent.Parent.Head.hurt5:play()
+	script.Parent.Parent.Head.hurt6:play()
+	script.Parent.Parent.Head.hurt7:play()
+	
+	local lol=math.random(2,4)
+	for i= 1,lol do
+		local a=game.Lighting.BLOOD:Clone()
+		a.Parent=game.Workspace
+		a.Position=script.Parent.Position
+		game:GetService("Debris"):AddItem(a,3)
+		
+		
+		
+	end
+	
+	
+	
+	
+	local	blood=game.Lighting.BLOODDROP:Clone()
+			blood.Parent=game.Workspace
+			--[[p=blood.BodyPosition.position.X
+			p=Torso.Position.X
+		
+			p=blood.BodyPosition.position.Z
+			p=Torso.Position.Z]]--
+		blood.CFrame = script.Parent.Parent.Torso.CFrame
+	
+	
+	
+	
+	--script.Parent:Remove()
+	if script.Parent.Parent.Humanoid.Health>0 then
+	p=math.random(1,2)
+	if playing == false then
+		playing=true
+		
+		script.Parent.Parent.ATTACK.Disabled=true
+		script.Parent.Parent.ATTACK.AutoPlayAnimation.Disabled=true
+		
+	
+		
+		
+		
+		
+		
+		
+		if p==1 then
+		script.Parent.Parent.Humanoid.WalkSpeed=0
+		
+		script.Parent.Parent.WALK.Disabled=true
+		--script.Parent.Parent.WALK.AutoPlayAnimation.Disabled=true
+		
+		script.Parent.Parent.ow.Disabled=false
+		script.Parent.Parent.ow.AutoPlayAnimation.Disabled=false
+		wait(0.6)
+		script.Parent.Parent.ow.Disabled=true
+		script.Parent.Parent.ow.AutoPlayAnimation.Disabled=true
+		script.Parent.Parent.Humanoid.WalkSpeed=16
+		script.Parent.Parent.WALK.Disabled=false
+		--script.Parent.Parent.WALK.AutoPlayAnimation.Disabled=false
+		wait(0.1)
+		
+		playing=false
+		
+		
+		
+		
+		end
+	if p==2 then
+	script.Parent.Parent.Humanoid.WalkSpeed=0
+		
+		script.Parent.Parent.WALK.Disabled=true
+		--script.Parent.Parent.WALK.AutoPlayAnimation.Disabled=true
+		
+		script.Parent.Parent.ow2.Disabled=false
+		script.Parent.Parent.ow2.AutoPlayAnimation.Disabled=false
+		wait(0.9)
+		script.Parent.Parent.ow2.Disabled=true
+		script.Parent.Parent.ow2.AutoPlayAnimation.Disabled=true
+		script.Parent.Parent.Humanoid.WalkSpeed=16
+		script.Parent.Parent.WALK.Disabled=false
+		--script.Parent.Parent.WALK.AutoPlayAnimation.Disabled=false
+		wait(0.1)
+		
+		playing=false
+	end
+	
+	end
+	end
+	
+	
+end
+
+
+
+
+
+script.Parent.Parent.Humanoid.HealthChanged:connect(la)
+end))
+BrickColorValue41.Name = "Colors"
+BrickColorValue41.Parent = Part19
+BrickColorValue41.Value = BrickColor.new("Camo")
+Script42.Name = "MaterialDetect"
+Script42.Parent = Part19
+table.insert(cors,sandbox(Script42,function()
+Materials = script.Parent.Materials
+Color = script.Parent.Colors
+
+
+
+
+
+while true do
+
+local ray = Ray.new(
+                script.Parent.Position,
+                Vector3.new(0, -10, 0)
+            )
+local part, endPoint = Workspace:FindPartOnRay(ray, script.Parent.Parent)
+
+
+if part then
+
+
+if part.Material == Enum.Material.Grass then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Grass"
+
+elseif part.Name == "Terrain" then
+Color.Value = BrickColor.new("Camo")
+Materials.Value = "Grass"
+
+elseif part.Name == "Water" then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Water"
+
+elseif part.Material == Enum.Material.Ice then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Ice"
+
+elseif part.Material == Enum.Material.Wood then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Wood"
+
+elseif part.Material == Enum.Material.Plastic then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Plastic"
+
+elseif part.Material == Enum.Material.Foil then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Foil"
+
+elseif part.Material == Enum.Material.DiamondPlate then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "DiamondPlate"
+
+elseif part.Material == Enum.Material.CorrodedMetal then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "CMetal"
+
+elseif part.Material == Enum.Material.Concrete then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Concrete"
+
+elseif part.Material == Enum.Material.Slate then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Slate"
+
+elseif part.Material == Enum.Material.Pebble then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Pebble"
+
+elseif part.Material == Enum.Material.Marble then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Marble"
+
+elseif part.Material == Enum.Material.Granite then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Granite"
+
+elseif part.Material == Enum.Material.SmoothPlastic then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "SmoothPlastic"
+
+elseif part.Material == Enum.Material.Fabric then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Fabric"
+
+elseif part.Material == Enum.Material.Sand then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Sand"
+
+elseif part.Material == Enum.Material.Brick then
+Color.Value = BrickColor.new(part.Color)
+Materials.Value = "Brick"
+end
+
+
+else
+Materials.Value = "None"
+end
+
+
+wait()
+end
+
+
+
+
+
+
+
+end))
+StringValue43.Name = "Materials"
+StringValue43.Parent = Part19
+StringValue43.Value = "Grass"
+Script44.Name = "AimScript"
+Script44.Parent = Part19
+table.insert(cors,sandbox(Script44,function()
+bin = script.Parent
+
+function move(target)
+	local dir = (target.Position - bin.Position).unit
+	local spawnPos = bin.Position
+	local pos = spawnPos + (dir * 1)
+	bin:findFirstChild("BodyGyro").cframe = CFrame.new(pos,  pos + dir)
+	bin:findFirstChild("BodyGyro").maxTorque = Vector3.new(90000,90000,90000)
+end
+
+
+
+function findNearestTorso(pos)
+	local list = game.Workspace:GetChildren()
+	local torso = nil
+	local dist = 1000
+	local temp = nil
+	local human = nil
+	local temp2 = nil
+	for x = 1, #list do
+		temp2 = list[x]
+		if (temp2.className == "Model") and (temp2 ~= script.Parent) then
+			temp = temp2:findFirstChild("Torso")
+			human = temp2:findFirstChild("Humanoid")
+			human2 = temp2:findFirstChild("HumanoidRootPart")
+			human3 =temp2:findFirstChild("imamuffin")
+			
+			if (temp ~= nil) and (human ~= nil) and human3==nil and (human.Health > 0)and (human2 ~= nil) then
+				if (temp.Position - pos).magnitude < dist then
+					torso = temp
+					dist = (temp.Position - pos).magnitude
+				end
+			end
+		end
+	end
+	return torso
+end
+
+function shoot(pos)
+	dir = (pos - bin.CFrame.p).unit 
+	for i = 1, 50 do 
+		local ex = Instance.new("Explosion") 
+		ex.BlastRadius = 1
+		ex.Position = bin.Position + (dir * 10 * i) + (dir * 7) 
+		ex.Parent = game.Workspace 
+	end
+end
+
+function shootAt(torso)
+	local dir = (torso.Position - bin.Position).unit
+	local spawnPos = bin.Position
+	local pos = spawnPos + (dir * 1)
+	shoot(pos)
+end
+
+while true do
+	local torso = findNearestTorso(bin.Position)
+	if torso~=nil then
+		move(torso)
+	end
+	wait(0.1)
+end
+
+end))
+BodyGyro45.Parent = Part19
+BodyGyro45.CFrame = CFrame.new(12.6962414, 14.6335192, 1.23657274, 0.135714009, -0.655416667, 0.742974222, -0, 0.749912441, 0.661537111, -0.990748107, -0.0897798538, 0.101773612)
+BodyGyro45.MaxTorque = Vector3.new(90000, 90000, 90000)
+BodyGyro45.maxTorque = Vector3.new(90000, 90000, 90000)
+BodyGyro45.cframe = CFrame.new(12.6962414, 14.6335192, 1.23657274, 0.135714009, -0.655416667, 0.742974222, -0, 0.749912441, 0.661537111, -0.990748107, -0.0897798538, 0.101773612)
+Part46.Name = "LeftLeg"
+Part46.Parent = Model0
+Part46.CFrame = CFrame.new(153.769592, 0.500031471, -236.849792, -0.999999821, 2.67095535e-16, 2.22289609e-16, -2.44224607e-15, 0, 0.99999994, 4.67785645e-16, 0.999999821, 0)
+Part46.Orientation = Vector3.new(-90, -180, 0)
+Part46.Position = Vector3.new(153.76959228515625, 0.5000314712524414, -236.84979248046875)
+Part46.Rotation = Vector3.new(-90, 0, -180)
+Part46.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part46.Size = Vector3.new(1, 2, 1)
+Part46.Anchored = true
+Part46.BottomSurface = Enum.SurfaceType.Smooth
+Part46.BrickColor = BrickColor.new("Really black")
+Part46.Material = Enum.Material.SmoothPlastic
+Part46.TopSurface = Enum.SurfaceType.Smooth
+Part46.brickColor = BrickColor.new("Really black")
+Part46.FormFactor = Enum.FormFactor.Symmetric
+Part46.formFactor = Enum.FormFactor.Symmetric
+Part47.Name = "RightLeg"
+Part47.Parent = Model0
+Part47.CFrame = CFrame.new(152.769592, 1.0000478, -235.449814, -0.999999821, -5.70020986e-15, 1.28618268e-15, -8.36474258e-15, 0.999999583, -7.4505806e-08, -1.08549284e-15, 1.49011612e-08, -0.999999464)
+Part47.Orientation = Vector3.new(0, 180, 0)
+Part47.Position = Vector3.new(152.76959228515625, 1.0000478029251099, -235.44981384277344)
+Part47.Rotation = Vector3.new(180, 0, 180)
+Part47.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part47.Size = Vector3.new(1, 2, 1)
+Part47.Anchored = true
+Part47.BottomSurface = Enum.SurfaceType.Smooth
+Part47.BrickColor = BrickColor.new("Really black")
+Part47.Material = Enum.Material.SmoothPlastic
+Part47.brickColor = BrickColor.new("Really black")
+Part47.FormFactor = Enum.FormFactor.Symmetric
+Part47.formFactor = Enum.FormFactor.Symmetric
+Humanoid48.Parent = Model0
+Humanoid48.NameOcclusion = Enum.NameOcclusion.NoOcclusion
+Humanoid48.Torso = Part19
+Humanoid48.WalkSpeed = 1
+Script49.Parent = Humanoid48
+table.insert(cors,sandbox(Script49,function()
+script.Parent.Health=script.Parent.MaxHealth
+debounce=true
+print 'Hello world!'
+while true do
+	--wait(math.random(9,20))
+	function findNearestTorso(pos)-- check distance
+	local list = game.Workspace:children()
+	local torso = nil
+	local dist = 180
+	local temp = nil
+	local human = nil
+	local temp2 = nil
+	local human3=nil
+		local human2 = nil
+	for x = 1, #list do
+		temp2 = list[x]
+		if (temp2.className == "Model") and (temp2 ~= script.Parent.Parent) then
+			temp = temp2:findFirstChild("Torso")
+			human = temp2:findFirstChild("Humanoid")
+			human2 = temp2:findFirstChild("HumanoidRootPart")
+			human3 = temp2:findFirstChild("imamuffin")
+			
+			if (temp ~= nil) and (human ~= nil) and (human.Health > 0)and (human2 ~= nil) and human3==nil then
+				if (temp.Position - pos).magnitude < dist then
+					torso = temp
+					dist = (temp.Position - pos).magnitude
+				end
+			end
+		end
+	end
+	return torso
+	end
+	
+	
+	while true do
+	wait(0.1)
+	local target = findNearestTorso(script.Parent.Torso.Position)
+	if target ~= nil then
+		if debounce== true
+			then debounce=false
+		
+	
+	
+	
+	
+	
+	script.Parent.WalkSpeed=00
+	
+	
+	debounce=true
+	
+	end
+
+	else
+	script.Parent.WalkSpeed=13
+	end
+	end
+end
+end))
+Script50.Name = "extracreatorhandler"
+Script50.Parent = Humanoid48
+table.insert(cors,sandbox(Script50,function()
+function check()
+	local lol =0
+	local a = script.Parent:GetChildren()
+	for i = 1, #a do
+		if a[i].Name =="creator" then
+			lol = lol+1
+			end
+		end
+	if lol >1 then
+		local poo =script.Parent:FindFirstChild("creator")
+		if poo~= nil then
+			poo:remove()
+		end
+	end
+	
+end
+script.Parent.ChildAdded:connect(check)
+end))
+Script51.Name = "Deadmarker"
+Script51.Parent = Humanoid48
+table.insert(cors,sandbox(Script51,function()
+--print 'Hello world!'
+local name = script.Parent.Parent.Name
+function markdead()
+	
+local	killer = script.Parent:findFirstChild("creator")
+print("creator")
+local lol = killer.Value
+	if killer ~= nil then
+	--[[	print("creatoris real")
+		local h = game.Players:GetChildren()
+		
+		for i = 1, # h do
+			
+			if h[i].Name == lol then
+				
+				local mark=h[i].PlayerGui:findFirstChild("KILLS")
+				print("found gui")
+				if mark~= nil then
+					mark.KILLFRAME.BUTTON.KILLS.Value=mark.KILLFRAME.BUTTON.KILLS.Value+1
+					
+					
+					
+				end
+			
+	
+	
+end	
+	end]]--
+	
+		local thing = nil
+		local killer = lol
+		if killer.Parent ~= nil then -- killer still in game
+			
+			local mark=killer.PlayerGui:findFirstChild("KILLS")
+				print("found gui")
+				if mark~= nil then
+					mark.KILLFRAME.BUTTON.KILLS.Value=mark.KILLFRAME.BUTTON.KILLS.Value+1
+				
+			local a = game.ServerScriptService.GameChatScript.kill:Clone()
+			a.killer.Value = killer.Name
+			a.killed.Value=name
+			local weapon = killer.Character:GetChildren()
+			for i = 1,#weapon do
+				if weapon[i].ClassName == "Tool" then
+					thing = weapon[i]
+				end
+			end
+			if thing ~= nil then
+				a.text.Value= thing.Name
+			else
+			a.text.Value= "killed"
+			end
+			a.Parent=game.Lighting.kills
+			end
+			
+		end
+	
+	
+	
+	end
+end
+script.Parent.Died:connect(markdead)
+end))
+IntValue52.Name = "imamuffin"
+IntValue52.Parent = Model0
+NumberValue53.Name = "POWER"
+NumberValue53.Parent = Model0
+NumberValue53.Value = 100
+Script54.Name = "Respawn"
+Script54.Parent = Model0
+table.insert(cors,sandbox(Script54,function()
+name="Humanoid"
+
+robo=script.Parent:clone()
+
+while true do
+	wait(1)
+	if script.Parent.Humanoid.Health<1 then
+		robot=robo:clone()
+		robot.Parent=script.Parent.Parent
+		robot:makeJoints()
+		script.Parent:remove()
+	end
+end
+		
+
+
+
+end))
+Script55.Parent = Model0
+table.insert(cors,sandbox(Script55,function()
+--local larm = script.Parent:FindFirstChild("Left Arm")
+--local rarm = script.Parent:FindFirstChild("Right Arm")
+
+function findNearestTorso(pos)
+	local list = game.Workspace:children()
+	local torso = nil
+	local dist = 1000
+	local temp = nil
+	local human = nil
+	local temp2 = nil
+	for x = 1, #list do
+		temp2 = list[x]
+		if (temp2.className == "Model") and (temp2 ~= script.Parent) then
+			temp = temp2:findFirstChild("Torso")
+			human = temp2:findFirstChild("Humanoid")
+			human2 = temp2:findFirstChild("imamuffin")
+			--humana = temp2:findFirstChild("imamuffin")
+			if (temp ~= nil) and (human ~= nil) and (human.Health > 0) and (human2 == nil)then
+				if (temp.Position - pos).magnitude < dist then
+					torso = temp
+					dist = (temp.Position - pos).magnitude
+				end
+			end
+		end
+	end
+	return torso
+end
+
+function Hit(hit)
+	local human = hit.Parent:FindFirstChild("Humanoid")
+	if human ~= nil then
+		human.Health =  human.Health -0
+	end
+end
+
+--larm.Touched:connect(Hit)
+--rarm.Touched:connect(Hit)
+
+while true do
+	wait(0.1)
+	local target = findNearestTorso(script.Parent.Torso.Position)
+	if target ~= nil then
+		script.Parent.Humanoid:MoveTo(target.Position, target)
+	end
+end
+
+end))
+Part56.Name = "Right Arm"
+Part56.Parent = Model0
+Part56.CFrame = CFrame.new(152.369629, 2.09995747, -235.849792, -0.965925574, -0.258818984, 2.65885425e-09, -9.19748944e-10, -6.84049306e-09, -0.999999762, 0.258818924, -0.965925336, -2.34329569e-08)
+Part56.Orientation = Vector3.new(90, -165, 0)
+Part56.Position = Vector3.new(152.36962890625, 2.0999574661254883, -235.84979248046875)
+Part56.Rotation = Vector3.new(90, 0, 165)
+Part56.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part56.Size = Vector3.new(1, 2, 1)
+Part56.Anchored = true
+Part56.BottomSurface = Enum.SurfaceType.Smooth
+Part56.BrickColor = BrickColor.new("Really black")
+Part56.CanCollide = false
+Part56.Material = Enum.Material.SmoothPlastic
+Part56.TopSurface = Enum.SurfaceType.Smooth
+Part56.brickColor = BrickColor.new("Really black")
+Part56.FormFactor = Enum.FormFactor.Symmetric
+Part56.formFactor = Enum.FormFactor.Symmetric
+Script57.Name = "warning"
+Script57.Parent = Model0
+table.insert(cors,sandbox(Script57,function()
+wait()
+
+local OwnerTorso = script.Parent.Torso   --  Summoner.
+--print("Owner: ", OwnerToso)
+
+local myTarget = nil
+
+
+-- obtain goals based on Sphere part
+--sphere.BodyPosition.position = sphere.Position
+
+--sphere.BodyPosition.position = OwnerTorso.Position + Vector3.new(0,10,0)  -- Above Head.
+
+
+
+-- this code hijacked from the new rocket launcher
+local Rocket = Instance.new("Part")
+local pee = Instance.new("Fire")
+--local m = script.Parent.Mesh:clone()
+--m.Parent=Rocket
+pee.Heat=0
+Rocket.Locked = true
+Rocket.BackSurface = 4
+Rocket.BottomSurface = 3
+Rocket.FrontSurface = 3
+Rocket.LeftSurface = 3
+Rocket.RightSurface = 3
+pee.Parent=Rocket
+pee.Size=1
+Rocket.FormFactor="Custom"
+Rocket.BrickColor=BrickColor.new("Bright yellow")
+Rocket.TopSurface = 3
+Rocket.Size = Vector3.new(0.4,0.4,5)
+
+
+Rocket. Reflectance = .1
+Rocket.BrickColor = BrickColor.new("Cool yellow")
+
+script.Parent.RocketScript:clone().Parent = Rocket
+script.Parent.Explosion:clone().Parent = Rocket
+script.Parent.Swoosh:clone().Parent = Rocket
+--script.Parent.hit:clone().Parent = Rocket
+
+script.Parent.ow:Clone().Parent=Rocket
+
+function getPlayerTeamName(player)
+	local teams = game.Teams:children()
+	for i=1, #teams do
+		if (teams[i].TeamColor == player.TeamColor) then return teams[i].Name end
+	end
+end
+
+function getTeamColorFromName(name)
+	local teams = game.Teams:children()
+	for i=1, #teams do
+		if (teams[i].Name == name) then return teams[i].TeamColor end
+	end
+
+	return BrickColor.new(24)
+end
+
+
+
+
+function fire(target)  --  from Owner of Killbot.
+
+	local dir = target - OwnerTorso.Position --+ Vector3.new(0,2,0) -- Head shot.
+	dir = computeDirection(dir)
+
+	local missile = Rocket:clone()
+	local spawnPos = OwnerTorso.Position + Vector3.new(0,1,0) -- from head
+	local pos = spawnPos + (dir * 10)
+	
+	--missile.Position = pos
+	missile.CFrame = CFrame.new(pos,  pos + dir)
+
+	missile.ow.Disabled=false
+	missile.RocketScript.Disabled = false
+	missile.Parent = game.Workspace
+	script.Parent.Head.Fire:Play()
+	
+
+
+end
+
+function computeDirection(vec)
+	local lenSquared = vec.magnitude * vec.magnitude
+	local invSqrt = 1 / math.sqrt(lenSquared)
+	return Vector3.new(vec.x * invSqrt, vec.y * invSqrt, vec.z * invSqrt)
+end
+
+
+
+function scanForHumans()  --  within 300.
+	-- KILL THE HUMANS!!!!!!!!!!
+
+	-- find the closest human that is not on my team
+	
+
+	local players = game.Players:children()
+
+	local best_distance = 1000
+	local best_target = nil
+
+	for n=1,#players do
+		--if (getPlayerTeamName(players[n]) ~= script.Parent.OwningTeam.Value) then
+			if (players[n].Character ~= nil) then
+				local lol = players[n].Character:FindFirstChild("Humanoid")
+				if lol == nil then return end
+                              if (players[n].Character.Humanoid.Health > 0) then  --  don't shoot the dead.
+				local dist = (players[n].Character.PrimaryPart.Position - OwnerTorso.Position).magnitude
+				if (dist < best_distance and dist > 2 ) then  --  and not too close.
+					best_distance = dist
+					best_target = players[n]
+					
+					
+
+					
+					
+					
+			        end
+    --  end  --  worth shooting?
+
+
+
+
+
+
+			end
+		end
+	end
+
+	myTarget =  best_target
+	
+
+end
+
+
+--if (script.Parent.OwningTeam.Value ~= nil) then sphere.BrickColor = getTeamColorFromName(script.Parent.OwningTeam.Value) end
+
+--local lead = OwnerTorso.Position
+
+while true do  -- loop forever
+	scanForHumans()
+
+	--for n=1,1 do
+
+		if (myTarget ~= nil) then
+
+--lead target
+			
+                     
+ 
+local safe =  myTarget:FindFirstChild("PlayerGui")
+	if safe ~= nil then
+local lol = myTarget.PlayerGui:FindFirstChild("sniperwarning")
+					if lol == nil then
+						local a=script.sniperwarning:clone()
+						a.Parent=myTarget.PlayerGui
+						a.lol.Frame.main.Disabled=false
+						--game:GetService("Debris"):AddItem(a,1)
+					end
+					if lol ~= nil then
+						lol.lol.Frame.main.Time.Value = 2
+					end
+--        if myTarget == nil then   --  look for dinos.
+--           players = game.Raptor:children()
+--           myTarget = players[1]
+--        end
+  
+	
+end
+
+
+			wait(0.2)
+--wait()
+--			moveKillbot()
+
+--			wait(math.random(1,2))
+		--end
+	end
+	wait(0.1) -- don't hog CPU
+--wait(0.1)
+end
+
+end))
+ScreenGui58.Name = "sniperwarning"
+ScreenGui58.Parent = Script57
+Frame59.Name = "lol"
+Frame59.Parent = ScreenGui58
+Frame59.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame59.BackgroundColor = BrickColor.new("Institutional white")
+Frame59.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame59.BackgroundTransparency = 1
+Frame60.Parent = Frame59
+Frame60.Position = UDim2.new(0, -75, 0, 110)
+Frame60.Size = UDim2.new(0, 150, 0, 60)
+Frame60.BackgroundColor = BrickColor.new("Really red")
+Frame60.BackgroundColor3 = Color3.new(1, 0, 0)
+Frame60.BackgroundTransparency = 0.30000001192092896
+Frame60.BorderSizePixel = 0
+Script61.Name = "main"
+Script61.Parent = Frame60
+Script61.Enabled = false
+table.insert(cors,sandbox(Script61,function()
+print 'Hello world!'
+while true do
+	
+	wait(0.5)
+	script.Parent.BackgroundTransparency = 0.5
+	if script.Time.Value ~= 0 then
+	script.Time.Value=script.Time.Value-1
+	end
+	if script.Time.Value== 0 then
+		script.Parent.Parent.Parent:Remove()
+	end
+	wait(0.5)
+	script.Parent.BackgroundTransparency = 0.3
+end
+end))
+Script61.Disabled = true
+NumberValue62.Name = "Time"
+NumberValue62.Parent = Script61
+NumberValue62.Value = 2
+TextLabel63.Parent = Frame60
+TextLabel63.Size = UDim2.new(0, 150, 0, 60)
+TextLabel63.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel63.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel63.BackgroundTransparency = 1
+TextLabel63.BorderSizePixel = 0
+TextLabel63.Font = Enum.Font.ArialBold
+TextLabel63.FontSize = Enum.FontSize.Size18
+TextLabel63.Text = "SNIPER WARNING"
+TextLabel63.TextColor = BrickColor.new("Institutional white")
+TextLabel63.TextColor3 = Color3.new(1, 1, 1)
+TextLabel63.TextSize = 18
+TextLabel63.TextStrokeTransparency = 0
+Script64.Name = "qPerfectionWeld"
+Script64.Parent = Model0
+table.insert(cors,sandbox(Script64,function()
+-- Created by Quenty (@Quenty, follow me on twitter).
+-- Should work with only ONE copy, seamlessly with weapons, trains, et cetera.
+-- Parts should be ANCHORED before use. It will, however, store relatives values and so when tools are reparented, it'll fix them.
+
+--[[ INSTRUCTIONS
+- Place in the model
+- Make sure model is anchored
+- That's it. It will weld the model and all children. 
+
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
+
+This script is designed to be used is a regular script. In a local script it will weld, but it will not attempt to handle ancestory changes. 
+]]
+
+--[[ DOCUMENTATION
+- Will work in tools. If ran more than once it will not create more than one weld.  This is especially useful for tools that are dropped and then picked up again.
+- Will work in PBS servers
+- Will work as long as it starts out with the part anchored
+- Stores the relative CFrame as a CFrame value
+- Takes careful measure to reduce lag by not having a joint set off or affected by the parts offset from origin
+- Utilizes a recursive algorith to find all parts in the model
+- Will reweld on script reparent if the script is initially parented to a tool.
+- Welds as fast as possible
+]]
+
+-- qPerfectionWeld.lua
+-- Created 10/6/2014
+-- Author: Quenty
+-- Version 1.0.3
+
+-- Updated 10/14/2014 - Updated to 1.0.1
+--- Bug fix with existing ROBLOX welds ? Repro by asimo3089
+
+-- Updated 10/14/2014 - Updated to 1.0.2
+--- Fixed bug fix. 
+
+-- Updated 10/14/2014 - Updated to 1.0.3
+--- Now handles joints semi-acceptably. May be rather hacky with some joints. :/
+
+local NEVER_BREAK_JOINTS = true -- If you set this to true it will never break joints (this can create some welding issues, but can save stuff like hinges).
+
+
+local function CallOnChildren(Instance, FunctionToCall)
+	-- Calls a function on each of the children of a certain object, using recursion.  
+
+	FunctionToCall(Instance)
+
+	for _, Child in next, Instance:GetChildren() do
+		CallOnChildren(Child, FunctionToCall)
+	end
+end
+
+local function GetNearestParent(Instance, ClassName)
+	-- Returns the nearest parent of a certain class, or returns nil
+
+	local Ancestor = Instance
+	repeat
+		Ancestor = Ancestor.Parent
+		if Ancestor == nil then
+			return nil
+		end
+	until Ancestor:IsA(ClassName)
+
+	return Ancestor
+end
+
+local function GetBricks(StartInstance)
+	local List = {}
+
+	-- if StartInstance:IsA("BasePart") then
+	-- 	List[#List+1] = StartInstance
+	-- end
+
+	CallOnChildren(StartInstance, function(Item)
+		if Item:IsA("BasePart") then
+			List[#List+1] = Item;
+		end
+	end)
+
+	return List
+end
+
+local function Modify(Instance, Values)
+	-- Modifies an Instance by using a table.  
+
+	assert(type(Values) == "table", "Values is not a table");
+
+	for Index, Value in next, Values do
+		if type(Index) == "number" then
+			Value.Parent = Instance
+		else
+			Instance[Index] = Value
+		end
+	end
+	return Instance
+end
+
+local function Make(ClassType, Properties)
+	-- Using a syntax hack to create a nice way to Make new items.  
+
+	return Modify(Instance.new(ClassType), Properties)
+end
+
+local Surfaces = {"TopSurface", "BottomSurface", "LeftSurface", "RightSurface", "FrontSurface", "BackSurface"}
+local HingSurfaces = {"Hinge", "Motor", "SteppingMotor"}
+
+local function HasWheelJoint(Part)
+	for _, SurfaceName in pairs(Surfaces) do
+		for _, HingSurfaceName in pairs(HingSurfaces) do
+			if Part[SurfaceName].Name == HingSurfaceName then
+				return true
+			end
+		end
+	end
+	
+	return false
+end
+
+local function ShouldBreakJoints(Part)
+	--- We do not want to break joints of wheels/hinges. This takes the utmost care to not do this. There are
+	--  definitely some edge cases. 
+
+	if NEVER_BREAK_JOINTS then
+		return false
+	end
+	
+	if HasWheelJoint(Part) then
+		return false
+	end
+	
+	local Connected = Part:GetConnectedParts()
+	
+	if #Connected == 1 then
+		return false
+	end
+	
+	for _, Item in pairs(Connected) do
+		if HasWheelJoint(Item) then
+			return false
+		elseif not Item:IsDescendantOf(script.Parent) then
+			return false
+		end
+	end
+	
+	return true
+end
+
+local function WeldTogether(Part0, Part1, JointType, WeldParent)
+	--- Weld's 2 parts together
+	-- @param Part0 The first part
+	-- @param Part1 The second part (Dependent part most of the time).
+	-- @param [JointType] The type of joint. Defaults to weld.
+	-- @param [WeldParent] Parent of the weld, Defaults to Part0 (so GC is better).
+	-- @return The weld created.
+
+	JointType = JointType or "Weld"
+	local RelativeValue = Part1:FindFirstChild("qRelativeCFrameWeldValue")
+	
+	local NewWeld = Part1:FindFirstChild("qCFrameWeldThingy") or Instance.new(JointType)
+	Modify(NewWeld, {
+		Name = "qCFrameWeldThingy";
+		Part0  = Part0;
+		Part1  = Part1;
+		C0     = CFrame.new();--Part0.CFrame:inverse();
+		C1     = RelativeValue and RelativeValue.Value or Part1.CFrame:toObjectSpace(Part0.CFrame); --Part1.CFrame:inverse() * Part0.CFrame;-- Part1.CFrame:inverse();
+		Parent = Part1;
+	})
+
+	if not RelativeValue then
+		RelativeValue = Make("CFrameValue", {
+			Parent     = Part1;
+			Name       = "qRelativeCFrameWeldValue";
+			Archivable = true;
+			Value      = NewWeld.C1;
+		})
+	end
+
+	return NewWeld
+end
+
+local function WeldParts(Parts, MainPart, JointType, DoNotUnanchor)
+	-- @param Parts The Parts to weld. Should be anchored to prevent really horrible results.
+	-- @param MainPart The part to weld the model to (can be in the model).
+	-- @param [JointType] The type of joint. Defaults to weld. 
+	-- @parm DoNotUnanchor Boolean, if true, will not unachor the model after cmopletion.
+	
+	for _, Part in pairs(Parts) do
+		if ShouldBreakJoints(Part) then
+			Part:BreakJoints()
+		end
+	end
+	
+	for _, Part in pairs(Parts) do
+		if Part ~= MainPart then
+			WeldTogether(MainPart, Part, JointType, MainPart)
+		end
+	end
+
+	if not DoNotUnanchor then
+		for _, Part in pairs(Parts) do
+			Part.Anchored = false
+		end
+		MainPart.Anchored = false
+	end
+end
+
+local function PerfectionWeld()	
+	local Tool = GetNearestParent(script, "Tool")
+
+	local Parts = GetBricks(script.Parent)
+	local PrimaryPart = Tool and Tool:FindFirstChild("Handle") and Tool.Handle:IsA("BasePart") and Tool.Handle or script.Parent:IsA("Model") and script.Parent.PrimaryPart or Parts[1]
+
+	if PrimaryPart then
+		WeldParts(Parts, PrimaryPart, "Weld", false)
+	else
+		warn("qWeld - Unable to weld part")
+	end
+	
+	return Tool
+end
+
+local Tool = PerfectionWeld()
+
+
+if Tool and script.ClassName == "Script" then
+	--- Don't bother with local scripts
+
+	script.Parent.AncestryChanged:connect(function()
+		PerfectionWeld()
+	end)
+end
+
+-- Created by Quenty (@Quenty, follow me on twitter).
+
+end))
+Part65.Name = "Stucc"
+Part65.Parent = Model0
+Part65.CFrame = CFrame.new(152.569611, 3.59990978, -235.749786, -0.999999821, -1.00345075e-16, 1.33226763e-15, -1.33226763e-15, 3.55271368e-15, 1, 1.00345075e-16, 0.999999821, 3.55271368e-15)
+Part65.Orientation = Vector3.new(-90, 180, 0)
+Part65.Position = Vector3.new(152.56961059570312, 3.599909782409668, -235.74978637695312)
+Part65.Rotation = Vector3.new(-90, 0, 180)
+Part65.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part65.Size = Vector3.new(0.20000000298023224, 0.6000000238418579, 0.20000000298023224)
+Part65.Anchored = true
+Part65.BottomSurface = Enum.SurfaceType.Weld
+Part65.BrickColor = BrickColor.new("Institutional white")
+Part65.CanCollide = false
+Part65.LeftSurface = Enum.SurfaceType.Weld
+Part65.Material = Enum.Material.SmoothPlastic
+Part65.Reflectance = 0.20000000298023224
+Part65.RightSurface = Enum.SurfaceType.Weld
+Part65.TopSurface = Enum.SurfaceType.Weld
+Part65.brickColor = BrickColor.new("Institutional white")
+Part65.FormFactor = Enum.FormFactor.Custom
+Part65.formFactor = Enum.FormFactor.Custom
+Part66.Name = "top"
+Part66.Parent = Model0
+Part66.CFrame = CFrame.new(152.569611, 4.80001068, -236.349792, -0.999999821, -1.00345075e-16, 1.33226763e-15, -1.33226763e-15, 3.55271368e-15, 1, 1.00345075e-16, 0.999999821, 3.55271368e-15)
+Part66.Orientation = Vector3.new(-90, 180, 0)
+Part66.Position = Vector3.new(152.56961059570312, 4.800010681152344, -236.34979248046875)
+Part66.Rotation = Vector3.new(-90, 0, 180)
+Part66.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part66.Size = Vector3.new(0.20000000298023224, 0.20000000298023224, 0.20000000298023224)
+Part66.Anchored = true
+Part66.BottomSurface = Enum.SurfaceType.Weld
+Part66.BrickColor = BrickColor.new("Black")
+Part66.CanCollide = false
+Part66.FrontSurface = Enum.SurfaceType.Weld
+Part66.LeftSurface = Enum.SurfaceType.Weld
+Part66.Material = Enum.Material.SmoothPlastic
+Part66.Reflectance = 0.20000000298023224
+Part66.RightSurface = Enum.SurfaceType.Weld
+Part66.TopSurface = Enum.SurfaceType.Weld
+Part66.brickColor = BrickColor.new("Black")
+Part66.FormFactor = Enum.FormFactor.Custom
+Part66.formFactor = Enum.FormFactor.Custom
+BoolValue67.Name = "EXPLODED"
+BoolValue67.Parent = Model0
+Script68.Name = "EXTRAUNGLITCH"
+Script68.Parent = Model0
+table.insert(cors,sandbox(Script68,function()
+wait(5)
+while true do
+	wait(1)
+	lol=script.Parent:FindFirstChild("Humanoid")
+	if lol~=nil then
+	if lol.Health==0 then
+		game:GetService("Debris"):AddItem(script.Parent,10)
+	end
+	end
+	if lol == nil then
+		game:GetService("Debris"):AddItem(script.Parent,5)
+	end
+	babacaca = script.Parent:FindFirstChild("Torso")
+	if babacaca ~= nil then
+		if babacaca.Position.Y>1000 then
+			script.Parent:remove()
+		end
+		if babacaca.Position.Y<-0.5 then
+			script.Parent:remove()
+		end
+	end
+end
+end))
+Script69.Name = "ZAMBIERAGDOLL"
+Script69.Parent = Model0
+table.insert(cors,sandbox(Script69,function()
+print 'Hello world!'
+print("Hello world!")
+dead=false
+Character = script.Parent
+Humanoid = Character.Humanoid
+Torso = Character.Torso
+
+
+
+
+
+
+robo=script.Parent:clone()
+
+
+	
+
+		
+		
+	
+
+
+
+
+
+
+
+function OnDeath()
+		game:GetService("Debris"):AddItem(script.Parent,15)
+		script.Parent.KillbotScript:remove()
+		script.Parent.Torso.BodyGyro:Remove()
+		script.Parent.warning:Remove()
+	if dead==false
+		then dead = true
+		
+		robot=robo:clone()
+		
+
+	--[[local h = script.Parent:GetChildren()
+		for i = 1, # h do
+			if h[i].className == "Part" then
+				h[i].Anchored = true
+			h[i]:BreakJoints()
+	
+	
+end	
+		end]]--
+		
+		--wait(0.01)
+		
+		--
+	print("Death")--  HAHA
+    Humanoid.Parent = script
+    local betc = Instance.new("Humanoid")
+betc.Parent = script.Parent
+betc.Name = "Humanoid"
+betc.PlatformStand = true
+betc.Sit = true
+betc.Health=0
+betc.DisplayDistanceType="None"
+
+ 
+	
+	
+	
+	
+	script.Parent.Name=" "
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	--game.Workspace.TheScore.Value=game.Workspace.TheScore.Value+1
+	
+	
+	
+	if Torso then
+		local Head = Character:FindFirstChild("Head")
+		if Head then
+			local Neck = Instance.new("Weld")
+			Neck.Name = "Neck"
+			Neck.Part0 = Torso
+			Neck.Part1 = Head
+			Neck.C0 = CFrame.new(0, 1.5, 0)
+			Neck.C1 = CFrame.new()
+			Neck.Parent = Torso
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		end
+		local Limb = Character:FindFirstChild("Right Arm")
+		if Limb then
+
+			Limb.CFrame = Torso.CFrame * CFrame.new(1.5, 0, 0)
+			local Joint = Instance.new("Glue")
+			Joint.Name = "RightShoulder"
+			Joint.Part0 = Torso
+			Joint.Part1 = Limb
+			Joint.C0 = CFrame.new(1.5, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+			Joint.C1 = CFrame.new(-0, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+			Joint.Parent = Torso
+
+			local B = Instance.new("Part")
+			B.TopSurface = 0
+			B.BottomSurface = 0
+			B.formFactor = "Symmetric"
+			B.Size = Vector3.new(1, 1, 1)
+			B.Transparency = 1
+			B.CFrame = Limb.CFrame * CFrame.new(0, -0.5, 0)
+			B.Parent = Character
+			local W = Instance.new("Weld")
+			W.Part0 = Limb
+			W.Part1 = B
+			W.C0 = CFrame.new(0, -0.5, 0)
+			W.Parent = Limb
+
+		end
+		local Limb = Character:FindFirstChild("Left Arm")
+		if Limb then
+
+			Limb.CFrame = Torso.CFrame * CFrame.new(-1.5, 0, 0)
+			local Joint = Instance.new("Glue")
+			Joint.Name = "LeftShoulder"
+			Joint.Part0 = Torso
+			Joint.Part1 = Limb
+			Joint.C0 = CFrame.new(-1.5, 0.5, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+			Joint.C1 = CFrame.new(0, 0.5, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+			Joint.Parent = Torso
+
+			local B = Instance.new("Part")
+			B.TopSurface = 0
+			B.BottomSurface = 0
+			B.formFactor = "Symmetric"
+			B.Size = Vector3.new(1, 1, 1)
+			B.Transparency = 1
+			B.CFrame = Limb.CFrame * CFrame.new(0, -0.5, 0)
+			B.Parent = Character
+			local W = Instance.new("Weld")
+			W.Part0 = Limb
+			W.Part1 = B
+			W.C0 = CFrame.new(0, -0.5, 0)
+			W.Parent = Limb
+
+		end
+		local Limb = Character:FindFirstChild("RightLeg")
+		if Limb then
+
+			Limb.CFrame = Torso.CFrame * CFrame.new(0.5, -2, 0)
+			local Joint = Instance.new("Glue")
+			Joint.Name = "RightHip"
+			Joint.Part0 = Torso
+			Joint.Part1 = Limb
+			Joint.C0 = CFrame.new(0.5, -1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+			Joint.C1 = CFrame.new(0, 1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+			Joint.Parent = Torso
+
+			local B = Instance.new("Part")
+			B.TopSurface = 0
+			B.BottomSurface = 0
+			B.formFactor = "Symmetric"
+			B.Size = Vector3.new(1, 1.5, 1)
+			B.Transparency = 1
+			B.CFrame = Limb.CFrame * CFrame.new(0, -0.5, 0)
+			B.Parent = Character
+			local W = Instance.new("Weld")
+			W.Part0 = Limb
+			W.Part1 = B
+			W.C0 = CFrame.new(0, -0.25, 0)
+			W.Parent = Limb
+
+		end
+		local Limb = Character:FindFirstChild("LeftLeg")
+		if Limb then
+
+			Limb.CFrame = Torso.CFrame * CFrame.new(-0.5, -2, 0)
+			local Joint = Instance.new("Glue")
+			Joint.Name = "LeftHip"
+			Joint.Part0 = Torso
+			Joint.Part1 = Limb
+			Joint.C0 = CFrame.new(-0.5, -1, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+			Joint.C1 = CFrame.new(-0, 1, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+			Joint.Parent = Torso
+
+			local B = Instance.new("Part")
+			B.TopSurface = 0
+			B.BottomSurface = 0
+			B.formFactor = "Symmetric"
+			B.Size = Vector3.new(1, 1.5, 1)
+			B.Transparency = 1
+			B.CFrame = Limb.CFrame * CFrame.new(0, -0.5, 0)
+			B.Parent = Character
+			local W = Instance.new("Weld")
+			W.Part0 = Limb
+			W.Part1 = B
+			W.C0 = CFrame.new(0, -0.25, 0)
+			W.Parent = Limb
+
+		end
+		--[
+		local Bar = Instance.new("Part")
+		Bar.TopSurface = 0
+		Bar.BottomSurface = 0
+		Bar.formFactor = "Symmetric"
+		Bar.Size = Vector3.new(1, 1, 1)
+		Bar.Transparency = 1
+		Bar.CFrame = Torso.CFrame * CFrame.new(0, 0.5, 0)
+		Bar.Parent = Character
+		local Weld = Instance.new("Weld")
+		Weld.Part0 = Torso
+		Weld.Part1 = Bar
+		Weld.C0 = CFrame.new(0, 0.5, 0)
+		Weld.Parent = Torso
+		--]]
+	end
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+		
+	
+	local crappy = script.Parent:GetChildren()
+	for i=1,#crappy do
+	if crappy[i].className == "Hat" then
+	coroutine.resume(coroutine.create(function()
+		
+		
+		
+	
+	--crappy[i].Parent = game.Workspace
+   -- wait(0.01)	
+	crappy[i].Parent = Character
+	
+	
+	end))
+	end
+	end
+	
+	
+	
+		
+	--[[local h = script.Parent:GetChildren()
+		for i = 1, # h do
+		 	if h[i].className == "Part" or  h[i].className == "WedgePart" then
+			
+		
+	h[i].Velocity = Vector3.new(0,0,0)
+	
+		h[i].RotVelocity = Vector3.new(0,0,0)
+		
+		
+	end
+	end]]--
+	
+--	wait(0.2)
+		local h = script.Parent:GetChildren()
+		for i = 1, # h do
+			if h[i].className == "Part" then
+				h[i].Anchored = false
+			
+	
+	
+end	
+		end
+		
+		
+		
+		
+		if Torso then
+		if script.Parent.EXPLODED.Value==false then
+		
+		--Torso.Velocity = Vector3.new(0,30,0)
+		Torso.Velocity = Vector3.new(0,math.random(30,80),0)
+		
+		
+			Torso.RotVelocity = Vector3.new(math.random(-40,40),math.random(-40,40),math.random(-40,40))
+		
+		end
+		if script.Parent.EXPLODED.Value==true then
+		
+		
+			local a = script.Parent.EPOS.Value
+		local b = script.Parent.Torso.Position
+
+		local dir = (a - b).unit
+
+		script.Parent.Torso.Velocity = dir*-script.Parent.POWER.Value
+		
+		
+		
+		
+		
+		
+		
+		end
+		
+		
+		
+	end
+		
+	
+	
+		--wait(0.2)
+		
+		wait(0.1)
+		
+		local lol = math.random(2,4)
+		for i=1,lol do
+		local	blood=game.Lighting.BLOODSPLAT:Clone()
+			blood.Parent=game.Workspace
+			--[[p=blood.BodyPosition.position.X
+			p=Torso.Position.X
+		
+			p=blood.BodyPosition.position.Z
+			p=Torso.Position.Z]]--
+		blood.CFrame = Torso.CFrame
+		
+			wait(0.4)
+			
+			
+		end
+	
+		
+	--poop=script.UnLGitch:clone()
+	--	poop.Disabled=false
+	--	poop.Parent=script.Parent
+		
+	--game:GetService("Debris"):AddItem(poop, 1)
+	--[[	wait(3)
+		local p=math.random(1,10)
+	
+
+	
+	if p == 3 then
+		
+		local g=game.ReplicatedStorage.AMMO:clone()
+		g.Parent=game.Workspace
+	    g.Position=script.Parent.Torso.Position
+		--g.EDITME.Disabled=false
+		
+		
+	end
+	
+	if p == 4 then
+		
+		local g=game.ReplicatedStorage.AMMOPOO:clone()
+		g.Parent=game.Workspace
+	    g.Position=script.Parent.Torso.Position
+		--g.EDITME.Disabled=false
+		
+		
+	end]]--
+		wait(10) --Change this number to whatever you want so that it is a timed respawn of your choice.
+	--	robot.Parent=script.Parent.Parent
+	--	robot:makeJoints()
+		script.Parent:remove()
+		wait(0.1)
+		--robot:findFirstChild("Right Arm").RightGrip:remove()
+		--robot:findFirstChild("Right Arm").RightGrip:remove()
+		robot:makeJoints()
+		script.Parent:remove()
+	
+--	wait(1)
+--	game.Workspace.CurrentCamera.CameraType = "Custom"
+	end
+	end
+
+Humanoid.Died:connect(OnDeath)
+
+
+end))
+Sound70.Name = "Swoosh"
+Sound70.Parent = Model0
+Sound70.Pitch = 1.5
+Sound70.PlaybackSpeed = 1.5
+Sound70.SoundId = "http://www.roblox.com/asset/?id=12222095"
+Part71.Name = "Left Arm"
+Part71.Parent = Model0
+Part71.CFrame = CFrame.new(153.369598, 2.2999897, -235.449814, -0.707106471, 0.707106471, 7.40501571e-09, -9.23001764e-09, 1.24225796e-09, -0.999999821, -0.707106411, -0.707106352, 5.64820546e-09)
+Part71.Orientation = Vector3.new(90, 135, 0)
+Part71.Position = Vector3.new(153.36959838867188, 2.299989700317383, -235.44981384277344)
+Part71.Rotation = Vector3.new(90, 0, -135)
+Part71.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part71.Size = Vector3.new(1, 2, 1)
+Part71.Anchored = true
+Part71.BottomSurface = Enum.SurfaceType.Smooth
+Part71.BrickColor = BrickColor.new("Really black")
+Part71.CanCollide = false
+Part71.Material = Enum.Material.SmoothPlastic
+Part71.TopSurface = Enum.SurfaceType.Smooth
+Part71.brickColor = BrickColor.new("Really black")
+Part71.FormFactor = Enum.FormFactor.Symmetric
+Part71.formFactor = Enum.FormFactor.Symmetric
+StringValue72.Name = "OwningTeam"
+StringValue72.Parent = Model0
+SpecialMesh73.Name = "Mesho"
+SpecialMesh73.Parent = Model0
+SpecialMesh73.MeshId = "http://www.roblox.com/asset/?id=23261119"
+SpecialMesh73.Scale = Vector3.new(2, 2, 2)
+SpecialMesh73.MeshType = Enum.MeshType.FileMesh
+Part74.Parent = Model0
+Part74.CFrame = CFrame.new(152.532135, 2.41877747, -232.602875, -9.20984894e-06, -3.69399786e-05, -0.999999762, -0.980066419, 0.198669106, 1.62422475e-06, 0.198669523, 0.980066299, -2.89306026e-05)
+Part74.Orientation = Vector3.new(0, -90, -78.54000091552734)
+Part74.Position = Vector3.new(152.53213500976562, 2.4187774658203125, -232.60287475585938)
+Part74.Rotation = Vector3.new(78.54000091552734, -90, 0)
+Part74.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part74.Velocity = Vector3.new(0.029307428747415543, -0.007079130504280329, -0.011438519693911076)
+Part74.Size = Vector3.new(1, 1, 1)
+Part74.Anchored = true
+Part74.BottomSurface = Enum.SurfaceType.Smooth
+Part74.BrickColor = BrickColor.new("Mid gray")
+Part74.CanCollide = false
+Part74.Material = Enum.Material.SmoothPlastic
+Part74.RotVelocity = Vector3.new(-0.0010427366942167282, -0.0030738590285182, -0.0016770868096500635)
+Part74.TopSurface = Enum.SurfaceType.Smooth
+Part74.brickColor = BrickColor.new("Mid gray")
+Part74.FormFactor = Enum.FormFactor.Symmetric
+Part74.formFactor = Enum.FormFactor.Symmetric
+BlockMesh75.Parent = Part74
+BlockMesh75.Scale = Vector3.new(0.75, 0.0625, 0.0625)
+Script76.Name = "RocketScript"
+Script76.Parent = Model0
+Script76.Enabled = false
+table.insert(cors,sandbox(Script76,function()
+r = game:service("RunService")
+
+shaft = script.Parent
+position = shaft.Position
+
+shaft.RotVelocity = Vector3.new (0, 0, 0)  --  Graphics
+
+script.Parent.Explosion.PlayOnRemove = false -- play explosion sound when projectile removed from game
+
+function fly()
+	direction = shaft.CFrame.lookVector 
+	position = position + 20*direction
+	error = position - shaft.Position
+	shaft.Velocity = 5*error
+end
+
+function blow(hit)
+	script.Parent.Fire:remove()
+	script.Parent.hit:play()
+	swoosh:stop()
+	--explosion = Instance.new("Explosion")
+	--explosion.Position = shaft.Position
+	--explosion.BlastPressure=0
+	p=hit.Parent:findFirstChild("Humanoid")
+pa=hit.Parent.Parent:findFirstChild("Humanoid")
+paa=hit.Parent.Parent.Parent:findFirstChild("Humanoid")
+if p~=nil then
+	p:TakeDamage(math.random(20,40))
+end
+if pa~=nil then
+	pa:TakeDamage(math.random(20,40))
+end
+if paa~=nil then
+	paa:TakeDamage(math.random(20,40))
+end
+script.Parent.hit:play()
+	-- find instigator tag
+	--[[local creator = script.Parent:findFirstChild("creator")
+	if creator ~= nil then
+		explosion.Hit:connect(function(part, distance)  onPlayerBlownUp(part, distance, creator) end)
+	end]]--
+
+	--explosion.Parent = game.Workspace
+	connection:disconnect()
+	wait(1.1)
+	shaft:remove()
+end
+
+function onPlayerBlownUp(part, distance, creator)
+	
+	if part.Name == "Head" then
+	
+		local humanoid = part.Parent:findFirstChild("Humanoid")
+		--humanoid.Health=humanoid.Health-50
+		tagHumanoid(humanoid, creator)
+	end
+end
+
+function tagHumanoid(humanoid, creator)
+	-- tag does not need to expire iff all explosions lethal
+	
+	if creator ~= nil then
+		local new_tag = creator:clone()
+		new_tag.Parent = humanoid
+		
+	end
+end
+
+function untagHumanoid(humanoid)
+	if humanoid ~= nil then
+		local tag = humanoid:findFirstChild("creator")
+		if tag ~= nil then
+		
+			tag.Parent = nil
+		end
+	end
+end
+
+t, s = r.Stepped:wait()
+
+swoosh = script.Parent.Swoosh
+swoosh:play()
+
+d = t + 10.0 - s
+connection = shaft.Touched:connect(blow)
+
+while t < d do
+	fly()
+	t = r.Stepped:wait()
+end
+
+-- at max range
+script.Parent.Explosion.PlayOnRemove = false
+swoosh:stop()
+shaft:remove()
+
+end))
+Script76.Disabled = true
+Part77.Name = "Stucc"
+Part77.Parent = Model0
+Part77.CFrame = CFrame.new(152.569611, 4.29989052, -236.349792, -0.999999821, -1.00345075e-16, 1.33226763e-15, -1.33226763e-15, 3.55271368e-15, 1, 1.00345075e-16, 0.999999821, 3.55271368e-15)
+Part77.Orientation = Vector3.new(-90, 180, 0)
+Part77.Position = Vector3.new(152.56961059570312, 4.299890518188477, -236.34979248046875)
+Part77.Rotation = Vector3.new(-90, 0, 180)
+Part77.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part77.Size = Vector3.new(0.20000000298023224, 0.20000000298023224, 0.800000011920929)
+Part77.Anchored = true
+Part77.BottomSurface = Enum.SurfaceType.Weld
+Part77.BrickColor = BrickColor.new("Black")
+Part77.CanCollide = false
+Part77.FrontSurface = Enum.SurfaceType.Weld
+Part77.LeftSurface = Enum.SurfaceType.Weld
+Part77.Material = Enum.Material.SmoothPlastic
+Part77.Reflectance = 0.20000000298023224
+Part77.RightSurface = Enum.SurfaceType.Weld
+Part77.TopSurface = Enum.SurfaceType.Weld
+Part77.brickColor = BrickColor.new("Black")
+Part77.FormFactor = Enum.FormFactor.Custom
+Part77.formFactor = Enum.FormFactor.Custom
+Sound78.Name = "hita"
+Sound78.Parent = Model0
+Sound78.SoundId = "rbxassetid://142082166"
+Sound78.Volume = 1
+Sound79.Name = "Explosion"
+Sound79.Parent = Model0
+Sound79.Pitch = 0.800000011920929
+Sound79.PlaybackSpeed = 0.800000011920929
+Sound79.SoundId = "rbxasset://sounds/collide.wav"
+Sound79.Volume = 1
+SpecialMesh80.Parent = Model0
+SpecialMesh80.MeshId = "http://www.roblox.com/asset/?id=94690081"
+SpecialMesh80.Scale = Vector3.new(2, 2, 2)
+SpecialMesh80.TextureId = "http://www.roblox.com/asset/?id=94689966"
+SpecialMesh80.MeshType = Enum.MeshType.FileMesh
+Vector3Value81.Name = "EPOS"
+Vector3Value81.Parent = Model0
+Script82.Name = "ow"
+Script82.Parent = Model0
+Script82.Enabled = false
+table.insert(cors,sandbox(Script82,function()
+enabled=true
+
+
+
+
+function onTouched(hit)
+	if  enabled then 
+        enabled=false
+
+script.Parent.Anchored=true
+script.Parent.Transparency=1
+
+script.Parent.CanCollide=false
+--script.Parent.Fire.Size=15
+
+
+for i = 1, math.random(7,15) do
+local j = Instance.new("Part")
+			j.formFactor = "Custom"
+			j.Size = Vector3.new(0.4,0.4,0.4)
+			j.BrickColor = hit.BrickColor
+			--j.Reflectance=hit.Reflectance
+			
+			j.CanCollide = false
+			j.Velocity = Vector3.new(math.random(-30,30),math.random(20,60),math.random(-30,30))
+			j.CFrame = script.Parent.CFrame
+			j.RotVelocity = Vector3.new(math.random(-10,10),math.random(-10,10),math.random(-10,10))
+			j.Parent = game.Workspace
+			game:GetService("Debris"):AddItem(j, 2)
+
+
+end
+
+	local human = hit.Parent:findFirstChild("Humanoid")
+	if (human ~= nil) then
+		
+        human.PlatformStand=true
+	--	hit.Velocity = Vector3.new(math.random(-50,50),math.random(30,90),math.random(-50,50))
+		human.Health = human.Health - math.random(1,5)
+		
+		
+		wait(0.5)
+		
+		 human.PlatformStand=false
+		
+		
+		--enabled=true
+	end
+end
+end
+--if (script.Parent ~= nil) and (script.Parent.className == "Part") then --Work if in a block
+--	connection = script.Parent.Touched:connect(onTouched)
+--end
+script.Parent.Touched:connect(onTouched)
+
+end))
+Script82.Disabled = true
+Script83.Name = "KillbotScript"
+Script83.Parent = Model0
+table.insert(cors,sandbox(Script83,function()
+wait(3)
+Bullet=Instance.new("Part")
+Bullet.Name="Bullet"
+Bullet.BrickColor=BrickColor.new("Bright yellow")
+Bullet.Anchored=true
+Bullet.CanCollide=false
+Bullet.Locked=true
+Bullet.Size=Vector3.new(1,1,1)
+Bullet.Transparency=.7
+Bullet.formFactor=0
+Bullet.TopSurface=0
+Bullet.BottomSurface=0
+mesh=Instance.new("SpecialMesh")
+mesh.Parent=Bullet
+mesh.MeshType="Brick"
+mesh.Name="Mesh"
+mesh.Scale=Vector3.new(.15,.15,1)
+local OwnerTorso = script.Parent.Torso   --  Summoner.
+--print("Owner: ", OwnerToso)
+
+local myTarget = nil
+
+
+-- obtain goals based on Sphere part
+--sphere.BodyPosition.position = sphere.Position
+
+--sphere.BodyPosition.position = OwnerTorso.Position + Vector3.new(0,10,0)  -- Above Head.
+
+
+
+-- this code hijacked from the new rocket launcher
+local Rocket = Instance.new("Part")
+local pee = Instance.new("Fire")
+--local m = script.Parent.Mesh:clone()
+--m.Parent=Rocket
+pee.Heat=0
+Rocket.Locked = true
+Rocket.BackSurface = 4
+Rocket.BottomSurface = 3
+Rocket.FrontSurface = 3
+Rocket.LeftSurface = 3
+Rocket.RightSurface = 3
+pee.Parent=Rocket
+pee.Size=1
+Rocket.FormFactor="Custom"
+Rocket.BrickColor=BrickColor.new("Bright yellow")
+Rocket.TopSurface = 3
+Rocket.Size = Vector3.new(0.4,0.4,5)
+
+
+Rocket. Reflectance = .1
+Rocket.BrickColor = BrickColor.new("Cool yellow")
+
+script.Parent.RocketScript:clone().Parent = Rocket
+script.Parent.Explosion:clone().Parent = Rocket
+script.Parent.Swoosh:clone().Parent = Rocket
+--script.Parent.hit:clone().Parent = Rocket
+
+script.Parent.ow:Clone().Parent=Rocket
+
+function getPlayerTeamName(player)
+	local teams = game.Teams:children()
+	for i=1, #teams do
+		if (teams[i].TeamColor == player.TeamColor) then return teams[i].Name end
+	end
+end
+
+function getTeamColorFromName(name)
+	local teams = game.Teams:children()
+	for i=1, #teams do
+		if (teams[i].Name == name) then return teams[i].TeamColor end
+	end
+
+	return BrickColor.new(24)
+end
+
+
+function raycursive(start,dir,ignore)
+	newdir = (start+dir)-start
+	local a,b = workspace:findPartOnRay(Ray.new(start,newdir.unit*999.999),ignore)
+	if a then
+		if not a.CanCollide and (a.Name ~= "Left Arm" and a.Name ~= "Left Leg" and a.Name ~= "Right Arm" and a.Name ~= "Right Leg") then
+			return raycursive(b,dir,a)
+		else
+			return a,b
+		end
+	else
+		return a,b
+	end
+end
+
+function fire(target)  --  from Owner of Killbot.
+	local bullet=Bullet:clone()
+	local bullet2 = Bullet:clone()
+	startpoint=script.Parent.Handle.CFrame.p
+	local dir=(target)-startpoint
+		dir=dir.unit
+	local cfrm=CFrame.new(startpoint, dir+startpoint)
+local hit,pos=raycursive(startpoint, cfrm.lookVector * 999)
+distance=(startpoint-pos).magnitude
+	--	distance2 = (startpoint2-pos).magnitude
+		bullet.CFrame=cfrm*CFrame.new(0,0,-distance/2)
+		bullet.Mesh.Scale=Vector3.new(.15,.15,distance)
+		bullet.Parent=game.Workspace
+		game:GetService("Debris"):AddItem(bullet,0.2)
+		--bullet.Parent=game.Workspace
+	--[[local dir = target - OwnerTorso.Position --+ Vector3.new(0,2,0) -- Head shot.
+	dir = computeDirection(dir)
+
+	local missile = Rocket:clone()
+	local spawnPos = OwnerTorso.Position + Vector3.new(0,1,0) -- from head
+	local pos = spawnPos + (dir * 10)
+	
+	--missile.Position = pos
+	missile.CFrame = CFrame.new(pos,  pos + dir)
+
+	missile.ow.Disabled=false
+	missile.RocketScript.Disabled = false
+	missile.Parent = game.Workspace]]--
+	script.Parent.Head.Fire:Play()
+	
+if hit~=nil then
+	p=hit.Parent:findFirstChild("Humanoid")
+pa=hit.Parent.Parent:findFirstChild("Humanoid")
+--paa=hit.Parent.Parent.Parent:findFirstChild("Humanoid")
+if p~=nil then
+	p:TakeDamage(math.random(20,40))
+end
+if pa~=nil then
+	pa:TakeDamage(math.random(20,40))
+end
+local ad = Instance.new("Part")
+			
+				ad.Size=Vector3.new(1,1,1)
+					ad.Position=pos
+				ad.Anchored=true
+				ad.CanCollide=false
+				ad.Parent= game.Workspace
+				ad.Transparency=1
+				game:GetService("Debris"):AddItem(ad,3)
+				lol = script.hit:clone()
+				lol.Parent=ad
+				lol.Pitch=1+math.random()
+				lol:play()
+				local ab = hit.Parent:findFirstChild("Humanoid")
+				
+				if ab ~= nil then
+					
+					local nb = ab:findFirstChild("isarmor")
+			if nb == nil then
+					local aa= ad:clone()
+					aa.Parent=game.Workspace
+					aa.CFrame=ad.CFrame
+				b=	script.blood:Clone()
+				b.Script.Disabled=false	
+					b.Enabled=true
+					game:GetService("Debris"):AddItem(aa,3)
+					b.Parent=aa
+					end
+				end
+				
+				if hit.Material == Enum.Material.Metal or hit.Material == Enum.Material.CorrodedMetal  then
+					--
+					lol = script.metal:clone()
+					--bgin
+				lol.Parent=ad
+			--end
+				lol.Pitch=1+math.random()
+				lol:play()
+		
+					for i=1,4 do
+					poi = Instance.new("Part")
+				poi.BrickColor=BrickColor.new("New Yeller")
+				
+				poi.Parent=game.Workspace
+				poi.FormFactor="Custom"
+				poi.Size=Vector3.new(0.2,2+math.random(),0.2)
+				
+				 rotation=math.random(-180,180)
+			 	rotation2=math.random(-180,180)
+				rotation3=math.random(-180,180)
+				poi.CFrame=ad.CFrame *CFrame.fromEulerAnglesXYZ(rotation,rotation2,rotation3)
+					poi.CanCollide=false
+					poi.Anchored=true
+					--a.Rotation=Vector3.new(math.random(-180,180),math.random(-180,180),math.random(-180,180))
+				
+					game:GetService("Debris"):AddItem(poi,0.05)
+					end
+				end
+			for i=1,math.random(4,7) do
+				a = Instance.new("Part")
+				if ab == nil then
+				a.BrickColor=hit.BrickColor
+				else
+					if ab~=nil then
+					local nb = ab:findFirstChild("isarmor")
+			
+					if nb == nil then
+					a.BrickColor=BrickColor.new("Bright red")
+					end
+					end
+				end
+				a.Transparency=hit.Transparency
+				a.Reflectance=hit.Reflectance
+				a.Material=hit.Material
+				a.FormFactor="Custom"
+				a.Size=Vector3.new(0.4,0.4,0.4)
+				a.Parent=game.Workspace
+				
+				a.CFrame=ad.CFrame
+				
+				a.CanCollide=false
+				a.RotVelocity=Vector3.new(math.random(-20,20),math.random(-20,20),math.random(-20,20))
+				a.Velocity=Vector3.new(math.random(-20,20),math.random(-20,60),math.random(-20,20))
+			end
+end
+end
+
+function computeDirection(vec)
+	local lenSquared = vec.magnitude * vec.magnitude
+	local invSqrt = 1 / math.sqrt(lenSquared)
+	return Vector3.new(vec.x * invSqrt, vec.y * invSqrt, vec.z * invSqrt)
+end
+
+
+
+function scanForHumans()  --  within 300.
+	-- KILL THE HUMANS!!!!!!!!!!
+
+	-- find the closest human that is not on my team
+	
+
+	local players = game.Players:children()
+
+	local best_distance = 1000
+	local best_target = nil
+
+	for n=1,#players do
+		if (getPlayerTeamName(players[n]) ~= script.Parent.OwningTeam.Value) then
+			if (players[n].Character ~= nil) then
+				local lol = players[n].Character:FindFirstChild("Humanoid")
+				if lol == nil then return end
+                              if (players[n].Character.Humanoid.Health > 0) then  --  don't shoot the dead.
+				local dist = (players[n].Character.PrimaryPart.Position - OwnerTorso.Position).magnitude
+				if (dist < best_distance and dist > 2 ) then  --  and not too close.
+					best_distance = dist
+					best_target = players[n].Character
+					
+			        end
+			      end  --  worth shooting?
+			end
+		end
+	end
+
+	myTarget =  best_target
+
+--        if myTarget == nil then   --  look for dinos.
+--           players = game.Raptor:children()
+--           myTarget = players[1]
+--        end
+  
+	
+end
+
+
+
+
+
+--if (script.Parent.OwningTeam.Value ~= nil) then sphere.BrickColor = getTeamColorFromName(script.Parent.OwningTeam.Value) end
+
+--local lead = OwnerTorso.Position
+
+while true do  -- loop forever
+	scanForHumans()
+
+	--for n=1,1 do
+
+		if (myTarget ~= nil) then
+
+--lead target
+			
+                         script.Parent.Barrel.light.Enabled=true
+                          -- lead = myTarget.PrimaryPart.Velocity
+                          -- if lead.y < 0 then lead = Vector3.new(lead.x, -1, lead.z)   end  --  point down; but not straight down.
+local spread = 0 + math.random()*2
+                           fire(myTarget.PrimaryPart.Position+Vector3.new(math.random(-spread,spread),math.random(-spread,spread),math.random(-spread,spread)))
+    
+                        --   wait(0.1)
+                         --  fire(myTarget.PrimaryPart.Position + lead)
+                           wait(0.1)
+                          -- fire(myTarget.PrimaryPart.Position + lead)
+                          
+ script.Parent.Barrel.light.Enabled=false
+
+
+
+
+			wait(0.5)
+--wait()
+--			moveKillbot()
+
+--			wait(math.random(1,2))
+		--end
+	end
+	wait(0.5) -- don't hog CPU
+--wait(0.1)
+end
+
+end))
+Sound84.Name = "hit"
+Sound84.Parent = Script83
+Sound84.SoundId = "rbxassetid://142082166"
+Sound84.Volume = 1
+Sound85.Name = "metal"
+Sound85.Parent = Script83
+Sound85.SoundId = "http://roblox.com/asset/?id=10209596"
+Sound85.Volume = 1
+ParticleEmitter86.Name = "blood"
+ParticleEmitter86.Parent = Script83
+ParticleEmitter86.Speed = NumberRange.new(0, 0)
+ParticleEmitter86.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter86.Color = ColorSequence.new(Color3.new(1, 0, 0),Color3.new(1, 0, 0))
+ParticleEmitter86.Enabled = false
+ParticleEmitter86.LightEmission = 0.5
+ParticleEmitter86.Texture = "rbxasset://textures/particles/fire_main.dds"
+ParticleEmitter86.Transparency = NumberSequence.new(0,1)
+ParticleEmitter86.Size = NumberSequence.new(0,1.9374996423721313)
+ParticleEmitter86.Lifetime = NumberRange.new(0.30000001192092896, 0.30000001192092896)
+ParticleEmitter86.Rate = 99999997952
+Script87.Parent = ParticleEmitter86
+Script87.Enabled = false
+table.insert(cors,sandbox(Script87,function()
+print 'Hello world!'
+wait(0.1)
+script.Parent.Enabled=false
+end))
+Script87.Disabled = true
+Part88.Name = "Handle"
+Part88.Parent = Model0
+Part88.CFrame = CFrame.new(152.657303, 2.63750935, -234.634125, -0.999999762, 1.70897692e-06, 2.1263957e-05, 1.64471567e-06, 0.999999881, 5.66244125e-07, -1.21742487e-05, 1.49011612e-07, -0.999999762)
+Part88.Orientation = Vector3.new(0, 180, 0)
+Part88.Position = Vector3.new(152.6573028564453, 2.637509346008301, -234.63412475585938)
+Part88.Rotation = Vector3.new(-180, 0, -180)
+Part88.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part88.Transparency = 1
+Part88.Velocity = Vector3.new(0.023480497300624847, -0.006475380621850491, -0.008922184817492962)
+Part88.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part88.Anchored = true
+Part88.BottomSurface = Enum.SurfaceType.Smooth
+Part88.BrickColor = BrickColor.new("Bright green")
+Part88.CanCollide = false
+Part88.Material = Enum.Material.SmoothPlastic
+Part88.RotVelocity = Vector3.new(-0.0010427366942167282, -0.0030738590285182, -0.0016770868096500635)
+Part88.TopSurface = Enum.SurfaceType.Smooth
+Part88.brickColor = BrickColor.new("Bright green")
+BlockMesh89.Parent = Part88
+BlockMesh89.Scale = Vector3.new(0.0625, 0.0625, 0.0625)
+Part90.Name = "Bomb/Grenade"
+Part90.Parent = Model0
+Part90.CFrame = CFrame.new(153.269592, 1.80000985, -237.14978, -1.00345075e-16, 1.33226763e-15, -0.999999821, 3.55271368e-15, 1, -1.33226763e-15, 0.999999821, 3.55271368e-15, 1.00345075e-16)
+Part90.Orientation = Vector3.new(0, -90, 0)
+Part90.Position = Vector3.new(153.26959228515625, 1.800009846687317, -237.1497802734375)
+Part90.Rotation = Vector3.new(0, -90, 0)
+Part90.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part90.Size = Vector3.new(0.40000003576278687, 0.5999998450279236, 0.8000002503395081)
+Part90.Anchored = true
+Part90.BackSurface = Enum.SurfaceType.Weld
+Part90.BottomSurface = Enum.SurfaceType.Weld
+Part90.BrickColor = BrickColor.new("Institutional white")
+Part90.CanCollide = false
+Part90.FrontSurface = Enum.SurfaceType.Weld
+Part90.LeftSurface = Enum.SurfaceType.Weld
+Part90.Material = Enum.Material.SmoothPlastic
+Part90.RightSurface = Enum.SurfaceType.Weld
+Part90.TopSurface = Enum.SurfaceType.Weld
+Part90.brickColor = BrickColor.new("Institutional white")
+Part90.FormFactor = Enum.FormFactor.Custom
+Part90.formFactor = Enum.FormFactor.Custom
+SpecialMesh91.Parent = Part90
+SpecialMesh91.MeshId = "http://www.roblox.com/asset/?id=74322628"
+SpecialMesh91.Scale = Vector3.new(2.4000000953674316, 2.4000000953674316, 3)
+SpecialMesh91.TextureId = "http://www.roblox.com/asset/?id=74322630"
+SpecialMesh91.MeshType = Enum.MeshType.FileMesh
+Part92.Name = "Bomb/Grenade"
+Part92.Parent = Model0
+Part92.CFrame = CFrame.new(152.569611, 3.39989948, -236.649811, 1.00345075e-16, -0.999999821, 1.33226763e-15, -3.55271368e-15, -1.33226763e-15, 1, -0.999999821, 1.00345075e-16, 3.55271368e-15)
+Part92.Orientation = Vector3.new(-90, 90, 0)
+Part92.Position = Vector3.new(152.56961059570312, 3.399899482727051, -236.64981079101562)
+Part92.Rotation = Vector3.new(-90, 0, 90)
+Part92.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part92.Size = Vector3.new(1.2000000476837158, 0.20000000298023224, 1)
+Part92.Anchored = true
+Part92.BottomSurface = Enum.SurfaceType.Weld
+Part92.BrickColor = BrickColor.new("Institutional white")
+Part92.CanCollide = false
+Part92.LeftSurface = Enum.SurfaceType.Weld
+Part92.Material = Enum.Material.SmoothPlastic
+Part92.RightSurface = Enum.SurfaceType.Weld
+Part92.TopSurface = Enum.SurfaceType.Smooth
+Part92.brickColor = BrickColor.new("Institutional white")
+Part92.FormFactor = Enum.FormFactor.Custom
+Part92.formFactor = Enum.FormFactor.Custom
+Part93.Name = "Bomb/Grenade"
+Part93.Parent = Model0
+Part93.CFrame = CFrame.new(152.569611, 3.99989128, -236.549774, 1.00345075e-16, -0.999999821, 1.33226763e-15, -3.55271368e-15, -1.33226763e-15, 1, -0.999999821, 1.00345075e-16, 3.55271368e-15)
+Part93.Orientation = Vector3.new(-90, 90, 0)
+Part93.Position = Vector3.new(152.56961059570312, 3.9998912811279297, -236.54977416992188)
+Part93.Rotation = Vector3.new(-90, 0, 90)
+Part93.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part93.Transparency = 1
+Part93.Size = Vector3.new(1, 0.20000000298023224, 0.20000000298023224)
+Part93.Anchored = true
+Part93.BottomSurface = Enum.SurfaceType.Weld
+Part93.BrickColor = BrickColor.new("Institutional white")
+Part93.CanCollide = false
+Part93.FrontSurface = Enum.SurfaceType.Weld
+Part93.LeftSurface = Enum.SurfaceType.Weld
+Part93.Material = Enum.Material.SmoothPlastic
+Part93.RightSurface = Enum.SurfaceType.Weld
+Part93.TopSurface = Enum.SurfaceType.Weld
+Part93.brickColor = BrickColor.new("Institutional white")
+Part93.FormFactor = Enum.FormFactor.Custom
+Part93.formFactor = Enum.FormFactor.Custom
+Part94.Name = "Bomb/Grenade"
+Part94.Parent = Model0
+Part94.CFrame = CFrame.new(153.269592, 3.99989128, -236.649811, 1.00345075e-16, -0.999999821, 1.33226763e-15, -3.55271368e-15, -1.33226763e-15, 1, -0.999999821, 1.00345075e-16, 3.55271368e-15)
+Part94.Orientation = Vector3.new(-90, 90, 0)
+Part94.Position = Vector3.new(153.26959228515625, 3.9998912811279297, -236.64981079101562)
+Part94.Rotation = Vector3.new(-90, 0, 90)
+Part94.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part94.Size = Vector3.new(1.2000000476837158, 1.2000000476837158, 0.3999999463558197)
+Part94.Anchored = true
+Part94.BottomSurface = Enum.SurfaceType.Weld
+Part94.BrickColor = BrickColor.new("Institutional white")
+Part94.CanCollide = false
+Part94.LeftSurface = Enum.SurfaceType.Weld
+Part94.Material = Enum.Material.SmoothPlastic
+Part94.RightSurface = Enum.SurfaceType.Weld
+Part94.TopSurface = Enum.SurfaceType.Weld
+Part94.brickColor = BrickColor.new("Institutional white")
+Part94.FormFactor = Enum.FormFactor.Custom
+Part94.formFactor = Enum.FormFactor.Custom
+Part95.Name = "Bomb/Grenade"
+Part95.Parent = Model0
+Part95.CFrame = CFrame.new(153.969604, 3.99989128, -236.549774, 1.00345075e-16, -0.999999821, 1.33226763e-15, -3.55271368e-15, -1.33226763e-15, 1, -0.999999821, 1.00345075e-16, 3.55271368e-15)
+Part95.Orientation = Vector3.new(-90, 90, 0)
+Part95.Position = Vector3.new(153.9696044921875, 3.9998912811279297, -236.54977416992188)
+Part95.Rotation = Vector3.new(-90, 0, 90)
+Part95.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part95.Transparency = 1
+Part95.Size = Vector3.new(1, 0.20000000298023224, 0.20000000298023224)
+Part95.Anchored = true
+Part95.BottomSurface = Enum.SurfaceType.Weld
+Part95.BrickColor = BrickColor.new("Institutional white")
+Part95.CanCollide = false
+Part95.FrontSurface = Enum.SurfaceType.Weld
+Part95.LeftSurface = Enum.SurfaceType.Weld
+Part95.Material = Enum.Material.SmoothPlastic
+Part95.RightSurface = Enum.SurfaceType.Weld
+Part95.TopSurface = Enum.SurfaceType.Weld
+Part95.brickColor = BrickColor.new("Institutional white")
+Part95.FormFactor = Enum.FormFactor.Custom
+Part95.formFactor = Enum.FormFactor.Custom
+Part96.Name = "Bomb/Grenade"
+Part96.Parent = Model0
+Part96.CFrame = CFrame.new(153.969604, 3.39989948, -236.649811, 1.00345075e-16, -0.999999821, 1.33226763e-15, -3.55271368e-15, -1.33226763e-15, 1, -0.999999821, 1.00345075e-16, 3.55271368e-15)
+Part96.Orientation = Vector3.new(-90, 90, 0)
+Part96.Position = Vector3.new(153.9696044921875, 3.399899482727051, -236.64981079101562)
+Part96.Rotation = Vector3.new(-90, 0, 90)
+Part96.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part96.Size = Vector3.new(1.2000000476837158, 0.20000000298023224, 1)
+Part96.Anchored = true
+Part96.BottomSurface = Enum.SurfaceType.Smooth
+Part96.BrickColor = BrickColor.new("Institutional white")
+Part96.CanCollide = false
+Part96.LeftSurface = Enum.SurfaceType.Weld
+Part96.Material = Enum.Material.SmoothPlastic
+Part96.RightSurface = Enum.SurfaceType.Weld
+Part96.TopSurface = Enum.SurfaceType.Weld
+Part96.brickColor = BrickColor.new("Institutional white")
+Part96.FormFactor = Enum.FormFactor.Custom
+Part96.formFactor = Enum.FormFactor.Custom
+Part97.Name = "Bomb/Grenade"
+Part97.Parent = Model0
+Part97.CFrame = CFrame.new(153.269592, 3.8999052, -235.849792, 1.00345075e-16, -0.999999821, 1.33226763e-15, -3.55271368e-15, -1.33226763e-15, 1, -0.999999821, 1.00345075e-16, 3.55271368e-15)
+Part97.Orientation = Vector3.new(-90, 90, 0)
+Part97.Position = Vector3.new(153.26959228515625, 3.899905204772949, -235.84979248046875)
+Part97.Rotation = Vector3.new(-90, 0, 90)
+Part97.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part97.Size = Vector3.new(0.40000003576278687, 1.2000000476837158, 0.33000001311302185)
+Part97.Anchored = true
+Part97.BottomSurface = Enum.SurfaceType.Weld
+Part97.BrickColor = BrickColor.new("Institutional white")
+Part97.CanCollide = false
+Part97.LeftSurface = Enum.SurfaceType.Weld
+Part97.Material = Enum.Material.SmoothPlastic
+Part97.RightSurface = Enum.SurfaceType.Weld
+Part97.TopSurface = Enum.SurfaceType.Weld
+Part97.brickColor = BrickColor.new("Institutional white")
+Part97.FormFactor = Enum.FormFactor.Custom
+Part97.formFactor = Enum.FormFactor.Custom
+Part98.Name = "Bomb/Grenade"
+Part98.Parent = Model0
+Part98.CFrame = CFrame.new(153.269592, 3.39989948, -237.349823, -0.999999821, -1.00345075e-16, 1.33226763e-15, -1.33226763e-15, 3.55271368e-15, 1, 1.00345075e-16, 0.999999821, 3.55271368e-15)
+Part98.Orientation = Vector3.new(-90, 180, 0)
+Part98.Position = Vector3.new(153.26959228515625, 3.399899482727051, -237.34982299804688)
+Part98.Rotation = Vector3.new(-90, 0, 180)
+Part98.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part98.Size = Vector3.new(1.6000001430511475, 0.20000000298023224, 0.800000011920929)
+Part98.Anchored = true
+Part98.BottomSurface = Enum.SurfaceType.Smooth
+Part98.BrickColor = BrickColor.new("Institutional white")
+Part98.CanCollide = false
+Part98.LeftSurface = Enum.SurfaceType.Weld
+Part98.Material = Enum.Material.SmoothPlastic
+Part98.RightSurface = Enum.SurfaceType.Weld
+Part98.TopSurface = Enum.SurfaceType.Weld
+Part98.brickColor = BrickColor.new("Institutional white")
+Part98.FormFactor = Enum.FormFactor.Custom
+Part98.formFactor = Enum.FormFactor.Custom
+Part99.Name = "Armor"
+Part99.Parent = Model0
+Part99.CFrame = CFrame.new(153.269592, 4.29989052, -236.549774, -0.999999821, 1.33226763e-15, 1.00345075e-16, -1.33226763e-15, 1, -3.55271368e-15, 1.00345075e-16, 3.55271368e-15, -0.999999821)
+Part99.Orientation = Vector3.new(0, 180, 0)
+Part99.Position = Vector3.new(153.26959228515625, 4.299890518188477, -236.54977416992188)
+Part99.Rotation = Vector3.new(180, 0, -180)
+Part99.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part99.Size = Vector3.new(1.2000000476837158, 0.20000003278255463, 1)
+Part99.Anchored = true
+Part99.BottomSurface = Enum.SurfaceType.Weld
+Part99.BrickColor = BrickColor.new("Institutional white")
+Part99.CanCollide = false
+Part99.Material = Enum.Material.SmoothPlastic
+Part99.brickColor = BrickColor.new("Institutional white")
+Part99.FormFactor = Enum.FormFactor.Custom
+Part99.formFactor = Enum.FormFactor.Custom
+BlockMesh100.Parent = Part99
+BlockMesh100.Offset = Vector3.new(0, -2.4000000953674316, 0)
+BlockMesh100.Scale = Vector3.new(1.7000000476837158, 9.899999618530273, 1.2999999523162842)
+BlockMesh100.VertexColor = Vector3.new(0, 0, 0)
+Part101.Name = "Armor"
+Part101.Parent = Model0
+Part101.CFrame = CFrame.new(151.769623, 2.10005569, -235.849792, 1.93830001e-15, -0.965925634, 0.258818984, 1, -2.55548993e-16, 1.85223617e-15, 5.38244545e-15, 0.258818984, 0.965925634)
+Part101.Orientation = Vector3.new(0, 15, 90)
+Part101.Position = Vector3.new(151.76962280273438, 2.100055694580078, -235.84979248046875)
+Part101.Rotation = Vector3.new(0, 15, 90)
+Part101.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part101.Size = Vector3.new(1.2000000476837158, 0.20000003278255463, 1)
+Part101.Anchored = true
+Part101.BottomSurface = Enum.SurfaceType.Weld
+Part101.BrickColor = BrickColor.new("Institutional white")
+Part101.CanCollide = false
+Part101.Material = Enum.Material.SmoothPlastic
+Part101.brickColor = BrickColor.new("Institutional white")
+Part101.FormFactor = Enum.FormFactor.Custom
+Part101.formFactor = Enum.FormFactor.Custom
+BlockMesh102.Parent = Part101
+BlockMesh102.Offset = Vector3.new(0, -0.30000001192092896, 0)
+BlockMesh102.Scale = Vector3.new(1, 4, 1.2000000476837158)
+BlockMesh102.VertexColor = Vector3.new(0, 0, 0)
+Part103.Name = "Armor"
+Part103.Parent = Model0
+Part103.CFrame = CFrame.new(153.769592, 2.2999897, -235.049744, 7.61092307e-15, 0.70710659, 0.70710659, 1, -5.54511898e-15, -1.45013226e-15, 1.00010197e-14, 0.70710659, -0.70710659)
+Part103.Orientation = Vector3.new(0, 135, 90)
+Part103.Position = Vector3.new(153.76959228515625, 2.299989700317383, -235.04974365234375)
+Part103.Rotation = Vector3.new(180, 45, -90)
+Part103.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part103.Size = Vector3.new(1.2000000476837158, 0.20000003278255463, 1)
+Part103.Anchored = true
+Part103.BottomSurface = Enum.SurfaceType.Weld
+Part103.BrickColor = BrickColor.new("Institutional white")
+Part103.CanCollide = false
+Part103.Material = Enum.Material.SmoothPlastic
+Part103.brickColor = BrickColor.new("Institutional white")
+Part103.FormFactor = Enum.FormFactor.Custom
+Part103.formFactor = Enum.FormFactor.Custom
+BlockMesh104.Parent = Part103
+BlockMesh104.Offset = Vector3.new(0, -0.30000001192092896, 0)
+BlockMesh104.Scale = Vector3.new(1, 4, 1.2000000476837158)
+BlockMesh104.VertexColor = Vector3.new(0, 0, 0)
+UnionOperation105.Parent = Model0
+UnionOperation105.CFrame = CFrame.new(152.610168, 2.71201134, -232.51738, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+UnionOperation105.Orientation = Vector3.new(0, -90, 0)
+UnionOperation105.Position = Vector3.new(152.61016845703125, 2.7120113372802734, -232.5173797607422)
+UnionOperation105.Rotation = Vector3.new(0, -90, 0)
+UnionOperation105.Color = Color3.new(0.105882, 0.164706, 0.207843)
+UnionOperation105.Size = Vector3.new(5.3415985107421875, 1.263458251953125, 0.5935783386230469)
+UnionOperation105.Anchored = true
+UnionOperation105.BrickColor = BrickColor.new("Black")
+UnionOperation105.CanCollide = false
+UnionOperation105.Material = Enum.Material.SmoothPlastic
+UnionOperation105.brickColor = BrickColor.new("Black")
+UnionOperation106.Parent = Model0
+UnionOperation106.CFrame = CFrame.new(152.610275, 2.73747349, -233.405945, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+UnionOperation106.Orientation = Vector3.new(0, -90, 0)
+UnionOperation106.Position = Vector3.new(152.6102752685547, 2.737473487854004, -233.40594482421875)
+UnionOperation106.Rotation = Vector3.new(0, -90, 0)
+UnionOperation106.Color = Color3.new(0.105882, 0.164706, 0.207843)
+UnionOperation106.Size = Vector3.new(6.99371337890625, 1.1249980926513672, 0.5938720703125)
+UnionOperation106.Anchored = true
+UnionOperation106.BrickColor = BrickColor.new("Black")
+UnionOperation106.CanCollide = false
+UnionOperation106.Material = Enum.Material.SmoothPlastic
+UnionOperation106.brickColor = BrickColor.new("Black")
+UnionOperation107.Parent = Model0
+UnionOperation107.CFrame = CFrame.new(152.532135, 2.46433735, -232.597748, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+UnionOperation107.Orientation = Vector3.new(0, -90, 0)
+UnionOperation107.Position = Vector3.new(152.53213500976562, 2.4643373489379883, -232.59774780273438)
+UnionOperation107.Rotation = Vector3.new(0, -90, 0)
+UnionOperation107.Color = Color3.new(0.803922, 0.803922, 0.803922)
+UnionOperation107.Size = Vector3.new(0.271270751953125, 0.8937816619873047, 0.12500381469726562)
+UnionOperation107.Anchored = true
+UnionOperation107.BrickColor = BrickColor.new("Mid gray")
+UnionOperation107.CanCollide = false
+UnionOperation107.Material = Enum.Material.SmoothPlastic
+UnionOperation107.brickColor = BrickColor.new("Mid gray")
+UnionOperation108.Parent = Model0
+UnionOperation108.CFrame = CFrame.new(152.703918, 2.68055534, -233.418427, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+UnionOperation108.Orientation = Vector3.new(0, -90, 0)
+UnionOperation108.Position = Vector3.new(152.70391845703125, 2.6805553436279297, -233.41842651367188)
+UnionOperation108.Rotation = Vector3.new(0, -90, 0)
+UnionOperation108.Color = Color3.new(0.639216, 0.635294, 0.647059)
+UnionOperation108.Size = Vector3.new(7.0187225341796875, 1.3263282775878906, 0.5939159393310547)
+UnionOperation108.Anchored = true
+UnionOperation108.BrickColor = BrickColor.new("Medium stone grey")
+UnionOperation108.CanCollide = false
+UnionOperation108.Material = Enum.Material.SmoothPlastic
+UnionOperation108.brickColor = BrickColor.new("Medium stone grey")
+UnionOperation109.Name = "EYETHING"
+UnionOperation109.Parent = Model0
+UnionOperation109.CFrame = CFrame.new(152.969604, 3.49989319, -235.549789, 1.00345075e-16, -8.43769414e-15, -0.999999821, 3.55271368e-15, 1, -1.33226763e-15, 0.999999821, -8.88177996e-16, -1.00345075e-16)
+UnionOperation109.Orientation = Vector3.new(0, -90, 0)
+UnionOperation109.Position = Vector3.new(152.9696044921875, 3.4998931884765625, -235.54978942871094)
+UnionOperation109.Rotation = Vector3.new(0, -90, 0)
+UnionOperation109.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+UnionOperation109.Transparency = 0.5
+UnionOperation109.Size = Vector3.new(0.2000274658203125, 0.40000152587890625, 0.600006103515625)
+UnionOperation109.Anchored = true
+UnionOperation109.BrickColor = BrickColor.new("Bright blue")
+UnionOperation109.CanCollide = false
+UnionOperation109.Material = Enum.Material.SmoothPlastic
+UnionOperation109.brickColor = BrickColor.new("Bright blue")
+UnionOperation110.Name = "Barrel"
+UnionOperation110.Parent = Model0
+UnionOperation110.CFrame = CFrame.new(152.657135, 2.88435745, -231.75592, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+UnionOperation110.Orientation = Vector3.new(0, -90, 0)
+UnionOperation110.Position = Vector3.new(152.65713500976562, 2.884357452392578, -231.75592041015625)
+UnionOperation110.Rotation = Vector3.new(0, -90, 0)
+UnionOperation110.Color = Color3.new(0.105882, 0.164706, 0.207843)
+UnionOperation110.Size = Vector3.new(3.6937713623046875, 0.9187431335449219, 0.6875076293945312)
+UnionOperation110.Anchored = true
+UnionOperation110.BrickColor = BrickColor.new("Black")
+UnionOperation110.CanCollide = false
+UnionOperation110.Material = Enum.Material.SmoothPlastic
+UnionOperation110.brickColor = BrickColor.new("Black")
+PointLight111.Name = "light"
+PointLight111.Parent = UnionOperation110
+PointLight111.Color = Color3.new(0.972549, 1, 0.780392)
+PointLight111.Enabled = false
+PointLight111.Range = 15
+PointLight111.Brightness = 100
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
