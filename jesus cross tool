@@ -1,0 +1,224 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Sound6 = Instance.new("Sound")
+Sound7 = Instance.new("Sound")
+Sound8 = Instance.new("Sound")
+Script9 = Instance.new("Script")
+Tool0.Name = "CROSS"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0, -0.800000012, -0.200000003, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Tool0.GripForward = Vector3.new(8.742277657347586e-08, -0, 1)
+Tool0.GripPos = Vector3.new(0, -0.800000011920929, -0.20000000298023224)
+Tool0.GripRight = Vector3.new(-1, 0, 8.742277657347586e-08)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-145.682312, 0.209991455, 40.3691711, 1, 0, -8.74227766e-08, 6.09830453e-09, 0.997564077, 0.0697564706, 8.72098127e-08, -0.0697564781, 0.997563958)
+Part1.Orientation = Vector3.new(-4, 0, 0)
+Part1.Position = Vector3.new(-145.68231201171875, 0.209991455078125, 40.369171142578125)
+Part1.Rotation = Vector3.new(-4, 0, 0)
+Part1.Color = Color3.new(0.411765, 0.25098, 0.156863)
+Part1.Size = Vector3.new(0.19999995827674866, 0.3999996781349182, 0.2999999523162842)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Reddish brown")
+Part1.Material = Enum.Material.Sand
+Part1.RotVelocity = Vector3.new(1, 1, 1)
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Reddish brown")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxassetid://6599243360"
+SpecialMesh2.Scale = Vector3.new(0.09999997913837433, 0.133333221077919, 0.1499999761581421)
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "sound"
+Sound3.Parent = Part1
+Sound3.SoundId = "rbxassetid://511340819"
+Sound3.Volume = 3
+Sound4.Name = "sound2"
+Sound4.Parent = Part1
+Sound4.SoundId = "rbxassetid://280667448"
+Sound4.Volume = 5
+Sound5.Name = "sound3"
+Sound5.Parent = Part1
+Sound5.SoundId = "rbxassetid://139100774"
+Sound5.Volume = 10
+Sound6.Name = "sound4"
+Sound6.Parent = Part1
+Sound6.SoundId = "rbxassetid://258057783"
+Sound6.Volume = 10
+Sound7.Name = "sound5"
+Sound7.Parent = Part1
+Sound7.SoundId = "rbxassetid://130932305"
+Sound7.Volume = 10
+Sound8.Name = "sound6"
+Sound8.Parent = Part1
+Sound8.TimePosition = 2
+Sound8.SoundId = "rbxassetid://906084456"
+Sound8.Volume = 10
+Script9.Parent = Tool0
+table.insert(cors,sandbox(Script9,function()
+local plr = owner
+local tool = Tool0
+local part = tool.Handle
+local slap = false
+local cd = false
+local sound = script.Parent.Handle:WaitForChild('sound')
+local sound2 = script.Parent.Handle:WaitForChild('sound2')
+local sound3 = script.Parent.Handle:WaitForChild('sound3')
+local sound4 = script.Parent.Handle:WaitForChild('sound4')
+local sound5 = script.Parent.Handle:WaitForChild('sound5')
+local sound6 = script.Parent.Handle:WaitForChild('sound6')
+
+local function firstHum(target)
+	for i,v in pairs(target:GetChildren()) do
+		if v:IsA("Humanoid") then
+			return v
+		end
+	end
+	return nil
+end
+
+script.Parent.Activated:Connect(function()
+	if slap == false then
+		slap = true
+		sound2:Play()
+		local str = Instance.new("StringValue")
+		str.Name = "toolanim"
+		str.Value = "Slash"
+		str.Parent = tool
+		wait(1)
+		slap = false
+	end
+end)
+
+part.Touched:Connect(function(hit)
+	if slap == true then
+		if cd == false then
+			if hit.Parent:IsA("Model") then
+				local fhum = firstHum(hit.Parent)
+				if fhum then
+					cd = true
+					fhum.PlatformStand = true
+					sound:Play()
+					local con1
+					con1 = game:GetService("RunService").Heartbeat:Connect(function()
+						fhum.PlatformStand = true
+					end)
+					wait(0.1)
+					local vel = Instance.new("BodyVelocity",hit)
+					vel.MaxForce = Vector3.new(10000000,10000000,10000000)
+					wait(1)
+					cd = false
+					vel:Destroy()
+					local vel2 = Instance.new("BodyVelocity",hit)
+					vel2.Velocity = Vector3.new(0,12.5,0)
+					vel2.MaxForce = Vector3.new(10000000,10000000,10000000)
+					local p2 = Instance.new("Part",hit)
+					p2.Anchored = true
+					p2.Transparency = 0.6
+					p2.CanCollide = false
+					p2.Size = Vector3.new(0.2,0.2,0.2)
+					p2.CFrame = CFrame.new(hit.CFrame.p) * CFrame.Angles(math.rad(0),math.rad(90),math.rad(0))
+					p2.BrickColor = BrickColor.new("Institutional white")
+					p2.Material = "Neon"
+					local m2 = Instance.new("CylinderMesh",p2)
+					m2.Scale = Vector3.new(60,10000,60)
+					local scln = sound3:Clone()
+					scln.Parent = hit
+					scln:Play()
+					local con2
+					con2 = game:GetService("RunService").Heartbeat:connect(function()
+						p2.CFrame = CFrame.new(hit.CFrame.p) * CFrame.Angles(math.rad(0),math.rad(90),math.rad(0))
+					end)
+					wait(7)
+					vel2.Velocity = Vector3.new(0,0,0)
+					wait(0.5)
+					scln:Stop()
+					local scln3 = sound5:Clone()
+					scln3.Parent = hit
+					scln3:Play()
+					wait(1)
+					local bav = Instance.new("BodyAngularVelocity",hit)
+					bav.AngularVelocity = Vector3.new(math.random(0,360),math.random(0,360),math.random(0,360))
+					vel2.Velocity = Vector3.new(0,-250,0)
+					p2.BrickColor = BrickColor.new("Really red")
+					local scln6 = sound6:Clone()
+					scln6.Parent = hit
+					scln6:Play()
+					local continue = false
+					local htc
+					htc = hit.Touched:connect(function(hitp)
+						if not hitp:IsDescendantOf(hit.Parent) then
+							continue = true
+							scln6:Stop()
+							vel2:Destroy()
+							con2:Disconnect()
+							con1:Disconnect()
+							htc:Disconnect()
+							p2:Destroy()
+						end
+					end)
+					repeat wait() until continue == true
+					local ctab = {}
+					for i=1,4 do
+						local p = Instance.new("Part",hit)
+						p.Size = Vector3.new(30,30,30)
+						p.Anchored = true
+						p.CanCollide = false
+						p.TopSurface = "Smooth"
+						p.BottomSurface = "Smooth"
+						p.Color = Color3.fromRGB(255,math.random(0,255),0)
+						p.CFrame = hit.CFrame
+						local con
+						con = game:GetService("RunService").Heartbeat:connect(function()
+							p.CFrame = p.CFrame * CFrame.Angles(math.rad(math.random(0,360)),math.rad(math.random(0,360)),math.rad(math.random(0,360)))
+							p.Transparency = p.Transparency + 0.01
+							if p.Transparency >= 1 then
+								con:Disconnect()
+							end
+						end)
+						table.insert(ctab,con)
+					end	
+					Instance.new("Explosion",workspace).Position = hit.Position
+					local scln2 = sound4:Clone()
+					scln2.Parent = hit
+					scln2:Play()
+					vel2:Destroy()
+					hit.Parent:BreakJoints()
+					repeat wait() until not hit:IsDescendantOf(workspace)
+					con2:Disconnect()
+				end
+			end
+		end
+	end
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
