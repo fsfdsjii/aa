@@ -1,0 +1,371 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Script1 = Instance.new("Script")
+Part2 = Instance.new("Part")
+Sound3 = Instance.new("Sound")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Part6 = Instance.new("Part")
+Script7 = Instance.new("Script")
+Motor6D8 = Instance.new("Motor6D")
+SurfaceGui9 = Instance.new("SurfaceGui")
+TextLabel10 = Instance.new("TextLabel")
+Tool0.Name = "Hamer"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0, 0, -1.5, 0, 0, -1, -1, 0, 0, 0, 1, 0)
+Tool0.GripForward = Vector3.new(1, -0, -0)
+Tool0.GripPos = Vector3.new(0, 0, -1.5)
+Tool0.GripRight = Vector3.new(0, -1, 0)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Tool0.ToolTip = "kick hamer"
+Script1.Name = "SwordScript"
+Script1.Parent = Tool0
+table.insert(cors,sandbox(Script1,function()
+--Rescripted by Luckymaxer
+--EUROCOW WAS HERE BECAUSE I MADE THE PARTICLES AND THEREFORE THIS ENTIRE SWORD PRETTY AND LOOK PRETTY WORDS AND I'D LIKE TO DEDICATE THIS TO MY FRIENDS AND HI LUCKYMAXER PLS FIX SFOTH SWORDS TY LOVE Y'ALl
+--Updated for R15 avatars by StarWars
+--Re-updated by TakeoHonorable
+
+local Tool = script.Parent
+local Handle = Tool:WaitForChild("Handle")
+
+local function Create(ty)
+	return function(data)
+		local obj = Instance.new(ty)
+		for k, v in pairs(data) do
+			if type(k) == 'number' then
+				v.Parent = obj
+			else
+				obj[k] = v
+			end
+		end
+		return obj
+	end
+end
+
+local BaseUrl = "rbxassetid://"
+
+local Players = game:GetService("Players")
+local Debris = game:GetService("Debris")
+local RunService = game:GetService("RunService")
+
+local DamageValues = {
+	BaseDamage = 0,
+	SlashDamage = 00,
+	LungeDamage = 0
+}
+
+--For R15 avatars
+local Animations = {
+	R15Slash = 522635514,
+	R15Lunge = 522638767
+}
+
+local Damage = DamageValues.BaseDamage
+
+local Grips = {
+	Up = CFrame.new(0, 0, -1.70000005, 0, 0, 1, 1, 0, 0, 0, 1, 0),
+	Out = CFrame.new(0, 0, -1.70000005, 0, 1, 0, 1, -0, 0, 0, 0, -1)
+}
+
+local Sounds = {
+	Slash = Handle:WaitForChild("SwordSlash"),
+	Lunge = Handle:WaitForChild("SwordLunge"),
+	Unsheath = Handle:WaitForChild("Unsheath")
+}
+
+local ToolEquipped = false
+
+--For Omega Rainbow Katana thumbnail to display a lot of particles.
+for i, v in pairs(Handle:GetChildren()) do
+	if v:IsA("ParticleEmitter") then
+		v.Rate = 20
+	end
+end
+
+Tool.Grip = Grips.Up
+Tool.Enabled = true
+
+local function IsTeamMate(Player1, Player2)
+	return (Player1 and Player2 and not Player1.Neutral and not Player2.Neutral and Player1.TeamColor == Player2.TeamColor)
+end
+
+local function TagHumanoid(humanoid, player)
+local Creator_Tag = Instance.new("ObjectValue")
+	Creator_Tag.Name = "creator"
+	Creator_Tag.Value = player
+	Debris:AddItem(Creator_Tag, 2)
+	Creator_Tag.Parent = humanoid
+end
+
+local function UntagHumanoid(humanoid)
+	for i, v in pairs(humanoid:GetChildren()) do
+		if v:IsA("ObjectValue") and v.Name == "creator" then
+			v:Destroy()
+		end
+	end
+end
+
+local function Blow(Hit)
+	if not Hit or not Hit.Parent or not CheckIfAlive() or not ToolEquipped then
+		return
+	end
+	local RightArm = Character:FindFirstChild("Right Arm") or Character:FindFirstChild("RightHand")
+	if not RightArm then
+		return
+	end
+	local RightGrip = RightArm:FindFirstChild("RightGrip")
+	if not RightGrip or (RightGrip.Part0 ~= Handle and RightGrip.Part1 ~= Handle) then
+		return
+	end
+	local character = Hit.Parent
+	if character == Character then
+		return
+	end
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+	if not humanoid or humanoid.Health == 0 then
+		return
+	end
+	local player = Players:GetPlayerFromCharacter(character)
+	if player and (player == Player or IsTeamMate(Player, player)) then
+		return
+	end
+	UntagHumanoid(humanoid)
+	TagHumanoid(humanoid, Player)
+	humanoid:TakeDamage(Damage)	
+end
+
+
+local function Attack()
+	Damage = DamageValues.SlashDamage
+	Sounds.Slash:Play()
+
+	if Humanoid then
+		if Humanoid.RigType == Enum.HumanoidRigType.R6 then
+			local Anim = Instance.new("StringValue")
+			Anim.Name = "toolanim"
+			Anim.Value = "Slash"
+			Anim.Parent = Tool
+		elseif Humanoid.RigType == Enum.HumanoidRigType.R15 then
+			local Anim = Tool:FindFirstChild("R15Slash")
+			if Anim then
+				local Track = Humanoid:LoadAnimation(Anim)
+				Track:Play(0)
+			end
+		end
+	end	
+end
+
+local function Lunge()
+	Damage = DamageValues.LungeDamage
+
+	Sounds.Lunge:Play()
+	
+	if Humanoid then
+		if Humanoid.RigType == Enum.HumanoidRigType.R6 then
+			local Anim = Instance.new("StringValue")
+			Anim.Name = "toolanim"
+			Anim.Value = "Lunge"
+			Anim.Parent = Tool
+		elseif Humanoid.RigType == Enum.HumanoidRigType.R15 then
+			local Anim = Tool:FindFirstChild("R15Lunge")
+			if Anim then
+				local Track = Humanoid:LoadAnimation(Anim)
+				Track:Play(0)
+			end
+		end
+	end	
+	--[[
+	if CheckIfAlive() then
+		local Force = Instance.new("BodyVelocity")
+		Force.velocity = Vector3.new(0, 10, 0) 
+		Force.maxForce = Vector3.new(0, 4000, 0)
+		Debris:AddItem(Force, 0.4)
+		Force.Parent = Torso
+	end
+	]]
+	
+	task.wait(0.2)
+	Tool.Grip = Grips.Out
+	task.wait(0.6)
+	Tool.Grip = Grips.Up
+
+	Damage = DamageValues.SlashDamage
+end
+
+Tool.Enabled = true
+local LastAttack = 0
+
+local function Activated()
+	if not Tool.Enabled or not ToolEquipped or not CheckIfAlive() then
+		return
+	end
+	Tool.Enabled = false
+	local Tick = RunService.Stepped:wait()
+	if (Tick - LastAttack < 0.2) then
+		Lunge()
+	else
+		Attack()
+	end
+	LastAttack = Tick
+	--wait(0.5)
+	Damage = DamageValues.BaseDamage
+	local SlashAnim = (Tool:FindFirstChild("R15Slash") or Create("Animation"){
+		Name = "R15Slash",
+		AnimationId = BaseUrl .. Animations.R15Slash,
+		Parent = Tool
+	})
+	
+	local LungeAnim = (Tool:FindFirstChild("R15Lunge") or Create("Animation"){
+		Name = "R15Lunge",
+		AnimationId = BaseUrl .. Animations.R15Lunge,
+		Parent = Tool
+	})
+	Tool.Enabled = true
+end
+
+function CheckIfAlive()
+	return (((Player and Player.Parent and Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Torso and Torso.Parent) and true) or false)
+end
+
+local function Equipped()
+	Character = owner.Character
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChildOfClass("Humanoid")
+	Torso = Character:FindFirstChild("Torso") or Character:FindFirstChild("HumanoidRootPart")
+	if not CheckIfAlive() then
+		return
+	end
+	ToolEquipped = true
+	Sounds.Unsheath:Play()
+end
+
+local function Unequipped()
+	Tool.Grip = Grips.Up
+	ToolEquipped = false
+end
+
+Tool.Activated:Connect(Activated)
+Tool.Equipped:Connect(Equipped)
+Tool.Unequipped:Connect(Unequipped)
+
+local Connection = Handle.Touched:Connect(Blow)
+end))
+Part2.Name = "Handle"
+Part2.Parent = Tool0
+Part2.CFrame = CFrame.new(-131.782135, 2.45696115, -17.6733341, 0.328132302, 0.44002071, 0.835889697, 0.371529907, 0.753454208, -0.542470396, -0.868501544, 0.488560736, 0.0837516636)
+Part2.Orientation = Vector3.new(32.849998474121094, 84.27999877929688, 26.25)
+Part2.Position = Vector3.new(-131.78213500976562, 2.456961154937744, -17.6733341217041)
+Part2.Rotation = Vector3.new(81.22000122070312, 56.709999084472656, -53.290000915527344)
+Part2.Color = Color3.new(0.415686, 0.223529, 0.0352941)
+Part2.Size = Vector3.new(0.6300000548362732, 5.699999809265137, 0.7100009322166443)
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.BrickColor = BrickColor.new("Burnt Sienna")
+Part2.CanCollide = false
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.brickColor = BrickColor.new("Burnt Sienna")
+Sound3.Name = "SwordSlash"
+Sound3.Parent = Part2
+Sound3.SoundId = "http://www.roblox.com/asset/?id=12222216"
+Sound3.Volume = 0
+Sound4.Name = "Unsheath"
+Sound4.Parent = Part2
+Sound4.SoundId = "http://www.roblox.com/asset/?id=12222225"
+Sound4.Volume = 0
+Sound5.Name = "SwordLunge"
+Sound5.Parent = Part2
+Sound5.SoundId = "http://www.roblox.com/asset/?id=12222208"
+Sound5.Volume = 0
+Part6.Parent = Part2
+Part6.CFrame = CFrame.new(-131.018112, 3.72379732, -16.8804321, -0.842261493, 0.440020472, 0.311412901, 0.53496033, 0.753453851, 0.382264316, -0.0664310381, 0.488560498, -0.869997799)
+Part6.Orientation = Vector3.new(-22.469999313354492, 160.30999755859375, 35.380001068115234)
+Part6.Position = Vector3.new(-131.0181121826172, 3.72379732131958, -16.88043212890625)
+Part6.Rotation = Vector3.new(-156.27999877929688, 18.139999389648438, -152.4199981689453)
+Part6.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part6.Size = Vector3.new(3.270000696182251, 1.660000205039978, 2)
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.BrickColor = BrickColor.new("Really black")
+Part6.CanCollide = false
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part6.brickColor = BrickColor.new("Really black")
+Script7.Parent = Part6
+table.insert(cors,sandbox(Script7,function()
+
+local function onTouched(hit)
+	local human = hit.Parent:findFirstChild("Humanoid")
+	if (human ~= nil) then
+
+local Model0 = Instance.new("Model")
+local Humanoid1 = Instance.new("Humanoid")
+local Parts2 = Instance.new("Part")
+		Model0.Name = "-50"
+		Model0.Parent = script
+		Humanoid1.Parent = Model0
+		Parts2.Name = "Head"
+		Parts2.Parent = Model0
+		Parts2.Position = Part2
+		Parts2.Color = Color3.new(1, 0, 0)
+		Parts2.Size = Vector3.new(0.4000000059604645, 0.10000000149011612, 0.4000000059604645)
+		Parts2.Anchored = true
+		Parts2.BottomSurface = Enum.SurfaceType.Smooth
+		Parts2.BrickColor = BrickColor.new("Really red")
+		Parts2.TopSurface = Enum.SurfaceType.Smooth
+		Parts2.brickColor = BrickColor.new("Really red")
+		task.wait(3)
+		Model0:Destroy()
+		human:TakeDamage(50)
+		
+	end
+end
+script.Parent.Touched:Connect(onTouched)
+end))
+Motor6D8.Name = "Handle"
+Motor6D8.Parent = Part6
+Motor6D8.C0 = CFrame.new(0.0184783936, -1.67806816, -0.032371521, -0.0199239925, -2.60770321e-08, -0.999801517, 2.98023224e-08, 1.00000048, -3.35276127e-08, 0.999801517, 0, -0.0199239925)
+Motor6D8.Part0 = Part6
+Motor6D8.Part1 = Part2
+Motor6D8.part1 = Part2
+SurfaceGui9.Parent = Part6
+SurfaceGui9.LightInfluence = 1
+SurfaceGui9.ClipsDescendants = true
+SurfaceGui9.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextLabel10.Parent = SurfaceGui9
+TextLabel10.Size = UDim2.new(0, 160, 0, 80)
+TextLabel10.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel10.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel10.BackgroundTransparency = 1
+TextLabel10.Font = Enum.Font.SourceSans
+TextLabel10.FontSize = Enum.FontSize.Size14
+TextLabel10.Text = "Ham"
+TextLabel10.TextColor = BrickColor.new("Really red")
+TextLabel10.TextColor3 = Color3.new(1, 0, 0)
+TextLabel10.TextScaled = true
+TextLabel10.TextSize = 14
+TextLabel10.TextWrap = true
+TextLabel10.TextWrapped = true
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
