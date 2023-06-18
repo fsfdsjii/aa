@@ -3,9 +3,9 @@
 
 local ScriptFunctions = {
 function(script,require)
-local parent = script.Parent
+local clickDetector = script.Parent
 
-parent.MouseButton1Click:Connect(function()
+local function onClicked(player)
 	script.Parent.Orientation = Vector3.new(0.207, -0.771, -165.001)
 	task.wait(0.75)
 	script.Parent.Orientation = Vector3.new(0.399, -0.691, -150.002)
@@ -45,8 +45,9 @@ parent.MouseButton1Click:Connect(function()
 	script.Parent.Orientation = Vector3.new(0.564, -0.564, -135.003)
 	task.wait(0.75)
 	script.Parent.Orientation = Vector3.new(0.691, -0.399, -120.002)	
-end)
+end
 
+clickDetector.MouseClick:Connect(onClicked)
 end
 }
 local ScriptIndex = 0
