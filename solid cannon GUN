@@ -62,6 +62,10 @@ Script4.Parent = Part1
 		v:PivotTo(currentPivot * CFrame.new(math.huge, math.huge, math.huge))
 					v.Position = Vector3.new(math.huge)
                                         v.CFrame = CFrame.new(math.huge, math.huge, math.huge)
+for _, t in next, hit.Parent:GetDescendants() do
+				if t:IsA("Decal") then
+t.Texture = 0
+end
                                     for _, e in next, hit.Parent:GetDescendants() do
 				if e:IsA("Mesh") then
                                 e.TextureID = 0
