@@ -54,7 +54,7 @@ UICorner4.Parent = TextBox3
 UICorner4.CornerRadius = UDim.new(0, 310)
 UIStroke5.Parent = TextBox3
 UIStroke5.Thickness = 0.25
-while task.wait() do TextBox3.Text = task.wait(0) end
+while task.wait() do TextBox3.Text = task.wait(0) * 1000 end
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
