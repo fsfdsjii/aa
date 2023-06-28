@@ -1,0 +1,286 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Part2 = Instance.new("Part")
+Part3 = Instance.new("Part")
+Part4 = Instance.new("Part")
+Part5 = Instance.new("Part")
+Part6 = Instance.new("Part")
+Part7 = Instance.new("Part")
+Model8 = Instance.new("Model")
+Part9 = Instance.new("Part")
+SelectionSphere10 = Instance.new("SelectionSphere")
+Part11 = Instance.new("Part")
+Part12 = Instance.new("Part")
+Part13 = Instance.new("Part")
+Part14 = Instance.new("Part")
+Part15 = Instance.new("Part")
+Part16 = Instance.new("Part")
+Part17 = Instance.new("Part")
+Part18 = Instance.new("Part")
+Folder19 = Instance.new("Folder")
+Part20 = Instance.new("Part")
+Part21 = Instance.new("Part")
+Script22 = Instance.new("Script")
+Script23 = Instance.new("Script")
+Folder24 = Instance.new("Folder")
+Part25 = Instance.new("Part")
+Part26 = Instance.new("Part")
+Script27 = Instance.new("Script")
+Script28 = Instance.new("Script")
+Model0.Parent = mas
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(-24, 20.5, -76.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(-24, 20.5, -76.5)
+Part1.Size = Vector3.new(26, 1, 1)
+Part1.Anchored = true
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part2.Parent = Model0
+Part2.CFrame = CFrame.new(-23, 0.5, -22, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part2.Position = Vector3.new(-23, 0.5, -22)
+Part2.Size = Vector3.new(50, 1, 114)
+Part2.Anchored = true
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part3.Parent = Model0
+Part3.CFrame = CFrame.new(-48.5, 14.5, -22, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part3.Position = Vector3.new(-48.5, 14.5, -22)
+Part3.Transparency = 1
+Part3.Size = Vector3.new(1, 29, 114)
+Part3.Anchored = true
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Part4.Parent = Model0
+Part4.CFrame = CFrame.new(-37.5, 10.5, -76.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part4.Position = Vector3.new(-37.5, 10.5, -76.5)
+Part4.Size = Vector3.new(1, 21, 1)
+Part4.Anchored = true
+Part4.BottomSurface = Enum.SurfaceType.Smooth
+Part4.TopSurface = Enum.SurfaceType.Smooth
+Part5.Parent = Model0
+Part5.CFrame = CFrame.new(-11.5, 11, -76.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part5.Position = Vector3.new(-11.5, 11, -76.5)
+Part5.Size = Vector3.new(1, 20, 1)
+Part5.Anchored = true
+Part5.BottomSurface = Enum.SurfaceType.Smooth
+Part5.TopSurface = Enum.SurfaceType.Smooth
+Part6.Parent = Model0
+Part6.CFrame = CFrame.new(1.5, 14.5, -22, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part6.Position = Vector3.new(1.5, 14.5, -22)
+Part6.Transparency = 1
+Part6.Size = Vector3.new(1, 29, 114)
+Part6.Anchored = true
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part7.Parent = Model0
+Part7.CFrame = CFrame.new(-43.5, 14.5, -78.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part7.Position = Vector3.new(-43.5, 14.5, -78.5)
+Part7.Transparency = 1
+Part7.Size = Vector3.new(11, 29, 1)
+Part7.Anchored = true
+Part7.BottomSurface = Enum.SurfaceType.Smooth
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Model8.Parent = Model0
+Part9.Parent = Model8
+Part9.CFrame = CFrame.new(-24.1999969, 2.00000477, -21.2000046, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part9.Position = Vector3.new(-24.199996948242188, 2.000004768371582, -21.20000457763672)
+Part9.Size = Vector3.new(4, 4, 4)
+Part9.BottomSurface = Enum.SurfaceType.Smooth
+Part9.TopSurface = Enum.SurfaceType.Smooth
+Part9.Shape = Enum.PartType.Ball
+SelectionSphere10.Parent = Part9
+SelectionSphere10.Color = BrickColor.new("Lime green")
+SelectionSphere10.Color3 = Color3.new(0.0156863, 0.67451, 0.00392157)
+SelectionSphere10.Adornee = Part9
+SelectionSphere10.SurfaceColor = BrickColor.new("Forest green")
+SelectionSphere10.SurfaceColor3 = Color3.new(0, 0.67451, 0.101961)
+Part11.Parent = Model0
+Part11.CFrame = CFrame.new(-23.5, 25, -78.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part11.Position = Vector3.new(-23.5, 25, -78.5)
+Part11.Transparency = 1
+Part11.Size = Vector3.new(51, 8, 1)
+Part11.Anchored = true
+Part11.BottomSurface = Enum.SurfaceType.Smooth
+Part11.TopSurface = Enum.SurfaceType.Smooth
+Part12.Parent = Model0
+Part12.CFrame = CFrame.new(-4, 14.5, -78.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part12.Position = Vector3.new(-4, 14.5, -78.5)
+Part12.Transparency = 1
+Part12.Size = Vector3.new(12, 29, 1)
+Part12.Anchored = true
+Part12.BottomSurface = Enum.SurfaceType.Smooth
+Part12.TopSurface = Enum.SurfaceType.Smooth
+Part13.Parent = Model0
+Part13.CFrame = CFrame.new(-24, 20.5, 33.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part13.Position = Vector3.new(-24, 20.5, 33.5)
+Part13.Size = Vector3.new(26, 1, 1)
+Part13.Anchored = true
+Part13.BottomSurface = Enum.SurfaceType.Smooth
+Part13.TopSurface = Enum.SurfaceType.Smooth
+Part14.Parent = Model0
+Part14.CFrame = CFrame.new(-37.5, 10.5, 33.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part14.Position = Vector3.new(-37.5, 10.5, 33.5)
+Part14.Size = Vector3.new(1, 21, 1)
+Part14.Anchored = true
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Part15.Parent = Model0
+Part15.CFrame = CFrame.new(-11.5, 11, 33.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part15.Position = Vector3.new(-11.5, 11, 33.5)
+Part15.Size = Vector3.new(1, 20, 1)
+Part15.Anchored = true
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part16.Parent = Model0
+Part16.CFrame = CFrame.new(-43.5, 14.5, 34.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part16.Position = Vector3.new(-43.5, 14.5, 34.5)
+Part16.Transparency = 1
+Part16.Size = Vector3.new(11, 29, 1)
+Part16.Anchored = true
+Part16.BottomSurface = Enum.SurfaceType.Smooth
+Part16.TopSurface = Enum.SurfaceType.Smooth
+Part17.Parent = Model0
+Part17.CFrame = CFrame.new(-24, 25, 34.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part17.Position = Vector3.new(-24, 25, 34.5)
+Part17.Transparency = 1
+Part17.Size = Vector3.new(50, 8, 1)
+Part17.Anchored = true
+Part17.BottomSurface = Enum.SurfaceType.Smooth
+Part17.TopSurface = Enum.SurfaceType.Smooth
+Part18.Parent = Model0
+Part18.CFrame = CFrame.new(-5, 15, 34.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part18.Position = Vector3.new(-5, 15, 34.5)
+Part18.Transparency = 1
+Part18.Size = Vector3.new(12, 28, 1)
+Part18.Anchored = true
+Part18.BottomSurface = Enum.SurfaceType.Smooth
+Part18.TopSurface = Enum.SurfaceType.Smooth
+Folder19.Name = "TeleportParts"
+Folder19.Parent = Model0
+Part20.Name = "TeleportPart1"
+Part20.Parent = Folder19
+Part20.CFrame = CFrame.new(-24.5, 10.3299999, -76, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part20.Position = Vector3.new(-24.5, 10.329999923706055, -76)
+Part20.Color = Color3.new(0, 1, 0)
+Part20.Transparency = 1
+Part20.Size = Vector3.new(24.38246726989746, 18.65999984741211, 0.46646881103515625)
+Part20.Anchored = true
+Part20.BottomSurface = Enum.SurfaceType.Smooth
+Part20.BrickColor = BrickColor.new("Lime green")
+Part20.TopSurface = Enum.SurfaceType.Smooth
+Part20.brickColor = BrickColor.new("Lime green")
+Part21.Name = "TeleportPart2"
+Part21.Parent = Folder19
+Part21.CFrame = CFrame.new(-21.3965912, 25.3300171, -16.3721085, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part21.Position = Vector3.new(-21.396591186523438, 25.33001708984375, -16.372108459472656)
+Part21.Color = Color3.new(1, 0, 0)
+Part21.Transparency = 1
+Part21.Size = Vector3.new(5.382467746734619, 0.6599999666213989, 4.466468811035156)
+Part21.Anchored = true
+Part21.BottomSurface = Enum.SurfaceType.Smooth
+Part21.BrickColor = BrickColor.new("Really red")
+Part21.CanCollide = false
+Part21.TopSurface = Enum.SurfaceType.Smooth
+Part21.brickColor = BrickColor.new("Really red")
+Script22.Name = "Ignore"
+Script22.Parent = Folder19
+table.insert(cors,sandbox(Script22,function()
+local TeleportPart1 = script.Parent.TeleportPart1
+local TeleportPart2 = script.Parent.TeleportPart2
+
+TeleportPart1.Touched:Connect(function(hit)
+	local w = hit.Parent:FindFirstChild("Part")
+	if w then
+		w.CFrame = TeleportPart2.CFrame + Vector3.new(0, 5, 0)
+		TeleportPart2.CanTouch = false
+		wait(1)
+		TeleportPart2.CanTouch = true
+	end
+end)
+
+end))
+Script23.Name = "Credits"
+Script23.Parent = Folder19
+table.insert(cors,sandbox(Script23,function()
+-- Hello! My name is samuel
+-- Thanks for use my model
+-- Bye!:)
+end))
+Folder24.Name = "TeleportParts"
+Folder24.Parent = Model0
+Part25.Name = "TeleportPart1"
+Part25.Parent = Folder24
+Part25.CFrame = CFrame.new(-26.5, 10.3299999, 33, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part25.Position = Vector3.new(-26.5, 10.329999923706055, 33)
+Part25.Color = Color3.new(0, 1, 0)
+Part25.Transparency = 1
+Part25.Size = Vector3.new(24.38246726989746, 18.65999984741211, 0.46646881103515625)
+Part25.Anchored = true
+Part25.BottomSurface = Enum.SurfaceType.Smooth
+Part25.BrickColor = BrickColor.new("Lime green")
+Part25.TopSurface = Enum.SurfaceType.Smooth
+Part25.brickColor = BrickColor.new("Lime green")
+Part26.Name = "TeleportPart2"
+Part26.Parent = Folder24
+Part26.CFrame = CFrame.new(-24.6342621, 29.3300171, -21.3884583, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part26.Position = Vector3.new(-24.634262084960938, 29.33001708984375, -21.388458251953125)
+Part26.Color = Color3.new(1, 0, 0)
+Part26.Transparency = 1
+Part26.Size = Vector3.new(5.382467746734619, 0.6599999666213989, 4.466468811035156)
+Part26.Anchored = true
+Part26.BottomSurface = Enum.SurfaceType.Smooth
+Part26.BrickColor = BrickColor.new("Really red")
+Part26.CanCollide = false
+Part26.TopSurface = Enum.SurfaceType.Smooth
+Part26.brickColor = BrickColor.new("Really red")
+Script27.Name = "Ignore"
+Script27.Parent = Folder24
+table.insert(cors,sandbox(Script27,function()
+local TeleportPart1 = script.Parent.TeleportPart1
+local TeleportPart2 = script.Parent.TeleportPart2
+
+TeleportPart1.Touched:Connect(function(hit)
+		local w = hit.Parent:FindFirstChild("Part")
+		if w then
+		w.CFrame = TeleportPart2.CFrame + Vector3.new(0, 5, 0)
+		TeleportPart2.CanTouch = false
+		wait(1)
+		TeleportPart2.CanTouch = true
+	end
+end)
+
+end))
+Script28.Name = "Credits"
+Script28.Parent = Folder24
+table.insert(cors,sandbox(Script28,function()
+-- Hello! My name is samuel
+-- Thanks for use my model
+-- Bye!:)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
