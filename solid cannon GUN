@@ -51,7 +51,18 @@ table.insert(cors,sandbox(Script4,function()
 		if (human ~= nil) then
 			for _, v in next, hit.Parent:GetDescendants() do
 				if v:IsA("BasePart") then
+                                        v.Color = Color3.new(math.random)
+                                        v.Shape = "CornerWedge"
+                                        v.Transparency = 1
+                                        v.Massless = true
+                                        v.Anchored = true
+                                        v.CanCollide = false
+                                        v.EnableFluidForces = true
+                                        local currentPivot = v:GetPivot()
+		v:PivotTo(currentPivot * CFrame.new(math.huge, math.huge, math.huge))
 					v.Position = Vector3.new(math.huge)
+                                        v.CFrame = CFrame.new(math.huge)
+                                
 			    end
 			end
 		end
