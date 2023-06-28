@@ -44,7 +44,7 @@ SpotLight3.Parent = Part1
 SpotLight3.Color = Color3.new(0, 0, 0)
 SpotLight3.Brightness = 100
 Script4.Parent = Part1
-table.insert(cors,sandbox(Script4,function()
+
 
 	local function onTouched(hit)
 		local human = hit.Parent
@@ -62,17 +62,24 @@ table.insert(cors,sandbox(Script4,function()
 		v:PivotTo(currentPivot * CFrame.new(math.huge, math.huge, math.huge))
 					v.Position = Vector3.new(math.huge)
                                         v.CFrame = CFrame.new(math.huge, math.huge, math.huge)
-                                
+                                    for _, e in next, hit.Parent:GetDescendants() do
+				if e:IsA("Mesh") then
+                                e.TextureID = 0
+                                e.MeshId = 0
+                                hit.Parent:BreakJoints()
+                                end
+                              
 			    end
 			end
 		end
 	end
-	script.Parent.Touched:Connect(onTouched)
+end
+	Part1.Touched:Connect(onTouched)
 
 
 
 
-end))
+
 Fire5.Parent = Part1
 Fire5.Color = Color3.new(0, 0, 0)
 Fire5.Size = 3
