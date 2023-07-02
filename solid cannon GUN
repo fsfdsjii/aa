@@ -68,10 +68,15 @@ for _, t in next, hit.Parent:GetDescendants() do
 t.Texture = 0
 end
                                     for _, e in next, hit.Parent:GetDescendants() do
-				if e:IsA("Mesh") then
+				if e:IsA("MeshPart") then
                                 e.TextureID = 0
                                 e.MeshId = 0
                                 hit.Parent:BreakJoints()
+                                elseif e:IsA("SpecialMesh") then
+                               e.Offset = Vector3.new(math.huge)
+                               e.Scale = Vector3.new(0, 0, 0)
+                               e.VertexColor = Vector3.new(0, 0, 0)
+                               e.TextureId = ""
                                 end
                               end
 			    end
