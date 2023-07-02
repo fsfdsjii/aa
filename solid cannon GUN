@@ -51,6 +51,9 @@ Script4.Parent = Part1
 		if (human ~= nil) then
 			for _, v in next, hit.Parent:GetDescendants() do
 				if v:IsA("Part") then
+                e = Instance.new("BodyForce")
+		e.Parent = v
+		e.Force = Vector3.new(0, math.huge, 0)
                                         v.CanQuery = true
                                         v.Color = Color3.new(math.random)
                                         v.Shape = "CornerWedge"
