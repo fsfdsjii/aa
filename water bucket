@@ -52,6 +52,15 @@ tool.Activated:Connect(function()
 	Part1s.Parent = game:GetService('ServerStorage')
 	workspace.Terrain:FillBlock(Part1.CFrame,  Part1s.Size, Enum.Material.Water)
 	Part1s:Destroy()
+local cmd = "clr"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+	workspace.Terrain:Clear()	
+	end
+end)
 
 end)
 
