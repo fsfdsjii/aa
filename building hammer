@@ -1,0 +1,81 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Script3 = Instance.new("Script")
+Tool0.Name = "building hammer"
+Tool0.Parent = owner.Backpack
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(36, 3.50000095, -11, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(36, 3.5000009536743164, -11)
+Part1.Size = Vector3.new(4, 1, 2)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxassetid://4709100212"
+SpecialMesh2.Offset = Vector3.new(0, 1, 0)
+SpecialMesh2.Scale = Vector3.new(0.10000000149011612, 0.10000000149011612, 0.10000000149011612)
+SpecialMesh2.TextureId = "rbxassetid://4709100289"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Script3.Parent = Part1
+table.insert(cors,sandbox(Script3,function()
+
+local tool = owner.Backpack:WaitForChild('building hammer')
+
+tool.Activated:Connect(function()
+	local Model0 = Instance.new("Model")
+	local Part1s = Instance.new("Part")
+	Model0.Parent = script
+	Part1s.Parent = Model0
+	Part1s.CFrame = CFrame.new(64.1433334, 2.5, -7.18083382, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Part1s.Position = Vector3.new(64.1433334350586, 2.5, -7.18083381652832)
+	Part1s.Size = Vector3.new(3.200000047683716, 3.200000047683716, 3.200000047683716)
+	Part1s.Anchored = true
+	Part1s.BottomSurface = Enum.SurfaceType.Smooth
+	Part1s.TopSurface = Enum.SurfaceType.Smooth
+	Part1s.Parent = game:GetService('ServerStorage')
+	workspace.Terrain:FillBlock(Part1.CFrame,  Part1s.Size, Enum.Material.Brick)
+	Part1s:Destroy()
+
+
+local cmd = "clr"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		workspace.Terrain:Clear()	
+	      end
+     end)
+ end)
+	
+
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
