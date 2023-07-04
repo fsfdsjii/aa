@@ -1,0 +1,90 @@
+print("Press R for a new part, Press E for a new lava part")
+
+
+local UserInputService = game:GetService("UserInputService")
+
+
+local function onInputBegan(input, _gameProcessed)
+	if input.KeyCode == Enum.KeyCode.E then
+		NS([[Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Script2 = Instance.new("Script")
+ForceField3 = Instance.new("ForceField")
+Model0.Parent = script
+Part1.Parent = Model0
+Part1.Position = owner.Character.Torso.Position
+Part1.Color = Color3.new(1, 0, 0)
+Part1.Size = Vector3.new(3.799999952316284, 1, 2.8000001907348633)
+Part1.Anchored = true
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Really red")
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Really red")
+Script2.Parent = Part1
+ForceField3.Parent = owner.Character
+ForceField3.Visible = false
+
+function onTouched(part)
+	local h = part.Parent:findFirstChild("Humanoid")
+	if h~=nil then
+		h.Health = h:TakeDamage(99999999)
+	end
+end
+Part1.Touched:Connect(onTouched)
+
+local currentPivot = Model0:GetPivot()
+		Model0:PivotTo(currentPivot * CFrame.new(0, -2.5, -4)
+)
+	]] , workspace)
+	end
+end
+
+UserInputService.InputBegan:Connect(onInputBegan)
+
+
+
+
+
+
+local UserInputServicee = game:GetService("UserInputService")
+
+
+local function onInputBegan(input, _gameProcessed)
+	if input.KeyCode == Enum.KeyCode.R then
+		NS([[
+mas = script
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Model0.Parent = mas
+Part1.Parent = Model0
+Part1.Position = owner.Character.Torso.Position
+Part1.Size = Vector3.new(6, 1, 6)
+Part1.Anchored = true
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+
+
+
+
+local currentPivot = Model0:GetPivot()
+		Model0:PivotTo(currentPivot * CFrame.new(0, -2.5, -4)
+
+
+	)]] , workspace)
+	end
+end
+
+UserInputServicee.InputBegan:Connect(onInputBegan)
+
+
+
+
+
+
+
+
+
+
+
+
+
