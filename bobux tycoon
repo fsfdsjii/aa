@@ -28,7 +28,7 @@ end
 part.Touched:Connect(onTouch)
 
 
-if Coins.Value == 500 then
+if Coins.Value == 750 then
 	--Originally by PenguinAnonymous. Simplified by WaverlyCole
 	--Errors: TouchTransmitter
 	mas = Instance.new("Model",game:GetService("Lighting")) 
@@ -264,7 +264,7 @@ if Coins.Value == 500 then
 
 
 
-	NLS([[local Tool = owner.Backpack.DarkHeart;
+	NLS([[local Tool = owner.Backpack:WaitForChild('DarkHeart');
 
 enabled = true
 function onButton1Down(mouse)
