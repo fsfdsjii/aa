@@ -21389,3 +21389,260 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Script2 = Instance.new("Script")
+Script3 = Instance.new("Script")
+NumberValue4 = Instance.new("NumberValue")
+BodyGyro5 = Instance.new("BodyGyro")
+BodyPosition6 = Instance.new("BodyPosition")
+Sound7 = Instance.new("Sound")
+WeldConstraint8 = Instance.new("WeldConstraint")
+BlockMesh9 = Instance.new("BlockMesh")
+Part10 = Instance.new("Part")
+WeldConstraint11 = Instance.new("WeldConstraint")
+WeldConstraint12 = Instance.new("WeldConstraint")
+Humanoid13 = Instance.new("Humanoid")
+Script14 = Instance.new("Script")
+IntValue15 = Instance.new("IntValue")
+Camera16 = Instance.new("Camera")
+Part17 = Instance.new("Part")
+SpecialMesh18 = Instance.new("SpecialMesh")
+Model0.Name = "Shark"
+Model0.Parent = mas
+Model0.PrimaryPart = Part1
+Part1.Name = "Head"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(85.1581116, 586.599976, -166.845566, -1, 3.3516485e-06, -2.96980324e-05, 3.3516485e-06, 1, -2.12890712e-11, 2.96980324e-05, -1.20826432e-10, -1)
+Part1.Orientation = Vector3.new(0, -180, 0)
+Part1.Position = Vector3.new(85.15811157226562, 586.5999755859375, -166.84556579589844)
+Part1.Rotation = Vector3.new(180, 0, -180)
+Part1.Size = Vector3.new(2, 2, 2.4000000953674316)
+Part1.CanCollide = false
+Part1.CustomPhysicalProperties = PhysicalProperties.new(0.00999999978, 0.300000012, 0.5, 1, 1)
+Script2.Name = "Deadly"
+Script2.Parent = Part1
+table.insert(cors,sandbox(Script2,function()
+local Debris = game:GetService("Debris")
+local MyHumanoid = script.Parent.Parent:WaitForChild("Humanoid")
+
+local function TagHumanoid(humanoid, player)
+	local Creator_Tag = Instance.new("ObjectValue")
+	Creator_Tag.Name = "creator"
+	Creator_Tag.Value = player
+	Debris:AddItem(Creator_Tag, 2)
+	Creator_Tag.Parent = humanoid
+end
+
+local function OnTouched(hit)
+	local human = hit.Parent:FindFirstChildOfClass("Humanoid")
+	if human and human.Health > 0 and human.Parent.Name ~= script.Parent.Parent.Name and human.Parent ~= script.Parent.Parent then
+		human:TakeDamage(20)
+		TagHumanoid(human, MyHumanoid)
+	end
+end
+
+
+script.Parent.Touched:Connect(OnTouched)
+
+end))
+Script3.Name = "MainScript"
+Script3.Parent = Part1
+table.insert(cors,sandbox(Script3,function()
+local Head = script.Parent
+local Humanoid = Head.Parent:WaitForChild("Humanoid")
+local BodyPos = Head:WaitForChild("BodyPosition")
+local BodyGyro = Head:WaitForChild("BodyGyro")
+local AttackDistance = Head.Parent:WaitForChild("AttackDistance", 25) and Head.Parent:FindFirstChild("AttackDistance").Value or 100
+local Speed = Head:WaitForChild("Speed").Value
+BodyPos.Position = Head.Position
+BodyGyro.CFrame = Head.CFrame
+local MainTarget
+
+local function Move(Target)
+	local Dir = (Target.Position - Head.Position).Unit
+	local SpawnPos = Head.Position
+	local Pos = SpawnPos + (Dir * 1)
+	BodyGyro.CFrame = CFrame.new(Pos,  Pos + Dir)
+	BodyGyro.MaxTorque = Vector3.new(9000, 9000, 9000)
+end
+
+local function MoveTo(Target)
+	BodyPos.Position = Target.Position
+	BodyPos.MaxForce = Vector3.new(10000, 10000, 10000) * Speed
+end
+
+Humanoid.HealthChanged:Connect(function()
+	local CreatorTag = Humanoid:FindFirstChild("creator") or Humanoid:FindFirstChild("Creator")
+	if CreatorTag then
+		local Tagged = CreatorTag.Value
+		if Tagged and Tagged:IsA("Player") then
+			MainTarget = Tagged.Character and Tagged.Character:FindFirstChildOfClass("Humanoid") or MainTarget
+		else
+			MainTarget = Tagged
+		end
+	end
+end)
+
+-- // The function for finding a target
+local function FindNearestTorso(pos, Distance)
+	local Torso
+	for _, Obj in ipairs(workspace:GetChildren()) do
+		if Obj:IsA("Model") and Obj ~= Head.Parent and Obj.Name ~= Head.Parent then
+			local Humanoid = Obj:FindFirstChildOfClass("Humanoid")
+			if Humanoid and Humanoid.Health > 0 then
+				local Temp = Humanoid.RootPart
+				if Temp and (Temp.Position - pos).Magnitude < Distance then
+					Torso = Temp
+					Distance = (Torso.Position - pos).Magnitude
+				end
+			end
+		end
+	end
+	return Torso
+end
+
+if Head.Angry.Playing == false then
+	Head.Angry:Play()
+end
+
+while true do
+	if MainTarget and MainTarget.Health > 0 and MainTarget.RootPart and (Head.Position - MainTarget.RootPart.Position).Magnitude > AttackDistance then
+		Move(MainTarget.RootPart)
+		MoveTo(MainTarget.RootPart)
+	else
+		local Torso = FindNearestTorso(Head.Position, AttackDistance)
+		if Torso then
+			Move(Torso)
+			MoveTo(Torso)
+			MainTarget = Torso.Parent:FindFirstChildOfClass("Humanoid")
+		else
+			task.wait(2)
+		end
+	end
+	task.wait(1)
+end
+
+end))
+NumberValue4.Name = "Speed"
+NumberValue4.Parent = Part1
+NumberValue4.Value = 45
+BodyGyro5.Parent = Part1
+BodyGyro5.CFrame = CFrame.new(-71.561203, 21.0378857, -201.330414, 0.932218313, -0.022479061, 0.36119774, 1.86264537e-09, 0.998069048, 0.0621145964, -0.361896574, -0.0579043627, 0.930418134)
+BodyGyro5.MaxTorque = Vector3.new(9000, 9000, 9000)
+BodyGyro5.maxTorque = Vector3.new(9000, 9000, 9000)
+BodyGyro5.cframe = CFrame.new(-71.561203, 21.0378857, -201.330414, 0.932218313, -0.022479061, 0.36119774, 1.86264537e-09, 0.998069048, 0.0621145964, -0.361896574, -0.0579043627, 0.930418134)
+BodyPosition6.Parent = Part1
+BodyPosition6.Position = Vector3.new(0, 0, 0)
+BodyPosition6.P = 15000
+BodyPosition6.D = 500
+BodyPosition6.MaxForce = Vector3.new(450000, 450000, 450000)
+BodyPosition6.maxForce = Vector3.new(450000, 450000, 450000)
+BodyPosition6.position = Vector3.new(0, 0, 0)
+Sound7.Name = "Angry"
+Sound7.Parent = Part1
+Sound7.Looped = true
+Sound7.MaxDistance = 10
+Sound7.EmitterSize = 8
+Sound7.MinDistance = 8
+Sound7.SoundId = "rbxassetid://3969849183"
+Sound7.Volume = 0
+WeldConstraint8.Parent = Part1
+WeldConstraint8.Part0 = Part1
+WeldConstraint8.Part1 = nil
+BlockMesh9.Parent = Part1
+BlockMesh9.Scale = Vector3.new(0, 0, 0)
+Part10.Name = "Torso"
+Part10.Parent = Model0
+Part10.CFrame = CFrame.new(85.1578827, 586.599976, -174.60437, -1, 3.3516485e-06, -2.96980324e-05, 3.3516485e-06, 1, -2.12890712e-11, 2.96980324e-05, -1.20826432e-10, -1)
+Part10.Orientation = Vector3.new(0, -180, 0)
+Part10.Position = Vector3.new(85.15788269042969, 586.5999755859375, -174.6043701171875)
+Part10.Rotation = Vector3.new(180, 0, -180)
+Part10.Transparency = 1
+Part10.Size = Vector3.new(2, 2, 2.4000000953674316)
+Part10.CustomPhysicalProperties = PhysicalProperties.new(0.00999999978, 0.300000012, 0.5, 1, 1)
+WeldConstraint11.Parent = Part10
+WeldConstraint11.Part0 = Part10
+WeldConstraint11.Part1 = Part1
+WeldConstraint12.Parent = Part10
+WeldConstraint12.Part0 = Part10
+WeldConstraint12.Part1 = nil
+Humanoid13.Parent = Model0
+Humanoid13.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.Subject
+Humanoid13.Health = 500
+Humanoid13.JumpPower = 0
+Humanoid13.MaxHealth = 500
+Humanoid13.NameDisplayDistance = 0
+Humanoid13.NameOcclusion = Enum.NameOcclusion.NoOcclusion
+Humanoid13.Torso = Part10
+Humanoid13.WalkSpeed = 10
+Humanoid13.maxHealth = 500
+Script14.Name = "Despawn"
+Script14.Parent = Model0
+table.insert(cors,sandbox(Script14,function()
+local Humanoid = script.Parent:WaitForChild("Humanoid")
+local Debris = game:GetService("Debris")
+
+local Connection
+Connection = Humanoid.Died:Connect(function()
+	if not Connection.Connected then
+		return
+	end
+
+	Connection:Disconnect()
+	Debris:AddItem(script.Parent, 4)
+	for _, v in ipairs(script.Parent:FindFirstChild("Head"):GetChildren()) do
+		if not v:IsA("BlockMesh") then
+			v:Destroy()
+		end
+	end
+end)
+end))
+IntValue15.Name = "AttackDistance"
+IntValue15.Parent = Model0
+IntValue15.Value = 100
+Camera16.Name = "ThumbnailCamera"
+Camera16.Parent = Model0
+Camera16.CFrame = CFrame.new(6.52389622, 16.8394947, 36.2224121, 0.62114799, -0.0410166755, 0.782619298, -0, 0.99862951, 0.0523376651, -0.783693254, -0.032509435, 0.620296717)
+Camera16.CoordinateFrame = CFrame.new(6.52389622, 16.8394947, 36.2224121, 0.62114799, -0.0410166755, 0.782619298, -0, 0.99862951, 0.0523376651, -0.783693254, -0.032509435, 0.620296717)
+Camera16.Focus = CFrame.new(4.95865822, 16.7348194, 34.9818192, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera16.focus = CFrame.new(4.95865822, 16.7348194, 34.9818192, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part17.Name = "MeshPart"
+Part17.Parent = Model0
+Part17.CFrame = CFrame.new(85.1810608, 587.249268, -181.048691, 1, 3.3516485e-06, 2.96980324e-05, -3.3516485e-06, 1, 2.12890712e-11, -2.96980324e-05, -1.20826432e-10, 1)
+Part17.Position = Vector3.new(85.18106079101562, 587.249267578125, -181.04869079589844)
+Part17.Size = Vector3.new(11.954292297363281, 10.498479843139648, 31.60638427734375)
+Part17.CustomPhysicalProperties = PhysicalProperties.new(1.5, 0.200000003, 0.5, 1, 1)
+Part17.Material = Enum.Material.SmoothPlastic
+SpecialMesh18.Parent = Part17
+SpecialMesh18.MeshId = "rbxassetid://430072846"
+SpecialMesh18.Scale = Vector3.new(0.13546688854694366, 0.13546691834926605, 0.13546688854694366)
+SpecialMesh18.TextureId = "rbxassetid://430072921"
+SpecialMesh18.MeshType = Enum.MeshType.FileMesh
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
