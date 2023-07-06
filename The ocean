@@ -21405,7 +21405,7 @@ function sandbox(var,func)
 	return func
 end
 cors = {}
-mas = Instance.new("Model",game:GetService("Lighting"))
+masses = Instance.new("Model",game:GetService("Lighting"))
 Model0 = Instance.new("Model")
 Part1 = Instance.new("Part")
 Script2 = Instance.new("Script")
@@ -21636,11 +21636,11 @@ SpecialMesh18.MeshId = "rbxassetid://430072846"
 SpecialMesh18.Scale = Vector3.new(0.13546688854694366, 0.13546691834926605, 0.13546688854694366)
 SpecialMesh18.TextureId = "rbxassetid://430072921"
 SpecialMesh18.MeshType = Enum.MeshType.FileMesh
-for i,v in pairs(mas:GetChildren()) do
+for i,v in pairs(masses:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
 end
-mas:Destroy()
+masses:Destroy()
 for i,v in pairs(cors) do
 	spawn(function()
 		pcall(v)
