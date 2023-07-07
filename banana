@@ -1,0 +1,66 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Script3 = Instance.new("Script")
+Tool0.Name = "Banana"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0.695251465, -0.525342822, -0.0308914185, -0.122555196, -4.06764791e-08, 0.992461801, -2.9165907e-08, 1, 3.73838596e-08, -0.992461801, -2.43644696e-08, -0.122555196)
+Tool0.GripForward = Vector3.new(-0.9924618005752563, -3.7383859563533406e-08, 0.1225551962852478)
+Tool0.GripPos = Vector3.new(0.69525146484375, -0.5253428220748901, -0.03089141845703125)
+Tool0.GripRight = Vector3.new(-0.1225551962852478, -2.9165907022843385e-08, -0.9924618005752563)
+Tool0.GripUp = Vector3.new(-4.067647907390892e-08, 1, -2.436446955300653e-08)
+Tool0.ToolTip = "potassium"
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(103.5, 0.500001013, -88.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(103.5, 0.5000010132789612, -88.5)
+Part1.Size = Vector3.new(1, 1, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxassetid://5265948820"
+SpecialMesh2.Scale = Vector3.new(0.699999988079071, 0.699999988079071, 0.699999988079071)
+SpecialMesh2.TextureId = "rbxassetid://5265948859"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Script3.Parent = Part1
+table.insert(cors,sandbox(Script3,function()
+local tool = owner.Backpack:WaitForChild('Banana')
+
+tool.Activated:Connect(function()
+	owner.Character.Humanoid.MaxHealth = owner.Character.Humanoid.MaxHealth + 50 
+	owner.Character.Humanoid.Health = owner.Character.Humanoid.Health + 80
+local chats = {"🦍"}
+game:GetService("Chat"):Chat(owner.Character, chats[math.random(1, #chats)], Enum.ChatColor.Green)
+task.wait(0.1)
+tool:Destroy()
+
+end)
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
