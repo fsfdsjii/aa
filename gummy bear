@@ -1,0 +1,82 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Script3 = Instance.new("Script")
+Tool0.Name = "gummy bear"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0.107480861, -0.201984406, 0.175882339, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(0.10748086124658585, -0.20198440551757812, 0.17588233947753906)
+Tool0.ToolTip = "oh hes a gummy bear"
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(37.5, 1.50000095, -11.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(37.5, 1.5000009536743164, -11.5)
+Part1.Color = Color3.new(0, 1, 0)
+Part1.Transparency = 0.20000000298023224
+Part1.Size = Vector3.new(1, 1, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Lime green")
+Part1.Material = Enum.Material.Glass
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Lime green")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxassetid://2060085173"
+SpecialMesh2.Scale = Vector3.new(1.399999976158142, 1.399999976158142, 1.399999976158142)
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Script3.Parent = Part1
+table.insert(cors,sandbox(Script3,function()
+local tool = Tool0
+
+tool.Activated:Connect(function()
+local Model0 = Instance.new("Model")
+local Part1s = Instance.new("Part")
+local SpecialMesh2s = Instance.new("SpecialMesh")
+	Model0.Parent = workspace
+	Part1s.Name = "Handle"
+	Part1s.Parent = Model0
+	Part1s.Position = Part1.Position
+	Part1s.Color = Color3.new(0, 1, 0)
+	Part1s.Transparency = 0.20000000298023224
+	Part1s.Size = Vector3.new(1, 1, 1)
+	Part1s.BottomSurface = Enum.SurfaceType.Smooth
+	Part1s.BrickColor = BrickColor.new("Lime green")
+	Part1s.Material = Enum.Material.Glass
+	Part1s.TopSurface = Enum.SurfaceType.Smooth
+	Part1s.brickColor = BrickColor.new("Lime green")
+	SpecialMesh2s.Parent = Part1s
+	SpecialMesh2s.MeshId = "rbxassetid://2060085173"
+	SpecialMesh2s.Scale = Vector3.new(1.399999976158142, 1.399999976158142, 1.399999976158142)
+	SpecialMesh2s.MeshType = Enum.MeshType.FileMesh
+	task.wait(0.1)
+	Tool0:Destroy()
+	task.wait(15)
+	Model0:Destroy()
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
