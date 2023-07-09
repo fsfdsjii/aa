@@ -1,0 +1,269 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Fire2 = Instance.new("Fire")
+Script3 = Instance.new("Script")
+Part4 = Instance.new("Part")
+Fire5 = Instance.new("Fire")
+Snap6 = Instance.new("Snap")
+Part7 = Instance.new("Part")
+Fire8 = Instance.new("Fire")
+Snap9 = Instance.new("Snap")
+Part10 = Instance.new("Part")
+Snap11 = Instance.new("Snap")
+Part12 = Instance.new("Part")
+Fire13 = Instance.new("Fire")
+Part14 = Instance.new("Part")
+Fire15 = Instance.new("Fire")
+Part16 = Instance.new("Part")
+Fire17 = Instance.new("Fire")
+Snap18 = Instance.new("Snap")
+ObjectValue19 = Instance.new("ObjectValue")
+Model0.Name = "bonzi buddy giver"
+Model0.Parent = workspace
+Part1.Name = "do not edit"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(25.3195801, 3.04997945, 67.3647461, -0.999997377, 3.05180256e-05, 4.47034836e-08, 3.05179528e-05, 1, 0.000152589972, -4.47034836e-08, 0.000152589913, -0.999997377)
+Part1.Orientation = Vector3.new(-0.009999999776482582, 180, 0)
+Part1.Position = Vector3.new(25.319580078125, 3.0499794483184814, 67.36474609375)
+Part1.Rotation = Vector3.new(-179.99000549316406, 0, -180)
+Part1.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part1.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part1.Anchored = true
+Part1.BrickColor = BrickColor.new("White")
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("White")
+Fire2.Parent = Part1
+Fire2.Color = Color3.new(1, 1, 0)
+Fire2.Enabled = false
+Fire2.Size = 30
+Fire2.Heat = 25
+Fire2.SecondaryColor = Color3.new(1, 0, 0)
+Fire2.size = 30
+Script3.Name = "PUT THIS IN THE WEAPON"
+Script3.Parent = Part1
+table.insert(cors,sandbox(Script3,function()
+part = script.Parent
+local debounce = false
+
+function getPlayer(humanoid) 
+	local players = game.Players:children() 
+	for i = 1, #players do 
+		if players[i].Character.Humanoid == humanoid then return players[i] end 
+	end 
+	return nil 
+end 
+
+function onTouch(partt) 
+
+	local human = partt.Parent:findFirstChild("Humanoid") 
+	if (human ~= nil) and debounce == false then
+
+		debounce = true
+
+		local player = getPlayer(human) 
+
+		if (player == nil) then return end 
+
+
+		local plr = player.Parent.Parent
+		local char = plr.Character
+		local tool = player.Parent:WaitForChild('bonzi buddy')
+
+
+		local function onTouch(otherPart)
+			if otherPart:IsA("Model") then
+				local Tool0 = Instance.new("Tool")
+				local Part1s = Instance.new("Part")
+				local Decal2 = Instance.new("Decal")
+				local Script3 = Instance.new("Script")
+				Tool0.Name = "bonzi buddy"
+				Tool0.Parent = otherPart.Parent.Parent.Backpack
+				Part1s.Name = "Handle"
+				Part1s.Parent = Tool0
+				Part1s.CFrame = CFrame.new(-13.5, 2.5, 52.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+				Part1s.Position = Vector3.new(-13.5, 2.5, 52.5)
+				Part1s.Size = Vector3.new(5, 5, 0.5)
+				Part1s.BottomSurface = Enum.SurfaceType.Smooth
+				Part1s.TopSurface = Enum.SurfaceType.Smooth
+				Decal2.Parent = Part1s
+				Decal2.Texture = "rbxassetid://11590094358"
+				Script3.Parent = Part1s
+				local function onTouched(hit)
+					local human = hit.Parent
+					if (human ~= nil) then
+						for _, v in next, hit.Parent:GetDescendants() do
+							if v:IsA("Humanoid") then
+								v:Destroy()
+							end
+						end
+					end
+				end
+				ObjectValue1.Parent = otherPart
+				Part1s.Touched:Connect(onTouched)
+			end
+
+
+		end
+
+
+		part.Touched:Connect(onTouch)
+
+		task.wait(2)
+		debounce = false
+	end
+end
+
+end))
+Part4.Name = "Smooth Block Model"
+Part4.Parent = Model0
+Part4.CFrame = CFrame.new(23.3198242, 3.4000771, 69.3676758, 0.999999464, 0, -1.49011612e-08, 0, 1, 0, 1.49011612e-08, 0, 0.999999464)
+Part4.Position = Vector3.new(23.31982421875, 3.4000771045684814, 69.36767578125)
+Part4.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part4.Size = Vector3.new(3, 6, 1)
+Part4.Anchored = true
+Part4.BrickColor = BrickColor.new("Black")
+Part4.brickColor = BrickColor.new("Black")
+Fire5.Parent = Part4
+Fire5.Color = Color3.new(1, 1, 0)
+Fire5.Enabled = false
+Fire5.Size = 30
+Fire5.Heat = 25
+Fire5.SecondaryColor = Color3.new(1, 0, 0)
+Fire5.size = 30
+Snap6.Parent = Part4
+Snap6.C0 = CFrame.new(0, -3, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap6.C1 = CFrame.new(2, 0.200073242, -0.500488281, 0, 0.999998927, 0, 0, 0, -1, -0.999998927, 0, -0)
+Snap6.Part0 = Part4
+Snap6.Part1 = Part12
+Snap6.part1 = Part12
+Part7.Name = "Smooth Block Model"
+Part7.Parent = Model0
+Part7.CFrame = CFrame.new(24.3190918, 3.41997457, 67.3671875, 1.04606152e-05, -1.26411578e-05, -0.999999821, -2.31125996e-05, 1, -1.26413997e-05, 0.999999821, 2.31127269e-05, 1.04606152e-05)
+Part7.Orientation = Vector3.new(0, -90, 0)
+Part7.Position = Vector3.new(24.319091796875, 3.4199745655059814, 67.3671875)
+Part7.Rotation = Vector3.new(0, -90, 0)
+Part7.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part7.Size = Vector3.new(3, 6, 1)
+Part7.Anchored = true
+Part7.BrickColor = BrickColor.new("Black")
+Part7.brickColor = BrickColor.new("Black")
+Fire8.Parent = Part7
+Fire8.Color = Color3.new(1, 1, 0)
+Fire8.Enabled = false
+Fire8.Size = 30
+Fire8.Heat = 25
+Fire8.SecondaryColor = Color3.new(1, 0, 0)
+Fire8.size = 30
+Snap9.Parent = Part7
+Snap9.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap9.C1 = CFrame.new(-0.00048828125, -0.600097656, -1.49975586, -0.999999642, 2.91947799e-10, -9.09494702e-12, 9.09494702e-12, -1.97122874e-12, 1, -2.91947799e-10, 0.999999642, -1.97122874e-12)
+Snap9.Part0 = Part7
+Snap9.Part1 = Part10
+Snap9.part1 = Part10
+Part10.Name = "Smooth Block Model"
+Part10.Parent = Model0
+Part10.CFrame = CFrame.new(22.8193359, 7.02007246, 67.3676758, 1.04606152e-05, -1.26411578e-05, -0.999999821, -2.31125996e-05, 1, -1.26413997e-05, 0.999999821, 2.31127269e-05, 1.04606152e-05)
+Part10.Orientation = Vector3.new(0, -90, 0)
+Part10.Position = Vector3.new(22.8193359375, 7.0200724601745605, 67.36767578125)
+Part10.Rotation = Vector3.new(0, -90, 0)
+Part10.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part10.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part10.Anchored = true
+Part10.BrickColor = BrickColor.new("Black")
+Part10.TopSurface = Enum.SurfaceType.Smooth
+Part10.brickColor = BrickColor.new("Black")
+Snap11.Parent = Part10
+Snap11.C0 = CFrame.new(0, -0.600000024, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap11.C1 = CFrame.new(0, 2.99304199, -1.5, 0.999999642, 2.91947799e-10, -3.45607987e-11, -5.27506927e-11, -2.92565416e-11, -1, 2.91947799e-10, 0.999999642, -1.98566441e-11)
+Snap11.Part0 = Part10
+Snap11.Part1 = Part14
+Snap11.part1 = Part14
+Part12.Name = "Smooth Block Model"
+Part12.Parent = Model0
+Part12.CFrame = CFrame.new(22.8193359, 0.20000416, 67.3676758, -1.49011612e-08, 0, -0.999999464, 0, 1, 0, 0.999999464, 0, -1.49011612e-08)
+Part12.Orientation = Vector3.new(0, -90, 0)
+Part12.Position = Vector3.new(22.8193359375, 0.20000416040420532, 67.36767578125)
+Part12.Rotation = Vector3.new(-180, -89.94000244140625, -180)
+Part12.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part12.Size = Vector3.new(5, 0.4000000059604645, 4)
+Part12.Anchored = true
+Part12.BrickColor = BrickColor.new("Black")
+Part12.brickColor = BrickColor.new("Black")
+Part12.FormFactor = Enum.FormFactor.Plate
+Part12.formFactor = Enum.FormFactor.Plate
+Fire13.Parent = Part12
+Fire13.Color = Color3.new(1, 1, 0)
+Fire13.Enabled = false
+Fire13.Size = 30
+Fire13.Heat = 25
+Fire13.SecondaryColor = Color3.new(1, 0, 0)
+Fire13.size = 30
+Part14.Name = "Smooth Block Model"
+Part14.Parent = Model0
+Part14.CFrame = CFrame.new(21.3195801, 3.42705464, 67.3676758, 1.04606152e-05, -1.26411305e-05, -0.999999821, -2.31125559e-05, 1, -1.26413779e-05, 0.999999821, 2.31126833e-05, 1.04606152e-05)
+Part14.Orientation = Vector3.new(0, -90, 0)
+Part14.Position = Vector3.new(21.319580078125, 3.4270546436309814, 67.36767578125)
+Part14.Rotation = Vector3.new(0, -90, 0)
+Part14.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part14.Size = Vector3.new(5, 6, 1)
+Part14.Anchored = true
+Part14.BrickColor = BrickColor.new("Black")
+Part14.brickColor = BrickColor.new("Black")
+Fire15.Parent = Part14
+Fire15.Color = Color3.new(1, 1, 0)
+Fire15.Enabled = false
+Fire15.Size = 30
+Fire15.Heat = 25
+Fire15.SecondaryColor = Color3.new(1, 0, 0)
+Fire15.size = 30
+Part16.Name = "Smooth Block Model"
+Part16.Parent = Model0
+Part16.CFrame = CFrame.new(23.3193359, 3.4000771, 65.3669434, 0.999999464, 0, -1.49011612e-08, 0, 1, 0, 1.49011612e-08, 0, 0.999999464)
+Part16.Position = Vector3.new(23.3193359375, 3.4000771045684814, 65.366943359375)
+Part16.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part16.Size = Vector3.new(3, 6, 1)
+Part16.Anchored = true
+Part16.BrickColor = BrickColor.new("Black")
+Part16.brickColor = BrickColor.new("Black")
+Fire17.Parent = Part16
+Fire17.Color = Color3.new(1, 1, 0)
+Fire17.Enabled = false
+Fire17.Size = 30
+Fire17.Heat = 25
+Fire17.SecondaryColor = Color3.new(1, 0, 0)
+Fire17.size = 30
+Snap18.Parent = Part16
+Snap18.C0 = CFrame.new(0, -3, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap18.C1 = CFrame.new(-2.00073242, 0.200073242, -0.5, 0, 0.999998927, 0, 0, 0, -1, -0.999998927, 0, -0)
+Snap18.Part0 = Part16
+Snap18.Part1 = Part12
+Snap18.part1 = Part12
+ObjectValue19.Name = "DetectPlayerValue"
+ObjectValue19.Parent = Model0
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
