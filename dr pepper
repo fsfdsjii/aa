@@ -1,0 +1,129 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Sound4 = Instance.new("Sound")
+Script5 = Instance.new("Script")
+Script6 = Instance.new("Script")
+Tool0.Name = "dr pepper"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(-0.150000006, 0, -0.300000012, 0.217036352, 0, 0.976163507, 0, 1, -0, -0.976163507, 0, 0.217036352)
+Tool0.GripForward = Vector3.new(-0.9761635065078735, 0, -0.21703635156154633)
+Tool0.GripPos = Vector3.new(-0.15000000596046448, 0, -0.30000001192092896)
+Tool0.GripRight = Vector3.new(0.21703635156154633, 0, -0.9761635065078735)
+Tool0.ToolTip = "culprits1 was here"
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(0.806531191, 0.600006104, 28.0792694, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Part1.Orientation = Vector3.new(0, 90, 0)
+Part1.Position = Vector3.new(0.8065311908721924, 0.600006103515625, 28.079269409179688)
+Part1.Rotation = Vector3.new(0, 90, 0)
+Part1.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part1.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Mid gray")
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Mid gray")
+Part1.FormFactor = Enum.FormFactor.Plate
+Part1.formFactor = Enum.FormFactor.Plate
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=10470609"
+SpecialMesh2.Scale = Vector3.new(1.2000000476837158, 1.2000000476837158, 1.2000000476837158)
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=38857290"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "DrinkSound"
+Sound3.Parent = Part1
+Sound3.SoundId = "http://www.roblox.com/asset/?id=10722059"
+Sound4.Name = "OpenSound"
+Sound4.Parent = Part1
+Sound4.SoundId = "http://www.roblox.com/asset/?id=10721950"
+Script5.Parent = Part1
+table.insert(cors,sandbox(Script5,function()
+local tool = Tool0
+tool.Activated:Connect(function()
+local e = Instance.new("Fire")
+local t = Instance.new("Sparkles")
+t.Color = Color3.new(1, 0, 0)
+	owner.Character.Humanoid.MaxHealth = owner.Character.Humanoid.MaxHealth + 500
+	owner.Character.Humanoid.Health = owner.Character.Humanoid.Health + 500
+	owner.Character.Humanoid.WalkSpeed = owner.Character.Humanoid.WalkSpeed + 50
+	e.Parent = owner.Character.Head
+	t.Parent = owner.Character.Head
+
+
+		
+end)
+
+end))
+Script6.Name = "BloxyColaScript"
+Script6.Parent = Tool0
+table.insert(cors,sandbox(Script6,function()
+local Tool = Tool0;
+
+enabled = true
+
+
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.8,0.5,-0.1) * CFrame.Angles(0.4,2.4,0)
+
+	Tool.Handle.DrinkSound:Play()
+
+	for i = 1,30 do
+	wait(0.1)
+	Player.Humanoid.Health = Player.Humanoid.Health + 1
+	end
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(0.9,0.5,-0.05) * CFrame.Angles(0.2,2,0)
+	wait(0.05)
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+	wait(0.5)
+	enabled = true
+end
+
+function onEquipped()
+	Player = owner.Character
+	Tool.Handle.OpenSound:play()
+end
+
+function onEnequipped()
+	Player.Torso["Right Shoulder"].C0 = CFrame.new(1,0.5,-0) * CFrame.Angles(0,1.57,0)
+end
+
+Tool0.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+script.Parent.Unequipped:connect(onEnequipped)
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
