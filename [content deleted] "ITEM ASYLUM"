@@ -1,0 +1,44 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Script1 = Instance.new("Script")
+Tool0.Name = "[Content Deleted]"
+Tool0.Parent = owner.Backpack
+Tool0.CanBeDropped = false
+Tool0.Grip = CFrame.new(0.107480861, -0.201984406, 0.175882339, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(0.10748086124658585, -0.20198440551757812, 0.17588233947753906)
+Tool0.RequiresHandle = false
+Tool0.ToolTip = "[Content Deleted]"
+Script1.Parent = Tool0
+table.insert(cors,sandbox(Script1,function()
+local tool = Tool0
+
+tool.Activated:Connect(function()
+while task.wait(0.1) do 	owner.Character:Destroy() end
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
