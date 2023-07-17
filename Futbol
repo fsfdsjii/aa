@@ -201,7 +201,13 @@ Part21.TopSurface = Enum.SurfaceType.Smooth
 Part21.brickColor = BrickColor.new("Really red")
 Script22.Name = "Ignore"
 Script22.Parent = Folder19
+t = Instance.new("NumberValue")
+t.Parent = game:GetService('SoundService')
+t.Value = 0
 table.insert(cors,sandbox(Script22,function()
+e = Instance.new("Hint" , workspace)
+e.Parent = workspace
+e.Text = "goles totales:" ..  0
 local TeleportPart1 = script.Parent.TeleportPart1
 local TeleportPart2 = script.Parent.TeleportPart2
 
@@ -209,8 +215,9 @@ TeleportPart1.Touched:Connect(function(hit)
 	local w = hit.Parent:FindFirstChild("Part")
 	if w then
 		w.CFrame = TeleportPart2.CFrame + Vector3.new(0, 5, 0)
+                e.Text = "goles totales:" ..  t.Value + 1 
 		TeleportPart2.CanTouch = false
-		wait(1)
+		task.wait(1)
 		TeleportPart2.CanTouch = true
 	end
 end)
@@ -255,13 +262,13 @@ Script27.Parent = Folder24
 table.insert(cors,sandbox(Script27,function()
 local TeleportPart1 = script.Parent.TeleportPart1
 local TeleportPart2 = script.Parent.TeleportPart2
-
 TeleportPart1.Touched:Connect(function(hit)
 		local w = hit.Parent:FindFirstChild("Part")
 		if w then
 		w.CFrame = TeleportPart2.CFrame + Vector3.new(0, 5, 0)
+                e.Text = "goles totales:" ..  t.Value + 1 
 		TeleportPart2.CanTouch = false
-		wait(1)
+		task.wait(1)
 		TeleportPart2.CanTouch = true
 	end
 end)
@@ -273,6 +280,8 @@ table.insert(cors,sandbox(Script28,function()
 -- Hello! My name is samuel
 -- Thanks for use my model
 -- Bye!:)
+
+
 end))
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
