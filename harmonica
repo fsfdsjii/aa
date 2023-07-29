@@ -1,0 +1,104 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Accessory1 = Instance.new("Accessory")
+Part2 = Instance.new("Part")
+SpecialMesh3 = Instance.new("SpecialMesh")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Sound6 = Instance.new("Sound")
+Sound7 = Instance.new("Sound")
+Script8 = Instance.new("Script")
+Attachment9 = Instance.new("Attachment")
+Weld10 = Instance.new("Weld")
+Accessory1.Name = "Harmonica"
+Accessory1.Parent = owner.Character
+Accessory1.AttachmentPoint = CFrame.new(0, 0.949999988, 0.0799999982, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Accessory1.AttachmentPos = Vector3.new(0, 0.949999988079071, 0.07999999821186066)
+Part2.Name = "Handle"
+Part2.Parent = Accessory1
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.Locked = true
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.FormFactor = Enum.FormFactor.Symmetric
+Part2.formFactor = Enum.FormFactor.Symmetric
+SpecialMesh3.Parent = Part2
+SpecialMesh3.MeshId = "http://www.roblox.com/asset/?id=32104593"
+SpecialMesh3.Scale = Vector3.new(1.100000023841858, 0.800000011920929, 0.8999999761581421)
+SpecialMesh3.TextureId = "http://www.roblox.com/asset/?id=32104613"
+SpecialMesh3.MeshType = Enum.MeshType.FileMesh
+Sound4.Name = "Harm1"
+Sound4.Parent = Part2
+Sound4.SoundId = "http://www.roblox.com/asset/?id=33069371"
+Sound4.Volume = 0.95
+Sound5.Name = "Harm2"
+Sound5.Parent = Part2
+Sound5.SoundId = "http://www.roblox.com/asset/?id=33069392"
+Sound5.Volume = 0.95
+Sound6.Name = "Harm3"
+Sound6.Parent = Part2
+Sound6.SoundId = "http://www.roblox.com/asset/?id=33069412"
+Sound6.Volume = 0.95
+Sound7.Name = "Harm4"
+Sound7.Parent = Part2
+Sound7.SoundId = "http://www.roblox.com/asset/?id=33069454"
+Sound7.Volume = 0.95
+Script8.Name = "HarmonicaSounds"
+Script8.Parent = Part2
+table.insert(cors,sandbox(Script8,function()
+	-- LOL
+
+	function isWorn()
+		return script.Parent.Parent.Parent:FindFirstChild("Humanoid") ~= nil
+	end
+
+	while true do
+
+		wait(math.random(5,20))
+
+		if (isWorn()) then
+
+			local name = "Harm" .. math.random(1,4)
+
+			script.Parent:FindFirstChild(name):Play()
+		end
+
+	end
+	Attachment9.Name = "NeckAttachment"
+	Attachment9.Parent = Part2
+	Attachment9.CFrame.Position = Vector3.new(0, -0.05, 0.08)
+	Attachment9.Axis = 	Vector3.new(1, 0, 0)
+	Attachment9.SecondaryAxis = Vector3.new(-0, 1, 0)
+	Weld10.Name = "AccessoryWeld"
+	Weld10.Parent = Part2
+	Weld10.Part0 = Part2
+	Weld10.Part1 = owner.Character.Torso
+	Weld10.C1.Position = Vector3.new(0, 1, 0)
+	Weld10.C0.Position = Vector3.new(0, -0.05, 0.08)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
