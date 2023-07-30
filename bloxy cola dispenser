@@ -1603,10 +1603,13 @@ local Debounce = false
 local function onClicked()
 	if not Debounce then
 local e = game:GetService('ServerStorage').BloxyCola:Clone()
-		for _, v in next, e:GetDescendants() do
-e.Handle.Mesh.Parent = game:GetService('ServerStorage')
+	for _, v in next, e:GetDescendants() do
+local t = e.Handle:FindFirstChildWhichIsA('SpecialMesh')
+t.Parent = game:GetService('ServerStorage')
 v.Position = script.Parent.PositionPart.Position
-game:GetService('ServerStorage').Mesh.Parent = e
+local ServerStorage = game:GetService('ServerStorage')
+local ty = ServerStorage:FindFirstChildWhichIsA('SpecialMesh')		
+ty.Parent = e
 	end
 Debounce = true
 task.wait(3)
