@@ -779,7 +779,7 @@ e.Parent = game:GetService('LanguageService')
 e.Value = Vector3.new(0, 2, 0)
 
 while task.wait(1.5) do 
-	Part1.Size = e.Value + Part1.Size
+	Part1.Size = Part1.Size + e.Value % 100
 end
 end))
 Part5.Parent = Model0
