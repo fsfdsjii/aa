@@ -776,10 +776,10 @@ Script4.Parent = Part1
 table.insert(cors,sandbox(Script4,function()
 e = Instance.new("Vector3Value")
 e.Parent = game:GetService('LanguageService')
-e.Value = Vector3.new(0, 4, 0)
+e.Value = Vector3.new(0, 2, 0)
 
-while task.wait(4) do 
-	Part1.Size = e.Value + Part1.Size % 100
+while task.wait(1.5) do 
+	Part1.Size = e.Value + Part1.Size
 end
 end))
 Part5.Parent = Model0
