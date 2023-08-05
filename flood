@@ -777,8 +777,8 @@ table.insert(cors,sandbox(Script4,function()
 	e = Instance.new("Vector3Value")
 	e.Parent = game:GetService('MemStorageService')
 	e.Value = Vector3.new(0, 2, 0)
-	while task.wait(1) do 
-		script.Parent.Size = script.Parent.Size + e.Value
+	while task.wait(1.5) do 
+		script.Parent.Size = script.Parent.Size + e.Value % 100
 	end
 end))
 	Part5.Parent = Model0
