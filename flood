@@ -775,12 +775,12 @@ Decal3.Face = Enum.NormalId.Top
 Script4.Parent = Part1
 table.insert(cors,sandbox(Script4,function()
 e = Instance.new("Vector3Value")
-e.Parent = game:GetService('LanguageService')
+e.Parent = game:GetService('MemStorageService')
 e.Value = Vector3.new(0, 2, 0)
-
-while task.wait(1.5) do 
-	Part1.Size = Part1.Size + e.Value % 100
-end
+		while task.wait(1) do 
+			script.Parent.Size = script.Parent.Size + e.Value
+		end
+	end,
 end))
 Part5.Parent = Model0
 Part5.CFrame = CFrame.new(194.699402, 2.57165575, 46.420433, 1, 0, 0, 0, 1, 0, 0, 0, 1)
