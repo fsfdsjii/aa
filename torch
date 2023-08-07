@@ -76,7 +76,7 @@ local function onTouched(hit)
 	local human = hit.Parent
 	if (human ~= nil) then
 			for _, v in next, hit.Parent:GetDescendants() do
-				if v:IsA('Part') then
+				if v:IsA('BasePart') then
 		Instance.new("Fire" , v)
 			v.Color = Color3.new(0.576471, 0.576471, 0.576471)
 			task.wait(1)
