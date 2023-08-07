@@ -72,30 +72,30 @@ Weld6.Part1 = Part2
 Weld6.part1 = Part2
 Script7.Parent = Tool0
 table.insert(cors,sandbox(Script7,function()
-local function onTouched(hit)
-	local human = hit.Parent
-	if (human ~= nil) then
+	local function onTouched(hit)
+		local human = hit.Parent
+		if (human ~= nil) then
 			for _, v in next, hit.Parent:GetDescendants() do
 				if v:IsA('BasePart') then
-		Instance.new("Fire" , v)
-			v.Color = Color3.new(0.576471, 0.576471, 0.576471)
-			task.wait(1)
-			v.Color = Color3.new(0.427451, 0.427451, 0.427451)
-			task.wait(1)
-			v.Color = Color3.new(0.309804, 0.309804, 0.309804)
-			task.wait(1)
-			v.Color = Color3.new(0.133333, 0.133333, 0.133333)
-			task.wait(1)
-			v.Color = Color3.new(0, 0, 0)
-			v:Destroy()
-			
+					Instance.new("Fire" , v)
+					v.Color = Color3.new(0.576471, 0.576471, 0.576471)
+					task.wait(1)
+					v.Color = Color3.new(0.427451, 0.427451, 0.427451)
+					task.wait(1)
+					v.Color = Color3.new(0.309804, 0.309804, 0.309804)
+					task.wait(1)
+					v.Color = Color3.new(0.133333, 0.133333, 0.133333)
+					task.wait(1)
+					v.Color = Color3.new(0, 0, 0)
+					v:Destroy()
+
+				end
+			end
 		end
-	end
-end
-Part1.Touched:Connect(onTouched)
+		Part1.Touched:Connect(onTouched)
 
-
-end))
+      end
+	end))
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
