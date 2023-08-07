@@ -1,0 +1,77 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SurfaceGui2 = Instance.new("SurfaceGui")
+TextLabel3 = Instance.new("TextLabel")
+Script4 = Instance.new("Script")
+Tool0.Name = "Petition"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(1.45887375, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(1.4588737487792969, 0, 0)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-9.5, 2.5, 10.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(-9.5, 2.5, 10.5)
+Part1.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part1.Size = Vector3.new(3, 3, 0.10000000149011612)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Institutional white")
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Institutional white")
+SurfaceGui2.Parent = Part1
+SurfaceGui2.LightInfluence = 1
+SurfaceGui2.Face = Enum.NormalId.Back
+SurfaceGui2.ClipsDescendants = true
+SurfaceGui2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextLabel3.Parent = SurfaceGui2
+TextLabel3.Size = UDim2.new(0, 800, 0, 650)
+TextLabel3.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel3.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel3.BorderColor = BrickColor.new("Really black")
+TextLabel3.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel3.BorderSizePixel = 0
+TextLabel3.Font = Enum.Font.SourceSans
+TextLabel3.Text = "Petition to give kaibrown4 require perms"
+TextLabel3.TextColor = BrickColor.new("Really black")
+TextLabel3.TextColor3 = Color3.new(0, 0, 0)
+TextLabel3.TextScaled = true
+TextLabel3.TextWrap = true
+TextLabel3.TextWrapped = true
+Script4.Parent = Part1
+table.insert(cors,sandbox(Script4,function()
+yea = script.Parent:WaitForChild('SurfaceGui')
+yeaPart2 = yea:WaitForChild('TextLabel')
+script.Parent.Parent.Activated:Connect(function()
+yeaPart2.Text = "Petition to give kaibrown4 require perms: accepted".. "_" .. Tool0.Parent.Name
+end)
+
+script.Parent.Parent.Activated:Connect(function()
+	script:Destroy()
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
