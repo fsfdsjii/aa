@@ -208,3 +208,21 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+Sound1 = Instance.new("Sound")
+DistortionSoundEffect2 = Instance.new("DistortionSoundEffect")
+ReverbSoundEffect3 = Instance.new("ReverbSoundEffect")
+EchoSoundEffect4 = Instance.new("EchoSoundEffect")
+Sound1.Parent = Part1
+Sound1.Pitch = 2
+Sound1.PlaybackSpeed = 2
+Sound1.RollOffMode = Enum.RollOffMode.InverseTapered
+Sound1.SoundId = "rbxassetid://2179942010"
+Sound1.Volume = 0.11999999731779099
+Sound1.Looped = true
+DistortionSoundEffect2.Parent = Sound1
+DistortionSoundEffect2.Level = 0.9200000166893005
+ReverbSoundEffect3.Parent = Sound1
+ReverbSoundEffect3.DryLevel = -9
+ReverbSoundEffect3.WetLevel = 1
+EchoSoundEffect4.Parent = Sound1
+Sound1:Play()
