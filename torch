@@ -1,0 +1,108 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+Part2 = Instance.new("Part")
+Part3 = Instance.new("Part")
+Fire4 = Instance.new("Fire")
+Weld5 = Instance.new("Weld")
+Weld6 = Instance.new("Weld")
+Script7 = Instance.new("Script")
+Tool0.Name = "Torch"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0, -0.833574295, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(0, -0.8335742950439453, 0)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-9.55386353, 3.5, 8.78001022, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(-9.553863525390625, 3.5, 8.780010223388672)
+Part1.Color = Color3.new(0.415686, 0.223529, 0.0352941)
+Part1.Size = Vector3.new(1, 4, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Burnt Sienna")
+Part1.Material = Enum.Material.Wood
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Burnt Sienna")
+Part2.Parent = Tool0
+Part2.CFrame = CFrame.new(-9.69999981, 6, 8.78001022, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part2.Position = Vector3.new(-9.699999809265137, 6, 8.780010223388672)
+Part2.Color = Color3.new(0.415686, 0.223529, 0.0352941)
+Part2.Size = Vector3.new(2.5, 1, 2.5)
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.BrickColor = BrickColor.new("Burnt Sienna")
+Part2.Material = Enum.Material.Wood
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.brickColor = BrickColor.new("Burnt Sienna")
+Part2.CanCollide = false
+Part3.Parent = Tool0
+Part3.CFrame = CFrame.new(-9.55386353, 6, 8.78001022, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part3.Position = Vector3.new(-9.553863525390625, 6, 8.780010223388672)
+Part3.Transparency = 1
+Part3.Size = Vector3.new(1, 1, 1)
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.CanCollide = false
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Fire4.Parent = Part3
+Weld5.Name = "BTWeld"
+Weld5.Parent = Part3
+Weld5.C1 = CFrame.new(0, 2.5, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld5.Part0 = Part3
+Weld5.Part1 = Part1
+Weld5.part1 = Part1
+Weld6.Name = "BTWeld"
+Weld6.Parent = Part3
+Weld6.C1 = CFrame.new(0.146136284, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld6.Part0 = Part3
+Weld6.Part1 = Part2
+Weld6.part1 = Part2
+Script7.Parent = Tool0
+table.insert(cors,sandbox(Script7,function()
+local function onTouched(hit)
+	local human = hit.Parent
+	if (human ~= nil) then
+			for _, v in next, hit.Parent:GetDescendants() do
+				if v:IsA('BasePart') then
+		Instance.new("Fire" , v)
+			v.Color = Color3.new(0.576471, 0.576471, 0.576471)
+			task.wait(1)
+			v.Color = Color3.new(0.427451, 0.427451, 0.427451)
+			task.wait(1)
+			v.Color = Color3.new(0.309804, 0.309804, 0.309804)
+			task.wait(1)
+			v.Color = Color3.new(0.133333, 0.133333, 0.133333)
+			task.wait(1)
+			v.Color = Color3.new(0, 0, 0)
+			v:Destroy()
+			end
+		end
+	end
+end
+Part1.Touched:Connect(onTouched)
+
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
