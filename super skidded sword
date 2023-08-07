@@ -1,0 +1,210 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Script6 = Instance.new("Script")
+BillboardGui7 = Instance.new("BillboardGui")
+TextLabel8 = Instance.new("TextLabel")
+Script9 = Instance.new("Script")
+Camera10 = Instance.new("Camera")
+Script11 = Instance.new("Script")
+Tool0.Name = "SUPER SKIDDED RAINBOW SWORD UNLEAKED VERY RARE SUPER SKIDDED"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "rbxasset://Textures/Sword128.png"
+Tool0.Grip = CFrame.new(0, 0, -1.5, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+Tool0.GripForward = Vector3.new(-1, -0, -0)
+Tool0.GripPos = Vector3.new(0, 0, -1.5)
+Tool0.GripRight = Vector3.new(0, 1, 0)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-9.62472153, 1.88733482, 4.8993001, 0.0910440385, -0.881099463, 0.464084357, 0.537011683, 0.435894847, 0.722229123, -0.838648558, 0.183463722, 0.512845576)
+Part1.Orientation = Vector3.new(-46.2400016784668, 42.13999938964844, 50.93000030517578)
+Part1.Position = Vector3.new(-9.62472152709961, 1.8873348236083984, 4.8993000984191895)
+Part1.Rotation = Vector3.new(-54.619998931884766, 27.649999618530273, 84.0999984741211)
+Part1.Color = Color3.new(1, 0, 0)
+Part1.Size = Vector3.new(1, 0.800000011920929, 4)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Really red")
+Part1.Locked = true
+Part1.Reflectance = 0.4000000059604645
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Really red")
+Part1.FormFactor = Enum.FormFactor.Plate
+Part1.formFactor = Enum.FormFactor.Plate
+Sound3.Name = "SwordSlash"
+Sound3.Parent = Part1
+Sound3.SoundId = "http://www.roblox.com/asset/?id=12222216"
+Sound3.Volume = 0.699999988079071
+Sound4.Name = "SwordLunge"
+Sound4.Parent = Part1
+Sound4.SoundId = "http://www.roblox.com/asset/?id=12222208"
+Sound4.Volume = 0.6000000238418579
+Sound5.Name = "Unsheath"
+Sound5.Parent = Part1
+Sound5.SoundId = "http://www.roblox.com/asset/?id=12222225"
+Sound5.Volume = 1
+Script6.Parent = Part1
+table.insert(cors,sandbox(Script6,function()
+Part1.Material = Enum.Material.Neon
+while task.wait(0.2) do
+	script.Parent.Color = Color3.new(1, 0, 0.0156863)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(1, 0, 0.615686)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(1, 0, 0.901961)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(0.752941, 0.00784314, 1)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(0.552941, 0.00392157, 1)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(0.333333, 0, 1)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(0, 0.6, 1)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(0, 1, 0.968627)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(0.00392157, 1, 0.784314)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(0, 1, 0.501961)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(0, 1, 0.0666667)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(0.733333, 1, 0)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(0.984314, 1, 0.00392157)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(1, 0.717647, 0)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(1, 0.533333, 0)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(1, 0.317647, 0)
+	task.wait(0.2)
+	script.Parent.Color = Color3.new(1, 0, 0.0156863)
+    
+end
+
+end))
+
+BillboardGui7.Parent = Part1
+BillboardGui7.LightInfluence = 1
+BillboardGui7.Size = UDim2.new(0, 200, 0, 50)
+BillboardGui7.Active = true
+BillboardGui7.ClipsDescendants = true
+BillboardGui7.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextLabel8.Parent = BillboardGui7
+TextLabel8.Position = UDim2.new(0, 0, 0.100000001, 0)
+TextLabel8.Size = UDim2.new(0, 200, 0, 50)
+TextLabel8.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel8.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel8.BackgroundTransparency = 1
+TextLabel8.BorderColor = BrickColor.new("Really black")
+TextLabel8.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel8.BorderSizePixel = 0
+TextLabel8.Font = Enum.Font.SourceSans
+TextLabel8.FontSize = Enum.FontSize.Size18
+TextLabel8.Text = "SUPER SKIDDED RAINBOW SWORD UNLEAKED VERY RARE SUPER SKIDDED"
+TextLabel8.TextColor = BrickColor.new("Really black")
+TextLabel8.TextColor3 = Color3.new(0, 0, 0)
+TextLabel8.TextScaled = true
+TextLabel8.TextSize = 16
+TextLabel8.TextWrap = true
+TextLabel8.TextWrapped = true
+Script9.Parent = TextLabel8
+table.insert(cors,sandbox(Script9,function()
+while task.wait(0.2) do
+script.Parent.TextColor3 = Color3.new(1, 0, 0.0156863)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(1, 0, 0.615686)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(1, 0, 0.901961)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(0.752941, 0.00784314, 1)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(0.552941, 0.00392157, 1)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(0.333333, 0, 1)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(0, 0.6, 1)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(0, 1, 0.968627)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(0.00392157, 1, 0.784314)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(0, 1, 0.501961)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(0, 1, 0.0666667)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(0.733333, 1, 0)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(0.984314, 1, 0.00392157)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(1, 0.717647, 0)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(1, 0.533333, 0)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(1, 0.317647, 0)
+task.wait(0.2)
+script.Parent.TextColor3 = Color3.new(1, 0, 0.0156863)
+end
+while task.wait(0.05) do
+	script.Parent.Rotation = -2
+	task.wait(0.05)
+	script.Parent.Rotation = -1
+	task.wait(0.05)
+	script.Parent.Rotation = 0
+	task.wait(0.05)
+	script.Parent.Rotation = 1
+	task.wait(0.05)
+	script.Parent.Rotation = 2
+end
+end))
+Camera10.Name = "ThumbnailCamera"
+Camera10.Parent = Tool0
+Camera10.CFrame = CFrame.new(-5.67428207, 2.83736515, 3.79184556, 0.289030313, 0.416664183, -0.861888885, -0, 0.900314331, 0.435240269, 0.957319915, -0.125797629, 0.260218143)
+Camera10.CoordinateFrame = CFrame.new(-5.67428207, 2.83736515, 3.79184556, 0.289030313, 0.416664183, -0.861888885, -0, 0.900314331, 0.435240269, 0.957319915, -0.125797629, 0.260218143)
+Camera10.Focus = CFrame.new(-3.9505043, 1.96688461, 3.27140927, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera10.focus = CFrame.new(-3.9505043, 1.96688461, 3.27140927, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Script11.Parent = Tool0
+table.insert(cors,sandbox(Script11,function()
+script.Parent.Activated:Connect(function()
+	script.Parent.Handle.Touched:Connect(function(onTouched)
+		local e = onTouched.Parent:FindFirstChild('Humanoid')
+		if e then
+			e.MaxHealth = e.MaxHealth - math.huge
+			e.Parent:Destroy()
+		end
+	end)
+
+end)
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
