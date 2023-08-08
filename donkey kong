@@ -1,0 +1,247 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Part2 = Instance.new("Part")
+Part3 = Instance.new("Part")
+WedgePart4 = Instance.new("WedgePart")
+Part5 = Instance.new("Part")
+Part6 = Instance.new("Part")
+Part7 = Instance.new("Part")
+Part8 = Instance.new("Part")
+Part9 = Instance.new("Part")
+Part10 = Instance.new("Part")
+Part11 = Instance.new("Part")
+Decal12 = Instance.new("Decal")
+Script13 = Instance.new("Script")
+Part14 = Instance.new("Part")
+Part15 = Instance.new("Part")
+Part16 = Instance.new("Part")
+Part17 = Instance.new("Part")
+SpecialMesh18 = Instance.new("SpecialMesh")
+Script19 = Instance.new("Script")
+Model0.Name = "DonkeyKongGame"
+Model0.Parent = mas
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(-19, 1.5, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(-19, 1.5, 2)
+Part1.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part1.Size = Vector3.new(12, 3.0999999046325684, 5)
+Part1.Anchored = true
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Forest green")
+Part1.Material = Enum.Material.Grass
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Forest green")
+Part2.Parent = Model0
+Part2.CFrame = CFrame.new(-19, 29.5, -25.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part2.Position = Vector3.new(-19, 29.5, -25.5)
+Part2.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part2.Size = Vector3.new(12.399999618530273, 3.0999999046325684, 6)
+Part2.Anchored = true
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.BrickColor = BrickColor.new("Forest green")
+Part2.Material = Enum.Material.Grass
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.brickColor = BrickColor.new("Forest green")
+Part3.Parent = Model0
+Part3.CFrame = CFrame.new(-19, 29.5, -22, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part3.Position = Vector3.new(-19, 29.5, -22)
+Part3.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part3.Size = Vector3.new(12.399999618530273, 3.0999999046325684, 0.10000000149011612)
+Part3.Anchored = true
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.BrickColor = BrickColor.new("Forest green")
+Part3.Material = Enum.Material.Grass
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Part3.brickColor = BrickColor.new("Forest green")
+WedgePart4.Parent = Model0
+WedgePart4.CFrame = CFrame.new(-19, 17.2477417, -8.91421509, 1, 0, 0, 0, 0.499999762, -0.866025507, 0, 0.866025507, 0.499999762)
+WedgePart4.Orientation = Vector3.new(60, 0, 0)
+WedgePart4.Position = Vector3.new(-19, 17.24774169921875, -8.914215087890625)
+WedgePart4.Rotation = Vector3.new(60, 0, 0)
+WedgePart4.Color = Color3.new(0.121569, 0.501961, 0.113725)
+WedgePart4.Size = Vector3.new(12, 9, 38)
+WedgePart4.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart4.BrickColor = BrickColor.new("Forest green")
+WedgePart4.Material = Enum.Material.Grass
+WedgePart4.brickColor = BrickColor.new("Forest green")
+WedgePart4.Anchored = true
+Part5.Parent = Model0
+Part5.CFrame = CFrame.new(-19, 29.5, -22.1000004, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part5.Position = Vector3.new(-19, 29.5, -22.100000381469727)
+Part5.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part5.Size = Vector3.new(12.399999618530273, 3.0999999046325684, 0.10000000149011612)
+Part5.Anchored = true
+Part5.BottomSurface = Enum.SurfaceType.Smooth
+Part5.BrickColor = BrickColor.new("Forest green")
+Part5.Material = Enum.Material.Grass
+Part5.TopSurface = Enum.SurfaceType.Smooth
+Part5.brickColor = BrickColor.new("Forest green")
+Part6.Parent = Model0
+Part6.CFrame = CFrame.new(-19, 29.5, -22.2000008, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part6.Position = Vector3.new(-19, 29.5, -22.200000762939453)
+Part6.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part6.Size = Vector3.new(12.399999618530273, 3.0999999046325684, 0.10000000149011612)
+Part6.Anchored = true
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.BrickColor = BrickColor.new("Forest green")
+Part6.Material = Enum.Material.Grass
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part6.brickColor = BrickColor.new("Forest green")
+Part7.Parent = Model0
+Part7.CFrame = CFrame.new(-19, 29.5, -22.2999992, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part7.Position = Vector3.new(-19, 29.5, -22.299999237060547)
+Part7.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part7.Size = Vector3.new(12.399999618530273, 3.0999999046325684, 0.10000000149011612)
+Part7.Anchored = true
+Part7.BottomSurface = Enum.SurfaceType.Smooth
+Part7.BrickColor = BrickColor.new("Forest green")
+Part7.Material = Enum.Material.Grass
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Part7.brickColor = BrickColor.new("Forest green")
+Part8.Parent = Model0
+Part8.CFrame = CFrame.new(-19, 29.5, -22.3999996, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part8.Position = Vector3.new(-19, 29.5, -22.399999618530273)
+Part8.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part8.Size = Vector3.new(12.399999618530273, 3.0999999046325684, 0.10000000149011612)
+Part8.Anchored = true
+Part8.BottomSurface = Enum.SurfaceType.Smooth
+Part8.BrickColor = BrickColor.new("Forest green")
+Part8.Material = Enum.Material.Grass
+Part8.TopSurface = Enum.SurfaceType.Smooth
+Part8.brickColor = BrickColor.new("Forest green")
+Part9.Parent = Model0
+Part9.CFrame = CFrame.new(-19, 29.5, -22.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part9.Position = Vector3.new(-19, 29.5, -22.5)
+Part9.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part9.Size = Vector3.new(12.399999618530273, 3.0999999046325684, 0.10000000149011612)
+Part9.Anchored = true
+Part9.BottomSurface = Enum.SurfaceType.Smooth
+Part9.BrickColor = BrickColor.new("Forest green")
+Part9.Material = Enum.Material.Grass
+Part9.TopSurface = Enum.SurfaceType.Smooth
+Part9.brickColor = BrickColor.new("Forest green")
+Part10.Parent = Model0
+Part10.CFrame = CFrame.new(-19, 30, -22.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part10.Position = Vector3.new(-19, 30, -22.5)
+Part10.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part10.Size = Vector3.new(12.399999618530273, 3.0999999046325684, 0.3499999940395355)
+Part10.Anchored = true
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.BrickColor = BrickColor.new("Forest green")
+Part10.Material = Enum.Material.Grass
+Part10.TopSurface = Enum.SurfaceType.Smooth
+Part10.brickColor = BrickColor.new("Forest green")
+Part11.Name = "Donkey Kong Character"
+Part11.Parent = Model0
+Part11.CFrame = CFrame.new(-21.3656445, 33.7000008, -23.1174431, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part11.Position = Vector3.new(-21.365644454956055, 33.70000076293945, -23.117443084716797)
+Part11.Transparency = 1
+Part11.Size = Vector3.new(5, 5, 0.10000000149011612)
+Part11.Anchored = true
+Part11.BottomSurface = Enum.SurfaceType.Smooth
+Part11.TopSurface = Enum.SurfaceType.Smooth
+Decal12.Parent = Part11
+Decal12.Texture = "http://www.roblox.com/asset/?id=111049135"
+Decal12.Face = Enum.NormalId.Back
+Script13.Parent = Decal12
+table.insert(cors,sandbox(Script13,function()
+while task.wait(2) do
+	script.Parent.Texture = "rbxassetid://111049104"
+	task.wait(2)
+	script.Parent.Texture = "http://www.roblox.com/asset/?id=111049135"
+end
+
+end))
+Part14.Parent = Model0
+Part14.CFrame = CFrame.new(-19, 29.2999992, -22.2000008, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part14.Position = Vector3.new(-19, 29.299999237060547, -22.200000762939453)
+Part14.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part14.Size = Vector3.new(12.399999618530273, 2.799999952316284, 0.10000000149011612)
+Part14.Anchored = true
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.BrickColor = BrickColor.new("Forest green")
+Part14.Material = Enum.Material.Grass
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Part14.brickColor = BrickColor.new("Forest green")
+Part15.Parent = Model0
+Part15.CFrame = CFrame.new(-19, 29.2999992, -21.8999996, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part15.Position = Vector3.new(-19, 29.299999237060547, -21.899999618530273)
+Part15.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part15.Size = Vector3.new(12.399999618530273, 3, 0.10000000149011612)
+Part15.Anchored = true
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.BrickColor = BrickColor.new("Forest green")
+Part15.Material = Enum.Material.Grass
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.brickColor = BrickColor.new("Forest green")
+Part16.Parent = Model0
+Part16.CFrame = CFrame.new(-19, 30, -22.2999992, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part16.Position = Vector3.new(-19, 30, -22.299999237060547)
+Part16.Color = Color3.new(0.121569, 0.501961, 0.113725)
+Part16.Size = Vector3.new(12.399999618530273, 2.799999952316284, 0.3499999940395355)
+Part16.Anchored = true
+Part16.BottomSurface = Enum.SurfaceType.Smooth
+Part16.BrickColor = BrickColor.new("Forest green")
+Part16.Material = Enum.Material.Grass
+Part16.TopSurface = Enum.SurfaceType.Smooth
+Part16.brickColor = BrickColor.new("Forest green")
+Part17.Name = "Barrel"
+Part17.Parent = Model0
+Part17.CFrame = CFrame.new(-15, 30.3498402, -20, -1, 2.38497613e-08, 0, -2.38497613e-08, -1, 0, 0, 0, 1)
+Part17.Orientation = Vector3.new(0, 0, -180)
+Part17.Position = Vector3.new(-15, 30.34984016418457, -20)
+Part17.Rotation = Vector3.new(0, 0, -180)
+Part17.Size = Vector3.new(3, 3, 3)
+Part17.BottomSurface = Enum.SurfaceType.Smooth
+Part17.TopSurface = Enum.SurfaceType.Smooth
+Part17.Shape = Enum.PartType.Cylinder
+Part17.Anchored = false
+SpecialMesh18.Parent = Part17
+SpecialMesh18.MeshId = "rbxassetid://13540218379"
+SpecialMesh18.Scale = Vector3.new(3, 3, 3)
+SpecialMesh18.TextureId = "rbxassetid://13540218454"
+SpecialMesh18.MeshType = Enum.MeshType.FileMesh
+Script19.Parent = Part17
+table.insert(cors,sandbox(Script19,function()
+script.Parent.Parent = game:GetService('ServerStorage')
+
+while task.wait(2) do e = script.Parent:Clone()
+t = math.random(23, 15)
+e.Position = Vector3.new(t, 30.35, -20)
+function onTouched(part)
+	local h = part.Parent:findFirstChild("Humanoid")
+	if h~=nil then
+		h.Health = h.Health-100
+	end
+end
+e.Touched:connect(onTouched) end
+task.wait(9)
+e:Destroy()
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
