@@ -35,6 +35,8 @@ Part16 = Instance.new("Part")
 Part17 = Instance.new("Part")
 SpecialMesh18 = Instance.new("SpecialMesh")
 Script19 = Instance.new("Script")
+Part17s = Instance.new("Part")
+SpecialMesh18s = Instance.new("SpecialMesh")
 Model0.Name = "DonkeyKongGame"
 Model0.Parent = mas
 Part1.Parent = Model0
@@ -222,9 +224,23 @@ Script19.Parent = Part17
 table.insert(cors,sandbox(Script19,function()
 script.Parent.Parent = game:GetService('ServerStorage')
 
-while task.wait(2) do e = script.Parent:Clone()
+while task.wait(2) do
 t = math.random(23, 15)
-e.Position = Vector3.new(t, 30.35, -20)
+SpecialMesh18s.Parent = Part17
+SpecialMesh18s.MeshId = "rbxassetid://13540218379"
+SpecialMesh18s.Scale = Vector3.new(3, 3, 3)
+SpecialMesh18s.TextureId = "rbxassetid://13540218454"
+SpecialMesh18s.MeshType = Enum.MeshType.FileMesh
+Part17s.Name = "Barrel"
+Part17s.Parent = Model0
+Part17s.Orientation = Vector3.new(0, 0, -180)
+Part17s.Position = Vector3.new(t, 30.34984016418457, -20)
+Part17s.Rotation = Vector3.new(0, 0, -180)
+Part17s.Size = Vector3.new(3, 3, 3)
+Part17s.BottomSurface = Enum.SurfaceType.Smooth
+Part17s.TopSurface = Enum.SurfaceType.Smooth
+Part17s.Shape = Enum.PartType.Cylinder
+Part17s.Anchored = false
 function onTouched(part)
 	local h = part.Parent:findFirstChild("Humanoid")
 	if h~=nil then
