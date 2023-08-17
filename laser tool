@@ -1,0 +1,57 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+LineHandleAdornment2 = Instance.new("LineHandleAdornment")
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=7757261206"
+Tool0.Grip = CFrame.new(0, 0, 104.741249, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(0, 0, 104.74124908447266)
+Part1.Name = "Handle"
+Part1.Massless = true
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(0, 0.5, 0, 1, -0, 0, 0, 1, 0, -0, 0, 1)
+Part1.Position = Vector3.new(0, 0.5, 0)
+Part1.Transparency = 1
+Part1.Size = Vector3.new(4, 1, 210)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.CanCollide = false
+Part1.Touched:Connect(function(t)
+	if t.Name ~= "Base" then
+		t:Destroy()
+	end
+	
+end)
+LineHandleAdornment2.Parent = Part1
+LineHandleAdornment2.Length = 210
+LineHandleAdornment2.Color = BrickColor.new("Really red")
+LineHandleAdornment2.Thickness = 100
+LineHandleAdornment2.Color3 = Color3.new(1, 0, 0.0156863)
+LineHandleAdornment2.Adornee = Part1
+LineHandleAdornment2.SizeRelativeOffset = Vector3.new(0, 0, 1)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
