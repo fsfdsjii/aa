@@ -1,0 +1,82 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Script3 = Instance.new("Script")
+Tool0.Name = "x-ray"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0, 0, -0.0399436951, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(0, 0, -0.039943695068359375)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(36, 0.500001013, -11, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(36, 0.5000010132789612, -11)
+Part1.Size = Vector3.new(4, 1, 2)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxassetid://1031203373"
+SpecialMesh2.TextureId = "rbxassetid://1031203384"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Script3.Parent = Part1
+table.insert(cors,sandbox(Script3,function()
+script.Parent.Parent.Activated:Connect(function()
+		NLS([[for _, v in next, workspace:GetDescendants() do
+	if v:IsA("Model") then
+		local E = v:FindFirstChild('Humanoid')
+		if E then
+			local e = Instance.new("Highlight")
+			e.Parent = v
+			e.FillColor = Color3.new(0, 0, 0)
+			owner.Character["x-ray"].Deactivated:Connect(function()
+			NS('owner.Character["x-ray"].Grip = Tool0.Grip = CFrame.new(1.54510188, -1.14515305, -1.27927971, 1, 0, 0, 0, 1, 0, 0, 0, 1) ')
+NS('owner.Character["x-ray"].GripPos = Tool0.GripPos = Vector3.new(1.5451018810272217, -1.1451530456542969, -1.2792797088623047)')
+script:Destroy()
+for _, v in next, workspace:GetDescendants() do
+	if v:IsA("Model") then
+		local E = v:FindFirstChild('Humanoid')
+		if E then
+		e:Destroy()
+		   end
+		end
+	 end
+           end)
+		end
+	end
+end]] , owner.PlayerGui)
+end)
+
+Tool0.Deactivated:Connect(function()
+	Tool0.Grip = CFrame.new(1.54510188, -1.14515305, -1.27927971, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Tool0.GripPos = Vector3.new(1.5451018810272217, -1.1451530456542969, -1.2792797088623047)
+	Script3:Destroy()
+end)
+
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
