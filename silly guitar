@@ -1,0 +1,381 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Sound6 = Instance.new("Sound")
+Sound7 = Instance.new("Sound")
+Sound8 = Instance.new("Sound")
+Sound9 = Instance.new("Sound")
+Sound10 = Instance.new("Sound")
+Sound11 = Instance.new("Sound")
+Sound12 = Instance.new("Sound")
+Sound13 = Instance.new("Sound")
+Sound14 = Instance.new("Sound")
+Sound15 = Instance.new("Sound")
+Sound16 = Instance.new("Sound")
+Sound17 = Instance.new("Sound")
+Sound18 = Instance.new("Sound")
+Animation19 = Instance.new("Animation")
+Animation20 = Instance.new("Animation")
+Script21 = Instance.new("Script")
+NumberValue22 = Instance.new("NumberValue")
+Script23 = Instance.new("Script")
+LocalScript24 = Instance.new("LocalScript")
+Tool0.Name = "SillyGuitar"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=55735329"
+Tool0.CanBeDropped = false
+Tool0.Grip = CFrame.new(-1.70000005, -1, -1.20000005, -0.707106769, -0.707106829, 0, 0, 0, 1, -0.707106769, 0.707106829, 0)
+Tool0.GripForward = Vector3.new(-0, -1, -0)
+Tool0.GripPos = Vector3.new(-1.7000000476837158, -1, -1.2000000476837158)
+Tool0.GripRight = Vector3.new(-0.7071067690849304, 0, -0.7071067690849304)
+Tool0.GripUp = Vector3.new(-0.7071068286895752, 0, 0.7071068286895752)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(22.975769, 0.400024414, -15.5249434, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(22.97576904296875, 0.4000244140625, -15.524943351745605)
+Part1.Size = Vector3.new(1.8700016736984253, 0.8000002503395081, 5.779999256134033)
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=55735445"
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=55735403"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "A5"
+Sound3.Parent = Part1
+Sound3.SoundId = "http://www.roblox.com/asset/?id=55741617"
+Sound3.Volume = 1
+Sound4.Name = "AFlat5"
+Sound4.Parent = Part1
+Sound4.SoundId = "http://www.roblox.com/asset/?id=55741584"
+Sound4.Volume = 1
+Sound5.Name = "B5"
+Sound5.Parent = Part1
+Sound5.SoundId = "http://www.roblox.com/asset/?id=55741702"
+Sound5.Volume = 1
+Sound6.Name = "BFlat5"
+Sound6.Parent = Part1
+Sound6.SoundId = "http://www.roblox.com/asset/?id=55741662"
+Sound6.Volume = 1
+Sound7.Name = "C5"
+Sound7.Parent = Part1
+Sound7.SoundId = "http://www.roblox.com/asset/?id=55741213"
+Sound7.Volume = 1
+Sound8.Name = "C6"
+Sound8.Parent = Part1
+Sound8.SoundId = "http://www.roblox.com/asset/?id=55741744"
+Sound8.Volume = 1
+Sound9.Name = "CSharp5"
+Sound9.Parent = Part1
+Sound9.SoundId = "http://www.roblox.com/asset/?id=55741275"
+Sound9.Volume = 1
+Sound10.Name = "D5"
+Sound10.Parent = Part1
+Sound10.SoundId = "http://www.roblox.com/asset/?id=55741329"
+Sound10.Volume = 1
+Sound11.Name = "E5"
+Sound11.Parent = Part1
+Sound11.SoundId = "http://www.roblox.com/asset/?id=55741420"
+Sound11.Volume = 1
+Sound12.Name = "EFlat5"
+Sound12.Parent = Part1
+Sound12.SoundId = "http://www.roblox.com/asset/?id=55741380"
+Sound12.Volume = 1
+Sound13.Name = "F5"
+Sound13.Parent = Part1
+Sound13.SoundId = "http://www.roblox.com/asset/?id=55741464"
+Sound13.Volume = 1
+Sound14.Name = "FSharp5"
+Sound14.Parent = Part1
+Sound14.SoundId = "http://www.roblox.com/asset/?id=55741505"
+Sound14.Volume = 1
+Sound15.Name = "G5"
+Sound15.Parent = Part1
+Sound15.SoundId = "http://www.roblox.com/asset/?id=55741543"
+Sound15.Volume = 1
+Sound16.Name = "Song2"
+Sound16.Parent = Part1
+Sound16.SoundId = "http://www.roblox.com/asset/?id=55814311"
+Sound16.Volume = 0.800000011920929
+Sound17.Name = "Song3"
+Sound17.Parent = Part1
+Sound17.SoundId = "http://www.roblox.com/asset/?id=55816068"
+Sound18.Name = "Song1"
+Sound18.Parent = Part1
+Sound18.SoundId = "http://www.roblox.com/asset/?id=55797022"
+Animation19.Name = "GetGuitarReady"
+Animation19.Parent = Tool0
+Animation19.AnimationId = "http://www.roblox.com/Asset?ID=55791352"
+Animation20.Name = "Strum"
+Animation20.Parent = Tool0
+Animation20.AnimationId = "http://www.roblox.com/Asset?ID=55816634"
+Script21.Name = "WaitScript"
+Script21.Parent = Tool0
+Script21.Enabled = false
+table.insert(cors,sandbox(Script21,function()
+local Tool = script.Parent
+local TimeTillEnabled = Tool:FindFirstChild("TimeTillEnabled")
+
+if TimeTillEnabled then
+	wait(TimeTillEnabled.Value)
+else
+	wait(11)	-- Maximum possible value we could need to wait
+end
+
+Tool.Enabled = true
+
+script:Remove()
+
+end))
+Script21.Disabled = true
+NumberValue22.Name = "TimeTillEnabled"
+NumberValue22.Parent = Tool0
+NumberValue22.Value = -0.2300000000000022
+Script23.Name = "Silly"
+Script23.Parent = Tool0
+table.insert(cors,sandbox(Script23,function()
+-- Silly guitar: because you haven't lived until you've played music on a giant tongue.
+math.randomseed(tick()); math.random()
+
+local Tool = script.Parent
+local Guitar = Tool.Handle
+local playKey = Instance.new("RemoteEvent",Tool) -- Because of how remoteevents replicate throughout non-starterpack storage services, we will make a remoteevent. 
+playKey.Name = "playKey"
+local myHumanoid
+local Torso
+local TorsoWeld = {}
+
+local StrumAnim
+local ReadyAnim
+
+local TimeTillEnabled
+local WaitScript
+
+local SongSound = Tool:FindFirstChild("SongSound")
+local waitTime = 0
+local timeWaited = 0
+local stepTime = 0.1
+
+local randNum
+
+local noteTable = {
+	["f"] = Guitar:FindFirstChild("C5"),
+	["t"] = Guitar:FindFirstChild("CSharp5"),
+	["g"] = Guitar:FindFirstChild("D5"),
+	["y"] = Guitar:FindFirstChild("EFlat5"),
+	["h"] = Guitar:FindFirstChild("E5"),
+	["j"] = Guitar:FindFirstChild("F5"),
+	["n"] = Guitar:FindFirstChild("FSharp5"),
+	["k"] = Guitar:FindFirstChild("G5"),
+	["m"] = Guitar:FindFirstChild("AFlat5"),
+	["l"] = Guitar:FindFirstChild("A5"),
+	["p"] = Guitar:FindFirstChild("BFlat5"),
+	[";"] = Guitar:FindFirstChild("B5"),
+	["'"] = Guitar:FindFirstChild("C6")
+}
+
+function reformGrip()
+	for i = 1, 5 do	-- Game needs to be told quite a few times that we're serious about getting rid of RightGrip.
+		local myCharacter = Tool.Parent
+		local RightGrip
+		Torso = myCharacter:FindFirstChild("Torso")
+		RightArm = myCharacter:FindFirstChild("Right Arm")
+		if RightArm then RightGrip = RightArm:FindFirstChild("RightGrip") end
+		if Torso and not Torso:FindFirstChild("Silly Guitar Torso Weld") then
+			if RightGrip then RightGrip.Parent = nil end
+			Guitar.CanCollide = false
+			local Welder = Instance.new("Weld")
+			Welder.Part0 = Torso
+			Welder.Part1 = Guitar
+			Welder.C1 = CFrame.Angles(math.pi/2, math.pi, -math.pi/4) + Vector3.new(-0.2, 0.6, -0.4)
+			Welder.Name = "Silly Guitar Torso Weld"
+			Welder.Parent = Tool
+			table.insert(TorsoWeld,Welder)
+		end
+		wait()
+	end
+end
+
+function onActivated()
+	-- Again, make sure character still has arms first.
+	local myCharacter = Tool.Parent
+	RightArm = myCharacter:FindFirstChild("Right Arm")
+	LeftArm = myCharacter:FindFirstChild("Left Arm")
+	if not (RightArm and LeftArm) then return end
+	-- And that tool is enabled.
+	if not Tool.Enabled then return end
+
+	Tool.Enabled = false
+
+	randNum = math.random()
+	if (randNum < 1/3) then 
+		SongSound = Guitar:FindFirstChild("Song1")
+		waitTime = 11
+		stepTime = 0.37
+	elseif (randNum < 2/3) then 
+		SongSound = Guitar:FindFirstChild("Song2")
+		waitTime = 9.1
+		stepTime = 0.52
+	else 
+		SongSound = Guitar:FindFirstChild("Song3")
+		waitTime = 8.1
+		stepTime = 0.49
+	end
+
+	SongSound:Play()
+	timeWaited = 0
+	while timeWaited < waitTime do
+		if StrumAnim then StrumAnim:Play() end
+		wait(stepTime)
+		timeWaited = timeWaited + stepTime
+	end
+
+	Tool.Enabled = true
+end
+
+function play(player,key)
+	--  Make sure character still has arms with which to play.
+	local myCharacter = Tool.Parent
+	RightArm = myCharacter:FindFirstChild("Right Arm")
+	LeftArm = myCharacter:FindFirstChild("Left Arm")
+	local Note = noteTable[key:lower()]
+	if Note and RightArm and LeftArm then 
+		if StrumAnim then StrumAnim:Play() end
+		Note:Play() 
+	end
+end
+
+function onEquipped(mouse)
+	if mouse then mouse.KeyDown:connect(play) end
+
+	local myCharacter = Tool.Parent
+	-- Load animation nao, so we don't have to do it every time we play a note.
+	myHumanoid = myCharacter:FindFirstChild("Humanoid")
+	if myHumanoid then StrumAnim = myHumanoid:LoadAnimation(Tool.Strum) end
+
+	-- And play the animation that gets us in position to strum.
+	if myHumanoid then ReadyAnim = myHumanoid:LoadAnimation(Tool.GetGuitarReady) end
+	if ReadyAnim then ReadyAnim:Play() end
+
+	-- Break right grip, and weld guitar to torso instead.
+	reformGrip()
+
+end
+
+function onUnequipped()
+	-- Prepare to wait a while to re-enable if the unequip was via a backspace.
+	
+	for _, weld in ipairs(TorsoWeld) do
+		if weld ~= nil then
+			weld:Destroy()
+		end
+	end
+	
+	if (Tool.Parent == game.Workspace and not Tool:FindFirstChild("RunningWaitScript")) then
+		TimeTillEnabled = Tool:FindFirstChild("TimeTillEnabled")
+		if TimeTillEnabled then TimeTillEnabled.Value = waitTime - timeWaited end
+		WaitScript = Tool:FindFirstChild("WaitScript")
+		if WaitScript then
+			WaitScript = WaitScript:Clone()
+			WaitScript.Name = "RunningWaitScript"
+			WaitScript.Parent = Tool
+			WaitScript.Disabled = false
+		end
+	end
+
+	if ReadyAnim then ReadyAnim:Stop() end
+	StrumAnim = nil
+
+	if Torso then
+		Guitar.Position = Torso.Position + 8 * Torso.CFrame.lookVector + Vector3.new(0, 5, 0)
+	else	
+		Guitar.Position = Vector3.new(0, 5, 0)
+	end
+end
+
+playKey.OnServerEvent:connect(play)
+Tool.Activated:connect(onActivated)
+Tool.Equipped:connect(onEquipped)
+Tool.Unequipped:connect(onUnequipped)
+end))
+LocalScript24.Name = "Local Gui"
+LocalScript24.Parent = Tool0
+table.insert(cors,sandbox(LocalScript24,function()
+NLS([[Tool = script.Parent
+
+local stillEquipped = false
+local userInput = game:GetService("UserInputService")
+local noteTable = {
+	[Enum.KeyCode.F] = "F",
+	[Enum.KeyCode.T] = "T",
+	[Enum.KeyCode.G] = "G",
+	[Enum.KeyCode.Y] = "Y",
+	[Enum.KeyCode.H] = "H",
+	[Enum.KeyCode.J] = "J",
+	[Enum.KeyCode.N] = "N",
+	[Enum.KeyCode.K] = "K",
+	[Enum.KeyCode.M] = "M",
+	[Enum.KeyCode.L] = "L",
+	[Enum.KeyCode.P] = "P",
+	[Enum.KeyCode.Semicolon] = ";",
+	[Enum.KeyCode.Quote] = "'"
+}
+local remote = Tool:WaitForChild("playKey")
+function onEquippedLocal(mouse)
+	stillEquipped = true
+	if mouse == nil then 
+		return
+	end
+	while stillEquipped do 
+		mouse.Icon = "rbxasset://textures\\GunCursor.png"
+		while Tool.Enabled and stillEquipped do 
+			wait(0.01)
+		end
+		mouse.Icon = "http://www.roblox.com/asset/?id=1088199"
+		while not Tool.Enabled and stillEquipped do 
+			wait(0.01)
+		end	
+	end
+end
+
+function playKey(Input,gameProcessed)
+	if noteTable[Input.KeyCode] and gameProcessed == false then
+		remote:FireServer(noteTable[Input.KeyCode])
+	end
+end
+
+function onUnequippedLocal()
+	stillEquipped = false
+end
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal)
+userInput.InputBegan:connect(playKey)]] , owner.PlayerGui)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
