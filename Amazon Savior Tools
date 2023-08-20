@@ -1,0 +1,159 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+Part2 = Instance.new("Part")
+Part3 = Instance.new("Part")
+ScreenGui4 = Instance.new("ScreenGui")
+TextButton5 = Instance.new("TextButton")
+LocalScript6 = Instance.new("LocalScript")
+Script7 = Instance.new("Script")
+Script8 = Instance.new("Script")
+Part9 = Instance.new("Part")
+Weld10 = Instance.new("Weld")
+Weld11 = Instance.new("Weld")
+Weld12 = Instance.new("Weld")
+Weld13 = Instance.new("Weld")
+Part14 = Instance.new("Part")
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0, 0, 1.69280052, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(0, 0, 1.692800521850586)
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(36, 2, -6, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(36, 2, -6)
+Part1.Color = Color3.new(0.627451, 0.517647, 0.309804)
+Part1.Size = Vector3.new(4, 1, 0.10000000149011612)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Fawn brown")
+Part1.CanCollide = false
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Fawn brown")
+Part2.Name = "Handle"
+Part2.Parent = Tool0
+Part2.CFrame = CFrame.new(36, 2.00000095, -8, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part2.Position = Vector3.new(36, 2.0000009536743164, -8)
+Part2.Color = Color3.new(0.415686, 0.223529, 0.0352941)
+Part2.Size = Vector3.new(4, 4, 4)
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.BrickColor = BrickColor.new("Burnt Sienna")
+Part2.CanCollide = false
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.brickColor = BrickColor.new("Burnt Sienna")
+Part3.Parent = Tool0
+Part3.CFrame = CFrame.new(34, 2, -8, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part3.Position = Vector3.new(34, 2, -8)
+Part3.Color = Color3.new(0.627451, 0.517647, 0.309804)
+Part3.Size = Vector3.new(0.10000000149011612, 1, 4.099999904632568)
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.BrickColor = BrickColor.new("Fawn brown")
+Part3.CanCollide = false
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Part3.brickColor = BrickColor.new("Fawn brown")
+ScreenGui4.Parent = Tool0
+ScreenGui4.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextButton5.Parent = ScreenGui4
+TextButton5.Position = UDim2.new(0.232057422, 0, 0.239999995, 0)
+TextButton5.Size = UDim2.new(0, 200, 0, 119)
+TextButton5.BackgroundColor = BrickColor.new("Really black")
+TextButton5.BackgroundColor3 = Color3.new(0, 0, 0)
+TextButton5.BorderColor = BrickColor.new("Really black")
+TextButton5.BorderColor3 = Color3.new(0, 0, 0)
+TextButton5.BorderSizePixel = 0
+TextButton5.Font = Enum.Font.SourceSans
+TextButton5.FontSize = Enum.FontSize.Size14
+TextButton5.Text = "Store Tool"
+TextButton5.TextColor = BrickColor.new("Institutional white")
+TextButton5.TextColor3 = Color3.new(1, 1, 1)
+TextButton5.TextScaled = true
+TextButton5.TextSize = 14
+TextButton5.TextWrap = true
+TextButton5.TextWrapped = true
+LocalScript6.Parent = TextButton5
+table.insert(cors,sandbox(LocalScript6,function()
+NLS([[owner.PlayerGui.ScreenGui.TextButton.Activated:Connect(function()
+		NS('e = owner.Backpack:FindFirstChildOfClass("Tool") e.Parent = game:GetService("BrowserService") ')
+end)]] , owner.PlayerGui)
+end))
+Script7.Parent = ScreenGui4
+table.insert(cors,sandbox(Script7,function()
+script.Parent.Parent = owner.PlayerGui
+end))
+Script8.Parent = Tool0
+table.insert(cors,sandbox(Script8,function()
+script.Parent.Activated:Connect(function()
+		e = game:GetService('BrowserService')
+		t =	game:GetService('BrowserService'):FindFirstChildOfClass('Tool')
+		t.Parent = owner.Backpack
+end)
+
+end))
+Part9.Parent = Tool0
+Part9.CFrame = CFrame.new(38, 2, -8, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part9.Position = Vector3.new(38, 2, -8)
+Part9.Color = Color3.new(0.627451, 0.517647, 0.309804)
+Part9.Size = Vector3.new(0.10000000149011612, 1, 4.099999904632568)
+Part9.BottomSurface = Enum.SurfaceType.Smooth
+Part9.BrickColor = BrickColor.new("Fawn brown")
+Part9.CanCollide = false
+Part9.TopSurface = Enum.SurfaceType.Smooth
+Part9.brickColor = BrickColor.new("Fawn brown")
+Weld10.Name = "BTWeld"
+Weld10.Parent = Part9
+Weld10.C1 = CFrame.new(2, 0, -2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld10.Part0 = Part9
+Weld10.Part1 = Part1
+Weld10.part1 = Part1
+Weld11.Name = "BTWeld"
+Weld11.Parent = Part9
+Weld11.C1 = CFrame.new(2, -9.53674316e-07, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld11.Part0 = Part9
+Weld11.Part1 = Part2
+Weld11.part1 = Part2
+Weld12.Name = "BTWeld"
+Weld12.Parent = Part9
+Weld12.C1 = CFrame.new(4, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld12.Part0 = Part9
+Weld12.Part1 = Part3
+Weld12.part1 = Part3
+Weld13.Name = "BTWeld"
+Weld13.Parent = Part9
+Weld13.C1 = CFrame.new(2, 0, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld13.Part0 = Part9
+Weld13.Part1 = Part14
+Weld13.part1 = Part14
+Part14.Parent = Tool0
+Part14.CFrame = CFrame.new(36, 2, -10, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part14.Position = Vector3.new(36, 2, -10)
+Part14.Color = Color3.new(0.627451, 0.517647, 0.309804)
+Part14.Size = Vector3.new(4, 1, 0.10000000149011612)
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.BrickColor = BrickColor.new("Fawn brown")
+Part14.CanCollide = false
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Part14.brickColor = BrickColor.new("Fawn brown")
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+print("script might bug if theres another tool in VRStatusService")
