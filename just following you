@@ -1,0 +1,43 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+LineForce1 = Instance.new("LineForce")
+Attachments2 = Instance.new("Attachment")
+Partsarelame = Instance.new("Part")
+Model0.Parent = mas
+Partsarelame.Parent = workspace
+Partsarelame.Position = Vector3.new(1, 1, 1)
+Partsarelame.Anchored = true
+Attachments2.Parent = Partsarelame
+LineForce1.Parent = Model0
+LineForce1.Visible = true
+LineForce1.Attachment0 = owner.Character.UpperTorso.NeckAttachment
+LineForce1.Attachment1 = game.Players.denispitu06.Character.UpperTorso.NeckAttachment
+LineForce1.MaxForce = 1000
+LineForce1.ReactionForceEnabled = true
+
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
