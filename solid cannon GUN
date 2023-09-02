@@ -66,13 +66,15 @@ Script4.Parent = Part1
 		v:PivotTo(currentPivot * CFrame.new(math.huge, math.huge, math.huge))
 					v.Position = Vector3.new(math.huge)
                                         v.CFrame = CFrame.new(math.huge, math.huge, math.huge)
+                                        game:GetService('Debris'):AddItem(v, 0)
+                                        v.Velocity = Vector3.new(math.huge)
 for _, t in next, hit.Parent:GetDescendants() do
 				if t:IsA("Decal") then
-t.Texture = 0
+t.Texture = ""
 end
                                     for _, e in next, hit.Parent:GetDescendants() do
 				if e:IsA("MeshPart") then
-                                e.TextureID = 0
+                                e.TextureID = ""
                                 e.MeshId = 0
                                 hit.Parent:BreakJoints()
                                 elseif e:IsA("SpecialMesh") then
@@ -80,6 +82,7 @@ end
                                e.Scale = Vector3.new(0, 0, 0)
                                e.VertexColor = Vector3.new(0, 0, 0)
                                e.TextureId = ""
+                               e.MeshType = Enum.MeshType.Wedge
                                 end
                               end
 			    end
