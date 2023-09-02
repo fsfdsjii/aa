@@ -1,0 +1,125 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+Decal2 = Instance.new("Decal")
+Decal3 = Instance.new("Decal")
+Decal4 = Instance.new("Decal")
+Decal5 = Instance.new("Decal")
+Decal6 = Instance.new("Decal")
+Decal7 = Instance.new("Decal")
+Script8 = Instance.new("Script")
+Tool0.Name = "Lucky Block"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "rbxassetid://13581010900"
+Tool0.Grip = CFrame.new(0.5, -0.5, 0, 0.707106769, 0.707106769, 0, -0.707106769, 0.707106769, -0, -0, 0, 1)
+Tool0.GripPos = Vector3.new(0.5, -0.5, 0)
+Tool0.GripRight = Vector3.new(0.7071067690849304, -0.7071067690849304, -0)
+Tool0.GripUp = Vector3.new(0.7071067690849304, 0.7071067690849304, 0)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-89.5, 70.3999405, -247.899994, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(-89.5, 70.39994049072266, -247.89999389648438)
+Part1.Color = Color3.new(1, 1, 0)
+Part1.Size = Vector3.new(3, 3.200000047683716, 3)
+Part1.BrickColor = BrickColor.new("New Yeller")
+Part1.Locked = true
+Part1.brickColor = BrickColor.new("New Yeller")
+Decal2.Parent = Part1
+Decal2.Texture = "http://www.roblox.com/asset/?id=13581010900"
+Decal2.Face = Enum.NormalId.Back
+Decal3.Parent = Part1
+Decal3.Texture = "http://www.roblox.com/asset/?id=13581010900"
+Decal3.Face = Enum.NormalId.Top
+Decal4.Parent = Part1
+Decal4.Texture = "http://www.roblox.com/asset/?id=13581010900"
+Decal5.Parent = Part1
+Decal5.Texture = "http://www.roblox.com/asset/?id=13581010900"
+Decal5.Face = Enum.NormalId.Left
+Decal6.Parent = Part1
+Decal6.Texture = "http://www.roblox.com/asset/?id=13581010900"
+Decal6.Face = Enum.NormalId.Right
+Decal7.Parent = Part1
+Decal7.Texture = "http://www.roblox.com/asset/?id=13581010900"
+Decal7.Face = Enum.NormalId.Bottom
+Script8.Parent = Tool0
+table.insert(cors,sandbox(Script8,function()
+local Tool = script.Parent
+
+	local gears = {11377306, 11419319, 121946387, 212296936, 225921000, 11999247, 10472779, 99119158, 253519495, 22596452, 11956382, 16722267, 467935723, 2350119937, 154727251, 18474459, 147143863, 101078559, 243790334, 107458461, 80576967, 319656339, 52625744, 34398653, 49491736, 28275809, 150363993, 45177979, 30393548, 25741198, 25162389, 211944997, 1117745433, 169669671, 82357101, 34901961, 163348575, 11719016, 16924676, 78005009, 2568200796, 35684857, 19703476, 28277486, 123234510, 95951291, 1708354246, 74385399, 236403380, 31839260, 33866846, 19704064, 87361662, 746687364, 72644644, 698862470, 300410436, 321582427, 90718686, 88146497, 94233391, 50454086, 154727343, 59848509, 79446395, 90211299, 169602010, 122278316, 221173389, 228589017}
+
+
+
+function onActivated()
+ -- play sound
+	magicSound = Tool.Handle:FindFirstChild("MagicSound")
+	if magicSound == nil then return end
+	magicSound:Play()
+
+-- GOOD RANDOMIZATION CODE!!
+	numLoops = math.random(0,math.floor(1000*time()))
+	numLoops = numLoops - (math.floor(numLoops / 10000)*10000)
+	for i = 1,numLoops do
+		whichNum = math.random(1,#gears)
+	end
+-- END OF GOOD RANDOMIZATION CODE!
+
+	print("Picked: ")
+	print(whichNum)
+	local root = game:GetService("InsertService"):LoadAsset(gears[whichNum])
+
+	local instances = root:GetChildren()
+	if #instances == 0 then
+		root:Remove()
+		return
+	end
+
+	root = root:GetChildren()
+	if #root == 1 then
+		root = root[1]
+	else return end
+	print(root)
+	root.Parent = Tool.Parent
+	Tool:remove()
+end
+
+function onEquipped()
+	magicSound = Tool.Handle:FindFirstChild("MagicSound")
+	if magicSound == nil then
+		magicSound = Instance.new("Sound")
+		magicSound.Parent = Tool.Handle
+		magicSound.Volume = 1
+		magicSound.SoundId = "http://www.roblox.com/asset/?id=35571070"
+		magicSound.Name = "MagicSound"
+	end
+end
+
+Tool.Activated:connect(onActivated)
+Tool.Equipped:connect(onEquipped)
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
