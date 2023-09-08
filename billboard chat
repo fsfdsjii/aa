@@ -1,5 +1,6 @@
 owner.Chatted:Connect(function(themessage)
-if owner.Character.HumanoidRootPart.Chat then
+chats = owner.Character.HumanoidRootPart:FindFirstChild('Chat')
+if chats then
 warn("Wait for current chatted thing to dissapear.")
 else
 	local BillboardGui1 = Instance.new("BillboardGui")
