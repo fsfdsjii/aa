@@ -581,7 +581,7 @@ lastframe = tick()
 script.Heartbeat:Fire()
 
 
-game:GetService("RunService").Heartbeat:connect(function(s, p)
+game:GetService('RunService').Heartbeat:connect(function(s, p)
 	tf = tf + s
 	if tf >= frame then
 		if allowframeloss then
@@ -609,10 +609,10 @@ end)
 -------------------------------------------------------
 function swait(num)
 	if num == 0 or num == nil then
-		game:service("RunService").Stepped:wait(0)
+		game:GetService('RunService').Stepped:wait(0)
 	else
 		for i = 0, num do
-			game:service("RunService").Stepped:wait(0)
+			game:GetService('RunService').Stepped:wait(0)
 		end
 	end
 end
@@ -886,7 +886,7 @@ function ShowDamage(Pos, Text, Time, Color)
 		TextStrokeColor3 = Color3.fromRGB(0,0,0),
 		Parent = BillboardGui,
 	}
-	game.Debris:AddItem(EffectPart, (Time))
+	game:GetService('Debris'):AddItem(EffectPart, (Time))
 	EffectPart.Parent = game:GetService("Workspace")
 	delay(0, function()
 		local Frames = (Time / Rate)
