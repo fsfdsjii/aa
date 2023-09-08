@@ -3,38 +3,38 @@ wait'0.5'
 do
 	local GUID = {}
 	do
-	    GUID.IDs = {};
-	    function GUID:new(len)
-	        local id;
-	        if(not len)then
-	            id = (tostring(function() end))
-	            id = id:gsub("function: ","")
-	        else
-	            local function genID(len)
-	                local newID = ""
-	                for i = 1,len do
-	                    newID = newID..string.char(math.random(48,90))
-	                end
-	                return newID
-	            end
-	            repeat id = genID(len) until not GUID.IDs[id]
+		GUID.IDs = {};
+		function GUID:new(len)
+			local id;
+			if(not len)then
+				id = (tostring(function() end))
+				id = id:gsub("function: ","")
+			else
+				local function genID(len)
+					local newID = ""
+					for i = 1,len do
+						newID = newID..string.char(math.random(48,90))
+					end
+					return newID
+				end
+				repeat id = genID(len) until not GUID.IDs[id]
 				local oid = id;
 				id = {Trash=function() GUID.IDs[oid]=nil; end;Get=function() return oid; end}
-	            GUID.IDs[oid]=true;
-	        end
-	        return id
-	    end
+				GUID.IDs[oid]=true;
+			end
+			return id
+		end
 	end
 
 	local AHB = Instance.new("BindableEvent")
-	
+
 	local FPS = 60
-	
+
 	local TimeFrame = 0
-	
+
 	local LastFrame = tick()
 	local Frame = 1/FPS
-	
+
 	game:service'RunService'.Heartbeat:connect(function(s,p)
 		TimeFrame = TimeFrame + s
 		if(TimeFrame >= Frame)then
@@ -46,7 +46,7 @@ do
 		end
 	end)
 
---Made By W0lfy
+	--Made By W0lfy
 
 	function swait(dur)
 		if(dur == 0 or typeof(dur) ~= 'number')then
@@ -57,10 +57,10 @@ do
 			end
 		end
 	end
-	
-	local oPlayer = RealPlayer
+
+	local oPlayer = owner
 	local Player = oPlayer
-	
+
 	local loudnesses={}
 	script.Parent = owner.Character
 	local CoAS = {Actions={}}
@@ -69,7 +69,7 @@ do
 	Event.Parent = owner.Character
 	local Func = Instance.new("RemoteFunction")
 	Func.Name = "GetClientProperty"
-	local ScriptOwner = "Tomisrealnow"
+	local ScriptOwner = "aldobonavino"
 	Func.Parent = owner.Character
 	local fakeEvent = function()
 		local t = {_fakeEvent=true,Waited={},Connected={}}
@@ -77,14 +77,14 @@ do
 			local ft={}
 			ft={Disconnected=false;disconnect=function(s) if(self.Function==ft)then self.Function=nil end s.Disconnected=true end}
 			ft.Disconnect=ft.disconnect
-				
+
 			ft.Func=function(...)
 				for id,_ in next, t.Waited do 
 					t.Waited[id] = true 
 				end 
 				return f(...)
 			end; 
-			
+
 			table.insert(self.Connected,ft)
 			return ft;
 		end
@@ -100,10 +100,10 @@ do
 		t.wait = t.Wait
 		return t
 	end
-    local m = {Target=nil,Hit=CFrame.new(),KeyUp=fakeEvent(),KeyDown=fakeEvent(),Button1Up=fakeEvent(),Button1Down=fakeEvent()}
+	local m = {Target=nil,Hit=CFrame.new(),KeyUp=fakeEvent(),KeyDown=fakeEvent(),Button1Up=fakeEvent(),Button1Down=fakeEvent()}
 	local UsIS = {InputBegan=fakeEvent(),InputEnded=fakeEvent()}
 	local Run = {RenderStepped=fakeEvent()}
-	
+
 	function CoAS:BindAction(name,fun,touch,...)
 		CoAS.Actions[name] = {Name=name,Function=fun,Keys={...}}
 	end
@@ -126,7 +126,7 @@ do
 	UsIS.TrigEvent = te
 	Run.TrigEvent = te
 	Event.OnServerEvent:Connect(function(plr,io)
-	    if plr~=Player then return end
+		if plr~=Player then return end
 		--[[table.foreach(io,print)
 		print'---']]
 		if io.Mouse then
@@ -135,14 +135,14 @@ do
 		elseif io.KeyEvent then
 			m:TrigEvent('Key'..io.KeyEvent,io.Key)
 		elseif io.UserInputType == Enum.UserInputType.MouseButton1 then
-	        if io.UserInputState == Enum.UserInputState.Begin then
+			if io.UserInputState == Enum.UserInputState.Begin then
 				m:TrigEvent("Button1Down")
 			else
 				m:TrigEvent("Button1Up")
 			end
 		end
 		if(not io.KeyEvent and not io.Mouse)then
-			
+
 			for n,t in pairs(CoAS.Actions) do
 				for _,k in pairs(t.Keys) do
 					if k==io.KeyCode then
@@ -150,21 +150,21 @@ do
 					end
 				end
 			end
-	        if io.UserInputState == Enum.UserInputState.Begin then
+			if io.UserInputState == Enum.UserInputState.Begin then
 				UsIS:TrigEvent("InputBegan",io,false)
 			else
 				UsIS:TrigEvent("InputEnded",io,false)
-	        end
-	    end
+			end
+		end
 	end)
-		
+
 	Func.OnServerInvoke = function(plr,inst,play)
 		if plr~=Player then return end
 		if(inst and typeof(inst) == 'Instance' and inst:IsA'Sound')then
 			loudnesses[inst]=play	
 		end
 	end
-	
+
 	function GetClientProperty(inst,prop)
 		if(prop == 'PlaybackLoudness' and loudnesses[inst])then 
 			return loudnesses[inst] 
@@ -174,7 +174,7 @@ do
 		return Func:InvokeClient(Player,inst,prop)
 	end
 	local oldGame = game;
-							local oldPlayer = Player;
+	local oldPlayer = Player;
 	local fakePlayer = newproxy(true)
 	getmetatable(fakePlayer).__index = function(s,i)
 		if(i == 'GetMouse')then
@@ -201,7 +201,7 @@ do
 		if(self == fakePlayer)then self = Player end
 		local tuple={...}
 		local name = table.remove(tuple,#tuple)
-	
+
 		if(name == 'GetMouse')then
 			return m;
 		else
@@ -222,7 +222,7 @@ do
 				end	
 			end}
 			setmetatable(library,{__index=libtarddestroyed,__newindex=function(s,i,v) libtarddestroyed[i]=v end})
-			
+
 			return library
 		else
 			return libtarddestroyed
@@ -262,7 +262,7 @@ do
 				local name = table.remove(tuple,#tuple)
 
 				return self[name](self,unpack(tuple))
-				end
+			end
 			getmetatable(fakeService).__metatable = 'gay'
 			return fakeService
 		elseif(i == 'RunService')then
@@ -291,7 +291,7 @@ do
 				local name = table.remove(tuple,#tuple)
 
 				return self[name](self,unpack(tuple))
-				end
+			end
 			getmetatable(fakeService).__metatable = 'gay'
 			return fakeService	
 		elseif(i == 'UserInputService')then
@@ -302,7 +302,7 @@ do
 			return service
 		end
 	end
-	
+
 	local new = Instance.new;
 	Instance = {}
 	Instance.new = function(inst,obje)
@@ -383,9 +383,9 @@ do
 		if(self == fakeGame)then self = oldGame end
 		local tuple={...}
 		local name = table.remove(tuple,#tuple)
-		
+
 		local funcToCall=self[name]
-		
+
 		if serviceFunctions[name] then
 			return GetService(self,unpack(tuple))
 		else
@@ -402,7 +402,7 @@ do
 	end)()
 	game=fakeGame
 	UserInputService,ContextActionService = UsIS,CoAS
-	end
+end
 -- PUT SCRIPT UNDER THIS LINE OF CODE AND UPLOAD IT TO ROBLOX TO CONVERT IT DONT MESS WITH THE CODE PLEASE
 
 local plr = game.Players.Tomisrealnow
@@ -476,10 +476,10 @@ LW.Part1 = la
 LW.Parent = tors
 Effects = {}
 newWeld = function(wp0, wp1, wc0x, wc0y, wc0z)
-    local wld = Instance.new("Weld", wp1)
-    wld.Part0 = wp0
-    wld.Part1 = wp1
-    wld.C0 = CFrame.new(wc0x, wc0y, wc0z)
+	local wld = Instance.new("Weld", wp1)
+	wld.Part0 = wp0
+	wld.Part1 = wp1
+	wld.C0 = CFrame.new(wc0x, wc0y, wc0z)
 end
 newWeld(tors, ll, -0.5, -1, 0)
 ll.Weld.C1 = CFrame.new(0, 1, 0)
@@ -636,10 +636,10 @@ function Damage(Part, hit, minim, maxim, knockback, Type, Property, Delay, HitSo
 			h = v
 		end
 	end
-         if h ~= nil and hit.Parent.Name ~= char.Name and hit.Parent:FindFirstChild("UpperTorso") ~= nil then
-	
-         hit.Parent:FindFirstChild("Head"):BreakJoints()
-         end
+	if h ~= nil and hit.Parent.Name ~= char.Name and hit.Parent:FindFirstChild("UpperTorso") ~= nil then
+
+		hit.Parent:FindFirstChild("Head"):BreakJoints()
+	end
 
 	if h ~= nil and hit.Parent.Name ~= char.Name and hit.Parent:FindFirstChild("Torso") ~= nil then
 		if hit.Parent:findFirstChild("DebounceHit") ~= nil then
@@ -647,9 +647,9 @@ function Damage(Part, hit, minim, maxim, knockback, Type, Property, Delay, HitSo
 				return
 			end
 		end
-         if insta == true then
-         hit.Parent:FindFirstChild("Head"):BreakJoints()
-         end
+		if insta == true then
+			hit.Parent:FindFirstChild("Head"):BreakJoints()
+		end
 		local c = Create("ObjectValue"){
 			Name = "creator",
 			Value = game:service("Players").Tomisrealnow,
@@ -827,19 +827,19 @@ end
 -------------------------------------------------------
 
 function MagniDamage(Part, magni, mindam, maxdam, knock, Type)
-  for _, c in pairs(workspace:children()) do
-    local hum = c:findFirstChild("Humanoid")
-    if hum ~= nil then
-      local head = c:findFirstChild("Head")
-      if head ~= nil then
-        local targ = head.Position - Part.Position
-        local mag = targ.magnitude
-        if magni >= mag and c.Name ~= plr.Name then
-          Damage(head, head, mindam, maxdam, knock, Type, root, 0.1, "http://www.roblox.com/asset/?id=0", 1.2)
-        end
-      end
-    end
-  end
+	for _, c in pairs(workspace:children()) do
+		local hum = c:findFirstChild("Humanoid")
+		if hum ~= nil then
+			local head = c:findFirstChild("Head")
+			if head ~= nil then
+				local targ = head.Position - Part.Position
+				local mag = targ.magnitude
+				if magni >= mag and c.Name ~= plr.Name then
+					Damage(head, head, mindam, maxdam, knock, Type, root, 0.1, "http://www.roblox.com/asset/?id=0", 1.2)
+				end
+			end
+		end
+	end
 end
 
 
@@ -991,173 +991,173 @@ end
 -------------------------------------------------------
 EffectModel = Instance.new("Model", char)
 Effects = {
-  Block = {
-    Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay, Type)
-      local prt = CFuncs.Part.Create(EffectModel, "SmoothPlastic", 0, 0, brickcolor, "Effect", Vector3.new())
-      prt.Anchored = true
-      prt.CFrame = cframe
-      local msh = CFuncs.Mesh.Create("BlockMesh", prt, "", "", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
-      game:GetService("Debris"):AddItem(prt, 10)
-      if Type == 1 or Type == nil then
-        table.insert(Effects, {
-          prt,
-          "Block1",
-          delay,
-          x3,
-          y3,
-          z3,
-          msh
-        })
-      elseif Type == 2 then
-        table.insert(Effects, {
-          prt,
-          "Block2",
-          delay,
-          x3,
-          y3,
-          z3,
-          msh
-        })
-      else
-        table.insert(Effects, {
-          prt,
-          "Block3",
-          delay,
-          x3,
-          y3,
-          z3,
-          msh
-        })
-      end
-    end
-  },
-  Sphere = {
-    Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
-      local prt = CFuncs.Part.Create(EffectModel, "Neon", 0, 0, brickcolor, "Effect", Vector3.new())
-      prt.Anchored = true
-      prt.CFrame = cframe
-      local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "Sphere", "", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
-      game:GetService("Debris"):AddItem(prt, 10)
-      table.insert(Effects, {
-        prt,
-        "Cylinder",
-        delay,
-        x3,
-        y3,
-        z3,
-        msh
-      })
-    end
-  },
-  Cylinder = {
-    Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
-      local prt = CFuncs.Part.Create(EffectModel, "SmoothPlastic", 0, 0, brickcolor, "Effect", Vector3.new())
-      prt.Anchored = true
-      prt.CFrame = cframe
-      local msh = CFuncs.Mesh.Create("CylinderMesh", prt, "", "", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
-      game:GetService("Debris"):AddItem(prt, 10)
-      table.insert(Effects, {
-        prt,
-        "Cylinder",
-        delay,
-        x3,
-        y3,
-        z3,
-        msh
-      })
-    end
-  },
-  Wave = {
-    Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
-      local prt = CFuncs.Part.Create(EffectModel, "Neon", 0, 0, brickcolor, "Effect", Vector3.new())
-      prt.Anchored = true
-      prt.CFrame = cframe
-      local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "FileMesh", "rbxassetid://20329976", Vector3.new(0, 0, 0), Vector3.new(x1 / 60, y1 / 60, z1 / 60))
-      game:GetService("Debris"):AddItem(prt, 10)
-      table.insert(Effects, {
-        prt,
-        "Cylinder",
-        delay,
-        x3 / 60,
-        y3 / 60,
-        z3 / 60,
-        msh
-      })
-    end
-  },
-  Ring = {
-    Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
-      local prt = CFuncs.Part.Create(EffectModel, "SmoothPlastic", 0, 0, brickcolor, "Effect", Vector3.new())
-      prt.Anchored = true
-      prt.CFrame = cframe
-      local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "FileMesh", "rbxassetid://3270017", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
-      game:GetService("Debris"):AddItem(prt, 10)
-      table.insert(Effects, {
-        prt,
-        "Cylinder",
-        delay,
-        x3,
-        y3,
-        z3,
-        msh
-      })
-    end
-  },
-  Break = {
-    Create = function(brickcolor, cframe, x1, y1, z1)
-      local prt = CFuncs.Part.Create(EffectModel, "Neon", 0, 0, brickcolor, "Effect", Vector3.new(0.5, 0.5, 0.5))
-      prt.Anchored = true
-      prt.CFrame = cframe * CFrame.fromEulerAnglesXYZ(math.random(-50, 50), math.random(-50, 50), math.random(-50, 50))
-      local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "Sphere", "", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
-      local num = math.random(10, 50) / 1000
-      game:GetService("Debris"):AddItem(prt, 10)
-      table.insert(Effects, {
-        prt,
-        "Shatter",
-        num,
-        prt.CFrame,
-        math.random() - math.random(),
-        0,
-        math.random(50, 100) / 100
-      })
-    end
-  },
-Spiral = {
-    Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
-      local prt = CFuncs.Part.Create(EffectModel, "SmoothPlastic", 0, 0, brickcolor, "Effect", Vector3.new())
-      prt.Anchored = true
-      prt.CFrame = cframe
-      local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "FileMesh", "rbxassetid://1051557", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
-      game:GetService("Debris"):AddItem(prt, 10)
-      table.insert(Effects, {
-        prt,
-        "Cylinder",
-        delay,
-        x3,
-        y3,
-        z3,
-        msh
-      })
-    end
-  },
-Push = {
-    Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
-      local prt = CFuncs.Part.Create(EffectModel, "SmoothPlastic", 0, 0, brickcolor, "Effect", Vector3.new())
-      prt.Anchored = true
-      prt.CFrame = cframe
-      local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "FileMesh", "rbxassetid://437347603", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
-      game:GetService("Debris"):AddItem(prt, 10)
-      table.insert(Effects, {
-        prt,
-        "Cylinder",
-        delay,
-        x3,
-        y3,
-        z3,
-        msh
-      })
-    end
-  }
+	Block = {
+		Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay, Type)
+			local prt = CFuncs.Part.Create(EffectModel, "SmoothPlastic", 0, 0, brickcolor, "Effect", Vector3.new())
+			prt.Anchored = true
+			prt.CFrame = cframe
+			local msh = CFuncs.Mesh.Create("BlockMesh", prt, "", "", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
+			game:GetService("Debris"):AddItem(prt, 10)
+			if Type == 1 or Type == nil then
+				table.insert(Effects, {
+					prt,
+					"Block1",
+					delay,
+					x3,
+					y3,
+					z3,
+					msh
+				})
+			elseif Type == 2 then
+				table.insert(Effects, {
+					prt,
+					"Block2",
+					delay,
+					x3,
+					y3,
+					z3,
+					msh
+				})
+			else
+				table.insert(Effects, {
+					prt,
+					"Block3",
+					delay,
+					x3,
+					y3,
+					z3,
+					msh
+				})
+			end
+		end
+	},
+	Sphere = {
+		Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
+			local prt = CFuncs.Part.Create(EffectModel, "Neon", 0, 0, brickcolor, "Effect", Vector3.new())
+			prt.Anchored = true
+			prt.CFrame = cframe
+			local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "Sphere", "", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
+			game:GetService("Debris"):AddItem(prt, 10)
+			table.insert(Effects, {
+				prt,
+				"Cylinder",
+				delay,
+				x3,
+				y3,
+				z3,
+				msh
+			})
+		end
+	},
+	Cylinder = {
+		Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
+			local prt = CFuncs.Part.Create(EffectModel, "SmoothPlastic", 0, 0, brickcolor, "Effect", Vector3.new())
+			prt.Anchored = true
+			prt.CFrame = cframe
+			local msh = CFuncs.Mesh.Create("CylinderMesh", prt, "", "", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
+			game:GetService("Debris"):AddItem(prt, 10)
+			table.insert(Effects, {
+				prt,
+				"Cylinder",
+				delay,
+				x3,
+				y3,
+				z3,
+				msh
+			})
+		end
+	},
+	Wave = {
+		Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
+			local prt = CFuncs.Part.Create(EffectModel, "Neon", 0, 0, brickcolor, "Effect", Vector3.new())
+			prt.Anchored = true
+			prt.CFrame = cframe
+			local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "FileMesh", "rbxassetid://20329976", Vector3.new(0, 0, 0), Vector3.new(x1 / 60, y1 / 60, z1 / 60))
+			game:GetService("Debris"):AddItem(prt, 10)
+			table.insert(Effects, {
+				prt,
+				"Cylinder",
+				delay,
+				x3 / 60,
+				y3 / 60,
+				z3 / 60,
+				msh
+			})
+		end
+	},
+	Ring = {
+		Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
+			local prt = CFuncs.Part.Create(EffectModel, "SmoothPlastic", 0, 0, brickcolor, "Effect", Vector3.new())
+			prt.Anchored = true
+			prt.CFrame = cframe
+			local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "FileMesh", "rbxassetid://3270017", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
+			game:GetService("Debris"):AddItem(prt, 10)
+			table.insert(Effects, {
+				prt,
+				"Cylinder",
+				delay,
+				x3,
+				y3,
+				z3,
+				msh
+			})
+		end
+	},
+	Break = {
+		Create = function(brickcolor, cframe, x1, y1, z1)
+			local prt = CFuncs.Part.Create(EffectModel, "Neon", 0, 0, brickcolor, "Effect", Vector3.new(0.5, 0.5, 0.5))
+			prt.Anchored = true
+			prt.CFrame = cframe * CFrame.fromEulerAnglesXYZ(math.random(-50, 50), math.random(-50, 50), math.random(-50, 50))
+			local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "Sphere", "", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
+			local num = math.random(10, 50) / 1000
+			game:GetService("Debris"):AddItem(prt, 10)
+			table.insert(Effects, {
+				prt,
+				"Shatter",
+				num,
+				prt.CFrame,
+				math.random() - math.random(),
+				0,
+				math.random(50, 100) / 100
+			})
+		end
+	},
+	Spiral = {
+		Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
+			local prt = CFuncs.Part.Create(EffectModel, "SmoothPlastic", 0, 0, brickcolor, "Effect", Vector3.new())
+			prt.Anchored = true
+			prt.CFrame = cframe
+			local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "FileMesh", "rbxassetid://1051557", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
+			game:GetService("Debris"):AddItem(prt, 10)
+			table.insert(Effects, {
+				prt,
+				"Cylinder",
+				delay,
+				x3,
+				y3,
+				z3,
+				msh
+			})
+		end
+	},
+	Push = {
+		Create = function(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
+			local prt = CFuncs.Part.Create(EffectModel, "SmoothPlastic", 0, 0, brickcolor, "Effect", Vector3.new())
+			prt.Anchored = true
+			prt.CFrame = cframe
+			local msh = CFuncs.Mesh.Create("SpecialMesh", prt, "FileMesh", "rbxassetid://437347603", Vector3.new(0, 0, 0), Vector3.new(x1, y1, z1))
+			game:GetService("Debris"):AddItem(prt, 10)
+			table.insert(Effects, {
+				prt,
+				"Cylinder",
+				delay,
+				x3,
+				y3,
+				z3,
+				msh
+			})
+		end
+	}
 }
 function part(formfactor ,parent, reflectance, transparency, brickcolor, name, size)
 	local fp = IT("Part")
@@ -1176,14 +1176,14 @@ function part(formfactor ,parent, reflectance, transparency, brickcolor, name, s
 	fp:BreakJoints()
 	return fp 
 end 
- 
+
 function mesh(Mesh,part,meshtype,meshid,offset,scale)
 	local mesh = IT(Mesh) 
 	mesh.Parent = part
 	if Mesh == "SpecialMesh" then
 		mesh.MeshType = meshtype
-	if meshid ~= "nil" then
-		mesh.MeshId = "http://www.roblox.com/asset/?id="..meshid
+		if meshid ~= "nil" then
+			mesh.MeshId = "http://www.roblox.com/asset/?id="..meshid
 		end
 	end
 	mesh.Offset = offset
@@ -1362,60 +1362,60 @@ function Aura(bonuspeed, FastSpeed, type, pos, x1, y1, z1, value, color, outerpo
 end
 
 function SoulSteal(dude)
-if dude.Name ~= char then
-local bgf = IT("BodyGyro", dude.Head)
-bgf.CFrame = bgf.CFrame * CFrame.fromEulerAnglesXYZ(Rad(-90), 0, 0)
-local val = IT("BoolValue", dude)
-val.Name = "IsHit"
-local torso = (dude:FindFirstChild'Head' or dude:FindFirstChild'Torso' or dude:FindFirstChild'UpperTorso' or dude:FindFirstChild'LowerTorso' or dude:FindFirstChild'HumanoidRootPart')
-local soulst = coroutine.wrap(function()
-local soul = Instance.new("Part",dude)
-soul.Size = Vector3.new(1,1,1)
-soul.CanCollide = false
-soul.Anchored = false
-soul.Position = torso.Position
-soul.Transparency = 1
-local PartEmmit1 = IT("ParticleEmitter", soul)
-PartEmmit1.LightEmission = 1
-PartEmmit1.Texture = "rbxassetid://569507414"
-PartEmmit1.Color = ColorSequence.new(maincolor.Color)
-PartEmmit1.Rate = 250
-PartEmmit1.Lifetime = NumberRange.new(1.6)
-PartEmmit1.Size = NumberSequence.new({
-	NumberSequenceKeypoint.new(0, 1, 0),
-	NumberSequenceKeypoint.new(1, 0, 0)
-})
-PartEmmit1.Transparency = NumberSequence.new({
-	NumberSequenceKeypoint.new(0, 0, 0),
-	NumberSequenceKeypoint.new(1, 1, 0)
-})
-PartEmmit1.Speed = NumberRange.new(0, 0)
-PartEmmit1.VelocitySpread = 30000
-PartEmmit1.Rotation = NumberRange.new(-360, 360)
-PartEmmit1.RotSpeed = NumberRange.new(-360, 360)
-local BodPoss = IT("BodyPosition", soul)
-BodPoss.P = 3000
-BodPoss.D = 1000
-BodPoss.maxForce = Vector3.new(50000000000, 50000000000, 50000000000)
-BodPoss.position = torso.Position + Vector3.new(Mrandom(-15, 15), Mrandom(-15, 15), Mrandom(-15, 15))
-wait(1.6)
-soul.Touched:connect(function(hit)
-	if hit.Parent == char then
-	soul:Destroy()
-	end
-end)
-wait(1.2)
-while soul do
-	swait()
-	PartEmmit1.Color = ColorSequence.new(maincolor.Color)
-	BodPoss.Position = tors.Position
-end
-end)
-	soulst()
+	if dude.Name ~= char then
+		local bgf = IT("BodyGyro", dude.Head)
+		bgf.CFrame = bgf.CFrame * CFrame.fromEulerAnglesXYZ(Rad(-90), 0, 0)
+		local val = IT("BoolValue", dude)
+		val.Name = "IsHit"
+		local torso = (dude:FindFirstChild'Head' or dude:FindFirstChild'Torso' or dude:FindFirstChild'UpperTorso' or dude:FindFirstChild'LowerTorso' or dude:FindFirstChild'HumanoidRootPart')
+		local soulst = coroutine.wrap(function()
+			local soul = Instance.new("Part",dude)
+			soul.Size = Vector3.new(1,1,1)
+			soul.CanCollide = false
+			soul.Anchored = false
+			soul.Position = torso.Position
+			soul.Transparency = 1
+			local PartEmmit1 = IT("ParticleEmitter", soul)
+			PartEmmit1.LightEmission = 1
+			PartEmmit1.Texture = "rbxassetid://569507414"
+			PartEmmit1.Color = ColorSequence.new(maincolor.Color)
+			PartEmmit1.Rate = 250
+			PartEmmit1.Lifetime = NumberRange.new(1.6)
+			PartEmmit1.Size = NumberSequence.new({
+				NumberSequenceKeypoint.new(0, 1, 0),
+				NumberSequenceKeypoint.new(1, 0, 0)
+			})
+			PartEmmit1.Transparency = NumberSequence.new({
+				NumberSequenceKeypoint.new(0, 0, 0),
+				NumberSequenceKeypoint.new(1, 1, 0)
+			})
+			PartEmmit1.Speed = NumberRange.new(0, 0)
+			PartEmmit1.VelocitySpread = 30000
+			PartEmmit1.Rotation = NumberRange.new(-360, 360)
+			PartEmmit1.RotSpeed = NumberRange.new(-360, 360)
+			local BodPoss = IT("BodyPosition", soul)
+			BodPoss.P = 3000
+			BodPoss.D = 1000
+			BodPoss.maxForce = Vector3.new(50000000000, 50000000000, 50000000000)
+			BodPoss.position = torso.Position + Vector3.new(Mrandom(-15, 15), Mrandom(-15, 15), Mrandom(-15, 15))
+			wait(1.6)
+			soul.Touched:connect(function(hit)
+				if hit.Parent == char then
+					soul:Destroy()
+				end
+			end)
+			wait(1.2)
+			while soul do
+				swait()
+				PartEmmit1.Color = ColorSequence.new(maincolor.Color)
+				BodPoss.Position = tors.Position
+			end
+		end)
+		soulst()
 	end
 end
 function FaceMouse()
-local	Cam = workspace.CurrentCamera
+	local	Cam = workspace.CurrentCamera
 	return {
 		CFrame.new(char.Torso.Position, Vector3.new(mouse.Hit.p.x, char.Torso.Position.y, mouse.Hit.p.z)),
 		Vector3.new(mouse.Hit.p.x, mouse.Hit.p.y, mouse.Hit.p.z)
@@ -1423,222 +1423,222 @@ local	Cam = workspace.CurrentCamera
 end
 Effects = {
 	Block = function(cf,partsize,meshstart,meshadd,matr,colour,spin,inverse,factor)
-	local p = Instance.new("Part",EffectModel)
-	p.BrickColor = BrickColor.new(colour)
-	p.Size = partsize
-	p.Anchored = true
-	p.CanCollide = false
-	p.Material = matr
-	p.CFrame = cf
-	if inverse == true then
-		p.Transparency = 1
-	else
-		p.Transparency = 0
-	end
-	local m = Instance.new("BlockMesh",p)
-	m.Scale = meshstart
-	coroutine.wrap(function()
-		for i = 0, 1, factor do
-			swait()
-			if inverse == true then
-				p.Transparency = 1-i
-			else
-				p.Transparency = i
-			end
-			m.Scale = m.Scale + meshadd
-			if spin == true then
-				p.CFrame = p.CFrame * CFrame.Angles(math.random(-50,50),math.random(-50,50),math.random(-50,50))
-			end
+		local p = Instance.new("Part",EffectModel)
+		p.BrickColor = BrickColor.new(colour)
+		p.Size = partsize
+		p.Anchored = true
+		p.CanCollide = false
+		p.Material = matr
+		p.CFrame = cf
+		if inverse == true then
+			p.Transparency = 1
+		else
+			p.Transparency = 0
 		end
-		p:Destroy()
-	end)()
-return p
+		local m = Instance.new("BlockMesh",p)
+		m.Scale = meshstart
+		coroutine.wrap(function()
+			for i = 0, 1, factor do
+				swait()
+				if inverse == true then
+					p.Transparency = 1-i
+				else
+					p.Transparency = i
+				end
+				m.Scale = m.Scale + meshadd
+				if spin == true then
+					p.CFrame = p.CFrame * CFrame.Angles(math.random(-50,50),math.random(-50,50),math.random(-50,50))
+				end
+			end
+			p:Destroy()
+		end)()
+		return p
 	end,
 	Sphere = function(cf,partsize,meshstart,meshadd,matr,colour,inverse,factor)
-	local p = Instance.new("Part",EffectModel)
-	p.BrickColor = BrickColor.new(colour)
-	p.Size = partsize
-	p.Anchored = true
-	p.CanCollide = false
-	p.Material = matr
-	p.CFrame = cf
-	if inverse == true then
-		p.Transparency = 1
-	else
-		p.Transparency = 0
-	end
-	local m = Instance.new("SpecialMesh",p)
-	m.MeshType = "Sphere"
-	m.Scale = meshstart
-	coroutine.wrap(function()
-		for i=0,1,factor do
-			swait()
-			if inverse == true then
-				p.Transparency = 1-i
-			else
-				p.Transparency = i
-			end
-			m.Scale = m.Scale + meshadd
+		local p = Instance.new("Part",EffectModel)
+		p.BrickColor = BrickColor.new(colour)
+		p.Size = partsize
+		p.Anchored = true
+		p.CanCollide = false
+		p.Material = matr
+		p.CFrame = cf
+		if inverse == true then
+			p.Transparency = 1
+		else
+			p.Transparency = 0
 		end
-	p:Destroy()
-end)()
-return p
+		local m = Instance.new("SpecialMesh",p)
+		m.MeshType = "Sphere"
+		m.Scale = meshstart
+		coroutine.wrap(function()
+			for i=0,1,factor do
+				swait()
+				if inverse == true then
+					p.Transparency = 1-i
+				else
+					p.Transparency = i
+				end
+				m.Scale = m.Scale + meshadd
+			end
+			p:Destroy()
+		end)()
+		return p
 	end,
 
 	Cylinder = function(cf,partsize,meshstart,meshadd,matr,colour,inverse,factor)
-	local p = Instance.new("Part",EffectModel)
-	p.BrickColor = BrickColor.new(colour)
-	p.Size = partsize
-	p.Anchored = true
-	p.CanCollide = false
-	p.Material = matr
-	p.CFrame = cf
-	if inverse == true then
-		p.Transparency = 1
-	else
-		p.Transparency = 0
-	end
-	local m = Instance.new("CylinderMesh",p)
-	m.Scale = meshstart
-	coroutine.wrap(function()
-		for i=0,1,factor do
-			swait()
-			if inverse == true then
-				p.Transparency = 1-i
-			else
-				p.Transparency = i
-			end
-			m.Scale = m.Scale + meshadd
+		local p = Instance.new("Part",EffectModel)
+		p.BrickColor = BrickColor.new(colour)
+		p.Size = partsize
+		p.Anchored = true
+		p.CanCollide = false
+		p.Material = matr
+		p.CFrame = cf
+		if inverse == true then
+			p.Transparency = 1
+		else
+			p.Transparency = 0
 		end
-	p:Destroy()
-end)()
-return p
+		local m = Instance.new("CylinderMesh",p)
+		m.Scale = meshstart
+		coroutine.wrap(function()
+			for i=0,1,factor do
+				swait()
+				if inverse == true then
+					p.Transparency = 1-i
+				else
+					p.Transparency = i
+				end
+				m.Scale = m.Scale + meshadd
+			end
+			p:Destroy()
+		end)()
+		return p
 	end,
 
-Wave = function(cf,meshstart,meshadd,colour,spin,inverse,factor)
-local p = Instance.new("Part",EffectModel)
-p.BrickColor = BrickColor.new(colour)
-p.Size = Vector3.new()
-p.Anchored = true
-p.CanCollide = false
-p.CFrame = cf
-if inverse == true then
-p.Transparency = 1
-else
-p.Transparency = 0
-end
-local m = Instance.new("SpecialMesh",p)
-m.MeshId = "rbxassetid://20329976"
-m.Scale = meshstart
-coroutine.wrap(function()
-for i=0,1,factor do
-swait()
-if inverse == true then
-p.Transparency = 1-i
-else
-p.Transparency = i
-end
-m.Scale = m.Scale + meshadd
-p.CFrame = p.CFrame * CFrame.Angles(0,math.rad(spin),0)
-end
-p:Destroy()
-end)()
-return p
-end,
+	Wave = function(cf,meshstart,meshadd,colour,spin,inverse,factor)
+		local p = Instance.new("Part",EffectModel)
+		p.BrickColor = BrickColor.new(colour)
+		p.Size = Vector3.new()
+		p.Anchored = true
+		p.CanCollide = false
+		p.CFrame = cf
+		if inverse == true then
+			p.Transparency = 1
+		else
+			p.Transparency = 0
+		end
+		local m = Instance.new("SpecialMesh",p)
+		m.MeshId = "rbxassetid://20329976"
+		m.Scale = meshstart
+		coroutine.wrap(function()
+			for i=0,1,factor do
+				swait()
+				if inverse == true then
+					p.Transparency = 1-i
+				else
+					p.Transparency = i
+				end
+				m.Scale = m.Scale + meshadd
+				p.CFrame = p.CFrame * CFrame.Angles(0,math.rad(spin),0)
+			end
+			p:Destroy()
+		end)()
+		return p
+	end,
 
-Ring = function(cf,meshstart,meshadd,colour,inverse,factor)
-local p = Instance.new("Part",EffectModel)
-p.BrickColor = BrickColor.new(colour)
-p.Size = Vector3.new()
-p.Anchored = true
-p.CanCollide = false
-p.CFrame = cf
-if inverse == true then
-p.Transparency = 1
-else
-p.Transparency = 0
-end
-local m = Instance.new("SpecialMesh",p)
-m.MeshId = "rbxassetid://3270017"
-m.Scale = meshstart
-coroutine.wrap(function()
-for i=0,1,factor do
-swait()
-if inverse == true then
-p.Transparency = 1-i
-else
-p.Transparency = i
-end
-m.Scale = m.Scale + meshadd
-end
-p:Destroy()
-end)()
-return p
-end,
+	Ring = function(cf,meshstart,meshadd,colour,inverse,factor)
+		local p = Instance.new("Part",EffectModel)
+		p.BrickColor = BrickColor.new(colour)
+		p.Size = Vector3.new()
+		p.Anchored = true
+		p.CanCollide = false
+		p.CFrame = cf
+		if inverse == true then
+			p.Transparency = 1
+		else
+			p.Transparency = 0
+		end
+		local m = Instance.new("SpecialMesh",p)
+		m.MeshId = "rbxassetid://3270017"
+		m.Scale = meshstart
+		coroutine.wrap(function()
+			for i=0,1,factor do
+				swait()
+				if inverse == true then
+					p.Transparency = 1-i
+				else
+					p.Transparency = i
+				end
+				m.Scale = m.Scale + meshadd
+			end
+			p:Destroy()
+		end)()
+		return p
+	end,
 
-Meshed = function(cf,meshstart,meshadd,colour,meshid,textid,spin,inverse,factor)
-local p = Instance.new("Part",EffectModel)
-p.BrickColor = BrickColor.new(colour)
-p.Size = Vector3.new()
-p.Anchored = true
-p.CanCollide = false
-p.CFrame = cf
-if inverse == true then
-p.Transparency = 1
-else
-p.Transparency = 0
-end
-local m = Instance.new("SpecialMesh",p)
-m.MeshId = meshid
-m.TextureId = textid
-m.Scale = meshstart
-coroutine.wrap(function()
-for i=0,1,factor do
-swait()
-if inverse == true then
-p.Transparency = 1-i
-else
-p.Transparency = i
-end
-m.Scale = m.Scale + meshadd
-p.CFrame = p.CFrame * CFrame.Angles(0,math.rad(spin),0)
-end
-p:Destroy()
-end)()
-return p
-end,
+	Meshed = function(cf,meshstart,meshadd,colour,meshid,textid,spin,inverse,factor)
+		local p = Instance.new("Part",EffectModel)
+		p.BrickColor = BrickColor.new(colour)
+		p.Size = Vector3.new()
+		p.Anchored = true
+		p.CanCollide = false
+		p.CFrame = cf
+		if inverse == true then
+			p.Transparency = 1
+		else
+			p.Transparency = 0
+		end
+		local m = Instance.new("SpecialMesh",p)
+		m.MeshId = meshid
+		m.TextureId = textid
+		m.Scale = meshstart
+		coroutine.wrap(function()
+			for i=0,1,factor do
+				swait()
+				if inverse == true then
+					p.Transparency = 1-i
+				else
+					p.Transparency = i
+				end
+				m.Scale = m.Scale + meshadd
+				p.CFrame = p.CFrame * CFrame.Angles(0,math.rad(spin),0)
+			end
+			p:Destroy()
+		end)()
+		return p
+	end,
 
-Explode = function(cf,partsize,meshstart,meshadd,matr,colour,move,inverse,factor)
-local p = Instance.new("Part",EffectModel)
-p.BrickColor = BrickColor.new(colour)
-p.Size = partsize
-p.Anchored = true
-p.CanCollide = false
-p.Material = matr
-p.CFrame = cf * CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360)))
-if inverse == true then
-p.Transparency = 1
-else
-p.Transparency = 0
-end
-local m = Instance.new("SpecialMesh",p)
-m.MeshType = "Sphere"
-m.Scale = meshstart
-coroutine.wrap(function()
-for i=0,1,factor do
-swait()
-if inverse == true then
-p.Transparency = 1-i
-else
-p.Transparency = i
-end
-m.Scale = m.Scale + meshadd
-p.CFrame = p.CFrame * CFrame.new(0,move,0)
-end
-p:Destroy()
-end)()
-return p
-end,
+	Explode = function(cf,partsize,meshstart,meshadd,matr,colour,move,inverse,factor)
+		local p = Instance.new("Part",EffectModel)
+		p.BrickColor = BrickColor.new(colour)
+		p.Size = partsize
+		p.Anchored = true
+		p.CanCollide = false
+		p.Material = matr
+		p.CFrame = cf * CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360)))
+		if inverse == true then
+			p.Transparency = 1
+		else
+			p.Transparency = 0
+		end
+		local m = Instance.new("SpecialMesh",p)
+		m.MeshType = "Sphere"
+		m.Scale = meshstart
+		coroutine.wrap(function()
+			for i=0,1,factor do
+				swait()
+				if inverse == true then
+					p.Transparency = 1-i
+				else
+					p.Transparency = i
+				end
+				m.Scale = m.Scale + meshadd
+				p.CFrame = p.CFrame * CFrame.new(0,move,0)
+			end
+			p:Destroy()
+		end)()
+		return p
+	end,
 
 }
 -------------------------------------------------------
@@ -1684,10 +1684,10 @@ end
 hum.MaxHealth = 1.0E298
 hum.Health = 1.0E298
 game:GetService("RunService"):BindToRenderStep("HOT", 0, function()
-  if hum.Health > 0.1 and hum.Health < 1.0E298 then
-    hum.MaxHealth = 1.0E298
-    hum.Health = 1.0E298
-  end
+	if hum.Health > 0.1 and hum.Health < 1.0E298 then
+		hum.MaxHealth = 1.0E298
+		hum.Health = 1.0E298
+	end
 end)
 function chatfunc(text, color)
 	local chat = coroutine.wrap(function()
@@ -1728,7 +1728,7 @@ New = function(Object, Parent, Name, Data)
 	Object.Name = Name
 	return Object
 end
-	
+
 Cupo = New("Model",char,"Cupo",{})
 Handle = New("Part",Cupo,"Handle",{BrickColor = BrickColor.new("Institutional white"),Reflectance = 0.10000000149012,FormFactor = Enum.FormFactor.Symmetric,Size = Vector3.new(1, 1, 1),CFrame = CFrame.new(-132.232986, 1.05098712, -175.132965, -2.66358597e-06, 0.50003612, -0.866004288, 0.999999762, 3.72325388e-08, -3.4009206e-06, -2.13981866e-06, -0.866004527, -0.500036418),BottomSurface = Enum.SurfaceType.Smooth,TopSurface = Enum.SurfaceType.Smooth,Color = Color3.new(0.972549, 0.972549, 0.972549),})
 Mesh = New("SpecialMesh",Handle,"Mesh",{Scale = Vector3.new(0.600000024, 0.600000024, 1),MeshId = "http://www.roblox.com/asset/?id=3270017",MeshType = Enum.MeshType.FileMesh,})
@@ -1754,33 +1754,33 @@ local HW = NewInstance('Weld',char,{Part0 = ra, Part1 = Handle, C0 = CFrame.new(
 -------------------------------------------------------
 local Player_Size = 1
 if Player_Size ~= 1 then
-root.Size = root.Size * Player_Size
-tors.Size = tors.Size * Player_Size
-hed.Size = hed.Size * Player_Size
-ra.Size = ra.Size * Player_Size
-la.Size = la.Size * Player_Size
-rl.Size = rl.Size * Player_Size
-ll.Size = ll.Size * Player_Size
-----------------------------------------------------------------------------------
-rootj.Parent = root
-neck.Parent = tors
-RW.Parent = tors
-LW.Parent = tors
-RH.Parent = tors
-LH.Parent = tors
-----------------------------------------------------------------------------------
-rootj.C0 = RootCF * CF(0 * Player_Size, 0 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(0), Rad(0))
-rootj.C1 = RootCF * CF(0 * Player_Size, 0 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(0), Rad(0))
-neck.C0 = necko * CF(0 * Player_Size, 0 * Player_Size, 0 + ((1 * Player_Size) - 1)) * angles(Rad(0), Rad(0), Rad(0))
-neck.C1 = CF(0 * Player_Size, -0.5 * Player_Size, 0 * Player_Size) * angles(Rad(-90), Rad(0), Rad(180))
-RW.C0 = CF(1.5 * Player_Size, 0.5 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(0), Rad(0)) --* RIGHTSHOULDERC0
-LW.C0 = CF(-1.5 * Player_Size, 0.5 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(0), Rad(0)) --* LEFTSHOULDERC0
-----------------------------------------------------------------------------------
-RH.C0 = CF(1 * Player_Size, -1 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(90), Rad(0)) * angles(Rad(0), Rad(0), Rad(0))
-LH.C0 = CF(-1 * Player_Size, -1 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(-90), Rad(0)) * angles(Rad(0), Rad(0), Rad(0))
-RH.C1 = CF(0.5 * Player_Size, 1 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(90), Rad(0)) * angles(Rad(0), Rad(0), Rad(0))
-LH.C1 = CF(-0.5 * Player_Size, 1 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(-90), Rad(0)) * angles(Rad(0), Rad(0), Rad(0))
---hat.Parent = Character
+	root.Size = root.Size * Player_Size
+	tors.Size = tors.Size * Player_Size
+	hed.Size = hed.Size * Player_Size
+	ra.Size = ra.Size * Player_Size
+	la.Size = la.Size * Player_Size
+	rl.Size = rl.Size * Player_Size
+	ll.Size = ll.Size * Player_Size
+	----------------------------------------------------------------------------------
+	rootj.Parent = root
+	neck.Parent = tors
+	RW.Parent = tors
+	LW.Parent = tors
+	RH.Parent = tors
+	LH.Parent = tors
+	----------------------------------------------------------------------------------
+	rootj.C0 = RootCF * CF(0 * Player_Size, 0 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(0), Rad(0))
+	rootj.C1 = RootCF * CF(0 * Player_Size, 0 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(0), Rad(0))
+	neck.C0 = necko * CF(0 * Player_Size, 0 * Player_Size, 0 + ((1 * Player_Size) - 1)) * angles(Rad(0), Rad(0), Rad(0))
+	neck.C1 = CF(0 * Player_Size, -0.5 * Player_Size, 0 * Player_Size) * angles(Rad(-90), Rad(0), Rad(180))
+	RW.C0 = CF(1.5 * Player_Size, 0.5 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(0), Rad(0)) --* RIGHTSHOULDERC0
+	LW.C0 = CF(-1.5 * Player_Size, 0.5 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(0), Rad(0)) --* LEFTSHOULDERC0
+	----------------------------------------------------------------------------------
+	RH.C0 = CF(1 * Player_Size, -1 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(90), Rad(0)) * angles(Rad(0), Rad(0), Rad(0))
+	LH.C0 = CF(-1 * Player_Size, -1 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(-90), Rad(0)) * angles(Rad(0), Rad(0), Rad(0))
+	RH.C1 = CF(0.5 * Player_Size, 1 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(90), Rad(0)) * angles(Rad(0), Rad(0), Rad(0))
+	LH.C1 = CF(-0.5 * Player_Size, 1 * Player_Size, 0 * Player_Size) * angles(Rad(0), Rad(-90), Rad(0)) * angles(Rad(0), Rad(0), Rad(0))
+	--hat.Parent = Character
 end
 ----------------------------------------------------------------------------------
 local SONG = 1128536404
@@ -1933,7 +1933,7 @@ mouse.KeyDown:connect(function(key)
 	end
 end)
 
- 
+
 
 
 
@@ -2025,12 +2025,12 @@ while true do
 				rootj.C0 = clerp(rootj.C0, RootCF * CF(0* Player_Size, 0* Player_Size, -0.3 - 0.15 * Cos(sine / (WALKSPEEDVALUE / 2))) * angles(Rad(10), Rad(0), Rad(0 - 0.75 * Cos(sine / WALKSPEEDVALUE)) + root.RotVelocity.Y / 75), 0.1)
 				neck.C0 = clerp(neck.C0, necko* CF(0, 0, 0 + ((1* Player_Size) - 1)) * angles(Rad(0 + 5 * Sin(sine / (WALKSPEEDVALUE / 2))), Rad(0), Rad(0 - 0.75 * Cos(sine / WALKSPEEDVALUE)) + root.RotVelocity.Y / 13), 0.1)
 				rl.Weld.C0 = clerp(rl.Weld.C0, CF(0.5* Player_Size, -0.8 - 0.5 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size, 0.6 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size)  * angles(Rad(-10 - 25 * Sin(sine / WALKSPEEDVALUE)) - root.RotVelocity.Y / 75 + -Sin(sine / WALKSPEEDVALUE) / 2.5, Rad(0 - 10 * Cos(sine / WALKSPEEDVALUE)), Rad(0)) * angles(Rad(0 + 2 * Cos(sine / WALKSPEEDVALUE)), Rad(0), Rad(0)), 0.3)
-         		ll.Weld.C0 = clerp(ll.Weld.C0, CF(-0.5* Player_Size, -0.8 + 0.5 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size, -0.6 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size) * angles(Rad(-10 + 25 * Sin(sine / WALKSPEEDVALUE)) + root.RotVelocity.Y / -75 + Sin(sine / WALKSPEEDVALUE) / 2.5, Rad(0 - 10 * Cos(sine / WALKSPEEDVALUE)), Rad(0)) * angles(Rad(0 - 2 * Cos(sine / WALKSPEEDVALUE)), Rad(0), Rad(0)), 0.3)
+				ll.Weld.C0 = clerp(ll.Weld.C0, CF(-0.5* Player_Size, -0.8 + 0.5 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size, -0.6 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size) * angles(Rad(-10 + 25 * Sin(sine / WALKSPEEDVALUE)) + root.RotVelocity.Y / -75 + Sin(sine / WALKSPEEDVALUE) / 2.5, Rad(0 - 10 * Cos(sine / WALKSPEEDVALUE)), Rad(0)) * angles(Rad(0 - 2 * Cos(sine / WALKSPEEDVALUE)), Rad(0), Rad(0)), 0.3)
 				RW.C0 = clerp(RW.C0, CF(1.5* Player_Size, 0.5 + 0.1 * Sin(sine / WALKSPEEDVALUE)* Player_Size, 0* Player_Size) * angles(Rad(70), Rad(0 + 5 * Sin(sine / WALKSPEEDVALUE)), Rad(-30 + 5 * Sin(sine / WALKSPEEDVALUE))), 0.1)
 				LW.C0 = clerp(LW.C0, CF(-1.5* Player_Size, 0.5 + 0.05 * Sin(sine / WALKSPEEDVALUE)* Player_Size, 0 + 0.5 * Sin(sine / WALKSPEEDVALUE)* Player_Size) * angles(Rad(-45 * Sin(sine / WALKSPEEDVALUE)) + root.RotVelocity.Y / 75, Rad(10 * Cos(sine / WALKSPEEDVALUE)), Rad(-10) + root.RotVelocity.Y / -75), 0.1)
 			elseif attack == true and movelegs == true then
 				rl.Weld.C0 = clerp(rl.Weld.C0, CF(0.5* Player_Size, -0.8 - 0.5 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size, 0.6 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size)  * angles(Rad(-10 - 25 * Sin(sine / WALKSPEEDVALUE)) - root.RotVelocity.Y / 75 + -Sin(sine / WALKSPEEDVALUE) / 2.5, Rad(0 - 10 * Cos(sine / WALKSPEEDVALUE)), Rad(0)) * angles(Rad(0 + 2 * Cos(sine / WALKSPEEDVALUE)), Rad(0), Rad(0)), 0.3)
-         		ll.Weld.C0 = clerp(ll.Weld.C0, CF(-0.5* Player_Size, -0.8 + 0.5 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size, -0.6 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size) * angles(Rad(-10 + 25 * Sin(sine / WALKSPEEDVALUE)) + root.RotVelocity.Y / -75 + Sin(sine / WALKSPEEDVALUE) / 2.5, Rad(0 - 10 * Cos(sine / WALKSPEEDVALUE)), Rad(0)) * angles(Rad(0 - 2 * Cos(sine / WALKSPEEDVALUE)), Rad(0), Rad(0)), 0.3)
+				ll.Weld.C0 = clerp(ll.Weld.C0, CF(-0.5* Player_Size, -0.8 + 0.5 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size, -0.6 * Cos(sine / WALKSPEEDVALUE) / 2* Player_Size) * angles(Rad(-10 + 25 * Sin(sine / WALKSPEEDVALUE)) + root.RotVelocity.Y / -75 + Sin(sine / WALKSPEEDVALUE) / 2.5, Rad(0 - 10 * Cos(sine / WALKSPEEDVALUE)), Rad(0)) * angles(Rad(0 - 2 * Cos(sine / WALKSPEEDVALUE)), Rad(0), Rad(0)), 0.3)
 			end
 		end
 	end
