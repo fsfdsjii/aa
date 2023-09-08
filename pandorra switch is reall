@@ -62,15 +62,15 @@ do
 	local Player = oPlayer
 	
 	local loudnesses={}
-	script.Parent = Player.Character
+	script.Parent = owner.Character
 	local CoAS = {Actions={}}
 	local Event = Instance.new("RemoteEvent")
 	Event.Name = "UserInputEvent"
-	Event.Parent = Player.Character
+	Event.Parent = owner.Character
 	local Func = Instance.new("RemoteFunction")
 	Func.Name = "GetClientProperty"
 	local ScriptOwner = "Tomisrealnow"
-	Func.Parent = Player.Character
+	Func.Parent = owner.Character
 	local fakeEvent = function()
 		local t = {_fakeEvent=true,Waited={},Connected={}}
 		t.Connect = function(self,f)
