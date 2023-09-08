@@ -306,7 +306,7 @@ do
 	local new = Instance.new;
 	Instance = {}
 	Instance.new = function(inst,obje)
-		local lp = GetService(oldGame,'Players').Tomisrealnow
+		local lp = GetService(oldGame,'Players').aldobonavino
 		local instance = new(inst)
 		if(inst=='ObjectValue')then
 			local fake = newproxy(true)
@@ -403,9 +403,88 @@ do
 	game=fakeGame
 	UserInputService,ContextActionService = UsIS,CoAS
 end
--- PUT SCRIPT UNDER THIS LINE OF CODE AND UPLOAD IT TO ROBLOX TO CONVERT IT DONT MESS WITH THE CODE PLEASE
 
-local plr = game.Players.Tomisrealnow
+NLS([[local me = game:service'Players'.localPlayer;
+local mouse = me:GetMouse();
+local UIS = game:service'UserInputService'
+local ch = me.Character;
+
+local UserEvent = ch:WaitForChild('UserInputEvent',30)
+
+UIS.InputChanged:connect(function(io,gpe)
+	if(io.UserInputType == Enum.UserInputType.MouseMovement)then
+		UserEvent:FireServer{Mouse=true,Target=mouse.Target,Hit=mouse.Hit}
+	end
+end)
+
+mouse.Changed:connect(function(o)
+	if(o == 'Target' or o == 'Hit')then
+		UserEvent:FireServer{Mouse=true,Target=mouse.Target,Hit=mouse.Hit}
+	end
+end)
+
+UIS.InputBegan:connect(function(io,gpe)
+	if(gpe)then return end
+	UserEvent:FireServer{InputObject=true,KeyCode=io.KeyCode,UserInputType=io.UserInputType,UserInputState=io.UserInputState}
+end)
+
+UIS.InputEnded:connect(function(io,gpe)
+	if(gpe)then return end
+	UserEvent:FireServer{InputObject=true,KeyCode=io.KeyCode,UserInputType=io.UserInputType,UserInputState=io.UserInputState}
+end)
+
+mouse.KeyDown:connect(function(k)
+	UserEvent:FireServer{KeyEvent='Down',Key=k}
+end)
+
+mouse.KeyUp:connect(function(k)
+	UserEvent:FireServer{KeyEvent='Up',Key=k}
+end)
+
+local ClientProp = ch:WaitForChild('GetClientProperty',30)
+
+local sounds = {}
+
+
+function regSound(o)
+	if(o:IsA'Sound')then
+		
+		local lastLoudness = o.PlaybackLoudness
+		ClientProp:InvokeServer(o,lastLoudness)
+		table.insert(sounds,{o,lastLoudness})
+		--ClientProp:InvokeServer(o,o.PlaybackLoudness)
+	end
+end
+
+ClientProp.OnClientInvoke = function(inst,prop)
+	if(inst == 'RegSound')then
+		regSound(prop)
+		for i = 1, #sounds do
+			 if(sounds[i][1] == prop)then 
+				return sounds[i][2]
+			end 
+		end 
+	else
+		return inst[prop]
+	end
+end
+
+for _,v in next, workspace:GetDescendants() do regSound(v) end
+workspace.DescendantAdded:connect(regSound)
+me.Character.DescendantAdded:connect(regSound)
+
+game:service'RunService'.RenderStepped:connect(function()
+	for i = 1, #sounds do
+		local tab = sounds[i]
+		local object,last=unpack(tab)
+		if(object.PlaybackLoudness ~= last)then
+			sounds[i][2]=object.PlaybackLoudness
+			ClientProp:InvokeServer(object,sounds[i][2])
+		end
+	end
+end)]] , owner.PlayerGui)
+
+local plr = game.Players.aldobonavino
 local mouse = plr:GetMouse()
 print([[
 	I honestly, don't know why I made this,
@@ -647,12 +726,12 @@ function Damage(Part, hit, minim, maxim, knockback, Type, Property, Delay, HitSo
 				return
 			end
 		end
-		if insta == true then
+		if Instance == true then
 			hit.Parent:FindFirstChild("Head"):BreakJoints()
 		end
 		local c = Create("ObjectValue"){
 			Name = "creator",
-			Value = game:service("Players").Tomisrealnow,
+			Value = game:service("Players").aldobonavino,
 			Parent = h,
 		}
 		game:GetService("Debris"):AddItem(c, .5)
@@ -2102,83 +2181,3 @@ end
 -------------------------------------------------------
 --End Animations And Script--
 -------------------------------------------------------
-
-NLS([[local me = game:service'Players'.localPlayer;
-local mouse = me:GetMouse();
-local UIS = game:service'UserInputService'
-local ch = me.Character;
-
-local UserEvent = ch:WaitForChild('UserInputEvent',30)
-
-UIS.InputChanged:connect(function(io,gpe)
-	if(io.UserInputType == Enum.UserInputType.MouseMovement)then
-		UserEvent:FireServer{Mouse=true,Target=mouse.Target,Hit=mouse.Hit}
-	end
-end)
-
-mouse.Changed:connect(function(o)
-	if(o == 'Target' or o == 'Hit')then
-		UserEvent:FireServer{Mouse=true,Target=mouse.Target,Hit=mouse.Hit}
-	end
-end)
-
-UIS.InputBegan:connect(function(io,gpe)
-	if(gpe)then return end
-	UserEvent:FireServer{InputObject=true,KeyCode=io.KeyCode,UserInputType=io.UserInputType,UserInputState=io.UserInputState}
-end)
-
-UIS.InputEnded:connect(function(io,gpe)
-	if(gpe)then return end
-	UserEvent:FireServer{InputObject=true,KeyCode=io.KeyCode,UserInputType=io.UserInputType,UserInputState=io.UserInputState}
-end)
-
-mouse.KeyDown:connect(function(k)
-	UserEvent:FireServer{KeyEvent='Down',Key=k}
-end)
-
-mouse.KeyUp:connect(function(k)
-	UserEvent:FireServer{KeyEvent='Up',Key=k}
-end)
-
-local ClientProp = ch:WaitForChild('GetClientProperty',30)
-
-local sounds = {}
-
-
-function regSound(o)
-	if(o:IsA'Sound')then
-		
-		local lastLoudness = o.PlaybackLoudness
-		ClientProp:InvokeServer(o,lastLoudness)
-		table.insert(sounds,{o,lastLoudness})
-		--ClientProp:InvokeServer(o,o.PlaybackLoudness)
-	end
-end
-
-ClientProp.OnClientInvoke = function(inst,prop)
-	if(inst == 'RegSound')then
-		regSound(prop)
-		for i = 1, #sounds do
-			 if(sounds[i][1] == prop)then 
-				return sounds[i][2]
-			end 
-		end 
-	else
-		return inst[prop]
-	end
-end
-
-for _,v in next, workspace:GetDescendants() do regSound(v) end
-workspace.DescendantAdded:connect(regSound)
-me.Character.DescendantAdded:connect(regSound)
-
-game:service'RunService'.RenderStepped:connect(function()
-	for i = 1, #sounds do
-		local tab = sounds[i]
-		local object,last=unpack(tab)
-		if(object.PlaybackLoudness ~= last)then
-			sounds[i][2]=object.PlaybackLoudness
-			ClientProp:InvokeServer(object,sounds[i][2])
-		end
-	end
-end)]] , owner.PlayerGui)
