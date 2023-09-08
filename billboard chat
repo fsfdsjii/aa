@@ -1,0 +1,32 @@
+owner.Chatted:Connect(function(themessage)
+	local BillboardGui1 = Instance.new("BillboardGui")
+	local TextLabel2 = Instance.new("TextLabel")
+	BillboardGui1.Parent = owner.Character.HumanoidRootPart
+	BillboardGui1.LightInfluence = 1
+	BillboardGui1.Size = UDim2.new(7, 0, 6, 0)
+	BillboardGui1.Active = true
+	BillboardGui1.ClipsDescendants = true
+	BillboardGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	BillboardGui1.StudsOffsetWorldSpace = Vector3.new(0, 4, 0)
+	TextLabel2.Parent = BillboardGui1
+	TextLabel2.Size = UDim2.new(0, 300, 0, 100)
+	TextLabel2.BackgroundColor = BrickColor.new("Really black")
+	TextLabel2.BackgroundColor3 = Color3.new(0, 0, 0)
+	TextLabel2.BackgroundTransparency = 0.178
+	TextLabel2.BorderColor = BrickColor.new("Really black")
+	TextLabel2.BorderColor3 = Color3.new(0, 0, 0)
+	TextLabel2.BorderSizePixel = 0
+	TextLabel2.Font = Enum.Font.SourceSans
+	TextLabel2.FontSize = Enum.FontSize.Size24
+	TextLabel2.TextColor = BrickColor.new("Really blue")
+	TextLabel2.TextColor3 = Color3.new(0.0313725, 0, 1)
+	TextLabel2.TextSize = 15.5
+	TextLabel2.TextWrap = true
+	TextLabel2.TextWrapped = true
+	TextLabel2.TextXAlignment = Enum.TextXAlignment.Left
+	TextLabel2.TextYAlignment = Enum.TextYAlignment.Top
+	TextLabel2.Text = tostring(themessage)
+	TextLabel2.TextTransparency = 0.168
+	task.wait(8)
+	BillboardGui1:Destroy()
+end)
