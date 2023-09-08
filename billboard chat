@@ -1,6 +1,10 @@
 owner.Chatted:Connect(function(themessage)
+if owner.Character.HumanoidRootPart.Chat then
+warn("Wait for current chatted thing to dissapear.")
+else
 	local BillboardGui1 = Instance.new("BillboardGui")
 	local TextLabel2 = Instance.new("TextLabel")
+        BillboardGui1.Name = "Chat"
 	BillboardGui1.Parent = owner.Character.HumanoidRootPart
 	BillboardGui1.LightInfluence = 1
 	BillboardGui1.Size = UDim2.new(7, 0, 6, 0)
@@ -29,4 +33,5 @@ owner.Chatted:Connect(function(themessage)
 	TextLabel2.TextTransparency = 0.168
 	task.wait(8)
 	BillboardGui1:Destroy()
+   end
 end)
