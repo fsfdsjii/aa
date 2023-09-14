@@ -1,0 +1,87 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Folder0 = Instance.new("Folder")
+Tool1 = Instance.new("Tool")
+Part2 = Instance.new("Part")
+RopeConstraint3 = Instance.new("RopeConstraint")
+Script4 = Instance.new("Script")
+Part5 = Instance.new("Part")
+Script7 = Instance.new("Script")
+attach1 = Instance.new("Attachment")
+attach2 = Instance.new("Attachment")
+attach1.Parent = Part2
+attach2.Parent = Part5
+Folder0.Parent = mas
+Tool1.Parent = owner.Backpack
+Tool1.TextureId = "http://www.roblox.com/asset/?id=11184108639"
+Part2.Name = "Handle"
+Part2.Parent = Tool1
+Part2.Transparency = 1
+Part2.Size = Vector3.new(4, 1, 2)
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.TopSurface = Enum.SurfaceType.Smooth
+RopeConstraint3.Parent = Part2
+RopeConstraint3.Length = 15
+RopeConstraint3.Visible = true
+RopeConstraint3.Attachment0 = attach1
+RopeConstraint3.Attachment1 = attach2
+Script4.Parent = Part2
+table.insert(cors,sandbox(Script4,function()
+	Tool1.Activated:Connect(function()
+		local rrr = Part5:FindFirstChildOfClass('BodyVelocity')
+		if not rrr then
+		local bodyv = Instance.new("BodyVelocity")
+bodyv.Parent = Part5
+		bodyv.Velocity =  owner.Character.HumanoidRootPart.CFrame.LookVector * Vector3.new(20, 0, 13) + Vector3.new(0, 0.5, 0)
+		print(bodyv.Velocity)
+		task.wait(2)
+			bodyv:Destroy()
+	else
+	warn("Please wait before sending another swing.")
+end
+end)
+end))
+Part5.Parent = Tool1
+Part5.Transparency = 1
+Part5.Size = Vector3.new(4, 1, 2)
+Part5.BottomSurface = Enum.SurfaceType.Smooth
+Part5.TopSurface = Enum.SurfaceType.Smooth
+Script7.Parent = Part5
+table.insert(cors,sandbox(Script7,function()
+local r = Instance.new("ForceField")
+r.Parent = owner.Character
+r.Visible = false
+script.Parent.Touched:Connect(function(part)
+
+	local hum = part.Parent:FindFirstChild('Humanoid')
+	if hum then
+				hum:TakeDamage(20)
+	end
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
