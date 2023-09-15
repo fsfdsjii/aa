@@ -58,9 +58,12 @@ end)
 
 script.Parent.Touched:Connect(function(yey)
 	if yey then
+yeyh = yey.Parent:FindFirstChild('Humanoid')
 	if yey.Name ~= "Base" then
+if not yeyh then
 	yey:Destroy()
-		end
+	end
+end
 if game:GetService('Players'):GetPlayerFromCharacter(script.Parent.Parent.Parent) ~= nil then
 		if math.random(1, 50) == 1 then
 			local Tool0z = Instance.new("Tool")
