@@ -336,6 +336,9 @@ while task.wait() do
 					end
 				end
 			end
+			for k,y in game:GetService('ReplicatedStorage'):GetDescendants() do
+				y.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+			end
 		end
 	end
 end
