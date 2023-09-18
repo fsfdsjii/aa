@@ -340,8 +340,11 @@ end
 
 			for m,y in workspace:GetDescendants() do 
 				if y:IsA('BasePart') then
-				if y.Name ~= "Terrain" then
+				if y.ClassName ~= "Terrain" then
+e = Instance.new("Weld")
+e.Parent = owner.Character.HumanoidRootPart
+e.Part0 = e.Parent
+e.Part1 = y
 			if y.Name ~= "Base" then
-Instance.new("SpecialMesh" , y)
 						end
 					end
