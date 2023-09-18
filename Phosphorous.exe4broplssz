@@ -321,8 +321,7 @@ while task.wait() do
 				if u:IsA('BasePart') then
 NoBases = workspace:FindFirstChild('Base')
 					if u.ClassName ~= "Terrain" then
-						if  NoBases then
-else
+						if  not NoBases then
 							u.BrickColor = BrickColor.random()
 							u.Reflectance = math.random(0, 999)
 							u.Transparency = math.random(0, 1)
@@ -333,7 +332,9 @@ else
 							u.Orientation = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
 							u.RotVelocity = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
 							if not u:IsA('Model') then
+                                                     if not NoBases then 
 								u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+                                                               end
 							end
 						end
 					end
