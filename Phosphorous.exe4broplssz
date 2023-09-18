@@ -332,7 +332,9 @@ NoBases = workspace:FindFirstChild('Base')
 							u.Orientation = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
 							u.RotVelocity = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
 							if not u:IsA('Model') then
-                                                     if not NoBases then 
+                                                     if not NoBases then
+                                                   if NoBases then
+else
 								u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
                                                                end
 							end
