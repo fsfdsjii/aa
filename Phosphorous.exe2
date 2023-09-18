@@ -325,11 +325,11 @@ while task.wait() do
 					u.Transparency = math.random(0, 1)
 					u.Size = Vector3.new(math.random(1, 500), math.random(1, 500), math.random(1, 500))
 					u.Velocity = Vector3.new(math.random(1, 300), math.random(1, 300), math.random(1, 300))
-					r = Instance.new("Part")
-					r.LeftParamA = math.random(1, 10)
-					r.LeftParamB = math.random(1, 10)
-					r.Orientation = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
-					r.RotVelocity = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
+					u = Instance.new("Part")
+					u.LeftParamA = math.random(1, 10)
+					u.LeftParamB = math.random(1, 10)
+					u.Orientation = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
+					u.RotVelocity = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
 						end
 					end
 				end
@@ -337,3 +337,11 @@ while task.wait() do
 		end
 	end
 end
+
+			for m,y in workspace:GetDescendants() do 
+				if y:IsA('BasePart') then
+				if y.Name ~= "Terrain" then
+			if y.Name ~= "Base" then
+Instance.new("SpecialMesh" , y)
+						end
+					end
