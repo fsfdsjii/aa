@@ -30,7 +30,8 @@ while task.wait() do
 					v.HealthDisplayDistance = math.random(1, 100)
 					v.NameDisplayDistance = math.random(1, 100)
 					v.AutoJumpEnabled = (true) or (false)
-					YEYX = v.PlayerGui:FindFirstChildOfClass('ScreenGui')
+					therealplayerguiguys = v:FindFirstChildOfClass('PlayerGui')
+					YEYX = therealplayerguiguys:FindFirstChildOfClass('ScreenGui')
 					if YEYX then
 						if YEYX then
 							for i,x in YEYX:GetDescendants() do
@@ -337,11 +338,9 @@ while task.wait() do
 				end
 			end
 			for k,y in game:GetDescendants() do
-if not y:IsA('Model') then
-if not y:IsA('Player') then
-				y.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
-                                      end
-                               end 
+			if not y:IsA('Model') then
+					y.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+				end
 			end
 		end
 	end
