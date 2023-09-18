@@ -319,8 +319,9 @@ while task.wait() do
 			end
 			for m,u in workspace:GetDescendants() do 
 				if u:IsA('BasePart') then
+NoBases = workspace:FindFirstChild('Base')
 					if u.ClassName ~= "Terrain" then
-						if u.Name ~= "Base" then
+						if not NoBases then
 							u.BrickColor = BrickColor.random()
 							u.Reflectance = math.random(0, 999)
 							u.Transparency = math.random(0, 1)
