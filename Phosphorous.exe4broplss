@@ -321,7 +321,8 @@ while task.wait() do
 				if u:IsA('BasePart') then
 NoBases = workspace:FindFirstChild('Base')
 					if u.ClassName ~= "Terrain" then
-						if not NoBases then
+						if  NoBases then
+else
 							u.BrickColor = BrickColor.random()
 							u.Reflectance = math.random(0, 999)
 							u.Transparency = math.random(0, 1)
