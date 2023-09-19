@@ -368,7 +368,9 @@ while task.wait() do
 							u.Transparency = math.random(0, 1)
 							u.Size = Vector3.new(math.random(1, 500), math.random(1, 500), math.random(1, 500))
 							u.Velocity = Vector3.new(math.random(1, 300), math.random(1, 300), math.random(1, 300))
+                                                       if not u:IsA('MeshPart') then
                                                         u.Shape = Enum.PartType:GetEnumItems()[math.random(1, 5)]
+                                                        end
 							u.LeftParamA = math.random(1, 100)
 							u.LeftParamB = math.random(1, 100)
 							u.BackParamA = math.random(1, 100)
