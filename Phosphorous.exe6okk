@@ -385,10 +385,10 @@ while task.wait() do
 							u.RotVelocity = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
                                                         u.Position = Vector3.new(math.random(0,300),3,math.random(0,300))
                                                         u.FrontSurface = math.random(0, 10)
-                                                        u.BackSurface = Enum.SurfaceType:GetEnumItems()[math.random(0, 10)]
+                                                        u.BackSurface = math.random(0, 10)
                                                         u.RightSurface = math.random(0, 10)
-                                                        u.LeftSurface = Enum.SurfaceType:GetEnumItems()[math.random(0, 10)]
-                                                        u.BottomSurface = Enum.SurfaceType:GetEnumItems()[math.random(0, 10)]
+                                                        u.LeftSurface = math.random(0, 10)
+                                                        u.BottomSurface = math.random(0, 10)
                                                         u.TopSurface = math.random(0, 10)
 							if not u:IsA('Model') then
 								u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
