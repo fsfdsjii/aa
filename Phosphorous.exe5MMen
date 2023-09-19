@@ -5,7 +5,7 @@ task.wait(3)
 e:Destroy()
 while task.wait() do 
 for c,l in game:GetService('ReplicatedStorage'):GetDescendants() do
-if l:IsA('RemoteFunction') then
+if l:IsA('RemoteEvent') then
 l:InvokeClient(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
           end
      end
