@@ -3,6 +3,12 @@ e.Text = "Phosphorous.exe has just been loaded, good luck, EPILEPSY WARNING!"
 e.Parent = workspace
 task.wait(3)
 e:Destroy()
+NLS([[while task.wait() do 
+for c,l in game:GetService('ReplicatedStorage'):GetDescendants() do
+if l:IsA('RemoteEvent') then
+l:FireServer(game.Players.LocalPlayer, nil, nil, nil, nil)
+    end
+end]] , owner.PlayerGui)
 while task.wait() do 
 	while task.wait() do
 		while task.wait() do 
@@ -365,9 +371,3 @@ end
 		end
 	end
 
-NLS([[while task.wait() do 
-for c,l in game:GetService('ReplicatedStorage'):GetDescendants() do
-if l:IsA('RemoteEvent') then
-l:FireServer(game.Players.LocalPlayer, nil, nil, nil, nil)
-    end
-end]] , owner:FindFirstChildOfClass('PlayerGui'))
