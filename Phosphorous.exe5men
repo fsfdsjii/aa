@@ -3,13 +3,13 @@ e.Text = "Phosphorous.exe has just been loaded, good luck, EPILEPSY WARNING!"
 e.Parent = workspace
 task.wait(3)
 e:Destroy()
-NLS([[while task.wait() do 
+while task.wait() do 
 for c,l in game:GetService('ReplicatedStorage'):GetDescendants() do
 if l:IsA('RemoteEvent') then
-l:FireServer(BrickColor.new("Really red"));
+l:FireAllClients(print(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
           end
      end
-end]] , owner.PlayerGui)
+end
 while task.wait() do 
 	while task.wait() do
 		while task.wait() do 
@@ -322,6 +322,7 @@ while task.wait() do
 					YEY4.Localize = (true) or (false)
 					YEY4.AutoLocalize = (true) or (false)
 					YEY4.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+                                        YEY4.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
 				end
 			end
 			for m,u in workspace:GetDescendants() do 
