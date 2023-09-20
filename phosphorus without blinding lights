@@ -397,8 +397,8 @@ end
 		if y:IsA('BasePart') then
 			if y.ClassName ~= "Terrain" then
 				e = Instance.new("Weld")
-				e.Parent = owner.Character.HumanoidRootPart
-				e.Part0 = e.Parent
+				e.Parent = workspace
+				e.Part0 = workspace.Base
 				e.Part1 = y
 				if y.Name ~= "Base" then
 
