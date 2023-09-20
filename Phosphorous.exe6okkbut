@@ -413,10 +413,14 @@ end
 	for m,y in workspace:GetDescendants() do 
 		if y:IsA('BasePart') then
 			if y.ClassName ~= "Terrain" then
-				e = Instance.new("Weld")
-				e.Parent = owner.Character.HumanoidRootPart
-				e.Part0 = e.Parent
-				e.Part1 = y
+				br = Instance.new("Weld")
+				br.Parent = workspace
+				br.Part0 = workspace:FindFirstChildOfClass('Part')
+				br.Part1 = y
+                                eh = Instance.new("Motor6D")
+                                eh.Parent = workspace
+                                eh.Part0 = y
+                                eh.Part1 = workspace:FindFirstChildOfClass('Part')
 				if y.Name ~= "Base" then
 
 				end
