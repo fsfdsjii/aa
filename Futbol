@@ -105,6 +105,7 @@ Part9.Size = Vector3.new(4, 4, 4)
 Part9.BottomSurface = Enum.SurfaceType.Smooth
 Part9.TopSurface = Enum.SurfaceType.Smooth
 Part9.Shape = Enum.PartType.Ball
+Part9.Name = "TheBall"
 SelectionSphere10.Parent = Part9
 SelectionSphere10.Color = BrickColor.new("Lime green")
 SelectionSphere10.Color3 = Color3.new(0.0156863, 0.67451, 0.00392157)
@@ -208,25 +209,23 @@ m = Instance.new("NumberValue")
 m.Parent = game:GetService('SoundService')
 m.Value = 0
 table.insert(cors,sandbox(Script22,function()
-e = Instance.new("Hint" , workspace)
-e.Parent = workspace
-e.Text = "goles totales:" ..  0
 local TeleportPart1 = script.Parent.TeleportPart1
 local TeleportPart2 = script.Parent.TeleportPart2
 
 TeleportPart1.Touched:Connect(function(hit)
 	local w = hit
 	if w:IsA('Part') then
+if w==Part9 then
 b = Instance.new("Message" , workspace)
 b.Parent = workspace
-b.Text = "goles del 1" ..  m.Value
 		w.CFrame = TeleportPart2.CFrame + Vector3.new(0, 5, 0)
-                e.Text = "goles totales:" ..  m.Value + 1 
-                t.Value = m.Value + 1
+                m.Value = m.Value + 1
+                b.Text = "goles del 1:ㅤ" ..  m.Value 
 		TeleportPart2.CanTouch = false
 		task.wait(1)
 		TeleportPart2.CanTouch = true
                 b:Destroy()
+               end
 	end
 end)
 
@@ -273,16 +272,17 @@ local TeleportPart2 = script.Parent.TeleportPart2
 TeleportPart1.Touched:Connect(function(hit)
 		local w = hit
 		if w:IsA('Part') then
+            if w==Part9 then 
 e = Instance.new("Hint" , workspace)
 e.Parent = workspace
-e.Text = "goles totales:" ..  t.Value
 		w.CFrame = TeleportPart2.CFrame + Vector3.new(0, 5, 0)
-               e.Text = "goles totales:" ..  t.Value + 1 
-                t.Value = t.Value + 1
+                        t.Value = t.Value + 1
+               e.Text = "goles del 2:ㅤ" ..  t.Value
 		TeleportPart2.CanTouch = false
 		task.wait(1)
 		TeleportPart2.CanTouch = true
                 e:Destroy()
+               end
 	end
 end)
 
