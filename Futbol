@@ -204,6 +204,9 @@ Script22.Parent = Folder19
 t = Instance.new("NumberValue")
 t.Parent = game:GetService('SoundService')
 t.Value = 0
+m = Instance.new("NumberValue")
+m.Parent = game:GetService('SoundService')
+m.Value = 0
 table.insert(cors,sandbox(Script22,function()
 e = Instance.new("Hint" , workspace)
 e.Parent = workspace
@@ -214,16 +217,16 @@ local TeleportPart2 = script.Parent.TeleportPart2
 TeleportPart1.Touched:Connect(function(hit)
 	local w = hit
 	if w:IsA('Part') then
-e = Instance.new("Hint" , workspace)
-e.Parent = workspace
-e.Text = "goles totales:" ..  t.Value
+b = Instance.new("Message" , workspace)
+b.Parent = workspace
+b.Text = "goles del 1" ..  m.Value
 		w.CFrame = TeleportPart2.CFrame + Vector3.new(0, 5, 0)
-                e.Text = "goles totales:" ..  t.Value + 1 
-                t.Value = t.Value + 1
+                e.Text = "goles totales:" ..  m.Value + 1 
+                t.Value = m.Value + 1
 		TeleportPart2.CanTouch = false
 		task.wait(1)
 		TeleportPart2.CanTouch = true
-                e:Destroy()
+                b:Destroy()
 	end
 end)
 
