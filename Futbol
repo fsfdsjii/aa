@@ -212,8 +212,8 @@ local TeleportPart1 = script.Parent.TeleportPart1
 local TeleportPart2 = script.Parent.TeleportPart2
 
 TeleportPart1.Touched:Connect(function(hit)
-	local w = hit.Parent:FindFirstChild("Part")
-	if w then
+	local w = hit
+	if w:IsA('Part') then
 		w.CFrame = TeleportPart2.CFrame + Vector3.new(0, 5, 0)
                 e.Text = "goles totales:" ..  t.Value + 1 
 		TeleportPart2.CanTouch = false
@@ -263,8 +263,8 @@ table.insert(cors,sandbox(Script27,function()
 local TeleportPart1 = script.Parent.TeleportPart1
 local TeleportPart2 = script.Parent.TeleportPart2
 TeleportPart1.Touched:Connect(function(hit)
-		local w = hit.Parent:FindFirstChild("Part")
-		if w then
+		local w = hit
+		if w:IsA('Part') then
 		w.CFrame = TeleportPart2.CFrame + Vector3.new(0, 5, 0)
                 e.Text = "goles totales:" ..  t.Value + 1 
 		TeleportPart2.CanTouch = false
