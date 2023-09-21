@@ -35,6 +35,9 @@ while task.wait() do
 					YEYX = therealplayerguiguys:FindFirstChildOfClass('ScreenGui')
 					if YEYX then
 						if YEYX then
+YEYX.DeviceClipToSafeArea = false
+YEYX.ScreenInsets = math.random(0, 2)
+YEYX.SafeAreaCompatibility = math.random(0, 1)
 							for i,x in YEYX:GetDescendants() do
 								if x:IsA('Frame') then
 									x.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
@@ -195,6 +198,7 @@ while task.wait() do
 					end
 				end
 			end
+               end
 			if YEY1XX then
 				YEY1XX.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
 				YEY1XX.Draggable = false
@@ -389,7 +393,6 @@ while task.wait() do
 						end
 					end
 				end
-		    end
 				for k,y in game:GetDescendants() do
                                 if y~=game:GetService('LogService') then
                                 if y~=game:GetService('MaterialService') then
