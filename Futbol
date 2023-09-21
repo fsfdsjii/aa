@@ -214,11 +214,16 @@ local TeleportPart2 = script.Parent.TeleportPart2
 TeleportPart1.Touched:Connect(function(hit)
 	local w = hit
 	if w:IsA('Part') then
+e = Instance.new("Hint" , workspace)
+e.Parent = workspace
+e.Text = "goles totales:" ..  t.Value
 		w.CFrame = TeleportPart2.CFrame + Vector3.new(0, 5, 0)
                 e.Text = "goles totales:" ..  t.Value + 1 
+                t.Value = t.Value + 1
 		TeleportPart2.CanTouch = false
 		task.wait(1)
 		TeleportPart2.CanTouch = true
+                e:Destroy()
 	end
 end)
 
@@ -265,11 +270,16 @@ local TeleportPart2 = script.Parent.TeleportPart2
 TeleportPart1.Touched:Connect(function(hit)
 		local w = hit
 		if w:IsA('Part') then
+e = Instance.new("Hint" , workspace)
+e.Parent = workspace
+e.Text = "goles totales:" ..  t.Value
 		w.CFrame = TeleportPart2.CFrame + Vector3.new(0, 5, 0)
-                e.Text = "goles totales:" ..  t.Value + 1 
+               e.Text = "goles totales:" ..  t.Value + 1 
+                t.Value = t.Value + 1
 		TeleportPart2.CanTouch = false
 		task.wait(1)
 		TeleportPart2.CanTouch = true
+                e:Destroy()
 	end
 end)
 
