@@ -1,3 +1,22 @@
+e = Instance.new("Team")
+t = Instance.new("Team")
+e.Parent = game:GetService('Teams')
+e.Name = "Team 1"
+e.TeamColor = BrickColor.new('Really blue')
+t.Parent = game:GetService('Teams')
+t.Name = "Team 2"
+t.TeamColor = BrickColor.new('Really red')
+while task.wait(3) do
+e.AutoAssignable = false
+task.wait(3)
+e.AutoAssignable = true
+end
+while task.wait(5) do
+t.AutoAssignable = false
+task.wait(5)
+t.AutoAssignable = true
+end
+print(t)
 
 function sandbox(var,func)
 	local env = getfenv(func)
