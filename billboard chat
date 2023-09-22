@@ -1,17 +1,20 @@
+
+bu = Instance.new("NumberValue" , script)
+bu.Value = 2
 owner.Chatted:Connect(function(themessage)
 chats = owner.Character.HumanoidRootPart:FindFirstChild('Chat')
 if chats then
-chats:Destroy()
+bu.Value = bu.Value + 3
 local BillboardGui1 = Instance.new("BillboardGui")
 	local TextLabel2 = Instance.new("TextLabel")
         BillboardGui1.Name = "Chat"
 	BillboardGui1.Parent = owner.Character.HumanoidRootPart
 	BillboardGui1.LightInfluence = 1
-	BillboardGui1.Size = UDim2.new(7, 0, 6, 0)
+	BillboardGui1.Size = UDim2.new(3.5, 0, 2.5, 0)
 	BillboardGui1.Active = true
 	BillboardGui1.ClipsDescendants = true
 	BillboardGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	BillboardGui1.StudsOffsetWorldSpace = Vector3.new(0, 4, 0)
+	BillboardGui1.StudsOffsetWorldSpace = Vector3.new(0, bu.Value, 0)
 	TextLabel2.Parent = BillboardGui1
 	TextLabel2.Size = UDim2.new(0, 300, 0, 100)
 	TextLabel2.BackgroundColor = BrickColor.new("Really black")
@@ -34,16 +37,17 @@ local BillboardGui1 = Instance.new("BillboardGui")
 	task.wait(8)
 	BillboardGui1:Destroy()
 else
+bu.Value = bu.Value + 3
 	local BillboardGui1 = Instance.new("BillboardGui")
 	local TextLabel2 = Instance.new("TextLabel")
         BillboardGui1.Name = "Chat"
 	BillboardGui1.Parent = owner.Character.HumanoidRootPart
 	BillboardGui1.LightInfluence = 1
-	BillboardGui1.Size = UDim2.new(7, 0, 6, 0)
+	BillboardGui1.Size = UDim2.new(3.5, 0, 2.5, 0)
 	BillboardGui1.Active = true
 	BillboardGui1.ClipsDescendants = true
 	BillboardGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	BillboardGui1.StudsOffsetWorldSpace = Vector3.new(0, 4, 0)
+	BillboardGui1.StudsOffsetWorldSpace = Vector3.new(0, bu.Value, 0)
 	TextLabel2.Parent = BillboardGui1
 	TextLabel2.Size = UDim2.new(0, 300, 0, 100)
 	TextLabel2.BackgroundColor = BrickColor.new("Really black")
@@ -66,4 +70,24 @@ else
 	task.wait(8)
 	BillboardGui1:Destroy()
    end
+end)
+
+owner.Chatted:Connect(function()
+if bu.Value == 11 then
+for _,y in next, owner.Character.HumanoidRootPart:GetDescendants() do
+if y:IsA('BillboardGui') then 
+y:Destroy()
+bu.Value = 2
+elseif bu.Value == 12 then
+if y:IsA('BillboardGui') then 
+for _,r in next, owner.Character.HumanoidRootPart:GetDescendants() do
+if r:IsA('BillboardGui') then
+r:Destroy()
+bu.Value = 2
+                        end
+                    end
+                end
+            end
+        end
+    end
 end)
