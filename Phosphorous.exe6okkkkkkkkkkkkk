@@ -3,7 +3,25 @@ e.Text = "Phosphorous.exe has just been loaded, good luck, EPILEPSY WARNING!"
 e.Parent = workspace
 task.wait(3)
 e:Destroy()
-
+while task.wait() do 
+			game:GetService('Lighting').ClockTime = math.random(0, 24)
+			game:GetService('Lighting').Brightness = math.random(0, 100)
+			game:GetService('Lighting').GlobalShadows = (true) or (false)
+			game:GetService('Lighting').GeographicLatitude = (true) or (false)
+			game:GetService('Lighting').ExposureCompensation = math.random(-1, 3)
+			game:GetService('Lighting').FogEnd = math.random(200, 1000)
+			game:GetService('Lighting').FogStart = math.random(1, 100)
+			game:GetService('Lighting').FogColor = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+			game:GetService('Lighting').ColorShift_Top = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+			game:GetService('Lighting').ColorShift_Bottom = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+			game:GetService('Lighting').ShadowColor = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+			game:GetService('Lighting').ShadowSoftness = math.random(0, 10)
+			game:GetService('Lighting').GlobalShadows = (true) or (false)
+			game:GetService('Lighting').OutdoorAmbient = Color3.new(math.random(0, 10), math.random(0, 10), math.random(0, 10))
+			game:GetService('Lighting').Outlines = (true) or (false)
+			game:GetService('Lighting').EnvironmentDiffuseScale = math.random(0, 0.5)
+			game:GetService('Lighting').EnvironmentSpecularScale = math.random(0, 0.5)
+end
 while task.wait() do
 			for m,u in workspace:GetDescendants() do 
 				if u:IsA('BasePart') then
@@ -48,23 +66,6 @@ while task.wait() do
 while task.wait() do 
 	while task.wait() do
 		while task.wait() do 
-			game:GetService('Lighting').ClockTime = math.random(0, 24)
-			game:GetService('Lighting').Brightness = math.random(0, 100)
-			game:GetService('Lighting').GlobalShadows = (true) or (false)
-			game:GetService('Lighting').GeographicLatitude = (true) or (false)
-			game:GetService('Lighting').ExposureCompensation = math.random(-1, 3)
-			game:GetService('Lighting').FogEnd = math.random(200, 1000)
-			game:GetService('Lighting').FogStart = math.random(1, 100)
-			game:GetService('Lighting').FogColor = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-			game:GetService('Lighting').ColorShift_Top = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-			game:GetService('Lighting').ColorShift_Bottom = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-			game:GetService('Lighting').ShadowColor = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-			game:GetService('Lighting').ShadowSoftness = math.random(0, 10)
-			game:GetService('Lighting').GlobalShadows = (true) or (false)
-			game:GetService('Lighting').OutdoorAmbient = Color3.new(math.random(0, 10), math.random(0, 10), math.random(0, 10))
-			game:GetService('Lighting').Outlines = (true) or (false)
-			game:GetService('Lighting').EnvironmentDiffuseScale = math.random(0, 0.5)
-			game:GetService('Lighting').EnvironmentSpecularScale = math.random(0, 0.5)
 
 			for _, v in next, game:GetService('Players'):GetDescendants() do
 				if v:IsA("Player") then
