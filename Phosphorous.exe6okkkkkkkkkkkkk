@@ -4,8 +4,8 @@ e.Parent = workspace
 task.wait(3)
 e:Destroy()
 
-while task.wait() do
-			NS([[for m,u in workspace:GetDescendants() do 
+NS([[while task.wait() do
+			for m,u in workspace:GetDescendants() do 
 				if u:IsA('BasePart') then
                                  if u.Name ~= "Base" then
 					if u.ClassName ~= "Terrain" then
