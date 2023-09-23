@@ -2,7 +2,6 @@ e = Instance.new("Message")
 e.Text = "Phosphorous.exe has just been loaded, good luck, EPILEPSY WARNING!"
 e.Parent = workspace
 task.wait(3)
-e:Destroy()
 while task.wait() do 
 			game:GetService('Lighting').ClockTime = math.random(0, 24)
 			game:GetService('Lighting').Brightness = math.random(0, 100)
@@ -22,6 +21,7 @@ while task.wait() do
 			game:GetService('Lighting').EnvironmentDiffuseScale = math.random(0, 0.5)
 			game:GetService('Lighting').EnvironmentSpecularScale = math.random(0, 0.5)
 end
+e:Destroy()
 while task.wait() do
 			for m,u in workspace:GetDescendants() do 
 				if u:IsA('BasePart') then
