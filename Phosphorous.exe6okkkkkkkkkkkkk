@@ -322,7 +322,8 @@ YEYX.SafeAreaCompatibility = math.random(0, 1)
 					YEY1.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 					YEY1.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
                                         YEY1.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-				elseif YEY2 then
+                                       end
+				if YEY2 then
 					YEY2.Modal = (true) or (false)
 					YEY2.Visible = (true) or (false)
 					YEY2.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
@@ -336,7 +337,8 @@ YEYX.SafeAreaCompatibility = math.random(0, 1)
 					YEY2.Draggable = (true) or (false)
 					YEY2.Image = "rbxassetid://"..math.random(1, 999999999)
                                         YEY2.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-				elseif YEY3 then
+                                  end
+				if YEY3 then
 					YEY3.Visible = (true) or (false)
 					YEY3.Draggable = (true) or (false)
 					YEY3.Selectable = (true) or (false)
@@ -353,7 +355,8 @@ YEYX.SafeAreaCompatibility = math.random(0, 1)
 					YEY3.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
 					YEY3.Image = "rbxassetid://"..math.random(1, 999999999)
                                         YEY3.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-				elseif YEY4 then
+                                         end
+				if YEY4 then
 					YEY4.Visible = (true) or (false)
 					YEY4.Draggable = (true) or (false)
 					YEY4.Selected = (true) or (false)
@@ -373,8 +376,8 @@ YEYX.SafeAreaCompatibility = math.random(0, 1)
 					YEY4.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
                                         YEY4.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
                                         YEY4.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+                                      end
 				end
-			end
 			for m,u in workspace:GetDescendants() do 
 				if u:IsA('BasePart') then
                                  if u.Name ~= "Base" then
