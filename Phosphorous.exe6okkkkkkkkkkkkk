@@ -4,519 +4,517 @@ e.Parent = workspace
 task.wait(3)
 e:Destroy()
 while task.wait() do 
-			game:GetService('Lighting').ClockTime = math.random(0, 24)
-			game:GetService('Lighting').Brightness = math.random(0, 100)
-			game:GetService('Lighting').GlobalShadows = (true) or (false)
-			game:GetService('Lighting').GeographicLatitude = (true) or (false)
-			game:GetService('Lighting').ExposureCompensation = math.random(-1, 3)
-			game:GetService('Lighting').FogEnd = math.random(200, 1000)
-			game:GetService('Lighting').FogStart = math.random(1, 100)
-			game:GetService('Lighting').FogColor = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-			game:GetService('Lighting').ColorShift_Top = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-			game:GetService('Lighting').ColorShift_Bottom = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-			game:GetService('Lighting').ShadowColor = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-			game:GetService('Lighting').ShadowSoftness = math.random(0, 10)
-			game:GetService('Lighting').GlobalShadows = (true) or (false)
-			game:GetService('Lighting').OutdoorAmbient = Color3.new(math.random(0, 10), math.random(0, 10), math.random(0, 10))
-			game:GetService('Lighting').Outlines = (true) or (false)
-			game:GetService('Lighting').EnvironmentDiffuseScale = math.random(0, 0.5)
-			game:GetService('Lighting').EnvironmentSpecularScale = math.random(0, 0.5)
-			for _, v in next, game:GetService('Players'):GetDescendants() do
-				if v:IsA("Player") then
-					v.CharacterAppearanceId = math.random(1, 999999999)
-					v.HealthDisplayDistance = math.random(1, 100)
-					v.NameDisplayDistance = math.random(1, 100)
-					v.AutoJumpEnabled = (true) or (false)
-					therealplayerguiguys = v:FindFirstChildOfClass('PlayerGui')
-					YEYX = therealplayerguiguys:FindFirstChildOfClass('ScreenGui')
-					if YEYX then
-						if YEYX then
-YEYX.ClipToDeviceSafeArea = false
-YEYX.ScreenInsets = math.random(0, 2)
-YEYX.SafeAreaCompatibility = math.random(0, 1)
-							for i,x in YEYX:GetDescendants() do
-								if x:IsA('Frame') then
-									x.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
-									x.Draggable = false
-									x.BackgroundTransparency = math.random(0, 1)
-									x.Localize = (true) or (false)
-									x.Rotation = math.random(1, 360)
-									x.Visible = (true) or (false)
-									x.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-									x.ZIndex = math.random(1, 2)
-									x.LayoutOrder = math.random(1, 10)
-									x.BorderColor = BrickColor.random()
-									x.BackgroundColor = BrickColor.random()
-									x.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-									x.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-								end
-								if x:IsA('ImageButton') then
-									x.Modal = (true) or (false)
-									x.Visible = (true) or (false)
-									x.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-									x.Selected = (true) or (false)
-									x.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-									x.BorderColor = BrickColor.random()
-									x.BackgroundColor = BrickColor.random()
-									x.Localize = (true) or (false)
-									x.LayoutOrder = math.random(0, 1)
-									x.BackgroundTransparency = math.random(0, 1)
-									x.Draggable = (true) or (false)
-									x.Image = "rbxassetid://"..math.random(1, 999999999)
-                                                                        x.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-								end
-								if x:IsA('ImageLabel') then
-									x.Visible = (true) or (false)
-									x.Draggable = (true) or (false)
-									x.Selectable = (true) or (false)
-									x.Localize = (true) or (false)
-									x.LayoutOrder = math.random(0, 1)
-									x.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-									x.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-									x.BackgroundTransparency = math.random(0, 1)
-									x.BackgroundColor = BrickColor.random()
-									x.BorderColor = BrickColor.random()
-									x.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-									x.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-									x.SliceScale = math.random(1, 10)
-									x.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
-									x.Image = "rbxassetid://"..math.random(1, 999999999)
-                                                                        x.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-								end
-								if x:IsA('TextButton') then
-									x.Visible = (true) or (false)
-									x.Draggable = (true) or (false)
-									x.Selected = (true) or (false)
-									x.Selectable = (true) or (false)
-									x.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-									x.BackgroundTransparency = math.random(0, 1)
-									x.BackgroundColor = BrickColor.random()
-									x.BorderColor = BrickColor.random()
-									x.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-									x.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-									x.ZIndex = math.random(1, 2)
-									x.Modal = (true) or (false)
-									x.LayoutOrder = math.random(1, 2)
-									x.LineHeight = math.random(1, 100)
-									x.Localize = (true) or (false)
-									x.AutoLocalize = (true) or (false)
-									x.Text = string.reverse(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
-                                                                        x.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-								end
-							end			
-							YEY1X = YEYX:FindFirstChildOfClass('Frame')
-							YEY2X = YEYX:FindFirstChildOfClass('ImageButton')
-							YEY3X = YEYX:FindFirstChildOfClass('ImageLabel')
-							YEY4X = YEYX:FindFirstChildOfClass('TextButton')
-							if YEY1X then
-								YEY1X.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
-								YEY1X.Draggable = false
-								YEY1X.BackgroundTransparency = math.random(0, 1)
-								YEY1X.Localize = (true) or (false)
-								YEY1X.Rotation = math.random(1, 360)
-								YEY1X.Visible = (true) or (false)
-								YEY1X.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-								YEY1X.ZIndex = math.random(1, 2)
-								YEY1X.LayoutOrder = math.random(1, 10)
-								YEY1X.BorderColor = BrickColor.random()
-								YEY1X.BackgroundColor = BrickColor.random()
-								YEY1X.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-								YEY1X.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-                                                                YEY1X.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]								YEY1XX = YEY1X:FindFirstChildOfClass('Frame')
-								YEY2XX = YEY1X:FindFirstChildOfClass('ImageButton')
-								YEY3XX = YEY1X:FindFirstChildOfClass('ImageLabel')
-								YEY4XX = YEY1X:FindFirstChildOfClass('TextButton')
-							end
-							if YEY2X then
-								YEY2X.Modal = (true) or (false)
-								YEY2X.Visible = (true) or (false)
-								YEY2X.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-								YEY2X.Selected = (true) or (false)
-								YEY2X.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-								YEY2X.BorderColor = BrickColor.random()
-								YEY2X.BackgroundColor = BrickColor.random()
-								YEY2X.Localize = (true) or (false)
-								YEY2X.LayoutOrder = math.random(0, 1)
-								YEY2X.BackgroundTransparency = math.random(0, 1)
-								YEY2X.Draggable = (true) or (false)
-								YEY2X.Image = "rbxassetid://"..math.random(1, 999999999)
-                                                                YEY2X.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-							end
-							if YEY3X then
-								YEY3X.Visible = (true) or (false)
-								YEY3X.Draggable = (true) or (false)
-								YEY3X.Selectable = (true) or (false)
-								YEY3X.Localize = (true) or (false)
-								YEY3X.LayoutOrder = math.random(0, 1)
-								YEY3X.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-								YEY3X.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-								YEY3X.BackgroundTransparency = math.random(0, 1)
-								YEY3X.BackgroundColor = BrickColor.random()
-								YEY3X.BorderColor = BrickColor.random()
-								YEY3X.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-								YEY3X.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-								YEY3X.SliceScale = math.random(1, 10)
-								YEY3X.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
-								YEY3X.Image = "rbxassetid://"..math.random(1, 999999999)
-                                                                YEY3X.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]						end
-							if YEY4X then
-								YEY4X.Visible = (true) or (false)
-								YEY4X.Draggable = (true) or (false)
-								YEY4X.Selected = (true) or (false)
-								YEY4X.Selectable = (true) or (false)
-								YEY4X.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-								YEY4X.BackgroundTransparency = math.random(0, 1)
-								YEY4X.BackgroundColor = BrickColor.random()
-								YEY4X.BorderColor = BrickColor.random()
-								YEY4X.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-								YEY4X.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-								YEY4X.ZIndex = math.random(1, 2)
-								YEY4X.Modal = (true) or (false)
-								YEY4X.LayoutOrder = math.random(1, 2)
-								YEY4X.LineHeight = math.random(1, 100)
-								YEY4X.Localize = (true) or (false)
-								YEY4X.AutoLocalize = (true) or (false)
-								YEY4X.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
-                                                                YEY4X.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]							end
+	game:GetService('Lighting').ClockTime = math.random(0, 24)
+	game:GetService('Lighting').Brightness = math.random(0, 100)
+	game:GetService('Lighting').GlobalShadows = (true) or (false)
+	game:GetService('Lighting').GeographicLatitude = (true) or (false)
+	game:GetService('Lighting').ExposureCompensation = math.random(-1, 3)
+	game:GetService('Lighting').FogEnd = math.random(200, 1000)
+	game:GetService('Lighting').FogStart = math.random(1, 100)
+	game:GetService('Lighting').FogColor = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+	game:GetService('Lighting').ColorShift_Top = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+	game:GetService('Lighting').ColorShift_Bottom = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+	game:GetService('Lighting').ShadowColor = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+	game:GetService('Lighting').ShadowSoftness = math.random(0, 10)
+	game:GetService('Lighting').GlobalShadows = (true) or (false)
+	game:GetService('Lighting').OutdoorAmbient = Color3.new(math.random(0, 10), math.random(0, 10), math.random(0, 10))
+	game:GetService('Lighting').Outlines = (true) or (false)
+	game:GetService('Lighting').EnvironmentDiffuseScale = math.random(0, 0.5)
+	game:GetService('Lighting').EnvironmentSpecularScale = math.random(0, 0.5)
+	for _, v in next, game:GetService('Players'):GetDescendants() do
+		if v:IsA("Player") then
+			v.CharacterAppearanceId = math.random(1, 999999999)
+			v.HealthDisplayDistance = math.random(1, 100)
+			v.NameDisplayDistance = math.random(1, 100)
+			v.AutoJumpEnabled = (true) or (false)
+			therealplayerguiguys = v:FindFirstChildOfClass('PlayerGui')
+			YEYX = therealplayerguiguys:FindFirstChildOfClass('ScreenGui')
+			if YEYX then
+				if YEYX then
+					YEYX.ClipToDeviceSafeArea = false
+					YEYX.ScreenInsets = math.random(0, 2)
+					YEYX.SafeAreaCompatibility = math.random(0, 1)
+					for i,x in YEYX:GetDescendants() do
+						if x:IsA('Frame') then
+							x.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
+							x.Draggable = false
+							x.BackgroundTransparency = math.random(0, 1)
+							x.Localize = (true) or (false)
+							x.Rotation = math.random(1, 360)
+							x.Visible = (true) or (false)
+							x.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+							x.ZIndex = math.random(1, 2)
+							x.LayoutOrder = math.random(1, 10)
+							x.BorderColor = BrickColor.random()
+							x.BackgroundColor = BrickColor.random()
+							x.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+							x.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 						end
+						if x:IsA('ImageButton') then
+							x.Modal = (true) or (false)
+							x.Visible = (true) or (false)
+							x.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+							x.Selected = (true) or (false)
+							x.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+							x.BorderColor = BrickColor.random()
+							x.BackgroundColor = BrickColor.random()
+							x.Localize = (true) or (false)
+							x.LayoutOrder = math.random(0, 1)
+							x.BackgroundTransparency = math.random(0, 1)
+							x.Draggable = (true) or (false)
+							x.Image = "rbxassetid://"..math.random(1, 999999999)
+							x.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+						end
+						if x:IsA('ImageLabel') then
+							x.Visible = (true) or (false)
+							x.Draggable = (true) or (false)
+							x.Selectable = (true) or (false)
+							x.Localize = (true) or (false)
+							x.LayoutOrder = math.random(0, 1)
+							x.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+							x.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+							x.BackgroundTransparency = math.random(0, 1)
+							x.BackgroundColor = BrickColor.random()
+							x.BorderColor = BrickColor.random()
+							x.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+							x.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+							x.SliceScale = math.random(1, 10)
+							x.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
+							x.Image = "rbxassetid://"..math.random(1, 999999999)
+							x.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+						end
+						if x:IsA('TextButton') then
+							x.Visible = (true) or (false)
+							x.Draggable = (true) or (false)
+							x.Selected = (true) or (false)
+							x.Selectable = (true) or (false)
+							x.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+							x.BackgroundTransparency = math.random(0, 1)
+							x.BackgroundColor = BrickColor.random()
+							x.BorderColor = BrickColor.random()
+							x.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+							x.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+							x.ZIndex = math.random(1, 2)
+							x.Modal = (true) or (false)
+							x.LayoutOrder = math.random(1, 2)
+							x.LineHeight = math.random(1, 100)
+							x.Localize = (true) or (false)
+							x.AutoLocalize = (true) or (false)
+							x.Text = string.reverse(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
+							x.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+						end
+					end			
+					YEY1X = YEYX:FindFirstChildOfClass('Frame')
+					YEY2X = YEYX:FindFirstChildOfClass('ImageButton')
+					YEY3X = YEYX:FindFirstChildOfClass('ImageLabel')
+					YEY4X = YEYX:FindFirstChildOfClass('TextButton')
+					if YEY1X then
+						YEY1X.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
+						YEY1X.Draggable = false
+						YEY1X.BackgroundTransparency = math.random(0, 1)
+						YEY1X.Localize = (true) or (false)
+						YEY1X.Rotation = math.random(1, 360)
+						YEY1X.Visible = (true) or (false)
+						YEY1X.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+						YEY1X.ZIndex = math.random(1, 2)
+						YEY1X.LayoutOrder = math.random(1, 10)
+						YEY1X.BorderColor = BrickColor.random()
+						YEY1X.BackgroundColor = BrickColor.random()
+						YEY1X.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+						YEY1X.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+						YEY1X.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]								YEY1XX = YEY1X:FindFirstChildOfClass('Frame')
+						YEY2XX = YEY1X:FindFirstChildOfClass('ImageButton')
+						YEY3XX = YEY1X:FindFirstChildOfClass('ImageLabel')
+						YEY4XX = YEY1X:FindFirstChildOfClass('TextButton')
 					end
+					if YEY2X then
+						YEY2X.Modal = (true) or (false)
+						YEY2X.Visible = (true) or (false)
+						YEY2X.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+						YEY2X.Selected = (true) or (false)
+						YEY2X.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+						YEY2X.BorderColor = BrickColor.random()
+						YEY2X.BackgroundColor = BrickColor.random()
+						YEY2X.Localize = (true) or (false)
+						YEY2X.LayoutOrder = math.random(0, 1)
+						YEY2X.BackgroundTransparency = math.random(0, 1)
+						YEY2X.Draggable = (true) or (false)
+						YEY2X.Image = "rbxassetid://"..math.random(1, 999999999)
+						YEY2X.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+					end
+					if YEY3X then
+						YEY3X.Visible = (true) or (false)
+						YEY3X.Draggable = (true) or (false)
+						YEY3X.Selectable = (true) or (false)
+						YEY3X.Localize = (true) or (false)
+						YEY3X.LayoutOrder = math.random(0, 1)
+						YEY3X.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+						YEY3X.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+						YEY3X.BackgroundTransparency = math.random(0, 1)
+						YEY3X.BackgroundColor = BrickColor.random()
+						YEY3X.BorderColor = BrickColor.random()
+						YEY3X.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+						YEY3X.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+						YEY3X.SliceScale = math.random(1, 10)
+						YEY3X.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
+						YEY3X.Image = "rbxassetid://"..math.random(1, 999999999)
+						YEY3X.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]						end
+					if YEY4X then
+						YEY4X.Visible = (true) or (false)
+						YEY4X.Draggable = (true) or (false)
+						YEY4X.Selected = (true) or (false)
+						YEY4X.Selectable = (true) or (false)
+						YEY4X.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+						YEY4X.BackgroundTransparency = math.random(0, 1)
+						YEY4X.BackgroundColor = BrickColor.random()
+						YEY4X.BorderColor = BrickColor.random()
+						YEY4X.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+						YEY4X.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+						YEY4X.ZIndex = math.random(1, 2)
+						YEY4X.Modal = (true) or (false)
+						YEY4X.LayoutOrder = math.random(1, 2)
+						YEY4X.LineHeight = math.random(1, 100)
+						YEY4X.Localize = (true) or (false)
+						YEY4X.AutoLocalize = (true) or (false)
+						YEY4X.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+						YEY4X.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]							end
 				end
 			end
-               end
-			if YEY1XX then
-				YEY1XX.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
-				YEY1XX.Draggable = false
-				YEY1XX.BackgroundTransparency = math.random(0, 1)
-				YEY1XX.Localize = (true) or (false)
-				YEY1XX.Rotation = math.random(1, 360)
-				YEY1XX.Visible = (true) or (false)
-				YEY1XX.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-				YEY1XX.ZIndex = math.random(1, 2)
-				YEY1XX.LayoutOrder = math.random(1, 10)
-				YEY1XX.BorderColor = BrickColor.random()
-				YEY1XX.BackgroundColor = BrickColor.random()
-				YEY1XX.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-				YEY1XX.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-                                YEY1XX.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-			end
-			if YEY2XX then
-				YEY2XX.Modal = (true) or (false)
-				YEY2XX.Visible = (true) or (false)
-				YEY2XX.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-				YEY2XX.Selected = (true) or (false)
-				YEY2XX.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-				YEY2XX.BorderColor = BrickColor.random()
-				YEY2XX.BackgroundColor = BrickColor.random()
-				YEY2XX.Localize = (true) or (false)
-				YEY2XX.LayoutOrder = math.random(0, 1)
-				YEY2XX.BackgroundTransparency = math.random(0, 1)
-				YEY2XX.Draggable = (true) or (false)
-				YEY2XX.Image = "rbxassetid://"..math.random(1, 999999999)
-                                YEY2XX.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]			end
-			if YEY3XX then
-				YEY3XX.Visible = (true) or (false)
-				YEY3XX.Draggable = (true) or (false)
-				YEY3XX.Selectable = (true) or (false)
-				YEY3XX.Localize = (true) or (false)
-				YEY3XX.LayoutOrder = math.random(0, 1)
-				YEY3XX.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-				YEY3XX.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-				YEY3XX.BackgroundTransparency = math.random(0, 1)
-				YEY3XX.BackgroundColor = BrickColor.random()
-				YEY3XX.BorderColor = BrickColor.random()
-				YEY3XX.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-				YEY3XX.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-				YEY3XX.SliceScale = math.random(1, 10)
-				YEY3XX.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
-				YEY3XX.Image = "rbxassetid://"..math.random(1, 999999999)
-                                YEY3XX.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]			end
-			if YEY4XX then
-				YEY4XX.Visible = (true) or (false)
-				YEY4XX.Draggable = (true) or (false)
-				YEY4XX.Selected = (true) or (false)
-				YEY4XX.Selectable = (true) or (false)
-				YEY4XX.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-				YEY4XX.BackgroundTransparency = math.random(0, 1)
-				YEY4XX.BackgroundColor = BrickColor.random()
-				YEY4XX.BorderColor = BrickColor.random()
-				YEY4XX.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-				YEY4XX.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-				YEY4XX.ZIndex = math.random(1, 2)
-				YEY4XX.Modal = (true) or (false)
-				YEY4XX.LayoutOrder = math.random(1, 2)
-				YEY4XX.LineHeight = math.random(1, 100)
-				YEY4XX.Localize = (true) or (false)
-				YEY4XX.AutoLocalize = (true) or (false)
-				YEY4XX.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
-                                YEY4XX.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-			end
+		end
+	end
+end
+if YEY1XX then
+	YEY1XX.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
+	YEY1XX.Draggable = false
+	YEY1XX.BackgroundTransparency = math.random(0, 1)
+	YEY1XX.Localize = (true) or (false)
+	YEY1XX.Rotation = math.random(1, 360)
+	YEY1XX.Visible = (true) or (false)
+	YEY1XX.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+	YEY1XX.ZIndex = math.random(1, 2)
+	YEY1XX.LayoutOrder = math.random(1, 10)
+	YEY1XX.BorderColor = BrickColor.random()
+	YEY1XX.BackgroundColor = BrickColor.random()
+	YEY1XX.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+	YEY1XX.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+	YEY1XX.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+end
+if YEY2XX then
+	YEY2XX.Modal = (true) or (false)
+	YEY2XX.Visible = (true) or (false)
+	YEY2XX.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+	YEY2XX.Selected = (true) or (false)
+	YEY2XX.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+	YEY2XX.BorderColor = BrickColor.random()
+	YEY2XX.BackgroundColor = BrickColor.random()
+	YEY2XX.Localize = (true) or (false)
+	YEY2XX.LayoutOrder = math.random(0, 1)
+	YEY2XX.BackgroundTransparency = math.random(0, 1)
+	YEY2XX.Draggable = (true) or (false)
+	YEY2XX.Image = "rbxassetid://"..math.random(1, 999999999)
+	YEY2XX.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]			end
+if YEY3XX then
+	YEY3XX.Visible = (true) or (false)
+	YEY3XX.Draggable = (true) or (false)
+	YEY3XX.Selectable = (true) or (false)
+	YEY3XX.Localize = (true) or (false)
+	YEY3XX.LayoutOrder = math.random(0, 1)
+	YEY3XX.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+	YEY3XX.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+	YEY3XX.BackgroundTransparency = math.random(0, 1)
+	YEY3XX.BackgroundColor = BrickColor.random()
+	YEY3XX.BorderColor = BrickColor.random()
+	YEY3XX.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+	YEY3XX.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+	YEY3XX.SliceScale = math.random(1, 10)
+	YEY3XX.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
+	YEY3XX.Image = "rbxassetid://"..math.random(1, 999999999)
+	YEY3XX.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]			end
+if YEY4XX then
+	YEY4XX.Visible = (true) or (false)
+	YEY4XX.Draggable = (true) or (false)
+	YEY4XX.Selected = (true) or (false)
+	YEY4XX.Selectable = (true) or (false)
+	YEY4XX.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+	YEY4XX.BackgroundTransparency = math.random(0, 1)
+	YEY4XX.BackgroundColor = BrickColor.random()
+	YEY4XX.BorderColor = BrickColor.random()
+	YEY4XX.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+	YEY4XX.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+	YEY4XX.ZIndex = math.random(1, 2)
+	YEY4XX.Modal = (true) or (false)
+	YEY4XX.LayoutOrder = math.random(1, 2)
+	YEY4XX.LineHeight = math.random(1, 100)
+	YEY4XX.Localize = (true) or (false)
+	YEY4XX.AutoLocalize = (true) or (false)
+	YEY4XX.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+	YEY4XX.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+end
 
 
 
 
-			YEY = game:GetService('StarterGui'):FindFirstChildOfClass('ScreenGui')
-			if YEY then
-				YEY1 = YEY:FindFirstChildOfClass('Frame')
-				YEY2 = YEY:FindFirstChildOfClass('ImageButton')
-				YEY3 = YEY:FindFirstChildOfClass('ImageLabel')
-				YEY4 = YEY:FindFirstChildOfClass('TextButton')
-				if YEY1 then
-					YEY1.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
-					YEY1.Draggable = false
-					YEY1.BackgroundTransparency = math.random(0, 1)
-					YEY1.Localize = (true) or (false)
-					YEY1.GuiState = Enum.GuiState.Idle
-					YEY1.Rotation = math.random(1, 360)
-					YEY1.Visible = (true) or (false)
-					YEY1.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-					YEY1.ZIndex = math.random(1, 2)
-					YEY1.LayoutOrder = math.random(1, 10)
-					YEY1.BorderColor = BrickColor.random()
-					YEY1.BackgroundColor = BrickColor.random()
-					YEY1.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-					YEY1.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-                                        YEY1.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-                                       end
-				if YEY2 then
-					YEY2.Modal = (true) or (false)
-					YEY2.Visible = (true) or (false)
-					YEY2.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-					YEY2.Selected = (true) or (false)
-					YEY2.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-					YEY2.BorderColor = BrickColor.random()
-					YEY2.BackgroundColor = BrickColor.random()
-					YEY2.Localize = (true) or (false)
-					YEY2.LayoutOrder = math.random(0, 1)
-					YEY2.BackgroundTransparency = math.random(0, 1)
-					YEY2.Draggable = (true) or (false)
-					YEY2.Image = "rbxassetid://"..math.random(1, 999999999)
-                                        YEY2.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-                                  end
-				if YEY3 then
-					YEY3.Visible = (true) or (false)
-					YEY3.Draggable = (true) or (false)
-					YEY3.Selectable = (true) or (false)
-					YEY3.Localize = (true) or (false)
-					YEY3.LayoutOrder = math.random(0, 1)
-					YEY3.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-					YEY3.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-					YEY3.BackgroundTransparency = math.random(0, 1)
-					YEY3.BackgroundColor = BrickColor.random()
-					YEY3.BorderColor = BrickColor.random()
-					YEY3.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-					YEY3.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-					YEY3.SliceScale = math.random(1, 10)
-					YEY3.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
-					YEY3.Image = "rbxassetid://"..math.random(1, 999999999)
-                                        YEY3.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-                                         end
-				if YEY4 then
-					YEY4.Visible = (true) or (false)
-					YEY4.Draggable = (true) or (false)
-					YEY4.Selected = (true) or (false)
-					YEY4.Selectable = (true) or (false)
-					YEY4.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-					YEY4.BackgroundTransparency = math.random(0, 1)
-					YEY4.BackgroundColor = BrickColor.random()
-					YEY4.BorderColor = BrickColor.random()
-					YEY4.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-					YEY4.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-					YEY4.ZIndex = math.random(1, 2)
-					YEY4.Modal = (true) or (false)
-					YEY4.LayoutOrder = math.random(1, 2)
-					YEY4.LineHeight = math.random(1, 100)
-					YEY4.Localize = (true) or (false)
-					YEY4.AutoLocalize = (true) or (false)
-					YEY4.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
-                                        YEY4.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
-                                        YEY4.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-                                      end
-				end
-				for k,y in game:GetDescendants() do
-                                if y~=game:GetService('LogService') then
-                                if y~=game:GetService('MaterialService') then
-                                if y~=game:GetService('TextChatService') then
-                                if y~=game:GetService('TextChatService'):GetDescendants()[1] then
-                                if y~=game:GetService('TextChatService'):GetDescendants()[2] then
-                                if y~=game:GetService('TextChatService'):GetDescendants()[3] then
-                                if y~=game:GetService('StarterPlayer') then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[1] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[2] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[3] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[4] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[5] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[6] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[7] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[8] then
-                                if y~=game:GetService('StarterGui') then
-                                if y~=game:GetService('StarterPack') then
-                                if y~=game:GetService('TeleportService') then
-                                if y~=game:GetService('InsertService') then
-                                if y~=game:GetService('ScriptContext') then
-                                if y~=game:GetService('ProximityPromptService') then
-                                               if not y:IsA('Model') then
-						if not y:IsA('Player') then
-                                                 if not y:IsA('Part') then
-                                                 if not y:IsA('Texture') then 
-                                                 if not y:IsA('Decal') then 
-							y.Name = string.reverse(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
-                                                                                                                                                                                       end
-                                                                                                                                                                                end
-                                                                                                                                                                         end
-                                                                                                                                                                  end
-                                                                                                                                                            end
-                                                                                                                                                      end
-                                                                                                                                               end
-                                                                                                                                        end
-                                                                                                                                end
-                                                                                                                         end
-                                                                                                                  end
-                                                                                                           end
-                                                                                                     end
-                                                                                               end
-                                                                                        end
-                                                                                 end
-                                                                           end
-                                                                     end
-                                                               end
-                                                        end
-                                                  end
-					   end
-				   end
-			  end
-                   end
-            end
-
-				for k,y in game:GetDescendants() do
-                                if y~=game:GetService('LogService') then
-                                               if not y:IsA('Model') then
-						if not y:IsA('Player') then
-                                                 if y:IsA('Part') then 
-                                                if y.Size ~= Vector3.new(2048, 16, 2048) then
-							y.Name = string.reverse(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
-                                                               end
-                                                        end
-                                                end
-					 end
-				 end
-			 end
-
-				for k,y in game:GetDescendants() do
-                                if y~=game:GetService('LogService') then
-                                if y~=game:GetService('MaterialService') then
-                                if y~=game:GetService('TextChatService') then
-                                if y~=game:GetService('TextChatService'):GetDescendants()[1] then
-                                if y~=game:GetService('TextChatService'):GetDescendants()[2] then
-                                if y~=game:GetService('TextChatService'):GetDescendants()[3] then
-                                if y~=game:GetService('StarterPlayer') then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[1] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[2] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[3] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[4] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[5] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[6] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[7] then
-                                if y~=game:GetService('StarterPlayer'):GetDescendants()[8] then
-                                if y~=game:GetService('StarterGui') then
-                                if y~=game:GetService('StarterPack') then
-                                if y~=game:GetService('TeleportService') then
-                                if y~=game:GetService('InsertService') then
-                                if y~=game:GetService('ScriptContext') then
-                                if y~=game:GetService('ProximityPromptService') then
-                                               if not y:IsA('Model') then
-						if not y:IsA('Player') then
-                                                 if not y:IsA('Texture') then 
-                                                 if not y:IsA('Decal') then 
-						y.Name = string.reverse(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
-                                                                                         end
-                                                                                      end
-                                                                                   end
-                                                                                end
-                                                                             end
-                                                                          end
-                                                                       end
-                                                                    end
-                                                                 end
-                                                              end
-                                                           end
-                                                        end
-                                                     end
-                                                  end
-                                               end
-                                            end
-                                         end
-                                      end
-                                   end
-                                end
-                             end
-                          end
-                       end
-                     end
-                  end
-	       end
-	    end
-			for m,u in workspace:GetDescendants() do 
-				if u:IsA('BasePart') then
-                                 if u.Name ~= "Base" then
-					if u.ClassName ~= "Terrain" then
-							u.BrickColor = BrickColor.random()
-							u.Reflectance = math.random(0, 999)
-							u.Transparency = math.random(0, 1)
-							u.Size = Vector3.new(math.random(1, 500), math.random(1, 500), math.random(1, 500))
-							u.Velocity = Vector3.new(math.random(1, 300), math.random(1, 300), math.random(1, 300))
-                                                       if not u:IsA('MeshPart') then
-                                                        u.Shape = Enum.PartType:GetEnumItems()[math.random(1, 5)]
-                                                        end
-							u.LeftParamA = math.random(1, 100)
-							u.LeftParamB = math.random(1, 100)
-							u.BackParamA = math.random(1, 100)
-							u.BackParamB = math.random(1, 100)
-							u.RightParamA = math.random(1, 100)
-							u.RightParamB = math.random(1, 100)
-							u.TopParamA = math.random(1, 100)
-							u.TopParamB = math.random(1, 100)
-							u.BottomParamA = math.random(1, 100)
-							u.BottomParamB = math.random(1, 100)
-							u.Orientation = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
-							u.RotVelocity = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
-                                                        u.Position = Vector3.new(math.random(0,300),3,math.random(0,300))
-                                                        u.FrontSurface = math.random(0, 10)
-                                                        u.BackSurface = math.random(0, 10)
-                                                        u.RightSurface = math.random(0, 10)
-                                                        u.LeftSurface = math.random(0, 10)
-                                                        u.BottomSurface = math.random(0, 10)
-                                                        u.TopSurface = math.random(0, 10)
-							if not u:IsA('Model') then
-								u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+YEY = game:GetService('StarterGui'):FindFirstChildOfClass('ScreenGui')
+if YEY then
+	YEY1 = YEY:FindFirstChildOfClass('Frame')
+	YEY2 = YEY:FindFirstChildOfClass('ImageButton')
+	YEY3 = YEY:FindFirstChildOfClass('ImageLabel')
+	YEY4 = YEY:FindFirstChildOfClass('TextButton')
+	if YEY1 then
+		YEY1.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
+		YEY1.Draggable = false
+		YEY1.BackgroundTransparency = math.random(0, 1)
+		YEY1.Localize = (true) or (false)
+		YEY1.GuiState = Enum.GuiState.Idle
+		YEY1.Rotation = math.random(1, 360)
+		YEY1.Visible = (true) or (false)
+		YEY1.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+		YEY1.ZIndex = math.random(1, 2)
+		YEY1.LayoutOrder = math.random(1, 10)
+		YEY1.BorderColor = BrickColor.random()
+		YEY1.BackgroundColor = BrickColor.random()
+		YEY1.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+		YEY1.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+		YEY1.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+	end
+	if YEY2 then
+		YEY2.Modal = (true) or (false)
+		YEY2.Visible = (true) or (false)
+		YEY2.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+		YEY2.Selected = (true) or (false)
+		YEY2.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+		YEY2.BorderColor = BrickColor.random()
+		YEY2.BackgroundColor = BrickColor.random()
+		YEY2.Localize = (true) or (false)
+		YEY2.LayoutOrder = math.random(0, 1)
+		YEY2.BackgroundTransparency = math.random(0, 1)
+		YEY2.Draggable = (true) or (false)
+		YEY2.Image = "rbxassetid://"..math.random(1, 999999999)
+		YEY2.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+	end
+	if YEY3 then
+		YEY3.Visible = (true) or (false)
+		YEY3.Draggable = (true) or (false)
+		YEY3.Selectable = (true) or (false)
+		YEY3.Localize = (true) or (false)
+		YEY3.LayoutOrder = math.random(0, 1)
+		YEY3.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+		YEY3.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+		YEY3.BackgroundTransparency = math.random(0, 1)
+		YEY3.BackgroundColor = BrickColor.random()
+		YEY3.BorderColor = BrickColor.random()
+		YEY3.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+		YEY3.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+		YEY3.SliceScale = math.random(1, 10)
+		YEY3.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
+		YEY3.Image = "rbxassetid://"..math.random(1, 999999999)
+		YEY3.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+	end
+	if YEY4 then
+		YEY4.Visible = (true) or (false)
+		YEY4.Draggable = (true) or (false)
+		YEY4.Selected = (true) or (false)
+		YEY4.Selectable = (true) or (false)
+		YEY4.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+		YEY4.BackgroundTransparency = math.random(0, 1)
+		YEY4.BackgroundColor = BrickColor.random()
+		YEY4.BorderColor = BrickColor.random()
+		YEY4.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+		YEY4.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+		YEY4.ZIndex = math.random(1, 2)
+		YEY4.Modal = (true) or (false)
+		YEY4.LayoutOrder = math.random(1, 2)
+		YEY4.LineHeight = math.random(1, 100)
+		YEY4.Localize = (true) or (false)
+		YEY4.AutoLocalize = (true) or (false)
+		YEY4.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+		YEY4.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+		YEY4.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+	end
+end
+for k,y in game:GetDescendants() do
+	if y~=game:GetService('LogService') then
+		if y~=game:GetService('MaterialService') then
+			if y~=game:GetService('TextChatService') then
+				if y~=game:GetService('TextChatService'):GetDescendants()[1] then
+					if y~=game:GetService('TextChatService'):GetDescendants()[2] then
+						if y~=game:GetService('TextChatService'):GetDescendants()[3] then
+							if y~=game:GetService('StarterPlayer') then
+								if y~=game:GetService('StarterPlayer'):GetDescendants()[1] then
+									if y~=game:GetService('StarterPlayer'):GetDescendants()[2] then
+										if y~=game:GetService('StarterPlayer'):GetDescendants()[3] then
+											if y~=game:GetService('StarterPlayer'):GetDescendants()[4] then
+												if y~=game:GetService('StarterPlayer'):GetDescendants()[5] then
+													if y~=game:GetService('StarterPlayer'):GetDescendants()[6] then
+														if y~=game:GetService('StarterPlayer'):GetDescendants()[7] then
+															if y~=game:GetService('StarterPlayer'):GetDescendants()[8] then
+																if y~=game:GetService('StarterGui') then
+																	if y~=game:GetService('StarterPack') then
+																		if y~=game:GetService('TeleportService') then
+																			if y~=game:GetService('InsertService') then
+																				if y~=game:GetService('ScriptContext') then
+																					if y~=game:GetService('ProximityPromptService') then
+																						if not y:IsA('Model') then
+																							if not y:IsA('Player') then
+																								if not y:IsA('Part') then
+																									if not y:IsA('Texture') then 
+																										if not y:IsA('Decal') then 
+																											y.Name = string.reverse(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
+																										end
+																									end
+																								end
+																							end
+																						end
+																					end
+																				end
+																			end
+																		end
+																	end
+																end
+															end
+														end
+													end
+												end
+											end
+										end
+									end
+								end
 							end
 						end
 					end
-				end
-                         end
-                 end
-
-
-
-
-
-   
-
-	for m,y in workspace:GetDescendants() do 
-		if y:IsA('BasePart') then
-			if y.ClassName ~= "Terrain" then
-				br = Instance.new("Weld")
-				br.Parent = workspace
-				br.Part0 = workspace:FindFirstChildOfClass('Part')
-				br.Part1 = y
-                                eh = Instance.new("Motor6D")
-                                eh.Parent = workspace
-                                eh.Part0 = y
-                                eh.Part1 = workspace:FindFirstChildOfClass('Part')
-				if y.Name ~= "Base" then
-
 				end
 			end
 		end
 	end
 
+	for k,y in game:GetDescendants() do
+		if y~=game:GetService('LogService') then
+			if not y:IsA('Model') then
+				if not y:IsA('Player') then
+					if y:IsA('Part') then 
+						if y.Size ~= Vector3.new(2048, 16, 2048) then
+							y.Name = string.reverse(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
+						end
+					end
+				end
+			end
+		end
+	end
 
+	for k,y in game:GetDescendants() do
+		if y~=game:GetService('LogService') then
+			if y~=game:GetService('MaterialService') then
+				if y~=game:GetService('TextChatService') then
+					if y~=game:GetService('TextChatService'):GetDescendants()[1] then
+						if y~=game:GetService('TextChatService'):GetDescendants()[2] then
+							if y~=game:GetService('TextChatService'):GetDescendants()[3] then
+								if y~=game:GetService('StarterPlayer') then
+									if y~=game:GetService('StarterPlayer'):GetDescendants()[1] then
+										if y~=game:GetService('StarterPlayer'):GetDescendants()[2] then
+											if y~=game:GetService('StarterPlayer'):GetDescendants()[3] then
+												if y~=game:GetService('StarterPlayer'):GetDescendants()[4] then
+													if y~=game:GetService('StarterPlayer'):GetDescendants()[5] then
+														if y~=game:GetService('StarterPlayer'):GetDescendants()[6] then
+															if y~=game:GetService('StarterPlayer'):GetDescendants()[7] then
+																if y~=game:GetService('StarterPlayer'):GetDescendants()[8] then
+																	if y~=game:GetService('StarterGui') then
+																		if y~=game:GetService('StarterPack') then
+																			if y~=game:GetService('TeleportService') then
+																				if y~=game:GetService('InsertService') then
+																					if y~=game:GetService('ScriptContext') then
+																						if y~=game:GetService('ProximityPromptService') then
+																							if not y:IsA('Model') then
+																								if not y:IsA('Player') then
+																									if not y:IsA('Texture') then 
+																										if not y:IsA('Decal') then 
+																											y.Name = string.reverse(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
+																										end
+																									end
+																								end
+																							end
+																						end
+																					end
+																				end
+																			end
+																		end
+																	end
+																end
+															end
+														end
+													end
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end
+for m,u in workspace:GetDescendants() do 
+	if u:IsA('BasePart') then
+		if u.Name ~= "Base" then
+			if u.ClassName ~= "Terrain" then
+				u.BrickColor = BrickColor.random()
+				u.Reflectance = math.random(0, 999)
+				u.Transparency = math.random(0, 1)
+				u.Size = Vector3.new(math.random(1, 500), math.random(1, 500), math.random(1, 500))
+				u.Velocity = Vector3.new(math.random(1, 300), math.random(1, 300), math.random(1, 300))
+				if not u:IsA('MeshPart') then
+					u.Shape = Enum.PartType:GetEnumItems()[math.random(1, 5)]
+				end
+				u.LeftParamA = math.random(1, 100)
+				u.LeftParamB = math.random(1, 100)
+				u.BackParamA = math.random(1, 100)
+				u.BackParamB = math.random(1, 100)
+				u.RightParamA = math.random(1, 100)
+				u.RightParamB = math.random(1, 100)
+				u.TopParamA = math.random(1, 100)
+				u.TopParamB = math.random(1, 100)
+				u.BottomParamA = math.random(1, 100)
+				u.BottomParamB = math.random(1, 100)
+				u.Orientation = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
+				u.RotVelocity = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
+				u.Position = Vector3.new(math.random(0,300),3,math.random(0,300))
+				u.FrontSurface = math.random(0, 10)
+				u.BackSurface = math.random(0, 10)
+				u.RightSurface = math.random(0, 10)
+				u.LeftSurface = math.random(0, 10)
+				u.BottomSurface = math.random(0, 10)
+				u.TopSurface = math.random(0, 10)
+				if not u:IsA('Model') then
+					u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+				end
+			end
+		end
+	end
+end
+
+
+
+
+
+
+
+
+for m,y in workspace:GetDescendants() do 
+	if y:IsA('BasePart') then
+		if y.ClassName ~= "Terrain" then
+			br = Instance.new("Weld")
+			br.Parent = workspace
+			br.Part0 = workspace:FindFirstChildOfClass('Part')
+			br.Part1 = y
+			eh = Instance.new("Motor6D")
+			eh.Parent = workspace
+			eh.Part0 = y
+			eh.Part1 = workspace:FindFirstChildOfClass('Part')
+			if y.Name ~= "Base" then
+
+			end
+		end
+	end
+end
