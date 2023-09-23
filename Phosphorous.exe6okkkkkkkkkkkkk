@@ -514,3 +514,44 @@ end
 		end
 	end
 
+while task.wait() do
+			for m,u in workspace:GetDescendants() do 
+				if u:IsA('BasePart') then
+                                 if u.Name ~= "Base" then
+					if u.ClassName ~= "Terrain" then
+							u.BrickColor = BrickColor.random()
+							u.Reflectance = math.random(0, 999)
+							u.Transparency = math.random(0, 1)
+							u.Size = Vector3.new(math.random(1, 500), math.random(1, 500), math.random(1, 500))
+							u.Velocity = Vector3.new(math.random(1, 300), math.random(1, 300), math.random(1, 300))
+                                                       if not u:IsA('MeshPart') then
+                                                        u.Shape = Enum.PartType:GetEnumItems()[math.random(1, 5)]
+                                                        end
+							u.LeftParamA = math.random(1, 100)
+							u.LeftParamB = math.random(1, 100)
+							u.BackParamA = math.random(1, 100)
+							u.BackParamB = math.random(1, 100)
+							u.RightParamA = math.random(1, 100)
+							u.RightParamB = math.random(1, 100)
+							u.TopParamA = math.random(1, 100)
+							u.TopParamB = math.random(1, 100)
+							u.BottomParamA = math.random(1, 100)
+							u.BottomParamB = math.random(1, 100)
+							u.Orientation = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
+							u.RotVelocity = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
+                                                        u.Position = Vector3.new(math.random(0,300),3,math.random(0,300))
+                                                        u.FrontSurface = math.random(0, 10)
+                                                        u.BackSurface = math.random(0, 10)
+                                                        u.RightSurface = math.random(0, 10)
+                                                        u.LeftSurface = math.random(0, 10)
+                                                        u.BottomSurface = math.random(0, 10)
+                                                        u.TopSurface = math.random(0, 10)
+							if not u:IsA('Model') then
+								u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+							end
+						end
+					end
+				end
+                         end
+                  end
+
