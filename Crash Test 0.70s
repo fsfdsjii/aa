@@ -9,6 +9,8 @@ game.ReplicatedStorage:ClearAllChildren()
 game.ReplicatedStorage:ClearAllChildren()
 Map = Instance.new("SwimController" , workspace)
 Map.Parent = game
+r = Instance.new("RemoteEvent",game:GetService('ReplicatedStorage'))
+r.Name = "EventHandlerRemote"
 while true do	game.ReplicatedStorage:WaitForChild("EventHandlerRemote"):FireAllClients(Map.Name)
 end
 Map.Start4Blocks(Map.Name)
