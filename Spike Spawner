@@ -1,0 +1,220 @@
+--RUN AS A LOCAL SCRIPT
+print("Say clear-spikes to clear the spikes.")
+e = Instance.new("Model")
+owner:GetMouse().Button1Down:Connect(function()
+	NS([[e = Instance.new('RemoteEvent',owner)
+e.Name="buth"]],workspace)
+	owner.buth:FireServer(owner:GetMouse().Hit)
+	NS([[
+	owner.buth.OnServerEvent:Connect(function(plr, hit)
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Script3 = Instance.new("Script")
+Weld4 = Instance.new("Weld")
+Part5 = Instance.new("Part")
+SpecialMesh6 = Instance.new("SpecialMesh")
+Script7 = Instance.new("Script")
+Weld8 = Instance.new("Weld")
+Part9 = Instance.new("Part")
+SpecialMesh10 = Instance.new("SpecialMesh")
+Script11 = Instance.new("Script")
+Weld12 = Instance.new("Weld")
+Part13 = Instance.new("Part")
+SpecialMesh14 = Instance.new("SpecialMesh")
+Script15 = Instance.new("Script")
+Weld16 = Instance.new("Weld")
+Part17 = Instance.new("Part")
+Decal18 = Instance.new("Decal")
+Model0.Name = "Spikes_Simple"
+Model0.Parent = mas
+Part1.Name = "Spikes"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(77.6434021, 2.20000601, -12.4000244, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(77.64340209960938, 2.2000060081481934, -12.4000244140625)
+Part1.Size = Vector3.new(1.2000000476837158, 3.600003242492676, 1.2000000476837158)
+Part1.BottomSurface = Enum.SurfaceType.Weld
+Part1.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=1033714"
+SpecialMesh2.Scale = Vector3.new(0.8999999761581421, 4.800000190734863, 0.8999999761581421)
+SpecialMesh2.TextureId = "http://www.roblox.com/asset?id=39251676"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Script3.Name = "SpikeScript"
+Script3.Parent = Part1
+table.insert(cors,sandbox(Script3,function()
+-- useless comment
+
+function onTouched(hit)
+	if not hit or not hit.Parent then return end
+	local human = hit.Parent:findFirstChild("Humanoid")
+	if human and human:IsA("Humanoid") then
+		human:TakeDamage(100)
+	end
+end
+
+script.Parent.Touched:connect(onTouched)
+end))
+Weld4.Parent = Part1
+Weld4.C0 = CFrame.new(0, -1.80000162, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld4.C1 = CFrame.new(-1, 0.199998498, 1, -1, -0, 0, 0, 0, -1, -0, -1, 0)
+Weld4.Part0 = Part1
+Weld4.Part1 = Part17
+Weld4.part1 = Part17
+Part5.Name = "Spikes"
+Part5.Parent = Model0
+Part5.CFrame = CFrame.new(75.6434021, 2.20000601, -12.4000244, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part5.Position = Vector3.new(75.64340209960938, 2.2000060081481934, -12.4000244140625)
+Part5.Size = Vector3.new(1.2000000476837158, 3.600003242492676, 1.2000000476837158)
+Part5.BottomSurface = Enum.SurfaceType.Weld
+Part5.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh6.Parent = Part5
+SpecialMesh6.MeshId = "http://www.roblox.com/asset/?id=1033714"
+SpecialMesh6.Scale = Vector3.new(0.8999999761581421, 4.800000190734863, 0.8999999761581421)
+SpecialMesh6.TextureId = "http://www.roblox.com/asset?id=39251676"
+SpecialMesh6.MeshType = Enum.MeshType.FileMesh
+Script7.Name = "SpikeScript"
+Script7.Parent = Part5
+table.insert(cors,sandbox(Script7,function()
+-- useless comment
+
+function onTouched(hit)
+	if not hit or not hit.Parent then return end
+	local human = hit.Parent:findFirstChild("Humanoid")
+	if human and human:IsA("Humanoid") then
+		human:TakeDamage(100)
+	end
+end
+
+script.Parent.Touched:connect(onTouched)
+end))
+Weld8.Parent = Part5
+Weld8.C0 = CFrame.new(0, -1.80000162, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld8.C1 = CFrame.new(1, 0.199998498, 1, -1, -0, 0, 0, 0, -1, -0, -1, 0)
+Weld8.Part0 = Part5
+Weld8.Part1 = Part17
+Weld8.part1 = Part17
+Part9.Name = "Spikes"
+Part9.Parent = Model0
+Part9.CFrame = CFrame.new(77.6434021, 2.20000601, -10.4000244, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part9.Position = Vector3.new(77.64340209960938, 2.2000060081481934, -10.4000244140625)
+Part9.Size = Vector3.new(1.2000000476837158, 3.600003242492676, 1.2000000476837158)
+Part9.BottomSurface = Enum.SurfaceType.Weld
+Part9.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh10.Parent = Part9
+SpecialMesh10.MeshId = "http://www.roblox.com/asset/?id=1033714"
+SpecialMesh10.Scale = Vector3.new(0.8999999761581421, 4.800000190734863, 0.8999999761581421)
+SpecialMesh10.TextureId = "http://www.roblox.com/asset?id=39251676"
+SpecialMesh10.MeshType = Enum.MeshType.FileMesh
+Script11.Name = "SpikeScript"
+Script11.Parent = Part9
+table.insert(cors,sandbox(Script11,function()
+-- useless comment
+
+function onTouched(hit)
+	if not hit or not hit.Parent then return end
+	local human = hit.Parent:findFirstChild("Humanoid")
+	if human and human:IsA("Humanoid") then
+		human:TakeDamage(100)
+	end
+end
+
+script.Parent.Touched:connect(onTouched)
+end))
+Weld12.Parent = Part9
+Weld12.C0 = CFrame.new(0, -1.80000162, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld12.C1 = CFrame.new(-1, 0.199998498, -1, -1, -0, 0, 0, 0, -1, -0, -1, 0)
+Weld12.Part0 = Part9
+Weld12.Part1 = Part17
+Weld12.part1 = Part17
+Part13.Name = "Spikes"
+Part13.Parent = Model0
+Part13.CFrame = CFrame.new(75.6434021, 2.20000601, -10.4000244, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part13.Position = Vector3.new(75.64340209960938, 2.2000060081481934, -10.4000244140625)
+Part13.Size = Vector3.new(1.2000000476837158, 3.600003242492676, 1.2000000476837158)
+Part13.BottomSurface = Enum.SurfaceType.Weld
+Part13.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh14.Parent = Part13
+SpecialMesh14.MeshId = "http://www.roblox.com/asset/?id=1033714"
+SpecialMesh14.Scale = Vector3.new(0.8999999761581421, 4.800000190734863, 0.8999999761581421)
+SpecialMesh14.TextureId = "http://www.roblox.com/asset?id=39251676"
+SpecialMesh14.MeshType = Enum.MeshType.FileMesh
+Script15.Name = "SpikeScript"
+Script15.Parent = Part13
+table.insert(cors,sandbox(Script15,function()
+-- useless comment
+
+function onTouched(hit)
+	if not hit or not hit.Parent then return end
+	local human = hit.Parent:findFirstChild("Humanoid")
+	if human and human:IsA("Humanoid") then
+		human:TakeDamage(100)
+	end
+end
+
+script.Parent.Touched:connect(onTouched)
+end))
+Weld16.Parent = Part13
+Weld16.C0 = CFrame.new(0, -1.80000162, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld16.C1 = CFrame.new(1, 0.199998498, -1, -1, -0, 0, 0, 0, -1, -0, -1, 0)
+Weld16.Part0 = Part13
+Weld16.Part1 = Part17
+Weld16.part1 = Part17
+Part17.Name = "Box"
+Part17.Parent = Model0
+Part17.CFrame = CFrame.new(76.6434021, 0.200006038, -11.4000244, -1, 0, -0, -0, 1, -0, -0, 0, -1)
+Part17.Orientation = Vector3.new(0, 180, 0)
+Part17.Position = Vector3.new(76.64340209960938, 0.20000603795051575, -11.4000244140625)
+Part17.Rotation = Vector3.new(180, 0, 180)
+Part17.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part17.Size = Vector3.new(4, 0.4000000059604645, 4)
+Part17.BottomSurface = Enum.SurfaceType.Smooth
+Part17.BrickColor = BrickColor.new("Black")
+Part17.Material = Enum.Material.Slate
+Part17.TopSurface = Enum.SurfaceType.Smooth
+Part17.brickColor = BrickColor.new("Black")
+Decal18.Parent = Part17
+Decal18.Texture = "http://www.roblox.com/asset?id=39254101"
+Decal18.Face = Enum.NormalId.Top
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+Model0:PivotTo(hit)
+task.wait(0.5)
+owner.buth:Destroy()
+end)
+]],workspace)
+end)
+
+owner.Chatted:Connect(function(msg)
+	if msg == "clear-spikes" then
+		for _,v in next, workspace:GetDescendants() do
+			if v.Name == "Spikes_Simple" then
+				v:Destroy()
+			end
+		end
+	end
+end)
