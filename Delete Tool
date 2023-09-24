@@ -1,4 +1,6 @@
-print("Say clr-remotes then remote name in this case 'breh' then how many instances there are in the replicated storage called breh")
+print("Say clr-remotes then remote name in this case 'breh' then how many instances there are in the replicated storage called breh.")
+print("Say unlock-all to unlock every single part in workspace.")
+
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -96,8 +98,20 @@ owner.Chatted:Connect(function(msg)
 		local Target=game.Workspace:FindFirstChild(TargetName)
 		local TargetName2=SplitMsg[3]
 		for  i = 1,tonumber(TargetName2) do
+                        print("Just cleared the remotes named="..tostring(TargetName))
 			game:GetService('ReplicatedStorage')[TargetName]:Destroy()
 			
 		end
+	end
+end)
+
+local cmd = "unlock-all"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg)
+	if cmd == SplitMsg[1] then
+for _,v  in next,  workspace:GetDescendants() do if v:IsA('BasePart') then v.Locked = false end end
+print("Just unlocked all parts!")
 	end
 end)
