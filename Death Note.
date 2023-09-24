@@ -60,7 +60,7 @@ local function ZFIREUH_fake_script() -- TextBox.LocalScript
 			character=theplayer.Character
 	for _,v in next, character:GetDescendants() do
 	if v.ClassName=="Humanoid" then
-	for i = 1,50 do
+	for i = 0,math.random(10, 20) do
 Part1 = Instance.new("Part")
 BodyVelocity1 = Instance.new("BodyVelocity")
 Part1.Parent = script
@@ -78,8 +78,8 @@ BodyVelocity1.maxForce = Vector3.new(4000, math.huge, 4000)
 BodyVelocity1.Velocity = Vector3.new(0, 50, 0)
 BodyVelocity1.velocity = Vector3.new(0, 50, 0)
 	v.Health=0
-	task.wait(2)
-	Part1:Destroy()
+	task.wait(0.5)
+	BodyVelocity1:Destroy()
 	                    end
 	                end
 			    end
