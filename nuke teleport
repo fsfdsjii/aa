@@ -181,14 +181,11 @@ end
 local Door = script.Parent
 
 function onTouched(hit) 
-	print("Door Hit") 
 	local human = hit.Parent:findFirstChild("Humanoid") 
 	if (human ~= nil ) then 
 		-- a human has touched this door! 
-		print("Human touched door") 
 		-- test the human's name against the permission list 
 		if (checkOkToLetIn(human.Parent.Name)) then 
-			print("Human passed test") 
 			Door.Transparency = 0.7 
 			Door.CanCollide = false 
 			wait(1) -- this is how long the door is open 
