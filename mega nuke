@@ -1,0 +1,413 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Model1 = Instance.new("Model")
+Part2 = Instance.new("Part")
+BlockMesh3 = Instance.new("BlockMesh")
+Part4 = Instance.new("Part")
+Decal5 = Instance.new("Decal")
+ClickDetector6 = Instance.new("ClickDetector")
+Script7 = Instance.new("Script")
+BlockMesh8 = Instance.new("BlockMesh")
+Model9 = Instance.new("Model")
+Part10 = Instance.new("Part")
+BlockMesh11 = Instance.new("BlockMesh")
+Snap12 = Instance.new("Snap")
+Part13 = Instance.new("Part")
+BlockMesh14 = Instance.new("BlockMesh")
+Snap15 = Instance.new("Snap")
+Part16 = Instance.new("Part")
+BlockMesh17 = Instance.new("BlockMesh")
+Part18 = Instance.new("Part")
+BlockMesh19 = Instance.new("BlockMesh")
+Part20 = Instance.new("Part")
+BlockMesh21 = Instance.new("BlockMesh")
+Weld22 = Instance.new("Weld")
+Part23 = Instance.new("Part")
+BlockMesh24 = Instance.new("BlockMesh")
+Part25 = Instance.new("Part")
+BlockMesh26 = Instance.new("BlockMesh")
+Part27 = Instance.new("Part")
+BlockMesh28 = Instance.new("BlockMesh")
+Part29 = Instance.new("Part")
+BlockMesh30 = Instance.new("BlockMesh")
+Snap31 = Instance.new("Snap")
+Part32 = Instance.new("Part")
+BlockMesh33 = Instance.new("BlockMesh")
+Snap34 = Instance.new("Snap")
+Part35 = Instance.new("Part")
+BlockMesh36 = Instance.new("BlockMesh")
+Snap37 = Instance.new("Snap")
+Part38 = Instance.new("Part")
+CylinderMesh39 = Instance.new("CylinderMesh")
+Snap40 = Instance.new("Snap")
+Part41 = Instance.new("Part")
+CylinderMesh42 = Instance.new("CylinderMesh")
+Script43 = Instance.new("Script")
+Part44 = Instance.new("Part")
+BlockMesh45 = Instance.new("BlockMesh")
+Snap46 = Instance.new("Snap")
+Snap47 = Instance.new("Snap")
+Snap48 = Instance.new("Snap")
+Snap49 = Instance.new("Snap")
+Snap50 = Instance.new("Snap")
+Model0.Parent = mas
+Model1.Parent = Model0
+Part2.Name = ":D"
+Part2.Parent = Model1
+Part2.CFrame = CFrame.new(14.5, 16.1999969, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part2.Position = Vector3.new(14.5, 16.199996948242188, -1.5)
+Part2.Color = Color3.new(0.705882, 0.501961, 1)
+Part2.Size = Vector3.new(5, 1.2000000476837158, 5)
+Part2.Anchored = true
+Part2.BackSurface = Enum.SurfaceType.Universal
+Part2.BottomSurface = Enum.SurfaceType.Universal
+Part2.BrickColor = BrickColor.new("Alder")
+Part2.FrontSurface = Enum.SurfaceType.Universal
+Part2.LeftSurface = Enum.SurfaceType.Universal
+Part2.RightSurface = Enum.SurfaceType.Universal
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.brickColor = BrickColor.new("Alder")
+BlockMesh3.Parent = Part2
+Part4.Parent = Model1
+Part4.CFrame = CFrame.new(14.5, 5.90000057, -6.19998169, 1, 0, 0, 0, 0, 1, 0, -1, 0)
+Part4.Orientation = Vector3.new(-90, 0, 0)
+Part4.Position = Vector3.new(14.5, 5.90000057220459, -6.199981689453125)
+Part4.Rotation = Vector3.new(-90, 0, 0)
+Part4.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part4.Size = Vector3.new(7, 0.4000000059604645, 3)
+Part4.BottomSurface = Enum.SurfaceType.Weld
+Part4.BrickColor = BrickColor.new("Bright green")
+Part4.TopSurface = Enum.SurfaceType.Smooth
+Part4.brickColor = BrickColor.new("Bright green")
+Decal5.Parent = Part4
+Decal5.Texture = "http://www.roblox.com/asset/?id=19681474"
+Decal5.Face = Enum.NormalId.Top
+ClickDetector6.Parent = Part4
+Script7.Parent = Part4
+table.insert(cors,sandbox(Script7,function()
+function onClicked()
+script.Parent.Parent:Remove()
+end
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end))
+BlockMesh8.Parent = Part4
+Model9.Parent = Model0
+Part10.Parent = Model9
+Part10.CFrame = CFrame.new(20.7000122, 17.0008354, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part10.Position = Vector3.new(20.70001220703125, 17.000835418701172, -1.5)
+Part10.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part10.Size = Vector3.new(1, 0.4000000059604645, 5)
+Part10.BrickColor = BrickColor.new("Bright blue")
+Part10.brickColor = BrickColor.new("Bright blue")
+BlockMesh11.Parent = Part10
+Snap12.Parent = Part10
+Snap12.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap12.C1 = CFrame.new(6, -0.199998856, 0, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap12.Part0 = Part10
+Snap12.Part1 = Part16
+Snap12.part1 = Part16
+Part13.Parent = Model9
+Part13.CFrame = CFrame.new(14.7000122, 17.0008354, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part13.Position = Vector3.new(14.70001220703125, 17.000835418701172, -1.5)
+Part13.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part13.Size = Vector3.new(5, 0.4000000059604645, 5)
+Part13.BrickColor = BrickColor.new("Bright blue")
+Part13.brickColor = BrickColor.new("Bright blue")
+BlockMesh14.Parent = Part13
+Snap15.Parent = Part13
+Snap15.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap15.C1 = CFrame.new(0, -0.199998856, 0, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap15.Part0 = Part13
+Snap15.Part1 = Part16
+Snap15.part1 = Part16
+Part16.Parent = Model9
+Part16.CFrame = CFrame.new(14.7000122, 17.400835, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part16.Position = Vector3.new(14.70001220703125, 17.400835037231445, -1.5)
+Part16.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part16.Size = Vector3.new(13, 0.4000000059604645, 1)
+Part16.BrickColor = BrickColor.new("Bright blue")
+Part16.brickColor = BrickColor.new("Bright blue")
+BlockMesh17.Parent = Part16
+Part18.Parent = Model9
+Part18.CFrame = CFrame.new(14.5, 18.5999985, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part18.Position = Vector3.new(14.5, 18.599998474121094, -1.5)
+Part18.Color = Color3.new(0.431373, 0.6, 0.792157)
+Part18.Transparency = 0.4000000059604645
+Part18.Size = Vector3.new(9, 0.4000000059604645, 9)
+Part18.Anchored = true
+Part18.BrickColor = BrickColor.new("Medium blue")
+Part18.TopSurface = Enum.SurfaceType.Smooth
+Part18.brickColor = BrickColor.new("Medium blue")
+BlockMesh19.Parent = Part18
+Part20.Parent = Model9
+Part20.CFrame = CFrame.new(14.5, 9.40000057, -5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part20.Position = Vector3.new(14.5, 9.40000057220459, -5)
+Part20.Color = Color3.new(0.431373, 0.6, 0.792157)
+Part20.Transparency = 0.4000000059604645
+Part20.Size = Vector3.new(9, 18.000001907348633, 2)
+Part20.Anchored = true
+Part20.BrickColor = BrickColor.new("Medium blue")
+Part20.TopSurface = Enum.SurfaceType.Smooth
+Part20.brickColor = BrickColor.new("Medium blue")
+BlockMesh21.Parent = Part20
+Weld22.Parent = Part20
+Weld22.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld22.C1 = CFrame.new(0, -0.199981689, 3.5, -1, 0, 0, 0, -0, 1, 0, 1, 0)
+Weld22.Part0 = Part20
+Weld22.Part1 = Part4
+Weld22.part1 = Part4
+Part23.Parent = Model9
+Part23.CFrame = CFrame.new(18.5, 9.40000057, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part23.Position = Vector3.new(18.5, 9.40000057220459, -3)
+Part23.Color = Color3.new(0.431373, 0.6, 0.792157)
+Part23.Transparency = 0.4000000059604645
+Part23.Size = Vector3.new(1, 18.000001907348633, 2)
+Part23.Anchored = true
+Part23.BrickColor = BrickColor.new("Medium blue")
+Part23.TopSurface = Enum.SurfaceType.Smooth
+Part23.brickColor = BrickColor.new("Medium blue")
+BlockMesh24.Parent = Part23
+Part25.Parent = Model9
+Part25.CFrame = CFrame.new(10.5, 9.40000057, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part25.Position = Vector3.new(10.5, 9.40000057220459, -3)
+Part25.Color = Color3.new(0.431373, 0.6, 0.792157)
+Part25.Transparency = 0.4000000059604645
+Part25.Size = Vector3.new(1, 18.000001907348633, 2)
+Part25.Anchored = true
+Part25.BrickColor = BrickColor.new("Medium blue")
+Part25.TopSurface = Enum.SurfaceType.Smooth
+Part25.brickColor = BrickColor.new("Medium blue")
+BlockMesh26.Parent = Part25
+Part27.Parent = Model9
+Part27.CFrame = CFrame.new(18.7000122, 9.40085316, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part27.Position = Vector3.new(18.70001220703125, 9.400853157043457, 0)
+Part27.Color = Color3.new(0.431373, 0.6, 0.792157)
+Part27.Transparency = 0.4000000059604645
+Part27.Size = Vector3.new(1, 18.000001907348633, 2)
+Part27.Anchored = true
+Part27.BrickColor = BrickColor.new("Medium blue")
+Part27.TopSurface = Enum.SurfaceType.Smooth
+Part27.brickColor = BrickColor.new("Medium blue")
+BlockMesh28.Parent = Part27
+Part29.Parent = Model9
+Part29.CFrame = CFrame.new(8.70001221, 17.0008354, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part29.Position = Vector3.new(8.70001220703125, 17.000835418701172, -1.5)
+Part29.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part29.Size = Vector3.new(1, 0.4000000059604645, 5)
+Part29.BrickColor = BrickColor.new("Bright blue")
+Part29.brickColor = BrickColor.new("Bright blue")
+BlockMesh30.Parent = Part29
+Snap31.Parent = Part29
+Snap31.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap31.C1 = CFrame.new(-6, -0.199998856, 0, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap31.Part0 = Part29
+Snap31.Part1 = Part16
+Snap31.part1 = Part16
+Part32.Parent = Model9
+Part32.CFrame = CFrame.new(10.5, 9.40000057, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part32.Position = Vector3.new(10.5, 9.40000057220459, 0)
+Part32.Color = Color3.new(0.431373, 0.6, 0.792157)
+Part32.Transparency = 0.4000000059604645
+Part32.Size = Vector3.new(1, 18.000001907348633, 2)
+Part32.Anchored = true
+Part32.BrickColor = BrickColor.new("Medium blue")
+Part32.TopSurface = Enum.SurfaceType.Smooth
+Part32.brickColor = BrickColor.new("Medium blue")
+BlockMesh33.Parent = Part32
+Snap34.Parent = Part32
+Snap34.C0 = CFrame.new(0, -9.00000095, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap34.C1 = CFrame.new(-4, 0.199999213, 1.5, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Snap34.Part0 = Part32
+Snap34.Part1 = Part44
+Snap34.part1 = Part44
+Part35.Parent = Model9
+Part35.CFrame = CFrame.new(14.5, 9.40000057, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part35.Position = Vector3.new(14.5, 9.40000057220459, 2)
+Part35.Color = Color3.new(0.431373, 0.6, 0.792157)
+Part35.Transparency = 0.4000000059604645
+Part35.Size = Vector3.new(9, 18.000001907348633, 2)
+Part35.Anchored = true
+Part35.BrickColor = BrickColor.new("Medium blue")
+Part35.TopSurface = Enum.SurfaceType.Smooth
+Part35.brickColor = BrickColor.new("Medium blue")
+BlockMesh36.Parent = Part35
+Snap37.Parent = Part35
+Snap37.C0 = CFrame.new(0, -9.00000095, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap37.C1 = CFrame.new(0, 0.199999213, 3.5, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Snap37.Part0 = Part35
+Snap37.Part1 = Part44
+Snap37.part1 = Part44
+Part38.Parent = Model9
+Part38.CFrame = CFrame.new(14.7000122, 1.00076962, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part38.Position = Vector3.new(14.70001220703125, 1.0007696151733398, -1.5)
+Part38.Size = Vector3.new(5, 1.2000000476837158, 5)
+Part38.Anchored = true
+Part38.Reflectance = 0.5
+CylinderMesh39.Parent = Part38
+Snap40.Parent = Part38
+Snap40.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap40.C1 = CFrame.new(0, -0.599989653, 0, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap40.Part0 = Part38
+Snap40.Part1 = Part41
+Snap40.part1 = Part41
+Part41.Name = "Head"
+Part41.Parent = Model9
+Part41.CFrame = CFrame.new(14.7000122, 2.20075798, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part41.Position = Vector3.new(14.70001220703125, 2.2007579803466797, -1.5)
+Part41.Color = Color3.new(1, 0, 0)
+Part41.Size = Vector3.new(5, 1.2000000476837158, 5)
+Part41.Anchored = true
+Part41.BrickColor = BrickColor.new("Really red")
+Part41.brickColor = BrickColor.new("Really red")
+CylinderMesh42.Parent = Part41
+CylinderMesh42.Scale = Vector3.new(0.75, 1, 0.75)
+Script43.Parent = Part41
+table.insert(cors,sandbox(Script43,function()
+--[[local ONOES = Instance.new("Sound")
+ONOES.SoundId = "d5609845694b62f45afd8da79aa190f7"
+ONOES.Volume = 1
+ONOES.Looped = true
+ONOES.archivable = false
+ONOES.Parent = workspace]]
+
+--game:GetService("Debris").MaxItems = 500 -- Decrease if you have a laggy computer
+local s = Instance.new("Sound")
+s.Volume = 1
+sounds = {"rbxasset://sounds\\rocket shot.wav", "rbxasset://sounds\\collide.wav"}
+local workspace = game.Workspace
+
+function check(object)
+	
+	if object.className == "Model" and object:findFirstChild("Humanoid") == nil then
+		for i, v in ipairs(object:getChildren()) do
+			check(v) 
+			wait()
+		end
+	end
+	if object:IsA("Part") then
+		local soundclone = s:Clone()
+		soundclone.SoundId = sounds[math.random(1, 2)]
+		game:GetService("Debris"):AddItem(object, 300)
+		soundclone.Pitch = math.random(9, 12)/10
+		soundclone.Parent = object
+		delay(0.1, function() soundclone:Play() end)
+		delay(0, function()
+		for i = 1, 15*1.5 do
+		local e = Instance.new("Explosion")
+		e.Parent = workspace
+		e.BlastPressure = 1e4*object:getMass()
+		e.Position = object.Position
+		object.Anchored = false
+		object:BreakJoints()
+		wait(1.5)
+		end
+		end)
+	end
+end
+
+local deb = true
+script.Parent.Touched:connect(function(hit)
+	if not deb then return end
+	deb = false
+	--ONOES:Play()
+	script.Parent.Parent.Name = ""
+	local c = script.Parent.CFrame
+	for i = 0, 1, 0.05 do
+		script.Parent.CFrame = c - Vector3.new(0, i, 0)
+		wait()
+	end
+	local m = Instance.new("Message")
+	m.Text = "I pushed the button cuz i can, so now you go boom when this message is gone, ima go get a twinky."
+	m.Parent = workspace
+	local color = game.Lighting.Ambient
+	delay(0, function()
+	while true do
+		game.Lighting.Brightness = 1
+		game.Lighting.Ambient = Color3.new(100, 0, 0)
+		game.Lighting.ColorShift_Top = Color3.new(1, 0, 0)
+		game.Lighting.ColorShift_Bottom = Color3.new(1, 0, 0)
+		wait(1)
+		game.Lighting.Brightness = 1
+		game.Lighting.Ambient = color
+		game.Lighting.ColorShift_Top = Color3.new(0, 0, 0)
+		game.Lighting.ColorShift_Bottom = Color3.new(0, 0, 0)
+		wait(1)
+	end
+	end)
+	wait(5)
+	m:remove()
+	script.Parent.Parent.Name = ""
+	for i, v in ipairs(workspace:getChildren()) do
+		check(v)
+		wait()
+	end
+end)
+		
+end))
+Part44.Parent = Model9
+Part44.CFrame = CFrame.new(14.5, 0.199999809, -1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part44.Position = Vector3.new(14.5, 0.19999980926513672, -1.5)
+Part44.Color = Color3.new(0.431373, 0.6, 0.792157)
+Part44.Transparency = 0.4000000059604645
+Part44.Size = Vector3.new(9, 0.4000000059604645, 9)
+Part44.Anchored = true
+Part44.BrickColor = BrickColor.new("Medium blue")
+Part44.brickColor = BrickColor.new("Medium blue")
+BlockMesh45.Parent = Part44
+Snap46.Parent = Part44
+Snap46.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap46.C1 = CFrame.new(0, -9, 3.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap46.Part0 = Part44
+Snap46.Part1 = Part20
+Snap46.part1 = Part20
+Snap47.Parent = Part44
+Snap47.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap47.C1 = CFrame.new(-4, -9, 1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap47.Part0 = Part44
+Snap47.Part1 = Part23
+Snap47.part1 = Part23
+Snap48.Parent = Part44
+Snap48.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap48.C1 = CFrame.new(4, -9, 1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap48.Part0 = Part44
+Snap48.Part1 = Part25
+Snap48.part1 = Part25
+Snap49.Parent = Part44
+Snap49.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap49.C1 = CFrame.new(-4.20001221, -9.00085163, -1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap49.Part0 = Part44
+Snap49.Part1 = Part27
+Snap49.part1 = Part27
+Snap50.Parent = Part44
+Snap50.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap50.C1 = CFrame.new(-0.200012207, -0.600769103, 0, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap50.Part0 = Part44
+Snap50.Part1 = Part38
+Snap50.part1 = Part38
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
