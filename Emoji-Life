@@ -1,3 +1,5 @@
+e = Instance.new("NumberValue")
+e.Value = 0
 print("🗣️🧨🏛️")
 print("🗣️👅🍽️")
 print("🗣️🏃⚽")
@@ -10,6 +12,14 @@ if math.random(0, 1) == 1 then
 print("🚴💨👮")
 task.wait(3)
 print("💸💸💸💸💸💵💵")
+local function money(cash)
+    if cash == 1500000 then
+print("🧍1️⃣5️⃣0️⃣0️⃣0️⃣0️⃣0️⃣💸✅")
+script:Destroy()
+    end
+end
+e.Changed:Connect(money)
+e.Value = e.Value + 100000
 else
 print("👮👊🚓⛓️")
 owner.Character.Humanoid.Health = 0
