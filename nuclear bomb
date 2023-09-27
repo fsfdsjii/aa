@@ -1,0 +1,432 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Script3 = Instance.new("Script")
+Script4 = Instance.new("Script")
+Script5 = Instance.new("Script")
+Script6 = Instance.new("Script")
+Weld7 = Instance.new("Weld")
+Part8 = Instance.new("Part")
+Decal9 = Instance.new("Decal")
+Decal10 = Instance.new("Decal")
+Decal11 = Instance.new("Decal")
+Decal12 = Instance.new("Decal")
+Weld13 = Instance.new("Weld")
+Weld14 = Instance.new("Weld")
+Part15 = Instance.new("Part")
+SpecialMesh16 = Instance.new("SpecialMesh")
+Script17 = Instance.new("Script")
+Script18 = Instance.new("Script")
+Script19 = Instance.new("Script")
+Script20 = Instance.new("Script")
+Part21 = Instance.new("Part")
+SpecialMesh22 = Instance.new("SpecialMesh")
+Script23 = Instance.new("Script")
+Script24 = Instance.new("Script")
+Script25 = Instance.new("Script")
+Script26 = Instance.new("Script")
+Model0.Name = "Infected"
+Model0.Parent = mas
+Part1.Name = "Infected"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(-23.9565525, 9.20000648, -30.8702774, -1, 0, -0, -0, 1, -0, -0, 0, -1)
+Part1.Orientation = Vector3.new(0, 180, 0)
+Part1.Position = Vector3.new(-23.956552505493164, 9.200006484985352, -30.870277404785156)
+Part1.Rotation = Vector3.new(180, 0, 180)
+Part1.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part1.Size = Vector3.new(9, 2.4000000953674316, 9)
+Part1.Anchored = true
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Bright red")
+Part1.Reflectance = 0.5
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Bright red")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.Scale = Vector3.new(1, 5, 1)
+SpecialMesh2.MeshType = Enum.MeshType.Sphere
+Script3.Name = "Touch"
+Script3.Parent = Part1
+table.insert(cors,sandbox(Script3,function()
+debounce = true
+function activate(hit)
+if debounce == false then return end
+debounce = false
+script.Parent.Anchored = true
+wait(0.05)
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 9000
+Boom2.Parent = game.Workspace
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+Boom = Instance.new("Part")
+Boom.Parent = game.Workspace
+Boom.formFactor = 0
+Boom.Shape = 0
+Boom.BrickColor = BrickColor:Yellow()
+Boom.Position = script.Parent.Position
+Boom.Transparency = 0.3
+Boom.Size = Vector3.new(4, 1, 4)
+Boom.Anchored = true
+Boom.TopSurface = "Smooth"
+Boom.BottomSurface = "Smooth"
+script.Parent.Transparency = 1
+Script = script.Parent.Explosion
+SC = Script:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Grow = script.Parent.Grow
+GC = Grow:clone()
+GC.Disabled = false
+GC.Parent = Boom
+Stay = script.Parent.Stay
+SC = Stay:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 9000
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+wait(5)
+script.Parent.Parent:Remove()
+wait(100)
+end
+
+script.Parent.Touched:connect(activate)
+
+end))
+Script4.Name = "Stay"
+Script4.Parent = Part1
+Script4.Enabled = false
+table.insert(cors,sandbox(Script4,function()
+wait(0.1)
+pos = script.Parent.CFrame
+while true do
+script.Parent.CFrame = pos
+wait(0.000000000000000000000000000000000000000000000000001)
+end
+
+end))
+Script4.Disabled = true
+Script5.Name = "Grow"
+Script5.Parent = Part1
+Script5.Enabled = false
+table.insert(cors,sandbox(Script5,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 20000000000000000000000000000000000000000000000000 do
+Boom.Size = Boom.Size + Vector3.new(1, 1, 1)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script5.Disabled = true
+Script6.Name = "Explosion"
+Script6.Parent = Part1
+Script6.Enabled = false
+table.insert(cors,sandbox(Script6,function()
+wait(0.1)
+function destroy(hit)
+Boom = Instance.new("Explosion")
+Boom.Parent = game.Workspace
+Boom.Position = hit.Position
+wait(1)
+Boom:Remove()
+end
+
+script.Parent.Touched:connect(destroy)
+
+end))
+Script6.Disabled = true
+Weld7.Parent = Part1
+Weld7.C0 = CFrame.new(0, -1.20000005, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld7.C1 = CFrame.new(0, 3.99999952, 0, -1, -0, -0, -0, -0, -1, -0, -1, -0)
+Weld7.Part0 = Part1
+Weld7.Part1 = Part8
+Weld7.part1 = Part8
+Part8.Name = "Infected"
+Part8.Parent = Model0
+Part8.CFrame = CFrame.new(-23.9565525, 4.00000763, -30.8702774, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part8.Position = Vector3.new(-23.956552505493164, 4.000007629394531, -30.870277404785156)
+Part8.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part8.Size = Vector3.new(8, 8, 8)
+Part8.BottomSurface = Enum.SurfaceType.Weld
+Part8.BrickColor = BrickColor.new("Really black")
+Part8.Reflectance = 0.5
+Part8.TopSurface = Enum.SurfaceType.Weld
+Part8.brickColor = BrickColor.new("Really black")
+Decal9.Parent = Part8
+Decal9.Texture = "http://www.roblox.com/asset/?id=2220630"
+Decal10.Parent = Part8
+Decal10.Texture = "http://www.roblox.com/asset/?id=2220630"
+Decal10.Face = Enum.NormalId.Left
+Decal11.Parent = Part8
+Decal11.Texture = "http://www.roblox.com/asset/?id=2220630"
+Decal11.Face = Enum.NormalId.Back
+Decal12.Parent = Part8
+Decal12.Texture = "http://www.roblox.com/asset/?id=2220630"
+Decal12.Face = Enum.NormalId.Right
+Weld13.Parent = Part8
+Weld13.C0 = CFrame.new(0, 4, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld13.C1 = CFrame.new(0, -1.19999886, 0, 1, -0, -0, 0, 0, 1, 0, -1, -0)
+Weld13.Part0 = Part8
+Weld13.Part1 = Part15
+Weld13.part1 = Part15
+Weld14.Parent = Part8
+Weld14.C0 = CFrame.new(0, 4, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld14.C1 = CFrame.new(0, -1.19999886, 0, 1, -0, -0, 0, 0, 1, 0, -1, -0)
+Weld14.Part0 = Part8
+Weld14.Part1 = Part21
+Weld14.part1 = Part21
+Part15.Name = "Infected"
+Part15.Parent = Model0
+Part15.CFrame = CFrame.new(-23.9565525, 9.20000648, -30.8702774, -1, 0, -0, -0, 1, -0, -0, 0, -1)
+Part15.Orientation = Vector3.new(0, 180, 0)
+Part15.Position = Vector3.new(-23.956552505493164, 9.200006484985352, -30.870277404785156)
+Part15.Rotation = Vector3.new(180, 0, 180)
+Part15.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part15.Size = Vector3.new(9, 2.4000000953674316, 9)
+Part15.Anchored = true
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.BrickColor = BrickColor.new("Bright red")
+Part15.Reflectance = 0.5
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.brickColor = BrickColor.new("Bright red")
+SpecialMesh16.Parent = Part15
+SpecialMesh16.Scale = Vector3.new(1, 5, 1)
+SpecialMesh16.MeshType = Enum.MeshType.Sphere
+Script17.Name = "Touch"
+Script17.Parent = Part15
+table.insert(cors,sandbox(Script17,function()
+debounce = true
+function activate(hit)
+if debounce == false then return end
+debounce = false
+script.Parent.Anchored = true
+wait(0.05)
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 9000
+Boom2.Parent = game.Workspace
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+Boom = Instance.new("Part")
+Boom.Parent = game.Workspace
+Boom.formFactor = 0
+Boom.Shape = 0
+Boom.BrickColor = BrickColor:Yellow()
+Boom.Position = script.Parent.Position
+Boom.Transparency = 0.3
+Boom.Size = Vector3.new(4, 1, 4)
+Boom.Anchored = true
+Boom.TopSurface = "Smooth"
+Boom.BottomSurface = "Smooth"
+script.Parent.Transparency = 1
+Script = script.Parent.Explosion
+SC = Script:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Grow = script.Parent.Grow
+GC = Grow:clone()
+GC.Disabled = false
+GC.Parent = Boom
+Stay = script.Parent.Stay
+SC = Stay:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 9000
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+wait(5)
+script.Parent.Parent:Remove()
+wait(100)
+end
+
+script.Parent.Touched:connect(activate)
+
+end))
+Script18.Name = "Stay"
+Script18.Parent = Part15
+Script18.Enabled = false
+table.insert(cors,sandbox(Script18,function()
+wait(0.1)
+pos = script.Parent.CFrame
+while true do
+script.Parent.CFrame = pos
+wait(0.000000000000000000000000000000000000000000000000001)
+end
+
+end))
+Script18.Disabled = true
+Script19.Name = "Grow"
+Script19.Parent = Part15
+Script19.Enabled = false
+table.insert(cors,sandbox(Script19,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 20000000000000000000000000000000000000000000000000 do
+Boom.Size = Boom.Size + Vector3.new(1, 1, 1)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script19.Disabled = true
+Script20.Name = "Explosion"
+Script20.Parent = Part15
+Script20.Enabled = false
+table.insert(cors,sandbox(Script20,function()
+wait(0.1)
+function destroy(hit)
+Boom = Instance.new("Explosion")
+Boom.Parent = game.Workspace
+Boom.Position = hit.Position
+wait(1)
+Boom:Remove()
+end
+
+script.Parent.Touched:connect(destroy)
+
+end))
+Script20.Disabled = true
+Part21.Name = "Infected"
+Part21.Parent = Model0
+Part21.CFrame = CFrame.new(-23.9565525, 9.20000648, -30.8702774, -1, 0, -0, -0, 1, -0, -0, 0, -1)
+Part21.Orientation = Vector3.new(0, 180, 0)
+Part21.Position = Vector3.new(-23.956552505493164, 9.200006484985352, -30.870277404785156)
+Part21.Rotation = Vector3.new(180, 0, 180)
+Part21.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part21.Size = Vector3.new(9, 2.4000000953674316, 9)
+Part21.Anchored = true
+Part21.BottomSurface = Enum.SurfaceType.Smooth
+Part21.BrickColor = BrickColor.new("Bright red")
+Part21.Reflectance = 0.5
+Part21.TopSurface = Enum.SurfaceType.Smooth
+Part21.brickColor = BrickColor.new("Bright red")
+SpecialMesh22.Parent = Part21
+SpecialMesh22.Scale = Vector3.new(1, 5, 1)
+SpecialMesh22.MeshType = Enum.MeshType.Sphere
+Script23.Name = "Touch"
+Script23.Parent = Part21
+table.insert(cors,sandbox(Script23,function()
+debounce = true
+function activate(hit)
+if debounce == false then return end
+debounce = false
+script.Parent.Anchored = true
+wait(0.05)
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 9000
+Boom2.Parent = game.Workspace
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+Boom = Instance.new("Part")
+Boom.Parent = game.Workspace
+Boom.formFactor = 0
+Boom.Shape = 0
+Boom.BrickColor = BrickColor:Yellow()
+Boom.Position = script.Parent.Position
+Boom.Transparency = 0.3
+Boom.Size = Vector3.new(4, 1, 4)
+Boom.Anchored = true
+Boom.TopSurface = "Smooth"
+Boom.BottomSurface = "Smooth"
+script.Parent.Transparency = 1
+Script = script.Parent.Explosion
+SC = Script:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Grow = script.Parent.Grow
+GC = Grow:clone()
+GC.Disabled = false
+GC.Parent = Boom
+Stay = script.Parent.Stay
+SC = Stay:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 9000
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+wait(5)
+script.Parent.Parent:Remove()
+wait(100)
+end
+
+script.Parent.Touched:connect(activate)
+
+end))
+Script24.Name = "Stay"
+Script24.Parent = Part21
+Script24.Enabled = false
+table.insert(cors,sandbox(Script24,function()
+wait(0.1)
+pos = script.Parent.CFrame
+while true do
+script.Parent.CFrame = pos
+wait(0.000000000000000000000000000000000000000000000000001)
+end
+
+end))
+Script24.Disabled = true
+Script25.Name = "Grow"
+Script25.Parent = Part21
+Script25.Enabled = false
+table.insert(cors,sandbox(Script25,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 20000000000000000000000000000000000000000000000000 do
+Boom.Size = Boom.Size + Vector3.new(1, 1, 1)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script25.Disabled = true
+Script26.Name = "Explosion"
+Script26.Parent = Part21
+Script26.Enabled = false
+table.insert(cors,sandbox(Script26,function()
+wait(0.1)
+function destroy(hit)
+Boom = Instance.new("Explosion")
+Boom.Parent = game.Workspace
+Boom.Position = hit.Position
+wait(1)
+Boom:Remove()
+end
+
+script.Parent.Touched:connect(destroy)
+
+end))
+Script26.Disabled = true
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
