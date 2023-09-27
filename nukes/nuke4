@@ -1,0 +1,2647 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Model1 = Instance.new("Model")
+Model2 = Instance.new("Model")
+Part3 = Instance.new("Part")
+Part4 = Instance.new("Part")
+SpecialMesh5 = Instance.new("SpecialMesh")
+Weld6 = Instance.new("Weld")
+Weld7 = Instance.new("Weld")
+Weld8 = Instance.new("Weld")
+Weld9 = Instance.new("Weld")
+Part10 = Instance.new("Part")
+SpecialMesh11 = Instance.new("SpecialMesh")
+Weld12 = Instance.new("Weld")
+Weld13 = Instance.new("Weld")
+Weld14 = Instance.new("Weld")
+Part15 = Instance.new("Part")
+Part16 = Instance.new("Part")
+Part17 = Instance.new("Part")
+Weld18 = Instance.new("Weld")
+Model19 = Instance.new("Model")
+Model20 = Instance.new("Model")
+Model21 = Instance.new("Model")
+Part22 = Instance.new("Part")
+Snap23 = Instance.new("Snap")
+Snap24 = Instance.new("Snap")
+Part25 = Instance.new("Part")
+Snap26 = Instance.new("Snap")
+Part27 = Instance.new("Part")
+Part28 = Instance.new("Part")
+Snap29 = Instance.new("Snap")
+Part30 = Instance.new("Part")
+Snap31 = Instance.new("Snap")
+Snap32 = Instance.new("Snap")
+Part33 = Instance.new("Part")
+Part34 = Instance.new("Part")
+Snap35 = Instance.new("Snap")
+Part36 = Instance.new("Part")
+Decal37 = Instance.new("Decal")
+Weld38 = Instance.new("Weld")
+Weld39 = Instance.new("Weld")
+Snap40 = Instance.new("Snap")
+Snap41 = Instance.new("Snap")
+Weld42 = Instance.new("Weld")
+Weld43 = Instance.new("Weld")
+Part44 = Instance.new("Part")
+Snap45 = Instance.new("Snap")
+Part46 = Instance.new("Part")
+Snap47 = Instance.new("Snap")
+Part48 = Instance.new("Part")
+Part49 = Instance.new("Part")
+Snap50 = Instance.new("Snap")
+Part51 = Instance.new("Part")
+Part52 = Instance.new("Part")
+Snap53 = Instance.new("Snap")
+Part54 = Instance.new("Part")
+Snap55 = Instance.new("Snap")
+Snap56 = Instance.new("Snap")
+Part57 = Instance.new("Part")
+Weld58 = Instance.new("Weld")
+Part59 = Instance.new("Part")
+Part60 = Instance.new("Part")
+Snap61 = Instance.new("Snap")
+Snap62 = Instance.new("Snap")
+Part63 = Instance.new("Part")
+Snap64 = Instance.new("Snap")
+Part65 = Instance.new("Part")
+Snap66 = Instance.new("Snap")
+Part67 = Instance.new("Part")
+Snap68 = Instance.new("Snap")
+Part69 = Instance.new("Part")
+Snap70 = Instance.new("Snap")
+Snap71 = Instance.new("Snap")
+Part72 = Instance.new("Part")
+Part73 = Instance.new("Part")
+Weld74 = Instance.new("Weld")
+Humanoid75 = Instance.new("Humanoid")
+ObjectValue76 = Instance.new("ObjectValue")
+Part77 = Instance.new("Part")
+Snap78 = Instance.new("Snap")
+Part79 = Instance.new("Part")
+Model80 = Instance.new("Model")
+Model81 = Instance.new("Model")
+Part82 = Instance.new("Part")
+Snap83 = Instance.new("Snap")
+Part84 = Instance.new("Part")
+Snap85 = Instance.new("Snap")
+Snap86 = Instance.new("Snap")
+Weld87 = Instance.new("Weld")
+Part88 = Instance.new("Part")
+Snap89 = Instance.new("Snap")
+Weld90 = Instance.new("Weld")
+Part91 = Instance.new("Part")
+Part92 = Instance.new("Part")
+Snap93 = Instance.new("Snap")
+Snap94 = Instance.new("Snap")
+Part95 = Instance.new("Part")
+Snap96 = Instance.new("Snap")
+Part97 = Instance.new("Part")
+Part98 = Instance.new("Part")
+Decal99 = Instance.new("Decal")
+Weld100 = Instance.new("Weld")
+Snap101 = Instance.new("Snap")
+Part102 = Instance.new("Part")
+Snap103 = Instance.new("Snap")
+Part104 = Instance.new("Part")
+Snap105 = Instance.new("Snap")
+Snap106 = Instance.new("Snap")
+Part107 = Instance.new("Part")
+Snap108 = Instance.new("Snap")
+Part109 = Instance.new("Part")
+Part110 = Instance.new("Part")
+Part111 = Instance.new("Part")
+Snap112 = Instance.new("Snap")
+Snap113 = Instance.new("Snap")
+Part114 = Instance.new("Part")
+Part115 = Instance.new("Part")
+Part116 = Instance.new("Part")
+Snap117 = Instance.new("Snap")
+Snap118 = Instance.new("Snap")
+Part119 = Instance.new("Part")
+Part120 = Instance.new("Part")
+Weld121 = Instance.new("Weld")
+Snap122 = Instance.new("Snap")
+Part123 = Instance.new("Part")
+Snap124 = Instance.new("Snap")
+Part125 = Instance.new("Part")
+Weld126 = Instance.new("Weld")
+Snap127 = Instance.new("Snap")
+Snap128 = Instance.new("Snap")
+Part129 = Instance.new("Part")
+Part130 = Instance.new("Part")
+Snap131 = Instance.new("Snap")
+Weld132 = Instance.new("Weld")
+Part133 = Instance.new("Part")
+Humanoid134 = Instance.new("Humanoid")
+ObjectValue135 = Instance.new("ObjectValue")
+Part136 = Instance.new("Part")
+Snap137 = Instance.new("Snap")
+Part138 = Instance.new("Part")
+Snap139 = Instance.new("Snap")
+Part140 = Instance.new("Part")
+Glue141 = Instance.new("Glue")
+Model142 = Instance.new("Model")
+Model143 = Instance.new("Model")
+Part144 = Instance.new("Part")
+Weld145 = Instance.new("Weld")
+Weld146 = Instance.new("Weld")
+Weld147 = Instance.new("Weld")
+Humanoid148 = Instance.new("Humanoid")
+Part149 = Instance.new("Part")
+ClickDetector150 = Instance.new("ClickDetector")
+Decal151 = Instance.new("Decal")
+Part152 = Instance.new("Part")
+Decal153 = Instance.new("Decal")
+ClickDetector154 = Instance.new("ClickDetector")
+Part155 = Instance.new("Part")
+ClickDetector156 = Instance.new("ClickDetector")
+Part157 = Instance.new("Part")
+ClickDetector158 = Instance.new("ClickDetector")
+Script159 = Instance.new("Script")
+Model160 = Instance.new("Model")
+Part161 = Instance.new("Part")
+Script162 = Instance.new("Script")
+SpecialMesh163 = Instance.new("SpecialMesh")
+Model164 = Instance.new("Model")
+Model165 = Instance.new("Model")
+Model166 = Instance.new("Model")
+Model167 = Instance.new("Model")
+Model168 = Instance.new("Model")
+Model169 = Instance.new("Model")
+Model170 = Instance.new("Model")
+Model171 = Instance.new("Model")
+Model172 = Instance.new("Model")
+Model173 = Instance.new("Model")
+Model174 = Instance.new("Model")
+Model175 = Instance.new("Model")
+Part176 = Instance.new("Part")
+ClickDetector177 = Instance.new("ClickDetector")
+Script178 = Instance.new("Script")
+Part179 = Instance.new("Part")
+ClickDetector180 = Instance.new("ClickDetector")
+Script181 = Instance.new("Script")
+Sound182 = Instance.new("Sound")
+Model0.Parent = mas
+Model0.PrimaryPart = Part3
+Model1.Name = "Model2"
+Model1.Parent = Model0
+Model1.PrimaryPart = Part3
+Model2.Parent = Model1
+Model2.PrimaryPart = Part3
+Part3.Name = "Smooth Block Model"
+Part3.Parent = Model2
+Part3.CFrame = CFrame.new(-17.6000061, 8.49952507, 28, 5.10615584e-14, -1, 1.21626114e-12, 1, -5.10615584e-14, -2.65359544e-12, -2.65359544e-12, -1.21626114e-12, 1)
+Part3.Orientation = Vector3.new(0, 0, 90)
+Part3.Position = Vector3.new(-17.600006103515625, 8.49952507019043, 28)
+Part3.Rotation = Vector3.new(0, 0, 90)
+Part3.Color = Color3.new(0.898039, 0.894118, 0.87451)
+Part3.Transparency = 0.6000000238418579
+Part3.Size = Vector3.new(1, 9.199999809265137, 6)
+Part3.Anchored = true
+Part3.BrickColor = BrickColor.new("Light stone grey")
+Part3.LeftSurface = Enum.SurfaceType.Glue
+Part3.brickColor = BrickColor.new("Light stone grey")
+Part4.Name = "Smooth Block Model"
+Part4.Parent = Model2
+Part4.CFrame = CFrame.new(-22.7999878, 5.00007582, 28, -1.25426926e-12, 1, -5.2657233e-14, 2.73652021e-12, 5.2657233e-14, -1, -1, 1.25426926e-12, 2.73652021e-12)
+Part4.Orientation = Vector3.new(90, 90, 0)
+Part4.Position = Vector3.new(-22.79998779296875, 5.000075817108154, 28)
+Part4.Rotation = Vector3.new(90, 0, -90)
+Part4.Color = Color3.new(0.152941, 0.27451, 0.176471)
+Part4.Size = Vector3.new(10, 1.2000000476837158, 10)
+Part4.Anchored = true
+Part4.BottomSurface = Enum.SurfaceType.Smooth
+Part4.BrickColor = BrickColor.new("Earth green")
+Part4.TopSurface = Enum.SurfaceType.Weld
+Part4.brickColor = BrickColor.new("Earth green")
+SpecialMesh5.Parent = Part4
+Weld6.Parent = Part4
+Weld6.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld6.C1 = CFrame.new(-3.49944925, 4.59998131, 0, -2.73652021e-12, -1, 5.2657233e-14, -1.25426926e-12, 5.2657233e-14, -1, 1, 2.73652021e-12, 1.25426926e-12)
+Weld6.Part0 = Part4
+Weld6.Part1 = Part3
+Weld6.part1 = Part3
+Weld7.Parent = Part4
+Weld7.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld7.C1 = CFrame.new(-3.5, 4.59998751, 0.000402450562, 1, 1.4097226e-12, 6.46138741e-13, -6.46138741e-13, 2.71264521e-14, -1, 1.4097226e-12, 1, -2.71264521e-14)
+Weld7.Part0 = Part4
+Weld7.Part1 = Part15
+Weld7.part1 = Part15
+Weld8.Parent = Part4
+Weld8.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld8.C1 = CFrame.new(-3.5, 4.59998751, -0.000402450562, -1, -1.4097226e-12, -6.46138741e-13, -6.46138741e-13, 2.71264521e-14, -1, -1.4097226e-12, -1, 2.71264521e-14)
+Weld8.Part0 = Part4
+Weld8.Part1 = Part16
+Weld8.part1 = Part16
+Weld9.Parent = Part4
+Weld9.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld9.C1 = CFrame.new(-3.49959755, 4.59998751, 0, 1.4097226e-12, 1, -2.71264521e-14, -6.46138741e-13, 2.71264521e-14, -1, -1, -1.4097226e-12, -6.46138741e-13)
+Weld9.Part0 = Part4
+Weld9.Part1 = Part17
+Weld9.part1 = Part17
+Part10.Name = "Smooth Block Model"
+Part10.Parent = Model2
+Part10.CFrame = CFrame.new(-12.3999634, 5.00000048, 28, -1.1402448e-12, -1, 4.78702093e-14, 2.48774569e-12, -4.78702093e-14, 1, -1, -1.1402448e-12, -2.48774569e-12)
+Part10.Orientation = Vector3.new(-90, 90, 0)
+Part10.Position = Vector3.new(-12.39996337890625, 5.000000476837158, 28)
+Part10.Rotation = Vector3.new(-90, 0, 90)
+Part10.Color = Color3.new(0.152941, 0.27451, 0.176471)
+Part10.Size = Vector3.new(10, 1.2000000476837158, 10)
+Part10.Anchored = true
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.BrickColor = BrickColor.new("Earth green")
+Part10.TopSurface = Enum.SurfaceType.Weld
+Part10.brickColor = BrickColor.new("Earth green")
+SpecialMesh11.Parent = Part10
+Weld12.Parent = Part10
+Weld12.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld12.C1 = CFrame.new(-3.49952459, -4.60004282, 0, -2.48774569e-12, 1, -4.78702093e-14, -1.1402448e-12, -4.78702093e-14, 1, 1, -2.48774569e-12, -1.1402448e-12)
+Weld12.Part0 = Part10
+Weld12.Part1 = Part3
+Weld12.part1 = Part3
+Weld13.Parent = Part10
+Weld13.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld13.C1 = CFrame.new(-3.5, -4.60003662, 0.000477790833, 1, -1.16094797e-12, -5.32114229e-13, -5.32114229e-13, -2.23394318e-14, 1, 1.16094797e-12, -1, 2.23394318e-14)
+Weld13.Part0 = Part10
+Weld13.Part1 = Part15
+Weld13.part1 = Part15
+Weld14.Parent = Part10
+Weld14.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Weld14.C1 = CFrame.new(-3.5, -4.60003662, -0.000477790833, -1, 1.16094797e-12, 5.32114229e-13, -5.32114229e-13, -2.23394318e-14, 1, -1.16094797e-12, 1, -2.23394318e-14)
+Weld14.Part0 = Part10
+Weld14.Part1 = Part16
+Weld14.part1 = Part16
+Part15.Name = "Smooth Block Model"
+Part15.Parent = Model2
+Part15.CFrame = CFrame.new(-17.5999985, 5.00047827, 31.5, 6.08130571e-13, -1, -2.55307792e-14, -1.32679772e-12, -2.55307792e-14, -1, 1, -6.08130571e-13, 1.32679772e-12)
+Part15.Orientation = Vector3.new(90, -90, 0)
+Part15.Position = Vector3.new(-17.599998474121094, 5.000478267669678, 31.5)
+Part15.Rotation = Vector3.new(90, 0, 90)
+Part15.Color = Color3.new(0.898039, 0.894118, 0.87451)
+Part15.Transparency = 0.6000000238418579
+Part15.Size = Vector3.new(1, 9.199999809265137, 6)
+Part15.Anchored = true
+Part15.BrickColor = BrickColor.new("Light stone grey")
+Part15.LeftSurface = Enum.SurfaceType.Glue
+Part15.brickColor = BrickColor.new("Light stone grey")
+Part16.Name = "Smooth Block Model"
+Part16.Parent = Model2
+Part16.CFrame = CFrame.new(-17.5999985, 5.00047827, 24.5, -6.08130571e-13, -1, 2.55307792e-14, 1.32679772e-12, -2.55307792e-14, 1, -1, -6.08130571e-13, -1.32679772e-12)
+Part16.Orientation = Vector3.new(-90, 90, 0)
+Part16.Position = Vector3.new(-17.599998474121094, 5.000478267669678, 24.5)
+Part16.Rotation = Vector3.new(-90, 0, 90)
+Part16.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part16.Transparency = 0.6000000238418579
+Part16.Size = Vector3.new(1, 9.199999809265137, 6)
+Part16.Anchored = true
+Part16.BrickColor = BrickColor.new("White")
+Part16.LeftSurface = Enum.SurfaceType.Glue
+Part16.brickColor = BrickColor.new("White")
+Part17.Name = "Smooth Block Model"
+Part17.Parent = Model2
+Part17.CFrame = CFrame.new(-17.5999985, 1.50047827, 28, -2.55307792e-14, -1, -6.08130571e-13, -1, -2.55307792e-14, 1.32679772e-12, 1.32679772e-12, -6.08130571e-13, -1)
+Part17.Orientation = Vector3.new(0, 180, -90)
+Part17.Position = Vector3.new(-17.599998474121094, 1.5004782676696777, 28)
+Part17.Rotation = Vector3.new(180, 0, 90)
+Part17.Color = Color3.new(0.898039, 0.894118, 0.87451)
+Part17.Transparency = 0.6000000238418579
+Part17.Size = Vector3.new(1, 9.199999809265137, 6)
+Part17.Anchored = true
+Part17.BrickColor = BrickColor.new("Light stone grey")
+Part17.LeftSurface = Enum.SurfaceType.Glue
+Part17.brickColor = BrickColor.new("Light stone grey")
+Weld18.Parent = Part17
+Weld18.C0 = CFrame.new(0, -4.5999999, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld18.C1 = CFrame.new(0, 0.600036621, -3.49952221, -1.16094797e-12, 1, -5.32114229e-13, 2.23394318e-14, 5.32114229e-13, -1, -1, 1.16094797e-12, 2.23394318e-14)
+Weld18.Part0 = Part17
+Weld18.Part1 = Part10
+Weld18.part1 = Part10
+Model19.Name = "100"
+Model19.Parent = Model1
+Model19.PrimaryPart = Part60
+Model20.Parent = Model19
+Model20.PrimaryPart = Part60
+Model21.Name = "R.B.O."
+Model21.Parent = Model20
+Model21.PrimaryPart = Part60
+Part22.Name = "Smooth Block Model"
+Part22.Parent = Model21
+Part22.CFrame = CFrame.new(-27.5999756, 5.00006819, 25, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part22.Position = Vector3.new(-27.5999755859375, 5.000068187713623, 25)
+Part22.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part22.Size = Vector3.new(2, 0.4000000059604645, 2)
+Part22.Anchored = true
+Part22.BrickColor = BrickColor.new("Br. yellowish green")
+Part22.CanCollide = false
+Part22.TopSurface = Enum.SurfaceType.Smooth
+Part22.brickColor = BrickColor.new("Br. yellowish green")
+Snap23.Parent = Part22
+Snap23.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap23.C1 = CFrame.new(0.5, 0.399999619, 0, -4.56097942e-13, -1, -9.95098318e-13, 1.91480844e-14, -9.95098318e-13, -1, 1, 4.56097942e-13, -1.91480844e-14)
+Snap23.Part0 = Part22
+Snap23.Part1 = Part25
+Snap23.part1 = Part25
+Snap24.Parent = Part22
+Snap24.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap24.C1 = CFrame.new(-0.5, 0.399999619, -1, -4.56097942e-13, -1, -9.95098318e-13, 1.91480844e-14, -9.95098318e-13, -1, 1, 4.56097942e-13, -1.91480844e-14)
+Snap24.Part0 = Part22
+Snap24.Part1 = Part27
+Snap24.part1 = Part27
+Part25.Name = "Smooth Block Model"
+Part25.Parent = Model21
+Part25.CFrame = CFrame.new(-27.5999756, 4.40006876, 25.5, -8.36179541e-13, 3.51048197e-14, 1, 1.82434688e-12, 1, 3.51048197e-14, -1, -1.82434688e-12, 8.36179541e-13)
+Part25.Orientation = Vector3.new(0, 90, 0)
+Part25.Position = Vector3.new(-27.5999755859375, 4.400068759918213, 25.5)
+Part25.Rotation = Vector3.new(0, 90, 0)
+Part25.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part25.Size = Vector3.new(1, 0.800000011920929, 2)
+Part25.Anchored = true
+Part25.BrickColor = BrickColor.new("Br. yellowish green")
+Part25.CanCollide = false
+Part25.brickColor = BrickColor.new("Br. yellowish green")
+Snap26.Parent = Part25
+Snap26.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap26.C1 = CFrame.new(0, 0.200000286, 0.5, -4.56097942e-13, 1, -1.91480844e-14, 9.95098318e-13, 1.91480844e-14, -1, -1, 4.56097942e-13, 9.95098318e-13)
+Snap26.Part0 = Part25
+Snap26.Part1 = Part28
+Snap26.part1 = Part28
+Part27.Name = "Smooth Block Model"
+Part27.Parent = Model21
+Part27.CFrame = CFrame.new(-26.5999756, 4.40006876, 24.5, -8.36179541e-13, 3.51048197e-14, 1, 1.82434688e-12, 1, 3.51048197e-14, -1, -1.82434688e-12, 8.36179541e-13)
+Part27.Orientation = Vector3.new(0, 90, 0)
+Part27.Position = Vector3.new(-26.5999755859375, 4.400068759918213, 24.5)
+Part27.Rotation = Vector3.new(0, 90, 0)
+Part27.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part27.Size = Vector3.new(1, 0.800000011920929, 4)
+Part27.Anchored = true
+Part27.BackSurface = Enum.SurfaceType.Weld
+Part27.BrickColor = BrickColor.new("Br. yellowish green")
+Part27.CanCollide = false
+Part27.brickColor = BrickColor.new("Br. yellowish green")
+Part28.Name = "Smooth Block Model"
+Part28.Parent = Model21
+Part28.CFrame = CFrame.new(-27.5999756, 3.80006886, 25, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part28.Position = Vector3.new(-27.5999755859375, 3.8000688552856445, 25)
+Part28.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part28.Size = Vector3.new(2, 0.4000000059604645, 2)
+Part28.Anchored = true
+Part28.BackSurface = Enum.SurfaceType.Weld
+Part28.BottomSurface = Enum.SurfaceType.Smooth
+Part28.BrickColor = BrickColor.new("Br. yellowish green")
+Part28.CanCollide = false
+Part28.brickColor = BrickColor.new("Br. yellowish green")
+Snap29.Parent = Part28
+Snap29.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap29.C1 = CFrame.new(-0.5, -0.400000572, -1, 4.56097942e-13, -1, 9.95098318e-13, -1.91480844e-14, -9.95098318e-13, 1, -1, 4.56097942e-13, 1.91480844e-14)
+Snap29.Part0 = Part28
+Snap29.Part1 = Part27
+Snap29.part1 = Part27
+Part30.Name = "Smooth Block Model"
+Part30.Parent = Model21
+Part30.CFrame = CFrame.new(-27.0999756, 2.60015202, 27.5, 1, 5.42529041e-14, 1.29227748e-12, 5.42529041e-14, 1, -2.8194452e-12, 1.29227748e-12, -2.8194452e-12, 1)
+Part30.Position = Vector3.new(-27.0999755859375, 2.600152015686035, 27.5)
+Part30.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part30.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part30.Anchored = true
+Part30.BrickColor = BrickColor.new("Bright green")
+Part30.CanCollide = false
+Part30.brickColor = BrickColor.new("Bright green")
+Snap31.Parent = Part30
+Snap31.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap31.C1 = CFrame.new(0, -0.199916601, 0, -1, 9.12195883e-13, 3.82961688e-14, -3.82961688e-14, -1.99019664e-12, 1, -9.12195883e-13, 1, -1.99019664e-12)
+Snap31.Part0 = Part30
+Snap31.Part1 = Part33
+Snap31.part1 = Part33
+Snap32.Parent = Part30
+Snap32.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap32.C1 = CFrame.new(0, 0.200026751, 0, 1, 1.36829382e-12, -5.74442498e-14, 5.74442498e-14, -2.98529495e-12, -1, 1.36829382e-12, 1, 2.98529495e-12)
+Snap32.Part0 = Part30
+Snap32.Part1 = Part51
+Snap32.part1 = Part51
+Part33.Name = "Smooth Block Model"
+Part33.Parent = Model21
+Part33.CFrame = CFrame.new(-27.0999756, 3.00006866, 27.5, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part33.Position = Vector3.new(-27.0999755859375, 3.0000686645507812, 27.5)
+Part33.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part33.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part33.Anchored = true
+Part33.BrickColor = BrickColor.new("Bright green")
+Part33.CanCollide = false
+Part33.brickColor = BrickColor.new("Bright green")
+Part34.Name = "Smooth Block Model"
+Part34.Parent = Model21
+Part34.CFrame = CFrame.new(-27.0999756, 3.40006828, 27.5, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part34.Position = Vector3.new(-27.0999755859375, 3.4000682830810547, 27.5)
+Part34.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part34.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part34.Anchored = true
+Part34.BrickColor = BrickColor.new("Bright green")
+Part34.CanCollide = false
+Part34.brickColor = BrickColor.new("Bright green")
+Snap35.Parent = Part34
+Snap35.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap35.C1 = CFrame.new(0, 0.200000048, 0, 1, 4.56097942e-13, -1.91480844e-14, 1.91480844e-14, -9.95098318e-13, -1, 4.56097942e-13, 1, 9.95098318e-13)
+Snap35.Part0 = Part34
+Snap35.Part1 = Part33
+Snap35.part1 = Part33
+Part36.Name = "Smooth Block Model"
+Part36.Parent = Model21
+Part36.CFrame = CFrame.new(-27.0999756, 4.200068, 27.5, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part36.Position = Vector3.new(-27.0999755859375, 4.20006799697876, 27.5)
+Part36.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part36.Size = Vector3.new(3, 1.2000000476837158, 3)
+Part36.Anchored = true
+Part36.BackSurface = Enum.SurfaceType.Weld
+Part36.BrickColor = BrickColor.new("Bright green")
+Part36.CanCollide = false
+Part36.FrontSurface = Enum.SurfaceType.Weld
+Part36.brickColor = BrickColor.new("Bright green")
+Decal37.Parent = Part36
+Decal37.Texture = "http://www.roblox.com/asset/?id=2015837"
+Decal37.Face = Enum.NormalId.Right
+Weld38.Parent = Part36
+Weld38.C0 = CFrame.new(0, 0, -1.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld38.C1 = CFrame.new(-0.5, -0.200000763, 0.5, 4.56097942e-13, 9.95098318e-13, 1, -1.91480844e-14, 1, 9.95098318e-13, -1, 1.91480844e-14, -4.56097942e-13)
+Weld38.Part0 = Part36
+Weld38.Part1 = Part25
+Weld38.part1 = Part25
+Weld39.Parent = Part36
+Weld39.C0 = CFrame.new(0, 0, -1.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld39.C1 = CFrame.new(0.5, 0.399999619, 1, -1, 1.91480844e-14, -4.56097942e-13, -1.91480844e-14, 1, 9.95098318e-13, -4.56097942e-13, -9.95098318e-13, -1)
+Weld39.Part0 = Part36
+Weld39.Part1 = Part28
+Weld39.part1 = Part28
+Snap40.Parent = Part36
+Snap40.C0 = CFrame.new(0, -0.600000024, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap40.C1 = CFrame.new(0, 0.199999809, 0, 1, 4.56097942e-13, -1.91480844e-14, 1.91480844e-14, -9.95098318e-13, -1, 4.56097942e-13, 1, 9.95098318e-13)
+Snap40.Part0 = Part36
+Snap40.Part1 = Part34
+Snap40.part1 = Part34
+Snap41.Parent = Part36
+Snap41.C0 = CFrame.new(0, 0.600000024, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap41.C1 = CFrame.new(0, -0.200000286, 0, -1, 4.56097942e-13, 1.91480844e-14, -1.91480844e-14, -9.95098318e-13, 1, -4.56097942e-13, 1, -9.95098318e-13)
+Snap41.Part0 = Part36
+Snap41.Part1 = Part44
+Snap41.part1 = Part44
+Weld42.Parent = Part36
+Weld42.C0 = CFrame.new(0, 0, 1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld42.C1 = CFrame.new(0.5, -0.200000763, 0.5, -4.56097942e-13, 9.95098318e-13, -1, 1.91480844e-14, 1, -9.95098318e-13, 1, 1.91480844e-14, 4.56097942e-13)
+Weld42.Part0 = Part36
+Weld42.Part1 = Part63
+Weld42.part1 = Part63
+Weld43.Parent = Part36
+Weld43.C0 = CFrame.new(0, 0, 1.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld43.C1 = CFrame.new(0.5, 0.399999619, -1, 1, 1.91480844e-14, 4.56097942e-13, 1.91480844e-14, 1, -9.95098318e-13, 4.56097942e-13, -9.95098318e-13, 1)
+Weld43.Part0 = Part36
+Weld43.Part1 = Part67
+Weld43.part1 = Part67
+Part44.Name = "Smooth Block Model"
+Part44.Parent = Model21
+Part44.CFrame = CFrame.new(-27.0999756, 5.00006819, 27.5, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part44.Position = Vector3.new(-27.0999755859375, 5.000068187713623, 27.5)
+Part44.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part44.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part44.Anchored = true
+Part44.BrickColor = BrickColor.new("Bright green")
+Part44.CanCollide = false
+Part44.brickColor = BrickColor.new("Bright green")
+Snap45.Parent = Part44
+Snap45.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap45.C1 = CFrame.new(0, -0.200000763, 0, -1, 4.56097942e-13, 1.91480844e-14, -1.91480844e-14, -9.95098318e-13, 1, -4.56097942e-13, 1, -9.95098318e-13)
+Snap45.Part0 = Part44
+Snap45.Part1 = Part46
+Snap45.part1 = Part46
+Part46.Name = "Smooth Block Model"
+Part46.Parent = Model21
+Part46.CFrame = CFrame.new(-27.0999756, 5.40006876, 27.5, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part46.Position = Vector3.new(-27.0999755859375, 5.400068759918213, 27.5)
+Part46.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part46.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part46.Anchored = true
+Part46.BrickColor = BrickColor.new("Bright green")
+Part46.CanCollide = false
+Part46.brickColor = BrickColor.new("Bright green")
+Snap47.Parent = Part46
+Snap47.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap47.C1 = CFrame.new(0, -0.199999809, 0, -4.56097942e-13, 1, -9.95098318e-13, -1.91480844e-14, -9.95098318e-13, 1, 1, -4.56097942e-13, -1.91480844e-14)
+Snap47.Part0 = Part46
+Snap47.Part1 = Part48
+Snap47.part1 = Part48
+Part48.Name = "Torso"
+Part48.Parent = Model21
+Part48.CFrame = CFrame.new(-27.0999756, 5.80006838, 27.5, 8.36179541e-13, 3.51048197e-14, -1, -1.82434688e-12, 1, -3.51048197e-14, 1, -1.82434688e-12, -8.36179541e-13)
+Part48.Orientation = Vector3.new(0, -90, 0)
+Part48.Position = Vector3.new(-27.0999755859375, 5.800068378448486, 27.5)
+Part48.Rotation = Vector3.new(0, -90, 0)
+Part48.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part48.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part48.Anchored = true
+Part48.BrickColor = BrickColor.new("Bright green")
+Part48.brickColor = BrickColor.new("Bright green")
+Part49.Name = "Smooth Block Model"
+Part49.Parent = Model21
+Part49.CFrame = CFrame.new(-25.0999756, 6.50006819, 26.5, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part49.Position = Vector3.new(-25.0999755859375, 6.500068187713623, 26.5)
+Part49.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part49.Size = Vector3.new(1, 1, 1)
+Part49.Anchored = true
+Part49.BrickColor = BrickColor.new("Bright red")
+Part49.CanCollide = false
+Part49.LeftSurface = Enum.SurfaceType.Inlet
+Part49.TopSurface = Enum.SurfaceType.Smooth
+Part49.brickColor = BrickColor.new("Bright red")
+Part49.Shape = Enum.PartType.Cylinder
+Snap50.Parent = Part49
+Snap50.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Snap50.C1 = CFrame.new(-1, -0.100000381, 1, -4.56097942e-13, -1.91480844e-14, 1, -9.95098318e-13, 1, -1.91480844e-14, -1, 9.95098318e-13, 4.56097942e-13)
+Snap50.Part0 = Part49
+Snap50.Part1 = Part77
+Snap50.part1 = Part77
+Part51.Name = "Smooth Block Model"
+Part51.Parent = Model21
+Part51.CFrame = CFrame.new(-27.0999756, 2.20012474, 27.5, 1, 5.42529041e-14, 1.29227748e-12, 5.42529041e-14, 1, -2.8194452e-12, 1.29227748e-12, -2.8194452e-12, 1)
+Part51.Position = Vector3.new(-27.0999755859375, 2.200124740600586, 27.5)
+Part51.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part51.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part51.Anchored = true
+Part51.BrickColor = BrickColor.new("Dark green")
+Part51.CanCollide = false
+Part51.brickColor = BrickColor.new("Dark green")
+Part52.Name = "Smooth Block Model"
+Part52.Parent = Model21
+Part52.CFrame = CFrame.new(-27.0999756, 1.80013275, 27.5, 1, 5.42529041e-14, 1.29227748e-12, 5.42529041e-14, 1, -2.8194452e-12, 1.29227748e-12, -2.8194452e-12, 1)
+Part52.Position = Vector3.new(-27.0999755859375, 1.8001327514648438, 27.5)
+Part52.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part52.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part52.Anchored = true
+Part52.BrickColor = BrickColor.new("Dark green")
+Part52.CanCollide = false
+Part52.brickColor = BrickColor.new("Dark green")
+Snap53.Parent = Part52
+Snap53.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap53.C1 = CFrame.new(0, -0.199991941, 0, -1, 1.36829382e-12, 5.74442498e-14, -5.74442498e-14, -2.98529495e-12, 1, -1.36829382e-12, 1, -2.98529495e-12)
+Snap53.Part0 = Part52
+Snap53.Part1 = Part51
+Snap53.part1 = Part51
+Part54.Name = "Smooth Block Model"
+Part54.Parent = Model21
+Part54.CFrame = CFrame.new(-27.0999756, 1.40013552, 27.5, 1, 5.42529041e-14, 1.29227748e-12, 5.42529041e-14, 1, -2.8194452e-12, 1.29227748e-12, -2.8194452e-12, 1)
+Part54.Position = Vector3.new(-27.0999755859375, 1.4001355171203613, 27.5)
+Part54.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part54.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part54.Anchored = true
+Part54.BrickColor = BrickColor.new("Dark green")
+Part54.CanCollide = false
+Part54.brickColor = BrickColor.new("Dark green")
+Snap55.Parent = Part54
+Snap55.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap55.C1 = CFrame.new(0, -0.199997067, 0, -1, 1.36829382e-12, 5.74442498e-14, -5.74442498e-14, -2.98529495e-12, 1, -1.36829382e-12, 1, -2.98529495e-12)
+Snap55.Part0 = Part54
+Snap55.Part1 = Part52
+Snap55.part1 = Part52
+Snap56.Parent = Part54
+Snap56.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap56.C1 = CFrame.new(0, 0.200068235, 0, 1, 9.12195883e-13, -3.82961688e-14, 3.82961688e-14, -1.99019664e-12, -1, 9.12195883e-13, 1, 1.99019664e-12)
+Snap56.Part0 = Part54
+Snap56.Part1 = Part59
+Snap56.part1 = Part59
+Part57.Name = "Smooth Block Model"
+Part57.Parent = Model21
+Part57.CFrame = CFrame.new(-24.0999756, 4.40006876, 25, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part57.Orientation = Vector3.new(0, 180, 0)
+Part57.Position = Vector3.new(-24.0999755859375, 4.400068759918213, 25)
+Part57.Rotation = Vector3.new(180, 0, 180)
+Part57.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part57.Size = Vector3.new(1, 0.800000011920929, 2)
+Part57.Anchored = true
+Part57.BottomSurface = Enum.SurfaceType.Smooth
+Part57.BrickColor = BrickColor.new("Br. yellowish green")
+Part57.CanCollide = false
+Part57.RightSurface = Enum.SurfaceType.Weld
+Part57.brickColor = BrickColor.new("Br. yellowish green")
+Weld58.Parent = Part57
+Weld58.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld58.C1 = CFrame.new(-0.5, 0, 2, -1, 9.95098318e-13, 4.56097942e-13, -9.95098318e-13, 1, -1.91480844e-14, 4.56097942e-13, 1.91480844e-14, -1)
+Weld58.Part0 = Part57
+Weld58.Part1 = Part27
+Weld58.part1 = Part27
+Part59.Name = "Smooth Block Model"
+Part59.Parent = Model21
+Part59.CFrame = CFrame.new(-27.0999756, 1.00006723, 27.5, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part59.Position = Vector3.new(-27.0999755859375, 1.0000672340393066, 27.5)
+Part59.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part59.Size = Vector3.new(3, 0.4000000059604645, 3)
+Part59.Anchored = true
+Part59.BrickColor = BrickColor.new("Dark green")
+Part59.CanCollide = false
+Part59.brickColor = BrickColor.new("Dark green")
+Part60.Name = "Smooth Block Model"
+Part60.Parent = Model21
+Part60.CFrame = CFrame.new(-27.0999756, 0.600102425, 27.5, 1, 5.42529041e-14, 1.29227748e-12, 5.42529041e-14, 1, -2.8194452e-12, 1.29227748e-12, -2.8194452e-12, 1)
+Part60.Position = Vector3.new(-27.0999755859375, 0.600102424621582, 27.5)
+Part60.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part60.Size = Vector3.new(5, 0.4000000059604645, 5)
+Part60.Anchored = true
+Part60.BrickColor = BrickColor.new("Dark green")
+Part60.CanCollide = false
+Part60.brickColor = BrickColor.new("Dark green")
+Snap61.Parent = Part60
+Snap61.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap61.C1 = CFrame.new(0, -0.199964762, 0, -1, 9.12195883e-13, 3.82961688e-14, -3.82961688e-14, -1.99019664e-12, 1, -9.12195883e-13, 1, -1.99019664e-12)
+Snap61.Part0 = Part60
+Snap61.Part1 = Part59
+Snap61.part1 = Part59
+Snap62.Parent = Part60
+Snap62.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap62.C1 = CFrame.new(0, 0.199995697, 0, 1, 1.36829382e-12, -5.74442498e-14, 5.74442498e-14, -2.98529495e-12, -1, 1.36829382e-12, 1, 2.98529495e-12)
+Snap62.Part0 = Part60
+Snap62.Part1 = Part79
+Snap62.part1 = Part79
+Part63.Name = "Smooth Block Model"
+Part63.Parent = Model21
+Part63.CFrame = CFrame.new(-27.5999756, 4.40006876, 29.5, -8.36179541e-13, 3.51048197e-14, 1, 1.82434688e-12, 1, 3.51048197e-14, -1, -1.82434688e-12, 8.36179541e-13)
+Part63.Orientation = Vector3.new(0, 90, 0)
+Part63.Position = Vector3.new(-27.5999755859375, 4.400068759918213, 29.5)
+Part63.Rotation = Vector3.new(0, 90, 0)
+Part63.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part63.Size = Vector3.new(1, 0.800000011920929, 2)
+Part63.Anchored = true
+Part63.BrickColor = BrickColor.new("Br. yellowish green")
+Part63.CanCollide = false
+Part63.brickColor = BrickColor.new("Br. yellowish green")
+Snap64.Parent = Part63
+Snap64.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap64.C1 = CFrame.new(0, 0.200000286, -0.5, -4.56097942e-13, 1, -1.91480844e-14, 9.95098318e-13, 1.91480844e-14, -1, -1, 4.56097942e-13, 9.95098318e-13)
+Snap64.Part0 = Part63
+Snap64.Part1 = Part67
+Snap64.part1 = Part67
+Part65.Name = "Smooth Block Model"
+Part65.Parent = Model21
+Part65.CFrame = CFrame.new(-25.0999756, 6.50006819, 28.5, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part65.Position = Vector3.new(-25.0999755859375, 6.500068187713623, 28.5)
+Part65.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part65.Size = Vector3.new(1, 1, 1)
+Part65.Anchored = true
+Part65.BrickColor = BrickColor.new("Black")
+Part65.CanCollide = false
+Part65.LeftSurface = Enum.SurfaceType.Inlet
+Part65.TopSurface = Enum.SurfaceType.Smooth
+Part65.brickColor = BrickColor.new("Black")
+Part65.Shape = Enum.PartType.Cylinder
+Snap66.Parent = Part65
+Snap66.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Snap66.C1 = CFrame.new(-1, -0.100000381, -1, -4.56097942e-13, -1.91480844e-14, 1, -9.95098318e-13, 1, -1.91480844e-14, -1, 9.95098318e-13, 4.56097942e-13)
+Snap66.Part0 = Part65
+Snap66.Part1 = Part77
+Snap66.part1 = Part77
+Part67.Name = "Smooth Block Model"
+Part67.Parent = Model21
+Part67.CFrame = CFrame.new(-27.5999756, 3.80006886, 30, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part67.Position = Vector3.new(-27.5999755859375, 3.8000688552856445, 30)
+Part67.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part67.Size = Vector3.new(2, 0.4000000059604645, 2)
+Part67.Anchored = true
+Part67.BottomSurface = Enum.SurfaceType.Smooth
+Part67.BrickColor = BrickColor.new("Br. yellowish green")
+Part67.CanCollide = false
+Part67.FrontSurface = Enum.SurfaceType.Weld
+Part67.brickColor = BrickColor.new("Br. yellowish green")
+Snap68.Parent = Part67
+Snap68.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap68.C1 = CFrame.new(0.5, -0.400000572, -1, 4.56097942e-13, -1, 9.95098318e-13, -1.91480844e-14, -9.95098318e-13, 1, -1, 4.56097942e-13, 1.91480844e-14)
+Snap68.Part0 = Part67
+Snap68.Part1 = Part72
+Snap68.part1 = Part72
+Part69.Name = "Smooth Block Model"
+Part69.Parent = Model21
+Part69.CFrame = CFrame.new(-27.5999756, 5.00006819, 30, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part69.Position = Vector3.new(-27.5999755859375, 5.000068187713623, 30)
+Part69.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part69.Size = Vector3.new(2, 0.4000000059604645, 2)
+Part69.Anchored = true
+Part69.BrickColor = BrickColor.new("Br. yellowish green")
+Part69.CanCollide = false
+Part69.TopSurface = Enum.SurfaceType.Smooth
+Part69.brickColor = BrickColor.new("Br. yellowish green")
+Snap70.Parent = Part69
+Snap70.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap70.C1 = CFrame.new(-0.5, 0.399999619, 0, -4.56097942e-13, -1, -9.95098318e-13, 1.91480844e-14, -9.95098318e-13, -1, 1, 4.56097942e-13, -1.91480844e-14)
+Snap70.Part0 = Part69
+Snap70.Part1 = Part63
+Snap70.part1 = Part63
+Snap71.Parent = Part69
+Snap71.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap71.C1 = CFrame.new(0.5, 0.399999619, -1, -4.56097942e-13, -1, -9.95098318e-13, 1.91480844e-14, -9.95098318e-13, -1, 1, 4.56097942e-13, -1.91480844e-14)
+Snap71.Part0 = Part69
+Snap71.Part1 = Part72
+Snap71.part1 = Part72
+Part72.Name = "Smooth Block Model"
+Part72.Parent = Model21
+Part72.CFrame = CFrame.new(-26.5999756, 4.40006876, 30.5, -8.36179541e-13, 3.51048197e-14, 1, 1.82434688e-12, 1, 3.51048197e-14, -1, -1.82434688e-12, 8.36179541e-13)
+Part72.Orientation = Vector3.new(0, 90, 0)
+Part72.Position = Vector3.new(-26.5999755859375, 4.400068759918213, 30.5)
+Part72.Rotation = Vector3.new(0, 90, 0)
+Part72.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part72.Size = Vector3.new(1, 0.800000011920929, 4)
+Part72.Anchored = true
+Part72.BackSurface = Enum.SurfaceType.Weld
+Part72.BrickColor = BrickColor.new("Br. yellowish green")
+Part72.CanCollide = false
+Part72.brickColor = BrickColor.new("Br. yellowish green")
+Part73.Name = "Smooth Block Model"
+Part73.Parent = Model21
+Part73.CFrame = CFrame.new(-24.0999756, 4.40006876, 30, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part73.Orientation = Vector3.new(0, 180, 0)
+Part73.Position = Vector3.new(-24.0999755859375, 4.400068759918213, 30)
+Part73.Rotation = Vector3.new(180, 0, 180)
+Part73.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part73.Size = Vector3.new(1, 0.800000011920929, 2)
+Part73.Anchored = true
+Part73.BottomSurface = Enum.SurfaceType.Smooth
+Part73.BrickColor = BrickColor.new("Br. yellowish green")
+Part73.CanCollide = false
+Part73.RightSurface = Enum.SurfaceType.Weld
+Part73.TopSurface = Enum.SurfaceType.Smooth
+Part73.brickColor = BrickColor.new("Br. yellowish green")
+Weld74.Parent = Part73
+Weld74.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld74.C1 = CFrame.new(0.5, 0, 2, -1, 9.95098318e-13, 4.56097942e-13, -9.95098318e-13, 1, -1.91480844e-14, 4.56097942e-13, 1.91480844e-14, -1)
+Weld74.Part0 = Part73
+Weld74.Part1 = Part72
+Weld74.part1 = Part72
+Humanoid75.Parent = Model21
+Humanoid75.Health = 0
+Humanoid75.MaxHealth = 0
+Humanoid75.Torso = Part48
+Humanoid75.maxHealth = 0
+ObjectValue76.Name = "IsaDalek"
+ObjectValue76.Parent = Model21
+Part77.Name = "Head"
+Part77.Parent = Model21
+Part77.CFrame = CFrame.new(-26.5999756, 6.60006857, 27.5, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part77.Orientation = Vector3.new(0, 180, 0)
+Part77.Position = Vector3.new(-26.5999755859375, 6.60006856918335, 27.5)
+Part77.Rotation = Vector3.new(180, 0, 180)
+Part77.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part77.Size = Vector3.new(2, 1.2000000476837158, 3)
+Part77.Anchored = true
+Part77.BrickColor = BrickColor.new("Bright red")
+Part77.LeftSurface = Enum.SurfaceType.Studs
+Part77.TopSurface = Enum.SurfaceType.Smooth
+Part77.brickColor = BrickColor.new("Bright red")
+Snap78.Parent = Part77
+Snap78.C0 = CFrame.new(0, -0.600000024, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap78.C1 = CFrame.new(0, 0.200000286, -0.5, -4.56097942e-13, -1, 9.95098318e-13, -1.91480844e-14, 9.95098318e-13, -1, 1, 4.56097942e-13, 1.91480844e-14)
+Snap78.Part0 = Part77
+Snap78.Part1 = Part48
+Snap78.part1 = Part48
+Part79.Name = "Smooth Block Model"
+Part79.Parent = Model21
+Part79.CFrame = CFrame.new(-27.0999756, 0.200106621, 27.5, 1, 5.42529041e-14, 1.29227748e-12, 5.42529041e-14, 1, -2.8194452e-12, 1.29227748e-12, -2.8194452e-12, 1)
+Part79.Position = Vector3.new(-27.0999755859375, 0.20010662078857422, 27.5)
+Part79.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part79.Size = Vector3.new(5, 0.4000000059604645, 5)
+Part79.Anchored = true
+Part79.BottomSurface = Enum.SurfaceType.Smooth
+Part79.BrickColor = BrickColor.new("Dark green")
+Part79.CanCollide = false
+Part79.brickColor = BrickColor.new("Dark green")
+Model80.Parent = Model19
+Model80.PrimaryPart = Part119
+Model81.Name = "R.B.O."
+Model81.Parent = Model80
+Model81.PrimaryPart = Part119
+Part82.Name = "Smooth Block Model"
+Part82.Parent = Model81
+Part82.CFrame = CFrame.new(-7.59997559, 5.00006819, 30, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part82.Orientation = Vector3.new(0, 180, 0)
+Part82.Position = Vector3.new(-7.5999755859375, 5.000068187713623, 30)
+Part82.Rotation = Vector3.new(180, 0, 180)
+Part82.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part82.Size = Vector3.new(2, 0.4000000059604645, 2)
+Part82.Anchored = true
+Part82.BrickColor = BrickColor.new("Br. yellowish green")
+Part82.CanCollide = false
+Part82.TopSurface = Enum.SurfaceType.Smooth
+Part82.brickColor = BrickColor.new("Br. yellowish green")
+Snap83.Parent = Part82
+Snap83.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap83.C1 = CFrame.new(-0.5, 0.399999619, -1, -4.56097942e-13, -1, 9.95098318e-13, -1.91480844e-14, 9.95098318e-13, -1, 1, 4.56097942e-13, 1.91480844e-14)
+Snap83.Part0 = Part82
+Snap83.Part1 = Part88
+Snap83.part1 = Part88
+Part84.Name = "Smooth Block Model"
+Part84.Parent = Model81
+Part84.CFrame = CFrame.new(-7.59997559, 4.40006876, 29.5, 8.36179541e-13, 3.51048197e-14, -1, -1.82434688e-12, 1, -3.51048197e-14, 1, -1.82434688e-12, -8.36179541e-13)
+Part84.Orientation = Vector3.new(0, -90, 0)
+Part84.Position = Vector3.new(-7.5999755859375, 4.400068759918213, 29.5)
+Part84.Rotation = Vector3.new(0, -90, 0)
+Part84.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part84.Size = Vector3.new(1, 0.800000011920929, 2)
+Part84.Anchored = true
+Part84.BrickColor = BrickColor.new("Br. yellowish green")
+Part84.CanCollide = false
+Part84.brickColor = BrickColor.new("Br. yellowish green")
+Snap85.Parent = Part84
+Snap85.C0 = CFrame.new(0, 0.400000006, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap85.C1 = CFrame.new(0, -0.199999332, 0.5, 4.56097942e-13, 1, -1.91480844e-14, 9.95098318e-13, -1.91480844e-14, 1, 1, 4.56097942e-13, 9.95098318e-13)
+Snap85.Part0 = Part84
+Snap85.Part1 = Part82
+Snap85.part1 = Part82
+Snap86.Parent = Part84
+Snap86.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap86.C1 = CFrame.new(0, 0.200000286, 0.5, -4.56097942e-13, 1, 1.91480844e-14, -9.95098318e-13, -1.91480844e-14, -1, -1, 4.56097942e-13, -9.95098318e-13)
+Snap86.Part0 = Part84
+Snap86.Part1 = Part91
+Snap86.part1 = Part91
+Weld87.Parent = Part84
+Weld87.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld87.C1 = CFrame.new(-0.5, 0.200000763, -1.5, 1, -1.91480844e-14, 4.56097942e-13, -1.91480844e-14, 1, 9.95098318e-13, 4.56097942e-13, 9.95098318e-13, 1)
+Weld87.Part0 = Part84
+Weld87.Part1 = Part98
+Weld87.part1 = Part98
+Part88.Name = "Smooth Block Model"
+Part88.Parent = Model81
+Part88.CFrame = CFrame.new(-8.59997559, 4.40006876, 30.5, 8.36179541e-13, 3.51048197e-14, -1, -1.82434688e-12, 1, -3.51048197e-14, 1, -1.82434688e-12, -8.36179541e-13)
+Part88.Orientation = Vector3.new(0, -90, 0)
+Part88.Position = Vector3.new(-8.5999755859375, 4.400068759918213, 30.5)
+Part88.Rotation = Vector3.new(0, -90, 0)
+Part88.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part88.Size = Vector3.new(1, 0.800000011920929, 4)
+Part88.Anchored = true
+Part88.BackSurface = Enum.SurfaceType.Weld
+Part88.BrickColor = BrickColor.new("Br. yellowish green")
+Part88.CanCollide = false
+Part88.brickColor = BrickColor.new("Br. yellowish green")
+Snap89.Parent = Part88
+Snap89.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap89.C1 = CFrame.new(1, 0.200000286, -0.5, -4.56097942e-13, 1, 1.91480844e-14, -9.95098318e-13, -1.91480844e-14, -1, -1, 4.56097942e-13, -9.95098318e-13)
+Snap89.Part0 = Part88
+Snap89.Part1 = Part91
+Snap89.part1 = Part91
+Weld90.Parent = Part88
+Weld90.C0 = CFrame.new(0, 0, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld90.C1 = CFrame.new(0.5, 0, 0.5, 4.56097942e-13, 1.91480844e-14, -1, -9.95098318e-13, 1, -1.91480844e-14, 1, -9.95098318e-13, -4.56097942e-13)
+Weld90.Part0 = Part88
+Weld90.Part1 = Part115
+Weld90.part1 = Part115
+Part91.Name = "Smooth Block Model"
+Part91.Parent = Model81
+Part91.CFrame = CFrame.new(-7.59997559, 3.80006886, 30, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part91.Orientation = Vector3.new(0, 180, 0)
+Part91.Position = Vector3.new(-7.5999755859375, 3.8000688552856445, 30)
+Part91.Rotation = Vector3.new(180, 0, 180)
+Part91.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part91.Size = Vector3.new(2, 0.4000000059604645, 2)
+Part91.Anchored = true
+Part91.BackSurface = Enum.SurfaceType.Weld
+Part91.BottomSurface = Enum.SurfaceType.Smooth
+Part91.BrickColor = BrickColor.new("Br. yellowish green")
+Part91.CanCollide = false
+Part91.brickColor = BrickColor.new("Br. yellowish green")
+Part92.Name = "Smooth Block Model"
+Part92.Parent = Model81
+Part92.CFrame = CFrame.new(-8.09997559, 2.60015202, 27.5, -1, 5.42529041e-14, -1.29227748e-12, -5.42529041e-14, 1, 2.8194452e-12, -1.29227748e-12, -2.8194452e-12, -1)
+Part92.Orientation = Vector3.new(0, 180, 0)
+Part92.Position = Vector3.new(-8.0999755859375, 2.600152015686035, 27.5)
+Part92.Rotation = Vector3.new(180, 0, 180)
+Part92.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part92.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part92.Anchored = true
+Part92.BrickColor = BrickColor.new("Bright green")
+Part92.CanCollide = false
+Part92.brickColor = BrickColor.new("Bright green")
+Snap93.Parent = Part92
+Snap93.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap93.C1 = CFrame.new(0, -0.199916601, 0, -1, 9.12195883e-13, -3.82961688e-14, 3.82961688e-14, 1.99019664e-12, 1, -9.12195883e-13, 1, 1.99019664e-12)
+Snap93.Part0 = Part92
+Snap93.Part1 = Part95
+Snap93.part1 = Part95
+Snap94.Parent = Part92
+Snap94.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap94.C1 = CFrame.new(0, 0.200026751, 0, 1, 1.36829382e-12, 5.74442498e-14, -5.74442498e-14, 2.98529495e-12, -1, 1.36829382e-12, 1, -2.98529495e-12)
+Snap94.Part0 = Part92
+Snap94.Part1 = Part110
+Snap94.part1 = Part110
+Part95.Name = "Smooth Block Model"
+Part95.Parent = Model81
+Part95.CFrame = CFrame.new(-8.09997559, 3.00006866, 27.5, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part95.Orientation = Vector3.new(0, 180, 0)
+Part95.Position = Vector3.new(-8.0999755859375, 3.0000686645507812, 27.5)
+Part95.Rotation = Vector3.new(180, 0, 180)
+Part95.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part95.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part95.Anchored = true
+Part95.BrickColor = BrickColor.new("Bright green")
+Part95.CanCollide = false
+Part95.brickColor = BrickColor.new("Bright green")
+Snap96.Parent = Part95
+Snap96.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap96.C1 = CFrame.new(0, -0.200000048, 0, -1, 4.56097942e-13, -1.91480844e-14, 1.91480844e-14, 9.95098318e-13, 1, -4.56097942e-13, 1, 9.95098318e-13)
+Snap96.Part0 = Part95
+Snap96.Part1 = Part97
+Snap96.part1 = Part97
+Part97.Name = "Smooth Block Model"
+Part97.Parent = Model81
+Part97.CFrame = CFrame.new(-8.09997559, 3.40006828, 27.5, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part97.Orientation = Vector3.new(0, 180, 0)
+Part97.Position = Vector3.new(-8.0999755859375, 3.4000682830810547, 27.5)
+Part97.Rotation = Vector3.new(180, 0, 180)
+Part97.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part97.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part97.Anchored = true
+Part97.BrickColor = BrickColor.new("Bright green")
+Part97.CanCollide = false
+Part97.brickColor = BrickColor.new("Bright green")
+Part98.Name = "Smooth Block Model"
+Part98.Parent = Model81
+Part98.CFrame = CFrame.new(-8.09997559, 4.200068, 27.5, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part98.Orientation = Vector3.new(0, 180, 0)
+Part98.Position = Vector3.new(-8.0999755859375, 4.20006799697876, 27.5)
+Part98.Rotation = Vector3.new(180, 0, 180)
+Part98.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part98.Size = Vector3.new(3, 1.2000000476837158, 3)
+Part98.Anchored = true
+Part98.BackSurface = Enum.SurfaceType.Weld
+Part98.BrickColor = BrickColor.new("Bright green")
+Part98.CanCollide = false
+Part98.FrontSurface = Enum.SurfaceType.Weld
+Part98.brickColor = BrickColor.new("Bright green")
+Decal99.Parent = Part98
+Decal99.Texture = "http://www.roblox.com/asset/?id=2015837"
+Decal99.Face = Enum.NormalId.Right
+Weld100.Parent = Part98
+Weld100.C0 = CFrame.new(0, 0, -1.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld100.C1 = CFrame.new(0.5, 0.399999619, 1, -1, -1.91480844e-14, -4.56097942e-13, 1.91480844e-14, 1, -9.95098318e-13, -4.56097942e-13, 9.95098318e-13, -1)
+Weld100.Part0 = Part98
+Weld100.Part1 = Part91
+Weld100.part1 = Part91
+Snap101.Parent = Part98
+Snap101.C0 = CFrame.new(0, -0.600000024, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap101.C1 = CFrame.new(0, 0.199999809, 0, 1, 4.56097942e-13, 1.91480844e-14, -1.91480844e-14, 9.95098318e-13, -1, 4.56097942e-13, 1, -9.95098318e-13)
+Snap101.Part0 = Part98
+Snap101.Part1 = Part97
+Snap101.part1 = Part97
+Part102.Name = "Smooth Block Model"
+Part102.Parent = Model81
+Part102.CFrame = CFrame.new(-8.09997559, 5.00006819, 27.5, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part102.Orientation = Vector3.new(0, 180, 0)
+Part102.Position = Vector3.new(-8.0999755859375, 5.000068187713623, 27.5)
+Part102.Rotation = Vector3.new(180, 0, 180)
+Part102.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part102.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part102.Anchored = true
+Part102.BrickColor = BrickColor.new("Bright green")
+Part102.CanCollide = false
+Part102.brickColor = BrickColor.new("Bright green")
+Snap103.Parent = Part102
+Snap103.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap103.C1 = CFrame.new(0, 0.600000381, 0, 1, 4.56097942e-13, 1.91480844e-14, -1.91480844e-14, 9.95098318e-13, -1, 4.56097942e-13, 1, -9.95098318e-13)
+Snap103.Part0 = Part102
+Snap103.Part1 = Part98
+Snap103.part1 = Part98
+Part104.Name = "Smooth Block Model"
+Part104.Parent = Model81
+Part104.CFrame = CFrame.new(-8.09997559, 5.40006876, 27.5, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part104.Orientation = Vector3.new(0, 180, 0)
+Part104.Position = Vector3.new(-8.0999755859375, 5.400068759918213, 27.5)
+Part104.Rotation = Vector3.new(180, 0, 180)
+Part104.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part104.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part104.Anchored = true
+Part104.BrickColor = BrickColor.new("Bright green")
+Part104.CanCollide = false
+Part104.brickColor = BrickColor.new("Bright green")
+Snap105.Parent = Part104
+Snap105.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap105.C1 = CFrame.new(0, 0.200000763, 0, 1, 4.56097942e-13, 1.91480844e-14, -1.91480844e-14, 9.95098318e-13, -1, 4.56097942e-13, 1, -9.95098318e-13)
+Snap105.Part0 = Part104
+Snap105.Part1 = Part102
+Snap105.part1 = Part102
+Snap106.Parent = Part104
+Snap106.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap106.C1 = CFrame.new(0, -0.199999809, 0, -4.56097942e-13, 1, 9.95098318e-13, 1.91480844e-14, 9.95098318e-13, 1, 1, -4.56097942e-13, 1.91480844e-14)
+Snap106.Part0 = Part104
+Snap106.Part1 = Part107
+Snap106.part1 = Part107
+Part107.Name = "Torso"
+Part107.Parent = Model81
+Part107.CFrame = CFrame.new(-8.09997559, 5.80006838, 27.5, -8.36179541e-13, 3.51048197e-14, 1, 1.82434688e-12, 1, 3.51048197e-14, -1, -1.82434688e-12, 8.36179541e-13)
+Part107.Orientation = Vector3.new(0, 90, 0)
+Part107.Position = Vector3.new(-8.0999755859375, 5.800068378448486, 27.5)
+Part107.Rotation = Vector3.new(0, 90, 0)
+Part107.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part107.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part107.Anchored = true
+Part107.BrickColor = BrickColor.new("Bright green")
+Part107.brickColor = BrickColor.new("Bright green")
+Snap108.Parent = Part107
+Snap108.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap108.C1 = CFrame.new(0.5, -0.600000381, 0, 4.56097942e-13, 1, 1.91480844e-14, -9.95098318e-13, 1.91480844e-14, 1, 1, 4.56097942e-13, -9.95098318e-13)
+Snap108.Part0 = Part107
+Snap108.Part1 = Part136
+Snap108.part1 = Part136
+Part109.Name = "Smooth Block Model"
+Part109.Parent = Model81
+Part109.CFrame = CFrame.new(-10.0999756, 6.50006819, 28.5, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part109.Orientation = Vector3.new(0, 180, 0)
+Part109.Position = Vector3.new(-10.0999755859375, 6.500068187713623, 28.5)
+Part109.Rotation = Vector3.new(180, 0, 180)
+Part109.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part109.Size = Vector3.new(1, 1, 1)
+Part109.Anchored = true
+Part109.BrickColor = BrickColor.new("Black")
+Part109.CanCollide = false
+Part109.LeftSurface = Enum.SurfaceType.Inlet
+Part109.TopSurface = Enum.SurfaceType.Smooth
+Part109.brickColor = BrickColor.new("Black")
+Part109.Shape = Enum.PartType.Cylinder
+Part110.Name = "Smooth Block Model"
+Part110.Parent = Model81
+Part110.CFrame = CFrame.new(-8.09997559, 2.20012474, 27.5, -1, 5.42529041e-14, -1.29227748e-12, -5.42529041e-14, 1, 2.8194452e-12, -1.29227748e-12, -2.8194452e-12, -1)
+Part110.Orientation = Vector3.new(0, 180, 0)
+Part110.Position = Vector3.new(-8.0999755859375, 2.200124740600586, 27.5)
+Part110.Rotation = Vector3.new(180, 0, 180)
+Part110.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part110.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part110.Anchored = true
+Part110.BrickColor = BrickColor.new("Dark green")
+Part110.CanCollide = false
+Part110.brickColor = BrickColor.new("Dark green")
+Part111.Name = "Smooth Block Model"
+Part111.Parent = Model81
+Part111.CFrame = CFrame.new(-8.09997559, 1.80013275, 27.5, -1, 5.42529041e-14, -1.29227748e-12, -5.42529041e-14, 1, 2.8194452e-12, -1.29227748e-12, -2.8194452e-12, -1)
+Part111.Orientation = Vector3.new(0, 180, 0)
+Part111.Position = Vector3.new(-8.0999755859375, 1.8001327514648438, 27.5)
+Part111.Rotation = Vector3.new(180, 0, 180)
+Part111.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part111.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part111.Anchored = true
+Part111.BrickColor = BrickColor.new("Dark green")
+Part111.CanCollide = false
+Part111.brickColor = BrickColor.new("Dark green")
+Snap112.Parent = Part111
+Snap112.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap112.C1 = CFrame.new(0, -0.199991941, 0, -1, 1.36829382e-12, -5.74442498e-14, 5.74442498e-14, 2.98529495e-12, 1, -1.36829382e-12, 1, 2.98529495e-12)
+Snap112.Part0 = Part111
+Snap112.Part1 = Part110
+Snap112.part1 = Part110
+Snap113.Parent = Part111
+Snap113.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap113.C1 = CFrame.new(0, 0.199997067, 0, 1, 1.36829382e-12, 5.74442498e-14, -5.74442498e-14, 2.98529495e-12, -1, 1.36829382e-12, 1, -2.98529495e-12)
+Snap113.Part0 = Part111
+Snap113.Part1 = Part114
+Snap113.part1 = Part114
+Part114.Name = "Smooth Block Model"
+Part114.Parent = Model81
+Part114.CFrame = CFrame.new(-8.09997559, 1.40013552, 27.5, -1, 5.42529041e-14, -1.29227748e-12, -5.42529041e-14, 1, 2.8194452e-12, -1.29227748e-12, -2.8194452e-12, -1)
+Part114.Orientation = Vector3.new(0, 180, 0)
+Part114.Position = Vector3.new(-8.0999755859375, 1.4001355171203613, 27.5)
+Part114.Rotation = Vector3.new(180, 0, 180)
+Part114.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part114.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part114.Anchored = true
+Part114.BrickColor = BrickColor.new("Dark green")
+Part114.CanCollide = false
+Part114.brickColor = BrickColor.new("Dark green")
+Part115.Name = "Smooth Block Model"
+Part115.Parent = Model81
+Part115.CFrame = CFrame.new(-11.0999756, 4.40006876, 30, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part115.Position = Vector3.new(-11.0999755859375, 4.400068759918213, 30)
+Part115.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part115.Size = Vector3.new(1, 0.800000011920929, 2)
+Part115.Anchored = true
+Part115.BottomSurface = Enum.SurfaceType.Smooth
+Part115.BrickColor = BrickColor.new("Br. yellowish green")
+Part115.CanCollide = false
+Part115.RightSurface = Enum.SurfaceType.Weld
+Part115.brickColor = BrickColor.new("Br. yellowish green")
+Part116.Name = "Smooth Block Model"
+Part116.Parent = Model81
+Part116.CFrame = CFrame.new(-8.09997559, 1.00006723, 27.5, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part116.Orientation = Vector3.new(0, 180, 0)
+Part116.Position = Vector3.new(-8.0999755859375, 1.0000672340393066, 27.5)
+Part116.Rotation = Vector3.new(180, 0, 180)
+Part116.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part116.Size = Vector3.new(3, 0.4000000059604645, 3)
+Part116.Anchored = true
+Part116.BrickColor = BrickColor.new("Dark green")
+Part116.CanCollide = false
+Part116.brickColor = BrickColor.new("Dark green")
+Snap117.Parent = Part116
+Snap117.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap117.C1 = CFrame.new(0, -0.200068235, 0, -1, 9.12195883e-13, -3.82961688e-14, 3.82961688e-14, 1.99019664e-12, 1, -9.12195883e-13, 1, 1.99019664e-12)
+Snap117.Part0 = Part116
+Snap117.Part1 = Part114
+Snap117.part1 = Part114
+Snap118.Parent = Part116
+Snap118.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap118.C1 = CFrame.new(0, 0.199964762, 0, 1, 9.12195883e-13, 3.82961688e-14, -3.82961688e-14, 1.99019664e-12, -1, 9.12195883e-13, 1, -1.99019664e-12)
+Snap118.Part0 = Part116
+Snap118.Part1 = Part119
+Snap118.part1 = Part119
+Part119.Name = "Smooth Block Model"
+Part119.Parent = Model81
+Part119.CFrame = CFrame.new(-8.09997559, 0.600102425, 27.5, -1, 5.42529041e-14, -1.29227748e-12, -5.42529041e-14, 1, 2.8194452e-12, -1.29227748e-12, -2.8194452e-12, -1)
+Part119.Orientation = Vector3.new(0, 180, 0)
+Part119.Position = Vector3.new(-8.0999755859375, 0.600102424621582, 27.5)
+Part119.Rotation = Vector3.new(180, 0, 180)
+Part119.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part119.Size = Vector3.new(5, 0.4000000059604645, 5)
+Part119.Anchored = true
+Part119.BrickColor = BrickColor.new("Dark green")
+Part119.CanCollide = false
+Part119.brickColor = BrickColor.new("Dark green")
+Part120.Name = "Smooth Block Model"
+Part120.Parent = Model81
+Part120.CFrame = CFrame.new(-7.59997559, 4.40006876, 25.5, 8.36179541e-13, 3.51048197e-14, -1, -1.82434688e-12, 1, -3.51048197e-14, 1, -1.82434688e-12, -8.36179541e-13)
+Part120.Orientation = Vector3.new(0, -90, 0)
+Part120.Position = Vector3.new(-7.5999755859375, 4.400068759918213, 25.5)
+Part120.Rotation = Vector3.new(0, -90, 0)
+Part120.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part120.Size = Vector3.new(1, 0.800000011920929, 2)
+Part120.Anchored = true
+Part120.BrickColor = BrickColor.new("Br. yellowish green")
+Part120.CanCollide = false
+Part120.brickColor = BrickColor.new("Br. yellowish green")
+Weld121.Parent = Part120
+Weld121.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld121.C1 = CFrame.new(-0.5, 0.200000763, 1.5, -1, -1.91480844e-14, -4.56097942e-13, 1.91480844e-14, 1, -9.95098318e-13, -4.56097942e-13, 9.95098318e-13, -1)
+Weld121.Part0 = Part120
+Weld121.Part1 = Part98
+Weld121.part1 = Part98
+Snap122.Parent = Part120
+Snap122.C0 = CFrame.new(0, 0.400000006, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap122.C1 = CFrame.new(0, -0.199999332, -0.5, 4.56097942e-13, 1, -1.91480844e-14, 9.95098318e-13, -1.91480844e-14, 1, 1, 4.56097942e-13, 9.95098318e-13)
+Snap122.Part0 = Part120
+Snap122.Part1 = Part129
+Snap122.part1 = Part129
+Part123.Name = "Smooth Block Model"
+Part123.Parent = Model81
+Part123.CFrame = CFrame.new(-10.0999756, 6.50006819, 26.5, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part123.Orientation = Vector3.new(0, 180, 0)
+Part123.Position = Vector3.new(-10.0999755859375, 6.500068187713623, 26.5)
+Part123.Rotation = Vector3.new(180, 0, 180)
+Part123.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part123.Size = Vector3.new(1, 1, 1)
+Part123.Anchored = true
+Part123.BrickColor = BrickColor.new("Bright red")
+Part123.CanCollide = false
+Part123.LeftSurface = Enum.SurfaceType.Inlet
+Part123.TopSurface = Enum.SurfaceType.Smooth
+Part123.brickColor = BrickColor.new("Bright red")
+Part123.Shape = Enum.PartType.Cylinder
+Snap124.Parent = Part123
+Snap124.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Snap124.C1 = CFrame.new(-1, -0.100000381, -1, -4.56097942e-13, 1.91480844e-14, 1, 9.95098318e-13, 1, 1.91480844e-14, -1, -9.95098318e-13, 4.56097942e-13)
+Snap124.Part0 = Part123
+Snap124.Part1 = Part136
+Snap124.part1 = Part136
+Part125.Name = "Smooth Block Model"
+Part125.Parent = Model81
+Part125.CFrame = CFrame.new(-7.59997559, 3.80006886, 25, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part125.Orientation = Vector3.new(0, 180, 0)
+Part125.Position = Vector3.new(-7.5999755859375, 3.8000688552856445, 25)
+Part125.Rotation = Vector3.new(180, 0, 180)
+Part125.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part125.Size = Vector3.new(2, 0.4000000059604645, 2)
+Part125.Anchored = true
+Part125.BottomSurface = Enum.SurfaceType.Smooth
+Part125.BrickColor = BrickColor.new("Br. yellowish green")
+Part125.CanCollide = false
+Part125.FrontSurface = Enum.SurfaceType.Weld
+Part125.brickColor = BrickColor.new("Br. yellowish green")
+Weld126.Parent = Part125
+Weld126.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld126.C1 = CFrame.new(-0.5, -0.399999619, 1.5, -1, -1.91480844e-14, -4.56097942e-13, 1.91480844e-14, 1, -9.95098318e-13, -4.56097942e-13, 9.95098318e-13, -1)
+Weld126.Part0 = Part125
+Weld126.Part1 = Part98
+Weld126.part1 = Part98
+Snap127.Parent = Part125
+Snap127.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap127.C1 = CFrame.new(-0.5, -0.400000572, 0, 4.56097942e-13, -1, -9.95098318e-13, 1.91480844e-14, 9.95098318e-13, 1, -1, 4.56097942e-13, -1.91480844e-14)
+Snap127.Part0 = Part125
+Snap127.Part1 = Part120
+Snap127.part1 = Part120
+Snap128.Parent = Part125
+Snap128.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap128.C1 = CFrame.new(0.5, -0.400000572, -1, 4.56097942e-13, -1, -9.95098318e-13, 1.91480844e-14, 9.95098318e-13, 1, -1, 4.56097942e-13, -1.91480844e-14)
+Snap128.Part0 = Part125
+Snap128.Part1 = Part130
+Snap128.part1 = Part130
+Part129.Name = "Smooth Block Model"
+Part129.Parent = Model81
+Part129.CFrame = CFrame.new(-7.59997559, 5.00006819, 25, -1, 3.51048197e-14, -8.36179541e-13, -3.51048197e-14, 1, 1.82434688e-12, -8.36179541e-13, -1.82434688e-12, -1)
+Part129.Orientation = Vector3.new(0, 180, 0)
+Part129.Position = Vector3.new(-7.5999755859375, 5.000068187713623, 25)
+Part129.Rotation = Vector3.new(180, 0, 180)
+Part129.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part129.Size = Vector3.new(2, 0.4000000059604645, 2)
+Part129.Anchored = true
+Part129.BrickColor = BrickColor.new("Br. yellowish green")
+Part129.CanCollide = false
+Part129.TopSurface = Enum.SurfaceType.Smooth
+Part129.brickColor = BrickColor.new("Br. yellowish green")
+Part130.Name = "Smooth Block Model"
+Part130.Parent = Model81
+Part130.CFrame = CFrame.new(-8.59997559, 4.40006876, 24.5, 8.36179541e-13, 3.51048197e-14, -1, -1.82434688e-12, 1, -3.51048197e-14, 1, -1.82434688e-12, -8.36179541e-13)
+Part130.Orientation = Vector3.new(0, -90, 0)
+Part130.Position = Vector3.new(-8.5999755859375, 4.400068759918213, 24.5)
+Part130.Rotation = Vector3.new(0, -90, 0)
+Part130.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part130.Size = Vector3.new(1, 0.800000011920929, 4)
+Part130.Anchored = true
+Part130.BackSurface = Enum.SurfaceType.Weld
+Part130.BrickColor = BrickColor.new("Br. yellowish green")
+Part130.CanCollide = false
+Part130.brickColor = BrickColor.new("Br. yellowish green")
+Snap131.Parent = Part130
+Snap131.C0 = CFrame.new(0, 0.400000006, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap131.C1 = CFrame.new(1, -0.199999332, 0.5, 4.56097942e-13, 1, -1.91480844e-14, 9.95098318e-13, -1.91480844e-14, 1, 1, 4.56097942e-13, 9.95098318e-13)
+Snap131.Part0 = Part130
+Snap131.Part1 = Part129
+Snap131.part1 = Part129
+Weld132.Parent = Part130
+Weld132.C0 = CFrame.new(0, 0, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld132.C1 = CFrame.new(0.5, 0, -0.5, 4.56097942e-13, 1.91480844e-14, -1, -9.95098318e-13, 1, -1.91480844e-14, 1, -9.95098318e-13, -4.56097942e-13)
+Weld132.Part0 = Part130
+Weld132.Part1 = Part133
+Weld132.part1 = Part133
+Part133.Name = "Smooth Block Model"
+Part133.Parent = Model81
+Part133.CFrame = CFrame.new(-11.0999756, 4.40006876, 25, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part133.Position = Vector3.new(-11.0999755859375, 4.400068759918213, 25)
+Part133.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part133.Size = Vector3.new(1, 0.800000011920929, 2)
+Part133.Anchored = true
+Part133.BottomSurface = Enum.SurfaceType.Smooth
+Part133.BrickColor = BrickColor.new("Br. yellowish green")
+Part133.CanCollide = false
+Part133.RightSurface = Enum.SurfaceType.Weld
+Part133.TopSurface = Enum.SurfaceType.Smooth
+Part133.brickColor = BrickColor.new("Br. yellowish green")
+Humanoid134.Parent = Model81
+Humanoid134.Health = 0
+Humanoid134.MaxHealth = 0
+Humanoid134.Torso = Part107
+Humanoid134.maxHealth = 0
+ObjectValue135.Name = "IsaDalek"
+ObjectValue135.Parent = Model81
+Part136.Name = "Head"
+Part136.Parent = Model81
+Part136.CFrame = CFrame.new(-8.59997559, 6.60006857, 27.5, 1, 3.51048197e-14, 8.36179541e-13, 3.51048197e-14, 1, -1.82434688e-12, 8.36179541e-13, -1.82434688e-12, 1)
+Part136.Position = Vector3.new(-8.5999755859375, 6.60006856918335, 27.5)
+Part136.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part136.Size = Vector3.new(2, 1.2000000476837158, 3)
+Part136.Anchored = true
+Part136.BrickColor = BrickColor.new("Bright red")
+Part136.LeftSurface = Enum.SurfaceType.Studs
+Part136.TopSurface = Enum.SurfaceType.Smooth
+Part136.brickColor = BrickColor.new("Bright red")
+Snap137.Parent = Part136
+Snap137.C0 = CFrame.new(-1, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Snap137.C1 = CFrame.new(-0.5, 0.100000381, 1, -4.56097942e-13, -1.91480844e-14, 1, -9.95098318e-13, 1, -1.91480844e-14, -1, 9.95098318e-13, 4.56097942e-13)
+Snap137.Part0 = Part136
+Snap137.Part1 = Part109
+Snap137.part1 = Part109
+Part138.Name = "Smooth Block Model"
+Part138.Parent = Model81
+Part138.CFrame = CFrame.new(-8.09997559, 0.200106621, 27.5, -1, 5.42529041e-14, -1.29227748e-12, -5.42529041e-14, 1, 2.8194452e-12, -1.29227748e-12, -2.8194452e-12, -1)
+Part138.Orientation = Vector3.new(0, 180, 0)
+Part138.Position = Vector3.new(-8.0999755859375, 0.20010662078857422, 27.5)
+Part138.Rotation = Vector3.new(180, 0, 180)
+Part138.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part138.Size = Vector3.new(5, 0.4000000059604645, 5)
+Part138.Anchored = true
+Part138.BottomSurface = Enum.SurfaceType.Smooth
+Part138.BrickColor = BrickColor.new("Dark green")
+Part138.CanCollide = false
+Part138.brickColor = BrickColor.new("Dark green")
+Snap139.Parent = Part138
+Snap139.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap139.C1 = CFrame.new(0, -0.199995697, 0, -1, 1.36829382e-12, -5.74442498e-14, 5.74442498e-14, 2.98529495e-12, 1, -1.36829382e-12, 1, 2.98529495e-12)
+Snap139.Part0 = Part138
+Snap139.Part1 = Part119
+Snap139.part1 = Part119
+Part140.Name = "Smooth Block Model"
+Part140.Parent = Model1
+Part140.CFrame = CFrame.new(-17.5999985, 2.60047817, 28, 1, 2.55307792e-14, 6.08130571e-13, 2.55307792e-14, 1, -1.32679772e-12, 6.08130571e-13, -1.32679772e-12, 1)
+Part140.Position = Vector3.new(-17.599998474121094, 2.600478172302246, 28)
+Part140.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part140.Transparency = 10
+Part140.Size = Vector3.new(2, 1.2000000476837158, 4)
+Part140.BrickColor = BrickColor.new("White")
+Part140.brickColor = BrickColor.new("White")
+Glue141.Parent = Part140
+Glue141.C0 = CFrame.new(0, -0.600000024, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Glue141.C1 = CFrame.new(-0.5, 0, 0, -0, -0, 1, -1, -0, 0, -0, -1, 0)
+Glue141.Part0 = Part140
+Glue141.Part1 = Part17
+Glue141.part1 = Part17
+Glue141.F0 = Vector3.new(-1.0000014305114746, -2, -0)
+Glue141.F1 = Vector3.new(-1.0000007152557373, 2, 1.1920928955078125e-07)
+Glue141.F2 = Vector3.new(1.0000007152557373, 1.9999992847442627, 2.384185791015625e-07)
+Glue141.F3 = Vector3.new(1, -2.0000007152557373, 1.1920928955078125e-07)
+Model142.Parent = Model0
+Model142.PrimaryPart = Part161
+Model143.Name = "10"
+Model143.Parent = Model142
+Model143.PrimaryPart = Part144
+Part144.Name = "Head"
+Part144.Parent = Model143
+Part144.CFrame = CFrame.new(-17.5, 1.40047836, 31.5, -1, 2.55307792e-14, -6.08130571e-13, -2.55307792e-14, 1, 1.32679772e-12, -6.08130571e-13, -1.32679772e-12, -1)
+Part144.Orientation = Vector3.new(0, 180, 0)
+Part144.Position = Vector3.new(-17.5, 1.4004783630371094, 31.5)
+Part144.Rotation = Vector3.new(180, 0, 180)
+Part144.Color = Color3.new(0.427451, 0.431373, 0.423529)
+Part144.Transparency = 0.8999999761581421
+Part144.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part144.Anchored = true
+Part144.BackSurface = Enum.SurfaceType.Weld
+Part144.BrickColor = BrickColor.new("Dark grey")
+Part144.FrontSurface = Enum.SurfaceType.Weld
+Part144.LeftSurface = Enum.SurfaceType.Weld
+Part144.RightSurface = Enum.SurfaceType.Weld
+Part144.brickColor = BrickColor.new("Dark grey")
+Weld145.Parent = Part144
+Weld145.C0 = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld145.C1 = CFrame.new(0.0999999046, -0.0999999046, -3, 0, -1, 0, 1, -0, 0, 0, -0, 1)
+Weld145.Part0 = Part144
+Weld145.Part1 = Part17
+Weld145.part1 = Part17
+Weld146.Parent = Part144
+Weld146.C0 = CFrame.new(0.5, 0, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+Weld146.C1 = CFrame.new(0.5, 0, 0, 0, 0, -1, -0, -1, 0, -1, -0, 0)
+Weld146.Part0 = Part144
+Weld146.Part1 = Part152
+Weld146.part1 = Part152
+Weld147.Parent = Part144
+Weld147.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld147.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, -0, -1)
+Weld147.Part0 = Part144
+Weld147.Part1 = Part157
+Weld147.part1 = Part157
+Humanoid148.Parent = Model143
+Humanoid148.Health = 0
+Humanoid148.MaxHealth = 0
+Humanoid148.maxHealth = 0
+Part149.Name = "up"
+Part149.Parent = Model143
+Part149.CFrame = CFrame.new(-19.5, 1.40047836, 31.5, -1, 2.55307792e-14, -6.08130571e-13, -2.55307792e-14, 1, 1.32679772e-12, -6.08130571e-13, -1.32679772e-12, -1)
+Part149.Orientation = Vector3.new(0, 180, 0)
+Part149.Position = Vector3.new(-19.5, 1.4004783630371094, 31.5)
+Part149.Rotation = Vector3.new(180, 0, 180)
+Part149.Color = Color3.new(0.427451, 0.431373, 0.423529)
+Part149.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part149.Anchored = true
+Part149.BackSurface = Enum.SurfaceType.Inlet
+Part149.BrickColor = BrickColor.new("Dark grey")
+Part149.TopSurface = Enum.SurfaceType.Smooth
+Part149.brickColor = BrickColor.new("Dark grey")
+ClickDetector150.Parent = Part149
+Decal151.Parent = Part149
+Part152.Name = "down"
+Part152.Parent = Model143
+Part152.CFrame = CFrame.new(-18.5, 1.40047836, 31.5, 1, -2.55307792e-14, -6.08130571e-13, 2.55307792e-14, -1, 1.32679772e-12, 6.08130571e-13, 1.32679772e-12, -1)
+Part152.Orientation = Vector3.new(0, 180, 180)
+Part152.Position = Vector3.new(-18.5, 1.4004783630371094, 31.5)
+Part152.Rotation = Vector3.new(180, 0, 0)
+Part152.Color = Color3.new(0.427451, 0.431373, 0.423529)
+Part152.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part152.Anchored = true
+Part152.BackSurface = Enum.SurfaceType.Inlet
+Part152.BottomSurface = Enum.SurfaceType.Smooth
+Part152.BrickColor = BrickColor.new("Dark grey")
+Part152.TopSurface = Enum.SurfaceType.Inlet
+Part152.brickColor = BrickColor.new("Dark grey")
+Decal153.Parent = Part152
+ClickDetector154.Parent = Part152
+Part155.Name = "stop"
+Part155.Parent = Model143
+Part155.CFrame = CFrame.new(-15.5, 1.40047836, 31.5, 6.08130571e-13, 2.55307792e-14, -1, -1.32679772e-12, 1, -2.55307792e-14, 1, -1.32679772e-12, -6.08130571e-13)
+Part155.Orientation = Vector3.new(0, -90, 0)
+Part155.Position = Vector3.new(-15.5, 1.4004783630371094, 31.5)
+Part155.Rotation = Vector3.new(0, -90, 0)
+Part155.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part155.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part155.Anchored = true
+Part155.BrickColor = BrickColor.new("Bright red")
+Part155.TopSurface = Enum.SurfaceType.Smooth
+Part155.brickColor = BrickColor.new("Bright red")
+ClickDetector156.Parent = Part155
+Part157.Name = "start"
+Part157.Parent = Model143
+Part157.CFrame = CFrame.new(-16.5, 1.40047836, 31.5, 6.08130571e-13, 2.55307792e-14, -1, -1.32679772e-12, 1, -2.55307792e-14, 1, -1.32679772e-12, -6.08130571e-13)
+Part157.Orientation = Vector3.new(0, -90, 0)
+Part157.Position = Vector3.new(-16.5, 1.4004783630371094, 31.5)
+Part157.Rotation = Vector3.new(0, -90, 0)
+Part157.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part157.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part157.Anchored = true
+Part157.BrickColor = BrickColor.new("Dark green")
+Part157.TopSurface = Enum.SurfaceType.Smooth
+Part157.brickColor = BrickColor.new("Dark green")
+ClickDetector158.Parent = Part157
+Script159.Parent = Model143
+table.insert(cors,sandbox(Script159,function()
+bin = script.Parent
+local time = 10
+
+function update()
+	bin.Name = tostring(time)
+end
+
+function explode()
+script.Parent.Parent.con.con2.BlackHole.Disabled= false
+local a = script.Parent.Parent.con.con2:clone()
+local deb = false
+if deb == true then return end
+deb = true
+local new = a:clone()
+new.Parent = script.Parent.Parent.delete
+wait()
+deb = false
+end
+
+local running = false
+
+function activated()
+
+	running = true
+
+	while (time > 0) do
+		wait(1)
+		if (running == false) then return end
+		time = time - 1
+		update()
+	end
+
+	explode()
+
+end
+
+function deactivated()
+	running = false
+end
+
+function up()
+	if (running == true) then return end
+	time = time + 10
+	update()
+end
+
+function down()
+	if (running == true) then return end
+	time = time - 10
+	update()
+end
+
+
+bin.start.ClickDetector.MouseClick:connect(activated)
+bin.stop.ClickDetector.MouseClick:connect(deactivated)
+bin.up.ClickDetector.MouseClick:connect(up)
+bin.down.ClickDetector.MouseClick:connect(down)
+
+end))
+Model160.Name = "con"
+Model160.Parent = Model142
+Model160.PrimaryPart = Part161
+Part161.Name = "con2"
+Part161.Parent = Model160
+Part161.CFrame = CFrame.new(-17.7999573, 5.00000048, 28, -1.1402448e-12, 1, -4.78702093e-14, 2.48774569e-12, 4.78702093e-14, -1, -1, 1.1402448e-12, 2.48774569e-12)
+Part161.Orientation = Vector3.new(90, 90, 0)
+Part161.Position = Vector3.new(-17.799957275390625, 5.000000476837158, 28)
+Part161.Rotation = Vector3.new(90, 0, -90)
+Part161.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part161.Size = Vector3.new(2, 2, 2)
+Part161.Anchored = true
+Part161.BottomSurface = Enum.SurfaceType.Smooth
+Part161.BrickColor = BrickColor.new("Black")
+Part161.CanCollide = false
+Part161.TopSurface = Enum.SurfaceType.Smooth
+Part161.brickColor = BrickColor.new("Black")
+Part161.Shape = Enum.PartType.Ball
+Script162.Name = "BlackHole"
+Script162.Parent = Part161
+Script162.Enabled = false
+table.insert(cors,sandbox(Script162,function()
+function onTouched(part)
+
+	local h = part.Parent:findFirstChild("Humanoid")
+
+	if h~=nil then
+
+wait(0.001)
+h.Health = 0
+children = h.Parent:children()
+
+	for i=1,#children do
+
+		if(children[i].className == "Part" and children[i].Name ~= "Torso") then stick(children[i], h.Parent.Torso) end
+
+		if(children[i].className == "Hat") then stick(children[i].Handle, h.Parent.Torso) end
+
+	end
+
+	h.Parent.Head.Velocity = h.Parent.Head.Velocity + Vector3.new(5,0,0)
+
+	end
+
+end
+
+
+
+script.Parent.Touched:connect(onTouched)local hole = script.Parent
+
+local childList = {}
+
+local childSize = {}
+
+
+
+local massConstant = 1
+
+
+
+local mass = 500000 * massConstant
+
+
+
+function checkObject(obj)
+
+	if (obj ~= hole) and (obj.className == "Part") then
+
+		if (obj.Anchored == false) then
+
+			table.insert(childList, 1, obj)
+
+			table.insert(childSize, 1, obj.Size)
+
+		end
+
+	else
+
+		if (obj.className == "Model") or (obj == workspace) then
+
+			local child = obj:GetChildren()
+
+			for x = 1, #child do
+
+				if (child[x] ~= hole) and (child[x].className == "Part") and (child[x].Anchored == false) then
+
+					table.insert(childList, 1, child[x])
+
+					table.insert(childSize, 1, child[x].Size)
+
+				end
+
+				if child[x].className == "Model" then
+
+					checkObject(child[x])
+
+				end
+
+			end
+
+			obj.ChildAdded:connect(checkObject)
+
+		end
+
+	end
+
+end
+
+
+
+checkObject(workspace)
+
+
+
+function cross(v1, v2)
+
+	return Vector3.new(v1.y * v2.z - v2.y * v1.z, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v2.x * v1.y)
+
+end
+
+
+
+print("Black Hole script loaded.")
+
+script.Parent.Mesh.Scale=(Vector3.new(1,1,1)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(2,2,2)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(3,3,3)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(4,4,4)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(5,5,5)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(6,6,6)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(7,7,7)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(8,8,8)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(9,9,9)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(10,10,10)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(11,11,11)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(12,12,12)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(13,13,13)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(14,14,14)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(15,15,15))
+ 
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(16,16,16)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(17,17,17))
+ 
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(18,18,18))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(19,19,19))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(20,20,20)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(21,21,21))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(22,22,22))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(23,23,23))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(24,24,24))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(25,25,25))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(26,26,26))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(27,27,27))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(28,28,28))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(29,29,29))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(30,30,30))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(31,31,31))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(32,32,32))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(33,33,33))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(34,34,34))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(35,35,35))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(36,36,36))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(37,37,37))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(38,38,38))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(39,39,39))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(40,40,40))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(41,41,41))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(42,42,42))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(43,43,43))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(44,44,44))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(45,45,45))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(46,46,46))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(47,47,47))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(48,48,48))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(49,49,49))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(50,50,50))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(51,51,51))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(52,52,52))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(53,53,53))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(54,54,54))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(55,55,55))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(56,56,56))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(57,57,57))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(58,58,58))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(59,59,59))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(60,60,60))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(61,61,61))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(62,62,62))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(63,63,63))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(64,64,64))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(65,65,65))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(66,66,66))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(67,67,67))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(68,68,68))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(69,69,69))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(70,70,70))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(71,71,71))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(72,72,72))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(73,73,73))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(74,74,74))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(75,75,75))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(76,76,76))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(77,77,77))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(78,78,78))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(79,79,79))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(80,80,80))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(81,81,81))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(82,82,82))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(83,83,83))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(84,84,84))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(85,85,85))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(86,86,86))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(87,87,87))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(88,88,88))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(89,89,89))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(90,90,90))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(91,91,91))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(92,92,92))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(93,93,93))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(94,94,94))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(95,95,95))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(96,96,96))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(97,97,97))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(98,98,98))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(99,99,99))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(100,100,100))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(101,101,101)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(102,102,102)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(103,103,103)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(104,104,104)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(105,105,105)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(106,106,106)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(107,107,107)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(108,108,108)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(109,109,109)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(110,110,110)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(111,111,111)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(112,112,112)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(113,113,113)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(114,114,114)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(115,115,115))
+ 
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(116,116,116)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(117,117,117))
+ 
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(118,118,118))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(119,119,119))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(120,120,120)) 
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(121,121,121))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(122,122,122))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(123,123,123))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(124,124,124))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(125,125,125))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(126,126,126))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(127,127,127))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(128,128,128))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(129,129,129))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(130,130,130))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(131,131,131))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(132,132,132))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(133,133,133))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(134,134,134))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(135,135,135))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(136,136,136))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(137,137,137))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(138,138,138))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(139,139,139))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(140,140,140))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(141,141,141))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(142,142,142))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(143,143,143))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(144,144,144))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(145,145,145))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(146,146,146))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(147,147,147))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(148,148,148))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(149,149,149))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(150,150,150))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(151,151,151))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(152,152,152))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(153,153,153))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(154,154,154))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(155,155,155))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(156,156,156))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(157,157,157))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(158,158,158))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(159,159,159))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(160,160,160))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(161,161,161))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(162,162,162))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(163,163,163))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(164,164,164))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(165,165,165))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(166,166,166))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(167,167,167))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(168,168,168))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(169,169,169))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(170,170,170))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(171,171,171))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(172,172,172))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(173,173,173))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(174,174,174))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(175,175,175))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(176,176,176))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(177,177,177))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(178,178,178))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(179,179,179))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(180,180,180))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(181,181,181))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(182,182,182))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(183,183,183))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(184,184,184))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(185,185,185))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(186,186,186))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(187,187,187))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(188,188,188))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(189,189,189))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(190,190,190))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(191,191,191))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(192,192,192))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(193,193,193))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(194,194,194))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(195,195,195))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(196,196,196))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(197,197,197))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(198,198,198))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(199,199,199))
+
+wait(0.1)
+
+script.Parent.Mesh.Scale=(Vector3.new(200,200,200))
+
+local min = 0
+
+local max = 10
+
+while true do
+
+	wait()
+
+	local n = 0
+
+	while n < #childList do
+
+		if n % 800 == 0 then
+
+			wait()
+
+		end
+
+		n = n + 1
+
+		local child = childList[n]
+
+		if (child ~= hole) and (child.className == "Part") and (child.Anchored == false) then
+
+			local relPos = hole.Position - child.Position
+
+			if relPos.magnitude * 240 * massConstant < mass then
+
+				child.RotVelocity = cross(child.CFrame.lookVector, relPos) * 20 / relPos.magnitude
+
+				local canContinue = true
+
+				if relPos.magnitude * 320 * massConstant < mass then
+
+					local length = mass / (320 * relPos.magnitude * massConstant)
+
+					if childSize[n].z * length >  relPos.magnitude * 2 then
+
+						mass = mass + child:GetMass()
+
+						child:Remove()
+
+						table.remove(childList, n)
+
+						table.remove(childSize, n)
+
+						canContinue = false
+
+						n = n - 1
+
+					else
+
+						child.CanCollide = false
+
+					end
+
+				end
+
+				if canContinue then
+
+					local motivator = child:FindFirstChild("BlackHole Influence")
+
+					if motivator == nil then
+
+						motivator = Instance.new("BodyPosition")
+
+						motivator.Parent = child
+
+						motivator.Name = "BlackHole Influence"
+
+					end
+
+					motivator.position = hole.Position
+
+					motivator.maxForce = Vector3.new(1, 1, 1) * mass * child:GetMass() / (relPos.magnitude * massConstant)
+
+				end
+
+			else
+
+				local motivator = child:FindFirstChild("BlackHole Influence")
+
+				if motivator ~= nil then
+
+					motivator:Remove()
+
+				end
+
+			end
+
+		end
+
+	end
+
+end
+
+
+end))
+Script162.Disabled = true
+SpecialMesh163.Parent = Part161
+SpecialMesh163.MeshId = "http://www.roblox.com/asset/?id=1527559"
+SpecialMesh163.TextureId = "http://www.roblox.com/asset/?id=1530169"
+SpecialMesh163.MeshType = Enum.MeshType.FileMesh
+Model164.Name = "delete"
+Model164.Parent = Model142
+Model165.Name = "delete"
+Model165.Parent = Model142
+Model166.Name = "delete"
+Model166.Parent = Model142
+Model167.Name = "delete"
+Model167.Parent = Model142
+Model168.Name = "delete"
+Model168.Parent = Model142
+Model169.Name = "delete"
+Model169.Parent = Model142
+Model170.Name = "delete"
+Model170.Parent = Model142
+Model171.Name = "delete"
+Model171.Parent = Model142
+Model172.Name = "delete"
+Model172.Parent = Model142
+Model173.Name = "delete"
+Model173.Parent = Model142
+Model174.Name = "alarm"
+Model174.Parent = Model0
+Model174.PrimaryPart = Part176
+Model175.Name = "Boombox by Marjock"
+Model175.Parent = Model174
+Model175.PrimaryPart = Part176
+Part176.Name = "play"
+Part176.Parent = Model175
+Part176.CFrame = CFrame.new(-23.8999863, 5.50007486, 33.2000008, -1, -3.4503847e-10, -1.01965112e-11, -1.01965112e-11, 7.18958504e-10, -1, -3.4503847e-10, -1, 7.18958504e-10)
+Part176.Orientation = Vector3.new(90, 180, 0)
+Part176.Position = Vector3.new(-23.899986267089844, 5.500074863433838, 33.20000076293945)
+Part176.Rotation = Vector3.new(90, 0, 180)
+Part176.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part176.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part176.Anchored = true
+Part176.BottomSurface = Enum.SurfaceType.Smooth
+Part176.BrickColor = BrickColor.new("Bright green")
+Part176.TopSurface = Enum.SurfaceType.Smooth
+Part176.brickColor = BrickColor.new("Bright green")
+ClickDetector177.Parent = Part176
+ClickDetector177.MaxActivationDistance = 50
+Script178.Parent = Part176
+table.insert(cors,sandbox(Script178,function()
+brick=script.Parent
+other=brick.Parent.stop
+music=brick.Parent.music
+
+function onClicked()
+
+music:Play()
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end))
+Part179.Name = "stop"
+Part179.Parent = Model175
+Part179.CFrame = CFrame.new(-22.8999863, 5.50007486, 33.2000008, -1, -1.77737594e-08, -1.01036557e-09, -1.01036557e-09, 4.65518575e-08, -1, -1.77737594e-08, -1, 4.65518575e-08)
+Part179.Orientation = Vector3.new(90, 180, 0)
+Part179.Position = Vector3.new(-22.899986267089844, 5.500074863433838, 33.20000076293945)
+Part179.Rotation = Vector3.new(90, 0, 180)
+Part179.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part179.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part179.Anchored = true
+Part179.BottomSurface = Enum.SurfaceType.Smooth
+Part179.BrickColor = BrickColor.new("Bright red")
+Part179.TopSurface = Enum.SurfaceType.Smooth
+Part179.brickColor = BrickColor.new("Bright red")
+ClickDetector180.Parent = Part179
+ClickDetector180.MaxActivationDistance = 50
+Script181.Parent = Part179
+table.insert(cors,sandbox(Script181,function()
+brick=script.Parent
+other=brick.Parent.play
+music=brick.Parent.music
+
+function onClicked()
+
+music:Stop()
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end))
+Sound182.Name = "music"
+Sound182.Parent = Model175
+Sound182.Looped = true
+Sound182.Volume = 1
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
