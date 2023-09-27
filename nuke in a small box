@@ -1,0 +1,643 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Model1 = Instance.new("Model")
+Sound2 = Instance.new("Sound")
+Part3 = Instance.new("Part")
+Script4 = Instance.new("Script")
+SpecialMesh5 = Instance.new("SpecialMesh")
+ManualWeld6 = Instance.new("ManualWeld")
+Part7 = Instance.new("Part")
+Script8 = Instance.new("Script")
+Script9 = Instance.new("Script")
+Script10 = Instance.new("Script")
+Script11 = Instance.new("Script")
+Script12 = Instance.new("Script")
+Script13 = Instance.new("Script")
+Script14 = Instance.new("Script")
+Weld15 = Instance.new("Weld")
+Part16 = Instance.new("Part")
+BlockMesh17 = Instance.new("BlockMesh")
+Snap18 = Instance.new("Snap")
+Part19 = Instance.new("Part")
+BlockMesh20 = Instance.new("BlockMesh")
+Part21 = Instance.new("Part")
+BlockMesh22 = Instance.new("BlockMesh")
+Snap23 = Instance.new("Snap")
+Part24 = Instance.new("Part")
+BlockMesh25 = Instance.new("BlockMesh")
+ManualWeld26 = Instance.new("ManualWeld")
+ManualWeld27 = Instance.new("ManualWeld")
+ManualWeld28 = Instance.new("ManualWeld")
+ManualWeld29 = Instance.new("ManualWeld")
+ManualWeld30 = Instance.new("ManualWeld")
+ManualWeld31 = Instance.new("ManualWeld")
+Part32 = Instance.new("Part")
+BlockMesh33 = Instance.new("BlockMesh")
+ManualWeld34 = Instance.new("ManualWeld")
+ManualWeld35 = Instance.new("ManualWeld")
+Snap36 = Instance.new("Snap")
+Part37 = Instance.new("Part")
+BlockMesh38 = Instance.new("BlockMesh")
+ManualWeld39 = Instance.new("ManualWeld")
+ManualWeld40 = Instance.new("ManualWeld")
+Snap41 = Instance.new("Snap")
+Model42 = Instance.new("Model")
+Model43 = Instance.new("Model")
+Humanoid44 = Instance.new("Humanoid")
+Script45 = Instance.new("Script")
+Part46 = Instance.new("Part")
+ManualWeld47 = Instance.new("ManualWeld")
+ManualWeld48 = Instance.new("ManualWeld")
+ManualWeld49 = Instance.new("ManualWeld")
+Part50 = Instance.new("Part")
+BlockMesh51 = Instance.new("BlockMesh")
+Decal52 = Instance.new("Decal")
+ClickDetector53 = Instance.new("ClickDetector")
+Part54 = Instance.new("Part")
+BlockMesh55 = Instance.new("BlockMesh")
+ClickDetector56 = Instance.new("ClickDetector")
+Decal57 = Instance.new("Decal")
+Part58 = Instance.new("Part")
+BlockMesh59 = Instance.new("BlockMesh")
+Decal60 = Instance.new("Decal")
+ClickDetector61 = Instance.new("ClickDetector")
+Model0.Name = "Explode"
+Model0.Parent = mas
+Model1.Name = "Nuke"
+Model1.Parent = Model0
+Sound2.Name = "Fire"
+Sound2.Parent = Model1
+Sound2.Pitch = 0.20000000298023224
+Sound2.PlaybackSpeed = 0.20000000298023224
+Sound2.SoundId = "http://www.roblox.com/asset?id=2248511"
+Sound2.Volume = 1
+Part3.Name = "ShockWave"
+Part3.Parent = Model1
+Part3.CFrame = CFrame.new(71.180275, 0.500008821, -26.5576096, 1, 0, -0, 0, 0, -1, 0, 1, 0)
+Part3.Orientation = Vector3.new(90, 0, 0)
+Part3.Position = Vector3.new(71.1802749633789, 0.5000088214874268, -26.55760955810547)
+Part3.Rotation = Vector3.new(90, 0, 0)
+Part3.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part3.Transparency = 1
+Part3.Size = Vector3.new(0.20000000298023224, 0.20000000298023224, 0.20000000298023224)
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.BrickColor = BrickColor.new("Dark stone grey")
+Part3.CanCollide = false
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Part3.brickColor = BrickColor.new("Dark stone grey")
+Script4.Parent = Part3
+table.insert(cors,sandbox(Script4,function()
+function onTouched(hit)
+if (hit:getMass() < 99999) then
+hit:BreakJoints()
+local dir = (hit.Position - script.Parent.Position).unit
+local bf = Instance.new("BodyForce")
+bf.force = dir * 10000
+bf.Parent = hit
+wait(0.5)
+bf:remove()
+end
+end
+
+connection = script.Parent.Touched:connect(onTouched)
+end))
+SpecialMesh5.Parent = Part3
+SpecialMesh5.MeshId = "http://www.roblox.com/asset/?id=3270017"
+SpecialMesh5.MeshType = Enum.MeshType.FileMesh
+ManualWeld6.Name = "ShockWave-to-Tip Strong Joint"
+ManualWeld6.Parent = Part3
+ManualWeld6.C0 = CFrame.new(0.100000001, -0.100000001, 0.100000001, -0, 0, 1, 0, 1, 0, -1, 0, -0)
+ManualWeld6.C1 = CFrame.new(0.100000143, -0.100000381, 0.100000024, 0, 0, -1, 1, 0, 0, 0, -1, 0)
+Part7.Name = "Tip"
+Part7.Parent = Model1
+Part7.CFrame = CFrame.new(71.3802719, 0.500008464, -26.5576115, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part7.Orientation = Vector3.new(0, 180, 0)
+Part7.Position = Vector3.new(71.3802719116211, 0.5000084638595581, -26.5576114654541)
+Part7.Rotation = Vector3.new(180, 0, 180)
+Part7.Color = Color3.new(0.854902, 0.521569, 0.254902)
+Part7.Size = Vector3.new(0.20000000298023224, 0.20000000298023224, 0.20000000298023224)
+Part7.BottomSurface = Enum.SurfaceType.Weld
+Part7.BrickColor = BrickColor.new("Bright orange")
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Part7.brickColor = BrickColor.new("Bright orange")
+Script8.Name = "Explosion"
+Script8.Parent = Part7
+Script8.Enabled = false
+table.insert(cors,sandbox(Script8,function()
+wait(0.1)
+function destroy(hit)
+Boom = Instance.new("Explosion")
+Boom.Parent = game.Workspace
+Boom.Position = hit.Position
+wait(1)
+Boom:Remove()
+end
+
+script.Parent.Touched:connect(destroy)
+
+end))
+Script8.Disabled = true
+Script9.Name = "Grow2"
+Script9.Parent = Part7
+Script9.Enabled = false
+table.insert(cors,sandbox(Script9,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 200 do
+Boom.Size = Boom.Size + Vector3.new(1, 0, 1)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script9.Disabled = true
+Script10.Name = "Grow3"
+Script10.Parent = Part7
+Script10.Enabled = false
+table.insert(cors,sandbox(Script10,function()
+wait(0.1)
+Boom = script.Parent
+Boom.Mesh.Scale = Vector3.new(1, 1, 500)
+for i = 1, 350 do
+Boom.Mesh.Scale = Boom.Mesh.Scale + Vector3.new(3, 3, 0)
+wait(0.0001)
+end
+Boom:Remove()
+end))
+Script10.Disabled = true
+Script11.Name = "Grow4"
+Script11.Parent = Script10
+Script11.Enabled = false
+table.insert(cors,sandbox(Script11,function()
+wait(0.1)
+Boom = script.Parent.Parent
+for i = 1, 350 do
+Boom.Size = Boom.Size + Vector3.new(3, 3, 0)
+wait(0.0001)
+end
+Boom:Remove()
+end))
+Script11.Disabled = true
+Script12.Name = "Grow"
+Script12.Parent = Part7
+Script12.Enabled = false
+table.insert(cors,sandbox(Script12,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 200 do
+Boom.Size = Boom.Size + Vector3.new(1, 1, 1)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script12.Disabled = true
+Script13.Name = "Touch"
+Script13.Parent = Part7
+table.insert(cors,sandbox(Script13,function()
+shockRing = Instance.new("Part")
+shockRing.formFactor = 2
+shockRing.Size = Vector3.new(50, 0.4, 50)
+shockRing.Anchored = true
+shockRing.Locked = true
+shockRing.CanCollide = false
+shockRing.archivable = false
+shockRing.TopSurface = 0
+shockRing.BottomSurface = 0
+shockRing.Transparency = 1
+local decal = Instance.new("Decal")
+decal.Face = 1
+decal.Texture = "http://www.roblox.com/asset/?version=1&id=1280730"
+decal.Parent = shockRing
+
+local bottomDecal = decal:Clone()
+bottomDecal.Face = 4
+bottomDecal.Parent = shockRing
+
+debounce = true
+function activate(hit)
+if debounce == false then return end
+debounce = false
+script.Parent.Parent.Fire:play()
+game.Lighting.Brightness = 999
+grow3 = script.Parent.Grow3:clone()
+grow3.Disabled = false
+grow3.Grow4.Disabled = false
+grow3.Parent = script.Parent.Parent.ShockWave
+stay2 = script.Parent.Stay:clone()
+stay2.Disabled = false
+stay2.Parent = script.Parent.Parent.ShockWave
+script.Parent.Parent.ShockWave.Anchored = true
+script.Parent.Parent.ShockWave.Transparency = 0
+script.Parent.Anchored = true
+wait(0.05)
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 40
+Boom2.Parent = game.Workspace
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+Boom = Instance.new("Part")
+Boom.Parent = game.Workspace
+Boom.formFactor = 0
+Boom.Shape = 0
+Boom.BrickColor = BrickColor:Yellow()
+Boom.Position = script.Parent.Position
+Boom.Transparency = 0.3
+Boom.Size = Vector3.new(1, 1, 1)
+Boom.Anchored = true
+Boom.TopSurface = "Smooth"
+Boom.BottomSurface = "Smooth"
+script.Parent.Transparency = 1
+Script = script.Parent.Explosion
+SC = Script:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Grow = script.Parent.Grow
+GC = Grow:clone()
+GC.Disabled = false
+GC.Parent = Boom
+Stay = script.Parent.Stay
+SC = Stay:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 40
+Boom2.Position = script.Parent.Position
+pos = script.Parent.Position
+shockRing.Position = pos
+shockRing.Parent = game.Workspace
+Grow2 = script.Parent.Grow2
+G2C = Grow2:clone()
+G2C.Disabled = false
+G2C.Parent = shockRing
+Script2 = script.Parent.Explosion
+S2C = Script2:clone()
+S2C.Disabled = false
+S2C.Parent = shockRing
+Stay2 = script.Parent.Stay
+S2C = Stay:clone()
+S2C.Disabled = false
+S2C.Parent = shockRing
+wait(0.5)
+game.Lighting.Brightness = 1
+Boom2:Remove()
+wait(5)
+script.Parent.Parent.Fire:remove()
+script.Parent.Parent:Remove()
+wait(100)
+end
+
+script.Parent.Touched:connect(activate)
+
+end))
+Script14.Name = "Stay"
+Script14.Parent = Part7
+Script14.Enabled = false
+table.insert(cors,sandbox(Script14,function()
+wait(0.1)
+pos = script.Parent.CFrame
+while true do
+script.Parent.CFrame = pos
+wait(0.000000000000000000000000000000000000000000000000001)
+end
+
+end))
+Script14.Disabled = true
+Weld15.Parent = Part7
+Weld15.C0 = CFrame.new(0, -0.100000001, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld15.C1 = CFrame.new(0.100000143, 0.199999809, -0.100000024, -1, 0, 0, 0, 0, -1, 0, -1, 0)
+Weld15.Part0 = Part7
+Weld15.Part1 = Part19
+Weld15.part1 = Part19
+Part16.Parent = Model1
+Part16.CFrame = CFrame.new(71.2802811, 0.600008249, -25.6576099, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part16.Position = Vector3.new(71.28028106689453, 0.6000082492828369, -25.657609939575195)
+Part16.Size = Vector3.new(2.3999993801116943, 0.4000000059604645, 0.7999998331069946)
+Part16.Anchored = true
+BlockMesh17.Parent = Part16
+Snap18.Parent = Part16
+Snap18.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap18.C1 = CFrame.new(4.76837158e-07, 0.199999809, 0.80000031, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Snap18.Part0 = Part16
+Snap18.Part1 = Part19
+Snap18.part1 = Part19
+Part19.Parent = Model1
+Part19.CFrame = CFrame.new(71.2802734, 0.200008631, -26.4576111, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part19.Position = Vector3.new(71.2802734375, 0.20000863075256348, -26.457611083984375)
+Part19.Size = Vector3.new(2.3999993801116943, 0.4000000059604645, 2.3999998569488525)
+Part19.Anchored = true
+BlockMesh20.Parent = Part19
+Part21.Parent = Model1
+Part21.CFrame = CFrame.new(71.2802811, 0.600008249, -27.2576103, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part21.Position = Vector3.new(71.28028106689453, 0.6000082492828369, -27.257610321044922)
+Part21.Size = Vector3.new(2.3999993801116943, 0.4000000059604645, 0.7999998331069946)
+Part21.Anchored = true
+BlockMesh22.Parent = Part21
+Snap23.Parent = Part21
+Snap23.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap23.C1 = CFrame.new(4.76837158e-07, 0.199999809, -0.799999952, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Snap23.Part0 = Part21
+Snap23.Part1 = Part19
+Snap23.part1 = Part19
+Part24.Parent = Model1
+Part24.CFrame = CFrame.new(71.2802734, 0.700007737, -26.4576111, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part24.Position = Vector3.new(71.2802734375, 0.7000077366828918, -26.457611083984375)
+Part24.Size = Vector3.new(1.6000001430511475, 0.20000003278255463, 0.7999998331069946)
+Part24.Anchored = true
+BlockMesh25.Parent = Part24
+ManualWeld26.Name = "Part-to-ShockWave Strong Joint"
+ManualWeld26.Parent = Part24
+ManualWeld26.C0 = CFrame.new(0.800000072, -0.100000016, 0.399999917, 1, 0, 0, 0, 0, -1, -0, 1, 0)
+ManualWeld26.C1 = CFrame.new(0.899999976, 0.5, -0.0999984741, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld27.Name = "Part-to-Tip Strong Joint"
+ManualWeld27.Parent = Part24
+ManualWeld27.C0 = CFrame.new(0.800000072, -0.100000016, 0.399999917, 1, 0, 0, 0, 0, -1, -0, 1, 0)
+ManualWeld27.C1 = CFrame.new(-0.699999928, 0.0999984741, -0.5, -1, 0, 0, 0, 0, -1, 0, -1, 0)
+ManualWeld28.Name = "Part-to-Part Strong Joint"
+ManualWeld28.Parent = Part24
+ManualWeld28.C0 = CFrame.new(0.800000072, -0.100000016, 0.399999917, -0, 0, 1, 0, 1, 0, -1, 0, -0)
+ManualWeld28.C1 = CFrame.new(-0.200000167, -9.53674316e-07, 0.399999857, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+ManualWeld29.Name = "Part-to-Part Strong Joint"
+ManualWeld29.Parent = Part24
+ManualWeld29.C0 = CFrame.new(-0.800000072, -0.100000016, -0.399999917, -0, 0, -1, 0, 1, 0, 1, 0, -0)
+ManualWeld29.C1 = CFrame.new(0.199999332, -9.53674316e-07, -0.399999976, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+ManualWeld30.Name = "Part-to-Part Strong Joint"
+ManualWeld30.Parent = Part24
+ManualWeld30.C0 = CFrame.new(0.800000072, -0.100000016, -0.399999917, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+ManualWeld30.C1 = CFrame.new(0.799999595, -9.53674316e-07, 0.399999976, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+ManualWeld31.Name = "Part-to-Part Strong Joint"
+ManualWeld31.Parent = Part24
+ManualWeld31.C0 = CFrame.new(-0.800000072, -0.100000016, 0.399999917, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld31.C1 = CFrame.new(-0.800000668, -9.53674316e-07, -0.400000334, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part32.Parent = Model1
+Part32.CFrame = CFrame.new(72.2802811, 0.600008249, -26.4576111, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part32.Position = Vector3.new(72.28028106689453, 0.6000082492828369, -26.457611083984375)
+Part32.Size = Vector3.new(0.40000003576278687, 0.4000000059604645, 0.7999998331069946)
+Part32.Anchored = true
+BlockMesh33.Parent = Part32
+ManualWeld34.Name = "Part-to-Part Strong Joint"
+ManualWeld34.Parent = Part32
+ManualWeld34.C0 = CFrame.new(0.200000018, -0.200000003, -0.399999917, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+ManualWeld34.C1 = CFrame.new(1.19999981, -0.199999809, 0.400000215, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+ManualWeld35.Name = "Part-to-Part Strong Joint"
+ManualWeld35.Parent = Part32
+ManualWeld35.C0 = CFrame.new(-0.200000018, -0.200000003, 0.399999917, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld35.C1 = CFrame.new(0.799999714, -0.199999809, -0.400000334, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Snap36.Parent = Part32
+Snap36.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap36.C1 = CFrame.new(1.00000024, 0.199999809, 1.1920929e-07, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Snap36.Part0 = Part32
+Snap36.Part1 = Part19
+Snap36.part1 = Part19
+Part37.Parent = Model1
+Part37.CFrame = CFrame.new(70.2802811, 0.600008249, -26.4576111, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part37.Position = Vector3.new(70.28028106689453, 0.6000082492828369, -26.457611083984375)
+Part37.Size = Vector3.new(0.40000003576278687, 0.4000000059604645, 0.7999998331069946)
+Part37.Anchored = true
+BlockMesh38.Parent = Part37
+ManualWeld39.Name = "Part-to-Part Strong Joint"
+ManualWeld39.Parent = Part37
+ManualWeld39.C0 = CFrame.new(0.200000018, -0.200000003, -0.399999917, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+ManualWeld39.C1 = CFrame.new(-0.799999952, -0.199999809, 0.399999976, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+ManualWeld40.Name = "Part-to-Part Strong Joint"
+ManualWeld40.Parent = Part37
+ManualWeld40.C0 = CFrame.new(-0.200000018, -0.200000003, 0.399999917, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld40.C1 = CFrame.new(-1.20000005, -0.199999809, -0.400000334, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Snap41.Parent = Part37
+Snap41.C0 = CFrame.new(0, -0.200000003, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap41.C1 = CFrame.new(-0.999999523, 0.199999809, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Snap41.Part0 = Part37
+Snap41.Part1 = Part19
+Snap41.part1 = Part19
+Model42.Name = "5e7z-Nuke"
+Model42.Parent = Model0
+Model43.Name = "5e7z-Nuke (Unarmed(10))"
+Model43.Parent = Model42
+Humanoid44.Name = "5e7z-Nuke"
+Humanoid44.Parent = Model43
+Humanoid44.Health = 0
+Humanoid44.MaxHealth = 0
+Humanoid44.WalkSpeed = 0
+Humanoid44.maxHealth = 0
+Script45.Name = "MasterScript 5e7z"
+Script45.Parent = Model43
+table.insert(cors,sandbox(Script45,function()
+local Program = script.Parent 
+local NotPressing = true 
+local ButtonUp = Program.Up
+local ButtonDown = Program.Down
+local Screen = Program.DecalScreen
+local ActivateUp = ButtonUp.ClickDetector
+local ActivateDown = ButtonDown.ClickDetector
+local ActivateNuke = Screen.ClickDetector
+local LoadTextureA = "http://www.roblox.com/asset/?id=15949465"
+local LoadTextureB = "http://www.roblox.com/asset/?id=20343069"
+local NukeTexture = "http://www.roblox.com/asset/?id=24351280"
+local UnarmedTexture = "http://www.roblox.com/asset/?id=4740155"
+local AddTexture = "http://www.roblox.com/asset/?id=13890082"
+local SubtractTexture = "http://www.roblox.com/asset/?id=13890090"
+local FailureTexture = "http://www.roblox.com/asset/?id=25481703"
+Time = 10
+
+Program.Name = "5e7z-Nuke (Unarmed("..Time.."))"
+
+local Decal = Screen:findFirstChild("Decal")
+if Decal == nil then 
+local Decal = Instance.new("Decal") 
+Decal.Parent = Screen 
+Decal.Face = "Top"
+Decal.Texture = UnarmedTexture
+else Decal = Screen.Decal
+end 
+
+function AddTime(click)
+if NotPressing == true then 
+if Time ~= 120 then 
+Time = Time + 1
+Decal.Texture = AddTexture 
+Program.Name = "5e7z-Nuke (Unarmed("..Time.."))"
+wait(1)
+Decal.Texture = UnarmedTexture
+else NotPressing = false 
+Program.Name = "5e7z-Nuke (Unarmed(MAX("..Time..")))"
+Decal.Texture = FailureTexture
+wait(1)
+Program.Name = "5e7z-Nuke (Unarmed("..Time.."))"
+Decal.Texture = UnarmedTexture
+NotPressing = true 
+end end end  
+
+function SubtractTime(click)
+if NotPressing == true then 
+if Time ~= 5 then
+Time = Time - 1
+Decal.Texture = SubtractTexture
+Program.Name = "5e7z-Nuke (Unarmed("..Time.."))"
+wait(1)
+Decal.Texture = UnarmedTexture
+else NotPressing = false 
+Program.Name = "5e7z-Nuke (Unarmed(MIN("..Time..")))"
+Decal.Texture = FailureTexture
+wait(1)
+Program.Name = "5e7z-Nuke (Unarmed("..Time.."))"
+Decal.Texture = UnarmedTexture 
+NotPressing = true 
+end end end 
+
+function ActivateBomb(click)
+if NotPressing == true then 
+NotPressing = false 
+Decal.Texture = NukeTexture
+for i = 1, Time do
+wait(1) 
+Time = Time - 1
+Program.Name = "5e7z-Nuke (Armed("..Time.."))"
+end 
+LoadNuke() 
+Nuke()
+end end  
+
+function LoadNuke()
+for i = 1, 5 do 
+Decal.Texture = LoadTextureA
+wait(.5)
+Decal.Texture = LoadTextureB
+wait(.5)
+end end 
+
+function Nuke() 
+Decal.Texture = NukeTexture
+wait(.1)
+local NukeExplosionA = Instance.new("Explosion")
+NukeExplosionA.Parent = game.Workspace
+NukeExplosionA.BlastRadius = 100
+NukeExplosionA.BlastPressure = 10000
+NukeExplosionA.Position = Screen.Position
+wait(.25)
+local NukeExplosionB = Instance.new("Explosion")
+NukeExplosionB.Parent = game.Workspace
+NukeExplosionB.BlastRadius = 100
+NukeExplosionB.BlastPressure = 10000
+NukeExplosionB.Position = Screen.Position + Vector3.new(-10,0,10)
+wait(.25)
+local NukeExplosionC = Instance.new("Explosion")
+NukeExplosionC.Parent = game.Workspace
+NukeExplosionC.BlastRadius = 100
+NukeExplosionC.BlastPressure = 10000
+NukeExplosionC.Position = Screen.Position + Vector3.new(10,0,-10)
+Program.Parent:Remove() 
+end 
+
+ActivateUp.MouseClick:connect(AddTime)
+ActivateDown.MouseClick:connect(SubtractTime)
+ActivateNuke.MouseClick:connect(ActivateBomb)
+
+end))
+Part46.Name = "Head"
+Part46.Parent = Model43
+Part46.CFrame = CFrame.new(69.980278, 0.70000869, -26.4576111, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part46.Orientation = Vector3.new(-90, -90, 0)
+Part46.Position = Vector3.new(69.98027801513672, 0.7000086903572083, -26.457611083984375)
+Part46.Rotation = Vector3.new(-90, 0, -90)
+Part46.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part46.Transparency = 0.9800000190734863
+Part46.Size = Vector3.new(1.1999998092651367, 0.20000000298023224, 0.20000003278255463)
+Part46.Anchored = true
+Part46.BottomSurface = Enum.SurfaceType.Smooth
+Part46.BrickColor = BrickColor.new("Black")
+Part46.TopSurface = Enum.SurfaceType.Smooth
+Part46.brickColor = BrickColor.new("Black")
+ManualWeld47.Name = "Head-to-Part Strong Joint"
+ManualWeld47.Parent = Part46
+ManualWeld47.C0 = CFrame.new(-0.599999905, 0.100000001, 0.100000016, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+ManualWeld47.C1 = CFrame.new(-0.200000286, 0.200000763, -0.599999785, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+ManualWeld48.Name = "Head-to-Part Strong Joint"
+ManualWeld48.Parent = Part46
+ManualWeld48.C0 = CFrame.new(-0.599999905, 0.100000001, 0.100000016, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+ManualWeld48.C1 = CFrame.new(-1.20000029, 0.200000763, 0.200000167, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+ManualWeld49.Name = "Head-to-Part Strong Joint"
+ManualWeld49.Parent = Part46
+ManualWeld49.C0 = CFrame.new(-0.599999905, 0.100000001, 0.100000016, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+ManualWeld49.C1 = CFrame.new(-1.20000029, 0.200000763, -1.4000001, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Part50.Name = "Down"
+Part50.Parent = Model43
+Part50.CFrame = CFrame.new(71.9802704, 1.30000448, -27.157608, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part50.Orientation = Vector3.new(0, -90, 0)
+Part50.Position = Vector3.new(71.98027038574219, 1.300004482269287, -27.157608032226562)
+Part50.Rotation = Vector3.new(0, -90, 0)
+Part50.Size = Vector3.new(1, 1, 1)
+Part50.Anchored = true
+Part50.BottomSurface = Enum.SurfaceType.Smooth
+Part50.CanCollide = false
+Part50.TopSurface = Enum.SurfaceType.Smooth
+BlockMesh51.Parent = Part50
+BlockMesh51.Offset = Vector3.new(0, -0.550000011920929, 0)
+BlockMesh51.Scale = Vector3.new(0.6499999761581421, 0.20000000298023224, 0.6499999761581421)
+Decal52.Parent = Part50
+Decal52.Texture = "http://www.roblox.com/asset/?id=31959825"
+Decal52.Face = Enum.NormalId.Top
+ClickDetector53.Parent = Part50
+Part54.Name = "DecalScreen"
+Part54.Parent = Model43
+Part54.CFrame = CFrame.new(70.7802734, 2.20000696, -26.4576111, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part54.Orientation = Vector3.new(0, -90, 0)
+Part54.Position = Vector3.new(70.7802734375, 2.2000069618225098, -26.457611083984375)
+Part54.Rotation = Vector3.new(0, -90, 0)
+Part54.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part54.Size = Vector3.new(1.2000025510787964, 0.4000000059604645, 0.9999995827674866)
+Part54.Anchored = true
+Part54.BottomSurface = Enum.SurfaceType.Smooth
+Part54.BrickColor = BrickColor.new("Black")
+Part54.CanCollide = false
+Part54.TopSurface = Enum.SurfaceType.Smooth
+Part54.brickColor = BrickColor.new("Black")
+BlockMesh55.Parent = Part54
+BlockMesh55.Offset = Vector3.new(0, -1.399999976158142, -0.10000000149011612)
+BlockMesh55.Scale = Vector3.new(0.8500000238418579, 0.20000000298023224, 0.8999999761581421)
+ClickDetector56.Parent = Part54
+Decal57.Parent = Part54
+Decal57.Texture = "http://www.roblox.com/asset/?id=4740155"
+Decal57.Face = Enum.NormalId.Top
+Part58.Name = "Up"
+Part58.Parent = Model43
+Part58.CFrame = CFrame.new(71.980278, 1.30000734, -25.7576103, 0, 0, -0.99999845, 0, 0.999999225, 0, 0.999999225, 0, 0)
+Part58.Orientation = Vector3.new(0, -90, 0)
+Part58.Position = Vector3.new(71.98027801513672, 1.3000073432922363, -25.757610321044922)
+Part58.Rotation = Vector3.new(0, -89.89900207519531, 0)
+Part58.Size = Vector3.new(1, 1, 1)
+Part58.Anchored = true
+Part58.BottomSurface = Enum.SurfaceType.Smooth
+Part58.CanCollide = false
+Part58.TopSurface = Enum.SurfaceType.Smooth
+BlockMesh59.Parent = Part58
+BlockMesh59.Offset = Vector3.new(0, -0.550000011920929, 0)
+BlockMesh59.Scale = Vector3.new(0.6499999761581421, 0.20000000298023224, 0.6499999761581421)
+Decal60.Parent = Part58
+Decal60.Texture = "http://www.roblox.com/asset/?id=31959854"
+Decal60.Face = Enum.NormalId.Top
+ClickDetector61.Parent = Part58
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
