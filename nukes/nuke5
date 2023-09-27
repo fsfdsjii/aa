@@ -1,0 +1,710 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Script2 = Instance.new("Script")
+Script3 = Instance.new("Script")
+Script4 = Instance.new("Script")
+Script5 = Instance.new("Script")
+Script6 = Instance.new("Script")
+SpecialMesh7 = Instance.new("SpecialMesh")
+Weld8 = Instance.new("Weld")
+Part9 = Instance.new("Part")
+Script10 = Instance.new("Script")
+Script11 = Instance.new("Script")
+Script12 = Instance.new("Script")
+Script13 = Instance.new("Script")
+Script14 = Instance.new("Script")
+SpecialMesh15 = Instance.new("SpecialMesh")
+Model16 = Instance.new("Model")
+Part17 = Instance.new("Part")
+Decal18 = Instance.new("Decal")
+Part19 = Instance.new("Part")
+ClickDetector20 = Instance.new("ClickDetector")
+Part21 = Instance.new("Part")
+Decal22 = Instance.new("Decal")
+ClickDetector23 = Instance.new("ClickDetector")
+Part24 = Instance.new("Part")
+Weld25 = Instance.new("Weld")
+Weld26 = Instance.new("Weld")
+Weld27 = Instance.new("Weld")
+Weld28 = Instance.new("Weld")
+Part29 = Instance.new("Part")
+Decal30 = Instance.new("Decal")
+ClickDetector31 = Instance.new("ClickDetector")
+Humanoid32 = Instance.new("Humanoid")
+Script33 = Instance.new("Script")
+Script34 = Instance.new("Script")
+Script35 = Instance.new("Script")
+Script36 = Instance.new("Script")
+Script37 = Instance.new("Script")
+Script38 = Instance.new("Script")
+Model0.Parent = mas
+Part1.Name = "negative black hole bomb"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(-36.8000031, 2.90000153, 11.5, 0, 1, -0, 1, 0, -0, 0, 0, -1)
+Part1.Orientation = Vector3.new(0, 180, 90)
+Part1.Position = Vector3.new(-36.80000305175781, 2.9000015258789062, 11.5)
+Part1.Rotation = Vector3.new(180, 0, -90)
+Part1.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part1.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part1.Anchored = true
+Part1.BackSurface = Enum.SurfaceType.Weld
+Part1.BottomSurface = Enum.SurfaceType.Weld
+Part1.BrickColor = BrickColor.new("Really black")
+Part1.FrontSurface = Enum.SurfaceType.Weld
+Part1.LeftSurface = Enum.SurfaceType.Weld
+Part1.Material = Enum.Material.DiamondPlate
+Part1.Reflectance = 0.5
+Part1.RightSurface = Enum.SurfaceType.Weld
+Part1.TopSurface = Enum.SurfaceType.Weld
+Part1.brickColor = BrickColor.new("Really black")
+Part1.FormFactor = Enum.FormFactor.Plate
+Part1.formFactor = Enum.FormFactor.Plate
+Script2.Name = "Touch"
+Script2.Parent = Part1
+table.insert(cors,sandbox(Script2,function()
+shockRing = Instance.new("Part")
+shockRing.formFactor = 2
+shockRing.Size = Vector3.new(50, 0.4, 50)
+shockRing.Anchored = true
+shockRing.Locked = true
+shockRing.CanCollide = false
+shockRing.archivable = false
+shockRing.TopSurface = 0
+shockRing.BottomSurface = 0
+shockRing.Transparency = 1
+local decal = Instance.new("Decal")
+decal.Face = 1
+decal.Texture = "http://www.roblox.com/asset/?version=1&id=1280730"
+decal.Parent = shockRing
+
+local bottomDecal = decal:Clone()
+bottomDecal.Face = 4
+bottomDecal.Parent = shockRing
+
+
+debounce = true
+function activate(hit)
+if debounce == false then return end
+debounce = false
+script.Parent.Anchored = true
+wait(0.05)
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 400
+Boom2.Parent = game.Workspace
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+Boom = Instance.new("Part")
+Boom.Parent = game.Workspace
+Boom.formFactor = 0
+Boom.Shape = 0
+Boom.BrickColor = BrickColor:Yellow()
+Boom.Position = script.Parent.Position
+Boom.Transparency = 0.3
+Boom.Size = Vector3.new(1, 1, 1)
+Boom.Anchored = true
+Boom.TopSurface = "Smooth"
+Boom.BottomSurface = "Smooth"
+script.Parent.Transparency = 1
+Script = script.Parent.Explosion
+SC = Script:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Grow = script.Parent.Grow
+GC = Grow:clone()
+GC.Disabled = false
+GC.Parent = Boom
+Stay = script.Parent.Stay
+SC = Stay:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 40
+Boom2.Position = script.Parent.Position
+pos = script.Parent.Position
+shockRing.Position = pos
+shockRing.Parent = game.Workspace
+Grow2 = script.Parent.Grow2
+G2C = Grow2:clone()
+G2C.Disabled = false
+G2C.Parent = shockRing
+Script2 = script.Parent.Explosion
+S2C = Script2:clone()
+S2C.Disabled = false
+S2C.Parent = shockRing
+Stay2 = script.Parent.Stay
+S2C = Stay:clone()
+S2C.Disabled = false
+S2C.Parent = shockRing
+wait(0.5)
+Boom2:Remove()
+wait(5)
+script.Parent.Parent:Remove()
+wait(100)
+end
+
+script.Parent.Touched:connect(activate)
+
+end))
+Script3.Name = "Stay"
+Script3.Parent = Part1
+Script3.Enabled = false
+table.insert(cors,sandbox(Script3,function()
+wait(0.1)
+pos = script.Parent.CFrame
+while true do
+script.Parent.CFrame = pos
+wait(0.000000000000000000000000000000000000000000000000001)
+end
+
+end))
+Script3.Disabled = true
+Script4.Name = "Grow"
+Script4.Parent = Part1
+Script4.Enabled = false
+table.insert(cors,sandbox(Script4,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 200 do
+Boom.Size = Boom.Size + Vector3.new(1, 1, 1)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script4.Disabled = true
+Script5.Name = "Explosion"
+Script5.Parent = Part1
+Script5.Enabled = false
+table.insert(cors,sandbox(Script5,function()
+wait(0.1)
+function destroy(hit)
+Boom = Instance.new("Explosion")
+Boom.Parent = game.Workspace
+Boom.Position = hit.Position
+wait(1)
+Boom:Remove()
+end
+
+script.Parent.Touched:connect(destroy)
+
+end))
+Script5.Disabled = true
+Script6.Name = "Grow2"
+Script6.Parent = Part1
+Script6.Enabled = false
+table.insert(cors,sandbox(Script6,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 200 do
+Boom.Size = Boom.Size + Vector3.new(1, 0, 1)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script6.Disabled = true
+SpecialMesh7.Parent = Part1
+SpecialMesh7.MeshId = "http://www.roblox.com/asset/?id=27295548"
+SpecialMesh7.TextureId = "http://www.roblox.com/asset/?id=28333490"
+SpecialMesh7.MeshType = Enum.MeshType.FileMesh
+Weld8.Parent = Part1
+Weld8.C0 = CFrame.new(0, 0, -0.5, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+Weld8.C1 = CFrame.new(0, 0, 0.5, -1, 0, 0, 0, 1, 0, 0, -0, -1)
+Weld8.Part0 = Part1
+Weld8.Part1 = Part9
+Weld8.part1 = Part9
+Part9.Name = "negative black hole bomb"
+Part9.Parent = Model0
+Part9.CFrame = CFrame.new(-36.8000031, 2.90000153, 12.5, 0, 1, -0, 1, 0, -0, 0, 0, -1)
+Part9.Orientation = Vector3.new(0, 180, 90)
+Part9.Position = Vector3.new(-36.80000305175781, 2.9000015258789062, 12.5)
+Part9.Rotation = Vector3.new(180, 0, -90)
+Part9.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part9.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part9.Anchored = true
+Part9.BackSurface = Enum.SurfaceType.Weld
+Part9.BottomSurface = Enum.SurfaceType.Weld
+Part9.BrickColor = BrickColor.new("Really black")
+Part9.FrontSurface = Enum.SurfaceType.Weld
+Part9.LeftSurface = Enum.SurfaceType.Weld
+Part9.Material = Enum.Material.DiamondPlate
+Part9.Reflectance = 0.5
+Part9.RightSurface = Enum.SurfaceType.Weld
+Part9.TopSurface = Enum.SurfaceType.Weld
+Part9.brickColor = BrickColor.new("Really black")
+Part9.FormFactor = Enum.FormFactor.Plate
+Part9.formFactor = Enum.FormFactor.Plate
+Script10.Name = "Touch"
+Script10.Parent = Part9
+table.insert(cors,sandbox(Script10,function()
+shockRing = Instance.new("Part")
+shockRing.formFactor = 2
+shockRing.Size = Vector3.new(50, 0.4, 50)
+shockRing.Anchored = true
+shockRing.Locked = true
+shockRing.CanCollide = false
+shockRing.archivable = false
+shockRing.TopSurface = 0
+shockRing.BottomSurface = 0
+shockRing.Transparency = 1
+local decal = Instance.new("Decal")
+decal.Face = 1
+decal.Texture = "http://www.roblox.com/asset/?version=1&id=1280730"
+decal.Parent = shockRing
+
+local bottomDecal = decal:Clone()
+bottomDecal.Face = 4
+bottomDecal.Parent = shockRing
+
+
+debounce = true
+function activate(hit)
+if debounce == false then return end
+debounce = false
+script.Parent.Anchored = true
+wait(0.05)
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 400
+Boom2.Parent = game.Workspace
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+Boom = Instance.new("Part")
+Boom.Parent = game.Workspace
+Boom.formFactor = 0
+Boom.Shape = 0
+Boom.BrickColor = BrickColor:Yellow()
+Boom.Position = script.Parent.Position
+Boom.Transparency = 0.3
+Boom.Size = Vector3.new(1, 1, 1)
+Boom.Anchored = true
+Boom.TopSurface = "Smooth"
+Boom.BottomSurface = "Smooth"
+script.Parent.Transparency = 1
+Script = script.Parent.Explosion
+SC = Script:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Grow = script.Parent.Grow
+GC = Grow:clone()
+GC.Disabled = false
+GC.Parent = Boom
+Stay = script.Parent.Stay
+SC = Stay:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 40
+Boom2.Position = script.Parent.Position
+pos = script.Parent.Position
+shockRing.Position = pos
+shockRing.Parent = game.Workspace
+Grow2 = script.Parent.Grow2
+G2C = Grow2:clone()
+G2C.Disabled = false
+G2C.Parent = shockRing
+Script2 = script.Parent.Explosion
+S2C = Script2:clone()
+S2C.Disabled = false
+S2C.Parent = shockRing
+Stay2 = script.Parent.Stay
+S2C = Stay:clone()
+S2C.Disabled = false
+S2C.Parent = shockRing
+wait(0.5)
+Boom2:Remove()
+wait(5)
+script.Parent.Parent:Remove()
+wait(100)
+end
+
+script.Parent.Touched:connect(activate)
+
+end))
+Script11.Name = "Stay"
+Script11.Parent = Part9
+Script11.Enabled = false
+table.insert(cors,sandbox(Script11,function()
+wait(0.1)
+pos = script.Parent.CFrame
+while true do
+script.Parent.CFrame = pos
+wait(0.000000000000000000000000000000000000000000000000001)
+end
+
+end))
+Script11.Disabled = true
+Script12.Name = "Grow"
+Script12.Parent = Part9
+Script12.Enabled = false
+table.insert(cors,sandbox(Script12,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 200 do
+Boom.Size = Boom.Size + Vector3.new(1, 1, 1)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script12.Disabled = true
+Script13.Name = "Explosion"
+Script13.Parent = Part9
+Script13.Enabled = false
+table.insert(cors,sandbox(Script13,function()
+wait(0.1)
+function destroy(hit)
+Boom = Instance.new("Explosion")
+Boom.Parent = game.Workspace
+Boom.Position = hit.Position
+wait(1)
+Boom:Remove()
+end
+
+script.Parent.Touched:connect(destroy)
+
+end))
+Script13.Disabled = true
+Script14.Name = "Grow2"
+Script14.Parent = Part9
+Script14.Enabled = false
+table.insert(cors,sandbox(Script14,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 200 do
+Boom.Size = Boom.Size + Vector3.new(1, 0, 1)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script14.Disabled = true
+SpecialMesh15.Parent = Part9
+SpecialMesh15.MeshId = "http://www.roblox.com/asset/?id=27295548"
+SpecialMesh15.TextureId = "http://www.roblox.com/asset/?id=28333490"
+SpecialMesh15.MeshType = Enum.MeshType.FileMesh
+Model16.Name = "10"
+Model16.Parent = Model0
+Part17.Name = "Head"
+Part17.Parent = Model16
+Part17.CFrame = CFrame.new(-35.8000031, 0.5, 11.5, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part17.Orientation = Vector3.new(-90, -90, 0)
+Part17.Position = Vector3.new(-35.80000305175781, 0.5, 11.5)
+Part17.Rotation = Vector3.new(-90, 0, -90)
+Part17.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part17.Velocity = Vector3.new(-0.0059623122215271, -0.010172939859330654, 0.006259540095925331)
+Part17.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part17.Anchored = true
+Part17.BottomSurface = Enum.SurfaceType.Weld
+Part17.BrickColor = BrickColor.new("Really black")
+Part17.Reflectance = 0.5
+Part17.RotVelocity = Vector3.new(0.0029289419762790203, 0.0011810420546680689, 0.005936121102422476)
+Part17.TopSurface = Enum.SurfaceType.Smooth
+Part17.brickColor = BrickColor.new("Really black")
+Part17.FormFactor = Enum.FormFactor.Plate
+Part17.formFactor = Enum.FormFactor.Plate
+Decal18.Parent = Part17
+Decal18.Texture = "http://www.roblox.com/asset/?id=41618395"
+Decal18.Face = Enum.NormalId.Top
+Part19.Name = "Begin"
+Part19.Parent = Model16
+Part19.CFrame = CFrame.new(-35.8000031, 1.5, 11.5, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part19.Orientation = Vector3.new(-90, -90, 0)
+Part19.Position = Vector3.new(-35.80000305175781, 1.5, 11.5)
+Part19.Rotation = Vector3.new(-90, 0, -90)
+Part19.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part19.Velocity = Vector3.new(-0.0047885156236588955, -0.012436548247933388, 0.006130740977823734)
+Part19.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part19.Anchored = true
+Part19.BottomSurface = Enum.SurfaceType.Weld
+Part19.BrickColor = BrickColor.new("Bright red")
+Part19.RotVelocity = Vector3.new(0.0029289419762790203, 0.0011810420546680689, 0.005936121102422476)
+Part19.TopSurface = Enum.SurfaceType.Smooth
+Part19.brickColor = BrickColor.new("Bright red")
+Part19.FormFactor = Enum.FormFactor.Plate
+Part19.formFactor = Enum.FormFactor.Plate
+ClickDetector20.Parent = Part19
+Part21.Name = "Add"
+Part21.Parent = Model16
+Part21.CFrame = CFrame.new(-35.8000031, 0.5, 12.5, -0, 1, -0, -0, 0, -1, -1, 0, -0)
+Part21.Orientation = Vector3.new(90, 90, 0)
+Part21.Position = Vector3.new(-35.80000305175781, 0.5, 12.5)
+Part21.Rotation = Vector3.new(90, 0, -90)
+Part21.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part21.Velocity = Vector3.new(-0.005836797878146172, -0.01639319211244583, 0.007435182575136423)
+Part21.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part21.Anchored = true
+Part21.BottomSurface = Enum.SurfaceType.Weld
+Part21.BrickColor = BrickColor.new("Institutional white")
+Part21.RotVelocity = Vector3.new(0.0029289419762790203, 0.0011810420546680689, 0.005936121102422476)
+Part21.TopSurface = Enum.SurfaceType.Smooth
+Part21.brickColor = BrickColor.new("Institutional white")
+Part21.FormFactor = Enum.FormFactor.Plate
+Part21.formFactor = Enum.FormFactor.Plate
+Decal22.Parent = Part21
+Decal22.Texture = "http://www.roblox.com/asset/?id=9832044"
+Decal22.Face = Enum.NormalId.Top
+ClickDetector23.Parent = Part21
+Part24.Name = "Body"
+Part24.Parent = Model16
+Part24.CFrame = CFrame.new(-37, 1, 12, 0, -0, 1, 0, -1, 0, 1, -0, 0)
+Part24.Orientation = Vector3.new(0, 90, 180)
+Part24.Position = Vector3.new(-37, 1, 12)
+Part24.Rotation = Vector3.new(180, 90, 0)
+Part24.Color = Color3.new(0.427451, 0.431373, 0.423529)
+Part24.Size = Vector3.new(2, 2, 2)
+Part24.Anchored = true
+Part24.BottomSurface = Enum.SurfaceType.Smooth
+Part24.BrickColor = BrickColor.new("Dark grey")
+Part24.FrontSurface = Enum.SurfaceType.Weld
+Part24.TopSurface = Enum.SurfaceType.Smooth
+Part24.brickColor = BrickColor.new("Dark grey")
+Part24.FormFactor = Enum.FormFactor.Symmetric
+Part24.formFactor = Enum.FormFactor.Symmetric
+Weld25.Parent = Part24
+Weld25.C0 = CFrame.new(0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld25.C1 = CFrame.new(0.5, -0.199996948, 0.5, 1, 0, 0, 0, 0, 1, 0, -1, 0)
+Weld25.Part0 = Part24
+Weld25.Part1 = Part17
+Weld25.part1 = Part17
+Weld26.Parent = Part24
+Weld26.C0 = CFrame.new(0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld26.C1 = CFrame.new(0.5, -0.199996948, -0.5, 1, 0, 0, 0, 0, 1, 0, -1, 0)
+Weld26.Part0 = Part24
+Weld26.Part1 = Part19
+Weld26.part1 = Part19
+Weld27.Parent = Part24
+Weld27.C0 = CFrame.new(0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld27.C1 = CFrame.new(0.5, -0.199996948, -0.5, -1, 0, -0, 0, 0, 1, -0, 1, -0)
+Weld27.Part0 = Part24
+Weld27.Part1 = Part21
+Weld27.part1 = Part21
+Weld28.Parent = Part24
+Weld28.C0 = CFrame.new(0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld28.C1 = CFrame.new(-0.5, -0.199996948, -0.5, 1, 0, 0, 0, 0, 1, 0, -1, 0)
+Weld28.Part0 = Part24
+Weld28.Part1 = Part29
+Weld28.part1 = Part29
+Part29.Name = "Subtract"
+Part29.Parent = Model16
+Part29.CFrame = CFrame.new(-35.8000031, 1.5, 12.5, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Part29.Orientation = Vector3.new(-90, -90, 0)
+Part29.Position = Vector3.new(-35.80000305175781, 1.5, 12.5)
+Part29.Rotation = Vector3.new(-90, 0, -90)
+Part29.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part29.Velocity = Vector3.new(-0.004662978928536177, -0.01865680143237114, 0.007306372281163931)
+Part29.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part29.Anchored = true
+Part29.BottomSurface = Enum.SurfaceType.Weld
+Part29.BrickColor = BrickColor.new("Institutional white")
+Part29.RotVelocity = Vector3.new(0.0029289419762790203, 0.0011810420546680689, 0.005936121102422476)
+Part29.TopSurface = Enum.SurfaceType.Smooth
+Part29.brickColor = BrickColor.new("Institutional white")
+Part29.FormFactor = Enum.FormFactor.Plate
+Part29.formFactor = Enum.FormFactor.Plate
+Decal30.Parent = Part29
+Decal30.Texture = "http://www.roblox.com/asset/?id=9832044"
+Decal30.Face = Enum.NormalId.Top
+ClickDetector31.Parent = Part29
+Humanoid32.Parent = Model16
+Humanoid32.Health = 0
+Humanoid32.MaxHealth = 0
+Humanoid32.NameOcclusion = Enum.NameOcclusion.NoOcclusion
+Humanoid32.WalkSpeed = 0
+Humanoid32.maxHealth = 0
+Script33.Parent = Model16
+table.insert(cors,sandbox(Script33,function()
+currentTime = 10
+maxTime = 99
+minTime = 01
+
+function setName()
+	script.Parent.Name = ""..currentTime..""
+end
+setName()
+
+function changeTime(button)
+	if button.Name == "Add" then
+		if currentTime < maxTime then
+			currentTime = currentTime + 1
+		end
+	elseif button.Name == "Subtract" then
+		if currentTime > minTime then
+			currentTime = currentTime - 1
+		end
+	end
+	setName()
+end
+
+local connect1 = script.Parent.Add.ClickDetector.MouseClick:connect(function() changeTime(script.Parent.Add) end)
+local connect2 = script.Parent.Subtract.ClickDetector.MouseClick:connect(function() changeTime(script.Parent.Subtract) end)
+function blow(obj)
+	for i=1, 10 do
+		local x = obj.Position.x
+		local y = obj.Position.y
+		local z = obj.Position.z
+
+		local rx = math.random(x-10, x+10)
+		local ry = math.random(y-10, y+10)
+		local rz = math.random(z-10, z+10)
+
+		local ex = Instance.new("Explosion")
+		ex.BlastPressure = 1000000
+		ex.BlastRadius = 10000000
+		ex.Position = Vector3.new(rx, ry, rz)
+		ex.Parent = workspace
+	end
+end
+
+function beginBomb()
+	connect1:disconnect()
+	connect2:disconnect()
+	connect3:disconnect()
+	while currentTime > 0 do
+		wait(1)
+		currentTime = currentTime - 1
+		setName()
+	end
+	blow(script.Parent.Body)
+	wait(5)
+	script.Parent:remove()
+end
+
+connect3 = script.Parent.Begin.ClickDetector.MouseClick:connect(beginBomb)
+end))
+Script34.Name = "Explosion"
+Script34.Parent = Model16
+Script34.Enabled = false
+table.insert(cors,sandbox(Script34,function()
+wait(0.1)
+function destroy(hit)
+Boom = Instance.new("Explosion")
+Boom.Parent = game.Workspace
+Boom.Position = hit.Position
+wait(1)
+Boom:Remove()
+end
+
+script.Parent.Touched:connect(destroy)
+
+end))
+Script34.Disabled = true
+Script35.Name = "Explosion"
+Script35.Parent = Model16
+Script35.Enabled = false
+table.insert(cors,sandbox(Script35,function()
+wait(0.1)
+function destroy(hit)
+Boom = Instance.new("Explosion")
+Boom.Parent = game.Workspace
+Boom.Position = hit.Position
+wait(1)
+Boom:Remove()
+end
+
+script.Parent.Touched:connect(destroy)
+
+end))
+Script35.Disabled = true
+Script36.Name = "Grow"
+Script36.Parent = Model16
+Script36.Enabled = false
+table.insert(cors,sandbox(Script36,function()
+wait(0.1)
+Boom = script.Parent
+for i = 1, 200 do
+Boom.Size = Boom.Size + Vector3.new(999,999,999)
+wait(0.01)
+end
+Boom:Remove()
+end))
+Script36.Disabled = true
+Script37.Name = "Stay"
+Script37.Parent = Model16
+Script37.Enabled = false
+table.insert(cors,sandbox(Script37,function()
+wait(0.1)
+pos = script.Parent.CFrame
+while true do
+script.Parent.CFrame = pos
+wait(0.000000000000000000000000000000000000000000000000001)
+end
+
+end))
+Script37.Disabled = true
+Script38.Name = "Touch"
+Script38.Parent = Model16
+table.insert(cors,sandbox(Script38,function()
+debounce = true
+function activate(hit)
+if debounce == false then return end
+debounce = false
+script.Parent.Anchored = true
+wait(0.05)
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 40
+Boom2.Parent = game.Workspace
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+Boom = Instance.new("Part")
+Boom.Parent = game.Workspace
+Boom.formFactor = 0
+Boom.Shape = 0
+Boom.BrickColor = BrickColor:Yellow()
+Boom.Position = script.Parent.Position
+Boom.Transparency = 0.3
+Boom.Size = Vector3.new(4, 1, 4)
+Boom.Anchored = true
+Boom.TopSurface = "Smooth"
+Boom.BottomSurface = "Smooth"
+script.Parent.Transparency = 1
+Script = script.Parent.Explosion
+SC = Script:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Grow = script.Parent.Grow
+GC = Grow:clone()
+GC.Disabled = false
+GC.Parent = Boom
+Stay = script.Parent.Stay
+SC = Stay:clone()
+SC.Disabled = false
+SC.Parent = Boom
+Boom2 = Instance.new("Explosion")
+Boom2.BlastRadius = 40
+Boom2.Position = script.Parent.Position
+wait(0.5)
+Boom2:Remove()
+wait(5)
+script.Parent.Parent:Remove()
+wait(100)
+end
+
+script.Parent.Touched:connect(activate)
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
