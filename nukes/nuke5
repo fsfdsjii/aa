@@ -279,7 +279,8 @@ d = hit:findFirstChild("Radiation")
 if d == nil then
 script.Radiation:Clone().Parent = hit
 end
-else 
+						else
+if hit.Name ~= "Base" then
 hit.Material = "CorrodedMetal" 
 hs = hit:findFirstChild("AfterSmoke")
 if hs == nil then
@@ -301,8 +302,9 @@ end
 end
 end
 end
- end)
-	end
+ end
+		end)
+		end
 num1 = num1 + 50
 num2 = num2 + 50
 wait(0.2)
