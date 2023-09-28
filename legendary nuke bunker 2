@@ -2809,8 +2809,14 @@ local debounce = false
 function getPlayer(humanoid) 
 local players = game.Players:children() 
 for i = 1, #players do 
+charac = players[i]:FindFirstChildOfClass('Model')
+if charac then
+hum = charac:FindFirstChildOfClass('Humanoid')
+if hum then
 if players[i].Character.Humanoid == humanoid then return players[i] end 
-end 
+end
+end
+end
 return nil 
 end 
 
