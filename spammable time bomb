@@ -1,0 +1,86 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Script3 = Instance.new("Script")
+Tool0.Name = "ClassicTimebomb"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "rbxasset://Textures/Bomb.png"
+Tool0.Grip = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0, -1, -0, 1, 0)
+Tool0.GripForward = Vector3.new(-0, 1, -0)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(36.1162338, 1, -10.5166206, -0.999967933, -0.00797146745, -6.34748039e-06, -3.72146801e-12, -0.000796274282, 0.999999642, -0.00797146931, 0.999967694, 0.000796248845)
+Part1.Orientation = Vector3.new(-90, 179.54299926757812, 0)
+Part1.Position = Vector3.new(36.116233825683594, 1, -10.516620635986328)
+Part1.Rotation = Vector3.new(-89.9540023803711, 0, 179.54299926757812)
+Part1.Size = Vector3.new(2, 2, 2)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.FormFactor = Enum.FormFactor.Symmetric
+Part1.formFactor = Enum.FormFactor.Symmetric
+Part1.Shape = Enum.PartType.Ball
+Part1.Massless = true
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxasset://fonts/timebomb.mesh"
+SpecialMesh2.TextureId = "rbxasset://textures/bombtex.png"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Script3.Parent = Tool0
+table.insert(cors,sandbox(Script3,function()
+script.Parent.Activated:Connect(function()
+	Part1.Archivable = true
+	Part1.CanCollide = true
+	local clone = Part1:Clone()
+	clone.Parent = workspace
+	local FuseSound = Instance.new("Sound")
+	FuseSound.SoundId = "http://www.roblox.com/asset/?id=11565378"
+	FuseSound.Parent = script.Parent
+	FuseSound.Volume = 1.5
+	FuseSound:Play()
+	local sparkles = Instance.new("Sparkles")
+	sparkles.SparkleColor = Color3.new(1, 0, 0)
+	sparkles.Parent = clone
+	task.wait(3.5)
+	local explosion = Instance.new("Explosion")
+	explosion.Parent = workspace
+	explosion.BlastRadius = 12
+	explosion.BlastPressure = 1000000
+	explosion.Position = clone.Position
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxasset://sounds\\Rocket shot.wav"
+	sound.Parent = script.Parent
+	sound.Volume = 1
+	sound:play()
+	clone:Destroy()
+	FuseSound:Destroy()
+	task.wait(2)
+	sound:Destroy()
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
