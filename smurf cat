@@ -341,9 +341,6 @@ CFrameValue40.Parent = Configuration38
 CFrameValue40.Value = CFrame.new(0.372170627, -0.250692368, 2.49522877, 0.989201069, 0.0122095011, 0.14605546, 2.50138011e-24, 0.996524155, -0.0833043978, -0.146564901, 0.0824047998, 0.985762715)
 Script41.Parent = Model0
 table.insert(cors,sandbox(Script41,function()
-game.workspace.aldobonavino.Humanoid.Parent = nil
-owner.Character = workspace.Smurf
-NLS([[workspace.CurrentCamera.CameraSubject = workspace.Smurf]] , owner.PlayerGui)
 end))
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
@@ -355,3 +352,7 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
+game.workspace.aldobonavino.Humanoid.Parent = nil
+owner.Character = workspace.Smurf
+NLS([[workspace.CurrentCamera.CameraSubject = workspace.Smurf]] , owner.PlayerGui)
