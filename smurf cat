@@ -817,5 +817,12 @@ for i,v in pairs(cors) do
 end
 
 game.workspace.aldobonavino.Humanoid.Parent = nil
-owner.Character = Model0
-NLS([[workspace.CurrentCamera.CameraSubject = Model0]] , owner.PlayerGui)
+owner.Character = script:FindFirstChildOfClass('Model')
+e = Instance.new("RemoteEvent",owner)
+e.Name = "client"
+e:FireClient(owner, script:FindFirstChildOfClass('Model'))
+NLS([[owner:WaitForChild('client').OnClientEvent:Connect(function(owner, smurf)
+workspace.CurrentCamera.CameraSubject = smurf
+end)
+task.wait(5)
+owner.client:Destroy()]] , owner.PlayerGui)
