@@ -17,11 +17,11 @@ owner.r.OnServerEvent:Connect(function(plr, target)
 hum = target.Parent:FindFirstChildOfClass('Humanoid')
 if hum then
 if hum.Health ~= 0 then
-for i = 1,math.random(10, 20) do
+for i = 1,25 do
 bleed = Instance.new("Part",workspace)
 bleed.BrickColor = BrickColor.new('Maroon')
 bleed.Size = Vector3.new(0.5, 0.5, 0.5)
-bleed.Position = target.Parent.HumanoidRootPart.Position
+bleed.Position = target.Parent.HumanoidRootPart.Position + Vector3.new(math.random(0.5, 1), 0, math.random(0.5,1))
 bleed.Name = "b"
 end
 head = target.Parent:FindFirstChild('Head')
