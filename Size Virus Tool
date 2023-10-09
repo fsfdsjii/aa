@@ -1,0 +1,39 @@
+print("Say /e clearevents to fix the tool")
+e = Instance.new("Tool",owner.Backpack)
+e.RequiresHandle = false
+e.Name="Size Virus"
+e.Activated:Connect(function()
+y = Instance.new("RemoteEvent",owner)
+y.Name="h"
+NLS([[owner:WaitForChild('h'):FireServer(owner:GetMouse().Target)]],owner.PlayerGui)
+y.OnServerEvent:Connect(function(plr, target)
+hum = target.Parent:FindFirstChildOfClass('Humanoid')
+if hum then
+target.Parent:ScaleTo(2)
+task.wait(2) 
+target.Parent:ScaleTo(3)
+task.wait(2)
+target.Parent:ScaleTo(4)
+task.wait(2)
+target.Parent:ScaleTo(5)
+task.wait(0.5)
+explode = Instance.new("Explosion")
+explode.Parent = workspace
+explode.BlastRadius = 4
+explode.BlastPressure = 50
+explode.Position = target.Parent.HumanoidRootPart.Position
+task.wait(0.5)
+y:Destroy()
+        end
+    end)
+end)
+
+owner.Chatted:Connect(function(msg)
+if msg=="/e clearevents" then
+for i,v in owner:GetDescendants() do
+if v.Name=="h" then
+        v:Destroy()
+          end
+       end
+    end
+end)
