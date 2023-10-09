@@ -205,7 +205,7 @@ script.Parent.Activated:Connect(function()
 				pcall(v)
 			end)
 		end
-		Model0:PivotTo(Tool0.WorldPivot)
+		Model0:PivotTo(owner.Character.HumanoidRootPart.CFrame)
 	else
 		laddetect:Destroy()
 		laddetect = workspace:FindFirstChild('theladder')
@@ -390,7 +390,7 @@ script.Parent.Activated:Connect(function()
 					pcall(v)
 				end)
 			end
-			Model0:PivotTo(Tool0.WorldPivot)
+			Model0:PivotTo(owner.Character.HumanoidRootPart.CFrame)
 	    end
 	end
 end)
