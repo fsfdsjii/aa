@@ -1,4 +1,4 @@
-
+print("Say clear-stairs to clear stairs")
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -17,384 +17,205 @@ cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
 Tool0 = Instance.new("Tool")
 Script1 = Instance.new("Script")
+Part2 = Instance.new("Part")
 Tool0.Name = "Ladder"
 Tool0.Parent = owner.Backpack
 Tool0.RequiresHandle = false
 Script1.Parent = Tool0
 table.insert(cors,sandbox(Script1,function()
 script.Parent.Activated:Connect(function()
-	laddetect = workspace:FindFirstChild('theladder')
-	if not laddetect then
-		function sandbox(var,func)
-			local env = getfenv(func)
-			local newenv = setmetatable({},{
-				__index = function(self,k)
-					if k=="script" then
-						return var
-					else
-						return env[k]
-					end
-				end,
-			})
-			setfenv(func,newenv)
-			return func
-		end
-		cors = {}
-		mas = Instance.new("Model",game:GetService("Lighting"))
-		Model0 = Instance.new("Model")
-		TrussPart1 = Instance.new("TrussPart")
-		Weld2 = Instance.new("Weld")
-		Weld3 = Instance.new("Weld")
-		Weld4 = Instance.new("Weld")
-		Weld5 = Instance.new("Weld")
-		Weld6 = Instance.new("Weld")
-		Weld7 = Instance.new("Weld")
-		TrussPart8 = Instance.new("TrussPart")
-		TrussPart9 = Instance.new("TrussPart")
-		Snap10 = Instance.new("Snap")
-		Snap11 = Instance.new("Snap")
-		TrussPart12 = Instance.new("TrussPart")
-		Snap13 = Instance.new("Snap")
-		Part14 = Instance.new("Part")
-		SpecialMesh15 = Instance.new("SpecialMesh")
-		Part16 = Instance.new("Part")
-		Part17 = Instance.new("Part")
-		Script18 = Instance.new("Script")
-		Model0.Parent = mas
-		Model0.Name = "theladder"
-		TrussPart1.Parent = Model0
-		TrussPart1.CFrame = CFrame.new(6.04589367, 9, -1.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		TrussPart1.Position = Vector3.new(6.045893669128418, 9, -1.3545646667480469)
-		TrussPart1.Transparency = 1
-		TrussPart1.Size = Vector3.new(2, 18, 2)
-		TrussPart1.BottomSurface = Enum.SurfaceType.Smooth
-		TrussPart1.Material = Enum.Material.Wood
-		TrussPart1.TopSurface = Enum.SurfaceType.Smooth
-		Weld2.Name = "BTWeld"
-		Weld2.Parent = TrussPart1
-		Weld2.C1 = CFrame.new(0, 0, -2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		Weld2.Part0 = TrussPart1
-		Weld2.Part1 = TrussPart12
-		Weld2.part1 = TrussPart12
-		Weld3.Name = "BTWeld"
-		Weld3.Parent = TrussPart1
-		Weld3.C1 = CFrame.new(-0.15410614, -9.53674316e-06, 4.64543533, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		Weld3.Part0 = TrussPart1
-		Weld3.Part1 = Part17
-		Weld3.part1 = Part17
-		Weld4.Name = "BTWeld"
-		Weld4.Parent = TrussPart1
-		Weld4.C1 = CFrame.new(-0.15410614, -9.53674316e-06, -2.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		Weld4.Part0 = TrussPart1
-		Weld4.Part1 = Part16
-		Weld4.part1 = Part16
-		Weld5.Name = "BTWeld"
-		Weld5.Parent = TrussPart1
-		Weld5.C1 = CFrame.new(-0.145435333, 0.499999046, 1.04589367, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		Weld5.Part0 = TrussPart1
-		Weld5.Part1 = Part14
-		Weld5.part1 = Part14
-		Weld6.Name = "BTWeld"
-		Weld6.Parent = TrussPart1
-		Weld6.C1 = CFrame.new(0, 0, 4, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		Weld6.Part0 = TrussPart1
-		Weld6.Part1 = TrussPart8
-		Weld6.part1 = TrussPart8
-		Weld7.Name = "BTWeld"
-		Weld7.Parent = TrussPart1
-		Weld7.C1 = CFrame.new(0, 0, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		Weld7.Part0 = TrussPart1
-		Weld7.Part1 = TrussPart9
-		Weld7.part1 = TrussPart9
-		TrussPart8.Parent = Model0
-		TrussPart8.CFrame = CFrame.new(6.04589367, 9, -5.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		TrussPart8.Position = Vector3.new(6.045893669128418, 9, -5.354564666748047)
-		TrussPart8.Transparency = 1
-		TrussPart8.Size = Vector3.new(2, 18, 2)
-		TrussPart8.BottomSurface = Enum.SurfaceType.Smooth
-		TrussPart8.Material = Enum.Material.Wood
-		TrussPart8.TopSurface = Enum.SurfaceType.Smooth
-		TrussPart9.Parent = Model0
-		TrussPart9.CFrame = CFrame.new(6.04589367, 9, -3.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		TrussPart9.Position = Vector3.new(6.045893669128418, 9, -3.354564666748047)
-		TrussPart9.Transparency = 1
-		TrussPart9.Size = Vector3.new(2, 18, 2)
-		TrussPart9.BottomSurface = Enum.SurfaceType.Smooth
-		TrussPart9.Material = Enum.Material.Wood
-		TrussPart9.TopSurface = Enum.SurfaceType.Smooth
-		Snap10.Parent = TrussPart9
-		Snap10.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
-		Snap10.C1 = CFrame.new(0, 0, 1, -1, 0, 0, 0, 1, 0, 0, 0, -1)
-		Snap10.Part0 = TrussPart9
-		Snap10.Part1 = TrussPart8
-		Snap10.part1 = TrussPart8
-		Snap11.Parent = TrussPart9
-		Snap11.C0 = CFrame.new(0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		Snap11.C1 = CFrame.new(0, 0, -1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		Snap11.Part0 = TrussPart9
-		Snap11.Part1 = TrussPart1
-		Snap11.part1 = TrussPart1
-		TrussPart12.Parent = Model0
-		TrussPart12.CFrame = CFrame.new(6.04589367, 9, 0.645435333, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		TrussPart12.Position = Vector3.new(6.045893669128418, 9, 0.6454353332519531)
-		TrussPart12.Transparency = 1
-		TrussPart12.Size = Vector3.new(2, 18, 2)
-		TrussPart12.BottomSurface = Enum.SurfaceType.Smooth
-		TrussPart12.Material = Enum.Material.Wood
-		TrussPart12.TopSurface = Enum.SurfaceType.Smooth
-		Snap13.Parent = TrussPart12
-		Snap13.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
-		Snap13.C1 = CFrame.new(0, 0, 1, -1, 0, 0, 0, 1, 0, 0, 0, -1)
-		Snap13.Part0 = TrussPart12
-		Snap13.Part1 = TrussPart1
-		Snap13.part1 = TrussPart1
-		Part14.Parent = Model0
-		Part14.CFrame = CFrame.new(6.191329, 8.50000095, -2.40045834, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		Part14.Position = Vector3.new(6.191329002380371, 8.500000953674316, -2.400458335876465)
-		Part14.Size = Vector3.new(0.10000000149011612, 0.10000000149011612, 0.10000000149011612)
-		Part14.BottomSurface = Enum.SurfaceType.Smooth
-		Part14.Material = Enum.Material.Wood
-		Part14.TopSurface = Enum.SurfaceType.Smooth
-		SpecialMesh15.Parent = Part14
-		SpecialMesh15.MeshId = "rbxassetid://12810850996"
-		SpecialMesh15.Scale = Vector3.new(2, 1.350000023841858, 2.299999952316284)
-		SpecialMesh15.TextureId = "rbxassetid://12810851227"
-		SpecialMesh15.MeshType = Enum.MeshType.FileMesh
-		Part16.Parent = Model0
-		Part16.CFrame = CFrame.new(6.19999981, 9.00000954, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		Part16.Position = Vector3.new(6.199999809265137, 9.000009536743164, 1)
-		Part16.Transparency = 1
-		Part16.Size = Vector3.new(3, 18, 2.5)
-		Part16.BottomSurface = Enum.SurfaceType.Smooth
-		Part16.Material = Enum.Material.Wood
-		Part16.TopSurface = Enum.SurfaceType.Smooth
-		Part17.Parent = Model0
-		Part17.CFrame = CFrame.new(6.19999981, 9.00000954, -6, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-		Part17.Position = Vector3.new(6.199999809265137, 9.000009536743164, -6)
-		Part17.Transparency = 1
-		Part17.Size = Vector3.new(3, 18, 2.5)
-		Part17.BottomSurface = Enum.SurfaceType.Smooth
-		Part17.Material = Enum.Material.Wood
-		Part17.TopSurface = Enum.SurfaceType.Smooth
-		Script18.Parent = Model0
-		table.insert(cors,sandbox(Script18,function()
-			for i,v in script.Parent:GetDescendants() do
-				if v:IsA('BasePart') then
-					v.Touched:Connect(function(part)
-						if part:IsA('BasePart') then
-							if not part:IsA('Terrain') then
-								if part ~= v then
-									local hum = part.Parent:FindFirstChild('Humanoid')
-									if hum then
-										part.Material = Enum.Material.Granite
-									end
+	function sandbox(var,func)
+		local env = getfenv(func)
+		local newenv = setmetatable({},{
+			__index = function(self,k)
+				if k=="script" then
+					return var
+				else
+					return env[k]
+				end
+			end,
+		})
+		setfenv(func,newenv)
+		return func
+	end
+	cors = {}
+	mas = Instance.new("Model",game:GetService("Lighting"))
+	Model0 = Instance.new("Model")
+	TrussPart1 = Instance.new("TrussPart")
+	Weld2 = Instance.new("Weld")
+	Weld3 = Instance.new("Weld")
+	Weld4 = Instance.new("Weld")
+	Weld5 = Instance.new("Weld")
+	Weld6 = Instance.new("Weld")
+	Weld7 = Instance.new("Weld")
+	TrussPart8 = Instance.new("TrussPart")
+	TrussPart9 = Instance.new("TrussPart")
+	Snap10 = Instance.new("Snap")
+	Snap11 = Instance.new("Snap")
+	TrussPart12 = Instance.new("TrussPart")
+	Snap13 = Instance.new("Snap")
+	Part14 = Instance.new("Part")
+	SpecialMesh15 = Instance.new("SpecialMesh")
+	Part16 = Instance.new("Part")
+	Part17 = Instance.new("Part")
+	Script18 = Instance.new("Script")
+	Model0.Parent = workspace
+	Model0.Name = "theladder"
+	TrussPart1.Parent = Model0
+	TrussPart1.CFrame = CFrame.new(6.04589367, 9, -1.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	TrussPart1.Position = Vector3.new(6.045893669128418, 9, -1.3545646667480469)
+	TrussPart1.Transparency = 1
+	TrussPart1.Size = Vector3.new(2, 18, 2)
+	TrussPart1.BottomSurface = Enum.SurfaceType.Smooth
+	TrussPart1.Material = Enum.Material.Wood
+	TrussPart1.TopSurface = Enum.SurfaceType.Smooth
+	Weld2.Name = "BTWeld"
+	Weld2.Parent = TrussPart1
+	Weld2.C1 = CFrame.new(0, 0, -2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Weld2.Part0 = TrussPart1
+	Weld2.Part1 = TrussPart12
+	Weld2.part1 = TrussPart12
+	Weld3.Name = "BTWeld"
+	Weld3.Parent = TrussPart1
+	Weld3.C1 = CFrame.new(-0.15410614, -9.53674316e-06, 4.64543533, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Weld3.Part0 = TrussPart1
+	Weld3.Part1 = Part17
+	Weld3.part1 = Part17
+	Weld4.Name = "BTWeld"
+	Weld4.Parent = TrussPart1
+	Weld4.C1 = CFrame.new(-0.15410614, -9.53674316e-06, -2.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Weld4.Part0 = TrussPart1
+	Weld4.Part1 = Part16
+	Weld4.part1 = Part16
+	Weld5.Name = "BTWeld"
+	Weld5.Parent = TrussPart1
+	Weld5.C1 = CFrame.new(-0.145435333, 0.499999046, 1.04589367, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Weld5.Part0 = TrussPart1
+	Weld5.Part1 = Part14
+	Weld5.part1 = Part14
+	Weld6.Name = "BTWeld"
+	Weld6.Parent = TrussPart1
+	Weld6.C1 = CFrame.new(0, 0, 4, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Weld6.Part0 = TrussPart1
+	Weld6.Part1 = TrussPart8
+	Weld6.part1 = TrussPart8
+	Weld7.Name = "BTWeld"
+	Weld7.Parent = TrussPart1
+	Weld7.C1 = CFrame.new(0, 0, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Weld7.Part0 = TrussPart1
+	Weld7.Part1 = TrussPart9
+	Weld7.part1 = TrussPart9
+	TrussPart8.Parent = Model0
+	TrussPart8.CFrame = CFrame.new(6.04589367, 9, -5.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	TrussPart8.Position = Vector3.new(6.045893669128418, 9, -5.354564666748047)
+	TrussPart8.Transparency = 1
+	TrussPart8.Size = Vector3.new(2, 18, 2)
+	TrussPart8.BottomSurface = Enum.SurfaceType.Smooth
+	TrussPart8.Material = Enum.Material.Wood
+	TrussPart8.TopSurface = Enum.SurfaceType.Smooth
+	TrussPart9.Parent = Model0
+	TrussPart9.CFrame = CFrame.new(6.04589367, 9, -3.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	TrussPart9.Position = Vector3.new(6.045893669128418, 9, -3.354564666748047)
+	TrussPart9.Transparency = 1
+	TrussPart9.Size = Vector3.new(2, 18, 2)
+	TrussPart9.BottomSurface = Enum.SurfaceType.Smooth
+	TrussPart9.Material = Enum.Material.Wood
+	TrussPart9.TopSurface = Enum.SurfaceType.Smooth
+	Snap10.Parent = TrussPart9
+	Snap10.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+	Snap10.C1 = CFrame.new(0, 0, 1, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Snap10.Part0 = TrussPart9
+	Snap10.Part1 = TrussPart8
+	Snap10.part1 = TrussPart8
+	Snap11.Parent = TrussPart9
+	Snap11.C0 = CFrame.new(0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Snap11.C1 = CFrame.new(0, 0, -1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Snap11.Part0 = TrussPart9
+	Snap11.Part1 = TrussPart1
+	Snap11.part1 = TrussPart1
+	TrussPart12.Parent = Model0
+	TrussPart12.CFrame = CFrame.new(6.04589367, 9, 0.645435333, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	TrussPart12.Position = Vector3.new(6.045893669128418, 9, 0.6454353332519531)
+	TrussPart12.Transparency = 1
+	TrussPart12.Size = Vector3.new(2, 18, 2)
+	TrussPart12.BottomSurface = Enum.SurfaceType.Smooth
+	TrussPart12.Material = Enum.Material.Wood
+	TrussPart12.TopSurface = Enum.SurfaceType.Smooth
+	Snap13.Parent = TrussPart12
+	Snap13.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
+	Snap13.C1 = CFrame.new(0, 0, 1, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Snap13.Part0 = TrussPart12
+	Snap13.Part1 = TrussPart1
+	Snap13.part1 = TrussPart1
+	Part14.Parent = Model0
+	Part14.CFrame = CFrame.new(6.191329, 8.50000095, -2.40045834, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Part14.Position = Vector3.new(6.191329002380371, 8.500000953674316, -2.400458335876465)
+	Part14.Size = Vector3.new(0.10000000149011612, 0.10000000149011612, 0.10000000149011612)
+	Part14.BottomSurface = Enum.SurfaceType.Smooth
+	Part14.Material = Enum.Material.Wood
+	Part14.TopSurface = Enum.SurfaceType.Smooth
+	SpecialMesh15.Parent = Part14
+	SpecialMesh15.MeshId = "rbxassetid://12810850996"
+	SpecialMesh15.Scale = Vector3.new(2, 1.350000023841858, 2.299999952316284)
+	SpecialMesh15.TextureId = "rbxassetid://12810851227"
+	SpecialMesh15.MeshType = Enum.MeshType.FileMesh
+	Part16.Parent = Model0
+	Part16.CFrame = CFrame.new(6.19999981, 9.00000954, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Part16.Position = Vector3.new(6.199999809265137, 9.000009536743164, 1)
+	Part16.Transparency = 1
+	Part16.Size = Vector3.new(3, 18, 2.5)
+	Part16.BottomSurface = Enum.SurfaceType.Smooth
+	Part16.Material = Enum.Material.Wood
+	Part16.TopSurface = Enum.SurfaceType.Smooth
+	Part17.Parent = Model0
+	Part17.CFrame = CFrame.new(6.19999981, 9.00000954, -6, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Part17.Position = Vector3.new(6.199999809265137, 9.000009536743164, -6)
+	Part17.Transparency = 1
+	Part17.Size = Vector3.new(3, 18, 2.5)
+	Part17.BottomSurface = Enum.SurfaceType.Smooth
+	Part17.Material = Enum.Material.Wood
+	Part17.TopSurface = Enum.SurfaceType.Smooth
+	Script18.Parent = Model0
+	table.insert(cors,sandbox(Script18,function()
+		for i,v in script.Parent:GetDescendants() do
+			if v:IsA('BasePart') then
+				v.Touched:Connect(function(part)
+					if part:IsA('BasePart') then
+						if not part:IsA('Terrain') then
+							if part ~= v then
+								local hum = part.Parent:FindFirstChild('Humanoid')
+								if hum then
+									part.Material = Enum.Material.Granite
 								end
 							end
 						end
-					end)
-				end
-			end
-		end))
-		for i,v in pairs(mas:GetChildren()) do
-			v.Parent = script
-			pcall(function() v:MakeJoints() end)
-		end
-		mas:Destroy()
-		for i,v in pairs(cors) do
-			spawn(function()
-				pcall(v)
-			end)
-		end
-		Model0:PivotTo(owner.Character.HumanoidRootPart.CFrame)
-	else
-		laddetect:Destroy()
-		laddetect = workspace:FindFirstChild('theladder')
-		if not laddetect then
-			function sandbox(var,func)
-				local env = getfenv(func)
-				local newenv = setmetatable({},{
-					__index = function(self,k)
-						if k=="script" then
-							return var
-						else
-							return env[k]
-						end
-					end,
-				})
-				setfenv(func,newenv)
-				return func
-			end
-			cors = {}
-			mas = Instance.new("Model",game:GetService("Lighting"))
-			Model0 = Instance.new("Model")
-			TrussPart1 = Instance.new("TrussPart")
-			Weld2 = Instance.new("Weld")
-			Weld3 = Instance.new("Weld")
-			Weld4 = Instance.new("Weld")
-			Weld5 = Instance.new("Weld")
-			Weld6 = Instance.new("Weld")
-			Weld7 = Instance.new("Weld")
-			TrussPart8 = Instance.new("TrussPart")
-			TrussPart9 = Instance.new("TrussPart")
-			Snap10 = Instance.new("Snap")
-			Snap11 = Instance.new("Snap")
-			TrussPart12 = Instance.new("TrussPart")
-			Snap13 = Instance.new("Snap")
-			Part14 = Instance.new("Part")
-			SpecialMesh15 = Instance.new("SpecialMesh")
-			Part16 = Instance.new("Part")
-			Part17 = Instance.new("Part")
-			Script18 = Instance.new("Script")
-			Model0.Parent = mas
-			Model0.Name = "theladder"
-			TrussPart1.Parent = Model0
-			TrussPart1.CFrame = CFrame.new(6.04589367, 9, -1.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			TrussPart1.Position = Vector3.new(6.045893669128418, 9, -1.3545646667480469)
-			TrussPart1.Transparency = 1
-			TrussPart1.Size = Vector3.new(2, 18, 2)
-			TrussPart1.BottomSurface = Enum.SurfaceType.Smooth
-			TrussPart1.Material = Enum.Material.Wood
-			TrussPart1.TopSurface = Enum.SurfaceType.Smooth
-			Weld2.Name = "BTWeld"
-			Weld2.Parent = TrussPart1
-			Weld2.C1 = CFrame.new(0, 0, -2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			Weld2.Part0 = TrussPart1
-			Weld2.Part1 = TrussPart12
-			Weld2.part1 = TrussPart12
-			Weld3.Name = "BTWeld"
-			Weld3.Parent = TrussPart1
-			Weld3.C1 = CFrame.new(-0.15410614, -9.53674316e-06, 4.64543533, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			Weld3.Part0 = TrussPart1
-			Weld3.Part1 = Part17
-			Weld3.part1 = Part17
-			Weld4.Name = "BTWeld"
-			Weld4.Parent = TrussPart1
-			Weld4.C1 = CFrame.new(-0.15410614, -9.53674316e-06, -2.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			Weld4.Part0 = TrussPart1
-			Weld4.Part1 = Part16
-			Weld4.part1 = Part16
-			Weld5.Name = "BTWeld"
-			Weld5.Parent = TrussPart1
-			Weld5.C1 = CFrame.new(-0.145435333, 0.499999046, 1.04589367, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			Weld5.Part0 = TrussPart1
-			Weld5.Part1 = Part14
-			Weld5.part1 = Part14
-			Weld6.Name = "BTWeld"
-			Weld6.Parent = TrussPart1
-			Weld6.C1 = CFrame.new(0, 0, 4, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			Weld6.Part0 = TrussPart1
-			Weld6.Part1 = TrussPart8
-			Weld6.part1 = TrussPart8
-			Weld7.Name = "BTWeld"
-			Weld7.Parent = TrussPart1
-			Weld7.C1 = CFrame.new(0, 0, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			Weld7.Part0 = TrussPart1
-			Weld7.Part1 = TrussPart9
-			Weld7.part1 = TrussPart9
-			TrussPart8.Parent = Model0
-			TrussPart8.CFrame = CFrame.new(6.04589367, 9, -5.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			TrussPart8.Position = Vector3.new(6.045893669128418, 9, -5.354564666748047)
-			TrussPart8.Transparency = 1
-			TrussPart8.Size = Vector3.new(2, 18, 2)
-			TrussPart8.BottomSurface = Enum.SurfaceType.Smooth
-			TrussPart8.Material = Enum.Material.Wood
-			TrussPart8.TopSurface = Enum.SurfaceType.Smooth
-			TrussPart9.Parent = Model0
-			TrussPart9.CFrame = CFrame.new(6.04589367, 9, -3.35456467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			TrussPart9.Position = Vector3.new(6.045893669128418, 9, -3.354564666748047)
-			TrussPart9.Transparency = 1
-			TrussPart9.Size = Vector3.new(2, 18, 2)
-			TrussPart9.BottomSurface = Enum.SurfaceType.Smooth
-			TrussPart9.Material = Enum.Material.Wood
-			TrussPart9.TopSurface = Enum.SurfaceType.Smooth
-			Snap10.Parent = TrussPart9
-			Snap10.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
-			Snap10.C1 = CFrame.new(0, 0, 1, -1, 0, 0, 0, 1, 0, 0, 0, -1)
-			Snap10.Part0 = TrussPart9
-			Snap10.Part1 = TrussPart8
-			Snap10.part1 = TrussPart8
-			Snap11.Parent = TrussPart9
-			Snap11.C0 = CFrame.new(0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			Snap11.C1 = CFrame.new(0, 0, -1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			Snap11.Part0 = TrussPart9
-			Snap11.Part1 = TrussPart1
-			Snap11.part1 = TrussPart1
-			TrussPart12.Parent = Model0
-			TrussPart12.CFrame = CFrame.new(6.04589367, 9, 0.645435333, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			TrussPart12.Position = Vector3.new(6.045893669128418, 9, 0.6454353332519531)
-			TrussPart12.Transparency = 1
-			TrussPart12.Size = Vector3.new(2, 18, 2)
-			TrussPart12.BottomSurface = Enum.SurfaceType.Smooth
-			TrussPart12.Material = Enum.Material.Wood
-			TrussPart12.TopSurface = Enum.SurfaceType.Smooth
-			Snap13.Parent = TrussPart12
-			Snap13.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
-			Snap13.C1 = CFrame.new(0, 0, 1, -1, 0, 0, 0, 1, 0, 0, 0, -1)
-			Snap13.Part0 = TrussPart12
-			Snap13.Part1 = TrussPart1
-			Snap13.part1 = TrussPart1
-			Part14.Parent = Model0
-			Part14.CFrame = CFrame.new(6.191329, 8.50000095, -2.40045834, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			Part14.Position = Vector3.new(6.191329002380371, 8.500000953674316, -2.400458335876465)
-			Part14.Size = Vector3.new(0.10000000149011612, 0.10000000149011612, 0.10000000149011612)
-			Part14.BottomSurface = Enum.SurfaceType.Smooth
-			Part14.Material = Enum.Material.Wood
-			Part14.TopSurface = Enum.SurfaceType.Smooth
-			SpecialMesh15.Parent = Part14
-			SpecialMesh15.MeshId = "rbxassetid://12810850996"
-			SpecialMesh15.Scale = Vector3.new(2, 1.350000023841858, 2.299999952316284)
-			SpecialMesh15.TextureId = "rbxassetid://12810851227"
-			SpecialMesh15.MeshType = Enum.MeshType.FileMesh
-			Part16.Parent = Model0
-			Part16.CFrame = CFrame.new(6.19999981, 9.00000954, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			Part16.Position = Vector3.new(6.199999809265137, 9.000009536743164, 1)
-			Part16.Transparency = 1
-			Part16.Size = Vector3.new(3, 18, 2.5)
-			Part16.BottomSurface = Enum.SurfaceType.Smooth
-			Part16.Material = Enum.Material.Wood
-			Part16.TopSurface = Enum.SurfaceType.Smooth
-			Part17.Parent = Model0
-			Part17.CFrame = CFrame.new(6.19999981, 9.00000954, -6, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			Part17.Position = Vector3.new(6.199999809265137, 9.000009536743164, -6)
-			Part17.Transparency = 1
-			Part17.Size = Vector3.new(3, 18, 2.5)
-			Part17.BottomSurface = Enum.SurfaceType.Smooth
-			Part17.Material = Enum.Material.Wood
-			Part17.TopSurface = Enum.SurfaceType.Smooth
-			Script18.Parent = Model0
-			table.insert(cors,sandbox(Script18,function()
-				for i,v in script.Parent:GetDescendants() do
-					if v:IsA('BasePart') then
-						v.Touched:Connect(function(part)
-							if part:IsA('BasePart') then
-								if not part:IsA('Terrain') then
-									if part ~= v then
-										local hum = part.Parent:FindFirstChild('Humanoid')
-										if hum then
-											part.Material = Enum.Material.Granite
-										end
-									end
-								end
-							end
-						end)
 					end
-				end
-			end))
-			for i,v in pairs(mas:GetChildren()) do
-				v.Parent = script
-				pcall(function() v:MakeJoints() end)
-			end
-			mas:Destroy()
-			for i,v in pairs(cors) do
-				spawn(function()
-					pcall(v)
 				end)
 			end
-			Model0:PivotTo(owner.Character.HumanoidRootPart.CFrame)
-	    end
+		end
+	end))
+	for i,v in pairs(mas:GetChildren()) do
+		v.Parent = script
+		pcall(function() v:MakeJoints() end)
 	end
+	mas:Destroy()
+	for i,v in pairs(cors) do
+		spawn(function()
+			pcall(v)
+		end)
+	end
+	Model0:PivotTo(script.Parent.Handle.CFrame)
 end)
 end))
+Part2.Name = "Handle"
+Part2.Parent = Tool0
+Part2.CFrame = CFrame.new(5, 18.5000134, -6, -4.37113883e-08, 0, 1, 0, 1, 0, -1, 0, -4.37113883e-08)
+Part2.Orientation = Vector3.new(0, 90, 0)
+Part2.Position = Vector3.new(5, 18.50001335144043, -6)
+Part2.Rotation = Vector3.new(0, 90, 0)
+Part2.Size = Vector3.new(0.10000000149011612, 0.10000000149011612, 0.10000000149011612)
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.TopSurface = Enum.SurfaceType.Smooth
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
@@ -405,3 +226,13 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
+owner.Chatted:Connect(function(msg)
+	if msg == "clear-stairs" then
+		for i,v in workspace:GetDescendants() do
+			if v.Name == "theladder" then
+				v:Destroy()
+			end
+		end
+	end
+end)
