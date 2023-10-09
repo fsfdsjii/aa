@@ -16,6 +16,7 @@ NLS([[owner.r:FireServer(owner:GetMouse().Target)]],owner.PlayerGui)
 owner.r.OnServerEvent:Connect(function(plr, target)
 hum = target.Parent:FindFirstChildOfClass('Humanoid')
 if hum then
+if hum.Health ~= 0 then
 for i = 1,math.random(10, 20) do
 bleed = Instance.new("Part",workspace)
 bleed.BrickColor = BrickColor.new('Maroon')
@@ -23,12 +24,17 @@ bleed.Size = Vector3.new(0.5, 0.5, 0.5)
 bleed.Position = target.Parent.HumanoidRootPart.Position
 bleed.Name = "b"
 end
-target.Parent:BreakJoints() target.Parent.Head.Rotation = target.Parent.Head.Rotation + Vector3.new(180, 0, 0)
+head = target.Parent:FindFirstChild('Head')
+target.Parent:BreakJoints()
+if head then
+head:Destroy()
+end
 sound:Play()
 task.wait(1.8)
 for i,v in workspace:GetDescendants() do
 if v.Name == "b" then
 v:Destroy()
+                    end
                 end
             end
         end
