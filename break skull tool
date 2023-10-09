@@ -14,6 +14,7 @@ end
 br.Activated:Connect(function()
 NLS([[owner.r:FireServer(owner:GetMouse().Target)]],owner.PlayerGui)
 owner.r.OnServerEvent:Connect(function(plr, target)
+if target ~= nil then
 hum = target.Parent:FindFirstChildOfClass('Humanoid')
 if hum then
 if hum.Health ~= 0 then
@@ -34,6 +35,7 @@ task.wait(1.8)
 for i,v in workspace:GetDescendants() do
 if v.Name == "b" then
 v:Destroy()
+                        end
                     end
                 end
             end
