@@ -21,7 +21,7 @@ thevalue2.Value = false
 end
 debug = true
 e.Activated:Connect(function()
-NLS([[owner.n:FireServer(owner:GetMouse().Hit)]],owner.PlayerGui)
+NLS([[owner.n:FireServer(owner:GetMouse().Hit) task.wait(0.8) script:Destroy()]],owner.PlayerGui)
 owner.n.OnServerEvent:Connect(function(plr, hit)
 if debug == true then
 debug = false
