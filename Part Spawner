@@ -1,0 +1,58 @@
+print("Say /e then a basepart to toggle between parts and also say /e anchored then true or false to toggle if its anchored or not")
+e = Instance.new("Tool",owner.Backpack)
+e.RequiresHandle = false
+e.Name = "Part Spawner"
+b = owner:FindFirstChild('n')
+if not b then
+y = Instance.new("RemoteEvent",owner)
+y.Name = "n"
+end
+check2 = owner:FindFirstChild('bud')
+if not check2 then
+thevalue = Instance.new("StringValue",owner)
+thevalue.Name = "bud"
+thevalue.Value = "Part"
+end
+check3 = owner:FindFirstChild('buddy')
+if not check3 then
+thevalue2 = Instance.new("BoolValue",owner)
+thevalue2.Name = "buddy"
+thevalue2.Value = false
+end
+debug = true
+e.Activated:Connect(function()
+NLS([[owner.n:FireServer(owner:GetMouse().Hit)]],owner.PlayerGui)
+owner.n.OnServerEvent:Connect(function(plr, hit)
+if debug == true then
+debug = false
+thepart = Instance.new(tostring(owner.bud.Value))
+thepart.Parent = workspace
+thepart.Position = hit.Position
+thepart.Anchored = owner.buddy.Value
+task.wait(0.1)
+debug = true
+       end
+   end)
+end)
+
+owner.Chatted:Connect(function(Z1)
+if Z1 == "/e Part" then
+owner.bud.Value = "Part"
+elseif Z1 == "/e TrussPart" then
+owner.bud.Value = "TrussPart"
+elseif Z1 == "/e MeshPart" then
+owner.bud.Value = "MeshPart"
+elseif Z1 == "/e WedgePart" then
+owner.bud.Value = "WedgePart"
+elseif Z1 == "/e CornerWedgePart" then
+owner.bud.Value = "CornerWedgePart"
+   end
+end)
+
+owner.Chatted:Connect(function(Z2)
+if Z2 == "/e anchored false" then
+owner.buddy.Value = false
+elseif Z2 == "/e anchored true" then
+owner.buddy.Value = true
+    end
+end)
