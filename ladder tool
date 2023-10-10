@@ -1,4 +1,4 @@
-print("Say clear-stairs to clear stairs")
+print("Say clear-ladders to clear ladders")
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -228,7 +228,7 @@ for i,v in pairs(cors) do
 end
 
 owner.Chatted:Connect(function(msg)
-	if msg == "clear-stairs" then
+	if msg == "clear-ladders" then
 		for i,v in workspace:GetDescendants() do
 			if v.Name == "theladder" then
 				v:Destroy()
