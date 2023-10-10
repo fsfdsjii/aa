@@ -69,6 +69,7 @@ script.Parent.Activated:Connect(function()
 	TrussPart1.BottomSurface = Enum.SurfaceType.Smooth
 	TrussPart1.Material = Enum.Material.Wood
 	TrussPart1.TopSurface = Enum.SurfaceType.Smooth
+        TrussPart1.Massless = true
 	Weld2.Name = "BTWeld"
 	Weld2.Parent = TrussPart1
 	Weld2.C1 = CFrame.new(0, 0, -2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -141,6 +142,7 @@ script.Parent.Activated:Connect(function()
 	TrussPart12.BottomSurface = Enum.SurfaceType.Smooth
 	TrussPart12.Material = Enum.Material.Wood
 	TrussPart12.TopSurface = Enum.SurfaceType.Smooth
+        TrussPart12.Massless = true
 	Snap13.Parent = TrussPart12
 	Snap13.C0 = CFrame.new(0, 0, -1, -1, -0, -0, 0, 1, 0, -0, -0, -1)
 	Snap13.C1 = CFrame.new(0, 0, 1, -1, 0, 0, 0, 1, 0, 0, 0, -1)
@@ -154,6 +156,7 @@ script.Parent.Activated:Connect(function()
 	Part14.BottomSurface = Enum.SurfaceType.Smooth
 	Part14.Material = Enum.Material.Wood
 	Part14.TopSurface = Enum.SurfaceType.Smooth
+        Part14.Massless = true
 	SpecialMesh15.Parent = Part14
 	SpecialMesh15.MeshId = "rbxassetid://12810850996"
 	SpecialMesh15.Scale = Vector3.new(2, 1.350000023841858, 2.299999952316284)
@@ -167,6 +170,7 @@ script.Parent.Activated:Connect(function()
 	Part16.BottomSurface = Enum.SurfaceType.Smooth
 	Part16.Material = Enum.Material.Wood
 	Part16.TopSurface = Enum.SurfaceType.Smooth
+        Part16.Massless = true
 	Part17.Parent = Model0
 	Part17.CFrame = CFrame.new(6.19999981, 9.00000954, -6, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 	Part17.Position = Vector3.new(6.199999809265137, 9.000009536743164, -6)
@@ -175,24 +179,9 @@ script.Parent.Activated:Connect(function()
 	Part17.BottomSurface = Enum.SurfaceType.Smooth
 	Part17.Material = Enum.Material.Wood
 	Part17.TopSurface = Enum.SurfaceType.Smooth
+        Part17.Massless = true
 	Script18.Parent = Model0
 	table.insert(cors,sandbox(Script18,function()
-		for i,v in script.Parent:GetDescendants() do
-			if v:IsA('BasePart') then
-				v.Touched:Connect(function(part)
-					if part:IsA('BasePart') then
-						if not part:IsA('Terrain') then
-							if part ~= v then
-								local hum = part.Parent:FindFirstChild('Humanoid')
-								if hum then
-									part.Material = Enum.Material.Granite
-								end
-							end
-						end
-					end
-				end)
-			end
-		end
 	end))
 	for i,v in pairs(mas:GetChildren()) do
 		v.Parent = script
