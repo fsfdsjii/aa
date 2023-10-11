@@ -3,6 +3,7 @@ print("Say /e anchored then true or false to toggle if its anchored or not")
 print("Say /e clear-part-data to clear the parts data 'basically resetting if its anchored or not, etc'")
 print("Say /e clear-parts to clear parts")
 print("Say /setsize to size parts, you might have to do /c System and enable chatted on private messages to use it privately")
+print("Say /setmaterial to set the material of parts, without spaces in the material")
 e = Instance.new("Tool",owner.Backpack)
 e.RequiresHandle = false
 e.Name = "Part Spawner"
@@ -29,6 +30,12 @@ thevalue3 = Instance.new("Vector3Value",owner)
 thevalue3.Name = "buddys"
 thevalue3.Value = Vector3.new(4, 1, 2)
 end
+check5 = owner:FindFirstChild('bu')
+if not check5 then
+thevalue4 = Instance.new("StringValue",owner)
+thevalue4.Name = "bu"
+thevalue4.Value = "Plastic"
+end
 debug = true
 e.Activated:Connect(function()
 if not check2 then
@@ -46,17 +53,23 @@ thevalue3 = Instance.new("Vector3Value",owner)
 thevalue3.Name = "buddys"
 thevalue3.Value = Vector3.new(4, 1, 2)
 end
+if not check5 then
+thevalue4 = Instance.new("StringValue",owner)
+thevalue4.Name = "bu"
+thevalue4.Value = "Plastic"
+end
 NLS([[owner.n:FireServer(owner:GetMouse().Hit) task.wait(0.8) script:Destroy()]],owner.PlayerGui)
 owner.n.OnServerEvent:Connect(function(plr, hit)
 if debug == true then
 debug = false
 thepart = Instance.new(tostring(owner.bud.Value))
+thepart.Size = owner.buddys.Value
 thepart.Name = "thepart"
 thepart.Parent = workspace
 thepart.Position = hit.Position
 thepart.Anchored = owner.buddy.Value
-thepart.Size = owner.buddys.Value
-task.wait(0.1)
+thepart.Material = Enum.Material[owner.bu.Value]
+task.wait(0.2)
 debug = true
        end
    end)
@@ -91,6 +104,7 @@ if Q == "/e clear-part-data" then
 owner.buddy:Destroy()
 owner.bud:Destroy()
 owner.buddys:Destroy()
+owner.bu:Destroy()
    end
 end)
 
@@ -111,10 +125,21 @@ local seperator = " "
 
 owner.Chatted:Connect(function(msg)
 	local SplitMsg = string.split(msg, seperator, seperator, seperator)
-	if msg == SplitMsg[1] then
-		local TargetName=SplitMsg[2]
-		local TargetName2=SplitMsg[3]
-		local TargetName3=SplitMsg[4]
+	if cmd == SplitMsg[1] then
+  TargetName = SplitMsg[2]
+ TargetName2 = SplitMsg[3]
+TargetName3 = SplitMsg[4]
 		owner.buddys.Value = Vector3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
 	end
+end)
+
+local cmd = "/setmaterial"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+  TargetName = SplitMsg[2]
+		owner.bu.Value = tostring(TargetName)
+     end
 end)
