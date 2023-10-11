@@ -1,6 +1,7 @@
 print("Click somewhere to create a part in that position, Say /e then a basepart to toggle between parts")
 print("Say /e anchored then true or false to toggle if its anchored or not")
 print("Say /e clear-part-data to clear the parts data 'basically resetting if its anchored or not, etc'")
+print("Say /e clear-parts to clear parts")
 e = Instance.new("Tool",owner.Backpack)
 e.RequiresHandle = false
 e.Name = "Part Spawner"
@@ -38,6 +39,7 @@ owner.n.OnServerEvent:Connect(function(plr, hit)
 if debug == true then
 debug = false
 thepart = Instance.new(tostring(owner.bud.Value))
+thepart.Name = "thepart"
 thepart.Parent = workspace
 thepart.Position = hit.Position
 thepart.Anchored = owner.buddy.Value
@@ -73,5 +75,17 @@ owner.Chatted:Connect(function(Q)
 if Q == "/e clear-part-data" then
 owner.buddy:Destroy()
 owner.bud:Destroy()
+   end
+end)
+
+owner.Chatted:Connect(function(unacceptable)
+if unacceptable == "/e clear-parts" then
+for i,v in workspace:GetDescendants() do
+if v:IsA('BasePart') then
+if v.Name == "thepart" then
+v:Destroy()
+               end
+           end
+       end
    end
 end)
