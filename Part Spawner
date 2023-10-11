@@ -44,7 +44,7 @@ end
 if not check4 then
 thevalue3 = Instance.new("Vector3Value",owner)
 thevalue3.Name = "buddys"
-thevalue3.Value = "Vector3.new(4, 1, 2)"
+thevalue3.Value = Vector3.new(4, 1, 2)
 end
 NLS([[owner.n:FireServer(owner:GetMouse().Hit) task.wait(0.8) script:Destroy()]],owner.PlayerGui)
 owner.n.OnServerEvent:Connect(function(plr, hit)
