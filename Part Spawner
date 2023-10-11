@@ -2,6 +2,7 @@ print("Click somewhere to create a part in that position, Say /e then a basepart
 print("Say /e anchored then true or false to toggle if its anchored or not")
 print("Say /e clear-part-data to clear the parts data 'basically resetting if its anchored or not, etc'")
 print("Say /e clear-parts to clear parts")
+print("Say /setsize to size parts, you might have to do /c System and enable chatted on private messages to use it privately")
 e = Instance.new("Tool",owner.Backpack)
 e.RequiresHandle = false
 e.Name = "Part Spawner"
@@ -22,6 +23,12 @@ thevalue2 = Instance.new("BoolValue",owner)
 thevalue2.Name = "buddy"
 thevalue2.Value = false
 end
+check4 = owner:FindFirstChild('buddys')
+if not check4 then
+thevalue3 = Instance.new("Vector3Value",owner)
+thevalue3.Name = "buddys"
+thevalue3.Value = Vector3.new(4, 1, 2)
+end
 debug = true
 e.Activated:Connect(function()
 if not check2 then
@@ -34,6 +41,11 @@ thevalue2 = Instance.new("BoolValue",owner)
 thevalue2.Name = "buddy"
 thevalue2.Value = false
 end
+if not check4 then
+thevalue3 = Instance.new("Vector3Value",owner)
+thevalue3.Name = "buddys"
+thevalue3.Value = "Vector3.new(4, 1, 2)"
+end
 NLS([[owner.n:FireServer(owner:GetMouse().Hit) task.wait(0.8) script:Destroy()]],owner.PlayerGui)
 owner.n.OnServerEvent:Connect(function(plr, hit)
 if debug == true then
@@ -43,6 +55,7 @@ thepart.Name = "thepart"
 thepart.Parent = workspace
 thepart.Position = hit.Position
 thepart.Anchored = owner.buddy.Value
+thepart.Size = owner.buddys.Value
 task.wait(0.1)
 debug = true
        end
@@ -77,6 +90,7 @@ owner.Chatted:Connect(function(Q)
 if Q == "/e clear-part-data" then
 owner.buddy:Destroy()
 owner.bud:Destroy()
+owner.buddys:Destroy()
    end
 end)
 
@@ -90,4 +104,17 @@ v:Destroy()
            end
        end
    end
+end)
+
+local cmd = "/setsize"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator, seperator, seperator)
+	if msg == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+		local TargetName2=SplitMsg[3]
+		local TargetName3=SplitMsg[4]
+		owner.buddys.Value = Vector3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
+	end
 end)
