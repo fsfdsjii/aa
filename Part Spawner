@@ -1,4 +1,6 @@
-print("Click somewhere to create a part in that position, Say /e then a basepart to toggle between parts and also say /e anchored then true or false to toggle if its anchored or not")
+print("Click somewhere to create a part in that position, Say /e then a basepart to toggle between parts")
+print("Say /e anchored then true or false to toggle if its anchored or not")
+print("Say /e clear-part-data to clear the parts data 'basically resetting if its anchored or not, etc'")
 e = Instance.new("Tool",owner.Backpack)
 e.RequiresHandle = false
 e.Name = "Part Spawner"
@@ -21,6 +23,16 @@ thevalue2.Value = false
 end
 debug = true
 e.Activated:Connect(function()
+if not check2 then
+thevalue = Instance.new("StringValue",owner)
+thevalue.Name = "bud"
+thevalue.Value = "Part"
+end
+if not check3 then
+thevalue2 = Instance.new("BoolValue",owner)
+thevalue2.Name = "buddy"
+thevalue2.Value = false
+end
 NLS([[owner.n:FireServer(owner:GetMouse().Hit) task.wait(0.8) script:Destroy()]],owner.PlayerGui)
 owner.n.OnServerEvent:Connect(function(plr, hit)
 if debug == true then
@@ -55,4 +67,11 @@ owner.buddy.Value = false
 elseif Z2 == "/e anchored true" then
 owner.buddy.Value = true
     end
+end)
+
+owner.Chatted:Connect(function(Q)
+if Q == "/e clear-part-data" then
+owner.buddy:Destroy()
+owner.bud:Destroy()
+   end
 end)
