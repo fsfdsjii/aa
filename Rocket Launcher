@@ -87,7 +87,7 @@ table.insert(cors,sandbox(Script6,function()
 				Part1x.TopSurface = Enum.SurfaceType.Smooth
 				Part1x.Velocity = Part1x.CFrame.LookVector
 				Part1x.Parent = workspace
-				Part1x:SetNetworkOwner(nil)
+                                Part1x.Anchored = true
 				local tween = game:GetService('TweenService'):Create(Part1x, tweenInfo, goal)
 				tween:Play()
 				local lil = true
@@ -106,6 +106,8 @@ table.insert(cors,sandbox(Script6,function()
 				task.wait(0.1)
 				fix = true
 				NLS([[owner:GetMouse().Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowCursor.png"]],owner.PlayerGui)
+                         task.wait(3)
+                        Part1x.Anchored = false
 			end
 		end)
 	end)
