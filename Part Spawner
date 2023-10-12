@@ -126,11 +126,11 @@ end)
 
 owner.Chatted:Connect(function(Q)
 if Q == "/e clear-part-data" then
-owner.buddy:Destroy()
-owner.bud:Destroy()
-owner.buddys:Destroy()
-owner.bu:Destroy()
-owner.but:Destroy()
+for i,v in owner:GetDescendants()  do
+if v.Name == "buddy" and "bud" and "buddys" and "bu" and "but" then
+v:Destroy()
+         end
+      end
    end
 end)
 
@@ -397,7 +397,7 @@ owner.Chatted:Connect(function(msg)
 	local SplitMsg = string.split(msg, seperator)
 	if cmd == SplitMsg[1] then
   TargetName = SplitMsg[2]
-		owner.but.Value = tonumber(TargetName)
+		owner.but.Value = tostring(TargetName)
      end
 end)
 
