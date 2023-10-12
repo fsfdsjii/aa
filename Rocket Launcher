@@ -1,0 +1,124 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Camera3 = Instance.new("Camera")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Script6 = Instance.new("Script")
+Tool0.Name = "RocketLauncher [Modded]"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=90021376"
+Tool0.CanBeDropped = false
+Tool0.Grip = CFrame.new(0.699999988, 0, -0.5, 0, 0, -1, -1, 0, 0, 0, 1, 0)
+Tool0.GripForward = Vector3.new(1, -0, -0)
+Tool0.GripPos = Vector3.new(0.699999988079071, 0, -0.5)
+Tool0.GripRight = Vector3.new(0, -1, 0)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(38.5399971, 0.420000076, -18.3700008, 1, 0, 0, 0, 0, 1, 0, -1, 0)
+Part1.Orientation = Vector3.new(-90, 0, 0)
+Part1.Position = Vector3.new(38.53999710083008, 0.4200000762939453, -18.3700008392334)
+Part1.Rotation = Vector3.new(-90, 0, 0)
+Part1.Size = Vector3.new(4.920006275177002, 0.7400005459785461, 0.839999794960022)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.CanCollide = false
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.FormFactor = Enum.FormFactor.Custom
+Part1.formFactor = Enum.FormFactor.Custom
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxasset://fonts/rocketlauncher.mesh"
+SpecialMesh2.Scale = Vector3.new(0.75, 0.75, 0.75)
+SpecialMesh2.TextureId = "rbxasset://textures/rocketlaunchertex.png"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Camera3.Name = "ThumbnailCamera"
+Camera3.Parent = Tool0
+Camera3.CFrame = CFrame.new(-6.07614708, 2.61947393, 6.68940592, 0.934826314, 0.0463544093, -0.352066964, 3.72529074e-09, 0.991443455, 0.130537018, 0.355105489, -0.122029439, 0.926827312)
+Camera3.CoordinateFrame = CFrame.new(-6.07614708, 2.61947393, 6.68940592, 0.934826314, 0.0463544093, -0.352066964, 3.72529074e-09, 0.991443455, 0.130537018, 0.355105489, -0.122029439, 0.926827312)
+Camera3.Focus = CFrame.new(-5.37201309, 2.35839987, 4.83575106, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera3.focus = CFrame.new(-5.37201309, 2.35839987, 4.83575106, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Sound4.Name = "Boom"
+Sound4.Parent = Tool0
+Sound4.SoundId = "rbxasset://sounds/collide.wav"
+Sound4.Volume = 1
+Sound5.Name = "Swoosh"
+Sound5.Parent = Tool0
+Sound5.Looped = true
+Sound5.SoundId = "rbxasset://sounds/Rocket whoosh 01.wav"
+Sound5.Volume = 0.699999988079071
+Script6.Parent = Tool0
+table.insert(cors,sandbox(Script6,function()
+	checking = owner:FindFirstChild('hi')
+	if not checking then
+		remote = Instance.new("RemoteEvent",owner)
+		remote.Name = "hi"
+	end
+	local fix = true
+	Tool0.Activated:Connect(function()
+		NLS([[owner.hi:FireServer(owner:GetMouse().Hit.p)]],owner.PlayerGui)
+		owner.hi.OnServerEvent:Connect(function(plr, pos)
+			if fix == true then
+				fix = false
+				local goal = {}
+				goal.Position = pos
+				local tweenInfo = TweenInfo.new(4)
+				local Part1x = Instance.new("Part")
+				Part1x.CFrame = Part1.CFrame
+				Part1x.Color = Color3.new(0.321569, 0.486275, 0.682353)
+				Part1x.Size = Vector3.new(1.5, 0.5, 0.5)
+				Part1x.BottomSurface = Enum.SurfaceType.Smooth
+				Part1x.TopSurface = Enum.SurfaceType.Smooth
+				Part1x.Velocity = Part1x.CFrame.LookVector
+				Part1x.Parent = workspace
+				Part1x:SetNetworkOwner(nil)
+				local tween = game:GetService('TweenService'):Create(Part1x, tweenInfo, goal)
+				tween:Play()
+				local lil = true
+				NLS([[owner:GetMouse().Icon = "rbxasset://textures/chatBubble_bot_notifyGray_dotDotDot.png"]],owner.PlayerGui)
+				task.wait(0.25)
+				Part1x.Touched:Connect(function(part)
+					if lil == true then
+						lil = false
+						local explode = Instance.new("Explosion",workspace)
+						explode.Position = Part1x.Position
+						task.wait(0.05)
+						Part1x:Destroy()
+					end		
+				end)
+				task.wait(0.1)
+				fix = true
+				NLS([[owner:GetMouse().Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowCursor.png"]],owner.PlayerGui)
+			end
+		end)
+	end)
+	Tool0.Unequipped:Connect(function()
+		NLS([[owner:GetMouse().Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowCursor.png"]],owner.PlayerGui)
+	end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
