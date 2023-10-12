@@ -5,7 +5,7 @@ print("Say /e clear-parts to clear parts")
 print("Say /setsize to size parts, you might have to do /c System and enable chatted on private messages to use it privately")
 print("Say /setmaterial to set the material of parts, without spaces in the material")
 print("Say /e ctools+ to get extra tools such as the delete and the clone tool")
-print("Say /setpart-type to change the part type like Block but in numbers")
+print("Say /setpart-type to change the part type like Block and etc")
 e = Instance.new("Tool",owner.Backpack)
 e.RequiresHandle = false
 e.Name = [[Creating
@@ -41,9 +41,9 @@ thevalue4.Value = "Plastic"
 end
 check6 = owner:FindFirstChild('but')
 if not check6 then
-thevalue5 = Instance.new("NumberValue",owner)
+thevalue5 = Instance.new("StringValue",owner)
 thevalue5.Name = "but"
-thevalue5.Value = 1
+thevalue5.Value = "Block"
 end
 debug = true
 e.Activated:Connect(function()
@@ -68,9 +68,9 @@ thevalue4.Name = "bu"
 thevalue4.Value = "Plastic"
 end
 if not check6 then
-thevalue5 = Instance.new("NumberValue",owner)
+thevalue5 = Instance.new("StringValue",owner)
 thevalue5.Name = "but"
-thevalue5.Value = 1
+thevalue5.Value = "Block"
 end
 NLS([[owner.n:FireServer(owner:GetMouse().Hit) task.wait(0.8) script:Destroy()]],owner.PlayerGui)
 owner.n.OnServerEvent:Connect(function(plr, hit)
@@ -83,7 +83,7 @@ thepart.Parent = workspace
 thepart.Position = hit.Position
 thepart.Anchored = owner.buddy.Value
 thepart.Material = Enum.Material[owner.bu.Value]
-thepart.PartType = owner.but.Value
+thepart.Shape = tostring(owner.but.Value)
 task.wait(0.2)
 debug = true
        end
@@ -387,6 +387,6 @@ owner.Chatted:Connect(function(msg)
 	local SplitMsg = string.split(msg, seperator)
 	if cmd == SplitMsg[1] then
   TargetName = SplitMsg[2]
-		owner.but.Value = tonumber(TargetName)
+		owner.but.Value = tostring(TargetName)
      end
 end)
