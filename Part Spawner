@@ -137,11 +137,11 @@ end)
 
 owner.Chatted:Connect(function(Q)
 if Q == "/e clear-part-data" then
-owner.buddy:Destroy()
-owner.bud:Destroy()
-owner.buddys:Destroy()
-owner.bu:Destroy()
-owner.but:Destroy()
+for i,v in owner:GetDescendants() do
+if v.Name == "buddy" and "bud" and "buddys" and "bu" and "but" and "buz" then
+v:Destroy()
+           end
+       end
    end
 end)
 
