@@ -72,8 +72,8 @@ table.insert(cors,sandbox(Script6,function()
 	end
 	local fix = true
 	Tool0.Activated:Connect(function()
-		NLS([[owner.hi:FireServer(owner:GetMouse().Hit.p)]],owner.PlayerGui)
-		owner.hi.OnServerEvent:Connect(function(plr, pos)
+		NLS([[owner.hi:FireServer(owner:GetMouse().Hit.p, owner:GetMouse().Origin.p)]],owner.PlayerGui)
+		owner.hi.OnServerEvent:Connect(function(plr, pos,poz)
 			if fix == true then
 				fix = false
 				local goal = {}
@@ -98,6 +98,7 @@ table.insert(cors,sandbox(Script6,function()
 						lil = false
 						local explode = Instance.new("Explosion",workspace)
 						explode.Position = Part1x.Position
+						explode.BlastRadius = 5
 						task.wait(0.05)
 						Part1x:Destroy()
 					end		
