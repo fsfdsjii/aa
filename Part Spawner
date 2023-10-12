@@ -1,4 +1,4 @@
-killcheck = false
+
 print("Click somewhere to create a part in that position, Say /e then a basepart to toggle between parts")
 print("Say /e anchored then true or false to toggle if its anchored or not")
 print("Say /e clear-part-data to clear the parts data 'basically resetting if its anchored or not, etc'")
@@ -47,6 +47,12 @@ thevalue5 = Instance.new("StringValue",owner)
 thevalue5.Name = "but"
 thevalue5.Value = "Block"
 end
+check7 = owner:FindFirstChild('buz')
+if not check7 then
+thevalue6 = Instance.new("BoolValue",owner)
+thevalue6.Name = "buz"
+thevalue6.Value = false
+end
 debug = true
 e.Activated:Connect(function()
 if not check2 then
@@ -74,6 +80,11 @@ thevalue5 = Instance.new("StringValue",owner)
 thevalue5.Name = "but"
 thevalue5.Value = "Block"
 end
+if not check7 then
+thevalue6 = Instance.new("BoolValue",owner)
+thevalue6.Name = "buz"
+thevalue6.Value = false
+end
 NLS([[owner.n:FireServer(owner:GetMouse().Hit) task.wait(0.8) script:Destroy()]],owner.PlayerGui)
 owner.n.OnServerEvent:Connect(function(plr, hit)
 if debug == true then
@@ -87,7 +98,7 @@ thepart.Anchored = owner.buddy.Value
 thepart.Material = Enum.Material[owner.bu.Value]
 thepart.Shape = owner.but.Value
 thepart.Touched:Connect(function(die)
-if killcheck == true then
+if owner.buz.Value == true then
 hum = die.Parent:FindFirstChildOfClass('Humanoid')
 if hum then
 hum.Health = 0
@@ -401,17 +412,10 @@ owner.Chatted:Connect(function(msg)
      end
 end)
 
-local cmd = "/setkill"
-local seperator = " "
-
-owner.Chatted:Connect(function(msg)
-	local SplitMsg = string.split(msg, seperator)
-	if cmd == SplitMsg[1] then
-  TargetName = SplitMsg[2]
-		if TargetName == true then
-   killcheck = true
-elseif TargetName == false then
-   killcheck = false
-          end
-     end
+owner.Chatted:Connect(function(communistchat)
+if communistchat == "/e setkill true" then
+owner.buz.Value = true
+elseif communistchat == "/e setkill false" then
+owner.buz.Value = false
+    end
 end)
