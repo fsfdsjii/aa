@@ -6,7 +6,7 @@ print("Say /e clear-parts to clear parts")
 print("Say /setsize to size parts, you might have to do /c System and enable chatted on private messages to use it privately")
 print("Say /setmaterial to set the material of parts, without spaces in the material")
 print("Say /e ctools+ to get extra tools such as the delete and the clone tool")
-print("Say /setpart-type to change the part type like Block but in numbers")
+print("Say /setpart-type to change the part type like Block and etc")
 print("Say /setkill then true or false to set if it kills or not")
 e = Instance.new("Tool",owner.Backpack)
 e.RequiresHandle = false
@@ -43,9 +43,9 @@ thevalue4.Value = "Plastic"
 end
 check6 = owner:FindFirstChild('but')
 if not check6 then
-thevalue5 = Instance.new("NumberValue",owner)
+thevalue5 = Instance.new("StringValue",owner)
 thevalue5.Name = "but"
-thevalue5.Value = 1
+thevalue5.Value = "Block"
 end
 debug = true
 e.Activated:Connect(function()
@@ -70,9 +70,9 @@ thevalue4.Name = "bu"
 thevalue4.Value = "Plastic"
 end
 if not check6 then
-thevalue5 = Instance.new("NumberValue",owner)
+thevalue5 = Instance.new("StringValue",owner)
 thevalue5.Name = "but"
-thevalue5.Value = 1
+thevalue5.Value = "Block"
 end
 NLS([[owner.n:FireServer(owner:GetMouse().Hit) task.wait(0.8) script:Destroy()]],owner.PlayerGui)
 owner.n.OnServerEvent:Connect(function(plr, hit)
@@ -126,11 +126,11 @@ end)
 
 owner.Chatted:Connect(function(Q)
 if Q == "/e clear-part-data" then
-for i,v in owner:GetDescendants()  do
-if v.Name == "buddy" and "bud" and "buddys" and "bu" and "but" then
-v:Destroy()
-         end
-      end
+owner.buddy:Destroy()
+owner.bud:Destroy()
+owner.buddys:Destroy()
+owner.bu:Destroy()
+owner.but:Destroy()
    end
 end)
 
