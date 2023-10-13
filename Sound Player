@@ -146,6 +146,24 @@ sound.Looped = tobool(TargetName)
 	end
 end)
 
+local cmd = "/colorgui"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator, seperator, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+		local TargetName2=SplitMsg[3]
+		local TargetName3=SplitMsg[4]
+Frame.BackgroundColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
+TextBox.BackgroundColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
+TextBox_2.BackgroundColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
+TextButton.BackgroundColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
+        end
+    end
+end)
+
 print("Say /volume then number to set the volume of the sound")
 print("Say /pitch then number to set the pitch of the sound")
 print("Say /looped to set if the sound is looped")
+print("Say /colorgui to color your gui ")
