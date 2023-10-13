@@ -227,6 +227,22 @@ checkingg.Value = false
 end
 end)
 
+local cmd = "/colortext"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator, seperator, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+		local TargetName2=SplitMsg[3]
+		local TargetName3=SplitMsg[4]
+TextBox.TextColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
+TextBox_2.TextColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
+TextButton.TextColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
+    end
+end)
+
+
 print("Say /volume then number to set the volume of the sound")
 print("Say /pitch then number to set the pitch of the sound")
 print("Say /looped to set if the sound is looped")
@@ -235,3 +251,4 @@ print("Say /e sync to sync sounds")
 print("Say /e sync-client to sync cliented sounds")
 print("Say /e client-mode for cliented sounds [this mode has no commands] [needs more than 1 try to start working]")
 print("Say /e server-mode for server sounds")
+print("Say /colortext to color your text ")
