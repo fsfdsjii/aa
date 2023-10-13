@@ -98,4 +98,28 @@ TextButton.MouseButton1Click:Connect(function()
                 return response
 	end)
 end)
-print("There may be a limit to how many times you put an image, put an image id and done your image is now in the back!")
+print("There may be a limit to how many times you put an image, put an image id and done your image is now behind you!")
+print("Say /setimagesize then number and number to set the size of the image")
+print("Say /setimagepos then number to set the upper position of the image if your having problems with the size")
+local cmd = "/setimagsize"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+		local TargetName2=SplitMsg[3]
+ImageHandleAdornment1.Size = Vector2.new(tonumber(TargetName), tonumber(TargetName2))
+	end
+end)
+
+local cmd = "/setimagepos"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+ImageHandleAdornment1.CFrame = CFrame.new(0, tonumber(TargetName), 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	end
+end)
