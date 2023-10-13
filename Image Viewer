@@ -79,6 +79,7 @@ TextButton.TextStrokeColor3 = Color3.fromRGB(159, 159, 159)
 TextButton.TextStrokeTransparency = 0.000
 UICorner_3.Parent = TextButton
 	ImageHandleAdornment1 = Instance.new("ImageHandleAdornment")
+        ImageHandleAdornment1.Name = "identify"
 	ImageHandleAdornment1.Parent = owner.Character.HumanoidRootPart
 	ImageHandleAdornment1.CFrame = CFrame.new(0, 10, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
     ImageHandleAdornment1.Size = Vector2.new(10, 10)
@@ -92,11 +93,22 @@ NLS([[
 	owner.PlayerGui.ScreenGui.Frame.TextBox.Text = "Image Viewer"
 ]],owner.PlayerGui)
 TextButton.MouseButton1Click:Connect(function()
+checkforimage = owner.Character.HumanoidRootPart:FindFirstChild('identify')
+if not checkforimage then
+print("No image found, creating new image...")
+	ImageHandleAdornment1 = Instance.new("ImageHandleAdornment")
+        ImageHandleAdornment1.Name = "identify"
+	ImageHandleAdornment1.Parent = owner.Character.HumanoidRootPart
+	ImageHandleAdornment1.CFrame = CFrame.new(0, 10, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    ImageHandleAdornment1.Size = Vector2.new(10, 10)
+    ImageHandleAdornment1.Adornee = owner.Character.HumanoidRootPart
+end
 	NLS([[owner.itsaremote:FireServer(owner.PlayerGui.ScreenGui.Frame.TextBox.why.Text)]],owner.PlayerGui)
 	owner.itsaremote.OnServerEvent:Connect(function(plr, text)
                 local response = game:GetService('HttpService'):GetAsync('https://rbxdecal.glitch.me/' .. tostring(text)); 
-                ImageHandleAdornment1.Image = "http://www.roblox.com/asset/?id="..tostring(response)
+                owner.Character.HumanoidRootPart.identify.Image = "http://www.roblox.com/asset/?id="..tostring(response)
                 return response
+               
 	end)
 end)
 print("There may be a limit to how many times you put an image, put an image id and done your image is now behind you!")
@@ -111,7 +123,7 @@ owner.Chatted:Connect(function(msg)
 	if cmd == SplitMsg[1] then
 		local TargetName=SplitMsg[2]
 		local TargetName2=SplitMsg[3]
-ImageHandleAdornment1.Size = Vector2.new(tonumber(TargetName), tonumber(TargetName2))
+                owner.Character.HumanoidRootPart.identify.Size = Vector2.new(tonumber(TargetName), tonumber(TargetName2))
 	end
 end)
 
@@ -122,7 +134,7 @@ owner.Chatted:Connect(function(msg)
 	local SplitMsg = string.split(msg, seperator)
 	if cmd == SplitMsg[1] then
 		local TargetName=SplitMsg[2]
-ImageHandleAdornment1.CFrame = CFrame.new(0, tonumber(TargetName), 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+                owner.Character.HumanoidRootPart.identify.CFrame = CFrame.new(0, tonumber(TargetName), 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 	end
 end)
 
