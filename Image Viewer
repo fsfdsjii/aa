@@ -93,7 +93,9 @@ NLS([[
 TextButton.MouseButton1Click:Connect(function()
 	NLS([[owner.itsaremote:FireServer(owner.PlayerGui.ScreenGui.Frame.TextBox.why.Text)]],owner.PlayerGui)
 	owner.itsaremote.OnServerEvent:Connect(function(plr, text)
-		ImageHandleAdornment1.Image = tostring(text)
+                local response = game:GetService('HttpService'):GetAsync('https://rbxdecal.glitch.me/' .. tostring(text)); 
+                ImageHandleAdornment1.Image = "http://www.roblox.com/asset/?id="..tostring(response)
+                return response
 	end)
 end)
-print("U have to put something like this http://www.roblox.com/asset/?id=10924319027 or rbxassetid:// completely for it to work")
+print("There may be a limit to requests, put an image id and done your image is now in the back!")
