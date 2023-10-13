@@ -115,6 +115,7 @@ print("There may be a limit to how many times you put an image, put an image id 
 print("Say /setimagesize then number and number to set the size of the image")
 print("Say /setimagepos then number to set the upper position of the image if your having problems with the size")
 print("Say /colorgui to color your gui ")
+print("Say /colortext to color your text ")
 local cmd = "/setimagesize"
 local seperator = " "
 
@@ -151,5 +152,20 @@ Frame.BackgroundColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2),
 TextBox.BackgroundColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
 TextBox_2.BackgroundColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
 TextButton.BackgroundColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
+    end
+end)
+
+local cmd = "/colortext"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator, seperator, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+		local TargetName2=SplitMsg[3]
+		local TargetName3=SplitMsg[4]
+TextBox.TextColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
+TextBox_2.TextColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
+TextButton.TextColor3 = Color3.new(tonumber(TargetName), tonumber(TargetName2), tonumber(TargetName3))
     end
 end)
