@@ -105,9 +105,14 @@ print("No image found, creating new image...")
 end
 	NLS([[owner.itsaremote:FireServer(owner.PlayerGui.ScreenGui.Frame.TextBox.why.Text)]],owner.PlayerGui)
 	owner.itsaremote.OnServerEvent:Connect(function(plr, text)
-                local response = game:GetService('HttpService'):GetAsync('https://rbxdecal.glitch.me/' .. tostring(text)); 
-                owner.Character.HumanoidRootPart.identify.Image = "http://www.roblox.com/asset/?id="..tostring(response)
-                return response
+local info = game:GetService('MarketplaceService'):GetProductInfo(tonumber(text), Enum.InfoType.Asset) 
+if info.AssetTypeId == 13 then 
+local response = game:GetService('HttpService'):GetAsync('https://rbxdecal.glitch.me/' .. tostring(text)); 
+owner.Character.HumanoidRootPart.identify.Image = "http://www.roblox.com/asset/?id="..tostring(response)
+return response
+else
+warn("id is not a valid decal id")
+end
                
 	end)
 end)
