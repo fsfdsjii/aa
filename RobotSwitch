@@ -70,7 +70,7 @@ end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
 Model0 = Instance.new("Model")
-Part1 = Instance.new("Part")
+Part1x = Instance.new("Part")
 Motor6D2 = Instance.new("Motor6D")
 Part3 = Instance.new("Part")
 Motor6D4 = Instance.new("Motor6D")
@@ -119,22 +119,22 @@ Animation46 = Instance.new("Animation")
 BodyColors47 = Instance.new("BodyColors")
 Model0.Name = "NPC"
 Model0.Parent = NS([[]],workspace)
-Part1.Name = "HumanoidRootPart"
-Part1.Parent = Model0
-Part1.CFrame = CFrame.new(6, 2.99997425, -24.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
-Part1.Orientation = Vector3.new(0, 180, 0)
-Part1.Position = Vector3.new(6, 2.999974250793457, -24.5)
-Part1.Rotation = Vector3.new(180, 0, 180)
-Part1.Color = Color3.new(0.152941, 0.27451, 0.176471)
-Part1.Transparency = 1
-Part1.Size = Vector3.new(2, 2, 1)
-Part1.BottomSurface = Enum.SurfaceType.Smooth
-Part1.BrickColor = BrickColor.new("Earth green")
-Part1.Material = Enum.Material.Metal
-Part1.TopSurface = Enum.SurfaceType.Smooth
-Part1.brickColor = BrickColor.new("Earth green")
-Part1.FormFactor = Enum.FormFactor.Symmetric
-Part1.formFactor = Enum.FormFactor.Symmetric
+Part1x.Name = "HumanoidRootPart"
+Part1x.Parent = Model0
+Part1x.CFrame = CFrame.new(6, 2.99997425, -24.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part1x.Orientation = Vector3.new(0, 180, 0)
+Part1x.Position = Vector3.new(6, 2.999974250793457, -24.5)
+Part1x.Rotation = Vector3.new(180, 0, 180)
+Part1x.Color = Color3.new(0.152941, 0.27451, 0.176471)
+Part1x.Transparency = 1
+Part1x.Size = Vector3.new(2, 2, 1)
+Part1x.BottomSurface = Enum.SurfaceType.Smooth
+Part1x.BrickColor = BrickColor.new("Earth green")
+Part1x.Material = Enum.Material.Metal
+Part1x.TopSurface = Enum.SurfaceType.Smooth
+Part1x.brickColor = BrickColor.new("Earth green")
+Part1x.FormFactor = Enum.FormFactor.Symmetric
+Part1x.formFactor = Enum.FormFactor.Symmetric
 Motor6D2.Name = "Root Hip"
 Motor6D2.Parent = Part1
 Motor6D2.MaxVelocity = 0.10000000149011612
@@ -919,6 +919,7 @@ end
 script.Parent.Activated:Connect(function()
 	local character = workspace:FindFirstChild(owner.Character.Name)
 	if owner.Character == character then
+        	Tool0.Parent = game:GetService('ServerStorage')		
 		owner.Character = Model0
 		owner.doyouget:FireClient(owner, Model0)
 		NLS([[owner.doyouget.OnClientEvent:Connect(function(npc)
@@ -929,7 +930,9 @@ script.Parent.Activated:Connect(function()
 		owner.doyougett:FireClient(owner, character)
 		NLS([[owner.doyougett.OnClientEvent:Connect(function(character)
 		workspace.CurrentCamera.CameraSubject = character
-		end)]])
+		end)]],owner.PlayerGui)
+		Tool0.Parent = game:GetService('Players'):GetPlayerFromCharacter(character).Backpack
+		
 	end
 end)
 end))
