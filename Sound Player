@@ -92,21 +92,33 @@ end
 if checkingg.Value == false then
 sound = Instance.new("Sound",owner.Character.Head)
 sound.Name = "thisisasound"
-elseif checkingg.Value == true then
-sound = Instance.new("Sound",owner.PlayerGui)
-sound.Name = "thisisasound"
 end
 NLS([[
 	owner.PlayerGui.ScreenGui.Frame.TextBox.Text = "Sound Player"
 ]],owner.PlayerGui)
 TextButton.MouseButton1Click:Connect(function()
+if checkingg.Value == true then
+king = owner.PlayerGui:FindFirstChild('thisisasoundx')
+if not king then
+soundc = Instance.new("Sound",owner.PlayerGui)
+soundc.Name = "thisisasoundx"
+   end
+end
 	NLS([[owner.itsaremotex:FireServer(owner.PlayerGui.ScreenGui.Frame.TextBox.whyx.Text)]],owner.PlayerGui)
 	owner.itsaremotex.OnServerEvent:Connect(function(plr, soundtext)
-      sound.SoundId = "rbxassetid://"..tostring(soundtext)
-      sound:Play()
+owner.itsaremotex:FireClient(owner, soundtext)
+if checkingg.Value == true then
+     NLS([[owner.itsaremotex.OnClientEvent:Connect(function(soundtext)
+owner.PlayerGui.thisisasoundx.SoundId = "rbxassetid://"..tostring(soundtext)
+      owner.PlayerGui.thisisasoundx:Play()
+end)]],owner.PlayerGui)
+           elseif checkingg.Value == false then
+              sound.SoundId = "rbxassetid://"..tostring(soundtext)
+              sound:Play()
+                 end
 	end)
 end)
-
+plrguicheck = owner.PlayerGui:FindFirstChild('thisisasoundx')
 local cmd = "/volume"
 local seperator = " "
 
@@ -118,7 +130,11 @@ sound.Volume = tonumber(TargetName)
 
 	end
 end)
-
+plscheck = owner:FindFirstChild('no')
+if not plscheck then
+theremotesarereal = Instance.new("RemoteEvent",owner)
+theremotesarereal.Name = "no"
+end
 local cmd = "/pitch"
 local seperator = " "
 
@@ -127,7 +143,6 @@ owner.Chatted:Connect(function(msg)
 	if cmd == SplitMsg[1] then
 		local TargetName=SplitMsg[2]
 sound.Pitch = tonumber(TargetName)
-
 	end
 end)
 
@@ -189,9 +204,9 @@ end)
 
 owner.Chatted:Connect(function(msg)
 if msg == "/e sync-client" then
-for i,v in game.Players:GetDescendants() do
+for i,v in owner.PlayerGui:GetDescendants() do
 if v:IsA('Sound') then
-if v.Name == "thisisasound" then
+if v.Name == "thisisasoundx" then
 v.TimePosition = 0
                 end
             end
@@ -208,7 +223,7 @@ end)
 
 owner.Chatted:Connect(function(msg)
 if msg == "/e server-mode" then
-checkingg.Value = true
+checkingg.Value = false
 end
 end)
 
@@ -218,5 +233,5 @@ print("Say /looped to set if the sound is looped")
 print("Say /colorgui to color your gui ")
 print("Say /e sync to sync sounds")
 print("Say /e sync-client to sync cliented sounds")
-print("Say /e client-mode for cliented sounds")
+print("Say /e client-mode for cliented sounds [this mode has no commands]")
 print("Say /e server-mode for server sounds")
