@@ -3501,16 +3501,22 @@ table.insert(cors,sandbox(Script414,function()
 			local sound2 = script.Parent.Explode2:Clone()
 			sound.Parent = ccc
 			sound2.Parent = ccc
-			sound.Volume = 2.3
-			sound2.Volume = 2.3
+			sound.Volume = 2.1
+			sound2.Volume = 2.1
 			sound:Play()
 			sound2:Play()
+			cooldown = true
 			ccc.Touched:Connect(function(part)
+			if cooldown == true then
 				if part:IsA('BasePart') then
+					cooldown = false
 					local e = Instance.new("Explosion",workspace)
 					e.Position = part.Position
 					part.Material = Enum.Material.CorrodedMetal
-					part.BrickColor = BrickColor.new('Really black')
+						part.BrickColor = BrickColor.new('Really black')
+						task.wait(0.1)
+						cooldown = true
+					end
 				end
 			end)
 			task.wait(10)
