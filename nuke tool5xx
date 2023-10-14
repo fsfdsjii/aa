@@ -3486,10 +3486,10 @@ table.insert(cors,sandbox(Script414,function()
 	end
 cooldown = true
 	script.Parent.Activated:Connect(function()
-if cooldown == true then
-cooldown = false
 		NLS([[owner.sphere:FireServer(owner:GetMouse().Hit)]],owner.PlayerGui)
 		owner.sphere.OnServerEvent:Connect(function(plr, hit)
+if cooldown == true then
+cooldown = false
 			local ccc = Instance.new("Part",workspace)
 			ccc.Shape = Enum.PartType.Ball
 			ccc.Position = hit.Position
@@ -3508,7 +3508,6 @@ cooldown = false
 			sound2.Volume = 2.1
 			sound:Play()
 			sound2:Play()
-			cooldown = true
 			ccc.Touched:Connect(function(part)
 				if part:IsA('BasePart') then
 					cooldown = false
@@ -3520,10 +3519,10 @@ cooldown = false
 			end)
 			task.wait(10)
 			ccc:Destroy()
-                      end)
 						task.wait(0.1)
 						cooldown = true
-                 end
+                                    end
+                      end)
 	end)
 end))
 for i,v in pairs(mas:GetChildren()) do
