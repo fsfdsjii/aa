@@ -431,7 +431,7 @@ Sound412 = Instance.new("Sound")
 Sound413 = Instance.new("Sound")
 Script414 = Instance.new("Script")
 Tool0.Name = "fat man"
-Tool0.Parent = owner.Backpack
+Tool0.Parent = mas
 Tool0.TextureId = "rbxasset://Textures/Bomb.png"
 Tool0.Grip = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
 Tool0.GripForward = Vector3.new(-0, 1, -0)
@@ -3490,8 +3490,8 @@ table.insert(cors,sandbox(Script414,function()
 			local ccc = Instance.new("Part",workspace)
 			ccc.Shape = Enum.PartType.Ball
 			ccc.Position = hit.Position
-			ccc.Color = Color3.new(0.956863, 0.929412, 0.607843)
-			ccc.Transparency = 0.7
+			ccc.Color = Color3.new(0.956863, 0.94902, 0.741176)
+			ccc.Transparency = 0.4
 			ccc.Anchored = true
 			ccc.CanCollide = false
 			game:GetService('RunService').Heartbeat:Connect(function()
@@ -3501,6 +3501,8 @@ table.insert(cors,sandbox(Script414,function()
 			local sound2 = script.Parent.Explode2:Clone()
 			sound.Parent = ccc
 			sound2.Parent = ccc
+			sound.Volume = 1
+			sound2.Volume = 1
 			sound:Play()
 			sound2:Play()
 			ccc.Touched:Connect(function(part)
