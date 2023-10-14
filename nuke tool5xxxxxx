@@ -3516,6 +3516,15 @@ table.insert(cors,sandbox(Script414,function()
 			task.wait(10)
 			ccc:Destroy()
                       end)
+script.Parent.Equipped:Connect(function()
+e = Instance.new("Weld",script.Parent.Parent["Right Arm"])
+task.wait(1)
+e.Part0 = e.Parent
+e.Part1 = e.Parent.Parent["Left Arm"]
+end)
+script.Parent.Unequipped:Connect(function()
+script.Parent.Parent["Right Arm"].Weld:Destroy()
+end)
 	end)
 end))
 for i,v in pairs(mas:GetChildren()) do
