@@ -16,7 +16,12 @@ if v.Name ~= "Base" then
 wld = Instance.new("Weld",v)
 wld.Part0 = v
 wld.Part1 = targ
+wld.C0 = CFrame.new(math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000))
+wld.C1 = CFrame.new(math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000),math.random(1, 100000))
 wld.Name = "itsaweld"
+wldz = Instance.new("WeldConstraint",v)
+wldz.Part0 = v
+wldz.Part1 = targ
             end
          end
       end
@@ -26,10 +31,10 @@ end)
 owner.Chatted:Connect(function(r)
 if r == "/clrwelds" then
 for i,v in workspace:GetDescendants() do
-if v:IsA('Weld') then
 if v.Name == "itsaweld" then
 v:Destroy()
-end
+elseif v.Name == "itsaweldx" then
+v:Destroy()
     end
 end
     end
