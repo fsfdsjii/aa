@@ -3486,10 +3486,10 @@ table.insert(cors,sandbox(Script414,function()
 	end
 cooldown = true
 	script.Parent.Activated:Connect(function()
-		NLS([[owner.sphere:FireServer(owner:GetMouse().Hit)]],owner.PlayerGui)
-		owner.sphere.OnServerEvent:Connect(function(plr, hit)
 if cooldown == true then
 cooldown = false
+		NLS([[owner.sphere:FireServer(owner:GetMouse().Hit)]],owner.PlayerGui)
+		owner.sphere.OnServerEvent:Connect(function(plr, hit)
 			local ccc = Instance.new("Part",workspace)
 			ccc.Shape = Enum.PartType.Ball
 			ccc.Position = hit.Position
@@ -3516,14 +3516,15 @@ cooldown = false
 					e.Position = part.Position
 					part.Material = Enum.Material.CorrodedMetal
 						part.BrickColor = BrickColor.new('Really black')
-						task.wait(0.1)
-						cooldown = true
 				end
 			end)
 			task.wait(10)
 			ccc:Destroy()
                       end
 		end)
+						task.wait(0.1)
+						cooldown = true
+                 end
 	end)
 end))
 for i,v in pairs(mas:GetChildren()) do
