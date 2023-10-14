@@ -3490,7 +3490,7 @@ table.insert(cors,sandbox(Script414,function()
 			local ccc = Instance.new("Part",workspace)
 			ccc.Shape = Enum.PartType.Ball
 			ccc.Position = hit.Position
-			ccc.Color = Color3.new(0.956863, 0.94902, 0.741176)
+			ccc.Color = Color3.new(1, 0.972549, 0.611765)
 			ccc.Transparency = 0.4
 			ccc.Anchored = true
 			ccc.CanCollide = false
@@ -3501,8 +3501,8 @@ table.insert(cors,sandbox(Script414,function()
 			local sound2 = script.Parent.Explode2:Clone()
 			sound.Parent = ccc
 			sound2.Parent = ccc
-			sound.Volume = 1
-			sound2.Volume = 1
+			sound.Volume = 2.3
+			sound2.Volume = 2.3
 			sound:Play()
 			sound2:Play()
 			ccc.Touched:Connect(function(part)
