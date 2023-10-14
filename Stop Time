@@ -1,0 +1,81 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Script3 = Instance.new("Script")
+Tool0.Name = "Time Stop"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(1.55730581, 2.26271057, -1.5819912, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(1.5573058128356934, 2.2627105712890625, -1.581991195678711)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(1.47058034, 0.0250000004, -36.5286598, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(1.4705803394317627, 0.02500000037252903, -36.52865982055664)
+Part1.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part1.Size = Vector3.new(4.941160678863525, 0.05000000074505806, 4.942683219909668)
+Part1.BrickColor = BrickColor.new("Black")
+Part1.brickColor = BrickColor.new("Black")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxassetid://7213527989"
+SpecialMesh2.Scale = Vector3.new(1, 58440688861184, 1)
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Script3.Parent = Tool0
+table.insert(cors,sandbox(Script3,function()
+script.Parent.Activated:Connect(function()
+local checkingr = game:GetService('Lighting'):FindFirstChild('correctingcolor')
+	if not checkingr then
+		local e = Instance.new("ColorCorrectionEffect",game:GetService('Lighting'))
+		e.Name = "correctingcolor"
+			e.Saturation = -1
+			for i,v in workspace:GetDescendants() do
+					if v:IsA('BasePart') then
+						v.Anchored = true
+				end
+			end
+			for i,v in script.Parent.Parent:GetDescendants() do
+				if v:IsA('BasePart') then
+					v.Anchored = false
+				end
+			end
+	else
+		for i,v in game:GetService('Lighting'):GetDescendants() do
+			if v.Name == "correctingcolor" then
+				v:Destroy()
+	end
+end
+		for i,v in workspace:GetDescendants() do
+			if v:IsA('BasePart') then
+				if v.Name ~= "Base" then
+					v.Anchored = false
+				end
+			end
+		end
+	end
+   end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
