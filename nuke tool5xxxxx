@@ -3484,17 +3484,13 @@ table.insert(cors,sandbox(Script414,function()
 		mmmmm = Instance.new("RemoteEvent",owner)
 		mmmmm.Name = "sphere"
 	end
-cooldown = true
 	script.Parent.Activated:Connect(function()
 		NLS([[owner.sphere:FireServer(owner:GetMouse().Hit)]],owner.PlayerGui)
 		owner.sphere.OnServerEvent:Connect(function(plr, hit)
-if cooldown == true then
-cooldown = false
 			local ccc = Instance.new("Part",workspace)
 			ccc.Shape = Enum.PartType.Ball
 			ccc.Position = hit.Position
 			ccc.Color = Color3.new(1, 0.972549, 0.611765)
-			ccc.Transparency = 0.4
 			ccc.Anchored = true
 			ccc.CanCollide = false
 			game:GetService('RunService').Heartbeat:Connect(function()
@@ -3517,11 +3513,8 @@ cooldown = false
 						part.BrickColor = BrickColor.new('Really black')
 				end
 			end)
-						task.wait(0.1)
-						cooldown = true
 			task.wait(10)
 			ccc:Destroy()
-                                    end
                       end)
 	end)
 end))
