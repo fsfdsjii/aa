@@ -59,10 +59,10 @@ Script4.Name = "DeleteScript"
 Script4.Parent = Tool0
 table.insert(cors,sandbox(Script4,function()
 Tool0.Activated:Connect(function()
-	local m=Instance.new("RemoteEvent",game:FindService('ReplicatedStorage'))
+	local m=Instance.new("RemoteEvent",owner)
 	m.Name="breh"
-	NLS([[game:FindService('ReplicatedStorage').breh:FireServer(owner:GetMouse().Target) ]],owner.PlayerGui)
-		m.OnServerEvent:Connect(function(plr, targ)
+	NLS([[owner.breh:FireServer(owner:GetMouse().Target) ]],owner.PlayerGui)
+		owner.breh.OnServerEvent:Connect(function(plr, targ)
 			if targ:IsA('BasePart') then
 				if targ.Locked==false then
 					local r = Instance.new("Explosion", workspace)
@@ -74,8 +74,6 @@ Tool0.Activated:Connect(function()
 		end
 	end)
 	Sound3:Play()
-	task.wait(0.5)
-	m:Destroy()
 end)
 end))
 for i,v in pairs(mas:GetChildren()) do
