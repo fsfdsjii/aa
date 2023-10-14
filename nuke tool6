@@ -3507,7 +3507,9 @@ table.insert(cors,sandbox(Script414,function()
 			ccc.Touched:Connect(function(part)
 				if part:IsA('BasePart') then
 					cooldown = false
+pcall(function()
 					local e = Instance.new("Explosion",workspace)
+end)
 					e.Position = part.Position
 					part.Material = Enum.Material.CorrodedMetal
 					part.BrickColor = BrickColor.new('Really black')
