@@ -1,0 +1,36 @@
+e = Instance.new("Tool",owner.Backpack)
+e.Name = "Weld Manipulation"
+e.RequiresHandle = false
+loool = owner:FindFirstChild('Hello')
+if not loool then
+rrrrr = Instance.new("RemoteEvent",owner)
+rrrrr.Name = "Hello"
+end
+
+e.Activated:Connect(function()
+NLS([[owner.Hello:FireServer(owner:GetMouse().Target)]],owner.PlayerGui)
+owner.Hello.OnServerEvent:Connect(function(plr, targ)
+for i,v in workspace:GetDescendants() do
+if v:IsA('BasePart') then
+if v.Name ~= "Base" then
+wld = Instance.new("Weld",v)
+wld.Part0 = v
+wld.Part1 = targ
+wld.Name = "itsaweld"
+            end
+         end
+      end
+   end)
+end)
+
+owner.Chatted:Connect(function(r)
+if r == "/clrwelds" then
+for i,v in workspace:GetDescendants() do
+if v:IsA('Weld') then
+if v.Name == "itsaweld" then
+v:Destroy()
+end
+    end
+end
+    end
+end)
