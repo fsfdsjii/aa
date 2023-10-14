@@ -3516,15 +3516,6 @@ table.insert(cors,sandbox(Script414,function()
 			task.wait(10)
 			ccc:Destroy()
                       end)
-script.Parent.Equipped:Connect(function()
-e = Instance.new("WeldConstraint",Part1)
-task.wait(1)
-e.Part0 = e.Parent
-e.Part1 = e.Parent.Parent.Parent["Left Arm"]
-end)
-script.Parent.Unequipped:Connect(function()
-Part1.WeldConstraint:Destroy()
-end)
 	end)
 end))
 for i,v in pairs(mas:GetChildren()) do
@@ -3537,3 +3528,14 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
+
+Tool0.Equipped:Connect(function()
+e = Instance.new("WeldConstraint",owner.Character['Right Arm'])
+task.wait(1)
+e.Part0 = e.Parent
+e.Part1 = e.Parent.Parent["Left Arm"]
+end)
+Tool0.Unequipped:Connect(function()
+owner.Character["Right Arm"].WeldConstraint:Destroy()
+end)
