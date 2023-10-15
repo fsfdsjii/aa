@@ -1,0 +1,13 @@
+for i,v in workspace:GetDescendants() do
+if v:IsA('BasePart') then
+if v.Name~="Base" then
+fire = Instance.new("Fire",v)
+fire.Color = Color3.new(255, 255, 0)
+fire.Size = 100
+selection = Instance.new("SelectionBox",v)
+selection.SurfaceColor = BrickColor.new("Black")
+selection.Color3 = Color3.new(255, 255, 0)
+selection.Adornee = v
+      end
+   end
+end
