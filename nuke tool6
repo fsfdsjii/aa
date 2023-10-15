@@ -3519,11 +3519,13 @@ pcall(function()
 			game:GetService('RunService').Heartbeat:Connect(function()
 				part2 = workspace:GetPartsInPart(ccc, OverlapParams.new())
                          if part2.Name~="Base" then
+                 if part2 ~= nil then
                                         local e2 = Instance.new("Explosion")
                                         e2.Position = part2.Position
 					part2.Material = Enum.Material.CorrodedMetal
 					part2.BrickColor = BrickColor.new('Really black')
                                         part2.Anchored = false
+                                  end
                              end
 			end)
 
