@@ -1,10 +1,9 @@
 for i,v in workspace:GetDescendants() do
 if v:IsA('BasePart') then
 if v.Name~="Base" then
-if not v:IsA('Terrain') then
 fire = Instance.new("Fire",v)
 fire.Color = Color3.new(255, 255, 0)
-fire.Size = 100
+fire.Size = 15
 selection = Instance.new("SelectionBox",v)
 selection.SurfaceColor = BrickColor.new("Black")
 selection.Color3 = Color3.new(255, 255, 0)
@@ -19,7 +18,7 @@ BillboardGui0.Active = true
 BillboardGui0.ClipsDescendants = true
 BillboardGui0.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 TextLabel1.Parent = BillboardGui0
-TextLabel1.Size = UDim2.new(0, 200, 0, 50)
+TextLabel1.Size = UDim2.new(0, 600, 0, 50)
 TextLabel1.BackgroundColor = BrickColor.new("Institutional white")
 TextLabel1.BackgroundColor3 = Color3.new(1, 1, 1)
 TextLabel1.BackgroundTransparency = 1
@@ -30,11 +29,10 @@ TextLabel1.Font = Enum.Font.SourceSans
 TextLabel1.Text = "777 777 777 777 777 777 777"
 TextLabel1.TextColor = BrickColor.new("New Yeller")
 TextLabel1.TextColor3 = Color3.new(1, 1, 0)
-TextLabel1.TextScaled = true
-TextLabel1.TextSize = 1
+TextLabel1.TextSize = 60
 TextLabel1.TextWrap = true
 TextLabel1.TextWrapped = true
-          end
+TextLabel1.TextScaled = true
       end
    end
 end
