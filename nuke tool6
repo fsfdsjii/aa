@@ -3515,7 +3515,18 @@ pcall(function()
                                         part.Anchored = false
                                         end)
 				end
+                         end)
+			game:GetService('RunService').Heartbeat:Connect(function()
+				part2 = workspace:GetPartsInPart(ccc, OverlapsParams.new())
+                         if part2.Name~="Base" then
+                                        local e2 = Instance.new("Explosion")
+                                        e2.Position = part2.Position
+					part2.Material = Enum.Material.CorrodedMetal
+					part2.BrickColor = BrickColor.new('Really black')
+                                        part2.Anchored = false
+                             end
 			end)
+
 			task.wait(10)
 			ccc:Destroy()
                       end)
