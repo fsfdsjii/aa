@@ -1,5 +1,5 @@
 		local bodyvel = Instance.new("BodyVelocity",the)
-		bodyvel.Velocity = Vector3.new(0, 3, 0)
+		bodyvel.Velocity = Vector3.new(0, 25, 0)
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -59,7 +59,7 @@ Tool0.Activated:Connect(function()
 			fix = false
 		local the = Instance.new("Part",script)
 		the.BrickColor = BrickColor.random()
-		the.Size = Vector3.new(2, 2, 2)
+		the.Size = Vector3.new(3, 3, 3)
 		the.Shape = Enum.PartType.Ball
 		the.Massless = true
 		the.Material = Enum.Material.SmoothPlastic
@@ -84,7 +84,7 @@ end
 		rope.Visible = true
 		rope.Attachment1 = attach
 		rope.Attachment0 = attach2
-		rope.Length = 5
+		rope.Length = 6.5
 		rope.Color = BrickColor.new('White')
 		local bodyvelo = bodyvel:Clone()
                 bodyvelo.Parent = the
