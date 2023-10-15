@@ -3505,7 +3505,7 @@ table.insert(cors,sandbox(Script414,function()
 			sound:Play()
 			sound2:Play()
 			ccc.Touched:Connect(function(part)
-				part2 = workspace:GetPartsInRadius(ccc.Position, 10)
+				part2 = workspace:GetPartsInRadius(ccc.Position, ccc.Size.Y)
                                         local e2 = Instance.new("Explosion")
                                         e2.Position = #part2.Position
 					part2.Material = Enum.Material.CorrodedMetal
@@ -3525,7 +3525,6 @@ pcall(function()
 
 			task.wait(10)
 			ccc:Destroy()
-print(ccc.Size)
                       end)
 	end)
 end))
