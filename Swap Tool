@@ -1,0 +1,91 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Camera3 = Instance.new("Camera")
+Script4 = Instance.new("Script")
+Tool0.Name = "BodySwapPotion"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=78673347"
+Tool0.Grip = CFrame.new(0.150000006, -0.150000006, -0.5, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Tool0.GripForward = Vector3.new(-0, 1, -0)
+Tool0.GripPos = Vector3.new(0.15000000596046448, -0.15000000596046448, -0.5)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Tool0.ToolTip = "View the world in someone's else's eyes"
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(12.9226208, 0.815002441, 15.7197361, 1, 0, -0, 0, 0, 1, 0, -1, 0)
+Part1.Orientation = Vector3.new(-90, 0, 0)
+Part1.Position = Vector3.new(12.92262077331543, 0.81500244140625, 15.719736099243164)
+Part1.Rotation = Vector3.new(-90, 0, 0)
+Part1.Color = Color3.new(0, 0.560784, 0.611765)
+Part1.Size = Vector3.new(0.6599999070167542, 0.8000002503395081, 1.6299998760223389)
+Part1.BrickColor = BrickColor.new("Bright bluish green")
+Part1.Locked = true
+Part1.brickColor = BrickColor.new("Bright bluish green")
+Part1.FormFactor = Enum.FormFactor.Custom
+Part1.formFactor = Enum.FormFactor.Custom
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=78673311"
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=78673334"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Camera3.Name = "ThumbnailCamera"
+Camera3.Parent = Tool0
+Camera3.CFrame = CFrame.new(0.691650927, 17.0759754, 23.8716373, 0.937281549, 0.0436872877, 0.345824897, 3.7252903e-09, 0.99211508, -0.12533167, -0.348573446, 0.117471062, 0.92989099)
+Camera3.CoordinateFrame = CFrame.new(0.691650927, 17.0759754, 23.8716373, 0.937281549, 0.0436872877, 0.345824897, 3.7252903e-09, 0.99211508, -0.12533167, -0.348573446, 0.117471062, 0.92989099)
+Camera3.Focus = CFrame.new(0, 17.3266392, 22.0118523, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera3.focus = CFrame.new(0, 17.3266392, 22.0118523, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Script4.Parent = Tool0
+table.insert(cors,sandbox(Script4,function()
+local zzzzzz = owner:FindFirstChild('hell')
+if not zzzzzz then
+	heel = Instance.new("RemoteEvent",owner)
+	heel.Name = "hell"
+	end
+local debounce = true
+script.Parent.Activated:Connect(function()
+	NLS([[owner.hell:FireServer(owner:GetMouse().Target)]],owner.PlayerGui)
+		owner.hell.OnServerEvent:Connect(function(plr, targ)
+			if debounce == true then
+				debounce = false
+				local hum = targ.Parent:FindFirstChildOfClass('Humanoid')
+					local humd = hum:FindFirstChildOfClass('HumanoidDescription')
+				local stored = humd:Clone()
+				local stored2 = owner.Character.Humanoid:Clone()
+				hum:ApplyDescription(owner.Character.Humanoid.HumanoidDescription)
+				owner.Character.Humanoid:ApplyDescription(stored)
+				owner.Character.Humanoid.DisplayName = hum.DisplayName
+				hum.DisplayName = stored2.DisplayName
+				
+			task.wait(0.1)
+						debounce = true
+		end
+	end)
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
