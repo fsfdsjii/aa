@@ -1,0 +1,133 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+CylinderMesh2 = Instance.new("CylinderMesh")
+Part3 = Instance.new("Part")
+SpecialMesh4 = Instance.new("SpecialMesh")
+Sound5 = Instance.new("Sound")
+Sound6 = Instance.new("Sound")
+Weld7 = Instance.new("Weld")
+Script8 = Instance.new("Script")
+Tool0.Name = "MP5K"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(-0.072960794, -0.187531859, 0.864265621, 0.999624252, 0.000119487362, 0.0274095163, -0.000119508513, 1.00000012, -1.5060258e-06, -0.0274095386, -1.70934175e-06, 0.999624372)
+Tool0.GripForward = Vector3.new(-0.027409516274929047, 0.0000015060257965160417, -0.9996243715286255)
+Tool0.GripPos = Vector3.new(-0.07296079397201538, -0.18753185868263245, 0.8642656207084656)
+Tool0.GripRight = Vector3.new(0.9996242523193359, -0.00011950851330766454, -0.027409538626670837)
+Tool0.GripUp = Vector3.new(0.00011948736209888011, 1.0000001192092896, -0.0000017093417454816517)
+Tool0.ToolTip = "Tanglingjoker's Creation"
+Part1.Name = "Muzzle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(15.3009119, 1.47900867, 9.42478943, -0.99755609, -9.09865776e-05, 0.0698710084, 0.0698710084, 3.19990577e-05, 0.99755609, -9.30000169e-05, 1, -2.55635314e-05)
+Part1.Orientation = Vector3.new(-85.99299621582031, 90.02100372314453, 89.9739990234375)
+Part1.Position = Vector3.new(15.300911903381348, 1.479008674621582, 9.424789428710938)
+Part1.Rotation = Vector3.new(-90.0009994506836, 4.006999969482422, 179.9949951171875)
+Part1.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part1.Transparency = 1
+Part1.Size = Vector3.new(0.05000000074505806, 0.05000000074505806, 0.05000000074505806)
+Part1.BrickColor = BrickColor.new("Black")
+Part1.Material = Enum.Material.SmoothPlastic
+Part1.brickColor = BrickColor.new("Black")
+Part1.FormFactor = Enum.FormFactor.Plate
+Part1.formFactor = Enum.FormFactor.Plate
+CylinderMesh2.Parent = Part1
+CylinderMesh2.Scale = Vector3.new(1, 1.149999976158142, 0.10000000149011612)
+Part3.Name = "Handle"
+Part3.Parent = Tool0
+Part3.CFrame = CFrame.new(15.304368, 0.984207153, 8.04269695, -1, 0, 0, 0, 1, 8.94069672e-08, 0, 8.94069672e-08, -1)
+Part3.Orientation = Vector3.new(0, 180, 0)
+Part3.Position = Vector3.new(15.304368019104004, 0.9842071533203125, 8.042696952819824)
+Part3.Rotation = Vector3.new(180, 0, 180)
+Part3.Size = Vector3.new(0.3401128351688385, 1.9683938026428223, 2.639030933380127)
+SpecialMesh4.Parent = Part3
+SpecialMesh4.MeshId = "rbxassetid://568634722"
+SpecialMesh4.Scale = Vector3.new(1.259150743484497, 1.271248698234558, 1.2879414558410645)
+SpecialMesh4.TextureId = "rbxassetid://568634915"
+SpecialMesh4.MeshType = Enum.MeshType.FileMesh
+Sound5.Name = "Hitmark"
+Sound5.Parent = Part3
+Sound5.SoundId = "rbxassetid://160432334"
+Sound6.Name = "Fire"
+Sound6.Parent = Part3
+Sound6.SoundId = "rbxassetid://1772743949"
+Weld7.Name = "BTWeld"
+Weld7.Parent = Part3
+Weld7.C1 = CFrame.new(-0.0378913879, -1.38210869, -0.493315458, 0.99755609, 0.0698710084, 9.3006267e-05, 9.09865776e-05, 3.20884646e-05, -1, -0.0698710084, 0.99755609, 2.56527201e-05)
+Weld7.Part0 = Part3
+Weld7.Part1 = Part1
+Weld7.part1 = Part1
+Script8.Parent = Tool0
+table.insert(cors,sandbox(Script8,function()
+local plscheckkk = owner:FindFirstChild('no')
+if not plscheckkk then
+	local ssss = Instance.new("RemoteEvent",owner)
+	ssss.Name = "no"
+	end
+debounce = true
+script.Parent.Activated:Connect(function()
+		NLS([[owner.no:FireServer(owner:GetMouse().Hit, owner:GetMouse().Target) task.wait(2) script:Destroy()]],owner.PlayerGui)
+		owner.no.OnServerEvent:Connect(function(plr, hit, targ)
+			if debounce == true then
+				debounce = false
+		local bullet = Instance.new("Part",workspace)
+		bullet.Size = Vector3.new(0.1, 0.1, 0.5)
+		bullet.BrickColor = BrickColor.new('Sand yellow')
+		bullet.CFrame = Part1.CFrame
+		local bodyf = Instance.new("BodyVelocity",bullet)
+				bodyf.Velocity = hit.Position * Vector3.new(1, 0, 1) * Vector3.new(3, 0, 3)
+		bodyf.P = 0
+		script.Parent.Handle.Fire:Play()
+		task.wait(0.5)
+		bullet.Touched:Connect(function(part)
+			local hum = part.Parent:FindFirstChildOfClass('Humanoid')
+			if hum then
+				hum:TakeDamage(85)
+				local hitmark = script.Parent.Handle.Hitmark:Clone()
+				hitmark.Parent  = targ
+				hitmark:Play()
+				bullet:Destroy()
+				task.wait(1)
+				hitmark:Destroy()
+			else
+				if targ.Name ~= "Base" then
+				local hitmarkx = script.Parent.Handle.Hitmark:Clone()
+				hitmarkx.Parent  = targ
+				hitmarkx:Play()
+				task.wait(1)
+				hitmarkx:Destroy()
+				end
+				bullet:Destroy()
+			end
+				end)
+				task.wait(0.05)
+				debounce = true
+				end
+			end)
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
