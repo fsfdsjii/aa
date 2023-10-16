@@ -3531,6 +3531,20 @@ v.Anchored = false
         end
     end
 end)
+game:GetService('RunService').Heartbeat:Connect(function()
+raycast = workspace:Raycast(ccc.Position, ccc.Position + Vector3.new(0.1, 0.1, 0.1))
+if raycast.Instance ~= nil then
+if raycast:IsA('BasePart') then
+if raycast.ClassName ~= "Terrain" then
+local exx = Instance.new("Explosion",workspace)
+exx.Position = raycast.Instance.Position
+raycast.Instance.Material = Enum.Material.CorrodedMetal
+raycast.Instance.BrickColor = BrickColor.new('Really black')
+raycast.Instance.Anchored = false
+            end
+        end
+    end
+end)
 			task.wait(10)
 			ccc:Destroy()
                       end)
