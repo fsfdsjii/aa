@@ -10,7 +10,7 @@ rrrr.Material = Enum.Material.Metal
 rrr.Activated:Connect(function()
 e = RaycastParams.new()
 e.FilterDescendantsInstances = {owner.Character.HumanoidRootPart, owner.Character["Right Arm"], owner.Character.Torso, owner.Character["Left Arm"], owner.Character["Left Leg"], owner.Character["Right Leg"], rrrr}
-v = workspace:Raycast(rrrr.Position, rrrr.Position * 5, e)
+v = workspace:Raycast(rrrr.Position, rrrr.Position * 2, e)
 print(v)
 if v ~= nil then
 if v.Instance.ClassName == "Part" or "UnionOperation" then
