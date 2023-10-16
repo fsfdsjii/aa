@@ -3516,7 +3516,21 @@ pcall(function()
                                         end)
 				end
                          end)
-
+game:GetService('RunService').Heartbeat:Connect(function()
+for i,v in ccc:GetTouchingParts() do
+if part ~= nil then
+if v:IsA('BasePart') then
+if v.Name~="Base" then
+local ex = Instance.new("Explosion",workspace)
+ex.Position = v.Position
+v.Material = Enum.Material.CorrodedMetal
+v.BrickColor = BrickColor.new('Really black')
+v.Anchored = false
+                end
+            end
+        end
+    end
+end)
 			task.wait(10)
 			ccc:Destroy()
                       end)
