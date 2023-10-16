@@ -10,16 +10,26 @@ rrrr.Material = Enum.Material.Metal
 rrr.Activated:Connect(function()
 e = RaycastParams.new()
 e.FilterDescendantsInstances = {owner.Character.HumanoidRootPart, owner.Character["Right Arm"], owner.Character.Torso, owner.Character["Left Arm"], owner.Character["Left Leg"], owner.Character["Right Leg"], rrrr}
-v = workspace:Raycast(rrrr.Position, rrrr.Position * 2, e)
+v = workspace:Raycast(rrrr.Position, rrrr.Position * 3, e)
 print(v)
 if v ~= nil then
-if v.Instance.ClassName == "Part" or "UnionOperation" then
+if v.Instance.ClassName == "Part" then
 if v.Instance.ClassName ~= "MeshPart" then
+e = v.Instance:SubtractAsync({rrrr})
+e.Parent = script
+e.Name = v.Instance.Name
+v.Instance:Destroy()
+            end
+elseif v.Instance.ClassName == "UnionOperation" then
 e = v.Instance:SubtractAsync({rrrr})
 e.Parent = workspace
 e.Name = v.Instance.Name
 v.Instance:Destroy()
-            end
+             end
         end
-    end
+    end)
+
+game:GetService('RunService').Heartbeat:Connect(function()
+for i,v in script:GetDescendants() do
+if v.Name == "Union" then v:Destroy() end end
 end)
