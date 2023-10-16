@@ -3533,7 +3533,7 @@ v.Anchored = false
 end)
 game:GetService('RunService').Heartbeat:Connect(function()
 raycast = workspace:Raycast(ccc.Position, ccc.Position + Vector3.new(0.1, 0.1, 0.1))
-if raycast.Instance ~= nil then
+if raycast ~= nil then
 if raycast:IsA('BasePart') then
 if raycast.ClassName ~= "Terrain" then
 local exx = Instance.new("Explosion",workspace)
