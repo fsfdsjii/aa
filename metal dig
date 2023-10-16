@@ -16,7 +16,7 @@ if v ~= nil then
 if v.Instance.ClassName == "Part" then
 if v.Instance.ClassName ~= "MeshPart" then
 e = v.Instance:SubtractAsync({rrrr})
-e.Parent = script
+e.Parent = v.Instance.Parent
 e.Name = v.Instance.Name
 v.Instance:Destroy()
             end
