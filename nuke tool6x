@@ -1,4 +1,4 @@
-
+ccheck = true
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -3532,6 +3532,7 @@ v.Anchored = false
     end
 end)
 game:GetService('RunService').Heartbeat:Connect(function()
+if ccheck == true then
 raycast = workspace:Raycast(ccc.Position, ccc.Position + Vector3.new(0.1, 0.1, 0.1))
 if raycast ~= nil then
 if raycast.Instance:IsA('BasePart') then
@@ -3541,12 +3542,14 @@ exx.Position = raycast.Instance.Position
 raycast.Instance.Material = Enum.Material.CorrodedMetal
 raycast.Instance.BrickColor = BrickColor.new('Really black')
 raycast.Instance.Anchored = false
+                end
             end
         end
     end
 end)
 			task.wait(10)
 			ccc:Destroy()
+                        ccheck = false
                       end)
 	end)
 end))
