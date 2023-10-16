@@ -1,0 +1,25 @@
+rrr = Instance.new("Tool",owner.Backpack)
+rrr.Name = "Subtract"
+
+rrrr = Instance.new("Part",rrr)
+rrrr.Name = "Handle"
+rrrr.Size = Vector3.new(2, 1, 6)
+rrrr.Massless = true
+rrrr.Material = Enum.Material.Metal
+
+rrr.Activated:Connect(function()
+e = RaycastParams.new()
+e.FilterDescendantsInstances = {owner.Character.HumanoidRootPart, owner.Character["Right Arm"], owner.Character.Torso, owner.Character["Left Arm"], owner.Character["Left Leg"], owner.Character["Right Leg"], rrrr}
+v = workspace:Raycast(rrrr.Position, rrrr.Position * 5, e)
+print(v)
+if v ~= nil then
+if v.Instance.ClassName == "Part" or "UnionOperation" then
+if v.Instance.ClassName ~= "MeshPart" then
+e = v.Instance:SubtractAsync({rrrr})
+e.Parent = workspace
+e.Name = v.Instance.Name
+v.Instance:Destroy()
+            end
+        end
+    end
+end)
