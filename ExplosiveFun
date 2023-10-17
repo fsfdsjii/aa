@@ -1,0 +1,70 @@
+e = Instance.new("Tool",owner.Backpack)
+e.RequiresHandle = false
+e.Name = "Long Explosion"
+
+nnnnn = owner:FindFirstChild('mmmmm')
+if not nnnnn then
+wha = Instance.new("RemoteEvent",owner)
+wha.Name = "mmmmm"
+end
+nnnn = owner:FindFirstChild('mmmm')
+if not nnnn then
+whax = Instance.new("NumberValue",owner)
+whax.Name = "mmmm"
+whax.Value = 1
+end
+debounce = true
+e.Activated:Connect(function()
+NLS([[owner.mmmmm:FireServer(owner:GetMouse().Hit)]],owner.PlayerGui)
+owner.mmmmm.OnServerEvent:Connect(function(plr, hit)
+if debounce == true then
+debounce = false
+ee = Instance.new("Explosion",workspace)
+ee.Position = hit * Vector3.new(1, tonumber(owner.mmmm.Value), 1)
+ee.BlastRadius = 20
+owner.mmmm.Value = 1
+ee = Instance.new("Explosion",workspace)
+ee.Position = hit * Vector3.new(1, tonumber(owner.mmmm.Value), 1)
+ee.BlastRadius = 20
+owner.mmmm.Value = 10
+ee = Instance.new("Explosion",workspace)
+ee.Position = hit * Vector3.new(1, tonumber(owner.mmmm.Value), 1)
+ee.BlastRadius = 20
+owner.mmmm.Value = 20
+ee = Instance.new("Explosion",workspace)
+ee.Position = hit * Vector3.new(1, tonumber(owner.mmmm.Value), 1)
+ee.BlastRadius = 20
+owner.mmmm.Value = 30
+ee = Instance.new("Explosion",workspace)
+ee.Position = hit * Vector3.new(1, tonumber(owner.mmmm.Value), 1)
+ee.BlastRadius = 20
+owner.mmmm.Value = 40
+ee = Instance.new("Explosion",workspace)
+ee.Position = hit * Vector3.new(1, tonumber(owner.mmmm.Value), 1)
+ee.BlastRadius = 20
+owner.mmmm.Value = 50
+ee = Instance.new("Explosion",workspace)
+ee.Position = hit * Vector3.new(1, tonumber(owner.mmmm.Value), 1)
+ee.BlastRadius = 20
+owner.mmmm.Value = 60
+ee = Instance.new("Explosion",workspace)
+ee.Position = hit * Vector3.new(1, tonumber(owner.mmmm.Value), 1)
+ee.BlastRadius = 20
+owner.mmmm.Value = 70
+ee = Instance.new("Explosion",workspace)
+ee.Position = hit * Vector3.new(1, tonumber(owner.mmmm.Value), 1)
+ee.BlastRadius = 20
+owner.mmmm.Value = 80
+ee = Instance.new("Explosion",workspace)
+ee.Position = hit * Vector3.new(1, tonumber(owner.mmmm.Value), 1)
+ee.BlastRadius = 20
+owner.mmmm.Value = 90
+ee = Instance.new("Explosion",workspace)
+ee.Position = hit * Vector3.new(1, tonumber(owner.mmmm.Value), 1)
+ee.BlastRadius = 20
+owner.mmmm.Value = 100
+task.wait(0.1)
+debounce = true
+         end
+    end)
+end)
