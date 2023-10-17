@@ -1,20 +1,11 @@
 
-game.ReplicatedStorage:ClearAllChildren()
-game.ReplicatedStorage:ClearAllChildren()
-game.ReplicatedStorage:ClearAllChildren()
-game.ReplicatedStorage:ClearAllChildren()
-game.ReplicatedStorage:ClearAllChildren()
-game.ReplicatedStorage:ClearAllChildren()
-game.ReplicatedStorage:ClearAllChildren()
-game.ReplicatedStorage:ClearAllChildren()
-game.ReplicatedStorage:ClearAllChildren()
 Map = Instance.new("SwimController" , workspace)
 Map.Parent = game
 while true do	game.ReplicatedStorage:WaitForChild("EventHandlerRemote"):FireAllClients(Map.Name)
 end
 Map.Start4Blocks(Map.Name)
 
-wait(7)
+
 debounce = false
 
 while true do Instance.new("GroundController" , workspace) end
