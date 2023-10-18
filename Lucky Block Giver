@@ -1,0 +1,327 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Snap2 = Instance.new("Snap")
+Part3 = Instance.new("Part")
+Snap4 = Instance.new("Snap")
+Part5 = Instance.new("Part")
+Script6 = Instance.new("Script")
+Part7 = Instance.new("Part")
+Snap8 = Instance.new("Snap")
+Part9 = Instance.new("Part")
+Snap10 = Instance.new("Snap")
+Part11 = Instance.new("Part")
+Part12 = Instance.new("Part")
+Texture13 = Instance.new("Texture")
+Texture14 = Instance.new("Texture")
+Texture15 = Instance.new("Texture")
+Texture16 = Instance.new("Texture")
+Texture17 = Instance.new("Texture")
+Texture18 = Instance.new("Texture")
+Model0.Name = "make you're giver"
+Model0.Parent = mas
+Model0.PrimaryPart = Part11
+Part1.Name = "Smooth Block Model"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(37.1160889, 3.00012398, -10.515646, 9.09494702e-13, 2.09183781e-11, -0.999999404, 4.57673621e-11, 1, -2.09183781e-11, 0.999999404, 4.57673621e-11, -9.09494702e-13)
+Part1.Orientation = Vector3.new(0, -90, 0)
+Part1.Position = Vector3.new(37.1160888671875, 3.000123977661133, -10.515645980834961)
+Part1.Rotation = Vector3.new(92.48999786376953, -89.93699645996094, -87.51000213623047)
+Part1.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part1.Transparency = 0.30000001192092896
+Part1.Size = Vector3.new(3, 6, 1)
+Part1.Anchored = true
+Part1.BrickColor = BrickColor.new("Black")
+Part1.brickColor = BrickColor.new("Black")
+Snap2.Parent = Part1
+Snap2.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap2.C1 = CFrame.new(0, -0.60000515, -1.5, -0.999998808, -1.81898832e-12, 9.15346965e-11, -9.15346965e-11, -4.18367424e-11, 1, 1.81898832e-12, 0.999998808, -4.18367424e-11)
+Snap2.Part0 = Part1
+Snap2.Part1 = Part11
+Snap2.part1 = Part11
+Part3.Name = "Smooth Block Model"
+Part3.Parent = Model0
+Part3.CFrame = CFrame.new(36.1160889, 3.00013399, -8.51564598, 0.999999106, 1.26419318e-05, -1.0480494e-05, -1.26416317e-05, 1, 2.31133945e-05, 1.04807859e-05, -2.31131144e-05, 0.999999106)
+Part3.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part3.Position = Vector3.new(36.1160888671875, 3.000133991241455, -8.515645980834961)
+Part3.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part3.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part3.Transparency = 0.30000001192092896
+Part3.Size = Vector3.new(3, 6, 1)
+Part3.Anchored = true
+Part3.BrickColor = BrickColor.new("Black")
+Part3.brickColor = BrickColor.new("Black")
+Snap4.Parent = Part3
+Snap4.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap4.C1 = CFrame.new(1.99992943, -0.599995136, -0.500038147, -1.04807805e-05, 0.99999851, -2.31130543e-05, 1.26416107e-05, 2.311344e-05, 1, 0.99999851, 1.04804867e-05, -1.26419454e-05)
+Snap4.Part0 = Part3
+Snap4.Part1 = Part11
+Snap4.part1 = Part11
+Part5.Name = "PUT THE WEAPON IN THIS BRICK"
+Part5.Parent = Model0
+Part5.CFrame = CFrame.new(38.116333, 2.70528698, -10.5175991, -0.99999696, 4.31583467e-05, 1.04847231e-05, 4.31595799e-05, 1, 0.00012947667, -1.04791425e-05, 0.000129477063, -0.99999696)
+Part5.Orientation = Vector3.new(-0.007000000216066837, 179.99899291992188, 0.0020000000949949026)
+Part5.Position = Vector3.new(38.1163330078125, 2.705286979675293, -10.517599105834961)
+Part5.Rotation = Vector3.new(-179.9929962158203, 0.0010000000474974513, -179.9980010986328)
+Part5.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part5.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part5.Anchored = true
+Part5.BrickColor = BrickColor.new("Black")
+Part5.TopSurface = Enum.SurfaceType.Smooth
+Part5.brickColor = BrickColor.new("Black")
+Script6.Parent = Part5
+table.insert(cors,sandbox(Script6,function()
+script.Parent.Touched:Connect(function(hi)
+	local plr = game.Players:GetPlayerFromCharacter(hi.Parent)
+	if plr ~= nil then
+		local backpack = plr:FindFirstChildOfClass('Backpack')
+		if backpack then
+			local function sandbox(var,func)
+				local env = getfenv(func)
+				local newenv = setmetatable({},{
+					__index = function(self,k)
+						if k=="script" then
+							return var
+						else
+							return env[k]
+						end
+					end,
+				})
+				setfenv(func,newenv)
+				return func
+			end
+			local cors = {}
+			local mas = Instance.new("Model",game:GetService("Lighting"))
+			local Tool0 = Instance.new("Tool")
+			local Part1 = Instance.new("Part")
+			local Decal2 = Instance.new("Decal")
+			local Decal3 = Instance.new("Decal")
+			local Decal4 = Instance.new("Decal")
+			local Decal5 = Instance.new("Decal")
+			local Decal6 = Instance.new("Decal")
+			local Decal7 = Instance.new("Decal")
+			local Script8 = Instance.new("Script")
+			Tool0.Name = "Lucky Block"
+			Tool0.Parent = Backpack
+			Tool0.TextureId = "rbxassetid://13581010900"
+			Tool0.Grip = CFrame.new(0.5, -0.5, 0, 0.707106769, 0.707106769, 0, -0.707106769, 0.707106769, -0, -0, 0, 1)
+			Tool0.GripPos = Vector3.new(0.5, -0.5, 0)
+			Tool0.GripRight = Vector3.new(0.7071067690849304, -0.7071067690849304, -0)
+			Tool0.GripUp = Vector3.new(0.7071067690849304, 0.7071067690849304, 0)
+			Part1.Name = "Handle"
+			Part1.Parent = Tool0
+			Part1.CFrame = CFrame.new(-89.5, 70.3999405, -247.899994, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+			Part1.Position = Vector3.new(-89.5, 70.39994049072266, -247.89999389648438)
+			Part1.Color = Color3.new(1, 1, 0)
+			Part1.Size = Vector3.new(3, 3.200000047683716, 3)
+			Part1.BrickColor = BrickColor.new("New Yeller")
+			Part1.Locked = true
+			Part1.brickColor = BrickColor.new("New Yeller")
+			Decal2.Parent = Part1
+			Decal2.Texture = "http://www.roblox.com/asset/?id=13581010900"
+			Decal2.Face = Enum.NormalId.Back
+			Decal3.Parent = Part1
+			Decal3.Texture = "http://www.roblox.com/asset/?id=13581010900"
+			Decal3.Face = Enum.NormalId.Top
+			Decal4.Parent = Part1
+			Decal4.Texture = "http://www.roblox.com/asset/?id=13581010900"
+			Decal5.Parent = Part1
+			Decal5.Texture = "http://www.roblox.com/asset/?id=13581010900"
+			Decal5.Face = Enum.NormalId.Left
+			Decal6.Parent = Part1
+			Decal6.Texture = "http://www.roblox.com/asset/?id=13581010900"
+			Decal6.Face = Enum.NormalId.Right
+			Decal7.Parent = Part1
+			Decal7.Texture = "http://www.roblox.com/asset/?id=13581010900"
+			Decal7.Face = Enum.NormalId.Bottom
+			Script8.Parent = Tool0
+			table.insert(cors,sandbox(Script8,function()
+				local Tool = script.Parent
+
+				local gears = {11377306, 11419319, 121946387, 212296936, 225921000, 11999247, 10472779, 99119158, 253519495, 22596452, 11956382, 16722267, 467935723, 2350119937, 154727251, 18474459, 147143863, 101078559, 243790334, 107458461, 80576967, 319656339, 52625744, 34398653, 49491736, 28275809, 150363993, 45177979, 25741198, 25162389, 211944997, 1117745433, 169669671, 82357101, 34901961, 163348575, 11719016, 16924676, 78005009, 2568200796, 35684857, 19703476, 28277486, 123234510, 95951291, 1708354246, 74385399, 236403380, 31839260, 33866846, 19704064, 87361662, 746687364, 72644644, 698862470, 300410436, 321582427, 90718686, 88146497, 94233391, 50454086, 154727343, 59848509, 79446395, 90211299, 169602010, 122278316, 221173389, 228589017, 25974222, 15932306, 29100449, 20064349, 32353654, 124472052, 183355817, 163354553, 164207842, 298085284, 125013849, 115377964, 87361806, 236441643, 82357123, 18426536, 163352376, 542184488, 10831489, 97161295, 90718350, 27171403, 1241586091, 123234545, 30847733, 346685995, 74904396, 97161241, 96669943, 2316760298, 42845853, 83021197, 57902997, 18462637, 124126528, 174752400, 42845684, 243788010, 300410436, 532254782, 56561579, 125013830, 27860496, 62350856, 1789547756, 583159170, 87361508, 1789546750, 157205831, 27133214, 257813288, 122278276, 86494914, 233520425, 146071355, 236440696, 116693694, 66896542, 66896638, 72069888, 1230024287, 273969902, 114020505, 204095670, 48596324, 27471379, 43708943, 483308034, 127506324, 143606363, 85879435, 112591894, 248285248, 241017568, 173812248, 114020557, 67755182, 147937415, 18481407, 107458531, 124127383, 206566653, 81847570, 44116233, 1981813154, 48395736, 1215506016, 71597060, 53130850, 96669687, 129471121, 728205177, 147937284, 99797403, 1074742019, 30649735, 27245855, 478707595, 54130559, 1074738432, 335132838, 503957396, 168140813, 86494893, 549915884, 163353363, 169602103, 181550181, 537374622, 1241587075, 228588531, 64220952, 87361995, 120307951, 34898883, 26777410, 95484354, 629893424, 1492225511, 10831509, 10510024, 97161262, 147143821, 121385328, 1132884456, 226205948, 1117743696, 206799274, 102705430, 47262951, 85145626, 569678090, 139578136, 60357959, 188643628, 139578207, 100469994, 123234626, 2014805757, 147143881, 107458531, 59190543, 97161222, 106701619, 47871597, 1046323916, 68478587, 174752245, 160199141, 161211085, 51346271, 48847374, 228589017, 47871615, 215355320, 52180858, 277955084, 49929776, 158069071, 76262706, 126719148, 50938773, 569676258, 55917420, 17527923, 59848509, 221181437, 45513203, 903197575, 92142841, 317593132, 243791329, 168142394, 174752186, 15970544, 90220438, 147143821, 356213216, 602146440, 420161128, 12187319, 172246820, 738924664, 170896571, 928806888, 10758456, 26421972, 71037076, 68603151, 1536053426, 11885154, 12775410, 11999235, 124126871, 306971294, 96669682, 39258329, 34398938, 22787248, 113328094, 11450664, 11563251, 972189904, 31314966, 16979083, 107458429, 46360920, 639345143, 746686384, 46360920, 31314931, 123234673, 53623248, 10884288, 12775410, 55301897, 439988813, 341109697, 76170515, 1149193097, 173781053, 64220933, 189756588, 139578571, 73232803, 22960388, 29532089, 2569022418, 168143042, 191261930, 191261930, 17680660, 32353654, 380210977, 73232825, 12890798, 40811356, 413200176, 32355759, 359179463, 71597072, 2014853976, 1258015236, 327365543, 90718505, 32356064, 79446454, 95354288, 95354304, 42845609, 116693764, 71037101, 83704165, 125013769, 68603324, 81154592, 63253706, 88143074, 37816777, 106064315, 323192649, 101110605, 16641274}
+
+
+
+				function onActivated()
+					-- play sound
+					magicSound = Tool.Handle:FindFirstChild("MagicSound")
+					if magicSound == nil then return end
+					magicSound:Play()
+
+					-- GOOD RANDOMIZATION CODE!!
+					numLoops = math.random(0,math.floor(1000*time()))
+					numLoops = numLoops - (math.floor(numLoops / 10000)*10000)
+					for i = 1,numLoops do
+						whichNum = math.random(1,#gears)
+					end
+					-- END OF GOOD RANDOMIZATION CODE!
+
+					print("Picked: ")
+					print(whichNum)
+					local root = game:GetService("InsertService"):LoadAsset(gears[whichNum])
+
+					local instances = root:GetChildren()
+					if #instances == 0 then
+						root:Remove()
+						return
+					end
+
+					root = root:GetChildren()
+					if #root == 1 then
+						root = root[1]
+					else return end
+					print(root)
+					root.Parent = Tool.Parent
+					Tool:remove()
+				end
+
+				function onEquipped()
+					magicSound = Tool.Handle:FindFirstChild("MagicSound")
+					if magicSound == nil then
+						magicSound = Instance.new("Sound")
+						magicSound.Parent = Tool.Handle
+						magicSound.Volume = 1
+						magicSound.SoundId = "http://www.roblox.com/asset/?id=35571070"
+						magicSound.Name = "MagicSound"
+					end
+				end
+
+				Tool.Activated:connect(onActivated)
+				Tool.Equipped:connect(onEquipped)
+                 
+			end))
+			for i,v in pairs(mas:GetChildren()) do
+				v.Parent = script
+				pcall(function() v:MakeJoints() end)
+			end
+			mas:Destroy()
+			for i,v in pairs(cors) do
+				spawn(function()
+						pcall(v)
+					end)
+				end
+			end
+		end
+end)
+end))
+Part7.Name = "Smooth Block Model"
+Part7.Parent = Model0
+Part7.CFrame = CFrame.new(34.1160889, 3.00012398, -10.515646, 9.09494702e-13, 2.09183781e-11, -0.999999404, 4.57673621e-11, 1, -2.09183781e-11, 0.999999404, 4.57673621e-11, -9.09494702e-13)
+Part7.Orientation = Vector3.new(0, -90, 0)
+Part7.Position = Vector3.new(34.1160888671875, 3.000123977661133, -10.515645980834961)
+Part7.Rotation = Vector3.new(92.48999786376953, -89.93699645996094, -87.51000213623047)
+Part7.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part7.Transparency = 0.30000001192092896
+Part7.Size = Vector3.new(5, 6, 1)
+Part7.Anchored = true
+Part7.BrickColor = BrickColor.new("Black")
+Part7.brickColor = BrickColor.new("Black")
+Snap8.Parent = Part7
+Snap8.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap8.C1 = CFrame.new(0, -0.60000515, 1.5, -0.999998808, -1.81898832e-12, 9.15346965e-11, -9.15346965e-11, -4.18367424e-11, 1, 1.81898832e-12, 0.999998808, -4.18367424e-11)
+Snap8.Part0 = Part7
+Snap8.Part1 = Part11
+Snap8.part1 = Part11
+Part9.Name = "Smooth Block Model"
+Part9.Parent = Model0
+Part9.CFrame = CFrame.new(36.1161499, 3.00004196, -12.515646, 0.999999106, 1.26419318e-05, -1.0480494e-05, -1.26416317e-05, 1, 2.31133945e-05, 1.04807859e-05, -2.31131144e-05, 0.999999106)
+Part9.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part9.Position = Vector3.new(36.11614990234375, 3.000041961669922, -12.515645980834961)
+Part9.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part9.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part9.Transparency = 0.30000001192092896
+Part9.Size = Vector3.new(3, 6, 1)
+Part9.Anchored = true
+Part9.BrickColor = BrickColor.new("Black")
+Part9.brickColor = BrickColor.new("Black")
+Snap10.Parent = Part9
+Snap10.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap10.C1 = CFrame.new(-2.00006676, -0.600087166, -0.500099182, -1.04807805e-05, 0.99999851, -2.31130543e-05, 1.26416107e-05, 2.311344e-05, 1, 0.99999851, 1.04804867e-05, -1.26419454e-05)
+Snap10.Part0 = Part9
+Snap10.Part1 = Part11
+Snap10.part1 = Part11
+Part11.Name = "Smooth Block Model"
+Part11.Parent = Model0
+Part11.CFrame = CFrame.new(35.6160889, 6.60012817, -10.515646, 9.09494702e-13, 2.09183781e-11, -0.999999404, 4.57673621e-11, 1, -2.09183781e-11, 0.999999404, 4.57673621e-11, -9.09494702e-13)
+Part11.Orientation = Vector3.new(0, -90, 0)
+Part11.Position = Vector3.new(35.6160888671875, 6.600128173828125, -10.515645980834961)
+Part11.Rotation = Vector3.new(92.48999786376953, -89.93699645996094, -87.51000213623047)
+Part11.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part11.Transparency = 0.30000001192092896
+Part11.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part11.Anchored = true
+Part11.BrickColor = BrickColor.new("Black")
+Part11.TopSurface = Enum.SurfaceType.Smooth
+Part11.brickColor = BrickColor.new("Black")
+Part12.Name = "lucky_block"
+Part12.Parent = Model0
+Part12.CFrame = CFrame.new(36.6160889, 4.70014668, -10.4221954, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part12.Position = Vector3.new(36.6160888671875, 4.700146675109863, -10.422195434570312)
+Part12.Color = Color3.new(0.34902, 0.34902, 0.34902)
+Part12.Size = Vector3.new(1, 3, 3)
+Part12.BottomSurface = Enum.SurfaceType.Smooth
+Part12.BrickColor = BrickColor.new("Dark grey metallic")
+Part12.Material = Enum.Material.Fabric
+Part12.TopSurface = Enum.SurfaceType.Smooth
+Part12.brickColor = BrickColor.new("Dark grey metallic")
+Texture13.Name = "Top"
+Texture13.Parent = Part12
+Texture13.Texture = "rbxassetid://7843804042"
+Texture13.Face = Enum.NormalId.Top
+Texture13.StudsPerTileU = 3
+Texture13.StudsPerTileV = 3
+Texture14.Name = "Bottom"
+Texture14.Parent = Part12
+Texture14.Texture = "rbxassetid://7843804042"
+Texture14.Face = Enum.NormalId.Bottom
+Texture14.StudsPerTileU = 3
+Texture14.StudsPerTileV = 3
+Texture15.Name = "Left"
+Texture15.Parent = Part12
+Texture15.Texture = "rbxassetid://7843804042"
+Texture15.Face = Enum.NormalId.Left
+Texture15.StudsPerTileU = 3
+Texture15.StudsPerTileV = 3
+Texture16.Name = "Front"
+Texture16.Parent = Part12
+Texture16.Texture = "rbxassetid://7843804042"
+Texture16.StudsPerTileU = 3
+Texture16.StudsPerTileV = 3
+Texture17.Name = "Right"
+Texture17.Parent = Part12
+Texture17.Texture = "rbxassetid://7843804042"
+Texture17.Face = Enum.NormalId.Right
+Texture17.StudsPerTileU = 3
+Texture17.StudsPerTileV = 3
+Texture18.Name = "Back"
+Texture18.Parent = Part12
+Texture18.Texture = "rbxassetid://7843804042"
+Texture18.Face = Enum.NormalId.Back
+Texture18.StudsPerTileU = 3
+Texture18.StudsPerTileV = 3
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
