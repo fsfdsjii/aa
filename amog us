@@ -1,4 +1,4 @@
-
+owner = game.Players.game_fixing
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -44,16 +44,17 @@ Rotate3.Part1 = Part1
 Rotate3.part1 = Part1
 Script4.Parent = Part2
 table.insert(cors,sandbox(Script4,function()
-	script.Parent.Rotate.C1 = script.Parent.Parent.Part.CFrame
-game:GetService('RunService').Heartbeat:Connect(function()
+	script.Parent.Rotate.C1 = Part2.CFrame
+while wait() do
 	SpecialMesh5.VertexColor = Vector3.new(math.random(0, 1), math.random(0, 1), math.random(0, 1))
-end)
+end
 end))
 SpecialMesh5.Parent = Part2
 SpecialMesh5.MeshId = "rbxassetid://6686375902"
 SpecialMesh5.Scale = Vector3.new(0.10000000149011612, 0.25, 0.10000000149011612)
 SpecialMesh5.TextureId = "rbxassetid://6686375937"
 SpecialMesh5.MeshType = Enum.MeshType.FileMesh
+
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
@@ -64,3 +65,4 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
