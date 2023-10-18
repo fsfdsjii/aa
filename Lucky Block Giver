@@ -87,7 +87,10 @@ Part5.TopSurface = Enum.SurfaceType.Smooth
 Part5.brickColor = BrickColor.new("Black")
 Script6.Parent = Part5
 table.insert(cors,sandbox(Script6,function()
-script.Parent.Touched:Connect(function(hi)
+debounce = true
+	script.Parent.Touched:Connect(function(hi)
+		if debounce == true then
+debounce = false
 	local plr = game.Players:GetPlayerFromCharacter(hi.Parent)
 	if plr ~= nil then
 		local backpack = plr:FindFirstChildOfClass('Backpack')
@@ -171,9 +174,6 @@ script.Parent.Touched:Connect(function(hi)
 						whichNum = math.random(1,#gears)
 					end
 					-- END OF GOOD RANDOMIZATION CODE!
-
-					print("Picked: ")
-					print(whichNum)
 					local root = game:GetService("InsertService"):LoadAsset(gears[whichNum])
 
 					local instances = root:GetChildren()
@@ -186,7 +186,6 @@ script.Parent.Touched:Connect(function(hi)
 					if #root == 1 then
 						root = root[1]
 					else return end
-					print(root)
 					root.Parent = Tool.Parent
 					Tool:remove()
 				end
@@ -217,7 +216,10 @@ script.Parent.Touched:Connect(function(hi)
 					end)
 				end
 			end
-		end
+			end
+			task.wait(2.5)
+		debounce = true
+	end
 end)
 end))
 Part7.Name = "Smooth Block Model"
