@@ -1,0 +1,68 @@
+eeee = Instance.new("Tool",owner.Backpack)
+eeee.RequiresHandle = false
+eeee.Name = "Rope Grab"
+
+yyy = owner:FindFirstChild('yy')
+if not yyy then
+yy = Instance.new("RemoteEvent",owner)
+yy.Name = "yy"
+end
+
+ropee = owner.Character["Right Arm"]:FindFirstChild('rope')
+if not ropee then
+rope = Instance.new("RopeConstraint",owner.Character["Right Arm"])
+rope.Name = "rope"
+rope.Attachment0 = owner.Character["Right Arm"].RightGripAttachment
+rope.Length = 5
+rope.Visible = true
+end
+
+eeee.Activated:Connect(function()
+NLS([[owner.yy:FireServer(owner:GetMouse().Target)]],owner.PlayerGui)
+owner.yy.OnServerEvent:Connect(function(plr, targg)
+if targg ~= nil then
+if targg.Anchored == false then
+attach = targg:FindFirstChild('attch')
+if not attach then
+attch = Instance.new("Attachment",targg)
+attch.Name = "attch"
+owner.Character["Right Arm"].rope.Attachment1 = attch
+else
+targg.attch:Destroy()
+attch = Instance.new("Attachment",targg)
+attch.Name = "attch"
+owner.Character["Right Arm"].rope.Attachment1 = attch
+                end
+            end
+        end
+    end)
+end)
+
+eeee.Unequipped:Connect(function()
+for i,v in owner.Character["Right Arm"]:GetDescendants() do
+if v.Name == "rope" then
+v:Destroy()
+        end
+    end
+end)
+
+eeee.Equipped:Connect(function()
+rope = Instance.new("RopeConstraint",owner.Character["Right Arm"])
+rope.Name = "rope"
+rope.Attachment0 = owner.Character["Right Arm"].RightGripAttachment
+rope.Length = 5
+rope.Visible = true
+end)
+
+print("Say /ropelength then a number to set the length of the rope")
+local cmd = "/ropelength"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+owner.Character["Right Arm"].rope.Length = tonumber(TargetName)
+
+	end
+end)
