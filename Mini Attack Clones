@@ -1,0 +1,87 @@
+e = Instance.new("Tool",owner.Backpack)
+e.RequiresHandle = false
+e.Name = "Mini Attack Clones"
+
+checkr = owner:FindFirstChild('NotAFind')
+if not checkr then
+p = Instance.new("RemoteEvent",owner)
+p.Name = "NotAFind"
+end
+
+checkrr = owner:FindFirstChild('NotAFindx')
+if not checkrr then
+px = Instance.new("NumberValue",owner)
+px.Name = "NotAFindx"
+px.Value = 1
+end
+
+
+e.Activated:Connect(function()
+NLS([[owner.NotAFind:FireServer(owner:GetMouse().Target)]],owner.PlayerGui)
+for i,v in owner.Character:GetDescendants() do
+v.Archivable = true 
+    end
+owner.Character.Archivable = true
+owner.NotAFind.OnServerEvent:Connect(function(plr, targz)
+if targz ~= nil then
+hum = targz.Parent:FindFirstChildOfClass('Humanoid')
+if hum then
+for i,v in script:GetDescendants() do
+if v.Name == owner.Character.Name then
+v.Humanoid.WalkToPoint = targz.Position
+v.Humanoid.WalkToPart = targz
+v.Humanoid:MoveTo(targz.Position, targz)
+v.HumanoidRootPart.Touched:Connect(function(part)
+huma = part.Parent:FindFirstChildOfClass('Humanoid')
+if huma then
+if huma == hum then
+huma.Health = 0
+                     end
+                  end
+              end)
+              end
+              end          
+           end
+        end
+    end)
+end)
+
+e.Unequipped:Connect(function()
+iden = script:FindFirstChild(owner.Character.Name)
+if iden then
+for i,v in script:GetDescendants() do
+if v.Name == owner.Character.Name then
+v:Destroy()
+            end
+        end
+    end
+end)
+
+e.Equipped:Connect(function()
+iden = script:FindFirstChild(owner.Character.Name)
+if not iden then
+for i,v in owner.Character:GetDescendants() do
+v.Archivable = true 
+    end
+owner.Character.Archivable = true
+for i = 1,tonumber(px.Value) do
+eee = owner.Character:Clone()
+eee.Parent = script
+eee.HumanoidRootPart.Position = owner.Character.HumanoidRootPart.Position
+eee:ScaleTo(0.5)
+        end
+    end
+end)
+
+print("Say /numberofclones then number to set the number of clones.")
+
+local cmd = "/numberofclones"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+owner.NotAFindx.Value = tonumber(TargetName)
+	end
+end)
