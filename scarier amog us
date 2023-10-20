@@ -1,4 +1,4 @@
-owner = game.Players.game_fixing
+
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -38,6 +38,12 @@ Part2.Size = Vector3.new(3, 2, 2)
 Part2.BottomSurface = Enum.SurfaceType.Smooth
 Part2.TopSurface = Enum.SurfaceType.Smooth
 Part2.Shape = Enum.PartType.Ball
+random = Random.new()
+e = Instance.new("Sound",Part2)
+e.SoundId = "rbxassetid://6040995928"
+e.Volume = 2
+e.Looped = true
+e:Play()
 Rotate3.Parent = Part2
 Rotate3.Part0 = Part2
 Rotate3.Part1 = Part1
@@ -73,3 +79,8 @@ if v:IsA('BasePart') then
 v.CanCollide = false
    end
 end
+
+while task.wait(1.5) do
+e.Pitch = random:NextNumber(0.25, 2.5)
+end
+
