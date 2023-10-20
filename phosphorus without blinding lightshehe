@@ -51,7 +51,13 @@ u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..str
 				end
                          end
                  end]] , workspace)
-
+for i,v in workspace:GetDescendants() do
+if v.ClassName == "Part"  then
+e = Instance.new("WeldConstraint",v)
+e.Part0 = v
+e.Part1 = v
+end
+end
 while task.wait() do 
 	while task.wait() do
 		while task.wait() do 
