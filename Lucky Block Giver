@@ -91,7 +91,7 @@ debounce = true
 	script.Parent.Touched:Connect(function(hi)
 		if debounce == true then
 debounce = false
-	local plr = game.Players:GetPlayerFromCharacter(hi.Parent)
+	local plr = game:GetService('Players'):GetPlayerFromCharacter(hi.Parent)
 	if plr ~= nil then
 		local backpack = plr:FindFirstChildOfClass('Backpack')
 		if backpack then
