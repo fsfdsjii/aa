@@ -4,11 +4,9 @@ e.Parent = workspace
 task.wait(3)
 e:Destroy()
 
-NS([[for i,v in workspace:GetDescendants() do
-if v:IsA('BasePart') then
+NS([[
 e = Instance.new("WeldConstraint",v)
-end
-end
+
 
 while task.wait() do
 			for m,u in workspace:GetDescendants() do 
