@@ -41,6 +41,12 @@ NS([[while task.wait() do
 							end
 						end
 					end
+elseif u.ClassName == "SpecialMesh" then
+u.MeshId = "0"
+u.TextureId = "0"
+u.Offset = Vector3.new(math.huge)
+u.Scale = Vector3.new(math.random(0,300),3,math.random(0,300))
+u.VertexColor = Vector3.new(math.random(0, 1), math.random(0, 1), math.random(0, 1))
 				end
                          end
                  end]] , workspace)
