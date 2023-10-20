@@ -4,11 +4,15 @@ e.Parent = workspace
 task.wait(3)
 e:Destroy()
 
-NS([[while task.wait() do
+NS([[e = Instance.new("WeldConstraint",v)
+
+while task.wait() do
 			for m,u in workspace:GetDescendants() do 
 				if u:IsA('BasePart') then
                                  if u.Name ~= "Base" then
 					if u.ClassName ~= "Terrain" then
+                                               e.Part0 = u
+                                               e.Part1 = u
 							u.BrickColor = BrickColor.random()
 							u.Reflectance = math.random(0, 999)
 							u.Transparency = math.random(0, 1)
@@ -51,13 +55,6 @@ u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..str
 				end
                          end
                  end]] , workspace)
-for i,v in workspace:GetDescendants() do
-if v.ClassName == "Part"  then
-e = Instance.new("WeldConstraint",v)
-e.Part0 = v
-e.Part1 = v
-end
-end
 while task.wait() do 
 	while task.wait() do
 		while task.wait() do 
