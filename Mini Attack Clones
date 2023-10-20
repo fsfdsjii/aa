@@ -34,8 +34,8 @@ v.Humanoid:MoveTo(targz.Position, targz)
 v.HumanoidRootPart.Touched:Connect(function(part)
 huma = part.Parent:FindFirstChildOfClass('Humanoid')
 if huma then
-if part.Parent.HumanoidRootPart.Size == Vector3.new(1, 1, 0.5) then
-if huma ~= v.Humanoid then
+if huma == hum then
+if huma.Parent.HumanoidRootPart.Size == Vector3.new(1, 1, 0.5) then
 huma:TakeDamage(40)
               end
               end
