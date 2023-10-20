@@ -41,7 +41,7 @@ Part2.Shape = Enum.PartType.Ball
 random = Random.new()
 e = Instance.new("Sound",Part2)
 e.SoundId = "rbxassetid://6040995928"
-e.Volume = 2
+e.Volume = 4.5
 e.Looped = true
 e:Play()
 Rotate3.Parent = Part2
@@ -75,5 +75,5 @@ for i,v in pairs(cors) do
 end
 
 while task.wait(1.5) do
-e.Pitch = random:NextNumber(0.25, 2.5)
+e.Pitch = random:NextNumber(0.15, 2)
 end
