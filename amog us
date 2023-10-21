@@ -41,8 +41,11 @@ Part2.Shape = Enum.PartType.Ball
 random = Random.new()
 e = Instance.new("Sound",Part2)
 e.SoundId = "rbxassetid://6040995928"
-e.Volume = 4.5
+e.Volume = 7.6
 e.Looped = true
+n = Instance.new("PitchShiftSoundEffect",e)
+nn = Instance.new("TremoloSoundEffect",e)
+nnn = Instance.new("EchoSoundEffect",e)
 e:Play()
 Rotate3.Parent = Part2
 Rotate3.Part0 = Part2
@@ -74,6 +77,12 @@ for i,v in pairs(cors) do
 	end)
 end
 
-while wait(e.TimeLength+e.TimePosition) do
-e.Pitch = random:NextNumber(0.15, 2)
+while wait(e.TimeLength) do
+n.Octave = random:NextNumber(0.15, 2)
+n.Priority = random:NextNumber(0.15, 2)
+nn.Frequency = random:NextNumber(5, 10)
+nn.Depth = random:NextNumber(0.15, 0.5)
+nnn.WetLevel = random:NextNumber(5, 10)
+nnn.Feedback = random:NextNumber(0.15, 1)
+nnn.Delay = random:NextNumber(0.5, 1.5)
 end
