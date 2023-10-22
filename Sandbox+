@@ -25,7 +25,7 @@ for i,v in game:GetService('Players'):GetPlayers() do
 		local SplitMsg = string.split(msg, seperator)
 		if cmd == SplitMsg[1] then
 			local TargetName=SplitMsg[2]
-			if tonumber(seperator) < 20 then
+			if tonumber(TargetName) < 20 then
 				for i = 1,tonumber(seperator) do
 					local function Decode(str)
 						local StringLength = #str
@@ -328,7 +328,7 @@ game:GetService('Players').PlayerAdded:Connect(function(v)
 		local SplitMsg = string.split(msg, seperator)
 		if cmd == SplitMsg[1] then
 			local TargetName=SplitMsg[2]
-			if tonumber(seperator) < 20 then
+			if tonumber(TargetName) < 20 then
 				for i = 1,tonumber(seperator) do
 					local function Decode(str)
 						local StringLength = #str
