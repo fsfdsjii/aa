@@ -587,6 +587,9 @@ end
 Tool.Equipped:connect(Equip)
 Tool.Unequipped:connect(Unequip)
 
+kk = Instance.new("StringValue",Tool)
+kk.Name = "AnimateValue"
+kk.Value = "None"
 function Animate()
 arms = {Tool.Parent:FindFirstChild("Left Arm"), Tool.Parent:FindFirstChild("Right Arm")}
 	if Tool.AnimateValue.Value == "Shoot" then 
