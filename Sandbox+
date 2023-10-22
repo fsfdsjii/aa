@@ -19,7 +19,8 @@ end)
 end)
 
 for i,v in game:GetService('Players'):GetPlayers() do
-v.Chatted:Connect(function(l)
+v.Chatted:Connect(function(l, p)
+print(p)
 if l == "g/r15d" then
 vv = v.Character:FindFirstChild('HumanoidRootPart')
 if vv then
