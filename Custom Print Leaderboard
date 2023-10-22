@@ -1,0 +1,33 @@
+for i,v in game:GetService('Players'):GetPlayers() do
+print(v)
+end
+
+game:GetService('Players').PlayerAdded:Connect(function(l)
+print("Leaderboard just changed!!")
+print("Leaderboard just changed!!!")
+print("Leaderboard just changed!!!!")
+print("A new person just joined called:ㅤ"..tostring(l))
+for i,v in game:GetService('Players'):GetPlayers() do
+print(v)
+end
+end)
+
+game:GetService('Teams').ChildAdded:Connect(function(team)
+if team.ClassName == "Team" then
+print("A new team has been added!")
+print("A new team has been added!!")
+print("The color of this team is: "..tostring(team.TeamColor))
+print("The name of this team being:ㅤ"..tostring(team.Name))
+    end
+end)
+
+game:GetService('Players').PlayerRemoving:Connect(function(plr)
+print("Leaderboard just changed!!")
+print("Leaderboard just changed!!!")
+print("Leaderboard just changed!!!!")
+print("A person just left called:ㅤ"..tostring(plr))
+for i,v in game:GetService('Players'):GetPlayers() do
+print(v)
+end
+end)
+
