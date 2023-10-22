@@ -1,0 +1,69 @@
+zxxxsc = Instance.new("Tool",owner.Backpack)
+zxxxsc.RequiresHandle = false
+zxxxsc.Name = "Exploding Head"
+
+np = owner:FindFirstChild('hello')
+if not np then
+hello = Instance.new("RemoteEvent",owner)
+hello.Name = "hello"
+end
+
+npz = owner:FindFirstChild('helloo')
+if not npz then
+helloo = Instance.new("Part",owner)
+helloo.Name = "helloo"
+end
+
+NLS([[owner.helloo.Changed:Connect(function()
+owner.hello:FireServer(owner:GetMouse().Target)
+end)]],owner.PlayerGui)
+debounce = true
+zxxxsc.Activated:Connect(function()
+owner.helloo.Transparency = owner.helloo.Transparency + 1
+owner.hello.OnServerEvent:Connect(function(plr, target)
+if debounce == true then
+debounce = false
+head = target.Parent:FindFirstChild('Head')
+if head then
+headd = head:Clone()
+headd.Parent = script
+headd.Position = head.Position
+head.Transparency = 1
+face = head:FindFirstChildOfClass('Decal')
+if face then
+face:Destroy()
+end
+headd.Transparency = 0
+headd.BrickColor = BrickColor.new('White')
+task.wait(0.5)
+headd.BrickColor = BrickColor.new('Really red')
+task.wait(0.5)
+headd.BrickColor = BrickColor.new('White')
+task.wait(0.5)
+headd.BrickColor = BrickColor.new('Really red')
+task.wait(0.5)
+headd.BrickColor = BrickColor.new('White')
+task.wait(0.5)
+headd.BrickColor = BrickColor.new('Really red')
+task.wait(0.5)
+headd.BrickColor = BrickColor.new('White')
+task.wait(0.5)
+headd.BrickColor = BrickColor.new('Really red')
+task.wait(0.5)
+headd.BrickColor = BrickColor.new('White')
+task.wait(0.5)
+headd.BrickColor = BrickColor.new('Really red')
+task.wait(0.5)
+headd.BrickColor = BrickColor.new('White')
+task.wait(0.5)
+headd.BrickColor = BrickColor.new('Really red')
+explodee = Instance.new("Explosion",workspace)
+explodee.Position = headd.Position
+explodee.BlastRadius = 4.5
+headd:Destroy()
+end
+task.wait(0.1)
+debounce = true
+        end
+    end)
+end)
