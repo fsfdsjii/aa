@@ -1,0 +1,133 @@
+print("Say clr-remotes then remote name in this case 'breh' then how many instances there are in the replicated storage called breh.")
+print("Say unlock-all to unlock every single part in workspace.")
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Script4 = Instance.new("Script")
+Tool0.Name = "DeleteTool"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset?id=55212908"
+Tool0.Grip = CFrame.new(0, 0, -0.5, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+Tool0.GripForward = Vector3.new(-1, -0, -0)
+Tool0.GripPos = Vector3.new(0, 0, -0.5)
+Tool0.GripRight = Vector3.new(0, 1, 0)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(15.2043877, 1.5004102, -14.8055058, 0.815435171, 0.578847528, -0.000649310299, 0.000796274282, -3.93885717e-21, 0.999999642, 0.578847408, -0.81543535, -0.000460921437)
+Part1.Orientation = Vector3.new(-90, -35.369998931884766, 0)
+Part1.Position = Vector3.new(15.204387664794922, 1.5004101991653442, -14.805505752563477)
+Part1.Rotation = Vector3.new(-90.0260009765625, -0.03700000047683716, -35.369998931884766)
+Part1.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part1.Size = Vector3.new(1, 0.800000011920929, 3)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Dark stone grey")
+Part1.Locked = true
+Part1.Reflectance = 0.4000000059604645
+Part1.RotVelocity = Vector3.new(1, 1, 1)
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Dark stone grey")
+Part1.FormFactor = Enum.FormFactor.Plate
+Part1.formFactor = Enum.FormFactor.Plate
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=16198309"
+SpecialMesh2.Scale = Vector3.new(1.2000000476837158, 1.2000000476837158, 1.2000000476837158)
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=16198294"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Parent = Part1
+Sound3.SoundId = "http://www.roblox.com/Asset/?ID=12135982"
+Sound3.Volume = 0.699999988079071
+Script4.Name = "DeleteScript"
+Script4.Parent = Tool0
+table.insert(cors,sandbox(Script4,function()
+mm = owner:FindFirstChild('breh')
+if not mm then
+	local m=Instance.new("RemoteEvent",owner)
+	m.Name="breh"
+end
+mmm = owner:FindFirstChild('brehh')
+if not mmm then
+	local mmmm=Instance.new("Part",owner)
+	mmmm.Name="brehh"
+end
+	NLS([[owner.brehh.Changed:Connect(function()
+owner.breh:FireServer(owner:GetMouse().Target)
+end) ]],owner.PlayerGui)
+debounce = true
+Tool0.Activated:Connect(function()
+owner.brehh.Transparency = owner.brehh.Transparency + 1
+		owner.breh.OnServerEvent:Connect(function(plr, targ)
+if debounce == true then
+debounce = false
+print("hello")
+			if targ:IsA('BasePart') then
+				if targ.Locked==false then
+					local r = Instance.new("Explosion", workspace)
+					r.DestroyJointRadiusPercent = 0
+					r.Position = targ.Position
+                                        r.BlastPressure = 0
+					targ:Destroy()
+			end
+		end
+task.wait(0.05)
+debounce = true
+	end)
+	Sound3:Play()
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+local cmd = "clr-remotes"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+		local Target=game.Workspace:FindFirstChild(TargetName)
+		local TargetName2=SplitMsg[3]
+		for  i = 1,tonumber(TargetName2) do
+                        print("Just cleared the remotes named="..tostring(TargetName))
+			game:GetService('ReplicatedStorage')[TargetName]:Destroy()
+			
+		end
+	end
+end)
+
+local cmd = "unlock-all"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg)
+	if cmd == SplitMsg[1] then
+for _,v  in next,  workspace:GetDescendants() do if v:IsA('BasePart') then v.Locked = false end end
+print("Just unlocked all parts!")
+	end
+end)
