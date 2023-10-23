@@ -61,6 +61,7 @@ script.Parent.Activated:Connect(function()
 			if target:IsA('BasePart') then
 				if target.ClassName ~= "Terrain" then
 	target.Velocity = Vector3.new(tonumber(text), tonumber(text), tonumber(text))
+        target:ApplyImpulse(Vector3.new(tonumber(text), tonumber(text), tonumber(text)))
 end
 				              end
 				           end
