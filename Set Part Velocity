@@ -46,8 +46,10 @@ owner.jzxx.Changed:Connect(function()
 end)
 
 NLS([[owner.jzxx.Changed:Connect(function()
+pcall(function()
 owner.j.OnClientEvent:Connect(function(textbox)
 owner.j:FireServer(textbox.Text, owner:GetMouse().Target)
+        end)
     end)
 end)]],owner.PlayerGui)
 	
