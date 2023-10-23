@@ -29,10 +29,10 @@ Tool0.ToolTip = "Sets material to parts"
 Script1.Parent = Tool0
 table.insert(cors,sandbox(Script1,function()
 script.Parent.ScreenGui.Parent = owner.PlayerGui
-local jk = owner:FindFirstChild('j')
-if not jk then
-	local j = Instance.new("RemoteEvent",owner)
-	j.Name = "j"
+local jkz = owner:FindFirstChild('j')
+if not jkz then
+	local jm = Instance.new("RemoteEvent",owner)
+	jm.Name = "jm"
 end
 
 local jkk = owner:FindFirstChild('jzx')
@@ -42,19 +42,19 @@ if not jkk then
 end
 
 owner.jzx.Changed:Connect(function()
-	owner.j:FireClient(owner, TextBox4)
+	owner.jm:FireClient(owner, TextBox4)
 end)
 
 NLS([[owner.jzx.Changed:Connect(function()
-owner.j.OnClientEvent:Connect(function(textbox)
-owner.j:FireServer(textbox.Text, owner:GetMouse().Target)
+owner.jm.OnClientEvent:Connect(function(textbox)
+owner.jm:FireServer(textbox.Text, owner:GetMouse().Target)
     end)
 end)]],owner.PlayerGui)
 	
 local debouncee = true
 script.Parent.Activated:Connect(function()
 	owner.jzx.Transparency = owner.jzx.Transparency + 1
-		owner.j.OnServerEvent:Connect(function(plr, text, target)
+		owner.jm.OnServerEvent:Connect(function(plr, text, target)
 			if debouncee == true then
            debouncee = false
 			for i,v in Enum.Material:GetEnumItems() do
