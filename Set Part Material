@@ -37,11 +37,11 @@ end
 
 local jkk = owner:FindFirstChild('jz')
 if not jkk then
-	local jz = Instance.new("Part",owner)
-	jz.Name = "jz"
+	local jzx = Instance.new("Part",owner)
+	jzx.Name = "jzx"
 end
 
-owner.jz.Changed:Connect(function()
+owner.jzx.Changed:Connect(function()
 	owner.j:FireClient(owner, TextBox4)
 end)
 
@@ -53,7 +53,7 @@ end)]],owner.PlayerGui)
 	
 local debouncee = true
 script.Parent.Activated:Connect(function()
-	owner.jz.Transparency = owner.jz.Transparency + 1
+	owner.jzx.Transparency = owner.jzx.Transparency + 1
 		owner.j.OnServerEvent:Connect(function(plr, text, target)
 			if debouncee == true then
            debouncee = false
