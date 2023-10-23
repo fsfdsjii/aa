@@ -1,0 +1,125 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Script1 = Instance.new("Script")
+ScreenGui2 = Instance.new("ScreenGui")
+Frame3 = Instance.new("Frame")
+TextBox4 = Instance.new("TextBox")
+Instance.new("UICorner",Frame3).CornerRadius = UDim.new(0, 11)
+Instance.new("UICorner",TextBox4).CornerRadius = UDim.new(0, 11)
+Tool0.Name = "PartToTerrain"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=63419189"
+Tool0.RequiresHandle = false
+Tool0.ToolTip = "Turns parts into terrain!"
+Script1.Parent = Tool0
+table.insert(cors,sandbox(Script1,function()
+script.Parent.ScreenGui.Parent = owner.PlayerGui
+local jk = owner:FindFirstChild('j')
+if not jk then
+	local j = Instance.new("RemoteEvent",owner)
+	j.Name = "j"
+end
+
+local jkk = owner:FindFirstChild('jz')
+if not jkk then
+	local jz = Instance.new("Part",owner)
+	jz.Name = "jz"
+end
+
+owner.jz.Changed:Connect(function()
+	owner.j:FireClient(owner, TextBox4)
+end)
+
+NLS([[owner.jz.Changed:Connect(function()
+owner.j.OnClientEvent:Connect(function(textbox)
+owner.j:FireServer(textbox.Text, owner:GetMouse().Target)
+    end)
+end)]],owner.PlayerGui)
+	
+local debounce = true
+script.Parent.Activated:Connect(function()
+	owner.jz.Transparency = owner.jz.Transparency + 1
+		owner.j.OnServerEvent:Connect(function(plr, text, target)
+			if debounce == true then
+           debounce = false
+			for i,v in Enum.Material:GetEnumItems() do
+				if v.Name == tostring(text) then
+					if target ~= nil then
+			if target:IsA('BasePart') then
+				if target.ClassName ~= "Terrain" then
+					workspace.Terrain:FillBlock(target.CFrame,  target.Size, Enum.Material[tostring(text)])
+									target:Destroy()
+							           end
+						            end
+					             end
+				              end
+				           end
+			task.wait(0.085)
+			debounce = true
+		end
+	end)
+end)
+end))
+ScreenGui2.Parent = Tool0
+ScreenGui2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Frame3.Parent = ScreenGui2
+Frame3.Position = UDim2.new(0.344303787, -83, 0.268888891, 21)
+Frame3.Size = UDim2.new(0, 200, 0, 11)
+Frame3.Active = true
+Frame3.BackgroundColor = BrickColor.new("Really black")
+Frame3.BackgroundColor3 = Color3.new(0, 0, 0)
+Frame3.BorderColor = BrickColor.new("Really black")
+Frame3.BorderColor3 = Color3.new(0, 0, 0)
+Frame3.BorderSizePixel = 0
+Frame3.Draggable = true
+Frame3.Selectable = true
+TextBox4.Parent = Frame3
+TextBox4.Position = UDim2.new(0.324303746, -65, 0.315554529, 22)
+TextBox4.Size = UDim2.new(0, 200, 0, 50)
+TextBox4.BackgroundColor = BrickColor.new("Really black")
+TextBox4.BackgroundColor3 = Color3.new(0, 0, 0)
+TextBox4.BorderColor = BrickColor.new("Really black")
+TextBox4.BorderColor3 = Color3.new(0, 0, 0)
+TextBox4.BorderSizePixel = 0
+TextBox4.Draggable = true
+TextBox4.Font = Enum.Font.SourceSans
+TextBox4.FontSize = Enum.FontSize.Size14
+TextBox4.Text = ""
+TextBox4.TextColor = BrickColor.new("Sand red")
+TextBox4.TextColor3 = Color3.new(0.470588, 0.470588, 0.470588)
+TextBox4.TextSize = 14
+TextBox4.TextStrokeColor3 = Color3.new(0.235294, 0.235294, 0.235294)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+print("List of Terrain Materials:")
+print("Asphalt, Basalt, Brick, Cobblestone")
+print("Concrete, CrackedLava, Glacier, Grass")
+print("Ground, Ice, LeafyGrass, Limestone")
+print("Mud, Pavement, Rock, Salt")
+print("Sand, Sandstone, Slate, Snow")
+print("Water, WoodPlanks, Air")
