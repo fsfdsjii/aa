@@ -45,10 +45,15 @@ owner.jzx.Changed:Connect(function()
 	owner.jm:FireClient(owner, TextBox4)
 end)
 
-NLS([[owner.jzx.Changed:Connect(function()
+NLS([[debounce = true
+owner.jzx.Changed:Connect(function()
 owner.jm.OnClientEvent:Connect(function(textbox)
+if debounce == true then
+debounce = false
 owner.jm:FireServer(textbox.Text, owner:GetMouse().Target)
-print("hello")
+task.wait(0.01)
+debounce = true
+        end
     end)
 end)]],owner.PlayerGui)
 	
