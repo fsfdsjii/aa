@@ -29,7 +29,7 @@ Tool0.ToolTip = "Sets material to parts"
 Script1.Parent = Tool0
 table.insert(cors,sandbox(Script1,function()
 script.Parent.ScreenGui.Parent = owner.PlayerGui
-local jkz = owner:FindFirstChild('j')
+local jkz = owner:FindFirstChild('jm')
 if not jkz then
 	local jm = Instance.new("RemoteEvent",owner)
 	jm.Name = "jm"
@@ -48,6 +48,7 @@ end)
 NLS([[owner.jzx.Changed:Connect(function()
 owner.jm.OnClientEvent:Connect(function(textbox)
 owner.jm:FireServer(textbox.Text, owner:GetMouse().Target)
+print("hello")
     end)
 end)]],owner.PlayerGui)
 	
