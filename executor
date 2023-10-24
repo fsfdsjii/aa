@@ -1,0 +1,105 @@
+
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+local TextButton = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = owner.PlayerGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = ScreenGui
+TextLabel.Active = true
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Draggable = true
+TextLabel.Position = UDim2.new(0, 235, 0, 75)
+TextLabel.Selectable = true
+TextLabel.Size = UDim2.new(0, 250, 0, 20)
+TextLabel.Font = Enum.Font.ArialBold
+TextLabel.Text = "epic executor"
+TextLabel.TextColor3 = Color3.fromRGB(184, 184, 184)
+TextLabel.TextSize = 14.000
+TextLabel.FontFace.Style = Enum.FontStyle.Italic
+TextLabel.FontFace.Bold = true
+
+TextBox.Parent = TextLabel
+TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(-0.00100000005, 0, 0.961000025, 0)
+TextBox.Size = UDim2.new(0, 250, 0, 40)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(184, 184, 184)
+TextBox.TextSize = 14.000
+
+TextButton.Parent = TextLabel
+TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(-0.00100000005, 0, 2.95000005, 0)
+TextButton.Size = UDim2.new(0, 250, 0, 20)
+TextButton.Font = Enum.Font.ArialBold
+TextButton.Text = "execute now."
+TextButton.TextColor3 = Color3.fromRGB(184, 184, 184)
+TextButton.TextSize = 14.000
+TextButton.FontFace.Style = Enum.FontStyle.Italic
+TextButton.FontFace.Bold = true
+
+-- Scripts:
+
+local function RPHG_fake_script() -- TextButton.Script 
+	local script = Instance.new('Script', TextButton)
+
+	local detection = owner:FindFirstChild('hehe')
+	if not detection then
+		 Instance.new("RemoteEvent",owner).Name = "hehe"
+	end
+	
+	local detectionn = owner:FindFirstChild('hehez')
+	if not detectionn then
+		Instance.new("Part",owner).Name = "hehez"
+	end
+	
+	owner.hehez.Changed:Connect(function()
+		owner.hehe:FireClient(owner, script.Parent.Parent.TextBox)
+	end)
+	
+	NLS([[debounce = true
+	owner.hehez.Changed:Connect(function()
+	owner.hehe.OnClientEvent:Connect(function(txtbox)
+	if debounce == true then
+	debounce = false
+	owner.hehe:FireServer(txtbox.Text)
+	task.wait(0.01)
+	debounce = true
+	        end
+	    end)
+	end)]],owner.PlayerGui)
+	debounce = true
+	script.Parent.MouseButton1Click:Connect(function()
+		owner.hehez.Transparency = owner.hehez.Transparency + 1
+		owner.hehe.OnServerEvent:Connect(function(plrowner, text)
+			if debounce == true then
+				debounce = false
+				local success, failure = pcall(function() loadstring(tostring(text))() end)
+				if success then
+					loadstring(tostring(text))()
+				else
+					warn(failure)
+				end
+				task.wait(0.01)
+				debounce = true
+			end
+		end)
+	end)
+end
+coroutine.wrap(RPHG_fake_script)()
