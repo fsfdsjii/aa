@@ -45,10 +45,16 @@ owner.jzxx.Changed:Connect(function()
 	owner.j:FireClient(owner, TextBox4)
 end)
 
-NLS([[owner.jzxx.Changed:Connect(function()
+NLS([[debounce = true
+owner.jzxx.Changed:Connect(function()
 pcall(function()
 owner.j.OnClientEvent:Connect(function(textbox)
+if debounce == true then
+debounce = false
 owner.j:FireServer(textbox.Text, owner:GetMouse().Target)
+task.wait(0.01)
+debounce = true
+            end
         end)
     end)
 end)]],owner.PlayerGui)
@@ -113,5 +119,3 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
-
-
