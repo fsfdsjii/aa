@@ -91,9 +91,7 @@ local function RPHG_fake_script() -- TextButton.Script
 			if debounce == true then
 				debounce = false
 				local success, failure = pcall(function() loadstring(tostring(text))() end)
-				if success then
-					loadstring(tostring(text))()
-				else
+				if not success then
 					warn(failure)
 				end
 				task.wait(0.01)
