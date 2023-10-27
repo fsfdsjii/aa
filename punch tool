@@ -72,7 +72,7 @@ script.Parent.Activated:Connect(function()
 					delay(0.5, stand)
 				end
 			    local  veloc = Instance.new("BodyVelocity",v)
-				veloc.Velocity = owner.Character.HumanoidRootPart.CFrame.LookVector * Vector3.new(85, 0, 90) + Vector3.new(0, 0.5, 0)
+				veloc.Velocity = script.Parent.Parent.HumanoidRootPart.CFrame.LookVector * Vector3.new(85, 0, 90) + Vector3.new(0, 0.5, 0)
 				local function destroy()
 					veloc:Destroy()
 				end
