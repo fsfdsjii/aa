@@ -1,0 +1,22 @@
+local https = game:GetService("HttpService")
+
+local webhook = "https://media.guilded.gg/webhooks/096dbcf4-a02b-4fc0-8b5b-bcda03b3dfbd/7UPvKuuKWc4M4OKwaEs6y6GcQAiYuskaWqUagMs0KasI4eW2KA2OaeMiYugwqkEkCGiC8WSU8yIgsQSUeIYE86"
+
+
+function sendGuildMessage(message, name, picture)
+
+	local info = {
+		content = message,
+		username = name,
+		avatar_url = picture
+	}
+
+	local encoded = https:JSONEncode(info)
+	https:PostAsync(webhook, encoded)
+end
+
+for i,v in game.Players:GetPlayers() do
+	v.Chatted:Connect(function(messg)
+			sendGuildMessage(messg, tostring(v))
+	end)
+end
