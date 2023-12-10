@@ -1,0 +1,146 @@
+print("Say /meshscale [Number] to scale the mesh.")
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextBox = Instance.new("TextBox")
+local TextButton = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = owner.PlayerGui
+ScreenGui.Name = "kk"
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.Active = true
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Draggable = true
+Frame.Position = UDim2.new(0.392145038, -125, 0.467828304, 69)
+Frame.Selectable = true
+Frame.Size = UDim2.new(0, 200, 0, 60)
+
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Draggable = true
+TextBox.Position = UDim2.new(-0.872588038, 174, -2.74447846, 224)
+TextBox.Size = UDim2.new(0, 200, 0, 50)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 14.000
+
+TextButton.Parent = TextBox
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(-0.00120849605, 0, 0.989697278, 0)
+TextButton.Size = UDim2.new(0, 200, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+p = owner:FindFirstChild('y')
+if not p then
+	Instance.new("RemoteEvent",owner).Name = "y"
+end
+
+pz = owner:FindFirstChild('yz')
+if not pz then
+	Instance.new("Part",owner).Name = "yz"
+end
+
+NLS([[boolean = true
+owner.yz.Changed:Connect(function()
+if boolean == true then
+boolean = false
+owner.y:FireServer(owner.PlayerGui.kk.Frame.TextBox.Text)
+task.wait(0.05)
+boolean = true
+end
+end)]],owner.PlayerGui)
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+Script2 = Instance.new("Script")
+Tool0.Parent = owner.Backpack
+Tool0.Name = "Throw your Part"
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(21, 0.500001013, -21, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(21, 0.5000010132789612, -21)
+Part1.Size = Vector3.new(4, 1, 2)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+TextButton.MouseButton1Click:Connect(function()
+	owner.yz.Transparency = math.random(0, 1)
+	boolean = true
+	if boolean == true then
+	boolean = false
+	owner.y.OnServerEvent:Connect(function(me, txt)
+		detect = Part1:FindFirstChild('hello')
+		if not detect then
+			Instance.new("SpecialMesh", Part1).Name = "hello"
+		end
+			Part1:WaitForChild('hello').MeshId = "rbxassetid://"..tostring(txt)
+		end)
+		task.wait(0.05)
+		boolean = true
+	end
+end)
+local cmd = "/meshscale"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+		local Target=game.Workspace:FindFirstChild(TargetName)
+		Part1:WaitForChild('hello').Scale = Vector3.new(tonumber(TargetName), tonumber(TargetName), tonumber(TargetName))
+	end
+end)
+
+Script2.Parent = Part1
+table.insert(cors,sandbox(Script2,function()
+script.Parent.Parent.Activated:Connect(function()
+	local theclone = script.Parent:Clone()
+		theclone.Parent = workspace
+		theclone.CanCollide = true
+		theclone.Velocity = script.Parent.CFrame.LookVector * Vector3.new(70, 0, 60) + Vector3.new(0, 80, 0)
+		task.wait(5)
+		theclone:Destroy()
+	
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
