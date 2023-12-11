@@ -1,0 +1,152 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Sound2 = Instance.new("Sound")
+PitchShiftSoundEffect3 = Instance.new("PitchShiftSoundEffect")
+PitchShiftSoundEffect4 = Instance.new("PitchShiftSoundEffect")
+PitchShiftSoundEffect5 = Instance.new("PitchShiftSoundEffect")
+PitchShiftSoundEffect6 = Instance.new("PitchShiftSoundEffect")
+ChorusSoundEffect7 = Instance.new("ChorusSoundEffect")
+Sound8 = Instance.new("Sound")
+Script9 = Instance.new("Script")
+LocalScript10 = Instance.new("LocalScript")
+LocalScript11 = Instance.new("LocalScript")
+Script12 = Instance.new("Script")
+Camera13 = Instance.new("Camera")
+Model0.Name = "Monolith"
+Model0.Parent = mas
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(-20.2101059, 17.8639908, -11.3477821, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part1.Orientation = Vector3.new(0, 90, 0)
+Part1.Position = Vector3.new(-20.210105895996094, 17.863990783691406, -11.347782135009766)
+Part1.Rotation = Vector3.new(0, 90, 0)
+Part1.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part1.Size = Vector3.new(17.781034469604492, 33.72793960571289, 2.658097743988037)
+Part1.Anchored = true
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Really black")
+Part1.Material = Enum.Material.Neon
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Really black")
+Sound2.Parent = Part1
+Sound2.Looped = true
+Sound2.Pitch = 20
+Sound2.PlaybackSpeed = 20
+Sound2.Playing = true
+Sound2.SoundId = "rbxassetid://999970464"
+PitchShiftSoundEffect3.Parent = Sound2
+PitchShiftSoundEffect3.Octave = 0.5
+PitchShiftSoundEffect4.Parent = Sound2
+PitchShiftSoundEffect4.Octave = 0.5
+PitchShiftSoundEffect5.Parent = Sound2
+PitchShiftSoundEffect5.Octave = 0.5
+PitchShiftSoundEffect6.Parent = Sound2
+PitchShiftSoundEffect6.Octave = 0.5
+ChorusSoundEffect7.Parent = Sound2
+ChorusSoundEffect7.Rate = 0.009999999776482582
+ChorusSoundEffect7.Depth = 1
+ChorusSoundEffect7.Mix = 1
+Sound8.Name = "Touch"
+Sound8.Parent = Part1
+Sound8.Pitch = 0.4000000059604645
+Sound8.PlayOnRemove = true
+Sound8.PlaybackSpeed = 0.4000000059604645
+Sound8.SoundId = "rbxassetid://572905589"
+Sound8.Volume = 1
+debounce = true
+Part1.Touched:Connect(function(toc)
+	if debounce == true then
+		debounce = false
+		hum = toc.Parent:FindFirstChildOfClass('Humanoid')
+		if hum then
+			if hum.PlatformStand == false then
+				hum.PlatformStand = true
+				Sound8:Play()
+			end
+		end
+		task.wait(2)
+		debounce = true
+	end
+end)
+Script9.Parent = Part1
+table.insert(cors,sandbox(Script9,function()
+b = script.Parent
+end))
+LocalScript10.Parent = Script9
+table.insert(cors,sandbox(LocalScript10,function()
+script.Parent.Humanoid:ChangeState'GettingUp'
+script:Destroy()
+end))
+LocalScript11.Name = "LocalScript2"
+LocalScript11.Parent = Script9
+table.insert(cors,sandbox(LocalScript11,function()
+script.Parent.Humanoid:ChangeState'Physics'
+script:Destroy()
+end))
+Script12.Name = "Sky"
+Script12.Parent = Part1
+Script12.Enabled = false
+table.insert(cors,sandbox(Script12,function()
+-- dayLength defines how long, in minutes, a day in your game is. Feel free to alter it.
+local dayLength = 0.1
+
+local cycleTime = dayLength*60
+local minutesInADay = 24*60
+
+local lighting = game:GetService("Lighting")
+
+local startTime = tick() - (lighting:getMinutesAfterMidnight() / minutesInADay)*cycleTime
+local endTime = startTime + cycleTime
+
+local timeRatio = minutesInADay / cycleTime
+
+if dayLength == 0 then
+	dayLength = 1
+end
+
+repeat
+	local currentTime = tick()
+	
+	if currentTime > endTime then
+		startTime = endTime
+		endTime = startTime + cycleTime
+	end
+	
+	lighting:setMinutesAfterMidnight((currentTime - startTime)*timeRatio)
+	wait(1/15)
+until false
+
+end))
+Script12.Disabled = true
+Camera13.Name = "ThumbnailCamera"
+Camera13.Parent = Model0
+Camera13.CFrame = CFrame.new(-159.381317, 36.775238, -17.7952652, -0.67977947, 0.312878102, -0.663330376, 1.4901163e-08, 0.904438734, 0.426603526, 0.733416617, 0.289996326, -0.614818871)
+Camera13.CoordinateFrame = CFrame.new(-159.381317, 36.775238, -17.7952652, -0.67977947, 0.312878102, -0.663330376, 1.4901163e-08, 0.904438734, 0.426603526, 0.733416617, 0.289996326, -0.614818871)
+Camera13.Focus = CFrame.new(-158.054657, 35.9220314, -16.5656281, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera13.focus = CFrame.new(-158.054657, 35.9220314, -16.5656281, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
