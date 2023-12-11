@@ -1,0 +1,473 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Humanoid1 = Instance.new("Humanoid")
+UnionOperation2 = Instance.new("UnionOperation")
+Sound3 = Instance.new("Sound")
+PitchShiftSoundEffect4 = Instance.new("PitchShiftSoundEffect")
+Script5 = Instance.new("Script")
+Script6 = Instance.new("Script")
+Sound7 = Instance.new("Sound")
+DistortionSoundEffect8 = Instance.new("DistortionSoundEffect")
+EchoSoundEffect9 = Instance.new("EchoSoundEffect")
+Script10 = Instance.new("Script")
+ParticleEmitter11 = Instance.new("ParticleEmitter")
+Script12 = Instance.new("Script")
+SpecialMesh13 = Instance.new("SpecialMesh")
+BodyPosition14 = Instance.new("BodyPosition")
+BodyGyro15 = Instance.new("BodyGyro")
+Sound16 = Instance.new("Sound")
+DistortionSoundEffect17 = Instance.new("DistortionSoundEffect")
+Script18 = Instance.new("Script")
+Sound19 = Instance.new("Sound")
+ObjectValue20 = Instance.new("ObjectValue")
+ObjectValue21 = Instance.new("ObjectValue")
+Sound22 = Instance.new("Sound")
+DistortionSoundEffect23 = Instance.new("DistortionSoundEffect")
+Weld24 = Instance.new("Weld")
+Weld25 = Instance.new("Weld")
+ColorCorrectionEffect26 = Instance.new("ColorCorrectionEffect")
+ParticleEmitter27 = Instance.new("ParticleEmitter")
+UnionOperation28 = Instance.new("UnionOperation")
+Part29 = Instance.new("Part")
+Model0.Name = "ミノタウロス"
+Model0.Parent = mas
+Humanoid1.Name = "Moloch"
+Humanoid1.Parent = Model0
+Humanoid1.Health = 1000
+Humanoid1.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOn
+Humanoid1.MaxHealth = 1000
+Humanoid1.Torso = Part29
+Humanoid1.maxHealth = 1000
+UnionOperation2.Name = "Head"
+UnionOperation2.Parent = Model0
+UnionOperation2.CFrame = CFrame.new(39.2876358, 7.50233269, -117.325699, -8.64267349e-07, 0, -1, 0, 1, 0, 1, 0, -8.64267349e-07)
+UnionOperation2.Orientation = Vector3.new(0, -90, 0)
+UnionOperation2.Position = Vector3.new(39.287635803222656, 7.50233268737793, -117.32569885253906)
+UnionOperation2.Rotation = Vector3.new(0, -90, 0)
+UnionOperation2.Color = Color3.new(0.639216, 0.635294, 0.647059)
+UnionOperation2.Size = Vector3.new(15.10323715209961, 15.004656791687012, 15.10916519165039)
+UnionOperation2.BrickColor = BrickColor.new("Medium stone grey")
+UnionOperation2.Material = Enum.Material.Glass
+UnionOperation2.Reflectance = 1
+UnionOperation2.brickColor = BrickColor.new("Medium stone grey")
+Sound3.Name = "Idle"
+Sound3.Parent = UnionOperation2
+Sound3.SoundId = "rbxasset://sounds/bass.wav"
+Sound3.Volume = 0.10000000149011612
+PitchShiftSoundEffect4.Parent = Sound3
+PitchShiftSoundEffect4.Octave = 0.5
+Script5.Parent = PitchShiftSoundEffect4
+table.insert(cors,sandbox(Script5,function()
+repeat
+wait()
+script.Parent.Octave = math.random(50,150)*0.01
+if math.random(1,8) == 8 then
+script.Parent.Parent.TimePosition = 0.35
+end
+until nil
+end))
+Script6.Parent = Sound3
+table.insert(cors,sandbox(Script6,function()
+script.Parent.Looped = true
+script.Parent:Play()
+end))
+Sound7.Name = "asd"
+Sound7.Parent = UnionOperation2
+Sound7.Looped = true
+Sound7.Pitch = 0.8999999761581421
+Sound7.PlaybackSpeed = 0.8999999761581421
+Sound7.SoundId = "rbxassetid://678930213"
+Sound7.Volume = 1
+DistortionSoundEffect8.Parent = Sound7
+DistortionSoundEffect8.Level = 0.7799999713897705
+EchoSoundEffect9.Parent = Sound7
+EchoSoundEffect9.Delay = 0.009999999776482582
+EchoSoundEffect9.Feedback = 0.7300000190734863
+Script10.Parent = EchoSoundEffect9
+table.insert(cors,sandbox(Script10,function()
+while true do wait(0)
+	script.Parent.WetLevel = math.random()
+end
+end))
+ParticleEmitter11.Parent = UnionOperation2
+ParticleEmitter11.Speed = NumberRange.new(15, 15)
+ParticleEmitter11.Color = ColorSequence.new(Color3.new(0.317647, 0.356863, 0.619608),Color3.new(0.0627451, 0.266667, 1))
+ParticleEmitter11.Enabled = false
+ParticleEmitter11.LightEmission = 1
+ParticleEmitter11.LightInfluence = 1
+ParticleEmitter11.Transparency = NumberSequence.new(0.48124998807907104,0.42500001192092896,1)
+ParticleEmitter11.Size = NumberSequence.new(4.6875,0)
+ParticleEmitter11.Rate = 600
+ParticleEmitter11.SpreadAngle = Vector2.new(360, 360)
+ParticleEmitter11.VelocitySpread = 360
+Script12.Parent = UnionOperation2
+table.insert(cors,sandbox(Script12,function()
+phase = 1
+dis = script.Parent.distortion
+dm = script.Mesh
+function findNearestTorso(pos)
+	local list = game.Workspace:children()
+	local torso = nil
+	local dist = 250
+	local temp = nil
+	local human = nil
+	local temp2 = nil
+	for x = 1, #list do
+		temp2 = list[x]
+		if (temp2.className == "Model") and (temp2 ~= script.Parent) then
+			temp = temp2:findFirstChild("Torso")
+			human = temp2:findFirstChild("Humanoid")
+			if (temp ~= nil) and (human ~= nil) and (human.Health > 0) then
+				if (temp.Position - pos).magnitude < dist then
+					torso = temp
+					dist = (temp.Position - pos).magnitude
+				end
+			end
+		end
+	end
+	return torso
+end
+
+script.Parent.Touched:Connect(function(hit)
+	if script.Parent.Parent:IsAncestorOf(hit) == false then
+		if hit.Parent:FindFirstChildOfClass('Humanoid') then
+			hit.Parent:BreakJoints()
+		end
+	end
+	if string.lower(hit.Name) == "cannon shot" then
+		for i=1, 5 do
+			wait(0.02)
+			script.Parent.AssemblyAngularVelocity = ((script.Parent.Position - findNearestTorso(script.Parent.Position).Position)+Vector3.new(0,15,0)*6)
+		end
+	end
+end)
+
+coroutine.resume(coroutine.create(function()
+	while true do
+		wait(math.random(5,6))
+		if phase >= 3 then
+			for j=1, 6 do
+				wait(0.75)
+				local ball = Instance.new("Part",workspace)
+				ball.Anchored = false
+				ball.CanCollide = false
+				ball.Shape = Enum.PartType.Ball
+				ball.Size = Vector3.new(3.5,3.5,3.5)
+				ball.Material = Enum.Material.Neon
+				ball.BrickColor = BrickColor.new('Really red')
+				Instance.new("Fire",ball)
+				ball.CFrame = script.Parent.CFrame
+				local bs = script.Parent.Ball:Clone()
+				bs.Value.Value = script.Parent.Parent
+				bs.V.Value = findNearestTorso(script.Parent.Position)
+				bs.Parent = ball
+				bs.Disabled = false
+			end
+		end
+	end
+end))
+
+coroutine.resume(coroutine.create(function()
+	repeat
+		wait(0.01)
+	until script.Parent.Parent:FindFirstChildOfClass("Humanoid").Health < (666/4*3)
+	phase = 2
+	repeat
+		wait(0.01)
+	until script.Parent.Parent:FindFirstChildOfClass("Humanoid").Health < (666/4*2)
+	phase = 3
+	repeat
+		wait(0.01)
+	until script.Parent.Parent:FindFirstChildOfClass("Humanoid").Health < (666/4*1)
+	phase = 4
+	repeat
+		wait(0.01)
+	until script.Parent.Parent:FindFirstChildOfClass("Humanoid").Health <= 0
+	phase = 0
+end))
+
+coroutine.resume(coroutine.create(function()
+	while true do
+		wait(0.01)
+		if findNearestTorso(script.Parent.Position) then
+			if script.Parent.asd.IsPlaying then
+				--ok
+			else
+				script.Parent.asd:Play()
+			end
+		else
+			if script.Parent.asd.IsPlaying then
+				script.Parent.asd:Stop()
+			else
+				--ok
+			end
+		end
+	end
+end))
+
+coroutine.resume(coroutine.create(function()
+	while true do
+		wait(math.random(6,12))
+		if phase >= 2 then
+			dis.Parent = game:GetService('Lighting')
+			dis.Enabled = true
+			script.Parent.wind:Play()
+			wait(4)
+			script.Parent.wind:Stop()
+			dis.Enabled = false
+			dis.Parent = script.Parent
+		end
+	end
+end))
+
+coroutine.resume(coroutine.create(function()
+	repeat
+		wait(0.01)
+	until phase >= 4
+	dm.Parent = script.Parent
+end))
+local cancel = false
+coroutine.resume(coroutine.create(function()
+	while true do wait(0)
+		if cancel == false then
+			if (script.Parent.Parent.Horn ~= nil) then
+				script.Parent.Transparency = math.random()
+				script.Parent.Parent.Horn.Transparency = math.random()
+			end
+		elseif cancel == true then
+			script.Parent.Transparency = 0
+			script.Parent.Parent.Horn.Transparency = 0
+		end
+	end
+end))
+coroutine.resume(coroutine.create(function()
+	repeat
+		wait()
+		if findNearestTorso(script.Parent.Position) then
+			local torso = findNearestTorso(script.Parent.Position)
+			script.Parent.Parent:FindFirstChildOfClass("Humanoid"):MoveTo(torso.Position)
+			--script.Parent.AssemblyAngularVelocity = (torso.Position - script.Parent.Position)/3
+		end
+	until nil
+end))
+
+coroutine.resume(coroutine.create(function()
+	repeat
+		wait(0.01)
+	until phase == 0
+	script.Parent.Anchored = true
+	script.Parent.CanCollide = false
+	script.Parent.ParticleEmitter.Enabled = true
+	script.Parent.idk:Play()
+	cancel = true
+	if dm.Parent == script.Parent then
+		dm.Parent = script
+	end
+	--script.Parent:BreakJoints()
+	coroutine.resume(coroutine.create(function()
+		repeat
+			wait()
+			dis.Enabled = false
+		until nil
+	end))
+	if script.Parent:FindFirstChild("2") then
+		script.Parent["2"].Enabled = true
+	end
+	wait(2)
+	if script.Parent:FindFirstChild("2") then
+		script.Parent["2"].Enabled = false
+	end
+	local bl = Instance.new("Part",workspace)
+	bl.Material = Enum.Material.Glass
+	bl.Transparency = 0.5
+	bl.Reflectance = 1
+	bl.Shape = Enum.PartType.Ball
+	bl.Size = Vector3.new(2,2,2)
+	bl.CFrame = script.Parent.CFrame
+	bl.Anchored = true
+	bl.CanCollide = false
+	bl.CastShadow = false
+	for n=1, 15 do
+		wait(0.1)
+		bl.Size = bl.Size + (bl.Size/3.5)
+	end
+	coroutine.resume(coroutine.create(function()
+		pcall(function()
+			repeat
+				wait(0.05)
+				if math.random(1,3) == 2 then
+					bl.Transparency = 0.5
+					bl.Material = Enum.Material.Glass
+					bl.Reflectance = 0
+				else
+					bl.Transparency = 0
+					bl.Material = Enum.Material.Neon
+					bl.Reflectance = 0
+				end
+			until nil
+		end)
+	end))
+	wait(3)
+	for n=1, 10 do
+		wait()
+		script.Parent.Transparency = script.Parent.Transparency + 0.1
+		script.Parent.asd.Volume = script.Parent.asd.Volume - 0.15
+		script.Parent.Idle.Volume = script.Parent.Idle.Volume + 0.02
+	end
+	script.Parent.Idle.PlaybackSpeed = 2
+	script.Parent.asd:Stop()
+	wait(6)
+	local bls = bl.Size
+	for n=1, 10 do
+		wait(0.1)
+		bl.Size = bl.Size - (bls/10)
+	end
+	bl:Destroy()
+	local ex = Instance.new("Explosion")
+	ex.BlastRadius = 0
+	ex.BlastPressure = 0
+	ex.Position = bl.Position
+	ex.Parent = workspace
+	wait(4)
+	script.Parent.ParticleEmitter.Enabled = false
+	wait(10)
+	dis.Parent = nil
+	if game:GetService("Lighting") then
+		if game.Lighting:FindFirstChild("distortion") ~= nil then
+			game.Lighting:FindFirstChild("distortion").Parent = nil
+		end
+	end
+	script.Parent.Parent:Destroy()
+end))
+end))
+
+SpecialMesh13.Parent = Script12
+SpecialMesh13.Scale = Vector3.new(3, 10000000, 3)
+BodyPosition14.Parent = Script12
+BodyPosition14.P = 1000
+BodyPosition14.D = 1200
+BodyPosition14.MaxForce = Vector3.new(400000, 400000, 400000)
+BodyPosition14.maxForce = Vector3.new(400000, 400000, 400000)
+BodyGyro15.Parent = UnionOperation2
+BodyGyro15.MaxTorque = Vector3.new(4000000, 0, 4000000)
+BodyGyro15.P = 30000
+BodyGyro15.maxTorque = Vector3.new(4000000, 0, 4000000)
+BodyGyro15.D = 25
+Sound16.Name = "wind"
+Sound16.Parent = UnionOperation2
+Sound16.Looped = true
+Sound16.SoundId = "rbxassetid://932896283"
+Sound16.Volume = 2
+DistortionSoundEffect17.Parent = Sound16
+DistortionSoundEffect17.Level = 0.6000000238418579
+Script18.Name = "Ball"
+Script18.Parent = UnionOperation2
+Script18.Enabled = false
+table.insert(cors,sandbox(Script18,function()
+sound = script.Explosion
+sound.Parent = script.Parent
+sound.Volume = 3
+sound:Play()
+script.Parent.Velocity = (script.V.Value.Position - script.Parent.Position)*4
+script.Parent.Touched:Connect(function(hit)
+if script.Value.Value:IsAncestorOf(hit) == false then
+if hit.Parent:FindFirstChildOfClass("Humanoid") then
+hit.Parent:BreakJoints()
+script.Parent:Destroy()
+end
+end
+end)
+end))
+Script18.Disabled = true
+Sound19.Name = "Explosion"
+Sound19.Parent = Script18
+Sound19.SoundId = "rbxassetid://3154829820"
+ObjectValue20.Parent = Script18
+ObjectValue20.Value = Model0
+ObjectValue21.Name = "V"
+ObjectValue21.Parent = Script18
+Sound22.Name = "idk"
+Sound22.Parent = UnionOperation2
+Sound22.Pitch = 0.9800000190734863
+Sound22.PlaybackSpeed = 0.9800000190734863
+Sound22.SoundId = "rbxassetid://1382851510"
+Sound22.Volume = 5
+DistortionSoundEffect23.Parent = Sound22
+DistortionSoundEffect23.Level = 0.5
+Weld24.Parent = UnionOperation2
+Weld24.C0 = CFrame.new(-46.137085, -7.50232887, -30.1967468, -1, 0, 9.89530236e-09, 0, 1, 0, 9.89530236e-09, 0, -1)
+Weld24.C1 = CFrame.new(46.4165192, -12.2672157, 23.7335701, 0.999999106, 0, 0.00133299013, 0, 1, 0, -0.00133301003, 0, 0.999999106)
+Weld24.Part0 = UnionOperation2
+Weld24.Part1 = UnionOperation28
+Weld24.part1 = UnionOperation28
+Weld25.Name = "TorsoWeld"
+Weld25.Parent = UnionOperation2
+Weld25.C0 = CFrame.new(-46.137085, -7.50232887, -30.1967468, -1, 0, 9.89530236e-09, 0, 1, 0, 9.89530236e-09, 0, -1)
+Weld25.C1 = CFrame.new(-46.1364365, -7.50272942, -30.1971512, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld25.Part0 = UnionOperation2
+Weld25.Part1 = Part29
+Weld25.part1 = Part29
+ColorCorrectionEffect26.Name = "distortion"
+ColorCorrectionEffect26.Parent = UnionOperation2
+ColorCorrectionEffect26.Enabled = false
+ColorCorrectionEffect26.Saturation = 1000
+ParticleEmitter27.Name = "2"
+ParticleEmitter27.Parent = UnionOperation2
+ParticleEmitter27.Color = ColorSequence.new(Color3.new(0.235294, 0.439216, 0.619608),Color3.new(0.235294, 0.439216, 0.619608))
+ParticleEmitter27.Enabled = false
+ParticleEmitter27.LightEmission = 1
+ParticleEmitter27.LightInfluence = 1
+ParticleEmitter27.Transparency = NumberSequence.new(0.48124998807907104,0.42500001192092896,1)
+ParticleEmitter27.Size = NumberSequence.new(4.6875,0)
+ParticleEmitter27.Rate = 200
+ParticleEmitter27.SpreadAngle = Vector2.new(360, 360)
+ParticleEmitter27.VelocitySpread = 360
+UnionOperation28.Name = "Horn"
+UnionOperation28.Parent = Model0
+UnionOperation28.CFrame = CFrame.new(45.688961, 12.2672195, -117.077934, 0.0013338445, 0, 0.999999106, 0, 1, 0, -0.999999106, 0, 0.0013338842)
+UnionOperation28.Orientation = Vector3.new(0, 89.92400360107422, 0)
+UnionOperation28.Position = Vector3.new(45.688961029052734, 12.267219543457031, -117.07793426513672)
+UnionOperation28.Rotation = Vector3.new(0, 89.9229965209961, 0)
+UnionOperation28.Color = Color3.new(0.639216, 0.635294, 0.647059)
+UnionOperation28.Size = Vector3.new(10.866325378417969, 5.1123247146606445, 7.412976264953613)
+UnionOperation28.BrickColor = BrickColor.new("Medium stone grey")
+UnionOperation28.CanCollide = false
+UnionOperation28.Material = Enum.Material.Glass
+UnionOperation28.Reflectance = 1
+UnionOperation28.brickColor = BrickColor.new("Medium stone grey")
+Part29.Name = "Torso"
+Part29.Parent = Model0
+Part29.CFrame = CFrame.new(39.2872314, 7.50273323, -117.326347, -8.54372047e-07, 0, -1, 0, 1, 0, 1, 0, -8.74162652e-07)
+Part29.Orientation = Vector3.new(0, -90, 0)
+Part29.Position = Vector3.new(39.2872314453125, 7.50273323059082, -117.32634735107422)
+Part29.Rotation = Vector3.new(0, -90, 0)
+Part29.Transparency = 1
+Part29.Size = Vector3.new(2.6795461177825928, 2.6795461177825928, 1.3397730588912964)
+Part29.BottomSurface = Enum.SurfaceType.Smooth
+Part29.TopSurface = Enum.SurfaceType.Smooth
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
