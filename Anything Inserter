@@ -1,0 +1,464 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+SurfaceGui2 = Instance.new("SurfaceGui")
+TextLabel3 = Instance.new("TextLabel")
+ClickDetector4 = Instance.new("ClickDetector")
+Part5 = Instance.new("Part")
+SurfaceGui6 = Instance.new("SurfaceGui")
+TextLabel7 = Instance.new("TextLabel")
+ClickDetector8 = Instance.new("ClickDetector")
+Part9 = Instance.new("Part")
+SurfaceGui10 = Instance.new("SurfaceGui")
+TextLabel11 = Instance.new("TextLabel")
+ClickDetector12 = Instance.new("ClickDetector")
+Part13 = Instance.new("Part")
+SurfaceGui14 = Instance.new("SurfaceGui")
+TextLabel15 = Instance.new("TextLabel")
+ClickDetector16 = Instance.new("ClickDetector")
+Part17 = Instance.new("Part")
+SurfaceGui18 = Instance.new("SurfaceGui")
+TextLabel19 = Instance.new("TextLabel")
+ClickDetector20 = Instance.new("ClickDetector")
+Part21 = Instance.new("Part")
+ClickDetector22 = Instance.new("ClickDetector")
+SurfaceGui23 = Instance.new("SurfaceGui")
+TextLabel24 = Instance.new("TextLabel")
+Part25 = Instance.new("Part")
+SurfaceGui26 = Instance.new("SurfaceGui")
+TextLabel27 = Instance.new("TextLabel")
+ClickDetector28 = Instance.new("ClickDetector")
+Part29 = Instance.new("Part")
+SurfaceGui30 = Instance.new("SurfaceGui")
+TextLabel31 = Instance.new("TextLabel")
+ClickDetector32 = Instance.new("ClickDetector")
+Part33 = Instance.new("Part")
+SurfaceGui34 = Instance.new("SurfaceGui")
+TextLabel35 = Instance.new("TextLabel")
+ClickDetector36 = Instance.new("ClickDetector")
+Part37 = Instance.new("Part")
+SurfaceGui38 = Instance.new("SurfaceGui")
+TextLabel39 = Instance.new("TextLabel")
+ClickDetector40 = Instance.new("ClickDetector")
+Part41 = Instance.new("Part")
+Part42 = Instance.new("Part")
+ClickDetector43 = Instance.new("ClickDetector")
+Part44 = Instance.new("Part")
+ClickDetector45 = Instance.new("ClickDetector")
+NumberValue46 = Instance.new("NumberValue")
+Script47 = Instance.new("Script")
+Model0.Parent = mas
+Part1.Name = "1"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(18, 9, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part1.Orientation = Vector3.new(0, 180, 0)
+Part1.Position = Vector3.new(18, 9, -50.5)
+Part1.Rotation = Vector3.new(180, 0, 180)
+Part1.Size = Vector3.new(2, 2, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+SurfaceGui2.Parent = Part1
+SurfaceGui2.LightInfluence = 1
+SurfaceGui2.ClipsDescendants = true
+SurfaceGui2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui2.MaxDistance = 1000
+TextLabel3.Parent = SurfaceGui2
+TextLabel3.Size = UDim2.new(0, 100, 0, 100)
+TextLabel3.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel3.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel3.BorderColor = BrickColor.new("Really black")
+TextLabel3.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel3.BorderSizePixel = 0
+TextLabel3.Font = Enum.Font.SourceSans
+TextLabel3.FontSize = Enum.FontSize.Size96
+TextLabel3.Text = "1"
+TextLabel3.TextColor = BrickColor.new("Really black")
+TextLabel3.TextColor3 = Color3.new(0, 0, 0)
+TextLabel3.TextSize = 80
+TextLabel3.TextWrap = true
+TextLabel3.TextWrapped = true
+ClickDetector4.Parent = Part1
+Part5.Name = "2"
+Part5.Parent = Model0
+Part5.CFrame = CFrame.new(20, 9, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part5.Orientation = Vector3.new(0, 180, 0)
+Part5.Position = Vector3.new(20, 9, -50.5)
+Part5.Rotation = Vector3.new(180, 0, 180)
+Part5.Size = Vector3.new(2, 2, 1)
+Part5.BottomSurface = Enum.SurfaceType.Smooth
+Part5.TopSurface = Enum.SurfaceType.Smooth
+SurfaceGui6.Parent = Part5
+SurfaceGui6.LightInfluence = 1
+SurfaceGui6.ClipsDescendants = true
+SurfaceGui6.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui6.MaxDistance = 1000
+TextLabel7.Parent = SurfaceGui6
+TextLabel7.Size = UDim2.new(0, 100, 0, 100)
+TextLabel7.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel7.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel7.BorderColor = BrickColor.new("Really black")
+TextLabel7.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel7.BorderSizePixel = 0
+TextLabel7.Font = Enum.Font.SourceSans
+TextLabel7.FontSize = Enum.FontSize.Size96
+TextLabel7.Text = "2"
+TextLabel7.TextColor = BrickColor.new("Really black")
+TextLabel7.TextColor3 = Color3.new(0, 0, 0)
+TextLabel7.TextSize = 80
+TextLabel7.TextWrap = true
+TextLabel7.TextWrapped = true
+ClickDetector8.Parent = Part5
+Part9.Name = "3"
+Part9.Parent = Model0
+Part9.CFrame = CFrame.new(22, 9, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part9.Orientation = Vector3.new(0, 180, 0)
+Part9.Position = Vector3.new(22, 9, -50.5)
+Part9.Rotation = Vector3.new(180, 0, 180)
+Part9.Size = Vector3.new(2, 2, 1)
+Part9.BottomSurface = Enum.SurfaceType.Smooth
+Part9.TopSurface = Enum.SurfaceType.Smooth
+SurfaceGui10.Parent = Part9
+SurfaceGui10.LightInfluence = 1
+SurfaceGui10.ClipsDescendants = true
+SurfaceGui10.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui10.MaxDistance = 1000
+TextLabel11.Parent = SurfaceGui10
+TextLabel11.Size = UDim2.new(0, 100, 0, 100)
+TextLabel11.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel11.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel11.BorderColor = BrickColor.new("Really black")
+TextLabel11.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel11.BorderSizePixel = 0
+TextLabel11.Font = Enum.Font.SourceSans
+TextLabel11.FontSize = Enum.FontSize.Size96
+TextLabel11.Text = "3"
+TextLabel11.TextColor = BrickColor.new("Really black")
+TextLabel11.TextColor3 = Color3.new(0, 0, 0)
+TextLabel11.TextSize = 80
+TextLabel11.TextWrap = true
+TextLabel11.TextWrapped = true
+ClickDetector12.Parent = Part9
+Part13.Name = "8"
+Part13.Parent = Model0
+Part13.CFrame = CFrame.new(20, 5, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part13.Orientation = Vector3.new(0, 180, 0)
+Part13.Position = Vector3.new(20, 5, -50.5)
+Part13.Rotation = Vector3.new(180, 0, 180)
+Part13.Size = Vector3.new(2, 2, 1)
+Part13.BottomSurface = Enum.SurfaceType.Smooth
+Part13.TopSurface = Enum.SurfaceType.Smooth
+SurfaceGui14.Parent = Part13
+SurfaceGui14.LightInfluence = 1
+SurfaceGui14.ClipsDescendants = true
+SurfaceGui14.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui14.MaxDistance = 1000
+TextLabel15.Parent = SurfaceGui14
+TextLabel15.Size = UDim2.new(0, 100, 0, 100)
+TextLabel15.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel15.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel15.BorderColor = BrickColor.new("Really black")
+TextLabel15.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel15.BorderSizePixel = 0
+TextLabel15.Font = Enum.Font.SourceSans
+TextLabel15.FontSize = Enum.FontSize.Size96
+TextLabel15.Text = "8"
+TextLabel15.TextColor = BrickColor.new("Really black")
+TextLabel15.TextColor3 = Color3.new(0, 0, 0)
+TextLabel15.TextSize = 80
+TextLabel15.TextWrap = true
+TextLabel15.TextWrapped = true
+ClickDetector16.Parent = Part13
+Part17.Name = "6"
+Part17.Parent = Model0
+Part17.CFrame = CFrame.new(22, 7, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part17.Orientation = Vector3.new(0, 180, 0)
+Part17.Position = Vector3.new(22, 7, -50.5)
+Part17.Rotation = Vector3.new(180, 0, 180)
+Part17.Size = Vector3.new(2, 2, 1)
+Part17.BottomSurface = Enum.SurfaceType.Smooth
+Part17.TopSurface = Enum.SurfaceType.Smooth
+SurfaceGui18.Parent = Part17
+SurfaceGui18.LightInfluence = 1
+SurfaceGui18.ClipsDescendants = true
+SurfaceGui18.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui18.MaxDistance = 1000
+TextLabel19.Parent = SurfaceGui18
+TextLabel19.Size = UDim2.new(0, 100, 0, 100)
+TextLabel19.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel19.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel19.BorderColor = BrickColor.new("Really black")
+TextLabel19.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel19.BorderSizePixel = 0
+TextLabel19.Font = Enum.Font.SourceSans
+TextLabel19.FontSize = Enum.FontSize.Size96
+TextLabel19.Text = "6"
+TextLabel19.TextColor = BrickColor.new("Really black")
+TextLabel19.TextColor3 = Color3.new(0, 0, 0)
+TextLabel19.TextSize = 80
+TextLabel19.TextWrap = true
+TextLabel19.TextWrapped = true
+ClickDetector20.Parent = Part17
+Part21.Name = "0"
+Part21.Parent = Model0
+Part21.CFrame = CFrame.new(18, 3, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part21.Orientation = Vector3.new(0, 180, 0)
+Part21.Position = Vector3.new(18, 3, -50.5)
+Part21.Rotation = Vector3.new(180, 0, 180)
+Part21.Size = Vector3.new(2, 2, 1)
+Part21.BottomSurface = Enum.SurfaceType.Smooth
+Part21.TopSurface = Enum.SurfaceType.Smooth
+ClickDetector22.Parent = Part21
+SurfaceGui23.Parent = Part21
+SurfaceGui23.LightInfluence = 1
+SurfaceGui23.ClipsDescendants = true
+SurfaceGui23.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui23.MaxDistance = 1000
+TextLabel24.Parent = SurfaceGui23
+TextLabel24.Size = UDim2.new(0, 100, 0, 100)
+TextLabel24.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel24.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel24.BorderColor = BrickColor.new("Really black")
+TextLabel24.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel24.BorderSizePixel = 0
+TextLabel24.Font = Enum.Font.SourceSans
+TextLabel24.FontSize = Enum.FontSize.Size96
+TextLabel24.Text = "0"
+TextLabel24.TextColor = BrickColor.new("Really black")
+TextLabel24.TextColor3 = Color3.new(0, 0, 0)
+TextLabel24.TextSize = 80
+TextLabel24.TextWrap = true
+TextLabel24.TextWrapped = true
+Part25.Name = "4"
+Part25.Parent = Model0
+Part25.CFrame = CFrame.new(18, 7, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part25.Orientation = Vector3.new(0, 180, 0)
+Part25.Position = Vector3.new(18, 7, -50.5)
+Part25.Rotation = Vector3.new(180, 0, 180)
+Part25.Size = Vector3.new(2, 2, 1)
+Part25.BottomSurface = Enum.SurfaceType.Smooth
+Part25.TopSurface = Enum.SurfaceType.Smooth
+SurfaceGui26.Parent = Part25
+SurfaceGui26.LightInfluence = 1
+SurfaceGui26.ClipsDescendants = true
+SurfaceGui26.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui26.MaxDistance = 1000
+TextLabel27.Parent = SurfaceGui26
+TextLabel27.Size = UDim2.new(0, 100, 0, 100)
+TextLabel27.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel27.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel27.BorderColor = BrickColor.new("Really black")
+TextLabel27.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel27.BorderSizePixel = 0
+TextLabel27.Font = Enum.Font.SourceSans
+TextLabel27.FontSize = Enum.FontSize.Size96
+TextLabel27.Text = "4"
+TextLabel27.TextColor = BrickColor.new("Really black")
+TextLabel27.TextColor3 = Color3.new(0, 0, 0)
+TextLabel27.TextSize = 80
+TextLabel27.TextWrap = true
+TextLabel27.TextWrapped = true
+ClickDetector28.Parent = Part25
+Part29.Name = "9"
+Part29.Parent = Model0
+Part29.CFrame = CFrame.new(22, 5, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part29.Orientation = Vector3.new(0, 180, 0)
+Part29.Position = Vector3.new(22, 5, -50.5)
+Part29.Rotation = Vector3.new(180, 0, 180)
+Part29.Size = Vector3.new(2, 2, 1)
+Part29.BottomSurface = Enum.SurfaceType.Smooth
+Part29.TopSurface = Enum.SurfaceType.Smooth
+SurfaceGui30.Parent = Part29
+SurfaceGui30.LightInfluence = 1
+SurfaceGui30.ClipsDescendants = true
+SurfaceGui30.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui30.MaxDistance = 1000
+TextLabel31.Parent = SurfaceGui30
+TextLabel31.Size = UDim2.new(0, 100, 0, 100)
+TextLabel31.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel31.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel31.BorderColor = BrickColor.new("Really black")
+TextLabel31.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel31.BorderSizePixel = 0
+TextLabel31.Font = Enum.Font.SourceSans
+TextLabel31.FontSize = Enum.FontSize.Size96
+TextLabel31.Text = "9"
+TextLabel31.TextColor = BrickColor.new("Really black")
+TextLabel31.TextColor3 = Color3.new(0, 0, 0)
+TextLabel31.TextSize = 80
+TextLabel31.TextWrap = true
+TextLabel31.TextWrapped = true
+ClickDetector32.Parent = Part29
+Part33.Name = "5"
+Part33.Parent = Model0
+Part33.CFrame = CFrame.new(20, 7, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part33.Orientation = Vector3.new(0, 180, 0)
+Part33.Position = Vector3.new(20, 7, -50.5)
+Part33.Rotation = Vector3.new(180, 0, 180)
+Part33.Size = Vector3.new(2, 2, 1)
+Part33.BottomSurface = Enum.SurfaceType.Smooth
+Part33.TopSurface = Enum.SurfaceType.Smooth
+SurfaceGui34.Parent = Part33
+SurfaceGui34.LightInfluence = 1
+SurfaceGui34.ClipsDescendants = true
+SurfaceGui34.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui34.MaxDistance = 1000
+TextLabel35.Parent = SurfaceGui34
+TextLabel35.Size = UDim2.new(0, 100, 0, 100)
+TextLabel35.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel35.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel35.BorderColor = BrickColor.new("Really black")
+TextLabel35.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel35.BorderSizePixel = 0
+TextLabel35.Font = Enum.Font.SourceSans
+TextLabel35.FontSize = Enum.FontSize.Size96
+TextLabel35.Text = "5"
+TextLabel35.TextColor = BrickColor.new("Really black")
+TextLabel35.TextColor3 = Color3.new(0, 0, 0)
+TextLabel35.TextSize = 80
+TextLabel35.TextWrap = true
+TextLabel35.TextWrapped = true
+ClickDetector36.Parent = Part33
+Part37.Name = "7"
+Part37.Parent = Model0
+Part37.CFrame = CFrame.new(18, 5, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part37.Orientation = Vector3.new(0, 180, 0)
+Part37.Position = Vector3.new(18, 5, -50.5)
+Part37.Rotation = Vector3.new(180, 0, 180)
+Part37.Size = Vector3.new(2, 2, 1)
+Part37.BottomSurface = Enum.SurfaceType.Smooth
+Part37.TopSurface = Enum.SurfaceType.Smooth
+SurfaceGui38.Parent = Part37
+SurfaceGui38.LightInfluence = 1
+SurfaceGui38.ClipsDescendants = true
+SurfaceGui38.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui38.MaxDistance = 1000
+TextLabel39.Parent = SurfaceGui38
+TextLabel39.Size = UDim2.new(0, 100, 0, 100)
+TextLabel39.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel39.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel39.BorderColor = BrickColor.new("Really black")
+TextLabel39.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel39.BorderSizePixel = 0
+TextLabel39.Font = Enum.Font.SourceSans
+TextLabel39.FontSize = Enum.FontSize.Size96
+TextLabel39.Text = "7"
+TextLabel39.TextColor = BrickColor.new("Really black")
+TextLabel39.TextColor3 = Color3.new(0, 0, 0)
+TextLabel39.TextSize = 80
+TextLabel39.TextWrap = true
+TextLabel39.TextWrapped = true
+ClickDetector40.Parent = Part37
+Part41.Name = "PositionPart"
+Part41.Parent = Model0
+Part41.CFrame = CFrame.new(19.8488026, 1, -45.9695129, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part41.Position = Vector3.new(19.84880256652832, 1, -45.969512939453125)
+Part41.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part41.Size = Vector3.new(4, 1, 4)
+Part41.Anchored = true
+Part41.BottomSurface = Enum.SurfaceType.Smooth
+Part41.BrickColor = BrickColor.new("Institutional white")
+Part41.TopSurface = Enum.SurfaceType.Smooth
+Part41.brickColor = BrickColor.new("Institutional white")
+Part42.Name = "Accept"
+Part42.Parent = Model0
+Part42.CFrame = CFrame.new(20, 3, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part42.Orientation = Vector3.new(0, 180, 0)
+Part42.Position = Vector3.new(20, 3, -50.5)
+Part42.Rotation = Vector3.new(180, 0, 180)
+Part42.Color = Color3.new(1, 0, 0)
+Part42.Size = Vector3.new(2, 2, 1)
+Part42.BottomSurface = Enum.SurfaceType.Smooth
+Part42.BrickColor = BrickColor.new("Really red")
+Part42.TopSurface = Enum.SurfaceType.Smooth
+Part42.brickColor = BrickColor.new("Really red")
+ClickDetector43.Parent = Part42
+Part44.Name = "Cancel"
+Part44.Parent = Model0
+Part44.CFrame = CFrame.new(22, 3, -50.5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Part44.Orientation = Vector3.new(0, 180, 0)
+Part44.Position = Vector3.new(22, 3, -50.5)
+Part44.Rotation = Vector3.new(180, 0, 180)
+Part44.Color = Color3.new(0, 1, 0)
+Part44.Size = Vector3.new(2, 2, 1)
+Part44.BottomSurface = Enum.SurfaceType.Smooth
+Part44.BrickColor = BrickColor.new("Lime green")
+Part44.TopSurface = Enum.SurfaceType.Smooth
+Part44.brickColor = BrickColor.new("Lime green")
+ClickDetector45.Parent = Part44
+NumberValue46.Parent = Model0
+Script47.Parent = Model0
+table.insert(cors,sandbox(Script47,function()
+script.Parent.Cancel.ClickDetector.MouseClick:Connect(function()
+	script.Parent.Value.Value = nil
+end)
+
+script.Parent.Accept.ClickDetector.MouseClick:Connect(function()  
+	local f = game:GetService("InsertService") :LoadAsset(script.Parent.Value.Value) f.Parent = game.Workspace f:MoveTo(script.Parent.PositionPart.Position)
+end)
+
+script.Parent["0"].ClickDetector.MouseClick:Connect(function()
+	script.Parent.Value.Value = script.Parent.Value.Value..0
+end)
+
+script.Parent["1"].ClickDetector.MouseClick:Connect(function()
+	script.Parent.Value.Value = script.Parent.Value.Value..1
+end)
+
+script.Parent["2"].ClickDetector.MouseClick:Connect(function()
+	script.Parent.Value.Value = script.Parent.Value.Value..2
+end)
+
+script.Parent["3"].ClickDetector.MouseClick:Connect(function()
+	script.Parent.Value.Value = script.Parent.Value.Value..3
+end)
+
+script.Parent["4"].ClickDetector.MouseClick:Connect(function()
+	script.Parent.Value.Value = script.Parent.Value.Value..4
+end)
+
+script.Parent["5"].ClickDetector.MouseClick:Connect(function()
+	script.Parent.Value.Value = script.Parent.Value.Value..5
+end)
+
+script.Parent["6"].ClickDetector.MouseClick:Connect(function()
+	script.Parent.Value.Value = script.Parent.Value.Value..6
+end)
+
+script.Parent["7"].ClickDetector.MouseClick:Connect(function()
+	script.Parent.Value.Value = script.Parent.Value.Value..7
+end)
+
+script.Parent["8"].ClickDetector.MouseClick:Connect(function()
+	script.Parent.Value.Value = script.Parent.Value.Value..8
+end)
+
+script.Parent["9"].ClickDetector.MouseClick:Connect(function()
+	script.Parent.Value.Value = script.Parent.Value.Value..9
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
