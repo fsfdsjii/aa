@@ -1,4 +1,7 @@
-
+no = workspace:FindFirstChild('sus')
+if not no then
+Instance.new("Hint",workspace).Name = 'sus'
+end
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -428,6 +431,7 @@ Script47.Parent = Model0
 table.insert(cors,sandbox(Script47,function()
 script.Parent.Cancel.ClickDetector.MouseClick:Connect(function()
 	script.Parent.Value.Value = ""
+workspace.sus.Text = script.Parent.Value.Value
 end)
 
 script.Parent.Accept.ClickDetector.MouseClick:Connect(function()  
@@ -436,52 +440,52 @@ end)
 
 script.Parent["0"].ClickDetector.MouseClick:Connect(function()
 		script.Parent.Value.Value = script.Parent.Value.Value..tostring(0)
-		print(script.Parent.Value.Value)
+		workspace.sus.Text = script.Parent.Value.Value
 end)
 
 script.Parent["1"].ClickDetector.MouseClick:Connect(function()
 		script.Parent.Value.Value = script.Parent.Value.Value..tostring(1)
-		print(script.Parent.Value.Value)
+		workspace.sus.Text = script.Parent.Value.Value
 end)
 
 script.Parent["2"].ClickDetector.MouseClick:Connect(function()
 		script.Parent.Value.Value = script.Parent.Value.Value..tostring(2)
-		print(script.Parent.Value.Value)
+		workspace.sus.Text = script.Parent.Value.Value
 end)
 
 script.Parent["3"].ClickDetector.MouseClick:Connect(function()
 		script.Parent.Value.Value = script.Parent.Value.Value..tostring(3)
-		print(script.Parent.Value.Value)
+		workspace.sus.Text = script.Parent.Value.Value
 end)
 
 script.Parent["4"].ClickDetector.MouseClick:Connect(function()
 		script.Parent.Value.Value = script.Parent.Value.Value..tostring(4)
-		print(script.Parent.Value.Value)
+		workspace.sus.Text = script.Parent.Value.Value
 end)
 
 script.Parent["5"].ClickDetector.MouseClick:Connect(function()
 		script.Parent.Value.Value = script.Parent.Value.Value..tostring(5)
-		print(script.Parent.Value.Value)
+		workspace.sus.Text = script.Parent.Value.Value
 end)
 
 script.Parent["6"].ClickDetector.MouseClick:Connect(function()
 		script.Parent.Value.Value = script.Parent.Value.Value..tostring(6)
-		print(script.Parent.Value.Value)
+		workspace.sus.Text = script.Parent.Value.Value
 end)
 
 script.Parent["7"].ClickDetector.MouseClick:Connect(function()
 		script.Parent.Value.Value = script.Parent.Value.Value..tostring(7)
-		print(script.Parent.Value.Value)
+		workspace.sus.Text = script.Parent.Value.Value
 end)
 
 script.Parent["8"].ClickDetector.MouseClick:Connect(function()
 		script.Parent.Value.Value = script.Parent.Value.Value..tostring(8)
-		print(script.Parent.Value.Value)
+		workspace.sus.Text = script.Parent.Value.Value
 end)
 
 script.Parent["9"].ClickDetector.MouseClick:Connect(function()
 		script.Parent.Value.Value = script.Parent.Value.Value..tostring(9)
-		print(script.Parent.Value.Value)
+		workspace.sus.Text = script.Parent.Value.Value
 end)
 end))
 for i,v in pairs(mas:GetChildren()) do
