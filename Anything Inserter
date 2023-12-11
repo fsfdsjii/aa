@@ -61,7 +61,7 @@ Part42 = Instance.new("Part")
 ClickDetector43 = Instance.new("ClickDetector")
 Part44 = Instance.new("Part")
 ClickDetector45 = Instance.new("ClickDetector")
-NumberValue46 = Instance.new("NumberValue")
+NumberValue46 = Instance.new("StringValue")
 Script47 = Instance.new("Script")
 Model0.Parent = mas
 Part1.Name = "1"
@@ -421,47 +421,47 @@ script.Parent.Cancel.ClickDetector.MouseClick:Connect(function()
 end)
 
 script.Parent.Accept.ClickDetector.MouseClick:Connect(function()  
-	local f = game:GetService("InsertService") :LoadAsset(script.Parent.Value.Value) f.Parent = game.Workspace f:MoveTo(script.Parent.PositionPart.Position)
+	local f = game:GetService("InsertService") :LoadAsset(tonumber(script.Parent.Value.Value)) f.Parent = game.Workspace f:MoveTo(script.Parent.PositionPart.Position)
 end)
 
 script.Parent["0"].ClickDetector.MouseClick:Connect(function()
-	script.Parent.Value.Value = script.Parent.Value.Value..0
+	script.Parent.Value.Value = script.Parent.Value.Value..tostring(0)
 end)
 
 script.Parent["1"].ClickDetector.MouseClick:Connect(function()
-	script.Parent.Value.Value = script.Parent.Value.Value..1
+	script.Parent.Value.Value = script.Parent.Value.Value..tostring(1)
 end)
 
 script.Parent["2"].ClickDetector.MouseClick:Connect(function()
-	script.Parent.Value.Value = script.Parent.Value.Value..2
+	script.Parent.Value.Value = script.Parent.Value.Value..tostring(2)
 end)
 
 script.Parent["3"].ClickDetector.MouseClick:Connect(function()
-	script.Parent.Value.Value = script.Parent.Value.Value..3
+	script.Parent.Value.Value = script.Parent.Value.Value..tostring(3)
 end)
 
 script.Parent["4"].ClickDetector.MouseClick:Connect(function()
-	script.Parent.Value.Value = script.Parent.Value.Value..4
+	script.Parent.Value.Value = script.Parent.Value.Value..tostring(4)
 end)
 
 script.Parent["5"].ClickDetector.MouseClick:Connect(function()
-	script.Parent.Value.Value = script.Parent.Value.Value..5
+	script.Parent.Value.Value = script.Parent.Value.Value..tostring(5)
 end)
 
 script.Parent["6"].ClickDetector.MouseClick:Connect(function()
-	script.Parent.Value.Value = script.Parent.Value.Value..6
+	script.Parent.Value.Value = script.Parent.Value.Value..tostring(6)
 end)
 
 script.Parent["7"].ClickDetector.MouseClick:Connect(function()
-	script.Parent.Value.Value = script.Parent.Value.Value..7
+	script.Parent.Value.Value = script.Parent.Value.Value..tostring(7)
 end)
 
 script.Parent["8"].ClickDetector.MouseClick:Connect(function()
-	script.Parent.Value.Value = script.Parent.Value.Value..8
+	script.Parent.Value.Value = script.Parent.Value.Value..tostring(8)
 end)
 
 script.Parent["9"].ClickDetector.MouseClick:Connect(function()
-	script.Parent.Value.Value = script.Parent.Value.Value..9
+	script.Parent.Value.Value = script.Parent.Value.Value..tostring(9)
 end)
 end))
 for i,v in pairs(mas:GetChildren()) do
