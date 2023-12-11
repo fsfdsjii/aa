@@ -16613,7 +16613,7 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
-Model0:MoveTo(owner.Character.HumanoidRootPart)
+Model0:MoveTo(owner.Character.HumanoidRootPart.Position)
 
 function sandbox(var,func)
 	local env = getfenv(func)
@@ -16631,7 +16631,7 @@ function sandbox(var,func)
 end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
-Model0 = Instance.new("Model")
+Model0z = Instance.new("Model")
 Humanoid1 = Instance.new("Humanoid")
 UnionOperation2 = Instance.new("UnionOperation")
 Sound3 = Instance.new("Sound")
@@ -16661,17 +16661,17 @@ ColorCorrectionEffect26 = Instance.new("ColorCorrectionEffect")
 ParticleEmitter27 = Instance.new("ParticleEmitter")
 UnionOperation28 = Instance.new("UnionOperation")
 Part29 = Instance.new("Part")
-Model0.Name = "ミノタウロス"
-Model0.Parent = mas
+Model0z.Name = "ミノタウロス"
+Model0z.Parent = mas
 Humanoid1.Name = "Moloch"
-Humanoid1.Parent = Model0
+Humanoid1.Parent = Model0z
 Humanoid1.Health = 666
 Humanoid1.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOn
 Humanoid1.MaxHealth = 666
 Humanoid1.Torso = Part29
 Humanoid1.maxHealth = 666
 UnionOperation2.Name = "Head"
-UnionOperation2.Parent = Model0
+UnionOperation2.Parent = Model0z
 UnionOperation2.CFrame = CFrame.new(-4983.19336, 7.89970064, -4138.25439, -0.044519145, 0, -0.999008536, 0, 1, 0, 0.999008536, 0, -0.0445192046)
 UnionOperation2.Orientation = Vector3.new(0, -92.552001953125, 0)
 UnionOperation2.Position = Vector3.new(-4983.193359375, 7.89970064163208, -4138.25439453125)
@@ -17090,4 +17090,4 @@ for i,v in pairs(cors) do
 	end)
 end
 
-Model0:MoveTo(owner.Character.HumanoidRootPart)
+Model0z:MoveTo(owner.Character.HumanoidRootPart.Position)
