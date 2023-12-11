@@ -1,0 +1,378 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Texture2 = Instance.new("Texture")
+Texture3 = Instance.new("Texture")
+Texture4 = Instance.new("Texture")
+Texture5 = Instance.new("Texture")
+Texture6 = Instance.new("Texture")
+Texture7 = Instance.new("Texture")
+Part8 = Instance.new("Part")
+Texture9 = Instance.new("Texture")
+Texture10 = Instance.new("Texture")
+Texture11 = Instance.new("Texture")
+Texture12 = Instance.new("Texture")
+Texture13 = Instance.new("Texture")
+Texture14 = Instance.new("Texture")
+Model15 = Instance.new("Model")
+Part16 = Instance.new("Part")
+Decal17 = Instance.new("Decal")
+BodyGyro18 = Instance.new("BodyGyro")
+BodyPosition19 = Instance.new("BodyPosition")
+Script20 = Instance.new("Script")
+NumberValue21 = Instance.new("NumberValue")
+Sound22 = Instance.new("Sound")
+Part23 = Instance.new("Part")
+Script24 = Instance.new("Script")
+Part25 = Instance.new("Part")
+Script26 = Instance.new("Script")
+Part27 = Instance.new("Part")
+Script28 = Instance.new("Script")
+Part29 = Instance.new("Part")
+Script30 = Instance.new("Script")
+Part31 = Instance.new("Part")
+Texture32 = Instance.new("Texture")
+Texture33 = Instance.new("Texture")
+Texture34 = Instance.new("Texture")
+Texture35 = Instance.new("Texture")
+Texture36 = Instance.new("Texture")
+Texture37 = Instance.new("Texture")
+Model0.Name = "Szemtelen Mano Wooden Wall Fate"
+Model0.Parent = mas
+Part1.Name = "Smooth Block Model"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(-45.062767, 16.7520294, 8.18291092, -0.707107008, 0, 0.707106531, 0, 1, 0, -0.707106531, 0, -0.707107008)
+Part1.Orientation = Vector3.new(0, 135, 0)
+Part1.Position = Vector3.new(-45.062767028808594, 16.752029418945312, 8.182910919189453)
+Part1.Rotation = Vector3.new(180, 45, 180)
+Part1.Color = Color3.new(0.560784, 0.298039, 0.164706)
+Part1.Size = Vector3.new(32.994998931884766, 31.503999710083008, 2)
+Part1.Anchored = true
+Part1.BrickColor = BrickColor.new("Rust")
+Part1.Material = Enum.Material.WoodPlanks
+Part1.brickColor = BrickColor.new("Rust")
+Texture2.Parent = Part1
+Texture2.Texture = "rbxassetid://21176306"
+Texture2.Transparency = 0.6000000238418579
+Texture2.Face = Enum.NormalId.Left
+Texture2.Color3 = Color3.new(0, 0, 0)
+Texture2.StudsPerTileU = 40
+Texture2.StudsPerTileV = 40
+Texture3.Parent = Part1
+Texture3.Texture = "rbxassetid://21176306"
+Texture3.Transparency = 0.6000000238418579
+Texture3.Face = Enum.NormalId.Top
+Texture3.Color3 = Color3.new(0, 0, 0)
+Texture3.StudsPerTileU = 40
+Texture3.StudsPerTileV = 40
+Texture4.Parent = Part1
+Texture4.Texture = "rbxassetid://21176306"
+Texture4.Transparency = 0.6000000238418579
+Texture4.Face = Enum.NormalId.Back
+Texture4.Color3 = Color3.new(0, 0, 0)
+Texture4.StudsPerTileU = 40
+Texture4.StudsPerTileV = 40
+Texture5.Parent = Part1
+Texture5.Texture = "rbxassetid://21176306"
+Texture5.Transparency = 0.6000000238418579
+Texture5.Color3 = Color3.new(0, 0, 0)
+Texture5.StudsPerTileU = 40
+Texture5.StudsPerTileV = 40
+Texture6.Parent = Part1
+Texture6.Texture = "rbxassetid://21176306"
+Texture6.Transparency = 0.6000000238418579
+Texture6.Face = Enum.NormalId.Right
+Texture6.Color3 = Color3.new(0, 0, 0)
+Texture6.StudsPerTileU = 40
+Texture6.StudsPerTileV = 40
+Texture7.Parent = Part1
+Texture7.Texture = "rbxassetid://21176306"
+Texture7.Transparency = 0.6000000238418579
+Texture7.Face = Enum.NormalId.Bottom
+Texture7.Color3 = Color3.new(0, 0, 0)
+Texture7.StudsPerTileU = 40
+Texture7.StudsPerTileV = 40
+Part8.Name = "Smooth Block Model"
+Part8.Parent = Model0
+Part8.CFrame = CFrame.new(-17.2580795, 16.7487564, 19.5192299, 0.99999994, 0, 4.17232513e-07, 0, 1, 0, -4.17232513e-07, 0, 0.99999994)
+Part8.Position = Vector3.new(-17.258079528808594, 16.748756408691406, 19.519229888916016)
+Part8.Color = Color3.new(0.560784, 0.298039, 0.164706)
+Part8.Size = Vector3.new(33.59000015258789, 31.497465133666992, 2)
+Part8.Anchored = true
+Part8.BrickColor = BrickColor.new("Rust")
+Part8.Material = Enum.Material.WoodPlanks
+Part8.brickColor = BrickColor.new("Rust")
+Texture9.Parent = Part8
+Texture9.Texture = "rbxassetid://21176306"
+Texture9.Transparency = 0.6000000238418579
+Texture9.Face = Enum.NormalId.Left
+Texture9.Color3 = Color3.new(0, 0, 0)
+Texture9.StudsPerTileU = 40
+Texture9.StudsPerTileV = 40
+Texture10.Parent = Part8
+Texture10.Texture = "rbxassetid://21176306"
+Texture10.Transparency = 0.6000000238418579
+Texture10.Face = Enum.NormalId.Top
+Texture10.Color3 = Color3.new(0, 0, 0)
+Texture10.StudsPerTileU = 40
+Texture10.StudsPerTileV = 40
+Texture11.Parent = Part8
+Texture11.Texture = "rbxassetid://21176306"
+Texture11.Transparency = 0.6000000238418579
+Texture11.Face = Enum.NormalId.Back
+Texture11.Color3 = Color3.new(0, 0, 0)
+Texture11.StudsPerTileU = 40
+Texture11.StudsPerTileV = 40
+Texture12.Parent = Part8
+Texture12.Texture = "rbxassetid://21176306"
+Texture12.Transparency = 0.6000000238418579
+Texture12.Color3 = Color3.new(0, 0, 0)
+Texture12.StudsPerTileU = 40
+Texture12.StudsPerTileV = 40
+Texture13.Parent = Part8
+Texture13.Texture = "rbxassetid://21176306"
+Texture13.Transparency = 0.6000000238418579
+Texture13.Face = Enum.NormalId.Right
+Texture13.Color3 = Color3.new(0, 0, 0)
+Texture13.StudsPerTileU = 40
+Texture13.StudsPerTileV = 40
+Texture14.Parent = Part8
+Texture14.Texture = "rbxassetid://21176306"
+Texture14.Transparency = 0.6000000238418579
+Texture14.Face = Enum.NormalId.Bottom
+Texture14.Color3 = Color3.new(0, 0, 0)
+Texture14.StudsPerTileU = 40
+Texture14.StudsPerTileV = 40
+Model15.Name = "Szemtelen Mano"
+Model15.Parent = Model0
+Part16.Name = "Sphere"
+Part16.Parent = Model15
+Part16.CFrame = CFrame.new(-45.1412582, 37.5040741, 8.07530594, 0.707106769, -6.57252031e-14, -0.707109809, -3.09087262e-08, 1.00000429, -3.09087334e-08, 0.707106769, 4.37115162e-08, 0.707109809)
+Part16.Orientation = Vector3.new(0, -45, 0)
+Part16.Position = Vector3.new(-45.141258239746094, 37.50407409667969, 8.075305938720703)
+Part16.Rotation = Vector3.new(0, -45, 0)
+Part16.Color = Color3.new(0.431373, 0.701961, 0.8)
+Part16.Size = Vector3.new(10, 10, 10)
+Part16.BottomSurface = Enum.SurfaceType.Smooth
+Part16.BrickColor = BrickColor.new("Medium blue")
+Part16.Material = Enum.Material.Slate
+Part16.TopSurface = Enum.SurfaceType.Smooth
+Part16.brickColor = BrickColor.new("Medium blue")
+Part16.Shape = Enum.PartType.Ball
+Decal17.Name = "face"
+Decal17.Parent = Part16
+Decal17.Texture = "rbxassetid://7526021840"
+Decal17.Transparency = -1
+BodyGyro18.Parent = Part16
+BodyGyro18.CFrame = CFrame.new(-82.9250488, 5.33665228, 765.406128, 0.0981513783, -0.369744539, 0.923934639, 9.26125232e-10, 0.928417504, 0.37153852, -0.995171487, -0.0364670157, 0.0911254585)
+BodyGyro18.MaxTorque = Vector3.new(9000, 9000, 9000)
+BodyGyro18.maxTorque = Vector3.new(9000, 9000, 9000)
+BodyGyro18.cframe = CFrame.new(-82.9250488, 5.33665228, 765.406128, 0.0981513783, -0.369744539, 0.923934639, 9.26125232e-10, 0.928417504, 0.37153852, -0.995171487, -0.0364670157, 0.0911254585)
+BodyPosition19.Parent = Part16
+BodyPosition19.Position = Vector3.new(-87.98052978515625, 3.303718328475952, 764.90771484375)
+BodyPosition19.MaxForce = Vector3.new(2000, 2000, 2000)
+BodyPosition19.maxForce = Vector3.new(2000, 2000, 2000)
+BodyPosition19.position = Vector3.new(-87.98052978515625, 3.303718328475952, 764.90771484375)
+Script20.Name = "Track"
+Script20.Parent = Part16
+table.insert(cors,sandbox(Script20,function()
+bin = script.Parent
+
+function move(target)
+	local dir = (target.Position - bin.Position).unit
+	local spawnPos = bin.Position
+	local pos = spawnPos + (dir * 1)
+	bin:findFirstChild("BodyGyro").cframe = CFrame.new(pos,  pos + dir)
+	bin:findFirstChild("BodyGyro").maxTorque = Vector3.new(9000,9000,9000)
+end
+
+function moveTo(target)
+	bin.BodyPosition.position = target.Position
+	bin.BodyPosition.maxForce = Vector3.new(10000,10000,10000) * bin.Speed.Value
+end
+
+function findNearestTorso(pos)
+	local list = game.Workspace:GetChildren()
+	local torso = nil
+	local dist = 1000
+	local temp = nil
+	local human = nil
+	local temp2 = nil
+	for x = 1, #list do
+		temp2 = list[x]
+		if (temp2.className == "Model") and (temp2 ~= script.Parent) then
+			temp = temp2:findFirstChild("Head")
+			human = temp2:findFirstChild("Humanoid")
+			if (temp ~= nil) and (human ~= nil) and (human.Health > 0)  then
+				if (temp.Position - pos).magnitude < dist then
+					torso = temp
+					dist = (temp.Position - pos).magnitude
+				end
+			end
+		end
+	end
+	return torso
+end
+
+while true do
+	local torso = findNearestTorso(bin.Position)
+	if torso~=nil then
+		move(torso)
+		moveTo(torso)
+	end
+	wait()
+end
+
+end))
+NumberValue21.Name = "Speed"
+NumberValue21.Parent = Part16
+NumberValue21.Value = 4
+Sound22.Parent = Part16
+Sound22.Looped = true
+Sound22.Playing = true
+Sound22.SoundId = "rbxassetid://138093488"
+Part23.Name = "Block From Falling"
+Part23.Parent = Model0
+Part23.CFrame = CFrame.new(-48.6516342, 37.1040497, 4.72535324, -0.707107008, 0, 0.707106531, 0, 1, 0, -0.707106531, 0, -0.707107008)
+Part23.Orientation = Vector3.new(0, 135, 0)
+Part23.Position = Vector3.new(-48.651634216308594, 37.10404968261719, 4.725353240966797)
+Part23.Rotation = Vector3.new(180, 45, 180)
+Part23.Transparency = 1
+Part23.Size = Vector3.new(0.029072344303131104, 9.199999809265137, 10)
+Part23.Anchored = true
+Script24.Name = "Read Me"
+Script24.Parent = Part23
+Script24.Enabled = false
+table.insert(cors,sandbox(Script24,function()
+
+
+end))
+Script24.Disabled = true
+Part25.Name = "Block From Falling"
+Part25.Parent = Model0
+Part25.CFrame = CFrame.new(-41.5805893, 37.1040497, 11.7964058, -0.707107008, 0, 0.707106531, 0, 1, 0, -0.707106531, 0, -0.707107008)
+Part25.Orientation = Vector3.new(0, 135, 0)
+Part25.Position = Vector3.new(-41.580589294433594, 37.10404968261719, 11.796405792236328)
+Part25.Rotation = Vector3.new(180, 45, 180)
+Part25.Transparency = 1
+Part25.Size = Vector3.new(0.029072344303131104, 9.199999809265137, 10)
+Part25.Anchored = true
+Script26.Name = "Read Me"
+Script26.Parent = Part25
+Script26.Enabled = false
+table.insert(cors,sandbox(Script26,function()
+
+
+end))
+Script26.Disabled = true
+Part27.Name = "Block From Falling"
+Part27.Parent = Model0
+Part27.CFrame = CFrame.new(-41.5805893, 37.1040497, 4.72533798, 0.707106531, 0, 0.707107008, 0, 1, 0, -0.707107008, 0, 0.707106531)
+Part27.Orientation = Vector3.new(0, 45, 0)
+Part27.Position = Vector3.new(-41.580589294433594, 37.10404968261719, 4.725337982177734)
+Part27.Rotation = Vector3.new(0, 45, 0)
+Part27.Transparency = 1
+Part27.Size = Vector3.new(0.029072344303131104, 9.199999809265137, 10)
+Part27.Anchored = true
+Script28.Name = "Read Me"
+Script28.Parent = Part27
+Script28.Enabled = false
+table.insert(cors,sandbox(Script28,function()
+
+end))
+Script28.Disabled = true
+Part29.Name = "Block From Falling"
+Part29.Parent = Model0
+Part29.CFrame = CFrame.new(-48.6516342, 37.1040497, 11.7964211, 0.707106531, 0, 0.707107008, 0, 1, 0, -0.707107008, 0, 0.707106531)
+Part29.Orientation = Vector3.new(0, 45, 0)
+Part29.Position = Vector3.new(-48.651634216308594, 37.10404968261719, 11.79642105102539)
+Part29.Rotation = Vector3.new(0, 45, 0)
+Part29.Transparency = 1
+Part29.Size = Vector3.new(0.029072344303131104, 9.199999809265137, 10)
+Part29.Anchored = true
+Script30.Name = "Read Me"
+Script30.Parent = Part29
+Script30.Enabled = false
+table.insert(cors,sandbox(Script30,function()
+
+end))
+Script30.Disabled = true
+Part31.Name = "Smooth Block Model"
+Part31.Parent = Model0
+Part31.CFrame = CFrame.new(-56.4317856, 16.7487564, -19.6102562, 0, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 0)
+Part31.Orientation = Vector3.new(0, 90, 0)
+Part31.Position = Vector3.new(-56.431785583496094, 16.748756408691406, -19.61025619506836)
+Part31.Rotation = Vector3.new(0, 90, 0)
+Part31.Color = Color3.new(0.560784, 0.298039, 0.164706)
+Part31.Size = Vector3.new(33.59000015258789, 31.497465133666992, 2)
+Part31.Anchored = true
+Part31.BrickColor = BrickColor.new("Rust")
+Part31.Material = Enum.Material.WoodPlanks
+Part31.brickColor = BrickColor.new("Rust")
+Texture32.Parent = Part31
+Texture32.Texture = "rbxassetid://21176306"
+Texture32.Transparency = 0.6000000238418579
+Texture32.Face = Enum.NormalId.Left
+Texture32.Color3 = Color3.new(0, 0, 0)
+Texture32.StudsPerTileU = 40
+Texture32.StudsPerTileV = 40
+Texture33.Parent = Part31
+Texture33.Texture = "rbxassetid://21176306"
+Texture33.Transparency = 0.6000000238418579
+Texture33.Face = Enum.NormalId.Top
+Texture33.Color3 = Color3.new(0, 0, 0)
+Texture33.StudsPerTileU = 40
+Texture33.StudsPerTileV = 40
+Texture34.Parent = Part31
+Texture34.Texture = "rbxassetid://21176306"
+Texture34.Transparency = 0.6000000238418579
+Texture34.Face = Enum.NormalId.Back
+Texture34.Color3 = Color3.new(0, 0, 0)
+Texture34.StudsPerTileU = 40
+Texture34.StudsPerTileV = 40
+Texture35.Parent = Part31
+Texture35.Texture = "rbxassetid://21176306"
+Texture35.Transparency = 0.6000000238418579
+Texture35.Color3 = Color3.new(0, 0, 0)
+Texture35.StudsPerTileU = 40
+Texture35.StudsPerTileV = 40
+Texture36.Parent = Part31
+Texture36.Texture = "rbxassetid://21176306"
+Texture36.Transparency = 0.6000000238418579
+Texture36.Face = Enum.NormalId.Right
+Texture36.Color3 = Color3.new(0, 0, 0)
+Texture36.StudsPerTileU = 40
+Texture36.StudsPerTileV = 40
+Texture37.Parent = Part31
+Texture37.Texture = "rbxassetid://21176306"
+Texture37.Transparency = 0.6000000238418579
+Texture37.Face = Enum.NormalId.Bottom
+Texture37.Color3 = Color3.new(0, 0, 0)
+Texture37.StudsPerTileU = 40
+Texture37.StudsPerTileV = 40
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
