@@ -1,0 +1,961 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Model1 = Instance.new("Model")
+Part2 = Instance.new("Part")
+Part3 = Instance.new("Part")
+Script4 = Instance.new("Script")
+Tool5 = Instance.new("Tool")
+Part6 = Instance.new("Part")
+Sound7 = Instance.new("Sound")
+Part8 = Instance.new("Part")
+SurfaceGui9 = Instance.new("SurfaceGui")
+TextLabel10 = Instance.new("TextLabel")
+Model11 = Instance.new("Model")
+Part12 = Instance.new("Part")
+Part13 = Instance.new("Part")
+Part14 = Instance.new("Part")
+UnionOperation15 = Instance.new("UnionOperation")
+UnionOperation16 = Instance.new("UnionOperation")
+UnionOperation17 = Instance.new("UnionOperation")
+UnionOperation18 = Instance.new("UnionOperation")
+UnionOperation19 = Instance.new("UnionOperation")
+UnionOperation20 = Instance.new("UnionOperation")
+UnionOperation21 = Instance.new("UnionOperation")
+UnionOperation22 = Instance.new("UnionOperation")
+UnionOperation23 = Instance.new("UnionOperation")
+UnionOperation24 = Instance.new("UnionOperation")
+UnionOperation25 = Instance.new("UnionOperation")
+Part26 = Instance.new("Part")
+Fire27 = Instance.new("Fire")
+Part28 = Instance.new("Part")
+Part29 = Instance.new("Part")
+Part30 = Instance.new("Part")
+Part31 = Instance.new("Part")
+Part32 = Instance.new("Part")
+MeshPart33 = Instance.new("MeshPart")
+MeshPart34 = Instance.new("MeshPart")
+UnionOperation35 = Instance.new("UnionOperation")
+Part36 = Instance.new("Part")
+WedgePart37 = Instance.new("WedgePart")
+WedgePart38 = Instance.new("WedgePart")
+WedgePart39 = Instance.new("WedgePart")
+WedgePart40 = Instance.new("WedgePart")
+WedgePart41 = Instance.new("WedgePart")
+WedgePart42 = Instance.new("WedgePart")
+WedgePart43 = Instance.new("WedgePart")
+WedgePart44 = Instance.new("WedgePart")
+Part45 = Instance.new("Part")
+Part46 = Instance.new("Part")
+Part47 = Instance.new("Part")
+Part48 = Instance.new("Part")
+Part49 = Instance.new("Part")
+Part50 = Instance.new("Part")
+Part51 = Instance.new("Part")
+Part52 = Instance.new("Part")
+Part53 = Instance.new("Part")
+Part54 = Instance.new("Part")
+WedgePart55 = Instance.new("WedgePart")
+WedgePart56 = Instance.new("WedgePart")
+WedgePart57 = Instance.new("WedgePart")
+CornerWedgePart58 = Instance.new("CornerWedgePart")
+CornerWedgePart59 = Instance.new("CornerWedgePart")
+CornerWedgePart60 = Instance.new("CornerWedgePart")
+CornerWedgePart61 = Instance.new("CornerWedgePart")
+WedgePart62 = Instance.new("WedgePart")
+Part63 = Instance.new("Part")
+Part64 = Instance.new("Part")
+Part65 = Instance.new("Part")
+UnionOperation66 = Instance.new("UnionOperation")
+MeshPart67 = Instance.new("MeshPart")
+MeshPart68 = Instance.new("MeshPart")
+Part69 = Instance.new("Part")
+Part70 = Instance.new("Part")
+Decal71 = Instance.new("Decal")
+Decal72 = Instance.new("Decal")
+Decal73 = Instance.new("Decal")
+Decal74 = Instance.new("Decal")
+Decal75 = Instance.new("Decal")
+Script76 = Instance.new("Script")
+Part77 = Instance.new("Part")
+Script78 = Instance.new("Script")
+LocalScript79 = Instance.new("LocalScript")
+Part80 = Instance.new("Part")
+Smoke81 = Instance.new("Smoke")
+Model0.Name = "furnace"
+Model0.Parent = mas
+Model1.Name = "button"
+Model1.Parent = Model0
+Part2.Name = "nopeaa"
+Part2.Parent = Model1
+Part2.CFrame = CFrame.new(9.51706696, 1.25003076, -90.3613586, 0, 0, 0.999999881, 0, 1, 0, -0.999999881, 0, 0)
+Part2.Orientation = Vector3.new(0, 90, 0)
+Part2.Position = Vector3.new(9.517066955566406, 1.250030755996704, -90.36135864257812)
+Part2.Rotation = Vector3.new(0, 90, 0)
+Part2.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part2.Size = Vector3.new(10.000000953674316, 0.5, 10.000000953674316)
+Part2.Anchored = true
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.BrickColor = BrickColor.new("Dark stone grey")
+Part2.Material = Enum.Material.Slate
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.brickColor = BrickColor.new("Dark stone grey")
+Part3.Parent = Model1
+Part3.CFrame = CFrame.new(9.51706696, 1.75003839, -90.3613586, 0, 0, 0.999999881, 0, 1, 0, -0.999999881, 0, 0)
+Part3.Orientation = Vector3.new(0, 90, 0)
+Part3.Position = Vector3.new(9.517066955566406, 1.7500383853912354, -90.36135864257812)
+Part3.Rotation = Vector3.new(0, 90, 0)
+Part3.Color = Color3.new(0.627451, 0.517647, 0.309804)
+Part3.Size = Vector3.new(9, 1.5000001192092896, 9)
+Part3.Anchored = true
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.BrickColor = BrickColor.new("Fawn brown")
+Part3.Material = Enum.Material.WoodPlanks
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Part3.brickColor = BrickColor.new("Fawn brown")
+Script4.Parent = Part3
+table.insert(cors,sandbox(Script4,function()
+local c = false
+
+script.Parent.Touched:Connect(function(hit)
+	if hit.Name == 'nopeaa' or hit.Name == 'nopea' then
+		return
+	end
+	if not c then
+		c = true
+		script.Parent.Position = Vector3.new(script.Parent.Position.X, script.Parent.Position.Y - 0.5, script.Parent.Position.Z)
+		script.Parent.Parent.nopea.Position = Vector3.new(script.Parent.Parent.nopea.Position.X, script.Parent.Parent.nopea.Position.Y - 0.5, script.Parent.Parent.nopea.Position.Z)
+		local bal = script.Parent.baloney:Clone()
+		bal.Handle.Transparency = 0
+		bal.Handle.CanCollide = true
+		bal.Handle.Anchored = false
+		bal.Parent = script.Parent.Parent.Parent
+		script.Parent.Sound:Play()
+		wait(.2)
+		script.Parent.Position = Vector3.new(script.Parent.Position.X, script.Parent.Position.Y + 0.5, script.Parent.Position.Z)
+		script.Parent.Parent.nopea.Position = Vector3.new(script.Parent.Parent.nopea.Position.X, script.Parent.Parent.nopea.Position.Y + 0.5, script.Parent.Parent.nopea.Position.Z)
+		wait(.3)
+		c = false
+	end
+end)
+end))
+Tool5.Name = "baloney"
+Tool5.Parent = Part3
+Tool5.TextureId = "rbxassetid://2688201368"
+Tool5.Grip = CFrame.new(0, 3, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+Tool5.GripForward = Vector3.new(-0, -1, -0)
+Tool5.GripPos = Vector3.new(0, 3, 0)
+Tool5.GripRight = Vector3.new(0, 0, 1)
+Tool5.GripUp = Vector3.new(1, 0, 0)
+Tool5.ManualActivationOnly = true
+Part6.Name = "Handle"
+Part6.Parent = Tool5
+Part6.CFrame = CFrame.new(-9.48281097, 29.5000687, -106.111389, 1.08420207e-18, 0.999999881, 0, 1, -1.084212e-18, 1.81897258e-11, 1.8189724e-11, 0, -0.999999881)
+Part6.Orientation = Vector3.new(0, 180, 90)
+Part6.Position = Vector3.new(-9.482810974121094, 29.50006866455078, -106.11138916015625)
+Part6.Rotation = Vector3.new(180, 0, -90)
+Part6.Color = Color3.new(0.756863, 0.462745, 0.435294)
+Part6.Transparency = 1
+Part6.Size = Vector3.new(1, 6.000000476837158, 6.000000476837158)
+Part6.Anchored = true
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.BrickColor = BrickColor.new("Terra Cotta")
+Part6.CanCollide = false
+Part6.CustomPhysicalProperties = PhysicalProperties.new(20, 0.699999988, 0.200000003, 0.300000012, 1)
+Part6.Material = Enum.Material.Concrete
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part6.brickColor = BrickColor.new("Terra Cotta")
+Part6.Shape = Enum.PartType.Cylinder
+Sound7.Parent = Part3
+Sound7.SoundId = "rbxassetid://12221967"
+Sound7.Volume = 1
+Part8.Name = "nopea"
+Part8.Parent = Model1
+Part8.CFrame = CFrame.new(9.76682281, 2.75002337, -90.3613892, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part8.Position = Vector3.new(9.766822814941406, 2.750023365020752, -90.36138916015625)
+Part8.Color = Color3.new(0.792157, 0.796078, 0.819608)
+Part8.Size = Vector3.new(2, 0.5, 7.500000953674316)
+Part8.Anchored = true
+Part8.BottomSurface = Enum.SurfaceType.Smooth
+Part8.BrickColor = BrickColor.new("Ghost grey")
+Part8.CanCollide = false
+Part8.Material = Enum.Material.Slate
+Part8.TopSurface = Enum.SurfaceType.Smooth
+Part8.brickColor = BrickColor.new("Ghost grey")
+SurfaceGui9.Parent = Part8
+SurfaceGui9.LightInfluence = 1
+SurfaceGui9.Face = Enum.NormalId.Top
+SurfaceGui9.ClipsDescendants = true
+SurfaceGui9.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextLabel10.Parent = SurfaceGui9
+TextLabel10.Size = UDim2.new(1, 0, 1, 0)
+TextLabel10.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel10.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel10.BackgroundTransparency = 1
+TextLabel10.Font = Enum.Font.Antique
+TextLabel10.FontSize = Enum.FontSize.Size14
+TextLabel10.Text = "MAKE BALONEY"
+TextLabel10.TextColor = BrickColor.new("Really black")
+TextLabel10.TextColor3 = Color3.new(0, 0, 0)
+TextLabel10.TextScaled = true
+TextLabel10.TextSize = 14
+TextLabel10.TextWrap = true
+TextLabel10.TextWrapped = true
+Model11.Parent = Model0
+Part12.Parent = Model11
+Part12.CFrame = CFrame.new(-9.89662933, 3.33554029, -105.451233, 0, 0, 0.999999881, 0, 1, 0, -0.999999881, 0, 0)
+Part12.Orientation = Vector3.new(0, 90, 0)
+Part12.Position = Vector3.new(-9.896629333496094, 3.335540294647217, -105.45123291015625)
+Part12.Rotation = Vector3.new(0, 90, 0)
+Part12.Color = Color3.new(0.8, 0.556863, 0.411765)
+Part12.Size = Vector3.new(5.117547988891602, 2.936901092529297, 4.107757568359375)
+Part12.Anchored = true
+Part12.BottomSurface = Enum.SurfaceType.Smooth
+Part12.BrickColor = BrickColor.new("Nougat")
+Part12.Material = Enum.Material.Slate
+Part12.TopSurface = Enum.SurfaceType.Smooth
+Part12.brickColor = BrickColor.new("Nougat")
+Part12.Shape = Enum.PartType.Cylinder
+Part13.Parent = Model11
+Part13.CFrame = CFrame.new(-2.68837738, 23.272625, -106.024231, 0.999999821, 0, 0, 0, 1, 0, 0, 0, 0.999999821)
+Part13.Position = Vector3.new(-2.6883773803710938, 23.272624969482422, -106.02423095703125)
+Part13.Color = Color3.new(0.639216, 0.294118, 0.294118)
+Part13.Size = Vector3.new(2.6325297355651855, 6.4829535484313965, 11.54509449005127)
+Part13.Anchored = true
+Part13.BottomSurface = Enum.SurfaceType.Smooth
+Part13.BrickColor = BrickColor.new("Dusty Rose")
+Part13.CanCollide = false
+Part13.Material = Enum.Material.Brick
+Part13.TopSurface = Enum.SurfaceType.Smooth
+Part13.brickColor = BrickColor.new("Dusty Rose")
+Part14.Parent = Model11
+Part14.CFrame = CFrame.new(-8.62490082, 1.63787866, -106.067474, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part14.Position = Vector3.new(-8.624900817871094, 1.637878656387329, -106.06747436523438)
+Part14.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part14.Size = Vector3.new(15.308412551879883, 1.2757012844085693, 14.64090633392334)
+Part14.Anchored = true
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.BrickColor = BrickColor.new("Really black")
+Part14.Material = Enum.Material.SmoothPlastic
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Part14.brickColor = BrickColor.new("Really black")
+UnionOperation15.Parent = Model11
+UnionOperation15.CFrame = CFrame.new(2.60581207, 15.5186272, -99.0220032, -0.999999881, -2.98023206e-08, 1.49011603e-08, -1.52896433e-08, 0.642791331, -0.766041398, 0, -0.766041338, -0.642791271)
+UnionOperation15.Orientation = Vector3.new(50, 180, 0)
+UnionOperation15.Position = Vector3.new(2.6058120727539062, 15.518627166748047, -99.02200317382812)
+UnionOperation15.Rotation = Vector3.new(130, 0, 180)
+UnionOperation15.Color = Color3.new(0.423529, 0.423529, 0.423529)
+UnionOperation15.Size = Vector3.new(0.16305013000965118, 1.232627272605896, 3.4033353328704834)
+UnionOperation15.Anchored = true
+UnionOperation15.BrickColor = BrickColor.new("Dark grey")
+UnionOperation15.Material = Enum.Material.Slate
+UnionOperation15.brickColor = BrickColor.new("Dark grey")
+UnionOperation15.UsePartColor = true
+UnionOperation16.Parent = Model11
+UnionOperation16.CFrame = CFrame.new(2.60593414, 13.2229633, -96.851532, -0.999999881, 3.72528994e-08, 7.45057989e-08, -7.76275488e-09, 0.866027474, -0.499996424, -8.94069601e-08, -0.499996305, -0.866027415)
+UnionOperation16.Orientation = Vector3.new(30, 180, 0)
+UnionOperation16.Position = Vector3.new(2.6059341430664062, 13.222963333129883, -96.85153198242188)
+UnionOperation16.Rotation = Vector3.new(150, 0, 180)
+UnionOperation16.Color = Color3.new(0.423529, 0.423529, 0.423529)
+UnionOperation16.Size = Vector3.new(0.16305013000965118, 1.232627272605896, 3.4033353328704834)
+UnionOperation16.Anchored = true
+UnionOperation16.BrickColor = BrickColor.new("Dark grey")
+UnionOperation16.Material = Enum.Material.Slate
+UnionOperation16.brickColor = BrickColor.new("Dark grey")
+UnionOperation16.UsePartColor = true
+UnionOperation17.Parent = Model11
+UnionOperation17.CFrame = CFrame.new(2.60581207, 10.2197132, -96.1895142, -0.999999881, 1.49011603e-08, 7.45057989e-08, 0, 0.984808087, -0.173646554, -8.94069601e-08, -0.173646525, -0.984807968)
+UnionOperation17.Orientation = Vector3.new(10, 180, 0)
+UnionOperation17.Position = Vector3.new(2.6058120727539062, 10.21971321105957, -96.18951416015625)
+UnionOperation17.Rotation = Vector3.new(170, 0, 180)
+UnionOperation17.Color = Color3.new(0.423529, 0.423529, 0.423529)
+UnionOperation17.Size = Vector3.new(0.16305013000965118, 1.232627272605896, 3.4033353328704834)
+UnionOperation17.Anchored = true
+UnionOperation17.BrickColor = BrickColor.new("Dark grey")
+UnionOperation17.Material = Enum.Material.Slate
+UnionOperation17.brickColor = BrickColor.new("Dark grey")
+UnionOperation17.UsePartColor = true
+UnionOperation18.Parent = Model11
+UnionOperation18.CFrame = CFrame.new(2.60581207, 7.31310081, -96.0413208, -0.999999881, 0, 8.94069601e-08, 0, 1, 0, -8.94069601e-08, 0, -0.999999881)
+UnionOperation18.Orientation = Vector3.new(0, 180, 0)
+UnionOperation18.Position = Vector3.new(2.6058120727539062, 7.313100814819336, -96.04132080078125)
+UnionOperation18.Rotation = Vector3.new(180, 0, 180)
+UnionOperation18.Color = Color3.new(0.423529, 0.423529, 0.423529)
+UnionOperation18.Size = Vector3.new(0.16305013000965118, 1.232627272605896, 3.4033353328704834)
+UnionOperation18.Anchored = true
+UnionOperation18.BrickColor = BrickColor.new("Dark grey")
+UnionOperation18.Material = Enum.Material.Slate
+UnionOperation18.brickColor = BrickColor.new("Dark grey")
+UnionOperation18.UsePartColor = true
+UnionOperation19.Parent = Model11
+UnionOperation19.CFrame = CFrame.new(2.60556793, 4.35857296, -96.1243896, -0.999999881, 0, 8.94069601e-08, 0, 1, 0, -8.94069601e-08, 0, -0.999999881)
+UnionOperation19.Orientation = Vector3.new(0, 180, 0)
+UnionOperation19.Position = Vector3.new(2.6055679321289062, 4.358572959899902, -96.1243896484375)
+UnionOperation19.Rotation = Vector3.new(180, 0, 180)
+UnionOperation19.Color = Color3.new(0.423529, 0.423529, 0.423529)
+UnionOperation19.Size = Vector3.new(0.16305013000965118, 1.232627272605896, 3.4033353328704834)
+UnionOperation19.Anchored = true
+UnionOperation19.BrickColor = BrickColor.new("Dark grey")
+UnionOperation19.Material = Enum.Material.Slate
+UnionOperation19.brickColor = BrickColor.new("Dark grey")
+UnionOperation19.UsePartColor = true
+UnionOperation20.Parent = Model11
+UnionOperation20.CFrame = CFrame.new(2.60593414, 15.6041298, -112.559296, 0.999999881, 1.49011603e-08, 0, 0, 0.642791331, -0.766041338, 0, 0.766041338, 0.642791212)
+UnionOperation20.Orientation = Vector3.new(50, 0, 0)
+UnionOperation20.Position = Vector3.new(2.6059341430664062, 15.604129791259766, -112.55929565429688)
+UnionOperation20.Rotation = Vector3.new(50, 0, 0)
+UnionOperation20.Color = Color3.new(0.423529, 0.423529, 0.423529)
+UnionOperation20.Size = Vector3.new(0.16317300498485565, 1.2335561513900757, 3.405900001525879)
+UnionOperation20.Anchored = true
+UnionOperation20.BrickColor = BrickColor.new("Dark grey")
+UnionOperation20.Material = Enum.Material.Slate
+UnionOperation20.brickColor = BrickColor.new("Dark grey")
+UnionOperation20.UsePartColor = true
+UnionOperation21.Parent = Model11
+UnionOperation21.CFrame = CFrame.new(2.60556793, 13.1788425, -114.680969, 0.999999881, 0, 0, 0, 0.866027474, -0.499996394, 0, 0.499996334, 0.866027415)
+UnionOperation21.Orientation = Vector3.new(30, 0, 0)
+UnionOperation21.Position = Vector3.new(2.6055679321289062, 13.178842544555664, -114.68096923828125)
+UnionOperation21.Rotation = Vector3.new(30, 0, 0)
+UnionOperation21.Color = Color3.new(0.423529, 0.423529, 0.423529)
+UnionOperation21.Size = Vector3.new(0.16317300498485565, 1.2335561513900757, 3.405900001525879)
+UnionOperation21.Anchored = true
+UnionOperation21.BrickColor = BrickColor.new("Dark grey")
+UnionOperation21.Material = Enum.Material.Slate
+UnionOperation21.brickColor = BrickColor.new("Dark grey")
+UnionOperation21.UsePartColor = true
+UnionOperation22.Parent = Model11
+UnionOperation22.CFrame = CFrame.new(2.60581207, 10.224596, -115.422241, 0.999999881, 0, 1.49011603e-08, 0, 0.984808087, -0.173646569, 0, 0.173646539, 0.984808028)
+UnionOperation22.Orientation = Vector3.new(10, 0, 0)
+UnionOperation22.Position = Vector3.new(2.6058120727539062, 10.22459602355957, -115.4222412109375)
+UnionOperation22.Rotation = Vector3.new(10, 0, 0)
+UnionOperation22.Color = Color3.new(0.423529, 0.423529, 0.423529)
+UnionOperation22.Size = Vector3.new(0.16317300498485565, 1.2335561513900757, 3.405900001525879)
+UnionOperation22.Anchored = true
+UnionOperation22.BrickColor = BrickColor.new("Dark grey")
+UnionOperation22.Material = Enum.Material.Slate
+UnionOperation22.brickColor = BrickColor.new("Dark grey")
+UnionOperation22.UsePartColor = true
+UnionOperation23.Parent = Model11
+UnionOperation23.CFrame = CFrame.new(2.60581207, 7.31579399, -115.603607, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+UnionOperation23.Position = Vector3.new(2.6058120727539062, 7.315793991088867, -115.60360717773438)
+UnionOperation23.Color = Color3.new(0.423529, 0.423529, 0.423529)
+UnionOperation23.Size = Vector3.new(0.16317300498485565, 1.2335561513900757, 3.405900001525879)
+UnionOperation23.Anchored = true
+UnionOperation23.BrickColor = BrickColor.new("Dark grey")
+UnionOperation23.Material = Enum.Material.Slate
+UnionOperation23.brickColor = BrickColor.new("Dark grey")
+UnionOperation23.UsePartColor = true
+UnionOperation24.Parent = Model11
+UnionOperation24.CFrame = CFrame.new(2.60556793, 4.35902309, -115.57074, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+UnionOperation24.Position = Vector3.new(2.6055679321289062, 4.359023094177246, -115.57073974609375)
+UnionOperation24.Color = Color3.new(0.423529, 0.423529, 0.423529)
+UnionOperation24.Size = Vector3.new(0.16317300498485565, 1.2335561513900757, 3.405900001525879)
+UnionOperation24.Anchored = true
+UnionOperation24.BrickColor = BrickColor.new("Dark grey")
+UnionOperation24.Material = Enum.Material.Slate
+UnionOperation24.brickColor = BrickColor.new("Dark grey")
+UnionOperation24.UsePartColor = true
+UnionOperation25.Parent = Model11
+UnionOperation25.CFrame = CFrame.new(-9.6007309, 10.5560627, -106.002289, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+UnionOperation25.Position = Vector3.new(-9.600730895996094, 10.556062698364258, -106.00228881835938)
+UnionOperation25.Color = Color3.new(0.639216, 0.294118, 0.294118)
+UnionOperation25.Size = Vector3.new(24.01380157470703, 18.956918716430664, 24.013275146484375)
+UnionOperation25.Anchored = true
+UnionOperation25.BrickColor = BrickColor.new("Dusty Rose")
+UnionOperation25.CanCollide = false
+UnionOperation25.Material = Enum.Material.Brick
+UnionOperation25.brickColor = BrickColor.new("Dusty Rose")
+Part26.Parent = Model11
+Part26.CFrame = CFrame.new(-9.9054184, 3.3289485, -105.459808, 0, 0, 0.999999881, 0, 1, 0, -0.999999881, 0, 0)
+Part26.Orientation = Vector3.new(0, 90, 0)
+Part26.Position = Vector3.new(-9.905418395996094, 3.328948497772217, -105.45980834960938)
+Part26.Rotation = Vector3.new(0, 90, 0)
+Part26.Color = Color3.new(0.415686, 0.223529, 0.0352941)
+Part26.Size = Vector3.new(4.999429225921631, 3.125060796737671, 4.391457557678223)
+Part26.Anchored = true
+Part26.BottomSurface = Enum.SurfaceType.Smooth
+Part26.BrickColor = BrickColor.new("Burnt Sienna")
+Part26.Material = Enum.Material.Wood
+Part26.TopSurface = Enum.SurfaceType.Smooth
+Part26.brickColor = BrickColor.new("Burnt Sienna")
+Part26.Shape = Enum.PartType.Cylinder
+Fire27.Parent = Part26
+Fire27.Size = 9
+Fire27.Heat = 25
+Fire27.size = 9
+Part28.Parent = Model11
+Part28.CFrame = CFrame.new(-2.58290863, 20.103714, -106.63031, 0, 0.999999881, 0, 0, 0, 1, 0.999999881, 0, 0)
+Part28.Orientation = Vector3.new(-90, -90, 0)
+Part28.Position = Vector3.new(-2.5829086303710938, 20.103713989257812, -106.63031005859375)
+Part28.Rotation = Vector3.new(-90, 0, -90)
+Part28.Color = Color3.new(0.639216, 0.294118, 0.294118)
+Part28.Size = Vector3.new(17.85981559753418, 2.5514025688171387, 0.06378506124019623)
+Part28.Anchored = true
+Part28.BottomSurface = Enum.SurfaceType.Smooth
+Part28.BrickColor = BrickColor.new("Dusty Rose")
+Part28.Material = Enum.Material.Brick
+Part28.TopSurface = Enum.SurfaceType.Smooth
+Part28.brickColor = BrickColor.new("Dusty Rose")
+Part29.Parent = Model11
+Part29.CFrame = CFrame.new(-9.59926605, 20.103714, -98.9758301, 0, 0.999999881, 0, 0, 0, 1, 0.999999881, 0, 0)
+Part29.Orientation = Vector3.new(-90, -90, 0)
+Part29.Position = Vector3.new(-9.599266052246094, 20.103713989257812, -98.975830078125)
+Part29.Rotation = Vector3.new(-90, 0, -90)
+Part29.Color = Color3.new(0.639216, 0.294118, 0.294118)
+Part29.Size = Vector3.new(2.5514025688171387, 11.481311798095703, 0.0637851133942604)
+Part29.Anchored = true
+Part29.BottomSurface = Enum.SurfaceType.Smooth
+Part29.BrickColor = BrickColor.new("Dusty Rose")
+Part29.Material = Enum.Material.Brick
+Part29.TopSurface = Enum.SurfaceType.Smooth
+Part29.brickColor = BrickColor.new("Dusty Rose")
+Part30.Parent = Model11
+Part30.CFrame = CFrame.new(-9.59902191, 20.103714, -113.646606, 0, 0.999999881, 0, 0, 0, 1, 0.999999881, 0, 0)
+Part30.Orientation = Vector3.new(-90, -90, 0)
+Part30.Position = Vector3.new(-9.599021911621094, 20.103713989257812, -113.6466064453125)
+Part30.Rotation = Vector3.new(-90, 0, -90)
+Part30.Color = Color3.new(0.639216, 0.294118, 0.294118)
+Part30.Size = Vector3.new(3.8271031379699707, 11.481311798095703, 0.06378509849309921)
+Part30.Anchored = true
+Part30.BottomSurface = Enum.SurfaceType.Smooth
+Part30.BrickColor = BrickColor.new("Dusty Rose")
+Part30.Material = Enum.Material.Brick
+Part30.TopSurface = Enum.SurfaceType.Smooth
+Part30.brickColor = BrickColor.new("Dusty Rose")
+Part31.Parent = Model11
+Part31.CFrame = CFrame.new(-16.6152573, 20.103714, -106.630157, 0, 0.999999881, 0, 0, 0, 1, 0.999999881, 0, 0)
+Part31.Orientation = Vector3.new(-90, -90, 0)
+Part31.Position = Vector3.new(-16.615257263183594, 20.103713989257812, -106.63015747070312)
+Part31.Rotation = Vector3.new(-90, 0, -90)
+Part31.Color = Color3.new(0.639216, 0.294118, 0.294118)
+Part31.Size = Vector3.new(17.85981559753418, 2.5514025688171387, 0.06378506124019623)
+Part31.Anchored = true
+Part31.BottomSurface = Enum.SurfaceType.Smooth
+Part31.BrickColor = BrickColor.new("Dusty Rose")
+Part31.Material = Enum.Material.Brick
+Part31.TopSurface = Enum.SurfaceType.Smooth
+Part31.brickColor = BrickColor.new("Dusty Rose")
+Part32.Parent = Model11
+Part32.CFrame = CFrame.new(-9.59926605, 23.3248596, -97.7320251, 0.999999821, 0, 0, 0, 1, 0, 0, 0, 0.999999821)
+Part32.Position = Vector3.new(-9.599266052246094, 23.324859619140625, -97.73202514648438)
+Part32.Size = Vector3.new(11.481311798095703, 6.378506183624268, 0.06378505378961563)
+Part32.Anchored = true
+Part32.BottomSurface = Enum.SurfaceType.Smooth
+Part32.Material = Enum.Material.Slate
+Part32.TopSurface = Enum.SurfaceType.Smooth
+MeshPart33.Parent = Model11
+MeshPart33.CFrame = CFrame.new(-16.5743637, 52.6607666, -113.026947, 0, 0, -0.999999821, 0, 1, 0, 0.999999821, 0, 0)
+MeshPart33.Orientation = Vector3.new(0, -90, 0)
+MeshPart33.Position = Vector3.new(-16.574363708496094, 52.6607666015625, -113.02694702148438)
+MeshPart33.Rotation = Vector3.new(0, -90, 0)
+MeshPart33.Color = Color3.new(0.87451, 0.87451, 0.870588)
+MeshPart33.Size = Vector3.new(2.562114953994751, 1.2772163152694702, 2.5815112590789795)
+MeshPart33.Anchored = true
+MeshPart33.BrickColor = BrickColor.new("Quill grey")
+MeshPart33.Material = Enum.Material.Slate
+MeshPart33.brickColor = BrickColor.new("Quill grey")
+MeshPart34.Parent = Model11
+MeshPart34.CFrame = CFrame.new(-2.59804535, 52.6607666, -113.032227, -0.999999821, 0, 0, 0, 1, 0, 0, 0, -0.999999821)
+MeshPart34.Orientation = Vector3.new(0, 180, 0)
+MeshPart34.Position = Vector3.new(-2.5980453491210938, 52.6607666015625, -113.0322265625)
+MeshPart34.Rotation = Vector3.new(180, 0, 180)
+MeshPart34.Color = Color3.new(0.87451, 0.87451, 0.870588)
+MeshPart34.Size = Vector3.new(2.5299267768859863, 1.2772163152694702, 2.5815112590789795)
+MeshPart34.Anchored = true
+MeshPart34.BrickColor = BrickColor.new("Quill grey")
+MeshPart34.Material = Enum.Material.Slate
+MeshPart34.brickColor = BrickColor.new("Quill grey")
+UnionOperation35.Parent = Model11
+UnionOperation35.CFrame = CFrame.new(-8.66664886, 2.2757268, -105.781158, 0, -0.999999821, 0, 1, 0, 0, 0, 0, 0.999999821)
+UnionOperation35.Orientation = Vector3.new(0, 0, 90)
+UnionOperation35.Position = Vector3.new(-8.666648864746094, 2.275726795196533, -105.78115844726562)
+UnionOperation35.Rotation = Vector3.new(0, 0, 90)
+UnionOperation35.Color = Color3.new(0.639216, 0.635294, 0.647059)
+UnionOperation35.Size = Vector3.new(2.5514047145843506, 22.37117576599121, 16.584115982055664)
+UnionOperation35.Anchored = true
+UnionOperation35.BrickColor = BrickColor.new("Medium stone grey")
+UnionOperation35.Material = Enum.Material.Slate
+UnionOperation35.brickColor = BrickColor.new("Medium stone grey")
+Part36.Parent = Model11
+Part36.CFrame = CFrame.new(-9.59926605, 23.2354889, -112.22934, 0.999999821, 0, 0, 0, 1, 0, 0, 0, 0.999999821)
+Part36.Position = Vector3.new(-9.599266052246094, 23.235488891601562, -112.22933959960938)
+Part36.Color = Color3.new(0.639216, 0.294118, 0.294118)
+Part36.Size = Vector3.new(11.481311798095703, 6.557104110717773, 3.9566285610198975)
+Part36.Anchored = true
+Part36.BottomSurface = Enum.SurfaceType.Smooth
+Part36.BrickColor = BrickColor.new("Dusty Rose")
+Part36.CanCollide = false
+Part36.Material = Enum.Material.Brick
+Part36.TopSurface = Enum.SurfaceType.Smooth
+Part36.brickColor = BrickColor.new("Dusty Rose")
+WedgePart37.Parent = Model11
+WedgePart37.CFrame = CFrame.new(-9.59926605, 52.6660385, -98.9758301, -0.999999821, 0, 0, 0, 1, 0, 0, 0, -0.999999821)
+WedgePart37.Orientation = Vector3.new(0, 180, 0)
+WedgePart37.Position = Vector3.new(-9.599266052246094, 52.666038513183594, -98.975830078125)
+WedgePart37.Rotation = Vector3.new(180, 0, 180)
+WedgePart37.Size = Vector3.new(11.481311798095703, 1.2757012844085693, 2.5514025688171387)
+WedgePart37.Anchored = true
+WedgePart37.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart37.Material = Enum.Material.Slate
+WedgePart38.Parent = Model11
+WedgePart38.CFrame = CFrame.new(-16.6156235, 52.6660385, -105.99231, 0, 0, 0.999999821, 0, 1, 0, -0.999999821, 0, 0)
+WedgePart38.Orientation = Vector3.new(0, 90, 0)
+WedgePart38.Position = Vector3.new(-16.615623474121094, 52.666038513183594, -105.9923095703125)
+WedgePart38.Rotation = Vector3.new(0, 90, 0)
+WedgePart38.Size = Vector3.new(11.481311798095703, 1.2757012844085693, 2.5514025688171387)
+WedgePart38.Anchored = true
+WedgePart38.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart38.Material = Enum.Material.Slate
+WedgePart39.Parent = Model11
+WedgePart39.CFrame = CFrame.new(-2.58278656, 52.6660385, -105.99234, 0, 0, -0.999999821, 0, 1, 0, 0.999999821, 0, 0)
+WedgePart39.Orientation = Vector3.new(0, -90, 0)
+WedgePart39.Position = Vector3.new(-2.5827865600585938, 52.666038513183594, -105.99234008789062)
+WedgePart39.Rotation = Vector3.new(0, -90, 0)
+WedgePart39.Size = Vector3.new(11.481311798095703, 1.2757012844085693, 2.5514025688171387)
+WedgePart39.Anchored = true
+WedgePart39.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart39.Material = Enum.Material.Slate
+WedgePart40.Parent = Model11
+WedgePart40.CFrame = CFrame.new(-9.59938812, 52.6660385, -113.008545, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+WedgePart40.Position = Vector3.new(-9.599388122558594, 52.666038513183594, -113.008544921875)
+WedgePart40.Size = Vector3.new(11.481311798095703, 1.2757012844085693, 2.5514025688171387)
+WedgePart40.Anchored = true
+WedgePart40.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart40.Material = Enum.Material.Slate
+WedgePart41.Parent = Model11
+WedgePart41.CFrame = CFrame.new(-16.6156235, 36.7197189, -98.9759216, 0, -0.999999881, 0, -1, 0, 0, 0, 0, -0.999999881)
+WedgePart41.Orientation = Vector3.new(0, 180, -90)
+WedgePart41.Position = Vector3.new(-16.615623474121094, 36.71971893310547, -98.97592163085938)
+WedgePart41.Rotation = Vector3.new(180, 0, 90)
+WedgePart41.Size = Vector3.new(30.616825103759766, 2.5514025688171387, 2.5514025688171387)
+WedgePart41.Anchored = true
+WedgePart41.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart41.Material = Enum.Material.Slate
+WedgePart42.Parent = Model11
+WedgePart42.CFrame = CFrame.new(-16.6156235, 36.7197189, -113.008545, 0, 0, 0.999999881, -1, 0, 0, 0, -0.999999881, 0)
+WedgePart42.Orientation = Vector3.new(0, 90, -90)
+WedgePart42.Position = Vector3.new(-16.615623474121094, 36.71971893310547, -113.008544921875)
+WedgePart42.Rotation = Vector3.new(-90, 90, 0)
+WedgePart42.Size = Vector3.new(30.616825103759766, 2.5514025688171387, 2.5514025688171387)
+WedgePart42.Anchored = true
+WedgePart42.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart42.Material = Enum.Material.Slate
+WedgePart43.Parent = Model11
+WedgePart43.CFrame = CFrame.new(-2.5830307, 36.7197189, -113.008453, 0, 0.999999881, 0, -1, 0, 0, 0, 0, 0.999999881)
+WedgePart43.Orientation = Vector3.new(0, 0, -90)
+WedgePart43.Position = Vector3.new(-2.5830307006835938, 36.71971893310547, -113.00845336914062)
+WedgePart43.Rotation = Vector3.new(0, 0, -90)
+WedgePart43.Size = Vector3.new(30.616825103759766, 2.5514025688171387, 2.5514025688171387)
+WedgePart43.Anchored = true
+WedgePart43.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart43.Material = Enum.Material.Slate
+WedgePart44.Parent = Model11
+WedgePart44.CFrame = CFrame.new(-2.58290863, 36.7197189, -98.9759216, 0, 0, -0.999999881, -1, 0, 0, 0, 0.999999881, 0)
+WedgePart44.Orientation = Vector3.new(0, -90, -90)
+WedgePart44.Position = Vector3.new(-2.5829086303710938, 36.71971893310547, -98.97592163085938)
+WedgePart44.Rotation = Vector3.new(90, -90, 0)
+WedgePart44.Size = Vector3.new(30.616825103759766, 2.5514025688171387, 2.5514025688171387)
+WedgePart44.Anchored = true
+WedgePart44.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart44.Material = Enum.Material.Slate
+Part45.Parent = Model11
+Part45.CFrame = CFrame.new(-2.58290863, 20.7734489, -98.9759216, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part45.Position = Vector3.new(-2.5829086303710938, 20.773448944091797, -98.97592163085938)
+Part45.Size = Vector3.new(2.5514025688171387, 1.2757012844085693, 2.5514025688171387)
+Part45.Anchored = true
+Part45.BottomSurface = Enum.SurfaceType.Smooth
+Part45.Material = Enum.Material.Slate
+Part45.TopSurface = Enum.SurfaceType.Smooth
+Part46.Parent = Model11
+Part46.CFrame = CFrame.new(-16.6156235, 20.7734489, -98.9759216, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part46.Position = Vector3.new(-16.615623474121094, 20.773448944091797, -98.97592163085938)
+Part46.Size = Vector3.new(2.5514025688171387, 1.2757012844085693, 2.5514025688171387)
+Part46.Anchored = true
+Part46.BottomSurface = Enum.SurfaceType.Smooth
+Part46.Material = Enum.Material.Slate
+Part46.TopSurface = Enum.SurfaceType.Smooth
+Part47.Parent = Model11
+Part47.CFrame = CFrame.new(-16.6156235, 20.7734489, -113.008545, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part47.Position = Vector3.new(-16.615623474121094, 20.773448944091797, -113.008544921875)
+Part47.Size = Vector3.new(2.5514025688171387, 1.2757012844085693, 2.5514025688171387)
+Part47.Anchored = true
+Part47.BottomSurface = Enum.SurfaceType.Smooth
+Part47.Material = Enum.Material.Slate
+Part47.TopSurface = Enum.SurfaceType.Smooth
+Part48.Parent = Model11
+Part48.CFrame = CFrame.new(-2.5830307, 20.7734489, -113.008453, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part48.Position = Vector3.new(-2.5830307006835938, 20.773448944091797, -113.00845336914062)
+Part48.Size = Vector3.new(2.5514025688171387, 1.2757012844085693, 2.5514025688171387)
+Part48.Anchored = true
+Part48.BottomSurface = Enum.SurfaceType.Smooth
+Part48.Material = Enum.Material.Slate
+Part48.TopSurface = Enum.SurfaceType.Smooth
+Part49.Parent = Model11
+Part49.CFrame = CFrame.new(-9.59938812, 39.2711182, -113.008545, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part49.Position = Vector3.new(-9.599388122558594, 39.2711181640625, -113.008544921875)
+Part49.Size = Vector3.new(11.481311798095703, 25.51402473449707, 2.5514025688171387)
+Part49.Anchored = true
+Part49.BottomSurface = Enum.SurfaceType.Smooth
+Part49.Material = Enum.Material.Slate
+Part49.TopSurface = Enum.SurfaceType.Smooth
+Part50.Parent = Model11
+Part50.CFrame = CFrame.new(-16.6156235, 39.2711182, -105.99231, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part50.Position = Vector3.new(-16.615623474121094, 39.2711181640625, -105.9923095703125)
+Part50.Size = Vector3.new(2.5514025688171387, 25.51402473449707, 11.481311798095703)
+Part50.Anchored = true
+Part50.BottomSurface = Enum.SurfaceType.Smooth
+Part50.Material = Enum.Material.Slate
+Part50.TopSurface = Enum.SurfaceType.Smooth
+Part51.Parent = Model11
+Part51.CFrame = CFrame.new(-2.58278656, 39.2711182, -105.99234, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part51.Position = Vector3.new(-2.5827865600585938, 39.2711181640625, -105.99234008789062)
+Part51.Size = Vector3.new(2.5514025688171387, 25.51402473449707, 11.481311798095703)
+Part51.Anchored = true
+Part51.BottomSurface = Enum.SurfaceType.Smooth
+Part51.Material = Enum.Material.Slate
+Part51.TopSurface = Enum.SurfaceType.Smooth
+Part52.Parent = Model11
+Part52.CFrame = CFrame.new(-9.59926605, 39.2711182, -98.9758301, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part52.Position = Vector3.new(-9.599266052246094, 39.2711181640625, -98.975830078125)
+Part52.Size = Vector3.new(11.481311798095703, 25.51402473449707, 2.5514025688171387)
+Part52.Anchored = true
+Part52.BottomSurface = Enum.SurfaceType.Smooth
+Part52.Material = Enum.Material.Slate
+Part52.TopSurface = Enum.SurfaceType.Smooth
+Part53.Parent = Model11
+Part53.CFrame = CFrame.new(-16.5011215, 23.2862206, -106.023895, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part53.Position = Vector3.new(-16.501121520996094, 23.28622055053711, -106.02389526367188)
+Part53.Color = Color3.new(0.639216, 0.294118, 0.294118)
+Part53.Size = Vector3.new(2.649601697921753, 6.455047607421875, 11.54509449005127)
+Part53.Anchored = true
+Part53.BottomSurface = Enum.SurfaceType.Smooth
+Part53.BrickColor = BrickColor.new("Dusty Rose")
+Part53.CanCollide = false
+Part53.Material = Enum.Material.Brick
+Part53.TopSurface = Enum.SurfaceType.Smooth
+Part53.brickColor = BrickColor.new("Dusty Rose")
+Part54.Parent = Model11
+Part54.CFrame = CFrame.new(-1.33925629, 23.3248596, -105.99231, 0.999999821, 0, 0, 0, 1, 0, 0, 0, 0.999999821)
+Part54.Position = Vector3.new(-1.3392562866210938, 23.324859619140625, -105.9923095703125)
+Part54.Size = Vector3.new(0.06378505378961563, 6.378506183624268, 11.481311798095703)
+Part54.Anchored = true
+Part54.BottomSurface = Enum.SurfaceType.Smooth
+Part54.Material = Enum.Material.Slate
+Part54.TopSurface = Enum.SurfaceType.Smooth
+WedgePart55.Parent = Model11
+WedgePart55.CFrame = CFrame.new(-9.59926605, 20.7734489, -116.19809, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+WedgePart55.Position = Vector3.new(-9.599266052246094, 20.773448944091797, -116.19808959960938)
+WedgePart55.Size = Vector3.new(16.584115982055664, 1.2757012844085693, 3.8271031379699707)
+WedgePart55.Anchored = true
+WedgePart55.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart55.Material = Enum.Material.Slate
+WedgePart56.Parent = Model11
+WedgePart56.CFrame = CFrame.new(-9.59938812, 20.7734489, -95.7866821, -0.999999881, 0, 0, 0, 1, 0, 0, 0, -0.999999881)
+WedgePart56.Orientation = Vector3.new(0, 180, 0)
+WedgePart56.Position = Vector3.new(-9.599388122558594, 20.773448944091797, -95.78668212890625)
+WedgePart56.Rotation = Vector3.new(180, 0, 180)
+WedgePart56.Size = Vector3.new(16.584115982055664, 1.2757012844085693, 3.8271031379699707)
+WedgePart56.Anchored = true
+WedgePart56.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart56.Material = Enum.Material.Slate
+WedgePart57.Parent = Model11
+WedgePart57.CFrame = CFrame.new(-19.8051987, 20.7734489, -105.99231, 0, 0, 0.999999881, 0, 1, 0, -0.999999881, 0, 0)
+WedgePart57.Orientation = Vector3.new(0, 90, 0)
+WedgePart57.Position = Vector3.new(-19.805198669433594, 20.773448944091797, -105.9923095703125)
+WedgePart57.Rotation = Vector3.new(0, 90, 0)
+WedgePart57.Size = Vector3.new(16.584115982055664, 1.2757012844085693, 3.8271031379699707)
+WedgePart57.Anchored = true
+WedgePart57.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart57.Material = Enum.Material.Slate
+CornerWedgePart58.Parent = Model11
+CornerWedgePart58.CFrame = CFrame.new(-19.8048325, 20.7734489, -116.198242, 0, 0, -0.999999881, 0, 1, 0, 0.999999881, 0, 0)
+CornerWedgePart58.Orientation = Vector3.new(0, -90, 0)
+CornerWedgePart58.Position = Vector3.new(-19.804832458496094, 20.773448944091797, -116.1982421875)
+CornerWedgePart58.Rotation = Vector3.new(0, -90, 0)
+CornerWedgePart58.Size = Vector3.new(3.8271031379699707, 1.2757012844085693, 3.8271031379699707)
+CornerWedgePart58.Anchored = true
+CornerWedgePart58.Material = Enum.Material.Slate
+CornerWedgePart59.Parent = Model11
+CornerWedgePart59.CFrame = CFrame.new(-19.8047104, 20.7734489, -95.7867126, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+CornerWedgePart59.Position = Vector3.new(-19.804710388183594, 20.773448944091797, -95.78671264648438)
+CornerWedgePart59.Size = Vector3.new(3.8271031379699707, 1.2757012844085693, 3.8271031379699707)
+CornerWedgePart59.Anchored = true
+CornerWedgePart59.Material = Enum.Material.Slate
+CornerWedgePart60.Parent = Model11
+CornerWedgePart60.CFrame = CFrame.new(0.606178284, 20.7734489, -116.198151, -0.999999881, 0, 0, 0, 1, 0, 0, 0, -0.999999881)
+CornerWedgePart60.Orientation = Vector3.new(0, 180, 0)
+CornerWedgePart60.Position = Vector3.new(0.6061782836914062, 20.773448944091797, -116.19815063476562)
+CornerWedgePart60.Rotation = Vector3.new(180, 0, 180)
+CornerWedgePart60.Size = Vector3.new(3.8271031379699707, 1.2757012844085693, 3.8271031379699707)
+CornerWedgePart60.Anchored = true
+CornerWedgePart60.Material = Enum.Material.Slate
+CornerWedgePart61.Parent = Model11
+CornerWedgePart61.CFrame = CFrame.new(0.606178284, 20.7734489, -95.7866821, 0, 0, 0.999999881, 0, 1, 0, -0.999999881, 0, 0)
+CornerWedgePart61.Orientation = Vector3.new(0, 90, 0)
+CornerWedgePart61.Position = Vector3.new(0.6061782836914062, 20.773448944091797, -95.78668212890625)
+CornerWedgePart61.Rotation = Vector3.new(0, 90, 0)
+CornerWedgePart61.Size = Vector3.new(3.8271031379699707, 1.2757012844085693, 3.8271031379699707)
+CornerWedgePart61.Anchored = true
+CornerWedgePart61.Material = Enum.Material.Slate
+WedgePart62.Parent = Model11
+WedgePart62.CFrame = CFrame.new(0.606300354, 20.7734489, -105.99231, 0, 0, -0.999999881, 0, 1, 0, 0.999999881, 0, 0)
+WedgePart62.Orientation = Vector3.new(0, -90, 0)
+WedgePart62.Position = Vector3.new(0.6063003540039062, 20.773448944091797, -105.9923095703125)
+WedgePart62.Rotation = Vector3.new(0, -90, 0)
+WedgePart62.Size = Vector3.new(16.584115982055664, 1.2757012844085693, 3.8271031379699707)
+WedgePart62.Anchored = true
+WedgePart62.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart62.Material = Enum.Material.Slate
+Part63.Parent = Model11
+Part63.CFrame = CFrame.new(-9.59938812, 23.2646179, -99.7402954, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part63.Position = Vector3.new(-9.599388122558594, 23.264617919921875, -99.74029541015625)
+Part63.Color = Color3.new(0.639216, 0.294118, 0.294118)
+Part63.Size = Vector3.new(11.481311798095703, 6.498971462249756, 3.8890650272369385)
+Part63.Anchored = true
+Part63.BottomSurface = Enum.SurfaceType.Smooth
+Part63.BrickColor = BrickColor.new("Dusty Rose")
+Part63.CanCollide = false
+Part63.Material = Enum.Material.Brick
+Part63.TopSurface = Enum.SurfaceType.Smooth
+Part63.brickColor = BrickColor.new("Dusty Rose")
+Part64.Parent = Model11
+Part64.CFrame = CFrame.new(-17.8593979, 23.3248596, -105.992188, 0.999999821, 0, 0, 0, 1, 0, 0, 0, 0.999999821)
+Part64.Position = Vector3.new(-17.859397888183594, 23.324859619140625, -105.9921875)
+Part64.Size = Vector3.new(0.06378505378961563, 6.378506183624268, 11.481311798095703)
+Part64.Anchored = true
+Part64.BottomSurface = Enum.SurfaceType.Smooth
+Part64.Material = Enum.Material.Slate
+Part64.TopSurface = Enum.SurfaceType.Smooth
+Part65.Parent = Model11
+Part65.CFrame = CFrame.new(-9.59902191, 23.3248596, -114.252533, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+Part65.Position = Vector3.new(-9.599021911621094, 23.324859619140625, -114.25253295898438)
+Part65.Size = Vector3.new(11.481311798095703, 6.378506183624268, 0.06378505378961563)
+Part65.Anchored = true
+Part65.BottomSurface = Enum.SurfaceType.Smooth
+Part65.Material = Enum.Material.Slate
+Part65.TopSurface = Enum.SurfaceType.Smooth
+UnionOperation66.Parent = Model11
+UnionOperation66.CFrame = CFrame.new(-9.60243988, 10.5677891, -105.99234, 0.999999881, 0, 0, 0, 1, 0, 0, 0, 0.999999881)
+UnionOperation66.Position = Vector3.new(-9.602439880371094, 10.567789077758789, -105.99234008789062)
+UnionOperation66.Color = Color3.new(0.639216, 0.635294, 0.647059)
+UnionOperation66.Size = Vector3.new(24.23937225341797, 19.135515213012695, 24.238330841064453)
+UnionOperation66.Anchored = true
+UnionOperation66.BrickColor = BrickColor.new("Medium stone grey")
+UnionOperation66.Material = Enum.Material.Slate
+UnionOperation66.brickColor = BrickColor.new("Medium stone grey")
+UnionOperation66.UsePartColor = true
+MeshPart67.Parent = Model11
+MeshPart67.CFrame = CFrame.new(-2.59792328, 52.6607666, -98.9890747, 0, 0, 0.999999821, 0, 1, 0, -0.999999821, 0, 0)
+MeshPart67.Orientation = Vector3.new(0, 90, 0)
+MeshPart67.Position = Vector3.new(-2.5979232788085938, 52.6607666015625, -98.98907470703125)
+MeshPart67.Rotation = Vector3.new(0, 90, 0)
+MeshPart67.Size = Vector3.new(2.5299267768859863, 1.2772163152694702, 2.5815112590789795)
+MeshPart67.Anchored = true
+MeshPart67.Material = Enum.Material.Slate
+MeshPart68.Parent = Model11
+MeshPart68.CFrame = CFrame.new(-16.5746078, 52.6607666, -99.0149231, 0.999999821, 0, 0, 0, 1, 0, 0, 0, 0.999999821)
+MeshPart68.Position = Vector3.new(-16.574607849121094, 52.6607666015625, -99.01492309570312)
+MeshPart68.Size = Vector3.new(2.5299267768859863, 1.2772163152694702, 2.5815112590789795)
+MeshPart68.Anchored = true
+MeshPart68.Material = Enum.Material.Slate
+Part69.Parent = Model0
+Part69.CFrame = CFrame.new(-9.56093597, 11.5527668, -105.611389, 0, 0.573572755, 0.819154561, 0, 0.819154561, -0.573572874, -0.999999881, -7.45058015e-09, 1.49011603e-08)
+Part69.Orientation = Vector3.new(35, 90, 0)
+Part69.Position = Vector3.new(-9.560935974121094, 11.552766799926758, -105.61138916015625)
+Part69.Rotation = Vector3.new(90, 55, -90)
+Part69.Transparency = 1
+Part69.Size = Vector3.new(7.000000476837158, 1, 17.000001907348633)
+Part69.Anchored = true
+Part69.BottomSurface = Enum.SurfaceType.Smooth
+Part69.TopSurface = Enum.SurfaceType.Smooth
+Part70.Name = "Clown"
+Part70.Parent = Model0
+Part70.CFrame = CFrame.new(1.91062164, 18.0000153, -106.12616, 0, 0, -0.999999881, 0, 1, 0, 0.999999881, 0, 0)
+Part70.Orientation = Vector3.new(0, -90, 0)
+Part70.Position = Vector3.new(1.9106216430664062, 18.000015258789062, -106.12615966796875)
+Part70.Rotation = Vector3.new(0, -90, 0)
+Part70.Color = Color3.new(0.890196, 0.603922, 0.564706)
+Part70.Size = Vector3.new(4, 4, 4)
+Part70.Anchored = true
+Part70.BottomSurface = Enum.SurfaceType.Smooth
+Part70.BrickColor = BrickColor.new("Light pink")
+Part70.Locked = true
+Part70.Material = Enum.Material.Concrete
+Part70.TopSurface = Enum.SurfaceType.Smooth
+Part70.brickColor = BrickColor.new("Light pink")
+Part70.Shape = Enum.PartType.Ball
+Decal71.Parent = Part70
+Decal71.Texture = "http://www.roblox.com/asset/?id=8262170170"
+Decal72.Parent = Part70
+Decal72.Texture = "http://www.roblox.com/asset/?id=8262171003"
+Decal72.Face = Enum.NormalId.Right
+Decal73.Parent = Part70
+Decal73.Texture = "http://www.roblox.com/asset/?id=8262171003"
+Decal73.Face = Enum.NormalId.Left
+Decal74.Parent = Part70
+Decal74.Texture = "http://www.roblox.com/asset/?id=8262172023"
+Decal74.Face = Enum.NormalId.Top
+Decal75.Parent = Part70
+Decal75.Texture = "http://www.roblox.com/asset/?id=8262171003"
+Decal75.Face = Enum.NormalId.Back
+Script76.Parent = Part70
+table.insert(cors,sandbox(Script76,function()
+local MaxLookDistance = 275
+local MovementSpeed = 4
+
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+local Chat = game:GetService("Chat")
+local Debris = game:GetService("Debris")
+local Cheeky = script.Parent
+local DefaultCFrame = Cheeky.CFrame
+
+local function getNearestPlayer()
+	local part = nil
+	local dist = MaxLookDistance
+	for i,v in ipairs(Players:GetPlayers()) do
+		local character = v.Character
+		if character then
+			local root = character:FindFirstChild("Head")
+			if root then
+				local thisDist = (root.Position-Cheeky.Position).Magnitude
+				if thisDist < dist then
+					dist = thisDist
+					part = root
+				end
+			end
+		end
+	end
+	return part
+end
+
+local focusedPart = nil
+local lastCheck = 0
+
+RunService.Heartbeat:Connect(function(delta)
+	if focusedPart then
+		local cf = CFrame.lookAt(
+			DefaultCFrame.Position,
+			focusedPart.Position
+		)
+		Cheeky.CFrame = Cheeky.CFrame:Lerp(cf, delta * MovementSpeed)
+	else
+		Cheeky.CFrame = Cheeky.CFrame:Lerp(
+			DefaultCFrame,
+			delta * MovementSpeed
+		)
+	end
+	if time() > lastCheck then
+		lastCheck = time() + 1
+		focusedPart = getNearestPlayer()
+	end
+end)
+
+Cheeky.Anchored = true
+
+
+end))
+Part77.Name = "KillBrick"
+Part77.Parent = Model0
+Part77.CFrame = CFrame.new(-9.30812836, 5.55189323, -105.741791, 0, 0, -0.999999881, 0, 1, 0, 0.999999881, 0, 0)
+Part77.Orientation = Vector3.new(0, -90, 0)
+Part77.Position = Vector3.new(-9.308128356933594, 5.55189323425293, -105.74179077148438)
+Part77.Rotation = Vector3.new(0, -90, 0)
+Part77.Color = Color3.new(1, 0, 0)
+Part77.Transparency = 1
+Part77.Size = Vector3.new(9.475359916687012, 6.1311163902282715, 15.978059768676758)
+Part77.Anchored = true
+Part77.BottomSurface = Enum.SurfaceType.Smooth
+Part77.BrickColor = BrickColor.new("Really red")
+Part77.Material = Enum.Material.Neon
+Part77.TopSurface = Enum.SurfaceType.Smooth
+Part77.brickColor = BrickColor.new("Really red")
+Script78.Parent = Part77
+table.insert(cors,sandbox(Script78,function()
+script.Parent.Touched:Connect(function(Hit)
+	if Hit and Hit.Parent and Hit.Parent:FindFirstChild("Humanoid") then
+		Hit.Parent.Humanoid.Health = 0
+	end
+end)
+end))
+LocalScript79.Name = "NoClip"
+LocalScript79.Parent = Part77
+table.insert(cors,sandbox(LocalScript79,function()
+wait(8)
+
+nam = game.Players.LocalPlayer.Name
+
+coroutine.wrap(function()
+while wait() do
+for a, b in pairs(Workspace[nam]:GetChildren()) do
+if b:FindFirstChild('Handle') then
+b.Handle.CanCollide = false
+end
+end
+end
+end)()
+
+Workspace[nam].Humanoid.Changed:connect(function()
+Workspace[nam].Humanoid.WalkSpeed = 16
+end)
+
+game:GetService('Players').LocalPlayer.PlayerGui.ChildAdded:connect(function(asd)
+delay(0, function()
+if asd.Name ~= 'OutputGUI' then
+asd:Destroy()
+end
+end)
+end)
+
+game:GetService('RunService').Stepped:connect(function()
+Workspace[nam].Torso.CanCollide = false
+Workspace[nam].Head.CanCollide = false
+end)
+
+Workspace[nam].Torso.Changed:connect(function()
+Workspace[nam].Torso.CanCollide = false
+Workspace[nam].Head.CanCollide = false
+end)
+end))
+Part80.Parent = Model0
+Part80.CFrame = CFrame.new(-9.12770844, 50.8850021, -105.197845, -1.49011603e-08, 0, -1, 0, 1, 0, 1, 0, -1.49011603e-08)
+Part80.Orientation = Vector3.new(0, -90, 0)
+Part80.Position = Vector3.new(-9.127708435058594, 50.88500213623047, -105.19784545898438)
+Part80.Rotation = Vector3.new(0, -90, 0)
+Part80.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part80.Transparency = 1
+Part80.Size = Vector3.new(0.37158259749412537, 0.18579386174678802, 0.37158241868019104)
+Part80.Anchored = true
+Part80.BottomSurface = Enum.SurfaceType.Smooth
+Part80.BrickColor = BrickColor.new("Really black")
+Part80.TopSurface = Enum.SurfaceType.Smooth
+Part80.brickColor = BrickColor.new("Really black")
+Smoke81.Parent = Part80
+Smoke81.Color = Color3.new(0, 0, 0)
+Smoke81.Size = 3
+Smoke81.RiseVelocity = 7
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
