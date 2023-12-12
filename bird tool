@@ -1,0 +1,108 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Script3 = Instance.new("Script")
+Tool0.Parent = owner.Backpack
+Tool0.Name = "bird"
+Tool0.Grip = CFrame.new(0, -1.39999998, 0, -0.4316926, 0, -0.902020752, 0, 1, 0, 0.902020752, 0, -0.4316926)
+Tool0.GripForward = Vector3.new(0.9020207524299622, -0, 0.43169260025024414)
+Tool0.GripPos = Vector3.new(0, -1.399999976158142, 0)
+Tool0.GripRight = Vector3.new(-0.43169260025024414, 0, 0.9020207524299622)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(9.5, 0.500001013, -27, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(9.5, 0.5000010132789612, -27)
+Part1.Size = Vector3.new(5, 1, 2)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh2.Name = "SpecialMesh"
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxassetid://14833363218"
+SpecialMesh2.Scale = Vector3.new(3.5, 3.5, 3.5)
+SpecialMesh2.TextureId = "rbxassetid://14833362920"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Script3.Parent = Tool0
+table.insert(cors,sandbox(Script3,function()
+lll = owner:FindFirstChild('l')
+if not lll then
+	Instance.new('RemoteEvent',owner).Name = "l"
+end
+
+lllz = owner:FindFirstChild('lz')
+if not lllz then
+	Instance.new('Part',owner).Name = "lz"
+end
+
+NLS([[bounce = true
+owner.lz.Changed:Connect(function()
+if bounce == true then
+bounce = false
+owner.l:FireServer(owner:GetMouse().Hit)
+task.wait(0.1)
+bounce = true
+end
+end)]],owner.PlayerGui)
+	
+Instance.new("ForceField",owner.Character).Visible = false
+
+script.Parent.Activated:Connect(function()
+	owner.lz.Transparency = math.random(0, 1)
+	owner.l.OnServerEvent:Connect(function(me, hit)
+		local bird = script.Parent.Handle:Clone()
+		bird.Parent = workspace
+		bird.Anchored = true
+		local debounce = true
+		bird.Touched:Connect(function(p)
+			if debounce == true then
+				debounce = false
+				local hum = p.Parent:FindFirstChildOfClass('Humanoid')
+				if hum then
+					hum:TakeDamage(40)
+				end
+				task.wait(3)
+				debounce = true
+			end
+		end)
+		local TweenService = game:GetService("TweenService")
+
+		local gol = {}
+		gol.Position = hit.Position
+
+
+		local tweenInfo = TweenInfo.new(5)
+
+		local tween = TweenService:Create(bird, tweenInfo, gol)
+
+		tween:Play()
+		task.wait(5)
+		bird:Destroy()
+	end)
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
