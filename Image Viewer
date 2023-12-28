@@ -102,7 +102,7 @@ TextButton.MouseButton1Click:Connect(function()
 checkforimage = owner.Character.HumanoidRootPart:FindFirstChild('identify')
 checkforimagee = owner.Character.HumanoidRootPart:FindFirstChild('identifyy')
 if not checkforimage  then
-print("No image found, creating new image...")
+print("No front image found, creating new front image...")
 ImageHandleAdornment1 = Instance.new("ImageHandleAdornment")
 ImageHandleAdornment1.Name = "identify"
 ImageHandleAdornment1.Parent = owner.Character.HumanoidRootPart
@@ -111,6 +111,7 @@ ImageHandleAdornment1.Size = Vector2.new(10, 10)
 ImageHandleAdornment1.Adornee = owner.Character.HumanoidRootPart
 end
 if not checkforimagee then
+print("No back image found, creating new back image...")
 ImageHandleAdornment2 = Instance.new("ImageHandleAdornment")
 ImageHandleAdornment2.Name = "identifyy"
 ImageHandleAdornment2.Parent = owner.Character.HumanoidRootPart
