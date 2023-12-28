@@ -102,21 +102,28 @@ TextButton.MouseButton1Click:Connect(function()
 checkforimage = owner.Character.HumanoidRootPart:FindFirstChild('identify')
 checkforimagee = owner.Character.HumanoidRootPart:FindFirstChild('identifyy')
 if not checkforimage  then
-print("No image found, creating new image...")
+print("No front image found, creating new front image...")
 ImageHandleAdornment1 = Instance.new("ImageHandleAdornment")
 ImageHandleAdornment1.Name = "identify"
 ImageHandleAdornment1.Parent = owner.Character.HumanoidRootPart
 ImageHandleAdornment1.CFrame = CFrame.new(0, 10, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 ImageHandleAdornment1.Size = Vector2.new(10, 10)
 ImageHandleAdornment1.Adornee = owner.Character.HumanoidRootPart
+end
+if not checkforimagee then
+print("No back image found, creating new back image...")
+ImageHandleAdornment2 = Instance.new("ImageHandleAdornment")
 ImageHandleAdornment2.Name = "identifyy"
 ImageHandleAdornment2.Parent = owner.Character.HumanoidRootPart
 ImageHandleAdornment2.CFrame = CFrame.new(0, 10, 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
 ImageHandleAdornment2.Size = Vector2.new(10, 10)
 ImageHandleAdornment2.Adornee = owner.Character.HumanoidRootPart
 end
+boolean =true
 	NLS([[owner.itsaremote:FireServer(owner.PlayerGui.ScreenGui.Frame.TextBox.why.Text)]],owner.PlayerGui)
 	owner.itsaremote.OnServerEvent:Connect(function(plr, text)
+if boolean == true then
+boolean = false
 local info = game:GetService('MarketplaceService'):GetProductInfo(tonumber(text), Enum.InfoType.Asset) 
 if info.AssetTypeId == 13 then 
 local response = game:GetService('HttpService'):GetAsync('https://rbxdecal.glitch.me/' .. tostring(text)); 
@@ -126,8 +133,10 @@ return response
 else
 warn("id is not a valid decal id")
 end
-               
-	end)
+task.wait(0.08)
+boolean = true       
+	end
+  end)
 end)
 print("This version of Image Viewer might have problems and difficulties, please be careful.")
 print("There may be a limit to how many times you put an image, put an image id and done your image is now behind you!")
