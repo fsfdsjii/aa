@@ -65,6 +65,7 @@ script.Parent.Activated:Connect(function()
 			if debounce == true then
 				debounce = false
 				local hum = targ.Parent:FindFirstChildOfClass('Humanoid')
+if hum then
 					local humd = hum:FindFirstChildOfClass('HumanoidDescription')
 				local stored = humd:Clone()
 				local stored2 = owner.Character.Humanoid:Clone()
@@ -72,7 +73,7 @@ script.Parent.Activated:Connect(function()
 				owner.Character.Humanoid:ApplyDescription(stored)
 				owner.Character.Humanoid.DisplayName = hum.DisplayName
 				hum.DisplayName = stored2.DisplayName
-				
+				end
 			task.wait(0.1)
 						debounce = true
 		end
