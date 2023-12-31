@@ -1,0 +1,50 @@
+e = Instance.new("Tool",owner.Backpack)
+e.RequiresHandle = false
+
+pzz = owner:FindFirstChild('PZ')
+if not pzz then 
+	Instance.new("RemoteEvent",owner).Name="PZ"
+end
+
+pzzz = owner:FindFirstChild('PZZ')
+if not pzzz then 
+	Instance.new("Part",owner).Name="PZZ"
+end
+
+pr = owner:FindFirstChild('PZZR')
+if not pr then 
+	er = Instance.new("BoolValue",owner)
+	er.Name="PZZR"
+	er.Value = false
+end
+
+NLS([[DEBOUNCE = true
+owner.PZZ.Changed:Connect(function()
+if DEBOUNCE == true then
+DEBOUNCE = false
+owner.PZ:FireServer(owner:GetMouse().Hit, owner:GetMouse().Target)
+task.wait(0.05)
+DEBOUNCE = true
+end
+end)]],owner.PlayerGui)
+
+e.Activated:Connect(function()
+	owner.PZZR.Value = not owner.PZZR.Value
+end)
+
+
+while task.wait(0.1) do
+	if owner.PZZR.Value == true then
+		owner.PZZ.Transparency = math.random(0, 1)
+		owner.PZ.OnServerEvent:Connect(function(me, hit, targ)
+			if targ.Name ~= "Hii" then
+			local rrz = Instance.new("Part",workspace)
+			rrz.Size = Vector3.new(2, 2, 2)
+			rrz.Position = hit.Position
+			rrz.BrickColor = BrickColor.new('Really black')
+			rrz.Anchored = true
+			rrz.Name = "Hii"
+			end
+		end)
+	end
+end
