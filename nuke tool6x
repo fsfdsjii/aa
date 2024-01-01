@@ -3484,9 +3484,12 @@ table.insert(cors,sandbox(Script414,function()
 		mmmmm = Instance.new("RemoteEvent",owner)
 		mmmmm.Name = "sphere"
 	end
+debounce = true
 	script.Parent.Activated:Connect(function()
 		NLS([[owner.sphere:FireServer(owner:GetMouse().Hit)]],owner.PlayerGui)
 		owner.sphere.OnServerEvent:Connect(function(plr, hit)
+if debounce == true then
+debounce = false
 			local ccc = Instance.new("Part",workspace)
 			ccc.Shape = Enum.PartType.Ball
 			ccc.Position = hit.Position
@@ -3513,6 +3516,9 @@ pcall(function()
 					part.Material = Enum.Material.CorrodedMetal
 					part.BrickColor = BrickColor.new('Really black')
                                         part.Anchored = false
+task.wait(0.05)
+debounce = true
+end
                                         end)
 				end
                          end)
