@@ -3516,8 +3516,6 @@ pcall(function()
 					part.Material = Enum.Material.CorrodedMetal
 					part.BrickColor = BrickColor.new('Really black')
                                         part.Anchored = false
-task.wait(0.05)
-debounce = true
                                         end)
 				end
                          end)
@@ -3552,9 +3550,12 @@ raycast.Instance.Anchored = false
         end
     end
 end)
+task.wait(0.05)
+debounce = true
 			task.wait(10)
 			ccc:Destroy()
                         ccheck = false
+end
                       end)
 	end)
 end))
