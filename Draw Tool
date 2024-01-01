@@ -37,16 +37,16 @@ while task.wait(0.1) do
 	if owner.PZZR.Value == true then
 		owner.PZZ.Transparency = math.random(0, 1)
 		owner.PZ.OnServerEvent:Connect(function(me, hit, targ)
+			if targ.Name ~= "Hii" then
 if debounce == true then
 debounce = false
-			if targ.Name ~= "Hii" then
 			local rrz = Instance.new("Part",workspace)
 			rrz.Size = Vector3.new(2, 2, 2)
 			rrz.Position = hit.Position
 			rrz.BrickColor = BrickColor.new('Really black')
 			rrz.Anchored = true
 			rrz.Name = "Hii"
-task.wait(0.0001)
+task.wait(0.005)
 debounce = true
                                 end
 			end
