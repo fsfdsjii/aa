@@ -1,3 +1,16 @@
+
+print("Say /clrpaint to clear all the paint you created")
+owner.Chatted:Connect(function(msg)
+if msg == "/clrpaint" then
+for i,v in workspace:GetDescendants() do
+if v.Name == owner.Name then
+if v.ClassName == "Folder" then
+v:ClearAllChildren()
+end
+end
+end
+end
+end)
 e = Instance.new("Tool",owner.Backpack)
 e.RequiresHandle = false
 e.Name = "Draw Tool"
@@ -17,6 +30,12 @@ if not pr then
 	er = Instance.new("BoolValue",owner)
 	er.Name="PZZR"
 	er.Value = false
+end
+
+prr = owner:FindFirstChild('PZZRR')
+if not prr then 
+	erz = Instance.new("Folder",workspace)
+	erz.Name=owner.Name
 end
 
 NLS([[DEBOUNCE = true
@@ -41,12 +60,18 @@ while task.wait(0.1) do
 			if targ.Name ~= "Hii" then
 if debounce == true then
 debounce = false
-			local rrz = Instance.new("Part",workspace)
+for i,v in workspace:GetDescendants() do
+if v.Name == owner.Name then
+if v.ClassName == "Folder" then
+			local rrz = Instance.new("Part",v)
 			rrz.Size = Vector3.new(1, 1, 1)
 			rrz.Position = hit.Position
 			rrz.BrickColor = BrickColor.new('Really black')
 			rrz.Anchored = true
 			rrz.Name = "Hii"
+end
+end
+end
 task.wait(0.005)
 debounce = true
                                 end
