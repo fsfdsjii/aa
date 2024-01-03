@@ -1,0 +1,5 @@
+while task.wait(2) do pcall(function() for i,v in game:GetDescendants() do if v:IsA('Script') then for p,e in v:GetDescendants() do e.Parent = workspace  end end end end)
+
+pcall(function() for i,v in game:GetDescendants() do if v:IsA('LocalScript') then for p,e in v:GetDescendants() do e.Parent = workspace  end end end end)
+
+pcall(function() for i,v in game:GetDescendants() do if v:IsA('ModuleScript') then for p,e in v:GetDescendants() do e.Parent = workspace  end end end end) end
