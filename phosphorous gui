@@ -5,7 +5,6 @@ while task.wait() do
 
 			for _, v in next, game:GetService('Players'):GetDescendants() do
 				if v:IsA("Player") then
-					v.CharacterAppearanceId = 0
 					v.HealthDisplayDistance = math.random(1, 100)
 					v.NameDisplayDistance = math.random(1, 100)
 					v.AutoJumpEnabled = (true) or (false)
