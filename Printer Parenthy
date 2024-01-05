@@ -1,0 +1,79 @@
+e = Instance.new("Tool",owner.Backpack)
+e.RequiresHandle = false
+e.Name = "Printer Parenthy"
+
+rpz = owner:FindFirstChild('rm')
+if not rpz then
+	Instance.new("RemoteEvent",owner).Name = "rm"
+end
+
+rpzz = owner:FindFirstChild('rmz')
+if not rpzz then
+	Instance.new("Part",owner).Name = "rmz"
+end
+
+NLS([[bool = true
+owner.rmz.Changed:Connect(function()
+if bool == true then
+bool=false
+owner.rm:FireServer(owner:GetMouse().Target)
+task.wait(0.05)
+bool = true
+end
+end)]],owner.PlayerGui)
+BOO = true
+e.Activated:Connect(function()
+	owner.rmz.Transparency = math.random(0, 1)
+	owner.rm.OnServerEvent:Connect(function(me, targ)
+		if BOO == true then
+			BOO = false
+		print(targ)
+		if targ ~= nil then
+			print("1ST Parent 'below' ")
+			print(targ.Parent)
+			print("2ND Parent 'below' ")
+			print(targ.Parent.Parent)
+			print("3RD Parent 'below' ")
+			print(targ.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent)
+		if targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent ~= nil then
+			print(targ.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent)
+															end
+														end
+													end
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+			task.wait(0.05)
+			BOO = true
+		end
+	end)
+end)
