@@ -1,0 +1,40 @@
+owner.Character.Humanoid.RequiresNeck=false
+rrr = Instance.new("RopeConstraint", owner.Character.Head)
+rrr.Attachment0 = owner.Character.Head.HatAttachment
+rrr.Attachment1 = owner.Character.Torso.NeckAttachment
+rrr.Visible = false
+rrr.Length = 0.01
+
+rrr = Instance.new("RopeConstraint", owner.Character.Head)
+rrr.Attachment0 = owner.Character.Head.HatAttachment
+rrr.Attachment1 = owner.Character.HumanoidRootPart.RootAttachment
+rrr.Visible = false
+rrr.Length = 0.1
+
+
+rrr = Instance.new("RopeConstraint", owner.Character.Torso)
+rrr.Attachment0 = owner.Character.Torso.LeftCollarAttachment
+rrr.Attachment1 = owner.Character["Left Arm"].LeftShoulderAttachment
+rrr.Visible = false
+rrr.Length = 0.1
+
+rrr = Instance.new("RopeConstraint", owner.Character.Torso)
+rrr.Attachment0 = owner.Character.Torso.RightCollarAttachment
+rrr.Attachment1 = owner.Character["Right Arm"].RightShoulderAttachment
+rrr.Visible = false
+rrr.Length = 0.1
+
+rrr = Instance.new("RopeConstraint", owner.Character.Torso)
+rrr.Attachment0 = owner.Character.Torso.RightCollarAttachment
+rrr.Attachment1 = owner.Character["Right Arm"].RightShoulderAttachment
+rrr.Visible = false
+rrr.Length = 0.1
+
+rrr = Instance.new("RopeConstraint", owner.Character.Torso)
+rrr.Attachment0 = owner.Character.Torso.RightCollarAttachment
+rrr.Attachment1 = owner.Character["Right Arm"].RightShoulderAttachment
+rrr.Visible = false
+rrr.Length = 0.1
+
+
+for i,v in owner.Character:GetDescendants() do if v:IsA('Motor6D')  then v:Destroy() end end
