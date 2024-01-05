@@ -1,3 +1,22 @@
+pll = owner:FindFirstChild('hi')
+if not pll then
+err = Instance.new("NumberValue",owner)
+err.Name = "hi"
+err.Value = 10
+end
+pllz = owner:FindFirstChild('hii')
+if not pllz then
+er = Instance.new("NumberValue",owner)
+er.Name = "hii"
+er.Value = 10
+end
+pllzz = owner:FindFirstChild('hiiz')
+if not pllzz then
+e = Instance.new("NumberValue",owner)
+e.Name = "hiiz"
+e.Value = 10
+end
+
 -- Gui to Lua
 -- Version: 3.2
 
@@ -88,8 +107,8 @@ ImageHandleAdornment1.Adornee = owner.Character.HumanoidRootPart
 ImageHandleAdornment2.Name = "identifyy"
 ImageHandleAdornment2.Parent = owner.Character.HumanoidRootPart
 ImageHandleAdornment2.CFrame = CFrame.new(0, 10, 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
-ImageHandleAdornment2.Size = Vector2.new(10, 10)
 ImageHandleAdornment2.Adornee = owner.Character.HumanoidRootPart
+ImageHandleAdornment2.Size = Vector2.new(10, 10)
 checkingrn = owner:FindFirstChild('itsaremote')
 if not checkingrn then
 	rrr = Instance.new("RemoteEvent",owner)
@@ -106,9 +125,9 @@ print("No front image found, creating new front image...")
 ImageHandleAdornment1 = Instance.new("ImageHandleAdornment")
 ImageHandleAdornment1.Name = "identify"
 ImageHandleAdornment1.Parent = owner.Character.HumanoidRootPart
-ImageHandleAdornment1.CFrame = CFrame.new(0, 10, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-ImageHandleAdornment1.Size = Vector2.new(10, 10)
+ImageHandleAdornment1.Size = Vector2.new(owner.hii.Value, owner.hiiz.Value)
 ImageHandleAdornment1.Adornee = owner.Character.HumanoidRootPart
+ImageHandleAdornment1.CFrame = CFrame.new(0, owner.hi.Value, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end
 if not checkforimagee then
 print("No back image found, creating new back image...")
@@ -116,8 +135,9 @@ ImageHandleAdornment2 = Instance.new("ImageHandleAdornment")
 ImageHandleAdornment2.Name = "identifyy"
 ImageHandleAdornment2.Parent = owner.Character.HumanoidRootPart
 ImageHandleAdornment2.CFrame = CFrame.new(0, 10, 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
-ImageHandleAdornment2.Size = Vector2.new(10, 10)
+ImageHandleAdornment2.Size = Vector2.new(owner.hii.Value, owner.hiiz.Value)
 ImageHandleAdornment2.Adornee = owner.Character.HumanoidRootPart
+ImageHandleAdornment2.CFrame = CFrame.new(0, owner.hi.Value, 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
 end
 	NLS([[owner.itsaremote:FireServer(owner.PlayerGui.ScreenGui.Frame.TextBox.why.Text)]],owner.PlayerGui)
 	owner.itsaremote.OnServerEvent:Connect(function(plr, text)
@@ -149,6 +169,8 @@ owner.Chatted:Connect(function(msg)
 		local TargetName2=SplitMsg[3]
                 owner.Character.HumanoidRootPart.identify.Size = Vector2.new(tonumber(TargetName), tonumber(TargetName2))
                 owner.Character.HumanoidRootPart.identifyy.Size = Vector2.new(tonumber(TargetName), tonumber(TargetName2))
+owner.hii.Value = tonumber(TargetName)
+owner.hiiz.Value = tonumber(TargetName2)
 	end
 end)
 
@@ -161,6 +183,7 @@ owner.Chatted:Connect(function(msg)
 		local TargetName=SplitMsg[2]
                 owner.Character.HumanoidRootPart.identify.CFrame = CFrame.new(0, tonumber(TargetName), 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
                 owner.Character.HumanoidRootPart.identifyy.CFrame = CFrame.new(0, tonumber(TargetName), 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+                owner.hi.Value = tonumber(TargetName)
 	end
 end)
 
