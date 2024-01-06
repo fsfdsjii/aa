@@ -1,3 +1,4 @@
+pcall(function()
 --___!!IMPORTANT!!___
 --Your model was too big, and the plugin couldn't put it all in 1 script.
 --Concatencate all scripts following volumes order.
@@ -605,12 +606,15 @@ local function DecodeUnion(Values,Flags,Parse,data)
 				mesh.Parent = part
 			end
 		end
+		part.Parent = m
 		table.insert(isNegate and Subtract or Union,part)
 	end
 	local first = table.remove(Union,1)
 	if #Union>0 then
+		first = first:UnionAsync(Union)
 	end
 	if #Subtract>0 then
+		first = first:SubtractAsync(Subtract)
 	end
 	m:Destroy()
 	return first
@@ -1014,3 +1018,4 @@ for _,obj in pairs(Objects) do
 end
 
 RunScripts()
+end)
