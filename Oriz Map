@@ -605,7 +605,6 @@ local function DecodeUnion(Values,Flags,Parse,data)
 				mesh.Parent = part
 			end
 		end
-		part.Parent = m
 		table.insert(isNegate and Subtract or Union,part)
 	end
 	local first = table.remove(Union,1)
