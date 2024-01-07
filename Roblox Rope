@@ -36,3 +36,12 @@ rrr.Visible = false
 rrr.Length = 0.1
 
 for i,v in owner.Character:GetDescendants() do if v:IsA('Motor6D')  then v:Destroy() end end
+
+e = Instance.new("Tool",owner.Backpack)
+e.RequiresHandle = false
+e.Name = "Jump"
+
+e.Activated:Connect(function()
+for i,v in owner.Character:GetDescendants() do if v:IsA('BasePart') then v.Position = v.Position + Vector3.new(0, 10, 0) end end
+owner.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+end)
