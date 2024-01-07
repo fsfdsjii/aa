@@ -36,7 +36,7 @@ rrr.Visible = false
 rrr.Length = 0.1
 
 for i,v in owner.Character:GetDescendants() do if v:IsA('Motor6D')  then v:Destroy() end end
-
+owner.Character.HumanoidRootPart:Destroy()
 e = Instance.new("Tool",owner.Backpack)
 e.RequiresHandle = false
 e.Name = "Jump"
