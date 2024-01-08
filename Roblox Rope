@@ -36,10 +36,41 @@ rrr.Visible = false
 rrr.Length = 0.1
 
 for i,v in owner.Character:GetDescendants() do if v:IsA('Motor6D')  then v:Destroy() end end
-owner.Character.HumanoidRootPart:Destroy()
+
 e = Instance.new("Tool",owner.Backpack)
 e.RequiresHandle = false
 e.Name = "Jump"
+
+ex = Instance.new("Tool",owner.Backpack)
+ex.Name = "TP"
+ex.RequiresHandle = false
+
+lzx = owner:FindFirstChild('Lx')
+if not lzx then
+	Lx = Instance.new("RemoteEvent",owner)
+	Lx.Name = "Lx"
+end
+
+lzxx = owner:FindFirstChild('Lxx')
+if not lzxx then
+	Lxx = Instance.new("Part",owner)
+	Lxx.Name = "Lxx"
+end
+	NLS([[ debounce = true owner.Lxx.Changed:Connect(function()  if debounce == true then debounce = false owner.Lx:FireServer(owner:GetMouse().Hit)  task.wait(0.05) debounce = true end end) ]],owner.PlayerGui)
+debounce = true
+ex.Activated:Connect(function()
+owner.Lxx.Transparency = math.random(0, 1)
+	owner.Lx.OnServerEvent:Connect(function(plr, hit)
+	if debounce == true then
+debounce = false	
+print("hello")
+			owner.Character.HumanoidRootPart.Position = hit.Position + Vector3.new(1, 3, 1)
+			task.wait(0.05)
+debounce = true
+end
+    end)
+end)
+
 
 e.Activated:Connect(function()
 for i,v in owner.Character:GetDescendants() do if v:IsA('BasePart') then v.Position = v.Position + Vector3.new(0, 10, 0) end end
