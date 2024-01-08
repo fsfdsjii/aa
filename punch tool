@@ -65,7 +65,7 @@ script.Parent.Activated:Connect(function()
                         owner.bhu.Transparency = owner.bhu.Transparency + 1
 			local overlap = OverlapParams.new()
 				overlap.FilterDescendantsInstances = owner.Character:GetDescendants()
-			for i,v in workspace:GetPartBoundsInBox(script.Parent.Handle.CFrame, script.Parent.Handle.Size, overlap) do
+			for i,v in workspace:GetPartBoundsInBox(script.Parent.Handle.CFrame, script.Parent.Handle.Size + Vector3.new(4, 6, 4), overlap) do
 				local hum = v.Parent:FindFirstChildOfClass('Humanoid')
 				if hum then
 					hum:TakeDamage(3)
@@ -80,7 +80,7 @@ script.Parent.Activated:Connect(function()
 				local function destroy()
 					veloc:Destroy()
 				end
-				delay(0.005, destroy)
+				delay(0.01, destroy)
 			end
 		task.wait(1)
 		debounce = true
