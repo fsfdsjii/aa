@@ -5,6 +5,10 @@ attachz = Instance.new("Attachment",owner.Character.Torso) attachz.Name = "Right
 attachz.Position = Vector3.new(0.55, -0.90, 0)
 attachzz = Instance.new("Attachment",owner.Character.Torso) attachzz.Name = "LeftLegAttachment"
 attachzz.Position = Vector3.new(-0.55, -0.90, 0)
+attachzzz = Instance.new("Attachment",owner.Character["Right Leg"]) attachzzz.Name = "RightLegAttachment"
+attachzzz.Position = Vector3.new(0, 1, 0)
+attachzzzz = Instance.new("Attachment",owner.Character["Left Leg"]) attachzzzz.Name = "LeftLegAttachment"
+attachzzzz.Position = Vector3.new(0, 1, 0)
 owner.Character.Humanoid.RequiresNeck=false
 rrr = Instance.new("RopeConstraint", owner.Character.Head)
 rrr.Attachment0 = attach
@@ -26,13 +30,13 @@ rrr.Length = 0.1
 
 rrr = Instance.new("RopeConstraint", owner.Character.Torso)
 rrr.Attachment0 = attachzz
-rrr.Attachment1 = owner.Character["Left Leg"].LeftFootAttachment
+rrr.Attachment1 = attachzzzz
 rrr.Visible = false
 rrr.Length = 0.1
 
 rrr = Instance.new("RopeConstraint", owner.Character.Torso)
 rrr.Attachment0 = attachz
-rrr.Attachment1 = owner.Character["Right Leg"].RightFootAttachment
+rrr.Attachment1 = attachzzz
 rrr.Visible = false
 rrr.Length = 0.1
 
