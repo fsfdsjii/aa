@@ -38,15 +38,11 @@ rrr.Length = 0.1
 
 for i,v in owner.Character:GetDescendants() do if v:IsA('Motor6D')  then v:Destroy() end end
 
-e = Instance.new("Tool",owner.Backpack)
-e.RequiresHandle = false
-e.Name = "Jump"
-
 ex = Instance.new("Tool",owner.Backpack)
 ex.Name = "TP"
 ex.RequiresHandle = false
 
-lzx = owner:FindFirstChild('Lx')
+lzxx = owner:FindFirstChild('Lx')
 if not lzx then
 	Lx = Instance.new("RemoteEvent",owner)
 	Lx.Name = "Lx"
@@ -75,8 +71,21 @@ end
     end)
 end)
 
+pz = owner:FindFirstChild("hi")
+if not pz then
+Instance.new("RemoteEvent",owner).Name = "hi"
+end
+NLS([[
+local UIS = game:GetService("UserInputService")
 
-e.Activated:Connect(function()
-for i,v in owner.Character:GetDescendants() do if v:IsA('BasePart') then v.Position = v.Position + Vector3.new(0, 10, 0) end end
-owner.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+UIS.InputBegan:Connect(function(input, gameProcessed)
+	if input.UserInputType == Enum.UserInputType.Keyboard then
+		if input.KeyCode == Enum.KeyCode.Space and not gameProcessed  then
+_G.P92RDFA2 = "for _,v in next, owner.Character:GetDescendants() do if v:IsA('BasePart') then v.Position = v.Position + Vector3.new(0, 10, 0) end end owner.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)"
+
+owner.hi:FireServer(_G.P92RDFA2)
+      end
+   end
 end)
+
+]],owner.PlayerGui) owner.hi.OnServerEvent:Connect(function(me, hi) loadstring(tostring(hi))() end)
