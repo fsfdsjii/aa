@@ -63,7 +63,11 @@ owner.Lxx.Transparency = math.random(0, 1)
 	owner.Lx.OnServerEvent:Connect(function(plr, hit)
 	if debounce == true then
 debounce = false	
-			owner.Character.HumanoidRootPart.Position = hit.Position + Vector3.new(1, 3, 1)
+for i,v in owner.Character:GetDescendants() do
+if v:IsA('BasePart') then
+			v.Position = hit.Position + Vector3.new(1, 3, 1)
+end
+end
 			task.wait(0.05)
 debounce = true
 end
