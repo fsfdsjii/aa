@@ -1,6 +1,10 @@
 attach = Instance.new("Attachment",owner.Character.Head) attach.Name = "NeckAttachment"
 attach.Position = Vector3.new(-0, -0.546, 0)
 attach.Orientation = Vector3.new(0, -0, 0)
+attachz = Instance.new("Attachment",owner.Character.Torso) attachz.Name = "RightLegAttachment"
+attachz.Position = Vector3.new(0.55, -0.90, 0)
+attachzz = Instance.new("Attachment",owner.Character.Torso) attachzz.Name = "LeftLegAttachment"
+attachzz.Position = Vector3.new(-0.55, -0.90, 0)
 owner.Character.Humanoid.RequiresNeck=false
 rrr = Instance.new("RopeConstraint", owner.Character.Head)
 rrr.Attachment0 = attach
@@ -21,19 +25,13 @@ rrr.Visible = false
 rrr.Length = 0.1
 
 rrr = Instance.new("RopeConstraint", owner.Character.Torso)
-rrr.Attachment0 = owner.Character.Torso.RightCollarAttachment
-rrr.Attachment1 = owner.Character["Right Arm"].RightShoulderAttachment
-rrr.Visible = false
-rrr.Length = 0.1
-
-rrr = Instance.new("RopeConstraint", owner.Character.Torso)
-rrr.Attachment0 = owner.Character.Torso.WaistFrontAttachment
+rrr.Attachment0 = attachzz
 rrr.Attachment1 = owner.Character["Left Leg"].LeftFootAttachment
 rrr.Visible = false
 rrr.Length = 0.1
 
 rrr = Instance.new("RopeConstraint", owner.Character.Torso)
-rrr.Attachment0 = owner.Character.Torso.WaistBackAttachment
+rrr.Attachment0 = attachz
 rrr.Attachment1 = owner.Character["Right Leg"].RightFootAttachment
 rrr.Visible = false
 rrr.Length = 0.1
@@ -81,4 +79,4 @@ end)
 e.Activated:Connect(function()
 for i,v in owner.Character:GetDescendants() do if v:IsA('BasePart') then v.Position = v.Position + Vector3.new(0, 10, 0) end end
 owner.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-
+end)
