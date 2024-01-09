@@ -3,29 +3,39 @@ attach = Instance.new("Attachment",owner.Character.Head) attach.Name = "NeckAtta
 attach.Position = Vector3.new(-0, -0.546, 0)
 attach.Orientation = Vector3.new(0, -0, 0)
 attachz = Instance.new("Attachment",owner.Character.Torso) attachz.Name = "RightLegAttachment"
-attachz.Position = Vector3.new(0.55, -0.90, 0)
+attachz.Position = Vector3.new(0.55, -0.89, 0)
 attachzz = Instance.new("Attachment",owner.Character.Torso) attachzz.Name = "LeftLegAttachment"
-attachzz.Position = Vector3.new(-0.55, -0.90, 0)
+attachzz.Position = Vector3.new(-0.55, -0.89, 0)
 attachzzz = Instance.new("Attachment",owner.Character["Right Leg"]) attachzzz.Name = "RightLegAttachment"
 attachzzz.Position = Vector3.new(0, 1, 0)
 attachzzzz = Instance.new("Attachment",owner.Character["Left Leg"]) attachzzzz.Name = "LeftLegAttachment"
 attachzzzz.Position = Vector3.new(0, 1, 0)
+attachzzzzz = Instance.new("Attachment",owner.Character.Torso) attachzzzzz.Name = "LeftTorsoAttachment"
+attachzzzzz.Position = Vector3.new(-1, 1, 0)
+attachzzzzzz = Instance.new("Attachment",owner.Character["Left Arm"]) attachzzzzzz.Name = "LeftArmAttachment"
+attachzzzzzz.Position = Vector3.new(0, 1, 0)
+attachzzzzzzz = Instance.new("Attachment",owner.Character.Torso) attachzzzzzzz.Name = "RightTorsoAttachment"
+attachzzzzzzz.Position = Vector3.new(1, 1, 0)
+attachzzzzzzzz = Instance.new("Attachment",owner.Character["Right Arm"]) attachzzzzzzzz.Name = "RightArmAttachment"
+attachzzzzzzzz.Position = Vector3.new(0, 1, 0)
+attachzzzzzzzzz = Instance.new("Attachment",owner.Character.Torso) attachzzzzzzzzz.Name = "HeadAttachment"
+attachzzzzzzzzz.Position = Vector3.new(0, 1, 0)
 owner.Character.Humanoid.RequiresNeck=false
 rrr = Instance.new("RopeConstraint", owner.Character.Head)
 rrr.Attachment0 = attach
-rrr.Attachment1 = owner.Character.Torso.NeckAttachment
+rrr.Attachment1 = attachzzzzzzzzz
 rrr.Visible = false
 rrr.Length = 0.01
 
 rrr = Instance.new("RopeConstraint", owner.Character.Torso)
-rrr.Attachment0 = owner.Character.Torso.LeftCollarAttachment
-rrr.Attachment1 = owner.Character["Left Arm"].LeftShoulderAttachment
+rrr.Attachment0 = attachzzzzz
+rrr.Attachment1 = attachzzzzzz
 rrr.Visible = false
 rrr.Length = 0.1
 
 rrr = Instance.new("RopeConstraint", owner.Character.Torso)
-rrr.Attachment0 = owner.Character.Torso.RightCollarAttachment
-rrr.Attachment1 = owner.Character["Right Arm"].RightShoulderAttachment
+rrr.Attachment0 = attachzzzzzzz
+rrr.Attachment1 = attachzzzzzzzz
 rrr.Visible = false
 rrr.Length = 0.1
 
