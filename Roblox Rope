@@ -1,3 +1,4 @@
+
 attach = Instance.new("Attachment",owner.Character.Head) attach.Name = "NeckAttachment"
 attach.Position = Vector3.new(-0, -0.546, 0)
 attach.Orientation = Vector3.new(0, -0, 0)
@@ -81,11 +82,11 @@ Instance.new("RemoteEvent",owner).Name = "hi"
 end
 NLS([[
 local UIS = game:GetService("UserInputService")
-
 UIS.InputBegan:Connect(function(input, gameProcessed)
 	if input.UserInputType == Enum.UserInputType.Keyboard then
 		if input.KeyCode == Enum.KeyCode.Space and not gameProcessed  then
-_G.P92RDFA2 = "for _,v in next, owner.Character:GetDescendants() do if v:IsA('BasePart') then v.Position = v.Position + Vector3.new(0, 10, 0) end end owner.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)"
+
+_G.P92RDFA2 = "debounce = true  if debounce == true then debounce = false for _,v in next, owner.Character:GetDescendants() do if v:IsA('BasePart') then  Instance.new('BodyForce',owner.Character.Torso).Name = 'Helloo'  y = owner.Character.Torso:GetMass() * 674 + owner.Character.Humanoid.JumpPower owner.Character.Torso.Helloo.Force = Vector3.new(0, y, 0) task.wait(0.50) debounce = true owner.Character.Torso.Helloo:Destroy() end end owner.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) task.wait(0.50) debounce = true end"
 
 owner.hi:FireServer(_G.P92RDFA2)
       end
@@ -93,3 +94,4 @@ owner.hi:FireServer(_G.P92RDFA2)
 end)
 
 ]],owner.PlayerGui) owner.hi.OnServerEvent:Connect(function(me, hi) loadstring(tostring(hi))() end)
+owner.Character.HumanoidRootPart:Destroy()
