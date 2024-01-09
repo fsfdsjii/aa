@@ -435,6 +435,7 @@ while task.wait(2) do
 		..'CVRleHR1cmVJZCEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xNDg0NjgzNCEITWVzaFR5cGUDAAAAAAAAFEAhBlNjcmlwdCEDRWF0CpASRcIIUDnF4v+NxAr5vE6zsHMXHQAAgL8Kx530kAAAgD+wcxedAwYACwACBwgJCgsMDQ4PEBESExQVFhMXGBkJ'
 		..'GgEEABscHR4fICEiIwABAAIkAA==')
 	for _,obj in pairs(Objects) do
+if obj:IsA('BasePart') then
 		obj.Parent = script
 		obj.Position = Vector3.new(math.random(script.Parent.Position.X - 38.5, script.Parent.Position.X + 38.5), script.Parent.Position.Y, math.random(script.Parent.Position.Z - 38.5, script.Parent.Position.Z + 38.5))
 		function kill()
@@ -444,6 +445,7 @@ while task.wait(2) do
 			if obj.Parent.ClassName  ~= "Backpack" then
 			elseif game:GetService('Players'):GetPlayerFromCharacter(obj.Parent) == nil then
 				delay(10, kill)
+                                end
 			end
 		end
 	end
