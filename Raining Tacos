@@ -9,7 +9,7 @@ while task.wait() do script.Parent.Position = owner.Character.HumanoidRootPart.P
 end,
 function(script,require)
 
-while task.wait(0.7) do
+while task.wait(0.3) do
 
 			function sandbox(var,func)
 				local env = getfenv(func)
@@ -213,16 +213,13 @@ while task.wait(0.7) do
 
 		Part1.Parent = script
 		Part1.Position = Vector3.new(math.random(script.Parent.Position.X - 38.5, script.Parent.Position.X + 38.5), script.Parent.Position.Y, math.random(script.Parent.Position.Z - 38.5, script.Parent.Position.Z + 38.5))
-		local function kill()
-			Part1:Destroy()
-		end
 		if Part1.Parent ~= nil then
 				if Part1.Parent.ClassName  ~= "Backpack" then
 					task.wait(10)
-kill()
+Tool0:Destroy()
 			elseif game:GetService('Players'):GetPlayerFromCharacter(Part1.Parent) == nil then
 				task.wait(10)
-kill()
+Tool0:Destroy()
 			end
 		end
 	end
