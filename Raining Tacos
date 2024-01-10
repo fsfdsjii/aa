@@ -86,7 +86,7 @@ while task.wait(0.3) do
 						local hum = vCharacter:FindFirstChild("Humanoid")
 						local rootpart = vCharacter:FindFirstChild("HumanoidRootPart")
 						enabled = true
-						EatTrack = script.Parent.Parent.Humanoid:LoadAnimation(EatAnim)
+						EatTrack = hum:LoadAnimation(EatAnim)
 						EatTrack.Priority = Enum.AnimationPriority.Action
 						EatTrack.Looped = false
 						EatSound:Play()
