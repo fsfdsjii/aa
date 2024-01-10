@@ -386,7 +386,7 @@ Sound77.Volume = 0.30000001192092896
 Script78.Name = "SandwichScript"
 Script78.Parent = Tool0
 table.insert(cors,sandbox(Script78,function()
-local Tool = script.Parent;
+local Tool = Tool0;
 
 enabled = true
 
@@ -432,8 +432,8 @@ function onEquipped()
 	Tool.Handle.OpenSound:play()
 end
 
-script.Parent.Activated:connect(onActivated)
-script.Parent.Equipped:connect(onEquipped)
+Tool.Activated:connect(onActivated)
+Tool.Equipped:connect(onEquipped)
 
 end))
 for i,v in pairs(mas:GetChildren()) do
@@ -452,12 +452,15 @@ end
 		Part1.Position = Vector3.new(math.random(script.Parent.Position.X - 38.5, script.Parent.Position.X + 38.5), script.Parent.Position.Y, math.random(script.Parent.Position.Z - 38.5, script.Parent.Position.Z + 38.5))
 		if Part1.Parent ~= nil then
 				if Part1.Parent.ClassName  ~= "Backpack" then
-function ello()
+for i = 1,math.huge do
+task.wait(10)
 Tool0:Destroy()
 end
-delay(10, ello)
 			elseif game:GetService('Players'):GetPlayerFromCharacter(Part1.Parent) == nil then
-delay(10, ello)
+for i = 1,math.huge do
+task.wait(10)
+Tool0:Destroy()
+end
 			end
 		end
 	end
