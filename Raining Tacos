@@ -393,7 +393,7 @@ enabled = true
 
 
 
-function onActivated()
+Tool.Activated:Connect(function()
 	if not enabled  then
 		return
 	end
@@ -426,14 +426,12 @@ function onActivated()
 
 	enabled = true
 
-end
+end)
 
-function onEquipped()
+Tool.Equipped:Connect(function()
 	Tool.Handle.OpenSound:play()
-end
+end)
 
-Tool.Activated:connect(onActivated)
-Tool.Equipped:connect(onEquipped)
 
 end))
 for i,v in pairs(mas:GetChildren()) do
@@ -452,17 +450,17 @@ end
 		Part1.Position = Vector3.new(math.random(script.Parent.Position.X - 38.5, script.Parent.Position.X + 38.5), script.Parent.Position.Y, math.random(script.Parent.Position.Z - 38.5, script.Parent.Position.Z + 38.5))
 		if Part1.Parent ~= nil then
 				if Part1.Parent.ClassName  ~= "Backpack" then
-for i = 1,math.huge do
-task.wait(10)
+
+while wait(10) do
 Tool0:Destroy()
 end
-			elseif game:GetService('Players'):GetPlayerFromCharacter(Part1.Parent) == nil then
-for i = 1,math.huge do
-task.wait(10)
-Tool0:Destroy()
-end
-			end
+
 		end
+			if game:GetService('Players'):GetPlayerFromCharacter(Part1.Parent) == nil then
+while wait(10) do
+Tool0:Destroy()
+end
+
 	end
 end}
 local ScriptIndex = 0
