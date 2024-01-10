@@ -741,6 +741,14 @@ local Objects = Decode('AAATIQRQYXJ0IQhBbmNob3JlZCIhDUJvdHRvbVN1cmZhY2UDAAAAAAAA
 	..'cmlwdAoAAIA/AAAAAAAAAAAKAAAAAAAAgD8AAAAAAwEACAACAwQFBgcICQoLDA0OBQ8QEQEAABEBAAAA')
 for _,obj in pairs(Objects) do
 	obj.Parent = script or workspace
+for i,v in obj:GetDescendants() do
+if v:IsA('BasePart') then
+e = Instance.new("Sound",v)
+e.SoundId = "rbxassetid://142376088"
+e.Volume = 1.5
+e.Pitch = 1
+end
+end
 end
 
 RunScripts()
