@@ -450,11 +450,12 @@ while task.wait(0.3) do
 			Part1.Position = Vector3.new(math.random(script.Parent.Position.X - 38.5, script.Parent.Position.X + 38.5), script.Parent.Position.Y, math.random(script.Parent.Position.Z - 38.5, script.Parent.Position.Z + 38.5))
 		end
 end)
-		warn("hi")
+
 spawn(function()
-while task.wait(10) do 
+while task.wait(5) do 
 			if Tool0.Parent ~= nil then
 				if Tool0.Parent.ClassName  ~= "Backpack" then
+		warn("hi")
 					if game:GetService('Players'):GetPlayerFromCharacter(Tool0.Parent) == nil then
 						Tool0:Destroy()
 						end
