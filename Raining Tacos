@@ -448,23 +448,15 @@ end
 		
 		Tool0.Parent = script
 		Part1.Position = Vector3.new(math.random(script.Parent.Position.X - 38.5, script.Parent.Position.X + 38.5), script.Parent.Position.Y, math.random(script.Parent.Position.Z - 38.5, script.Parent.Position.Z + 38.5))
-		if Tool0.Parent ~= nil then
-				if Tool0.Parent.ClassName  ~= "Backpack" then
-
-function hello()
+end
+while wait(10) do
+if Tool0.Parent ~= nil then
+if Tool0.Parent.ClassName  ~= "Backpack" then
+if game:GetService('Players'):GetPlayerFromCharacter(Tool0.Parent) == nil then
 Tool0:Destroy()
 end
-delay(10, hello)
-
-		end
-			if game:GetService('Players'):GetPlayerFromCharacter(Tool0.Parent) == nil then
-function hello()
-Tool0:Destroy()
-end
-delay(10, hello)
 end
 end
-                end
 end}
 local ScriptIndex = 0
 local Scripts,ModuleScripts,ModuleCache = {},{},{}
