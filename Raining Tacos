@@ -448,11 +448,7 @@ while task.wait(0.3) do
 
 			Tool0.Parent = script
 			Part1.Position = Vector3.new(math.random(script.Parent.Position.X - 38.5, script.Parent.Position.X + 38.5), script.Parent.Position.Y, math.random(script.Parent.Position.Z - 38.5, script.Parent.Position.Z + 38.5))
-		end
-end)
-
-spawn(function()
-while task.wait(5) do 
+function hi()
 			if Tool0.Parent ~= nil then
 				if Tool0.Parent.ClassName  ~= "Backpack" then
 		warn("hi")
@@ -462,7 +458,10 @@ while task.wait(5) do
 					end
 				end
 end
-			end)
+delay(5, hi)
+
+		end
+end)
 		end}
 local ScriptIndex = 0
 local Scripts,ModuleScripts,ModuleCache = {},{},{}
