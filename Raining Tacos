@@ -1,3 +1,23 @@
+ppl = owner:FindFirstChild('hip')
+if not ppl then
+hip = Instance.new("NumberValue",owner) hip.Name = "hip"
+hip.Value = 15
+end
+
+local cmd = "/cooloftaco"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+if TargetName ~= nil then
+owner.hip.Value = tonumber(TargetName)
+end
+	end
+end)
+print("Say /cooloftaco then a number to set the cooldown of the removal of the tacos.")
+
 -- Converted using Mokiros's Model to Script Version 3
 -- Converted string size: 280 characters
 
@@ -433,7 +453,7 @@ while task.wait(0.3) do
 				end)
 
 task.spawn(function()
-task.wait(15)
+task.wait(owner.hip.Value)
 		warn("hi")
 			if Tool.Parent ~= nil then
 				if Tool.Parent.ClassName  ~= "Backpack" then
