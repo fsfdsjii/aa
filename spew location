@@ -1,0 +1,130 @@
+local random = Random.new()
+local letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
+
+local function getRandomLetter()
+	return letters[random:NextInteger(1,#letters)]
+end
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+Script2 = Instance.new("Script")
+Decal3 = Instance.new("Decal")
+Decal4 = Instance.new("Decal")
+Tool0.Parent = owner.Backpack
+mathh = math.random(0, 10)
+if mathh == 0 then
+	Tool0.Name = getRandomLetter()..getRandomLetter()..getRandomLetter()
+elseif mathh == 1 then
+	Tool0.Name = getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()
+elseif mathh == 2 then
+	Tool0.Name = getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()
+elseif mathh == 3 then
+	Tool0.Name = getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()
+elseif mathh == 4 then
+	Tool0.Name = getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()
+elseif mathh == 5 then
+	Tool0.Name = getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()
+elseif mathh == 6 then
+	Tool0.Name = getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()
+elseif mathh == 7 then
+	Tool0.Name = getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()
+elseif mathh == 8 then
+	Tool0.Name = getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()
+elseif mathh == 9 then
+	Tool0.Name = getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()
+elseif mathh == 10 then
+	Tool0.Name = getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()..getRandomLetter()
+end
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-3.5, 1, -23, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(-3.5, 1, -23)
+Part1.Color = Color3.new(0, 0, 0)
+Part1.Size = Vector3.new(3, 2, 2)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Really black")
+Part1.Material = Enum.Material.Neon
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Really black")
+Part1.Shape = Enum.PartType.Cylinder
+Script2.Parent = Part1
+table.insert(cors,sandbox(Script2,function()
+
+task.spawn(function()
+while task.wait(2.7) do
+	local TweenService = game:GetService("TweenService")
+
+	local part = script.Parent
+	part.Color = Color3.new(0, 0, 0)
+
+	local goal = {}
+	goal.Color = Color3.new(1, 1, 1)
+
+	local tweenInfo = TweenInfo.new(5)
+
+	local tween = TweenService:Create(part, tweenInfo, goal)
+
+	tween:Play()
+	task.wait(2.7)
+	local part = script.Parent
+	part.Color = Color3.new(1, 1, 1)
+
+	local goal = {}
+	goal.Color = Color3.new(0, 0, 0)
+
+	local tweenInfo = TweenInfo.new(5)
+
+	local tweenz = TweenService:Create(part, tweenInfo, goal)
+
+	tweenz:Play()
+
+	end
+end)
+
+task.spawn(function()
+		while task.wait(1) do
+			e = Instance.new("Sound",script.Parent)
+			e.SoundId = "rbxassetid://8976511891"
+			e.Volume = 0.9
+			warn("hi")
+			local random = Random.new()
+			e.Pitch = random:NextNumber(0.15, 2)
+			e:Play()
+			e.Ended:Connect(function(soundId)
+				e:Destroy()
+				end)
+				
+	end
+	end)
+end))
+Decal3.Parent = Part1
+Decal3.Texture = "rbxasset://textures/SpawnLocation.png"
+Decal3.Face = Enum.NormalId.Left
+Decal4.Parent = Part1
+Decal4.Texture = "rbxasset://textures/SpawnLocation.png"
+Decal4.Face = Enum.NormalId.Right
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
