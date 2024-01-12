@@ -1,4 +1,13 @@
-
+for i,v in game.Players:GetDescendants() do
+if v.Name ~= "leaderstats" then
+if v.ClassName == "Player" then
+if v.Name ~= "Stage" then
+e = Instance.new("Folder",v) e.Name = "leaderstats"
+Instance.new("IntValue",e).Name = "Stage"
+end
+end
+end
+end
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
