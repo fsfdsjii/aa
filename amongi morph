@@ -9274,8 +9274,9 @@ local function Decode(str)
 					continue
 				end
 			end
-			
-			obj[Prop] = Value
+			if obj.ClassName == "UnionOperation" then
+				obj[Prop] = Value
+				end
 		end
 		if MeshPartMesh then
 			if MeshPartMesh.MeshId=='' then
