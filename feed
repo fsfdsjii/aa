@@ -1,0 +1,151 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Script1 = Instance.new("Script")
+StringValue2 = Instance.new("StringValue")
+Vector3Value3 = Instance.new("Vector3Value")
+ObjectValue4 = Instance.new("ObjectValue")
+LocalScript5 = Instance.new("LocalScript")
+Part6 = Instance.new("Part")
+Tool0.Name = "Feed"
+Tool0.Parent = owner.Character
+Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(0, 0, 0.5)
+Script1.Parent = Tool0
+table.insert(cors,sandbox(Script1,function()
+Tool = script.Parent
+
+function onActivated() 
+	if not Tool.Enabled then
+		return
+	end
+	
+	Tool.Enabled = false
+	local hit = Tool.Target.Value
+
+
+	if hit ~= nil then 
+		if hit.Name == "FeedPlate" or hit.Name == "Feed" then 
+			if hit.Parent.Feed.Transparency == 1 then
+				user = game.Players:findFirstChild(Tool.Parent.Name)
+				local stats = user:findFirstChild("leaderstats")
+				local cash = stats:findFirstChild("Money")
+				if cash.Value > 9 then
+					cash.Value = cash.Value -10
+					hit.Parent.Feed.Transparency = 0.5 - (user.feedLvl.Value/10)
+				end
+			end
+		end 
+	end
+
+	Tool.Enabled = true
+
+end 
+
+Tool.Activated:connect(onActivated)
+
+end))
+StringValue2.Name = "Key"
+StringValue2.Parent = Tool0
+Vector3Value3.Name = "Origin"
+Vector3Value3.Parent = Tool0
+ObjectValue4.Name = "Target"
+ObjectValue4.Parent = Tool0
+LocalScript5.Name = "Local Gui"
+LocalScript5.Parent = Tool0
+table.insert(cors,sandbox(LocalScript5,function()
+repeat task.wait() until game:GetService('Players'):GetPlayerFromCharacter(script.Parent.Parent) ~= nil
+plr = game:GetService('Players'):GetPlayerFromCharacter(script.Parent.Parent)
+remotezz = plr:FindFirstChild('Hellooz')
+if not remotezz then
+	Instance.new("RemoteEvent",plr).Name = "Hellooz"
+end
+	remotezzz = owner:FindFirstChild('Helloozz')
+	if not remotezzz then
+		Instance.new("RemoteEvent",owner).Name = "Helloozz"
+	end
+	remotezzx = owner:FindFirstChild('Helloozx')
+	if not remotezzx then
+		rrz = Instance.new("ObjectValue",owner) rrz.Name = "Helloozx" rrz.Value = plr
+	end
+NLS([[
+local Tool = owner.Helloozx.Value.Character:WaitForChild('Feed');
+
+function onKeyDown(key)
+	Tool.Key.Value = Tool.Key.Value .. key
+	_G[owner.Name..1] = Tool.Key.Value .. key
+	owner:WaitForChild('Helloozz'):FireServer(_G[owner.Name..1])
+end
+
+go = false
+function onEquippedLocal(mouse)
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+
+	Tool.Handle.BrickColor = game.Players:FindFirstChild(Tool.Parent.Name).TeamColor
+
+	Tool.Key.Value = ""
+	mouse.KeyDown:connect(onKeyDown)
+
+	go = true
+	while go do
+		wait(0.02)
+		Tool.Target.Value = mouse.Target
+		Tool.Origin.Value = mouse.Origin.p
+	end
+end
+
+function onUnequippedLocal(mouse)
+	go = false
+	wait(0.05)
+	Tool.Target.Value = nil
+	Tool.Origin.Value = Vector3.new(0, 0, 0)
+end
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal) ]],plr.PlayerGui)
+	plr.Helloozz.OnServerEvent:Connect(function(me, g)
+		Tool0.Key.Value = g
+	end)
+end))
+Part6.Name = "Handle"
+Part6.Parent = Tool0
+Part6.CFrame = CFrame.new(139.596161, 4.09795523, -45.7492676, -0.0459080562, 0.000733510067, -0.998945415, 1.68458864e-05, 0.999999702, 0.000733510067, 0.998945653, 1.68458882e-05, -0.0459080562)
+Part6.Orientation = Vector3.new(-0.041999999433755875, -92.63099670410156, 0.0010000000474974513)
+Part6.Position = Vector3.new(139.59616088867188, 4.097955226898193, -45.749267578125)
+Part6.Rotation = Vector3.new(-179.0850067138672, -87.36799621582031, -179.0850067138672)
+Part6.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part6.Size = Vector3.new(1, 2.4000000953674316, 1)
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.BrickColor = BrickColor.new("Black")
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part6.brickColor = BrickColor.new("Black")
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
