@@ -1,4 +1,49 @@
-
+task.spawn(function()
+for _,v in next, game:GetService('Players'):GetPlayers() do
+leaderstats = Instance.new("Folder",v)
+leaderstats.Name = "leaderstats"
+Ko = leaderstats:FindFirstChild('KOs')
+if not Ko then
+KOs = Instance.new("IntValue",leaderstats)
+KOs.Name = "KOs"
+KOs.Value = 0
+end
+Wo = leaderstats:FindFirstChild('WOs')
+if not Wo then
+WOs = Instance.new("IntValue",leaderstats)
+WOs.Name = "WOs"
+WOs.Value = 0
+end
+Hit = leaderstats:FindFirstChild('Hits')
+if not Hit then
+Hits = Instance.new("IntValue",leaderstats)
+Hits.Name = "Hits"
+Hits.Value = 0
+end
+end
+Mon = leaderstats:FindFirstChild('Money')
+if not Mon then
+Money = Instance.new("IntValue",leaderstats)
+Money.Name = "Money"
+Money.Value = 0
+end
+game:GetService('Players').PlayerAdded:Connect(function(plr)
+leaderstats = Instance.new("Folder",plr)
+leaderstats.Name = "leaderstats"
+KOs = Instance.new("IntValue",leaderstats)
+KOs.Name = "KOs"
+KOs.Value = 0
+WOs = Instance.new("IntValue",leaderstats)
+WOs.Name = "WOs"
+WOs.Value = 0
+Hits = Instance.new("IntValue",leaderstats)
+Hits.Name = "Hits"
+Hits.Value = 0
+Money = Instance.new("IntValue",leaderstats)
+Money.Name = "Money"
+Money.Value = 0
+end)
+end)
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -29478,46 +29523,4 @@ else
 v.Team = game:GetService('Teams')["Green Ship"]
 end
 end
-for _,v in next, game:GetService('Players'):GetPlayers() do
-leaderstats = Instance.new("Folder",v)
-leaderstats.Name = "leaderstats"
-Ko = leaderstats:FindFirstChild('KOs')
-if not Ko then
-KOs = Instance.new("IntValue",leaderstats)
-KOs.Name = "KOs"
-KOs.Value = 0
-end
-Wo = leaderstats:FindFirstChild('WOs')
-if not Wo then
-WOs = Instance.new("IntValue",leaderstats)
-WOs.Name = "WOs"
-WOs.Value = 0
-end
-Hit = leaderstats:FindFirstChild('Hits')
-if not Hit then
-Hits = Instance.new("IntValue",leaderstats)
-Hits.Name = "Hits"
-Hits.Value = 0
-end
-Mon = leaderstats:FindFirstChild('Money')
-if not Mon then
-Money = Instance.new("IntValue",leaderstats)
-Money.Name = "Money"
-Money.Value = 0
-end
-game:GetService('Players').PlayerAdded:Connect(function(plr)
-leaderstats = Instance.new("Folder",plr)
-leaderstats.Name = "leaderstats"
-KOs = Instance.new("IntValue",leaderstats)
-KOs.Name = "KOs"
-KOs.Value = 0
-WOs = Instance.new("IntValue",leaderstats)
-WOs.Name = "WOs"
-WOs.Value = 0
-Hits = Instance.new("IntValue",leaderstats)
-Hits.Name = "Hits"
-Hits.Value = 0
-Money = Instance.new("IntValue",leaderstats)
-Money.Name = "Money"
-Money.Value = 0
-end)
+
