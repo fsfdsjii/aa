@@ -29397,12 +29397,9 @@ Part1 = Instance.new("Part")
 BodyVelocity2 = Instance.new("BodyVelocity")
 SpecialMesh3 = Instance.new("SpecialMesh")
 Tool0.Name = "Parachute"
-for i,v in game:GetService('Players'):GetChildren() do
+for i,v in game:GetService('Players'):GetDescendants() do
 	if v.ClassName == "Player" then
-		backpack = v:FindFirstChildOfClass('Backpack')
-		if backpack then
 		Tool0.Parent = v.Backpack
-		end
 	end
 end
 Tool0.Grip = CFrame.new(1.5, -4, -1.37, 1, 0, 0, 0, 1, 0, 0, 0, 1)
