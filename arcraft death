@@ -24,7 +24,7 @@ Mon = leaderstats:FindFirstChild('Money')
 if not Mon then
 Money = Instance.new("IntValue",leaderstats)
 Money.Name = "Money"
-Money.Value = 0
+Money.Value = 20
 end
 Captur = leaderstats:FindFirstChild('Captures')
 if not Captur then
@@ -32,6 +32,40 @@ Captures = Instance.new("IntValue",leaderstats)
 Captures.Name = "Captures"
 Captures.Value = 0
 end
+Max = v:FindFirstChild('MaxFuel')
+if not Max then
+local c = Instance.new("IntValue")
+c.Name = "MaxFuel"
+c.Parent =v
+c.Value=20
+end
+MaxH = v:FindFirstChild('MaxHealth')
+if not MaxH then
+local d=Instance.new("IntValue")
+d.Name = "MaxHealth"
+d.Parent =v
+d.Value=100
+end
+pow = v:FindFirstChild('power')
+if not pow then
+local e=Instance.new("IntValue")
+e.Name = "power"
+e.Parent =v
+e.Value=40
+end
+r = v:FindFirstChild('rev')
+if not r then
+local f=Instance.new("IntValue")
+f.Name = "rev"
+f.Parent =v
+f.Value=0
+end
+bo = v:FindFirstChild('bomb')
+if not bo then
+local g=Instance.new("IntValue")
+g.Name = "bomb"
+g.Parent =v
+g.Value=0
 end
 game:GetService('Players').PlayerAdded:Connect(function(plr)
 leaderstats = Instance.new("Folder",plr)
@@ -48,6 +82,26 @@ Hits.Value = 0
 Money = Instance.new("IntValue",leaderstats)
 Money.Name = "Money"
 Money.Value = 0
+local c = Instance.new("IntValue")
+c.Name = "MaxFuel"
+c.Parent =plr
+c.Value=20
+local d=Instance.new("IntValue")
+d.Name = "MaxHealth"
+d.Parent =plr
+d.Value=100
+local e=Instance.new("IntValue")
+e.Name = "power"
+e.Parent =plr
+e.Value=40
+local f=Instance.new("IntValue")
+f.Name = "rev"
+f.Parent =plr
+f.Value=0
+local g=Instance.new("IntValue")
+g.Name = "bomb"
+g.Parent =plr
+g.Value=0
 end)
 end)
 function sandbox(var,func)
