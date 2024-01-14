@@ -29503,24 +29503,24 @@ SpecialMesh3.Parent = Part1
 SpecialMesh3.Scale = Vector3.new(2, 1, 2)
 SpecialMesh3.MeshType = Enum.MeshType.Sphere
 
-greener = game:GetService('Teams'):FindFirstChild('Green Ship')
+greener = game:GetService('Teams'):FindFirstChild('Green Team')
 if not greener then
 green = Instance.new("Team",game:GetService('Teams'))
 green.TeamColor = BrickColor.new('Bright green')
-green.Name = "Green Ship"
+green.Name = "Green Team"
 end
-redder = game:GetService('Teams'):FindFirstChild('Red Ship')
+redder = game:GetService('Teams'):FindFirstChild('Red Team')
 if not redder then
 red = Instance.new("Team",game:GetService('Teams'))
 red.TeamColor = BrickColor.new('Bright red')
-red.Name = "Red Ship"
+red.Name = "Red Team"
 end
 
 for _,v in next, game:GetService('Players'):GetPlayers() do
 if math.random(0, 1) == 0 then
-v.Team = game:GetService('Teams')["Red Ship"]
+v.Team = game:GetService('Teams')["Red Team"]
 else 
-v.Team = game:GetService('Teams')["Green Ship"]
+v.Team = game:GetService('Teams')["Green Team"]
 end
 end
 
