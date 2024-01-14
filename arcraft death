@@ -20,12 +20,12 @@ Hits = Instance.new("IntValue",leaderstats)
 Hits.Name = "Hits"
 Hits.Value = 0
 end
-end
 Mon = leaderstats:FindFirstChild('Money')
 if not Mon then
 Money = Instance.new("IntValue",leaderstats)
 Money.Name = "Money"
 Money.Value = 0
+end
 end
 game:GetService('Players').PlayerAdded:Connect(function(plr)
 leaderstats = Instance.new("Folder",plr)
