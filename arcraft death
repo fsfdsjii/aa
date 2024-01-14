@@ -29397,7 +29397,7 @@ Part1 = Instance.new("Part")
 BodyVelocity2 = Instance.new("BodyVelocity")
 SpecialMesh3 = Instance.new("SpecialMesh")
 Tool0.Name = "Parachute"
-for i,v in game.Players:GetChildren() do
+for i,v in game:GetService('Players'):GetChildren() do
 	if v.ClassName == "Player" then
 		backpack = v:FindFirstChildOfClass('Backpack')
 		if backpack then
