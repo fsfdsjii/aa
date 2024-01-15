@@ -73,12 +73,24 @@ if v.Character ~= nil then
 		if Humanoid then
 brr = Instance.new("ObjectValue",Humanoid)
 brr.Name = "heloamongus"
-if Humanoid.RootPart ~= nil then
-Humanoid.RootPart.Touched:Connect(function(yyy)
+if v.Character["Right Arm"] ~= nil then
+v.Character["Right Arm"].Touched:Connect(function(yyy)
 if yyy ~= nil then
 if game:GetService('Players'):GetPlayerFromCharacter(yyy.Parent) ~= nil then
 player = game:GetService('Players'):GetPlayerFromCharacter(yyy.Parent)
 tool = yyy.Parent:FindFirstChildOfClass('Tool')
+if tool then
+Humanoid.heloamongus.Value = player
+end
+end
+end
+end)
+elseif v.Character.RightHand ~= nil then
+v.Character.RightHand.Touched:Connect(function(yyyz)
+if yyyz ~= nil then
+if game:GetService('Players'):GetPlayerFromCharacter(yyyz.Parent) ~= nil then
+player = game:GetService('Players'):GetPlayerFromCharacter(yyyz.Parent)
+tool = yyyz.Parent:FindFirstChildOfClass('Tool')
 if tool then
 Humanoid.heloamongus.Value = player
 end
