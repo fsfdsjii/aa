@@ -92,6 +92,7 @@ if v.Character ~= nil then
 		if Humanoid then
 brr = Instance.new("ObjectValue",Humanoid)
 brr.Name = "heloamongus"
+if v.Character:FindFirstChildOfClass('Tool') ~= nil then
 if v.Character:FindFirstChildOfClass('Tool'):FindFirstChild('Handle') ~= nil then
 v.Character:FindFirstChildOfClass('Tool'):FindFirstChild('Handle').Touched:Connect(function(yyy)
 if yyy ~= nil then
@@ -104,6 +105,7 @@ end
 end
 end
 end)
+end
 end
 			Humanoid.Died:connect(function()
 				for i,Child in pairs(Humanoid:Getchildren()) do
