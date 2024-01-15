@@ -140,7 +140,10 @@ ImageHandleAdornment2.Adornee = owner.Character.HumanoidRootPart
 ImageHandleAdornment2.CFrame = CFrame.new(0, owner.hi.Value, 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
 end
 	NLS([[owner.itsaremote:FireServer(owner.PlayerGui.ScreenGui.Frame.TextBox.why.Text)]],owner.PlayerGui)
+debounce = true
 	owner.itsaremote.OnServerEvent:Connect(function(plr, text)
+if debounce == true then
+debounce = false
 local info = game:GetService('MarketplaceService'):GetProductInfo(tonumber(text), Enum.InfoType.Asset) 
 if info.AssetTypeId == 13 then 
 local response = game:GetService('HttpService'):GetAsync('https://rbxdecal.glitch.me/' .. tostring(text)); 
@@ -150,7 +153,9 @@ return response
 else
 warn("id is not a valid decal id")
 end
-               
+task.wait(0.08)
+debounce = true
+end            
 	end)
 end)
 print("There may be a limit to how many times you put an image, put an image id and done your image is now behind you!")
