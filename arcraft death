@@ -108,7 +108,7 @@ end)
 end
 end
 			Humanoid.Died:connect(function()
-				for i,Child in pairs(Humanoid:Getchildren()) do
+				for i,Child in pairs(Humanoid:GetChildren()) do
 					if Child:IsA("ObjectValue") and Child.Value and Child.Value:IsA("Player") then
 						local Killer = Child.Value
 						if Killer:FindFirstChild("leaderstats") then
