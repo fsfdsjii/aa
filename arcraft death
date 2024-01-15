@@ -1,40 +1,4 @@
 
-game:GetService('Players').PlayerAdded:Connect(function(plr)
-leaderstats = Instance.new("Folder",plr)
-leaderstats.Name = "leaderstats"
-KOs = Instance.new("IntValue",leaderstats)
-KOs.Name = "KOs"
-KOs.Value = 0
-WOs = Instance.new("IntValue",leaderstats)
-WOs.Name = "WOs"
-WOs.Value = 0
-Hits = Instance.new("IntValue",leaderstats)
-Hits.Name = "Hits"
-Hits.Value = 0
-Money = Instance.new("IntValue",leaderstats)
-Money.Name = "Money"
-Money.Value = 0
-local c = Instance.new("IntValue")
-c.Name = "MaxFuel"
-c.Parent =plr
-c.Value=20
-local d=Instance.new("IntValue")
-d.Name = "MaxHealth"
-d.Parent =plr
-d.Value=100
-local e=Instance.new("IntValue")
-e.Name = "power"
-e.Parent =plr
-e.Value=40
-local f=Instance.new("IntValue")
-f.Name = "rev"
-f.Parent =plr
-f.Value=0
-local g=Instance.new("IntValue")
-g.Name = "bomb"
-g.Parent =plr
-g.Value=0
-end)
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
