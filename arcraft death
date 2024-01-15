@@ -91,8 +91,8 @@ end
 					if Child:IsA("ObjectValue") and Child.Value and Child.Value:IsA("Player") then
 						local Killer = Child.Value
 						if Killer:FindFirstChild("leaderstats") then
-                                               if Killer:FindFirstChild("leaderstats"):FindFirstChild "Kills" then
-							local Kills = Killer.leaderstats.Kills
+                                               if Killer:FindFirstChild("leaderstats"):FindFirstChild "KOs" then
+							local Kills = Killer.leaderstats.KOs
 							Kills.Value = Kills.Value +1
                                                        end
 						end
