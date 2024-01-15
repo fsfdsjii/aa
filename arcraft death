@@ -2,71 +2,41 @@ task.spawn(function()
 for _,v in next, game:GetService('Players'):GetPlayers() do
 leaderstats = Instance.new("Folder",v)
 leaderstats.Name = "leaderstats"
-Ko = leaderstats:FindFirstChild('KOs')
-if not Ko then
 KOs = Instance.new("IntValue",leaderstats)
 KOs.Name = "KOs"
 KOs.Value = 0
-end
-Wo = leaderstats:FindFirstChild('WOs')
-if not Wo then
 WOs = Instance.new("IntValue",leaderstats)
 WOs.Name = "WOs"
 WOs.Value = 0
-end
-Hit = leaderstats:FindFirstChild('Hits')
-if not Hit then
 Hits = Instance.new("IntValue",leaderstats)
 Hits.Name = "Hits"
 Hits.Value = 0
-end
-Mon = leaderstats:FindFirstChild('Money')
-if not Mon then
 Money = Instance.new("IntValue",leaderstats)
 Money.Name = "Money"
-Money.Value = 20
-end
-Captur = leaderstats:FindFirstChild('Captures')
-if not Captur then
+Money.Value = 0
 Captures = Instance.new("IntValue",leaderstats)
 Captures.Name = "Captures"
 Captures.Value = 0
-end
-Max = v:FindFirstChild('MaxFuel')
-if not Max then
 local c = Instance.new("IntValue")
 c.Name = "MaxFuel"
 c.Parent =v
 c.Value=20
-end
-MaxH = v:FindFirstChild('MaxHealth')
-if not MaxH then
 local d=Instance.new("IntValue")
 d.Name = "MaxHealth"
 d.Parent =v
 d.Value=100
-end
-pow = v:FindFirstChild('power')
-if not pow then
 local e=Instance.new("IntValue")
 e.Name = "power"
 e.Parent =v
 e.Value=40
-end
-r = v:FindFirstChild('rev')
-if not r then
 local f=Instance.new("IntValue")
 f.Name = "rev"
 f.Parent =v
 f.Value=0
-end
-bo = v:FindFirstChild('bomb')
-if not bo then
 local g=Instance.new("IntValue")
 g.Name = "bomb"
 g.Parent =v
 g.Value=0
-end
 
 if v.Character ~= nil then
 		local Humanoid = v.Character:FindFirstChild("Humanoid")
