@@ -1,5 +1,5 @@
 task.spawn(function()
-for _,v in next, game:GetService('Players'):GetPlayers() do
+for _,v in next, game:GetService('Players'):GetChildren() do
 leaderstats = Instance.new("Folder",v)
 leaderstats.Name = "leaderstats"
 KOs = Instance.new("IntValue",leaderstats)
@@ -37,7 +37,6 @@ local g=Instance.new("IntValue")
 g.Name = "bomb"
 g.Parent =v
 g.Value=0
-end
 if v.Character ~= nil then
 		local Humanoid = v.Character:FindFirstChild("Humanoid")
 		if Humanoid then
