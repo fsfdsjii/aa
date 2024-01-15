@@ -1,0 +1,196 @@
+task.spawn(function()
+for _,v in next, game:GetService('Players'):GetChildren() do
+leaderstats = Instance.new("Folder",v)
+leaderstats.Name = "leaderstats"
+KO = owner:FindFirstChild('KOs')
+if not KO then
+KOs = Instance.new("IntValue",leaderstats)
+KOs.Name = "KOs"
+R = KOs:Clone()
+R.Parent = leaderstats
+end
+KO = owner:FindFirstChild('WOs')
+if not KO then
+WOs = Instance.new("IntValue",leaderstats)
+WOs.Name = "WOs"
+R = WOs:Clone()
+R.Parent = leaderstats
+end
+KO = owner:FindFirstChild('Hits')
+if not KO then
+Hits = Instance.new("IntValue",leaderstats)
+Hits.Name = "Hits"
+R = Hits:Clone()
+R.Parent = leaderstats
+end
+KO = owner:FindFirstChild('Money')
+if not KO then
+Money = Instance.new("IntValue",leaderstats)
+Money.Name = "Money"
+Money.Value = 20
+R = Money:Clone()
+R.Parent = leaderstats
+end
+KO = owner:FindFirstChild('Captures')
+if not KO then
+Captures = Instance.new("IntValue",leaderstats)
+Captures.Name = "Captures"
+R = Captures:Clone()
+R.Parent = leaderstats
+end
+KO = owner:FindFirstChild('MaxFuel')
+if not KO then
+local c = Instance.new("IntValue")
+c.Name = "MaxFuel"
+c.Parent =v
+c.Value=20
+R = c:Clone()
+R.Parent = v
+end
+KO = owner:FindFirstChild('MaxHealth')
+if not KO then
+local d=Instance.new("IntValue")
+d.Name = "MaxHealth"
+d.Parent =v
+d.Value=100
+R = d:Clone()
+R.Parent = v
+end
+KO = owner:FindFirstChild('power')
+if not KO then
+local e=Instance.new("IntValue")
+e.Name = "power"
+e.Parent =v
+e.Value=40
+R = e:Clone()
+R.Parent = v
+end
+KO = owner:FindFirstChild('rev')
+if not KO then
+local f=Instance.new("IntValue")
+f.Name = "rev"
+f.Parent =v
+f.Value=0
+R = f:Clone()
+R.Parent = v
+end
+KO = owner:FindFirstChild('bomb')
+if not KO then
+local g=Instance.new("IntValue")
+g.Name = "bomb"
+g.Parent =v
+g.Value=0
+R = g:Clone()
+R.Parent = v
+end
+if v.Character ~= nil then
+		local Humanoid = v.Character:FindFirstChild("Humanoid")
+		if Humanoid then
+brr = Instance.new("ObjectValue",Humanoid)
+brr.Name = "heloamongus"
+if v.Character:FindFirstChildOfClass('Tool') ~= nil then
+if v.Character:FindFirstChildOfClass('Tool'):FindFirstChild('Handle') ~= nil then
+v.Character:FindFirstChildOfClass('Tool'):FindFirstChild('Handle').Touched:Connect(function(yyy)
+if yyy ~= nil then
+if game:GetService('Players'):GetPlayerFromCharacter(yyy.Parent) ~= nil then
+player = game:GetService('Players'):GetPlayerFromCharacter(yyy.Parent)
+tool = yyy.Parent:FindFirstChildOfClass('Tool')
+if tool then
+Humanoid.heloamongus.Value = player
+end
+end
+end
+end)
+end
+end
+			Humanoid.Died:connect(function()
+				for i,Child in pairs(Humanoid:GetChildren()) do
+					if Child:IsA("ObjectValue") and Child.Value and Child.Value:IsA("Player") then
+						local Killer = Child.Value
+						if Killer:FindFirstChild("leaderstats") then
+                                               if Killer:FindFirstChild("leaderstats"):FindFirstChild "KOs" then
+							local Kills = Killer.leaderstats.KOs
+							Kills.Value = Kills.Value +1
+                                                       end
+						end
+						return
+					end
+end
+end)
+end
+
+game:GetService('Players').PlayerAdded:Connect(function(plr)
+leaderstats = Instance.new("Folder",plr)
+leaderstats.Name = "leaderstats"
+KOs = Instance.new("IntValue",leaderstats)
+KOs.Name = "KOs"
+KOs.Value = 0
+WOs = Instance.new("IntValue",leaderstats)
+WOs.Name = "WOs"
+WOs.Value = 0
+Hits = Instance.new("IntValue",leaderstats)
+Hits.Name = "Hits"
+Hits.Value = 0
+Money = Instance.new("IntValue",leaderstats)
+Money.Name = "Money"
+Money.Value = 0
+local c = Instance.new("IntValue")
+c.Name = "MaxFuel"
+c.Parent =plr
+c.Value=20
+local d=Instance.new("IntValue")
+d.Name = "MaxHealth"
+d.Parent =plr
+d.Value=100
+local e=Instance.new("IntValue")
+e.Name = "power"
+e.Parent =plr
+e.Value=40
+local f=Instance.new("IntValue")
+f.Name = "rev"
+f.Parent =plr
+f.Value=0
+local g=Instance.new("IntValue")
+g.Name = "bomb"
+g.Parent =plr
+g.Value=0
+end)
+game:GetService('Players').PlayerAdded:Connect(function(plr)
+leaderstats = Instance.new("Folder",plr)
+leaderstats.Name = "leaderstats"
+KOs = Instance.new("IntValue",leaderstats)
+KOs.Name = "KOs"
+KOs.Value = 0
+WOs = Instance.new("IntValue",leaderstats)
+WOs.Name = "WOs"
+WOs.Value = 0
+Hits = Instance.new("IntValue",leaderstats)
+Hits.Name = "Hits"
+Hits.Value = 0
+Money = Instance.new("IntValue",leaderstats)
+Money.Name = "Money"
+Money.Value = 0
+local c = Instance.new("IntValue")
+c.Name = "MaxFuel"
+c.Parent =plr
+c.Value=20
+local d=Instance.new("IntValue")
+d.Name = "MaxHealth"
+d.Parent =plr
+d.Value=100
+local e=Instance.new("IntValue")
+e.Name = "power"
+e.Parent =plr
+e.Value=40
+local f=Instance.new("IntValue")
+f.Name = "rev"
+f.Parent =plr
+f.Value=0
+local g=Instance.new("IntValue")
+g.Name = "bomb"
+g.Parent =plr
+g.Value=0
+end)
+end
+end
+end)
