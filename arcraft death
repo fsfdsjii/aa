@@ -7,30 +7,40 @@ if not KO then
 KOs = Instance.new("IntValue",leaderstats)
 KOs.Name = "KOs"
 KOs.Value = 0
+R = KOs:Clone()
+R.Parent = leaderstats
 end
 KO = owner:FindFirstChild('WOs')
 if not KO then
 WOs = Instance.new("IntValue",leaderstats)
 WOs.Name = "WOs"
 WOs.Value = 0
+R = WOs:Clone()
+R.Parent = leaderstats
 end
 KO = owner:FindFirstChild('Hits')
 if not KO then
 Hits = Instance.new("IntValue",leaderstats)
 Hits.Name = "Hits"
 Hits.Value = 0
+R = Hits:Clone()
+R.Parent = leaderstats
 end
 KO = owner:FindFirstChild('Money')
 if not KO then
 Money = Instance.new("IntValue",leaderstats)
 Money.Name = "Money"
 Money.Value = 0
+R = Money:Clone()
+R.Parent = leaderstats
 end
 KO = owner:FindFirstChild('Captures')
 if not KO then
 Captures = Instance.new("IntValue",leaderstats)
 Captures.Name = "Captures"
 Captures.Value = 0
+R = Captures:Clone()
+R.Parent = leaderstats
 end
 KO = owner:FindFirstChild('MaxFuel')
 if not KO then
@@ -38,6 +48,8 @@ local c = Instance.new("IntValue")
 c.Name = "MaxFuel"
 c.Parent =v
 c.Value=20
+R = MaxFuel:Clone()
+R.Parent = v
 end
 KO = owner:FindFirstChild('MaxHealth')
 if not KO then
@@ -45,6 +57,8 @@ local d=Instance.new("IntValue")
 d.Name = "MaxHealth"
 d.Parent =v
 d.Value=100
+R = MaxHealth:Clone()
+R.Parent = v
 end
 KO = owner:FindFirstChild('power')
 if not KO then
@@ -52,6 +66,8 @@ local e=Instance.new("IntValue")
 e.Name = "power"
 e.Parent =v
 e.Value=40
+R = power:Clone()
+R.Parent = v
 end
 KO = owner:FindFirstChild('rev')
 if not KO then
@@ -59,6 +75,8 @@ local f=Instance.new("IntValue")
 f.Name = "rev"
 f.Parent =v
 f.Value=0
+R = rev:Clone()
+R.Parent = v
 end
 KO = owner:FindFirstChild('rev')
 if not KO then
@@ -66,6 +84,8 @@ local g=Instance.new("IntValue")
 g.Name = "bomb"
 g.Parent =v
 g.Value=0
+R = bomb:Clone()
+R.Parent = v
 end
 if v.Character ~= nil then
 		local Humanoid = v.Character:FindFirstChild("Humanoid")
