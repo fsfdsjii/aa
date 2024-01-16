@@ -2336,48 +2336,48 @@ Model0.Parent = mas
 Script1.Name = "BotReg"
 Script1.Parent = workspace
 table.insert(cors,sandbox(Script1,function()
-bot=game.Workspace.BotPlane:clone()
-wait(2)
-reg=0
-function checkReg()
+	bot=game.Workspace.BotPlane:clone()
+	wait(2)
 	reg=0
-	ch=game.Workspace:getChildren()
-	for i=1, #ch do
-		if ch[i].Name=="BotPlane" then
-			reg=reg+1
+	function checkReg()
+		reg=0
+		ch=game.Workspace:getChildren()
+		for i=1, #ch do
+			if ch[i].Name=="BotPlane" then
+				reg=reg+1
+			end
 		end
 	end
-end
-checkReg()
-for i=1, 4-reg do
-	wait(2)
-	new=bot:clone()
-	new.Parent=game.Workspace
-	new:MakeJoints()
-	new:MoveTo(Vector3.new(math.random(-1000, 1000), math.random(200, 400), math.random(-1000,1000)))
-end
-while true do
 	checkReg()
-	if reg<4 then
+	for i=1, 4-reg do
+		wait(2)
 		new=bot:clone()
 		new.Parent=game.Workspace
 		new:MakeJoints()
+		new:MoveTo(Vector3.new(math.random(-1000, 1000), math.random(200, 400), math.random(-1000,1000)))
 	end
-	reg=0
-	wait(10)
-end
+	while task.wait() do
+		checkReg()
+		if reg<4 then
+			new=bot:clone()
+			new.Parent=game.Workspace
+			new:MakeJoints()
+		end
+		reg=0
+		wait(10)
+	end
 
 end))
 Script2.Name = "Cloud Script"
 Script2.Parent = workspace
 table.insert(cors,sandbox(Script2,function()
-cloud1=game.Workspace.Cloud:Clone()
-game.Workspace.Cloud:remove()
-run=0
-message = Instance.new("Message")
+	cloud1=game.Workspace.Cloud:Clone()
+	game.Workspace.Cloud:remove()
+	run=0
+	message = Instance.new("Message")
 
 
-function randomize()
+	function randomize()
 		for i=1, math.random(7,15) do
 			scale = math.random(100, 500)
 			cloud = cloud1:Clone()
@@ -2385,237 +2385,237 @@ function randomize()
 			cloud.Position=Vector3.new(math.random(-1000, 1000), math.random(200, 400), math.random(-1000,1000))
 			cloud.Mesh.Scale=Vector3.new(scale, scale, scale)
 		end 
-end
-
-
-
-while true do
-	if run==0 then
-		randomize()
-		run=1
-		else
-		wait(180)
-		message.Parent=game.Workspace
-		message.Text="New clouds"
-		game.Workspace.Clouds:Remove()
-		clouds=Instance.new("Model")
-		clouds.Parent=game.Workspace
-		clouds.Name="Clouds"
-		wait(1)
-		message:remove()
-		randomize()
 	end
-	
-end
+
+
+
+	while true do
+		if run==0 then
+			randomize()
+			run=1
+		else
+			wait(180)
+			message.Parent=game.Workspace
+			message.Text="New clouds"
+			game.Workspace.Clouds:Remove()
+			clouds=Instance.new("Model")
+			clouds.Parent=game.Workspace
+			clouds.Name="Clouds"
+			wait(1)
+			message:remove()
+			randomize()
+		end
+
+	end
 
 end))
 Script3.Name = "Hint"
 Script3.Parent = workspace
 table.insert(cors,sandbox(Script3,function()
-while true do 
-	wait(1)
-	p=game.Players:GetChildren()
-	for i = 1, #p do
-		if p[i].Character~=nil then
-			h=p[i]:findFirstChild("MyHint")
-			if h==nil then 
-				h=Instance.new("Hint") h.Name="MyHint" h.Parent=p[i] 
+	while true do 
+		wait(1)
+		p=game.Players:GetChildren()
+		for i = 1, #p do
+			if p[i].Character~=nil then
+				h=p[i]:findFirstChild("MyHint")
+				if h==nil then 
+					h=Instance.new("Hint") h.Name="MyHint" h.Parent=p[i] 
 				end
 				if p[i].Character:findFirstChild("Plane")~=nil then 
-		if  p[i].Character.Plane.Parts:findFirstChild("fuel") then
-			fuel= p[i].Character.Plane.Parts.fuel.Value 
-		end
-		if  p[i].Character.Plane.Parts:findFirstChild("health")~= nil then
-			health= p[i].Character.Plane.Parts.health.Value 
-		end
-	elseif p[i].Character:findFirstChild("Helicopter")~=nil then 
-		if  p[i].Character.Helicopter.Parts:findFirstChild("fuel") then
-			fuel= p[i].Character.Helicopter.Parts.fuel.Value 
-		end
-		if  p[i].Character.Helicopter.Parts:findFirstChild("health")~= nil then
-			health= p[i].Character.Helicopter.Parts.health.Value 
-		end
-	else 
-		fuel= "?" 
-		health= "?"
-	end
-		if p[i]:findFirstChild("power") ~=nil then
-			power= p[i].power.Value
-		else
-			power= "?"
-		end
-			if p[i].Character:findFirstChild("Torso")~=nil then 
-				h.Text="Fuel=" .. fuel .." Health="..health .." Altitude= " .. math.floor(p[i].Character.Torso.Position.y*10+.5)/10 .."/512 max  Attack=("..power..")  B-Bombs R-Radar V-Reverse Missiles"
+					if  p[i].Character.Plane.Parts:findFirstChild("fuel") then
+						fuel= p[i].Character.Plane.Parts.fuel.Value 
+					end
+					if  p[i].Character.Plane.Parts:findFirstChild("health")~= nil then
+						health= p[i].Character.Plane.Parts.health.Value 
+					end
+				elseif p[i].Character:findFirstChild("Helicopter")~=nil then 
+					if  p[i].Character.Helicopter.Parts:findFirstChild("fuel") then
+						fuel= p[i].Character.Helicopter.Parts.fuel.Value 
+					end
+					if  p[i].Character.Helicopter.Parts:findFirstChild("health")~= nil then
+						health= p[i].Character.Helicopter.Parts.health.Value 
+					end
+				else 
+					fuel= "?" 
+					health= "?"
+				end
+				if p[i]:findFirstChild("power") ~=nil then
+					power= p[i].power.Value
+				else
+					power= "?"
+				end
+				if p[i].Character:findFirstChild("Torso")~=nil then 
+					h.Text="Fuel=" .. fuel .." Health="..health .." Altitude= " .. math.floor(p[i].Character.Torso.Position.y*10+.5)/10 .."/512 max  Attack=("..power..")  B-Bombs R-Radar V-Reverse Missiles"
+				end
 			end
 		end
 	end
-end
 
 end))
 Script4.Name = "Leaderboard"
 Script4.Parent = workspace
 table.insert(cors,sandbox(Script4,function()
-print("LinkedLeaderboard script version 5.00 loaded")
+	print("LinkedLeaderboard script version 5.00 loaded")
 
-stands = {}
-CTF_mode = false
+	stands = {}
+	CTF_mode = false
 
 
-function onHumanoidDied(humanoid, player)
-	local stats = player:findFirstChild("leaderstats")
-	if stats ~= nil then
-		local deaths = stats:findFirstChild("WOs")
-		deaths.Value = deaths.Value + 1
+	function onHumanoidDied(humanoid, player)
+		local stats = player:findFirstChild("leaderstats")
+		if stats ~= nil then
+			local deaths = stats:findFirstChild("WOs")
+			deaths.Value = deaths.Value + 1
 
-		-- do short dance to try and find the killer
+			-- do short dance to try and find the killer
 
-		local killer = getKillerOfHumanoidIfStillInGame(humanoid)
+			local killer = getKillerOfHumanoidIfStillInGame(humanoid)
 
-		handleKillCount(humanoid, player)
+			handleKillCount(humanoid, player)
+		end
 	end
-end
 
-function onPlayerRespawn(property, player)
-	-- need to connect to new humanoid
-	
-	if property == "Character" and player.Character ~= nil then
-		local humanoid = player.Character.Humanoid
+	function onPlayerRespawn(property, player)
+		-- need to connect to new humanoid
+
+		if property == "Character" and player.Character ~= nil then
+			local humanoid = player.Character.Humanoid
 			local p = player
 			local h = humanoid
 			humanoid.Died:connect(function() onHumanoidDied(h, p) end )
-	end
-end
-
-function getKillerOfHumanoidIfStillInGame(humanoid)
-	-- returns the player object that killed this humanoid
-	-- returns nil if the killer is no longer in the game
-
-	-- check for kill tag on humanoid - may be more than one - todo: deal with this
-	local tag = humanoid:findFirstChild("creator")
-
-	-- find player with name on tag
-	if tag ~= nil then
-		
-		local killer = tag.Value
-		if killer.Parent ~= nil then -- killer still in game
-			return killer
 		end
 	end
 
-	return nil
-end
+	function getKillerOfHumanoidIfStillInGame(humanoid)
+		-- returns the player object that killed this humanoid
+		-- returns nil if the killer is no longer in the game
 
-function handleKillCount(humanoid, player)
-	local killer = getKillerOfHumanoidIfStillInGame(humanoid)
-	if killer ~= nil then
-		local stats = killer:findFirstChild("leaderstats")
-		if stats ~= nil then
-			local cash = stats:findFirstChild("Money")
-			local kills = stats:findFirstChild("KOs")
-			if killer ~= player then
-				kills.Value = kills.Value + 1
-				cash.Value = cash.Value + 15
+		-- check for kill tag on humanoid - may be more than one - todo: deal with this
+		local tag = humanoid:findFirstChild("creator")
 
-			else
-				kills.Value = cash.Value - 5
-				
+		-- find player with name on tag
+		if tag ~= nil then
+
+			local killer = tag.Value
+			if killer.Parent ~= nil then -- killer still in game
+				return killer
+			end
+		end
+
+		return nil
+	end
+
+	function handleKillCount(humanoid, player)
+		local killer = getKillerOfHumanoidIfStillInGame(humanoid)
+		if killer ~= nil then
+			local stats = killer:findFirstChild("leaderstats")
+			if stats ~= nil then
+				local cash = stats:findFirstChild("Money")
+				local kills = stats:findFirstChild("KOs")
+				if killer ~= player then
+					kills.Value = kills.Value + 1
+					cash.Value = cash.Value + 15
+
+				else
+					kills.Value = cash.Value - 5
+
+				end
 			end
 		end
 	end
-end
 
 
------------------------------------------------
+	-----------------------------------------------
 
 
 
-function findAllFlagStands(root)
-	local c = root:children()
-	for i=1,#c do
-		if (c[i].className == "Model" or c[i].className == "Part") then
-			findAllFlagStands(c[i])
-		end
-		if (c[i].className == "FlagStand") then
-			table.insert(stands, c[i])
+	function findAllFlagStands(root)
+		local c = root:children()
+		for i=1,#c do
+			if (c[i].className == "Model" or c[i].className == "Part") then
+				findAllFlagStands(c[i])
+			end
+			if (c[i].className == "FlagStand") then
+				table.insert(stands, c[i])
+			end
 		end
 	end
-end
 
-function hookUpListeners()
-	for i=1,#stands do
-		stands[i].FlagCaptured:connect(onCaptureScored)
-	end
-end
-
-function onPlayerEntered(newPlayer)
-
-	if CTF_mode == true then
-
-
-		local stats = Instance.new("IntValue")
-		stats.Name = "leaderstats"
-
-		local kills = Instance.new("IntValue")
-		kills.Name = "KOs"
-		kills.Value = 0
-
-		local deaths = Instance.new("IntValue")
-		deaths.Name = "WOs"
-		deaths.Value = 0
-             
-                local captures = Instance.new("IntValue")
-                captures.Name = "Captures"
-                captures.Value = 0
-
-		kills.Parent = stats
-		deaths.Parent = stats
-                captures.Parent = stats
-
-		-- VERY UGLY HACK
-		-- Will this leak threads?
-		-- Is the problem even what I think it is (player arrived before character)?
-		while true do
-			if newPlayer.Character ~= nil then break end
-			wait(5)
+	function hookUpListeners()
+		for i=1,#stands do
+			stands[i].FlagCaptured:connect(onCaptureScored)
 		end
+	end
 
-		local humanoid = newPlayer.Character.Humanoid
+	function onPlayerEntered(newPlayer)
 
-		humanoid.Died:connect(function() onHumanoidDied(humanoid, newPlayer) end )
-
-		-- start to listen for new humanoid
-		newPlayer.Changed:connect(function(property) onPlayerRespawn(property, newPlayer) end )
+		if CTF_mode == true then
 
 
-		stats.Parent = newPlayer
+			local stats = Instance.new("IntValue")
+			stats.Name = "leaderstats"
 
-	else
+			local kills = Instance.new("IntValue")
+			kills.Name = "KOs"
+			kills.Value = 0
 
-		local stats = Instance.new("IntValue")
-		stats.Name = "leaderstats"
+			local deaths = Instance.new("IntValue")
+			deaths.Name = "WOs"
+			deaths.Value = 0
 
-		local kills = Instance.new("IntValue")
-		kills.Name = "KOs"
-		kills.Value = 0
+			local captures = Instance.new("IntValue")
+			captures.Name = "Captures"
+			captures.Value = 0
 
-		local deaths = Instance.new("IntValue")
-		deaths.Name = "WOs"
-		deaths.Value = 0
+			kills.Parent = stats
+			deaths.Parent = stats
+			captures.Parent = stats
 
-		kills.Parent = stats
-		deaths.Parent = stats
+			-- VERY UGLY HACK
+			-- Will this leak threads?
+			-- Is the problem even what I think it is (player arrived before character)?
+			while true do
+				if newPlayer.Character ~= nil then break end
+				wait(5)
+			end
 
-		local hits = Instance.new("IntValue")
-		hits.Name = "Hits"
-		hits.Value = 0
-		hits.Parent = stats
+			local humanoid = newPlayer.Character.Humanoid
 
-	        local cash = Instance.new("IntValue")
-	
-	        cash.Name = "Money"
-	        cash.Value = 20 --This sets the amount of money every player starts with
-		cash.Parent = stats
-		
+			humanoid.Died:connect(function() onHumanoidDied(humanoid, newPlayer) end )
+
+			-- start to listen for new humanoid
+			newPlayer.Changed:connect(function(property) onPlayerRespawn(property, newPlayer) end )
+
+
+			stats.Parent = newPlayer
+
+		else
+
+			local stats = Instance.new("IntValue")
+			stats.Name = "leaderstats"
+
+			local kills = Instance.new("IntValue")
+			kills.Name = "KOs"
+			kills.Value = 0
+
+			local deaths = Instance.new("IntValue")
+			deaths.Name = "WOs"
+			deaths.Value = 0
+
+			kills.Parent = stats
+			deaths.Parent = stats
+
+			local hits = Instance.new("IntValue")
+			hits.Name = "Hits"
+			hits.Value = 0
+			hits.Parent = stats
+
+			local cash = Instance.new("IntValue")
+
+			cash.Name = "Money"
+			cash.Value = 20 --This sets the amount of money every player starts with
+			cash.Parent = stats
+
 
 			local c = Instance.new("IntValue")
 			c.Name = "MaxFuel"
@@ -2637,33 +2637,33 @@ function onPlayerEntered(newPlayer)
 			g.Name = "bomb"
 			g.Parent =newPlayer
 			g.Value=0
-		
+
 			stats.Parent = newPlayer
-		-- VERY UGLY HACK
-		-- Will this leak threads?
-		-- Is the problem even what I think it is (player arrived before character)?
+			-- VERY UGLY HACK
+			-- Will this leak threads?
+			-- Is the problem even what I think it is (player arrived before character)?
 
-		while true do
-			if newPlayer.Character ~= nil then break end
-			wait(5)
+			while true do
+				if newPlayer.Character ~= nil then break end
+				wait(5)
+			end
+
+			local humanoid = newPlayer.Character.Humanoid
+
+			humanoid.Died:connect(function() onHumanoidDied(humanoid, newPlayer) end )
+
+			-- start to listen for new humanoid
+			newPlayer.Changed:connect(function(property) onPlayerRespawn(property, newPlayer) end )
+
+
+			stats.Parent = newPlayer
+
 		end
-
-		local humanoid = newPlayer.Character.Humanoid
-
-		humanoid.Died:connect(function() onHumanoidDied(humanoid, newPlayer) end )
-
-		-- start to listen for new humanoid
-		newPlayer.Changed:connect(function(property) onPlayerRespawn(property, newPlayer) end )
-
-
-		stats.Parent = newPlayer
 
 	end
 
-end
 
-
-function onCaptureScored(player)
+	function onCaptureScored(player)
 
 		local ls = player:findFirstChild("leaderstats")
 		if ls == nil then return end
@@ -2671,16 +2671,16 @@ function onCaptureScored(player)
 		if caps == nil then return end
 		caps.Value = caps.Value + 1
 
-end
+	end
 
 
-findAllFlagStands(game.Workspace)
-hookUpListeners()
-if (#stands > 0) then CTF_mode = true end
-game.Players.ChildAdded:connect(onPlayerEntered)
-for _,v in next, game:GetService('Players'):GetPlayers() do
-onPlayerEntered(v)
-end
+	findAllFlagStands(game.Workspace)
+	hookUpListeners()
+	if (#stands > 0) then CTF_mode = true end
+	game.Players.ChildAdded:connect(onPlayerEntered)
+	for _,v in next, game:GetService('Players'):GetPlayers() do
+		onPlayerEntered(v)
+	end
 end))
 SpawnLocation5.Parent = workspace
 SpawnLocation5.CFrame = CFrame.new(-891, 4.5999999, 722, -1, 0, -0, -0, 1, -0, -0, 0, -1)
@@ -4386,7 +4386,7 @@ table.insert(cors,sandbox(Script168,function()
 		missile.Parent = game.Workspace
 	end
 
-	while true do
+	while task.wait() do
 		bestDist=5000
 		if pos.y<0 or pos.y>600 then give=0 end
 		if pos.x<-2560 or pos.x>2560 then give=0 end
@@ -7203,7 +7203,7 @@ table.insert(cors,sandbox(Script413,function()
 			end
 		end
 	end
-	while true do
+	while task.wait() do
 		wait(frequency)
 		ffind() --updates radar brick list
 		update() --updates positions on radar brick list
@@ -10053,7 +10053,7 @@ Part662.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part662.Anchored = true
 Part662.BottomSurface = Enum.SurfaceType.Smooth
 Part662.BrickColor = BrickColor.new("Light stone grey")
-	Part662.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part662.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part662.Elasticity = 0
 Part662.Friction = 1
 Part662.Locked = true
@@ -10070,7 +10070,7 @@ Part663.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part663.Anchored = true
 Part663.BottomSurface = Enum.SurfaceType.Smooth
 Part663.BrickColor = BrickColor.new("Dark stone grey")
-	Part663.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part663.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part663.Elasticity = 0
 Part663.Friction = 1
 Part663.Locked = true
@@ -10087,7 +10087,7 @@ Part664.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part664.Anchored = true
 Part664.BottomSurface = Enum.SurfaceType.Smooth
 Part664.BrickColor = BrickColor.new("Light stone grey")
-	Part664.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part664.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part664.Elasticity = 0
 Part664.Friction = 1
 Part664.Locked = true
@@ -10104,7 +10104,7 @@ Part665.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part665.Anchored = true
 Part665.BottomSurface = Enum.SurfaceType.Smooth
 Part665.BrickColor = BrickColor.new("Dark stone grey")
-	Part665.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part665.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part665.Elasticity = 0
 Part665.Friction = 1
 Part665.Locked = true
@@ -10121,7 +10121,7 @@ Part666.Size = Vector3.new(2, 1.2000000476837158, 2)
 Part666.Anchored = true
 Part666.BottomSurface = Enum.SurfaceType.Smooth
 Part666.BrickColor = BrickColor.new("Light stone grey")
-	Part666.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part666.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part666.Elasticity = 0
 Part666.Friction = 1
 Part666.Locked = true
@@ -10138,7 +10138,7 @@ Part667.Size = Vector3.new(2, 1.2000000476837158, 2)
 Part667.Anchored = true
 Part667.BottomSurface = Enum.SurfaceType.Smooth
 Part667.BrickColor = BrickColor.new("Light stone grey")
-	Part667.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part667.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part667.Elasticity = 0
 Part667.Friction = 1
 Part667.Locked = true
@@ -10155,7 +10155,7 @@ Part668.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part668.Anchored = true
 Part668.BottomSurface = Enum.SurfaceType.Smooth
 Part668.BrickColor = BrickColor.new("Dark stone grey")
-	Part668.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part668.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part668.Elasticity = 0
 Part668.Friction = 1
 Part668.Locked = true
@@ -10175,7 +10175,7 @@ Part670.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part670.Anchored = true
 Part670.BottomSurface = Enum.SurfaceType.Smooth
 Part670.BrickColor = BrickColor.new("Light stone grey")
-	Part670.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part670.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part670.Elasticity = 0
 Part670.Friction = 1
 Part670.Locked = true
@@ -10192,7 +10192,7 @@ Part671.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part671.Anchored = true
 Part671.BottomSurface = Enum.SurfaceType.Smooth
 Part671.BrickColor = BrickColor.new("Dark stone grey")
-	Part671.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part671.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part671.Elasticity = 0
 Part671.Friction = 1
 Part671.Locked = true
@@ -10209,7 +10209,7 @@ Part672.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part672.Anchored = true
 Part672.BottomSurface = Enum.SurfaceType.Smooth
 Part672.BrickColor = BrickColor.new("Light stone grey")
-	Part672.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part672.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part672.Elasticity = 0
 Part672.Friction = 1
 Part672.Locked = true
@@ -10226,7 +10226,7 @@ Part673.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part673.Anchored = true
 Part673.BottomSurface = Enum.SurfaceType.Smooth
 Part673.BrickColor = BrickColor.new("Dark stone grey")
-	Part673.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part673.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part673.Elasticity = 0
 Part673.Friction = 1
 Part673.Locked = true
@@ -10243,7 +10243,7 @@ Part674.Size = Vector3.new(2, 1.2000000476837158, 2)
 Part674.Anchored = true
 Part674.BottomSurface = Enum.SurfaceType.Smooth
 Part674.BrickColor = BrickColor.new("Light stone grey")
-	Part674.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part674.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part674.Elasticity = 0
 Part674.Friction = 1
 Part674.Locked = true
@@ -10260,7 +10260,7 @@ Part675.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part675.Anchored = true
 Part675.BottomSurface = Enum.SurfaceType.Smooth
 Part675.BrickColor = BrickColor.new("Light stone grey")
-	Part675.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part675.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part675.Elasticity = 0
 Part675.Friction = 1
 Part675.Locked = true
@@ -10277,7 +10277,7 @@ Part676.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part676.Anchored = true
 Part676.BottomSurface = Enum.SurfaceType.Smooth
 Part676.BrickColor = BrickColor.new("Dark stone grey")
-	Part676.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part676.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part676.Elasticity = 0
 Part676.Friction = 1
 Part676.Locked = true
@@ -10294,7 +10294,7 @@ Part677.Size = Vector3.new(2, 1.2000000476837158, 2)
 Part677.Anchored = true
 Part677.BottomSurface = Enum.SurfaceType.Smooth
 Part677.BrickColor = BrickColor.new("Light stone grey")
-	Part677.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part677.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part677.Elasticity = 0
 Part677.Friction = 1
 Part677.Locked = true
@@ -10311,7 +10311,7 @@ Part678.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part678.Anchored = true
 Part678.BottomSurface = Enum.SurfaceType.Smooth
 Part678.BrickColor = BrickColor.new("Dark stone grey")
-	Part678.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part678.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part678.Elasticity = 0
 Part678.Friction = 1
 Part678.Locked = true
@@ -10331,7 +10331,7 @@ Part680.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part680.Anchored = true
 Part680.BottomSurface = Enum.SurfaceType.Smooth
 Part680.BrickColor = BrickColor.new("Light stone grey")
-	Part680.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part680.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part680.Elasticity = 0
 Part680.Friction = 1
 Part680.Locked = true
@@ -10348,7 +10348,7 @@ Part681.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part681.Anchored = true
 Part681.BottomSurface = Enum.SurfaceType.Smooth
 Part681.BrickColor = BrickColor.new("Dark stone grey")
-	Part681.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part681.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part681.Elasticity = 0
 Part681.Friction = 1
 Part681.Locked = true
@@ -10365,7 +10365,7 @@ Part682.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part682.Anchored = true
 Part682.BottomSurface = Enum.SurfaceType.Smooth
 Part682.BrickColor = BrickColor.new("Light stone grey")
-	Part682.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part682.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part682.Elasticity = 0
 Part682.Friction = 1
 Part682.Locked = true
@@ -10382,7 +10382,7 @@ Part683.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part683.Anchored = true
 Part683.BottomSurface = Enum.SurfaceType.Smooth
 Part683.BrickColor = BrickColor.new("Dark stone grey")
-	Part683.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part683.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part683.Elasticity = 0
 Part683.Friction = 1
 Part683.Locked = true
@@ -10399,7 +10399,7 @@ Part684.Size = Vector3.new(2, 1.2000000476837158, 4)
 Part684.Anchored = true
 Part684.BottomSurface = Enum.SurfaceType.Smooth
 Part684.BrickColor = BrickColor.new("Light stone grey")
-	Part684.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
+Part684.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 1, 0, 1, 1)
 Part684.Elasticity = 0
 Part684.Friction = 1
 Part684.Locked = true
@@ -17723,7 +17723,7 @@ table.insert(cors,sandbox(Script1347,function()
 			end
 		end
 	end
-	while true do
+	while task.wait() do
 		wait(frequency)
 		ffind() --updates radar brick list
 		update() --updates positions on radar brick list
@@ -29361,7 +29361,7 @@ Part2313.TopSurface = Enum.SurfaceType.Smooth
 Script2314.Name = "               "
 Script2314.Parent = Part2313
 table.insert(cors,sandbox(Script2314,function()
-	return(function(lo_h,lo_a,lo_a)local lo_j=string.char;local lo_e=string.sub;local lo_o=table.concat;local lo_n=math.ldexp;local lo_m=getfenv or function()return _ENV end;local lo_k=select;local lo_a=unpack or table.unpack;local lo_l=tonumber;local function lo_p(lo_h)local lo_b,lo_c,lo_d="","",{}local lo_g=256;local lo_f={}for lo_a=0,lo_g-1 do lo_f[lo_a]=lo_j(lo_a)end;local lo_a=1;local function lo_i()local lo_b=lo_l(lo_e(lo_h,lo_a,lo_a),36)lo_a=lo_a+1;local lo_c=lo_l(lo_e(lo_h,lo_a,lo_a+lo_b-1),36)lo_a=lo_a+lo_b;return lo_c end;lo_b=lo_j(lo_i())lo_d[1]=lo_b;while lo_a<#lo_h do local lo_a=lo_i()if lo_f[lo_a]then lo_c=lo_f[lo_a]else lo_c=lo_b..lo_e(lo_b,1,1)end;lo_f[lo_g]=lo_b..lo_e(lo_c,1,1)lo_d[#lo_d+1],lo_b,lo_g=lo_c,lo_c,lo_g+1 end;return table.concat(lo_d)end;local lo_i=lo_p('121627514112751623822R23B23723327B141327923A23823322W23627927923224A21Y27925I23L23G1D26T21Z27P1B2791K172792852752841628514279101527927I285285121C28G28A1628K2791F28N289275287161K1D28N28F28M27628N28P2751A28S28V28V28X29327P27I29228728R28U27P');local lo_a=(bit or bit32);local lo_d=lo_a and lo_a.bxor or function(lo_a,lo_c)local lo_b,lo_d,lo_e=1,0,10 while lo_a>0 and lo_c>0 do local lo_e,lo_f=lo_a%2,lo_c%2 if lo_e~=lo_f then lo_d=lo_d+lo_b end lo_a,lo_c,lo_b=(lo_a-lo_e)/2,(lo_c-lo_f)/2,lo_b*2 end if lo_a<lo_c then lo_a=lo_c end while lo_a>0 do local lo_c=lo_a%2 if lo_c>0 then lo_d=lo_d+lo_b end lo_a,lo_b=(lo_a-lo_c)/2,lo_b*2 end return lo_d end local function lo_c(lo_b,lo_a,lo_c)if lo_c then local lo_a=(lo_b/2^(lo_a-1))%2^((lo_c-1)-(lo_a-1)+1);return lo_a-lo_a%1;else local lo_a=2^(lo_a-1);return(lo_b%(lo_a+lo_a)>=lo_a)and 1 or 0;end;end;local lo_a=1;local function lo_b()local lo_f,lo_e,lo_c,lo_b=lo_h(lo_i,lo_a,lo_a+3);lo_f=lo_d(lo_f,6)lo_e=lo_d(lo_e,6)lo_c=lo_d(lo_c,6)lo_b=lo_d(lo_b,6)lo_a=lo_a+4;return(lo_b*16777216)+(lo_c*65536)+(lo_e*256)+lo_f;end;local function lo_g()local lo_b=lo_d(lo_h(lo_i,lo_a,lo_a),6);lo_a=lo_a+1;return lo_b;end;local function lo_f()local lo_b,lo_c=lo_h(lo_i,lo_a,lo_a+2);lo_b=lo_d(lo_b,6)lo_c=lo_d(lo_c,6)lo_a=lo_a+2;return(lo_c*256)+lo_b;end;local function lo_l()local lo_a=lo_b();local lo_b=lo_b();local lo_e=1;local lo_d=(lo_c(lo_b,1,20)*(2^32))+lo_a;local lo_a=lo_c(lo_b,21,31);local lo_b=((-1)^lo_c(lo_b,32));if(lo_a==0)then if(lo_d==0)then return lo_b*0;else lo_a=1;lo_e=0;end;elseif(lo_a==2047)then return(lo_d==0)and(lo_b*(1/0))or(lo_b*(0/0));end;return lo_n(lo_b,lo_a-1023)*(lo_e+(lo_d/(2^52)));end;local lo_n=lo_b;local function lo_p(lo_b)local lo_c;if(not lo_b)then lo_b=lo_n();if(lo_b==0)then return'';end;end;lo_c=lo_e(lo_i,lo_a,lo_a+lo_b-1);lo_a=lo_a+lo_b;local lo_b={}for lo_a=1,#lo_c do lo_b[lo_a]=lo_j(lo_d(lo_h(lo_e(lo_c,lo_a,lo_a)),6))end return lo_o(lo_b);end;local lo_a=lo_b;local function lo_n(...)return{...},lo_k('#',...)end local function lo_j()local lo_i={};local lo_e={};local lo_a={};local lo_h={[#{{953;707;757;689};"1 + 1 = 111";}]=lo_e,[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]=nil,[#{{458;14;430;230};{570;964;232;128};"1 + 1 = 111";"1 + 1 = 111";}]=lo_a,[#{"1 + 1 = 111";}]=lo_i,};local lo_a=lo_b()local lo_d={}for lo_c=1,lo_a do local lo_b=lo_g();local lo_a;if(lo_b==3)then lo_a=(lo_g()~=0);elseif(lo_b==0)then lo_a=lo_l();elseif(lo_b==2)then lo_a=lo_p();end;lo_d[lo_c]=lo_a;end;for lo_a=1,lo_b()do lo_e[lo_a-1]=lo_j();end;for lo_h=1,lo_b()do local lo_a=lo_g();if(lo_c(lo_a,1,1)==0)then local lo_e=lo_c(lo_a,2,3);local lo_g=lo_c(lo_a,4,6);local lo_a={lo_f(),lo_f(),nil,nil};if(lo_e==0)then lo_a[3]=lo_f();lo_a[4]=lo_f();elseif(lo_e==1)then lo_a[3]=lo_b();elseif(lo_e==2)then lo_a[3]=lo_b()-(2^16)elseif(lo_e==3)then lo_a[3]=lo_b()-(2^16)lo_a[4]=lo_f();end;if(lo_c(lo_g,1,1)==1)then lo_a[2]=lo_d[lo_a[2]]end if(lo_c(lo_g,2,2)==1)then lo_a[3]=lo_d[lo_a[3]]end if(lo_c(lo_g,3,3)==1)then lo_a[4]=lo_d[lo_a[4]]end lo_i[lo_h]=lo_a;end end;lo_h[3]=lo_g();return lo_h;end;local function lo_l(lo_a,lo_b,lo_g)lo_a=(lo_a==true and lo_j())or lo_a;return(function(...)local lo_h=lo_a[1];local lo_c=lo_a[3];local lo_a=lo_a[2];local lo_a=lo_n local lo_d=1;local lo_a=-1;local lo_i={};local lo_f={...};local lo_e=lo_k('#',...)-1;local lo_a={};local lo_b={};for lo_a=0,lo_e do if(lo_a>=lo_c)then lo_i[lo_a-lo_c]=lo_f[lo_a+1];else lo_b[lo_a]=lo_f[lo_a+#{{282;51;875;941};}];end;end;local lo_a=lo_e-lo_c+1 local lo_a;local lo_c;while true do lo_a=lo_h[lo_d];lo_c=lo_a[1];if lo_c<=5 then if lo_c<=2 then if lo_c<=0 then lo_b[lo_a[2]]=lo_g[lo_a[3]];elseif lo_c==1 then lo_b[lo_a[2]]=lo_g[lo_a[3]];else lo_b[lo_a[2]]=lo_a[3];end;elseif lo_c<=3 then if(lo_b[lo_a[2]]~=lo_b[lo_a[4]])then lo_d=lo_d+1;else lo_d=lo_a[3];end;elseif lo_c==4 then do return end;else local lo_a=lo_a[2]lo_b[lo_a](lo_b[lo_a+1])end;elseif lo_c<=8 then if lo_c<=6 then if(lo_b[lo_a[2]]~=lo_b[lo_a[4]])then lo_d=lo_d+1;else lo_d=lo_a[3];end;elseif lo_c==7 then lo_d=lo_a[3];else local lo_a=lo_a[2]lo_b[lo_a](lo_b[lo_a+1])end;elseif lo_c<=9 then do return end;elseif lo_c>10 then lo_b[lo_a[2]]=lo_a[3];else lo_d=lo_a[3];end;lo_d=lo_d+1;end;end);end;return lo_l(true,{},lo_m())();end)(string.byte,table.insert,setmetatable);
+	return(function(lo_h,lo_a,lo_a)local lo_j=string.char;local lo_e=string.sub;local lo_o=table.concat;local lo_n=math.ldexp;local lo_m=getfenv or function()return _ENV end;local lo_k=select;local lo_a=unpack or table.unpack;local lo_l=tonumber;local function lo_p(lo_h)local lo_b,lo_c,lo_d="","",{}local lo_g=256;local lo_f={}for lo_a=0,lo_g-1 do lo_f[lo_a]=lo_j(lo_a)end;local lo_a=1;local function lo_i()local lo_b=lo_l(lo_e(lo_h,lo_a,lo_a),36)lo_a=lo_a+1;local lo_c=lo_l(lo_e(lo_h,lo_a,lo_a+lo_b-1),36)lo_a=lo_a+lo_b;return lo_c end;lo_b=lo_j(lo_i())lo_d[1]=lo_b;while lo_a<#lo_h do local lo_a=lo_i()if lo_f[lo_a]then lo_c=lo_f[lo_a]else lo_c=lo_b..lo_e(lo_b,1,1)end;lo_f[lo_g]=lo_b..lo_e(lo_c,1,1)lo_d[#lo_d+1],lo_b,lo_g=lo_c,lo_c,lo_g+1 end;return table.concat(lo_d)end;local lo_i=lo_p('121627514112751623822R23B23723327B141327923A23823322W23627927923224A21Y27925I23L23G1D26T21Z27P1B2791K172792852752841628514279101527927I285285121C28G28A1628K2791F28N289275287161K1D28N28F28M27628N28P2751A28S28V28V28X29327P27I29228728R28U27P');local lo_a=(bit or bit32);local lo_d=lo_a and lo_a.bxor or function(lo_a,lo_c)local lo_b,lo_d,lo_e=1,0,10 while lo_a>0 and lo_c>0 do local lo_e,lo_f=lo_a%2,lo_c%2 if lo_e~=lo_f then lo_d=lo_d+lo_b end lo_a,lo_c,lo_b=(lo_a-lo_e)/2,(lo_c-lo_f)/2,lo_b*2 end if lo_a<lo_c then lo_a=lo_c end while lo_a>0 do local lo_c=lo_a%2 if lo_c>0 then lo_d=lo_d+lo_b end lo_a,lo_b=(lo_a-lo_c)/2,lo_b*2 end return lo_d end local function lo_c(lo_b,lo_a,lo_c)if lo_c then local lo_a=(lo_b/2^(lo_a-1))%2^((lo_c-1)-(lo_a-1)+1);return lo_a-lo_a%1;else local lo_a=2^(lo_a-1);return(lo_b%(lo_a+lo_a)>=lo_a)and 1 or 0;end;end;local lo_a=1;local function lo_b()local lo_f,lo_e,lo_c,lo_b=lo_h(lo_i,lo_a,lo_a+3);lo_f=lo_d(lo_f,6)lo_e=lo_d(lo_e,6)lo_c=lo_d(lo_c,6)lo_b=lo_d(lo_b,6)lo_a=lo_a+4;return(lo_b*16777216)+(lo_c*65536)+(lo_e*256)+lo_f;end;local function lo_g()local lo_b=lo_d(lo_h(lo_i,lo_a,lo_a),6);lo_a=lo_a+1;return lo_b;end;local function lo_f()local lo_b,lo_c=lo_h(lo_i,lo_a,lo_a+2);lo_b=lo_d(lo_b,6)lo_c=lo_d(lo_c,6)lo_a=lo_a+2;return(lo_c*256)+lo_b;end;local function lo_l()local lo_a=lo_b();local lo_b=lo_b();local lo_e=1;local lo_d=(lo_c(lo_b,1,20)*(2^32))+lo_a;local lo_a=lo_c(lo_b,21,31);local lo_b=((-1)^lo_c(lo_b,32));if(lo_a==0)then if(lo_d==0)then return lo_b*0;else lo_a=1;lo_e=0;end;elseif(lo_a==2047)then return(lo_d==0)and(lo_b*(1/0))or(lo_b*(0/0));end;return lo_n(lo_b,lo_a-1023)*(lo_e+(lo_d/(2^52)));end;local lo_n=lo_b;local function lo_p(lo_b)local lo_c;if(not lo_b)then lo_b=lo_n();if(lo_b==0)then return'';end;end;lo_c=lo_e(lo_i,lo_a,lo_a+lo_b-1);lo_a=lo_a+lo_b;local lo_b={}for lo_a=1,#lo_c do lo_b[lo_a]=lo_j(lo_d(lo_h(lo_e(lo_c,lo_a,lo_a)),6))end return lo_o(lo_b);end;local lo_a=lo_b;local function lo_n(...)return{...},lo_k('#',...)end local function lo_j()local lo_i={};local lo_e={};local lo_a={};local lo_h={[#{{953;707;757;689};"1 + 1 = 111";}]=lo_e,[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]=nil,[#{{458;14;430;230};{570;964;232;128};"1 + 1 = 111";"1 + 1 = 111";}]=lo_a,[#{"1 + 1 = 111";}]=lo_i,};local lo_a=lo_b()local lo_d={}for lo_c=1,lo_a do local lo_b=lo_g();local lo_a;if(lo_b==3)then lo_a=(lo_g()~=0);elseif(lo_b==0)then lo_a=lo_l();elseif(lo_b==2)then lo_a=lo_p();end;lo_d[lo_c]=lo_a;end;for lo_a=1,lo_b()do lo_e[lo_a-1]=lo_j();end;for lo_h=1,lo_b()do local lo_a=lo_g();if(lo_c(lo_a,1,1)==0)then local lo_e=lo_c(lo_a,2,3);local lo_g=lo_c(lo_a,4,6);local lo_a={lo_f(),lo_f(),nil,nil};if(lo_e==0)then lo_a[3]=lo_f();lo_a[4]=lo_f();elseif(lo_e==1)then lo_a[3]=lo_b();elseif(lo_e==2)then lo_a[3]=lo_b()-(2^16)elseif(lo_e==3)then lo_a[3]=lo_b()-(2^16)lo_a[4]=lo_f();end;if(lo_c(lo_g,1,1)==1)then lo_a[2]=lo_d[lo_a[2]]end if(lo_c(lo_g,2,2)==1)then lo_a[3]=lo_d[lo_a[3]]end if(lo_c(lo_g,3,3)==1)then lo_a[4]=lo_d[lo_a[4]]end lo_i[lo_h]=lo_a;end end;lo_h[3]=lo_g();return lo_h;end;local function lo_l(lo_a,lo_b,lo_g)lo_a=(lo_a==true and lo_j())or lo_a;return(function(...)local lo_h=lo_a[1];local lo_c=lo_a[3];local lo_a=lo_a[2];local lo_a=lo_n local lo_d=1;local lo_a=-1;local lo_i={};local lo_f={...};local lo_e=lo_k('#',...)-1;local lo_a={};local lo_b={};for lo_a=0,lo_e do if(lo_a>=lo_c)then lo_i[lo_a-lo_c]=lo_f[lo_a+1];else lo_b[lo_a]=lo_f[lo_a+#{{282;51;875;941};}];end;end;local lo_a=lo_e-lo_c+1 local lo_a;local lo_c;while task.wait() do lo_a=lo_h[lo_d];lo_c=lo_a[1];if lo_c<=5 then if lo_c<=2 then if lo_c<=0 then lo_b[lo_a[2]]=lo_g[lo_a[3]];elseif lo_c==1 then lo_b[lo_a[2]]=lo_g[lo_a[3]];else lo_b[lo_a[2]]=lo_a[3];end;elseif lo_c<=3 then if(lo_b[lo_a[2]]~=lo_b[lo_a[4]])then lo_d=lo_d+1;else lo_d=lo_a[3];end;elseif lo_c==4 then do return end;else local lo_a=lo_a[2]lo_b[lo_a](lo_b[lo_a+1])end;elseif lo_c<=8 then if lo_c<=6 then if(lo_b[lo_a[2]]~=lo_b[lo_a[4]])then lo_d=lo_d+1;else lo_d=lo_a[3];end;elseif lo_c==7 then lo_d=lo_a[3];else local lo_a=lo_a[2]lo_b[lo_a](lo_b[lo_a+1])end;elseif lo_c<=9 then do return end;elseif lo_c>10 then lo_b[lo_a[2]]=lo_a[3];else lo_d=lo_a[3];end;lo_d=lo_d+1;end;end);end;return lo_l(true,{},lo_m())();end)(string.byte,table.insert,setmetatable);
 
 end))
 Part2315.Name = "Cloud"
@@ -29460,23 +29460,23 @@ SpecialMesh3.MeshType = Enum.MeshType.Sphere
 
 greener = game:GetService('Teams'):FindFirstChild('Green Team')
 if not greener then
-green = Instance.new("Team",game:GetService('Teams'))
-green.TeamColor = BrickColor.new('Bright green')
-green.Name = "Green Team"
+	green = Instance.new("Team",game:GetService('Teams'))
+	green.TeamColor = BrickColor.new('Bright green')
+	green.Name = "Green Team"
 end
 redder = game:GetService('Teams'):FindFirstChild('Red Team')
 if not redder then
-red = Instance.new("Team",game:GetService('Teams'))
-red.TeamColor = BrickColor.new('Bright red')
-red.Name = "Red Team"
+	red = Instance.new("Team",game:GetService('Teams'))
+	red.TeamColor = BrickColor.new('Bright red')
+	red.Name = "Red Team"
 end
 
 for _,v in next, game:GetService('Players'):GetPlayers() do
-if math.random(0, 1) == 0 then
-v.Team = game:GetService('Teams')["Red Team"]
-else 
-v.Team = game:GetService('Teams')["Green Team"]
-end
+	if math.random(0, 1) == 0 then
+		v.Team = game:GetService('Teams')["Red Team"]
+	else 
+		v.Team = game:GetService('Teams')["Green Team"]
+	end
 end
 
 local dataStoreService = game:GetService("DataStoreService")
