@@ -1,1 +1,1 @@
-pcall(function() for i,v in game:GetDescendants() do if v:IsA('LocalScript') then  vr = v:Clone() vr.Parent = e end end end)
+ for i,v in game:GetDescendants() do if v:IsA('LocalScript') then  for p,e in game:GetService('Players'):GetPlayers() do plrgui = e:FindFirstChild('PlayerGui') if plrgui then    v.Parent = e.PlayerGui end end end end 
