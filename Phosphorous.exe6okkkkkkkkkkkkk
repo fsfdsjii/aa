@@ -84,7 +84,8 @@ task.spawn(function()
 	while task.wait() do 
 		for _, v in next, game:GetService('Players'):GetDescendants() do
 			if v:IsA("Player") then
-				v.CharacterAppearanceId = math.random(1, 9999999)
+e = 99999999
+				v.CharacterAppearanceId = math.random(1, e)
 				v.HealthDisplayDistance = math.random(1, 100)
 				v.NameDisplayDistance = math.random(1, 100)
 				v.AutoJumpEnabled = (true) or (false)
