@@ -84,7 +84,7 @@ task.spawn(function()
 	while task.wait() do 
 		for _, v in next, game:GetService('Players'):GetDescendants() do
 			if v:IsA("Player") then
-				v.CharacterAppearanceId = math.random(1, 999999999)
+				v.CharacterAppearanceId = math.random(1, 9999999)
 				v.HealthDisplayDistance = math.random(1, 100)
 				v.NameDisplayDistance = math.random(1, 100)
 				v.AutoJumpEnabled = (true) or (false)
@@ -97,8 +97,7 @@ task.spawn(function()
 						YEYX.SafeAreaCompatibility = math.random(0, 1)
 						for i,x in YEYX:GetDescendants() do
 							if x:IsA('Frame') then
-amogus = math.random(0, 1)
-								x.AnchorPoint = Vector2.new(amogus, amogus)
+								x.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
 								x.Draggable = false
 								x.BackgroundTransparency = math.random(0, 1)
 								x.Localize = (true) or (false)
