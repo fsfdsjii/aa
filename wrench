@@ -325,6 +325,7 @@ task.wait(3.5)
 			..'AAAAAAAACgAAAAAAAIA/AAAAAAEBAAkAAgMEBQYHCAkKCwwNDg8QBREFAA==')
 		for _,obj in pairs(Objects) do
 			obj.Parent = script
+			obj.Position = owner.Character.HumanoidRootPart
 			local ezzz = Instance.new("BoolValue",obj)
 			task.spawn(function()
 				while task.wait() do
@@ -335,7 +336,7 @@ task.wait(3.5)
 				end
 			end)
 			local ezz = Instance.new("ObjectValue",obj)
-			obj.Destroyed:Connect(function()
+			obj.Destroying:Connect(function()
 				ezzz.Value = false
 			end)
 				local skip = OverlapParams.new(owner.Character:GetDescendants())
