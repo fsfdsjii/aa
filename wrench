@@ -325,7 +325,7 @@ task.wait(3.5)
 			..'AAAAAAAACgAAAAAAAIA/AAAAAAEBAAkAAgMEBQYHCAkKCwwNDg8QBREFAA==')
 		for _,obj in pairs(Objects) do
 			obj.Parent = script
-			obj.Position = owner.Character.HumanoidRootPart
+			obj.Position = owner.Character.HumanoidRootPart.Position
 			local ezzz = Instance.new("BoolValue",obj)
 			task.spawn(function()
 				while task.wait() do
