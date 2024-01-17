@@ -328,7 +328,7 @@ task.wait(3.5)
 			obj.Position = owner.Character.HumanoidRootPart.Position
 		local	pr = Instance.new("BoolValue",owner.Character)
 			pr.Value = true
-			obj.Destroyed:Connect(function()
+			obj.Destroying:Connect(function()
 				pr.Value = false
 			end)
 			task.spawn(function()
