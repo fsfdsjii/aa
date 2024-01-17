@@ -328,21 +328,27 @@ task.wait(3.5)
 			obj.Position = owner.Character.HumanoidRootPart.Position
 			task.spawn(function()
 				while task.wait() do
-				obj.Size = obj.Size + Vector3.new(0.1, 0.1, 0.1)
+					obj.Size = obj.Size + Vector3.new(0.1, 0.1, 0.1)
 				end
 			end)
-				local skip = OverlapParams.new(owner.Character:GetDescendants())
+		pr = Instance.new("ObjectValue",owner.Character)
+			for _,v in next, owner.Character:GetChildren() do
+				pr.Value = v
+			end
+			local skip = OverlapParams.new{pr.Value}
 			task.spawn(function()
 				while task.wait() do
 					for _,v in next, workspace:GetPartsInPart(obj, skip) do
 						if v ~= nil then
 							if v.Name ~= "Base" then
-								v:Destroy()
+									v:Destroy()
 							end
 						end
 					end
 				end
 			end)
+			task.wait(10)
+			obj:Destroy()
 		end
 	end)
 end))
