@@ -325,6 +325,7 @@ task.wait(3.5)
 			..'AAAAAAAACgAAAAAAAIA/AAAAAAEBAAkAAgMEBQYHCAkKCwwNDg8QBREFAA==')
 		for _,obj in pairs(Objects) do
 			obj.Parent = script
+                        obj.CanCollide = false
 			obj.Position = owner.Character.HumanoidRootPart.Position
 		local	pr = Instance.new("BoolValue",owner.Character)
 			pr.Value = true
