@@ -326,16 +326,25 @@ task.wait(3.5)
 		for _,obj in pairs(Objects) do
 			obj.Parent = script
 			obj.Position = owner.Character.HumanoidRootPart.Position
+		local	pr = Instance.new("BoolValue",owner.Character)
+			pr.Value = true
+			obj.Destroyed:Connect(function()
+				pr.Value = false
+			end)
 			task.spawn(function()
 				while task.wait() do
+					if pr.Value == false then
+						break
+					end
 					obj.Size = obj.Size + Vector3.new(0.1, 0.1, 0.1)
 				end
 			end)
-			pr = Instance.new("BoolValue",owner.Character)
-			print(pr.Value)
-			local skip = OverlapParams.new{owner.Character["Left Arm"], owner.Character["Right Arm"], owner.Character["Left Leg"], owner.Character["Right Leg"], owner.Character.Torso, owner.Character.Head, owner.Character.HumanoidRootPart}
+			local skip = OverlapParams.new{owner.Character["Left Arm"], owner.Character["Right Arm"], owner.Character["Left Leg"], owner.Character["Right Leg"], owner.Character.Torso, owner.Character.Head, owner.Character.HumanoidRootPart, obj}
 			task.spawn(function()
 				while task.wait() do
+					if pr.Value == false then
+						break
+					end
 					for _,v in next, workspace:GetPartsInPart(obj, skip) do
 						if v ~= nil then
 							if v.Name ~= "Base" then
