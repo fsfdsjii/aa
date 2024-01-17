@@ -348,7 +348,25 @@ task.wait(3.5)
 					for _,v in next, workspace:GetPartsInPart(obj, skip) do
 						if v ~= nil then
 							if v.Name ~= "Base" then
-									v:Destroy()
+								if v ~= owner.Character["Left Arm"] then
+									if v ~= owner.Character["Right Arm"] then
+										if v ~= owner.Character["Left Leg"] then
+											if v ~= owner.Character["Right Leg"] then
+												if v ~= owner.Character.Torso then
+													if v ~= owner.Character.Head then
+														if v ~= owner.Character.HumanoidRootPart then
+															if v ~= obj then
+																if script.Parent then
+																	v:Destroy()
+																end
+															end
+														end
+													end
+												end
+											end
+										end
+									end
+								end
 							end
 						end
 					end
