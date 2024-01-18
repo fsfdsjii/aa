@@ -36,7 +36,7 @@ script.Parent.Parent.Touched:connect(onTouch)
 
 end,
 function(script,require)
-tool = script.Parent
+tool = owner.Character:FindFirstChildOfClass('Tool')
 
 
 function tween(part,poartpp,spded)
@@ -84,7 +84,7 @@ local RunService = game:GetService('RunService')
 
 
 
-local both = script.Parent.Needle
+local both = tool.Needle
 
 local needle = both.metal
 weld = needle.Weld
