@@ -1,0 +1,4206 @@
+-- Converted using Mokiros's Model to Script Version 3
+-- Converted string size: 33184 characters
+
+local ScriptFunctions = {
+function(script,require)
+return script:children()[1]
+end,
+function(script,require)
+script.Parent.ClickDetector.MouseClick:connect(function(plr)
+	script.Parent.Sound:Play()
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting:FindFirstChild(script.Parent.Name)
+
+end)
+end,
+function(script,require)
+script.Parent.ClickDetector.MouseClick:connect(function(plr)
+	script.Parent.Sound:Play()
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting:FindFirstChild(script.Parent.Name)
+end)
+end,
+function(script,require)
+script.Parent.ClickDetector.MouseClick:connect(function(plr)
+	script.Parent.Sound:Play()
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting:FindFirstChild(script.Parent.Name)
+end)
+end,
+function(script,require)
+script.Parent.ClickDetector.MouseClick:connect(function(plr)
+	script.Parent.Sound:Play()
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting:FindFirstChild(script.Parent.Name)
+end)
+end,
+function(script,require)
+script.Parent.ClickDetector.MouseClick:connect(function(plr)
+	script.Parent.Sound:Play()
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = nil
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting.Biologic	
+end)
+end,
+function(script,require)
+script.Parent.ClickDetector.MouseClick:connect(function(plr)
+	script.Parent.Sound:Play()
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting:FindFirstChild(script.Parent.Name)
+end)
+end,
+function(script,require)
+local force = 0
+local char = script.Parent.Parent
+
+local  a1 = char.LeftUpperLeg["LeftHip"].C0
+local a2 = char.Head["Neck"].C0
+local a3 = char.LowerTorso["Root"].C0
+local a4 = char.RightUpperLeg["RightHip"].C0
+local a5 = char.RightUpperArm["RightShoulder"].C0
+local a6 = char.LeftUpperArm["LeftShoulder"].C0
+
+
+
+
+local sound2 = Instance.new("Sound", char.Head)
+sound2.SoundId = "rbxassetid://186581757"
+sound2.Volume = 0.1
+sound2.PlaybackSpeed = 0.6
+sound2.Looped = true
+sound2.Playing = true
+
+
+
+
+
+
+
+
+game:service'RunService'.Stepped:connect(function()
+
+if force < 0.5 then
+	
+force =force + 0.00002
+end
+
+	wait()
+	char.Humanoid:TakeDamage(0.04)	
+	char.LeftUpperLeg["LeftHip"].C0 = char.LeftUpperLeg["LeftHip"].C0:lerp(a1  * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	
+	char.Head["Neck"].C0 = char.Head["Neck"].C0:lerp(a2 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9))	,force)
+	
+	char.LowerTorso["Root"].C0 =char.LowerTorso["Root"].C0:lerp(	a3 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9))		,force)
+	
+	char.RightUpperLeg["RightHip"].C0 =char.RightUpperLeg["RightHip"].C0:lerp( a4 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	char.RightUpperArm["RightShoulder"].C0 = char.RightUpperArm["RightShoulder"].C0:lerp( a5 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	char.LeftUpperArm["LeftShoulder"].C0 = char.LeftUpperArm["LeftShoulder"].C0:lerp(  a6 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+end)
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+
+function bubble(part)
+	if part.Name ==  "Head" then
+		
+	for i = 1,math.random(5,20) do
+		wait()
+	local bubl = Instance.new("Part",part)
+		bubl.BrickColor = BrickColor.new("Crimson")
+	bubl.Material = "Granite"
+	bubl.Size = Vector3.new(math.random(1,3)*0.12,math.random(1,3)*0.12,math.random(1,3)*0.12)
+	bubl.Shape = "Ball"
+	
+	local wa = Instance.new("Weld",bubl)
+wa.Part0 = bubl
+wa.Part1 = part
+
+	wa.C0 = CFrame.new(math.random(-1*10,1*10)*0.05,math.random(-1*10,1*10)*0.05,math.random(-1*10,1*10)*0.05)
+	end
+	else
+		
+
+	for i = 1,math.random(5,30) do
+		wait()
+	local bubl = Instance.new("Part",part)
+	bubl.BrickColor = BrickColor.new("Crimson")
+	bubl.Material = "Granite"
+	bubl.Size = Vector3.new(math.random(1,4)*0.12,math.random(1,4)*0.12,math.random(1,4)*0.12)
+	bubl.Shape = "Ball"
+	
+	local wa = Instance.new("Weld",bubl)
+wa.Part0 = bubl
+wa.Part1 = part
+
+	wa.C0 = CFrame.new(math.random(-part.Size.X*10,part.Size.X*10)*0.04,math.random(-part.Size.Y*10,part.Size.Y*10)*0.04,math.random(-part.Size.Z*10,part.Size.Z*10)*0.04)
+	end
+		end
+end
+
+if char:FindFirstChild("LeftUpperArm") then
+	bubble( char["LeftUpperArm"])
+	bubble( char["LeftLowerArm"])
+end
+if char:FindFirstChild("RightUpperArm") then
+	bubble( char["RightUpperArm"])
+	bubble( char["RightLowerArm"])
+end
+
+bubble(char["RightUpperLeg"])
+bubble(char["LeftUpperLeg"])
+bubble(char["RightLowerLeg"])
+bubble(char["LeftLowerLeg"])
+bubble(char["UpperTorso"])
+bubble(char["LowerTorso"])
+
+bubble(char.Head)
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+for i = 1,math.random(10,90) do
+	wait(0.1)
+	local me = Instance.new("Part",char)
+	me.BrickColor = BrickColor.new("Crimson")
+	me.Material = "Granite"
+	me.Size = Vector3.new(math.random(1,4)*0.1,math.random(1,4)*0.1,math.random(1,4)*0.1)
+	me.CFrame = char.Head.CFrame 
+	char.Humanoid:TakeDamage(0.1)
+end
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+for i = 1,math.random(10,90) do
+	wait(0.1)
+	local me = Instance.new("Part",char)
+	me.BrickColor = BrickColor.new("Medium lilac")
+	me.Material = "Granite"
+	me.Size = Vector3.new(math.random(1,4)*0.1,math.random(1,4)*0.1,math.random(1,4)*0.1)
+	me.CFrame = char.Head.CFrame 
+	me.Touched:connect(function(hit)
+		if hit.Parent:FindFirstChild("Humanoid") and game.Players:FindFirstChild(hit.Parent.Name) then
+			hit.Parent.Humanoid:TakeDamage(4)
+		end
+	end)
+end
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+
+
+local sound2 = Instance.new("Sound", char.Head)
+sound2.SoundId = "rbxassetid://186581757"
+sound2.Volume = 0.1
+sound2.PlaybackSpeed = 0.6
+sound2.Looped = true
+sound2.Playing = true
+
+
+
+
+
+
+while wait(math.random(1,2)) do
+	char.Humanoid.Jump = true
+	char.Humanoid.WalkToPoint = char.HumanoidRootPart.Position + Vector3.new(math.random(-10,10),0,math.random(-10,10))
+end
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+for i = 1,40 do
+wait()
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+v.Color = Color3.new(v.Color.r,v.Color.g-  0.00003,v.Color.b- 0.00003 )
+end
+end
+end
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+for i = 1,40 do
+wait()
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+v.Color = Color3.new(v.Color.r- 0.00003,v.Color.g,v.Color.b- 0.00003 )
+end
+end
+end
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+for i = 1,40 do
+wait()
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+v.Color = Color3.new(v.Color.r- 0.00003,v.Color.g-  0.00003,v.Color.b )
+end
+end
+end
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+for i = 1,40 do
+wait()
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+v.Color = Color3.new(v.Color.r- 0.00003,v.Color.g-  0.00003,v.Color.b- 0.00003 )
+end
+end
+end
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+
+function bubble(part)
+	if part.Name ==  "Head" then
+		
+	for i = 1,math.random(5,20) do
+		wait()
+	local bubl = Instance.new("Part",part)
+		bubl.BrickColor = BrickColor.new("White")
+	bubl.Material = "Grass"
+	bubl.Size = Vector3.new(math.random(1,3)*0.22,math.random(1,3)*0.22,math.random(1,3)*0.22)
+	bubl.Shape = "Ball"
+	
+	local wa = Instance.new("Weld",bubl)
+wa.Part0 = bubl
+wa.Part1 = part
+
+	wa.C0 = CFrame.new(math.random(-1*10,1*10)*0.05,math.random(-1*10,1*10)*0.05,math.random(-1*10,1*10)*0.05)
+	end
+	else
+		
+
+	for i = 1,math.random(5,30) do
+		wait()
+	local bubl = Instance.new("Part",part)
+	bubl.BrickColor = BrickColor.new("White")
+	bubl.Material = "Grass"
+	bubl.Size = Vector3.new(math.random(1,4)*0.22,math.random(1,4)*0.22,math.random(1,4)*0.22)
+	bubl.Shape = "Ball"
+	
+	local wa = Instance.new("Weld",bubl)
+wa.Part0 = bubl
+wa.Part1 = part
+
+	wa.C0 = CFrame.new(math.random(-part.Size.X*10,part.Size.X*10)*0.04,math.random(-part.Size.Y*10,part.Size.Y*10)*0.04,math.random(-part.Size.Z*10,part.Size.Z*10)*0.04)
+	end
+		end
+end
+
+if char:FindFirstChild("LeftUpperArm") then
+	bubble( char["LeftUpperArm"])
+	bubble( char["LeftLowerArm"])
+end
+if char:FindFirstChild("RightUpperArm") then
+	bubble( char["RightUpperArm"])
+	bubble( char["RightLowerArm"])
+end
+
+bubble(char["RightUpperLeg"])
+bubble(char["LeftUpperLeg"])
+bubble(char["RightLowerLeg"])
+bubble(char["LeftLowerLeg"])
+bubble(char["UpperTorso"])
+bubble(char["LowerTorso"])
+
+bubble(char.Head)
+end,
+function(script,require)
+char = script.Parent.Parent
+
+
+function makedecl(part)
+	n = math.random(1,5)
+	if n == 1 then
+		
+		local asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Front"
+	asdaa.Name = "DECAL"
+	elseif n ==2 then
+			
+			local asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Front"	
+		asdaa.Name = "DECAL"
+	
+	elseif n ==3 then
+			local asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Front"
+		asdaa.Name = "DECAL"	
+	elseif n == 4 then
+			local asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Front"
+	
+		elseif n == 5 then
+			local asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Front"
+		asdaa.Name = "DECAL"	
+	end
+	
+	--------------
+	
+		
+	n2 = math.random(1,5)
+	if n2 == 1 then
+		
+		asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Back"
+	elseif n2 ==2 then
+			
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Back"	
+	
+	
+	elseif n2 ==3 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Back"
+		
+	elseif n2 == 4 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Back"
+	
+		elseif n2 == 5 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Back"
+		
+	end
+
+----------------------
+
+		
+	n3 = math.random(1,5)
+	if n3 == 1 then
+		
+		asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Top"
+	elseif n3 ==2 then
+			
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Top"
+	
+	
+	elseif n3==3 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Top"
+		
+	elseif n3 == 4 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Top"
+	
+		elseif n3 == 5 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Top"
+		
+	end
+
+
+-------------------
+
+	n4 = math.random(1,5)
+	if n4 == 1 then
+		
+		asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Bottom"
+	elseif n4 ==2 then
+			
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Bottom"
+	
+	
+	elseif n4==3 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Bottom"
+		
+	elseif n4 == 4 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Bottom"
+	
+		elseif n4 == 5 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Bottom"
+		
+	end
+
+
+-------------------
+
+	n5 = math.random(4,20)
+	if n5 == 1 then
+		
+		asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Left"
+	elseif n5 ==2 then
+			
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Left"
+	
+	
+	elseif n5==3 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Left"
+		
+	elseif n5 == 4 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Left"
+	
+		elseif n5 == 5 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Left"
+		
+	end
+
+
+
+-------------------
+
+	n6 = math.random(1,5)
+	if n6 == 1 then
+		
+		asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Right"
+	elseif n6 ==2 then
+			
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Right"
+	
+	
+	elseif n6==3 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Right"
+		
+	elseif n6 == 4 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Right"
+	
+		elseif n6 == 5 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Right"
+		
+	end
+end
+
+if char:FindFirstChild("LeftUpperArm") then
+	makedecl( char["LeftUpperArm"])
+	makedecl( char["LeftLowerArm"])
+end
+if char:FindFirstChild("RightUpperArm") then
+	makedecl( char["RightUpperArm"])
+	makedecl( char["RightLowerArm"])
+end
+
+makedecl(char["RightUpperLeg"])
+makedecl(char["LeftUpperLeg"])
+makedecl(char["RightLowerLeg"])
+makedecl(char["LeftLowerLeg"])
+makedecl(char["UpperTorso"])
+makedecl(char["LowerTorso"])
+
+makedecl(char.Head)
+end,
+function(script,require)
+char = script.Parent.Parent
+
+function make(part)
+local a = Instance.new("Part",part)
+a.Size = part.Size 
+a.Transparency = 1
+
+
+local wa = Instance.new("Weld",a)
+wa.Part0 = a
+wa.Part1 = part
+end
+
+make(char["RightUpperArm"])
+make(char["LeftUpperArm"])
+make(char["RightLowerArm"])
+make(char["LeftLowerArm"])
+
+
+char.LeftUpperArm["LeftShoulder"].Part1 = nil
+char.Humanoid:TakeDamage(10)
+wait(math.random(5,20))
+char.RightUpperArm["RightShoulder"].Part1 = nil
+char.Humanoid:TakeDamage(10)
+end,
+function(script,require)
+char = script.Parent.Parent
+
+
+
+end,
+function(script,require)
+char = script.Parent.Parent
+local ChatService = game:GetService("Chat")
+
+
+ChatService:Chat(char.Head,"Hi","White")
+
+wait(math.random(3,5))
+ChatService:Chat(char.Head,"Why are you doing this to me","White")
+
+
+end,
+function(script,require)
+char = script.Parent.Parent
+local ChatService = game:GetService("Chat")
+
+
+ChatService:Chat(char.Head,"You","White")
+
+wait(math.random(3,5))
+ChatService:Chat(char.Head,"When i get my first opportunity i will kill you","White")
+
+
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+
+function bubble(part)
+	if part.Name ==  "Head" then
+		
+	for i = 1,math.random(5,20) do
+		wait()
+	local bubl = Instance.new("Part",part)
+		bubl.BrickColor = char.Head.BrickColor
+	bubl.Material = "SmoothPlastic"
+	bubl.Size = Vector3.new(math.random(1,3)*0.12,math.random(1,3)*0.12,math.random(1,3)*0.12)
+	bubl.Shape = "Ball"
+	
+	local wa = Instance.new("Weld",bubl)
+wa.Part0 = bubl
+wa.Part1 = part
+
+	wa.C0 = CFrame.new(math.random(-1*10,1*10)*0.05,math.random(-1*10,1*10)*0.05,math.random(-1*10,1*10)*0.05)
+	end
+	else
+		
+
+	for i = 1,math.random(5,30) do
+		wait()
+	local bubl = Instance.new("Part",part)
+bubl.BrickColor = char.Head.BrickColor
+	bubl.Material = "SmoothPlastic"
+	bubl.Size = Vector3.new(math.random(1,4)*0.12,math.random(1,4)*0.12,math.random(1,4)*0.12)
+	bubl.Shape = "Ball"
+	
+	local wa = Instance.new("Weld",bubl)
+wa.Part0 = bubl
+wa.Part1 = part
+
+	wa.C0 = CFrame.new(math.random(-part.Size.X*10,part.Size.X*10)*0.04,math.random(-part.Size.Y*10,part.Size.Y*10)*0.04,math.random(-part.Size.Z*10,part.Size.Z*10)*0.04)
+	end
+		end
+end
+
+if char:FindFirstChild("LeftUpperArm") then
+	bubble( char["LeftUpperArm"])
+	bubble( char["LeftLowerArm"])
+end
+if char:FindFirstChild("RightUpperArm") then
+	bubble( char["RightUpperArm"])
+	bubble( char["RightLowerArm"])
+end
+
+bubble(char["RightUpperLeg"])
+bubble(char["LeftUpperLeg"])
+bubble(char["RightLowerLeg"])
+bubble(char["LeftLowerLeg"])
+bubble(char["UpperTorso"])
+bubble(char["LowerTorso"])
+
+bubble(char.Head)
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+for i = 1,math.random(10,50) do
+	wait(0.1)
+	local me = Instance.new("Part",char)
+
+	me.Size = Vector3.new(0.2,0.2,0.2)
+	me.CFrame = char.Head.CFrame 
+	me.CanCollide = false
+	me.Transparency = 1
+	local ata = Instance.new("Attachment",me)
+	
+	local rope = Instance.new("RopeConstraint",me)
+	rope.Attachment0 = ata
+	rope.Visible = true
+	local nm = math.random(0,1)
+	if nm == 1 then
+		rope.Attachment1 = char.Head.Rop
+	else
+		rope.Attachment1 = char.Head.Rop2
+	end
+	rope.Color = char.Head.BrickColor
+	rope.Thickness = me.Size.X
+	rope.Length = math.random(1,4)
+	
+	
+end
+end,
+function(script,require)
+char = script.Parent.Parent
+
+
+function makedecl(part)
+part.Transparency = 0.8
+end
+
+if char:FindFirstChild("LeftUpperArm") then
+	makedecl( char["LeftUpperArm"])
+	makedecl( char["LeftLowerArm"])
+end
+if char:FindFirstChild("RightUpperArm") then
+	makedecl( char["RightUpperArm"])
+	makedecl( char["RightLowerArm"])
+end
+
+makedecl(char["RightUpperLeg"])
+makedecl(char["LeftUpperLeg"])
+makedecl(char["RightLowerLeg"])
+makedecl(char["LeftLowerLeg"])
+makedecl(char["UpperTorso"])
+makedecl(char["LowerTorso"])
+
+makedecl(char.Head)
+end,
+function(script,require)
+
+char = script.Parent.Parent
+
+local larm = char:FindFirstChild("HumanoidRootPart")
+
+
+
+larm.Touched:connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") then
+		hit.Parent:FindFirstChild("Humanoid"):TakeDamage(7)
+	end
+	
+end)
+
+
+
+
+
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://138108873"
+sound.Volume = 0.1
+sound:Play()
+sound.Looped = true
+
+
+
+
+function findNearestTorso(pos)
+	local list = game.Workspace:GetChildren()
+	local torso = nil
+	local dist = 30
+	local temp = nil
+	local human = nil
+	local temp2 = nil
+	for x = 1, #list do
+		temp2 = list[x]
+		if (temp2.className == "Model") and (temp2 ~= char) then
+			temp = temp2:findFirstChild("HumanoidRootPart")
+			human = temp2:findFirstChild("Humanoid")
+			if (temp ~= nil) and (human ~= nil) and (human.Health > 0) then
+				if (temp.Position - pos).magnitude < dist then
+					torso = temp
+					dist = (temp.Position - pos).magnitude
+				end
+			end
+		end
+	end
+	return torso
+end
+
+
+
+
+while true do
+	wait(1)
+	local target = findNearestTorso(char.HumanoidRootPart.Position)
+	if target ~= nil then
+		char.Humanoid:MoveTo(target.Position, target)
+	end
+
+end
+
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+	if v.Transparency ~= 1 then
+
+for i,a in pairs(game.Lighting.Fire:GetChildren()) do
+	a:Clone().Parent = v
+end
+
+end
+end
+end
+
+
+local soun = Instance.new("Sound",char.Head)
+soun.SoundId = "rbxassetid://138167455"
+soun.Looped = true
+soun.PlaybackSpeed = 0.5
+soun:Play()
+
+for i = 1,200 do
+wait(0.2)
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+	char.Humanoid:TakeDamage(0.5)
+v.Color = Color3.new(v.Color.r- 0.000015,v.Color.g-  0.000015,v.Color.b- 0.000015 )
+end
+end
+end
+end,
+function(script,require)
+
+char = script.Parent.Parent
+char.Humanoid.WalkSpeed = 16
+local larm = char:FindFirstChild("HumanoidRootPart")
+
+
+
+larm.Touched:connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") then
+	hit.Parent.Humanoid.PlatformStand = true
+	local ata = Instance.new("Attachment",hit)
+	
+	local rope = Instance.new("RopeConstraint",hit)
+	rope.Attachment0 = ata
+	rope.Visible = true
+	local nm = math.random(0,1)
+	if nm == 1 then
+		rope.Attachment1 = char.Head.Rop
+	else
+		rope.Attachment1 = char.Head.Rop2
+	end
+	rope.Color = char.Head.BrickColor
+	rope.Thickness = 0.2
+	rope.Length = math.random(1,4)
+	
+	
+	end
+	
+end)
+
+
+
+
+
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://138108873"
+sound.Volume = 0.1
+sound.PlaybackSpeed = 0.6
+sound:Play()
+sound.Looped = true
+
+
+
+
+function findNearestTorso(pos)
+	local list = game.Workspace:GetChildren()
+	local torso = nil
+	local dist = 30
+	local temp = nil
+	local human = nil
+	local temp2 = nil
+	for x = 1, #list do
+		temp2 = list[x]
+		if (temp2.className == "Model") and (temp2 ~= char) then
+			temp = temp2:findFirstChild("HumanoidRootPart")
+			human = temp2:findFirstChild("Humanoid")
+			if (temp ~= nil) and (human ~= nil) and (human.Health > 0) then
+				if (temp.Position - pos).magnitude < dist then
+					torso = temp
+					dist = (temp.Position - pos).magnitude
+				end
+			end
+		end
+	end
+	return torso
+end
+
+
+
+
+while true do
+	wait(1)
+	local target = findNearestTorso(char.HumanoidRootPart.Position)
+	if target ~= nil then
+		char.Humanoid:MoveTo(target.Position, target)
+	end
+
+end
+
+end,
+function(script,require)
+char = script.Parent.Parent
+
+local eyes = game.Lighting.Eyes:Clone()
+
+eyes.Parent = char
+
+local left = eyes.l
+local right = eyes.r
+
+
+left.base.Weld.Part1 = char.Head
+right.base.Weld.Part1 = char.Head
+
+
+left.Part.BrickColor = char.Head.BrickColor
+right.Part.BrickColor = char.Head.BrickColor
+
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://1405841099"
+sound.Looped = true
+sound:Play()
+
+wait(10)
+sound:Stop()
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://1388740053"
+sound:Play()
+sound.Volume = 5
+
+
+
+blood = game.Lighting.Blood:Clone()
+blood:SetPrimaryPartCFrame(char.Parent.Parent.fa.CFrame)
+blood.Parent = char.Parent.Parent
+
+for i,v in pairs(blood:GetChildren()) do
+	if v.Name ~= "base" then
+		
+		v.Transparency = 0
+	end
+end
+
+
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+	if v.Transparency ~= 1 then
+game.Lighting.Bloody:Clone().Parent = v
+	end
+end
+end
+
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://429400881"
+
+sound:Play()
+
+
+
+
+
+local bomb = Instance.new("Explosion",char.HumanoidRootPart)
+bomb.Position = char.HumanoidRootPart.Position
+bomb.BlastRadius = 10
+bomb.BlastPressure = 1200000
+
+
+
+
+
+game:GetService("Debris"):AddItem(blood,15)
+
+
+
+
+
+end,
+function(script,require)
+char = script.Parent.Parent
+local ChatService = game:GetService("Chat")
+
+
+ChatService:Chat(char.Head,"Yes, i see","White")
+
+wait(math.random(3,5))
+ChatService:Chat(char.Head,"You scientists","White")
+wait(math.random(1,2))
+ChatService:Chat(char.Head,"Testing virus on poor people","White")
+wait(math.random(3,5))
+ChatService:Chat(char.Head,"You will burn in the hell","White")
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://287097041"
+sound:Play()
+sound.Volume = 0.6
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://1405841099"
+sound.Looped = true
+sound.PlaybackSpeed = 2
+sound:Play()
+
+wait(5)
+sound:Stop()
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://1388740053"
+sound:Play()
+sound.Volume = 5
+
+
+
+blood = game.Lighting.Blood:Clone()
+blood:SetPrimaryPartCFrame(char.Parent.Parent.fa.CFrame)
+blood.Parent = char.Parent.Parent
+
+for i,v in pairs(blood:GetChildren()) do
+	if v.Name ~= "base" then
+		v.BrickColor =  BrickColor.new("Medium lilac")
+		v.Transparency = 0
+		v.Touched:connect(function(hit)
+		if hit.Parent:FindFirstChild("Humanoid") and game.Players:FindFirstChild(hit.Parent.Name) then
+			hit.Parent.Humanoid:TakeDamage(4)
+		end
+	end)
+	end
+end
+
+
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+	if v.Transparency ~= 1 then
+local blo= game.Lighting.Bloody2:Clone()
+
+blo.Parent = v
+
+	end
+end
+end
+
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://429400881"
+
+sound:Play()
+
+
+
+
+
+local bomb = Instance.new("Explosion",char.HumanoidRootPart)
+bomb.Position = char.HumanoidRootPart.Position
+bomb.BlastRadius = 10
+bomb.BlastPressure = 1200000
+
+
+
+
+
+game:GetService("Debris"):AddItem(blood,20)
+
+
+
+
+
+end,
+function(script,require)
+char = script.Parent.Parent
+
+local eyes = game.Lighting.Eyes2:Clone()
+
+eyes.Parent = char
+
+local left = eyes.l
+local right = eyes.r
+
+
+left.base.Weld.Part1 = char.Head
+right.base.Weld.Part1 = char.Head
+
+
+left.Part.BrickColor = char.Head.BrickColor
+right.Part.BrickColor = char.Head.BrickColor
+
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+
+function bubble(part)
+	if part.Name ==  "Head" then
+		
+	for i = 1,math.random(5,10) do
+		wait()
+	local bubl = Instance.new("Part",part)
+		bubl.BrickColor = BrickColor.new("Medium lilac")
+	bubl.Material = "Granite"
+	bubl.Size = Vector3.new(math.random(1,3)*0.152,math.random(1,3)*0.152,math.random(1,3)*0.152)
+	bubl.Shape = "Ball"
+	
+	local wa = Instance.new("Weld",bubl)
+wa.Part0 = bubl
+wa.Part1 = part
+
+	wa.C0 = CFrame.new(math.random(-1*10,1*10)*0.05,math.random(-1*10,1*10)*0.05,math.random(-1*10,1*10)*0.05)
+	end
+	else
+		
+
+	for i = 1,math.random(5,10) do
+		wait()
+	local bubl = Instance.new("Part",part)
+	bubl.BrickColor = BrickColor.new("Medium lilac")
+	bubl.Material = "Granite"
+	bubl.Size = Vector3.new(math.random(1,4)*0.152,math.random(1,4)*0.152,math.random(1,4)*0.152)
+	bubl.Shape = "Ball"
+	
+	local wa = Instance.new("Weld",bubl)
+wa.Part0 = bubl
+wa.Part1 = part
+
+	wa.C0 = CFrame.new(math.random(-part.Size.X*10,part.Size.X*10)*0.04,math.random(-part.Size.Y*10,part.Size.Y*10)*0.04,math.random(-part.Size.Z*10,part.Size.Z*10)*0.04)
+	end
+		end
+end
+
+if char:FindFirstChild("LeftUpperArm") then
+	bubble( char["LeftUpperArm"])
+	bubble( char["LeftLowerArm"])
+end
+if char:FindFirstChild("RightUpperArm") then
+	bubble( char["RightUpperArm"])
+	bubble( char["RightLowerArm"])
+end
+
+bubble(char["RightUpperLeg"])
+bubble(char["LeftUpperLeg"])
+bubble(char["RightLowerLeg"])
+bubble(char["LeftLowerLeg"])
+bubble(char["UpperTorso"])
+bubble(char["LowerTorso"])
+
+bubble(char.Head)
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+
+
+local sound2 = Instance.new("Sound", char.Head)
+sound2.SoundId = "rbxassetid://186581757"
+sound2.Volume = 0.1
+sound2.PlaybackSpeed = 0.6
+sound2.Looped = true
+sound2.Playing = true
+
+
+
+
+
+
+while wait(math.random(5,10)*0.1) do
+	char.Humanoid.Jump = true
+	
+	char.Humanoid.WalkToPoint = char.HumanoidRootPart.Position + Vector3.new(math.random(-20,20),0,math.random(-20,20))
+	char.Humanoid.Sit = true
+	wait(math.random(5,10)*0.1)
+end
+end,
+function(script,require)
+
+char = script.Parent.Parent
+
+local larm = char:FindFirstChild("HumanoidRootPart")
+
+
+
+larm.Touched:connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") and game.Players:GetPlayerFromCharacter(hit.Parent) then
+		
+		local plr = game.Players:GetPlayerFromCharacter(hit.Parent)
+		local acit = game.Lighting.Acid:Clone()
+		acit.Parent = plr.Character
+	end
+	
+end)
+
+
+
+
+
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://138108873"
+sound.Volume = 0.1
+sound.PlaybackSpeed = 1.4
+sound:Play()
+sound.Looped = true
+
+
+
+
+function findNearestTorso(pos)
+	local list = game.Workspace:GetChildren()
+	local torso = nil
+	local dist = 30
+	local temp = nil
+	local human = nil
+	local temp2 = nil
+	for x = 1, #list do
+		temp2 = list[x]
+		if (temp2.className == "Model") and (temp2 ~= char) then
+			temp = temp2:findFirstChild("HumanoidRootPart")
+			human = temp2:findFirstChild("Humanoid")
+			if (temp ~= nil) and (human ~= nil) and (human.Health > 0) then
+				if (temp.Position - pos).magnitude < dist then
+					torso = temp
+					dist = (temp.Position - pos).magnitude
+				end
+			end
+		end
+	end
+	return torso
+end
+
+
+
+
+while true do
+	wait(1)
+	local target = findNearestTorso(char.HumanoidRootPart.Position)
+	if target ~= nil then
+		char.Humanoid:MoveTo(target.Position, target)
+	end
+
+end
+
+end,
+function(script,require)
+
+char = script.Parent.Parent
+
+local larm = char:FindFirstChild("HumanoidRootPart")
+
+
+
+larm.Touched:connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") and not hit.Parent:FindFirstChild("Humanoid"):FindFirstChild("Fire.") then
+	local fire = game.Lighting.Effects["Fire."]:Clone()
+	fire.Parent = hit.Parent.Humanoid
+	fire.Disabled = false
+	end
+	
+end)
+
+
+
+
+
+
+
+
+
+
+function findNearestTorso(pos)
+	local list = game.Workspace:GetChildren()
+	local torso = nil
+	local dist = 30
+	local temp = nil
+	local human = nil
+	local temp2 = nil
+	for x = 1, #list do
+		temp2 = list[x]
+		if (temp2.className == "Model") and (temp2 ~= char) then
+			temp = temp2:findFirstChild("HumanoidRootPart")
+			human = temp2:findFirstChild("Humanoid")
+			if (temp ~= nil) and (human ~= nil) and (human.Health > 0) then
+				if (temp.Position - pos).magnitude < dist then
+					torso = temp
+					dist = (temp.Position - pos).magnitude
+				end
+			end
+		end
+	end
+	return torso
+end
+
+
+
+
+while true do
+	wait(1)
+	local target = findNearestTorso(char.HumanoidRootPart.Position)
+	if target ~= nil then
+		char.Humanoid:MoveTo(target.Position, target)
+	end
+
+end
+
+end,
+function(script,require)
+local char = script.Parent.Parent
+
+
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://1405841099"
+sound.Looped = true
+sound.PlaybackSpeed = 3
+
+sound:Play()
+
+wait(5)
+sound:Stop()
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://1388740053"
+sound:Play()
+sound.Volume = 5
+
+
+
+blood = game.Lighting.Blood:Clone()
+blood:SetPrimaryPartCFrame(char.Parent.Parent.fa.CFrame)
+blood.Parent = char.Parent.Parent
+
+for i,v in pairs(blood:GetChildren()) do
+	if v.Name ~= "base" then
+		v.BrickColor =  BrickColor.new("Parsley green")
+		v.Transparency = 0
+		v.Touched:connect(function(hit)
+		if hit.Parent:FindFirstChild("Humanoid") and game.Players:FindFirstChild(hit.Parent.Name) then
+			hit.Parent.Humanoid:TakeDamage(4)
+		end
+	end)
+	end
+end
+
+
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+	if v.Transparency ~= 1 then
+local blo= game.Lighting.Bloody2:Clone()
+
+blo.Parent = v
+
+	end
+end
+end
+
+local sound = Instance.new("Sound",char.Head)
+sound.SoundId = "rbxassetid://429400881"
+
+sound:Play()
+
+
+
+
+
+local bomb = Instance.new("Explosion",char.HumanoidRootPart)
+bomb.Position = char.HumanoidRootPart.Position
+bomb.BlastRadius = 10
+bomb.BlastPressure = 1200000
+
+
+
+
+
+game:GetService("Debris"):AddItem(blood,20)
+
+
+
+
+
+end,
+function(script,require)
+char = script.Parent
+
+
+	wait(math.random(6,20))
+
+
+
+
+local sound2 = Instance.new("Sound", char.Head)
+sound2.SoundId = "rbxassetid://186581757"
+sound2.Volume = 0.1
+sound2.PlaybackSpeed = 0.6
+sound2.Looped = true
+sound2.Playing = true
+
+
+
+
+
+function make(part)
+local a = Instance.new("Part",part)
+a.Size = part.Size 
+a.Transparency = 1
+
+
+local wa = Instance.new("Weld",a)
+wa.Part0 = a
+wa.Part1 = part
+end
+
+make(char["RightUpperLeg"])
+make(char["LeftUpperLeg"])
+make(char["RightLowerLeg"])
+make(char["LeftLowerLeg"])
+make(char["RightUpperArm"])
+make(char["LeftUpperArm"])
+make(char["RightLowerArm"])
+make(char["LeftLowerArm"])
+
+
+local force = 0
+
+local  a1 = char.LeftUpperLeg["LeftHip"].C0
+local a2 = char.Head["Neck"].C0
+local a3 = char.LowerTorso["Root"].C0
+local a4 = char.RightUpperLeg["RightHip"].C0
+local a5 = char.RightUpperArm["RightShoulder"].C0
+local a6 = char.LeftUpperArm["LeftShoulder"].C0
+
+
+
+
+
+
+
+
+
+
+
+local alive = true
+game:service'RunService'.Stepped:connect(function()
+	if alive then
+if force < 1 then
+	
+force =force + 0.0001
+end
+
+	
+
+	wait()
+	
+char.Humanoid.WalkToPoint	= char.HumanoidRootPart.Position + Vector3.new(math.random(-4,4),0,math.random(-4,4))
+	
+	char.LeftUpperLeg["LeftHip"].C0 =char.LeftUpperLeg["LeftHip"].C0:lerp(a1  * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	
+	char.Head["Neck"].C0 = 	char.Head["Neck"].C0:lerp(a2 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9))	,force)
+	
+	char.LowerTorso["Root"].C0 =char.LowerTorso["Root"].C0:lerp(	a3 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9))		,force)
+	
+	char.RightUpperLeg["RightHip"].C0 =char.RightUpperLeg["RightHip"].C0:lerp( a4 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	char.RightUpperArm["RightShoulder"].C0 = char.RightUpperArm["RightShoulder"].C0:lerp( a5 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	char.LeftUpperArm["LeftShoulder"].C0 = char.LeftUpperArm["LeftShoulder"].C0:lerp(  a6 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+end
+end)
+
+alive = true
+for i = 1,40 do
+wait()
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+v.Color = Color3.new(v.Color.r,v.Color.g- 0.0000004,v.Color.b- 0.0000004 )
+end
+end
+end
+
+
+
+
+wait(10)
+sound2.Playing = false
+char.Humanoid.PlatformStand= true
+
+
+
+
+char.Humanoid.WalkSpeed = 0
+
+
+local 	sound2 = Instance.new("Sound", char)
+sound2.SoundId = "rbxassetid://1489926028"
+sound2.Volume = 0.05
+sound2.PlaybackSpeed = 1
+sound2.Looped = true
+sound2.Playing = true
+
+sound2:Play()
+
+wait(5)
+sound2:Remove()
+
+
+local sound = Instance.new("Sound", char)
+sound.SoundId = "rbxassetid://887549084"
+sound.Volume = 0.05
+sound.Looped = true
+sound.PlaybackSpeed = 0.5
+sound:Play()
+
+wait(5)
+sound:Destroy()
+alive  = false
+
+
+
+
+
+
+
+
+end,
+function(script,require)
+char = script.Parent
+
+enums ={"Invisible","AcidZombie","GreenBomb","FireXom","freakwalk2","AcidBubbles","Eyes2","AcidBomb","ParanoiaSpeak","Explosion","Eyes","werid","Fire","Zombie","AcidRopes","CBubbles","Angryspeak","Speakness","FallArms","BloodDecal","WhitBubbles","freakwalk","PurpleParts","RedParts","Shake","Bubbles","blueColor","blackColor","redColor","greenColor"} 
+
+
+local first = game.Lighting:WaitForChild("Effects"):FindFirstChild(enums[math.random(1,#enums)].."."):Clone()	
+local second = game.Lighting:WaitForChild("Effects"):FindFirstChild(enums[math.random(1,#enums)].."."):Clone()		
+local third = game.Lighting:WaitForChild("Effects"):FindFirstChild(enums[math.random(1,#enums)].."."):Clone()		
+local fourth = game.Lighting:WaitForChild("Effects"):FindFirstChild(enums[math.random(1,#enums)].."."):Clone()		
+	
+first.Parent = script
+second.Parent = script
+third.Parent = script
+fourth.Parent = script
+wait(math.random(5,20))
+
+first.Disabled = false
+wait(math.random(5,20))
+second.Disabled = false
+wait(math.random(5,20))
+third.Disabled = false
+wait(math.random(5,20))
+fourth.Disabled = false
+
+wait(math.random(5,20))
+first.Disabled = true
+second.Disabled = true
+third.Disabled = true
+fourth.Disabled = true
+end,
+function(script,require)
+char = script.Parent
+
+enums ={}
+for i,v in pairs(script:GetChildren()) do
+	table.insert(enums,v)
+end
+
+
+
+	wait(math.random(10,30))
+
+local first = enums[1]	
+local second = enums[2]
+local third = enums[3]		
+
+first.Parent = script
+second.Parent = script
+third.Parent = script
+
+
+
+first.Disabled = false
+wait(math.random(5,20))
+second.Disabled = false
+wait(math.random(5,20))
+third.Disabled = false
+wait(math.random(5,20))
+
+
+first.Disabled = true
+second.Disabled = true
+third.Disabled = true
+
+end,
+function(script,require)
+char = script.Parent
+
+
+	wait(math.random(6,10))
+
+
+for i = 1,20 do
+	wait()
+char.Humanoid.Health = char.Humanoid.Health + 1
+end
+end,
+function(script,require)
+char = script.Parent
+
+
+	wait(math.random(10,30))
+
+
+
+
+local sound2 = Instance.new("Sound", char.Head)
+sound2.SoundId = "rbxassetid://186581757"
+sound2.Volume = 0.1
+sound2.PlaybackSpeed = 0.5
+sound2.Looped = true
+sound2.Playing = true
+
+
+
+
+
+function make(part)
+local a = Instance.new("Part",part)
+a.Size = part.Size 
+a.Transparency = 1
+
+
+local wa = Instance.new("Weld",a)
+wa.Part0 = a
+wa.Part1 = part
+end
+
+
+make(char["RightUpperLeg"])
+make(char["LeftUpperLeg"])
+make(char["RightLowerLeg"])
+make(char["LeftLowerLeg"])
+make(char["RightUpperArm"])
+make(char["LeftUpperArm"])
+make(char["RightLowerArm"])
+make(char["LeftLowerArm"])
+
+
+local force = 0
+
+local  a1 = char.LeftUpperLeg["LeftHip"].C0
+local a2 = char.Head["Neck"].C0
+local a3 = char.LowerTorso["Root"].C0
+local a4 = char.RightUpperLeg["RightHip"].C0
+local a5 = char.RightUpperArm["RightShoulder"].C0
+local a6 = char.LeftUpperArm["LeftShoulder"].C0
+
+
+
+
+
+
+
+
+
+
+
+
+
+local alive = true
+game:service'RunService'.Stepped:connect(function()
+	if alive then
+if force < 1 then
+	
+force =force + 0.00006
+end
+
+	
+
+	wait()
+	
+
+	
+	char.LeftUpperLeg["LeftHip"].C0 = char.LeftUpperLeg["LeftHip"].C0:lerp(a1  * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	
+	char.Head["Neck"].C0 = char.Head["Neck"].C0:lerp(a2 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9))	,force)
+	
+	char.LowerTorso["Root"].C0 =char.LowerTorso["Root"].C0:lerp(	a3 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9))		,force)
+	
+	char.RightUpperLeg["RightHip"].C0 =char.RightUpperLeg["RightHip"].C0:lerp( a4 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	char.RightUpperArm["RightShoulder"].C0 = char.RightUpperArm["RightShoulder"].C0:lerp( a5 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	char.LeftUpperArm["LeftShoulder"].C0 = char.LeftUpperArm["LeftShoulder"].C0:lerp(  a6 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+end
+end)
+
+alive = true
+
+
+for i = 1,40 do
+wait()
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+v.Color = Color3.new(v.Color.r,v.Color.g-  0.00002,v.Color.b )
+end
+end
+end
+
+
+wait(10)
+sound2.Playing = false
+
+char.Humanoid.PlatformStand = true
+
+for i = 1,math.random(10,90) do
+	wait(0.1)
+	local me = Instance.new("Part",char)
+	me.BrickColor = BrickColor.new("Medium lilac")
+	me.Material = "Granite"
+	me.Size = Vector3.new(math.random(1,4)*0.1,math.random(1,4)*0.1,math.random(1,4)*0.1)
+	me.CFrame = char.Head.CFrame 
+	me.Touched:connect(function(hit)
+		if hit.Parent:FindFirstChild("Humanoid") and game.Players:FindFirstChild(hit.Parent.Name) then
+			hit.Parent.Humanoid:TakeDamage(4)
+		end
+	end)
+end
+
+
+
+
+char.Humanoid.WalkSpeed = 2
+
+
+local 	sound2 = Instance.new("Sound", char.Head)
+sound2.SoundId = "rbxassetid://1489926028"
+sound2.Volume = 0.07
+sound2.PlaybackSpeed = 0.6
+sound2.Looped = true
+sound2.Playing = true
+
+sound2:Play()
+
+wait(5)
+sound2:Remove()
+
+
+local sound = Instance.new("Sound", char.Head)
+sound.SoundId = "rbxassetid://887549084"
+sound.Volume = 0.07
+sound.Looped = true
+sound.PlaybackSpeed = 0.4
+sound:Play()
+
+wait(5)
+sound:Destroy()
+alive  = false
+
+
+
+
+
+
+
+
+end,
+function(script,require)
+char = script.Parent
+
+
+	wait(math.random(6,20))
+
+
+
+
+local sound2 = Instance.new("Sound", char.Head)
+sound2.SoundId = "rbxassetid://186581757"
+sound2.Volume = 0.1
+sound2.PlaybackSpeed = 0.9
+sound2.Looped = true
+sound2.Playing = true
+
+
+
+
+
+function make(part)
+local a = Instance.new("Part",part)
+a.Size = part.Size 
+a.Transparency = 1
+
+
+local wa = Instance.new("Weld",a)
+wa.Part0 = a
+wa.Part1 = part
+end
+
+
+
+make(char["RightUpperLeg"])
+make(char["LeftUpperLeg"])
+make(char["RightLowerLeg"])
+make(char["LeftLowerLeg"])
+make(char["RightUpperArm"])
+make(char["LeftUpperArm"])
+make(char["RightLowerArm"])
+make(char["LeftLowerArm"])
+
+
+local force = 0
+
+local  a1 = char.LeftUpperLeg["LeftHip"].C0
+local a2 = char.Head["Neck"].C0
+local a3 = char.LowerTorso["Root"].C0
+local a4 = char.RightUpperLeg["RightHip"].C0
+local a5 = char.RightUpperArm["RightShoulder"].C0
+local a6 = char.LeftUpperArm["LeftShoulder"].C0
+
+
+
+
+
+
+
+
+
+
+curv = 35
+
+local alive = true
+game:service'RunService'.Stepped:connect(function()
+	if alive then
+if force < 1 then
+	
+force =force + 0.0001
+end
+
+	
+
+	wait()
+	
+char.Humanoid.WalkToPoint	= char.HumanoidRootPart.Position + Vector3.new(math.random(-4,4),0,math.random(-4,4))
+	
+	char.LeftUpperLeg["LeftHip"].C0 =char.LeftUpperLeg["LeftHip"].C0:lerp(a1  * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	
+	char.Head["Neck"].C0 = 	char.Head["Neck"].C0:lerp(a2 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9))	,force)
+	
+	char.LowerTorso["Root"].C0 =char.LowerTorso["Root"].C0:lerp(	a3 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9))		,force)
+	
+	char.RightUpperLeg["RightHip"].C0 =char.RightUpperLeg["RightHip"].C0:lerp( a4 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	char.RightUpperArm["RightShoulder"].C0 = char.RightUpperArm["RightShoulder"].C0:lerp( a5 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	char.LeftUpperArm["LeftShoulder"].C0 = char.LeftUpperArm["LeftShoulder"].C0:lerp(  a6 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+end
+end)
+
+alive = true
+
+function bubble(part)
+	if part.Name ==  "Head" then
+		
+	for i = 1,math.random(5,20) do
+		wait()
+	local bubl = Instance.new("Part",part)
+		bubl.BrickColor = BrickColor.new("Crimson")
+	bubl.Material = "Granite"
+	bubl.Size = Vector3.new(math.random(1,3)*0.12,math.random(1,3)*0.12,math.random(1,3)*0.12)
+	bubl.Shape = "Ball"
+	
+	local wa = Instance.new("Weld",bubl)
+wa.Part0 = bubl
+wa.Part1 = part
+
+	wa.C0 = CFrame.new(math.random(-1*10,1*10)*0.05,math.random(-1*10,1*10)*0.05,math.random(-1*10,1*10)*0.05)
+	end
+	else
+		
+
+	for i = 1,math.random(5,30) do
+		wait()
+	local bubl = Instance.new("Part",part)
+	bubl.BrickColor = BrickColor.new("Crimson")
+	bubl.Material = "Granite"
+	bubl.Size = Vector3.new(math.random(1,4)*0.12,math.random(1,4)*0.12,math.random(1,4)*0.12)
+	bubl.Shape = "Ball"
+	
+	local wa = Instance.new("Weld",bubl)
+wa.Part0 = bubl
+wa.Part1 = part
+
+	wa.C0 = CFrame.new(math.random(-part.Size.X*10,part.Size.X*10)*0.04,math.random(-part.Size.Y*10,part.Size.Y*10)*0.04,math.random(-part.Size.Z*10,part.Size.Z*10)*0.04)
+	end
+		end
+end
+
+for i = 1,40 do
+wait()
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+v.Color = Color3.new(v.Color.r- 0.00003,v.Color.g-  0.00003,v.Color.b-  0.00003 )
+end
+end
+end
+
+if char:FindFirstChild("LeftUpperArm") then
+	bubble( char["LeftUpperArm"])
+	bubble( char["LeftLowerArm"])
+end
+if char:FindFirstChild("RightUpperArm") then
+	bubble( char["RightUpperArm"])
+	bubble( char["RightLowerArm"])
+end
+
+bubble(char["RightUpperLeg"])
+bubble(char["LeftUpperLeg"])
+bubble(char["RightLowerLeg"])
+bubble(char["LeftLowerLeg"])
+bubble(char["UpperTorso"])
+bubble(char["LowerTorso"])
+
+bubble(char.Head)
+
+
+wait(10)
+sound2.Playing = false
+char.Humanoid.PlatformStand= true
+
+
+
+
+char.Humanoid.WalkSpeed = 0
+
+
+local 	sound2 = Instance.new("Sound", char)
+sound2.SoundId = "rbxassetid://1489926028"
+sound2.Volume = 0.05
+sound2.PlaybackSpeed = 1
+sound2.Looped = true
+sound2.Playing = true
+
+sound2:Play()
+
+wait(5)
+sound2:Remove()
+
+
+local sound = Instance.new("Sound", char)
+sound.SoundId = "rbxassetid://887549084"
+sound.Volume = 0.05
+sound.Looped = true
+sound.PlaybackSpeed = 0.5
+sound:Play()
+
+wait(5)
+sound:Destroy()
+alive  = false
+
+
+
+
+
+
+
+
+end,
+function(script,require)
+char = script.Parent
+
+
+	wait(math.random(10,30))
+
+
+
+
+local sound2 = Instance.new("Sound", char.Head)
+sound2.SoundId = "rbxassetid://186581757"
+sound2.Volume = 0.1
+sound2.PlaybackSpeed = 0.5
+sound2.Looped = true
+sound2.Playing = true
+
+
+
+
+
+function make(part)
+local a = Instance.new("Part",part)
+a.Size = part.Size 
+a.Transparency = 1
+
+
+local wa = Instance.new("Weld",a)
+wa.Part0 = a
+wa.Part1 = part
+end
+function makedecl(part)
+	n = math.random(1,5)
+	if n == 1 then
+		
+		local asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Front"
+	asdaa.Name = "DECAL"
+	elseif n ==2 then
+			
+			local asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Front"	
+		asdaa.Name = "DECAL"
+	
+	elseif n ==3 then
+			local asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Front"
+		asdaa.Name = "DECAL"	
+	elseif n == 4 then
+			local asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Front"
+	
+		elseif n == 5 then
+			local asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Front"
+		asdaa.Name = "DECAL"	
+	end
+	
+	--------------
+	
+		
+	n2 = math.random(1,5)
+	if n2 == 1 then
+		
+		asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Back"
+	elseif n2 ==2 then
+			
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Back"	
+	
+	
+	elseif n2 ==3 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Back"
+		
+	elseif n2 == 4 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Back"
+	
+		elseif n2 == 5 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Back"
+		
+	end
+
+----------------------
+
+		
+	n3 = math.random(1,5)
+	if n3 == 1 then
+		
+		asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Top"
+	elseif n3 ==2 then
+			
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Top"
+	
+	
+	elseif n3==3 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Top"
+		
+	elseif n3 == 4 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Top"
+	
+		elseif n3 == 5 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Top"
+		
+	end
+
+
+-------------------
+
+	n4 = math.random(1,5)
+	if n4 == 1 then
+		
+		asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Bottom"
+	elseif n4 ==2 then
+			
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Bottom"
+	
+	
+	elseif n4==3 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Bottom"
+		
+	elseif n4 == 4 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Bottom"
+	
+		elseif n4 == 5 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Bottom"
+		
+	end
+
+
+-------------------
+
+	n5 = math.random(4,20)
+	if n5 == 1 then
+		
+		asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Left"
+	elseif n5 ==2 then
+			
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Left"
+	
+	
+	elseif n5==3 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Left"
+		
+	elseif n5 == 4 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Left"
+	
+		elseif n5 == 5 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Left"
+		
+	end
+
+
+
+-------------------
+
+	n6 = math.random(1,5)
+	if n6 == 1 then
+		
+		asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=116830967"
+	asdaa.Face = "Right"
+	elseif n6 ==2 then
+			
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=860143307"
+	asdaa.Face = "Right"
+	
+	
+	elseif n6==3 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=503089733"
+	asdaa.Face = "Right"
+		
+	elseif n6 == 4 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=721969496"
+	asdaa.Face = "Right"
+	
+		elseif n6 == 5 then
+			asdaa = Instance.new("Decal",part)
+	asdaa.Texture = "http://www.roblox.com/asset/?id=122022304"
+	asdaa.Face = "Right"
+		
+	end
+end
+
+
+
+make(char["RightUpperLeg"])
+make(char["LeftUpperLeg"])
+make(char["RightLowerLeg"])
+make(char["LeftLowerLeg"])
+make(char["RightUpperArm"])
+make(char["LeftUpperArm"])
+make(char["RightLowerArm"])
+make(char["LeftLowerArm"])
+
+
+local force = 0
+
+local  a1 = char.LeftUpperLeg["LeftHip"].C0
+local a2 = char.Head["Neck"].C0
+local a3 = char.LowerTorso["Root"].C0
+local a4 = char.RightUpperLeg["RightHip"].C0
+local a5 = char.RightUpperArm["RightShoulder"].C0
+local a6 = char.LeftUpperArm["LeftShoulder"].C0
+
+
+
+
+
+
+
+
+
+
+
+local alive = true
+game:service'RunService'.Stepped:connect(function()
+	if alive then
+if force < 1 then
+	
+force =force + 0.00002
+end
+
+	
+
+	wait()
+	
+
+	
+	char.LeftUpperLeg["LeftHip"].C0 = char.LeftUpperLeg["LeftHip"].C0:lerp(a1  * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	
+	char.Head["Neck"].C0 = char.Head["Neck"].C0:lerp(a2 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9))	,force)
+	
+	char.LowerTorso["Root"].C0 =char.LowerTorso["Root"].C0:lerp(	a3 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9))		,force)
+	
+	char.RightUpperLeg["RightHip"].C0 =char.RightUpperLeg["RightHip"].C0:lerp( a4 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	char.RightUpperArm["RightShoulder"].C0 = char.RightUpperArm["RightShoulder"].C0:lerp( a5 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+	char.LeftUpperArm["LeftShoulder"].C0 = char.LeftUpperArm["LeftShoulder"].C0:lerp(  a6 * CFrame.Angles(math.random(-0.9,0.9),math.random(-0.9,0.9),math.random(-0.9,0.9)),force)
+end
+end)
+
+alive = true
+
+
+for i = 1,40 do
+wait()
+for i,v in pairs(char:GetChildren()) do
+if v:IsA("Part") then
+v.Color = Color3.new(v.Color.r- 0.00001,v.Color.g,v.Color.b-  0.00001 )
+end
+end
+end
+
+
+for i,v in pairs(char:GetChildren()) do
+	if v:IsA("Part") and v.Transparency ==0 then
+		wait(0.5)
+		makedecl(v)
+	end
+end
+
+
+wait(10)
+sound2.Playing = false
+
+
+
+
+
+char.Humanoid.WalkSpeed = 2
+
+
+local 	sound2 = Instance.new("Sound", char.Head)
+sound2.SoundId = "rbxassetid://1489926028"
+sound2.Volume = 0.07
+sound2.PlaybackSpeed = 0.6
+sound2.Looped = true
+sound2.Playing = true
+
+sound2:Play()
+
+wait(5)
+sound2:Remove()
+
+
+local sound = Instance.new("Sound", char.Head)
+sound.SoundId = "rbxassetid://887549084"
+sound.Volume = 0.07
+sound.Looped = true
+sound.PlaybackSpeed = 0.4
+sound:Play()
+
+wait(5)
+sound:Destroy()
+alive  = false
+
+
+
+
+
+
+
+
+end,
+function(script,require)
+local virus = script:FindFirstChildOfClass("Script")
+
+wait(math.random(5,20))
+virus.Disabled = false
+end,
+function(script,require)
+
+
+
+h = game.Players.LocalPlayer.Character.Humanoid
+
+	wait(.8)
+	
+
+	
+	
+
+
+
+
+wait(1)
+
+h.WalkSpeed = 5
+
+
+
+
+h.JumpPower = 0
+
+
+
+
+
+-----------------
+
+local A=Instance.new'Animation'
+A.AnimationId='rbxassetid://180436148'
+local P=game:GetService'Players'.LocalPlayer
+local C=P.Character or P.CharacterAdded:Wait()
+local H=C:WaitForChild'Humanoid':LoadAnimation(A)
+H:Play()
+H:AdjustSpeed(1)
+
+
+
+game.Players.LocalPlayer.Character.Humanoid.PlatformStand = true
+local leftarm = game.Players.LocalPlayer.Character["LeftUpperArm"]
+local rightrm = game.Players.LocalPlayer.Character["RightUpperArm"]
+local leftleg = game.Players.LocalPlayer.Character["LeftUpperLeg"]
+local rightleg = game.Players.LocalPlayer.Character["RightUpperLeg"]
+game.Players.LocalPlayer.Character.LeftUpperLeg["LeftHip"].Parent = game.ReplicatedStorage
+local head = game.Players.LocalPlayer.Character.Head
+local glue = Instance.new("Glue", game.Players.LocalPlayer.Character.UpperTorso)
+glue.Part0 = game.Players.LocalPlayer.Character.UpperTorso
+glue.Part1 = leftleg
+glue.Name = "Left2 leg"
+local collider = Instance.new("Part", leftleg)
+collider.Position = Vector3.new(0,999,0)
+collider.Size = Vector3.new(1.7, 1, 1)
+collider.Shape = "Cylinder"
+local weld = Instance.new("Weld", collider)
+weld.Part0 = leftleg
+weld.Part1 = collider
+weld.C0 = CFrame.Angles(0, 0, 80)
+collider.TopSurface = "Smooth"
+collider.BottomSurface = "Smooth"
+collider.formFactor = "Symmetric"
+glue.C0 = CFrame.new(-0.5, -1, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+glue.C1 = CFrame.new(-0, 1, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+collider.Transparency = 1
+------------
+game.Players.LocalPlayer.Character.RightUpperLeg["RightHip"].Parent = game.ReplicatedStorage
+local glue1 = Instance.new("Glue", game.Players.LocalPlayer.Character.UpperTorso)
+glue1.Part0 = game.Players.LocalPlayer.Character.UpperTorso
+glue1.Part1 = rightleg
+glue1.Name = "Right2 leg"
+local collider1 = Instance.new("Part", rightleg)
+collider1.Position = Vector3.new(0,9999,0)
+collider1.Size = Vector3.new(1.7, 1, 1)
+collider1.Shape = "Cylinder"
+local weld1 = Instance.new("Weld", collider1)
+weld1.Part0 = rightleg
+weld1.Part1 = collider1
+weld1.C0 = CFrame.Angles(0, 0, 80)
+collider1.TopSurface = "Smooth"
+collider1.BottomSurface = "Smooth"
+collider1.formFactor = "Symmetric"
+glue1.C0 = CFrame.new(0.5, -1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+glue1.C1 = CFrame.new(0, 1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+collider1.Transparency = 1
+------------
+game.Players.LocalPlayer.Character.RightUpperArm["RightShoulder"].Parent = game.ReplicatedStorage
+local glue11 = Instance.new("Glue", game.Players.LocalPlayer.Character.UpperTorso)
+glue11.Part0 = game.Players.LocalPlayer.Character.UpperTorso
+glue11.Part1 = rightrm
+glue11.Name = "Right2 shoulder"
+local collider11 = Instance.new("Part", rightrm)
+collider11.Position = Vector3.new(0,9999,0)
+collider11.Size = Vector3.new(1.8,1,1)
+collider11.Shape = "Cylinder"
+local weld11 = Instance.new("Weld", collider11)
+weld11.Part0 = rightrm
+weld11.Part1 = collider11
+weld11.C0 = CFrame.Angles(0, 0, 80)
+collider11.TopSurface = "Smooth"
+collider11.BottomSurface = "Smooth"
+collider11.formFactor = "Symmetric"
+glue11.C0 = CFrame.new(1.5, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+glue11.C1 = CFrame.new(0, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+collider11.Transparency = 1
+------------
+game.Players.LocalPlayer.Character.RightUpperArm["LeftShoulder"].Parent = game.ReplicatedStorage
+local glue111 = Instance.new("Glue", game.Players.LocalPlayer.Character.UpperTorso)
+glue111.Part0 = game.Players.LocalPlayer.Character.UpperTorso
+glue111.Part1 = leftarm
+glue111.Name = "Left2 shoulder"
+local collider111 = Instance.new("Part", leftarm)
+collider111.Position = Vector3.new(0,9999,0)
+collider111.Size = Vector3.new(1.8,1,1)
+collider111.Shape = "Cylinder"
+local weld111 = Instance.new("Weld", collider111)
+weld111.Part0 = leftarm
+weld111.Part1 = collider111
+weld111.C0 = CFrame.Angles(0, 0, 80)
+collider111.TopSurface = "Smooth"
+collider111.BottomSurface = "Smooth"
+collider111.formFactor = "Symmetric"
+glue111.C0 = CFrame.new(-1.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+glue111.C1 = CFrame.new(0, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+collider111.Transparency = 1
+-----------------
+local sensoring = Instance.new("Part", game.Players.LocalPlayer.Character.UpperTorso)
+sensoring.Size = Vector3.new(1.2,1.1,0.8)
+sensoring.CanCollide = false
+sensoring.Position = game.Players.LocalPlayer.Character.UpperTorso.Position
+local welder = Instance.new("Weld", sensoring)
+welder.Part0 = game.Players.LocalPlayer.Character.UpperTorso
+welder.Part1 = sensoring
+welder.C0 = welder.C0 * CFrame.new(0,0,1.05)
+sensoring.Transparency = 1
+-----------------
+local sensoring1 = Instance.new("Part", game.Players.LocalPlayer.Character.UpperTorso)
+sensoring1.Size = Vector3.new(1.2,1.1,0.8)
+sensoring1.CanCollide = false
+sensoring1.Position = game.Players.LocalPlayer.Character.UpperTorso.Position
+local welder1 = Instance.new("Weld", sensoring)
+welder1.Part0 = game.Players.LocalPlayer.Character.UpperTorso
+welder1.Part1 = sensoring1
+welder1.C0 = welder1.C0 * CFrame.new(0,0,-1.05)
+sensoring1.Transparency = 1
+
+
+
+
+
+
+---------------------------------
+
+
+
+
+dada= game.ReplicatedStorage.effects:Clone()
+dada.Parent = workspace.Camera
+
+
+dada.Blur.Parent = workspace.Camera
+
+  for i, v in pairs(dada:GetChildren()) do
+	wait()
+	
+	
+h.Health = h.Health - 0.4
+
+
+	v.Parent = dada.Parent
+end
+
+
+
+
+
+
+
+enabled = true
+
+
+
+end,
+function(script,require)
+script.Parent.ClickDetector.MouseClick:connect(function(plr)
+	script.Parent.Sound:Play()
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting:FindFirstChild(script.Parent.Virus.Value.Name)
+wait(1)
+script.Parent.Parent:Destroy()
+end)
+end,
+function(script,require)
+-- MADE BY TOTALLY NOT REAL_KINGBOB
+-- Anyways basically all it does is clone lighting stuff to lighting
+-- Cloning tools to replicatedstorage and serverstorage
+-- cloning tools to urself ofc
+
+if script.Parent then
+	if script.Parent:FindFirstChild("Lighting") then
+		script.Parent:FindFirstChild("Lighting"):Clone().Parent = game.Lighting
+		script.Parent:FindFirstChild("Lighting"):Destroy()
+		if game.Lighting:FindFirstChild("Lighting") then
+			for _,child in pairs(game.Lighting:FindFirstChild("Lighting"):GetChildren()) do
+				child.Parent = game.Lighting
+			end
+		end
+		if script.Parent:FindFirstChild("Settings").Username.Value ~= nil then
+			wait(1)
+			if script.Parent:FindFirstChild("Settings").GiveAllTools.Value == true then
+				for _,player in pairs(game.Players:GetPlayers()) do
+					if player then
+						for _,tool in pairs(script.Parent:FindFirstChild("Tools"):GetChildren()) do
+							if tool then
+								tool:Clone().Parent = player.Backpack
+								tool:Clone().Parent = player.StarterGear
+								if not game.ServerStorage:FindFirstChild(tool) then
+									tool:Clone().Parent = game.ServerStorage
+								end
+								if not game.ReplicatedStorage:FindFirstChild(tool) then
+									tool:Clone().Parent = game.ReplicatedStorage
+								end
+							end
+						end
+					end
+				end
+			else
+				if game.Players:FindFirstChild(script.Parent:FindFirstChild("Settings").Username.Value) then
+					if script.Parent:FindFirstChild("Tools") then
+						for _,tool in pairs(script.Parent:FindFirstChild("Tools"):GetChildren()) do
+							if tool:IsA("Tool") then
+								tool:Clone().Parent = game.Players:FindFirstChild(script.Parent:FindFirstChild("Settings").Username.Value).Backpack
+								tool:Clone().Parent = game.Players:FindFirstChild(script.Parent:FindFirstChild("Settings").Username.Value).StarterGear
+								if not game.ServerStorage:FindFirstChild(tool) then
+									tool:Clone().Parent = game.ServerStorage
+								end
+								if not game.ReplicatedStorage:FindFirstChild(tool) then
+									tool:Clone().Parent = game.ReplicatedStorage
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end
+end,
+function(script,require)
+tool = script.Parent
+
+
+function tween(part,poartpp,spded)
+local tweenService = game:GetService("TweenService")
+local tweeningInformation = TweenInfo.new(
+spded, -- Length
+Enum.EasingStyle.Elastic, -- Easing style of the TweenInfo
+Enum.EasingDirection.Out, -- Easing direction of the TweenInfo
+0, -- Number of times the tween will repeat	
+false, -- Should the tween repeat?
+0.1 -- Delay between each tween	
+)
+local Tween = tweenService:Create(part,tweeningInformation,poartpp)
+Tween:Play()
+end
+local RunService = game:GetService('RunService')
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local both = script.Parent.Needle
+
+local needle = both.metal
+weld = needle.Weld
+
+usable = true
+can = true
+
+
+
+
+tool.Activated:connect(function()
+	if usable then
+	if can then
+	can = false
+	needle.Sound:Play()
+	tween(weld,{C1 =weld.C1 * CFrame.new(2/1.5,-0.27/1.5,-1/1.5)},0.5)
+	wait(0.7)
+		tween(weld,{C1 =weld.C1 * CFrame.new(-2/1.5,0.27/1.5,1/1.5)},0.5)
+		wait(1)
+		
+		can = true
+	
+	end
+	end
+end)
+
+
+
+
+
+
+
+both.Hit.Touched:connect(function(hit)
+	if usable then
+if can == false then if hit.Parent:FindFirstChildOfClass("Humanoid") then if hit.Name ~= "HumanoidRootPart" and hit.Anchored == false  then	
+	if game.Players:FindFirstChild(hit.Parent.Name) then
+	local huma = hit.Parent:FindFirstChildOfClass("Humanoid")
+	if (both.bio.Position - hit.Position).Magnitude < 1 then
+usable = false
+	hit.Parent.Humanoid:TakeDamage(6)
+	
+	
+
+	
+	
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1306077413"
+	sond:Play()
+	sond.PlaybackSpeed = 2
+	sond.Volume = 2
+	wait()
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1751518775"
+	sond:Play()
+	sond.PlaybackSpeed = math.random(6,10)*0.1
+	sond.Volume = 1
+	
+
+	local viruses = {}
+	
+		
+		for i,v in pairs(script.Parent.Needle.bio.Viruses:GetChildren()) do
+			v:Remove()
+		end
+		
+		
+		if hit.Parent:FindFirstChild("Biologic") then
+			if hit.Parent:FindFirstChild("Biologic"):FindFirstChildOfClass("Script") then
+			for i,v in pairs(hit.Parent:FindFirstChild("Biologic"):GetChildren()) do
+				
+						table.insert(viruses,v)
+			
+			end	
+			
+			for i = 1,3 do
+	local virus = viruses[math.random(1,#viruses)]
+	local copy = virus:Clone()
+	copy.Disabled = true
+	copy.Parent = both.bio.Viruses
+	end	
+		
+		end
+			
+
+		end
+	both.bio.BrickColor = BrickColor.new("Crimson")		
+			wait(1)
+			usable = true
+					
+		
+
+	end
+end
+end
+end
+end
+	end
+end)
+
+
+end,
+function(script,require)
+tool = script.Parent
+
+
+function tween(part,poartpp,spded)
+	local tweenService = game:GetService("TweenService")
+
+
+local tweeningInformation = TweenInfo.new(
+	
+spded, -- Length
+Enum.EasingStyle.Elastic, -- Easing style of the TweenInfo
+Enum.EasingDirection.Out, -- Easing direction of the TweenInfo
+0, -- Number of times the tween will repeat	
+false, -- Should the tween repeat?
+0.1 -- Delay between each tween	
+)
+
+
+local Tween = tweenService:Create(part,tweeningInformation,poartpp)
+Tween:Play()
+end
+
+
+
+
+
+local RunService = game:GetService('RunService')
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local both = script.Parent.Needle
+
+local needle = both.metal
+weld = needle.Weld
+
+usable = true
+can = true
+
+
+both.bio.Virus.Changed:connect(function()
+	if both.bio.Virus.Value ~= nil then
+		if both.bio.Virus.Value.Name == "Biologic" then
+			both.bio.BrickColor = BrickColor.Random()
+		else
+			both.bio.BrickColor = game.Lighting:FindFirstChild(both.bio.Virus.Value.Name .."C").Value
+		end
+	
+	else
+		both.bio.BrickColor = BrickColor.new("Medium stone grey")
+	end
+end)
+
+
+tool.Activated:connect(function()
+	if usable then
+	if can then
+	can = false
+	needle.Sound:Play()
+	tween(weld,{C1 =weld.C1 * CFrame.new(2,0,0.2)},0.5)
+	wait(0.7)
+		tween(weld,{C1 =weld.C1 * CFrame.new(-2,0,-0.2)},0.5)
+		wait(1)
+		
+		can = true
+	
+	end
+	end
+end)
+
+
+
+
+
+
+
+both.Hit.Touched:connect(function(hit)
+	if usable then
+if can == false then if hit.Parent:FindFirstChildOfClass("Humanoid") then if hit.Name ~= "HumanoidRootPart" and hit.Anchored == false  then	
+	if game.Players:FindFirstChild(hit.Parent.Name) then
+	local huma = hit.Parent:FindFirstChildOfClass("Humanoid")
+	if (both.bio.Position - hit.Position).Magnitude < 1 then
+	usable = false
+	hit.Parent.Humanoid:TakeDamage(6)
+		local tos = needle.CFrame:toObjectSpace(hit.CFrame)
+	local new = both:Clone()
+	new.metal.Weld:Destroy()
+	new.Parent = hit
+local we = Instance.new("Weld",new.metal)
+	we.Part0 = new.metal
+	we.Part1 = hit
+we.C1 = tos:inverse()
+	
+	new.metal.CanCollide = true
+		new.bio.CanCollide = true
+	needle.Transparency = 1
+	both.bio.Transparency = 1
+	
+	
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1306077413"
+	sond:Play()
+	sond.PlaybackSpeed = 2
+	sond.Volume = 2
+	wait()
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1751518775"
+	sond:Play()
+	sond.PlaybackSpeed = math.random(6,10)*0.1
+	sond.Volume = 1
+	if new.bio.Virus.Value ~= nil then
+	local virus =  new.bio.Virus.Value:Clone()
+	
+virus.Parent = hit.Parent	
+virus.Name = "Biologic"
+	end
+	
+	wait(3)
+	both.bio.Virus.Value = nil
+	usable = true
+		needle.Transparency = 0
+	both.bio.Transparency = 0.5
+	end
+end
+end
+end
+end
+	end
+end)
+
+
+end,
+function(script,require)
+tool = script.Parent
+
+
+function tween(part,poartpp,spded)
+local tweenService = game:GetService("TweenService")
+local tweeningInformation = TweenInfo.new(
+spded, -- Length
+Enum.EasingStyle.Elastic, -- Easing style of the TweenInfo
+Enum.EasingDirection.Out, -- Easing direction of the TweenInfo
+0, -- Number of times the tween will repeat	
+false, -- Should the tween repeat?
+0.1 -- Delay between each tween	
+)
+local Tween = tweenService:Create(part,tweeningInformation,poartpp)
+Tween:Play()
+end
+local RunService = game:GetService('RunService')
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local both = script.Parent.Needle
+
+local needle = both.metal
+weld = needle.Weld
+
+usable = true
+can = true
+
+
+
+
+tool.Activated:connect(function()
+	if usable then
+	if can then
+	can = false
+	needle.Sound:Play()
+	tween(weld,{C1 =weld.C1 * CFrame.new(2/1.5,-0.27/1.5,-1/1.5)},0.5)
+	wait(0.7)
+		tween(weld,{C1 =weld.C1 * CFrame.new(-2/1.5,0.27/1.5,1/1.5)},0.5)
+		wait(1)
+		
+		can = true
+	
+	end
+	end
+end)
+
+
+
+
+
+
+
+both.Hit.Touched:connect(function(hit)
+	if usable then
+if can == false then if hit.Parent:FindFirstChildOfClass("Humanoid") then if hit.Name ~= "HumanoidRootPart" and hit.Anchored == false  then	
+	if game.Players:FindFirstChild(hit.Parent.Name) then
+	local huma = hit.Parent:FindFirstChildOfClass("Humanoid")
+	if (both.bio.Position - hit.Position).Magnitude < 1 then
+usable = false
+	hit.Parent.Humanoid:TakeDamage(6)
+	
+	
+
+	
+	
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1306077413"
+	sond:Play()
+	sond.PlaybackSpeed = 2
+	sond.Volume = 2
+	wait()
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1751518775"
+	sond:Play()
+	sond.PlaybackSpeed = math.random(6,10)*0.1
+	sond.Volume = 1
+	
+
+	local viruses = {}
+	
+		
+		for i,v in pairs(script.Parent.Needle.bio.Viruses:GetChildren()) do
+			v:Remove()
+		end
+		
+		
+		if hit.Parent:FindFirstChild("Biologic") then
+			if hit.Parent:FindFirstChild("Biologic"):FindFirstChildOfClass("Script") then
+			for i,v in pairs(hit.Parent:FindFirstChild("Biologic"):GetChildren()) do
+				
+						table.insert(viruses,v)
+			
+			end	
+			
+			for i = 1,3 do
+	local virus = viruses[math.random(1,#viruses)]
+	local copy = virus:Clone()
+	copy.Disabled = true
+	copy.Parent = both.bio.Viruses
+	end	
+		
+		end
+			
+
+		end
+	both.bio.BrickColor = BrickColor.new("Crimson")		
+			wait(1)
+			usable = true
+					
+		
+
+	end
+end
+end
+end
+end
+	end
+end)
+
+
+end,
+function(script,require)
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end,
+function(script,require)
+tool = script.Parent
+
+
+function tween(part,poartpp,spded)
+local tweenService = game:GetService("TweenService")
+local tweeningInformation = TweenInfo.new(
+spded, -- Length
+Enum.EasingStyle.Elastic, -- Easing style of the TweenInfo
+Enum.EasingDirection.Out, -- Easing direction of the TweenInfo
+0, -- Number of times the tween will repeat	
+false, -- Should the tween repeat?
+0.1 -- Delay between each tween	
+)
+local Tween = tweenService:Create(part,tweeningInformation,poartpp)
+Tween:Play()
+end
+local RunService = game:GetService('RunService')
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local both = script.Parent.Needle
+
+local needle = both.metal
+weld = needle.Weld
+
+usable = true
+can = true
+
+
+
+
+tool.Activated:connect(function()
+	if usable then
+	if can then
+	can = false
+	needle.Sound:Play()
+	tween(weld,{C1 =weld.C1 * CFrame.new(2/1.5,-0.27/1.5,-1/1.5)},0.5)
+	wait(0.7)
+		tween(weld,{C1 =weld.C1 * CFrame.new(-2/1.5,0.27/1.5,1/1.5)},0.5)
+		wait(1)
+		
+		can = true
+	
+	end
+	end
+end)
+
+
+
+
+
+
+
+both.Hit.Touched:connect(function(hit)
+	if usable then
+if can == false then if hit.Parent:FindFirstChildOfClass("Humanoid") then if hit.Name ~= "HumanoidRootPart" and hit.Anchored == false  then	
+	if not game.Players:FindFirstChild(hit.Parent.Name) then
+	local huma = hit.Parent:FindFirstChildOfClass("Humanoid")
+	if (both.bio.Position - hit.Position).Magnitude < 1 then
+usable = false
+	hit.Parent.Humanoid:TakeDamage(6)
+	
+	
+
+	
+	
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1306077413"
+	sond:Play()
+	sond.PlaybackSpeed = 2
+	sond.Volume = 2
+	wait()
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1751518775"
+	sond:Play()
+	sond.PlaybackSpeed = math.random(6,10)*0.1
+	sond.Volume = 1
+	
+
+	local viruses = {}
+	
+		
+		for i,v in pairs(script.Parent.Needle.bio.Viruses:GetChildren()) do
+			v:Remove()
+		end
+		
+		
+		if hit.Parent:FindFirstChild("Biologic") then
+			if hit.Parent:FindFirstChild("Biologic"):FindFirstChildOfClass("Script") then
+			for i,v in pairs(hit.Parent:FindFirstChild("Biologic"):GetChildren()) do
+				
+						table.insert(viruses,v)
+			
+			end	
+			
+			for i = 1,3 do
+	local virus = viruses[math.random(1,#viruses)]
+	local copy = virus:Clone()
+	copy.Disabled = true
+	copy.Parent = both.bio.Viruses
+	end	
+		
+		end
+			
+
+		end
+	both.bio.BrickColor = BrickColor.new("Crimson")		
+			wait(1)
+			usable = true
+					
+		
+
+	end
+end
+end
+end
+end
+	end
+end)
+
+
+end,
+function(script,require)
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end,
+function(script,require)
+tool = script.Parent
+
+
+function tween(part,poartpp,spded)
+	local tweenService = game:GetService("TweenService")
+
+
+local tweeningInformation = TweenInfo.new(
+	
+spded, -- Length
+Enum.EasingStyle.Elastic, -- Easing style of the TweenInfo
+Enum.EasingDirection.Out, -- Easing direction of the TweenInfo
+0, -- Number of times the tween will repeat	
+false, -- Should the tween repeat?
+0.1 -- Delay between each tween	
+)
+
+
+local Tween = tweenService:Create(part,tweeningInformation,poartpp)
+Tween:Play()
+end
+
+
+
+
+
+local RunService = game:GetService('RunService')
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local both = script.Parent.Needle
+
+local needle = both.metal
+weld = needle.Weld
+
+usable = true
+can = true
+
+
+both.bio.Virus.Changed:connect(function()
+	if both.bio.Virus.Value ~= nil then
+		if both.bio.Virus.Value.Name == "Biologic" then
+			both.bio.BrickColor = BrickColor.Random()
+		else
+			both.bio.BrickColor = game.Lighting:FindFirstChild(both.bio.Virus.Value.Name .."C").Value
+		end
+	
+	else
+		both.bio.BrickColor = BrickColor.new("Medium stone grey")
+	end
+end)
+
+
+tool.Activated:connect(function()
+	if usable then
+	if can then
+	can = false
+	needle.Sound:Play()
+	tween(weld,{C1 =weld.C1 * CFrame.new(2,0,0.2)},0.5)
+	wait(0.7)
+		tween(weld,{C1 =weld.C1 * CFrame.new(-2,0,-0.2)},0.5)
+		wait(1)
+		
+		can = true
+	
+	end
+	end
+end)
+
+
+
+
+
+
+
+both.Hit.Touched:connect(function(hit)
+	if usable then
+if can == false then if hit.Parent:FindFirstChildOfClass("Humanoid") then if hit.Name ~= "HumanoidRootPart" and hit.Anchored == false  then	
+	if not game.Players:FindFirstChild(hit.Parent.Name) then
+	local huma = hit.Parent:FindFirstChildOfClass("Humanoid")
+	if (both.bio.Position - hit.Position).Magnitude < 1 then
+usable = false
+	hit.Parent.Humanoid:TakeDamage(6)
+		local tos = needle.CFrame:toObjectSpace(hit.CFrame)
+	local new = both:Clone()
+	new.metal.Weld:Remove()
+	new.Parent = hit
+local we = Instance.new("Weld",new.metal)
+	we.Part0 = new.metal
+	we.Part1 = hit
+we.C1 = tos:inverse()
+	
+	new.metal.CanCollide = true
+		new.bio.CanCollide = true
+	needle.Transparency = 1
+	both.bio.Transparency = 1
+	
+	
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1306077413"
+	sond:Play()
+	sond.PlaybackSpeed = 2
+	sond.Volume = 2
+	wait()
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1751518775"
+	sond:Play()
+	sond.PlaybackSpeed = math.random(6,10)*0.1
+	sond.Volume = 1
+	if new.bio.Virus.Value ~= nil then
+	local virus =  new.bio.Virus.Value:Clone()
+	
+virus.Parent = hit.Parent	
+virus.Name = "Biologic"
+	end
+	
+	wait(3)
+	both.bio.Virus.Value = nil
+	usable = true
+		needle.Transparency = 0
+	both.bio.Transparency = 0.5
+	end
+end
+end
+end
+end
+	end
+end)
+
+
+end,
+function(script,require)
+tool = script.Parent
+
+
+function tween(part,poartpp,spded)
+	local tweenService = game:GetService("TweenService")
+
+
+local tweeningInformation = TweenInfo.new(
+	
+spded, -- Length
+Enum.EasingStyle.Elastic, -- Easing style of the TweenInfo
+Enum.EasingDirection.Out, -- Easing direction of the TweenInfo
+0, -- Number of times the tween will repeat	
+false, -- Should the tween repeat?
+0.1 -- Delay between each tween	
+)
+
+
+local Tween = tweenService:Create(part,tweeningInformation,poartpp)
+Tween:Play()
+end
+
+
+
+
+
+local RunService = game:GetService('RunService')
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local both = script.Parent.Needle
+
+local needle = both.metal
+weld = needle.Weld
+
+usable = true
+can = true
+
+
+both.bio.Virus.Changed:connect(function()
+	if both.bio.Virus.Value ~= nil then
+		if both.bio.Virus.Value.Name == "Biologic" then
+			both.bio.BrickColor = BrickColor.Random()
+		else
+			both.bio.BrickColor = game.Lighting:FindFirstChild(both.bio.Virus.Value.Name .."C").Value
+		end
+	
+	else
+		both.bio.BrickColor = BrickColor.new("Medium stone grey")
+	end
+end)
+
+
+tool.Activated:connect(function()
+	if usable then
+	if can then
+	can = false
+	needle.Sound:Play()
+	tween(weld,{C1 =weld.C1 * CFrame.new(2,0,0.2)},0.5)
+	wait(0.7)
+		tween(weld,{C1 =weld.C1 * CFrame.new(-2,0,-0.2)},0.5)
+		wait(1)
+		
+		can = true
+	
+	end
+	end
+end)
+
+
+
+
+
+
+
+both.Hit.Touched:connect(function(hit)
+	if usable then
+if can == false then if hit.Parent:FindFirstChildOfClass("Humanoid") then if hit.Name ~= "HumanoidRootPart" and hit.Anchored == false  then	
+	if game.Players:FindFirstChild(hit.Parent.Name) then
+	local huma = hit.Parent:FindFirstChildOfClass("Humanoid")
+	if (both.bio.Position - hit.Position).Magnitude < 1 then
+	usable = false
+	hit.Parent.Humanoid:TakeDamage(6)
+		local tos = needle.CFrame:toObjectSpace(hit.CFrame)
+	local new = both:Clone()
+	new.metal.Weld:Destroy()
+	new.Parent = hit
+local we = Instance.new("Weld",new.metal)
+	we.Part0 = new.metal
+	we.Part1 = hit
+we.C1 = tos:inverse()
+	
+	new.metal.CanCollide = true
+		new.bio.CanCollide = true
+	needle.Transparency = 1
+	both.bio.Transparency = 1
+	
+	
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1306077413"
+	sond:Play()
+	sond.PlaybackSpeed = 2
+	sond.Volume = 2
+	wait()
+		local sond = Instance.new("Sound",hit)
+	sond.SoundId = "rbxassetid://1751518775"
+	sond:Play()
+	sond.PlaybackSpeed = math.random(6,10)*0.1
+	sond.Volume = 1
+	if new.bio.Virus.Value ~= nil then
+	local virus =  new.bio.Virus.Value:Clone()
+	
+virus.Parent = hit.Parent	
+virus.Name = "Biologic"
+	end
+	
+	wait(3)
+	both.bio.Virus.Value = nil
+	usable = true
+		needle.Transparency = 0
+	both.bio.Transparency = 0.5
+	end
+end
+end
+end
+end
+	end
+end)
+
+
+end,
+function(script,require)
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end,
+function(script,require)
+local debounce = true
+local door = script.Door:Clone()
+script.Parent.Touched:connect(function(hit)
+door.Value = script.Parent.Parent.Door
+if not debounce then return end
+if hit.Parent:findFirstChild("Humanoid") then
+debounce = false
+local player = game.Players:playerFromCharacter(hit.Parent)
+if not player.PlayerGui:findFirstChild("Keypad") then
+local main = Instance.new("GuiMain")
+main.Name = "Keypad"
+local runscript = script.LocalScript:Clone()
+script.Parent.Parent.CODE:Clone().Parent = runscript
+door:Clone().Parent = runscript
+main.Parent = player.PlayerGui
+script.Parent.Frame:Clone().Parent = main
+repeat wait() until player.Character
+runscript:Clone().Parent = player.Character
+end
+wait(2)
+debounce = true
+end
+end
+)
+--------
+end,
+function(script,require)
+local player = game.Players:playerFromCharacter(script.Parent) 
+local keypad = player.PlayerGui.Keypad.Frame.Frame 
+local door = script.Door.Value 
+local input = "" 
+local password = tostring(script.CODE.Value)
+for i = 0, 9 do 
+print("Loading button " ..i) 
+keypad[i].MouseButton1Down:connect(function() 
+input = input .. keypad[i].Text 
+keypad.Parent.Input.Text = input 
+print(keypad[i].Name .. " Clicked") 
+end) 
+end 
+
+keypad.Clear.MouseButton1Down:connect(function() 
+input = "" 
+keypad.Parent.Input.Text = input 
+end) 
+
+keypad.Enter.MouseButton1Down:connect(function() 
+if input == password then
+input = "" keypad.Parent.Parent:remove() 
+if not door:findFirstChild("DoorOpener") then
+local opener = script.DoorOpener:Clone() 
+opener.Disabled = false 
+opener.Parent = door 
+end 
+wait() 
+script:remove() 
+else 
+input = "" 
+keypad.Parent.Input.Text = "Error" 
+end 
+end) 
+
+keypad.Parent.Exit.MouseButton1Down:connect(function() 
+keypad.Parent.Parent:remove() 
+input = "" script:remove()
+end )
+end,
+function(script,require)
+local door = script.Parent
+local door1 = door.Door1 
+local door2 = door.Door2 
+local ret1 = door1.CFrame 
+local ret2 = door2.CFrame 
+local spd = script.Parent.Parent.Speed.Value
+for i = 1, 58/(15*spd) do 
+wait() 
+door1.CFrame = door1.CFrame+spd*door1.CFrame.lookVector 
+door2.CFrame = door2.CFrame-spd*door1.CFrame.lookVector 
+end 
+wait(2)
+for i = 1, 58/(15*spd) do
+wait()
+door1.CFrame = door1.CFrame-spd*door1.CFrame.lookVector
+door2.CFrame = door2.CFrame+spd*door1.CFrame.lookVector 
+end 
+door2.CFrame = ret2
+door1.CFrame = ret1 
+wait() 
+script:remove()
+
+
+end,
+function(script,require)
+local door = script.Parent
+local door1 = door.Door1 
+local door2 = door.Door2 
+local ret1 = door1.CFrame 
+local ret2 = door2.CFrame 
+local spd = script.Parent.Parent.Speed.Value
+for i = 1, 58/(15*spd) do 
+wait() 
+door1.CFrame = door1.CFrame+spd*door1.CFrame.lookVector 
+door2.CFrame = door2.CFrame-spd*door1.CFrame.lookVector 
+end 
+wait(2)
+for i = 1, 58/(15*spd) do
+wait()
+door1.CFrame = door1.CFrame-spd*door1.CFrame.lookVector
+door2.CFrame = door2.CFrame+spd*door1.CFrame.lookVector 
+end 
+door2.CFrame = ret2
+door1.CFrame = ret1 
+wait() 
+script:remove()
+
+
+end,
+function(script,require)
+local debounce = true
+local door = script.Door:Clone()
+script.Parent.Touched:connect(function(hit)
+door.Value = script.Parent.Parent.Door
+if not debounce then return end
+if hit.Parent:findFirstChild("Humanoid") then
+debounce = false
+local player = game.Players:playerFromCharacter(hit.Parent)
+if not player.PlayerGui:findFirstChild("Keypad") then
+local main = Instance.new("GuiMain")
+main.Name = "Keypad"
+local runscript = script.LocalScript:Clone()
+script.Parent.Parent.CODE:Clone().Parent = runscript
+door:Clone().Parent = runscript
+main.Parent = player.PlayerGui
+script.Parent.Frame:Clone().Parent = main
+repeat wait() until player.Character
+runscript:Clone().Parent = player.Character
+end
+wait(2)
+debounce = true
+end
+end
+)
+--------
+end,
+function(script,require)
+local door = script.Parent
+local door1 = door.Door1 
+local door2 = door.Door2 
+local ret1 = door1.CFrame 
+local ret2 = door2.CFrame 
+local spd = script.Parent.Parent.Speed.Value
+for i = 1, 58/(15*spd) do 
+wait() 
+door1.CFrame = door1.CFrame+spd*door1.CFrame.lookVector 
+door2.CFrame = door2.CFrame-spd*door1.CFrame.lookVector 
+end 
+wait(2)
+for i = 1, 58/(15*spd) do
+wait()
+door1.CFrame = door1.CFrame-spd*door1.CFrame.lookVector
+door2.CFrame = door2.CFrame+spd*door1.CFrame.lookVector 
+end 
+door2.CFrame = ret2
+door1.CFrame = ret1 
+wait() 
+script:remove()
+
+
+end,
+function(script,require)
+local player = game.Players:playerFromCharacter(script.Parent) 
+local keypad = player.PlayerGui.Keypad.Frame.Frame 
+local door = script.Door.Value 
+local input = "" 
+local password = tostring(script.CODE.Value)
+for i = 0, 9 do 
+print("Loading button " ..i) 
+keypad[i].MouseButton1Down:connect(function() 
+input = input .. keypad[i].Text 
+keypad.Parent.Input.Text = input 
+print(keypad[i].Name .. " Clicked") 
+end) 
+end 
+
+keypad.Clear.MouseButton1Down:connect(function() 
+input = "" 
+keypad.Parent.Input.Text = input 
+end) 
+
+keypad.Enter.MouseButton1Down:connect(function() 
+if input == password then
+input = "" keypad.Parent.Parent:remove() 
+if not door:findFirstChild("DoorOpener") then
+local opener = script.DoorOpener:Clone() 
+opener.Disabled = false 
+opener.Parent = door 
+end 
+wait() 
+script:remove() 
+else 
+input = "" 
+keypad.Parent.Input.Text = "Error" 
+end 
+end) 
+
+keypad.Parent.Exit.MouseButton1Down:connect(function() 
+keypad.Parent.Parent:remove() 
+input = "" script:remove()
+end )
+end,
+function(script,require)
+local door = script.Parent
+local door1 = door.Door1 
+local door2 = door.Door2 
+local ret1 = door1.CFrame 
+local ret2 = door2.CFrame 
+local spd = script.Parent.Parent.Speed.Value
+for i = 1, 58/(15*spd) do 
+wait() 
+door1.CFrame = door1.CFrame+spd*door1.CFrame.lookVector 
+door2.CFrame = door2.CFrame-spd*door1.CFrame.lookVector 
+end 
+wait(2)
+for i = 1, 58/(15*spd) do
+wait()
+door1.CFrame = door1.CFrame-spd*door1.CFrame.lookVector
+door2.CFrame = door2.CFrame+spd*door1.CFrame.lookVector 
+end 
+door2.CFrame = ret2
+door1.CFrame = ret1 
+wait() 
+script:remove()
+
+
+end
+}
+local ScriptIndex = 0
+local Scripts,ModuleScripts,ModuleCache = {},{},{}
+local _require = require
+function require(obj,...)
+	local index = ModuleScripts[obj]
+	if not index then
+		local a,b = pcall(_require,obj,...)
+		return not a and error(b,2) or b
+	end
+	
+	local res = ModuleCache[index]
+	if res then return res end
+	res = ScriptFunctions[index](obj,require)
+	if res==nil then error("Module code did not return exactly one value",2) end
+	ModuleCache[index] = res
+	return res
+end
+local function Script(obj,ismodule)
+	ScriptIndex = ScriptIndex + 1
+	local t = ismodule and ModuleScripts or Scripts
+	t[obj] = ScriptIndex
+end
+
+function RunScripts()
+	for script,index in pairs(Scripts) do
+		coroutine.wrap(ScriptFunctions[index])(script,require)
+	end
+end
+
+
+local function DecodeUnion(Values,Flags,Parse,data)
+	local m = Instance.new("Folder")
+	m.Name = "UnionCache ["..tostring(math.random(1,9999)).."]"
+	m.Archivable = false
+	m.Parent = game:GetService("ServerStorage")
+	local Union,Subtract = {},{}
+	if not data then
+		data = Parse('B')
+	end
+	local ByteLength = (data % 4) + 1
+	local Length = Parse('I'..ByteLength)
+	local ValueFMT = ('I'..Flags[1])
+	for i = 1,Length do
+		local data = Parse('B')
+		local part
+		local isNegate = bit32.band(data,0b10000000) > 0
+		local isUnion =  bit32.band(data,0b01000000) > 0
+		if isUnion then
+			part = DecodeUnion(Values,Flags,Parse,data)
+		else
+			local isMesh = data % 2 == 1
+			local ClassName = Values[Parse(ValueFMT)]
+			part = Instance.new(ClassName)
+			part.Size = Values[Parse(ValueFMT)]
+			part.Position = Values[Parse(ValueFMT)]
+			part.Orientation = Values[Parse(ValueFMT)]
+			if isMesh then
+				local mesh = Instance.new("SpecialMesh")
+				mesh.MeshType = Values[Parse(ValueFMT)]
+				mesh.Scale = Values[Parse(ValueFMT)]
+				mesh.Offset = Values[Parse(ValueFMT)]
+				mesh.Parent = part
+			end
+		end
+		part.Parent = m
+		table.insert(isNegate and Subtract or Union,part)
+	end
+	local first = table.remove(Union,1)
+	if #Union>0 then
+		first = first:UnionAsync(Union)
+	end
+	if #Subtract>0 then
+		first = first:SubtractAsync(Subtract)
+	end
+	m:Destroy()
+	return first
+end
+
+local function Decode(str)
+	local StringLength = #str
+	
+	-- Base64 decoding
+	do
+		local decoder = {}
+		for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+			decoder[char:byte()] = b64code-1
+		end
+		local n = StringLength
+		local t,k = table.create(math.floor(n/4)+1),1
+		local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+		for i = 1, padding > 0 and n-4 or n, 4 do
+			local a, b, c, d = str:byte(i,i+3)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+			k = k + 1
+		end
+		if padding == 1 then
+			local a, b, c = str:byte(n-3,n-1)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+		elseif padding == 2 then
+			local a, b = str:byte(n-3,n-2)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000
+			t[k] = string.char(bit32.extract(v,16,8))
+		end
+		str = table.concat(t)
+	end
+	
+	local Position = 1
+	local function Parse(fmt)
+		local Values = {string.unpack(fmt,str,Position)}
+		Position = table.remove(Values)
+		return table.unpack(Values)
+	end
+	
+	local Settings = Parse('B')
+	local Flags = Parse('B')
+	Flags = {
+		--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+		--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+		--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+		--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+		--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+	}
+	
+	local ValueFMT = ('I'..Flags[1])
+	local InstanceFMT = ('I'..Flags[2])
+	local ConnectionFMT = ('I'..Flags[3])
+	local PropertyLengthFMT = ('I'..Flags[4])
+	
+	local ValuesLength = Parse(ValueFMT)
+	local Values = table.create(ValuesLength)
+	local CFrameIndexes = {}
+	
+	local ValueDecoders = {
+		--!!Start
+		[1] = function(Modifier)
+			return Parse('s'..Modifier)
+		end,
+		--!!Split
+		[2] = function(Modifier)
+			return Modifier ~= 0
+		end,
+		--!!Split
+		[3] = function()
+			return Parse('d')
+		end,
+		--!!Split
+		[4] = function(_,Index)
+			table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+		end,
+		--!!Split
+		[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+		--!!Split
+		[6] = {Color3.fromRGB,'BBB'},
+		--!!Split
+		[7] = {BrickColor.new,'I2'},
+		--!!Split
+		[8] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+			end
+			return ColorSequence.new(kpts)
+		end,
+		--!!Split
+		[9] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+			end
+			return NumberSequence.new(kpts)
+		end,
+		--!!Split
+		[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+		--!!Split
+		[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+		--!!Split
+		[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+		--!!Split
+		[14] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Axes.new(unpack(t))
+		end,
+		--!!Split
+		[15] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Faces.new(unpack(t))
+		end,
+		--!!Split
+		[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+		--!!Split
+		[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+		--!!Split
+		[19] = function()
+			return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+		end
+		--!!End
+	}
+	
+	for i = 1,ValuesLength do
+		local TypeAndModifier = Parse('B')
+		local Type = bit32.band(TypeAndModifier,0b11111)
+		local Modifier = (TypeAndModifier - Type) / 0b100000
+		local Decoder = ValueDecoders[Type]
+		if type(Decoder)=='function' then
+			Values[i] = Decoder(Modifier,i)
+		else
+			Values[i] = Decoder[1](Parse(Decoder[2]))
+		end
+	end
+	
+	for i,t in pairs(CFrameIndexes) do
+		Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+	end
+	
+	local InstancesLength = Parse(InstanceFMT)
+	local Instances = {}
+	local NoParent = {}
+	
+	for i = 1,InstancesLength do
+		local ClassName = Values[Parse(ValueFMT)]
+		local obj
+		local MeshPartMesh,MeshPartScale
+		if ClassName == "UnionOperation" then
+			obj = DecodeUnion(Values,Flags,Parse)
+			obj.UsePartColor = true
+		elseif ClassName:find("Script") then
+			obj = Instance.new("Folder")
+			Script(obj,ClassName=='ModuleScript')
+		elseif ClassName == "MeshPart" then
+			obj = Instance.new("Part")
+			MeshPartMesh = Instance.new("SpecialMesh")
+			MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+			MeshPartMesh.Parent = obj
+		else
+			obj = Instance.new(ClassName)
+		end
+		local Parent = Instances[Parse(InstanceFMT)]
+		local PropertiesLength = Parse(PropertyLengthFMT)
+		local AttributesLength = Parse(PropertyLengthFMT)
+		Instances[i] = obj
+		for i = 1,PropertiesLength do
+			local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+			
+			-- ok this looks awful
+			if MeshPartMesh then
+				if Prop == "MeshId" then
+					MeshPartMesh.MeshId = Value
+					continue
+				elseif Prop == "TextureID" then
+					MeshPartMesh.TextureId = Value
+					continue
+				elseif Prop == "Size" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+					else
+						MeshPartMesh.Scale = Value / MeshPartScale
+					end
+				elseif Prop == "MeshSize" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+						MeshPartMesh.Scale = obj.Size / Value
+					else
+						MeshPartMesh.Scale = MeshPartScale / Value
+					end
+					continue
+				end
+			end
+			
+			obj[Prop] = Value
+		end
+		if MeshPartMesh then
+			if MeshPartMesh.MeshId=='' then
+				if MeshPartMesh.TextureId=='' then
+					MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+				end
+				MeshPartMesh.Scale = obj.Size
+			end
+		end
+		for i = 1,AttributesLength do
+			obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+		end
+		if not Parent then
+			table.insert(NoParent,obj)
+		else
+			obj.Parent = Parent
+		end
+	end
+	
+	local ConnectionsLength = Parse(ConnectionFMT)
+	for i = 1,ConnectionsLength do
+		local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+		Instances[a][Values[b]] = Instances[c]
+	end
+	
+	return NoParent
+end
+
+
+local Objects = Decode('AFBABCEMTW9kdWxlU2NyaXB0IQROYW1lIRJNYWluTW9kdWxlIChSb0JpbykhBU1vZGVsIQpUaGVQYWNrYWdlIQtQcmltYXJ5UGFydCEKV29ybGRQaXZvdAShA6ID+AIhBFBhcnQhCEFuY2hvcmVkIiENQm90dG9tU3VyZmFjZQMAAAAAAAAAACEKQnJpY2tDb2xvcgfpAyEGQ0ZyYW1lBBcAogP4A'
+..'iEFQ29sb3IG+Pj4IQhNYXRlcmlhbAMAAAAAAICIQCEIUG9zaXRpb24KcZoyQgWPH0F/Wb/CIQRTaXplCs3MTD7fepQ/icJVQSEKVG9wU3VyZmFjZSEHVGV4dHVyZSEERmFjZQMAAAAAAADwPyEWcmJ4YXNzZXRpZDovLzg4NTUzMDYyNSEMVHJhbnNwYXJlbmN5AwAAAKCZmeE/IQ1TdHVkc1Blcl'
+..'RpbGVVAwAAAAAAAD5AIQ1TdHVkc1BlclRpbGVWAwAAAAAAAABAAwAAAAAAABBAAwAAAAAAAAhABCgAogP4AgpxmjJCG8y6QEvwsMIKzcxMPlDhFkF9ZoY/BCsAogP4AgpxmjJCG8y6QH7CzcIHxwAEMgCjA/gCBmNfYgMAAAAAAICQQCELT3JpZW50YXRpb24KAAAAAAAAtEIAAAAACrF2MkKfrZl'
+..'A40m/wiEIUm90YXRpb24K8FFYQXoUFkHNzEw9IQpWaXJ1c1RhYmxlBKQDogP4AiEEU2lnbgQ6AKUD+AIKAAAAAAAAtMIAAAAACqGiL0JWhv5Ab5m/wgpAfMJAUWbGP0B8wj8hClN1cmZhY2VHdWkhCkNhbnZhc1NpemULAABIQwAASEIhCVRleHRMYWJlbCEQQmFja2dyb3VuZENvbG9yMwb///8h'
+..'FkJhY2tncm91bmRUcmFuc3BhcmVuY3kMAACAPwAAAACAPwAAIQRGb250AwAAAAAAABRAIQRUZXh0IQdWaXJ1c2VzIQpUZXh0Q29sb3IzIQpUZXh0U2NhbGVkIQhUZXh0U2l6ZQMAAAAAAABIQCEWVGV4dFN0cm9rZVRyYW5zcGFyZW5jeSELVGV4dFdyYXBwZWQhBVNvdW5kIQZMb29wZWQhDVBsY'
+..'XliYWNrU3BlZWQDAAAAwMzM7D8hB1BsYXlpbmchElJvbGxPZmZNYXhEaXN0YW5jZQMAAAAAAAA5QCEHU291bmRJZCEWcmJ4YXNzZXRpZDovLzMxMzkwNTQwOSEGVm9sdW1lAwAAAKCZmck/IRRFcXVhbGl6ZXJTb3VuZEVmZmVjdCEISGlnaEdhaW4DAAAAAAAAVMAhB0xvd0dhaW4DAAAAAAAAJE'
+..'AhB01pZEdhaW4EYACiA/gCCukZNkLIhC9Aeky/wgr1KNw/kML1PgnXN0EhCUFyZ29uZWxsYQSmA6UD+AIH8AMEaQCnA6gDBsG+QgMAAAAAAICYQArFIBC/i6ylwqbbs0IK+eo0QrzCfUDLZbjCCpMYkMBIoaXCCOyqQgoAAABAuB6FPpqZmT4DAAAAAAAA4D8hBVNoYXBlIQ1DbGlja0RldGVjdG9'
+..'yIRVNYXhBY3RpdmF0aW9uRGlzdGFuY2UhBlNjcmlwdCEXcmJ4YXNzZXRpZDovLzE5MTQ4MjczNDEhA3BlZAR0AKcDqAMK4ek0QsAHOEBrZrjCCrgehT4AAIA/AACAPwR3AKcDqAMKKf80Qt8gn0BrZrjCCgrXIz7NzMw+zczMPgR6AKUD+AIKoSIyQhO8vEALcrjCCkDhuj/qKNw+QOG6PiEOVW5p'
+..'b25PcGVyYXRpb24HXAEEgAClA/gCBu3q6gqxfjVCG+WMQN91uMIKgEkJQDgKd0BA4QJACsvMzD0OrldAQOG6PgqdIjJCJryUQGmBusIK6VEIQOtRuD1A4bo+Cp0iMkICN8lA/3G4wgrLzMw9W48CP0LhAkAKsX41Qn6CMEBVarbCCsvMzD1wPQo/bT0CQAqZeTVCyIwvQGmBusIKnSIyQia8lEBVa'
+..'rbCIQpOZWNyb21lbGxhBKkDpQP4AgdSAQSQAKcDqAMGvmhiCqnvNEI0131AY/G8wgSSAKcDqAMKme40QsgbOEAD8rzCBJQApwOoAwrZAzVC1yqfQAPyvMIElgClA/gCClEnMkITxrxAo/28wgfrAwSbAKIDqgMGERERCgAAIMIAAAAAAAAAAArZwjJCVe2rQJv8vMIKNuNMPdXA6j7ti+w+CgLYTD'
+..'0B2Mw9/9fMPQrYwjJCo8KrQCEDvcIKAACAPwAAgD8AAIA/CgAAAAAAAAAAAAAAAAoF2Mw9/qEZPvyhGT4Kc9wyQqPCq0AiA73CIQlXZWRnZVBhcnQKANhMPfzXTD7+18w9CtnCMkIPV69AdSK9wgoAACBCAAA0QwAANEMK2cIyQlRIrUCxSb3CCgAAIMIAAAAAAAA0QwoA2Ew9/NdMPgHYzD0K2cI'
+..'yQh9IrUAIvLzCCgAAIMIAADRDAAA0QwrZwjJC6FavQETjvMIKAAAgQgAAAAAAADRDCgDYTD3910w+/9fMPQrZwjJC2einQHccvcIK2cIyQtnop0BB6bzCCgAAAAAAADRDAAAAAASzAKUD+AIKaYM1Qp/vjEBzAb3CCoBJCUA1CndAQOECQAppgzVChpcwQOn1usIKVScyQoZByUCT/bzCClF+NULQ'
+..'oS9A/Qy/wgpVJzJCqsaUQP0Mv8IKVScyQqrGlEDp9brCIQlPcmdhbmVsbGEEqwOlA/gCBzYBBL8ApwOoAwZbmkwKqe80QjTXfUCTisHCBMEApwOoAwqZ7jRCyBs4QDOLwcIEwwCnA6gDCtkDNULXKp9AM4vBwgTFAKUD+AIKUScyQhPGvEDTlsHCBMcApQP4AgppgzVCn++MQKOawcIKaYM1QoaXM'
+..'EAZj7/CClUnMkKGQclAw5bBwgpRfjVC0KEvQC2mw8IKVScyQqrGlEAtpsPCClUnMkKqxpRAGY+/wgTOAKIDqgMK2cIyQlWdqUDXe8HCCtjCMkKjcqlAXYLBwgpz3DJCo3KpQF6CwcIK2cIyQg8HrUCxocHCCtnCMkJU+KpA7cjBwgrZwjJCH/iqQEQ7wcIK2cIyQugGrUCAYsHCCtnCMkLZmKVAs5'
+..'vBwgrZwjJC2ZilQH1owcIhB0thbWVsaWEErAOlA/gCBzgBBNwApwOoAwZZIlkKqe80QjTXfUB0K8bCBN4ApwOoAwqZ7jRCyBs4QBQsxsIE4ACnA6gDCtkDNULXKp9AFCzGwgTiAKUD+AIKUScyQhPGvEC0N8bCBOQAogOqAwrZwjJCVZ2pQLwcx8IK2MIyQqNyqUBCI8fCCnPcMkKjcqlAQyPHwgr'
+..'ZwjJCDwetQJZCx8IK2cIyQlT4qkDSacfCCtnCMkIf+KpAKdzGwgrZwjJC6AatQGUDx8IK2cIyQtmYpUCYPMfCCtnCMkLZmKVAYgnHwgTuAKUD+AIKaYM1Qp/vjECHO8bCCmmDNUKGlzBA/S/EwgpVJzJChkHJQKc3xsIKUX41QtChL0ARR8jCClUnMkKqxpRAEUfIwgpVJzJCqsaUQP0vxMIE9QCi'
+..'A/gCCsF9MkIdcKlAmETFwgpBTeE9QE3hPhNP4T4KQE3hPT9N4T5PTWE+CsF9MkIkcKlA6nzFwgrBfTJCJHCpQEIMxcIE+wCiA/gCClGANkKZWqc/Qxm1wgroUTg/LjMjQBbh+j4E/gCiA/gCClGANkKZWqc/uH/JwgroUTg/LjMjQFbh+j4EAQGiA/gCClGANkKZWqc/c0y/wiEGcmFuZG9tBK0Do'
+..'gP4AgfqAwQHAaID+AIGzc3NCt1qU0K89HxAuEKOwgp1PTZB4nr0QKNwPUEhBHJhbmQEDQGuA68DAwAAAAAAAHJACgAAAAAAAAAAAAA0QwptY1NCyGsnQIsKocIKAAAAQB2FKz9E4Zo/AwAAAAAAANA/IQVEZWNhbCEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD05NDcwMzMzNDkDAA'
+..'AAwMzM3D8EFAGiA/gCCt1qU0JlRx5BuEKOwgp1PRZB3qOwQKNwHUEHRAEEGgGiA/gCBqi9mQMAAAAAAACKQArdalNCZUcWQbhCjsIK6nrsQN6jkEBG4fpAIQNhc2QhFnJieGFzc2V0aWQ6Ly85NDcwMzMzNDkEHwGiA/gCCt1qU0LApF9AZY+awgp4PRZBpKTfQCBMsUAKdT0WQeJ6tECMwnVACtt'
+..'qU0Lq9DxAuUKcwgp1PRZBJzPDQFW4bkAK22pTQsCkX0B5jZrCCkoMmsEAAAAAAAAAACEEV2VsZCECQzAEsAOxA7IDIQJDMQSzA7EDsgMhBVBhcnQxBC0BtAP4Agq1R1NC1dHVQDW1m8IKmyetQBZcrz9hcC5AIRZSYW5kb20gVmlydXMgR2VuZXJhdG9yBDEBogP4AgrVVVNC0IArQOcMocIKoFoi'
+..'QIwUbj+AH6U/CniZmT56FG4/tB6lPwoLz1dC0IArQOUMocIKm9xOQtCAK0DlDKHCCsjMHEB6FG4/8FG4PQpFglNC0IArQBtAosIHwgAEOwGiA/gCBqOipQrdalNCBeEXQbRCjsIKwEf5QEYKl0Bg4fpACrZH+UBECpdARuH6QArdalNCBeEXQbhCjsIK3WpTQmtHFkG4Qo7CIQRoZWFsBLUDsQP4A'
+..'gRDAbED+AIKzZNVQkghQUA5RdLCCgAANEMAAAAAAAA0QwqpC0FA6HwBQCCsSEAhBEhlYWwH/AMESwG2A7cDBgD/AAoAAAAAAAA0QwAANEMKdY9VQkiUKECGs8zCCgAANEMAAAAAAAAAAAoI3ro/82b6Pv4bYj8ETwGxA/gCCs2TVULb5pJAOUXSwgrvJR9AER27P2bGJkAHOQEEVAGxA/gCBgCaAA'
+..'rNk1VCH6qOQDlF0sIKa4D6P1g3mT+t4ARABFcBsQP4AgrNk1VCyF05QGEDz8IK8iUfQEvn7D9Oz7s/Cu8lH0BfLr8/dSqCPwrOk1VCMi4wQBiQzsIK7yUfQBLGzj/Y33w/Cs6TVULIXTlA4wPPwgpKDJrBAAA0QwAAAAAEXwG4A/gCCh2dVUK+oHFAlbXOwgqJz9o/3JjdPv9uXD8hDUhlYWxpbmc'
+..'gVmlydXMEYwGxA/gCCl2ZVUJQjytAybHMwgpPBe0/bMktPzIQcT8KcT1gPl/JLT8ID3E/CmtVUkJQjytAyrHMwgpS3VhCUI8rQMqxzMIKjunkP1/JLT9ki4Y9Cu14VUJQjytAi9HLwgRrAbED+AIKzZNVQpnl0j85RdLCCrp96D/mpT1AqL73PyEGRm9sZGVyIQhMaWdodGluZyEHRWZmZWN0cyEG'
+..'U2hha2UuIQhEaXNhYmxlZCEIQnViYmxlcy4hCVJlZFBhcnRzLiEMUHVycGxlUGFydHMuIQpmcmVha3dhbGsuIQlyZWRDb2xvci4hC2dyZWVuQ29sb3IuIQpibHVlQ29sb3IuIQtibGFja0NvbG9yLiEMV2hpdEJ1YmJsZXMuIQtCbG9vZERlY2FsLiEJRmFsbEFybXMuIQdOZXdpc2guIQpTcGVha'
+..'25lc3MuIQtBbmdyeXNwZWFrLiEJQ0J1YmJsZXMuIQpBY2lkUm9wZXMuIQpJbnZpc2libGUuIQdab21iaWUuIQVGaXJlLiEGd2VyaWQuIQVFeWVzLiEKRXhwbG9zaW9uLiEOUGFyYW5vaWFTcGVhay4hCUFjaWRCb21iLiEGRXllczIuIQxBY2lkQnViYmxlcy4hC2ZyZWFrd2FsazIuIQtBY2lkWm'
+..'9tYmllLiEIRmlyZVhvbS4hCkdyZWVuQm9tYi4hD0JyaWNrQ29sb3JWYWx1ZSEKQXJnb25lbGxhQyEFVmFsdWUhCEJpb2xvZ2ljIQ1CbG9vZGluamVjdGVkIQ9QYXJ0aWNsZUVtaXR0ZXIhBkJsb29keSEMQWNjZWxlcmF0aW9uCgAAAAAAAKDAAAAAACgCAAAAAKoAAAAAgD9sAAAhEUVtaXNzaW9'
+..'uRGlyZWN0aW9uIQhMaWZldGltZRHNzMw9AACAPyENTGlnaHRFbWlzc2lvbgMAAACgmZm5PyEOTGlnaHRJbmZsdWVuY2UhBFJhdGUDAAAAAABAj0AhCFJvdFNwZWVkEQAAIMIAAIdDEQAAtMMAALRDKQIAAAAAAAAAAAAAAAAAAIA//v83QAAAAAAhBVNwZWVkEQAAQEAAAOBAIQtTcHJlYWRBbmds'
+..'ZQsAAEhCAABIQiEVcmJ4YXNzZXRpZDovLzczNTQ3MzI3KQIAAAAAzczMPQAAAAAAAIA/AACAPwAAAAAhB1pPZmZzZXQhB0Jsb29keTIoAwAAAACCVYT4eAQ/SjlJAACAPy8gLiEWcmJ4YXNzZXRpZDovLzIwMjk3NTk1MCEFSGVhbEMhCEthbWVsaWFDIQtOZWNyb21lbGxhQwfvAyEKT3JnYW5lb'
+..'GxhQyECU0khC0xvY2FsU2NyaXB0IQRBY2lkIQlOZWVkbGVHaXYEuQP4AqIDIQNiaW8EvQH4AqIDCgAAAAAAADRDAAC0QgpJFB5CEx/fQGegrMIKAAA0QwAAAAAAALTCCgAAAECPwnU+j8J1PgS6A7sDvAMhBVBhcnQwIQtPYmplY3RWYWx1ZSEFVmlydXMhBW1ldGFsBL0BvQO+AwrNzAxArkdhPq'
+..'5HYT4EvwO7A7wDIQVCbG9vZATAA6ID+AIhAmZhB0cBBM4BowP4AgaXAAAKneBvQl+hkUA3AKPCCtmj4EDNzEw97XqEQCELU3BlY2lhbE1lc2ghCE1lc2hUeXBlBNQBwQP4AgoAAAAAAACgQQAAAAAKTlmSQlsmkUAD9a7CCl2PgkAwXA8+dT0aQQTYAcIDsQMKAACgwQAANEMAALTCCgHHSUIwmoR'
+..'Bu5irwgoAACDDAAAAAAAAtEIKzMw8Qc3MTD2MKVw/BN0BwwP4AgoAAAAAAABIQgAAAAAKHW9UQl+hkUBoB8XCClW4OkHNzEw9vx4BQQTgAcED+AIK6F6GQl+hkUDglpHCCh6Fe0GyR+E92aMYQQTjAcED+AIKaYB8Qh9FkkBLwLbCCnA9KkEpXI895qPIQATnAcQDsQMKAADwwQAANEMAALTCCgHH'
+..'SUIFhBpBVgyXwgoAABbDAAAAAAAAtEIKaWZ6Qc3MTD1uj8JABOwBxQOxAwoAAKBBAAA0QwAAtMIKAcdJQqn+H0EXl7rCCgAAIEMAAAAAAAC0QgrzKGRBzcxMPe16hEAE8QGiA8YDCgAAoMIAAAAAAAAAAArqyZxC6YgtQXPKqcIKzcxMPZqZSUCPFE5ABPUBogPHAwoAAIzCAAA0QwAANEMK6smcQ'
+..'mXtCkEVzZjCCgAA3MIAAAAAAAAAAArNzEw9cT3KPwx79D8E+gGjA8gDCgAAcMIAALTCAAA0QwpI3I9CHcivQJDNjsIKAAC0wgAA8MEAALRCCs3MTD0Urr9AL1wPQQT/AckD+AIKAAAAAAAA3EIAAAAACh0rVEJfoZFA08inwgoAADRDAACMQgAANEMKpXBhQc3MTD3teoRABAQCowPKAwoAAKDCAA'
+..'C0QgAAAAAKtUZ+QqX2CkGQzY7CCgAAtMIAACBBAAC0QgrNzEw9wPUIQP1RkEAECAKiA/gCCoAjkUIXwI5Ah6TCwgo0MxtB4nqUPrlHqUAEDALLA/gCCgAAAAAAACBCAAAAAAqC64ZCX3iRQHTNpsIK2aPgQKvC9T34ejRABA8CwgOxAwoBx0lCJbwYQYDhp8IEEgLMA/gCCgAAAAAAAAJDAAAAAAo'
+..'piE1CX6GRQMhWk8IKAAA0QwAASEIAADRDCqVwYUHNzEw9c2aeQAQXAqIDzQMKAACgwgAANEMAADRDCurJnEJlQiRBv6+2wgoAAMjCAAAAAAAAAAAKzcxMPYTrUUCFPWpABBwCowPOAwoAAEjCAAC0QgAAAAAKXWV/QqXmBkEkksjCCgAAtMIAACBCAAC0QgrNzEw9lpk5QJjCnUAEIAKiA8cDCurJ'
+..'nEJJKFNBfOWdwgrNzEw9hOtRQCykMD8EIwKjA8gDCh3gdkJIrphBJJLIwiEEYmFzZQQmAqID+AIKtNaAQqergEDvnqvCCgAA0EGuR4E/AADYQSEERXllcwTPA9AD0QMhAXIE0gPQA9EDBC4C0APRAwMAAAAAAABxQAp99FhCW/GdQMOzucIKbz2KPm89ij5vPYo+BNMDogP4AgTUA9UD1gMHBgQEN'
+..'QLQA9EDBv/MmQoQSFlCW/GdQCyzucIKksL1PZLC9T2SwvU9BNcDogP4AiEBbATYA9AD0QMEOwLQA9EDCn30WEJb8Z1Ax1G6wgTZA6ID+AIEPgLQA9EDChFHWUJX851AolG6wgTaA6ID+AIhBUV5ZXMyIQRGaXJlBNsDogP4AiEFRmxhbWUKAAAAAAAAIEAAAAAAKAIAAAAA/349AACAP/+SOREAAI'
+..'A/AACQPwMAAAAAAADoPxEAAEjDAABIQxEAADTDAAA0QykCAAAAAAAAwD8AAEA/AACAP/z/Dz8wAEA+EQAAAEAAAABAISlodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTMwNDQzNzUzNykGAAAAAAAAgD8AAAAAzczMPQAAAD/NzMw9AACAPgAAgD4AAIA+AAAAPwAAgD4AAIA+zcxMPwA'
+..'AAD/QzMw9AACAPwAAgD8AAAAAIQxTdXJmYWNlTGlnaHQhCkJyaWdodG5lc3MDAAAAgD0K7z8G/6M6IQVBbmdsZQMAAAAAAOBgQCEFUmFuZ2UDAAAAAAAAKEAhBENvcmUhBVRvb2xzIQRUb29sIQlDb2xsZWN0b3IE3APdA94DIQZCZXJyZWwHbAEEYgLfA+ADIQpDYW5Db2xsaWRlAgZKR0kKsh2m'
+..'wq4H20JYuaXCCqi4NEKnQDFBiwXOwgpzqLjC30/RQLpJ1kEKAK8HP0BIYT4AtBk+CgvXoz2zR2E+wpkZPgoBhTVCYNIwQfE4zsIKGq4HP/BRuD3CmRk+CnTWNEKYPDFByufNwgThA+ID4wME5APiA+MDIQZOZWVkbGUE5QPmA+cDBG4C6APpAwrXeDRCOC4xQaqbzsIKAAAAQClcDz4pXA8+BOoD4'
+..'gPjAwRyAuYD5wMK13g0QjIuMUGqm87CCs3MDECPwvU9j8L1PSEXcmJ4YXNzZXRpZDovLzE2MjQzMjQwNDAE6wPsA+0DIQNIaXQEeALuA+8DCtd4NEI+LjFBqpvOwgqamRk/KVwPPilcDz4hBkhhbmRsZQR9At0D3gMKsh2mwuH62kJ1U7PCCtv+NEJrhzFBWgfNwgrpprjCQmDRQBSun0EK0PWoPg'
+..'AAgD9uj8I+BIEC8APxAwpxiTVCCbswQbm3zsIKoHu0P8DC9T6AUrg+Cvz/nz9LuJ4+QoVrPgqoyjVC24AwQcTQzsIKKoXrPonC9T76Ubg+CgzaM0JdpDFBOEvOwgoAAIBACtcjPgvXIz4KUrM1QsuEMEG9587CBPID8wP0AyEJTmVlZGxlZ3VuBPUD9gP3AwSNAvAD8QMKm+E0QjskL0GJhbPCCvS'
+..'tNUL0tS5B77izwgpn/zRCLCAvQchns8IEkQLwA/EDCnmbNUKhoS5Bm060wgqAe7Q/4HoUPwBcDz8K/P+fP37r0T4HKdw+Cq/cNUKGZy5BpWe0wgoAAIBAuB6FPrgehT4KRdw1QmBoLkG8Z7TCCiqF6z7eehQ/MFwPPwoV7DNCB4svQRnis8IKRtw1QmBoLkG8Z7TCBPgDuwO8AwT5A/AD8QMEnQLw'
+..'A/EDCsuhNEKvES9BqBu0wgqamRk/j8J1Po/CdT4EoAL2A/cDCs8nNUL8ai9BWIeywgT6A/sD/AMEowLfA+ADCtecOEJ06ixB7hu1wgoAzsA+AGOPPoBcjz4KW3Q2QlgVLkH7kLTCCubCdT7NzEw9KVyPPgoepjhCA9AsQStgtcIKKVyPPs3MTD0pXI8+CmL9OEKwyyxBUPK0wgo3w/U9KVyPPilcj'
+..'z4KVRE5QnKrLEE2ObXCCl7XIz4pXI8+KVyPPgqFOjhCpB8tQTADtcIE/QPiA+MDBP4D4gPjAyEIU2V0dGluZ3MhC1N0cmluZ1ZhbHVlIQhVc2VybmFtZSETbElsSWxJbElsbElsSUlsSWw2NSEJQm9vbFZhbHVlIQxHaXZlQWxsVG9vbHMhD0NvbGxlY3RvciBHaXZlcgT/AwAEAQQhElNtb290aC'
+..'BCbG9jayBNb2RlbAcaAAS9AgIEAwQGGyo1CgAAAAAAAEDAAAAAAApMdYpCJBJAQImuicIKAABAQAAAwEAAAIA/AwAAAEAzM9M/BMICBAQFBApvEoO6ff+tQm8Sg7oKFFmOQpwAQEBZeYfCCs3MzLx9/61CzczMPCEcUFVUIFRIRSBXRUFQT04gSU4gVEhJUyBCUklDSwcBAATJAgYEBwQG8vPzCkJ'
+..'g5buDALrCbxIDOwoHj4pCRCwtQKyti8IKptszw33/rcIj2zPDCgAAgD+amZk/AACgQAQIBAkECgQEzwILBAwECjUepsKYboNCXrqlwgoRLYpC0u1UQCdnh8IKnESuwjVeykCwcorBCmOaikLKNFNAiEWHwgo6I4pClt1UQF1Hh8IEDQQOBA8EBNYCEAQRBAq4HqbCmG6DQl66pcIK8X2KQhOkVECX'
+..'6YfCBBIEEwQUBATZAg4EFQQK8X2KQvyjVECX6YfCBNsCFgQXBArxfYpCKqRUQJfph8IKnESuwjVeykC8dIrBBN8CCQQKBAo1HqbCy2GDQntUs8IKdpaJQuAIVkBll4bCChJDrsIEVspAVg7BwQTiAhgEGQQKvfOKQnTXUkCAn4fCCpsci0LF7lFAAZuHwgr1DIpCmnxWQHvmh8IKFiSLQoP+UUCqs'
+..'4fCIRZQVVQgVEhJUyBJTiBUSEUgV0VBUE9OBOgCAgQDBAruJIpCTAhAQGKwg8IKAACgQAAAwEAAAIA/BOsCBAQFBArvW4ZC+AVAQI3kh8IE7QICBAMEChJNikKZPNNAnq6GwgoAAKBAmpmZPwAAgEAEGgQbBBwEIQRIZWFkBPMCGwQcBApvEoO6lkNzwG8SgzoKuiWKQl3S70A+k4bCCgAAoEDNzM'
+..'w+AACAQCEPTmVlZGxlR3VuIEdpdmVyBB0EHgQfBAT5AiAEIQQKAAAAAAAAgD8AAAAACuIGdkKoAEBAGRaKwgT8AiIEIwQKbxKDun3/tUJvEoO6CnAYfkKcAEBA8yeIwgqL7DPDgwCyQkrsM0MEAAMkBCUECkJg5buDALLCbxIDOwrx8nVC1CctQPkVjMIKmpnZvoMAssJ1k9i+BCYEJwQoBAQFAyk'
+..'EKgQKNR6mwnvUhULbuaXCCqW+dEJP0FJA4bqHwgq0iK7CiUHMQNnOgMEKpZp1QkcXUUCNm4fCCkysdEISwFJA5JqHwgQKAykEKgQKqVd2QgTGUED7D4jCCpCpdkKf3U9AWAyIwgphqXZCCeFPQI0MiMIKOod0QnBrVEAcUojCCmGpdkII4U9AjAyIwgQrBCkEKgQEEQMpBCoECuVadUIjhlJA+z6I'
+..'wgQUAycEKAQKNR6mwq7HhUL4U7PCCjSac0JQ61NAA+iGwgorh67CJzHMQHNot8EEFwMsBC0ECvOjeUKg6UlAu6KHwgoqUXdC9pROQHD3h8IKJwd6QuB/SUDR0YfCCquyeUKabklAbGOHwgpVIXpCpu1IQNuQh8IKEzp5Qlm+SkDLsYfCBB4DIAQhBAqMPHZCSAFAQEIWhMIEIAMiBCMEChMZbkLwA'
+..'EBAOwSIwgQiAyAEIQQKviF2Qpsz00CZFYfCIRhSRUFEIE1FIEZPUiBJTlNUUlVDVElPTlMELgQvBDAEBCcDLwQwBApvEoO6qMZLPm8SgzoKTNd1QpPL70CNB4fCIQ1HVUkgQ29kZSBEb29yBDEEowP4AiEERG9vcgQyBKMD+AIhBURvb3IyB+wDBDADowP4Agb/AAAK/DeWQtzHZkAs1cvCCgAAQE'
+..'BnZuZAAACAPyEJQmxvY2tNZXNoBv+tACEHRW5hYmxlZCEESGVhdCEOU2Vjb25kYXJ5Q29sb3IhBURvb3IxBDkDsQP4Agr8N5ZC3MdmQCzVxcIKAACAP2dm5kAAAEBAIQRFbmQyBD0DowP4Agr8N5ZCIZeGQCzV0sIKAACAQGdmBkEAAEBABDMEogP4AgSyA7ED+AIhBktleXBhZAREAzQENQQKqMZ'
+..'IwgAAtMIAAAAACvyam0JKQYlALNXSwgoAALTCWDkfwgAAtMIKAAAAQM3MzD4AAEBAIQVGcmFtZQYbKjUhDEJvcmRlckNvbG9yMwwAAAA/AADOzEw+AAAMrkdhPgAAAAAAPwAADD0K1z0AAJqZmT4AAAxmZmY/AACamRk/AAAhClRleHRCdXR0b24hATEGsrSzDJmZmT4AAAAAgD4AACEBMgyZmZk+'
+..'AAAAAAAAAAAhATMMdJMYPwAAAAAAAAAAIQE0DAAAAAAAABKDgD4AACEPQXV0b0J1dHRvbkNvbG9yIQE1DJmZmT4AABKDgD4AACEBNgx0kxg/AAASg4A+AAAhATcMAAAAAAAApHD9PgAAIQE4DJmZmT4AAKRw/T4AACEBOQx0kxg/AACkcP0+AAAhBUVudGVyDHSTGD8AAKRwPT8AAAyamZk+AAAAA'
+..'IA+AAAhBUNsZWFyDJ5KhzMAAKRwPT8AACEBMAyZmZk+AADrcz0/AAAhBUlucHV0DK5HYT0AAM3MzD0AAAxmZmY/AADNzMw9AAAhACEERXhpdAxmZmY/AAAAAAAAAAAMzczMPQAAzczMPQAAIQFYIQZPdXRwdXQM16PwPgAAzcxMPQAABtra2iEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz'
+..'9pZD0xNjIxODQzMSEETWFpbiEKRG9vck9wZW5lcgR5A6MD+AIK/DeWQlvK+UAs1cjCCgAAwECamZk/AABAQCEERW5kMQR9A6MD+AIK/DeWQiGXhkAs1b7CIQRDT0RFIQYxMjI1ODYhC051bWJlclZhbHVlAzMzMzMzM8M/BIQDNgQ3BAqoxkjCAAC0QgAAAAAK/NSQQkpBiUAs1dLCCgAAtMJYOR9'
+..'CAAC0QiELQmFja1N1cmZhY2UEiAOjA/gCCvw3kUIhl4ZALNXSwgoAAABAmpkZQAAAAEAEsgOiA/gCBDgEogP4AgSjA7ED+AIEOQQ6BDsEBI8DsgP4Agr8N5tCIZeGQCzV0sIEPAQ9BD4EIQV3YWxscwQ/BEAE+AIElAOiA/gCCvs3lULTB6xABE2dwgoAAIBAMzMrQc3M7EEElwNABPgCCiijakJt'
+..'oa1AarPawgoAAIBAmpkpQTMzEUIEmgNABPgCCiijakJtoa1AO815wgScA6ID+AIKXNYnQtMHrEAETavCCpqZeUAzMytBZmYuQgSfA0AE+AIKKKNqQrfQdkEEzavCCpqZS0KamSlBMzMRQgrN0iRB/44fQd7lEMIKAACAPwAAAAAAAAAACgAAAAAAAAAAAACAvwqRGTNChC6MQHpMv8IKLr07MwAAA'
+..'AAAAIA/CrF+NUIe5YxA33W4wgo5KyI8yvx/PwAAAAAKT1r/vUrEoTqLAH6/CmmDNUKi74xAcwG9wgoAAAAAdxtEP8KNJL8KaYM1QqLvjECjmsHCCmmDNUKi74xAhzvGwgrdalNCbHDKQGphksIKBACAvwAAVKtSv2k1CkCGbTEDAIC/lEljNAoAAIDDAAAgQQAAgEMKAACAvwAAAAAAAAAACgAAAA'
+..'AAAAAAAACAPwqwJ2rDTtdiwBEcYEMKAACAPwAAAAAuvTuzCs2TVUJwmi9AUZTQwgoEAIA/AABUq1K/abUKQIZtsQMAgL+USWO0CgAAgL8AAAAALr07MwpadKVABh/fQFzn1sEKAX1OQlauo8A0OzDDCpjLfj8XAIClqXPGvQoXAIAlAACAP5/rRqMKAABgmAAAgD8AAAAACgAAgD8AAGCYAAAAAAq'
+..'+bk1ChQWjwGQ8MMMKVo/wQZqrgEB84dLBCrSPcD8AAAAAPB2vvgoAAAAAtI9wvzwdr74KsI0kPwAAAACGG0S/CgAAAADXs12/BAAAvwoAAAAAtI9wvzwdrz4KAAAAAMfQMT5eHHy/CgAAAAA8Ha++tI9wvwrXs12/BAAAvwAAAAAKPB2vvgAAAAC0j3C/Cl4cfL/H0DE+AAAAAAqGG0Q/AAAAALCN'
+..'JL8KsI0kvwAAAACGG0S/CgAAAADH0DG+Xhx8vwp4G0S/wo0kPwAAAAAK4fdYQmDxnUDFArrCCgAAgD8YACAwFQCQswoaACCwAACAPwYAjbAK4fdYQmDxnUDDs7nCCoT3BL8F/pfAYBghvQpP9wE9w2iQwE1eQ70KUwovPdUgmToDxH+/CjIUPzxu+38/kaTaOgpK3Bm/Bf6XwHTMJb0KYfdYQmDxn'
+..'UDHUbrCCoj3BL8E/pfAmN+JPgprnBm/AACYwF66iT4Ky4oOQwAAwLaA48bBCkwyn0JyhzFB9fYhwwpGDm8/aYf3vQporL4KUqOtvvJFOjoq1HC/ChgLYz8BnfW9UG3kvgpLO+W+dg52PGngZL8KMGGSQS28AsF3DbDBChkLYz9HO+W+9k/pPQr+nPW9cA52PI8ffj8K26iPQa0+BsGAF7DBCtd4NE'
+..'JALjFBqpvOwgoYC2M/BZ31vVFt5L4KTTvlvnIOdjxu4GS/ChcLYz8InfW9UW3kvgpRO+W+eA52PHPgZL8KX8WRQeRfB8H4DbDBCl3FkUHnXwfB/g2wwQoYC2M/SzvlvvZP6T0KAZ31vXYOdjyTH34/ChYLYz8LnfW9UW3kvgpVO+W+fg52PHjgZL8KGQtjP/6c9b1QbeS+Ckc75b5wDnY8ZOBkvwr'
+..'v85lB7mCuwO4WsMEKRg5vP1Cjrb59Wek9CmaH970SRjo6jR9+PwrGRp9CA2svQfS2FMMKRg5vP2aH970KaKy+ClCjrb4SRjo6JdRwvwrqyk5C62aawCQ7MMMKy6E0QrQRL0GoG7TCCsgKUEIMyuo/azwwwwpS/Xw/KD3yPaF2xr0KCGXzvYkvfj+BoFm4Cuq8G0P1PMVCgYVPQQqj7xxDatHFQnKG'
+..'T0EKZjQLQoo800DggPzACi+mfz/7yqgsQl5WPQpFhxmsAACAPySkzSgKL6Z/PzskuCxCXlY9ChS/9asAAIA/JKRNKQo/aVY9lSFUtyamf78KSwq8twAAgD/LImi3CmBpVr3CCTU4JqZ/Pwrg8gk5AACAP8dcGLgKVUnOQvwIVkD1ff3CCqY0aD9ee/e9gn3OPgoODtA+xE85OjHpab8KRexyP0WR9'
+..'b2pbZU+Cmtilz6683U8JIZ0vwryfYpCJKRUQJfph8IKRexyP0mR9b2obZU+CmNilz6+83U8HoZ0vwpE7HI/TJH1vaZtlT4KdGKXPrzzdTwuhnS/CqDFYMAAJze99u8Ywwompn+/Ex5UNz1pVr0KWCBoNwAAgD9OFLy3Cm9ilz6283U8KIZ0vwpD7HI/T5H1vaRtlT4KeWKXPsLzdTw0hnS/Ckbscj'
+..'9CkfW9q22VPgpmYpc+tPN1PB6GdL8Kt+UKQk7S70DoyvrACuBvfz8kW8M3AsCHPQrUE7y3AACAP3MYaLcKAHjZQYwz00BIeAHBCgX2fz/NLbgsdfiOvArJmPWr//9/P3AmiagKBfZ/Pw2Hxyx1+I68Ci42uKv//38/qLnNqAp14o68lCFUtwj2f78KvK3Dt///fz8dVk23CjPijjzBCTU4CPZ/Pwq'
+..'k9AY5//9/P4t7PrgK+X++QmzrU0CTzv3CChlRaj9Le/e9RbjEPgpwNsY+VbA5OrYJbL8KLG90PxyR9b27OIs+CjMcjT6i+XU8KA52vwrmWnVCKYZSQPs+iMIKK290Px+R9b25OIs+CjccjT6o+XU8Lg52vwob49hBhMvvQOcHAcEKnP9/PyNbwzfMF2S7CuO2w7f//38/dkpNtwr6N5ZCI5eGQCzV'
+..'yMIK/DeWQt7HZkAs1cjCCgAAAAAAAAAAAADAPwoAAAAAAAAAANj/fz8KGapEPxPjIz8AAAAACmzntjOfxpe28/9/vwrUqUS/fOMjP8y4RrYKAAAAAAAAAAAAAMC/CgAAAACA/RA/gJMUvwrz/3+/zLhGtsaIZbYKn8aXtnzjIz/UqUQ/CgAAAACA/RA/QJMUvwrY/3+/AAAAAAAAAAAKAAAAABPjI'
+..'z8ZqkQ/CiijaULpAyZBBM2rwgoAAJAzAAAAAAAAgL+eAQEAAAABAAIAAwAEAAEAAgACAAUABwAIAAQAAgABAAcACAAJAAMACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcAGAAZABoADQAbAAQABQAcAB0AGwAeAB8AIAAhACIAIwAiABsABAAFABwAJAAbAB4AHwAgACEAIgAjACIAGwAEAA'
+..'QAGwAeAB8AIAAhACIAIwAiABsABAAFABwAJQAbAB4AHwAgACEAIgAjACIAGwAEAAUAHAAmABsAHgAfACAAIQAiACMAIgAbAAQABQAcAA0AGwAeAB8AIAAhACIAIwAiAAkAAwAJAAoACwAMAA0ADgAPABAAJwASABMAFAAVABYAKAAYACkAGgANABsACwAFABwAHQAbAB4AHwAgACEAIgAjACIAGwA'
+..'LAAUAHAAkABsAHgAfACAAIQAiACMAIgAbAAsABAAbAB4AHwAgACEAIgAjACIAGwALAAUAHAAlABsAHgAfACAAIQAiACMAIgAbAAsABQAcACYAGwAeAB8AIAAhACIAIwAiABsACwAFABwADQAbAB4AHwAgACEAIgAjACIACQADAAkACgALAAwADQAOAA8AEAAqABIAEwAUABUAFgArABgAKQAaAA0A'
+..'GwASAAUAHAAdABsAHgAfACAAIQAiACMAIgAbABIABQAcACQAGwAeAB8AIAAhACIAIwAiABsAEgAEABsAHgAfACAAIQAiACMAIgAbABIABQAcACUAGwAeAB8AIAAhACIAIwAiABsAEgAFABwAJgAbAB4AHwAgACEAIgAjACIAGwASAAUAHAANABsAHgAfACAAIQAiACMAIgAJAAMACwAKAAsADAANA'
+..'A4ALAAQAC0AEgAuABQALwAwADEAFgAyADMAMQAYADQAGgANAAQAAwACAAIANQAHADYACQAaAAoAAgA3AAoACwAOAA8AEAA4ABIAEwAUAC8AMAA5ABYAOgAzADkAGAA7ADwAGwABAD0APgA/ABwACgBAAEEAQgAdABgAQwBEAEUARgBHAEgAQQBJAAsASgBLAEwADQBNAAsATgAbAAYATwALAFAAUQ'
+..'BSAAsAUwBUAFUAVgBXAFgAWQAeAAMAWgBbAFwAXQBeAFsACQAaAAcACgALAAwADQAQAF8AFAAvABYAYAAYAGEAGgANAAQAGgACAAIAYgAHAGMACQAhAA4AAgBiAAoACwAMAA0ADgBkABAAZQASAGYAFABnADAAaAAWAGkAMwBqABgAawAaAA0AHwBsAG0AJABuACIAAQBvAEUAcAAiAAAATgAiAAI'
+..'AUAAmAFUAcQAJACEADQACAHIACgALAAwADQAOAA8AEABzABIAQQAUAC8AMABoABYAdAAzAGoAGAB1ABoADQBtACQACQAhAA0AAgByAAoACwAMAA0ADgAPABAAdgASAEEAFAAvADAAaAAWAHcAMwBqABgAeAAaAA0AbQAkAAkAIQAKAAIANwAKAAsADgAPABAAeQASABMAFAAvADAAOQAWAHoAMwA5'
+..'ABgAewA8ACgAAQA9AD4APwApAAoAQABBAEIAHQAYAEMARABFAEYAYgBIAEEASQALAEoASwBMAA0ATQALAHwAQAUACQCCAIMAOQAACQCEAIUAOQAACQCGAIcAOQAACQCIAIkAOQAACQCCAIoAOQAhAAkACgALAA4AfQAQAH4AEgB/ABQALwAwADkAFgCAADMAOQAYAIEABAAaAAIAAgCLAAcAjAAJA'
+..'CwADgACAIsACgALAAwADQAOAI0AEACOABIAjwAUAGcAMABoABYAkAAzAGoAGABrABoADQAfAGwAbQAkAG4ALQABAG8ARQBOAC0AAgBQACYAVQBxAHAALQAAAAkALAANAAIAcgAKAAsADAANAA4ADwAQAJEAEgBBABQALwAwAGgAFgCSADMAagAYAHUAGgANAG0AJAAJACwADQACAHIACgALAAwADQ'
+..'AOAA8AEACTABIAQQAUAC8AMABoABYAlAAzAGoAGAB4ABoADQBtACQACQAsAAoAAgA3AAoACwAOAA8AEACVABIAEwAUAC8AMAA5ABYAlgAzADkAGAB7ADwAMwABAD0APgA/ADQACgBAAEEAQgAdABgAQwBEAEUARgCLAEgAQQBJAAsASgBLAEwADQBNAAsAfABAAgEJAJ0AngCaACUAnwCgAEAEgQk'
+..'AoQCiAJoAJQCfAKAAQAIAowCkAKUApgAAowCkAKcAqABAAgCjAKkAqgCrAACjAKkArACtAEACAKMArgCvAKAAAKMArgCwALEALAAJAAoACwAOAJcAEACYABIAmQAUAC8AMACaABYAmwAzAJoAGACcAHwAQAUACQCGALUAOQAACQCEALYAOQAACQCIALcAOQAACQCCALgAOQAACQCCALkAOQAsAAkA'
+..'CgALAA4AfQAQALIAEgB/ABQALwAwADkAFgCzADMAOQAYALQABAAaAAIAAgC6AAcAuwAJADgADgACALoACgALAAwADQAOALwAEAC9ABIAvgAUAGcAMABoABYAvwAzAGoAGABrABoADQAfAGwAbQAkAG4AOQABAG8ARQBOADkAAgBQACYAVQBxAHAAOQAAAAkAOAANAAIAcgAKAAsADAANAA4ADwAQA'
+..'MAAEgBBABQALwAwAGgAFgDBADMAagAYAHUAGgANAG0AJAAJADgADQACAHIACgALAAwADQAOAA8AEADCABIAQQAUAC8AMABoABYAwwAzAGoAGAB4ABoADQBtACQACQA4AAoAAgA3AAoACwAOAA8AEADEABIAEwAUAC8AMAA5ABYAxQAzADkAGAB7ADwAPwABAD0APgA/AEAACgBAAEEAQgAdABgAQw'
+..'BEAEUARgC6AEgAQQBJAAsASgBLAEwADQBNAAsAfABABQAJAIYAyAA5AAAJAIQAyQA5AAAJAIgAygA5AAAJAIIAywA5AAAJAIIAzAA5ADgACQAKAAsADgB9ABAAxgASAH8AFAAvADAAOQAWAMcAMwA5ABgAtAB8AEACAQkAnQDPAJoAJQCfAKAAQASBCQChANAAmgAlAJ8AoABAAgCjAKQA0QCmAAC'
+..'jAKQA0gCoAEACAKMAqQDTAKsAAKMAqQDUAK0AQAIAowCuANUAoAAAowCuANYAsQA4AAkACgALAA4AlwAQAM0AEgCZABQALwAwAJoAFgDOADMAmgAYAJwABAAaAAIAAgDXAAcA2AAJAEQADgACANcACgALAAwADQAOANkAEADaABIA2wAUAGcAMABoABYA3AAzAGoAGABrABoADQAfAGwAbQAkAG4A'
+..'RQABAG8ARQBOAEUAAgBQACYAVQBxAHAARQAAAAkARAANAAIAcgAKAAsADAANAA4ADwAQAN0AEgBBABQALwAwAGgAFgDeADMAagAYAHUAGgANAG0AJAAJAEQADQACAHIACgALAAwADQAOAA8AEADfABIAQQAUAC8AMABoABYA4AAzAGoAGAB4ABoADQBtACQACQBEAAoAAgA3AAoACwAOAA8AEADhA'
+..'BIAEwAUAC8AMAA5ABYA4gAzADkAGAB7ADwASwABAD0APgA/AEwACgBAAEEAQgAdABgAQwBEAEUARgDXAEgAQQBJAAsASgBLAEwADQBNAAsAfABAAgEJAJ0A5QCaACUAnwCgAEAEgQkAoQDmAJoAJQCfAKAAQAIAowCkAOcApgAAowCkAOgAqABAAgCjAKkA6QCrAACjAKkA6gCtAEACAKMArgDrAK'
+..'AAAKMArgDsALEARAAJAAoACwAOAJcAEADjABIAmQAUAC8AMACaABYA5AAzAJoAGACcAHwAQAUACQCGAO8AOQAACQCEAPAAOQAACQCIAPEAOQAACQCCAPIAOQAACQCCAPMAOQBEAAkACgALAA4AfQAQAO0AEgB/ABQALwAwADkAFgDuADMAOQAYALQAfABAAgCjAPcA+ACgAACjAPcA+QCxAEQABwA'
+..'KAAsADgC8ABAA9AASAL4AFAAvABYA9QAYAPYACQAaAAcACgALAAwADQAQAPoAFAAvABYA+wAYAPwAGgANAAkAGgAHAAoACwAMAA0AEAD9ABQALwAWAP4AGAD/ABoADQAJABoABwAKAAsADAANABAAAAEUAC8AFgABARgA/AAaAA0ABAADAAIAAgACAQcAAwEJAFQACQAKAAsADAANAA4ABAEQAAUB'
+..'EgAGARQALwAWAAcBGAAIARoADQAJAFQADQACAAkBCgALAAwADQAOAA8AEAAKARIAEwAUAAsBMAAMARYADQEzAAwBGAAOARoADQAfAA8BTgBWAAIAUAAmAFUAcQBuAFYAAQBvAEUAcABWAAAAEAFWAAMAHAAlABsAEQEfABIBCQBUAAoACgALAAwADQAOAH0AEAATARIAfwAUAGcAFgAUARgAFQEaA'
+..'A0AHwAgAAkAVAAJAAoACwAMAA0ADgAWARAAFwESABgBFAAZARYAGgEYABsBGgANABsAXAAFAAIAHAEbAB0BHwAPASEAXQAjAEUAfABAAgAJACEBIgGgAAAJACMBJAElAVQABwAKAAsADgAEARAAHgESAAYBFAAvABYAHwEYACABJgFeAAIAJwEoASkBKgEJAFQACAACADcACgALAA4ADwAQACwBEg'
+..'ATABQALwAWAC0BGAAuATwAYAABAD0APgA/AGEACgBAAEEAQgAdABgAQwBEAEUARgAvAUgAQQBJAAsASgBLAEwADQBNAAsAfABAAwAJADMBNAGgAAAJADMBNQGgAAAJADYBNwGgAFQABwAKAAsADgAEARAAMAESAAYBFAAvABYAMQEYADIBfABAAgAJAD0BPgGgAIAJABsBPwGgAFQABwAKAAsADgA'
+..'4ARAAOQESADoBFAAvABYAOwEYADwBBAADAAIAAgBAAQcAQQEJAGUACwAKAAsADAANAA4ABAEQAEIBEgAGARQALwAwALEAFgBDATMARAEYAEUBGgANAAkAZQANAAIARgEKAAsADAANAA4ARwEQAEgBEgBJARQAZwAwAEoBFgBLATMATAEYAE0BGgANAB8AbABOAGcAAgBQACYAVQBxAG4AZwABAG8A'
+..'RQBwAGcAAAAJAGUADAAKAAsADAANAA4AfQAQAE4BEgB/ABQAZwAwALEAFgBPATMARAEYAFABGgANAB8AIAAJAGUACwAKAAsADAANAA4AUQEQAFIBEgBTARQAZwAwALEAFgBUATMARAEYAFUBGgANAHwAQAIACQBZAVoBsQAACQBbAVwBXQFlAAkACgALAA4ABAEQAFYBEgAGARQALwAwALEAFgBXA'
+..'TMARAEYAFgBCQBlAAoAAgA3AAoACwAOAA8AEABeARIAEwAUAC8AMACxABYAXwEzAEQBGABgATwAbgABAD0APgA/AG8ACgBAAEEAQgAdABgAQwBEAEUARgBhAUgAQQBJAAsASgBLAEwADQBNAAsAfABAAwAJAGUBZgGxAAAJAGUBZwGxAAAJAGgBaQGxAGUACQAKAAsADgAEARAAYgESAAYBFAAvAD'
+..'AAsQAWAGMBMwBEARgAZAEJAGUACwAKAAsADAANAA4ABAEQAGoBEgAGARQALwAwALEAFgBrATMARAEYAGwBGgANAG0BAgABAAIAbgFtAXMAAQACAG8BcAB0AAIAAgBwAXEBCwBwAHQAAgACAHIBcQELAHAAdAACAAIAcwFxAQsAcAB0AAIAAgB0AXEBCwBwAHQAAgACAHUBcQELAHAAdAACAAIAdgF'
+..'xAQsAcAB0AAIAAgB3AXEBCwBwAHQAAgACAHgBcQELAHAAdAACAAIAeQFxAQsAcAB0AAIAAgB6AXEBCwBwAHQAAgACAHsBcQELAHAAdAACAAIAfAFxAQsAcAB0AAIAAgB9AXEBCwBwAHQAAgACAH4BcQELAHAAdAACAAIAfwFxAQsAcAB0AAIAAgCAAXEBCwBwAHQAAgACAIEBcQELAHAAdAACAAIA'
+..'ggFxAQsAcAB0AAIAAgCDAXEBCwBwAHQAAgACAIQBcQELAHAAdAACAAIAhQFxAQsAcAB0AAIAAgCGAXEBCwBwAHQAAgACAIcBcQELAHAAdAACAAIAiAFxAQsAcAB0AAIAAgCJAXEBCwBwAHQAAgACAIoBcQELAHAAdAACAAIAiwFxAQsAcAB0AAIAAgCMAXEBCwBwAHQAAgACAI0BcQELAHAAdAACA'
+..'AIAjgFxAQsAcAB0AAIAAgCPAXEBCwBwAHMAAQACAGIAkAFzAAIAAgCRAZIBZABwAHMAAQACAJMBcABzAAEAAgCUAZUBcwAQAAIAlgGXAZgBEgCZAZoBRQCbAZwBnQGeAZ8BHQCgAaEBogGjATMApAEYAKUBpgGnAagBqQEbAKoBHwCrAawBHQCVAXMADwACAK0BlwGYARIArgGaAUUAmwGcAZ8BHQ'
+..'CgAaEBogGjATMApAEYAKUBpgGnAagBqQEbAK8BHwCrAawBHQBwAHMAAQACAEYBkAFzAAIAAgCwAZIBRwFwAHMAAQACANcAkAFzAAIAAgCxAZIB2QBwAHMAAQACAIsAkAFzAAIAAgCyAZIBswFwAHMAAQACALoAkAFzAAIAAgC0AZIBvABwAHMAAQACALUBtgFzAAEAAgC3AQQAcwACAAIAuAEHALk'
+..'BCQCkAAwAAgC6AQoACwAMAA0AEAC7ARQAZwAwALwBFgC9ATMAvgEYAL8BGgANAB8AbABtACQAJgGlAAIAJwHAASkBwAHCAaUAAQACAMMBbgClAAEAbwBdAE4ApQACAFAAJgBVAHEAcAClAAAACQCkAAoAAgDEAQwADQAQAMUBFAAvADAAvAEWAL0BMwC+ARgAxgEaAA0AbQAkACYBqwACACcBwAEp'
+..'AccBBABzAAIAAgDIAQcAyQEJAK0ADQACAMoBCgALAAwADQAOAMsBEADMARIAzQEUABkBMAAxABYAzgEzADEAGADPARoADQAfAB0A0AGuAAEA0QEmAAkArQANAAIAygEKAAsADAANAA4AywEQANIBEgDNARQAGQEwANMBFgDUATMA0wEYANUBGgANAB8AHQDQAbAAAQDRASYACQCtAA0AAgDKAQoAC'
+..'wAMAA0ADgDLARAA1gESAM0BFAAZATAA1wEWANgBMwDZARgA2gEaAA0AHwAdANABsgABANEBJgAJAK0ADQACAMoBCgALAAwADQAOAMsBEADbARIAzQEUABkBMADcARYA3QEzANwBGADeARoADQAfAB0A0AG0AAEA0QEmAAkArQANAAIAygEKAAsADAANAA4AywEQAN8BEgDNARQAGQEwANMBFgDgAT'
+..'MA0wEYAOEBGgANAB8AHQDQAbYAAQDRASYACQCtAA0AAgDKAQoACwAMAA0ADgDLARAA4gESAM0BFAAZATAA0wEWAOMBMwDTARgA5AEaAA0AHwAdANABuAABANEBJgAJAK0ADQACAMoBCgALAAwADQAOAMsBEADlARIAzQEUABkBMADmARYA5wEzAOgBGADpARoADQAfAB0A0AG6AAEA0QEmAAkArQA'
+..'NAAIAygEKAAsADAANAA4AywEQAOoBEgDNARQAGQEwAOsBFgDsATMA7QEYAO4BGgANAB8AHQDQAbwAAQDRASYACQCtAA0AAgDKAQoACwAMAA0ADgDLARAA7wESAM0BFAAZATAA8AEWAPEBMwDwARgA8gEaAA0AHwAdANABvgABANEBJgAJAK0ADQACAMoBCgALAAwADQAOAMsBEADzARIAzQEUABkB'
+..'MAD0ARYA9QEzAPYBGAD3ARoADQAfAB0A0AHAAAEA0QEmAAkArQANAAIAygEKAAsADAANAA4AywEQAPgBEgDNARQAGQEwAPkBFgD6ATMA+wEYAPwBGgANAB8AHQDQAcIAAQDRASYACQCtAA0AAgDKAQoACwAMAA0ADgDLARAA/QESAM0BFAAZATAA/gEWAP8BMwAAAhgAAQIaAA0AHwAdANABxAABA'
+..'NEBJgAJAK0ADQACAMoBCgALAAwADQAOAMsBEAACAhIAzQEUABkBMAADAhYABAIzAAUCGAAGAhoADQAfAB0A0AHGAAEA0QEmAAkArQALAAIAygEKAAsADAANAA4AywEQAAcCEgDNARQAGQEWAAgCGAAJAhoADQAfAB0A0AHIAAEA0QEmAAkArQANAAIAygEKAAsADAANAA4AywEQAAoCEgDNARQAGQ'
+..'EwAAsCFgAMAjMACwIYAA0CGgANAB8AHQDQAcoAAQDRASYACQCtAA0AAgDKAQoACwAMAA0ADgDLARAADgISAM0BFAAZATAA1wEWAA8CMwDZARgAzwEaAA0AHwAdANABzAABANEBJgAJAK0ADQACAMoBCgALAAwADQAOAMsBEAAQAhIAzQEUABkBMAARAhYAEgIzABMCGAAUAhoADQAfAB0A0AHOAAE'
+..'A0QEmAAkArQANAAIAygEKAAsADAANAA4AywEQABUCEgDNARQAGQEwABYCFgAXAjMAGAIYABkCGgANAB8AHQDQAdAAAQDRASYACQCtAA0AAgDKAQoACwAMAA0ADgDLARAAGgISAM0BFAAZATAAGwIWABwCMwAdAhgAHgIaAA0AHwAdANAB0gABANEBJgAJAK0ADQACAMoBCgALAAwADQAOAMsBEAAf'
+..'AhIAzQEUABkBMAD0ARYAIAIzAPYBGAAhAhoADQAfAB0A0AHUAAEA0QEmAAkArQANAAIAygEKAAsADAANAA4AywEQACICEgDNARQAGQEwAPkBFgAjAjMA+wEYAPwBGgANAB8AHQDQAdYAAQDRASYACQCtAAkAAgAkAgoACwAMAA0AEAAlAhQALwAWACYCGAAnAhoADQAfAB0ABABzAAIAAgAoAgcAK'
+..'QIEANkAAgACACoCBwArAgkA2gAKAAIAJAIMAA0ADgCXABAALAISAJkAFAAtAhYALgIYAC8CGgANAG0ADQAmAdsAAgAnATACKQExAgkA2gAJAAwADQAOADICEAAzAhIANAIUAC0CFgA1AhgANgIaAA0AbQANACYB3QACACcBNwIpATACBADZAAIAAgA4AgcAOQIJAN8ACgACACQCDAANAA4AlwAQAD'
+..'oCEgCZABQALQIWADsCGAAvAhoADQBtAA0AJgHgAAIAJwE8AikBMQIJAN8ACQAMAA0ADgAyAhAAPQISADQCFAAtAhYAPgIYADYCGgANAG0ADQAmAeIAAgAnAT8CKQE8AgQAcwACAAIAQAIHACkCBADkAAIAAgAqAgcAKwIJAOUACgACACQCDAANAA4AywEQACwCEgDNARQAGQEWAC4CGAAvAhoADQB'
+..'tAA0AJgHmAAIAJwEwAikBMQIJAOUACQAMAA0ADgAyAhAAMwISADQCFAALARYANQIYADYCGgANAG0ADQAmAegAAgAnATcCKQEwAgQA5AACAAIAOAIHADkCCQDqAAoAAgAkAgwADQAOAMsBEAA6AhIAzQEUABkBFgA7AhgALwIaAA0AbQANACYB6wACACcBPAIpATECCQDqAAkADAANAA4AMgIQAD0C'
+..'EgA0AhQACwEWAD4CGAA2AhoADQBtAA0AJgHtAAIAJwE/AikBPAIEAHMAAgACAEECBwBCApUB7wALAAIAQwKXAUQCEgBFApsBRgKdAUcCogFIAjMASQIYAEoCpgFLAhsATAIfAE0CTgLvAAUATwJQAhIAUQJSAlMCHAAdAFQCVQJwAAIAAQACAFYCbQECAAEAAgBXAnwAQAIACQBlAmYCYQIACQBnA'
+..'mgCYQIAAAoAAgBbAg4AXAIQAF0CXgJfAhIAYAIUAC8AMABhAhYAYgIzAGMCGABkAiYB9AACACcBaQIpAWoCBAAAAAIAAgBrAgcAbAIJAPYADAACALoBDAANABAAbQJeAl8CFABnADAAYQIWAG4CMwBjAhgAbwIaAA0AHwBsAG0AJAAmAfcAAgAnAXACKQFwAgQA9wACAAIARwAHAEICCQD2AA0AAg'
+..'DEAQwADQAOACwAEABxAl4CXwISAC4AFAAvADAAYQIWAHICMwBjAhgAcwIaAA0AbQAkAE4A+gACAFUAdAJXAB0AJgH6AAIAJwF1AikBagIJAPYADAACAHYCDAANABAAdwJeAl8CFABnADAAYQIWAHgCMwBjAhgAeQIaAA0AHwAdAG0AJAAmAf0AAgAnAXACKQFwAgkAAAAKAAIAegIMAA0AEAB7Al4'
+..'CXwIUAC8AMAB8AhYAfQIzAH4CGAB/AhoADQBwAAAAAAB8AEACQAIACQCDAoQCYQIACQCFAoYCYQKBCQCHAogCYQIlAJ8AoAAAAAkADgA4ARAAgAJeAl8CEgA6ARQALwAwAGECFgCBAjMAYwIYAIICJgEBAQIAJwFqAikBiQJ8AEACAAkAZQKOAmECAAkAZwKPAmECAAAKAAIAWwIOAFwCEACMAl4C'
+..'XwISAGACFAAvADAAYQIWAI0CMwBjAhgAZAJ8AEACQAIACQCTApQCYQKBCQCVApYCYQIlAJ8AoABAAgAJAJcCmAJhAoEJAJUCmQJhAiUAnwCgAAAACgACAFsCDgBcAhAAkAJeAl8CEgBgAhQALwAwAGECFgCRAjMAYwIYAJICJgEEAQIAJwHHASkBmgIEAAAAAgACAGsCBwCbAgkABgEMAAIAugEMA'
+..'A0AEACcAl4CXwIUAGcAMABhAhYAnQIzAGMCGAC/ARoADQAfAGwAbQAkACYBBwECACcBwAEpAcABwgEHAQEAAgDDAQkABgELAAIAxAEMAA0AEACcAl4CXwIUAC8AMABhAhYAnQIzAGMCGADGARoADQBtACQAJgEKAQIAJwHAASkBxwFOAAoBAgBVAHQCVwAdAAkABgEMAAIAdgIMAA0AEACcAl4CXw'
+..'IUAGcAMABhAhYAnQIzAGMCGACeAhoADQAfAB0AbQAkACYBDQECACcBwAEpAcABCQAAAAwAAgB6AgwADQAOAFwCEACfAl4CXwISAGACFAAvADAAfAIWAKACMwB+AhgAfwIaAA0AJgEPAQIAJwGhAikBxwFwAAAAAAB8AEACgQkAxgGlAmECJQCfAKAAQAQBCQCmAqcCYQIlAJ8AoAABCQCoAqkCYQI'
+..'lAJ8AoAABCQCqAqsCYQIlAJ8AoAABCQCsAq0CYQIlAJ8AoAAAAAkADgBcAhAAogJeAl8CEgBgAhQALwAwAGECFgCjAjMAYwIYAKQCJgESAQIAJwGuAikBrwJtAQIAAQACALACsQIUAQIAAgCyApIBswK0AhQBAQACALUCBAABAAIAAgC2AgcAtwIJABcBCgACALgCCgALAA4AuQIQALoCEgC7AjAA'
+..'vAIWAL0CMwC8AhgAvgIfAL8CCQAXAQoAAgC4AgoACwAOALkCEADAAhIAuwIwAMECFgDCAjMAwwIYAL4CHwC/AgkAFwEKAAIAxAIKAAsADgDFAhAAxgISAMcCMADIAhYAyQIzAMoCGADLAhoADQB8AEACAAkAZQLRAs4CAAkAZwLSAs4CAAAKAAIAWwIOAFwCEADNAl4CXwISAGACFAAvADAAzgIWA'
+..'M8CMwDQAhgAZAImARsBAgAnAWkCKQFqAgQAAAACAAIAawIHANMCCQAdAQwAAgC6AQwADQAQANQCXgJfAhQAZwAwANUCFgDWAjMA0AIYAG8CGgANAB8AbABtACQAJgEeAQIAJwFwAikBcAIEAB4BAgACAEcABwDXAgkAHQENAAIAxAEMAA0ADgAsABAA2AJeAl8CEgAuABQALwAwANUCFgDZAjMA0A'
+..'IYAHMCGgANAG0AJABOACEBAgBVAHQCVwAdACYBIQECACcBdQIpAWoCCQAdAQwAAgB2AgwADQAQANoCXgJfAhQAZwAwANUCFgDbAjMA3AIYAHkCGgANAB8AHQBtACQAJgEkAQIAJwFwAikBcAIJAAAACgACAHoCDAANABAA3QJeAl8CFAAvADAA3gIWAN8CMwDgAhgAfwIaAA0AcAAAAAAAfABAAkA'
+..'CAAkAgwLjAs4CAAkAhQLkAs4CgQkAhwLlAs4CJQCfAKAAAAAIAA4AOAEQAOECEgA6ARQALwAwAM4CFgDiAjMA0AIYAIICJgEoAQIAJwFqAikBiQJwAAAAAQACAOYCcAAAAAAACQAXAQoAAgC4AgoACwAOALkCEADnAhIAuwIwALwCFgDoAjMAvAIYAOkCHwC/AgkAFwEKAAIAuAIKAAsADgC5AhAA'
+..'6gISALsCMADBAhYA6wIzAMMCGAC+Ah8AvwIJABcBCwACALgCCgALAA4AuQIQAOwCEgC7AjAAvAIWAO0CMwC8AhgA7gIaAA0AHwC/AgQAFwECAAIAWQIHAO8CCQAvAQsAAgDwAgoACwAOALkCEADxAhIAuwIwAPICFgDzAjMA8gIYAPQCGgANAB8AUQAEAAEAAgACAPUCBwD2AgkAMQEKAAIAuAIKA'
+..'AsADgC5AhAA9wISALsCMAD4AhYA+QIzAPgCGAC+Ah8AvwIJADEBCgACALgCCgALAA4AuQIQAPoCEgC7AjAA+wIWAPwCMwD9AhgAvgIfAL8CCQAxAQoAAgDEAgoACwAOAMUCEAD+AhIAxwIwAP8CFgAAAzMAAQMYAMsCGgANAHwAQAIACQBlAgcDBAMACQBnAggDBAMAAAoAAgBbAg4AXAIQAAMDXg'
+..'JfAhIAYAIUAC8AMAAEAxYABQMzAAYDGABkAnwAQAJAAgAJAJMCCwMEA4EJAJUCDAMEAyUAnwCgAEACAAkAlwINAwQDgQkAlQIOAwQDJQCfAKAAAAAKAAIAWwIOAFwCEAAJA14CXwISAGACFAAvADAABAMWAAoDMwAGAxgAkgImATYBAgAnAccBKQGaAgQAAAACAAIAawIHAA8DCQA4AQwAAgC6AQw'
+..'ADQAQABADXgJfAhQAZwAwAAQDFgARAzMABgMYAL8BGgANAB8AbABtACQAJgE5AQIAJwHAASkBwAHCATkBAQACAMMBCQA4AQsAAgDEAQwADQAQABADXgJfAhQALwAwAAQDFgARAzMABgMYAMYBGgANAG0AJAAmATwBAgAnAcABKQHHAU4APAECAFUAdAJXAB0ACQA4AQwAAgB2AgwADQAQABADXgJf'
+..'AhQAZwAwAAQDFgARAzMABgMYAJ4CGgANAB8AHQBtACQAJgE/AQIAJwHAASkBwAEJAAAACwACAHoCDAANAA4AXAIQABIDEgBgAhQALwAwABMDFgAUAzMAFQMYAH8CGgANACYBQQECACcBoQIpAccBfABAAoEJAMYBGAMEAyUAnwCgAEAEAQkApgIZAwQDJQCfAKAAAQkAqAIaAwQDJQCfAKAAAQkAq'
+..'gIbAwQDJQCfAKAAAQkArAIcAwQDJQCfAKAAAAAIAA4AXAIQABYDEgBgAhQALwAwAAQDFgAXAzMABgMYAKQCJgFDAQIAJwGuAikBrwJwAAAAAQACAOYCcAAAAAAAcAAAAAAACQAxAQoAAgC4AgoACwAOALkCEAAdAxIAuwIwAPgCFgAeAzMA+AIYAOkCHwC/AgkAMQEKAAIAuAIKAAsADgC5AhAAHw'
+..'MSALsCMAD7AhYAIAMzAP0CGAC+Ah8AvwIJADEBCwACALgCCgALAA4AuQIQACEDEgC7AjAA+AIWACIDMwD4AhgA7gIaAA0AHwC/AnAAMQEBAAIAIwMEADEBAgACAIoCBwAkAwkATAELAAIA8AIKAAsADgC5AhAAJQMSALsCMAAmAxYAJwMzACYDGAD0AhoADQAfAFEABAABAAIAAgAoAwcAKQMEAE4'
+..'BAgACACoDBwArAwkATwEMAAIALAMKAAsADAANAA4ALQMQAC4DEgAvAzAAMQAWADADMwAxABgAMQMaAA0AHwBYADIDUAEAAEECUAEFABIAMwM0A18CNQNUADYDLwMYACIACQBPAQwAAgA3AwoACwAMAA0ADgAtAxAAOAMSAC8DMACxABYAOQMzAEQBGAA6AxoADQAfAFgAMgNTAQAAQQJTAQUAEgAz'
+..'AzQDXwI1A1QANgMvAxgAIgAJAE4BCgACADsDCgALAA4AlwAQADwDEgCZABQALwAwADEAFgA9AzMAMQAYAD4DMgNWAQAAJgFWAQIAJwE/AykBQAMJAE4BCgACAEEDCgALAAwAJAAOAJcAEABCAxIAmQAwAEMDFgBEAzMARQMYAEYDRwNZAQQAQABIA0kDmQAWAEoDGABLA0cDWgEDAEAASAMWAEwDG'
+..'ABNA04DWwEEAAIATwNAAFADGABRA0YATwNOA1sBBQACAFIDQABQAxYAUwMYAFEDRgBSA04DWwEFAAIAVANAAFADFgBVAxgAUQNGAFQDTgNbAQYAAgBWA0AAUAMWAFcDGABRA1gDXwJGAFYDTgNbAQUAAgBZA0AAUAMWAFoDGABRA0YAWQNOA1sBBgACAFsDQABQAxYAXAMYAFEDWANfAkYAWwNOA1'
+..'sBBgACAF0DQABQAxYAXgMYAFEDWANfAkYAXQNOA1sBBQACAF8DQABQAxYAYAMYAFEDRgBfA04DWwEFAAIAYQNAAFADFgBiAxgAUQNGAGEDTgNbAQcAAgBjA0AASQFJA5kAFgBkAxgAZQNYA18CRgBjA04DWwEHAAIAZgNAAC8DSQOZABYAZwMYAGUDWANfAkYAZgNOA1sBBQACAGgDQABQAxYAaQM'
+..'YAFEDRgBoAz8AWgEGAAIAagNAAEEASQOZABYAawMYAGwDRgBtA04DWgEHAAIAbgNAAJkASQOZABYAbwMYAHADRgBxA0gAQQA/AFoBBQACAHIDQABIAxYAcwNGAG0DSAB0AxABWQECABwAHQAbAHUDQQJZAQUAEgAzAzQDXwI1A1QANgMvAxgAIgBwAFkBAQACAHYDcABtAQEAAgC2AXAAbgECAAIA'
+..'dwNxAQsAwgFtAQEAAgAqA3AAbQECAAIAdwNxAQsACQBOAQkACgALAA4AlwAQAHgDEgCZABQALwAwADEAFgB5AzMAMQAYAHoDMgNyAQAACQBOAQoAAgB7AwoACwAOAJcAEAB8AxIAmQAUAC8AMAAxABYAfQMzADEAGAA+AzIDdAEAAEECdAEFABIAMwM0A18CNQNUADYDLwMYACIAsQJOAQIAAgB+A'
+..'5IBfwOAA04BAgACAKYBkgGBAwkATgEKAAIAQQMKAAsADAAkAA4ADwAQAIIDEgATADAAgwMWAIQDMwCFAxgARgNHA3kBBABAAEgDSQOZABYASgMYAEsDRwN6AQMAQABIAxYATAMYAE0DTgN7AQQAAgBPA0AAUAMYAFEDRgBPA04DewEFAAIAUgNAAFADFgBTAxgAUQNGAFIDTgN7AQUAAgBUA0AAUA'
+..'MWAFUDGABRA0YAVANOA3sBBgACAFYDQABQAxYAVwMYAFEDWANfAkYAVgNOA3sBBQACAFkDQABQAxYAWgMYAFEDRgBZA04DewEGAAIAWwNAAFADFgBcAxgAUQNYA18CRgBbA04DewEGAAIAXQNAAFADFgBeAxgAUQNYA18CRgBdA04DewEFAAIAXwNAAFADFgBgAxgAUQNGAF8DTgN7AQUAAgBhA0A'
+..'AUAMWAGIDGABRA0YAYQNOA3sBBwACAGMDQABJAUkDmQAWAGQDGABlA1gDXwJGAGMDTgN7AQcAAgBmA0AALwNJA5kAFgBnAxgAZQNYA18CRgBmA04DewEFAAIAaANAAFADFgBpAxgAUQNGAGgDPwB6AQYAAgBqA0AAQQBJA5kAFgBrAxgAbANGAG0DTgN6AQcAAgBuA0AAmQBJA5kAFgBvAxgAcANG'
+..'AHEDSABBAD8AegEFAAIAcgNAAEgDFgBzA0YAbQNIAHQDEAF5AQIAHAAdABsAdQNBAnkBBQASADMDNANfAjUDVAA2Ay8DGAAiAHAAeQEBAAIAdgPCAY0BAQACACoDcACNAQIAAgB3A3EBCwBwAI0BAQACALYBcACQAQIAAgB3A3EBCwCjAE4BCQAKAAsAhgMkAA4ALAAQAIcDEgAuADAAMQAWAIgDM'
+..'wAxABgAiQNBApIBBQASADMDNANfAjUDVAA2Ay8DGAAiACYBkgECACcBigMpAYsDJgGSAQIAJwGMAykBjQOjAE4BCQAKAAsAhgMkAA4ALAAQAI4DEgAuADAAOQAWAI8DMwA5ABgAiQNBApYBBQASADMDNANfAjUDVAA2Ay8DGAAiACYBlgECACcBjAMpAZADBAABAAIAAgCRAwcAkgMJAJkBCAAKAA'
+..'sADAANAA4AlwAQAJMDEgCZABYAlAMYAJUDGgANAAkAmQEKAAoACwAMAA0ADgCXABAAlgMSAJkAMAAxABYAlwMzADEAGACYAxoADQAJAJkBCgAKAAsADAANAA4AlwAQAJkDEgCZADAAMQAWAJoDMwAxABgAmAMaAA0ACQCZAQgACgALAAwADQAOAJcAEACbAxIAmQAWAJwDGACdAxoADQAJAJkBCgA'
+..'KAAsADAANAA4AlwAQAJ4DEgCZADAAMQAWAJ8DMwAxABgAoAMaAA0AUAIABgAEAAMABgAEAF8AKwFeAKQABgClAKYAwQGlAKYAKwGrAKwAwQGrAK0ABgDYANwAwQHbANwAKwHbAN4AwQHdAN4AKwHbAOEAwQHgAOEAKwHgAOMAwQHiAOMAKwHgAOcAwQHmAOcAKwHmAOkAwQHoAOkAKwHmAOwAwQHr'
+..'AOwAKwHrAO4AwQHtAO4AKwHrAPUAwQH0APUAKwEBAfgAwQH3APgAKwH6APwAwQH6APwAKwEBAf4AwQH9AP4AKwH3AAIBwQEBAQIBKwH/AAUBwQEEAQUBKwEDAQgBwQEHAQgBKwEKAQsBwQEKAQsBKwEEAQ4BwQENAQ4BKwEKARABwQEPARABKwEEARMBwQESARMBKwEDARcBBgAuARwBwQEbARwBK'
+..'wEoAR8BwQEeAR8BKwEhASMBwQEhASMBKwEoASUBwQEkASUBKwEeASkBwQEoASkBKwEmAS8BBgAwATEBBgBKATcBwQE2ATcBKwE1AToBwQE5AToBKwE8AT0BwQE8AT0BKwE2AUABwQE/AUABKwE8AUIBwQFBAUIBKwE2AUQBwQFDAUQBKwE1AUwBBgBNAVgBwQFWAVgBKwGWAZQBwQGSAZQBKwFWAZ'
+..'UBwQGSAZUBKwF5AZgBwQGWAZgBKwFZAQ==')
+for _,obj in pairs(Objects) do
+	obj.Parent = script or workspace
+end
+
+RunScripts()
