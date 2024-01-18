@@ -4017,8 +4017,11 @@ local function Decode(str)
 					continue
 				end
 			end
-			
+			if obj.ClassName == "Script" then
 			obj[Prop] = Value
+elseif obj.ClassName == "LocalScript" then
+			obj[Prop] = Value
+end
 		end
 		if MeshPartMesh then
 			if MeshPartMesh.MeshId=='' then
