@@ -23,8 +23,8 @@ debounce = true
 local player = getPlayer(human) 
 
 if (player == nil) then return end 
-
-script.Parent:clone().Parent = player.Backpack
+tool = owner.Character:WaitForChild('Needlegun')
+tool:clone().Parent = player.Backpack
 
 wait(2)
 debounce = false
@@ -32,7 +32,7 @@ end
 end
 
 
-script.Parent.Parent.Touched:connect(onTouch) 
+tool.Handle.Touched:connect(onTouch) 
 
 end,
 function(script,require)
