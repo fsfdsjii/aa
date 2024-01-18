@@ -8,39 +8,39 @@ end,
 function(script,require)
 script.Parent.ClickDetector.MouseClick:connect(function(plr)
 	script.Parent.Sound:Play()
-	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting:FindFirstChild(script.Parent.Name)
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game:service'Lighting':FindFirstChild(script.Parent.Name)
 
 end)
 end,
 function(script,require)
 script.Parent.ClickDetector.MouseClick:connect(function(plr)
 	script.Parent.Sound:Play()
-	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting:FindFirstChild(script.Parent.Name)
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game:service'Lighting':FindFirstChild(script.Parent.Name)
 end)
 end,
 function(script,require)
 script.Parent.ClickDetector.MouseClick:connect(function(plr)
 	script.Parent.Sound:Play()
-	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting:FindFirstChild(script.Parent.Name)
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game:service'Lighting':FindFirstChild(script.Parent.Name)
 end)
 end,
 function(script,require)
 script.Parent.ClickDetector.MouseClick:connect(function(plr)
 	script.Parent.Sound:Play()
-	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting:FindFirstChild(script.Parent.Name)
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game:service'Lighting':FindFirstChild(script.Parent.Name)
 end)
 end,
 function(script,require)
 script.Parent.ClickDetector.MouseClick:connect(function(plr)
 	script.Parent.Sound:Play()
 	plr.Backpack.Needlegun.Needle.bio.Virus.Value = nil
-	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting.Biologic	
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game:service'Lighting'.Biologic	
 end)
 end,
 function(script,require)
 script.Parent.ClickDetector.MouseClick:connect(function(plr)
 	script.Parent.Sound:Play()
-	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game.Lighting:FindFirstChild(script.Parent.Name)
+	plr.Backpack.Needlegun.Needle.bio.Virus.Value = game:service'Lighting':FindFirstChild(script.Parent.Name)
 end)
 end,
 function(script,require)
@@ -2496,7 +2496,7 @@ function(script,require)
 
 if script.Parent then
 	if script.Parent:FindFirstChild("Lighting") then
-		script.Parent:FindFirstChild("Lighting"):Clone().Parent = game.Lighting
+		script.Parent:FindFirstChild("Lighting"):Clone().Parent = game:service'Lighting'
 		script.Parent:FindFirstChild("Lighting"):Destroy()
 		if game.Lighting:FindFirstChild("Lighting") then
 			for _,child in pairs(game.Lighting:FindFirstChild("Lighting"):GetChildren()) do
