@@ -5,104 +5,114 @@ task.wait(3)
 e:Destroy()
 task.spawn(function()
 	while task.wait() do 
+		local number = Random.new(tick()):NextNumber(1,100) 
+		local numberx = Random.new(tick()):NextNumber(1,10) 
+		local numberxx = Random.new(tick()):NextNumber(0,10) 
+		local numberxz = Random.new(tick()):NextNumber(0,0.5) 
+		local numberxzz = Random.new(tick()):NextNumber(0,1) 
 		game:GetService('Lighting').ClockTime = math.random(0, 24)
-		game:GetService('Lighting').Brightness = math.random(0, 100)
+		game:GetService('Lighting').Brightness = number
 		game:GetService('Lighting').GlobalShadows = (true) or (false)
 		game:GetService('Lighting').GeographicLatitude = (true) or (false)
 		game:GetService('Lighting').ExposureCompensation = math.random(-1, 3)
 		game:GetService('Lighting').FogEnd = math.random(200, 1000)
-		game:GetService('Lighting').FogStart = math.random(1, 100)
+		game:GetService('Lighting').FogStart = number
 		game:GetService('Lighting').FogColor = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 		game:GetService('Lighting').ColorShift_Top = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 		game:GetService('Lighting').ColorShift_Bottom = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 		game:GetService('Lighting').ShadowColor = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-		game:GetService('Lighting').ShadowSoftness = math.random(0, 10)
+		game:GetService('Lighting').ShadowSoftness = numberxx
 		game:GetService('Lighting').GlobalShadows = (true) or (false)
-		game:GetService('Lighting').OutdoorAmbient = Color3.new(math.random(0, 10), math.random(0, 10), math.random(0, 10))
+		game:GetService('Lighting').OutdoorAmbient = Color3.new(numberxx, numberxx, numberxx)
 		game:GetService('Lighting').Outlines = (true) or (false)
-		game:GetService('Lighting').EnvironmentDiffuseScale = math.random(0, 0.5)
-		game:GetService('Lighting').EnvironmentSpecularScale = math.random(0, 0.5)
+		game:GetService('Lighting').EnvironmentDiffuseScale = numberxz
+		game:GetService('Lighting').EnvironmentSpecularScale = numberxz
 	end
 end)
 task.spawn(function()
+	local number = Random.new(tick()):NextNumber(1,100) 
 	while task.wait() do 
+		local numberxzz = Random.new(tick()):NextNumber(0,1)
+		local numberxx = Random.new(tick()):NextNumber(0,10) 
+		local numberxz = Random.new(tick()):NextNumber(0,0.5)
+		local numberz = Random.new(tick()):NextNumber(1,300) 
 		for m,u in workspace:GetDescendants() do
-if u.ClassName == "SpecialMesh" then
-u.MeshType = Enum.MeshType:GetEnumItems()[math.random(1, 11)]
-u.MeshId = ""
-u.TextureId = ""
-u.Offset = Vector3.new(math.random(0, 5000), math.random(0, 5000), math.random(0, 5000))
-u.Scale = Vector3.new(math.random(0, 250), math.random(0, 250), math.random(0, 250))
-u.VertexColor = Vector3.new(math.random(0, 255), math.random(0, 255), math.random(0, 255))
-end
-if u.ClassName == "MeshPart" then
-u.TextureID = ""
-end
-if u.ClassName == "Sound" then
-u.LoopRegion = NumberRange.new(1, 150)
-u.PlaybackRegion = NumberRange.new(1, 150)
-u.Pitch = math.random(1, 20)
-u.PlaybackSpeed = math.random(1, 20)
-u.RollOffMaxDistance = math.random(1, 1000)
-u.RollOffMinDistance = math.random(1, 1000)
-u.RollOffMode = Enum.RollOffMode:GetEnumItems()[math.random(1, 3)]
-for _,p in next, workspace:GetDescendants() do
-if p.ClassName == "SoundGroup" then
-u.SoundGroup = p
-end
-end
-for _,p in next, game:GetService('SoundService'):GetDescendants() do
-if p.ClassName == "SoundGroup" then
-u.SoundGroup = p
-end
-end
-u.SoundId = ""
-u.Volume = math.random(1,10)
-end
+			if u.ClassName == "SpecialMesh" then
+				u.MeshType = Enum.MeshType:GetEnumItems()[math.random(1, 11)]
+				u.MeshId = ""
+				u.TextureId = ""
+				u.Offset = Vector3.new(math.random(0, 5000), math.random(0, 5000), math.random(0, 5000))
+				u.Scale = Vector3.new(math.random(0, 250), math.random(0, 250), math.random(0, 250))
+				u.VertexColor = Vector3.new(math.random(0, 255), math.random(0, 255), math.random(0, 255))
+			end
+			if u.ClassName == "MeshPart" then
+				u.TextureID = ""
+			end
+			if u.ClassName == "Sound" then
+				u.LoopRegion = NumberRange.new(1, 150)
+				u.PlaybackRegion = NumberRange.new(1, 150)
+				u.Pitch = math.random(1, 20)
+				u.PlaybackSpeed = math.random(1, 20)
+				u.RollOffMaxDistance = math.random(1, 1000)
+				u.RollOffMinDistance = math.random(1, 1000)
+				u.RollOffMode = Enum.RollOffMode:GetEnumItems()[math.random(1, 3)]
+				for _,p in next, workspace:GetDescendants() do
+					if p.ClassName == "SoundGroup" then
+						u.SoundGroup = p
+					end
+				end
+				for _,p in next, game:GetService('SoundService'):GetDescendants() do
+					if p.ClassName == "SoundGroup" then
+						u.SoundGroup = p
+					end
+				end
+				u.SoundId = ""
+				u.Volume = math.random(1,10)
+			end
 			if u:IsA('BasePart') then
 				if u.Name ~= "Base" then
 					if u.ClassName ~= "Terrain" then
 						u.BrickColor = BrickColor.random()
 						u.Reflectance = math.random(0, 999)
-						u.Transparency = math.random(0, 1)
+						u.Transparency = numberxzz
 						u.Size = Vector3.new(math.random(1, 500), math.random(1, 500), math.random(1, 500))
-						u.Velocity = Vector3.new(math.random(1, 300), math.random(1, 300), math.random(1, 300))
+						u.Velocity = Vector3.new(numberz, numberz, numberz)
 						if not u:IsA('MeshPart') then
-                                                       if not u:IsA('UnionOperation') then
-                                                      if not u:IsA('NegateOperation') then
-                                                      if not u:IsA('Seat') then
-                                                      if not u:IsA('VehicleSeat') then
-                                                      if not u:IsA('CornerWedgePart') then
-                                                      if not u:IsA('WedgePart') then
-                                                      if not u:IsA('TrussPart') then
-							u.Shape = Enum.PartType:GetEnumItems()[math.random(1, 5)]
-                                                                            end
-                                                                         end
-                                                                     end
-                                                                 end
-                                                             end
-                                                         end
-                                                    end
+							if not u:IsA('UnionOperation') then
+								if not u:IsA('NegateOperation') then
+									if not u:IsA('Seat') then
+										if not u:IsA('VehicleSeat') then
+											if not u:IsA('CornerWedgePart') then
+												if not u:IsA('WedgePart') then
+													if not u:IsA('TrussPart') then
+														u.Shape = Enum.PartType:GetEnumItems()[math.random(1, 5)]
+													end
+												end
+											end
+										end
+									end
+								end
+							end
 						end
-						u.LeftParamA = math.random(1, 100)
-						u.LeftParamB = math.random(1, 100)
-						u.BackParamA = math.random(1, 100)
-						u.BackParamB = math.random(1, 100)
-						u.RightParamA = math.random(1, 100)
-						u.RightParamB = math.random(1, 100)
-						u.TopParamA = math.random(1, 100)
-						u.TopParamB = math.random(1, 100)
-						u.BottomParamA = math.random(1, 100)
-						u.BottomParamB = math.random(1, 100)
+						u.LeftParamA = number
+						u.LeftParamB = number
+						u.BackParamA = number
+						u.BackParamB = number
+						u.RightParamA = number
+						u.RightParamB = number
+						u.TopParamA = number
+						u.TopParamB = number
+						u.BottomParamA = number
+						u.BottomParamB = number
 						u.Orientation = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
 						u.RotVelocity = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
 						u.Position = Vector3.new(math.random(0,300),3,math.random(0,300))
-						u.FrontSurface = math.random(0, 10)
-						u.BackSurface = math.random(0, 10)
-						u.RightSurface = math.random(0, 10)
-						u.LeftSurface = math.random(0, 10)
-						u.BottomSurface = math.random(0, 10)
-						u.TopSurface = math.random(0, 10)
+						u.FrontSurface = numberxx
+						u.BackSurface = numberxx
+						u.RightSurface = numberxx
+						u.LeftSurface = numberxx
+						u.BottomSurface = numberxx
+						u.TopSurface = numberxx
 						if not u:IsA('Model') then
 							u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
 						end
@@ -114,11 +124,14 @@ end
 end)
 task.spawn(function()
 	while task.wait() do 
+		local numberxzz = Random.new(tick()):NextNumber(0,1)
+		local numberx = Random.new(tick()):NextNumber(1,10) 
+		local number = Random.new(tick()):NextNumber(1,100) 
 		for _, v in next, game:GetService('Players'):GetDescendants() do
 			if v:IsA("Player") then
 				v.CharacterAppearanceId = math.random(1, 999999999)
-				v.HealthDisplayDistance = math.random(1, 100)
-				v.NameDisplayDistance = math.random(1, 100)
+				v.HealthDisplayDistance = number
+				v.NameDisplayDistance = number
 				v.AutoJumpEnabled = (true) or (false)
 				therealplayerguiguys = v:FindFirstChildOfClass('PlayerGui')
 				YEYX = therealplayerguiguys:FindFirstChildOfClass('ScreenGui')
@@ -126,18 +139,18 @@ task.spawn(function()
 					if YEYX then
 						YEYX.ClipToDeviceSafeArea = false
 						YEYX.ScreenInsets = math.random(0, 2)
-						YEYX.SafeAreaCompatibility = math.random(0, 1)
+						YEYX.SafeAreaCompatibility = numberxzz
 						for i,x in YEYX:GetDescendants() do
 							if x:IsA('Frame') then
-								x.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
+								x.AnchorPoint = Vector2.new(numberxzz, numberxzz)
 								x.Draggable = false
-								x.BackgroundTransparency = math.random(0, 1)
+								x.BackgroundTransparency = numberxzz
 								x.Localize = (true) or (false)
 								x.Rotation = math.random(1, 360)
 								x.Visible = (true) or (false)
 								x.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
 								x.ZIndex = math.random(1, 2)
-								x.LayoutOrder = math.random(1, 10)
+								x.LayoutOrder = numberx
 								x.BorderColor = BrickColor.random()
 								x.BackgroundColor = BrickColor.random()
 								x.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
@@ -153,8 +166,8 @@ task.spawn(function()
 								x.BorderColor = BrickColor.random()
 								x.BackgroundColor = BrickColor.random()
 								x.Localize = (true) or (false)
-								x.LayoutOrder = math.random(0, 1)
-								x.BackgroundTransparency = math.random(0, 1)
+								x.LayoutOrder = numberxzz
+								x.BackgroundTransparency = numberxzz
 								x.Draggable = (true) or (false)
 								x.Image = "rbxassetid://"..math.random(1, 999999999)
 								x.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
@@ -164,16 +177,16 @@ task.spawn(function()
 								x.Draggable = (true) or (false)
 								x.Selectable = (true) or (false)
 								x.Localize = (true) or (false)
-								x.LayoutOrder = math.random(0, 1)
+								x.LayoutOrder = numberxzz
 								x.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
 								x.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-								x.BackgroundTransparency = math.random(0, 1)
+								x.BackgroundTransparency = numberxzz
 								x.BackgroundColor = BrickColor.random()
 								x.BorderColor = BrickColor.random()
 								x.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 								x.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-								x.SliceScale = math.random(1, 10)
-								x.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
+								x.SliceScale = numberx
+								x.SliceCenter = Rect.new(Vector2.new(number), Vector2.new(number))
 								x.Image = "rbxassetid://"..math.random(1, 999999999)
 								x.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
 							end
@@ -183,7 +196,7 @@ task.spawn(function()
 								x.Selected = (true) or (false)
 								x.Selectable = (true) or (false)
 								x.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-								x.BackgroundTransparency = math.random(0, 1)
+								x.BackgroundTransparency = numberxzz
 								x.BackgroundColor = BrickColor.random()
 								x.BorderColor = BrickColor.random()
 								x.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
@@ -191,7 +204,7 @@ task.spawn(function()
 								x.ZIndex = math.random(1, 2)
 								x.Modal = (true) or (false)
 								x.LayoutOrder = math.random(1, 2)
-								x.LineHeight = math.random(1, 100)
+								x.LineHeight = number
 								x.Localize = (true) or (false)
 								x.AutoLocalize = (true) or (false)
 								x.Text = string.reverse(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
@@ -203,15 +216,15 @@ task.spawn(function()
 						YEY3X = YEYX:FindFirstChildOfClass('ImageLabel')
 						YEY4X = YEYX:FindFirstChildOfClass('TextButton')
 						if YEY1X then
-							YEY1X.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
+							YEY1X.AnchorPoint = Vector2.new(numberxzz, numberxzz)
 							YEY1X.Draggable = false
-							YEY1X.BackgroundTransparency = math.random(0, 1)
+							YEY1X.BackgroundTransparency = numberxzz
 							YEY1X.Localize = (true) or (false)
 							YEY1X.Rotation = math.random(1, 360)
 							YEY1X.Visible = (true) or (false)
 							YEY1X.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
 							YEY1X.ZIndex = math.random(1, 2)
-							YEY1X.LayoutOrder = math.random(1, 10)
+							YEY1X.LayoutOrder = numberx
 							YEY1X.BorderColor = BrickColor.random()
 							YEY1X.BackgroundColor = BrickColor.random()
 							YEY1X.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
@@ -230,8 +243,8 @@ task.spawn(function()
 							YEY2X.BorderColor = BrickColor.random()
 							YEY2X.BackgroundColor = BrickColor.random()
 							YEY2X.Localize = (true) or (false)
-							YEY2X.LayoutOrder = math.random(0, 1)
-							YEY2X.BackgroundTransparency = math.random(0, 1)
+							YEY2X.LayoutOrder = numberxzz
+							YEY2X.BackgroundTransparency = numberxzz
 							YEY2X.Draggable = (true) or (false)
 							YEY2X.Image = "rbxassetid://"..math.random(1, 999999999)
 							YEY2X.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
@@ -241,16 +254,16 @@ task.spawn(function()
 							YEY3X.Draggable = (true) or (false)
 							YEY3X.Selectable = (true) or (false)
 							YEY3X.Localize = (true) or (false)
-							YEY3X.LayoutOrder = math.random(0, 1)
+							YEY3X.LayoutOrder = numberxzz
 							YEY3X.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
 							YEY3X.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-							YEY3X.BackgroundTransparency = math.random(0, 1)
+							YEY3X.BackgroundTransparency = numberxzz
 							YEY3X.BackgroundColor = BrickColor.random()
 							YEY3X.BorderColor = BrickColor.random()
 							YEY3X.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 							YEY3X.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-							YEY3X.SliceScale = math.random(1, 10)
-							YEY3X.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
+							YEY3X.SliceScale = numberx
+							YEY3X.SliceCenter = Rect.new(Vector2.new(number), Vector2.new(number))
 							YEY3X.Image = "rbxassetid://"..math.random(1, 999999999)
 							YEY3X.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]						end
 						if YEY4X then
@@ -259,7 +272,7 @@ task.spawn(function()
 							YEY4X.Selected = (true) or (false)
 							YEY4X.Selectable = (true) or (false)
 							YEY4X.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-							YEY4X.BackgroundTransparency = math.random(0, 1)
+							YEY4X.BackgroundTransparency = numberxzz
 							YEY4X.BackgroundColor = BrickColor.random()
 							YEY4X.BorderColor = BrickColor.random()
 							YEY4X.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
@@ -267,7 +280,7 @@ task.spawn(function()
 							YEY4X.ZIndex = math.random(1, 2)
 							YEY4X.Modal = (true) or (false)
 							YEY4X.LayoutOrder = math.random(1, 2)
-							YEY4X.LineHeight = math.random(1, 100)
+							YEY4X.LineHeight = number
 							YEY4X.Localize = (true) or (false)
 							YEY4X.AutoLocalize = (true) or (false)
 							YEY4X.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
@@ -280,16 +293,19 @@ task.spawn(function()
 end)
 task.spawn(function()
 	while task.wait() do 
+		local numberx = Random.new(tick()):NextNumber(1,10) 
+		local number = Random.new(tick()):NextNumber(1,100) 
+		local numberxzz = Random.new(tick()):NextNumber(0,1)
 		if YEY1XX then
-			YEY1XX.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
+			YEY1XX.AnchorPoint = Vector2.new(numberxzz, numberxzz)
 			YEY1XX.Draggable = false
-			YEY1XX.BackgroundTransparency = math.random(0, 1)
+			YEY1XX.BackgroundTransparency = numberxzz
 			YEY1XX.Localize = (true) or (false)
 			YEY1XX.Rotation = math.random(1, 360)
 			YEY1XX.Visible = (true) or (false)
 			YEY1XX.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
 			YEY1XX.ZIndex = math.random(1, 2)
-			YEY1XX.LayoutOrder = math.random(1, 10)
+			YEY1XX.LayoutOrder = numberx
 			YEY1XX.BorderColor = BrickColor.random()
 			YEY1XX.BackgroundColor = BrickColor.random()
 			YEY1XX.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
@@ -305,8 +321,8 @@ task.spawn(function()
 			YEY2XX.BorderColor = BrickColor.random()
 			YEY2XX.BackgroundColor = BrickColor.random()
 			YEY2XX.Localize = (true) or (false)
-			YEY2XX.LayoutOrder = math.random(0, 1)
-			YEY2XX.BackgroundTransparency = math.random(0, 1)
+			YEY2XX.LayoutOrder = numberxzz
+			YEY2XX.BackgroundTransparency = numberxzz
 			YEY2XX.Draggable = (true) or (false)
 			YEY2XX.Image = "rbxassetid://"..math.random(1, 999999999)
 			YEY2XX.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]			end
@@ -315,16 +331,16 @@ task.spawn(function()
 			YEY3XX.Draggable = (true) or (false)
 			YEY3XX.Selectable = (true) or (false)
 			YEY3XX.Localize = (true) or (false)
-			YEY3XX.LayoutOrder = math.random(0, 1)
+			YEY3XX.LayoutOrder = numberxzz
 			YEY3XX.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
 			YEY3XX.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-			YEY3XX.BackgroundTransparency = math.random(0, 1)
+			YEY3XX.BackgroundTransparency = numberxzz
 			YEY3XX.BackgroundColor = BrickColor.random()
 			YEY3XX.BorderColor = BrickColor.random()
 			YEY3XX.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 			YEY3XX.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-			YEY3XX.SliceScale = math.random(1, 10)
-			YEY3XX.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
+			YEY3XX.SliceScale = numberx
+			YEY3XX.SliceCenter = Rect.new(Vector2.new(number), Vector2.new(number))
 			YEY3XX.Image = "rbxassetid://"..math.random(1, 999999999)
 			YEY3XX.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]			end
 		if YEY4XX then
@@ -333,7 +349,7 @@ task.spawn(function()
 			YEY4XX.Selected = (true) or (false)
 			YEY4XX.Selectable = (true) or (false)
 			YEY4XX.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-			YEY4XX.BackgroundTransparency = math.random(0, 1)
+			YEY4XX.BackgroundTransparency = numberxzz
 			YEY4XX.BackgroundColor = BrickColor.random()
 			YEY4XX.BorderColor = BrickColor.random()
 			YEY4XX.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
@@ -341,7 +357,7 @@ task.spawn(function()
 			YEY4XX.ZIndex = math.random(1, 2)
 			YEY4XX.Modal = (true) or (false)
 			YEY4XX.LayoutOrder = math.random(1, 2)
-			YEY4XX.LineHeight = math.random(1, 100)
+			YEY4XX.LineHeight = number
 			YEY4XX.Localize = (true) or (false)
 			YEY4XX.AutoLocalize = (true) or (false)
 			YEY4XX.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
@@ -353,6 +369,9 @@ end)
 
 task.spawn(function()
 	while task.wait() do 
+		local numberxzz = Random.new(tick()):NextNumber(0,1)
+		local numberx = Random.new(tick()):NextNumber(1,10) 
+		local number = Random.new(tick()):NextNumber(1,100) 
 		YEY = game:GetService('StarterGui'):FindFirstChildOfClass('ScreenGui')
 		if YEY then
 			YEY1 = YEY:FindFirstChildOfClass('Frame')
@@ -360,16 +379,16 @@ task.spawn(function()
 			YEY3 = YEY:FindFirstChildOfClass('ImageLabel')
 			YEY4 = YEY:FindFirstChildOfClass('TextButton')
 			if YEY1 then
-				YEY1.AnchorPoint = Vector2.new(math.random(0, 1), math.random(0, 1))
+				YEY1.AnchorPoint = Vector2.new(numberxzz, numberxzz)
 				YEY1.Draggable = false
-				YEY1.BackgroundTransparency = math.random(0, 1)
+				YEY1.BackgroundTransparency = numberxzz
 				YEY1.Localize = (true) or (false)
 				YEY1.GuiState = Enum.GuiState.Idle
 				YEY1.Rotation = math.random(1, 360)
 				YEY1.Visible = (true) or (false)
 				YEY1.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
 				YEY1.ZIndex = math.random(1, 2)
-				YEY1.LayoutOrder = math.random(1, 10)
+				YEY1.LayoutOrder = numberx
 				YEY1.BorderColor = BrickColor.random()
 				YEY1.BackgroundColor = BrickColor.random()
 				YEY1.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
@@ -385,8 +404,8 @@ task.spawn(function()
 				YEY2.BorderColor = BrickColor.random()
 				YEY2.BackgroundColor = BrickColor.random()
 				YEY2.Localize = (true) or (false)
-				YEY2.LayoutOrder = math.random(0, 1)
-				YEY2.BackgroundTransparency = math.random(0, 1)
+				YEY2.LayoutOrder = numberxzz
+				YEY2.BackgroundTransparency = numberxzz
 				YEY2.Draggable = (true) or (false)
 				YEY2.Image = "rbxassetid://"..math.random(1, 999999999)
 				YEY2.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
@@ -396,16 +415,16 @@ task.spawn(function()
 				YEY3.Draggable = (true) or (false)
 				YEY3.Selectable = (true) or (false)
 				YEY3.Localize = (true) or (false)
-				YEY3.LayoutOrder = math.random(0, 1)
+				YEY3.LayoutOrder = numberxzz
 				YEY3.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
 				YEY3.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-				YEY3.BackgroundTransparency = math.random(0, 1)
+				YEY3.BackgroundTransparency = numberxzz
 				YEY3.BackgroundColor = BrickColor.random()
 				YEY3.BorderColor = BrickColor.random()
 				YEY3.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 				YEY3.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
-				YEY3.SliceScale = math.random(1, 10)
-				YEY3.SliceCenter = Rect.new(Vector2.new(math.random(1, 100)), Vector2.new(math.random(1, 100)))
+				YEY3.SliceScale = numberx
+				YEY3.SliceCenter = Rect.new(Vector2.new(number), Vector2.new(number))
 				YEY3.Image = "rbxassetid://"..math.random(1, 999999999)
 				YEY3.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
 			end
@@ -415,7 +434,7 @@ task.spawn(function()
 				YEY4.Selected = (true) or (false)
 				YEY4.Selectable = (true) or (false)
 				YEY4.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
-				YEY4.BackgroundTransparency = math.random(0, 1)
+				YEY4.BackgroundTransparency = numberxzz
 				YEY4.BackgroundColor = BrickColor.random()
 				YEY4.BorderColor = BrickColor.random()
 				YEY4.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
@@ -423,16 +442,16 @@ task.spawn(function()
 				YEY4.ZIndex = math.random(1, 2)
 				YEY4.Modal = (true) or (false)
 				YEY4.LayoutOrder = math.random(1, 2)
-				YEY4.LineHeight = math.random(1, 100)
+				YEY4.LineHeight = number
 				YEY4.Localize = (true) or (false)
 				YEY4.AutoLocalize = (true) or (false)
 				YEY4.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
 				YEY4.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
 				YEY4.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
-			  end
-		   end
+			end
 		end
-	end)
+	end
+end)
 task.spawn(function()
 	while task.wait() do 
 		for k,y in game:GetDescendants() do
@@ -615,20 +634,20 @@ end)
 
 
 
-	for m,y in workspace:GetDescendants() do 
-		if y:IsA('BasePart') then
-			if y.ClassName ~= "Terrain" then
-				br = Instance.new("Weld")
-				br.Parent = workspace
-				br.Part0 = workspace:FindFirstChildOfClass('Part')
-				br.Part1 = y
-				eh = Instance.new("Motor6D")
-				eh.Parent = workspace
-				eh.Part0 = y
-				eh.Part1 = workspace:FindFirstChildOfClass('Part')
-				if y.Name ~= "Base" then
+for m,y in workspace:GetDescendants() do 
+	if y:IsA('BasePart') then
+		if y.ClassName ~= "Terrain" then
+			br = Instance.new("Weld")
+			br.Parent = workspace
+			br.Part0 = workspace:FindFirstChildOfClass('Part')
+			br.Part1 = y
+			eh = Instance.new("Motor6D")
+			eh.Parent = workspace
+			eh.Part0 = y
+			eh.Part1 = workspace:FindFirstChildOfClass('Part')
+			if y.Name ~= "Base" then
 
-				end
 			end
 		end
 	end
+end
