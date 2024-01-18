@@ -1,0 +1,1884 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+ModuleScript1 = Instance.new("ModuleScript")
+Folder2 = Instance.new("Folder")
+Folder3 = Instance.new("Folder")
+ColorCorrectionEffect4 = Instance.new("ColorCorrectionEffect")
+ColorCorrectionEffect5 = Instance.new("ColorCorrectionEffect")
+Folder6 = Instance.new("Folder")
+Folder7 = Instance.new("Folder")
+Part8 = Instance.new("Part")
+ParticleEmitter9 = Instance.new("ParticleEmitter")
+ParticleEmitter10 = Instance.new("ParticleEmitter")
+ParticleEmitter11 = Instance.new("ParticleEmitter")
+ParticleEmitter12 = Instance.new("ParticleEmitter")
+Beam13 = Instance.new("Beam")
+Beam14 = Instance.new("Beam")
+Beam15 = Instance.new("Beam")
+PointLight16 = Instance.new("PointLight")
+ManualWeld17 = Instance.new("ManualWeld")
+Motor6D18 = Instance.new("Motor6D")
+Part19 = Instance.new("Part")
+SpecialMesh20 = Instance.new("SpecialMesh")
+Part21 = Instance.new("Part")
+ParticleEmitter22 = Instance.new("ParticleEmitter")
+ParticleEmitter23 = Instance.new("ParticleEmitter")
+Sound24 = Instance.new("Sound")
+Sound25 = Instance.new("Sound")
+PitchShiftSoundEffect26 = Instance.new("PitchShiftSoundEffect")
+Part27 = Instance.new("Part")
+ParticleEmitter28 = Instance.new("ParticleEmitter")
+ParticleEmitter29 = Instance.new("ParticleEmitter")
+ParticleEmitter30 = Instance.new("ParticleEmitter")
+ParticleEmitter31 = Instance.new("ParticleEmitter")
+ParticleEmitter32 = Instance.new("ParticleEmitter")
+ParticleEmitter33 = Instance.new("ParticleEmitter")
+ParticleEmitter34 = Instance.new("ParticleEmitter")
+Trail35 = Instance.new("Trail")
+Part36 = Instance.new("Part")
+ManualWeld37 = Instance.new("ManualWeld")
+ManualWeld38 = Instance.new("ManualWeld")
+Part39 = Instance.new("Part")
+ParticleEmitter40 = Instance.new("ParticleEmitter")
+ParticleEmitter41 = Instance.new("ParticleEmitter")
+ParticleEmitter42 = Instance.new("ParticleEmitter")
+ParticleEmitter43 = Instance.new("ParticleEmitter")
+PointLight44 = Instance.new("PointLight")
+ManualWeld45 = Instance.new("ManualWeld")
+Motor6D46 = Instance.new("Motor6D")
+Part47 = Instance.new("Part")
+SpecialMesh48 = Instance.new("SpecialMesh")
+Sound49 = Instance.new("Sound")
+Part50 = Instance.new("Part")
+Part51 = Instance.new("Part")
+Part52 = Instance.new("Part")
+ParticleEmitter53 = Instance.new("ParticleEmitter")
+ParticleEmitter54 = Instance.new("ParticleEmitter")
+ParticleEmitter55 = Instance.new("ParticleEmitter")
+ParticleEmitter56 = Instance.new("ParticleEmitter")
+ParticleEmitter57 = Instance.new("ParticleEmitter")
+ParticleEmitter58 = Instance.new("ParticleEmitter")
+ParticleEmitter59 = Instance.new("ParticleEmitter")
+Part60 = Instance.new("Part")
+ParticleEmitter61 = Instance.new("ParticleEmitter")
+ParticleEmitter62 = Instance.new("ParticleEmitter")
+ParticleEmitter63 = Instance.new("ParticleEmitter")
+ParticleEmitter64 = Instance.new("ParticleEmitter")
+ParticleEmitter65 = Instance.new("ParticleEmitter")
+Part66 = Instance.new("Part")
+ParticleEmitter67 = Instance.new("ParticleEmitter")
+ParticleEmitter68 = Instance.new("ParticleEmitter")
+ParticleEmitter69 = Instance.new("ParticleEmitter")
+Part70 = Instance.new("Part")
+ParticleEmitter71 = Instance.new("ParticleEmitter")
+ParticleEmitter72 = Instance.new("ParticleEmitter")
+ParticleEmitter73 = Instance.new("ParticleEmitter")
+ParticleEmitter74 = Instance.new("ParticleEmitter")
+PointLight75 = Instance.new("PointLight")
+Part76 = Instance.new("Part")
+Decal77 = Instance.new("Decal")
+BillboardGui78 = Instance.new("BillboardGui")
+ImageLabel79 = Instance.new("ImageLabel")
+Part80 = Instance.new("Part")
+Part81 = Instance.new("Part")
+SpecialMesh82 = Instance.new("SpecialMesh")
+ParticleEmitter83 = Instance.new("ParticleEmitter")
+Part84 = Instance.new("Part")
+Part85 = Instance.new("Part")
+LocalScript86 = Instance.new("LocalScript")
+RemoteEvent87 = Instance.new("RemoteEvent")
+Script88 = Instance.new("Script")
+Animation89 = Instance.new("Animation")
+BillboardGui90 = Instance.new("BillboardGui")
+TextLabel91 = Instance.new("TextLabel")
+Animation92 = Instance.new("Animation")
+Animation93 = Instance.new("Animation")
+Animation94 = Instance.new("Animation")
+Script95 = Instance.new("Script")
+Model0.Parent = mas
+ModuleScript1.Name = "MainModule"
+ModuleScript1.Parent = workspace
+table.insert(cors,sandbox(ModuleScript1,function()
+
+	plr = game.Players:FindFirstChild()
+	
+		local sse1 = script.Gojofr
+
+		for _, v in pairs(sse1.ReplicatedStorage:GetChildren()) do
+			v.Parent = game:GetService("ReplicatedStorage")
+		end
+		for _, v in pairs(sse1.Lighting:GetChildren()) do
+			v.Parent = game:GetService("Lighting")
+		end
+		
+
+end))
+Folder2.Name = "Gojofr"
+Folder2.Parent = ModuleScript1
+Folder3.Name = "Lighting"
+Folder3.Parent = Folder2
+ColorCorrectionEffect4.Name = "LightScreen"
+ColorCorrectionEffect4.Parent = Folder3
+ColorCorrectionEffect5.Name = "BrightControl"
+ColorCorrectionEffect5.Parent = Folder3
+Folder6.Name = "ReplicatedStorage"
+Folder6.Parent = Folder2
+Folder7.Name = "Gojo_Skills"
+Folder7.Parent = Folder6
+Part8.Name = "Red"
+Part8.Parent = Folder7
+Part8.CFrame = CFrame.new(29.9357262, 1.66219616, -24.286768, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part8.Position = Vector3.new(29.935726165771484, 1.662196159362793, -24.286767959594727)
+Part8.Color = Color3.new(1, 0, 0)
+Part8.Size = Vector3.new(0.37880969047546387, 0.37880969047546387, 0.37880969047546387)
+Part8.BottomSurface = Enum.SurfaceType.Smooth
+Part8.BrickColor = BrickColor.new("Really red")
+Part8.CanCollide = false
+Part8.Material = Enum.Material.Neon
+Part8.TopSurface = Enum.SurfaceType.Smooth
+Part8.brickColor = BrickColor.new("Really red")
+Part8.Shape = Enum.PartType.Ball
+ParticleEmitter9.Name = "Particle"
+ParticleEmitter9.Parent = mas
+ParticleEmitter9.Speed = NumberRange.new(0, 0)
+ParticleEmitter9.Rotation = NumberRange.new(-360, 360)
+ParticleEmitter9.LightEmission = 1
+ParticleEmitter9.Texture = "http://www.roblox.com/asset/?id=376023896"
+ParticleEmitter9.Transparency = NumberSequence.new(0,1)
+ParticleEmitter9.ZOffset = -1
+ParticleEmitter9.Size = NumberSequence.new(0.25,0.25)
+ParticleEmitter9.Lifetime = NumberRange.new(0.5, 0.5)
+ParticleEmitter9.LockedToPart = true
+ParticleEmitter9.Rate = 60
+ParticleEmitter9.RotSpeed = NumberRange.new(-50, 50)
+ParticleEmitter9.SpreadAngle = Vector2.new(360, 360)
+ParticleEmitter9.VelocitySpread = 360
+ParticleEmitter10.Name = "Particle"
+ParticleEmitter10.Parent = mas
+ParticleEmitter10.Speed = NumberRange.new(0, 0)
+ParticleEmitter10.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter10.Color = ColorSequence.new(Color3.new(1, 0, 0),Color3.new(1, 0, 0))
+ParticleEmitter10.LightEmission = 1
+ParticleEmitter10.LightInfluence = 1
+ParticleEmitter10.Texture = "rbxassetid://1084996536"
+ParticleEmitter10.Transparency = NumberSequence.new(1,0.4000000059604645,1)
+ParticleEmitter10.Size = NumberSequence.new(0.8743172883987427,0)
+ParticleEmitter10.Lifetime = NumberRange.new(1, 1.5)
+ParticleEmitter10.LockedToPart = true
+ParticleEmitter10.RotSpeed = NumberRange.new(250, 500)
+ParticleEmitter11.Name = "Particle"
+ParticleEmitter11.Parent = mas
+ParticleEmitter11.Speed = NumberRange.new(0, 0)
+ParticleEmitter11.Orientation = Enum.ParticleOrientation.FacingCameraWorldUp
+ParticleEmitter11.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter11.Color = ColorSequence.new(Color3.new(1, 0, 0),Color3.new(1, 0, 0))
+ParticleEmitter11.LightEmission = 1
+ParticleEmitter11.Texture = "rbxassetid://1053548563"
+ParticleEmitter11.Transparency = NumberSequence.new(0,1)
+ParticleEmitter11.Size = NumberSequence.new(0,0.43534404039382935,0.8673814535140991,1.2928308248519897,1.7084605693817139,2.1111137866973877,2.497732400894165,2.865379571914673,3.2112631797790527,3.5327560901641846,3.827416181564331,4.093005180358887,4.3275065422058105,4.529138565063477,4.6963701248168945,4.827930927276611,4.922821521759033,4.980321407318115,4.999993801116943,5)
+ParticleEmitter11.Lifetime = NumberRange.new(1, 2)
+ParticleEmitter11.LockedToPart = true
+ParticleEmitter11.Rate = 5
+ParticleEmitter11.RotSpeed = NumberRange.new(-75, 75)
+ParticleEmitter12.Name = "Particle"
+ParticleEmitter12.Parent = mas
+ParticleEmitter12.Speed = NumberRange.new(0, 0)
+ParticleEmitter12.Orientation = Enum.ParticleOrientation.FacingCameraWorldUp
+ParticleEmitter12.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter12.Color = ColorSequence.new(Color3.new(1, 0, 0),Color3.new(1, 0, 0))
+ParticleEmitter12.LightEmission = 1
+ParticleEmitter12.Texture = "rbxassetid://1084961641"
+ParticleEmitter12.Transparency = NumberSequence.new(0,1)
+ParticleEmitter12.Size = NumberSequence.new(0,0.43534404039382935,0.8673814535140991,1.2928308248519897,1.7084605693817139,2.1111137866973877,2.497732400894165,2.865379571914673,3.2112631797790527,3.5327560901641846,3.827416181564331,4.093005180358887,4.3275065422058105,4.529138565063477,4.6963701248168945,4.827930927276611,4.922821521759033,4.980321407318115,4.999993801116943,5)
+ParticleEmitter12.Lifetime = NumberRange.new(1, 2)
+ParticleEmitter12.LockedToPart = true
+ParticleEmitter12.Rate = 5
+ParticleEmitter12.RotSpeed = NumberRange.new(-75, 75)
+Beam13.Name = "Beam1"
+Beam13.Parent = Part8
+Beam13.Attachment0 = nil
+Beam13.Attachment1 = nil
+Beam13.Color = ColorSequence.new(Color3.new(1, 0, 0),Color3.new(1, 0, 0))
+Beam13.CurveSize1 = 1
+Beam13.FaceCamera = true
+Beam13.LightEmission = 1
+Beam13.LightInfluence = 1
+Beam13.Texture = "rbxassetid://3517446796"
+Beam13.TextureLength = 3
+Beam13.TextureMode = Enum.TextureMode.Wrap
+Beam13.TextureSpeed = -1
+Beam13.Transparency = NumberSequence.new(0,0)
+Beam13.Width0 = 0.3499999940395355
+Beam13.Width1 = 0.3499999940395355
+Beam14.Name = "Beam3"
+Beam14.Parent = Part8
+Beam14.Attachment0 = nil
+Beam14.Attachment1 = nil
+Beam14.Color = ColorSequence.new(Color3.new(1, 0, 0),Color3.new(1, 0, 0))
+Beam14.CurveSize1 = 1
+Beam14.FaceCamera = true
+Beam14.LightEmission = 1
+Beam14.LightInfluence = 1
+Beam14.Texture = "rbxassetid://3517446796"
+Beam14.TextureLength = 3
+Beam14.TextureMode = Enum.TextureMode.Wrap
+Beam14.TextureSpeed = -1
+Beam14.Transparency = NumberSequence.new(0,0)
+Beam14.Width0 = 0.3499999940395355
+Beam14.Width1 = 0.3499999940395355
+Beam15.Name = "Beam2"
+Beam15.Parent = Part8
+Beam15.Attachment0 = nil
+Beam15.Attachment1 = nil
+Beam15.Color = ColorSequence.new(Color3.new(1, 0, 0),Color3.new(1, 0, 0))
+Beam15.CurveSize0 = 1
+Beam15.FaceCamera = true
+Beam15.LightEmission = 1
+Beam15.LightInfluence = 1
+Beam15.Texture = "rbxassetid://3517446796"
+Beam15.TextureLength = 3
+Beam15.TextureMode = Enum.TextureMode.Wrap
+Beam15.TextureSpeed = -1
+Beam15.Transparency = NumberSequence.new(0,0)
+Beam15.Width0 = 0.3499999940395355
+Beam15.Width1 = 0.3499999940395355
+PointLight16.Name = "RedLight"
+PointLight16.Parent = Part8
+PointLight16.Color = Color3.new(1, 0, 0)
+PointLight16.Range = 0
+PointLight16.Brightness = 10
+ManualWeld17.Name = "Weld"
+ManualWeld17.Parent = Part8
+ManualWeld17.C1 = CFrame.new(0, 5.15030479e-07, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld17.Part0 = Part8
+ManualWeld17.Part1 = nil
+ManualWeld17.part1 = nil
+Motor6D18.Name = "Joint"
+Motor6D18.Parent = Part8
+Motor6D18.C0 = CFrame.new(-0.000408172607, -1.32814932, 0.0002784729, 1, 0, 0, 0, 0.999999285, 0, 0, 0, 0.999999285)
+Motor6D18.Part1 = Part8
+Motor6D18.part1 = Part8
+Part19.Name = "Outline"
+Part19.Parent = Part8
+Part19.CFrame = CFrame.new(29.9357262, 1.66219568, -24.286768, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part19.Position = Vector3.new(29.935726165771484, 1.6621956825256348, -24.286767959594727)
+Part19.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part19.Size = Vector3.new(0.3882799446582794, 0.3882799446582794, 0.3882799446582794)
+Part19.BrickColor = BrickColor.new("Institutional white")
+Part19.CanCollide = false
+Part19.Material = Enum.Material.Neon
+Part19.brickColor = BrickColor.new("Institutional white")
+SpecialMesh20.Parent = Part19
+SpecialMesh20.MeshId = "rbxassetid://4773168060"
+SpecialMesh20.Scale = Vector3.new(0.1941399723291397, 0.1941399723291397, 0.1941399723291397)
+SpecialMesh20.MeshType = Enum.MeshType.FileMesh
+Part21.Name = "Smoke"
+Part21.Parent = Folder7
+Part21.CFrame = CFrame.new(37.5297241, 0.162302494, -23.923769, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Part21.Orientation = Vector3.new(-90, 180, 0)
+Part21.Position = Vector3.new(37.52972412109375, 0.16230249404907227, -23.923768997192383)
+Part21.Rotation = Vector3.new(-90, 0, 180)
+Part21.Transparency = 1
+Part21.Size = Vector3.new(1, 1, 1)
+Part21.Anchored = true
+Part21.BottomSurface = Enum.SurfaceType.Smooth
+Part21.CanCollide = false
+Part21.TopSurface = Enum.SurfaceType.Smooth
+ParticleEmitter22.Parent = mas
+ParticleEmitter22.Speed = NumberRange.new(20, 20)
+ParticleEmitter22.Color = ColorSequence.new(Color3.new(0.494118, 0.494118, 0.494118),Color3.new(0.494118, 0.494118, 0.494118))
+ParticleEmitter22.LightInfluence = 1
+ParticleEmitter22.Texture = "rbxasset://textures/particles/smoke_main.dds"
+ParticleEmitter22.Transparency = NumberSequence.new(0,1,1)
+ParticleEmitter22.ZOffset = 1
+ParticleEmitter22.Size = NumberSequence.new(0.6010931730270386,1.6393446922302246,1.6393446922302246)
+ParticleEmitter22.Drag = 6
+ParticleEmitter22.Lifetime = NumberRange.new(1, 1)
+ParticleEmitter22.Rate = 15
+ParticleEmitter23.Parent = mas
+ParticleEmitter23.Speed = NumberRange.new(20, 20)
+ParticleEmitter23.Color = ColorSequence.new(Color3.new(0.494118, 0.494118, 0.494118),Color3.new(0.494118, 0.494118, 0.494118))
+ParticleEmitter23.LightInfluence = 1
+ParticleEmitter23.Texture = "rbxasset://textures/particles/smoke_main.dds"
+ParticleEmitter23.Transparency = NumberSequence.new(0,1,1)
+ParticleEmitter23.ZOffset = 1
+ParticleEmitter23.Size = NumberSequence.new(0.6010931730270386,1.6393446922302246,1.6393446922302246)
+ParticleEmitter23.Drag = 6
+ParticleEmitter23.Lifetime = NumberRange.new(1, 1)
+ParticleEmitter23.Rate = 15
+Sound24.Name = "Explosion"
+Sound24.Parent = Folder7
+Sound24.SoundId = "rbxassetid://151494080"
+Sound24.Volume = 1.25
+Sound25.Name = "Change"
+Sound25.Parent = Folder7
+Sound25.Pitch = 0.4000000059604645
+Sound25.PlaybackSpeed = 0.4000000059604645
+Sound25.SoundId = "rbxassetid://376107250"
+Sound25.Volume = 0.4000000059604645
+PitchShiftSoundEffect26.Parent = Sound25
+PitchShiftSoundEffect26.Octave = 1.2000000476837158
+Part27.Name = "Blue"
+Part27.Parent = Folder7
+Part27.CFrame = CFrame.new(58.2427254, 9.36697674, -99.5580139, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part27.Position = Vector3.new(58.24272537231445, 9.366976737976074, -99.55801391601562)
+Part27.Transparency = 1
+Part27.Size = Vector3.new(1, 1, 1)
+Part27.BottomSurface = Enum.SurfaceType.Smooth
+Part27.CanCollide = false
+Part27.TopSurface = Enum.SurfaceType.Smooth
+ParticleEmitter28.Name = "Core"
+ParticleEmitter28.Parent = mas
+ParticleEmitter28.Speed = NumberRange.new(0, 0)
+ParticleEmitter28.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter28.LightEmission = 1
+ParticleEmitter28.LightInfluence = 1
+ParticleEmitter28.Texture = "rbxassetid://1084962479"
+ParticleEmitter28.Transparency = NumberSequence.new(1,0,1)
+ParticleEmitter28.ZOffset = 1.100000023841858
+ParticleEmitter28.Size = NumberSequence.new(0.75,0.75)
+ParticleEmitter28.Lifetime = NumberRange.new(1, 1)
+ParticleEmitter28.LockedToPart = true
+ParticleEmitter28.Rate = 3
+ParticleEmitter29.Name = "Bolts"
+ParticleEmitter29.Parent = mas
+ParticleEmitter29.Speed = NumberRange.new(0, 0)
+ParticleEmitter29.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter29.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter29.LightEmission = 1
+ParticleEmitter29.LightInfluence = 1
+ParticleEmitter29.Texture = "rbxassetid://1084959312"
+ParticleEmitter29.Transparency = NumberSequence.new(0.8831140995025635,0.982573926448822,0.17053742706775665,0.39307841658592224,0.12906277179718018,0.9207434058189392,0.41569262742996216,0.2150334119796753,0.7820672988891602,0.23203222453594208,0.7898190021514893,0.8109988570213318,0.9116184115409851,0.8745689392089844,0.4192937910556793,0.300271600484848,0.16400647163391113,0.3960387110710144,0.7003387808799744,1)
+ParticleEmitter29.Size = NumberSequence.new(1,1)
+ParticleEmitter29.Lifetime = NumberRange.new(0.3330000042915344, 0.3330000042915344)
+ParticleEmitter29.LockedToPart = true
+ParticleEmitter29.Rate = 6
+ParticleEmitter30.Name = "Bolts"
+ParticleEmitter30.Parent = mas
+ParticleEmitter30.Speed = NumberRange.new(0, 0)
+ParticleEmitter30.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter30.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter30.LightEmission = 1
+ParticleEmitter30.LightInfluence = 1
+ParticleEmitter30.Texture = "rbxassetid://1084959583"
+ParticleEmitter30.Transparency = NumberSequence.new(0.8831140995025635,0.982573926448822,0.17053742706775665,0.39307841658592224,0.12906277179718018,0.9207434058189392,0.41569262742996216,0.2150334119796753,0.7820672988891602,0.23203222453594208,0.7898190021514893,0.8109988570213318,0.9116184115409851,0.8745689392089844,0.4192937910556793,0.300271600484848,0.16400647163391113,0.3960387110710144,0.7003387808799744,1)
+ParticleEmitter30.Size = NumberSequence.new(0.699999988079071,0.699999988079071)
+ParticleEmitter30.Lifetime = NumberRange.new(0.3330000042915344, 0.3330000042915344)
+ParticleEmitter30.LockedToPart = true
+ParticleEmitter30.Rate = 6
+ParticleEmitter31.Name = "Bolts"
+ParticleEmitter31.Parent = mas
+ParticleEmitter31.Speed = NumberRange.new(0, 0)
+ParticleEmitter31.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter31.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter31.LightEmission = 1
+ParticleEmitter31.LightInfluence = 1
+ParticleEmitter31.Texture = "rbxassetid://1084959112"
+ParticleEmitter31.Transparency = NumberSequence.new(0.8831140995025635,0.982573926448822,0.17053742706775665,0.39307841658592224,0.12906277179718018,0.9207434058189392,0.41569262742996216,0.2150334119796753,0.7820672988891602,0.23203222453594208,0.7898190021514893,0.8109988570213318,0.9116184115409851,0.8745689392089844,0.4192937910556793,0.300271600484848,0.16400647163391113,0.3960387110710144,0.7003387808799744,1)
+ParticleEmitter31.Size = NumberSequence.new(1.25,1.25)
+ParticleEmitter31.Lifetime = NumberRange.new(0.3330000042915344, 0.3330000042915344)
+ParticleEmitter31.LockedToPart = true
+ParticleEmitter31.Rate = 6
+ParticleEmitter32.Name = "Wave"
+ParticleEmitter32.Parent = mas
+ParticleEmitter32.Speed = NumberRange.new(0, 0)
+ParticleEmitter32.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter32.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter32.LightEmission = 1
+ParticleEmitter32.LightInfluence = 1
+ParticleEmitter32.Texture = "rbxassetid://1084996536"
+ParticleEmitter32.Transparency = NumberSequence.new(1,0.4000000059604645,1)
+ParticleEmitter32.Size = NumberSequence.new(2,2)
+ParticleEmitter32.Lifetime = NumberRange.new(1, 1.5)
+ParticleEmitter32.LockedToPart = true
+ParticleEmitter32.Rate = 100
+ParticleEmitter32.RotSpeed = NumberRange.new(250, 500)
+ParticleEmitter33.Name = "Bit"
+ParticleEmitter33.Parent = mas
+ParticleEmitter33.Speed = NumberRange.new(0, 0)
+ParticleEmitter33.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter33.Color = ColorSequence.new(Color3.new(0.0666667, 0, 1),Color3.new(0.0666667, 0, 1))
+ParticleEmitter33.LightEmission = 1
+ParticleEmitter33.LightInfluence = 1
+ParticleEmitter33.Texture = "rbxassetid://1084997326"
+ParticleEmitter33.Transparency = NumberSequence.new(1,0,0)
+ParticleEmitter33.Size = NumberSequence.new(10,0,0,0,0,0,0,0,0.006384499836713076,0.0000019999999949504854,0)
+ParticleEmitter33.Lifetime = NumberRange.new(0.5, 0.5)
+ParticleEmitter33.LockedToPart = true
+ParticleEmitter33.Rate = 0
+ParticleEmitter34.Name = "Circle"
+ParticleEmitter34.Parent = mas
+ParticleEmitter34.Speed = NumberRange.new(0, 0)
+ParticleEmitter34.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter34.Color = ColorSequence.new(Color3.new(0.0666667, 0, 1),Color3.new(0.0666667, 0, 1))
+ParticleEmitter34.LightEmission = 1
+ParticleEmitter34.LightInfluence = 1
+ParticleEmitter34.Texture = "http://www.roblox.com/asset/?id=3467149276"
+ParticleEmitter34.Transparency = NumberSequence.new(0,0,0)
+ParticleEmitter34.Size = NumberSequence.new(10,0,0,0,0,0,0,0,0.006384499836713076,0.0000019999999949504854,0)
+ParticleEmitter34.Lifetime = NumberRange.new(0.5, 0.5)
+ParticleEmitter34.LockedToPart = true
+ParticleEmitter34.Rate = 0
+Trail35.Parent = Part27
+Trail35.Attachment0 = nil
+Trail35.Attachment1 = nil
+Trail35.Color = ColorSequence.new(Color3.new(0.113725, 0, 1),Color3.new(0.113725, 0, 1))
+Trail35.FaceCamera = true
+Trail35.LightEmission = 1
+Trail35.LightInfluence = 1
+Trail35.Transparency = NumberSequence.new(0,1)
+Trail35.Lifetime = 1.5
+Trail35.WidthScale = NumberSequence.new(1,0)
+Part36.Name = "Core"
+Part36.Parent = Part27
+Part36.CFrame = CFrame.new(58.2427254, 9.36697674, -99.5580139, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part36.Position = Vector3.new(58.24272537231445, 9.366976737976074, -99.55801391601562)
+Part36.Transparency = 1
+Part36.Size = Vector3.new(1, 1, 1)
+Part36.BottomSurface = Enum.SurfaceType.Smooth
+Part36.CanCollide = false
+Part36.TopSurface = Enum.SurfaceType.Smooth
+ManualWeld37.Name = "Weld"
+ManualWeld37.Parent = Part27
+ManualWeld37.Part0 = Part27
+ManualWeld37.Part1 = Part36
+ManualWeld37.part1 = Part36
+ManualWeld38.Name = "Weld"
+ManualWeld38.Parent = Part27
+ManualWeld38.C1 = CFrame.new(0, -0.000361442566, -0.000244140625, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld38.Part0 = Part27
+ManualWeld38.Part1 = Part84
+ManualWeld38.part1 = Part84
+Part39.Name = "Blue2"
+Part39.Parent = Folder7
+Part39.CFrame = CFrame.new(27.5775375, 5.17969751, -24.4267673, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part39.Position = Vector3.new(27.577537536621094, 5.179697513580322, -24.426767349243164)
+Part39.Color = Color3.new(0, 0.0627451, 0.690196)
+Part39.Size = Vector3.new(0.37880969047546387, 0.37880969047546387, 0.37880969047546387)
+Part39.BottomSurface = Enum.SurfaceType.Smooth
+Part39.BrickColor = BrickColor.new("Dark blue")
+Part39.CanCollide = false
+Part39.Material = Enum.Material.Neon
+Part39.TopSurface = Enum.SurfaceType.Smooth
+Part39.brickColor = BrickColor.new("Dark blue")
+Part39.Shape = Enum.PartType.Ball
+ParticleEmitter40.Name = "Bolts"
+ParticleEmitter40.Parent = mas
+ParticleEmitter40.Speed = NumberRange.new(0, 0)
+ParticleEmitter40.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter40.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter40.LightEmission = 1
+ParticleEmitter40.LightInfluence = 1
+ParticleEmitter40.Texture = "rbxassetid://1084959312"
+ParticleEmitter40.Transparency = NumberSequence.new(0.8831140995025635,0.982573926448822,0.17053742706775665,0.39307841658592224,0.12906277179718018,0.9207434058189392,0.41569262742996216,0.2150334119796753,0.7820672988891602,0.23203222453594208,0.7898190021514893,0.8109988570213318,0.9116184115409851,0.8745689392089844,0.4192937910556793,0.300271600484848,0.16400647163391113,0.3960387110710144,0.7003387808799744,1)
+ParticleEmitter40.Size = NumberSequence.new(1,1)
+ParticleEmitter40.Lifetime = NumberRange.new(0.3330000042915344, 0.3330000042915344)
+ParticleEmitter40.LockedToPart = true
+ParticleEmitter40.Rate = 6
+ParticleEmitter41.Name = "Bolts"
+ParticleEmitter41.Parent = mas
+ParticleEmitter41.Speed = NumberRange.new(0, 0)
+ParticleEmitter41.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter41.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter41.LightEmission = 1
+ParticleEmitter41.LightInfluence = 1
+ParticleEmitter41.Texture = "rbxassetid://1084959112"
+ParticleEmitter41.Transparency = NumberSequence.new(0.8831140995025635,0.982573926448822,0.17053742706775665,0.39307841658592224,0.12906277179718018,0.9207434058189392,0.41569262742996216,0.2150334119796753,0.7820672988891602,0.23203222453594208,0.7898190021514893,0.8109988570213318,0.9116184115409851,0.8745689392089844,0.4192937910556793,0.300271600484848,0.16400647163391113,0.3960387110710144,0.7003387808799744,1)
+ParticleEmitter41.Size = NumberSequence.new(1.25,1.25)
+ParticleEmitter41.Lifetime = NumberRange.new(0.3330000042915344, 0.3330000042915344)
+ParticleEmitter41.LockedToPart = true
+ParticleEmitter41.Rate = 6
+ParticleEmitter42.Name = "Bolts"
+ParticleEmitter42.Parent = mas
+ParticleEmitter42.Speed = NumberRange.new(0, 0)
+ParticleEmitter42.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter42.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter42.LightEmission = 1
+ParticleEmitter42.LightInfluence = 1
+ParticleEmitter42.Texture = "rbxassetid://1084959583"
+ParticleEmitter42.Transparency = NumberSequence.new(0.8831140995025635,0.982573926448822,0.17053742706775665,0.39307841658592224,0.12906277179718018,0.9207434058189392,0.41569262742996216,0.2150334119796753,0.7820672988891602,0.23203222453594208,0.7898190021514893,0.8109988570213318,0.9116184115409851,0.8745689392089844,0.4192937910556793,0.300271600484848,0.16400647163391113,0.3960387110710144,0.7003387808799744,1)
+ParticleEmitter42.Size = NumberSequence.new(0.699999988079071,0.699999988079071)
+ParticleEmitter42.Lifetime = NumberRange.new(0.3330000042915344, 0.3330000042915344)
+ParticleEmitter42.LockedToPart = true
+ParticleEmitter42.Rate = 6
+ParticleEmitter43.Name = "Wave"
+ParticleEmitter43.Parent = mas
+ParticleEmitter43.Speed = NumberRange.new(0, 0)
+ParticleEmitter43.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter43.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter43.LightEmission = 1
+ParticleEmitter43.LightInfluence = 1
+ParticleEmitter43.Texture = "rbxassetid://1084996536"
+ParticleEmitter43.Transparency = NumberSequence.new(1,0.4000000059604645,1)
+ParticleEmitter43.Lifetime = NumberRange.new(1, 1.5)
+ParticleEmitter43.LockedToPart = true
+ParticleEmitter43.Rate = 100
+ParticleEmitter43.RotSpeed = NumberRange.new(250, 500)
+PointLight44.Name = "RedLight"
+PointLight44.Parent = Part39
+PointLight44.Color = Color3.new(1, 0, 0)
+PointLight44.Range = 0
+PointLight44.Brightness = 10
+ManualWeld45.Name = "Weld"
+ManualWeld45.Parent = Part39
+ManualWeld45.C1 = CFrame.new(0, 5.15030479e-07, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld45.Part0 = Part39
+ManualWeld45.Part1 = nil
+ManualWeld45.part1 = nil
+Motor6D46.Name = "Joint"
+Motor6D46.Parent = Part39
+Motor6D46.C0 = CFrame.new(-0.000408172607, -1.32814932, 0.0002784729, 1, 0, 0, 0, 0.999999285, 0, 0, 0, 0.999999285)
+Motor6D46.Part1 = Part39
+Motor6D46.part1 = Part39
+Part47.Name = "Outline"
+Part47.Parent = Part39
+Part47.CFrame = CFrame.new(27.5775375, 5.17969704, -24.4267673, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part47.Position = Vector3.new(27.577537536621094, 5.179697036743164, -24.426767349243164)
+Part47.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part47.Size = Vector3.new(0.3882799446582794, 0.3882799446582794, 0.3882799446582794)
+Part47.BrickColor = BrickColor.new("Institutional white")
+Part47.CanCollide = false
+Part47.Material = Enum.Material.Neon
+Part47.brickColor = BrickColor.new("Institutional white")
+SpecialMesh48.Parent = Part47
+SpecialMesh48.MeshId = "rbxassetid://4773168060"
+SpecialMesh48.Scale = Vector3.new(0.1941399723291397, 0.1941399723291397, 0.1941399723291397)
+SpecialMesh48.MeshType = Enum.MeshType.FileMesh
+Sound49.Name = "Throw"
+Sound49.Parent = Folder7
+Sound49.SoundId = "rbxassetid://535817500"
+Sound49.Volume = 0.75
+Part50.Name = "Camera"
+Part50.Parent = Folder7
+Part50.CFrame = CFrame.new(31.5181046, 0.490320683, -37.8693848, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part50.Position = Vector3.new(31.518104553222656, 0.49032068252563477, -37.869384765625)
+Part50.Transparency = 1
+Part50.Size = Vector3.new(1, 1, 1)
+Part50.Anchored = true
+Part50.BottomSurface = Enum.SurfaceType.Smooth
+Part50.CanCollide = false
+Part50.TopSurface = Enum.SurfaceType.Smooth
+Part51.Name = "Line"
+Part51.Parent = Folder7
+Part51.CFrame = CFrame.new(43.3469582, 0.090326786, -43.902832, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part51.Orientation = Vector3.new(0, 90, 0)
+Part51.Position = Vector3.new(43.34695816040039, 0.09032678604125977, -43.90283203125)
+Part51.Rotation = Vector3.new(0, 90, 0)
+Part51.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part51.Size = Vector3.new(10, 0.05000000074505806, 0.05000000074505806)
+Part51.Anchored = true
+Part51.BottomSurface = Enum.SurfaceType.Smooth
+Part51.BrickColor = BrickColor.new("Bright red")
+Part51.CanCollide = false
+Part51.Material = Enum.Material.Neon
+Part51.TopSurface = Enum.SurfaceType.Smooth
+Part51.brickColor = BrickColor.new("Bright red")
+Part52.Name = "Core"
+Part52.Parent = Folder7
+Part52.CFrame = CFrame.new(-71.5029221, 22.3573685, -48.8757706, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part52.Position = Vector3.new(-71.50292205810547, 22.35736846923828, -48.875770568847656)
+Part52.Transparency = 1
+Part52.Size = Vector3.new(1, 1, 1)
+Part52.Anchored = true
+Part52.BottomSurface = Enum.SurfaceType.Smooth
+Part52.CanCollide = false
+Part52.TopSurface = Enum.SurfaceType.Smooth
+ParticleEmitter53.Name = "Core"
+ParticleEmitter53.Parent = mas
+ParticleEmitter53.Speed = NumberRange.new(0, 0)
+ParticleEmitter53.Color = ColorSequence.new(Color3.new(0, 0, 0),Color3.new(0, 0, 0))
+ParticleEmitter53.Texture = "http://www.roblox.com/asset/?id=6827389541"
+ParticleEmitter53.Transparency = NumberSequence.new(1,0,1)
+ParticleEmitter53.ZOffset = 1
+ParticleEmitter53.Size = NumberSequence.new(8,8)
+ParticleEmitter53.Lifetime = NumberRange.new(1, 1)
+ParticleEmitter53.LockedToPart = true
+ParticleEmitter53.Rate = 10
+ParticleEmitter54.Name = "Wave1"
+ParticleEmitter54.Parent = mas
+ParticleEmitter54.Speed = NumberRange.new(0, 0)
+ParticleEmitter54.Rotation = NumberRange.new(-360, 360)
+ParticleEmitter54.Color = ColorSequence.new(Color3.new(0.207843, 0.282353, 0.239216),Color3.new(0.207843, 0.282353, 0.239216))
+ParticleEmitter54.LightEmission = 1
+ParticleEmitter54.LightInfluence = 1
+ParticleEmitter54.Texture = "rbxassetid://1084996536"
+ParticleEmitter54.Transparency = NumberSequence.new(1,0.4000000059604645,1)
+ParticleEmitter54.ZOffset = 1
+ParticleEmitter54.Size = NumberSequence.new(12,12)
+ParticleEmitter54.Lifetime = NumberRange.new(2, 2)
+ParticleEmitter54.LockedToPart = true
+ParticleEmitter55.Name = "Wave2"
+ParticleEmitter55.Parent = mas
+ParticleEmitter55.Speed = NumberRange.new(0, 0)
+ParticleEmitter55.Rotation = NumberRange.new(-360, 360)
+ParticleEmitter55.LightEmission = 1
+ParticleEmitter55.LightInfluence = 1
+ParticleEmitter55.Texture = "rbxassetid://1084996536"
+ParticleEmitter55.Transparency = NumberSequence.new(1,0.4000000059604645,1)
+ParticleEmitter55.ZOffset = 1
+ParticleEmitter55.Size = NumberSequence.new(25,25)
+ParticleEmitter55.Lifetime = NumberRange.new(2, 2)
+ParticleEmitter55.LockedToPart = true
+ParticleEmitter56.Name = "Wave3"
+ParticleEmitter56.Parent = mas
+ParticleEmitter56.Speed = NumberRange.new(0, 0)
+ParticleEmitter56.Rotation = NumberRange.new(-360, 360)
+ParticleEmitter56.Color = ColorSequence.new(Color3.new(0.603922, 1, 0.435294),Color3.new(0.603922, 1, 0.435294))
+ParticleEmitter56.LightEmission = 1
+ParticleEmitter56.Texture = "rbxassetid://1084996536"
+ParticleEmitter56.Transparency = NumberSequence.new(1,0.4000000059604645,1)
+ParticleEmitter56.ZOffset = 1
+ParticleEmitter56.Size = NumberSequence.new(27,27)
+ParticleEmitter56.Lifetime = NumberRange.new(1, 1.5)
+ParticleEmitter56.LockedToPart = true
+ParticleEmitter56.Rate = 5
+ParticleEmitter56.RotSpeed = NumberRange.new(20, 20)
+ParticleEmitter57.Name = "Wave4"
+ParticleEmitter57.Parent = mas
+ParticleEmitter57.Speed = NumberRange.new(0, 0)
+ParticleEmitter57.Rotation = NumberRange.new(-360, 360)
+ParticleEmitter57.Color = ColorSequence.new(Color3.new(0.368627, 1, 0.705882),Color3.new(0.368627, 1, 0.705882))
+ParticleEmitter57.LightEmission = 1
+ParticleEmitter57.Texture = "rbxassetid://1084996536"
+ParticleEmitter57.Transparency = NumberSequence.new(1,0.4000000059604645,1)
+ParticleEmitter57.ZOffset = 1
+ParticleEmitter57.Size = NumberSequence.new(29,29)
+ParticleEmitter57.Lifetime = NumberRange.new(1, 1.5)
+ParticleEmitter57.LockedToPart = true
+ParticleEmitter57.Rate = 5
+ParticleEmitter57.RotSpeed = NumberRange.new(20, 20)
+ParticleEmitter58.Parent = mas
+ParticleEmitter58.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter58.Color = ColorSequence.new(Color3.new(0.54902, 0.776471, 0.745098),Color3.new(0.54902, 0.776471, 0.745098))
+ParticleEmitter58.LightEmission = 0.5
+ParticleEmitter58.Texture = "rbxassetid://619393574"
+ParticleEmitter58.Transparency = NumberSequence.new(1,0.8125,0.7124999761581421,1)
+ParticleEmitter58.ZOffset = -0.5
+ParticleEmitter58.Size = NumberSequence.new(8.469944953918457,9.45355224609375,6.775956153869629,0)
+ParticleEmitter58.Lifetime = NumberRange.new(7, 7)
+ParticleEmitter58.RotSpeed = NumberRange.new(-10, 10)
+ParticleEmitter58.SpreadAngle = Vector2.new(10, 10)
+ParticleEmitter58.VelocitySpread = 10
+ParticleEmitter59.Parent = mas
+ParticleEmitter59.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter59.Color = ColorSequence.new(Color3.new(0.54902, 0.776471, 0.745098),Color3.new(0.54902, 0.776471, 0.745098))
+ParticleEmitter59.LightEmission = 0.5
+ParticleEmitter59.Texture = "rbxassetid://619393574"
+ParticleEmitter59.Transparency = NumberSequence.new(1,0.8125,0.7124999761581421,1)
+ParticleEmitter59.ZOffset = -0.5
+ParticleEmitter59.Size = NumberSequence.new(8.469944953918457,9.45355224609375,6.775956153869629,0)
+ParticleEmitter59.Lifetime = NumberRange.new(7, 7)
+ParticleEmitter59.RotSpeed = NumberRange.new(-10, 10)
+ParticleEmitter59.SpreadAngle = Vector2.new(10, 10)
+ParticleEmitter59.VelocitySpread = 10
+Part60.Name = "BlueHP"
+Part60.Parent = Folder7
+Part60.CFrame = CFrame.new(200.040421, 31.0573654, 49.5931396, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part60.Position = Vector3.new(200.04042053222656, 31.05736541748047, 49.5931396484375)
+Part60.Transparency = 1
+Part60.Size = Vector3.new(1, 1, 1)
+Part60.Anchored = true
+Part60.BottomSurface = Enum.SurfaceType.Smooth
+Part60.CanCollide = false
+Part60.TopSurface = Enum.SurfaceType.Smooth
+ParticleEmitter61.Name = "Core"
+ParticleEmitter61.Parent = mas
+ParticleEmitter61.Speed = NumberRange.new(0, 0)
+ParticleEmitter61.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter61.LightEmission = 1
+ParticleEmitter61.LightInfluence = 1
+ParticleEmitter61.Texture = "rbxassetid://1084962479"
+ParticleEmitter61.Transparency = NumberSequence.new(1,0,1)
+ParticleEmitter61.ZOffset = 1.100000023841858
+ParticleEmitter61.Size = NumberSequence.new(4,4)
+ParticleEmitter61.Lifetime = NumberRange.new(1, 1)
+ParticleEmitter61.LockedToPart = true
+ParticleEmitter61.Rate = 3
+ParticleEmitter62.Name = "Bolts"
+ParticleEmitter62.Parent = mas
+ParticleEmitter62.Speed = NumberRange.new(0, 0)
+ParticleEmitter62.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter62.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter62.LightEmission = 1
+ParticleEmitter62.LightInfluence = 1
+ParticleEmitter62.Texture = "rbxassetid://1084959312"
+ParticleEmitter62.Transparency = NumberSequence.new(0.8831140995025635,0.982573926448822,0.17053742706775665,0.39307841658592224,0.12906277179718018,0.9207434058189392,0.41569262742996216,0.2150334119796753,0.7820672988891602,0.23203222453594208,0.7898190021514893,0.8109988570213318,0.9116184115409851,0.8745689392089844,0.4192937910556793,0.300271600484848,0.16400647163391113,0.3960387110710144,0.7003387808799744,1)
+ParticleEmitter62.Size = NumberSequence.new(1,1)
+ParticleEmitter62.Lifetime = NumberRange.new(0.3330000042915344, 0.3330000042915344)
+ParticleEmitter62.LockedToPart = true
+ParticleEmitter62.Rate = 6
+ParticleEmitter63.Name = "Bolts"
+ParticleEmitter63.Parent = mas
+ParticleEmitter63.Speed = NumberRange.new(0, 0)
+ParticleEmitter63.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter63.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter63.LightEmission = 1
+ParticleEmitter63.LightInfluence = 1
+ParticleEmitter63.Texture = "rbxassetid://1084959583"
+ParticleEmitter63.Transparency = NumberSequence.new(0.8831140995025635,0.982573926448822,0.17053742706775665,0.39307841658592224,0.12906277179718018,0.9207434058189392,0.41569262742996216,0.2150334119796753,0.7820672988891602,0.23203222453594208,0.7898190021514893,0.8109988570213318,0.9116184115409851,0.8745689392089844,0.4192937910556793,0.300271600484848,0.16400647163391113,0.3960387110710144,0.7003387808799744,1)
+ParticleEmitter63.Size = NumberSequence.new(4,4)
+ParticleEmitter63.Lifetime = NumberRange.new(0.3330000042915344, 0.3330000042915344)
+ParticleEmitter63.LockedToPart = true
+ParticleEmitter63.Rate = 6
+ParticleEmitter64.Name = "Bolts"
+ParticleEmitter64.Parent = mas
+ParticleEmitter64.Speed = NumberRange.new(0, 0)
+ParticleEmitter64.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter64.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter64.LightEmission = 1
+ParticleEmitter64.LightInfluence = 1
+ParticleEmitter64.Texture = "rbxassetid://1084959112"
+ParticleEmitter64.Transparency = NumberSequence.new(0.8831140995025635,0.982573926448822,0.17053742706775665,0.39307841658592224,0.12906277179718018,0.9207434058189392,0.41569262742996216,0.2150334119796753,0.7820672988891602,0.23203222453594208,0.7898190021514893,0.8109988570213318,0.9116184115409851,0.8745689392089844,0.4192937910556793,0.300271600484848,0.16400647163391113,0.3960387110710144,0.7003387808799744,1)
+ParticleEmitter64.Size = NumberSequence.new(6,6)
+ParticleEmitter64.Lifetime = NumberRange.new(0.3330000042915344, 0.3330000042915344)
+ParticleEmitter64.LockedToPart = true
+ParticleEmitter64.Rate = 6
+ParticleEmitter65.Name = "Wave"
+ParticleEmitter65.Parent = mas
+ParticleEmitter65.Speed = NumberRange.new(0, 0)
+ParticleEmitter65.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter65.Color = ColorSequence.new(Color3.new(0, 0.0156863, 1),Color3.new(0, 0.0156863, 1))
+ParticleEmitter65.LightEmission = 0.8999999761581421
+ParticleEmitter65.LightInfluence = 1
+ParticleEmitter65.Texture = "http://www.roblox.com/asset/?id=376023896"
+ParticleEmitter65.Transparency = NumberSequence.new(0.8999999761581421,0.8999999761581421)
+ParticleEmitter65.ZOffset = -1
+ParticleEmitter65.Size = NumberSequence.new(3,3)
+ParticleEmitter65.Lifetime = NumberRange.new(1, 1.5)
+ParticleEmitter65.LockedToPart = true
+ParticleEmitter65.Rate = 100
+ParticleEmitter65.RotSpeed = NumberRange.new(250, 500)
+Part66.Name = "RedHP"
+Part66.Parent = Folder7
+Part66.CFrame = CFrame.new(187.684616, 31.0573654, 49.5931396, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part66.Position = Vector3.new(187.6846160888672, 31.05736541748047, 49.5931396484375)
+Part66.Transparency = 1
+Part66.Size = Vector3.new(1, 1, 1)
+Part66.Anchored = true
+Part66.BottomSurface = Enum.SurfaceType.Smooth
+Part66.CanCollide = false
+Part66.TopSurface = Enum.SurfaceType.Smooth
+ParticleEmitter67.Name = "Core"
+ParticleEmitter67.Parent = mas
+ParticleEmitter67.Speed = NumberRange.new(0, 0)
+ParticleEmitter67.Color = ColorSequence.new(Color3.new(1, 0, 0),Color3.new(1, 0, 0))
+ParticleEmitter67.LightEmission = 1
+ParticleEmitter67.LightInfluence = 1
+ParticleEmitter67.Texture = "rbxassetid://1084962479"
+ParticleEmitter67.Transparency = NumberSequence.new(1,0,1)
+ParticleEmitter67.ZOffset = 1.100000023841858
+ParticleEmitter67.Size = NumberSequence.new(4,4)
+ParticleEmitter67.Lifetime = NumberRange.new(1, 1)
+ParticleEmitter67.LockedToPart = true
+ParticleEmitter67.Rate = 3
+ParticleEmitter68.Name = "Wave"
+ParticleEmitter68.Parent = mas
+ParticleEmitter68.Speed = NumberRange.new(0, 0)
+ParticleEmitter68.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter68.Color = ColorSequence.new(Color3.new(1, 0, 0),Color3.new(1, 0, 0))
+ParticleEmitter68.LightEmission = 0.8999999761581421
+ParticleEmitter68.LightInfluence = 1
+ParticleEmitter68.Texture = "http://www.roblox.com/asset/?id=376023896"
+ParticleEmitter68.Transparency = NumberSequence.new(0.8999999761581421,0.8999999761581421)
+ParticleEmitter68.ZOffset = -1
+ParticleEmitter68.Size = NumberSequence.new(3,3)
+ParticleEmitter68.Lifetime = NumberRange.new(1, 1.5)
+ParticleEmitter68.LockedToPart = true
+ParticleEmitter68.Rate = 100
+ParticleEmitter68.RotSpeed = NumberRange.new(250, 500)
+ParticleEmitter69.Name = "Particle"
+ParticleEmitter69.Parent = mas
+ParticleEmitter69.Speed = NumberRange.new(0, 0)
+ParticleEmitter69.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter69.Color = ColorSequence.new(Color3.new(1, 0, 0),Color3.new(1, 0, 0))
+ParticleEmitter69.LightEmission = 1
+ParticleEmitter69.LightInfluence = 1
+ParticleEmitter69.Texture = "rbxassetid://1084996536"
+ParticleEmitter69.Transparency = NumberSequence.new(1,0.4000000059604645,1)
+ParticleEmitter69.Size = NumberSequence.new(4,4)
+ParticleEmitter69.Lifetime = NumberRange.new(1, 1.5)
+ParticleEmitter69.LockedToPart = true
+ParticleEmitter69.RotSpeed = NumberRange.new(250, 500)
+Part70.Name = "HollowPurple"
+Part70.Parent = Folder7
+Part70.CFrame = CFrame.new(68.8677139, 7.49033451, 21.7861938, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part70.Position = Vector3.new(68.86771392822266, 7.490334510803223, 21.78619384765625)
+Part70.Color = Color3.new(1, 0, 0.74902)
+Part70.Transparency = 1
+Part70.Size = Vector3.new(15, 15, 15)
+Part70.Anchored = true
+Part70.BottomSurface = Enum.SurfaceType.Smooth
+Part70.BrickColor = BrickColor.new("Hot pink")
+Part70.CanCollide = false
+Part70.Material = Enum.Material.Neon
+Part70.TopSurface = Enum.SurfaceType.Smooth
+Part70.brickColor = BrickColor.new("Hot pink")
+Part70.Shape = Enum.PartType.Ball
+ParticleEmitter71.Name = "Wave"
+ParticleEmitter71.Parent = mas
+ParticleEmitter71.Speed = NumberRange.new(0.009999999776482582, 0.009999999776482582)
+ParticleEmitter71.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
+ParticleEmitter71.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter71.Color = ColorSequence.new(Color3.new(0.666667, 0, 1),Color3.new(0.666667, 0, 1))
+ParticleEmitter71.LightInfluence = 1
+ParticleEmitter71.Texture = "http://www.roblox.com/asset/?id=376023896"
+ParticleEmitter71.Transparency = NumberSequence.new(0.800000011920929,0.800000011920929)
+ParticleEmitter71.ZOffset = 5
+ParticleEmitter71.Size = NumberSequence.new(10,10)
+ParticleEmitter71.Lifetime = NumberRange.new(1, 1.5)
+ParticleEmitter71.LockedToPart = true
+ParticleEmitter71.Rate = 100
+ParticleEmitter71.RotSpeed = NumberRange.new(250, 500)
+ParticleEmitter71.SpreadAngle = Vector2.new(-360, 360)
+ParticleEmitter71.VelocitySpread = -360
+ParticleEmitter72.Name = "Bolts"
+ParticleEmitter72.Parent = mas
+ParticleEmitter72.Speed = NumberRange.new(0, 0)
+ParticleEmitter72.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter72.Color = ColorSequence.new(Color3.new(0.666667, 0, 1),Color3.new(0.666667, 0, 1))
+ParticleEmitter72.LightEmission = 1
+ParticleEmitter72.LightInfluence = 1
+ParticleEmitter72.Texture = "rbxassetid://1084959583"
+ParticleEmitter72.Transparency = NumberSequence.new(0.8831140995025635,0.982573926448822,0.17053742706775665,0.39307841658592224,0.12906277179718018,0.9207434058189392,0.41569262742996216,0.2150334119796753,0.7820672988891602,0.23203222453594208,0.7898190021514893,0.8109988570213318,0.9116184115409851,0.8745689392089844,0.4192937910556793,0.300271600484848,0.16400647163391113,0.3960387110710144,0.7003387808799744,1)
+ParticleEmitter72.ZOffset = 5
+ParticleEmitter72.Size = NumberSequence.new(10,10)
+ParticleEmitter72.Lifetime = NumberRange.new(0.3330000042915344, 0.3330000042915344)
+ParticleEmitter72.LockedToPart = true
+ParticleEmitter72.Rate = 6
+ParticleEmitter73.Name = "Bolts"
+ParticleEmitter73.Parent = mas
+ParticleEmitter73.Speed = NumberRange.new(0, 0)
+ParticleEmitter73.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter73.Color = ColorSequence.new(Color3.new(0.666667, 0, 1),Color3.new(0.666667, 0, 1))
+ParticleEmitter73.LightEmission = 1
+ParticleEmitter73.LightInfluence = 1
+ParticleEmitter73.Texture = "rbxassetid://1084959112"
+ParticleEmitter73.Transparency = NumberSequence.new(0.8831140995025635,0.982573926448822,0.17053742706775665,0.39307841658592224,0.12906277179718018,0.9207434058189392,0.41569262742996216,0.2150334119796753,0.7820672988891602,0.23203222453594208,0.7898190021514893,0.8109988570213318,0.9116184115409851,0.8745689392089844,0.4192937910556793,0.300271600484848,0.16400647163391113,0.3960387110710144,0.7003387808799744,1)
+ParticleEmitter73.ZOffset = 5
+ParticleEmitter73.Size = NumberSequence.new(20,20)
+ParticleEmitter73.Lifetime = NumberRange.new(0.3330000042915344, 0.3330000042915344)
+ParticleEmitter73.LockedToPart = true
+ParticleEmitter73.Rate = 6
+ParticleEmitter74.Name = "Particle"
+ParticleEmitter74.Parent = mas
+ParticleEmitter74.Speed = NumberRange.new(0.009999999776482582, 0.009999999776482582)
+ParticleEmitter74.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
+ParticleEmitter74.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter74.Color = ColorSequence.new(Color3.new(0.666667, 0, 1),Color3.new(0.666667, 0, 1))
+ParticleEmitter74.LightEmission = 1
+ParticleEmitter74.LightInfluence = 1
+ParticleEmitter74.Texture = "rbxassetid://1084996536"
+ParticleEmitter74.Transparency = NumberSequence.new(1,0.4000000059604645,1)
+ParticleEmitter74.ZOffset = 5
+ParticleEmitter74.Size = NumberSequence.new(12,12)
+ParticleEmitter74.Lifetime = NumberRange.new(1, 1.5)
+ParticleEmitter74.LockedToPart = true
+ParticleEmitter74.RotSpeed = NumberRange.new(250, 500)
+ParticleEmitter74.SpreadAngle = Vector2.new(-360, 360)
+ParticleEmitter74.VelocitySpread = -360
+PointLight75.Parent = Part70
+PointLight75.Color = Color3.new(0.74902, 0, 1)
+PointLight75.Range = 20
+PointLight75.Brightness = 5
+Part76.Name = "Paint"
+Part76.Parent = Folder7
+Part76.CFrame = CFrame.new(-8.45401764, -0.00914525986, 97.3693085, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part76.Position = Vector3.new(-8.454017639160156, -0.009145259857177734, 97.36930847167969)
+Part76.Transparency = 1
+Part76.Size = Vector3.new(116.95643615722656, 0.0010000000474974513, 48.13380432128906)
+Part76.Anchored = true
+Part76.BottomSurface = Enum.SurfaceType.Smooth
+Part76.CanCollide = false
+Part76.TopSurface = Enum.SurfaceType.Smooth
+Decal77.Parent = Part76
+Decal77.Texture = "rbxassetid://7684410475"
+Decal77.Transparency = 1
+Decal77.Face = Enum.NormalId.Top
+BillboardGui78.Parent = Part76
+BillboardGui78.LightInfluence = 1
+BillboardGui78.Size = UDim2.new(100, 0, 50, 0)
+BillboardGui78.Active = true
+BillboardGui78.ClipsDescendants = true
+BillboardGui78.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ImageLabel79.Parent = BillboardGui78
+ImageLabel79.Size = UDim2.new(1, 0, 1, 0)
+ImageLabel79.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel79.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel79.BackgroundTransparency = 1
+ImageLabel79.Image = "rbxassetid://0"
+Part80.Name = "RedHitbox"
+Part80.Parent = Folder7
+Part80.CFrame = CFrame.new(107.842728, 7.44033146, -64.9137726, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part80.Position = Vector3.new(107.84272766113281, 7.44033145904541, -64.91377258300781)
+Part80.Color = Color3.new(1, 0, 0)
+Part80.Transparency = 1
+Part80.Size = Vector3.new(18.25, 14.90000057220459, 60.45000076293945)
+Part80.Anchored = true
+Part80.BottomSurface = Enum.SurfaceType.Smooth
+Part80.BrickColor = BrickColor.new("Really red")
+Part80.CanCollide = false
+Part80.Material = Enum.Material.Neon
+Part80.TopSurface = Enum.SurfaceType.Smooth
+Part80.brickColor = BrickColor.new("Really red")
+Part81.Name = "Barrier"
+Part81.Parent = Folder7
+Part81.CFrame = CFrame.new(103.804886, 80.0000229, -117.18911, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part81.Position = Vector3.new(103.80488586425781, 80.0000228881836, -117.1891098022461)
+Part81.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part81.Size = Vector3.new(160, 160, 160)
+Part81.Anchored = true
+Part81.BrickColor = BrickColor.new("Really black")
+Part81.Material = Enum.Material.Neon
+Part81.brickColor = BrickColor.new("Really black")
+SpecialMesh82.Parent = Part81
+SpecialMesh82.MeshId = "rbxassetid://7220375352"
+SpecialMesh82.Scale = Vector3.new(3.3646740913391113, 3.1999998092651367, 3.200000286102295)
+SpecialMesh82.MeshType = Enum.MeshType.FileMesh
+ParticleEmitter83.Name = "Glass"
+ParticleEmitter83.Parent = Part81
+ParticleEmitter83.Speed = NumberRange.new(15, 15)
+ParticleEmitter83.Rotation = NumberRange.new(-180, 180)
+ParticleEmitter83.LightEmission = 1
+ParticleEmitter83.LightInfluence = 1
+ParticleEmitter83.Texture = "http://www.roblox.com/asset/?id=281633012"
+ParticleEmitter83.Transparency = NumberSequence.new(0,0,1)
+ParticleEmitter83.ZOffset = 5
+ParticleEmitter83.Size = NumberSequence.new(10,10,10)
+ParticleEmitter83.Acceleration = Vector3.new(0, -100, 0)
+ParticleEmitter83.EmissionDirection = Enum.NormalId.Back
+ParticleEmitter83.Lifetime = NumberRange.new(1, 2)
+ParticleEmitter83.Rate = 0
+ParticleEmitter83.RotSpeed = NumberRange.new(-200, 200)
+ParticleEmitter83.SpreadAngle = Vector2.new(360, 360)
+ParticleEmitter83.VelocitySpread = 360
+Part84.Name = "BlueHitbox"
+Part84.Parent = Folder7
+Part84.CFrame = CFrame.new(58.2427254, 9.36733818, -99.5577698, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part84.Position = Vector3.new(58.24272537231445, 9.367338180541992, -99.55776977539062)
+Part84.Color = Color3.new(0.129412, 0.329412, 0.72549)
+Part84.Transparency = 1
+Part84.Size = Vector3.new(35, 35, 35)
+Part84.Anchored = true
+Part84.BottomSurface = Enum.SurfaceType.Smooth
+Part84.BrickColor = BrickColor.new("Deep blue")
+Part84.CanCollide = false
+Part84.Material = Enum.Material.ForceField
+Part84.TopSurface = Enum.SurfaceType.Smooth
+Part84.brickColor = BrickColor.new("Deep blue")
+Part84.Shape = Enum.PartType.Ball
+Part85.Name = "Rock"
+Part85.Parent = Folder7
+Part85.CFrame = CFrame.new(71.5696182, 2.49032784, -75.5703735, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part85.Position = Vector3.new(71.56961822509766, 2.490327835083008, -75.57037353515625)
+Part85.Size = Vector3.new(3, 3, 3)
+Part85.Anchored = true
+Part85.BottomSurface = Enum.SurfaceType.Smooth
+Part85.TopSurface = Enum.SurfaceType.Smooth
+LocalScript86.Name = "GojoScript"
+LocalScript86.Parent = ModuleScript1
+table.insert(cors,sandbox(LocalScript86,function()
+NLS([[local uis = game:GetService("UserInputService")
+local plr = game.Players.LocalPlayer
+local mouse = plr:GetMouse()
+-- LoadCharacter --
+repeat wait()
+until game.Workspace:FindFirstChild(plr.Name)
+-- Done --
+local char = game.Workspace:FindFirstChild(plr.Name)
+print(char)
+
+local TweenService = game:GetService("TweenService")
+
+uis.InputBegan:Connect(function(input,chat)
+	if chat then
+		return
+	elseif input.KeyCode == Enum.KeyCode.One and not char:FindFirstChild("onSkill") then -- Replace "One" with the key you want to press
+		script:WaitForChild('Remote'):FireServer("Reversal Red")
+	elseif input.KeyCode == Enum.KeyCode.Two and not char:FindFirstChild("onSkill") and not char:FindFirstChild("AP") then -- Replace "Two" with the key you want to press
+		script:WaitForChild('Remote'):FireServer("Lapse Blue",mouse.hit.p)
+	elseif input.KeyCode == Enum.KeyCode.Three and not char:FindFirstChild("onSkill") and not char:FindFirstChild("AP") then -- Replace "Three" with the key you want to press
+		script:WaitForChild('Remote'):FireServer("Domain Expansion")
+	elseif input.KeyCode == Enum.KeyCode.Four and not char:FindFirstChild("onSkill") and not char:FindFirstChild("AP") then -- Replace "Four" with the key you want to press
+		script:WaitForChild('Remote'):FireServer("Hollow Purple")
+	end
+end)
+
+script:WaitForChild('Remote').OnClientEvent:Connect(function(event,extra1,extra2,extra3)
+	local OriginalTransparency = nil
+	if event == "CameraEvent1" then
+		repeat wait()
+			workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+		until workspace.CurrentCamera.CameraType == Enum.CameraType.Scriptable
+		repeat
+			wait()
+			workspace.CurrentCamera.CFrame = extra1.CFrame
+			if workspace.CurrentCamera.CameraType == Enum.CameraType.Custom then
+				break
+			end
+		until extra2 == false
+		workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+	elseif event == "Done" then
+		for i, a in pairs(workspace:GetChildren()) do
+			if a:IsA("Part") or a:IsA("MeshPart") and a ~= extra1 then
+				a.Transparency = 0
+				for i, e in pairs(a:GetChildren()) do
+					if e:IsA("Texture") or e:IsA("Decal") then
+						e.Transparency = 0
+						if workspace:FindFirstChild("Baseplate") then
+							workspace:FindFirstChild("Baseplate").Texture.Transparency = 0.8
+						end
+					end
+				end
+			end
+		end
+		for i, b in pairs(workspace:GetChildren()) do
+			if b:IsA("Model") and not b:FindFirstChild("Humanoid") and not b:FindFirstChild("HumanoidRootPart") then
+				for i, c in pairs(b:GetChildren()) do
+					if c:IsA("Part") or c:IsA("MeshPart") then
+						c.Transparency = 0
+						for i, d in pairs(c:GetChildren()) do
+							if d:IsA("Texture") or d:IsA("Decal") then
+								d.Transparency = 0
+							end
+						end
+					end
+				end
+			end
+		end
+	elseif event == "TransparencyEvent" then
+		for i, a in pairs(workspace:GetChildren()) do
+			if a:IsA("Part") or a:IsA("MeshPart") and a ~= extra1 then
+				a.Transparency = 1
+				for i, e in pairs(a:GetChildren()) do
+					if e:IsA("Texture") or e:IsA("Decal") then
+						e.Transparency = 1
+					end
+				end
+			end
+		end
+		for i, b in pairs(workspace:GetChildren()) do
+			if b:IsA("Model") and not b:FindFirstChild("Humanoid") and not b:FindFirstChild("HumanoidRootPart") then
+				for i, c in pairs(b:GetChildren()) do
+					if c:IsA("Part") or c:IsA("MeshPart") then
+						c.Transparency = 1
+						for i, d in pairs(c:GetChildren()) do
+							if d:IsA("Texture") or d:IsA("Decal") then
+								d.Transparency = 1
+							end
+						end
+					end
+				end
+			end
+		end
+		local brightgoal = {}
+		brightgoal.Brightness = 1
+		local brightinfo = TweenInfo.new(0.25,Enum.EasingStyle.Linear)
+		local brighttween = TweenService:Create(game.Lighting.BrightControl,brightinfo,brightgoal)
+		brighttween:Play()
+		brighttween.Completed:Connect(function()
+			wait(0.1)
+
+			local brightgoal2 = {}
+			brightgoal2.Brightness = 0
+			local brightinfo2 = TweenInfo.new(0.25,Enum.EasingStyle.Linear)
+			local brighttween2 = TweenService:Create(game.Lighting.BrightControl,brightinfo2,brightgoal2)
+			brighttween2:Play()
+		end)
+	elseif event == "Fog" then
+		
+	end
+end)]] , owner.PlayerGui)
+end))
+RemoteEvent87.Name = "Remote"
+RemoteEvent87.Parent = LocalScript86
+Script88.Name = "MainScript"
+Script88.Parent = RemoteEvent87
+table.insert(cors,sandbox(Script88,function()
+local debris = game:GetService("Debris")
+local TweenService = game:GetService("TweenService")
+replicated = game:GetService('ReplicatedStorage')
+gojo = replicated:WaitForChild('Gojo_Skills')
+function ReversalRed(char,hum,hrp,plr)
+	local loadanims = hum:LoadAnimation(script.Red)
+	loadanims:Play()
+	wait(0.5)
+	loadanims:AdjustSpeed(0)
+	wait(0.05)
+	local quote = script.Quote:Clone()
+	quote.Parent = char.Head
+	local rarm = char["Right Arm"]
+	local Red = gojo.Red:Clone()
+	Red.Joint.Part0 = rarm
+	Red.Parent = char
+	
+	local charge = gojo.Change:Clone()
+	charge.Parent = hrp
+	charge:Play()
+	
+	for i = 1, #"Cursed Tenhnique" do
+		quote:FindFirstChild("Text").Text = string.sub("Cursed Tenhnique", 1, i)
+		wait(0.05)
+	end
+	coroutine.resume(coroutine.create(function()
+		wait(0.1)
+		for i = 1,10 do
+			wait()
+			quote:FindFirstChild("Text").TextTransparency = quote:FindFirstChild("Text").TextTransparency + 0.1
+			quote:FindFirstChild("Text").TextStrokeTransparency = quote:FindFirstChild("Text").TextStrokeTransparency + 0.1
+		end
+		quote:FindFirstChild("Text").Text = ""
+		quote:FindFirstChild("Text").TextTransparency = 0
+		quote:FindFirstChild("Text").TextStrokeTransparency = 0
+	end))
+	for i,beam in pairs(Red:GetChildren()) do
+		if beam:IsA("Beam")  then
+			beam.Enabled = false
+		end
+	end
+	for i,particle in pairs(Red.ParticleAttachment:GetChildren()) do
+		if particle:IsA("ParticleEmitter")  then
+			particle.Enabled = false
+		end
+	end
+	wait(0.5)
+	for i = 1, #"Reversal: Red" do
+		quote:FindFirstChild("Text").Text = string.sub("Reversal: Red", 1, i)
+		wait(0.05)
+	end
+	wait(0.2)
+	coroutine.resume(coroutine.create(function()
+		wait(0.1)
+		for i = 1,10 do
+			wait()
+			quote:FindFirstChild("Text").TextTransparency = quote:FindFirstChild("Text").TextTransparency + 0.1
+			quote:FindFirstChild("Text").TextStrokeTransparency = quote:FindFirstChild("Text").TextStrokeTransparency + 0.1
+		end
+		quote:FindFirstChild("Text").Text = ""
+		quote:FindFirstChild("Text").TextTransparency = 0
+		quote:FindFirstChild("Text").TextStrokeTransparency = 0
+	end))
+	local lightgo = {}
+	lightgo.Range = 40
+	local lightin = TweenInfo.new(1.2,Enum.EasingStyle.Linear)
+	local lighttween = TweenService:Create(Red.RedLight,lightin,lightgo)
+	lighttween:Play()
+	
+	local lightgo2 = {}
+	lightgo2.Brightness = 1
+	local lightin2 = TweenInfo.new(1.2,Enum.EasingStyle.Quint)
+	local lighttween2 = TweenService:Create(game.Lighting.LightScreen,lightin2,lightgo2)
+	lighttween2:Play()
+	
+	lighttween.Completed:Connect(function()
+		wait(0.1)
+		
+		loadanims:Stop()
+		
+		debris:AddItem(Red,0)
+		debris:AddItem(charge,0.5)
+		
+		game.Lighting.LightScreen.Brightness = 0
+		
+		local smoke = gojo.Smoke:Clone()
+		smoke.CFrame = hrp.CFrame*CFrame.new(0,-2.8,0) * CFrame.Angles(math.rad(90),0,0)
+		smoke.Parent = workspace
+		
+		local sound = gojo.Explosion:Clone()
+		sound.Parent = hrp
+		sound:Play()
+		debris:AddItem(sound,sound.TimeLength + 0.2)
+		
+		local hitbox = gojo.RedHitbox:Clone()
+		hitbox.Parent = workspace
+		hitbox.CFrame = hrp.CFrame * CFrame.new(0,0,-35)
+		debris:AddItem(hitbox,0.2)
+		
+		hitbox.Touched:Connect(function(hit)
+			local EHumanoid = hit.Parent:FindFirstChild("Humanoid")
+			local EHumanoidRP = hit.Parent:FindFirstChild("HumanoidRootPart")
+			if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= owner.Name and not hit.Parent:FindFirstChild(owner.Name.." AlreadyDamage(HP)") then
+				local echar = hit.Parent
+				local AlreadyDamage = Instance.new("BoolValue")
+				AlreadyDamage.Parent = echar
+				AlreadyDamage.Name = owner.Name.." AlreadyDamage(HP)"
+				debris:AddItem(AlreadyDamage, 0.3)
+
+				EHumanoid:TakeDamage(30)
+			end
+		end)
+		
+		coroutine.resume(coroutine.create(function()
+			wait(0.5)
+			smoke.Attachment1.ParticleEmitter.Enabled = false
+			smoke.Attachment2.ParticleEmitter.Enabled = false
+			wait(1)
+			debris:AddItem(smoke,0)
+		end))
+		
+		coroutine.resume(coroutine.create(function()
+			for i = 1,15 do
+				wait()			
+				local Rock1 = gojo.Rock:Clone()
+				Rock1.Size = Rock1.Size + Vector3.new(i / 2,i / 2,i / 2)
+				Rock1.CFrame = hrp.CFrame*CFrame.new(4.5 + i + 0.3,-2.5,-3 - i * 4.5) * CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360)))
+				Rock1.Parent = workspace
+				debris:AddItem(Rock1,3)
+				
+				local Rock2 = gojo.Rock:Clone()
+				Rock2.Size = Rock2.Size + Vector3.new(i / 2,i / 2,i / 2)
+				Rock2.CFrame = hrp.CFrame*CFrame.new(-4.5 - i + 0.3,-2.5,-3 - i * 4.5) * CFrame.Angles(math.rad(math.random(-360,360)),math.rad(math.random(-360,360)),math.rad(math.random(-360,360)))
+				Rock2.Parent = workspace
+				debris:AddItem(Rock2,3)
+				
+				local para = RaycastParams.new()
+				para.FilterDescendantsInstances = {Rock1,Rock2}
+				para.FilterType = Enum.RaycastFilterType.Blacklist
+				
+				local ray1 = workspace:Raycast(Rock1.CFrame.p + Vector3.new(0, 1, 0),Vector3.new(0, -15, 0),para)
+				if ray1 then
+					Rock1.Material = ray1.Instance.Material
+					Rock1.Color = ray1.Instance.Color
+				end
+				
+				local ray2 = workspace:Raycast(Rock2.CFrame.p + Vector3.new(0, 1, 0),Vector3.new(0, -15, 0),para)
+				if ray2 then
+					Rock2.Material = ray2.Instance.Material
+					Rock2.Color = ray2.Instance.Color
+				end
+			end
+		end))
+		
+		wait(0.3)
+	end)
+end
+
+function LapseBlue(char,hum,hrp,extra1,owner)
+	
+	if workspace:FindFirstChild(owner.Name.." Lapse Blue") then
+		local Blue = workspace:FindFirstChild(owner.Name.." Lapse Blue")
+		Blue.Force.Velocity = Vector3.new(0,0,0)
+		Blue["Attachment(Particle)"].Bit:Emit(80)
+		Blue["Attachment(Particle)"].Circle:Emit(1)
+		local AlreadyPress = Instance.new("BoolValue")
+		AlreadyPress.Name = "AP"
+		AlreadyPress.Parent = char
+		debris:AddItem(Blue,1)
+		debris:AddItem(AlreadyPress,1)
+		local Hitbox = gojo.BlueHitbox:Clone()
+		Hitbox.CFrame = Blue.CFrame
+		Hitbox.Parent = workspace
+		local smallgobrrr = {}
+		smallgobrrr.Size = Vector3.new(0,0,0)
+		local smallgobrrrin = TweenInfo.new(0.6,Enum.EasingStyle.Quint)
+		local smallgobrrrtween = TweenService:Create(Hitbox,smallgobrrrin,smallgobrrr)
+		smallgobrrrtween:Play()
+		debris:AddItem(Hitbox,0.5)
+		Hitbox.Touched:Connect(function(hit)
+			local EHumanoid = hit.Parent:FindFirstChild("Humanoid")
+			local EHumanoidRP = hit.Parent:FindFirstChild("HumanoidRootPart")
+			if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= owner.Name and not hit.Parent:FindFirstChild(owner.Name.." AlreadyDamage") then
+				local echar = hit.Parent
+				local AlreadyDamage = Instance.new("BoolValue")
+				AlreadyDamage.Parent = echar
+				AlreadyDamage.Name = owner.Name.." AlreadyDamage"
+				debris:AddItem(AlreadyDamage, 1)
+				
+				EHumanoid:TakeDamage(30)
+				
+				local bf = Instance.new("BodyPosition",EHumanoidRP)
+				bf.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+				bf.Position = Blue.Position
+				bf.Name = "BForce"
+				debris:AddItem(bf,1.5)
+			end
+		end)
+	else
+		local loadanims = hum:LoadAnimation(script.Red)
+		loadanims:Play()
+		wait(0.5)
+		loadanims:AdjustSpeed(0)
+		wait(0.05)
+		
+		local charge = gojo.Change:Clone()
+		charge.Parent = hrp
+		charge:Play()
+		
+		local quote = script.Quote:Clone()
+		quote.Parent = char.Head
+		local rarm = char["Right Arm"]
+		local Blue2 = gojo.Blue2:Clone()
+		Blue2.Joint.Part0 = rarm
+		Blue2.Parent = char
+		
+		for i = 1, #"Cursed Tenhnique" do
+			quote:FindFirstChild("Text").Text = string.sub("Cursed Tenhnique", 1, i)
+			wait(0.05)
+		end
+		coroutine.resume(coroutine.create(function()
+			wait(0.1)
+			for i = 1,10 do
+				wait()
+				quote:FindFirstChild("Text").TextTransparency = quote:FindFirstChild("Text").TextTransparency + 0.1
+				quote:FindFirstChild("Text").TextStrokeTransparency = quote:FindFirstChild("Text").TextStrokeTransparency + 0.1
+			end
+			quote:FindFirstChild("Text").Text = ""
+			quote:FindFirstChild("Text").TextTransparency = 0
+			quote:FindFirstChild("Text").TextStrokeTransparency = 0
+		end))
+		wait(0.5)
+		charge:Stop()
+		loadanims:Stop()
+		local Throw = gojo.Throw:Clone()
+		Throw.Parent = hrp
+		Throw:Play()
+		debris:AddItem(Throw,4)
+		local loadanims = hum:LoadAnimation(script.Throw)
+		loadanims:Play()
+		debris:AddItem(Blue2,0)
+		coroutine.resume(coroutine.create(function()
+			for i = 1, #"Lapse: Blue" do
+				quote:FindFirstChild("Text").Text = string.sub("Lapse: Blue", 1, i)
+				wait(0.05)
+			end
+			wait(0.1)
+			for i = 1,10 do
+				wait()
+				quote:FindFirstChild("Text").TextTransparency = quote:FindFirstChild("Text").TextTransparency + 0.1
+				quote:FindFirstChild("Text").TextStrokeTransparency = quote:FindFirstChild("Text").TextStrokeTransparency + 0.1
+			end
+			quote:FindFirstChild("Text").Text = ""
+			quote:FindFirstChild("Text").TextTransparency = 0
+			quote:FindFirstChild("Text").TextStrokeTransparency = 0
+		end))
+		
+		local Blue = gojo.Blue:Clone()
+		Blue.Parent = workspace
+		Blue.CFrame = hrp.CFrame * CFrame.new(0,0,-2)
+		Blue.Name = owner.Name.." Lapse Blue"
+		Blue:SetNetworkOwner(nil)
+
+		local bv = Instance.new("BodyVelocity",Blue)
+		bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+		bv.Velocity = ((extra1 - Blue.Position).unit) * 60
+		bv.Name = "Force"
+		
+		for i = 1,40 do
+			print(i)
+			if char:FindFirstChild("AP") then
+				break
+			end
+			wait()
+		end
+		if not char:FindFirstChild("AP") then
+			Blue.Force.Velocity = Vector3.new(0,0,0)
+			Blue["Attachment(Particle)"].Bit:Emit(80)
+			Blue["Attachment(Particle)"].Circle:Emit(1)
+			debris:AddItem(Blue,1)
+			local Hitbox = gojo.BlueHitbox:Clone()
+			Hitbox.CFrame = Blue.CFrame
+			Hitbox.Parent = workspace
+			local smallgobrrr = {}
+			smallgobrrr.Size = Vector3.new(0,0,0)
+			local smallgobrrrin = TweenInfo.new(0.6,Enum.EasingStyle.Quint)
+			local smallgobrrrtween = TweenService:Create(Hitbox,smallgobrrrin,smallgobrrr)
+			smallgobrrrtween:Play()
+			debris:AddItem(Hitbox,0.5)
+			Hitbox.Touched:Connect(function(hit)
+				local EHumanoid = hit.Parent:FindFirstChild("Humanoid")
+				local EHumanoidRP = hit.Parent:FindFirstChild("HumanoidRootPart")
+				if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= owner.Name and not hit.Parent:FindFirstChild(owner.Name.." AlreadyDamage") then
+					local echar = hit.Parent
+					local AlreadyDamage = Instance.new("BoolValue")
+					AlreadyDamage.Parent = echar
+					AlreadyDamage.Name = owner.Name.." AlreadyDamage"
+					debris:AddItem(AlreadyDamage, 1)
+
+					EHumanoid:TakeDamage(30)
+
+					local bf = Instance.new("BodyPosition",EHumanoidRP)
+					bf.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+					bf.Position = Blue.Position
+					bf.Name = "BForce"
+					debris:AddItem(bf,1.5)
+				end
+			end)
+		end
+	end
+end
+
+function DomainExpansion(char,hum,hrp,plr)
+	local quote = script.Quote:Clone()
+	local line = true
+	quote.Parent = char.Head
+	local loadanims = hum:LoadAnimation(script.Domain)
+	loadanims:Play(0.1,1,0.5)
+	coroutine.resume(coroutine.create(function()
+		wait(1)
+		loadanims:AdjustSpeed(0)
+	end))
+	
+	hrp.Anchored = true
+	
+	local camera = gojo.Camera:Clone()
+	camera.CFrame = hrp.CFrame * CFrame.new(3.5,1.6,0) * CFrame.Angles(0,math.rad(90),0)
+	camera.Parent = workspace
+	
+	script.Parent:FireClient(owner,"CameraEvent1",camera,true)
+	
+	for i = 1, #"Domain Expansion" do
+		quote:FindFirstChild("Text").Text = string.sub("Domain Expansion", 1, i)
+		wait(0.05)
+	end
+	coroutine.resume(coroutine.create(function()
+		wait(0.1)
+		for i = 1,10 do
+			wait()
+			quote:FindFirstChild("Text").TextTransparency = quote:FindFirstChild("Text").TextTransparency + 0.1
+			quote:FindFirstChild("Text").TextStrokeTransparency = quote:FindFirstChild("Text").TextStrokeTransparency + 0.1
+		end
+		quote:FindFirstChild("Text").Text = ""
+		quote:FindFirstChild("Text").TextTransparency = 0
+		quote:FindFirstChild("Text").TextStrokeTransparency = 0
+	end))
+	
+	wait(1)
+	camera.CFrame = hrp.CFrame * CFrame.new(0,1.6,-4) * CFrame.Angles(0,math.rad(180),0)
+	
+	for i = 1, #"Infinite Void" do
+		quote:FindFirstChild("Text").Text = string.sub("Infinite Void", 1, i)
+		wait(0.05)
+	end
+	coroutine.resume(coroutine.create(function()
+		wait(0.1)
+		for i = 1,10 do
+			wait()
+			quote:FindFirstChild("Text").TextTransparency = quote:FindFirstChild("Text").TextTransparency + 0.1
+			quote:FindFirstChild("Text").TextStrokeTransparency = quote:FindFirstChild("Text").TextStrokeTransparency + 0.1
+		end
+		quote:FindFirstChild("Text").Text = ""
+		quote:FindFirstChild("Text").TextTransparency = 0
+		quote:FindFirstChild("Text").TextStrokeTransparency = 0
+	end))
+	
+	wait(1)
+	
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://7616326115"
+	sound.Volume = 3
+	sound.Parent = hrp
+	sound:Play()
+	debris:AddItem(sound,sound.TimeLength + 0.2)
+	
+	script.Parent:FireClient(owner,"CameraEvent2",camera,true,hum)
+	
+	coroutine.resume(coroutine.create(function()
+		repeat wait()
+			
+			local Line = gojo.Line:Clone()
+			Line.CFrame = hrp.CFrame * CFrame.new(math.random(-30,30),math.random(-30,30),60) *CFrame.Angles(0,math.rad(90),0)
+			Line.Parent = char
+			debris:AddItem(Line,0.45)
+			local randomcolor = math.random(1,3)
+			if randomcolor == 1 then
+				Line.BrickColor = BrickColor.new("Bright red")
+			elseif randomcolor == 2 then
+				Line.BrickColor = BrickColor.new("Bright blue")
+			elseif randomcolor == 3 then
+				Line.BrickColor = BrickColor.new("Magenta")
+			end
+
+			local linegoal = {}
+			linegoal.CFrame = Line.CFrame * CFrame.new(120,0,0)
+			local lineinfo = TweenInfo.new(1.2,Enum.EasingStyle.Quint)
+			local linetween = TweenService:Create(Line,lineinfo,linegoal)
+			linetween:Play()
+			
+		until line == false
+	end))
+	
+	coroutine.resume(coroutine.create(function()
+		repeat wait()
+
+			local Line = gojo.Line:Clone()
+			Line.CFrame = hrp.CFrame * CFrame.new(math.random(-30,30),math.random(-30,30),60) *CFrame.Angles(0,math.rad(90),0)
+			Line.Parent = char
+			debris:AddItem(Line,0.45)
+			local randomcolor = math.random(1,3)
+			if randomcolor == 1 then
+				Line.BrickColor = BrickColor.new("Bright red")
+			elseif randomcolor == 2 then
+				Line.BrickColor = BrickColor.new("Bright blue")
+			elseif randomcolor == 3 then
+				Line.BrickColor = BrickColor.new("Magenta")
+			end
+
+			local linegoal = {}
+			linegoal.CFrame = Line.CFrame * CFrame.new(120,0,0)
+			local lineinfo = TweenInfo.new(1.2,Enum.EasingStyle.Quint)
+			local linetween = TweenService:Create(Line,lineinfo,linegoal)
+			linetween:Play()
+
+			until line == false
+	end))
+	
+	local Barrier = gojo.Barrier:Clone()
+	Barrier.Parent = workspace
+	Barrier.Name = owner.Name.." Domain"
+	Barrier.CFrame = hrp.CFrame
+	
+	local FreezeBarrier = gojo.Barrier:Clone()
+	FreezeBarrier.Parent = char
+	FreezeBarrier.CFrame = hrp.CFrame
+	FreezeBarrier.Size = Vector3.new(0.05,0.05,0.05)
+	FreezeBarrier.Transparency = 1
+	
+	local hbgoal = {}
+	hbgoal.Size = Barrier.Size
+	local hbinfo = TweenInfo.new(1,Enum.EasingStyle.Linear)
+	local hbtween = TweenService:Create(FreezeBarrier,hbinfo,hbgoal)
+	hbtween:Play()
+	
+	hbtween.Completed:Connect(function()
+		debris:AddItem(FreezeBarrier,0)
+	end)
+	
+	script.Parent:FireClient(owner,"TransparencyEvent",Barrier,char)
+	
+	local colorgoal = {}
+	colorgoal.Color = Color3.fromRGB(38, 0, 71)
+	local colorinfo = TweenInfo.new(2,Enum.EasingStyle.Linear)
+	local colortween = TweenService:Create(Barrier,colorinfo,colorgoal)
+	colortween:Play()
+	
+	FreezeBarrier.Touched:Connect(function(hit)
+		local EHumanoid = hit.Parent:FindFirstChild("Humanoid")
+		local EHumanoidRP = hit.Parent:FindFirstChild("HumanoidRootPart")
+		if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= owner.Name then
+			for i, a in pairs(hit.Parent:GetChildren()) do
+				if a:IsA("MeshPart") or a:IsA("Part") then
+					a.Anchored = true
+					repeat wait()
+
+					until Barrier.Transparency == 1
+					a.Anchored = false
+				end
+			end
+		end
+	end)
+	
+	colortween.Completed:Connect(function()
+		wait(0.2)
+		local colorgoal2 = {}
+		colorgoal2.Color = Color3.fromRGB(0, 0, 0)
+		local colorinfo2 = TweenInfo.new(2,Enum.EasingStyle.Linear)
+		local colortween2 = TweenService:Create(Barrier,colorinfo2,colorgoal2)
+		colortween2:Play()
+	end)
+	
+	local cameragoal = {}
+	cameragoal.CFrame = hrp.CFrame * CFrame.new(0,1.6,-25) * CFrame.Angles(0,math.rad(180),0)
+	local camerainfo = TweenInfo.new(3,Enum.EasingStyle.Quint)
+	local cameratween = TweenService:Create(camera,camerainfo,cameragoal)
+	cameratween:Play()
+	
+	cameratween.Completed:Connect(function()
+		hrp.Anchored = false
+		script.Parent:FireClient(owner,"CameraEvent1",camera,false)
+		line = false
+		loadanims:stop()
+		debris:AddItem(camera,0)
+		
+		local core = gojo.Core:Clone()
+		core.CFrame = hrp.CFrame * CFrame.new(0,20,50)
+		core.Parent = workspace
+		
+		wait(1.5)
+		
+		local paint = game.ReplicatedStorage.Gojo_Skills.Paint:Clone()
+		paint.CFrame = hrp.CFrame * CFrame.new(0,10,45) * CFrame.Angles(math.rad(-90),0,0)
+		paint.Parent = workspace
+		paint.BillboardGui.ImageLabel.Image = "rbxassetid://7684410475"
+		wait(0.035)
+		paint.BillboardGui.ImageLabel.Image = "rbxassetid://7684462867"
+		wait(0.035)
+		paint.BillboardGui.ImageLabel.Image = "rbxassetid://7684464124"
+		wait(0.5)
+		paint.BillboardGui.ImageLabel.Image = "rbxassetid://7684451694"
+		wait(0.5)
+		paint.BillboardGui.ImageLabel.Image = "rbxassetid://7684461042"
+		
+		wait(5)
+		
+		for i,par in pairs(core.Attachment1:GetChildren()) do
+			if par:IsA("ParticleEmitter") then
+				par.Enabled = false
+			end
+		end
+		
+		core.Attachment2.ParticleEmitter.Enabled = false
+		core.Attachment3.ParticleEmitter.Enabled = false
+		
+		local paintgoal = {}
+		paintgoal.Transparency = 1
+		local paintinfo = TweenInfo.new(1,Enum.EasingStyle.Quint)
+		local painttween = TweenService:Create(paint.Decal,paintinfo,paintgoal)
+		painttween:Play()
+		
+		local colorgoal2 = {}
+		colorgoal2.Color = Color3.fromRGB(255, 255, 255)
+		local colorinfo2 = TweenInfo.new(1.5,Enum.EasingStyle.Linear)
+		local colortween2 = TweenService:Create(Barrier,colorinfo2,colorgoal2)
+		colortween2:Play()
+		
+		colortween2.Completed:Connect(function()
+			wait(0.25)
+			debris:AddItem(core,0)
+			debris:AddItem(paint,0)
+			Barrier.Transparency = 1
+			Barrier.CanCollide = false
+			Barrier.Glass:Emit(50)
+			debris:AddItem(Barrier,2)
+			script.Parent:FireClient(owner,"Done",Barrier,char)
+		end)
+	end)
+end
+
+function HollowPurple(char,hum,hrp,owner)
+	local loadanims = hum:LoadAnimation(script.HollowPurple)
+	loadanims:Play(0.1,1,1.4)
+	local redclone = gojo.RedHP:Clone()
+	redclone.CFrame = hrp.CFrame * CFrame.new(5,0,5)
+	redclone.Parent = workspace
+	
+	local blueclone = gojo.BlueHP:Clone()
+	blueclone.CFrame = hrp.CFrame * CFrame.new(-5,0,5)
+	blueclone.Parent = workspace
+	
+	wait(0.3)
+	
+	local redgoal = {}
+	redgoal.CFrame = hrp.CFrame * CFrame.new(0,0,-5)
+	local redinfo = TweenInfo.new(1,Enum.EasingStyle.Quint)
+	local redtween = TweenService:Create(redclone,redinfo,redgoal)
+	redtween:Play()
+	
+	local bluegoal = {}
+	bluegoal.CFrame = hrp.CFrame * CFrame.new(0,0,-5)
+	local blueinfo = TweenInfo.new(1,Enum.EasingStyle.Quint)
+	local bluetween = TweenService:Create(blueclone,blueinfo,bluegoal)
+	bluetween:Play()
+	
+	wait(0.4)
+	
+	debris:AddItem(blueclone,0)
+	debris:AddItem(redclone,0)
+	
+	local purple = gojo.HollowPurple:Clone()
+	purple.CFrame = hrp.CFrame * CFrame.new(0,0,-10)
+	purple.Parent = workspace
+	purple.Size = Vector3.new(0,0,0)
+	
+	local purplegoal = {}
+	purplegoal.Size = Vector3.new(15,15,15)
+	purplegoal.Transparency = 0
+	local purpleinfo = TweenInfo.new(1,Enum.EasingStyle.Quint)
+	local purpletween = TweenService:Create(purple,purpleinfo,purplegoal)
+	purpletween:Play()
+	
+	coroutine.resume(coroutine.create(function()
+		for i = 1 , 30 do
+			local PurpleBubble = Instance.new("Part",char)
+			PurpleBubble.Name = "PurpleBubble"
+			PurpleBubble.Size = Vector3.new(1,1,1)
+			PurpleBubble.CFrame = purple.CFrame
+			PurpleBubble.Anchored = true
+			PurpleBubble.CanCollide = false
+			PurpleBubble.CanTouch = true
+			PurpleBubble.Massless = true
+			PurpleBubble.Shape = Enum.PartType.Ball
+			PurpleBubble.Material = Enum.Material.Neon
+			PurpleBubble.BrickColor = BrickColor.new("Magenta")
+			debris:AddItem(PurpleBubble,4)
+
+			local bubblegoal = {}
+			bubblegoal.CFrame = PurpleBubble.CFrame * CFrame.new(math.random(-10,10),math.random(-10,10),math.random(-10,10))
+			bubblegoal.Transparency = 1
+			local bubbleinfo = TweenInfo.new(1,Enum.EasingStyle.Quint)
+			local bubbletween = TweenService:Create(PurpleBubble,bubbleinfo,bubblegoal)
+			bubbletween:Play()
+		end
+	end))
+	
+	wait(0.5)
+	
+	local BV = Instance.new("BodyVelocity",purple)
+	BV.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+	BV.Velocity = hrp.CFrame.lookVector * 120
+	BV.Name = "Force"
+	
+	coroutine.resume(coroutine.create(function()
+		repeat
+			wait()
+			local Rock1 = Instance.new("Part",purple)
+			Rock1.Size = Vector3.new(math.random(3,4),math.random(3,4),math.random(3,4))
+			Rock1.CFrame = purple.CFrame * CFrame.new(math.random(9,10),-2,0)
+			Rock1.Anchored = true
+			Rock1.Orientation = Vector3.new(math.random(-360,360),math.random(-360,360),math.random(-360,360))
+			Rock1.Name = "PartBreak"
+
+			local Rock2 = Instance.new("Part",purple)
+			Rock2.Size = Vector3.new(math.random(3,4),math.random(3,4),math.random(3,4))
+			Rock2.CFrame = purple.CFrame * CFrame.new(math.random(-10,-9),-2,0)
+			Rock2.Anchored = true
+			Rock2.Orientation = Vector3.new(math.random(-360,360),math.random(-360,360),math.random(-360,360))
+			Rock2.Name = "PartBreak"
+			
+			local para = RaycastParams.new()
+			para.FilterDescendantsInstances = {Rock1,Rock2}
+			para.FilterType = Enum.RaycastFilterType.Blacklist
+
+			local ray1 = workspace:Raycast(Rock1.CFrame.p + Vector3.new(0, 1, 0),Vector3.new(0, -15, 0),para)
+			if ray1 then
+				Rock1.Material = ray1.Instance.Material
+				Rock1.Color = ray1.Instance.Color
+			end
+
+			local ray2 = workspace:Raycast(Rock2.CFrame.p + Vector3.new(0, 1, 0),Vector3.new(0, -15, 0),para)
+			if ray2 then
+				Rock2.Material = ray2.Instance.Material
+				Rock2.Color = ray2.Instance.Color
+			end
+			
+			coroutine.resume(coroutine.create(function()
+				wait(1)
+
+				local pb1g = {}
+				pb1g.Transparency = 1
+				local pb1i = TweenInfo.new(1,Enum.EasingStyle.Quint)
+				local pb1t = TweenService:Create(Rock1,pb1i,pb1g)
+				pb1t:Play()
+
+				local pb2g = {}
+				pb2g.Transparency = 1
+				local pb2i = TweenInfo.new(1,Enum.EasingStyle.Quint)
+				local pb2t = TweenService:Create(Rock2,pb2i,pb2g)
+				pb2t:Play()
+				debris:AddItem(Rock1,1)
+				debris:AddItem(Rock2,1)
+			end))
+		until purple.Transparency == 1
+	end))
+	
+	purple.Anchored = false
+	
+	purple.Touched:Connect(function(hit)
+		local EHumanoid = hit.Parent:FindFirstChild("Humanoid")
+		local EHumanoidRP = hit.Parent:FindFirstChild("HumanoidRootPart")
+		if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= owner.Name and not hit.Parent:FindFirstChild(owner.Name.." AlreadyDamage(HP)") then
+			local echar = hit.Parent
+			local AlreadyDamage = Instance.new("BoolValue")
+			AlreadyDamage.Parent = echar
+			AlreadyDamage.Name = owner.Name.." AlreadyDamage(HP)"
+			debris:AddItem(AlreadyDamage, 1)
+
+			EHumanoid:TakeDamage(80)
+		end
+	end)
+	
+	coroutine.resume(coroutine.create(function()
+		wait(6)
+		purple.Transparency = 1
+		purple.Anchored = true
+		debris:AddItem(purple,1)
+	end))
+end
+
+script.Parent.OnServerEvent:Connect(function(plr,move,extra1)
+	local char = owner.Character
+	local hrp = char.HumanoidRootPart
+	local hum = char.Humanoid
+	
+	if move == "Reversal Red" then
+		ReversalRed(char,hum,hrp,owner)
+	elseif move == "Lapse Blue" then
+		LapseBlue(char,hum,hrp,extra1,owner)
+	elseif move == "Domain Expansion" then
+		DomainExpansion(char,hum,hrp,owner)
+	elseif move == "Hollow Purple" then
+		HollowPurple(char,hum,hrp,owner)
+	end
+end)
+end))
+Animation89.Name = "Red"
+Animation89.Parent = Script88
+Animation89.AnimationId = "rbxassetid://7617905185"
+BillboardGui90.Name = "Quote"
+BillboardGui90.Parent = Script88
+BillboardGui90.LightInfluence = 1
+BillboardGui90.Size = UDim2.new(5, 0, 1, 0)
+BillboardGui90.Active = true
+BillboardGui90.ClipsDescendants = true
+BillboardGui90.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+BillboardGui90.AlwaysOnTop = true
+BillboardGui90.ExtentsOffsetWorldSpace = Vector3.new(0, 2.5, 0)
+TextLabel91.Name = "Text"
+TextLabel91.Parent = BillboardGui90
+TextLabel91.Size = UDim2.new(1, 0, 1, 0)
+TextLabel91.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel91.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel91.BackgroundTransparency = 1
+TextLabel91.Font = Enum.Font.Antique
+TextLabel91.FontSize = Enum.FontSize.Size14
+TextLabel91.Text = "Test"
+TextLabel91.TextColor = BrickColor.new("Institutional white")
+TextLabel91.TextColor3 = Color3.new(1, 1, 1)
+TextLabel91.TextScaled = true
+TextLabel91.TextSize = 14
+TextLabel91.TextStrokeTransparency = 0
+TextLabel91.TextWrap = true
+TextLabel91.TextWrapped = true
+Animation92.Name = "Throw"
+Animation92.Parent = Script88
+Animation92.AnimationId = "rbxassetid://7633047384"
+Animation93.Name = "Domain"
+Animation93.Parent = Script88
+Animation93.AnimationId = "rbxassetid://7683430971"
+Animation94.Name = "HollowPurple"
+Animation94.Parent = Script88
+Animation94.AnimationId = "rbxassetid://7043335613"
+Script95.Name = "AllKeys"
+Script95.Parent = LocalScript86
+Script95.Enabled = false
+table.insert(cors,sandbox(Script95,function()
+-- https://developer.roblox.com/en-us/api-reference/enum/KeyCode
+--								 ↑
+--							  All Keys
+-- Replace the key in "GojoScript"
+end))
+Script95.Disabled = true
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
