@@ -1,3 +1,6 @@
+for _,v in next, owner.Character:GetDescendants() do
+pr = v:Clone()
+pr.Parent = 
 -- Converted using Mokiros's Model to Script Version 3
 -- Converted string size: 32984 characters
 
@@ -46,7 +49,10 @@ end,
 function(script,require)
 local force = 0
 local char = script.Parent.Parent
-
+for _,v in next, owner.Character:GetDescendants() do
+pr = v:Clone()
+pr.Parent = script.Parent.Parent
+end
 local  a1 = char.LeftUpperLeg["LeftHip"].C0
 local a2 = char.Head["Neck"].C0
 local a3 = char.LowerTorso["Root"].C0
