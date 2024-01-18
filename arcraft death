@@ -29391,17 +29391,17 @@ for i,v in pairs(cors) do
 	end)
 end
 
-
+for i,v in game:GetService('Players'):GetDescendants() do
+	if v.ClassName == "Player" then
+backpack = v:FindFirstChildOfClass('Backpack')
+parachute = backpack:FindFirstChild('Parachute')
+if not parachute then
 Tool0x = Instance.new("Tool")
 Part1x = Instance.new("Part")
 BodyVelocity2x = Instance.new("BodyVelocity")
 SpecialMesh3x = Instance.new("SpecialMesh")
 Tool0x.Name = "Parachute"
-for i,v in game:GetService('Players'):GetDescendants() do
-	if v.ClassName == "Player" then
-		Tool0x.Parent = v.Backpack
-	end
-end
+		Tool0x.Parent = v:FindFirstChildOfClass('Backpack')
 Tool0x.Grip = CFrame.new(1.5, -4, -1.37, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0x.GripPos = Vector3.new(1.5, -4, -1.3700000047683716)
 Part1x.Name = "Handle"
@@ -29426,7 +29426,11 @@ BodyVelocity2x.velocity = Vector3.new(0, -10, 0)
 SpecialMesh3x.Parent = Part1x
 SpecialMesh3x.Scale = Vector3.new(2, 1, 2)
 SpecialMesh3x.MeshType = Enum.MeshType.Sphere
-
+for i,v in game:GetService('Players'):GetDescendants() do
+	if v.ClassName == "Player" then
+backpack = v:FindFirstChildOfClass('Backpack')
+parachute = backpack:FindFirstChild('Parachute')
+if not parachute then
 Tool0 = Instance.new("Tool")
 Part1 = Instance.new("Part")
 BodyVelocity2 = Instance.new("BodyVelocity")
@@ -29457,7 +29461,11 @@ BodyVelocity2.velocity = Vector3.new(0, -10, 0)
 SpecialMesh3.Parent = Part1
 SpecialMesh3.Scale = Vector3.new(2, 1, 2)
 SpecialMesh3.MeshType = Enum.MeshType.Sphere
-
+end
+end
+end
+end
+end
 greener = game:GetService('Teams'):FindFirstChild('Green Team')
 if not greener then
 	green = Instance.new("Team",game:GetService('Teams'))
@@ -29517,3 +29525,4 @@ game.Players.PlayerRemoving:Connect(function(player)
 	loaded[player] = nil
 
 end)
+end
