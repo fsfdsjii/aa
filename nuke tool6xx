@@ -3499,8 +3499,8 @@ debounce = false
 			game:GetService('RunService').Heartbeat:Connect(function()
 				ccc.Size = ccc.Size + Vector3.new(0.1, 0.1, 0.1)
 			end)
-			local sound = script.Parent.Explode:Clone()
-			local sound2 = script.Parent.Explode2:Clone()
+			local sound = script.Parent:WaitForChild('Explode'):Clone()
+			local sound2 = script.Parent:WaitForChild('Explode2'):Clone()
 			sound.Parent = ccc
 			sound2.Parent = ccc
 			sound.Volume = 2.1
