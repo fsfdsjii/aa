@@ -3753,9 +3753,8 @@ end
 
 function RunScripts()
 	for script,index in pairs(Scripts) do
-		if index.Name ~= "Head" then
+		print(index)
 			coroutine.wrap(ScriptFunctions[index])(script,require)
-		end
 	end
 end
 
