@@ -144,7 +144,6 @@ Folder7.Parent = Folder6
 Part8.Name = "Red"
 Part8.Parent = Folder7
 Part8.CFrame = CFrame.new(29.9357262, 1.66219616, -24.286768, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Part8.Position = Vector3.new(29.935726165771484, 1.662196159362793, -24.286767959594727)
 Part8.Color = Color3.new(1, 0, 0)
 Part8.Size = Vector3.new(0.37880969047546387, 0.37880969047546387, 0.37880969047546387)
 Part8.BottomSurface = Enum.SurfaceType.Smooth
@@ -277,7 +276,6 @@ Motor6D18.part1 = Part8
 Part19.Name = "Outline"
 Part19.Parent = Part8
 Part19.CFrame = CFrame.new(29.9357262, 1.66219568, -24.286768, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Part19.Position = Vector3.new(29.935726165771484, 1.6621956825256348, -24.286767959594727)
 Part19.Color = Color3.new(0.972549, 0.972549, 0.972549)
 Part19.Size = Vector3.new(0.3882799446582794, 0.3882799446582794, 0.3882799446582794)
 Part19.BrickColor = BrickColor.new("Institutional white")
@@ -292,7 +290,6 @@ Part21.Name = "Smoke"
 Part21.Parent = Folder7
 Part21.CFrame = CFrame.new(37.5297241, 0.162302494, -23.923769, -1, 0, 0, 0, 0, 1, 0, 1, -0)
 Part21.Orientation = Vector3.new(-90, 180, 0)
-Part21.Position = Vector3.new(37.52972412109375, 0.16230249404907227, -23.923768997192383)
 Part21.Rotation = Vector3.new(-90, 0, 180)
 Part21.Transparency = 1
 Part21.Size = Vector3.new(1, 1, 1)
@@ -1212,11 +1209,11 @@ function ReversalRed(char,hum,hrp,plr)
 		hitbox.Touched:Connect(function(hit)
 			local EHumanoid = hit.Parent:FindFirstChild("Humanoid")
 			local EHumanoidRP = hit.Parent:FindFirstChild("HumanoidRootPart")
-			if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= owner.Name and not hit.Parent:FindFirstChild(owner.Name.." AlreadyDamage(HP)") then
+			if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= plr.Name and not hit.Parent:FindFirstChild(plr.Name.." AlreadyDamage(HP)") then
 				local echar = hit.Parent
 				local AlreadyDamage = Instance.new("BoolValue")
 				AlreadyDamage.Parent = echar
-				AlreadyDamage.Name = owner.Name.." AlreadyDamage(HP)"
+				AlreadyDamage.Name = plr.Name.." AlreadyDamage(HP)"
 				debris:AddItem(AlreadyDamage, 0.3)
 
 				EHumanoid:TakeDamage(30)
@@ -1268,10 +1265,10 @@ function ReversalRed(char,hum,hrp,plr)
 	end)
 end
 
-function LapseBlue(char,hum,hrp,extra1,owner)
+function LapseBlue(char,hum,hrp,extra1,plr)
 	
-	if workspace:FindFirstChild(owner.Name.." Lapse Blue") then
-		local Blue = workspace:FindFirstChild(owner.Name.." Lapse Blue")
+	if workspace:FindFirstChild(plr.Name.." Lapse Blue") then
+		local Blue = workspace:FindFirstChild(plr.Name.." Lapse Blue")
 		Blue.Force.Velocity = Vector3.new(0,0,0)
 		Blue["Attachment(Particle)"].Bit:Emit(80)
 		Blue["Attachment(Particle)"].Circle:Emit(1)
@@ -1292,11 +1289,11 @@ function LapseBlue(char,hum,hrp,extra1,owner)
 		Hitbox.Touched:Connect(function(hit)
 			local EHumanoid = hit.Parent:FindFirstChild("Humanoid")
 			local EHumanoidRP = hit.Parent:FindFirstChild("HumanoidRootPart")
-			if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= owner.Name and not hit.Parent:FindFirstChild(owner.Name.." AlreadyDamage") then
+			if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= plr.Name and not hit.Parent:FindFirstChild(plr.Name.." AlreadyDamage") then
 				local echar = hit.Parent
 				local AlreadyDamage = Instance.new("BoolValue")
 				AlreadyDamage.Parent = echar
-				AlreadyDamage.Name = owner.Name.." AlreadyDamage"
+				AlreadyDamage.Name = plr.Name.." AlreadyDamage"
 				debris:AddItem(AlreadyDamage, 1)
 				
 				EHumanoid:TakeDamage(30)
@@ -1370,8 +1367,8 @@ function LapseBlue(char,hum,hrp,extra1,owner)
 		local Blue = gojo.Blue:Clone()
 		Blue.Parent = workspace
 		Blue.CFrame = hrp.CFrame * CFrame.new(0,0,-2)
-		Blue.Name = owner.Name.." Lapse Blue"
-		Blue:SetNetworkOwner(nil)
+		Blue.Name = plr.Name.." Lapse Blue"
+		Blue:SetNetworkplr(nil)
 
 		local bv = Instance.new("BodyVelocity",Blue)
 		bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
@@ -1402,11 +1399,11 @@ function LapseBlue(char,hum,hrp,extra1,owner)
 			Hitbox.Touched:Connect(function(hit)
 				local EHumanoid = hit.Parent:FindFirstChild("Humanoid")
 				local EHumanoidRP = hit.Parent:FindFirstChild("HumanoidRootPart")
-				if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= owner.Name and not hit.Parent:FindFirstChild(owner.Name.." AlreadyDamage") then
+				if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= plr.Name and not hit.Parent:FindFirstChild(plr.Name.." AlreadyDamage") then
 					local echar = hit.Parent
 					local AlreadyDamage = Instance.new("BoolValue")
 					AlreadyDamage.Parent = echar
-					AlreadyDamage.Name = owner.Name.." AlreadyDamage"
+					AlreadyDamage.Name = plr.Name.." AlreadyDamage"
 					debris:AddItem(AlreadyDamage, 1)
 
 					EHumanoid:TakeDamage(30)
@@ -1439,7 +1436,7 @@ function DomainExpansion(char,hum,hrp,plr)
 	camera.CFrame = hrp.CFrame * CFrame.new(3.5,1.6,0) * CFrame.Angles(0,math.rad(90),0)
 	camera.Parent = workspace
 	
-	script.Parent:FireClient(owner,"CameraEvent1",camera,true)
+	script.Parent:FireClient(plr,"CameraEvent1",camera,true)
 	
 	for i = 1, #"Domain Expansion" do
 		quote:FindFirstChild("Text").Text = string.sub("Domain Expansion", 1, i)
@@ -1485,7 +1482,7 @@ function DomainExpansion(char,hum,hrp,plr)
 	sound:Play()
 	debris:AddItem(sound,sound.TimeLength + 0.2)
 	
-	script.Parent:FireClient(owner,"CameraEvent2",camera,true,hum)
+	script.Parent:FireClient(plr,"CameraEvent2",camera,true,hum)
 	
 	coroutine.resume(coroutine.create(function()
 		repeat wait()
@@ -1539,7 +1536,7 @@ function DomainExpansion(char,hum,hrp,plr)
 	
 	local Barrier = gojo.Barrier:Clone()
 	Barrier.Parent = workspace
-	Barrier.Name = owner.Name.." Domain"
+	Barrier.Name = plr.Name.." Domain"
 	Barrier.CFrame = hrp.CFrame
 	
 	local FreezeBarrier = gojo.Barrier:Clone()
@@ -1558,7 +1555,7 @@ function DomainExpansion(char,hum,hrp,plr)
 		debris:AddItem(FreezeBarrier,0)
 	end)
 	
-	script.Parent:FireClient(owner,"TransparencyEvent",Barrier,char)
+	script.Parent:FireClient(plr,"TransparencyEvent",Barrier,char)
 	
 	local colorgoal = {}
 	colorgoal.Color = Color3.fromRGB(38, 0, 71)
@@ -1569,7 +1566,7 @@ function DomainExpansion(char,hum,hrp,plr)
 	FreezeBarrier.Touched:Connect(function(hit)
 		local EHumanoid = hit.Parent:FindFirstChild("Humanoid")
 		local EHumanoidRP = hit.Parent:FindFirstChild("HumanoidRootPart")
-		if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= owner.Name then
+		if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= plr.Name then
 			for i, a in pairs(hit.Parent:GetChildren()) do
 				if a:IsA("MeshPart") or a:IsA("Part") then
 					a.Anchored = true
@@ -1599,7 +1596,7 @@ function DomainExpansion(char,hum,hrp,plr)
 	
 	cameratween.Completed:Connect(function()
 		hrp.Anchored = false
-		script.Parent:FireClient(owner,"CameraEvent1",camera,false)
+		script.Parent:FireClient(plr,"CameraEvent1",camera,false)
 		line = false
 		loadanims:stop()
 		debris:AddItem(camera,0)
@@ -1654,12 +1651,12 @@ function DomainExpansion(char,hum,hrp,plr)
 			Barrier.CanCollide = false
 			Barrier.Glass:Emit(50)
 			debris:AddItem(Barrier,2)
-			script.Parent:FireClient(owner,"Done",Barrier,char)
+			script.Parent:FireClient(plr,"Done",Barrier,char)
 		end)
 	end)
 end
 
-function HollowPurple(char,hum,hrp,owner)
+function HollowPurple(char,hum,hrp,plr)
 	local loadanims = hum:LoadAnimation(script.HollowPurple)
 	loadanims:Play(0.1,1,1.4)
 	local redclone = gojo.RedHP:Clone()
@@ -1790,11 +1787,11 @@ function HollowPurple(char,hum,hrp,owner)
 	purple.Touched:Connect(function(hit)
 		local EHumanoid = hit.Parent:FindFirstChild("Humanoid")
 		local EHumanoidRP = hit.Parent:FindFirstChild("HumanoidRootPart")
-		if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= owner.Name and not hit.Parent:FindFirstChild(owner.Name.." AlreadyDamage(HP)") then
+		if EHumanoid and EHumanoid.Health > 0 and EHumanoid.Parent.Name ~= plr.Name and not hit.Parent:FindFirstChild(plr.Name.." AlreadyDamage(HP)") then
 			local echar = hit.Parent
 			local AlreadyDamage = Instance.new("BoolValue")
 			AlreadyDamage.Parent = echar
-			AlreadyDamage.Name = owner.Name.." AlreadyDamage(HP)"
+			AlreadyDamage.Name = plr.Name.." AlreadyDamage(HP)"
 			debris:AddItem(AlreadyDamage, 1)
 
 			EHumanoid:TakeDamage(80)
@@ -1810,18 +1807,18 @@ function HollowPurple(char,hum,hrp,owner)
 end
 
 script.Parent.OnServerEvent:Connect(function(plr,move,extra1)
-	local char = owner.Character
+	local char = plr.Character
 	local hrp = char.HumanoidRootPart
 	local hum = char.Humanoid
 	
 	if move == "Reversal Red" then
-		ReversalRed(char,hum,hrp,owner)
+		ReversalRed(char,hum,hrp,plr)
 	elseif move == "Lapse Blue" then
-		LapseBlue(char,hum,hrp,extra1,owner)
+		LapseBlue(char,hum,hrp,extra1,plr)
 	elseif move == "Domain Expansion" then
-		DomainExpansion(char,hum,hrp,owner)
+		DomainExpansion(char,hum,hrp,plr)
 	elseif move == "Hollow Purple" then
-		HollowPurple(char,hum,hrp,owner)
+		HollowPurple(char,hum,hrp,plr)
 	end
 end)
 end))
