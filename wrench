@@ -368,7 +368,9 @@ table.insert(cors,sandbox(Script3,function()
 																	if kss.Value == true then
 																		kss.Value = false
 																		hum = v.Parent:FindFirstChildOfClass('Humanoid')
+																		if hum then
 																		hum:TakeDamage(40)
+																		end
 																		task.wait(0.5)
 																		kss.Value = true
 																end
