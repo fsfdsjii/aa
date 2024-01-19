@@ -358,14 +358,20 @@ table.insert(cors,sandbox(Script3,function()
 															if v ~= obj then
 																if v ~= script.Parent then
 																	v.AssemblyLinearVelocity = ((v.Position + Vector3.new(0, 2, 0)) - obj.Position).Unit * 200
-																	debounce = true
-																	if debounce == true then
-																		debounce = false
-																		hum = v.Parent:FindFirstChildOfClass('Humanoid')
-																		hum:TakeDamage(40)
+																	kssz = v.Parent:FindFirstChild('Helloz')
+																	if not kssz then
+																		Pr = Instance.new("BoolValue",v.Parent)
+																		Pr.Value = true
+																		Pr.Name = "Helloz"
 																	end
-																	task.wait(2)
-																	debounce = true
+																	kss = v.Parent:FindFirstChild('Helloz')
+																	if kss.Value == true then
+																		kss.Value = false
+																		hum = v.Parent:FindFirstChildOfClass('Humanoid')
+																		hum:TakeDamage()
+																		task.wait(0.5)
+																		kss.Value = true
+																end
 															end
 														end
 													end
