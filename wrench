@@ -76,6 +76,7 @@ table.insert(cors,sandbox(Script3,function()
 		end
 	end)
 	script.Parent.Parent.Activated:Connect(function()
+		owner = Tool0.Parent
 		-- Converted using Mokiros's Model to Script Version 3
 		-- Converted string size: 260 characters
 		local function Decode(str)
@@ -325,8 +326,8 @@ table.insert(cors,sandbox(Script3,function()
 		for _,obj in pairs(Objects) do
 			obj.Parent = script
 			obj.CanCollide = false
-			obj.Position = owner.Character.HumanoidRootPart.Position
-			local	pr = Instance.new("BoolValue",owner.Character)
+			obj.Position = owner.HumanoidRootPart.Position
+			local	pr = Instance.new("BoolValue",owner)
 			pr.Value = true
 			obj.Destroying:Connect(function()
 				pr.Value = false
@@ -339,22 +340,21 @@ table.insert(cors,sandbox(Script3,function()
 					obj.Size = obj.Size + Vector3.new(1,1,1)
 				end
 			end)
-			local skip = OverlapParams.new{owner.Character["Left Arm"], owner.Character["Right Arm"], owner.Character["Left Leg"], owner.Character["Right Leg"], owner.Character.Torso, owner.Character.Head, owner.Character.HumanoidRootPart, obj}
 			task.spawn(function()
 				while task.wait() do
 					if pr.Value == false then
 						break
 					end
-					for _,v in next, workspace:GetPartsInPart(obj, skip) do
+					for _,v in next, workspace:GetPartsInPart(obj) do
 						if v ~= nil then
 							if v.Name ~= "Base" then
-								if v ~= owner.Character["Left Arm"] then
-									if v ~= owner.Character["Right Arm"] then
-										if v ~= owner.Character["Left Leg"] then
-											if v ~= owner.Character["Right Leg"] then
-												if v ~= owner.Character.Torso then
-													if v ~= owner.Character.Head then
-														if v ~= owner.Character.HumanoidRootPart then
+								if v ~= owner["Left Arm"] then
+									if v ~= owner["Right Arm"] then
+										if v ~= owner["Left Leg"] then
+											if v ~= owner["Right Leg"] then
+												if v ~= owner.Torso then
+													if v ~= owner.Head then
+														if v ~= owner.HumanoidRootPart then
 															if v ~= obj then
 																if v ~= script.Parent then
 																	v.AssemblyLinearVelocity = ((v.Position + Vector3.new(0, 2, 0)) - obj.Position).Unit * 200
