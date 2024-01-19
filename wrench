@@ -358,7 +358,17 @@ task.wait(3.5)
 														if v ~= owner.Character.HumanoidRootPart then
 															if v ~= obj then
 																if v ~= script.Parent then
-																	v:Destroy()
+																	v.AssemblyLinearVelocity = v.Position + Vector3.new(0, 2, 0) - orb.Position.Unit * 200
+                                                                                                                                         debounce = true
+                                                                                                                                         if debounce == true then
+                                                                                                                                         debounce = false
+                                                                                                                                         hum = v.Parent:FindFirstChildOfClass('Humanoid')
+                                                                                                                                         if hum then
+                                                                                                                                         hum:TakeDamage(40)
+                                                                                                                                                   end
+                                                                                                                                                   task.wait(2)
+                                                                                                                                                   debounce = true
+                                                                                                                                         end
 																end
 															end
 														end
