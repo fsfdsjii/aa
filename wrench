@@ -362,9 +362,12 @@ task.wait(3.5)
                                                                                                                                          debounce = true
                                                                                                                                          if debounce == true then
                                                                                                                                          debounce = false
+                                                                                                                                         table = {}
                                                                                                                                          hum = v.Parent:FindFirstChildOfClass('Humanoid')
-                                                                                                                                         if hum then
+                                                                                                                                         if hum and table[hum] == true then
+                                                                                                                                         table[hum] = true
                                                                                                                                          hum:TakeDamage(40)
+                                                                                                                                                   end
                                                                                                                                                    end
                                                                                                                                                    task.wait(2)
                                                                                                                                                    debounce = true
