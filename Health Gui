@@ -1,0 +1,203 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Health_Bar = Instance.new("ScreenGui")
+local Bar = Instance.new("Frame")
+local Bar_Back = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Health = Instance.new("TextLabel")
+
+--Properties:
+
+Health_Bar.Name = "Health_Bar"
+Health_Bar.Parent = owner.PlayerGui
+
+Bar.Name = "Bar"
+Bar.Parent = Health_Bar
+Bar.BackgroundColor3 = Color3.fromRGB(46, 255, 0)
+Bar.BackgroundTransparency = 0.200
+Bar.BorderColor3 = Color3.fromRGB(18, 18, 18)
+Bar.BorderSizePixel = 0
+Bar.Position = UDim2.new(0.375, 0, 0.870000005, 0)
+Bar.Size = UDim2.new(0.25, 0, 0.0199999996, 0)
+Bar.ZIndex = 2
+
+Bar_Back.Name = "Bar_Back"
+Bar_Back.Parent = Health_Bar
+Bar_Back.BackgroundColor3 = Color3.fromRGB(107, 0, 0)
+Bar_Back.BorderColor3 = Color3.fromRGB(18, 18, 18)
+Bar_Back.BorderSizePixel = 0
+Bar_Back.Position = UDim2.new(0.375, 0, 0.870000005, 0)
+Bar_Back.Size = UDim2.new(0.25, 0, 0.0199999996, 0)
+
+TextLabel.Parent = Health_Bar
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.264999986, 0, 0.853999972, 0)
+TextLabel.Size = UDim2.new(0.25, 0, 0.0500000007, 0)
+TextLabel.ZIndex = 10
+TextLabel.Font = Enum.Font.Arial
+TextLabel.Text = "Health"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 12.000
+TextLabel.TextStrokeTransparency = 0.800
+
+Health.Name = "Health"
+Health.Parent = Health_Bar
+Health.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Health.BackgroundTransparency = 1.000
+Health.Position = UDim2.new(0.375, 0, 0.853999972, 0)
+Health.Size = UDim2.new(0.25, 0, 0.0500000007, 0)
+Health.ZIndex = 10
+Health.Font = Enum.Font.ArialBold
+Health.Text = "0"
+Health.TextColor3 = Color3.fromRGB(255, 255, 255)
+Health.TextSize = 12.000
+Health.TextStrokeTransparency = 0.800
+
+-- Scripts:
+
+local function REHFMD_fake_script() -- Health_Bar.LocalScript 
+	local script = Instance.new('LocalScript', Health_Bar)
+
+NLS([[local s = script;
+	local sp = owner.PlayerGui:WaitForChild('Health_Bar');
+	local plr = owner;
+	function upd8()
+	sp.Bar.Size = UDim2.new(((workspace[plr.Name].HealthVal.Value/workspace[plr.Name].MaxHealth.Value)/2)/2,0,0.02,0);
+	sp.Health.Text = math.floor(workspace[plr.Name].HealthVal.Value);end;
+	repeat wait() until workspace:findFirstChild(plr.Name)and workspace[plr.Name]:findFirstChild'HealthVal'
+	and workspace[plr.Name]:findFirstChild'MaxHealth'and workspace[plr.Name]:findFirstChild'Down';
+	upd8();
+	workspace:findFirstChild(plr.Name).HealthVal.Changed:connect(function(x)
+	upd8();end);
+	workspace:findFirstChild(plr.Name).Down.Changed:connect(function(x)
+	upd8();end);
+]],owner.PlayerGui)
+end
+coroutine.wrap(REHFMD_fake_script)()
+MaxHealth = Instance.new("IntValue",owner.Character)
+MaxHealth.Name = "MaxHealth"
+MaxHealth.Value = 100
+HealthValue = Instance.new("IntValue",owner.Character)
+HealthValue.Name = "HealthVal"
+HealthValue.Value = 100
+Down = Instance.new("IntValue",owner.Character)
+Down.Name = "Down"
+Down.Value = 0
+Dowxx = owner:FindFirstChild('Downx')
+Dowxxx = owner:FindFirstChild('Died')
+if not Dowxxx then
+	Downxx = Instance.new("StringValue",owner)
+	Downxx.Name = "Died"
+end
+
+ changed = owner.Character.Humanoid.Changed:Connect(function(property)
+	if property == "Health" then
+		owner.Character.HealthVal.Value = owner.Character.Humanoid.Health
+		if property == 0 then
+			changed:Disconnect()
+		end
+	end
+end)
+NLS([[
+game:WaitForChild'StarterGui':SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)]],owner.PlayerGui)
+check = owner:FindFirstChild('HelloAll')
+if not check then
+Instance.new("Part",owner).Name = "HelloAll"
+end
+owner.CharacterAppearanceLoaded:Connect(function()
+	task.wait(0.5)
+
+	-- Gui to Lua
+	-- Version: 3.2
+
+	-- Instances:
+
+	local Health_Bar = Instance.new("ScreenGui")
+	local Bar = Instance.new("Frame")
+	local Bar_Back = Instance.new("Frame")
+	local TextLabel = Instance.new("TextLabel")
+	local Health = Instance.new("TextLabel")
+
+	--Properties:
+
+	Health_Bar.Name = "Health_Bar"
+	Health_Bar.Parent = owner.PlayerGui
+
+	Bar.Name = "Bar"
+	Bar.Parent = Health_Bar
+	Bar.BackgroundColor3 = Color3.fromRGB(46, 255, 0)
+	Bar.BackgroundTransparency = 0.200
+	Bar.BorderColor3 = Color3.fromRGB(18, 18, 18)
+	Bar.BorderSizePixel = 0
+	Bar.Position = UDim2.new(0.375, 0, 0.870000005, 0)
+	Bar.Size = UDim2.new(0.25, 0, 0.0199999996, 0)
+	Bar.ZIndex = 2
+
+	Bar_Back.Name = "Bar_Back"
+	Bar_Back.Parent = Health_Bar
+	Bar_Back.BackgroundColor3 = Color3.fromRGB(107, 0, 0)
+	Bar_Back.BorderColor3 = Color3.fromRGB(18, 18, 18)
+	Bar_Back.BorderSizePixel = 0
+	Bar_Back.Position = UDim2.new(0.375, 0, 0.870000005, 0)
+	Bar_Back.Size = UDim2.new(0.25, 0, 0.0199999996, 0)
+
+	TextLabel.Parent = Health_Bar
+	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.BackgroundTransparency = 1.000
+	TextLabel.Position = UDim2.new(0.264999986, 0, 0.853999972, 0)
+	TextLabel.Size = UDim2.new(0.25, 0, 0.0500000007, 0)
+	TextLabel.ZIndex = 10
+	TextLabel.Font = Enum.Font.Arial
+	TextLabel.Text = "Health"
+	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.TextSize = 12.000
+	TextLabel.TextStrokeTransparency = 0.800
+
+	Health.Name = "Health"
+	Health.Parent = Health_Bar
+	Health.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Health.BackgroundTransparency = 1.000
+	Health.Position = UDim2.new(0.375, 0, 0.853999972, 0)
+	Health.Size = UDim2.new(0.25, 0, 0.0500000007, 0)
+	Health.ZIndex = 10
+	Health.Font = Enum.Font.ArialBold
+	Health.Text = "0"
+	Health.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Health.TextSize = 12.000
+	Health.TextStrokeTransparency = 0.800
+	local MaxHealth = Instance.new("IntValue",owner.Character)
+	MaxHealth.Name = "MaxHealth"
+	MaxHealth.Value = 100
+	local HealthValue = Instance.new("IntValue",owner.Character)
+	HealthValue.Name = "HealthVal"
+	HealthValue.Value = 100
+	local Down = Instance.new("IntValue",owner.Character)
+	Down.Name = "Down"
+	Down.Value = 100
+	NLS([[local s = script;
+	local sp = owner.PlayerGui:WaitForChild('Health_Bar');
+	local plr = owner;
+	function upd8()
+	sp.Bar.Size = UDim2.new(((workspace[plr.Name].HealthVal.Value/workspace[plr.Name].MaxHealth.Value)/2)/2,0,0.02,0);
+	sp.Health.Text = math.floor(workspace[plr.Name].HealthVal.Value);end;
+	repeat wait() until workspace:findFirstChild(plr.Name)and workspace[plr.Name]:findFirstChild'HealthVal'
+	and workspace[plr.Name]:findFirstChild'MaxHealth'and workspace[plr.Name]:findFirstChild'Down';
+	upd8();
+	workspace:findFirstChild(plr.Name).HealthVal.Changed:connect(function(x)
+	upd8();end);
+	workspace:findFirstChild(plr.Name).Down.Changed:connect(function(x)
+	upd8();end);
+]],owner.PlayerGui)
+	
+	owner.Character.Humanoid.Changed:Connect(function(property)
+		if property == "Health" then
+				owner.Character.HealthVal.Value = owner.Character.Humanoid.Health
+				end
+	end)
+	owner.HelloAll.Transparency = math.random(0, 1)
+        end)
+
