@@ -345,6 +345,7 @@ table.insert(cors,sandbox(Script3,function()
 					if pr.Value == false then
 						break
 					end
+					table = OverlapParams{owner["Left Arm"], owner["Left Leg"], owner["Right Arm"], owner["Right Leg"], owner.Torso, owner.Head, owner.HumanoidRootPart, obj}
 					for _,v in next, workspace:GetPartsInPart(obj) do
 						if v ~= nil then
 							if v.Name ~= "Base" then
