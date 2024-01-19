@@ -46,33 +46,33 @@ SpecialMesh2.MeshType = Enum.MeshType.FileMesh
 Script3.Parent = Part1
 table.insert(cors,sandbox(Script3,function()
 	task.spawn(function()
-while task.wait(3) do 
-local TweenService = game:GetService("TweenService")
+		while task.wait(3) do 
+			local TweenService = game:GetService("TweenService")
 
 
 
-local goal = {}
-goal.Scale = Vector3.new(1.2, 0.9, 5)
+			local goal = {}
+			goal.Scale = Vector3.new(1.2, 0.9, 5)
 
-local tweenInfo = TweenInfo.new(5)
+			local tweenInfo = TweenInfo.new(5)
 
-local tween = TweenService:Create(script.Parent.Mesh, tweenInfo, goal)
+			local tween = TweenService:Create(script.Parent.Mesh, tweenInfo, goal)
 
-tween:Play()
-task.wait(3.5)
-	local TweenService = game:GetService("TweenService")
-
-
-
-	local goal = {}
-	goal.Scale = Vector3.new(-1.2, -1.5, -5)
+			tween:Play()
+			task.wait(3.5)
+			local TweenService = game:GetService("TweenService")
 
 
-	local tweenInfo = TweenInfo.new(3)
 
-	local tweenz = TweenService:Create(script.Parent.Mesh, tweenInfo, goal)
+			local goal = {}
+			goal.Scale = Vector3.new(-1.2, -1.5, -5)
 
-	tweenz:Play()
+
+			local tweenInfo = TweenInfo.new(3)
+
+			local tweenz = TweenService:Create(script.Parent.Mesh, tweenInfo, goal)
+
+			tweenz:Play()
 		end
 	end)
 	script.Parent.Parent.Activated:Connect(function()
@@ -324,9 +324,9 @@ task.wait(3.5)
 			..'AAAAAAAACgAAAAAAAIA/AAAAAAEBAAkAAgMEBQYHCAkKCwwNDg8QBREFAA==')
 		for _,obj in pairs(Objects) do
 			obj.Parent = script
-                        obj.CanCollide = false
+			obj.CanCollide = false
 			obj.Position = owner.Character.HumanoidRootPart.Position
-		local	pr = Instance.new("BoolValue",owner.Character)
+			local	pr = Instance.new("BoolValue",owner.Character)
 			pr.Value = true
 			obj.Destroying:Connect(function()
 				pr.Value = false
@@ -357,21 +357,15 @@ task.wait(3.5)
 														if v ~= owner.Character.HumanoidRootPart then
 															if v ~= obj then
 																if v ~= script.Parent then
-																	v.AssemblyLinearVelocity = v.Position + Vector3.new(0, 2, 0) - obj.Position.Unit * 200
-                                                                                                                                         debounce = true
-                                                                                                                                         if debounce == true then
-                                                                                                                                         debounce = false
-                                                                                                                                         table = {}
-                                                                                                                                         hum = v.Parent:FindFirstChildOfClass('Humanoid')
-                                                                                                                                         if hum and table[hum] == true then
-                                                                                                                                         table[hum] = true
-                                                                                                                                         hum:TakeDamage(40)
-                                                                                                                                                   end
-                                                                                                                                                   end
-                                                                                                                                                   task.wait(2)
-                                                                                                                                                   debounce = true
-                                                                                                                                         end
-																end
+																	v.AssemblyLinearVelocity = ((v.Position + Vector3.new(0, 2, 0)) - obj.Position).Unit * 200
+																	debounce = true
+																	if debounce == true then
+																		debounce = false
+																		hum = v.Parent:FindFirstChildOfClass('Humanoid')
+																		hum:TakeDamage(40)
+																	end
+																	task.wait(2)
+																	debounce = true
 															end
 														end
 													end
@@ -384,11 +378,12 @@ task.wait(3.5)
 						end
 					end
 				end
-			end)
-			task.wait(0.5)
-			obj:Destroy()
-		end
-	end)
+			end
+		end)
+	task.wait(0.5)
+	obj:Destroy()
+end
+end)
 end))
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
