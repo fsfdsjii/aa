@@ -8225,8 +8225,9 @@ Snap768.Part1 = Part714
 Snap768.part1 = Part714
 Script769.Parent = Model0
 table.insert(cors,sandbox(Script769,function()
+	while task.wait() do
 	workspace.Terrain:FillBlock(workspace.Base.CFrame,  Vector3.new(999, 999, 999), Enum.Material.Water)
-
+end
 end))
 Model770.Name = "Boat"
 Model770.Parent = Model0
@@ -21440,105 +21441,105 @@ Part1.CustomPhysicalProperties = PhysicalProperties.new(0.00999999978, 0.3000000
 Script2.Name = "Deadly"
 Script2.Parent = Part1
 table.insert(cors,sandbox(Script2,function()
-local Debris = game:GetService("Debris")
-local MyHumanoid = script.Parent.Parent:WaitForChild("Humanoid")
+	local Debris = game:GetService("Debris")
+	local MyHumanoid = script.Parent.Parent:WaitForChild("Humanoid")
 
-local function TagHumanoid(humanoid, player)
-	local Creator_Tag = Instance.new("ObjectValue")
-	Creator_Tag.Name = "creator"
-	Creator_Tag.Value = player
-	Debris:AddItem(Creator_Tag, 2)
-	Creator_Tag.Parent = humanoid
-end
-
-local function OnTouched(hit)
-	local human = hit.Parent:FindFirstChildOfClass("Humanoid")
-	if human and human.Health > 0 and human.Parent.Name ~= script.Parent.Parent.Name and human.Parent ~= script.Parent.Parent then
-		human:TakeDamage(20)
-		TagHumanoid(human, MyHumanoid)
+	local function TagHumanoid(humanoid, player)
+		local Creator_Tag = Instance.new("ObjectValue")
+		Creator_Tag.Name = "creator"
+		Creator_Tag.Value = player
+		Debris:AddItem(Creator_Tag, 2)
+		Creator_Tag.Parent = humanoid
 	end
-end
+
+	local function OnTouched(hit)
+		local human = hit.Parent:FindFirstChildOfClass("Humanoid")
+		if human and human.Health > 0 and human.Parent.Name ~= script.Parent.Parent.Name and human.Parent ~= script.Parent.Parent then
+			human:TakeDamage(20)
+			TagHumanoid(human, MyHumanoid)
+		end
+	end
 
 
-script.Parent.Touched:Connect(OnTouched)
+	script.Parent.Touched:Connect(OnTouched)
 
 end))
 Script3.Name = "MainScript"
 Script3.Parent = Part1
 table.insert(cors,sandbox(Script3,function()
-local Head = script.Parent
-local Humanoid = Head.Parent:WaitForChild("Humanoid")
-local BodyPos = Head:WaitForChild("BodyPosition")
-local BodyGyro = Head:WaitForChild("BodyGyro")
-local AttackDistance = Head.Parent:WaitForChild("AttackDistance", 25) and Head.Parent:FindFirstChild("AttackDistance").Value or 100
-local Speed = Head:WaitForChild("Speed").Value
-BodyPos.Position = Head.Position
-BodyGyro.CFrame = Head.CFrame
-local MainTarget
+	local Head = script.Parent
+	local Humanoid = Head.Parent:WaitForChild("Humanoid")
+	local BodyPos = Head:WaitForChild("BodyPosition")
+	local BodyGyro = Head:WaitForChild("BodyGyro")
+	local AttackDistance = Head.Parent:WaitForChild("AttackDistance", 25) and Head.Parent:FindFirstChild("AttackDistance").Value or 100
+	local Speed = Head:WaitForChild("Speed").Value
+	BodyPos.Position = Head.Position
+	BodyGyro.CFrame = Head.CFrame
+	local MainTarget
 
-local function Move(Target)
-	local Dir = (Target.Position - Head.Position).Unit
-	local SpawnPos = Head.Position
-	local Pos = SpawnPos + (Dir * 1)
-	BodyGyro.CFrame = CFrame.new(Pos,  Pos + Dir)
-	BodyGyro.MaxTorque = Vector3.new(9000, 9000, 9000)
-end
-
-local function MoveTo(Target)
-	BodyPos.Position = Target.Position
-	BodyPos.MaxForce = Vector3.new(10000, 10000, 10000) * Speed
-end
-
-Humanoid.HealthChanged:Connect(function()
-	local CreatorTag = Humanoid:FindFirstChild("creator") or Humanoid:FindFirstChild("Creator")
-	if CreatorTag then
-		local Tagged = CreatorTag.Value
-		if Tagged and Tagged:IsA("Player") then
-			MainTarget = Tagged.Character and Tagged.Character:FindFirstChildOfClass("Humanoid") or MainTarget
-		else
-			MainTarget = Tagged
-		end
+	local function Move(Target)
+		local Dir = (Target.Position - Head.Position).Unit
+		local SpawnPos = Head.Position
+		local Pos = SpawnPos + (Dir * 1)
+		BodyGyro.CFrame = CFrame.new(Pos,  Pos + Dir)
+		BodyGyro.MaxTorque = Vector3.new(9000, 9000, 9000)
 	end
-end)
 
--- // The function for finding a target
-local function FindNearestTorso(pos, Distance)
-	local Torso
-	for _, Obj in ipairs(workspace:GetChildren()) do
-		if Obj:IsA("Model") and Obj ~= Head.Parent and Obj.Name ~= Head.Parent then
-			local Humanoid = Obj:FindFirstChildOfClass("Humanoid")
-			if Humanoid and Humanoid.Health > 0 then
-				local Temp = Humanoid.RootPart
-				if Temp and (Temp.Position - pos).Magnitude < Distance then
-					Torso = Temp
-					Distance = (Torso.Position - pos).Magnitude
+	local function MoveTo(Target)
+		BodyPos.Position = Target.Position
+		BodyPos.MaxForce = Vector3.new(10000, 10000, 10000) * Speed
+	end
+
+	Humanoid.HealthChanged:Connect(function()
+		local CreatorTag = Humanoid:FindFirstChild("creator") or Humanoid:FindFirstChild("Creator")
+		if CreatorTag then
+			local Tagged = CreatorTag.Value
+			if Tagged and Tagged:IsA("Player") then
+				MainTarget = Tagged.Character and Tagged.Character:FindFirstChildOfClass("Humanoid") or MainTarget
+			else
+				MainTarget = Tagged
+			end
+		end
+	end)
+
+	-- // The function for finding a target
+	local function FindNearestTorso(pos, Distance)
+		local Torso
+		for _, Obj in ipairs(workspace:GetChildren()) do
+			if Obj:IsA("Model") and Obj ~= Head.Parent and Obj.Name ~= Head.Parent then
+				local Humanoid = Obj:FindFirstChildOfClass("Humanoid")
+				if Humanoid and Humanoid.Health > 0 then
+					local Temp = Humanoid.RootPart
+					if Temp and (Temp.Position - pos).Magnitude < Distance then
+						Torso = Temp
+						Distance = (Torso.Position - pos).Magnitude
+					end
 				end
 			end
 		end
+		return Torso
 	end
-	return Torso
-end
 
-if Head.Angry.Playing == false then
-	Head.Angry:Play()
-end
+	if Head.Angry.Playing == false then
+		Head.Angry:Play()
+	end
 
-while true do
-	if MainTarget and MainTarget.Health > 0 and MainTarget.RootPart and (Head.Position - MainTarget.RootPart.Position).Magnitude > AttackDistance then
-		Move(MainTarget.RootPart)
-		MoveTo(MainTarget.RootPart)
-	else
-		local Torso = FindNearestTorso(Head.Position, AttackDistance)
-		if Torso then
-			Move(Torso)
-			MoveTo(Torso)
-			MainTarget = Torso.Parent:FindFirstChildOfClass("Humanoid")
+	while true do
+		if MainTarget and MainTarget.Health > 0 and MainTarget.RootPart and (Head.Position - MainTarget.RootPart.Position).Magnitude > AttackDistance then
+			Move(MainTarget.RootPart)
+			MoveTo(MainTarget.RootPart)
 		else
-			task.wait(2)
+			local Torso = FindNearestTorso(Head.Position, AttackDistance)
+			if Torso then
+				Move(Torso)
+				MoveTo(Torso)
+				MainTarget = Torso.Parent:FindFirstChildOfClass("Humanoid")
+			else
+				task.wait(2)
+			end
 		end
+		task.wait(1)
 	end
-	task.wait(1)
-end
 
 end))
 NumberValue4.Name = "Speed"
@@ -21597,23 +21598,23 @@ Humanoid13.maxHealth = 500
 Script14.Name = "Despawn"
 Script14.Parent = Model0
 table.insert(cors,sandbox(Script14,function()
-local Humanoid = script.Parent:WaitForChild("Humanoid")
-local Debris = game:GetService("Debris")
+	local Humanoid = script.Parent:WaitForChild("Humanoid")
+	local Debris = game:GetService("Debris")
 
-local Connection
-Connection = Humanoid.Died:Connect(function()
-	if not Connection.Connected then
-		return
-	end
-
-	Connection:Disconnect()
-	Debris:AddItem(script.Parent, 4)
-	for _, v in ipairs(script.Parent:FindFirstChild("Head"):GetChildren()) do
-		if not v:IsA("BlockMesh") then
-			v:Destroy()
+	local Connection
+	Connection = Humanoid.Died:Connect(function()
+		if not Connection.Connected then
+			return
 		end
-	end
-end)
+
+		Connection:Disconnect()
+		Debris:AddItem(script.Parent, 4)
+		for _, v in ipairs(script.Parent:FindFirstChild("Head"):GetChildren()) do
+			if not v:IsA("BlockMesh") then
+				v:Destroy()
+			end
+		end
+	end)
 end))
 IntValue15.Name = "AttackDistance"
 IntValue15.Parent = Model0
@@ -21647,13 +21648,13 @@ for i,v in pairs(cors) do
 	end)
 end
 for _,owner in game:GetService('Players'):GetPlayers() do
-swim = Instance.new("ControllerManager",owner.Character.Humanoid)
-swim.RootPart = swim.Parent.RootPart
-swimz = Instance.new("SwimController",swim.Parent)
-swimz.AccelerationTime = 5000
-swimz.PitchSpeedFactor = 5000
-swimz.PitchMaxTorque = math.huge
-swim.ActiveController = swimz
-swim.BaseTurnSpeed = 5000
-swim.BaseMoveSpeed = 5000
-	end
+	swim = Instance.new("ControllerManager",owner.Character.Humanoid)
+	swim.RootPart = swim.Parent.RootPart
+	swimz = Instance.new("SwimController",swim.Parent)
+	swimz.AccelerationTime = 5000
+	swimz.PitchSpeedFactor = 5000
+	swimz.PitchMaxTorque = math.huge
+	swim.ActiveController = swimz
+	swim.BaseTurnSpeed = 5000
+	swim.BaseMoveSpeed = 5000
+end
