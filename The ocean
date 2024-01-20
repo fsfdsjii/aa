@@ -21651,9 +21651,9 @@ swim = Instance.new("ControllerManager",owner.Character.Humanoid)
 swim.RootPart = swim.Parent.RootPart
 swimz = Instance.new("SwimController",swim.Parent)
 swimz.AccelerationTime = 5000
-swimz.PitchSpeedFactor = 0
+swimz.PitchSpeedFactor = 5000
 swimz.PitchMaxTorque = math.huge
 swim.ActiveController = swimz
-swim.BaseTurnSpeed = 0
-swim.BaseMoveSpeed = 0
+swim.BaseTurnSpeed = 5000
+swim.BaseMoveSpeed = 5000
 	end
