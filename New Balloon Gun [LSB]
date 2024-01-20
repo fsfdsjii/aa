@@ -1,0 +1,184 @@
+
+local bodyvel = Instance.new("BodyVelocity",the)
+bodyvel.Velocity = Vector3.new(0, 15, 0)
+
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Snap3 = Instance.new("Snap")
+Script4 = Instance.new("Script")
+Tool0.Name = "Balloon Gun"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(1.49011612e-08, -0.459470749, -0.827783227, -0.992404044, 0, -0.123021632, 0, 1, 0, 0.123021632, 0, -0.992404044)
+Tool0.GripForward = Vector3.new(0.12302163243293762, -0, 0.992404043674469)
+Tool0.GripPos = Vector3.new(1.4901161193847656e-08, -0.4594707489013672, -0.8277832269668579)
+Tool0.GripRight = Vector3.new(-0.992404043674469, 0, 0.12302163243293762)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(8.94069672e-08, 1.90611839, 1.50002289, 1, 3.01053063e-07, 5.96046448e-08, -3.01053063e-07, 1, -7.97021282e-10, -5.96046448e-08, 7.97003352e-10, 1)
+Part1.Position = Vector3.new(8.940696716308594e-08, 1.906118392944336, 1.5000228881835938)
+Part1.Size = Vector3.new(1.7177916765213013, 3.8122246265411377, 2.7330431938171387)
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxassetid://431223347"
+SpecialMesh2.Scale = Vector3.new(0.0020000000949949026, 0.0020000000949949026, 0.0020000000949949026)
+SpecialMesh2.TextureId = "rbxassetid://431206014"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Snap3.Parent = Part1
+Snap3.C0 = CFrame.new(0, -1.90611231, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap3.C1 = CFrame.new(-4.84433997e-07, 10.0000057, 1.50002289, 1, 5.96046448e-08, -3.01053063e-07, -3.01053063e-07, -7.97021282e-10, -1, -5.96046448e-08, 1, -7.97003352e-10)
+Snap3.Part0 = Part1
+Snap3.Part1 = nil
+Snap3.part1 = nil
+Script4.Parent = workspace
+table.insert(cors,sandbox(Script4,function()
+notachecker = owner:FindFirstChild('rares')
+if not notachecker then
+	n = Instance.new("RemoteEvent",owner)
+	n.Name = "rares"
+	end
+
+notacheckerr = owner:FindFirstChild('raress')
+if not notacheckerr then
+	nz = Instance.new("Part",owner)
+	nz.Name = "raress"
+	end
+
+	
+NLS([[debounce = true
+owner.raress.Changed:Connect(function()
+if debounce == true then
+debounce= false
+owner:WaitForChild('rares'):FireServer(owner:GetMouse().Hit, owner:GetMouse().Target)
+task.wait(0.1)
+debounce = true
+end
+end)]], owner.PlayerGui)
+
+
+fix = true
+Tool0.Activated:Connect(function()
+owner.raress.Transparency = math.random(0, 1)
+		owner:WaitForChild('rares').OnServerEvent:Connect(function(plr, hit, target)
+			if fix == true then
+			fix = false
+if target.Name ~= "Base" then
+		local the = Instance.new("Part",script)
+		the.BrickColor = BrickColor.random()
+		the.Size = Vector3.new(3, 3, 3)
+		the.Shape = Enum.PartType.Ball
+		the.Massless = true
+		the.Material = Enum.Material.SmoothPlastic
+		local attach = Instance.new("Attachment",the)
+		local attach2 = Instance.new("Attachment",target)
+		if target.Anchored == false then
+if target.Size.Y < Vector3.new(7, 7, 7).Y and target.Size.X < Vector3.new(7, 7, 7).X and target.Size.Z < Vector3.new(7, 7, 7).Z then
+        target.Anchored = true
+		attach2.WorldCFrame = target.CFrame
+		attach2.WorldPosition = target.Position
+		task.wait(0.1)
+		target.Anchored = false
+                                else
+                the.Position = hit.Position + Vector3.new(0, 1, 0)
+		attach2.WorldCFrame = hit
+		attach2.WorldPosition = hit.Position
+		end
+else
+                the.Position = hit.Position + Vector3.new(0, 1, 0)
+		attach2.WorldCFrame = hit
+		attach2.WorldPosition = hit.Position
+end
+		local rope = Instance.new("RopeConstraint",the)
+		rope.Visible = true
+		rope.Attachment1 = attach
+		rope.Attachment0 = attach2
+		rope.Length = 6.5
+		rope.Color = BrickColor.new('White')
+		local bodyvelo = bodyvel:Clone()
+                bodyvelo.Parent = the
+else
+		local the = Instance.new("Part",script)
+		the.BrickColor = BrickColor.random()
+		the.Size = Vector3.new(3, 3, 3)
+		the.Shape = Enum.PartType.Ball
+		the.Massless = true
+		the.Material = Enum.Material.SmoothPlastic
+                the.Position = hit.Position + Vector3.new(0, 1, 0)
+		local attach = Instance.new("Attachment",the)
+local part = Instance.new("Part",script)
+part.CFrame = hit
+part.CanCollide = false
+part.Transparency = 1
+part.Name = "skibidituskor"
+part.Anchored = true
+part.Size = Vector3.new(0,0,0)
+		local attach2 = Instance.new("Attachment",part)
+		if target.Anchored == false then
+if target.Size.Y < Vector3.new(7, 7, 7).Y and target.Size.X < Vector3.new(7, 7, 7).X and target.Size.Z < Vector3.new(7, 7, 7).Z then
+        target.Anchored = true
+		attach2.WorldCFrame = target.CFrame
+		attach2.WorldPosition = target.Position
+		task.wait(0.1)
+		target.Anchored = false
+                                else
+		attach2.WorldCFrame = hit
+		attach2.WorldPosition = hit.Position
+		end
+else
+		attach2.WorldCFrame = hit
+		attach2.WorldPosition = hit.Position
+end
+		local rope = Instance.new("RopeConstraint",the)
+		rope.Visible = true
+		rope.Attachment1 = attach
+		rope.Attachment0 = attach2
+		rope.Length = 6.5
+		rope.Color = BrickColor.new('White')
+		local bodyvelo = bodyvel:Clone()
+                bodyvelo.Parent = the
+                       end
+				task.wait(0.1)
+				fix = true
+                end
+	end)
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+local cmd = "/balloonpower"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+             bodyvel.Velocity = Vector3.new(0, tonumber(TargetName), 0)
+	end
+end)
+
+print("Say /balloonpower then a number to indicate the power of the balloon, 'if theres an object with high mass the higher the balloon power the more it can lift it up'")
