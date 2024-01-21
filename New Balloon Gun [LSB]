@@ -160,6 +160,13 @@ end
                 end
 	end)
 end)
+owner.Chatted:Connect(function(hi)
+if hi == "/clrballoons" then
+for _,v in next, script:GetDescendants() do
+v:Destroy()
+end
+end
+end)
 end))
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
