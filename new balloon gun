@@ -88,17 +88,18 @@ if target.Size.Y < Vector3.new(7, 7, 7).Y and target.Size.X < Vector3.new(7, 7, 
         target.Anchored = true
 		attach2.WorldCFrame = target.CFrame
 		attach2.WorldPosition = target.Position
+                the.CFrame = hit + Vector3.new(0, 1, 0)
 		task.wait(0.1)
 		target.Anchored = false
                                 else
-                the.Position = hit.Position + Vector3.new(0, 1, 0)
 		attach2.WorldCFrame = hit
 		attach2.WorldPosition = hit.Position
+                the.CFrame = hit + Vector3.new(0, 1, 0)
 		end
 else
-                the.Position = hit.Position + Vector3.new(0, 1, 0)
 		attach2.WorldCFrame = hit
 		attach2.WorldPosition = hit.Position
+                the.CFrame = hit + Vector3.new(0, 1, 0)
 end
 		local rope = Instance.new("RopeConstraint",the)
 		rope.Visible = true
