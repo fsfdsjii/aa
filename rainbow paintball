@@ -63,7 +63,10 @@ Script5.Parent = Tool0
 table.insert(cors,sandbox(Script5,function()
 --Made by Stickmasterluke
 --Rescripted by StarWars
-
+local Part = Instance.new("Part",owner.Character)
+Part.Name = "hello"
+local RemoteEvent = Instance.new("RemoteEvent",owner.Character)
+RemoteEvent.Name = "hi"
 local Debris = game:GetService("Debris")
 local Players = game:GetService("Players")
 
@@ -78,7 +81,7 @@ local R15Folder = Animations.R15
 local FIRE_RATE = 0.4
 local VELOCITY = 200
 
-local WeaponEvent = Tool:FindFirstChild("WeaponEvent") or Instance.new("RemoteEvent")
+local WeaponEvent = owner.Character.hi
 WeaponEvent.Name = "WeaponEvent"
 
 local Player = nil
@@ -184,7 +187,7 @@ function Fire(player, firePos)
 
 	function onTouched(hit)
 		if not splatted and hit.Parent and sp and sp:isDescendantOf(workspace) and string.lower(string.sub(hit.Name,1,6))~="effect" and hit.Name~="Handle" then
-			local targetplayer=game.Players:GetPlayerFromCharacter(hit.Parent)
+			local targetplayer=game:GetService('Players'):GetPlayerFromCharacter(hit.Parent)
 			if creator and creator.Value and creator.Value.Character and not hit:isDescendantOf(creator.Value.Character) then
 				splatted=true
 				sp.Name="Effect"
@@ -271,9 +274,21 @@ function OnUnequipped()
 		FireSound:Stop()
 	end
 end
+NLS([[debounce = true
+owner.Character.hello.Changed:Connect(function()
+if debounce == true then
+debounce = false
+owner.Character.hi:FireServer(owner:GetMouse().Hit)
+task.wait(0.05)
+debounce = true
+end
+end)]],owner.PlayerGui)
+function OnActivate()
+owner.Character.hello.Transparency = math.random(0,1)
+end
 
 WeaponEvent.OnServerEvent:Connect(Fire)
---Tool.Activated:Connect(OnActivate)
+Tool.Activated:Connect(OnActivate)
 Tool.Equipped:Connect(OnEquipped)
 Tool.Unequipped:Connect(OnUnequipped)
 end))
