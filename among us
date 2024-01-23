@@ -29,7 +29,7 @@ if character ~= nil then
 humr = character:FindFirstChild('HumanoidRootPart')
 if humr then
 goal.Position = humr.Position
-goal.Orientation = Vector3.new(360, 360, 360)
+goal.Orientation = humr.Orientation + humr.Orientation
 end
 end
 end
