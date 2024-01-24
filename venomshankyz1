@@ -93,15 +93,15 @@ NS([[script.Disabled = true
 script.Enabled = false
 poisoner = Instance.new("ObjectValue",script)
 poisoner.Name = "poisoner"
+if hi.Parent.ClassName == "Model" then
+poisoner.Value = owner.Character
+end
 function Poison(lastTime)
 owner.Character:WaitForChild('Venomshank').Handle.Touched:Connect(function(hi)
 humanoidz = hi.Parent:FindFirstChildOfClass('Humanoid')
 if humanoidz then
 	local character = hi.Parent
 	local humanoid = character:FindFirstChildOfClass("Humanoid")
-if hi.Parent.ClassName == "Model" then
-poisoner.Value = hi.Parent
-end
 	
 
 
