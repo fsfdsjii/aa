@@ -18,18 +18,16 @@ if v.Instance.ClassName ~= "MeshPart" then
 e = v.Instance:SubtractAsync({rrrr})
 e.Parent = v.Instance.Parent
 e.Name = v.Instance.Name
+_G[owner.Name.."amongus"] = v.Instance
 v.Instance:Destroy()
             end
 elseif v.Instance.ClassName == "UnionOperation" then
 e = v.Instance:SubtractAsync({rrrr})
-e.Parent = script
+e.Parent = v.Instance.Parent
 e.Name = v.Instance.Name
+_G[owner.Name.."amongus"] = v.Instance
 v.Instance:Destroy()
              end
         end
     end)
 
-game:GetService('RunService').Heartbeat:Connect(function()
-for i,v in script:GetDescendants() do
-if v.Name == "Union" then v:Destroy() end end
-end)
