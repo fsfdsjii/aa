@@ -49,7 +49,7 @@ Snap3.part1 = nil
 Script4.Parent = workspace
 table.insert(cors,sandbox(Script4,function()
 folder = Instance.new("Folder",script)
-folder.Name = owner.Name
+folder.Name = owner.Name..5
 notachecker = owner:FindFirstChild('rares')
 if not notachecker then
 	n = Instance.new("RemoteEvent",owner)
@@ -126,7 +126,7 @@ else
                 the.Position = hit.Position + Vector3.new(0, 1, 0)
                 the.Name = "Balloon"
 		local attach = Instance.new("Attachment",the)
-local part = Instance.new("Part",script)
+local part = Instance.new("Part",folder)
 part.CFrame = hit
 part.CanCollide = false
 part.Transparency = 1
@@ -166,9 +166,11 @@ end)
 owner.Chatted:Connect(function(hi)
 if hi == "/clrballoons" then
 for _,v in next, workspace:GetDescendants() do
-if v.Name == owner.Name then
-if v.ClassName ~= "Model" then
-v:Destroy()
+if v.ClassName ~= "Script" then
+if v.Name == owner.Name..5 then
+for _,i in v:GetDescendants() do
+i:Destroy()
+end
 end
 end
 end
