@@ -73,13 +73,35 @@ o9.RotSpeed = NumberRange.new(200,200)
 o9.Speed = NumberRange.new(2.5,2.5)
 o9.VelocitySpread = 100
 o9.Color = ColorSequence.new(Color3.new(0.0196078, 0.172549, 0),Color3.new(0.0196078, 0.172549, 0))
+debounce = true
+o1.Activated:Connect(function()
+if debounce == true then
+debounce = false
+	wait(0.2)
+Grips = {
+	Up = CFrame.new(0, 0, -1.70000005, 0, 0, 1, 1, 0, 0, 0, 1, 0),
+	Out = CFrame.new(0, 0, -1.70000005, 0, 1, 0, 1, -0, 0, 0, 0, -1)
+}
+	o1.Grip = Grips.Out
+	wait(0.6)
+	o1.Grip = Grips.Up
+	wait(0.2)
+debounce = true
+end
+end)
 NS([[script.Disabled = true
 script.Enabled = false
+poisoner = Instance.new("ObjectValue",script)
+poisoner.Name = "poisoner"
 function Poison(lastTime)
-
-	local character = owner.Character
-	local humanoid = character:FindFirstChild("Humanoid")
-
+owner.Character:WaitForChild('Venomshank').Handle.Touched:Connect(function(hi)
+humanoidz = hi.Parent:FindFirstChildOfClass('Humanoid')
+if humanoidz then
+	local character = hi.Parent
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+if hi.Parent.ClassName == "Model" then
+poisoner.Value = hi.Parent
+end
 	
 
 
@@ -100,14 +122,15 @@ function Poison(lastTime)
 		if (childs[i].className == "Part") then
 			childs[i].BrickColor = colors[i]
 		end
-	end
 
 	
 	tagHumanoid(humanoid)
 	humanoid.Health = humanoid.Health - (humanoid.MaxHealth / 8) -- forcefield won't stop poison damage
 	wait(1)
 	--untagHumanoid(humanoid)
-
+end
+end
+	end)
 end
 
 function tagHumanoid(humanoid)
@@ -129,7 +152,7 @@ for i=1,5 do
 end
 
 
-owner.Backpack.Venomshank.Parent = nil
+
 ]] , game.Workspace)
 
 --Rescripted by Luckymaxer
