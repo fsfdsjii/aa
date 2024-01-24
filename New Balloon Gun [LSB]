@@ -163,7 +163,7 @@ end
 end)
 owner.Chatted:Connect(function(hi)
 if hi == "/clrballoons" then
-for _,v in next, workspace:GetDescendants() do
+for _,v in next, script:GetDescendants() do
 if v.Name == "Balloon" then
 v:Destroy()
 end
