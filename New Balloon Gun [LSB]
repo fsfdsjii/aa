@@ -1,8 +1,4 @@
 
-local bodyvel = Instance.new("BodyVelocity",the)
-bodyvel.Velocity = Vector3.new(0, 15, 0)
-
-
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -24,6 +20,10 @@ Part1 = Instance.new("Part")
 SpecialMesh2 = Instance.new("SpecialMesh")
 Snap3 = Instance.new("Snap")
 Script4 = Instance.new("Script")
+local bodyvel = Instance.new("BodyVelocity",the)
+bodyvel.Velocity = Vector3.new(0, 15, 0)
+local rahhh = Instance.new("StringValue",Tool0)
+rahhh.Value = "White"
 Tool0.Name = "Balloon Gun"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(1.49011612e-08, -0.459470749, -0.827783227, -0.992404044, 0, -0.123021632, 0, 1, 0, 0.123021632, 0, -0.992404044)
@@ -48,6 +48,8 @@ Snap3.Part1 = nil
 Snap3.part1 = nil
 Script4.Parent = workspace
 table.insert(cors,sandbox(Script4,function()
+folder = Instance.new("Folder",script)
+folder.Name = owner.Name
 notachecker = owner:FindFirstChild('rares')
 if not notachecker then
 	n = Instance.new("RemoteEvent",owner)
@@ -79,7 +81,7 @@ owner.raress.Transparency = math.random(0, 1)
 			if fix == true then
 			fix = false
 if target.Name ~= "Base" then
-		local the = Instance.new("Part",script)
+		local the = Instance.new("Part",folder)
 		the.BrickColor = BrickColor.random()
 		the.Size = Vector3.new(3, 3, 3)
 		the.Shape = Enum.PartType.Ball
@@ -89,7 +91,7 @@ if target.Name ~= "Base" then
 		local attach = Instance.new("Attachment",the)
 		local attach2 = Instance.new("Attachment",target)
 		if target.Anchored == false then
-if target.Size.Y < Vector3.new(7, 7, 7).Y and target.Size.X < Vector3.new(7, 7, 7).X and target.Size.Z < Vector3.new(7, 7, 7).Z then
+if target.Size.Y < Vector3.new(7, 7, 7).Y or target.Size.X < Vector3.new(7, 7, 7).X or target.Size.Z < Vector3.new(7, 7, 7).Z then
         target.Anchored = true
                 the.CFrame = hit + Vector3.new(0, 1, 0)
 		attach2.WorldCFrame = target.CFrame
@@ -115,7 +117,7 @@ end
 		local bodyvelo = bodyvel:Clone()
                 bodyvelo.Parent = the
 else
-		local the = Instance.new("Part",script)
+		local the = Instance.new("Part",folder)
 		the.BrickColor = BrickColor.random()
 		the.Size = Vector3.new(3, 3, 3)
 		the.Shape = Enum.PartType.Ball
@@ -152,7 +154,7 @@ end
 		rope.Attachment1 = attach
 		rope.Attachment0 = attach2
 		rope.Length = 6.5
-		rope.Color = BrickColor.new('White')
+		rope.Color = BrickColor.new(tostring(rahhh.Value))
 		local bodyvelo = bodyvel:Clone()
                 bodyvelo.Parent = the
                        end
@@ -163,9 +165,11 @@ end
 end)
 owner.Chatted:Connect(function(hi)
 if hi == "/clrballoons" then
-for _,v in next, script:GetDescendants() do
-if v.Name == "Balloon" then
+for _,v in next, workspace:GetDescendants() do
+if v.Name == owner.Name then
+if v.ClassName ~= "Model" then
 v:Destroy()
+end
 end
 end
 end
@@ -173,7 +177,7 @@ end)
 owner.Chatted:Connect(function(hi)
 if hi == "/clrallballoons" then
 for _,v in next, workspace:GetDescendants() do
-if v.Name == "Balloon" then
+if v.Name == "Balloon" or v.Name == "skibidituskor"  then
 v:Destroy()
 end
 end
@@ -202,6 +206,31 @@ owner.Chatted:Connect(function(msg)
 	end
 end)
 
+local cmd = "/ropecolor1"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+                rahhh.Value = tostring(TargetName)
+	end
+end)
+
+local cmd = "/ropecolor2"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+		local TargetName2=SplitMsg[3]
+                rahhh.Value = tostring(TargetName).." "..tostring(TargetName2)
+	end
+end)
+
 print("Say /balloonpower then a number to indicate the power of the balloon, 'if theres an object with high mass the higher the balloon power the more it can lift it up'")
 print("Say /clrballoons to clear your balloons")
 print("Say /clrallballoons to clear all balloons")
+print("Say /ropecolor1 to set the brick color of the rope, brick color name has to have 1 word")
+print("Say /ropecolor2 to set the brick color of the rope, brick color name has to have 2 words")
