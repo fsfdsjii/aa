@@ -96,6 +96,24 @@ end
                 end
 	end)
 end)
+owner.Chatted:Connect(function(hi)
+if hi == "/clrballoons" then
+for _,v in next, script:GetDescendants() do
+if v.Name == "Balloon" then
+v:Destroy()
+end
+end
+end
+end)
+owner.Chatted:Connect(function(hi)
+if hi == "/clrallballoons" then
+for _,v in next, workspace:GetDescendants() do
+if v.Name == "Balloon" then
+v:Destroy()
+end
+end
+end
+end)
 end))
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
@@ -120,3 +138,5 @@ owner.Chatted:Connect(function(msg)
 end)
 
 print("Say /balloonpower then a number to indicate the power of the balloon, 'if theres an object with high mass the higher the balloon power the more it can lift it up'")
+print("Say /clrballoons to clear your balloons")
+print("Say /clrallballoons to clear all balloons")
