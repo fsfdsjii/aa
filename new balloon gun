@@ -114,6 +114,11 @@ end
 		rope.Color = BrickColor.new(tostring(rahhh.Value))
 		local bodyvelo = bodyvel:Clone()
                 bodyvelo.Parent = the
+attach2.Changed:Connect(function(OHMYGOD)
+if attach2.Parent == nil then
+the:Destroy()
+end
+end)
 				task.wait(0.1)
 				fix = true
                 end
