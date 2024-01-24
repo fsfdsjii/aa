@@ -111,7 +111,7 @@ end
 		rope.Attachment1 = attach
 		rope.Attachment0 = attach2
 		rope.Length = 6.5
-		rope.Color = BrickColor.new('White')
+		rope.Color = BrickColor.new(tostring(rahhh.Value))
 		local bodyvelo = bodyvel:Clone()
                 bodyvelo.Parent = the
 				task.wait(0.1)
@@ -167,3 +167,28 @@ end)
 print("Say /balloonpower then a number to indicate the power of the balloon, 'if theres an object with high mass the higher the balloon power the more it can lift it up'")
 print("Say /clrballoons to clear your balloons")
 print("Say /clrallballoons to clear all balloons")
+print("Say /ropecolor1 to set the brick color of the rope, brick color name has to have 1 word")
+print("Say /ropecolor2 to set the brick color of the rope, brick color name has to have 2 words")
+
+local cmd = "/ropecolor1"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+                rahhh.Value = tostring(TargetName)
+	end
+end)
+
+local cmd = "/ropecolor2"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+		local TargetName2=SplitMsg[3]
+                rahhh.Value = tostring(TargetName).." "..tostring(TargetName2)
+	end
+end)
