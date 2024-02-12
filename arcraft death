@@ -2679,7 +2679,27 @@ table.insert(cors,sandbox(Script4,function()
 	if (#stands > 0) then CTF_mode = true end
 	game.Players.ChildAdded:connect(onPlayerEntered)
 	for _,v in next, game:GetService('Players'):GetPlayers() do
+for i,e in next, v:GetDescendants() do
+if v.Name ~= "KOs" then
+if v.Name ~= "WOs" then
+if v.Name ~= "Hits" then
+if v.Name ~= "Money" then
+if v.Name ~= "bomb" then
+if v.Name ~= "rev" then
+if v.Name ~= "MaxHealth" then
+if v.Name ~= "power" then
+if v.Name ~= "MaxFuel" then
 		onPlayerEntered(v)
+end
+end
+end
+end
+end
+end
+end
+end
+end
+               end
 	end
 end))
 SpawnLocation5.Parent = workspace
