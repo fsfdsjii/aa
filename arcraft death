@@ -2690,9 +2690,7 @@ if e.Name == "MaxHealth" then
 if e.Name == "power" then
 if e.Name == "MaxFuel" then
 e:Destroy()
-pcall(function() 
-e.Parent:Destroy() 
-end)
+pcall(e.Parent, Destroy)
 		onPlayerEntered(v)
 else
 		onPlayerEntered(v)
