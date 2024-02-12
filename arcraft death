@@ -29499,12 +29499,17 @@ if not redder then
 	red.TeamColor = BrickColor.new('Bright red')
 	red.Name = "Red Team"
 end
-
+hello = math.random(0, 1)
+hi = math.random(0, 1)
 for _,v in next, game:GetService('Players'):GetPlayers() do
-	if math.random(0, 1) == 0 then
+	if hello == 0 then
 		v.Team = game:GetService('Teams')["Red Team"]
-	else 
+	elseif hi = 0
 		v.Team = game:GetService('Teams')["Green Team"]
+        elseif hello == 1 then
+		v.Team = game:GetService('Teams')["Green Team"]
+        elseif hi == 1 then
+		v.Team = game:GetService('Teams')["Red Team"]
 	end
 end
 
