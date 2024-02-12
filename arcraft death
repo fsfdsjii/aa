@@ -2689,8 +2689,8 @@ if e.Name == "rev" then
 if e.Name == "MaxHealth" then
 if e.Name == "power" then
 if e.Name == "MaxFuel" then
-if e.Name == "leaderstats" then
 e:Destroy()
+pcall(function() e.Parent:Destroy() end)
 		onPlayerEntered(v)
 else
 		onPlayerEntered(v)
