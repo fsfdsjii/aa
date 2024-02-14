@@ -5,8 +5,6 @@ task.wait(3)
 e:Destroy()
 hi = Instance.new("BlurEffect",game:GetService('Lighting'))
 hi.Enabled = true
-hiz = Instance.new("ColorCorrectionEffect",game:GetService('Lighting'))
-hiz.Enabled = true
 task.spawn(function()
 	while task.wait() do 
 		local number = Random.new(tick()):NextNumber(1,100) 
@@ -15,8 +13,6 @@ task.spawn(function()
 		local numberxz = Random.new(tick()):NextNumber(0,0.5) 
 		local numberxzz = Random.new(tick()):NextNumber(0,1) 
                 hi.Size = math.random(1, 100)
-                hiz.Saturation = math.random(0,50)
-                hiz.TintColor = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 		game:GetService('Lighting').ClockTime = math.random(0, 24)
 		game:GetService('Lighting').Brightness = math.random(1, 100)
 		game:GetService('Lighting').GlobalShadows = (true) or (false)
