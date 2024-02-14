@@ -1802,29 +1802,34 @@ Part4.FormFactor = Enum.FormFactor.Symmetric
 Part4.formFactor = Enum.FormFactor.Symmetric
 Script5.Name = "InsertScript"
 Script5.Parent = Model1
-monk = NS([[script.Parent.ChildRemoved:connect(function()
+task.spawn(function()
+	while task.wait() do
+		_G.GEARWALL = Model0
+		 end
+end)
+Instance.new("Part",Model0).Name = "hello"
+monk = NS([[
+_G.GEARWALL.hello.Changed:Connect(function()
+script.Parent.ChildRemoved:connect(function()
 	wait(5)
 	script.Parent:Remove()
 end)
 wait(10)
-script.Parent:Remove()]],workspace)
-monk.Disabled = true
+script.Parent:Remove()
+end)]],workspace)
 monk.Parent = Script5
 monk.Name = "ToolClean"
 table.insert(cors,sandbox(Script5,function()
-drop = script.Parent.DropPoint1
+	task.spawn(function()
+drop = Part2
 machine = script.Parent
 
 function insertId(gearId)
 	local root = game:GetService("InsertService"):LoadAsset(gearId)
 
 	game:GetService("InsertService"):Insert(root)
-
-		local r = monk
-	r.Disabled = false
-	r.Parent = root
-
-	root.Parent = machine.InsertedObjects
+Model0.hello.Transparency = math.random(0, 1)
+	root.Parent = machine:WaitForChild("InsertedObjects")
 	root:MoveTo(drop.Position)
  end
 
@@ -1852,7 +1857,8 @@ for z = 1, #y do
 		end
 	end
 	print("Gear category: " .. y[z].Name .. " connected")
-end 
+		end
+		end)
 end))
 Script6.Disabled = true
 Model7.Name = "Buttons"
