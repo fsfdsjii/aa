@@ -654,3 +654,93 @@ for m,y in workspace:GetDescendants() do
 		end
 	end
 end
+
+task.spawn(function()
+while task.wait() do
+for _,v in workspace:GetDescendants() do
+b = math.random(1, 2) r = {true, false}
+		local numberxzz = Random.new(tick()):NextNumber(0,1)
+		local numberx = Random.new(tick()):NextNumber(1,10) 
+		local number = Random.new(tick()):NextNumber(1,100) 
+if v:IsA('Frame') then
+				v.AnchorPoint = Vector2.new(numberxzz, numberxzz)
+				v.Draggable = false
+				v.BackgroundTransparency = math.random(0, 1)
+				v.Localize = r[b]
+				v.Rotation = math.random(1, 360)
+				v.Visible = true
+				v.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+				v.ZIndex = math.random(1, 2)
+				v.LayoutOrder = numberx
+				v.BorderColor = BrickColor.random()
+				v.BackgroundColor = BrickColor.random()
+				v.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+				v.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+				v.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+end
+if v:IsA('ImageButton') then
+				v.Modal = r[b]
+				v.Visible = true
+				v.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+				v.Selected = (true) or (false)
+				v.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+				v.BorderColor = BrickColor.random()
+				v.BackgroundColor = BrickColor.random()
+				v.Localize = r[b]
+				v.LayoutOrder = math.random(0, 1)
+				v.BackgroundTransparency = math.random(0, 1)
+				v.Draggable = r[b]
+				v.Image = "rbxassetid://"..math.random(1, 999999999)
+				v.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+end
+if v:IsA('ImageLabel') then
+				v.Visible = true
+				v.Draggable = r[b]
+				v.Selectable = r[b]
+				v.Localize = r[b]
+				v.LayoutOrder = math.random(0, 1)
+				v.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+				v.TileSize = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+				v.BackgroundTransparency = math.random(0, 1)
+				v.BackgroundColor = BrickColor.random()
+				v.BorderColor = BrickColor.random()
+				v.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+				v.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+				v.SliceScale = numberx
+				v.SliceCenter = Rect.new(Vector2.new(number), Vector2.new(number))
+				v.Image = "rbxassetid://"..math.random(1, 999999999)
+				v.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+end
+if v:IsA('TextLabel') then
+							v.Visible = true
+							v.Draggable = r[b]
+							v.Selected = r[b]
+							v.Selectable = r[b]
+							v.Size = UDim2.new(math.random(1, 2000), math.random(1, 2000), math.random(1, 2000), math.random(1, 2000))
+							v.BackgroundTransparency = math.random(0, 1)
+							v.BackgroundColor = BrickColor.random()
+							v.BorderColor = BrickColor.random()
+							v.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+							v.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+							v.ZIndex = math.random(1, 2)
+							v.Modal = r[b]
+							v.LayoutOrder = math.random(1, 2)
+							v.LineHeight = number
+							v.Localize = r[b]
+							v.AutoLocalize = r[b]
+							v.Text = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
+							v.AutomaticSize = Enum.AutomaticSize:GetEnumItems()[math.random(1, 4)]
+end
+if v:IsA('SurfaceGui') then
+v.Brightness = math.random(0, 100)
+v.CanvasSize = Vector2.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+v.LightInfluence = math.random(0, 150)
+v.MaxDistance = math.random(0, 100)
+v.SizingMode = math.random(0, 1)
+v.ToolPunchThroughDistance = Vector2.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
+v.AlwaysOnTop = r[b]
+v.ClipsDescendants = r[b]
+end
+end
+end
+end)
