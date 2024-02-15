@@ -613,7 +613,7 @@ LocalScript61.Name = "ListScript"
 LocalScript61.Parent = Frame57
 table.insert(cors,sandbox(LocalScript61,function()
 heyooo = NLS([[local UserInputService = game:GetService("UserInputService")
-local template = script.template
+local template = script:WaitForChild('template')
 local Frame = script.Parent.Frame
 local PlayerListOn = true
 local Colors = {
@@ -655,24 +655,25 @@ end)
 game.Players.PlayerAdded:Connect(updatePlayers)
 game.Players.PlayerRemoving:Connect(updatePlayers)
 updatePlayers()]],owner.PlayerGui)
-heyooo.Parent = script.Parent
+	heyooo.Parent = script.Parent
+	TextLabel62.Name = "template"
+	TextLabel62.Parent = heyooo
+	TextLabel62.Size = UDim2.new(1, 0, 0, 29)
+	TextLabel62.BackgroundColor = BrickColor.new("Oyster")
+	TextLabel62.BackgroundColor3 = Color3.new(0.701961, 0.701961, 0.701961)
+	TextLabel62.BackgroundTransparency = 0.10000000149011612
+	TextLabel62.BorderColor = BrickColor.new("Really black")
+	TextLabel62.BorderColor3 = Color3.new(0, 0, 0)
+	TextLabel62.BorderSizePixel = 0
+	TextLabel62.Font = Enum.Font.Cartoon
+	TextLabel62.FontSize = Enum.FontSize.Size18
+	TextLabel62.Text = "Dummy"
+	TextLabel62.TextColor = BrickColor.new("Institutional white")
+	TextLabel62.TextColor3 = Color3.new(1, 1, 1)
+	TextLabel62.TextSize = 18
+	TextLabel62.TextXAlignment = Enum.TextXAlignment.Left
 end))
-TextLabel62.Name = "template"
-TextLabel62.Parent = LocalScript61
-TextLabel62.Size = UDim2.new(1, 0, 0, 29)
-TextLabel62.BackgroundColor = BrickColor.new("Oyster")
-TextLabel62.BackgroundColor3 = Color3.new(0.701961, 0.701961, 0.701961)
-TextLabel62.BackgroundTransparency = 0.10000000149011612
-TextLabel62.BorderColor = BrickColor.new("Really black")
-TextLabel62.BorderColor3 = Color3.new(0, 0, 0)
-TextLabel62.BorderSizePixel = 0
-TextLabel62.Font = Enum.Font.Cartoon
-TextLabel62.FontSize = Enum.FontSize.Size18
-TextLabel62.Text = "Dummy"
-TextLabel62.TextColor = BrickColor.new("Institutional white")
-TextLabel62.TextColor3 = Color3.new(1, 1, 1)
-TextLabel62.TextSize = 18
-TextLabel62.TextXAlignment = Enum.TextXAlignment.Left
+
 TextLabel63.Name = "PlusIcon"
 TextLabel63.Parent = ScreenGui53
 TextLabel63.Position = UDim2.new(0.978118598, 0, 0.893548369, 0)
