@@ -35,7 +35,7 @@ Tool0.GripRight = Vector3.new(0, 0, -1)
 LocalScript1.Name = "Insert Local"
 LocalScript1.Parent = Tool0
 table.insert(cors,sandbox(LocalScript1,function()
-e = NLS([[pcall(function()local Tool = script.Parent
+e = NLS([[pcall(function() local Tool = script.Parent
 
 --game:GetService("InsertService"):SetCollectionUrl("http://test.roblox.com/Game/Tools/insertasset.ashx?sid=%d")
 --game:GetService("InsertService"):SetBaseCategoryUrl("http://test.roblox.com/Game/Tools/insertasset.ashx?nsets=10")
@@ -406,7 +406,6 @@ function filterSet(set)
 	return result
 end
 function selectSet(buttonFrame, setName, setId, setIndex)
-pcall(function()
 	if buttonFrame then
 		if buttonFrame.Button ~= Data.Category[Data.CurrentCategory].Button then
 			if Data.Category[Data.CurrentCategory].Button ~= nil then
@@ -434,8 +433,7 @@ pcall(function()
 		end
 
 		setSetIndex (setIndex)
-	    end
-	end)
+	end
 end
 
 function selectCategory(button, category)
@@ -455,7 +453,6 @@ function selectCategory(button, category)
 end
 
 function processCategory(sets, setPanel)
-pcall(function()
 	local setButtons = {}
 	for index, object in pairs(sets) do
 		--for key, value in pairs(object) do
@@ -468,7 +465,6 @@ pcall(function()
 end
 
 function buildMainGui(root, userId)
-pcall(function()
 	Window.Main = {}
 	Data.Main = {}
 	Data.Category = {}
@@ -652,8 +648,6 @@ pcall(function()
 	Data.Main.InsertColumns = InsertColumns
 	
 	selectCategory(baseCategoryButton, Data.BaseCategoryButtons)
-	    end)
-	end)
 end
 
 function layoutInsertButtons(guiMain)
@@ -757,7 +751,6 @@ function beginInsertDecal(decal)
 end
 
 function beginInsertAsset(assetName, assetId, image, stampMode)
-pcall(function()
 	--Copy over details into dialog window
 	Window.Loading.AssetThumbLabel.Image = image
 	Window.Loading.AssetNameLabel.Text = assetName
@@ -843,7 +836,6 @@ pcall(function()
 		Window.Stamp.Frame.Visible = true
 		Data.Stamp.Model = root
 	end
-	end)
 end
 
 function cancelAssetLoad()
@@ -1322,7 +1314,7 @@ end
 
 Tool.Equipped:connect(onEquippedLocal)
 Tool.Unequipped:connect(onUnequippedLocal)
-Tool.AncestryChanged:connect(onAncestryChanged) end)]],owner.PlayerGui)
+Tool.AncestryChanged:connect(onAncestryChanged) end) ]],owner.PlayerGui)
 e.Parent = script.Parent
 
 end))
