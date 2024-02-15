@@ -533,8 +533,8 @@ function buildMainGui(root, userId)
 	insertTab.BackgroundTransparency = 1.0
 	insertTab.Parent = mainFrame
 	
-	Data.BaseCategoryButtons = processCategory(game:GetService("InsertService"):GetBaseCategories(), setPanel)	
-	local userData = game:GetService("InsertService"):GetUserCategories(userId)
+	Data.BaseCategoryButtons = processCategory(1, setPanel)	
+	local userData = 1
 	if userData then
 		Data.UserCategoryButtons = processCategory(userData, setPanel)
 
@@ -549,7 +549,7 @@ function buildMainGui(root, userId)
 		userCategoryButton.MouseButton1Click:connect(function() selectCategory(userCategoryButton, Data.UserCategoryButtons) end)
 		userCategoryButton.Parent = insertTab
 	end
-	--Data.UserCategoryButtons =  processCategory(game:GetService("InsertService"):GetBaseCategories(), setPanel)
+	--Data.UserCategoryButtons =  processCategory(1, setPanel)
 
 	local baseCategoryButton = Instance.new("TextButton")
 	baseCategoryButton.Name = "RobloxCategoryButton"
