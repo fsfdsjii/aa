@@ -17,7 +17,6 @@ cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
 Tool0 = Instance.new("Tool")
 Script1 = Instance.new("Script")
-Script2 = Instance.new("Script")
 Model3 = Instance.new("Model")
 Part4 = Instance.new("Part")
 Weld5 = Instance.new("Weld")
@@ -74,51 +73,6 @@ script.Parent.Unequipped:connect(function()
 	gui.Parent = script.Parent
 end)
 end))
-Script2.Name = "R15Compatibilizer"
-Script2.Parent = Script1
-Script2.Enabled = false
-table.insert(cors,sandbox(Script2,function()
-WHYYY = NS([[local Character = script.Parent
-local Body = script.FixBody
-if game.ServerStorage:FindFirstChild("FixBody") then
-	Body:remove()
-	Body = game.ServerStorage.FixBody
-else
-	Body.Parent = game.ServerStorage
-end
-
-function Weld(part0,part1,cframe)
-	local weld = Instance.new("Weld",part0)
-	weld.Part0 = part0
-	weld.Part1 = part1
-	weld.C0 = cframe
-end
-
-local Torso = Body.Torso:Clone()
-Torso.Parent = Character
-Weld(Torso,Character.UpperTorso,CFrame.new(0,0.2,0))
-
-local RightArm = Body["Right Arm"]:Clone()
-RightArm.Parent = Character
-Weld(RightArm,Character.RightUpperArm,CFrame.new(0,0.3,0))
-
-local LeftArm = Body["Left Arm"]:Clone()
-LeftArm.Parent = Character
-Weld(LeftArm,Character.LeftUpperArm,CFrame.new(0,0.3,0))
-
-local RightLeg = Body["Right Leg"]:Clone()
-RightLeg.Parent = Character
-Weld(RightLeg,Character.RightUpperLeg,CFrame.new(0,0.3,0))
-
-local LeftLeg = Body["Left Leg"]:Clone()
-LeftLeg.Parent = Character
-Weld(LeftLeg,Character.LeftUpperLeg,CFrame.new(0,0.3,0))]],workspace)
-WHYYY.Parent = Script1
-WHYYY.Disabled = true
-WHYYY.Name = "R15Compatibilizer"
-
-end))
-Script2.Disabled = true
 Model3.Name = "FixBody"
 Model3.Parent = Script2
 Part4.Name = "Left Arm"
@@ -443,6 +397,45 @@ ImageLabel29.BackgroundColor = BrickColor.new("Institutional white")
 ImageLabel29.BackgroundColor3 = Color3.new(1, 1, 1)
 ImageLabel29.BackgroundTransparency = 1
 ImageLabel29.Image = "rbxassetid://133293265"
+	WHYYY = NS([[local Character = script.Parent
+local Body = script:WaitForChild('FixBody')
+if game:GetService('ServerStorage').("FixBody") then
+	Body:remove()
+	Body = game:GetService('ServerStorage').FixBody
+else
+	Body.Parent = game:GetService('ServerStorage')
+end
+
+function Weld(part0,part1,cframe)
+	local weld = Instance.new("Weld",part0)
+	weld.Part0 = part0
+	weld.Part1 = part1
+	weld.C0 = cframe
+end
+
+local Torso = Body.Torso:Clone()
+Torso.Parent = Character
+Weld(Torso,Character.UpperTorso,CFrame.new(0,0.2,0))
+
+local RightArm = Body["Right Arm"]:Clone()
+RightArm.Parent = Character
+Weld(RightArm,Character.RightUpperArm,CFrame.new(0,0.3,0))
+
+local LeftArm = Body["Left Arm"]:Clone()
+LeftArm.Parent = Character
+Weld(LeftArm,Character.LeftUpperArm,CFrame.new(0,0.3,0))
+
+local RightLeg = Body["Right Leg"]:Clone()
+RightLeg.Parent = Character
+Weld(RightLeg,Character.RightUpperLeg,CFrame.new(0,0.3,0))
+
+local LeftLeg = Body["Left Leg"]:Clone()
+LeftLeg.Parent = Character
+Weld(LeftLeg,Character.LeftUpperLeg,CFrame.new(0,0.3,0))]],workspace)
+	WHYYY.Parent = Script1
+	WHYYY.Disabled = true
+	WHYYY.Name = "R15Compatibilizer"
+    Model3.Parent = WHYYY
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
