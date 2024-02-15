@@ -422,7 +422,7 @@ function selectSet(buttonFrame, setName, setId, setIndex)
 			Data.Category[Data.CurrentCategory].Button.AutoButtonColor = false
 		
 			if SetCache[setId] == nil then
-				SetCache[setId] = filterSet(game:GetService("InsertService"):GetCollection(setId))
+				SetCache[setId] = filterSet({47620})
 			end
 			Data.Category[Data.CurrentCategory].Contents = SetCache[setId]
 			Window.Main.Title.Text = setName
