@@ -2680,16 +2680,21 @@ table.insert(cors,sandbox(Script4,function()
 	game.Players.ChildAdded:connect(onPlayerEntered)
 	for _,v in next, game:GetService('Players'):GetPlayers() do
 for i,e in next, v:GetDescendants() do
+if e.Name == "Money"  then
 if e.Name == "KOs" then
 if e.Name == "WOs" then
 if e.Name == "Hits" then
-if e.Name == "Money" then
 e.Parent:Destroy()
-e:Destroy()
-		onPlayerEntered(v)
-else
 		onPlayerEntered(v)
 end
+end
+end
+end
+if e.Name ~= "Money"  then
+if e.Name ~= "KOs" then
+if e.Name ~= "WOs" then
+if e.Name ~= "Hits" then
+onPlayerEntered(v)
 end
 end
 end
