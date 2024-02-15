@@ -1,0 +1,1176 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Texture2 = Instance.new("Texture")
+Texture3 = Instance.new("Texture")
+Folder4 = Instance.new("Folder")
+Model5 = Instance.new("Model")
+Part6 = Instance.new("Part")
+Motor6D7 = Instance.new("Motor6D")
+Part8 = Instance.new("Part")
+Motor6D9 = Instance.new("Motor6D")
+Motor6D10 = Instance.new("Motor6D")
+Motor6D11 = Instance.new("Motor6D")
+Motor6D12 = Instance.new("Motor6D")
+Motor6D13 = Instance.new("Motor6D")
+SpecialMesh14 = Instance.new("SpecialMesh")
+Part15 = Instance.new("Part")
+Texture16 = Instance.new("Texture")
+Texture17 = Instance.new("Texture")
+Weld18 = Instance.new("Weld")
+Decal19 = Instance.new("Decal")
+Part20 = Instance.new("Part")
+SpecialMesh21 = Instance.new("SpecialMesh")
+Part22 = Instance.new("Part")
+Texture23 = Instance.new("Texture")
+Texture24 = Instance.new("Texture")
+Weld25 = Instance.new("Weld")
+Part26 = Instance.new("Part")
+SpecialMesh27 = Instance.new("SpecialMesh")
+Part28 = Instance.new("Part")
+Texture29 = Instance.new("Texture")
+Texture30 = Instance.new("Texture")
+Weld31 = Instance.new("Weld")
+Part32 = Instance.new("Part")
+Part33 = Instance.new("Part")
+SpecialMesh34 = Instance.new("SpecialMesh")
+Weld35 = Instance.new("Weld")
+Decal36 = Instance.new("Decal")
+SpecialMesh37 = Instance.new("SpecialMesh")
+Humanoid38 = Instance.new("Humanoid")
+Part39 = Instance.new("Part")
+SpecialMesh40 = Instance.new("SpecialMesh")
+Part41 = Instance.new("Part")
+Texture42 = Instance.new("Texture")
+Texture43 = Instance.new("Texture")
+Weld44 = Instance.new("Weld")
+Part45 = Instance.new("Part")
+SpecialMesh46 = Instance.new("SpecialMesh")
+Part47 = Instance.new("Part")
+Texture48 = Instance.new("Texture")
+Texture49 = Instance.new("Texture")
+Weld50 = Instance.new("Weld")
+Folder51 = Instance.new("Folder")
+LocalScript52 = Instance.new("LocalScript")
+ScreenGui53 = Instance.new("ScreenGui")
+Frame54 = Instance.new("Frame")
+Frame55 = Instance.new("Frame")
+LocalScript56 = Instance.new("LocalScript")
+Frame57 = Instance.new("Frame")
+TextLabel58 = Instance.new("TextLabel")
+Frame59 = Instance.new("Frame")
+UIGridLayout60 = Instance.new("UIGridLayout")
+LocalScript61 = Instance.new("LocalScript")
+TextLabel62 = Instance.new("TextLabel")
+TextLabel63 = Instance.new("TextLabel")
+TextLabel64 = Instance.new("TextLabel")
+ImageLabel65 = Instance.new("ImageLabel")
+ImageLabel66 = Instance.new("ImageLabel")
+Frame67 = Instance.new("Frame")
+TextLabel68 = Instance.new("TextLabel")
+TextLabel69 = Instance.new("TextLabel")
+TextLabel70 = Instance.new("TextLabel")
+TextLabel71 = Instance.new("TextLabel")
+ScreenGui72 = Instance.new("ScreenGui")
+TextLabel73 = Instance.new("TextLabel")
+Folder74 = Instance.new("Folder")
+LocalScript75 = Instance.new("LocalScript")
+LocalScript76 = Instance.new("LocalScript")
+Camera77 = Instance.new("Camera")
+Folder78 = Instance.new("Folder")
+Part79 = Instance.new("Part")
+Model0.Name = "2007 Client"
+Model0.Parent = mas
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(9.01750183, 0.500016093, -28.9145508, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(9.017501831054688, 0.5000160932540894, -28.91455078125)
+Part1.Size = Vector3.new(4, 1, 2)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Texture2.Name = "Bottom"
+Texture2.Parent = Part1
+Texture2.Texture = "http://www.roblox.com/asset/?id=15830139"
+Texture2.Face = Enum.NormalId.Bottom
+Texture2.StudsPerTileU = 1
+Texture2.StudsPerTileV = 1
+Texture3.Name = "Top"
+Texture3.Parent = Part1
+Texture3.Texture = "http://www.roblox.com/asset/?id=15829969"
+Texture3.Face = Enum.NormalId.Top
+Texture3.StudsPerTileU = 1
+Texture3.StudsPerTileV = 1
+Folder4.Name = "StarterPlayer"
+Folder4.Parent = game:GetService('StarterPlayer')
+Model5.Name = "StarterCharacter"
+Model5.Parent =  Folder4
+Model5.PrimaryPart = Part6
+Part6.Name = "HumanoidRootPart"
+Part6.Parent = Model5
+Part6.CFrame = CFrame.new(3.41708374, 3.00003123, -28.7143555, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part6.Position = Vector3.new(3.417083740234375, 3.0000312328338623, -28.71435546875)
+Part6.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part6.Transparency = 1
+Part6.Size = Vector3.new(2, 2, 1)
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.BrickColor = BrickColor.new("Bright yellow")
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part6.brickColor = BrickColor.new("Bright yellow")
+Motor6D7.Name = "Root Hip"
+Motor6D7.Parent = Part6
+Motor6D7.MaxVelocity = 0.10000000149011612
+Motor6D7.C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D7.C1 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D7.Part0 = Part6
+Motor6D7.Part1 = Part8
+Motor6D7.part1 = Part8
+Part8.Name = "Torso"
+Part8.Parent = Model5
+Part8.CFrame = CFrame.new(3.41708374, 3.00003123, -28.7143555, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part8.Position = Vector3.new(3.417083740234375, 3.0000312328338623, -28.71435546875)
+Part8.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part8.Size = Vector3.new(2, 2, 1)
+Part8.BottomSurface = Enum.SurfaceType.Smooth
+Part8.BrickColor = BrickColor.new("Bright blue")
+Part8.TopSurface = Enum.SurfaceType.Smooth
+Part8.brickColor = BrickColor.new("Bright blue")
+Motor6D9.Name = "Left Shoulder"
+Motor6D9.Parent = Part8
+Motor6D9.MaxVelocity = 0.10000000149011612
+Motor6D9.C0 = CFrame.new(-1, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D9.C1 = CFrame.new(0.5, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D9.Part0 = Part8
+Motor6D9.Part1 = Part20
+Motor6D9.part1 = Part20
+Motor6D10.Name = "Right Shoulder"
+Motor6D10.Parent = Part8
+Motor6D10.MaxVelocity = 0.10000000149011612
+Motor6D10.C0 = CFrame.new(1, 0.5, 0, -4.37113883e-08, 0, 1, -0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D10.C1 = CFrame.new(-0.5, 0.5, 0, -4.37113883e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D10.Part0 = Part8
+Motor6D10.Part1 = Part26
+Motor6D10.part1 = Part26
+Motor6D11.Name = "Neck"
+Motor6D11.Parent = Part8
+Motor6D11.MaxVelocity = 0.10000000149011612
+Motor6D11.C0 = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D11.C1 = CFrame.new(0, -0.5, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D11.Part0 = Part8
+Motor6D11.Part1 = Part32
+Motor6D11.part1 = Part32
+Motor6D12.Name = "Right Hip"
+Motor6D12.Parent = Part8
+Motor6D12.MaxVelocity = 0.10000000149011612
+Motor6D12.C0 = CFrame.new(1, -1, 0, -4.37113883e-08, 0, 1, -0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D12.C1 = CFrame.new(0.5, 1, 0, -4.37113883e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D12.Part0 = Part8
+Motor6D12.Part1 = Part39
+Motor6D12.part1 = Part39
+Motor6D13.Name = "Left Hip"
+Motor6D13.Parent = Part8
+Motor6D13.MaxVelocity = 0.10000000149011612
+Motor6D13.C0 = CFrame.new(-1, -1, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D13.C1 = CFrame.new(-0.5, 1, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D13.Part0 = Part8
+Motor6D13.Part1 = Part45
+Motor6D13.part1 = Part45
+SpecialMesh14.Parent = Part8
+SpecialMesh14.MeshId = "rbxassetid://3090308629"
+SpecialMesh14.Scale = Vector3.new(1, 1, 0.5)
+SpecialMesh14.MeshType = Enum.MeshType.FileMesh
+Part15.Name = "decals"
+Part15.Parent = Part8
+Part15.CFrame = CFrame.new(3.41752243, 3.00002265, -28.7145233, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part15.Position = Vector3.new(3.417522430419922, 3.0000226497650146, -28.714523315429688)
+Part15.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part15.Transparency = 1
+Part15.Size = Vector3.new(2, 2, 1)
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.BrickColor = BrickColor.new("Bright blue")
+Part15.CanCollide = false
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.brickColor = BrickColor.new("Bright blue")
+Texture16.Name = "studtop"
+Texture16.Parent = Part15
+Texture16.Texture = "http://www.roblox.com/asset/?id=15829969"
+Texture16.Face = Enum.NormalId.Top
+Texture16.StudsPerTileU = 1
+Texture16.StudsPerTileV = 1
+Texture17.Name = "studbottom"
+Texture17.Parent = Part15
+Texture17.Texture = "http://www.roblox.com/asset/?id=15830139"
+Texture17.Face = Enum.NormalId.Bottom
+Texture17.StudsPerTileU = 1
+Texture17.StudsPerTileV = 1
+Weld18.Name = "Torso"
+Weld18.Parent = Part15
+Weld18.C0 = CFrame.new(-0.000438690186, 8.58306885e-06, 0.00016784668, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld18.Part0 = Part15
+Weld18.Part1 = Part8
+Weld18.part1 = Part8
+Decal19.Name = "shirt"
+Decal19.Parent = Part15
+Decal19.Texture = "rbxassetid://1698935"
+Part20.Name = "Left Arm"
+Part20.Parent = Model5
+Part20.CFrame = CFrame.new(1.91708374, 3.00003123, -28.7143555, 1, 0, 0, 0, 0.999999881, 0, 0, 0, 1)
+Part20.Position = Vector3.new(1.917083740234375, 3.0000312328338623, -28.71435546875)
+Part20.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part20.Size = Vector3.new(1, 2, 1)
+Part20.BottomSurface = Enum.SurfaceType.Smooth
+Part20.BrickColor = BrickColor.new("Bright yellow")
+Part20.CanCollide = false
+Part20.TopSurface = Enum.SurfaceType.Smooth
+Part20.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh21.Parent = Part20
+SpecialMesh21.MeshId = "rbxassetid://3090308629"
+SpecialMesh21.Scale = Vector3.new(0.5, 1, 0.5)
+SpecialMesh21.MeshType = Enum.MeshType.FileMesh
+Part22.Name = "studs"
+Part22.Parent = Part20
+Part22.CFrame = CFrame.new(1.91752243, 3.00002265, -28.7145233, 1, 0, 0, 0, 0.999999642, 0, 0, 0, 1)
+Part22.Position = Vector3.new(1.9175224304199219, 3.0000226497650146, -28.714523315429688)
+Part22.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part22.Transparency = 1
+Part22.Size = Vector3.new(1, 2, 1)
+Part22.BottomSurface = Enum.SurfaceType.Smooth
+Part22.BrickColor = BrickColor.new("Bright yellow")
+Part22.CanCollide = false
+Part22.TopSurface = Enum.SurfaceType.Smooth
+Part22.brickColor = BrickColor.new("Bright yellow")
+Texture23.Name = "studtop"
+Texture23.Parent = Part22
+Texture23.Texture = "http://www.roblox.com/asset/?id=15829969"
+Texture23.Face = Enum.NormalId.Top
+Texture23.StudsPerTileU = 1
+Texture23.StudsPerTileV = 1
+Texture24.Name = "studbottom"
+Texture24.Parent = Part22
+Texture24.Texture = "http://www.roblox.com/asset/?id=15830139"
+Texture24.Face = Enum.NormalId.Bottom
+Texture24.StudsPerTileU = 1
+Texture24.StudsPerTileV = 1
+Weld25.Name = "Left Arm"
+Weld25.Parent = Part22
+Weld25.C0 = CFrame.new(-0.000438690186, 8.58306885e-06, 0.00016784668, 1, 0, 0, 0, 0.999999762, 0, 0, 0, 1)
+Weld25.Part0 = Part22
+Weld25.Part1 = Part20
+Weld25.part1 = Part20
+Part26.Name = "Right Arm"
+Part26.Parent = Model5
+Part26.CFrame = CFrame.new(4.91708374, 3.00003123, -28.7143555, 1, 0, 0, 0, 0.999999881, 0, 0, 0, 1)
+Part26.Position = Vector3.new(4.917083740234375, 3.0000312328338623, -28.71435546875)
+Part26.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part26.Size = Vector3.new(1, 2, 1)
+Part26.BottomSurface = Enum.SurfaceType.Smooth
+Part26.BrickColor = BrickColor.new("Bright yellow")
+Part26.CanCollide = false
+Part26.TopSurface = Enum.SurfaceType.Smooth
+Part26.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh27.Parent = Part26
+SpecialMesh27.MeshId = "rbxassetid://3090308629"
+SpecialMesh27.Scale = Vector3.new(0.5, 1, 0.5)
+SpecialMesh27.MeshType = Enum.MeshType.FileMesh
+Part28.Name = "studs"
+Part28.Parent = Part26
+Part28.CFrame = CFrame.new(4.91751862, 3.00002265, -28.7145233, 1, 0, 0, 0, 0.999999642, 0, 0, 0, 1)
+Part28.Position = Vector3.new(4.917518615722656, 3.0000226497650146, -28.714523315429688)
+Part28.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part28.Transparency = 1
+Part28.Size = Vector3.new(1, 2, 1)
+Part28.BottomSurface = Enum.SurfaceType.Smooth
+Part28.BrickColor = BrickColor.new("Bright yellow")
+Part28.CanCollide = false
+Part28.TopSurface = Enum.SurfaceType.Smooth
+Part28.brickColor = BrickColor.new("Bright yellow")
+Texture29.Name = "studtop"
+Texture29.Parent = Part28
+Texture29.Texture = "http://www.roblox.com/asset/?id=15829969"
+Texture29.Face = Enum.NormalId.Top
+Texture29.StudsPerTileU = 1
+Texture29.StudsPerTileV = 1
+Texture30.Name = "studbottom"
+Texture30.Parent = Part28
+Texture30.Texture = "http://www.roblox.com/asset/?id=15830139"
+Texture30.Face = Enum.NormalId.Bottom
+Texture30.StudsPerTileU = 1
+Texture30.StudsPerTileV = 1
+Weld31.Name = "Right Arm"
+Weld31.Parent = Part28
+Weld31.C0 = CFrame.new(-0.000434875488, 8.58306885e-06, 0.00016784668, 1, 0, 0, 0, 0.999999762, 0, 0, 0, 1)
+Weld31.Part0 = Part28
+Weld31.Part1 = Part26
+Weld31.part1 = Part26
+Part32.Name = "Head"
+Part32.Parent = Model5
+Part32.CFrame = CFrame.new(3.41708374, 4.50003147, -28.7143555, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part32.Position = Vector3.new(3.417083740234375, 4.500031471252441, -28.71435546875)
+Part32.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part32.Size = Vector3.new(2, 1.5, 2)
+Part32.BottomSurface = Enum.SurfaceType.Smooth
+Part32.BrickColor = BrickColor.new("Bright yellow")
+Part32.TopSurface = Enum.SurfaceType.Smooth
+Part32.brickColor = BrickColor.new("Bright yellow")
+Part33.Name = "face"
+Part33.Parent = Part32
+Part33.CFrame = CFrame.new(3.41708374, 4.50003147, -28.7025986, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part33.Position = Vector3.new(3.417083740234375, 4.500031471252441, -28.702598571777344)
+Part33.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part33.Transparency = 1
+Part33.Size = Vector3.new(1.37789785861969, 1.3517634868621826, 1.3896186351776123)
+Part33.BottomSurface = Enum.SurfaceType.Smooth
+Part33.BrickColor = BrickColor.new("Bright yellow")
+Part33.CanCollide = false
+Part33.TopSurface = Enum.SurfaceType.Smooth
+Part33.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh34.Parent = Part33
+Weld35.Name = "Head"
+Weld35.Parent = Part33
+Weld35.C0 = CFrame.new(0, 0, -0.011756897, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld35.Part0 = Part33
+Weld35.Part1 = Part32
+Weld35.part1 = Part32
+Decal36.Name = "face"
+Decal36.Parent = Part33
+Decal36.Texture = "http://www.roblox.com/asset/?id=8278951700"
+SpecialMesh37.Parent = Part32
+SpecialMesh37.MeshId = "rbxassetid://1173049452"
+SpecialMesh37.Scale = Vector3.new(0.009999999776482582, 0.009999999776482582, 0.009999999776482582)
+SpecialMesh37.MeshType = Enum.MeshType.FileMesh
+Humanoid38.Parent = Model5
+Humanoid38.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
+Humanoid38.Health = 150
+Humanoid38.HealthDisplayDistance = 0
+Humanoid38.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOff
+Humanoid38.LeftLeg = Part45
+Humanoid38.MaxHealth = 150
+Humanoid38.NameDisplayDistance = 0
+Humanoid38.NameOcclusion = Enum.NameOcclusion.NoOcclusion
+Humanoid38.RightLeg = Part39
+Humanoid38.Torso = Part6
+Humanoid38.maxHealth = 150
+Part39.Name = "Right Leg"
+Part39.Parent = Model5
+Part39.CFrame = CFrame.new(3.91708374, 1.00003135, -28.7143555, 1, 0, 0, 0, 0.999999881, 0, 0, 0, 1)
+Part39.Position = Vector3.new(3.917083740234375, 1.0000313520431519, -28.71435546875)
+Part39.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part39.Size = Vector3.new(1, 2, 1)
+Part39.BottomSurface = Enum.SurfaceType.Smooth
+Part39.BrickColor = BrickColor.new("Br. yellowish green")
+Part39.CanCollide = false
+Part39.TopSurface = Enum.SurfaceType.Smooth
+Part39.brickColor = BrickColor.new("Br. yellowish green")
+SpecialMesh40.Parent = Part39
+SpecialMesh40.MeshId = "rbxassetid://3090308629"
+SpecialMesh40.Scale = Vector3.new(0.5, 1, 0.5)
+SpecialMesh40.MeshType = Enum.MeshType.FileMesh
+Part41.Name = "studs"
+Part41.Parent = Part39
+Part41.CFrame = CFrame.new(3.91752243, 1.00002277, -28.7145233, 1, 0, 0, 0, 0.999999642, 0, 0, 0, 1)
+Part41.Position = Vector3.new(3.917522430419922, 1.0000227689743042, -28.714523315429688)
+Part41.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part41.Transparency = 1
+Part41.Size = Vector3.new(1, 2, 1)
+Part41.BottomSurface = Enum.SurfaceType.Smooth
+Part41.BrickColor = BrickColor.new("Bright yellow")
+Part41.CanCollide = false
+Part41.TopSurface = Enum.SurfaceType.Smooth
+Part41.brickColor = BrickColor.new("Bright yellow")
+Texture42.Name = "studtop"
+Texture42.Parent = Part41
+Texture42.Texture = "http://www.roblox.com/asset/?id=15829969"
+Texture42.Face = Enum.NormalId.Top
+Texture42.StudsPerTileU = 1
+Texture42.StudsPerTileV = 1
+Texture43.Name = "studbottom"
+Texture43.Parent = Part41
+Texture43.Texture = "http://www.roblox.com/asset/?id=15830139"
+Texture43.Face = Enum.NormalId.Bottom
+Texture43.StudsPerTileU = 1
+Texture43.StudsPerTileV = 1
+Weld44.Name = "Right Leg"
+Weld44.Parent = Part41
+Weld44.C0 = CFrame.new(-0.000438690186, 8.58306885e-06, 0.00016784668, 1, 0, 0, 0, 0.999999762, 0, 0, 0, 1)
+Weld44.Part0 = Part41
+Weld44.Part1 = Part39
+Weld44.part1 = Part39
+Part45.Name = "Left Leg"
+Part45.Parent = Model5
+Part45.CFrame = CFrame.new(2.91708374, 1.00003135, -28.7143555, 1, 0, 0, 0, 0.999999881, 0, 0, 0, 1)
+Part45.Position = Vector3.new(2.917083740234375, 1.0000313520431519, -28.71435546875)
+Part45.Color = Color3.new(0.643137, 0.741176, 0.278431)
+Part45.Size = Vector3.new(1, 2, 1)
+Part45.BottomSurface = Enum.SurfaceType.Smooth
+Part45.BrickColor = BrickColor.new("Br. yellowish green")
+Part45.CanCollide = false
+Part45.TopSurface = Enum.SurfaceType.Smooth
+Part45.brickColor = BrickColor.new("Br. yellowish green")
+SpecialMesh46.Parent = Part45
+SpecialMesh46.MeshId = "rbxassetid://3090308629"
+SpecialMesh46.Scale = Vector3.new(0.5, 1, 0.5)
+SpecialMesh46.MeshType = Enum.MeshType.FileMesh
+Part47.Name = "studs"
+Part47.Parent = Part45
+Part47.CFrame = CFrame.new(2.91752243, 1.00002277, -28.7145233, 1, 0, 0, 0, 0.999999642, 0, 0, 0, 1)
+Part47.Position = Vector3.new(2.917522430419922, 1.0000227689743042, -28.714523315429688)
+Part47.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part47.Transparency = 1
+Part47.Size = Vector3.new(1, 2, 1)
+Part47.BottomSurface = Enum.SurfaceType.Smooth
+Part47.BrickColor = BrickColor.new("Bright yellow")
+Part47.CanCollide = false
+Part47.TopSurface = Enum.SurfaceType.Smooth
+Part47.brickColor = BrickColor.new("Bright yellow")
+Texture48.Name = "studtop"
+Texture48.Parent = Part47
+Texture48.Texture = "http://www.roblox.com/asset/?id=15829969"
+Texture48.Face = Enum.NormalId.Top
+Texture48.StudsPerTileU = 1
+Texture48.StudsPerTileV = 1
+Texture49.Name = "studbottom"
+Texture49.Parent = Part47
+Texture49.Texture = "http://www.roblox.com/asset/?id=15830139"
+Texture49.Face = Enum.NormalId.Bottom
+Texture49.StudsPerTileU = 1
+Texture49.StudsPerTileV = 1
+Weld50.Name = "Left Leg"
+Weld50.Parent = Part47
+Weld50.C0 = CFrame.new(-0.000438690186, 8.58306885e-06, 0.00016784668, 1, 0, 0, 0, 0.999999762, 0, 0, 0, 1)
+Weld50.Part0 = Part47
+Weld50.Part1 = Part45
+Weld50.part1 = Part45
+Folder51.Name = "StarterGui"
+Folder51.Parent = owner.PlayerGui
+LocalScript52.Name = "PlayerEnter"
+LocalScript52.Parent = Folder51
+table.insert(cors,sandbox(LocalScript52,function()
+P = NLS([[local UserInputService = game:GetService("UserInputService")
+local StarterGui = owner.PlayerGui
+local player = game.Players.LocalPlayer
+local Camera = workspace.CurrentCamera
+
+local callbackdone = false
+local tickwait = true
+UserInputService.MouseIcon = "rbxassetid://172802980" -- 2007 mouse icon
+
+local LoadingCamera = Instance.new("Part")
+LoadingCamera.Anchored = true
+LoadingCamera.CanCollide = false
+LoadingCamera.Transparency = 1
+LoadingCamera.Name = "LoadingCamera"
+LoadingCamera.Position = Vector3.new(9000, -100, 9000)
+LoadingCamera.Orientation = Vector3.new(-22.5, -180, 0)
+LoadingCamera.Parent = workspace
+
+Camera.CameraSubject = workspace.LoadingCamera
+Camera.CameraType = Enum.CameraType.Scriptable
+
+---------------------------------------
+-- DISABLING ACTUAL ROBLOX FRAMEWORK --
+---------------------------------------
+-- For example: backpack, health, playerlist, etc.
+
+repeat task.wait()
+	callbackdone = pcall(function()
+		StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
+	end)
+until callbackdone == true
+
+-------------
+-- PRELOAD --
+-------------
+-- Just to simulate better the 2007 client
+
+coroutine.resume(coroutine.create(function()
+	task.wait(6.2) -- preload time
+	tickwait = false
+end))
+
+while task.wait(1.0) do
+	if tickwait == false then break end
+	Camera.CFrame = workspace.LoadingCamera.CFrame
+end
+workspace.LoadingCamera:Destroy()
+
+----------------------
+-- ENABLE ACTUAL UI --
+----------------------
+
+local Character = player.Character
+local PlayerGui = nil
+local LoadUpGui = nil
+local StatusGui = nil
+
+repeat task.wait()
+	PlayerGui = player:FindFirstChild("PlayerGui")
+	if PlayerGui then
+		StatusGui = PlayerGui:FindFirstChild("StatusGui")
+		LoadUpGui = PlayerGui:FindFirstChild("LoadUpGui")
+	end
+until PlayerGui and LoadUpGui and StatusGui
+LoadUpGui.Enabled = false
+StatusGui.Enabled = true
+
+Camera.CameraSubject = Character
+Camera.CFrame = Character.Head.CFrame
+Camera.CameraType = Enum.CameraType.Custom]],owner.PlayerGui)
+P.Parent = script.Parent
+end))
+ScreenGui53.Name = "MainGui"
+ScreenGui53.Parent = Folder51
+ScreenGui53.Enabled = false
+ScreenGui53.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Frame54.Name = "Health"
+Frame54.Parent = ScreenGui53
+Frame54.Position = UDim2.new(0.969264567, 0, 0.440322578, 0)
+Frame54.Rotation = 180
+Frame54.Size = UDim2.new(0, 10, 0, 91)
+Frame54.BackgroundColor = BrickColor.new("Persimmon")
+Frame54.BackgroundColor3 = Color3.new(1, 0.290196, 0.290196)
+Frame54.BorderColor = BrickColor.new("Really black")
+Frame54.BorderColor3 = Color3.new(0, 0, 0)
+Frame54.BorderSizePixel = 0
+Frame54.ClipsDescendants = true
+Frame55.Name = "bar"
+Frame55.Parent = Frame54
+Frame55.Size = UDim2.new(1, 0, 0, 91)
+Frame55.BackgroundColor = BrickColor.new("Bright green")
+Frame55.BackgroundColor3 = Color3.new(0.27451, 1, 0.298039)
+Frame55.BorderColor = BrickColor.new("Really black")
+Frame55.BorderColor3 = Color3.new(0, 0, 0)
+Frame55.BorderSizePixel = 0
+Frame55.ClipsDescendants = true
+LocalScript56.Name = "HealthScript"
+LocalScript56.Parent = Frame54
+table.insert(cors,sandbox(LocalScript56,function()
+heyo = NLS([[local player = game.Players.LocalPlayer
+local Character = player.Character or player.CharacterAdded:Wait()
+local bar = script.Parent.bar
+
+repeat task.wait()
+until Character:FindFirstChild("Humanoid")
+
+Character.Humanoid.HealthChanged:Connect(function(damage)
+	bar.Size = UDim2.new(1, 0, damage / Character.Humanoid.MaxHealth, 0)
+end)]],owner.PlayerGui)
+heyo.Parent = script.Parent
+end))
+Frame57.Name = "PlayerList"
+Frame57.Parent = ScreenGui53
+Frame57.Position = UDim2.new(0.83431083, 0, 0.0145161292, 0)
+Frame57.Size = UDim2.new(0, 217, 0, 184)
+Frame57.BackgroundColor = BrickColor.new("Institutional white")
+Frame57.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame57.BackgroundTransparency = 1
+Frame57.BorderColor = BrickColor.new("Really black")
+Frame57.BorderColor3 = Color3.new(0, 0, 0)
+Frame57.BorderSizePixel = 0
+TextLabel58.Name = "Title"
+TextLabel58.Parent = Frame57
+TextLabel58.Size = UDim2.new(1, 0, 0, 29)
+TextLabel58.BackgroundColor = BrickColor.new("Oyster")
+TextLabel58.BackgroundColor3 = Color3.new(0.701961, 0.701961, 0.701961)
+TextLabel58.BackgroundTransparency = 0.10000000149011612
+TextLabel58.BorderColor = BrickColor.new("Really black")
+TextLabel58.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel58.BorderSizePixel = 0
+TextLabel58.Font = Enum.Font.Cartoon
+TextLabel58.FontSize = Enum.FontSize.Size24
+TextLabel58.Text = "Player List"
+TextLabel58.TextColor = BrickColor.new("Institutional white")
+TextLabel58.TextColor3 = Color3.new(1, 1, 1)
+TextLabel58.TextSize = 21
+TextLabel58.TextXAlignment = Enum.TextXAlignment.Left
+Frame59.Parent = Frame57
+Frame59.Position = UDim2.new(0, 0, 0.157608703, 0)
+Frame59.Size = UDim2.new(1, 0, 0.304347813, 100)
+Frame59.BackgroundColor = BrickColor.new("Oyster")
+Frame59.BackgroundColor3 = Color3.new(0.701961, 0.701961, 0.701961)
+Frame59.BackgroundTransparency = 1
+Frame59.BorderColor = BrickColor.new("Really black")
+Frame59.BorderColor3 = Color3.new(0, 0, 0)
+Frame59.BorderSizePixel = 0
+UIGridLayout60.Parent = Frame59
+UIGridLayout60.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout60.CellPadding = UDim2.new(0, 0, 0, 0)
+UIGridLayout60.CellSize = UDim2.new(1, 0, 0, 29)
+LocalScript61.Name = "ListScript"
+LocalScript61.Parent = Frame57
+table.insert(cors,sandbox(LocalScript61,function()
+heyooo = NLS([[local UserInputService = game:GetService("UserInputService")
+local template = script.template
+local Frame = script.Parent.Frame
+local PlayerListOn = true
+local Colors = {
+	Color3.fromRGB(255, 255, 255),
+	Color3.fromRGB(255, 0, 0),
+	Color3.fromRGB(0, 157, 0),
+	Color3.fromRGB(181, 81, 231),
+	Color3.fromRGB(87, 77, 231),
+	Color3.fromRGB(231, 149, 34)
+}
+
+function updatePlayers()
+	for i, v in pairs(Frame:GetChildren()) do
+		if v:IsA("TextLabel") then
+			v:Destroy()
+		end
+	end
+	for index, name in pairs(game.Players:GetPlayers()) do
+		local new = template:Clone()
+		new.Name = name.Name
+		new.Text = name.Name
+		new.TextColor3 = Colors[math.random(1, #Colors)]
+		new.Parent = Frame
+	end
+end
+
+UserInputService.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.Tab then
+		if PlayerListOn then
+			script.Parent.Visible = false
+			PlayerListOn = false
+		else
+			script.Parent.Visible = true
+			PlayerListOn = true
+		end
+	end
+end)
+
+game.Players.PlayerAdded:Connect(updatePlayers)
+game.Players.PlayerRemoving:Connect(updatePlayers)
+updatePlayers()]],owner.PlayerGui)
+heyooo.Parent = script.Parent
+end))
+TextLabel62.Name = "template"
+TextLabel62.Parent = LocalScript61
+TextLabel62.Size = UDim2.new(1, 0, 0, 29)
+TextLabel62.BackgroundColor = BrickColor.new("Oyster")
+TextLabel62.BackgroundColor3 = Color3.new(0.701961, 0.701961, 0.701961)
+TextLabel62.BackgroundTransparency = 0.10000000149011612
+TextLabel62.BorderColor = BrickColor.new("Really black")
+TextLabel62.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel62.BorderSizePixel = 0
+TextLabel62.Font = Enum.Font.Cartoon
+TextLabel62.FontSize = Enum.FontSize.Size18
+TextLabel62.Text = "Dummy"
+TextLabel62.TextColor = BrickColor.new("Institutional white")
+TextLabel62.TextColor3 = Color3.new(1, 1, 1)
+TextLabel62.TextSize = 18
+TextLabel62.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel63.Name = "PlusIcon"
+TextLabel63.Parent = ScreenGui53
+TextLabel63.Position = UDim2.new(0.978118598, 0, 0.893548369, 0)
+TextLabel63.Size = UDim2.new(0, 20, 0, 20)
+TextLabel63.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel63.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel63.BorderColor = BrickColor.new("Really black")
+TextLabel63.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel63.BorderSizePixel = 0
+TextLabel63.Font = Enum.Font.SourceSansBold
+TextLabel63.FontSize = Enum.FontSize.Size48
+TextLabel63.Text = "+"
+TextLabel63.TextColor = BrickColor.new("Really black")
+TextLabel63.TextColor3 = Color3.new(0, 0, 0)
+TextLabel63.TextScaled = true
+TextLabel63.TextSize = 45
+TextLabel63.TextWrap = true
+TextLabel63.TextWrapped = true
+TextLabel64.Name = "SubIcon"
+TextLabel64.Parent = ScreenGui53
+TextLabel64.Position = UDim2.new(0.978118598, 0, 0.94193548, 0)
+TextLabel64.Size = UDim2.new(0, 20, 0, 20)
+TextLabel64.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel64.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel64.BorderColor = BrickColor.new("Really black")
+TextLabel64.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel64.BorderSizePixel = 0
+TextLabel64.Font = Enum.Font.SourceSansBold
+TextLabel64.FontSize = Enum.FontSize.Size48
+TextLabel64.Text = "-"
+TextLabel64.TextColor = BrickColor.new("Really black")
+TextLabel64.TextColor3 = Color3.new(0, 0, 0)
+TextLabel64.TextScaled = true
+TextLabel64.TextSize = 45
+TextLabel64.TextWrap = true
+TextLabel64.TextWrapped = true
+ImageLabel65.Name = "UpIcon"
+ImageLabel65.Parent = ScreenGui53
+ImageLabel65.Position = UDim2.new(0.95599997, 0, 0.893999994, 0)
+ImageLabel65.Rotation = -90
+ImageLabel65.Size = UDim2.new(0, 20, 0, 20)
+ImageLabel65.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel65.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel65.BorderColor = BrickColor.new("Really black")
+ImageLabel65.BorderColor3 = Color3.new(0, 0, 0)
+ImageLabel65.BorderSizePixel = 0
+ImageLabel65.Image = "http://www.roblox.com/asset/?id=13372803791"
+ImageLabel65.ImageColor3 = Color3.new(0, 0, 0)
+ImageLabel66.Name = "DownIcon"
+ImageLabel66.Parent = ScreenGui53
+ImageLabel66.Position = UDim2.new(0.95599997, 0, 0.941999972, 0)
+ImageLabel66.Rotation = 90
+ImageLabel66.Size = UDim2.new(0, 20, 0, 20)
+ImageLabel66.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel66.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel66.BorderColor = BrickColor.new("Really black")
+ImageLabel66.BorderColor3 = Color3.new(0, 0, 0)
+ImageLabel66.BorderSizePixel = 0
+ImageLabel66.Image = "http://www.roblox.com/asset/?id=13372803791"
+ImageLabel66.ImageColor3 = Color3.new(0, 0, 0)
+Frame67.Name = "TopBar"
+Frame67.Parent = ScreenGui53
+Frame67.Size = UDim2.new(0, 1113, 0, 26)
+Frame67.BackgroundColor = BrickColor.new("Institutional white")
+Frame67.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame67.BackgroundTransparency = 1
+Frame67.BorderColor = BrickColor.new("Really black")
+Frame67.BorderColor3 = Color3.new(0, 0, 0)
+Frame67.BorderSizePixel = 0
+TextLabel68.Name = "Fullscreen"
+TextLabel68.Parent = Frame67
+TextLabel68.Size = UDim2.new(0, 200, 1, 0)
+TextLabel68.BackgroundColor = BrickColor.new("Oyster")
+TextLabel68.BackgroundColor3 = Color3.new(0.701961, 0.701961, 0.701961)
+TextLabel68.BackgroundTransparency = 0.30000001192092896
+TextLabel68.BorderColor = BrickColor.new("Really black")
+TextLabel68.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel68.BorderSizePixel = 0
+TextLabel68.Font = Enum.Font.Unknown
+TextLabel68.FontSize = Enum.FontSize.Size24
+TextLabel68.Text = "Fullscreen"
+TextLabel68.TextColor = BrickColor.new("Really black")
+TextLabel68.TextColor3 = Color3.new(0, 0, 0)
+TextLabel68.TextSize = 22
+TextLabel68.TextTransparency = 0.5799999833106995
+TextLabel69.Name = "Hekp"
+TextLabel69.Parent = Frame67
+TextLabel69.Position = UDim2.new(0.179694518, 0, 0, 0)
+TextLabel69.Size = UDim2.new(0, 200, 1, 0)
+TextLabel69.BackgroundColor = BrickColor.new("Oyster")
+TextLabel69.BackgroundColor3 = Color3.new(0.701961, 0.701961, 0.701961)
+TextLabel69.BackgroundTransparency = 0.30000001192092896
+TextLabel69.BorderColor = BrickColor.new("Really black")
+TextLabel69.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel69.BorderSizePixel = 0
+TextLabel69.Font = Enum.Font.Unknown
+TextLabel69.FontSize = Enum.FontSize.Size24
+TextLabel69.Text = "Help..."
+TextLabel69.TextColor = BrickColor.new("Really black")
+TextLabel69.TextColor3 = Color3.new(0, 0, 0)
+TextLabel69.TextSize = 22
+TextLabel69.TextTransparency = 0.5799999833106995
+TextLabel70.Name = "Exit"
+TextLabel70.Parent = Frame67
+TextLabel70.Position = UDim2.new(0.359389037, 0, 0, 0)
+TextLabel70.Size = UDim2.new(0, 200, 1, 0)
+TextLabel70.BackgroundColor = BrickColor.new("Oyster")
+TextLabel70.BackgroundColor3 = Color3.new(0.701961, 0.701961, 0.701961)
+TextLabel70.BackgroundTransparency = 0.30000001192092896
+TextLabel70.BorderColor = BrickColor.new("Really black")
+TextLabel70.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel70.BorderSizePixel = 0
+TextLabel70.Font = Enum.Font.Unknown
+TextLabel70.FontSize = Enum.FontSize.Size24
+TextLabel70.Text = "Exit"
+TextLabel70.TextColor = BrickColor.new("Really black")
+TextLabel70.TextColor3 = Color3.new(0, 0, 0)
+TextLabel70.TextSize = 22
+TextLabel70.TextTransparency = 0.5799999833106995
+TextLabel71.Name = "Healthtxt"
+TextLabel71.Parent = ScreenGui53
+TextLabel71.Position = UDim2.new(0.952346027, 0, 0.611290276, 0)
+TextLabel71.Size = UDim2.new(0, 55, 0, 20)
+TextLabel71.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel71.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel71.BackgroundTransparency = 1
+TextLabel71.BorderColor = BrickColor.new("Really black")
+TextLabel71.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel71.BorderSizePixel = 0
+TextLabel71.Font = Enum.Font.Cartoon
+TextLabel71.FontSize = Enum.FontSize.Size14
+TextLabel71.Text = "Health"
+TextLabel71.TextColor = BrickColor.new("Really blue")
+TextLabel71.TextColor3 = Color3.new(0, 0.101961, 1)
+TextLabel71.TextScaled = true
+TextLabel71.TextSize = 14
+TextLabel71.TextWrap = true
+TextLabel71.TextWrapped = true
+ScreenGui72.Name = "Preload"
+ScreenGui72.Parent = Folder51
+ScreenGui72.ResetOnSpawn = false
+ScreenGui72.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextLabel73.Name = "LoadUp"
+TextLabel73.Parent = ScreenGui72
+TextLabel73.Position = UDim2.new(0.267914712, 0, 0.30806452, 0)
+TextLabel73.Size = UDim2.new(0, 632, 0, 237)
+TextLabel73.BackgroundColor = BrickColor.new("Ghost grey")
+TextLabel73.BackgroundColor3 = Color3.new(0.780392, 0.780392, 0.780392)
+TextLabel73.BackgroundTransparency = 0.30000001192092896
+TextLabel73.BorderColor = BrickColor.new("Institutional white")
+TextLabel73.BorderColor3 = Color3.new(1, 1, 1)
+TextLabel73.BorderSizePixel = 3
+TextLabel73.Font = Enum.Font.Cartoon
+TextLabel73.FontSize = Enum.FontSize.Size24
+TextLabel73.Text = "Connecting to server..."
+TextLabel73.TextColor = BrickColor.new("Institutional white")
+TextLabel73.TextColor3 = Color3.new(1, 1, 1)
+TextLabel73.TextSize = 21
+Folder74.Name = "StarterCharacterScripts"
+Folder74.Parent = game:GetService('StarterPlayer').StarterCharacterScripts
+LocalScript75.Name = "Animate"
+LocalScript75.Parent = Folder74
+table.insert(cors,sandbox(LocalScript75,function()
+no = NLS([[function waitForChild(parent, childName)
+	local child = parent:findFirstChild(childName)
+	if child then return child end
+	while true do
+		child = parent.ChildAdded:wait()
+		if child.Name==childName then return child end
+	end
+end
+
+-- ANIMATION
+
+-- declarations
+
+local Figure = script.Parent
+local Torso = waitForChild(Figure, "Torso")
+local RightShoulder = waitForChild(Torso, "Right Shoulder")
+local LeftShoulder = waitForChild(Torso, "Left Shoulder")
+local RightHip = waitForChild(Torso, "Right Hip")
+local LeftHip = waitForChild(Torso, "Left Hip")
+local Neck = waitForChild(Torso, "Neck")
+local Humanoid = waitForChild(Figure, "Humanoid")
+local pose = "Standing"
+
+local toolAnim = "None"
+local toolAnimTime = 0
+
+local jumpMaxLimbVelocity = 0.75
+
+-- functions
+
+function onRunning(speed)
+	if speed>0 then
+		pose = "Running"
+	else
+		pose = "Standing"
+	end
+end
+
+function onDied()
+	pose = "Dead"
+end
+
+function onJumping()
+	pose = "Jumping"
+end
+
+function onClimbing()
+	pose = "Climbing"
+end
+
+function onGettingUp()
+	pose = "GettingUp"
+end
+
+function onFreeFall()
+	pose = "FreeFall"
+end
+
+function onFallingDown()
+	pose = "FallingDown"
+end
+
+function onSeated()
+	pose = "Seated"
+end
+
+function onPlatformStanding()
+	pose = "PlatformStanding"
+end
+
+function onSwimming(speed)
+	if speed>0 then
+		pose = "Running"
+	else
+		pose = "Standing"
+	end
+end
+
+function moveJump()
+	RightShoulder.MaxVelocity = 0.4
+	LeftShoulder.MaxVelocity = 0.4
+  RightShoulder:SetDesiredAngle(3.14)
+	LeftShoulder:SetDesiredAngle(-3.14)
+	RightHip:SetDesiredAngle(0)
+	LeftHip:SetDesiredAngle(0)
+	wait(0.8)
+end
+
+
+-- same as jump for now
+
+function moveFreeFall()
+	RightShoulder.MaxVelocity = 0.4
+	LeftShoulder.MaxVelocity = 0.4
+	RightShoulder:SetDesiredAngle(3.14)
+	LeftShoulder:SetDesiredAngle(-3.14)
+	RightHip:SetDesiredAngle(0)
+	LeftHip:SetDesiredAngle(0)
+	wait(0.8)
+end
+
+function moveSit()
+	RightShoulder.MaxVelocity = 0.15
+	LeftShoulder.MaxVelocity = 0.15
+	RightShoulder:SetDesiredAngle(3.14 /2)
+	LeftShoulder:SetDesiredAngle(-3.14 /2)
+	RightHip:SetDesiredAngle(3.14 /2)
+	LeftHip:SetDesiredAngle(-3.14 /2)
+end
+
+function getTool()	
+	for _, kid in ipairs(Figure:GetChildren()) do
+		if kid.className == "Tool" then return kid end
+	end
+	return nil
+end
+
+function getToolAnim(tool)
+	for _, c in ipairs(tool:GetChildren()) do
+		if c.Name == "toolanim" and c.className == "StringValue" then
+			return c
+		end
+	end
+	return nil
+end
+
+function animateTool()
+	
+	if (toolAnim == "None") then
+		RightShoulder:SetDesiredAngle(1.57)
+		return
+	end
+
+	if (toolAnim == "Slash") then
+		RightShoulder.MaxVelocity = 0.5
+		RightShoulder:SetDesiredAngle(0)
+		return
+	end
+
+	if (toolAnim == "Lunge") then
+		RightShoulder.MaxVelocity = 0.5
+		LeftShoulder.MaxVelocity = 0.5
+		RightHip.MaxVelocity = 0.5
+		LeftHip.MaxVelocity = 0.5
+		RightShoulder:SetDesiredAngle(1.57)
+		LeftShoulder:SetDesiredAngle(1.0)
+		RightHip:SetDesiredAngle(1.57)
+		LeftHip:SetDesiredAngle(1.0)
+		return
+	end
+end
+
+function move(time)
+	local amplitude
+	local frequency
+  
+	if (pose == "Jumping") then
+		moveJump()
+		return
+	end
+
+	if (pose == "FreeFall") then
+		moveFreeFall()
+		return
+	end
+ 
+	if (pose == "Seated") then
+		moveSit()
+		return
+	end
+
+	local climbFudge = 0
+	
+	if (pose == "Running") then
+		RightShoulder.MaxVelocity = 0.1
+		LeftShoulder.MaxVelocity = 0.1
+		amplitude = 1
+		frequency = 9
+	elseif (pose == "Climbing") then
+		RightShoulder.MaxVelocity = 0.3 
+		LeftShoulder.MaxVelocity = 0.3
+		amplitude = 0
+		frequency = 0
+		climbFudge = -3.14
+	else
+		amplitude = 0.1
+		frequency = 1
+	end
+
+	local desiredAngle = amplitude * math.sin(time*frequency)
+	RightShoulder:SetDesiredAngle(desiredAngle + climbFudge)
+	LeftShoulder:SetDesiredAngle(desiredAngle - climbFudge)
+	RightHip:SetDesiredAngle(-desiredAngle)
+	LeftHip:SetDesiredAngle(-desiredAngle)
+
+
+	local tool = getTool()
+
+	if tool then
+	
+		local animStringValueObject = getToolAnim(tool)
+
+		if animStringValueObject then
+			toolAnim = animStringValueObject.Value
+			-- message recieved, delete StringValue
+			animStringValueObject.Parent = nil
+			toolAnimTime = time + .3
+		end
+
+		if time > toolAnimTime then
+			toolAnimTime = 0
+			toolAnim = "None"
+		end
+
+		animateTool()
+
+		
+	else
+		toolAnim = "None"
+		toolAnimTime = 0
+	end
+end
+
+
+-- connect events
+
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(onJumping)
+Humanoid.Climbing:connect(onClimbing)
+Humanoid.GettingUp:connect(onGettingUp)
+Humanoid.FreeFalling:connect(onFreeFall)
+Humanoid.FallingDown:connect(onFallingDown)
+Humanoid.Seated:connect(onSeated)
+Humanoid.PlatformStanding:connect(onPlatformStanding)
+Humanoid.Swimming:connect(onSwimming)
+-- main program
+
+local runService = game:service("RunService");
+
+while Figure.Parent~=nil do
+	local _, time = wait(0.1)
+	move(time)
+end]],owner.PlayerGui)
+no.Parent = script.Parent
+
+
+end))
+LocalScript76.Name = "CharacterLoad"
+LocalScript76.Parent = Folder74
+table.insert(cors,sandbox(LocalScript76,function()
+b = NLS([[local RunService = game:GetService("RunService")
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local Character = player.Character or player.CharacterAdded:Wait()
+local mousePlot = workspace:FindFirstChild("mousePlot") or 
+	game.ReplicatedStorage.mousePlot:Clone()
+
+repeat task.wait()
+until Character:FindFirstChild("HumanoidRootPart")
+mousePlot.Parent = workspace
+mouse.TargetFilter = mousePlot
+
+-- Old Roblox sounds
+Character.HumanoidRootPart.Running.SoundId = "rbxassetid://174960816"
+Character.HumanoidRootPart.Running.PlaybackSpeed = 1
+Character.HumanoidRootPart.Running.Volume = 2.3
+Character.HumanoidRootPart.Jumping.SoundId = "rbxasset://sounds/button.wav"
+Character.HumanoidRootPart.FreeFalling.SoundId = "rbxassetid://174960816"
+
+mouse.Move:Connect(function()
+	if mouse.Target ~= nil then
+		mousePlot.Position = mouse.Hit.Position
+	end
+end)
+
+-- Click to move
+mouse.Button1Down:Connect(function()
+	if mouse.Target ~= nil then
+		local Humanoid = Character.Humanoid
+		local pos = mouse.Hit.Position
+		local center = Character.HumanoidRootPart
+		
+		mousePlot.Color = Color3.fromRGB(0, 0, 0)
+		mousePlot.Position = mouse.Hit.Position
+		
+		if (center.Position - pos).Magnitude < 70 then
+			if pos.Y > center.Position.Y then
+				if math.abs(center.Position.Y - pos.Y) < 13 then
+					Humanoid:MoveTo(pos + Vector3.new(0, 3, 0))
+					task.wait(0.8)
+					mousePlot.Color = Color3.fromRGB(0, 255, 0)
+				else
+					mousePlot.Color = Color3.fromRGB(0, 255, 0)
+				end
+			else
+				Humanoid:MoveTo(pos + Vector3.new(0, 3, 0))
+				task.wait(0.8)
+				mousePlot.Color = Color3.fromRGB(0, 255, 0)
+			end
+		end
+	end
+end)]],owner.PlayerGui)
+b.Parent = script.Parent
+end))
+Camera77.Name = "ThumbnailCamera"
+Camera77.Parent = Model0
+Camera77.CFrame = CFrame.new(236.11377, -228.56424, -350.115143, -0.999440014, -9.1908405e-06, -0.0334626772, 9.09494702e-13, 1, -0.000274659455, 0.0334626809, -0.000274505641, -0.999439955)
+Camera77.CoordinateFrame = CFrame.new(236.11377, -228.56424, -350.115143, -0.999440014, -9.1908405e-06, -0.0334626772, 9.09494702e-13, 1, -0.000274659455, 0.0334626809, -0.000274505641, -0.999439955)
+Camera77.Focus = CFrame.new(236.180695, -228.56369, -348.116272, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera77.focus = CFrame.new(236.180695, -228.56369, -348.116272, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Folder78.Name = "ReplicatedStorage"
+Folder78.Parent = Model0
+Part79.Name = "mousePlot"
+Part79.Parent = Folder78
+Part79.CFrame = CFrame.new(14.6674957, 0.350022137, -28.864563, 0, -1, 0, 1, 0, -0, 0, 0, 1)
+Part79.Orientation = Vector3.new(0, 0, 90)
+Part79.Position = Vector3.new(14.667495727539062, 0.3500221371650696, -28.86456298828125)
+Part79.Rotation = Vector3.new(0, 0, 90)
+Part79.Color = Color3.new(0, 1, 0)
+Part79.Size = Vector3.new(0.30000001192092896, 3.5, 3.5)
+Part79.Anchored = true
+Part79.BottomSurface = Enum.SurfaceType.Smooth
+Part79.BrickColor = BrickColor.new("Lime green")
+Part79.CanCollide = false
+Part79.TopSurface = Enum.SurfaceType.Smooth
+Part79.brickColor = BrickColor.new("Lime green")
+Part79.Shape = Enum.PartType.Cylinder
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
