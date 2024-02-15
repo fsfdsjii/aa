@@ -49,6 +49,49 @@ Tool0.Parent = owner.Backpack
 Tool0.CanBeDropped = false
 Tool0.RequiresHandle = false
 Script1.Parent = Tool0
+
+Model3.Name = "FixBody"
+Model3.Parent = game:GetService('ServerStorage')
+WHYYY = NS([[ local Character = owner.Character
+local Body = script:WaitForChild('FixBody')
+if game:GetService('ServerStorage'):FindFirstChild('FixBody') then
+	Body:remove()
+	Body = game:GetService('ServerStorage').FixBody
+else
+	Body.Parent = game:GetService('ServerStorage')
+end
+
+function Weld(part0,part1,cframe)
+	local weld = Instance.new("Weld",part0)
+	weld.Part0 = part0
+	weld.Part1 = part1
+	weld.C0 = cframe
+end
+
+local Torso = Body.Torso:Clone()
+Torso.Parent = Character
+Weld(Torso,Character.UpperTorso,CFrame.new(0,0.2,0))
+
+local RightArm = Body["Right Arm"]:Clone()
+RightArm.Parent = Character
+Weld(RightArm,Character.RightUpperArm,CFrame.new(0,0.3,0))
+
+local LeftArm = Body["Left Arm"]:Clone()
+LeftArm.Parent = Character
+Weld(LeftArm,Character.LeftUpperArm,CFrame.new(0,0.3,0))
+
+local RightLeg = Body["Right Leg"]:Clone()
+RightLeg.Parent = Character
+Weld(RightLeg,Character.RightUpperLeg,CFrame.new(0,0.3,0))
+
+local LeftLeg = Body["Left Leg"]:Clone()
+LeftLeg.Parent = Character
+Weld(LeftLeg,Character.LeftUpperLeg,CFrame.new(0,0.3,0))  ]],workspace)
+        WHYYY.Disabled = true
+        WHYYY.Enabled = false
+	WHYYY.Parent = Script1
+	WHYYY.Name = "R15Compatibilizer"
+    Model3.Parent = WHYYY
 table.insert(cors,sandbox(Script1,function()
 --Created by Nightrains
 --Enable Http Requests to work.
@@ -61,6 +104,7 @@ script.Parent.Equipped:connect(function()
 			if not character:FindFirstChild("R15Compatibilizer") then
 				script.R15Compatibilizer.Parent = character
 				character.R15Compatibilizer.Disabled = false
+                                character.R15Compatibilizer.Enabled = true
 			end
 		end
 	end
@@ -73,8 +117,6 @@ script.Parent.Unequipped:connect(function()
 	gui.Parent = script.Parent
 end)
 end))
-Model3.Name = "FixBody"
-Model3.Parent = Script2
 Part4.Name = "Left Arm"
 Part4.Parent = Model3
 Part4.CFrame = CFrame.new(8.81265831, 4.20001316, -29.6584663, 0, 0, -1, 0, 1, 0, 1, 0, -0)
@@ -397,44 +439,6 @@ ImageLabel29.BackgroundColor = BrickColor.new("Institutional white")
 ImageLabel29.BackgroundColor3 = Color3.new(1, 1, 1)
 ImageLabel29.BackgroundTransparency = 1
 ImageLabel29.Image = "rbxassetid://133293265"
-WHYYY = NS([[ local Character = owner.Character
-local Body = script:WaitForChild('FixBody')
-if game:GetService('ServerStorage'):FindFirstChild('FixBody') then
-	Body:remove()
-	Body = game:GetService('ServerStorage').FixBody
-else
-	Body.Parent = game:GetService('ServerStorage')
-end
-
-function Weld(part0,part1,cframe)
-	local weld = Instance.new("Weld",part0)
-	weld.Part0 = part0
-	weld.Part1 = part1
-	weld.C0 = cframe
-end
-
-local Torso = Body.Torso:Clone()
-Torso.Parent = Character
-Weld(Torso,Character.UpperTorso,CFrame.new(0,0.2,0))
-
-local RightArm = Body["Right Arm"]:Clone()
-RightArm.Parent = Character
-Weld(RightArm,Character.RightUpperArm,CFrame.new(0,0.3,0))
-
-local LeftArm = Body["Left Arm"]:Clone()
-LeftArm.Parent = Character
-Weld(LeftArm,Character.LeftUpperArm,CFrame.new(0,0.3,0))
-
-local RightLeg = Body["Right Leg"]:Clone()
-RightLeg.Parent = Character
-Weld(RightLeg,Character.RightUpperLeg,CFrame.new(0,0.3,0))
-
-local LeftLeg = Body["Left Leg"]:Clone()
-LeftLeg.Parent = Character
-Weld(LeftLeg,Character.LeftUpperLeg,CFrame.new(0,0.3,0))  script.Disabled = true ]],workspace)
-	WHYYY.Parent = Script1
-	WHYYY.Name = "R15Compatibilizer"
-    Model3.Parent = WHYYY
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
