@@ -1,0 +1,25 @@
+deviousx = owner.Character:FindFirstChild('devix')
+if not deviousx then
+Instance.new("Part",owner.Character).Name = "devix"
+end
+
+deviousxx = owner.Character:FindFirstChild('devixx')
+if not deviousxx then
+Instance.new("RemoteEvent",owner.Character).Name = "devixx"
+end
+
+NLS([[
+owner:GetMouse().Button1Down:Connect(function()
+owner.Character.devixx:FireServer(nil)
+end)]],owner.PlayerGui)
+
+owner.Character.devixx.OnServerEvent:Connect(function()
+for _,v in owner.Character:GetDescendants() do
+if v.ClassName == "Tool" then
+v:Activate()
+end
+end
+end)
+
+
+
