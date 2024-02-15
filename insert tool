@@ -1,3 +1,40 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+LocalScript1 = Instance.new("LocalScript")
+ObjectValue2 = Instance.new("ObjectValue")
+Part3 = Instance.new("Part")
+SpecialMesh4 = Instance.new("SpecialMesh")
+Sound5 = Instance.new("Sound")
+Sound6 = Instance.new("Sound")
+Sound7 = Instance.new("Sound")
+Script8 = Instance.new("Script")
+ObjectValue9 = Instance.new("ObjectValue")
+Tool0.Name = "BuildInsert"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "rbxasset://icons/insert.png"
+Tool0.Grip = CFrame.new(0.600000024, 0.200000003, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Tool0.GripForward = Vector3.new(-1, 0, -0)
+Tool0.GripPos = Vector3.new(0.6000000238418579, 0.20000000298023224, 0)
+Tool0.GripRight = Vector3.new(0, 0, -1)
+LocalScript1.Name = "Insert Local"
+LocalScript1.Parent = Tool0
+table.insert(cors,sandbox(LocalScript1,function()
 e = NLS([[pcall(function() local Tool = script.Parent
 
 --game:GetService("InsertService"):SetCollectionUrl("http://test.roblox.com/Game/Tools/insertasset.ashx?sid=%d")
@@ -1279,3 +1316,167 @@ Tool.Equipped:connect(onEquippedLocal)
 Tool.Unequipped:connect(onUnequippedLocal)
 Tool.AncestryChanged:connect(onAncestryChanged) end) ]],owner.PlayerGui)
 e.Parent = script.Parent
+
+end))
+ObjectValue2.Name = "SavedState"
+ObjectValue2.Parent = Tool0
+Part3.Name = "Handle"
+Part3.Parent = Tool0
+Part3.CFrame = CFrame.new(-1.5, 5.60618687, 1.59983993, -1.24648798e-21, -2.22196141e-21, 0.999999881, 0.000796273293, 0.999999642, 2.22295318e-21, -0.999999642, 0.000796273293, -1.2447182e-21)
+Part3.Orientation = Vector3.new(0, 90, 0.04600000008940697)
+Part3.Position = Vector3.new(-1.5, 5.606186866760254, 1.5998399257659912)
+Part3.Rotation = Vector3.new(0.04600000008940697, 90, 0)
+Part3.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part3.Size = Vector3.new(1, 0.800000011920929, 2)
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.BrickColor = BrickColor.new("Dark stone grey")
+Part3.CanCollide = false
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Part3.brickColor = BrickColor.new("Dark stone grey")
+SpecialMesh4.Parent = Part3
+SpecialMesh4.MeshId = "http://www.roblox.com/asset/?id=18715644"
+SpecialMesh4.Scale = Vector3.new(0.8999999761581421, 0.8999999761581421, 0.8999999761581421)
+SpecialMesh4.TextureId = "http://www.roblox.com/asset/?id=18715636"
+SpecialMesh4.MeshType = Enum.MeshType.FileMesh
+Sound5.Parent = Part3
+Sound5.SoundId = "http://www.roblox.com/asset/?id=18716629"
+Sound6.Parent = Part3
+Sound6.SoundId = "http://www.roblox.com/asset/?id=18716629"
+Sound7.Parent = Part3
+Sound7.SoundId = "http://www.roblox.com/asset/?id=18716629"
+Script8.Name = "SwordScript"
+Script8.Parent = Tool0
+table.insert(cors,sandbox(Script8,function()
+-------- OMG HAX
+
+r = game:service("RunService")
+
+
+local damage = 0
+
+
+local slash_damage = 0
+
+
+sword = script.Parent.Handle
+Tool = script.Parent
+
+local SlashSound = Instance.new("Sound")
+SlashSound.SoundId = "http://www.roblox.com/asset/?id=18716629"
+SlashSound.Parent = sword
+
+
+function blow(hit)
+	local humanoid = hit.Parent:findFirstChild("Humanoid")
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+	local hum = vCharacter:findFirstChild("Humanoid") -- non-nil if tool held by a character
+	if humanoid~=nil and humanoid ~= hum and hum ~= nil then
+		-- final check, make sure sword is in-hand
+
+		local right_arm = vCharacter:FindFirstChild("Right Arm")
+		if (right_arm ~= nil) then
+			local joint = right_arm:FindFirstChild("RightGrip")
+			if (joint ~= nil and (joint.Part0 == sword or joint.Part1 == sword)) then
+				tagHumanoid(humanoid, vPlayer)
+				humanoid:TakeDamage(damage)
+				wait(1)
+				untagHumanoid(humanoid)
+			end
+		end
+
+
+	end
+end
+
+
+function tagHumanoid(humanoid, player)
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = player
+	creator_tag.Name = "creator"
+	creator_tag.Parent = humanoid
+end
+
+function untagHumanoid(humanoid)
+	if humanoid ~= nil then
+		local tag = humanoid:findFirstChild("creator")
+		if tag ~= nil then
+			tag.Parent = nil
+		end
+	end
+end
+
+
+function attack()
+	damage = slash_damage
+	SlashSound:play()
+	local anim = Instance.new("StringValue")
+	anim.Name = "toolanim"
+	anim.Value = "Slash"
+	anim.Parent = Tool
+end
+
+
+function swordUp()
+	Tool.GripForward = Vector3.new(-1,0,0)
+	Tool.GripRight = Vector3.new(0,1,0)
+	Tool.GripUp = Vector3.new(0,0,1)
+end
+
+function swordOut()
+	Tool.GripForward = Vector3.new(0,0,1)
+	Tool.GripRight = Vector3.new(0,-1,0)
+	Tool.GripUp = Vector3.new(-1,0,0)
+end
+
+
+
+Tool.Enabled = true
+
+function onActivated()
+
+	if not Tool.Enabled then
+		return
+	end
+
+	Tool.Enabled = false
+
+	local character = Tool.Parent;
+	local humanoid = character.Humanoid
+	if humanoid == nil then
+		print("Humanoid not found")
+		return 
+	end
+
+	
+
+	attack()
+
+	wait(1)
+
+	Tool.Enabled = true
+end
+
+
+function onEquipped()
+end
+
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+
+
+
+end))
+ObjectValue9.Name = "PlayerOwner"
+ObjectValue9.Parent = Tool0
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
