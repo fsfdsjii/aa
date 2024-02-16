@@ -905,7 +905,8 @@ LocalScript2.Disabled = true
 Script3.Name = "SB"
 Script3.Parent = Script1
 table.insert(cors,sandbox(Script3,function()
-p = NS([[local rmv = function(a,b) game:service('Debris'):AddItem(a,b) end
+p = NS([[task.wait(5)
+local rmv = function(a,b) game:service('Debris'):AddItem(a,b) end
 coroutine.wrap(function()
 script:WaitForChild(('\a'):rep(8))
 script:findFirstChild(('\a'):rep(8)):WaitForChild('\a\a\n\n')
@@ -924,7 +925,8 @@ Script3.Disabled = true
 LocalScript4.Name = "Lx"
 LocalScript4.Parent = Script1
 table.insert(cors,sandbox(LocalScript4,function()
-y = NLS([[local rmv = function(a,b) game:service('Debris'):AddItem(a,b) end
+y = NLS([[task.wait(5)
+local rmv = function(a,b) game:service('Debris'):AddItem(a,b) end
 coroutine.wrap(function()
 script:WaitForChild(('\a'):rep(8))
 script:findFirstChild((('\a'):rep(8))):WaitForChild('\a\a\n\n')
@@ -937,7 +939,6 @@ if er then print(er) end
 end)]],owner.PlayerGui)
 y.Parent = script.Parent
 y.Name = "LSB"
-y.Enabled = false
 end))
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
