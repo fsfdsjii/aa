@@ -8,16 +8,26 @@ if not deviousxx then
 Instance.new("RemoteEvent",owner.Character).Name = "devixx"
 end
 
-NLS([[
+NLS([[bool = true
 owner:GetMouse().Button1Down:Connect(function()
+if bool == true then
+bool = false
 owner.Character.devixx:FireServer(nil)
+task.wait(0.05)
+bool = true
+end
 end)]],owner.PlayerGui)
-
+boole = true
 owner.Character.devixx.OnServerEvent:Connect(function()
+if boole == true then
+boole = false
 for _,v in owner.Character:GetDescendants() do
 if v.ClassName == "Tool" then
 v:Activate()
 end
+end
+task.wait(0.05)
+boole = true
 end
 end)
 
