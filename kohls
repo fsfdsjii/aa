@@ -219,7 +219,7 @@ if (sn[x] and en[x] and f.getName(str:sub(sn[x],en[x]))) then table.insert(plrz,
 elseif (sn[x] and f.getName(str:sub(sn[x]))) then table.insert(plrz,f.getName(str:sub(sn[x])))
 elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'me') or (sn[x] and str:sub(sn[x]) == 'me') then table.insert(plrz, plr)
 elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'random') or (sn[x] and str:sub(sn[x]) == 'random') then table.insert(plrz, game.Players:children()[math.random(#game.Players:children())])
-elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'admins') or (sn[x] and str:sub(sn[x]) == 'admins') then for i, v in pairs(game.Players:children()) do if f.getPower(v.userId) < 4 and f.getPower(tostring(plr.userId)) < f.getPower(v.userId) then table.insert(plrz, v) end end
+elseif ({owner} and {owner} and {owner} == 'admins') or ({owner}) == 'admins') then for i, v in pairs(game.Players:children()) do if f.getPower(v.userId) < 4 and f.getPower(tostring(plr.userId)) < f.getPower(v.userId) then table.insert(plrz, v) end end
 elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'nonadmins') or (sn[x] and str:sub(sn[x]) == 'nonadmins') then for i, v in pairs(game.Players:children()) do if not f.getPower(v.userId) == 4 then table.insert(plrz, v) end end
 elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'others') or (sn[x] and str:sub(sn[x]) == 'others') then for i, v in pairs(game.Players:children()) do if v ~= plr then table.insert(plrz, v) end end
 elseif (sn[x] and en[x] and str:sub(sn[x],en[x]) == 'guests') or (sn[x] and str:sub(sn[x]) == 'guests') then for i, v in pairs(game.Players:children()) do if v.Name:find('Guest ') then table.insert(plrz, v) end end
