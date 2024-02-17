@@ -3288,13 +3288,13 @@ script.Parent.MouseButton1Down:connect(function()
 	if script.Parent.Text == "Turn on fire" then
 	script.Parent.Text = "Turn off fire"
 	script.Parent.BackgroundColor3 = Color3.new(255/255,0/255,0/255)
-	x.FireBrick.Fire.Enabled = true
-	x.FireBrick1.Fire.Enabled = true
+	x:WaitForChild('FireBrick').Fire.Enabled = true
+	x:WaitForChild('FireBrick1').Fire.Enabled = true
 	else
 	script.Parent.Text = "Turn on fire"
 	script.Parent.BackgroundColor3 = Color3.new(28/255, 170/255, 28/255)
-	x.FireBrick.Fire.Enabled = false
-	x.FireBrick1.Fire.Enabled = false
+	x:WaitForChild('FireBrick').Fire.Enabled = false
+	x:WaitForChild('FireBrick1').Fire.Enabled = false
 
 end
 end)
@@ -3302,18 +3302,18 @@ end,
 function(script,require)
 x = script.Parent.Parent.Parent.Parent.FireSet
 function Clicked()
-	x.FireBrick.Fire.Size = x.FireBrick.Fire.Size +1
-x.FireBrick1.Fire.Size = x.FireBrick1.Fire.Size +1
-script.Parent.Parent.Label.Text = "Size: "..x.FireBrick.Fire.Size
+x:WaitForChild('FireBrick').Fire.Size = 	x:WaitForChild('FireBrick').Fire.Size +1
+x:WaitForChild('FireBrick1').Fire.Size = 	x:WaitForChild('FireBrick').Fire.Size +1
+script.Parent.Parent.Label.Text = "Size: "..x:WaitForChild('FireBrick').Fire.Size
 end
 script.Parent.MouseButton1Down:connect(Clicked)
 end,
 function(script,require)
 x = script.Parent.Parent.Parent.Parent.FireSet
 function Clicked()
-	x.FireBrick.Fire.Size = x.FireBrick.Fire.Size -1
-x.FireBrick1.Fire.Size = x.FireBrick1.Fire.Size -1
-script.Parent.Parent.Label.Text = "Size: "..x.FireBrick.Fire.Size
+x:WaitForChild('FireBrick').Fire.Size = 	x:WaitForChild('FireBrick1').Fire.Size -1
+x:WaitForChild('FireBrick1').Fire.Size = 	x:WaitForChild('FireBrick1').Fire.Size -1
+script.Parent.Parent.Label.Text = "Size: "..x:WaitForChild('FireBrick1').Fire.Size
 end
 script.Parent.MouseButton1Down:connect(Clicked)
 end,
