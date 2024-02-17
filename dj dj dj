@@ -1,0 +1,3847 @@
+-- Converted using Mokiros's Model to Script Version 3
+-- Converted string size: 57536 characters
+
+local ScriptFunctions = {
+function(script,require)
+d = 1
+maxrange = 10
+function change(button)
+if d == 1 then
+d = 2
+for i = maxrange,0,-1 do
+wait()
+for t,v in pairs(workspace.Lights:GetChildren()) do
+if v:IsA("Part") then
+if v:FindFirstChild("PointLight") then
+v.PointLight.Range = i
+v.Transparency = v.Transparency + (0.5/15)
+elseif v:FindFirstChild("SelectionBox") then
+v.SelectionBox.Transparency = v.SelectionBox.Transparency + 1/30
+end
+end
+end
+end
+for i,v in pairs(workspace.Lights:GetChildren()) do
+if v:IsA("Part") then
+if v:FindFirstChild("PointLight") then
+v.BrickColor = BrickColor.new(button.BackgroundColor3)
+v.PointLight.Color = button.BackgroundColor3
+v.Transparency = 1
+elseif v:FindFirstChild("SelectionBox") then
+v.SelectionBox.Color = BrickColor.new(button.BackgroundColor3)
+v.SelectionBox.Transparency = 1
+end
+end
+end
+wait(.5)
+for i = 0,maxrange,1 do
+wait()
+for t,v in pairs(workspace.Lights:GetChildren()) do
+if v:IsA("Part") then
+if v:FindFirstChild("PointLight") then
+v.PointLight.Range = i
+v.Transparency = v.Transparency - (0.5/15)
+elseif v:FindFirstChild("SelectionBox") then
+v.SelectionBox.Transparency = v.SelectionBox.Transparency - 1/30
+end
+end
+end
+end
+--game.Lighting.FogColor = button.BackgroundColor3
+for i,v in pairs(workspace.Lights:GetChildren()) do
+if v:IsA("Part") then
+if v:FindFirstChild("PointLight") then
+v.Transparency = 0.5
+end
+end
+end
+d = 1
+end
+end
+
+for i,v in pairs(script.Parent:GetChildren()) do
+if v:IsA("TextButton") then
+v.MouseButton1Down:connect(function() change(v) end)
+end
+end
+end,
+function(script,require)
+d = 1
+
+colors = {"Really blue","Really red","Lime green","Royal purple","Bright orange","Pastel blue","Teal"}
+
+function change(button)
+if d == 1 then
+d = 2
+	for i = 15,0,-5 do
+	wait()
+		for t,v in pairs(workspace.Lights:GetChildren()) do
+			if v:IsA("Part") then
+				if v:FindFirstChild("PointLight") then
+					v.PointLight.Range = i
+					v.Transparency = v.Transparency + (0.5/3)
+				elseif v:FindFirstChild("SelectionBox") then
+					v.SelectionBox.Transparency = v.SelectionBox.Transparency + (0.5/3)
+				end
+			end
+		end
+	end
+		
+		for i,v in pairs(workspace.Lights:GetChildren()) do
+			if v:IsA("Part") then
+			v.BrickColor = BrickColor.new(colors[math.random(1,#colors)])
+			v.Transparency = 1
+				if v:FindFirstChild("PointLight") then
+					v.PointLight.Color = v.BrickColor.Color
+				elseif v:FindFirstChild("SelectionBox") then
+					v.SelectionBox.Color = v.BrickColor
+				end
+			end
+		end
+		
+		for i = 0,15,5 do
+			wait()
+			for t,v in pairs(workspace.Lights:GetChildren()) do
+				if v:IsA("Part") then
+					if v:FindFirstChild("PointLight") then
+						v.PointLight.Range = i
+						v.Transparency = v.Transparency - (0.5/3)
+					elseif v:FindFirstChild("SelectionBox") then
+						v.SelectionBox.Transparency = v.SelectionBox.Transparency - (0.5/3)
+					end
+				end
+			end
+		end
+		--game.Lighting.FogColor = button.BackgroundColor3
+		for i,v in pairs(workspace.Lights:GetChildren()) do
+			if v:IsA("Part") then
+				v.Transparency = 0.5
+			end
+		end
+		d = 1
+		end
+end
+
+script.Parent.MouseButton1Down:connect(function()
+change(script.Parent)
+end)
+
+end,
+function(script,require)
+x=script.Parent
+
+while true do
+	x.CFrame=x.CFrame*CFrame.Angles(0,25,0)
+	wait(1/30)
+end
+
+end,
+function(script,require)
+x=script.Parent
+
+while true do
+	x.CFrame=x.CFrame*CFrame.Angles(0,25,0)
+	wait(1/30)
+end
+
+end,
+function(script,require)
+x=script.Parent
+
+while true do
+	x.CFrame=x.CFrame*CFrame.Angles(0,25,0)
+	wait(1/30)
+end
+
+end,
+function(script,require)
+x=script.Parent
+
+while true do
+	x.CFrame=x.CFrame*CFrame.Angles(0,25,0)
+	wait(1/30)
+end
+
+end,
+function(script,require)
+sp = script.Parent
+NUM1 = sp.NUM1
+NUM2 = sp.NUM2
+NUM3 = sp.NUM3
+NUM4 = sp.NUM4
+NUM5 = sp.NUM5
+NUM6 = sp.NUM6
+NUM7 = sp.NUM7
+while true do
+	NUM1:TweenSize(UDim2.new(0, 100,0,math.random(-600,0)),"Out","Linear",0.1,false)
+	NUM2:TweenSize(UDim2.new(0, 100,0,math.random(-600,0)),"Out","Linear",0.1,false)
+	NUM3:TweenSize(UDim2.new(0, 100,0,math.random(-600,0)),"Out","Linear",0.1,false)
+	NUM4:TweenSize(UDim2.new(0, 100,0,math.random(-600,0)),"Out","Linear",0.1,false)
+	NUM5:TweenSize(UDim2.new(0, 100,0,math.random(-600,0)),"Out","Linear",0.1,false)
+	NUM6:TweenSize(UDim2.new(0, 100,0,math.random(-600,0)),"Out","Linear",0.1,false)
+	NUM7:TweenSize(UDim2.new(0, 100,0,math.random(-600,0)),"Out","Linear",0.1,false)
+	wait(0.05)
+end
+end,
+function(script,require)
+function onClicked()
+
+	game.Soundscape.AmbientReverb = "NoReverb"
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Reverb2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Reverb2.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Reverb3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Reverb3.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	game.Soundscape.AmbientReverb = "GenericReverb"
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Reverb1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Reverb1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Reverb3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Reverb3.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	game.Soundscape.AmbientReverb = "ConcertHall"
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Reverb1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Reverb1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Reverb2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Reverb2.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function On()
+
+	script.Parent.Light1.Transparency = 0.2
+	script.Parent.Light2.Transparency = 0.9
+	script.Parent.Light3.Transparency = 0.9
+
+	wait(0.1)
+
+	script.Parent.Light1.Transparency = 0.9
+	script.Parent.Light2.Transparency = 0.2
+	script.Parent.Light3.Transparency = 0.9
+
+	wait(0.1)
+
+	script.Parent.Light1.Transparency = 0.9
+	script.Parent.Light2.Transparency = 0.9
+	script.Parent.Light3.Transparency = 0.2
+
+	wait(0.1)
+	
+	script.Parent.Light1.Transparency = 0.9
+	script.Parent.Light2.Transparency = 0.9
+	script.Parent.Light3.Transparency = 0.9
+
+	wait(0.1)
+
+end
+
+function Off()
+
+	script.Parent.Light1.Transparency = 0.9
+	script.Parent.Light2.Transparency = 0.9
+	script.Parent.Light3.Transparency = 0.9
+
+end
+
+while true do
+
+	wait()
+
+	if script.Parent.Parent.ControlsB.TrackCurrent.Value ~= 0 then
+		On()
+	elseif script.Parent.Parent.ControlsB.TrackCurrent.Value == 0 then
+		Off()
+	end
+
+end
+
+end,
+function(script,require)
+function Mode1()
+
+	script.Parent.Base.Light.Enabled = true
+
+	script.Parent.LightTube1.Transparency = 0.2
+	script.Parent.LightTube2.Transparency = 0.2
+	script.Parent.LightTube3.Transparency = 0.2
+	script.Parent.LightTube4.Transparency = 0.2
+	script.Parent.LightTube5.Transparency = 0.2
+	script.Parent.LightTube6.Transparency = 0.2
+	script.Parent.LightTube7.Transparency = 0.2
+	script.Parent.LightTube8.Transparency = 0.2
+	script.Parent.LightTube9.Transparency = 0.2
+	script.Parent.LightTube10.Transparency = 0.2
+	script.Parent.LightTube11.Transparency = 0.2
+	script.Parent.Base.Light.Brightness = 10
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.3
+	script.Parent.LightTube2.Transparency = 0.3
+	script.Parent.LightTube3.Transparency = 0.3
+	script.Parent.LightTube4.Transparency = 0.3
+	script.Parent.LightTube5.Transparency = 0.3
+	script.Parent.LightTube6.Transparency = 0.3
+	script.Parent.LightTube7.Transparency = 0.3
+	script.Parent.LightTube8.Transparency = 0.3
+	script.Parent.LightTube9.Transparency = 0.3
+	script.Parent.LightTube10.Transparency = 0.3
+	script.Parent.LightTube11.Transparency = 0.3
+	script.Parent.Base.Light.Brightness = 9
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.4
+	script.Parent.LightTube2.Transparency = 0.4
+	script.Parent.LightTube3.Transparency = 0.4
+	script.Parent.LightTube4.Transparency = 0.4
+	script.Parent.LightTube5.Transparency = 0.4
+	script.Parent.LightTube6.Transparency = 0.4
+	script.Parent.LightTube7.Transparency = 0.4
+	script.Parent.LightTube8.Transparency = 0.4
+	script.Parent.LightTube9.Transparency = 0.4
+	script.Parent.LightTube10.Transparency = 0.4
+	script.Parent.LightTube11.Transparency = 0.4
+	script.Parent.Base.Light.Brightness = 8
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.5
+	script.Parent.LightTube2.Transparency = 0.5
+	script.Parent.LightTube3.Transparency = 0.5
+	script.Parent.LightTube4.Transparency = 0.5
+	script.Parent.LightTube5.Transparency = 0.5
+	script.Parent.LightTube6.Transparency = 0.5
+	script.Parent.LightTube7.Transparency = 0.5
+	script.Parent.LightTube8.Transparency = 0.5
+	script.Parent.LightTube9.Transparency = 0.5
+	script.Parent.LightTube10.Transparency = 0.5
+	script.Parent.LightTube11.Transparency = 0.5
+	script.Parent.Base.Light.Brightness = 7
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.6
+	script.Parent.LightTube2.Transparency = 0.6
+	script.Parent.LightTube3.Transparency = 0.6
+	script.Parent.LightTube4.Transparency = 0.6
+	script.Parent.LightTube5.Transparency = 0.6
+	script.Parent.LightTube6.Transparency = 0.6
+	script.Parent.LightTube7.Transparency = 0.6
+	script.Parent.LightTube8.Transparency = 0.6
+	script.Parent.LightTube9.Transparency = 0.6
+	script.Parent.LightTube10.Transparency = 0.6
+	script.Parent.LightTube11.Transparency = 0.6
+	script.Parent.Base.Light.Brightness = 6
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.7
+	script.Parent.LightTube2.Transparency = 0.7
+	script.Parent.LightTube3.Transparency = 0.7
+	script.Parent.LightTube4.Transparency = 0.7
+	script.Parent.LightTube5.Transparency = 0.7
+	script.Parent.LightTube6.Transparency = 0.7
+	script.Parent.LightTube7.Transparency = 0.7
+	script.Parent.LightTube8.Transparency = 0.7
+	script.Parent.LightTube9.Transparency = 0.7
+	script.Parent.LightTube10.Transparency = 0.7
+	script.Parent.LightTube11.Transparency = 0.7
+	script.Parent.Base.Light.Brightness = 5
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.8
+	script.Parent.LightTube2.Transparency = 0.8
+	script.Parent.LightTube3.Transparency = 0.8
+	script.Parent.LightTube4.Transparency = 0.8
+	script.Parent.LightTube5.Transparency = 0.8
+	script.Parent.LightTube6.Transparency = 0.8
+	script.Parent.LightTube7.Transparency = 0.8
+	script.Parent.LightTube8.Transparency = 0.8
+	script.Parent.LightTube9.Transparency = 0.8
+	script.Parent.LightTube10.Transparency = 0.8
+	script.Parent.LightTube11.Transparency = 0.8
+	script.Parent.Base.Light.Brightness = 4
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.9
+	script.Parent.LightTube2.Transparency = 0.9
+	script.Parent.LightTube3.Transparency = 0.9
+	script.Parent.LightTube4.Transparency = 0.9
+	script.Parent.LightTube5.Transparency = 0.9
+	script.Parent.LightTube6.Transparency = 0.9
+	script.Parent.LightTube7.Transparency = 0.9
+	script.Parent.LightTube8.Transparency = 0.9
+	script.Parent.LightTube9.Transparency = 0.9
+	script.Parent.LightTube10.Transparency = 0.9
+	script.Parent.LightTube11.Transparency = 0.9
+	script.Parent.Base.Light.Brightness = 3
+
+	wait(speed)
+
+end
+
+function Mode2()
+
+	script.Parent.Base.Light.Enabled = true
+
+	script.Parent.LightTube1.Transparency = 0.2
+	script.Parent.LightTube2.Transparency = 0.2
+	script.Parent.LightTube3.Transparency = 0.2
+	script.Parent.LightTube4.Transparency = 0.2
+	script.Parent.LightTube5.Transparency = 0.2
+	script.Parent.LightTube6.Transparency = 0.2
+	script.Parent.LightTube7.Transparency = 0.2
+	script.Parent.LightTube8.Transparency = 0.2
+	script.Parent.LightTube9.Transparency = 0.2
+	script.Parent.LightTube10.Transparency = 0.2
+	script.Parent.LightTube11.Transparency = 0.2
+	script.Parent.Base.Light.Brightness = 10
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.9
+	script.Parent.LightTube2.Transparency = 0.9
+	script.Parent.LightTube3.Transparency = 0.9
+	script.Parent.LightTube4.Transparency = 0.9
+	script.Parent.LightTube5.Transparency = 0.9
+	script.Parent.LightTube6.Transparency = 0.9
+	script.Parent.LightTube7.Transparency = 0.9
+	script.Parent.LightTube8.Transparency = 0.9
+	script.Parent.LightTube9.Transparency = 0.9
+	script.Parent.LightTube10.Transparency = 0.9
+	script.Parent.LightTube11.Transparency = 0.9
+	script.Parent.Base.Light.Brightness = 3
+
+	wait(speed)
+
+end
+
+function Mode3()
+
+	script.Parent.Base.Light.Enabled = true
+	script.Parent.Base.Light.Brightness = 10
+
+	script.Parent.LightTube1.Transparency = 0.2
+	script.Parent.LightTube2.Transparency = 0.9
+	script.Parent.LightTube3.Transparency = 0.2
+	script.Parent.LightTube4.Transparency = 0.9
+	script.Parent.LightTube5.Transparency = 0.2
+	script.Parent.LightTube6.Transparency = 0.9
+	script.Parent.LightTube7.Transparency = 0.2
+	script.Parent.LightTube8.Transparency = 0.9
+	script.Parent.LightTube9.Transparency = 0.2
+	script.Parent.LightTube10.Transparency = 0.9
+	script.Parent.LightTube11.Transparency = 0.2
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.3
+	script.Parent.LightTube2.Transparency = 0.8
+	script.Parent.LightTube3.Transparency = 0.3
+	script.Parent.LightTube4.Transparency = 0.8
+	script.Parent.LightTube5.Transparency = 0.3
+	script.Parent.LightTube6.Transparency = 0.8
+	script.Parent.LightTube7.Transparency = 0.3
+	script.Parent.LightTube8.Transparency = 0.8
+	script.Parent.LightTube9.Transparency = 0.3
+	script.Parent.LightTube10.Transparency = 0.8
+	script.Parent.LightTube11.Transparency = 0.3
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.4
+	script.Parent.LightTube2.Transparency = 0.7
+	script.Parent.LightTube3.Transparency = 0.4
+	script.Parent.LightTube4.Transparency = 0.7
+	script.Parent.LightTube5.Transparency = 0.4
+	script.Parent.LightTube6.Transparency = 0.7
+	script.Parent.LightTube7.Transparency = 0.4
+	script.Parent.LightTube8.Transparency = 0.7
+	script.Parent.LightTube9.Transparency = 0.4
+	script.Parent.LightTube10.Transparency = 0.7
+	script.Parent.LightTube11.Transparency = 0.4
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.5
+	script.Parent.LightTube2.Transparency = 0.6
+	script.Parent.LightTube3.Transparency = 0.5
+	script.Parent.LightTube4.Transparency = 0.6
+	script.Parent.LightTube5.Transparency = 0.5
+	script.Parent.LightTube6.Transparency = 0.6
+	script.Parent.LightTube7.Transparency = 0.5
+	script.Parent.LightTube8.Transparency = 0.6
+	script.Parent.LightTube9.Transparency = 0.5
+	script.Parent.LightTube10.Transparency = 0.6
+	script.Parent.LightTube11.Transparency = 0.5
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.6
+	script.Parent.LightTube2.Transparency = 0.5
+	script.Parent.LightTube3.Transparency = 0.6
+	script.Parent.LightTube4.Transparency = 0.5
+	script.Parent.LightTube5.Transparency = 0.6
+	script.Parent.LightTube6.Transparency = 0.5
+	script.Parent.LightTube7.Transparency = 0.6
+	script.Parent.LightTube8.Transparency = 0.5
+	script.Parent.LightTube9.Transparency = 0.6
+	script.Parent.LightTube10.Transparency = 0.5
+	script.Parent.LightTube11.Transparency = 0.6
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.7
+	script.Parent.LightTube2.Transparency = 0.4
+	script.Parent.LightTube3.Transparency = 0.7
+	script.Parent.LightTube4.Transparency = 0.4
+	script.Parent.LightTube5.Transparency = 0.7
+	script.Parent.LightTube6.Transparency = 0.4
+	script.Parent.LightTube7.Transparency = 0.7
+	script.Parent.LightTube8.Transparency = 0.4
+	script.Parent.LightTube9.Transparency = 0.7
+	script.Parent.LightTube10.Transparency = 0.4
+	script.Parent.LightTube11.Transparency = 0.7
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.8
+	script.Parent.LightTube2.Transparency = 0.3
+	script.Parent.LightTube3.Transparency = 0.8
+	script.Parent.LightTube4.Transparency = 0.3
+	script.Parent.LightTube5.Transparency = 0.8
+	script.Parent.LightTube6.Transparency = 0.3
+	script.Parent.LightTube7.Transparency = 0.8
+	script.Parent.LightTube8.Transparency = 0.3
+	script.Parent.LightTube9.Transparency = 0.8
+	script.Parent.LightTube10.Transparency = 0.3
+	script.Parent.LightTube11.Transparency = 0.8
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.9
+	script.Parent.LightTube2.Transparency = 0.2
+	script.Parent.LightTube3.Transparency = 0.9
+	script.Parent.LightTube4.Transparency = 0.2
+	script.Parent.LightTube5.Transparency = 0.9
+	script.Parent.LightTube6.Transparency = 0.2
+	script.Parent.LightTube7.Transparency = 0.9
+	script.Parent.LightTube8.Transparency = 0.2
+	script.Parent.LightTube9.Transparency = 0.9
+	script.Parent.LightTube10.Transparency = 0.2
+	script.Parent.LightTube11.Transparency = 0.9
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.8
+	script.Parent.LightTube2.Transparency = 0.3
+	script.Parent.LightTube3.Transparency = 0.8
+	script.Parent.LightTube4.Transparency = 0.3
+	script.Parent.LightTube5.Transparency = 0.8
+	script.Parent.LightTube6.Transparency = 0.3
+	script.Parent.LightTube7.Transparency = 0.8
+	script.Parent.LightTube8.Transparency = 0.3
+	script.Parent.LightTube9.Transparency = 0.8
+	script.Parent.LightTube10.Transparency = 0.3
+	script.Parent.LightTube11.Transparency = 0.8
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.7
+	script.Parent.LightTube2.Transparency = 0.4
+	script.Parent.LightTube3.Transparency = 0.7
+	script.Parent.LightTube4.Transparency = 0.4
+	script.Parent.LightTube5.Transparency = 0.7
+	script.Parent.LightTube6.Transparency = 0.4
+	script.Parent.LightTube7.Transparency = 0.7
+	script.Parent.LightTube8.Transparency = 0.4
+	script.Parent.LightTube9.Transparency = 0.7
+	script.Parent.LightTube10.Transparency = 0.4
+	script.Parent.LightTube11.Transparency = 0.7
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.6
+	script.Parent.LightTube2.Transparency = 0.5
+	script.Parent.LightTube3.Transparency = 0.6
+	script.Parent.LightTube4.Transparency = 0.5
+	script.Parent.LightTube5.Transparency = 0.6
+	script.Parent.LightTube6.Transparency = 0.5
+	script.Parent.LightTube7.Transparency = 0.6
+	script.Parent.LightTube8.Transparency = 0.5
+	script.Parent.LightTube9.Transparency = 0.6
+	script.Parent.LightTube10.Transparency = 0.5
+	script.Parent.LightTube11.Transparency = 0.6
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.5
+	script.Parent.LightTube2.Transparency = 0.6
+	script.Parent.LightTube3.Transparency = 0.5
+	script.Parent.LightTube4.Transparency = 0.6
+	script.Parent.LightTube5.Transparency = 0.5
+	script.Parent.LightTube6.Transparency = 0.6
+	script.Parent.LightTube7.Transparency = 0.5
+	script.Parent.LightTube8.Transparency = 0.6
+	script.Parent.LightTube9.Transparency = 0.5
+	script.Parent.LightTube10.Transparency = 0.6
+	script.Parent.LightTube11.Transparency = 0.5
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.4
+	script.Parent.LightTube2.Transparency = 0.7
+	script.Parent.LightTube3.Transparency = 0.4
+	script.Parent.LightTube4.Transparency = 0.7
+	script.Parent.LightTube5.Transparency = 0.4
+	script.Parent.LightTube6.Transparency = 0.7
+	script.Parent.LightTube7.Transparency = 0.4
+	script.Parent.LightTube8.Transparency = 0.7
+	script.Parent.LightTube9.Transparency = 0.4
+	script.Parent.LightTube10.Transparency = 0.7
+	script.Parent.LightTube11.Transparency = 0.4
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.3
+	script.Parent.LightTube2.Transparency = 0.8
+	script.Parent.LightTube3.Transparency = 0.3
+	script.Parent.LightTube4.Transparency = 0.8
+	script.Parent.LightTube5.Transparency = 0.3
+	script.Parent.LightTube6.Transparency = 0.8
+	script.Parent.LightTube7.Transparency = 0.3
+	script.Parent.LightTube8.Transparency = 0.8
+	script.Parent.LightTube9.Transparency = 0.3
+	script.Parent.LightTube10.Transparency = 0.8
+	script.Parent.LightTube11.Transparency = 0.3
+
+	wait(speed)
+
+end
+
+function Off()
+
+	script.Parent.Base.Light.Enabled = false
+
+	script.Parent.LightTube1.Transparency = 0.9
+	script.Parent.LightTube2.Transparency = 0.9
+	script.Parent.LightTube3.Transparency = 0.9
+	script.Parent.LightTube4.Transparency = 0.9
+	script.Parent.LightTube5.Transparency = 0.9
+	script.Parent.LightTube6.Transparency = 0.9
+	script.Parent.LightTube7.Transparency = 0.9
+	script.Parent.LightTube8.Transparency = 0.9
+	script.Parent.LightTube9.Transparency = 0.9
+	script.Parent.LightTube10.Transparency = 0.9
+	script.Parent.LightTube11.Transparency = 0.9
+
+end
+
+while true do
+	
+	wait()
+
+	speed = script.Parent.Speed.Value / 1000
+
+	local mode = script.Parent.Mode.Value
+
+	if script.Parent.Parent.ControlsB.TrackCurrent.Value ~= 0 then
+		if mode == 1 then
+			Mode1()
+		elseif mode == 2 then
+			Mode2()
+		elseif mode == 3 then
+			Mode3()
+		end
+	elseif script.Parent.Parent.ControlsB.TrackCurrent.Value == 0 then
+		Off()
+	end
+
+end
+
+end,
+function(script,require)
+function On()
+
+	for i = 1, #s do
+		if s[i]:IsA("Part") then
+			s[i].Mesh.Offset = Vector3.new(0, -0.13, 0)
+			wait(0.05)
+			s[i].Mesh.Offset = Vector3.new(0, -0.19, 0)
+		end
+	end
+
+end
+
+function Off()
+
+	for i = 1, #s do
+		if s[i]:IsA("Part") then
+			s[i].Mesh.Offset = Vector3.new(0, -0.19, 0)
+		end
+	end
+
+end
+
+while true do
+
+	wait()
+
+	s = script.Parent:GetChildren()
+
+	if script.Parent.Parent.ControlsB.TrackCurrent.Value ~= 0 then
+		On()
+	elseif script.Parent.Parent.ControlsB.TrackCurrent.Value == 0 then
+		Off()
+	end
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if (script.Parent.Parent.Parent.ControlsB.TrackCurrent.Value ~= 0 and script.Parent.Parent.Parent.ControlsB.TrackPaused.Value == false and script.Parent.Parent.Direction.Value == -5) then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+function Scratch()
+
+	local ID = script.Parent.Parent.ControlsB.TrackCurrent
+
+	local track = script.Parent.Parent.MusicPlayerB["Track" ..ID.Value]
+
+	local pitch = track.Pitch
+
+	local dir = script.Parent.Direction
+
+	track.Pitch = 0
+	dir.Value = 10
+	script.Parent.Scratch:Play()
+
+	wait(0.2)
+
+	track.Pitch = pitch
+	dir.Value = -5
+
+end
+
+script.Parent.Vinyl.ClickDetector.MouseClick:connect(Scratch)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	local controls = script.Parent.Parent.ControlsB
+
+	local dir = script.Parent.Direction.Value
+
+	if (controls.TrackCurrent.Value ~= 0 and controls.TrackPaused.Value == false) then
+		script.Parent.Vinyl.CFrame = script.Parent.Vinyl.CFrame * CFrame.fromEulerAnglesXYZ(0, (dir / 100), 0)
+	end
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Mode.Value == 1 then
+		script.Parent.Vinyl.Top.Texture = "http://www.roblox.com/asset/?id=200206383"
+		script.Parent.Vinyl.Bottom.Texture = "http://www.roblox.com/asset/?id=200206383"
+	end
+	if script.Parent.Mode.Value == 2 then
+		script.Parent.Vinyl.Top.Texture = "http://www.roblox.com/asset/?id=200206432"
+		script.Parent.Vinyl.Bottom.Texture = "http://www.roblox.com/asset/?id=200206432"
+	end
+	if script.Parent.Mode.Value == 3 then
+		script.Parent.Vinyl.Top.Texture = "http://www.roblox.com/asset/?id=200206497"
+		script.Parent.Vinyl.Bottom.Texture = "http://www.roblox.com/asset/?id=200206497"
+	end
+	if script.Parent.Mode.Value == 4 then
+		script.Parent.Vinyl.Top.Texture = "http://www.roblox.com/asset/?id=200206626"
+		script.Parent.Vinyl.Bottom.Texture = "http://www.roblox.com/asset/?id=200206626"
+	end
+
+end
+
+end,
+function(script,require)
+function VinylChanger()
+
+	script.Parent.Parent.Parent.TurntableB.Mode.Value = 1
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Vinyl2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl2.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl3.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl4.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl4.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(VinylChanger)
+
+end,
+function(script,require)
+function VinylChanger()
+
+	script.Parent.Parent.Parent.TurntableB.Mode.Value = 2
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Vinyl1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl3.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl4.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl4.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(VinylChanger)
+
+end,
+function(script,require)
+function VinylChanger()
+
+	script.Parent.Parent.Parent.TurntableB.Mode.Value = 3
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Vinyl1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl2.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl4.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl4.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(VinylChanger)
+
+end,
+function(script,require)
+function VinylChanger()
+
+	script.Parent.Parent.Parent.TurntableB.Mode.Value = 4
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Vinyl1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl2.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl3.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(VinylChanger)
+
+end,
+function(script,require)
+local track = 5
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 4
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 9
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 3
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 10
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 8
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 2
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 7
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXB[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXB[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXB[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+local track = 1
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXB[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXB[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+local track = 6
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXB[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+local mp = script.Parent.Parent.MusicPlayerB
+
+local paused = script.Parent.TrackPaused
+
+local button = script.Parent.Pause
+
+function Track()
+
+	track_current = script.Parent.TrackCurrent.Value
+	
+	local track_prev = script.Parent.TrackPrev.Value
+
+	if track_current ~= 0 then
+		mp["Track" ..track_current]:Play()
+		if track_prev ~= track_current then
+			mp["Track" ..track_prev]:Stop()
+			paused.Value = false
+		end
+	else
+		mp["Track" ..track_prev]:Stop()
+		paused.Value = false
+	end
+
+end
+
+function Pause()
+
+	if paused.Value == true then
+		mp["Track" ..track_current]:Pause()
+		button.Mesh.Offset = Vector3.new(0, -0.08, 0)
+		button.Icon.Texture = "http://www.roblox.com/asset/?id=210391009"
+	else
+		if track_current ~= 0 then
+			mp["Track" ..track_current]:Resume()
+		end
+		button.Mesh.Offset = Vector3.new(0, 0, 0)
+		button.Icon.Texture = "http://www.roblox.com/asset/?id=210391071"
+	end
+
+end
+
+script.Parent.TrackCurrent.Changed:connect(Track)
+paused.Changed:connect(Pause)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= 0 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+		script.Parent.Icon.Texture = "http://www.roblox.com/asset/?id=210391071"
+	end
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	if script.Parent.Parent.TrackPaused.Value == false then
+		script.Parent.Parent.TrackPaused.Value = true
+	else
+		script.Parent.Parent.TrackPaused.Value = false
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+local track = 1
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 2
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 3
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 9
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 7
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 6
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 4
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 8
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 10
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+local track = 5
+
+function ManualSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= track then
+		script.Parent.Parent.TrackCurrent.Value = track
+		script.Parent.Parent.TrackPrev.Value = track
+		script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	else
+		script.Parent.Parent.TrackCurrent.Value = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+function AutoSwitch()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= script.Parent.Parent.TrackPrev.Value then
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(ManualSwitch)
+script.Parent.Parent.TrackCurrent.Changed:connect(AutoSwitch)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXA[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXA[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXA[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXA[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXA[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.FXA[script.Parent.Name]:Play()
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+local mp = script.Parent.Parent.MusicPlayerA
+
+local paused = script.Parent.TrackPaused
+
+local button = script.Parent.Pause
+
+function Track()
+
+	track_current = script.Parent.TrackCurrent.Value
+	
+	local track_prev = script.Parent.TrackPrev.Value
+
+	if track_current ~= 0 then
+		mp["Track" ..track_current]:Play()
+		if track_prev ~= track_current then
+			mp["Track" ..track_prev]:Stop()
+			paused.Value = false
+		end
+	else
+		mp["Track" ..track_prev]:Stop()
+		paused.Value = false
+	end
+
+end
+
+function Pause()
+
+	if paused.Value == true then
+		mp["Track" ..track_current]:Pause()
+		button.Mesh.Offset = Vector3.new(0, -0.08, 0)
+		button.Icon.Texture = "http://www.roblox.com/asset/?id=210391009"
+	else
+		if track_current ~= 0 then
+			mp["Track" ..track_current]:Resume()
+		end
+		button.Mesh.Offset = Vector3.new(0, 0, 0)
+		button.Icon.Texture = "http://www.roblox.com/asset/?id=210391071"
+	end
+
+end
+
+script.Parent.TrackCurrent.Changed:connect(Track)
+paused.Changed:connect(Pause)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.TrackCurrent.Value ~= 0 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+		script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+		script.Parent.Icon.Texture = "http://www.roblox.com/asset/?id=210391071"
+	end
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	if script.Parent.Parent.TrackPaused.Value == false then
+		script.Parent.Parent.TrackPaused.Value = true
+	else
+		script.Parent.Parent.TrackPaused.Value = false
+	end
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function On()
+
+	script.Parent.Light1.Transparency = 0.2
+	script.Parent.Light2.Transparency = 0.9
+	script.Parent.Light3.Transparency = 0.9
+
+	wait(0.1)
+
+	script.Parent.Light1.Transparency = 0.9
+	script.Parent.Light2.Transparency = 0.2
+	script.Parent.Light3.Transparency = 0.9
+
+	wait(0.1)
+
+	script.Parent.Light1.Transparency = 0.9
+	script.Parent.Light2.Transparency = 0.9
+	script.Parent.Light3.Transparency = 0.2
+
+	wait(0.1)
+	
+	script.Parent.Light1.Transparency = 0.9
+	script.Parent.Light2.Transparency = 0.9
+	script.Parent.Light3.Transparency = 0.9
+
+	wait(0.1)
+
+end
+
+function Off()
+
+	script.Parent.Light1.Transparency = 0.9
+	script.Parent.Light2.Transparency = 0.9
+	script.Parent.Light3.Transparency = 0.9
+
+end
+
+while true do
+
+	wait()
+
+	if script.Parent.Parent.ControlsA.TrackCurrent.Value ~= 0 then
+		On()
+	elseif script.Parent.Parent.ControlsA.TrackCurrent.Value == 0 then
+		Off()
+	end
+
+end
+
+end,
+function(script,require)
+function Mode1()
+
+	script.Parent.Base.Light.Enabled = true
+
+	script.Parent.LightTube1.Transparency = 0.2
+	script.Parent.LightTube2.Transparency = 0.2
+	script.Parent.LightTube3.Transparency = 0.2
+	script.Parent.LightTube4.Transparency = 0.2
+	script.Parent.LightTube5.Transparency = 0.2
+	script.Parent.LightTube6.Transparency = 0.2
+	script.Parent.LightTube7.Transparency = 0.2
+	script.Parent.LightTube8.Transparency = 0.2
+	script.Parent.LightTube9.Transparency = 0.2
+	script.Parent.LightTube10.Transparency = 0.2
+	script.Parent.LightTube11.Transparency = 0.2
+	script.Parent.Base.Light.Brightness = 10
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.3
+	script.Parent.LightTube2.Transparency = 0.3
+	script.Parent.LightTube3.Transparency = 0.3
+	script.Parent.LightTube4.Transparency = 0.3
+	script.Parent.LightTube5.Transparency = 0.3
+	script.Parent.LightTube6.Transparency = 0.3
+	script.Parent.LightTube7.Transparency = 0.3
+	script.Parent.LightTube8.Transparency = 0.3
+	script.Parent.LightTube9.Transparency = 0.3
+	script.Parent.LightTube10.Transparency = 0.3
+	script.Parent.LightTube11.Transparency = 0.3
+	script.Parent.Base.Light.Brightness = 9
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.4
+	script.Parent.LightTube2.Transparency = 0.4
+	script.Parent.LightTube3.Transparency = 0.4
+	script.Parent.LightTube4.Transparency = 0.4
+	script.Parent.LightTube5.Transparency = 0.4
+	script.Parent.LightTube6.Transparency = 0.4
+	script.Parent.LightTube7.Transparency = 0.4
+	script.Parent.LightTube8.Transparency = 0.4
+	script.Parent.LightTube9.Transparency = 0.4
+	script.Parent.LightTube10.Transparency = 0.4
+	script.Parent.LightTube11.Transparency = 0.4
+	script.Parent.Base.Light.Brightness = 8
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.5
+	script.Parent.LightTube2.Transparency = 0.5
+	script.Parent.LightTube3.Transparency = 0.5
+	script.Parent.LightTube4.Transparency = 0.5
+	script.Parent.LightTube5.Transparency = 0.5
+	script.Parent.LightTube6.Transparency = 0.5
+	script.Parent.LightTube7.Transparency = 0.5
+	script.Parent.LightTube8.Transparency = 0.5
+	script.Parent.LightTube9.Transparency = 0.5
+	script.Parent.LightTube10.Transparency = 0.5
+	script.Parent.LightTube11.Transparency = 0.5
+	script.Parent.Base.Light.Brightness = 7
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.6
+	script.Parent.LightTube2.Transparency = 0.6
+	script.Parent.LightTube3.Transparency = 0.6
+	script.Parent.LightTube4.Transparency = 0.6
+	script.Parent.LightTube5.Transparency = 0.6
+	script.Parent.LightTube6.Transparency = 0.6
+	script.Parent.LightTube7.Transparency = 0.6
+	script.Parent.LightTube8.Transparency = 0.6
+	script.Parent.LightTube9.Transparency = 0.6
+	script.Parent.LightTube10.Transparency = 0.6
+	script.Parent.LightTube11.Transparency = 0.6
+	script.Parent.Base.Light.Brightness = 6
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.7
+	script.Parent.LightTube2.Transparency = 0.7
+	script.Parent.LightTube3.Transparency = 0.7
+	script.Parent.LightTube4.Transparency = 0.7
+	script.Parent.LightTube5.Transparency = 0.7
+	script.Parent.LightTube6.Transparency = 0.7
+	script.Parent.LightTube7.Transparency = 0.7
+	script.Parent.LightTube8.Transparency = 0.7
+	script.Parent.LightTube9.Transparency = 0.7
+	script.Parent.LightTube10.Transparency = 0.7
+	script.Parent.LightTube11.Transparency = 0.7
+	script.Parent.Base.Light.Brightness = 5
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.8
+	script.Parent.LightTube2.Transparency = 0.8
+	script.Parent.LightTube3.Transparency = 0.8
+	script.Parent.LightTube4.Transparency = 0.8
+	script.Parent.LightTube5.Transparency = 0.8
+	script.Parent.LightTube6.Transparency = 0.8
+	script.Parent.LightTube7.Transparency = 0.8
+	script.Parent.LightTube8.Transparency = 0.8
+	script.Parent.LightTube9.Transparency = 0.8
+	script.Parent.LightTube10.Transparency = 0.8
+	script.Parent.LightTube11.Transparency = 0.8
+	script.Parent.Base.Light.Brightness = 4
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.9
+	script.Parent.LightTube2.Transparency = 0.9
+	script.Parent.LightTube3.Transparency = 0.9
+	script.Parent.LightTube4.Transparency = 0.9
+	script.Parent.LightTube5.Transparency = 0.9
+	script.Parent.LightTube6.Transparency = 0.9
+	script.Parent.LightTube7.Transparency = 0.9
+	script.Parent.LightTube8.Transparency = 0.9
+	script.Parent.LightTube9.Transparency = 0.9
+	script.Parent.LightTube10.Transparency = 0.9
+	script.Parent.LightTube11.Transparency = 0.9
+	script.Parent.Base.Light.Brightness = 3
+
+	wait(speed)
+
+end
+
+function Mode2()
+
+	script.Parent.Base.Light.Enabled = true
+
+	script.Parent.LightTube1.Transparency = 0.2
+	script.Parent.LightTube2.Transparency = 0.2
+	script.Parent.LightTube3.Transparency = 0.2
+	script.Parent.LightTube4.Transparency = 0.2
+	script.Parent.LightTube5.Transparency = 0.2
+	script.Parent.LightTube6.Transparency = 0.2
+	script.Parent.LightTube7.Transparency = 0.2
+	script.Parent.LightTube8.Transparency = 0.2
+	script.Parent.LightTube9.Transparency = 0.2
+	script.Parent.LightTube10.Transparency = 0.2
+	script.Parent.LightTube11.Transparency = 0.2
+	script.Parent.Base.Light.Brightness = 10
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.9
+	script.Parent.LightTube2.Transparency = 0.9
+	script.Parent.LightTube3.Transparency = 0.9
+	script.Parent.LightTube4.Transparency = 0.9
+	script.Parent.LightTube5.Transparency = 0.9
+	script.Parent.LightTube6.Transparency = 0.9
+	script.Parent.LightTube7.Transparency = 0.9
+	script.Parent.LightTube8.Transparency = 0.9
+	script.Parent.LightTube9.Transparency = 0.9
+	script.Parent.LightTube10.Transparency = 0.9
+	script.Parent.LightTube11.Transparency = 0.9
+	script.Parent.Base.Light.Brightness = 3
+
+	wait(speed)
+
+end
+
+function Mode3()
+
+	script.Parent.Base.Light.Enabled = true
+	script.Parent.Base.Light.Brightness = 10
+
+	script.Parent.LightTube1.Transparency = 0.2
+	script.Parent.LightTube2.Transparency = 0.9
+	script.Parent.LightTube3.Transparency = 0.2
+	script.Parent.LightTube4.Transparency = 0.9
+	script.Parent.LightTube5.Transparency = 0.2
+	script.Parent.LightTube6.Transparency = 0.9
+	script.Parent.LightTube7.Transparency = 0.2
+	script.Parent.LightTube8.Transparency = 0.9
+	script.Parent.LightTube9.Transparency = 0.2
+	script.Parent.LightTube10.Transparency = 0.9
+	script.Parent.LightTube11.Transparency = 0.2
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.3
+	script.Parent.LightTube2.Transparency = 0.8
+	script.Parent.LightTube3.Transparency = 0.3
+	script.Parent.LightTube4.Transparency = 0.8
+	script.Parent.LightTube5.Transparency = 0.3
+	script.Parent.LightTube6.Transparency = 0.8
+	script.Parent.LightTube7.Transparency = 0.3
+	script.Parent.LightTube8.Transparency = 0.8
+	script.Parent.LightTube9.Transparency = 0.3
+	script.Parent.LightTube10.Transparency = 0.8
+	script.Parent.LightTube11.Transparency = 0.3
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.4
+	script.Parent.LightTube2.Transparency = 0.7
+	script.Parent.LightTube3.Transparency = 0.4
+	script.Parent.LightTube4.Transparency = 0.7
+	script.Parent.LightTube5.Transparency = 0.4
+	script.Parent.LightTube6.Transparency = 0.7
+	script.Parent.LightTube7.Transparency = 0.4
+	script.Parent.LightTube8.Transparency = 0.7
+	script.Parent.LightTube9.Transparency = 0.4
+	script.Parent.LightTube10.Transparency = 0.7
+	script.Parent.LightTube11.Transparency = 0.4
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.5
+	script.Parent.LightTube2.Transparency = 0.6
+	script.Parent.LightTube3.Transparency = 0.5
+	script.Parent.LightTube4.Transparency = 0.6
+	script.Parent.LightTube5.Transparency = 0.5
+	script.Parent.LightTube6.Transparency = 0.6
+	script.Parent.LightTube7.Transparency = 0.5
+	script.Parent.LightTube8.Transparency = 0.6
+	script.Parent.LightTube9.Transparency = 0.5
+	script.Parent.LightTube10.Transparency = 0.6
+	script.Parent.LightTube11.Transparency = 0.5
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.6
+	script.Parent.LightTube2.Transparency = 0.5
+	script.Parent.LightTube3.Transparency = 0.6
+	script.Parent.LightTube4.Transparency = 0.5
+	script.Parent.LightTube5.Transparency = 0.6
+	script.Parent.LightTube6.Transparency = 0.5
+	script.Parent.LightTube7.Transparency = 0.6
+	script.Parent.LightTube8.Transparency = 0.5
+	script.Parent.LightTube9.Transparency = 0.6
+	script.Parent.LightTube10.Transparency = 0.5
+	script.Parent.LightTube11.Transparency = 0.6
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.7
+	script.Parent.LightTube2.Transparency = 0.4
+	script.Parent.LightTube3.Transparency = 0.7
+	script.Parent.LightTube4.Transparency = 0.4
+	script.Parent.LightTube5.Transparency = 0.7
+	script.Parent.LightTube6.Transparency = 0.4
+	script.Parent.LightTube7.Transparency = 0.7
+	script.Parent.LightTube8.Transparency = 0.4
+	script.Parent.LightTube9.Transparency = 0.7
+	script.Parent.LightTube10.Transparency = 0.4
+	script.Parent.LightTube11.Transparency = 0.7
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.8
+	script.Parent.LightTube2.Transparency = 0.3
+	script.Parent.LightTube3.Transparency = 0.8
+	script.Parent.LightTube4.Transparency = 0.3
+	script.Parent.LightTube5.Transparency = 0.8
+	script.Parent.LightTube6.Transparency = 0.3
+	script.Parent.LightTube7.Transparency = 0.8
+	script.Parent.LightTube8.Transparency = 0.3
+	script.Parent.LightTube9.Transparency = 0.8
+	script.Parent.LightTube10.Transparency = 0.3
+	script.Parent.LightTube11.Transparency = 0.8
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.9
+	script.Parent.LightTube2.Transparency = 0.2
+	script.Parent.LightTube3.Transparency = 0.9
+	script.Parent.LightTube4.Transparency = 0.2
+	script.Parent.LightTube5.Transparency = 0.9
+	script.Parent.LightTube6.Transparency = 0.2
+	script.Parent.LightTube7.Transparency = 0.9
+	script.Parent.LightTube8.Transparency = 0.2
+	script.Parent.LightTube9.Transparency = 0.9
+	script.Parent.LightTube10.Transparency = 0.2
+	script.Parent.LightTube11.Transparency = 0.9
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.8
+	script.Parent.LightTube2.Transparency = 0.3
+	script.Parent.LightTube3.Transparency = 0.8
+	script.Parent.LightTube4.Transparency = 0.3
+	script.Parent.LightTube5.Transparency = 0.8
+	script.Parent.LightTube6.Transparency = 0.3
+	script.Parent.LightTube7.Transparency = 0.8
+	script.Parent.LightTube8.Transparency = 0.3
+	script.Parent.LightTube9.Transparency = 0.8
+	script.Parent.LightTube10.Transparency = 0.3
+	script.Parent.LightTube11.Transparency = 0.8
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.7
+	script.Parent.LightTube2.Transparency = 0.4
+	script.Parent.LightTube3.Transparency = 0.7
+	script.Parent.LightTube4.Transparency = 0.4
+	script.Parent.LightTube5.Transparency = 0.7
+	script.Parent.LightTube6.Transparency = 0.4
+	script.Parent.LightTube7.Transparency = 0.7
+	script.Parent.LightTube8.Transparency = 0.4
+	script.Parent.LightTube9.Transparency = 0.7
+	script.Parent.LightTube10.Transparency = 0.4
+	script.Parent.LightTube11.Transparency = 0.7
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.6
+	script.Parent.LightTube2.Transparency = 0.5
+	script.Parent.LightTube3.Transparency = 0.6
+	script.Parent.LightTube4.Transparency = 0.5
+	script.Parent.LightTube5.Transparency = 0.6
+	script.Parent.LightTube6.Transparency = 0.5
+	script.Parent.LightTube7.Transparency = 0.6
+	script.Parent.LightTube8.Transparency = 0.5
+	script.Parent.LightTube9.Transparency = 0.6
+	script.Parent.LightTube10.Transparency = 0.5
+	script.Parent.LightTube11.Transparency = 0.6
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.5
+	script.Parent.LightTube2.Transparency = 0.6
+	script.Parent.LightTube3.Transparency = 0.5
+	script.Parent.LightTube4.Transparency = 0.6
+	script.Parent.LightTube5.Transparency = 0.5
+	script.Parent.LightTube6.Transparency = 0.6
+	script.Parent.LightTube7.Transparency = 0.5
+	script.Parent.LightTube8.Transparency = 0.6
+	script.Parent.LightTube9.Transparency = 0.5
+	script.Parent.LightTube10.Transparency = 0.6
+	script.Parent.LightTube11.Transparency = 0.5
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.4
+	script.Parent.LightTube2.Transparency = 0.7
+	script.Parent.LightTube3.Transparency = 0.4
+	script.Parent.LightTube4.Transparency = 0.7
+	script.Parent.LightTube5.Transparency = 0.4
+	script.Parent.LightTube6.Transparency = 0.7
+	script.Parent.LightTube7.Transparency = 0.4
+	script.Parent.LightTube8.Transparency = 0.7
+	script.Parent.LightTube9.Transparency = 0.4
+	script.Parent.LightTube10.Transparency = 0.7
+	script.Parent.LightTube11.Transparency = 0.4
+
+	wait(speed)
+
+	script.Parent.LightTube1.Transparency = 0.3
+	script.Parent.LightTube2.Transparency = 0.8
+	script.Parent.LightTube3.Transparency = 0.3
+	script.Parent.LightTube4.Transparency = 0.8
+	script.Parent.LightTube5.Transparency = 0.3
+	script.Parent.LightTube6.Transparency = 0.8
+	script.Parent.LightTube7.Transparency = 0.3
+	script.Parent.LightTube8.Transparency = 0.8
+	script.Parent.LightTube9.Transparency = 0.3
+	script.Parent.LightTube10.Transparency = 0.8
+	script.Parent.LightTube11.Transparency = 0.3
+
+	wait(speed)
+
+end
+
+function Off()
+
+	script.Parent.Base.Light.Enabled = false
+
+	script.Parent.LightTube1.Transparency = 0.9
+	script.Parent.LightTube2.Transparency = 0.9
+	script.Parent.LightTube3.Transparency = 0.9
+	script.Parent.LightTube4.Transparency = 0.9
+	script.Parent.LightTube5.Transparency = 0.9
+	script.Parent.LightTube6.Transparency = 0.9
+	script.Parent.LightTube7.Transparency = 0.9
+	script.Parent.LightTube8.Transparency = 0.9
+	script.Parent.LightTube9.Transparency = 0.9
+	script.Parent.LightTube10.Transparency = 0.9
+	script.Parent.LightTube11.Transparency = 0.9
+
+end
+
+while true do
+	
+	wait()
+
+	speed = script.Parent.Speed.Value / 1000
+
+	local mode = script.Parent.Mode.Value
+
+	if script.Parent.Parent.ControlsA.TrackCurrent.Value ~= 0 then
+		if mode == 1 then
+			Mode1()
+		elseif mode == 2 then
+			Mode2()
+		elseif mode == 3 then
+			Mode3()
+		end
+	elseif script.Parent.Parent.ControlsA.TrackCurrent.Value == 0 then
+		Off()
+	end
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	local pitch = script.Parent.Parent.Pitch
+
+	pitch.Value = pitch.Value - 5
+
+	local m = script.Parent.Parent.Parent.MusicPlayerA:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Pitch = pitch.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Pitch.Value > 5 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	local pitch = script.Parent.Parent.Pitch
+
+	pitch.Value = 100
+
+	local m = script.Parent.Parent.Parent.MusicPlayerA:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Pitch = pitch.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	local pitch = script.Parent.Parent.Pitch
+
+	pitch.Value = pitch.Value + 5
+
+	local m = script.Parent.Parent.Parent.MusicPlayerA:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Pitch = pitch.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Pitch.Value < 500 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	local pitch = script.Parent.Parent.Parent.Parent.Pitch
+
+	if pitch.Value % 100 == 0 then
+		script.Parent.Text = "Pitch: " ..(pitch.Value / 100)..".0"
+	else
+		script.Parent.Text = "Pitch: " ..pitch.Value / 100
+	end
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Pitch.Value < 500 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	local pitch = script.Parent.Parent.Pitch
+
+	pitch.Value = pitch.Value + 5
+
+	local m = script.Parent.Parent.Parent.MusicPlayerB:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Pitch = pitch.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	local pitch = script.Parent.Parent.Pitch
+
+	pitch.Value = 100
+
+	local m = script.Parent.Parent.Parent.MusicPlayerB:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Pitch = pitch.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Pitch.Value > 5 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	local pitch = script.Parent.Parent.Pitch
+
+	pitch.Value = pitch.Value - 5
+
+	local m = script.Parent.Parent.Parent.MusicPlayerB:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Pitch = pitch.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	local pitch = script.Parent.Parent.Parent.Parent.Pitch
+
+	if pitch.Value % 100 == 0 then
+		script.Parent.Text = "Pitch: " ..(pitch.Value / 100)..".0"
+	else
+		script.Parent.Text = "Pitch: " ..pitch.Value / 100
+	end
+
+end
+
+end,
+function(script,require)
+function On()
+
+	for i = 1, #s do
+		if s[i]:IsA("Part") then
+			s[i].Mesh.Offset = Vector3.new(0, -0.13, 0)
+			wait(0.05)
+			s[i].Mesh.Offset = Vector3.new(0, -0.19, 0)
+		end
+	end
+
+end
+
+function Off()
+
+	for i = 1, #s do
+		if s[i]:IsA("Part") then
+			s[i].Mesh.Offset = Vector3.new(0, -0.19, 0)
+		end
+	end
+
+end
+
+while true do
+
+	wait()
+
+	s = script.Parent:GetChildren()
+
+	if script.Parent.Parent.ControlsA.TrackCurrent.Value ~= 0 then
+		On()
+	elseif script.Parent.Parent.ControlsA.TrackCurrent.Value == 0 then
+		Off()
+	end
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if (script.Parent.Parent.Parent.ControlsA.TrackCurrent.Value ~= 0 and script.Parent.Parent.Parent.ControlsA.TrackPaused.Value == false and script.Parent.Parent.Direction.Value == -5) then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Mode.Value == 1 then
+		script.Parent.Vinyl.Top.Texture = "http://www.roblox.com/asset/?id=200206383"
+		script.Parent.Vinyl.Bottom.Texture = "http://www.roblox.com/asset/?id=200206383"
+	end
+	if script.Parent.Mode.Value == 2 then
+		script.Parent.Vinyl.Top.Texture = "http://www.roblox.com/asset/?id=200206432"
+		script.Parent.Vinyl.Bottom.Texture = "http://www.roblox.com/asset/?id=200206432"
+	end
+	if script.Parent.Mode.Value == 3 then
+		script.Parent.Vinyl.Top.Texture = "http://www.roblox.com/asset/?id=200206497"
+		script.Parent.Vinyl.Bottom.Texture = "http://www.roblox.com/asset/?id=200206497"
+	end
+	if script.Parent.Mode.Value == 4 then
+		script.Parent.Vinyl.Top.Texture = "http://www.roblox.com/asset/?id=200206626"
+		script.Parent.Vinyl.Bottom.Texture = "http://www.roblox.com/asset/?id=200206626"
+	end
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	local controls = script.Parent.Parent.ControlsA
+
+	local dir = script.Parent.Direction.Value
+
+	if (controls.TrackCurrent.Value ~= 0 and controls.TrackPaused.Value == false) then
+		script.Parent.Vinyl.CFrame = script.Parent.Vinyl.CFrame * CFrame.fromEulerAnglesXYZ(0, (dir / 100), 0)
+	end
+
+end
+
+end,
+function(script,require)
+function Scratch()
+
+	local ID = script.Parent.Parent.ControlsA.TrackCurrent
+
+	local track = script.Parent.Parent.MusicPlayerA["Track" ..ID.Value]
+
+	local pitch = track.Pitch
+
+	local dir = script.Parent.Direction
+
+	track.Pitch = 0
+	dir.Value = 10
+	script.Parent.Scratch:Play()
+
+	wait(0.2)
+
+	track.Pitch = pitch
+	dir.Value = -5
+
+end
+
+script.Parent.Vinyl.ClickDetector.MouseClick:connect(Scratch)
+
+end,
+function(script,require)
+function VinylChanger()
+
+	script.Parent.Parent.Parent.TurntableA.Mode.Value = 4
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Vinyl1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl2.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl3.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(VinylChanger)
+
+end,
+function(script,require)
+function VinylChanger()
+
+	script.Parent.Parent.Parent.TurntableA.Mode.Value = 3
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Vinyl1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl2.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl4.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl4.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(VinylChanger)
+
+end,
+function(script,require)
+function VinylChanger()
+
+	script.Parent.Parent.Parent.TurntableA.Mode.Value = 2
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Vinyl1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl3.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl4.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl4.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(VinylChanger)
+
+end,
+function(script,require)
+function VinylChanger()
+
+	script.Parent.Parent.Parent.TurntableA.Mode.Value = 1
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Vinyl2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl2.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl3.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Vinyl4.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Vinyl4.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(VinylChanger)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Volume.Value < 100 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+function Volume()
+
+	local volume = script.Parent.Parent.Volume
+
+	volume.Value = volume.Value + 5
+
+	local m = script.Parent.Parent.Parent.MusicPlayerA:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Volume = volume.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(Volume)
+
+end,
+function(script,require)
+function Volume()
+
+	local volume = script.Parent.Parent.Volume
+
+	volume.Value = 100
+
+	local m = script.Parent.Parent.Parent.MusicPlayerA:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Volume = volume.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(Volume)
+
+end,
+function(script,require)
+function Volume()
+
+	local volume = script.Parent.Parent.Volume
+
+	volume.Value = volume.Value - 5
+
+	local m = script.Parent.Parent.Parent.MusicPlayerA:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Volume = volume.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(Volume)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Volume.Value > 0 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	local volume = script.Parent.Parent.Parent.Parent.Volume
+
+	script.Parent.Text = "Volume: " ..volume.Value.. "%"
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Volume.Value < 100 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+function Volume()
+
+	local volume = script.Parent.Parent.Volume
+
+	volume.Value = volume.Value + 5
+
+	local m = script.Parent.Parent.Parent.MusicPlayerB:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Volume = volume.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(Volume)
+
+end,
+function(script,require)
+function Volume()
+
+	local volume = script.Parent.Parent.Volume
+
+	volume.Value = 100
+
+	local m = script.Parent.Parent.Parent.MusicPlayerB:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Volume = volume.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(Volume)
+
+end,
+function(script,require)
+function Volume()
+
+	local volume = script.Parent.Parent.Volume
+
+	volume.Value = volume.Value - 5
+
+	local m = script.Parent.Parent.Parent.MusicPlayerB:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #m do
+		m[i].Volume = volume.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(Volume)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Volume.Value > 0 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	local volume = script.Parent.Parent.Parent.Parent.Volume
+
+	script.Parent.Text = "Volume: " ..volume.Value.. "%"
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	local volumea = script.Parent.Parent.VolumeA.Volume
+	local volumeb = script.Parent.Parent.VolumeB.Volume
+
+	volumea.Value = 0
+	volumeb.Value = 0
+
+	local ma = script.Parent.Parent.MusicPlayerA:GetChildren()
+	local mb = script.Parent.Parent.MusicPlayerB:GetChildren()
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.08, 0)
+
+	for i = 1, #ma do
+		ma[i].Volume = volumea.Value / 100
+	end
+	for i = 1, #mb do
+		mb[i].Volume = volumeb.Value / 100
+	end
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	script.Parent.Parent.LightTube1.BrickColor = script.Parent.Value
+	script.Parent.Parent.LightTube2.BrickColor = script.Parent.Value
+	script.Parent.Parent.LightTube3.BrickColor = script.Parent.Value
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	script.Parent.Color = script.Parent.Parent.Color
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	script.Parent.Color = script.Parent.Parent.Color
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	script.Parent.Color = script.Parent.Parent.Color
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.Panel1A.Mode.Value = 1
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Mode2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode2.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Mode3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode3.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.Panel1A.Mode.Value = 2
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Mode1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Mode3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode3.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.Panel1A.Mode.Value = 3
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Mode1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Mode2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode2.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	local speed = script.Parent.Parent.Parent.Parent.Parent.Panel1A.Speed
+
+	if speed.Value % 10 == 0 then
+		script.Parent.Text = (speed.Value / 10).. ".0"
+	else
+		script.Parent.Text = speed.Value / 10
+	end
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	local speed = script.Parent.Parent.Parent.Panel1A.Speed
+
+	speed.Value = speed.Value - 5
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Parent.Panel1A.Speed.Value > 5 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	local speed = script.Parent.Parent.Parent.Panel1A.Speed
+
+	speed.Value = speed.Value + 5
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Parent.Panel1A.Speed.Value < 200 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.Panel1B.Mode.Value = 3
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Mode1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Mode2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode2.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.Panel1B.Mode.Value = 2
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Mode1.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode1.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Mode3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode3.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+function onClicked()
+
+	script.Parent.Parent.Parent.Panel1B.Mode.Value = 1
+	script.Parent.ClickDetector.MaxActivationDistance = 0
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+	script.Parent.Parent.Mode2.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode2.Mesh.Offset = Vector3.new(0, 0, 0)
+	script.Parent.Parent.Mode3.ClickDetector.MaxActivationDistance = 20
+	script.Parent.Parent.Mode3.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Parent.Panel1B.Speed.Value < 200 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	local speed = script.Parent.Parent.Parent.Panel1B.Speed
+
+	speed.Value = speed.Value + 5
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	local speed = script.Parent.Parent.Parent.Parent.Parent.Panel1B.Speed
+
+	if speed.Value % 10 == 0 then
+		script.Parent.Text = (speed.Value / 10).. ".0"
+	else
+		script.Parent.Text = speed.Value / 10
+	end
+
+end
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Parent.Parent.Panel1B.Speed.Value > 5 then
+		script.Parent.ClickDetector.MaxActivationDistance = 20
+	else
+		script.Parent.ClickDetector.MaxActivationDistance = 0
+	end
+
+end
+
+end,
+function(script,require)
+function onClicked()
+
+	local speed = script.Parent.Parent.Parent.Panel1B.Speed
+
+	speed.Value = speed.Value - 5
+
+	script.Parent.Mesh.Offset = Vector3.new(0, -0.1, 0)
+
+	wait(0.05)
+
+	script.Parent.Mesh.Offset = Vector3.new(0, 0, 0)
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+end,
+function(script,require)
+while true do
+
+	wait()
+
+	if script.Parent.Value == true then
+		script.Parent.Parent.LightTube1.Light.Enabled = true
+		script.Parent.Parent.LightTube1.Transparency = 0.5
+		script.Parent.Parent.LightTube2.Light.Enabled = true
+		script.Parent.Parent.LightTube2.Transparency = 0.5
+		script.Parent.Parent.LightTube3.Light.Enabled = true
+		script.Parent.Parent.LightTube3.Transparency = 0.5
+	else
+		script.Parent.Parent.LightTube1.Light.Enabled = false
+		script.Parent.Parent.LightTube1.Transparency = 0.9
+		script.Parent.Parent.LightTube2.Light.Enabled = false
+		script.Parent.Parent.LightTube2.Transparency = 0.9
+		script.Parent.Parent.LightTube3.Light.Enabled = false
+		script.Parent.Parent.LightTube3.Transparency = 0.9
+	end
+
+end
+
+end,
+function(script,require)
+while true do
+
+	local list_a = script.Parent.ConfigA:GetChildren()
+
+	local list_b = script.Parent.ConfigB:GetChildren()
+
+	wait()
+
+	for i = 1, #list_a do
+		script.Parent.MusicPlayerA[list_a[i].Name].SoundId = "http://www.roblox.com/asset/?id="..list_a[i].Value
+	end
+
+	for i = 1, #list_b do
+		script.Parent.MusicPlayerB[list_b[i].Name].SoundId = "http://www.roblox.com/asset/?id="..list_b[i].Value
+	end
+
+end
+
+end,
+function(script,require)
+
+print[[FeliTech: RobloROXX DJ Master v10 - 40k Special Edition - Brief Manual
+
+	Current Version: 10.1
+
+	[FEATURES]
+	>   Only one Track can be played on one Deck (because of spamming and so).
+	>   Speaker, Light Panel and Vinyl functions trigger when playing or stopping a Track.
+	>   Light panels have 3 Modes and adjustable Speed.
+	>   The laptop is now Asus - Don't ask me to change it to anything else, sorry!
+	>   All New Look - Totally rebuilt - New decals, icons and everything!
+	>	If you could upload a better, fitting Scratch Sound, message me immediately!
+
+	[BASIC INFO]
+	>   First of all, Thank You for using Feli63's DJ Booth - and your patience too!
+	>   Don't change anything unless you know what it will do (especially Scripts)!
+	>   No copying, seriously... It's shameful we all know...
+	>   I won't say anything about further updates, I always change my mind.
+	>	However, minor updates (hotfixes, patches) could be expected!
+
+	[CUSTOMIZATION]
+	>	Change any Music IDs with the Values in the Config Folder (bottom section).
+	>   Change Vinyls on with the 4 black buttons next to the Turntables.
+	>   Change the Mode and Speed of the Light Panels next to the Music Players.
+	>   Change the Colors of the Stairs Lights in Studio Mode.
+
+	[PUBLISHING]
+	>   DON'T publish this under you name, unless you've asked me!
+	>   Distributing of the model is not allowed, everything belongs to Feli63!
+
+	Thank you for reading this, use it wisely and enjoy!
+	Best Regards, Feli63 � 2015]]
+
+
+
+end,
+function(script,require)
+x = script.Parent.Parent.Parent.Parent.FireSet
+script.Parent.MouseButton1Down:connect(function()
+	if script.Parent.Text == "Turn on fire" then
+	script.Parent.Text = "Turn off fire"
+	script.Parent.BackgroundColor3 = Color3.new(255/255,0/255,0/255)
+	x.FireBrick.Fire.Enabled = true
+	x.FireBrick1.Fire.Enabled = true
+	else
+	script.Parent.Text = "Turn on fire"
+	script.Parent.BackgroundColor3 = Color3.new(28/255, 170/255, 28/255)
+	x.FireBrick.Fire.Enabled = false
+	x.FireBrick1.Fire.Enabled = false
+
+end
+end)
+end,
+function(script,require)
+x = script.Parent.Parent.Parent.Parent.FireSet
+function Clicked()
+	x.FireBrick.Fire.Size = x.FireBrick.Fire.Size +1
+x.FireBrick1.Fire.Size = x.FireBrick1.Fire.Size +1
+script.Parent.Parent.Label.Text = "Size: "..x.FireBrick.Fire.Size
+end
+script.Parent.MouseButton1Down:connect(Clicked)
+end,
+function(script,require)
+x = script.Parent.Parent.Parent.Parent.FireSet
+function Clicked()
+	x.FireBrick.Fire.Size = x.FireBrick.Fire.Size -1
+x.FireBrick1.Fire.Size = x.FireBrick1.Fire.Size -1
+script.Parent.Parent.Label.Text = "Size: "..x.FireBrick.Fire.Size
+end
+script.Parent.MouseButton1Down:connect(Clicked)
+end,
+function(script,require)
+x = script.Parent.Parent.Parent.Parent.SmokeSet
+script.Parent.MouseButton1Down:connect(function()
+	if script.Parent.Text == "Turn on smoke" then
+	script.Parent.Text = "Turn off smoke"
+	script.Parent.BackgroundColor3 = Color3.new(255/255,0/255,0/255)
+	x.Smoke.Smoke.Enabled = true
+	x.Smoke1.Smoke.Enabled = true
+	x.Smoke2.Smoke.Enabled = true
+	x.Smoke3.Smoke.Enabled = true
+	else
+	script.Parent.Text = "Turn on smoke"
+	script.Parent.BackgroundColor3 = Color3.new(28/255, 170/255, 28/255)
+	x.Smoke.Smoke.Enabled = false
+	x.Smoke1.Smoke.Enabled = false
+	x.Smoke2.Smoke.Enabled = false
+	x.Smoke3.Smoke.Enabled = false
+end
+end)
+end,
+function(script,require)
+x = script.Parent.Parent.Parent.Parent.SmokeSet
+function Clicked()
+	x.Smoke.Smoke.Size = x.Smoke.Smoke.Size +1
+x.Smoke1.Smoke.Size = x.Smoke1.Smoke.Size +1
+x.Smoke2.Smoke.Size = x.Smoke2.Smoke.Size +1
+x.Smoke3.Smoke.Size = x.Smoke3.Smoke.Size +1
+script.Parent.Parent.Label.Text = "Size: "..x.Smoke3.Smoke.Size
+end
+script.Parent.MouseButton1Down:connect(Clicked)
+end,
+function(script,require)
+x = script.Parent.Parent.Parent.Parent.SmokeSet
+function Clicked()
+	x.Smoke.Smoke.Size = x.Smoke.Smoke.Size -1
+x.Smoke1.Smoke.Size = x.Smoke1.Smoke.Size -1
+x.Smoke2.Smoke.Size = x.Smoke2.Smoke.Size -1
+x.Smoke3.Smoke.Size = x.Smoke3.Smoke.Size -1
+script.Parent.Parent.Label.Text = "Size: "..x.Smoke3.Smoke.Size
+end
+script.Parent.MouseButton1Down:connect(Clicked)
+end,
+function(script,require)
+--instructions--
+--un group the lights build with it--
+--then once done put the lights in a modle named "Lights"--
+--play game and pick colors with the Control panel--
+
+--Xandenge--
+
+end
+}
+local ScriptIndex = 0
+local Scripts,ModuleScripts,ModuleCache = {},{},{}
+local _require = require
+function require(obj,...)
+	local index = ModuleScripts[obj]
+	if not index then
+		local a,b = pcall(_require,obj,...)
+		return not a and error(b,2) or b
+	end
+	
+	local res = ModuleCache[index]
+	if res then return res end
+	res = ScriptFunctions[index](obj,require)
+	if res==nil then error("Module code did not return exactly one value",2) end
+	ModuleCache[index] = res
+	return res
+end
+local function Script(obj,ismodule)
+	ScriptIndex = ScriptIndex + 1
+	local t = ismodule and ModuleScripts or Scripts
+	t[obj] = ScriptIndex
+end
+
+function RunScripts()
+	for script,index in pairs(Scripts) do
+		coroutine.wrap(ScriptFunctions[index])(script,require)
+	end
+end
+
+
+local function DecodeUnion(Values,Flags,Parse,data)
+	local m = Instance.new("Folder")
+	m.Name = "UnionCache ["..tostring(math.random(1,9999)).."]"
+	m.Archivable = false
+	m.Parent = game:GetService("ServerStorage")
+	local Union,Subtract = {},{}
+	if not data then
+		data = Parse('B')
+	end
+	local ByteLength = (data % 4) + 1
+	local Length = Parse('I'..ByteLength)
+	local ValueFMT = ('I'..Flags[1])
+	for i = 1,Length do
+		local data = Parse('B')
+		local part
+		local isNegate = bit32.band(data,0b10000000) > 0
+		local isUnion =  bit32.band(data,0b01000000) > 0
+		if isUnion then
+			part = DecodeUnion(Values,Flags,Parse,data)
+		else
+			local isMesh = data % 2 == 1
+			local ClassName = Values[Parse(ValueFMT)]
+			part = Instance.new(ClassName)
+			part.Size = Values[Parse(ValueFMT)]
+			part.Position = Values[Parse(ValueFMT)]
+			part.Orientation = Values[Parse(ValueFMT)]
+			if isMesh then
+				local mesh = Instance.new("SpecialMesh")
+				mesh.MeshType = Values[Parse(ValueFMT)]
+				mesh.Scale = Values[Parse(ValueFMT)]
+				mesh.Offset = Values[Parse(ValueFMT)]
+				mesh.Parent = part
+			end
+		end
+		part.Parent = m
+		table.insert(isNegate and Subtract or Union,part)
+	end
+	local first = table.remove(Union,1)
+	if #Union>0 then
+		first = first:UnionAsync(Union)
+	end
+	if #Subtract>0 then
+		first = first:SubtractAsync(Subtract)
+	end
+	m:Destroy()
+	return first
+end
+
+local function Decode(str)
+	local StringLength = #str
+	
+	-- Base64 decoding
+	do
+		local decoder = {}
+		for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+			decoder[char:byte()] = b64code-1
+		end
+		local n = StringLength
+		local t,k = table.create(math.floor(n/4)+1),1
+		local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+		for i = 1, padding > 0 and n-4 or n, 4 do
+			local a, b, c, d = str:byte(i,i+3)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+			k = k + 1
+		end
+		if padding == 1 then
+			local a, b, c = str:byte(n-3,n-1)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+		elseif padding == 2 then
+			local a, b = str:byte(n-3,n-2)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000
+			t[k] = string.char(bit32.extract(v,16,8))
+		end
+		str = table.concat(t)
+	end
+	
+	local Position = 1
+	local function Parse(fmt)
+		local Values = {string.unpack(fmt,str,Position)}
+		Position = table.remove(Values)
+		return table.unpack(Values)
+	end
+	
+	local Settings = Parse('B')
+	local Flags = Parse('B')
+	Flags = {
+		--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+		--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+		--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+		--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+		--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+	}
+	
+	local ValueFMT = ('I'..Flags[1])
+	local InstanceFMT = ('I'..Flags[2])
+	local ConnectionFMT = ('I'..Flags[3])
+	local PropertyLengthFMT = ('I'..Flags[4])
+	
+	local ValuesLength = Parse(ValueFMT)
+	local Values = table.create(ValuesLength)
+	local CFrameIndexes = {}
+	
+	local ValueDecoders = {
+		--!!Start
+		[1] = function(Modifier)
+			return Parse('s'..Modifier)
+		end,
+		--!!Split
+		[2] = function(Modifier)
+			return Modifier ~= 0
+		end,
+		--!!Split
+		[3] = function()
+			return Parse('d')
+		end,
+		--!!Split
+		[4] = function(_,Index)
+			table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+		end,
+		--!!Split
+		[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+		--!!Split
+		[6] = {Color3.fromRGB,'BBB'},
+		--!!Split
+		[7] = {BrickColor.new,'I2'},
+		--!!Split
+		[8] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+			end
+			return ColorSequence.new(kpts)
+		end,
+		--!!Split
+		[9] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+			end
+			return NumberSequence.new(kpts)
+		end,
+		--!!Split
+		[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+		--!!Split
+		[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+		--!!Split
+		[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+		--!!Split
+		[14] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Axes.new(unpack(t))
+		end,
+		--!!Split
+		[15] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Faces.new(unpack(t))
+		end,
+		--!!Split
+		[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+		--!!Split
+		[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+		--!!Split
+		[19] = function()
+			return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+		end
+		--!!End
+	}
+	
+	for i = 1,ValuesLength do
+		local TypeAndModifier = Parse('B')
+		local Type = bit32.band(TypeAndModifier,0b11111)
+		local Modifier = (TypeAndModifier - Type) / 0b100000
+		local Decoder = ValueDecoders[Type]
+		if type(Decoder)=='function' then
+			Values[i] = Decoder(Modifier,i)
+		else
+			Values[i] = Decoder[1](Parse(Decoder[2]))
+		end
+	end
+	
+	for i,t in pairs(CFrameIndexes) do
+		Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+	end
+	
+	local InstancesLength = Parse(InstanceFMT)
+	local Instances = {}
+	local NoParent = {}
+	
+	for i = 1,InstancesLength do
+		local ClassName = Values[Parse(ValueFMT)]
+		local obj
+		local MeshPartMesh,MeshPartScale
+		if ClassName == "UnionOperation" then
+			obj = DecodeUnion(Values,Flags,Parse)
+			obj.UsePartColor = true
+		elseif ClassName:find("Script") then
+			obj = Instance.new("Folder")
+			Script(obj,ClassName=='ModuleScript')
+		elseif ClassName == "MeshPart" then
+			obj = Instance.new("Part")
+			MeshPartMesh = Instance.new("SpecialMesh")
+			MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+			MeshPartMesh.Parent = obj
+		else
+			obj = Instance.new(ClassName)
+		end
+		local Parent = Instances[Parse(InstanceFMT)]
+		local PropertiesLength = Parse(PropertyLengthFMT)
+		local AttributesLength = Parse(PropertyLengthFMT)
+		Instances[i] = obj
+		for i = 1,PropertiesLength do
+			local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+			
+			-- ok this looks awful
+			if MeshPartMesh then
+				if Prop == "MeshId" then
+					MeshPartMesh.MeshId = Value
+					continue
+				elseif Prop == "TextureID" then
+					MeshPartMesh.TextureId = Value
+					continue
+				elseif Prop == "Size" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+					else
+						MeshPartMesh.Scale = Value / MeshPartScale
+					end
+				elseif Prop == "MeshSize" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+						MeshPartMesh.Scale = obj.Size / Value
+					else
+						MeshPartMesh.Scale = MeshPartScale / Value
+					end
+					continue
+				end
+			end
+			
+			obj[Prop] = Value
+		end
+		if MeshPartMesh then
+			if MeshPartMesh.MeshId=='' then
+				if MeshPartMesh.TextureId=='' then
+					MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+				end
+				MeshPartMesh.Scale = obj.Size
+			end
+		end
+		for i = 1,AttributesLength do
+			obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+		end
+		if not Parent then
+			table.insert(NoParent,obj)
+		else
+			obj.Parent = Parent
+		end
+	end
+	
+	local ConnectionsLength = Parse(ConnectionFMT)
+	for i = 1,ConnectionsLength do
+		local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+		Instances[a][Values[b]] = Instances[c]
+	end
+	
+	return NoParent
+end
+
+
+local Objects = Decode('AFC/BSEFTW9kZWwhBE5hbWUhB1VQREFURUQhCldvcmxkUGl2b3QEaAVpBWoFIQ1Db250cm9sIHBhbmVsBGsFbAVtBSEEUGFydCEQQ29udHJvbFBhZENvbG9ycyEIQW5jaG9yZWQiIQ1Cb3R0b21TdXJmYWNlAwAAAAAAAAAAIQpCcmlja0NvbG9yBxoAIQZDRnJhbWUEFwBsBW0FIQVDb2xvcgYbKjUhC09yaWVudGF0aW9uCgAAAAAAADRD+v5vwiEIUG9zaXRpb24KUK9NQVzsO0DWttvBIQhSb3RhdGlvbgoAADRDAAAAAIMA8EIhBFNpemUKZmbmP5qZmT/NzBxBIQpUb3BTdXJmYWNlIQpTdXJmYWNlR3VpIQpDYW5'
+..'2YXNTaXplCwAASEQAAEhDIQRGYWNlAwAAAAAAAPA/IQVGcmFtZSEKQ29sb3JGcmFtZSEQQmFja2dyb3VuZENvbG9yMwY6OjohD0JvcmRlclNpemVQaXhlbAwAAIA/AAAAAIA/AAAhCVRleHRMYWJlbCEFTGFiZWwG////IRZCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5DAAAAADIAAAAAABkACEERm9udAMAAAAAAAAQQCEEVGV4dCEMQ29sb3Igc2NoZW1lIQpUZXh0Q29sb3IzBrq6uiEIVGV4dFNpemUDAAAAAAAASEAhFlRleHRTdHJva2VUcmFuc3BhcmVuY3khC1RleHRXcmFwcGVkIQpUZXh0QnV0dG9uIQdCdXR0b2'
+..'5zBgAA/wwAAAA/AAAAAAAACgAMAAAAADIAAAAAADIAAwAAAAAAAAhAIQADAAAAAAAALEAG/wAADAAAAD88AAAAAAAKAAYA/wAMAAAAP3gAAAAAAAoABlUAfwwAAAA/tAAAAAAACgAG/6oADAAAAD/wAAAAAAAKAAYA//8MAAAAPywBAAAAAAoADAAAAD8AAAAAAABGAAb/AP8MAAAAPzwAAAAAAEYABv+qfwwAAAA/eAAAAAAARgAGVQAADAAAAD+0AAAAAABGACEGU2NyaXB0DAAAAD8AAAAAAACCAAwAAAAAbgAAAAAAMgAhB1Zpc2libGUCIQZSYW5kb20hBHBhcnQH6wMEWgBsBW0FBhEREQpgr01BXOw7QMC228EKZ'
+..'mbmP5qZmT8AAKhBIQZMaWdodHMEbgVvBWoFIQdSYWluYm93IQtCYWNrU3VyZmFjZQMAAAAAAAAUQAMAAAAAAAAcQARnAHAFagUhCkNhbkNvbGxpZGUhDEZyb250U3VyZmFjZSELTGVmdFN1cmZhY2UKAAAAAKabxDwAAAAACgA3JL8om1dB5i3cwSEMUmlnaHRTdXJmYWNlCgAAgD8AAIA/AACAPyEMVHJhbnNwYXJlbmN5IQlTcG90TGlnaHQhCkJyaWdodG5lc3MDAAAAAAAALkAG/wDVIQVSYW5nZQMAAAAAAAA5QCEHUm90YXRlViECQzAEcQVyBXMFIQJDMQR0BXIFcwUhBVBhcnQwIQVQYXJ0MSEJQmFzZUFuZ2xl'
+..'AwAAAKBhJfk/IQhSYWluYm93MgR9AG8FagUKAAAAAIMAFsMAAAAACgAjJL/QgGdBwC3cwQoAADRD5/vvwQAANEMhBUFuZ2xlAwAAACCO8gTAIQhSYWluYm93MQSEAHUFagUKAAAAAEoMtMIAAAAACgAUJL+NlXpB9i3cwQoAAAAAAAC0wgAAAAADAAAAAABAf0AGGf8AAwAAAAAAADRAIQhSYWluYm93MwSNAHUFagUhCE1hdGVyaWFsAwAAAAAAgIlACgAQJL/EskdB9i3cwSEKUG9pbnRMaWdodAYqAP8hBkRqIHNldAR2BWkFagUhBEJhcnMElAB3BWoFCoAeQ0GgNRBBmMCFwQpNMzNAb2bmP83MTD8hCUJsb2NrTWV'
+..'zaCENRHJvcHBpbmdGcmFtZQwAAAAAIAMAAAAAWAIhBE5VTTEGAPP/DAAAAAAAAAAAgD8AAAwAAAAAjAAAAAAAAAAhBE5VTTIG6v8ADClcDz4AAAAAgD8AACEETlVNMwwpXI8+AAAAAIA/AAAhBE5VTTQGRP8ADD0K1z4AAAAAgD8AACEETlVNNQYAEf8MKVwPPwAAAACAPwAAIQROVU02Bv9VAAwzMzM/AAAAAIA/AAAhBE5VTTcGdwD/DD0KVz8AAAAAgD8AACEHRHJvcHBlciEhRmVsaVRlY2g6IFJvYmxvUk9YWCBESiBNYXN0ZXIgdjEwIQZMYXB0b3AEeAV5BWoFIQhLZXlib2FyZAS3AHkFagUhGEN1c3RvbVBoeX'
+..'NpY2FsUHJvcGVydGllcxAzMzM/mpmZPgAAAAAAAIA/AACAPwoAAAAAAAC0QgAAAAAKyBKKQT0zo0CW6tLBCs3MTEDNzEw+zcwMQCEFRGVjYWwhCENvbnRyb2xzIQdUZXh0dXJlISlodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTIwMDI1MzYyOSEGU2NyZWVuBMAAeQV6BQoAAJbCAAC0QgAAAAAKOHmUQbVwxUCY6tLBCgAAtMIAAHBBAAC0QiEHUHJvZ3JhbSEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yMDAyMzYyMDYhBEFzdXMhKWh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/a'
+..'WQ9MjAwMjM3OTM3IQlSZXZlcmJCb3gEewVpBWoFBMsAaQVqBRAzM/tAmpmZPgAAAAAAAIA/AACAPwMAAAAAAACRQAo4eZBBnZmpQGC368EKZmYmQJmZGT8BAIA/BM4AaQVqBQporJNB3cy8QGC368EKZmYmQJmZGT/NzEw+IQdSZXZlcmIxBNMAeQV8BQrhehPCAAC0QgAAAAAKgDGPQTVcv0DGHfLBIQtSZWZsZWN0YW5jZQMAAACgmZnJPwoAALTCH4VUQgAAtEIKzcxMP83MTD4AAIA/IQZPZmZzZXQKAAAAAM3MzL0AAAAAIQVTY2FsZQrNzEw/AACAPzMzMz8hDUNsaWNrRGV0ZWN0b3IhFU1heEFjdGl2YXRpb25E'
+..'aXN0YW5jZSEESWNvbiEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yMTA0NzQzODghB1JldmVyYjIE4gB5BXwFCoAxj0E1XL9AXLfrwSEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yMTA0NzQ0NDYhB1JldmVyYjME5gB5BXwFCoAxj0E1XL9A/lDlwSEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yMTA0NzQ0OTUhB1BhbmVsMkIEfQVpBXcFIQZMaWdodDEH7QME7wBpBXcFBv+wAAoAALTCAAC0wgAAAAAKyBKWQfoAgD/GHbbBAwAAAAAAAOA/CgAAtMIAAAAAAAC0wgr'
+..'NzEw/zcxMPs3MTD8DAAAAwMzM7D8hC1NwZWNpYWxNZXNoIQhNZXNoVHlwZSEGTGlnaHQyBPgAaQV3BQrIEpZBHs0MQMYdtsEKmpmZP83MTD6amZk/IQZMaWdodDME/ABpBXcFCsgSlkE+M3NAxh22wQrOzMw/zcxMPs3MzD8hC0xpZ2h0U2NyaXB0IQdOZWVkbGVBBH4FfwWABQQDAX8FgAUKAAC0QgAA8MIAAAAACjh5jEENAMBAmOr6wQMAAABAMzPTPwoAALRCAAAAAAAA8EIKzczMPpqZGT/OzMw+IQxDeWxpbmRlck1lc2gKzcxMPwAAgD/NzEw/CgAAAAAAAAA/AAAAAAqamZk+AAAAQJqZmT4EDAFpBWoFCjh5jE'
+..'HdzLxAmOr6wQrNzMw+zcxMPs7MzD4KmpkZPwAAgD+amRk/Cs3MTD7NzEw+zcxMPgq4HgW/CtcjvGZmZj8KzcxMPjMz8z/NzEw+BBMBaQVqBQo4eYxBdWa2QJjq+sEhB05lZWRsZUIEgQV/BYAFBBcBfwWABQo4eYxB/f+/QJbqosEEGQFpBWoFCjh5jEHFzLxAiOqiwQQbAWkFagUKOHmMQc3MvECI6qLBBB0BaQVqBQo4eYxBZWa2QIjqosEhB1BhbmVsMUIEggVqBXkFIQtMaWdodFR1YmUxMQQjAWoFeQUKAAAAAAAAtMIAALRCCpjflkEzAQA/xB2awQrNzEw+ZmaGQM3MTD4hC0xpZ2h0VHViZTEwBCcBagV5BQqY3'
+..'5ZBNWhmP8QdmsEhCkxpZ2h0VHViZTkEKgFqBXkFCpjflkFaZ6Y/xB2awSEKTGlnaHRUdWJlOAQtAWoFeQUKmN+WQXqa2T/EHZrBIQpMaWdodFR1YmU3BDABagV5BQqY35ZBvmYGQMQdmsEhBEJhc2UEMwFpBWoFCpjflkE+ACBAxB2awQpmZoZAZmaGQM3MTD4KAAAAAAAAAADNzMw9CrgehT9mZoY/AACAPyEFTGlnaHQDAAAAAAAAJEAG/68AIQdFbmFibGVkAwAAAAAAAF5AIQpMaWdodFR1YmU1BD4BagV5BQqY35ZB3Jk5QMQdmsEhCkxpZ2h0VHViZTYEQQFqBXkFCpjflkFOACBAxB2awSEKTGlnaHRUdWJlNARE'
+..'AWoFeQUKmN+WQT4zU0DEHZrBCs3MTD5nZoZAzcxMPiEKTGlnaHRUdWJlMwRIAWoFeQUKmN+WQf7MbEDEHZrBIQpMaWdodFR1YmUyBEsBagV5BQqY35ZBVTODQMQdmsEhCkxpZ2h0VHViZTEETgFqBXkFCpjflkElAJBAxB2awSETSW50Q29uc3RyYWluZWRWYWx1ZSEFU3BlZWQhCE1heFZhbHVlAwAAAAAAAGlAIQhNaW5WYWx1ZSEFVmFsdWUDAAAAAAAASUAhBE1vZGUhCVNwZWFrZXJzQgSDBWkFdwUhBUxhcmdlBFsBaQV3BQpw8mBBPgBgQLxuZ8EKAACgQM3MTD4AAKBAISlodHRwOi8vd3d3LnJvYmxveC5jb20'
+..'vYXNzZXQvP2lkPTIwMDEzMjY0MAoAAAAAXI9CvgAAAAAKZmZmPwAAgD9mZmY/IQVTbWFsbARiAWkFdwUKEL9tQQ0A4EDAbnvBCgAAAEDNzEw+AAAAQARlAWkFdwUKAL9tQQ0A4EDEblPBBGcBaQV3BQpw8mBBDAAoQbxuZ8EhA1N1YgRqAWkFdwUKkN+OQVpn5j9it8fBIQ1TcGVha2VyU2NyaXB0IQpUdXJudGFibGVCBIQFaQVqBQfHAARxAWkFagUGY19iCtBYf0HFzKxAXrevwQoAAIBAzczMPgAAgEAhBEZvb3QEdQFpBWoFCtBYZ0EtM6NAXrejwQoAAIA/zcxMPgAAgD8EeAFpBWoFCtBYZ0EtM6NAXre7wSEHUG'
+..'xhdHRlcgR8AWkFhQUKAAC0QgAAtMIAAAAACtBYf0EtM7NAXrevwQoAALRCAAAAAAAAtEIKAACAQAAAgEDNzEw+CpqZWUCamVlAAACAPyEGTWVzaElkISdodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTMyNzAwMTcEgwFpBWoFCmisi0EtM6NAXre7wQSFAWkFagUKaKyLQS0zo0Bct6PBIQVWaW55bASIAXkFagUK0Fh/QWVmtkBet6/BCgAAgEDNzEw+AACAQApmZmY/AAAAAGZmZj8hA1RvcCEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yMDAyMDY0MzIhBkJvdHRvbSELTGltaXRTY3Jpc'
+..'HQhDVNjcmF0Y2hTY3JpcHQhD1Jldm9sdmluZ1NjcmlwdCEKTW9kZVNjcmlwdAMAAAAAAAAAQCEJRGlyZWN0aW9uAwAAAAAAABTAIQVTb3VuZCEHU2NyYXRjaCENUGxheWJhY2tTcGVlZAMAAAAAAAD0PyEHU291bmRJZCEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMzMzMjI4NjkhBlZvbHVtZSENVmlueWxDaGFuZ2VyQgSGBYcFagUEoAGHBWoFCgAAAAAAAJbCAAAAAAowCnZBbWamQES8k8EKMzOzP8zMzD4AAIBABKMBhwVqBQowHHhB3cy8QCbfj8EKzczMPgAAgD8AAIBAIQlXZWRnZVBhcnQE'
+..'qAGIBWoFCgAAAAAAAHBBAAAAAAogNnVB3cy8QO5HlcEKAACAQAAAgD8AAIA/IQZWaW55bDEErQGIBYkFCgAANMIAAHBBAAAAAAo4VYZBfW3DQBjhl8EK1fg3wlK4KEH8qStBCjMzMz8AAIA/MzMzPyEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xNDA0MTYyNzkhElZpbnlsQ2hhbmdlclNjcmlwdCEGVmlueWwyBLQBiAWJBQrwNX1BfW3DQPjOlcEhKWh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MTQwNDE2MjU1IQZWaW55bDMEuAGIBYkFCpDBbUF9bcNA+LyTwSEpaHR0cDovL3d3dy5'
+..'yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xNDA0MTYyOTkhBlZpbnlsNAS8AYgFiQUKIE1eQX1tw0DeqpHBISlodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTE0MDQxNjI4OATAAYoFiwUKAAAAAAAAlsIAADRCCgBvc0GllrNAKJmYwQrNzMw+zcxMPv//f0AhCkRlY29yYXRpb24ExAFpBWoFCpDfjkHzAQA/YrfHwQr+//8/zcxMPs3MTD4KAAAAAAAAAACamRk+CmZmZj8AAIA/AACAPwTJAWkFagUKmN+OQfMBAD9et+/BIQlMYXVuY2hwYWQEzAF5BWoFCtBYb0E9M6NAAFHJwSEJSW50ZXJmYWNlISlodHRwOi'
+..'8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTEyMTA2Nzc5MCEFTWl4ZXIE0QF5BWoFCgCMekGdmalAYLfrwQplZiZAmpkZPwAAQEAhBVBvcnRzISlodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTIwMDIyOTUwOSEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yMDAyMjk0NjUhA05ldATYAWkFagUK0BKSQb5mBkBet9vBCgEA4EA0M3NAzcxMPiEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD00NzE2MzMwMCENU3R1ZHNQZXJUaWxlVQMAAAAAAADQPyENU3R1ZHNQZXJUaWxlV'
+..'gTfAWkFagUK0Fh/QT0zs0Bet6/BCs3MTD8AAABAzcxMPyEFUGxhdGUE4wFpBWoFCmisi0F+MxNAYLfbwQrNzAxAAACAP83MTD4KAAAAAAAAAADNzEw9CgAAgD8AAIA/AAAAPyEIRmVsaVRlY2ghKWh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MTM3Mjg0MjQ1IQtQbGF0ZUhvbGRlcgTrAWoFeQUKyBKKQU4AIEBgt9vBCs3MTD4AAEBAzcxMPgoAAMA/AACAPwAAwD8E7wFqBXkFCsgSikG+ZgZAYLfbwSEQU3BlYWtlckJveExhcmdlQgSMBY0FdwUhDlVuaW9uT3BlcmF0aW9uBPUBjQV3BQoAAAAAAAAA'
+..'AAAAtMIKoCVEQQ0A4EDgbmfBCgAAYEEHAKBAAQCgQAoAAABAAACAPwAAAEAKxlhnQQ7NDECgO3zBCgAAtEIAADRDAAAAAAoAAAAAAAAAAAAAAAAKxlhnQRgAoEATolLBCsZYZ0EOzQxAE6JSwQrGWGdBGACgQKA7fMEKYPJIQezMrEDRbmfBCmDySEHOZuY/0W5nwQqW34JBzmbmP9FuZ8EKlt+CQezMrEDRbmfBCpmZmUD+/38/MzOTQArGWGdBm2ZmQNFuZ8EKxlhnQQwAQEETolLBCsZYZ0FCMxNBE6JSwQrGWGdBDABAQaA7fMEKxlhnQUIzE0GgO3zBCmHySEF0ZkZB0W5nwQph8khB2MwMQdFuZ8EKl9+CQdjMDEH'
+..'RbmfBCpffgkF0ZkZB0W5nwQrHWGdBpZkpQdFuZ8EKAACgQAAAYEEAAKBACqElREEMAOBA4W5nwSEKTWFudWFsV2VsZCETVW5pb24gVGVycmFpbiBKb2ludAQSAo0FdwUKcPJgQbSZKUG8bmfBCpqZmUAIAIA/OjOTQApw8mBBUDMTQYo7fMEKcPJgQU4zC0HFHYLBCnDyYEFOMwtB7qFKwQpw8mBBGwBIQe6hSsEKcPJgQRsASEHFHYLBCnDyYEG0mSlBu25nwQpw8mBBUDMTQf6hUsEKcPJgQRoAQEH+oVLBCnDyYEEaAEBBijt8wQQeAo0FdwUKcPJgQc5mZkC8bmfBCnDyYEE+zQxAijt8wQpw8mBBaJrZP8UdgsEKcP'
+..'JgQWia2T/uoUrBCnDyYEE1ALBA7qFKwQpw8mBBNQCwQMUdgsEKcPJgQc1mZkC7bmfBCnDyYEE+zQxA/qFSwQpw8mBBMwCgQP6hUsEKcPJgQTMAoECKO3zBIRBTcGVha2VyQm94U21hbGxBBCoCaQVqBQrQEoJBms3MP1y378EKAAAAQDIzM0AAAEBAIRBTcGVha2VyQm94U21hbGxCBC4CaQVqBQrIEoJBms3MP2C3x8EhCVRhYmxlUGFydAQxAmkFagUK0BKGQe6ZGUBgt6PBCgAA4ECZmZlAAACAQCEXVGFibGVQYXJ0IFRlcnJhaW4gSm9pbnQENQJpBWoFCsgShkHlzIxAYrfbwQoAAOBAyMxMPwAAgEAhClRhYmxlU'
+..'GxhdGUEOQJpBWoFCpAlfEHdzJxAYrfbwQMAAACgmZm5PwoAAKhBzcxMPgAAwEAEPQJpBWoFCnB3HEHuzAxASnUhwgoAAABAzczMP83MTD4hC0Nvcm5lckxpZ2h0BEICjQVpBQoAAAAAAAC0wgAAtMIKAEaFQfMBAD9eCGnBCs3MTD6amZlAMzNzQAMAAACAmZnJPyEKQ29ybmVyUGFydARHAo0FaQUK0BKGQczUTD68bmfBCszMzD4AAKBAAACAQCEYQ29ybmVyUGFydCBUZXJyYWluIEpvaW50BEsCjQVpBQrQEoZBs85MP7xuZ8EETgJ3BY0FCgAAAAAAADRDAAA0QwrQEoZBPgBgQFy388EKAAA0QwAAAAAAAAAABFIC'
+..'hQWNBQoAAAAAAAAAAAAANEMKyBKGQT4AYEBgt8PBBFQCeQVqBQpYrI9B3cy8QFy368EKZmYmQJiZGT/MzEw/IQlDb250cm9sc0IEjgV5BWoFIQZUcmFjazUEWwJ3BY8FCm1nIsIAAAAAAAAAAApAfvtAlZ/LQEqfjsEK/v9/P83MTD4AAIA/IShodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTI5NTUzNzM3IQtUcmFja1NjcmlwdCEGVHJhY2s0BGECdwWPBQowvw1BlZ/LQEqfjsEhKGh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9Mjk1NTM5MTghBlRyYWNrOQRlAncFjwUKML8NQUXMtkA4spT'
+..'BIShodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTI5NTUzNzg0IQZUcmFjazMEaQJ3BY8FCiC/HUGVn8tASJ+OwSEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yOTU1MzczMCEHVHJhY2sxMARtAncFjwUKYH77QEXMtkA4spTBIShodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTYxNjE0NDA5IQZUcmFjazgEcQJ3BY8FCjC/HUFFzLZAOLKUwSEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yOTU1Mzc2NCEGVHJhY2syBHUCdwWPBQowvy1BlZ/LQEifjsEhKGh0dH'
+..'A6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9Mjk1NTM3MjEhBlRyYWNrNwR5AncFjwUKML8tQUXMtkA4spTBIShodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTI5NTUzNzUxIQNGWDIEfQJ3BY8FCnDyMEH9+KFAMMWawQqYmRk/zcxMPpqZGT8hCEZYU2NyaXB0IQNGWDMEggJ3BY8FCqAlJEH9+KFAMMWawSEDRlg0BIUCdwWPBQrQWBdB/fihQDDFmsEhBlRyYWNrMQSIAncFjwUKML89QZWfy0BIn47BIShodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTI5NTUzNzE0IQNGWDUEjAJ3BY8FC'
+..'gCMCkH9+KFAMMWawSEDRlg2BI8CdwWPBQpgfvtA/fihQDDFmsEhBlRyYWNrNgSSAncFjwUKML89QUXMtkA4spTBIShodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTI5NTUzNzQxIQNGWDEElgJ3BY8FCjC/PUH9+KFAMMWawSEOQXV0b1BsYXlTY3JpcHQhDFRyYWNrQ3VycmVudCEJQm9vbFZhbHVlIQtUcmFja1BhdXNlZCEJVHJhY2tQcmV2IQVQYXVzZQfqAwSgAnkFagUGzc3NCqAlVEE9M6NAYLfTwSEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yMTAzOTEwNzEhC1BhdXNlU2NyaXB0'
+..'IQlDb250cm9sc0EEkAV5BWoFB/UDBKkChQWRBQYEr+wKbWciwgAANEMAAAAACmB++0CVn8tAu2cUwgolZgvDAAAAAAAANEMErAKFBZEFCjC/DUGVn8tAumcUwgSuAoUFkQUKML8dQZWfy0C6ZxTCBLAChQWRBQowvy1BRcy2QD5eEcIEsgKFBZEFCjC/DUFFzLZAP14RwgS0AoUFkQUKYH77QEXMtkA/XhHCBLYChQWRBQowvy1BlZ/LQLpnFMIEuAKFBZEFCjC/HUFFzLZAPl4RwgS6AoUFkQUKIL89QUXMtkBBXhHCBLwChQWRBQowvz1BlZ/LQLpnFMIEvgKFBZEFCmB++0AF+aFAwlQOwgTAAoUFkQUK8IsKQQX5oUD'
+..'EVA7CBMIChQWRBQogvz1BBfmhQMRUDsIExAKFBZEFCqAlJEEF+aFAwlQOwgTGAoUFkQUKwFgXQQX5oUDEVA7CBMgChQWRBQpw8jBBBfmhQMRUDsIEygJ5BWoFCqAlVEE9M6NAYLfjwSEHUGFuZWwyQQSSBWkFdwUEzgJpBXcFCsgSlkH6AIA/fqgAwgTQAmkFdwUKyBKWQS7NDEB+qADCBNICaQV3BQrIEpZBPjNzQH6oAMIhD011c2ljUGxheWVyQm94QQSTBWkFagUE1gJpBWoFCjC/BUFOAABAF0IYwgoAAIA/AACAQAAAgD8hElBhcnQgVGVycmFpbiBKb2ludATbAo0FeQUKAAAAAAAAtEIAALTCCkB+60B1ZrZATH'
+..'UZwgoAALTCAAC0QgAAAAAKmplZQMzMTD/MzEw/BN8CaQVqBQowvx1BdWaGQLDbEcIKAABAQM3MzD6amblABOICaQVqBQrg5OFAdWaWQEp1EcIKMzMzQJqZGT/NzEw+BOYChQVqBQoAAAAAAAA0QwAAAAAK4OThQG1mxkBKdRHCCgAANEMAAAAAAAA0QwrNzEw+mpkZQDMzM0AE6gJpBWoFCjC/HUHdzLxATHUXwgrNzEw+AABAQJqZuUAE7QKFBWoFCjC/HUE9M7NASnURwgrNzKxAmpkZQDMzM0AE8QKUBZUFCgAAAAAAALTCbWciwgogvx1BRXqVQE2CDMIKbWciQgAAtMIAAAAACs3MTD7NzEw+zMysQAT1AmkFagUKI'
+..'L8FQQ8A8EBMdRnCCpqZGT/NzEw+mpkZPyEEQnVsYgT5AmkFagUKIL8FQTcz80BMdRnCCpqZGT/NzMw+mpkZPwpmZmY/AADAP2ZmZj8GBKr/IQdTaGFkb3dzAwAAAAAAADBABAADagV5BQowvxVBdWa2QEx1GcIKmplZQMjMTD/MzEw/BAMDaQVqBQogvwVBdWa2QEx1GcIKzcxMP5qZWUCbmZk/BAYDaQVqBQrwi0pBdWaWQEx1EcIECAOFBWoFCvCLSkFtZsZATHURwiEPTXVzaWNQbGF5ZXJCb3hCBJYFaQVqBQQNA5cFmAUKAAAAAAAAtMJtZyJCCiC/HUFFepVAIGqewQptZyLCAAC0wgAAAAAEEAN3BWoFCjC/HUE9'
+..'M7NALISUwQQSA3cFagUK4OThQGVmxkAuhJTBBBQDdwVqBQrwi0pBbWbGQDKElMEEFgNpBWoFCvCLSkF1ZpZAMoSUwQQYA2kFagUKML8dQd3MvEAwhIjBBBoDaQVqBQrg5OFAdWaWQCyElMEEHANpBWoFCjC/HUF1ZoZAYLeTwQQeA2kFagUKQL8FQU4AAECQ6obBBCEDagVpBQoAAAAAAAC0QgAAtEIKYH7rQGVmtkAvhITBCgAAtEIAALRCAAAAAAQkA2kFagUKML8FQWVmtkAshITBBCYDjQVpBQowvxVBdWa2QC+EhMEEKANpBWoFCjC/BUEPAPBALISEwQQqA2kFagUKML8FQTcz80AshITBIQdQYW5lbDFBBJkFagV'
+..'5BQQuA2oFeQUKmN+WQTMBAD9/qA7CBDADagV5BQqY35ZBNWhmP3+oDsIEMgNqBXkFCpjflkFaZ6Y/f6gOwgQ0A2oFeQUKmN+WQZqa2T9/qA7CBDYDagV5BQqY35ZBzmYGQH+oDsIEOANpBWoFCpjflkE+ACBAf6gOwgQ6A2oFeQUKmN+WQdyZOUB/qA7CBDwDagV5BQqY35ZBTgAgQH+oDsIEPgNqBXkFCpjflkE+M1NAf6gOwgRAA2oFeQUKmN+WQf7MbEB/qA7CBEIDagV5BQqY35ZBVTODQH+oDsIERANqBXkFCpjflkEdAJBAf6gOwiEGUGl0Y2hBBJoFaQVqBSEIRGVjcmVhc2UH/AMESgN5BWoFCpAlVEE9M6NAsN'
+..'sBwiEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yOTU2MzgzMSELUGl0Y2hTY3JpcHQhBVJlc2V0B+wDBFADeQVqBQqQJVRBPTOjQLHbBcIhCEluY3JlYXNlBFMDeQVqBQqQJVRBPTOjQLHbCcIhKGh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9Mjk1NjM4MTMH8wMEWQONBYUFBgAgYAoAAAAAAAA0QwAAtMIKMJZNQQ0AkECx2wXCCgAANEMAAAAAAAC0QgoAAIA/zcxMPgAAAEAKzcxMPwAAgD8AAIA/IQdEaXNwbGF5CwAAFkMAAHBCIQxCb3JkZXJDb2xvcjMGAAAADAAAAD/E/wAAAD/x/'
+..'wzNzEw/AAAAAAA/AAAhClBpdGNoOiAxLjADAAAAAAAAQkAhEFRleHRTdHJva2VDb2xvcjMhClRleHRTY3JpcHQEaANpBWoFCpAlVEENAKBAsdsFwgMAAACgmZnZPwoAAEBAzcxMPgAAgD8Kmpl5PwAAgD9mZmY/IQVQaXRjaAMAAAAAAABZQCEGUGl0Y2hCBJsFaQVqBQRxA2kFagUKoCVUQQ0AoEBet6vBBHMDeQVqBQqgJVRBPTOjQF63o8EEdQN5BWoFCqAlVEE9M6NAXrerwQR3A3kFagUKoCVUQT0zo0Bet7PBB/YDBHsDjQWFBQaqVQAKQJZNQQ0AkEBet6vBIQlTcGVha2Vyc0EEnAVpBXcFBH8DaQV3BQqY345B'
+..'WmfmP16378EhKWh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MjAwMTMyNzMxBIIDaQV3BQpw8mBBHgBgQK7bIcIEhANpBXcFChC/bUENAOBArtscwgSGA2kFdwUKAL9tQQ0A4ECw2ybCBIgDaQV3BQpw8mBBEAAoQa7bIcIhClR1cm50YWJsZUEEnQVpBWoFBIwDaQVqBQrAWGdBPTOjQLHbCcIEjgNpBWoFCtBYZ0E9M6NAYrf7wQSQA2kFagUKwFh/Qd3MrECw2wPCBJIDaQVqBQpgrItBPTOjQLDbCcIElANpBWoFCmisi0E9M6NAYLf7wQSWA2kFhQUKwFh/QT0zs0Cw2wPCBJgDeQVqBQrAWH9BdWa2QLD'
+..'bA8IhKWh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MjAwMjA2MzgzIQ1WaW55bENoYW5nZXJBBJ4FnwVqBQSeA6AFagUKAAAAAAAAJUMAAAAACiA2dUHdzLxAYxMRwgoAADRDAABwQQAANEMEogOgBaEFCgAANMIAACVDAAAAAAogTV5BfW3DQOzhEsIKywEGw1K4KEFgRSlDBKUDoAWhBQqQwW1BfW3DQOTYEcIEpwOgBaEFCvA1fUF9bcNA188QwgSpA6AFoQUKOFWGQX1tw0DTxg/CBKwDnwVqBQoAAAAAAADSwgAAAAAKIAp2QXVmpkA52RHCCgAANEMAAJbCAAA0QwSvA58FagUKMBx4Qd3MvEDHxxPCBL'
+..'IDogWjBQoAAAAAAADSwgAANMIKAG9zQaWWs0DJag/CCgAANEMAAJbCAAAHQwrNzMw+zcxMPv7/f0AhB1ZvbHVtZUEEpAV5BWoFBLgDeQVqBQqQJVRBPTOjQGC3+8EhDFZvbHVtZVNjcmlwdAS7A3kFagUKkCVUQT0zo0Bit/PBBL0DeQVqBQqQJVRBPTOjQGC368EEvwONBYUFCjCWTUENAJBAYLfrwQoAAIA/zcxMPgAAQEALAABIQwAAcEIMAAAAAAAAAAAAP/H/DAAAgD8AAAAAAD8AACEMVm9sdW1lOiAxMDAlIQdWb2x1bWVCBKUFeQVqBQTIA3kFagUKoCVUQT0zo0Bet7vBBMoDeQVqBQqgJVRBPTOjQF63w8EEz'
+..'AN5BWoFCqAlVEE9M6NAYLfLwQTOA40FhQUKQJZNQQ0AkEBgt8vBIQlCYXNlUGxhdGUE0gNpBWoFAwAAAAAAgJBACghGhUGY2cw9XrfbwQoBAOBAzcxMPjUzc0AhF0Jhc2VQbGF0ZSBUZXJyYWluIEpvaW50IQRNdXRlB/IDBNgDeQVqBQqgJVRBPTOjQGC328EhKGh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9NTY4ODU5NTAElgNpBWoFBNwDaQVqBQqgJVRBDQCgQGC328EKAAAQQc3MTD4AAIA/CqRwfT8AAIA/ZmZmPyEGRm9sZGVyIQNGWEIhKGh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9'
+..'MTU2MzI1NjIhKGh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MTU2MzI1NjkhKGh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MTU2MzI1NzUhKGh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MjEzNDMyMjUDAAAAoJmZ6T8hKGh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9Mjg0NTMyMjIhD0JyaWNrQ29sb3JWYWx1ZSERU3RhaXJzTGlnaHRzQ29sb3IH6QMhC0NvbG9yU2NyaXB0IQxQbGF0Zm9ybVBhcnQE7QNpBWoFCqAlHEH6AMA/XrfbwQoAAHBBAABAQAAAwEAhGlB'
+..'sYXRmb3JtUGFydCBUZXJyYWluIEpvaW50BPEDaQVqBQqgJTRB+gDAP163k8EKAABAQAAAQEAAAEBABPQDaQVqBQqgJTRB+gDAP6/bEcIE9gNpBWoFCtAShkHumRlAr9sJwgT4A2kFagUKoCVcQe6ZGUBct9vBCgAAqEGZmZlAAAAAQCEDRlhBISdodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTE4NzY1NTIhJGh0dHA6Ly9yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMDIwOTc5OCEbcmJ4YXNzZXQ6Ly9zb3VuZHMvL2Jhc3Mud2F2IRtyYnhhc3NldDovL3NvdW5kcy91dWhoaC53YXYhHXJieGFzc2V0Oi8vc2'
+..'91bmRzL2NvbGxpZGUud2F2IShodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTg0MzA1NDEyBAIEagV5BQr4RYVB8wEAP051IcIEBARqBXkFCtAShkHM1Ew+rtshwgQGBGoFeQUK0BKGQbPOTD+u2yHCBAgEagVpBQqgJQRB+gDAP163k8EECgSNBXkFCqAlBEH6AMA/r9sRwiENQ29uZmlndXJhdGlvbiEHQ29uZmlnQiEISW50VmFsdWUDAAAAAMLUfEEDAAAAwEyFekEDAAAAAEAfgEEDAAAAcCRqekEDAAAAgPuSQUEDAAAAyPwhgUEDAAAAAFvwPkEDAAAAAGRxMEEDAAAAAMT8LkEDAAAAECNqekEhBFN0Z'
+..'XAEGgRpBWoFCiBLyEA8MzNAYrfbwQoAAFBBzczMPgAAgD8EHQRpBWoFCkBLuEA6Z+Y/YLfbwQoAAFBBzczMPgAAAEAEIARpBWoFCkBLqECzzkw/XLfbwQoAAFBBzczMPgAAQEAhCFN0ZXBCYXNlBCQEaQVqBQogS6hAppyZPuUOB8IKwMzMPpqZGT8AAEBAIRZTdGVwQmFzZSBUZXJyYWluIEpvaW50BCgEaQVqBQpAS7hAOmemP+MOB8IKzczMPpqZGT8AAABABCsEaQVqBQogS8hAfjMTQOMOB8IKwMzMPpqZGT8AAIA/BC4EaQVqBQogS6hAZp2ZPvJQqcEEMARpBWoFCiBLuEBaZ6Y/AlGpwQrAzMw+mpkZPwAAAEAE'
+..'MwRpBWoFCkBLyEB+MxNA/lCpwQQ1BGkFagUKQEuoQKacmT5ct9vBBDcEaQVqBQpAS7hAOmemP2C328EEOQRpBWoFCiBLyEB+MxNAYrfbwQQ7BHkFagUKQEuoQPoAwD+w2wnCCgAAgD8AAEBAAABAQAQ+BHkFagUKQEuoQPoAwD9gt6PBIQxNdXNpY1BsYXllckEhBkxvb3BlZCEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0zMDIzMTU4NCEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yNzgwODk3MiEoaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0zMzgxMDQzMiEoaHR0cDo'
+..'vL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yNzY5NzczNSEnaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0yMzAzNDc5IShodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTM1OTMwMDA5ISdodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTIwMjc2MTEhJ2h0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MTA3NzYwNCEnaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMDE1Mzk0IShodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTI3Njk3NzEzIQxNdX'
+..'NpY1BsYXllckIETgRqBXkFBvj4+AqgsY5AZp2ZPmC328EKzczMPjMzQ0HNzMw+Bvj4+AMAAAAAAAAoQCEPQXV0b0NvbG9yU2NyaXB0BFUEagV5BQb4+PgKoLGuQFpnpj9gt9vBBvj4+ARZBGoFeQUG+Pj4CsCxzkB+MxNAYLfbwQrNzMw+NDNDQc3MzD4G+Pj4IQdMaWdodHNBBKYFpwVqBQRgBI0FqAUKAAAAAAAAB0MAALTCCqBsgEBtZsZAtOoNwgoAADRDAAA0QgAAtEIKAAAAQJmZGT///38/IQVNb2RlMQRmBKkFpwUKAAC0wgAAB8MAAAAACsCGkkB1ZrZAc6cLwgoAALTCAAAAAAAAB8MEagSnBWoFCgAAAAAAA'
+..'DTCAAAAAAogDZdAbWbGQMy+EMIKmpkZPwAAAEAAAIA/BG0EpwVqBQpgXaJAbWbGQMNUD8IKzMzMPgAAAEAAAEBAIQVNb2RlMgRxBKkFpwUKICepQHVmtkCIew7CBHMEpwVqBQqgk5tA/MwsQPotEMIKAACAPwIAoEAAAIA/BHYEpwVqBQqgk5tAmNnMPfotEMIEeQRqBagFCgAAAAAAADTCAAC0Qgqgra1AbWbGQNmSE8IKAAAAQJWZGT///38/IQVNb2RlMwR9BKkFpwUKwMe/QHVmtkCcTxHCBIAEjQWnBQoAAAAAAAA0wgAAtMIKIMKlQGVm1kAm6A7CCmZmZj8AAIA/zcyMPwsAAHBCAABIQiEDNS4wBIUEqQWnBQrA'
+..'hpJAdWbWQHOnC8IhKWh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MjEwNTM5NzcxIQtTcGVlZFNjcmlwdASJBKkFpwUKwMe/QHVm1kCcTxHCISlodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTIxMDUzOTc1MyEHTGlnaHRzQgSqBakFagUEjwRqBakFCgAAAAAAADRCAAC0QgqgbIBAbWbGQFCZm8EEkgSnBasFCgAAtMIAADTCAAAAAArAhpJAdWa2QNAfoMEKAAC0wgAAAAAAADTCBJYEqQVqBQoAAAAAAAAHwwAAAAAKgJObQJjZzD3KEpfBCgAANEMAADTCAAA0QwSZBKkFagUKgJObQCzNLED'
+..'KEpfBBJsEqQVqBQpADZdAfWbGQCjxlcEEnQSpBWoFCmBdokBtZsZAMMWYwQSfBKcFqwUKICepQHVmtkCud5rBBKIEjQWpBQoAAAAAAAAHwwAAtMIKoK2tQG1mxkD8SJDBCgAANEMAADTCAAC0QgSlBKcFqwUKwMe/QHVmtkCGz5TBBKcEpwWrBQrAhpJAdWbWQNAfoMEEqgSNBasFCgAAAAAAADRCAAC0wgoAwqVAZWbWQGqemcEErASnBasFCsDHv0B1ZtZAhs+UwSEMU3RhaXJzTGlnaHRzIQxTd2l0Y2hTY3JpcHQhElRyYWNrQ2hhbmdlclNjcmlwdCEHQ29uZmlnQSEQU3BlYWtlckJveExhcmdlQQSsBY0FdwUEtA'
+..'SNBXcFCqAlREENAOBArtshwgrGWGdBDs0MQN4OJ8IKxlhnQRgAoEB7qBzCCsZYZ0EOzQxAe6gcwgrGWGdBGACgQN4OJ8IKYPJIQezMrECq2yHCCmDySEHOZuY/qtshwgqW34JBzmbmP6rbIcIKlt+CQezMrECq2yHCCsZYZ0GbZmZAqtshwgrGWGdBDABAQXuoHMIKxlhnQUIzE0F7qBzCCsZYZ0EMAEBB3g4nwgrGWGdBQjMTQd4OJ8IKYfJIQXRmRkGq2yHCCmHySEHYzAxBqtshwgqX34JB2MwMQarbIcIKl9+CQXRmRkGq2yHCCsdYZ0GlmSlBqtshwgqhJURBDADgQK7bIcIEyQSNBXcFCnDyYEG0mSlBrtshwgpw8'
+..'mBBUDMTQeIOJ8IKcPJgQU4zC0HiDinCCnDyYEFOMwtBeqgawgpw8mBBGwBIQXqoGsIKcPJgQRsASEHiDinCCnDyYEFQMxNBfqgcwgpw8mBBGgBAQX6oHMIKcPJgQRoAQEHiDifCBNMEjQV3BQpw8mBBzmZmQK7bIcIKcPJgQT7NDEDiDifCCnDyYEFomtk/4g4pwgpw8mBBaJrZP3qoGsIKcPJgQTUAsEB6qBrCCnDyYEE1ALBA4g4pwgpw8mBBzWZmQK7bIcIKcPJgQT7NDEB+qBzCCnDyYEEzAKBAfqgcwgpw8mBBMwCgQOIOJ8IE3gRpBWoFCnB3HEHuzAxAaAhpwQTgBHkFagUKEBlwQT1rpECek9nBCnA9ij7NzEw+'
+..'zcxMPgTjBHkFagUKYH9uQdUEnkCik9nBCs3MTD7NzEw+mJmZPyEEU25hcAStBYUFrgUErwWFBWkFBOkEeQVqBQpwf25B1QSeQD4t08EEsAWFBWkFBOwEeQVqBQrA5WxBPWukQEAt08EE7gR5BWoFCnB/bkHVBJ5AbGDWwQTwBHkFagUKQExzQT1rpEBwYNbBBNkAcgVzBQSxBXcFaQUE9AR5BWoFCnB/bkHVBJ5A1sbcwQT2BHkFagUKQExzQT1rpEDYxtzBBLIFdwVpBQT5BHkFagUKoLJpQS1rpEAG+t/BBLMFdwVpBQT8BHkFagUKcH9uQcUEnkAE+t/BIQhTbW9rZVNldAS0BbUFtgUhBlNtb2tlMQQCBbUFtgUKbed'
+..'KwhBYNMInsVDCCtD9lEHOrwNAUEGpwQoAAHDCbxLVwQAAtMIhBVNtb2tlIQdPcGFjaXR5IQxSaXNlVmVsb2NpdHkDAAAAAAAA+D8hBlNtb2tlMgQLBbcFuAUKc+hKwj3qBsMnsVBCCtj9lEHOrwNAW1kHwgoAAPDCYhDVwQAAtMIhBlNtb2tlMwQQBWkFuQUKnEStwgAAtEIAADRDCoD0k0GaTto/3sakwQoAALTCi2xXQAAAtMIEEwVpBbkFCqgklEFa0fM/l5YJwgQWBXkFugUKAABwwQAAtEIAAAAACuA0jUEI/zpB2MbcwQoAALTCAACWQgAAtEIKxMwMQExm5j/NzEw+ISlodHRwOi8vd3d3LnJvYmxveC5jb20vYX'
+..'NzZXQvP2lkPTE2MjMxNzc4NCEKRmlyZUJ1dHRvbgQcBXkFugUK8HKOQSS5MUEG+rvBCi4zs0D+/z9AzcxMPgYcqhwMXI9CPgAAXI9CPgAADAAAAACQAQAAAABeASEGWkluZGV4IQxUdXJuIG9uIGZpcmUGioqKIQJVUAzXozA/AABcj0I+AAAMAAAAAGQAAAAAAJYAIQFeIQpUZXh0U2NhbGVkIQRET1dODNejMD8AAFTjBT8AAAMAAAAAAIBmQAxcj0I+AACPwvU8AAAMAAAAAPQBAAAAAGQAIQVTaXplOgY/Pz8hB0ZpcmVTZXQEuwWFBbwFIQlGaXJlQnJpY2sENQWFBbwFCgAAcMEAADRDAAAAAApo2ZRBHutGQG5gl'
+..'sEKAAAlwwAAAAAAADRDCpqZGT+amRk/mpkZPyEERmlyZQYAqgAhBEhlYXQhDlNlY29uZGFyeUNvbG9yIQpGaXJlQnJpY2sxBD8FhQW9BQoAAHBBAAA0QwAAAAAKaNmUQR7rRkCflhHCCgAAJUMAAAAAAAA0QwRDBb4FaQUKAACWwgAAtMIAALTCCjAOj0Hs7EVB1sbcwQoAALTCAABwwQAANEMKmpkZP/7/T0GamRk/BEcFaQVqBQqY45FB4IUuQZiWAcIKm5lZQEYzM0C4HoU+ISlodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTE2MTQ3NzU4NQRLBXkFhQUK0D+PQWTsREE3MAfCCgAAtMIAAAAAAAC0Qgqa'
+..'mRk/z8zMP5qZGT8ETwV5BWoFCsA/k0Fg7QxBOTAHwgqamRk/LzPzQJqZGT8hC1Ntb2tlQnV0dG9uBFMFeQW6BQroco5BJLkxQaCT/cEKMDOzQP7/P0DNzEw+IQ1UdXJuIG9uIHNtb2tlBqqqqgRYBXkFagUKyD+TQWDtDEFALavBCpqZGT8uM/NAmpkZPwRbBXkFhQUKyD+PQWTsREFALavBBL8FaQVqBQReBWkFagUKcI9FQXf/70CC2yHCCgAAoEABAFBBAACgQCEMU2VsZWN0aW9uQm94IQZDb2xvcjMhB0Fkb3JuZWUEZAVpBWoFCmBhgEF6MbM/3rbbwQoAAEBAmpkZQJmZGUAEZwVpBWoFCoCPRUF3/+9AzG1nwQq'
+..'AFA1ByEoBQWa328EKAAAAAAAAAAAAAIA/CgAAAAAAAIA/AAAAAApgr01BUOw7QMC228EKmQAAv4CzXb8AAAAACoCzXb+ZAAA/AAAAAAoAHCS/KCRhQeIt3MEKtLRdvwAAAAAG/f8+CgAAgD8AAAAAW5TZuQoAAAAAAAAAvwAAAAAKAACAPwAAAIAAAAAACgAAAAAAAACAAACAPwoAAAAAR+H6PgAAAAAKW5TZuQAAAAAAAIA/CvBAM0EQAOBAZrfbwQoAAIA/AAAAAAAAAAAKCGaMQXgixECY6tLBCgAAAAAAAAAAAACAvwrrRne/7IOEPgAAAAAKUP6PQZjCtUBgt+vBCpqZGb/NzEw/AAAAAArIEpZBsGYmQMYdtsEKOH'
+..'mMQeDMvECY6vrBCgQAAL8AAAAA17NdPwrXs12/AAAAAAQAAL8KMHmMQdDMvECM6qLBCpjflkFAACBAxB2awQrQWH9B+MzcQGC3l8EK0Fh/QdDMrEBct6/BCgAAgL8AAAAAAAAAAAowv3VBkIC4QCxIlMEK7IOEPgAAAADrRnc/CutGdz8AAAAA7IOEvgqiZzu+/QQ1P+PZLr8Kxmc7PvsENT/k2S4/CsNnO77tBDU/8tkuvwqgJURBEADgQOBuZ8EKAAAAAAAAgL8AAAAACmDyKEFw4bhA8mOxwQoAAAAAq15CPz2aJr8KcPIoQXDhuEBmBQPCCgAAAACrXkI/PZomPwrIEpZBsGYmQH6oAMIKML8dQcCZeUBLdRPCCgAAA'
+..'AA9mia/q15CPwoAAAAAql5CPz2aJj8KML8dQcCZeUAuhJDBCgAAAAA9miY/q15CPwoAAAAAql5CPz2aJr8KmN+WQUAAIEB/qA7CChARVEFAM5NAsNsFwgogEVRBQDOTQF63q8EK0Fh/QQDN3ECu2w/CCtBYf0HgzKxAsNsDwgpAv3VBkIC4QEeTEcIK7IOEvgAAAADrRnc/CutGd78AAAAA7IOEvgqiZzu+/QQ1P+PZLj8Kvmc7vuIENb/92S4/CrpnO74EBTU/2dkuPwoQEVRBQDOTQGC378EKIBFUQUAzk0Bgt8fBCqCTm0CwZmZA+S0Qwgr0BDU/AAAAAPQENT8K9AQ1vwAAAAD0BDW/CvQENb8AAAAA9AQ1Pwqgk5tA'
+..'sGZmQMQSl8EK9AQ1PwAAAAD0BDW/CqAlREEQAOBArtshwgoAAAAAzczMPQAAAAAKAAAAgAAAAAAAAIA/CgAAADcAzsy9ANjMvQoAAIC2AM7MvQDYzD0KAAAANwDOzD0Ampk+CgAAgDYAzsw9AJqZPgoAAIA2AM7MPQCamb4KkAyUQeAP5z8G+tvBCgAAAAAEAAC/17NdPwob1mQ/R8XGPkmFZT4KAAAAAAQAAD/Xs10/CiLWZD80xcY+M4Vlvgrqjn8/doVwvQAAAAAK7IOEvutGdz8AAAAACmjZlEEQb0RAjlDdwQoAAAAA60Z3P+yDhD4KAAAAAOdGdz8LhIS+CutGd7/sg4S+AAAAAAqwwlhBuDLjQPS228HBAwEAAAA'
+..'CAAIAAwAEAAUAAQABAAIAAgAGAAQABwAIAAIACwACAAkACgALAAwADQAOAA8AEAARABIAEwAUABUAFgAXABgAGQAaABsAHAANAB0AAwACAB4AHwAgACEAIgAEAAQAAgAjACQAJQAmAA0AGgAnACgABQAKAAIAKQAkACoAKwAhABoALAAtAC4ALwAwADEAMgAzADQANQANADYACwA3AAUACAACADgAJAA5ACYADQAWADoAGgA7AC0APAAvAD0AMwA+ADcABQAIAAIAOAAkAD8AJgANABYAQAAaADsALQA8AC8APQAzAD4ANwAFAAgAAgA4ACQAQQAmAA0AFgBCABoAOwAtADwALwA9ADMAPgA3AAUACAACADgAJABDACYADQ'
+..'AWAEQAGgA7AC0APAAvAD0AMwA+ADcABQAIAAIAOAAkAEUAJgANABYARgAaADsALQA8AC8APQAzAD4ANwAFAAgAAgA4ACQARwAmAA0AFgBIABoAOwAtADwALwA9ADMAPgA3AAUACAACADgAJAAqACYADQAWAEkAGgA7AC0APAAvAD0AMwA+ADcABQAIAAIAOAAkAEoAJgANABYASwAaADsALQA8AC8APQAzAD4ANwAFAAgAAgA4ACQATAAmAA0AFgBNABoAOwAtADwALwA9ADMAPgA3AAUACAACADgAJABOACYADQAWAE8AGgA7AC0APAAvAD0AMwA+AFAABQAAADcABAAJAAIAOAAkACoAJgANABYAUQAaAFIAUwBUAC0AP'
+..'AAvAFUAMwA+AFAAEgAAAAgAAgALAAIAVgAKAAsADAANAA4AVwAQAFgAEgBZABQAFQAWAFoAGAAZABoAWwAcAA0AAQABAAIAAgBcAAQAXQAIABUADwACAF4ACgALAF8AYAAMAGEAEABiAGMAVABkAGAAZQBgABQAZgAWAGcAaABgABgAZgAaAGkAHABgAGoAIQBrABYAAwBsAG0AEgBuAG8AcABQABYAAABxABYAAwByAHMAdAB1AHgAeQAIABUADwACAHoACgALAF8AYAAMAGEAEAB7AGMAVABkAGAAZQBgABQAfAAWAH0AaABgABgAfgAaAGkAHABgAGoAIQBrABoABABsAG0AEgA/AH8AbQBvAHAAUAAaAAAAcQAaAAMA'
+..'cgBzAHQAdQB4AIAACAAVAA8AAgCBAAoACwBfAGAADABhABAAggBjAFQAZABgAGUAYAAUAIMAFgCEAGgAYAAYAIUAGgBpABwAYABqACEAawAeAAQAbACGABIAhwAgAA0AbwCIAFAAHgAAAAgAFQAQAAIAiQAKAAsAXwBgAAwAYQAQAIoAYwBUAGQAYABlAGAAiwCMABQAgwAWAI0AaABgABgAhQAaAGkAHABgAGoAIQCOACEAAgASAI8AbwBwAFAAIQAAAAEAAQACAAIAkAAEAJEACAAkAAcAAgCSAAoACwAOAA8AEACTABIAEwAWAJQAGgCVAJYAJQAAAB0AJQAAACIAJwAEAAIAlwAkACoAKwAhABoAmAAoACgABwACAJk'
+..'AJACaABYAmwAaAJwALQA8AC8APQAzAD4AKAAoAAcAAgCdACQAngAWAJ8AGgCcAC0APAAvAD0AMwA+ACgAKAAHAAIAoAAkAEoAFgChABoAnAAtADwALwA9ADMAPgAoACgABwACAKIAJACjABYApAAaAJwALQA8AC8APQAzAD4AKAAoAAcAAgClACQApgAWAKcAGgCcAC0APAAvAD0AMwA+ACgAKAAHAAIAqAAkAKkAFgCqABoAnAAtADwALwA9ADMAPgAoACgABwACAKsAJACsABYArQAaAJwALQA8AC8APQAzAD4AUAAoAAEAAgCuAAEAJAACAAIArwAEAJEAAQAxAAIAAgCwAAQAsQAIADIADAACALIACgALAAwADQAOAF'
+..'cAEACzABIAWQC0ALUAFAC2ABYAtwAYALYAGgC4ABwADQC5ADMAAwACALoAIAAhALsAvAAIADIADAACAL0ACgALAAwADQAOAFcAEAC+ABIAWQC0ALUAFAC/ABYAwAAYAMEAGgC4ABwADQC5ADUAAwACAMIAIAAhALsAwwC5ADUAAwACAMQAIAAuALsAxQABADEAAgACAMYABADHAAgAOAAKAAoACwAMAA0AEADIALQAyQCLAMoAFACFABYAywAYAIUAGgDMABwADQAIADgACgAKAAsADAANABAAzQC0AMkAiwDKABQAhQAWAM4AGACFABoAzwAcAA0ACAA4AA0AAgDQAAoACwAMAA0ADgBXABAA0QASAFkAtAC1ABQA0gAWA'
+..'NMA1ADVABgA1gAaANcAHAANAJYAOwACANgA2QDaANsA3AA7AAEA3QANAFAAOwAAALkAOwADAAIA3gAgACEAuwDfAAgAOAANAAIA4AAKAAsADAANAA4AVwAQAOEAEgBZALQAtQAUANIAFgDiANQA1QAYANYAGgDXABwADQCWAEAAAQDaANsA3ABAAAEA3QCIAFAAQAAAALkAQAADAAIA3gAgACEAuwDjAAgAOAANAAIA5AAKAAsADAANAA4AVwAQAOUAEgBZALQAtQAUANIAFgDmANQA1QAYANYAGgDXABwADQCWAEUAAQDaANsA3ABFAAEA3QCIAFAARQAAALkARQADAAIA3gAgACEAuwDnAAEAMQACAAIA6AAEAOkACABK'
+..'AA8AAgDqAAoACwAMAA0ADgDrABAA7ABjAFQAEgDtALQAtQAUAO4AFgDvANQA8AAYAPEAGgDyABwADQBqAPMA9ABLAAEA9QA8AAgASgAPAAIA9gAKAAsADAANAA4A6wAQAPcAYwBUABIA7QC0ALUAFADuABYA+ADUAPAAGADxABoA+QAcAA0AagDzAPQATQABAPUAPAAIAEoADwACAPoACgALAAwADQAOAOsAEAD7AGMAVAASAO0AtAC1ABQA7gAWAPwA1ADwABgA8QAaAP0AHAANAGoA8wD0AE8AAQD1ADwAUABKAAEAAgD+AAEAMQACAAIA/wAEAAABCABSAAkACgALAAwADQAQAAEBFAACARYAAwHUAAQBGAAFARoABgE'
+..'cAA0ABwFTAAEA2gAIAQgAUgAJAAoACwAMAA0AEAABARQAAgEWAAMB1AAEARgABQEaAAYBHAANAAcBVQACANgACQHaAAoBCABSAAkACgALAAwADQAQAAsBFACFABYADAHUAAQBGACFABoADQEcAA0ABwFXAAIA2ADZANoADgEIAFIACQAKAAsADAANABAACwEUAIUAFgAMAdQABAEYAIUAGgAPARwADQAHAVkAAgDYABAB2gARAQgAUgAJAAoACwAMAA0AEAASARQAhQAWABMB1AAEARgAhQAaAA0BHAANAAcBWwABANgA2QABADEAAgACABQBBAAVAQgAXQAJAAoACwAMAA0AEAAWARQAAgEWABcB1AAEARgABQEaAAYBHA'
+..'ANAAcBXgABANoACAEIAF0ACQAKAAsADAANABAAFgEUAAIBFgAXAdQABAEYAAUBGgAGARwADQAHAWAAAgDYAAkB2gAKAQgAXQAJAAoACwAMAA0AEAAYARQAhQAWABkB1AAEARgAhQAaAA0BHAANAAcBYgACANgA2QDaAA4BCABdAAkACgALAAwADQAQABoBFACFABYAGwHUAAQBGACFABoADwEcAA0ABwFkAAIA2AAQAdoAEQEIAF0ACQAKAAsADAANABAAHAEUAIUAFgAdAdQABAEYAIUAGgANARwADQAHAWYAAQDYANkAAQAxAAIAAgAeAQQAHwEIAGgADwACACABCgALAAwADQAOAOsAEAAhAWMAVAASAO0AtAC1ABQAI'
+..'gEWACMB1ADwABgA7gAaACQBHAANAGoA8wAHAWkAAAAIAGgADwACACUBCgALAAwADQAOAOsAEAAmAWMAVAASAO0AtAC1ABQAIgEWACcB1ADwABgA7gAaACQBHAANAGoA8wAHAWsAAAAIAGgADwACACgBCgALAAwADQAOAOsAEAApAWMAVAASAO0AtAC1ABQAIgEWACoB1ADwABgA7gAaACQBHAANAGoA8wAHAW0AAAAIAGgADwACACsBCgALAAwADQAOAOsAEAAsAWMAVAASAO0AtAC1ABQAIgEWAC0B1ADwABgA7gAaACQBHAANAGoA8wAHAW8AAAAIAGgADwACAC4BCgALAAwADQAOAOsAEAAvAWMAVAASAO0AtAC1ABQA'
+..'IgEWADAB1ADwABgA7gAaACQBHAANAGoA8wAHAXEAAAAIAGgADQACADEBCgALAAwADQAOAFcAEAAyARIAWQC0ALUAFACFABYAMwHUAAQBGACFABoANAEcAA0AlgBzAAIA2AA1AdoANgFrAHMABQACADcBbAA4ARIAOQE6AVQAfwA7AQgAaAAPAAIAPAEKAAsADAANAA4A6wAQAD0BYwBUABIA7QC0ALUAFAAiARYAPgHUAPAAGADuABoAJAEcAA0AagDzAAcBdgAAAAgAaAAPAAIAPwEKAAsADAANAA4A6wAQAEABYwBUABIA7QC0ALUAFAAiARYAQQHUAPAAGADuABoAJAEcAA0AagDzAAcBeAAAAAgAaAAPAAIAQgEKAAs'
+..'ADAANAA4A6wAQAEMBYwBUABIA7QC0ALUAFAAiARYARAHUAPAAGADuABoARQEcAA0AagDzAAcBegAAAAgAaAAPAAIARgEKAAsADAANAA4A6wAQAEcBYwBUABIA7QC0ALUAFAAiARYASAHUAPAAGADuABoAJAEcAA0AagDzAAcBfAAAAAgAaAAPAAIASQEKAAsADAANAA4A6wAQAEoBYwBUABIA7QC0ALUAFAAiARYASwHUAPAAGADuABoAJAEcAA0AagDzAAcBfgAAAAgAaAAPAAIATAEKAAsADAANAA4A6wAQAE0BYwBUABIA7QC0ALUAFAAiARYATgHUAPAAGADuABoAJAEcAA0AagDzAAcBgAAAAE8BaAAEAAIAUAFRAV'
+..'IBUwFgAFQBVQFPAWgABAACAFYBUQE8AFMBIQBUASEAUABoAAEAAgD+AAEAMQACAAIAVwEEAFgBCACFAA0AAgBZAQoACwAMAA0ADgBXABAAWgESAFkAtAC1ABQA7gAWAFsBGADxABoAXAEcAA0AagAhALkAhgACACAAIQC7AF0BlgCGAAIA2ABeAdoAXwEIAIUADQACAGABCgALAAwADQAOAFcAEABhARIAWQC0ALUAFADuABYAYgEYAPEAGgBjARwADQBqACEAuQCJAAIAIAAhALsAXQGWAIkAAQDYAF4BCACFAA0AAgBgAQoACwAMAA0ADgBXABAAZAESAFkAtAC1ABQA7gAWAGUBGADxABoAYwEcAA0AagAhALkAjAACA'
+..'CAAIQC7AF0BlgCMAAEA2ABeAQgAhQANAAIAWQEKAAsADAANAA4AVwAQAGYBEgBZALQAtQAUAO4AFgBnARgA8QAaAFwBHAANAGoAIQC5AI8AAgAgACEAuwBdAZYAjwACANgAXgHaAF8BCACFAA0AAgBoAQoACwAMAA0ADgBXABAAaQESAFkAtAC1ABQA7gAWAGoBGADxABoAYwEcAA0AagAhALkAkgACACAAIQC7AF0BlgCSAAIA2ABeAdoAXwFQAIUAAQACAGsBAQAxAAIAAgBsAQQAbQEIAJYADQACADEBCgALAAwADQAOAG4BEABvARIAcAG0ALUAFACFABYAcQHUANUAGACFABoAcgEcAA0ACACWAA0AAgBzAQoACwAM'
+..'AA0ADgDrABAAdAESAO0AtAC1ABQAhQAWAHUBGACFABoAdgEcAA0AagDwAAcBmAABANoAXwEIAJYADQACAHMBCgALAAwADQAOAOsAEAB3ARIA7QC0ALUAFACFABYAeAEYAIUAGgB2ARwADQBqAPAABwGaAAEA2gBfAQgAlgALAAIAeQEKAAsADAANABAAegG0ALUAFAB7ARYAfAHUAPAAGAB9ARoAfgEcAA0A9ACcAAMA2gB/AYABgQH1AGAACACWAA0AAgBzAQoACwAMAA0ADgDrABAAggESAO0AtAC1ABQAhQAWAIMBGACFABoAdgEcAA0AagDwAAcBngABANoAXwEIAJYADQACAHMBCgALAAwADQAOAOsAEACEARIA7QC'
+..'0ALUAFACFABYAhQEYAIUAGgB2ARwADQBqAPAABwGgAAEA2gBfAQgAlgANAAIAhgEKAAsADAANAA4AVwAQAIcBEgBZALQAtQAUALYAFgCIARgAtgAaAIkBHAANAGoAIQCWAKIAAQDaAIoBuQCiAAMAAgCLASAAIQC7AIwBuQCiAAMAAgCNASAALgC7AIwB3ACiAAEA3QANAFAAogABAAIAjgFQAJYAAQACAI8BUACWAAEAAgCQAVAAlgABAAIAkQFPAZYABAACAFYBUQEuAFMBIQBUAZIBTwGWAAMAAgCTAVMBlAFUAZQBlQGWAAQAAgCWAZcBmAGZAZoBmwEEAQEAMQACAAIAnAEEAJ0BCACuAAoACgALAAwADQAQAJ4BtA'
+..'DJAIsAygAUAJ8BFgCgARgAnwEaAKEBHAANAAgArgAKAAoACwAMAA0AEACiAbQAyQCLAMoAFACfARYAowEYAJ8BGgCkARwADQClAa4ACQAKAAsADAANABAApgG0AMkAiwDKABQApwEWAKgBGACnARoAqQEIAK4ADQACAKoBCgALAAwADQAOAFcAEACrARIAWQC0ALUAFACsARYArQHUANUAGACuARoAdgEcAA0AlgCyAAEA2gCvAbkAsgADAAIA3gAgACEAuwCwAdwAsgABAN0AiABQALIAAQACALEBCACuAA0AAgCyAQoACwAMAA0ADgBXABAAswESAFkAtAC1ABQArAEWALQB1ADVABgArgEaAHYBHAANAJYAtwACANgA2'
+..'QDaAK8B3AC3AAEA3QANALkAtwADAAIA3gAgACEAuwC1AVAAtwABAAIAsQEIAK4ADQACALYBCgALAAwADQAOAFcAEAC3ARIAWQC0ALUAFACsARYAuAHUANUAGACuARoAdgEcAA0AlgC8AAEA2gCvAdwAvAABAN0AiABQALwAAQACALEBuQC8AAMAAgDeACAAIQC7ALkBCACuAA0AAgC6AQoACwAMAA0ADgBXABAAuwESAFkAtAC1ABQArAEWALwB1ADVABgArgEaAHYBHAANAJYAwQABANoArwHcAMEAAQDdAIgAUADBAAEAAgCxAbkAwQADAAIA3gAgACEAuwC9AQgArgAKAAoACwAMAA0AEAC+AbQAyQCLAMoAFAC/ARYA'
+..'wAEYAL8BGgDBARwADQAIADEADQACAMIBCgALAAwADQAOAFcAEADDARIAWQC0ALUAFACFABYAxAHUAAQBGACFABoAxQEcAA0AlgDHAAIA2ADGAdoAxwEIADEADQACAMIBCgALAAwADQAOAFcAEADIARIAWQC0ALUAFACFABYAyQHUAAQBGACFABoAxQEcAA0AlgDJAAIA2ADGAdoAxwEIADEADAACAMoBCgALAAwADQAOAFcAEADLARIAWQC0ALUAFAC2ABYAzAEYALYAGgBjARwADQC5AMsAAwACAM0BIAAhALsAzgEIADEADAACAM8BCgALAAwADQAOAFcAEADQARIAWQC0ALUAFAC2ABYA0QEYALYAGgDSARwADQC5AM0'
+..'AAwACANMBIACSAbsA1AG5AM0AAwACAM0BIAAhALsA1QEIADEADQACANYBCgALAAwADQAOAFcAEADXARIAWQC0ALUAFACFABYA2AEYAIUAGgDZARwADQBqACEAuwDQAAMAuwDaAdsB3AHdAdwBCAAxAAwACgALAAwADQAOAFcAEADeARIAWQC0ALUAFACFABYA3wHUANUAGACFABoADwEcAA0ABwHSAAEA2gDgAQgAMQANAAIA4QEKAAsADAANAA4AVwAQAOIBEgBZALQAtQAUAIUAFgDjAdQABAEYAIUAGgDkARwADQCWANQAAgDYAOUB2gDmAbkA1AACAAIA5wG7AOgBCAAxAAsAAgDpAQoACwAMAA0AEADqAbQAyQCLAM'
+..'oAFAAiARYA6wEYAO4AGgDsARwADQAHAdcAAQDaAO0BCAAxAAsAAgDpAQoACwAMAA0AEADuAbQAyQCLAMoAFAAiARYA7wEYAO4AGgDsARwADQAHAdkAAQDaAO0BAQAxAAIAAgDwAQQA8QHyAUAGgQgA9wH4AfkBLgBpAPoBgQgA9wH7AfkBLgBpAPoBgQgA9wH8AfkBLgBpAPoBgQgA9wH9AfkBLgBpAPoBwAWACABpAP4BhQCACABpAP8BhQCACABpAAAChQCACABpAAEChQAACAACAgMC+QFAA4EIAPcBBAL5AS4AaQD6AYEIAPcBBQL5AS4AaQD6AUADgQgA9wEGAvkBLgBpAPoBgQgA9wEHAvkBLgBpAPoBQALABYAIA'
+..'GkACAKFAIAIAGkACQKFAIAIAGkACgKFAIAIAGkACwKFAAAIAAICDAL5AQAIAA0CDgKFANsACQAKAAsADgBXABAA8wESAFkAtAC1ABQA9AEWAPUBGAD0ARoA9gEPAtwAAQACABAC8gFABQEIAPcBFAL0AS4AaQD6AUAFgAgAaQAVAvkBgAgAaQAWAvkBgAgAaQAXAvkBgAgAaQAYAvkBAAgAAgIZAvQBAQgA9wEaAvQBLgBpAPoBAQgA9wEbAvQBLgBpAPoBAQgA9wEcAvQBLgBpAPoB2wAJAAoACwAOAFcAEAARAhIAWQAUAPQBFgASAhgA9AEaABMCagAhALsA3gAEACAAIQC7ANoB2wHcAd0B3AHyAUAFAQgA9wEfAvQB'
+..'LgBpAPoBQAWACABpACAC+QGACABpACEC+QGACABpACIC+QGACABpACMC+QEACAACAiQC9AEBCAD3ASUC9AEuAGkA+gEBCAD3ASYC9AEuAGkA+gEBCAD3AScC9AEuAGkA+gHbAAkACgALAA4AVwAQAB0CEgBZABQA9AEWAB4CGAD0ARoAEwJqACEAuwDgAAQAIAAhALsA2gHbAdwB3QHcAQgAMQAMAAIAKAIKAAsADAANAA4AVwAQACkCEgBZALQAtQAUAIUAFgAqAhgAhQAaACsCHAANAAgAMQAMAAIALAIKAAsADAANAA4AVwAQAC0CEgBZALQAtQAUAIUAFgAuAhgAhQAaACsCHAANAAgAMQAMAAIALwIKAAsADAANAA4'
+..'AVwAQADACEgBZALQAtQAUAIUAFgAxAhgAhQAaADICHAANAA8C5AABAAIAMwIIADEADAACAC8CCgALAAwADQAOAFcAEAA0AhIAWQC0ALUAFACFABYANQIYAIUAGgA2AhwADQAIADEADQACADcCCgALAAwADQAOAFcAEAA4AhIAWQC0ALUAFACFABYAOQLUADoCGACFABoAOwIcAA0ACAAxAAYACgALABAAPAIUAIUAFgA9AhgAhQAaAD4CpQExAA0AAgA/AgoACwAMAA0ADgDrABAAQAISAO0AtAC1ABQAQQIWAEIC1ADwABgAewEaAEMCagBEAqUBMQALAAIARQIKAAsADAANAA4AVwAQAEYCEgBZALQAtQAUAEECFgBHAh'
+..'gAewEaAEgCDwLqAAEAAgBJAqUBMQALAAIARQIKAAsADAANAA4AVwAQAEoCEgBZALQAtQAUAEECFgBLAhgAewEaAEgCpQExAAsAAgAvAgoACwAMAA0ADgBXABAATAISAFkAtAC1ABQATQIWAE4CGABPAhoAqQGlATEACwACAC8CCgALAAwADQAOAFcAEABQAhIAWQC0ALUAFABRAhYAUgIYAFECGgCpAaUBMQAJAAoACwAMAA0AEABTArQAyQCLAMoAFAC2ABYAVAIYALYAGgBVAgEAMQACAAIAVgIEAFcCCADwAA0AAgBYAgoACwAMAA0ADgDrABAAWQISAO0AtAC1ABQAWgIWAFsC1ADVABgAWgIaAFwCHAANALkA8QADA'
+..'AIA3gAgACEAuwBdApYA8QABANoAXwHcAPEAAQDdAIgAUADxAAEAAgBeAggA8AANAAIAXwIKAAsADAANAA4A6wAQAGACEgDtALQAtQAUAFoCFgBhAtQA1QAYAFoCGgBcAhwADQC5APYAAwACAN4AIAAhALsAYgKWAPYAAQDaAF8B3AD2AAEA3QCIAFAA9gABAAIAXgIIAPAADQACAGMCCgALAAwADQAOAOsAEABkAhIA7QC0ALUAFABaAhYAZQLUANUAGABaAhoAXAIcAA0AuQD7AAMAAgDeACAAIQC7AGYClgD7AAEA2gBfAdwA+wABAN0AiABQAPsAAQACAF4CCADwAA0AAgBnAgoACwAMAA0ADgDrABAAaAISAO0AtAC1'
+..'ABQAWgIWAGkC1ADVABgAWgIaAFwCHAANALkAAAEDAAIA3gAgACEAuwBqApYAAAEBANoAXwHcAAABAQDdAIgAUAAAAQEAAgBeAggA8AANAAIAawIKAAsADAANAA4A6wAQAGwCEgDtALQAtQAUAFoCFgBtAtQA1QAYAFoCGgBcAhwADQC5AAUBAwACAN4AIAAhALsAbgKWAAUBAQDaAF8B3AAFAQEA3QCIAFAABQEBAAIAXgIIAPAADQACAG8CCgALAAwADQAOAOsAEABwAhIA7QC0ALUAFABaAhYAcQLUANUAGABaAhoAXAIcAA0AuQAKAQMAAgDeACAAIQC7AHIClgAKAQEA2gBfAdwACgEBAN0AiABQAAoBAQACAF4CCAD'
+..'wAA0AAgBzAgoACwAMAA0ADgDrABAAdAISAO0AtAC1ABQAWgIWAHUC1ADVABgAWgIaAFwCHAANALkADwEDAAIA3gAgACEAuwB2ApYADwEBANoAXwHcAA8BAQDdAIgAUAAPAQEAAgBeAggA8AANAAIAdwIKAAsADAANAA4A6wAQAHgCEgDtALQAtQAUAFoCFgB5AtQA1QAYAFoCGgBcAhwADQC5ABQBAwACAN4AIAAhALsAegKWABQBAQDaAF8B3AAUAQEA3QCIAFAAFAEBAAIAXgIIAPAADQACAHsCCgALAAwADQAOAFcAEAB8AhIAWQC0ALUAFABaAhYAfQLUANUAGABaAhoAfgIcAA0ABwEZAQEA2gBfAVAAGQEBAAIAfw'
+..'LcABkBAQDdAIgACADwAA0AAgCAAgoACwAMAA0ADgBXABAAgQISAFkAtAC1ABQAWgIWAIIC1ADVABgAWgIaAH4CHAANAAcBHQEBANoAXwFQAB0BAQACAH8C3AAdAQEA3QCIAAgA8AANAAIAgwIKAAsADAANAA4AVwAQAIQCEgBZALQAtQAUAFoCFgCFAtQA1QAYAFoCGgB+AhwADQAHASEBAQDaAF8BUAAhAQEAAgB/AtwAIQEBAN0AiAAIAPAADQACAIYCCgALAAwADQAOAOsAEACHAhIA7QC0ALUAFABaAhYAiALUANUAGABaAhoAXAIcAA0AuQAlAQMAAgDeACAAIQC7AIkClgAlAQEA2gBfAdwAJQEBAN0AiABQACUBA'
+..'QACAF4CCADwAA0AAgCKAgoACwAMAA0ADgBXABAAiwISAFkAtAC1ABQAWgIWAIwC1ADVABgAWgIaAH4CHAANAAcBKgEBANoAXwFQACoBAQACAH8C3AAqAQEA3QCIAAgA8AANAAIAjQIKAAsADAANAA4AVwAQAI4CEgBZALQAtQAUAFoCFgCPAtQA1QAYAFoCGgB+AhwADQAHAS4BAQDaAF8BUAAuAQEAAgB/AtwALgEBAN0AiAAIAPAADQACAJACCgALAAwADQAOAOsAEACRAhIA7QC0ALUAFABaAhYAkgLUANUAGABaAhoAXAIcAA0AuQAyAQMAAgDeACAAIQC7AJMClgAyAQEA2gBfAdwAMgEBAN0AiABQADIBAQACAF4C'
+..'CADwAA0AAgCUAgoACwAMAA0ADgBXABAAlQISAFkAtAC1ABQAWgIWAJYC1ADVABgAWgIaAH4CHAANAAcBNwEBANoAXwHcADcBAQDdAIgAUAA3AQEAAgB/AlAA8AABAAIAlwJPAfAAAQACAJgCmQLwAAEAAgCaAk8B8AACAAIAmwJUASEACADwAA0AAgCcAgoACwAMAA0ADgCdAhAAngISAJ8CtAC1ABQAtgAWAKAC1ADVABgAtgAaAHYBHAANAJYAPwEBANoArwG5AD8BAwACAN4AIAAhALsAoQLcAD8BAQDdAA0AUAA/AQEAAgCOAVAAPwEBAAIAogIBADEAAgACAKMCBACkAggARQENAAIAhgIKAAsADAANAA4ApQIQAKY'
+..'CEgCnArQAtQAUAKgCFgCpAtQA1QAYAKoCGgBcAhwADQC5AEYBAwACAN4AIAAhALsAiQKWAEYBAQDaAF8B3ABGAQEA3QCIAFAARgEBAAIAXgIIAEUBDQACAHMCCgALAAwADQAOAKUCEACrAhIApwK0ALUAFACoAhYArALUANUAGACqAhoAXAIcAA0AuQBLAQMAAgDeACAAIQC7AHYClgBLAQEA2gBfAVAASwEBAAIAXgLcAEsBAQDdAIgACABFAQ0AAgBnAgoACwAMAA0ADgClAhAArQISAKcCtAC1ABQAqAIWAK4C1ADVABgAqgIaAFwCHAANALkAUAEDAAIA3gAgACEAuwBqApYAUAEBANoAXwFQAFABAQACAF4C3ABQAQ'
+..'EA3QCIAAgARQENAAIAYwIKAAsADAANAA4ApQIQAK8CEgCnArQAtQAUAKgCFgCwAtQA1QAYAKoCGgBcAhwADQC5AFUBAwACAN4AIAAhALsAZgKWAFUBAQDaAF8BUABVAQEAAgBeAtwAVQEBAN0AiAAIAEUBDQACAHcCCgALAAwADQAOAKUCEACxAhIApwK0ALUAFACoAhYAsgLUANUAGACqAhoAXAIcAA0AuQBaAQMAAgDeACAAIQC7AHoClgBaAQEA2gBfAVAAWgEBAAIAXgLcAFoBAQDdAIgACABFAQ0AAgCQAgoACwAMAA0ADgClAhAAswISAKcCtAC1ABQAqAIWALQC1ADVABgAqgIaAFwCHAANALkAXwEDAAIA3gAgA'
+..'CEAuwCTApYAXwEBANoAXwFQAF8BAQACAF4C3ABfAQEA3QCIAAgARQENAAIAXwIKAAsADAANAA4ApQIQALUCEgCnArQAtQAUAKgCFgC2AtQA1QAYAKoCGgBcAhwADQC5AGQBAwACAN4AIAAhALsAYgKWAGQBAQDaAF8BUABkAQEAAgBeAtwAZAEBAN0AiAAIAEUBDQACAG8CCgALAAwADQAOAKUCEAC3AhIApwK0ALUAFACoAhYAuALUANUAGACqAhoAXAIcAA0AuQBpAQMAAgDeACAAIQC7AHIClgBpAQEA2gBfAVAAaQEBAAIAXgLcAGkBAQDdAIgACABFAQ0AAgBrAgoACwAMAA0ADgClAhAAuQISAKcCtAC1ABQAqAIW'
+..'ALoC1ADVABgAqgIaAFwCHAANALkAbgEDAAIA3gAgACEAuwBuApYAbgEBANoAXwFQAG4BAQACAF4C3ABuAQEA3QCIAAgARQENAAIAWAIKAAsADAANAA4ApQIQALsCEgCnArQAtQAUAKgCFgC8AtQA1QAYAKoCGgBcAhwADQC5AHMBAwACAN4AIAAhALsAXQKWAHMBAQDaAF8BUABzAQEAAgBeAtwAcwEBAN0AiAAIAEUBDQACAJQCCgALAAwADQAOAFcAEAC9AhIAWQC0ALUAFACoAhYAvgLUANUAGACqAhoAfgIcAA0ABwF4AQEA2gBfAVAAeAEBAAIAfwLcAHgBAQDdAIgACABFAQ0AAgB7AgoACwAMAA0ADgBXABAAvwI'
+..'SAFkAtAC1ABQAqAIWAMAC1ADVABgAqgIaAH4CHAANAAcBfAEBANoAXwHcAHwBAQDdAIgAUAB8AQEAAgB/AggARQENAAIAjQIKAAsADAANAA4AVwAQAMECEgBZALQAtQAUAKgCFgDCAtQA1QAYAKoCGgB+AhwADQAHAYABAQDaAF8B3ACAAQEA3QCIAFAAgAEBAAIAfwIIAEUBDQACAIMCCgALAAwADQAOAFcAEADDAhIAWQC0ALUAFACoAhYAxALUANUAGACqAhoAfgIcAA0ABwGEAQEA2gBfAdwAhAEBAN0AiABQAIQBAQACAH8CCABFAQ0AAgCAAgoACwAMAA0ADgBXABAAxQISAFkAtAC1ABQAqAIWAMYC1ADVABgAqg'
+..'IaAH4CHAANAAcBiAEBANoAXwHcAIgBAQDdAIgAUACIAQEAAgB/AggARQENAAIAigIKAAsADAANAA4AVwAQAMcCEgBZALQAtQAUAKgCFgDIAtQA1QAYAKoCGgB+AhwADQAHAYwBAQDaAF8B3ACMAQEA3QCIAFAAjAEBAAIAfwJPAUUBAQACAJgCTwFFAQIAAgCbAlQBIQBQAEUBAQACAJcCCABFAQ0AAgCcAgoACwAMAA0ADgCdAhAAyQISAJ8CtAC1ABQAtgAWAMoC1ADVABgAtgAaAHYBHAANAJYAkwEBANoArwG5AJMBAwACAN4AIAAhALsAoQLcAJMBAQDdAA0AUACTAQEAAgCOAVAAkwEBAAIAogKZAkUBAQACAJoCA'
+..'QAxAAIAAgDLAgQAzAIIAJoBDwACAOoACgALAAwADQAOAKUCEADNAmMAVAASAKcCtAC1ABQA7gAWAM4C1ADwABgA8QAaAPIAHAANAGoA8wD0AJsBAQD1ADwACACaAQ8AAgD2AAoACwAMAA0ADgClAhAAzwJjAFQAEgCnArQAtQAUAO4AFgDQAtQA8AAYAPEAGgD5ABwADQBqAPMA9ACdAQEA9QA8AAgAmgEPAAIA+gAKAAsADAANAA4ApQIQANECYwBUABIApwK0ALUAFADuABYA0gLUAPAAGADxABoA/QAcAA0AagDzAPQAnwEBAPUAPABQAJoBAQACAP4AAQAxAAIAAgDTAgQA1AIIAKIBCgAKAAsADAANABAA1QK0AMkA'
+..'iwDKABQAhQAWANYCGACFABoA1wIcAA0ABwGjAQEA2gBfAQ8CowEBAAIA2AKlAaIBCQAKAAsADAANABAA2QK0AMkAiwDKABQA2gIWANsCGADcAhoA3QIIAKIBCgAKAAsADAANABAA3gK0AMkAiwDKABQAhQAWAN8CGACFABoA4AIcAA0ACACiAQoACgALAAwADQAQAOECtADJAIsAygAUAIUAFgDiAhgAhQAaAOMCHAANAKUBogEJAAoACwAMAA0AEADkArQAyQCLAMoAFADlAhYA5gIYAOcCGgDoAggAogEKAAoACwAMAA0AEADpArQAyQCLAMoAFACFABYA6gIYAIUAGgDrAhwADQClAaIBCQAKAAsADAANABAA7AK0AMk'
+..'AiwDKABQA5QIWAO0CGADnAhoA7gIIAKIBCgAKAAsADAANABAA7wK0AMkAiwDKABQA8AIWAPECGADyAhoA8wIcAA0ACACiAQwACgALAAwADQAOAG4BEAD0AhIAcAG0ALUAFACFABYA9QLUANUAGACFABoA9gIcAA0ABwGtAQAACACiAQ4AAgD3AgoACwAMAA0ADgClAhAA+AISAKcCtAC1ABQAhQAWAPkC1ADwABgAhQAaAPoCHAANAGoA8AD0AK8BAQDaAPsCjgCvAQUAAgA3ARIA/AI6AVQA/QILAG8A/gKlAaIBCQAKAAsADAANABAA/wK0AMkAiwDKABQAIgEWAAADGADuABoAAQMIAKIBCgAKAAsADAANABAAAgO0AM'
+..'kAiwDKABQAhQAWAAMDGACFABoABAMcAA0ACACiAQoACgALAAwADQAQAAUDtADJAIsAygAUAIUAFgAGAxgAhQAaAOMCHAANAKUBogEJAAoACwAMAA0AEAAHA7QAyQCLAMoAFADlAhYACAMYAOcCGgDoAgEAMQACAAIACQMEAAoDCAC2AQoACgALAAwADQAQAAsDtADJAIsAygAUAAwDFgANAxgADgMaAPMCHAANAKUBtgEHAAoACwAMAA0AEAAPA7QAyQCLAMoAFgAQAxoA7gKlAbYBBwAKAAsADAANABAAEQO0AMkAiwDKABYAEgMaAOgCpQG2AQcACgALAAwADQAQABMDtADJAIsAygAWABQDGgDoAggAtgEKAAoACwAMA'
+..'A0AEAAVA7QAyQCLAMoAFACFABYAFgMYAIUAGgDjAhwADQAIALYBCgAKAAsADAANABAAFwO0AMkAiwDKABQAhQAWABgDGACFABoA6wIcAA0ACAC2AQoACgALAAwADQAQABkDtADJAIsAygAUAIUAFgAaAxgAhQAaAOMCHAANAAgAtgEKAAoACwAMAA0AEAAbA7QAyQCLAMoAFACFABYAHAMYAIUAGgDgAhwADQAIALYBCgAKAAsADAANABAAHQO0AMkAiwDKABQAhQAWAB4DGACFABoA1wIcAA0ABwG/AQEA2gBfAQ8CvwEBAAIA2AKlAbYBCQAKAAsADAANABAAHwO0AMkAiwDKABQAIAMWACEDGAAiAxoA3QIIALYBCgAK'
+..'AAsADAANABAAIwO0AMkAiwDKABQAhQAWACQDGACFABoABAMcAA0ApQG2AQkACgALAAwADQAQACUDtADJAIsAygAUAEECFgAmAxgAewEaAAEDCAC2AQwACgALAAwADQAOAG4BEAAnAxIAcAG0ALUAFACFABYAKAPUANUAGACFABoA9gIcAA0ABwHFAQAACAC2AQ4AAgD3AgoACwAMAA0ADgDrABAAKQMSAO0AtAC1ABQAhQAWACoD1ADwABgAhQAaAPoCHAANAGoA8AD0AMcBAQDaAPsCjgDHAQUAAgA3ARIAOQE6AVQA/QILAG8A/gIBADEAAgACACsDBAAsAwgAygEPAAIAIAEKAAsADAANAA4ApQIQAC0DYwBUABIApwK'
+..'0ALUAFAAiARYALgPUAPAAGADuABoAJAEcAA0AagDzAAcBywEAAAgAygEPAAIAJQEKAAsADAANAA4ApQIQAC8DYwBUABIApwK0ALUAFAAiARYAMAPUAPAAGADuABoAJAEcAA0AagDzAAcBzQEAAAgAygEPAAIAKAEKAAsADAANAA4ApQIQADEDYwBUABIApwK0ALUAFAAiARYAMgPUAPAAGADuABoAJAEcAA0AagDzAAcBzwEAAAgAygEPAAIAKwEKAAsADAANAA4ApQIQADMDYwBUABIApwK0ALUAFAAiARYANAPUAPAAGADuABoAJAEcAA0AagDzAAcB0QEAAAgAygEPAAIALgEKAAsADAANAA4ApQIQADUDYwBUABIApw'
+..'K0ALUAFAAiARYANgPUAPAAGADuABoAJAEcAA0AagDzAAcB0wEAAAgAygENAAIAMQEKAAsADAANAA4AVwAQADcDEgBZALQAtQAUAIUAFgA4A9QABAEYAIUAGgA0ARwADQCWANUBAgDYADUB2gA2AWsA1QEFAAIANwFsADgBEgD8AjoBVAB/ADsBCADKAQ8AAgA8AQoACwAMAA0ADgClAhAAOQNjAFQAEgCnArQAtQAUACIBFgA6A9QA8AAYAO4AGgAkARwADQBqAPMABwHYAQAACADKAQ8AAgA/AQoACwAMAA0ADgClAhAAOwNjAFQAEgCnArQAtQAUACIBFgA8A9QA8AAYAO4AGgAkARwADQBqAPMABwHaAQAACADKAQ8AA'
+..'gBCAQoACwAMAA0ADgClAhAAPQNjAFQAEgCnArQAtQAUACIBFgA+A9QA8AAYAO4AGgBFARwADQBqAPMABwHcAQAACADKAQ8AAgBGAQoACwAMAA0ADgClAhAAPwNjAFQAEgCnArQAtQAUACIBFgBAA9QA8AAYAO4AGgAkARwADQBqAPMABwHeAQAACADKAQ8AAgBJAQoACwAMAA0ADgClAhAAQQNjAFQAEgCnArQAtQAUACIBFgBCA9QA8AAYAO4AGgAkARwADQBqAPMABwHgAQAACADKAQ8AAgBMAQoACwAMAA0ADgClAhAAQwNjAFQAEgCnArQAtQAUACIBFgBEA9QA8AAYAO4AGgAkARwADQBqAPMABwHiAQAAUADKAQEA'
+..'AgD+AE8BygEEAAIAVgFRATwAUwEhAFQBIQBPAcoBBAACAFABUQFSAVMBYABUAVUBAQAxAAIAAgBFAwQARgMIAOcBDQACAEcDCgALAAwADQAOAEgDEABJAxIAQQC0ALUAFAC2ABYASgPUANUAGAC2ABoAdgEcAA0AlgDoAQEA2gCvAbkA6AEDAAIA3gAgACEAuwBLA9wA6AEBAN0AiABQAOgBAQACAEwDUADoAQEAAgCOAQgA5wENAAIATQMKAAsADAANAA4ATgMQAE8DEgA/ALQAtQAUALYAFgBQA9QA1QAYALYAGgB2ARwADQCWAO4BAQDaAK8B3ADuAQEA3QCIAFAA7gEBAAIATAMIAOcBDQACAFEDCgALAAwADQAOAEg'
+..'DEABSAxIAQQC0ALUAFAC2ABYAUwPUANUAGAC2ABoAdgEcAA0AlgDyAQEA2gCvAbkA8gEDAAIA3gAgACEAuwBUA9wA8gEBAN0AiABQAPIBAQACAEwDUADyAQEAAgCOAQgA5wEOAAIAvQAKAAsADAANAA4AVQMQAFYDYwBUABIAVwO0ALUAFABYAxYAWQPUAPAAGABaAxoAWwMcAA0AlgD4AQEA2gBcAx0A+AEDAAIAXQMeAF4DIAAhACgA+gENAAIAKQAkACoAKwAhAF8DYAMmAA0AFgBhAxoAYgMtAC4ALwBjAzEA/AIzAGQDZQMqADUADQBQAPsBAQACAGYDCADnAQ0AAgAxAQoACwAMAA0ADgBXABAAZwMSAFkAtAC1AB'
+..'QAhQAWAGgD1ABpAxgAhQAaAGoDHAANAJYA/QEBANoAawNPAecBBAACAGwDUQGGAFMBYABUAW0DAQAxAAIAAgBuAwQAbwMIAAACDQACADEBCgALAAwADQAOAFcAEABwAxIAWQC0ALUAFACFABYAcQPUAGkDGACFABoAagMcAA0AlgABAgEA2gBrAwgAAAINAAIAUQMKAAsADAANAA4ASAMQAHIDEgBBALQAtQAUALYAFgBzA9QA1QAYALYAGgB2ARwADQCWAAMCAQDaAK8BuQADAgMAAgDeACAAIQC7AFQD3AADAgEA3QANAFAAAwIBAAIAjgFQAAMCAQACAEwDCAAAAg0AAgBNAwoACwAMAA0ADgBOAxAAdAMSAD8AtAC1A'
+..'BQAtgAWAHUD1ADVABgAtgAaAHYBHAANAJYACQIBANoArwHcAAkCAQDdAIgAUAAJAgEAAgBMAwgAAAINAAIARwMKAAsADAANAA4ASAMQAHYDEgBBALQAtQAUALYAFgB3A9QA1QAYALYAGgB2ARwADQCWAA0CAQDaAK8BuQANAgMAAgDeACAAIQC7AEsD3AANAgEA3QCIAFAADQIBAAIAjgFQAA0CAQACAEwDCAAAAg4AAgC9AAoACwAMAA0ADgB4AxAAeQNjAFQAEgB6A7QAtQAUAFgDFgB7A9QA8AAYAFoDGgBbAxwADQCWABMCAQDaAFwDHQATAgMAAgBdAx4AXgMgACEAKAAVAg0AAgApACQAKgArACEAXwNgAyYADQAW'
+..'AGEDGgBiAy0ALgAvAGMDMQA5ATMAZANlAyoANQANAFAAFgIBAAIAZgNPAQACBAACAGwDUQGGAFMBYABUAW0DAQAxAAIAAgB8AwQAfQMIABkCDQACAGgBCgALAAwADQAOAFcAEAB+AxIAWQC0ALUAFADuABYAfwMYAPEAGgBjARwADQBqACEAuQAaAgIAIAAhALsAgAOWABoCAgDYAF4B2gBfAQgAGQINAAIAWQEKAAsADAANAA4AVwAQAIEDEgBZALQAtQAUAO4AFgCCAxgA8QAaAFwBHAANAGoAIQC5AB0CAgAgACEAuwCAA5YAHQICANgAXgHaAF8BCAAZAg0AAgBgAQoACwAMAA0ADgBXABAAgwMSAFkAtAC1ABQA7gA'
+..'WAIQDGADxABoAYwEcAA0AagAhALkAIAICACAAIQC7AIADlgAgAgEA2ABeAQgAGQINAAIAYAEKAAsADAANAA4AVwAQAIUDEgBZALQAtQAUAO4AFgCGAxgA8QAaAGMBHAANAGoAIQC5ACMCAgAgACEAuwCAA5YAIwIBANgAXgEIABkCDQACAFkBCgALAAwADQAOAFcAEACHAxIAWQC0ALUAFADuABYAiAMYAPEAGgBcARwADQBqACEAuQAmAgIAIAAhALsAgAOWACYCAgDYAF4B2gBfAVAAGQIBAAIAawEBADEAAgACAIkDBACKAwgAKgINAAIAcwEKAAsADAANAA4ApQIQAIsDEgCnArQAtQAUAIUAFgCMAxgAhQAaAHYBHA'
+..'ANAGoA8AAHASsCAQDaAF8BCAAqAg0AAgBzAQoACwAMAA0ADgClAhAAjQMSAKcCtAC1ABQAhQAWAI4DGACFABoAdgEcAA0AagDwAAcBLQIBANoAXwEIACoCDQACADEBCgALAAwADQAOAG4BEACPAxIAcAG0ALUAFACFABYAkAPUANUAGACFABoAcgEcAA0ACAAqAg0AAgBzAQoACwAMAA0ADgClAhAAkQMSAKcCtAC1ABQAhQAWAJIDGACFABoAdgEcAA0AagDwAAcBMAIBANoAXwEIACoCDQACAHMBCgALAAwADQAOAKUCEACTAxIApwK0ALUAFACFABYAlAMYAIUAGgB2ARwADQBqAPAABwEyAgEA2gBfAQgAKgILAAIAe'
+..'QEKAAsADAANABAAlQO0ALUAFAB7ARYAlgPUAAQBGAB9ARoAfgEcAA0A9AA0AgMA2gB/AYABgQH1AGAACAAqAg0AAgCGAQoACwAMAA0ADgBXABAAlwMSAFkAtAC1ABQAtgAWAJgDGAC2ABoAiQEcAA0AagAhAJYANgIBANoAigG5ADYCAwACAIsBIAAhALsAmQO5ADYCAwACAI0BIAAuALsAmQPcADYCAQDdAA0AUAA2AgEAAgCOAU8BKgIEAAIAVgFRAS4AUwEhAFQBIQBQACoCAQACAJEBUAAqAgEAAgCQAZUBKgIEAAIAlgGXAZgBmQGaAZsBBAFQACoCAQACAI8BTwEqAgMAAgCTAVMBlAFUAZQBAQAxAAIAAgCaAwQA'
+..'mwOlAUICCQAKAAsADAANABAAnAO0AMkAiwDKABQAnQMWAJ4DGACfAxoAqQEIAEICDQACALoBCgALAAwADQAOAFcAEACgAxIAWQC0ALUAFAChAxYAogPUANUAGACjAxoAdgEcAA0AlgBEAgEA2gCvAdwARAIBAN0AiABQAEQCAQACALEBuQBEAgMAAgDeACAAIQC7AL0BCABCAg0AAgC2AQoACwAMAA0ADgBXABAApAMSAFkAtAC1ABQAoQMWAKUD1ADVABgAowMaAHYBHAANAJYASQIBANoArwHcAEkCAQDdAIgAUABJAgEAAgCxAbkASQIDAAIA3gAgACEAuwC5AQgAQgINAAIAsgEKAAsADAANAA4AVwAQAKYDEgBZALQ'
+..'AtQAUAKEDFgCnA9QA1QAYAKMDGgB2ARwADQCWAE4CAQDaAK8BuQBOAgMAAgDeACAAIQC7ALUB3ABOAgEA3QCIAFAATgIBAAIAsQEIAEICDQACAKoBCgALAAwADQAOAFcAEACoAxIAWQC0ALUAFAChAxYAqQPUANUAGACjAxoAdgEcAA0AlgBTAgIA2ADZANoArwG5AFMCAwACAN4AIAAhALsAsAHcAFMCAQDdAA0AUABTAgEAAgCxAQgAQgIKAAoACwAMAA0AEACqA7QAyQCLAMoAFACrAxYArAMYAK0DGgChARwADQAIAEICCgAKAAsADAANABAArgO0AMkAiwDKABQAqwMWAK8DGACtAxoApAEcAA0ACABCAgoACgALAA'
+..'wADQAQALADtADJAIsAygAUALEDFgCyAxgAswMaALQDHAANAAEAMQACAAIAtQMEALYDCABbAg0AAgBHAwoACwAMAA0ADgBIAxAAtwMSAEEAtAC1ABQAtgAWALgD1ADVABgAtgAaAHYBHAANAJYAXAIBANoArwG5AFwCAwACAN4AIAAhALsAVANQAFwCAQACAI4BUABcAgEAAgC5A9wAXAIBAN0AiAAIAFsCDQACAE0DCgALAAwADQAOAE4DEAC6AxIAPwC0ALUAFAC2ABYAuwPUANUAGAC2ABoAdgEcAA0AlgBiAgEA2gCvAdwAYgIBAN0AiABQAGICAQACALkDCABbAg0AAgBRAwoACwAMAA0ADgBIAxAAvAMSAEEAtAC1A'
+..'BQAtgAWAL0D1ADVABgAtgAaAHYBHAANAJYAZgIBANoArwG5AGYCAwACAN4AIAAhALsASwNQAGYCAQACALkDUABmAgEAAgCOAdwAZgIBAN0ADQAIAFsCDgACAL0ACgALAAwADQAOAFUDEAC+A2MAVAASAFcDtAC1ABQAWAMWAL8D1ADwABgAWgMaAMADHAANAJYAbAIBANoAXAMdAGwCAwACAF0DHgDBAyAAIQAoAG4CDQACACkAJAAqACsAIQBfA2ADJgANABYAwgMaAMMDLQAuAC8AxAMxAPwCMwBkA2UDKgA1AA0AUABvAgEAAgBmA08BWwIDAAIAmwFRAW0DVAFtAwEAMQACAAIAxQMEAMYDCAByAg0AAgBHAwoACwAM'
+..'AA0ADgBIAxAAxwMSAEEAtAC1ABQAtgAWAMgD1ADVABgAtgAaAHYBHAANAJYAcwIBANoArwG5AHMCAwACAN4AIAAhALsAVAPcAHMCAQDdAIgAUABzAgEAAgCOAVAAcwIBAAIAuQMIAHICDQACAE0DCgALAAwADQAOAE4DEADJAxIAPwC0ALUAFAC2ABYAygPUANUAGAC2ABoAdgEcAA0AlgB5AgEA2gCvAdwAeQIBAN0AiABQAHkCAQACALkDCAByAg0AAgBRAwoACwAMAA0ADgBIAxAAywMSAEEAtAC1ABQAtgAWAMwD1ADVABgAtgAaAHYBHAANAJYAfQIBANoArwG5AH0CAwACAN4AIAAhALsASwPcAH0CAQDdAA0AUAB'
+..'9AgEAAgC5A1AAfQIBAAIAjgEIAHICDgACAL0ACgALAAwADQAOAHgDEADNA2MAVAASAHoDtAC1ABQAWAMWAM4D1ADwABgAWgMaAMADHAANAJYAgwIBANoAXAMdAIMCAwACAF0DHgDBAyAAIQAoAIUCDQACACkAJAAqACsAIQBfA2ADJgANABYAwgMaAMMDLQAuAC8AxAMxADkBMwBkA2UDKgA1AA0AUACGAgEAAgBmA08BcgIDAAIAmwFRAW0DVAFtAwgAMQANAAIAzwMKAAsADAANAA4AbgEQANADEgBwAbQAyQCLANEDFACFABYA0gMYAIUAGgDTAxwADQAPAokCAQACANQDCAAxAA0AAgDVAwoACwAMAA0ADgDWAxAA1w'
+..'MSADkAtAC1ABQAtgAWANgD1ADVABgAtgAaAHYBHAANAJYAiwIBANoArwG5AIsCAwACAN4AIAAhALsA2QPcAIsCAQDdAIgAUACLAgEAAgC5AwgAMQAMAAoACwAMAA0ADgBXABAA2gMSAFkAtAC1ABQAhQAWAJYD1ADVABgAhQAaAA8BHAANAAcBkAIBANoA4AEIADEADAAKAAsADAANAA4AVwAQANsDEgBZALQAtQAUAIUAFgDcA9QAaQMYAIUAGgDdAxwADQCWAJICAQDaAN4D3wMxAAEAAgDgA5UBlAIDAAIAlAKZAeEDmwEEAZUBlAIDAAIAewKZAeIDmwEEAZUBlAIDAAIAgAKZAeMDmwEEAZUBlAIDAAIAgwKZAeQDm'
+..'wEEAZUBlAIEAAIAigKXAeUDmQHkA5sBBAGVAZQCAwACAI0CmQHmA5sBBAHnAzEAAgACAOgDVAHpA1AAmwIBAAIA6gMIADEADQACAOsDCgALAAwADQAOAG4BEADsAxIAcAG0AMkAiwDRAxQAhQAWAO0DGACFABoA7gMcAA0ADwKdAgEAAgDvAwgAMQANAAIA6wMKAAsADAANAA4AbgEQAPADEgBwAbQAyQCLANEDFACFABYA8QMYAIUAGgDyAxwADQAPAp8CAQACAO8DCAAxAA0AAgDrAwoACwAMAA0ADgBuARAA8wMSAHABtADJAIsA0QMUAIUAFgD0AxgAhQAaAPIDHAANAA8CoQIBAAIA7wMIADEADAACAC8CCgALAAwA'
+..'DQAOAFcAEAD1AxIAWQC0ALUAFACFABYA9gMYAIUAGgAyAhwADQAPAqMCAQACADMCCAAxAAwAAgAvAgoACwAMAA0ADgBXABAA9wMSAFkAtAC1ABQAhQAWAPgDGACFABoA+QMcAA0ADwKlAgEAAgAzAt8DMQABAAIA+gOVAacCAgACAJQCmQH7A5UBpwICAAIAewKZAfwDlQGnAgIAAgCAApkB/QOVAacCAgACAIMCmQH+A5UBpwICAAIAigKZAf8DlQGnAgIAAgCNApkBAASlATEADQACAD8CCgALAAwADQAOAKUCEAABBBIApwK0ALUAFAAiARYAAgTUAPAAGADuABoAQwJqAEQCpQExAAsAAgBFAgoACwAMAA0ADgBXABA'
+..'AAwQSAFkAtAC1ABQAIgEWAAQEGADuABoASAIPAq8CAQACAEkCpQExAAsAAgBFAgoACwAMAA0ADgBXABAABQQSAFkAtAC1ABQAIgEWAAYEGADuABoASAKlATEADAACAOsDCgALAAwADQAOAG4BEAAHBBIAcAG0AMkAiwDRAxQAIAMWAAgEGAAiAxoA8gMPArICAQACAO8DpQExAAwAAgDrAwoACwAMAA0ADgBuARAACQQSAHABtADJAIsA0QMUANoCFgAKBBgA3AIaAPIDDwK0AgEAAgDvAwsEMQABAAIADAQNBLYCAgACAIYCVAEOBA0EtgICAAIAcwJUAQ8EDQS2AgIAAgBnAlQBEAQNBLYCAgACAF8CVAERBA0EtgICAA'
+..'IAWAJUARIEDQS2AgIAAgCQAlQBEwQNBLYCAgACAHcCVAEUBA0EtgICAAIAbwJUARUEDQS2AgIAAgBjAlQBFgQNBLYCAgACAGsCVAEXBAgAMQALAAIAGAQKAAsADAANABAAGQS0AMkAiwDRAxQAhQAWABoEGACFABoAGwQcAA0ACAAxAAsAAgAYBAoACwAMAA0AEAAcBLQAyQCLANEDFACFABYAHQQYAIUAGgAeBBwADQAIADEACwACABgECgALAAwADQAQAB8EtADJAIsA0QMUAIUAFgAgBBgAhQAaACEEHAANAAgAMQALAAIAIgQKAAsADAANABAAIwS0AMkAiwDRAxQAhQAWACQEGACFABoAJQQcAA0ADwLEAgEAAgAmB'
+..'AgAMQALAAIAIgQKAAsADAANABAAJwS0AMkAiwDRAxQAhQAWACgEGACFABoAKQQcAA0ACAAxAAsAAgAiBAoACwAMAA0AEAAqBLQAyQCLANEDFACFABYAKwQYAIUAGgAsBBwADQAIADEACwACACIECgALAAwADQAQAC0EtADJAIsA0QMUAIUAFgAuBBgAhQAaACUEHAANAA8CyAIBAAIAJgQIADEACwACACIECgALAAwADQAQAC8EtADJAIsA0QMUAIUAFgAwBBgAhQAaADEEHAANAAgAMQALAAIAIgQKAAsADAANABAAMgS0AMkAiwDRAxQAhQAWADMEGACFABoALAQcAA0ACAAxAAsAAgAiBAoACwAMAA0AEAA0BLQAyQCL'
+..'ANEDFACFABYANQQYAIUAGgAlBBwADQAPAswCAQACACYECAAxAAsAAgAiBAoACwAMAA0AEAA2BLQAyQCLANEDFACFABYANwQYAIUAGgAxBBwADQAIADEACwACACIECgALAAwADQAQADgEtADJAIsA0QMUAIUAFgA5BBgAhQAaACwEHAANAKUBMQAMAAIA6wMKAAsADAANAA4AbgEQADoEEgBwAbQAyQCLANEDFAC2ABYAOwQYALYAGgA8BA8C0AIBAAIA7wOlATEADAACAOsDCgALAAwADQAOAG4BEAA9BBIAcAG0AMkAiwDRAxQAtgAWAD4EGAC2ABoAPAQPAtICAQACAO8D3wMxAAEAAgA/BJUB1AIEAAIAhgJABAsAmQF'
+..'BBJsBIQCVAdQCBAACAHMCQAQLAJkBQgSbASEAlQHUAgQAAgBnAkAECwCZAUMEmwEhAJUB1AIEAAIAXwJABAsAmQFEBJsBIQCVAdQCBAACAFgCQAQLAJkBRQSbASEAlQHUAgQAAgCQAkAECwCZAUYEmwEhAJUB1AIEAAIAdwJABAsAmQFHBJsBIQCVAdQCBAACAG8CQAQLAJkBSASbASEAlQHUAgQAAgBjAkAECwCZAUkEmwEhAJUB1AIEAAIAawJABAsAmQFKBJsBIQDfAzEAAQACAEsElQHfAgQAAgCGAkAECwCZAUEEmwEhAJUB3wIEAAIAcwJABAsAmQFCBJsBIQCVAd8CBAACAGcCQAQLAJkBQwSbASEAlQHfAgQAAg'
+..'BfAkAECwCZAUQEmwEhAJUB3wIEAAIAWAJABAsAmQFFBJsBIQCVAd8CBAACAJACQAQLAJkBRgSbASEAlQHfAgQAAgB3AkAECwCZAUcEmwEhAJUB3wIEAAIAbwJABAsAmQFIBJsBIQCVAd8CBAACAGMCQAQLAJkBSQSbASEAlQHfAgQAAgBrAkAECwCZAUoEmwEhAAgAMQAOAAIARgEKAAsADAANAA4A6QMQAEwEEgBNBLQAtQAUACIBFgBOBNQA8AAYAO4AGgBPBBwADQBqAPAABwHqAgAAawDqAgYAAgA3AWwAOAESAFAE/QILACAAkgFvAFEEUADsAgEAAgBSBAgAMQAOAAIASQEKAAsADAANAA4A6QMQAFMEEgBUBLQAt'
+..'QAUACIBFgBVBNQA8AAYAO4AGgBPBBwADQBqAPAABwHuAgAAawDuAgYAAgA3AWwAOAESAFYE/QILACAAkgFvAFEEUADwAgEAAgBSBAgAMQAOAAIATAEKAAsADAANAA4A6QMQAFcEEgBYBLQAtQAUACIBFgBZBNQA8AAYAO4AGgBaBBwADQBqAPAABwHyAgAAawDyAgYAAgA3AWwAOAESAFsE/QILACAAkgFvAFEEUAD0AgEAAgBSBAEAMQACAAIAXAQEAF0EpQH2AgkACgALAAwADQAQAF4EtADJAIsAygAUAF8EFgBgBBgAYQQaAGIECAD2Ag0AAgBjBAoACwAMAA0ADgClAhAAZAQSAKcCtAC1ABQAZQQWAGYE1ADVABgA'
+..'ZwQaAFwCHAANALkA+AIDAAIA3gAgACEAuwCJApYA+AICANgA2QDaAF8B3AD4AgEA3QANAFAA+AIBAAIAkQEIAPYCCgAKAAsADAANABAAaAS0AMkAiwDKABQAaQQWAGoEGABpBBoAawQcAA0ACAD2AgoACgALAAwADQAQAGwEtADJAIsAygAUAGkEFgBtBBgAaQQaAG4EHAANAAgA9gINAAIAbwQKAAsADAANAA4ApQIQAHAEEgCnArQAtQAUAGUEFgBxBNQA1QAYAGcEGgBcAhwADQC5AP8CAwACAN4AIAAhALsAdgKWAP8CAQDaAF8BUAD/AgEAAgCRAdwA/wIBAN0AiAAIAPYCCgAKAAsADAANABAAcgS0AMkAiwDKABQ'
+..'AaQQWAHMEGABpBBoAdAQcAA0ABwEEAwEA2gBfAQgA9gIKAAoACwAMAA0AEAB1BLQAyQCLAMoAFABpBBYAdgQYAGkEGgBjARwADQAHAQYDAQDaAF8BDwIGAwEAAgDYAqUB9gIJAAoACwAMAA0AEAB3BLQAyQCLAMoAFAB4BBYAeQQYAHgEGgB6BAgA9gINAAIAewQKAAsADAANAA4ApQIQAHwEEgCnArQAtQAUAGUEFgB9BNQA1QAYAGcEGgBcAhwADQC5AAoDAwACAN4AIAAhALsAagKWAAoDAQDaAF8BUAAKAwEAAgCRAdwACgMBAN0AiAAIAPYCDQACAL0ACgALAAwADQAOAFUDEAB+BBIAVwO0ALUAFAB/BBYAgATUAG'
+..'kDGAB/BBoAXAIcAA0AlgAPAwEA2gCBBB0ADwMDAAIAXQMeAIIEIAAhACgAEQMMAAIAKQAkACoAKwAhAF8DYAMmAA0AGgAnAC0ALgAvAIMEMQD8AjMAZANlAyoANQANAFAAEgMBAAIAZgMIAPYCDQACAEcDCgALAAwADQAOAJ0CEACEBBIAnwK0ALUAFABlBBYAhQTUANUAGABnBBoAXAIcAA0AuQAUAwMAAgDeACAAIQC7AIYElgAUAwEA2gCvAVAAFAMBAAIAhwTcABQDAQDdAIgAUAAUAwEAAgCOAQgA9gINAAIAUQMKAAsADAANAA4AnQIQAIgEEgCfArQAtQAUAGUEFgCJBNQA1QAYAGcEGgBcAhwADQC5ABoDAwACA'
+..'N4AIAAhALsAigSWABoDAQDaAK8B3AAaAwEA3QCIAFAAGgMBAAIAhwRQABoDAQACAI4BAQAxAAIAAgCLBAQAjASlASADCQAKAAsADAANABAAjQS0AMkAiwDKABQAjgQWAI8EGACOBBoAegQIACADDQACAHsECgALAAwADQAOAOsAEACQBBIA7QC0ALUAFACRBBYAkgTUANUAGACTBBoAXAIcAA0AuQAiAwMAAgDeACAAIQC7AGoClgAiAwEA2gBfAVAAIgMBAAIAkQHcACIDAQDdAIgACAAgAwoACgALAAwADQAQAJQEtADJAIsAygAUAJUEFgCWBBgAlwQaAGMBHAANAAcBJwMBANoAXwEPAicDAQACANgCCAAgAwoACgAL'
+..'AAwADQAQAJgEtADJAIsAygAUAJUEFgCZBBgAlwQaAHQEHAANAAcBKgMBANoAXwEIACADCgAKAAsADAANABAAmgS0AMkAiwDKABQAlQQWAJsEGACXBBoAawQcAA0ACAAgAwoACgALAAwADQAQAJwEtADJAIsAygAUAJUEFgCdBBgAlwQaAG4EHAANAAgAIAMNAAIAbwQKAAsADAANAA4A6wAQAJ4EEgDtALQAtQAUAJEEFgCfBNQA1QAYAJMEGgBcAhwADQC5AC4DAwACAN4AIAAhALsAdgKWAC4DAQDaAF8BUAAuAwEAAgCRAdwALgMBAN0AiAClASADCQAKAAsADAANABAAoAS0AMkAiwDKABQAoQQWAKIEGACjBBoAYgQ'
+..'IACADDQACAGMECgALAAwADQAOAOsAEACkBBIA7QC0ALUAFACRBBYApQTUANUAGACTBBoAXAIcAA0AuQA0AwMAAgDeACAAIQC7AIkClgA0AwIA2ADZANoAXwFQADQDAQACAJEB3AA0AwEA3QANAAgAIAMNAAIAUQMKAAsADAANAA4AnQIQAKYEEgCfArQAtQAUAJEEFgCnBNQA1QAYAJMEGgBcAhwADQC5ADkDAwACAN4AIAAhALsAigSWADkDAQDaAK8B3AA5AwEA3QCIAFAAOQMBAAIAjgFQADkDAQACAIcECAAgAw0AAgC9AAoACwAMAA0ADgB4AxAAqAQSAHoDtAC1ABQAqQQWAKoE1ABpAxgAqQQaAFwCHAANAJYAPw'
+..'MBANoAgQQdAD8DAwACAF0DHgCCBCAAIQAoAEEDDAACACkAJAAqACsAIQBfA2ADJgANABoAJwAtAC4ALwCDBDEARQAzAGQDZQMqADUADQBQAEIDAQACAGYDCAAgAw0AAgBHAwoACwAMAA0ADgCdAhAAqwQSAJ8CtAC1ABQAkQQWAKwE1ADVABgAkwQaAFwCHAANALkARAMDAAIA3gAgACEAuwCGBJYARAMBANoArwHcAEQDAQDdAIgAUABEAwEAAgCOAVAARAMBAAIAhwSZAjEAAgACAK0EVAELAFAASgMBAAIArgRQADEAAQACAK8ECwQxAAEAAgCwBA0ETQMCAAIAhgJUAQ4EDQRNAwIAAgBzAlQBDwQNBE0DAgACAGcCV'
+..'AEQBA0ETQMCAAIAXwJUAREEDQRNAwIAAgBYAlQBEgQNBE0DAgACAJACVAETBA0ETQMCAAIAdwJUARQEDQRNAwIAAgBvAlQBFQQNBE0DAgACAGMCVAEWBA0ETQMCAAIAawJUARcEAQAxAAIAAgCxBAQAsgTyAUAGgQgA9wG1BPkBLgBpAPoBgQgA9wG2BPkBLgBpAPoBgQgA9wG3BPkBLgBpAPoBgQgA9wG4BPkBLgBpAPoBwAWACABpALkEhQCACABpALoEhQCACABpALsEhQCACABpALwEhQAACAACAr0E+QFAA4EIAPcBvgT5AS4AaQD6AYEIAPcBvwT5AS4AaQD6AUADgQgA9wHABPkBLgBpAPoBgQgA9wHBBPkBLgBp'
+..'APoBQALABYAIAGkAwgSFAIAIAGkAwwSFAIAIAGkAxASFAIAIAGkAxQSFAAAIAAICxgT5AQAIAA0CxwSFAFgDCQAKAAsADgBXABAAswQSAFkAtAC1ABQA9AEWALQEGAD0ARoA9gEPAlkDAQACABAC8gFABQEIAPcBygT0AS4AaQD6AUAFgAgAaQDLBPkBgAgAaQDMBPkBgAgAaQDNBPkBgAgAaQDOBPkBAAgAAgLJBPQBAQgA9wHPBPQBLgBpAPoBAQgA9wHQBPQBLgBpAPoBAQgA9wHRBPQBLgBpAPoBWAMJAAoACwAOAFcAEADIBBIAWQAUAPQBFgDJBBgA9AEaABMCagAhALsAWwMEACAAIQC7ANoB2wHcAd0B3AHyAUA'
+..'FAQgA9wHUBPQBLgBpAPoBQAWACABpANUE+QGACABpANYE+QGACABpANcE+QGACABpANgE+QEACAACAtkE9AEBCAD3AdoE9AEuAGkA+gEBCAD3AdsE9AEuAGkA+gEBCAD3AdwE9AEuAGkA+gFYAwkACgALAA4AVwAQANIEEgBZABQA9AEWANMEGAD0ARoAEwJqACEAuwBdAwQAIAAhALsA2gHbAdwB3QHcAQgAMQAGAAoACwAQAN0EFACFABYA3gQYAIUAGgA+AlAAMQAAAAgAJAAIAAoACwAOAA8AEADfBBIAEwAUALYAFgDgBBgAtgAaAOEElgBhAwAACAAkAAYACgALABAA4gQUALYAFgDjBBgAtgAaAOQElgBjAwAA5Q'
+..'RjAwIAcgDmBHQA5wQIACQABgAKAAsAEADoBBQAtgAWAOkEGAC2ABoA5ASWAGYDAADlBGYDAgByAOYEdADqBAgAJAAIAAoACwAOAA8AEADrBBIAEwAUALYAFgDsBBgAtgAaAOEElgBpAwAACAAkAAYACgALABAA7QQUALYAFgDuBBgAtgAaAOQElgBrAwAACAAkAAgACgALAA4ADwAQAO8EEgATABQAtgAWAPAEGAC2ABoA4QSWAG0DAADlBG0DAgByAPEEdADyBAgAJAAGAAoACwAQAPMEFAC2ABYA9AQYALYAGgDkBJYAcAMAAAgAJAAIAAoACwAOAA8AEAD1BBIAEwAUALYAFgD2BBgAtgAaAOEElgByAwAA5QRyAwIAc'
+..'gDxBHQA9wQIACQACAAKAAsADgAPABAA+AQSABMAFAC2ABYA+QQYALYAGgDhBJYAdQMAAOUEdQMCAHIA8QR0APoECAAkAAYACgALABAA+wQUALYAFgD8BBgAtgAaAOQElgB4AwAAAQAkAAIAAgD9BAQA/gQIAHoDCQACAP8ECgALAA4AbgEQAAAFEgBwARQAAQUWAAIFGAADBRoA9gKWAHsDAAAHAXsDAAAEBXsDBQASAEEAOgFUAAUFBAEGBXAAGgAHBQgAegMJAAIACAUKAAsADgBuARAACQUSAHABFAAKBRYACwUYAAwFGgD2ApYAfwMAAAcBfwMAAAQFfwMFABIAQQA6AVQABQUEAQYFcAAaAAcFCAB6AwkAAgANBQoA'
+..'CwAOAG4BEAAOBRIAcAEUAA8FFgAQBRgAEQUaAPYClgCDAwAABwGDAwAABAWDAwUAEgBBADoBVAAFBQQBBgVwABoABwUIAHoDCQACAAQFCgALAA4AbgEQABIFEgBwARQADwUWABMFGAARBRoA9gKWAIcDAAAHAYcDAAAEBYcDBQASAEEAOgFUAAUFBAEGBXAAGgAHBQgAJAAIAAoACwAOAA8AEAAUBRIAEwAUABUFFgAWBRgAFwUaABgFlgCLAwAAuQCLAwEAuwAZBQgAJAAJAAIAGgUKAAsADgAPABAAGwUSABMAFAAVBRYAHAUYABcFGgAdBZYAjgMAAB0AjgMAADcAkAMNACQAHgUrAAQBXwNgAyYAkgEWAB8FGgAgBSE'
+..'FOAEvACIFMQAqADMANABlAyMFNQANADYACwBQAJEDAAA3AJADDgACACQFJAAeBSsABAFfA2ADJgCSARYAJQUaACYFLwAnBTEAYAMoBQsAMwA0AGUDowA1AA0ANgALAFAAkwMAADcAkAMPAAIAKQUkAB4FKwAEAV8DYAMmAJIBFgAqBRgAKwUaACYFLwAnBTEAYAMoBQsAMwA0AGUDowA1AA0ANgALAFAAlQMAACgAkAMMAAIAKQAkACoAKwAhAF8DYAMmAJIBFgAsBRoALQUvAC4FMQAqADMAZANlAy8FNQANAAEAJAACAAIAMAUEADEFCACYAwoAAgAyBQoACwAOAG4BEAAzBRIAcAEUADQFFgA1BRgANgUaADcFagAhAJ'
+..'YAmQMAADgFmQMFABIAOQU6AVQAOgVwADsFPwAaAFEECACYAwoAAgA8BQoACwAOAG4BEAA9BRIAcAEUAD4FFgA/BRgAQAUaADcFagAhAJYAnAMAADgFnAMFABIAOQU6AVQAOgVwADsFPwAaAFEECAAkAAgACgALAA4AbgEQAEEFEgBwARQAQgUWAEMFGABEBRoARQWWAJ8DAAAHAZ8DAAClASQADwAKAAsAXwA4AQwAOAEOAA8AEABGBRIAEwBkADgBZQA4ARQAhQAWAEcFaAA4ARgAhQAaAEgFHAA4AWoAIQC5AKIDAQC7AEkFCAAkAAgACgALAA4AbgEQAEoFEgBwARQA3AIWAEsFGABMBRoATQWWAKQDAAAHAaQDAAAIA'
+..'CQACAAKAAsADgBuARAATgUSAHABFAC2ABYATwUYALYAGgBQBZYApwMAAAcBpwMAAAgAJAAJAAIAUQUKAAsADgAPABAAUgUSABMAFAAVBRYAUwUYABcFGgBUBZYAqgMAAB0AqgMAADcArAMOACQAHgUrAAQBXwNgAyYAkgEWAB8FGgAgBSEFOAEvAFUFMQAqACgFCwAzADQAZQNWBTUADQA2AAsAUACtAwAANwCsAw4AAgAkBSQAHgUrAAQBXwNgAyYAkgEWACUFGgAmBS8AJwUxAGADKAULADMANABlA6MANQANADYACwBQAK8DAAA3AKwDDwACACkFJAAeBSsABAFfA2ADJgCSARYAKgUYACsFGgAmBS8AJwUxAGADKAUL'
+..'ADMANABlA6MANQANADYACwBQALEDAAAoAKwDDAACACkAJAAqACsAIQBfA2ADJgCSARYALAUaAC0FLwAuBTEAKgAzAGQDZQMvBTUADQAIACQACAAKAAsADgBuARAAVwUSAHABFAC2ABYAWAUYALYAGgBZBZYAtAMAAAcBtAMAAAgAJAAIAAoACwAOAG4BEABaBRIAcAEUANwCFgBbBRgATAUaAE0FlgC3AwAABwG3AwAAAQABAAIAAgBcAAQAXAUIALoDDQACAFwACgALAAwADQAOAFcAEABdBRIAWQCLAIwAFACFABYAXgUYAIUAGgBfBRwADQBqACEAYAW7AwIAYQU5AGoA8AAIALoDDAACAFwACgALAAwADQAOANYDEAB'
+..'jBRIAOQAUAIUAFgBkBRgAhQAaAGUFHAANAGoA8ACOAL0DAgASADkAbwA4AVAAugMAAAgAugMNAAIAXAAKAAsADAANAA4AVwAQAGYFEgBZAIsAjAAUAIUAFgBnBRgAhQAaAF8FHAANAGoAIQBgBcADAgBhBTkAagDwACYZAHYAFgAZAHcAIQAdAHYAGgAdAHcAFgDdAHcA3ADlAHcA5ADrAHcA6gClAXcAowHBAXcAvwGKAncAiQKeAncAnQKgAncAnwKiAncAoQKkAncAowKmAncApQKwAncArwKzAncAsgK1AncAtALFAncAxALJAncAyALNAncAzALRAncA0ALTAncA0gIIA3cABgMpA3cAJwNaA3cAWQNlA3YAYwNlA3'
+..'cAYQNoA3YAZgNoA3cAaQNvA3YAbQNvA3cAawN0A3YAcgN0A3cAcAN3A3YAdQN3A3cAeAO8A2IFuwPBA2IFwAM=')
+for _,obj in pairs(Objects) do
+	obj.Parent = script or workspace
+end
+
+RunScripts()
