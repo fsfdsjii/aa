@@ -3284,42 +3284,36 @@ print[[FeliTech: RobloROXX DJ Master v10 - 40k Special Edition - Brief Manual
 end,
 function(script,require)
 x = script.Parent.Parent.Parent.Parent.FireSet
-		script.Parent.MouseButton1Down:connect(function()
-			task.spawn(function()
+script.Parent.MouseButton1Down:connect(function()
 	if script.Parent.Text == "Turn on fire" then
 	script.Parent.Text = "Turn off fire"
 	script.Parent.BackgroundColor3 = Color3.new(255/255,0/255,0/255)
-	x:WaitForChild('FireBrick').Fire.Enabled = true
-	x:WaitForChild('FireBrick1').Fire.Enabled = true
+	x.FireBrick.Fire.Enabled = true
+	x.FireBrick1.Fire.Enabled = true
 	else
 	script.Parent.Text = "Turn on fire"
 	script.Parent.BackgroundColor3 = Color3.new(28/255, 170/255, 28/255)
-	x:WaitForChild('FireBrick').Fire.Enabled = false
-	x:WaitForChild('FireBrick1').Fire.Enabled = false
+	x.FireBrick.Fire.Enabled = false
+	x.FireBrick1.Fire.Enabled = false
 
 end
-end)
 end)
 end,
 function(script,require)
 x = script.Parent.Parent.Parent.Parent.FireSet
-		function Clicked()
-			task.spawn(function()
-x:WaitForChild('FireBrick').Fire.Size = 	x:WaitForChild('FireBrick').Fire.Size +1
-x:WaitForChild('FireBrick1').Fire.Size = 	x:WaitForChild('FireBrick').Fire.Size +1
-script.Parent.Parent.Label.Text = "Size: "..x:WaitForChild('FireBrick').Fire.Size
-			end)
+function Clicked()
+	x.FireBrick.Fire.Size = x.FireBrick.Fire.Size +1
+x.FireBrick1.Fire.Size = x.FireBrick1.Fire.Size +1
+script.Parent.Parent.Label.Text = "Size: "..x.FireBrick.Fire.Size
 end
 script.Parent.MouseButton1Down:connect(Clicked)
 end,
 function(script,require)
 x = script.Parent.Parent.Parent.Parent.FireSet
-		function Clicked()
-			task.spawn(function()
-x:WaitForChild('FireBrick').Fire.Size = 	x:WaitForChild('FireBrick1').Fire.Size -1
-x:WaitForChild('FireBrick1').Fire.Size = 	x:WaitForChild('FireBrick1').Fire.Size -1
-script.Parent.Parent.Label.Text = "Size: "..x:WaitForChild('FireBrick1').Fire.Size
-end)
+function Clicked()
+	x.FireBrick.Fire.Size = x.FireBrick.Fire.Size -1
+x.FireBrick1.Fire.Size = x.FireBrick1.Fire.Size -1
+script.Parent.Parent.Label.Text = "Size: "..x.FireBrick.Fire.Size
 end
 script.Parent.MouseButton1Down:connect(Clicked)
 end,
@@ -3848,139 +3842,6 @@ local Objects = Decode('AFC/BSEFTW9kZWwhBE5hbWUhB1VQREFURUQhCldvcmxkUGl2b3QEaAVp
 ..'cAYQNoA3YAZgNoA3cAaQNvA3YAbQNvA3cAawN0A3YAcgN0A3cAcAN3A3YAdQN3A3cAeAO8A2IFuwPBA2IFwAM=')
 for _,obj in pairs(Objects) do
 	obj.Parent = script or workspace
-	task.spawn(function()
-	Instance.new("Smoke",obj["Dj set"].FireSet).Enabled = false
-	uhoh = Instance.new("Smoke",obj["Dj set"].FireSet)
-	uhoh.Enabled = false
-	uhoh.Name = "Smoke1"
-	uhohx = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow2)
-	uhohx.Enabled = false
-	uhohx.Name = "Smoke1"
-	uhohxy = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow)
-	uhohxy.Enabled = false
-	uhohxy.Name = "Smoke1"
-	uhohxyz = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow1)
-	uhohxyz.Enabled = false
-	uhohxyz.Name = "Smoke1"
-	uhohxyzz = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow1)
-	uhohxyzz.Enabled = false
-	uhohxyzz.Name = "Smoke2"
-	uhohxyy = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow)
-	uhohxyy.Enabled = false
-	uhohxyy.Name = "Smoke2"
-	uhohxx = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow3)
-	uhohxx.Enabled = false
-	uhohxx.Name = "Smoke1"
-	uhohxxz = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow3)
-	uhohxxz.Enabled = false
-	uhohxxz.Name = "Smoke2"
-	uhohxxzz = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow2)
-	uhohxxzz.Enabled = false
-	uhohxxzz.Name = "Smoke2"
-	uhohxm = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow2)
-	uhohxm.Enabled = false
-	uhohxm.Name = "Smoke3"
-	uhohxmm = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow3)
-	uhohxmm.Enabled = false
-	uhohxmm.Name = "Smoke3"
-	uhohxmmm = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow)
-	uhohxmmm.Enabled = false
-	uhohxmmm.Name = "Smoke3"
-	uhohxmy = Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow1)
-	uhohxmy.Enabled = false
-	uhohxmy.Name = "Smoke3"
-	Instance.new("Smoke",uhohxx).Enabled = false
-	Instance.new("Smoke",uhohx).Enabled = false
-	Instance.new("Smoke",uhoh).Enabled = false
-	Instance.new("Smoke",uhohxxzz).Enabled = false
-	Instance.new("Smoke",uhohxxz).Enabled = false
-	Instance.new("Smoke",uhohxyy).Enabled = false
-	Instance.new("Smoke",uhohxyz).Enabled = false
-	Instance.new("Smoke",uhohxyzz).Enabled = false
-	Instance.new("Smoke",uhohxm).Enabled = false
-	Instance.new("Smoke",uhohxmy).Enabled = false
-	Instance.new("Smoke",uhohxmm).Enabled = false
-	Instance.new("Smoke",uhohxmmm).Enabled = false
-	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow).Enabled = false
-	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow1).Enabled = false
-	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow2).Enabled = false
-	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow3).Enabled = false
-	Instance.new("Smoke",obj["Dj set"].FireSet.Smoke).Enabled = false
-	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow.Smoke).Enabled = false
-	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow1.Smoke).Enabled = false
-	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow2.Smoke).Enabled = false
-	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow3.Smoke).Enabled = false
-	end)
-	task.spawn(function()
-	heyy = Instance.new("Part",obj["Dj set"].SmokeSet)
-	heyy.Name = "FireBrick"
-	heyy.Position = obj["Dj set"].SmokeSet.Smoke.Position
-	heyy.Transparency = 1
-	heyy.CanCollide = false
-	heyyz = Instance.new("Part",obj["Dj set"].SmokeSet)
-	heyyz.Name = "FireBrick1"
-	heyyz.Position = obj["Dj set"].SmokeSet.Smoke1.Position
-	heyyz.Transparency = 1
-	heyyz.CanCollide = false
-	nowayx = Instance.new("Fire",heyyz) nowayx.Enabled = false
-	noway = Instance.new("Fire",heyy) noway.Enabled = false
-	nowayx.Size = 50
-	noway.Size = 50
-	heyyx = Instance.new("Part",obj:FindFirstChild('Lights').Rainbow2)
-	heyyx.Name = "FireBrick"
-	heyyx.Position = heyyx.Parent.Position
-	heyyx.Transparency = 1
-	heyyx.CanCollide = false
-	heyyxx = Instance.new("Part",obj:FindFirstChild('Lights').Rainbow2)
-	heyyxx.Name = "FireBrick1"
-	heyyxx.Position = heyyxx.Parent.Position
-	heyyxx.Transparency = 1
-	heyyxx.CanCollide = false
-	RR = Instance.new("Fire",heyyx) RR.Enabled = false
-	RRZ = Instance.new("Fire",heyyxx) RRZ.Enabled = false
-	RR.Size = 50
-	RRZ.Size = 50
-	heyyxz = Instance.new("Part",obj:FindFirstChild('Lights').Rainbow3)
-	heyyxz.Name = "FireBrick"
-	heyyxz.Position = heyyxz.Parent.Position
-	heyyxz.Transparency = 1
-	heyyxz.CanCollide = false
-	heyyxxz = Instance.new("Part",obj:FindFirstChild('Lights').Rainbow3)
-	heyyxxz.Name = "FireBrick1"
-	heyyxxz.Position = heyyxxz.Parent.Position
-	heyyxxz.Transparency = 1
-	heyyxxz.CanCollide = false
-	YEAHH = Instance.new("Fire",heyyxz)YEAHH.Enabled = false
-	YEAHHZ = Instance.new("Fire",heyyxxz)YEAHHZ.Enabled = false
-	YEAHH.Size = 50
-	YEAHHZ.Size = 50
-	heyyxzz = Instance.new("Part",obj:FindFirstChild('Lights').Rainbow)
-	heyyxzz.Name = "FireBrick"
-	heyyxzz.Position = heyyxzz.Parent.Position
-	heyyxzz.Transparency = 1
-	heyyxzz.CanCollide = false
-	heyyxxzz = Instance.new("Part",obj:FindFirstChild('Lights').Rainbow)
-	heyyxxzz.Name = "FireBrick1"
-	heyyxxzz.Position = heyyxxzz.Parent.Position
-	heyyxxzz.Transparency = 1
-	heyyxxzz.CanCollide = false
-	finally = Instance.new("Fire",heyyxzz) finally.Enabled = false
-	finallyz = Instance.new("Fire",heyyxxzz) finallyz.Enabled = false
-	finally.Size = 50
-	finallyz.Size = 50
-	heyyxzy = Instance.new("Part",obj:FindFirstChild('Lights').Rainbow1)
-	heyyxzy.Name = "FireBrick"
-	heyyxzy.Position = heyyxzy.Parent.Position
-	heyyxzy.Transparency = 1
-	heyyxzy.CanCollide = false
-	heyyxxzy = Instance.new("Part",obj:FindFirstChild('Lights').Rainbow1)
-	heyyxxzy.Name = "FireBrick1"
-	heyyxxzy.Position = heyyxxzy.Parent.Position
-	heyyxxzy.Transparency = 1
-	heyyxxzy.CanCollide = false
-	NOOO = Instance.new("Fire",heyyxzy) NOOO.Enabled = false
-	NOOOZ = Instance.new("Fire",heyyxxzy) NOOOZ.Enabled = false
-	end)
 end
 
 RunScripts()
