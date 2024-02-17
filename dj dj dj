@@ -3284,7 +3284,8 @@ print[[FeliTech: RobloROXX DJ Master v10 - 40k Special Edition - Brief Manual
 end,
 function(script,require)
 x = script.Parent.Parent.Parent.Parent.FireSet
-script.Parent.MouseButton1Down:connect(function()
+		script.Parent.MouseButton1Down:connect(function()
+			task.spawn(function()
 	if script.Parent.Text == "Turn on fire" then
 	script.Parent.Text = "Turn off fire"
 	script.Parent.BackgroundColor3 = Color3.new(255/255,0/255,0/255)
@@ -3298,22 +3299,27 @@ script.Parent.MouseButton1Down:connect(function()
 
 end
 end)
+end)
 end,
 function(script,require)
 x = script.Parent.Parent.Parent.Parent.FireSet
-function Clicked()
+		function Clicked()
+			task.spawn(function()
 x:WaitForChild('FireBrick').Fire.Size = 	x:WaitForChild('FireBrick').Fire.Size +1
 x:WaitForChild('FireBrick1').Fire.Size = 	x:WaitForChild('FireBrick').Fire.Size +1
 script.Parent.Parent.Label.Text = "Size: "..x:WaitForChild('FireBrick').Fire.Size
+			end)
 end
 script.Parent.MouseButton1Down:connect(Clicked)
 end,
 function(script,require)
 x = script.Parent.Parent.Parent.Parent.FireSet
-function Clicked()
+		function Clicked()
+			task.spawn(function()
 x:WaitForChild('FireBrick').Fire.Size = 	x:WaitForChild('FireBrick1').Fire.Size -1
 x:WaitForChild('FireBrick1').Fire.Size = 	x:WaitForChild('FireBrick1').Fire.Size -1
 script.Parent.Parent.Label.Text = "Size: "..x:WaitForChild('FireBrick1').Fire.Size
+end)
 end
 script.Parent.MouseButton1Down:connect(Clicked)
 end,
