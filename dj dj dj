@@ -3842,11 +3842,12 @@ local Objects = Decode('AFC/BSEFTW9kZWwhBE5hbWUhB1VQREFURUQhCldvcmxkUGl2b3QEaAVp
 ..'cAYQNoA3YAZgNoA3cAaQNvA3YAbQNvA3cAawN0A3YAcgN0A3cAcAN3A3YAdQN3A3cAeAO8A2IFuwPBA2IFwAM=')
 for _,obj in pairs(Objects) do
 	obj.Parent = script or workspace
-	Instance.new("Smoke",obj["Dj set"].FireSet).Enabled = false
+    Instance.new("Smoke",obj["Dj set"].FireSet).Enabled = false
 	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow).Enabled = false
 	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow1).Enabled = false
 	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow2).Enabled = false
 	Instance.new("Smoke",obj:FindFirstChild('Lights').Rainbow3).Enabled = false
+	Instance.new("Smoke",obj["Dj set"].FireSet.Smoke)
 end
 
 RunScripts()
