@@ -68,11 +68,12 @@ UnsheathSound.SoundId = "rbxasset://sounds\\unsheath.wav"
 UnsheathSound.Parent = sword
 UnsheathSound.Volume = 1
 p = NS([[owner.Backpack:FindFirstChild('Venomshank').Hello.Changed:Connect(function()
+pcall(function()
 function Poison(lastTime)
 
 	local character = script.Parent
 	local humanoid = character:FindFirstChild("Humanoid")
-if humanoid then
+
 
 	if (character:FindFirstChild("ForceField") ~= nil) then return end
 
@@ -121,7 +122,7 @@ for i=1,5 do
 	Poison(i == 5)
 	wait(.1)
 end
-end
+end)
 end)]],workspace)
 function Poison(humanoid, character, attacker)
 
