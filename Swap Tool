@@ -58,9 +58,19 @@ if not zzzzzz then
 	heel = Instance.new("RemoteEvent",owner)
 	heel.Name = "hell"
 	end
+local zzzzzzx = owner:FindFirstChild('hellz')
+if not zzzzzzx then
+	heelx = Instance.new("Part",owner)
+	heelx.Name = "hellz"
+	end
+	NLS([[debounce = true
+owner.hellz.Changed:Connect(function()
+if debounce == true then
+debounce = false
+owner.hell:FireServer(owner:GetMouse().Target) task.wait(0.05) debounce = true end end)]],owner.PlayerGui)
 local debounce = true
 script.Parent.Activated:Connect(function()
-	NLS([[owner.hell:FireServer(owner:GetMouse().Target)]],owner.PlayerGui)
+owner.hellz.Transparency = math.random(0, 1)
 		owner.hell.OnServerEvent:Connect(function(plr, targ)
 			if debounce == true then
 				debounce = false
@@ -74,12 +84,15 @@ if humd then
 				owner.Character.Humanoid:ApplyDescription(stored)
 				owner.Character.Humanoid.DisplayName = hum.DisplayName
 				hum.DisplayName = stored2.DisplayName
+end
                                 if hum.RootPart~= nil then
-owner.Character.Humanoid.RootPart.Position = hum.RootPart.Position
-hum.RootPart.Position = owner.Character.Humanoid.RootPart.Position
+pos = owner.Character.HumanoidRootPart.Position
+owner.Character:MoveTo(hum.RootPart.Position)
+hum.Parent:MoveTo(pos)
+
                                 end
 				end
-			task.wait(0.1)
+			task.wait(0.05)
 						debounce = true
 		end
 	end)
