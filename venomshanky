@@ -67,7 +67,7 @@ local UnsheathSound = Instance.new("Sound")
 UnsheathSound.SoundId = "rbxasset://sounds\\unsheath.wav"
 UnsheathSound.Parent = sword
 UnsheathSound.Volume = 1
-p = NS([[script.Parent.Hello.Changed:Connect(function()
+p = NS([[owner.Backpack:FindFirstChild('Venomshank').Hello.Changed:Connect(function()
 function Poison(lastTime)
 
 	local character = script.Parent
@@ -355,65 +355,6 @@ Script11.Name = "Poison"
 Script11.Parent = Tool0
 Script11.Enabled = false
 table.insert(cors,sandbox(Script11,function()
-p = NS([[script.Parent.Hello.Changed:Connect(function()
-function Poison(lastTime)
-
-	local character = script.Parent
-	local humanoid = character:FindFirstChild("Humanoid")
-
-	if (character:FindFirstChild("ForceField") ~= nil) then return end
-
-
-	local childs = character:GetChildren()
-
-	local colors = {}
-
-	for i=1,#childs do
-		if (childs[i].className == "Part") then
-			colors[i] = childs[i].BrickColor
-			childs[i].BrickColor = BrickColor.new(119)
-		end
-	end
-
-	wait(1)
-	
-	for i=1,#childs do
-		if (childs[i].className == "Part") then
-			childs[i].BrickColor = colors[i]
-		end
-	end
-
-	
-	tagHumanoid(humanoid)
-	humanoid.Health = humanoid.Health - (humanoid.MaxHealth / 8) -- forcefield won't stop poison damage
-	wait(1)
-	--untagHumanoid(humanoid)
-
-end
-
-function tagHumanoid(humanoid)
-	local poisoner = script:FindFirstChild("poisoner")
-	
-	if (poisoner ~= nil) then
-
-		local creator_tag = Instance.new("ObjectValue")
-		creator_tag.Value = poisoner.Value
-		creator_tag.Name = "creator"
-		creator_tag.Parent = humanoid
-		game.Debris:AddItem(creator_tag, 1)
-	end
-end
-
-for i=1,5 do
-	Poison(i == 5)
-	wait(.1)
-end
-
-
-end)]],workspace)
-p.Parent = character
-p.Disabled = false
-p.Name = "Poison"
 end))
 Script11.Disabled = true
 for i,v in pairs(mas:GetChildren()) do
