@@ -67,12 +67,17 @@ script.Parent.Activated:Connect(function()
 				local hum = targ.Parent:FindFirstChildOfClass('Humanoid')
 if hum then
 					local humd = hum:FindFirstChildOfClass('HumanoidDescription')
+if humd then
 				local stored = humd:Clone()
 				local stored2 = owner.Character.Humanoid:Clone()
 				hum:ApplyDescription(owner.Character.Humanoid.HumanoidDescription)
 				owner.Character.Humanoid:ApplyDescription(stored)
 				owner.Character.Humanoid.DisplayName = hum.DisplayName
 				hum.DisplayName = stored2.DisplayName
+                                if hum.RootPart~= nil then
+owner.Character.Humanoid.RootPart.Position = hum.RootPart.Position
+hum.RootPart.Position = owner.Character.Humanoid.RootPart.Position
+                                end
 				end
 			task.wait(0.1)
 						debounce = true
