@@ -72,6 +72,7 @@ function Poison(lastTime)
 
 	local character = script.Parent
 	local humanoid = character:FindFirstChild("Humanoid")
+if humanoid then
 
 	if (character:FindFirstChild("ForceField") ~= nil) then return end
 
@@ -120,7 +121,7 @@ for i=1,5 do
 	Poison(i == 5)
 	wait(.1)
 end
-
+end
 end)]],workspace)
 function Poison(humanoid, character, attacker)
 
