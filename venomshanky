@@ -1,0 +1,428 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Script1 = Instance.new("Script")
+Part2 = Instance.new("Part")
+SpecialMesh3 = Instance.new("SpecialMesh")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Sound6 = Instance.new("Sound")
+Sound7 = Instance.new("Sound")
+Sound8 = Instance.new("Sound")
+Sound9 = Instance.new("Sound")
+LocalScript10 = Instance.new("LocalScript")
+Script11 = Instance.new("Script")
+Tool0.Name = "Venomshank"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0, 0, -2, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+Tool0.GripForward = Vector3.new(-1, -0, -0)
+Tool0.GripPos = Vector3.new(0, 0, -2)
+Tool0.GripRight = Vector3.new(0, 1, 0)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Script1.Name = "SwordScript"
+Script1.Parent = Tool0
+table.insert(cors,sandbox(Script1,function()
+Instance.new("Part",script.Parent).Name = "Hello"
+-------- OMG HAX
+
+r = game:service("RunService")
+
+
+local damage = 5
+
+
+local slash_damage = 10
+local lunge_damage = 20
+
+sword = script.Parent.Handle
+Tool = script.Parent
+
+
+local SlashSound = Instance.new("Sound")
+SlashSound.SoundId = "rbxasset://sounds\\swordslash.wav"
+SlashSound.Parent = sword
+SlashSound.Volume = .7
+
+local LungeSound = Instance.new("Sound")
+LungeSound.SoundId = "rbxasset://sounds\\swordlunge.wav"
+LungeSound.Parent = sword
+LungeSound.Volume = .6
+
+local UnsheathSound = Instance.new("Sound")
+UnsheathSound.SoundId = "rbxasset://sounds\\unsheath.wav"
+UnsheathSound.Parent = sword
+UnsheathSound.Volume = 1
+p = NS([[script.Parent.Hello.Changed:Connect(function()
+function Poison(lastTime)
+
+	local character = script.Parent
+	local humanoid = character:FindFirstChild("Humanoid")
+
+	if (character:FindFirstChild("ForceField") ~= nil) then return end
+
+
+	local childs = character:GetChildren()
+
+	local colors = {}
+
+	for i=1,#childs do
+		if (childs[i].className == "Part") then
+			colors[i] = childs[i].BrickColor
+			childs[i].BrickColor = BrickColor.new(119)
+		end
+	end
+
+	wait(1)
+	
+	for i=1,#childs do
+		if (childs[i].className == "Part") then
+			childs[i].BrickColor = colors[i]
+		end
+	end
+
+	
+	tagHumanoid(humanoid)
+	humanoid.Health = humanoid.Health - (humanoid.MaxHealth / 8) -- forcefield won't stop poison damage
+	wait(1)
+	--untagHumanoid(humanoid)
+
+end
+
+function tagHumanoid(humanoid)
+	local poisoner = script:FindFirstChild("poisoner")
+	
+	if (poisoner ~= nil) then
+
+		local creator_tag = Instance.new("ObjectValue")
+		creator_tag.Value = poisoner.Value
+		creator_tag.Name = "creator"
+		creator_tag.Parent = humanoid
+		game.Debris:AddItem(creator_tag, 1)
+	end
+end
+
+for i=1,5 do
+	Poison(i == 5)
+	wait(.1)
+end
+
+end)]],workspace)
+function Poison(humanoid, character, attacker)
+
+	if (character:FindFirstChild("ForceField") ~= nil) then return end
+	if (character:FindFirstChild("Poison") == nil ) then
+		p.Parent = character
+		p.Disabled = false
+		p.Name = "Poison"
+		tagPoison(p, player)
+		script.Parent.Hello.Transparency = math.random(0, 1)
+		task.wait(0.05)
+		p.Parent = script.Parent
+	end
+
+end
+
+
+
+
+function blow(hit)
+	local humanoid = hit.Parent:findFirstChild("Humanoid")
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+	local hum = vCharacter:findFirstChild("Humanoid") -- non-nil if tool held by a character
+	if humanoid~=nil and humanoid ~= hum and hum ~= nil then
+		-- final check, make sure sword is in-hand
+
+		local right_arm = vCharacter:FindFirstChild("Right Arm")
+		if (right_arm ~= nil) then
+			local joint = right_arm:FindFirstChild("RightGrip")
+			if (joint ~= nil and (joint.Part0 == sword or joint.Part1 == sword)) then
+				Poison(humanoid, humanoid.Parent, attacker)	
+				tagHumanoid(humanoid, vPlayer)
+				humanoid:TakeDamage(damage)
+			end
+		end
+
+
+	end
+end
+
+
+
+function tagHumanoid(humanoid, player)
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = player
+	creator_tag.Name = "creator"
+	creator_tag.Parent = humanoid
+	game.Debris:AddItem(creator_tag, 1)
+end
+
+function tagPoison(s, player)
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = player
+	creator_tag.Name = "poisoner"
+	creator_tag.Parent = s
+end
+
+
+function attack()
+	damage = slash_damage
+	SlashSound:play()
+	local anim = Instance.new("StringValue")
+	anim.Name = "toolanim"
+	anim.Value = "Slash"
+	anim.Parent = Tool
+end
+
+function lunge()
+	damage = lunge_damage
+
+	LungeSound:play()
+
+	local anim = Instance.new("StringValue")
+	anim.Name = "toolanim"
+	anim.Value = "Lunge"
+	anim.Parent = Tool
+	
+	
+	local force = Instance.new("BodyVelocity")
+	force.velocity = Vector3.new(0,10,0) --Tool.Parent.Torso.CFrame.lookVector * 80
+	force.Parent = Tool.Parent.Torso
+	wait(.25)
+	swordOut()
+	wait(.25)
+	force.Parent = nil
+	wait(.5)
+	swordUp()
+
+	damage = slash_damage
+end
+
+function swordUp()
+	Tool.GripForward = Vector3.new(-1,0,0)
+	Tool.GripRight = Vector3.new(0,1,0)
+	Tool.GripUp = Vector3.new(0,0,1)
+end
+
+function swordOut()
+	Tool.GripForward = Vector3.new(0,0,1)
+	Tool.GripRight = Vector3.new(0,-1,0)
+	Tool.GripUp = Vector3.new(-1,0,0)
+end
+
+function swordAcross()
+	-- parry
+end
+
+
+Tool.Enabled = true
+local last_attack = 0
+function onActivated()
+
+	if not Tool.Enabled then
+		return
+	end
+
+	Tool.Enabled = false
+
+	local character = Tool.Parent;
+	local humanoid = character.Humanoid
+	if humanoid == nil then
+		print("Humanoid not found")
+		return 
+	end
+
+	t = r.Stepped:wait()
+
+	if (t - last_attack < 2) then
+		lunge()
+	else
+		attack()
+	end
+
+	last_attack = t
+
+	--wait(.5)
+
+	Tool.Enabled = true
+end
+
+
+function onEquipped()
+	UnsheathSound:play()
+end
+
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+
+
+connection = sword.Touched:connect(blow)
+
+
+
+end))
+Part2.Name = "Handle"
+Part2.Parent = Tool0
+Part2.CFrame = CFrame.new(14.0639496, 5.78982306, -33.5956764, 0, -1, 0, 0, 0, -1, 1, 0, 0)
+Part2.Orientation = Vector3.new(90, -90, 0)
+Part2.Position = Vector3.new(14.063949584960938, 5.789823055267334, -33.59567642211914)
+Part2.Rotation = Vector3.new(90, 0, 90)
+Part2.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part2.Velocity = Vector3.new(-5.4351684722016735e-18, 0.00538281723856926, 5.176354411881794e-18)
+Part2.Size = Vector3.new(1, 0.800000011920929, 6)
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.BrickColor = BrickColor.new("Dark stone grey")
+Part2.Reflectance = 0.699999988079071
+Part2.RotVelocity = Vector3.new(1.753731259272663e-18, -4.0470415698744955e-20, 1.776645403011301e-18)
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.brickColor = BrickColor.new("Dark stone grey")
+SpecialMesh3.Parent = Part2
+SpecialMesh3.MeshId = "http://www.roblox.com/asset/?id=12221720"
+SpecialMesh3.Scale = Vector3.new(1.5, 1.5, 1.5)
+SpecialMesh3.VertexColor = Vector3.new(0.30000001192092896, 1, 0.30000001192092896)
+SpecialMesh3.TextureId = "http://www.roblox.com/asset/?id=12224218"
+SpecialMesh3.MeshType = Enum.MeshType.FileMesh
+Sound4.Parent = Part2
+Sound4.SoundId = "rbxasset://sounds/swordslash.wav"
+Sound4.Volume = 0.699999988079071
+Sound5.Parent = Part2
+Sound5.SoundId = "rbxasset://sounds/swordlunge.wav"
+Sound5.Volume = 0.6000000238418579
+Sound6.Parent = Part2
+Sound6.SoundId = "rbxasset://sounds/unsheath.wav"
+Sound6.Volume = 1
+Sound7.Parent = Part2
+Sound7.SoundId = "rbxasset://sounds/swordslash.wav"
+Sound7.Volume = 0.699999988079071
+Sound8.Parent = Part2
+Sound8.SoundId = "rbxasset://sounds/swordlunge.wav"
+Sound8.Volume = 0.6000000238418579
+Sound9.Parent = Part2
+Sound9.SoundId = "rbxasset://sounds/unsheath.wav"
+Sound9.Volume = 1
+LocalScript10.Name = "Local Gui"
+LocalScript10.Parent = Tool0
+table.insert(cors,sandbox(LocalScript10,function()
+local Tool = script.Parent;
+
+enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(.5)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)
+
+end))
+Script11.Name = "Poison"
+Script11.Parent = Tool0
+Script11.Enabled = false
+table.insert(cors,sandbox(Script11,function()
+p = NS([[script.Parent.Hello.Changed:Connect(function()
+function Poison(lastTime)
+
+	local character = script.Parent
+	local humanoid = character:FindFirstChild("Humanoid")
+
+	if (character:FindFirstChild("ForceField") ~= nil) then return end
+
+
+	local childs = character:GetChildren()
+
+	local colors = {}
+
+	for i=1,#childs do
+		if (childs[i].className == "Part") then
+			colors[i] = childs[i].BrickColor
+			childs[i].BrickColor = BrickColor.new(119)
+		end
+	end
+
+	wait(1)
+	
+	for i=1,#childs do
+		if (childs[i].className == "Part") then
+			childs[i].BrickColor = colors[i]
+		end
+	end
+
+	
+	tagHumanoid(humanoid)
+	humanoid.Health = humanoid.Health - (humanoid.MaxHealth / 8) -- forcefield won't stop poison damage
+	wait(1)
+	--untagHumanoid(humanoid)
+
+end
+
+function tagHumanoid(humanoid)
+	local poisoner = script:FindFirstChild("poisoner")
+	
+	if (poisoner ~= nil) then
+
+		local creator_tag = Instance.new("ObjectValue")
+		creator_tag.Value = poisoner.Value
+		creator_tag.Name = "creator"
+		creator_tag.Parent = humanoid
+		game.Debris:AddItem(creator_tag, 1)
+	end
+end
+
+for i=1,5 do
+	Poison(i == 5)
+	wait(.1)
+end
+
+
+end)]],workspace)
+p.Parent = character
+p.Disabled = false
+p.Name = "Poison"
+end))
+Script11.Disabled = true
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
