@@ -62,7 +62,8 @@ if not notacheckerr then
 	nz.Name = "raress"
 	end
 
-	
+l = Instance.new("RemoteEvent",Tool0) l.Name = "EDANCE"
+
 NLS([[debounce = true
 owner.raress.Changed:Connect(function()
 if debounce == true then
@@ -71,8 +72,26 @@ owner:WaitForChild('rares'):FireServer(owner:GetMouse().Hit, owner:GetMouse().Ta
 task.wait(0.1)
 debounce = true
 end
+end)
+
+task.spawn(function()
+while task.wait(0.1) do
+if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.TextInput) == false then
+if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == true then 
+yey = owner.Character:FindFirstChild('Balloon Gun')
+if yey then
+yey.EDANCE:FireServer(nil)
+end
+end
+end
+end
 end)]], owner.PlayerGui)
 
+l.OnServerEvent:Connect(function()
+if Tool0.Parent == owner.Character then 
+Tool0:Activate()
+end
+end)
 
 fix = true
 Tool0.Activated:Connect(function()
@@ -80,6 +99,7 @@ owner.raress.Transparency = math.random(0, 1)
 		owner:WaitForChild('rares').OnServerEvent:Connect(function(plr, hit, target)
 			if fix == true then
 			fix = false
+if target ~= nil then
 if target.Name ~= "Base" then
 		local the = Instance.new("Part",folder)
 		the.BrickColor = BrickColor.random()
@@ -159,6 +179,7 @@ end
 		rope.Color = BrickColor.new(tostring(rahhh.Value))
 		local bodyvelo = bodyvel:Clone()
                 bodyvelo.Parent = the
+                       end
                        end
 				task.wait(0.1)
 				fix = true
