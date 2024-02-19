@@ -90,6 +90,7 @@ if target.Name ~= "Base" then
                 the.Name = "Balloon"
 		local attach = Instance.new("Attachment",the)
 		local attach2 = Instance.new("Attachment",target)
+                attach2.Name = owner.Name..999
 		if target.Anchored == false then
 if target.Size.Y < Vector3.new(7, 7, 7).Y or target.Size.X < Vector3.new(7, 7, 7).X or target.Size.Z < Vector3.new(7, 7, 7).Z then
         target.Anchored = true
@@ -134,6 +135,7 @@ part.Name = "skibidituskor"
 part.Anchored = true
 part.Size = Vector3.new(0,0,0)
 		local attach2 = Instance.new("Attachment",part)
+                attach2.Name = owner.Name..999
 		if target.Anchored == false then
 if target.Size.Y < Vector3.new(7, 7, 7).Y or target.Size.X < Vector3.new(7, 7, 7).X or target.Size.Z < Vector3.new(7, 7, 7).Z then
         target.Anchored = true
@@ -167,6 +169,9 @@ owner.Chatted:Connect(function(hi)
 if hi == "/clrballoons" then
 for _,v in next, workspace:GetDescendants() do
 if v.ClassName ~= "Script" then
+if v.Name == owner.Name..999 then
+v:Destroy()
+end
 if v.Name == owner.Name..5 then
 for _,i in v:GetDescendants() do
 i:Destroy()
