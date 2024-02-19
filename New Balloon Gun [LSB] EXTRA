@@ -89,8 +89,8 @@ end
 end) ]], owner.PlayerGui)
 
 l.OnServerEvent:Connect(function()
-if owner.Character:FindFirstChild('Balloon Gun') then
-owner.Character["Balloon Gun"]:Activate()
+if Tool0.Parent == owner.Character then
+Tool0:Activate()
 end
 end)
 
