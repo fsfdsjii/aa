@@ -1977,6 +1977,7 @@ Tool0.RequiresHandle = false
 Script1.Name = "TeleportScript"
 Script1.Parent = Tool0
 table.insert(cors,sandbox(Script1,function()
+owner = game:GetService('Players'):GetPlayerFromCharacter(Tool0.Parent)
 	Instance.new("RemoteEvent",script.Parent).Name = "BroThisCodeSucks"
 
 	Instance.new("Part",script.Parent).Name = "Broz"
