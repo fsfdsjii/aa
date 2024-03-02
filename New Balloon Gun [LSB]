@@ -117,17 +117,11 @@ p.Position = hit.Position
 p.Anchored = true
 p.Transparency = 1
 p.CanCollide = false
-if target.Anchored == true then
 spark = Instance.new("Sparkles",p)
 spark.TimeScale = 5
 spark.SparkleColor = balcyl.Color
 spark.Name = "BalloonSparkles"
-else
-spark = Instance.new("Sparkles",target)
-spark.TimeScale = 5
-spark.SparkleColor = balcyl.Color
-spark.Name = "BalloonSparkles"
-end
+
 local goal = {}
 goal.Size = balcyl.Size * Vector3.new(0, 1, 0)
 
