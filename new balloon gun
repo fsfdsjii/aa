@@ -125,12 +125,21 @@ p.Position = hit.Position
 p.Anchored = true
 p.Transparency = 1
 p.CanCollide = false
+
+if target.Anchored == true then
 spark = Instance.new("Sparkles",p)
 spark.TimeScale = 5
 spark.SparkleColor = balcyl.Color
-local goal = {}
-goal.Size = balcyl.Size * Vector3.new(0, 1, 0)
+spark.Name = "BalloonSparkles"
+else
+spark = Instance.new("Sparkles",target)
+spark.TimeScale = 5
+spark.SparkleColor = balcyl.Color
+spark.Name = "BalloonSparkles"
+end
 
+goal = {}
+goal.Size = balcyl.Size * Vector3.new(0, 1, 0)
 local tweenInfo = TweenInfo.new(1)
 
 local tween = game:GetService('TweenService'):Create(balcyl, tweenInfo, goal)
@@ -139,6 +148,9 @@ tween:Play()
 tween.Completed:Connect(function()
 balcyl:Destroy()
 task.wait(1)
+if target:FindFirstChild('BalloonSparkles') then
+target.BalloonSparkles:Destroy()
+end
 p:Destroy()
 end)
 		if target.Anchored == false then
