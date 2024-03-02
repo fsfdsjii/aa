@@ -101,6 +101,38 @@ owner.raress.Transparency = math.random(0, 1)
 			fix = false
 if target ~= nil then
 if target.Name ~= "Base" then
+local balcyl = Instance.new("Part",folder)
+balcyl.Shape = Enum.PartType.Cylinder
+local magnitude = (Part1.Position - hit.Position).Magnitude
+balcyl.Position = ((Part1.Position + hit.Position)/2)
+balcyl.CFrame = CFrame.lookAt(balcyl.Position, hit.Position)
+balcyl.Orientation = balcyl.Orientation + Vector3.new(90, 0, 90)
+balcyl.Size = Vector3.new(magnitude, 1, 1)
+balcyl.BrickColor = BrickColor.new('Cyan')
+balcyl.Transparency = 0.7
+balcyl.Material = Enum.Material.Neon
+balcyl.Anchored = true
+p = Instance.new("Part",workspace)
+p.Position = hit.Position
+p.Anchored = true
+p.Transparency = 1
+p.CanCollide = false
+spark = Instance.new("Sparkles",p)
+spark.TimeScale = 5
+spark.SparkleColor = balcyl.Color
+local goal = {}
+goal.Size = balcyl.Size * Vector3.new(0, 1, 0)
+
+local tweenInfo = TweenInfo.new(1)
+
+local tween = game:GetService('TweenService'):Create(balcyl, tweenInfo, goal)
+
+tween:Play()
+tween.Completed:Connect(function()
+balcyl:Destroy()
+task.wait(1)
+p:Destroy()
+end)
 		local the = Instance.new("Part",folder)
 		the.BrickColor = BrickColor.random()
 		the.Size = Vector3.new(3, 3, 3)
@@ -138,6 +170,38 @@ end
 		local bodyvelo = bodyvel:Clone()
                 bodyvelo.Parent = the
 else
+local balcyl = Instance.new("Part",folder)
+balcyl.Shape = Enum.PartType.Cylinder
+local magnitude = (Part1.Position - hit.Position).Magnitude
+balcyl.Position = ((Part1.Position + hit.Position)/2)
+balcyl.CFrame = CFrame.lookAt(balcyl.Position, hit.Position)
+balcyl.Orientation = balcyl.Orientation + Vector3.new(90, 0, 90)
+balcyl.Size = Vector3.new(magnitude, 1, 1)
+balcyl.BrickColor = BrickColor.new('Cyan')
+balcyl.Transparency = 0.7
+balcyl.Material = Enum.Material.Neon
+balcyl.Anchored = true
+p = Instance.new("Part",workspace)
+p.Position = hit.Position
+p.Anchored = true
+p.Transparency = 1
+p.CanCollide = false
+spark = Instance.new("Sparkles",p)
+spark.TimeScale = 5
+spark.SparkleColor = balcyl.Color
+local goal = {}
+goal.Size = balcyl.Size * Vector3.new(0, 1, 0)
+
+local tweenInfo = TweenInfo.new(1)
+
+local tween = game:GetService('TweenService'):Create(balcyl, tweenInfo, goal)
+
+tween:Play()
+tween.Completed:Connect(function()
+balcyl:Destroy()
+task.wait(1)
+p:Destroy()
+end)
 		local the = Instance.new("Part",folder)
 		the.BrickColor = BrickColor.random()
 		the.Size = Vector3.new(3, 3, 3)
