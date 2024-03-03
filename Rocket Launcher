@@ -78,7 +78,7 @@ table.insert(cors,sandbox(Script6,function()
 				fix = false
 				local goal = {}
 				goal.Position = pos
-				local tweenInfo = TweenInfo.new(1.5)
+				local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Linear)
 				local Part1x = Instance.new("Part")
 				Part1x.CFrame = Part1.CFrame
 				Part1x.Color = Color3.new(0.321569, 0.486275, 0.682353)
@@ -93,17 +93,31 @@ table.insert(cors,sandbox(Script6,function()
 				local lil = true
 				NLS([[owner:GetMouse().Icon = "rbxasset://textures/chatBubble_bot_notifyGray_dotDotDot.png"]],owner.PlayerGui)
 				task.wait(0.25)
+function hi()
+if Part1x ~= nil then
+						local explode = Instance.new("Explosion",workspace)
+						explode.Position = Part1x.Position
+						explode.BlastRadius = 5
+task.spawn(function()
+						task.wait(0.05)
+						Part1x:Destroy()
+end)
+end
+end
+delay(15, hi)
 				Part1x.Touched:Connect(function(part)
 					if lil == true then
 						lil = false
 						local explode = Instance.new("Explosion",workspace)
 						explode.Position = Part1x.Position
 						explode.BlastRadius = 5
+task.spawn(function()
 						task.wait(0.05)
 						Part1x:Destroy()
+end)
 					end		
 				end)
-				task.wait(0.1)
+				task.wait(0.05)
 				fix = true
 				NLS([[owner:GetMouse().Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowCursor.png"]],owner.PlayerGui)
                          task.wait(3)
