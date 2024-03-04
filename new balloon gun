@@ -125,6 +125,7 @@ p.Position = hit.Position
 p.Anchored = true
 p.Transparency = 1
 p.CanCollide = false
+p.Name = owner.Name..10
 
 
 spark = Instance.new("Sparkles",p)
@@ -188,10 +189,13 @@ owner.Chatted:Connect(function(hi)
 if hi == "/clrballoons" then
 for _,v in next, workspace:GetDescendants() do
 if v.ClassName ~= "Script" then
-if v.Name == owner.Name..5 then
 if v.Name == owner.Name..999 then
 v:Destroy()
 end
+if v.Name == owner.Name..10 then
+v:Destroy()
+end
+if v.Name == owner.Name..5 then
 for _,i in v:GetDescendants() do
 i:Destroy()
 end
