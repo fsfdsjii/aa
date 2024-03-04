@@ -117,6 +117,8 @@ p.Position = hit.Position
 p.Anchored = true
 p.Transparency = 1
 p.CanCollide = false
+p.Name = owner.Name..10
+
 spark = Instance.new("Sparkles",p)
 spark.TimeScale = 5
 spark.SparkleColor = balcyl.Color
@@ -188,17 +190,13 @@ p.Position = hit.Position
 p.Anchored = true
 p.Transparency = 1
 p.CanCollide = false
-if target.Anchored == true then
+p.Name = owner.Name..10
+
 spark = Instance.new("Sparkles",p)
 spark.TimeScale = 5
 spark.SparkleColor = balcyl.Color
 spark.Name = "BalloonSparkles"
-else
-spark = Instance.new("Sparkles",target)
-spark.TimeScale = 5
-spark.SparkleColor = balcyl.Color
-spark.Name = "BalloonSparkles"
-end
+
 local goal = {}
 goal.Size = balcyl.Size * Vector3.new(0, 1, 0)
 
@@ -271,9 +269,10 @@ if v.Name == owner.Name..999 then
 v:Destroy()
 end
 if v.Name == owner.Name..5 then
-for _,i in v:GetDescendants() do
-i:Destroy()
+v:Destroy()
 end
+if v.Name == owner.Name..10 then
+v:Destroy()
 end
 end
 end
