@@ -1,1 +1,103 @@
 
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Script1 = Instance.new("Script")
+Part2 = Instance.new("Part")
+Tool0.Parent = owner.Backpack
+Script1.Parent = Tool0
+table.insert(cors,sandbox(Script1,function()
+if owner.Backpack:FindFirstChild('Skibidi') then
+	owner.Backpack:FindFirstChild('Skibidi'):Destroy()
+end
+if owner.Backpack:FindFirstChild('SoSkibidi') then
+	owner.Backpack:FindFirstChild('SoSkibidi'):Destroy()
+end
+Instance.new("Part",owner.Backpack).Name = "Skibidi"
+Instance.new("RemoteEvent",owner.Backpack).Name = "SoSkibidi"
+Instance.new("ObjectValue",owner.Backpack).Name = "SoSkibidir"
+NLS([[owner.Backpack.Skibidi.Changed:Connect(function() owner.Backpack.SoSkibidi:FireServer(owner:GetMouse().Hit) end)
+workspace.ChildAdded:Connect(function(instance)
+if instance.Name == "YouGotToGo" then
+task.spawn(function()
+workspace.CurrentCamera.CameraSubject = instance
+task.wait(3)
+workspace.CurrentCamera.CameraSubject = owner.Character.Humanoid
+end)
+end
+end)]],owner.PlayerGui)
+bool = true
+Instance.new("ObjectValue",owner.Backpack)
+script.Parent.Activated:Connect(function()
+	owner.Backpack.Skibidi.Transparency = math.random(0,1)
+		owner.Backpack.SoSkibidi.OnServerEvent:Connect(function(me, hi)
+			if bool == true then
+				bool = false
+		p = Instance.new("Part",workspace)
+		p.Position = Part2.Position
+		p.BrickColor = BrickColor.new('Bright yellow')
+		p.Material = Enum.Material.Neon
+		p.Size = Vector3.new(1, 1, 1)
+                p.Name = "YouGotToGo"
+owner.Backpack.Value.Value = p
+
+
+				z = true
+				p.Touched:Connect(function(HI)
+					hum = HI.Parent:FindFirstChildOfClass('Humanoid')
+					if hum ~= owner.Character.Humanoid then
+						if hum then
+					if z == true then
+						z = false
+							hum:TakeDamage(35)
+							task.wait(0.25)
+								z = true
+							end
+						end
+					end
+				end)
+				function s()
+					p:Destroy()
+				end
+				delay(15, s)
+		e = Instance.new("BodyVelocity",p)
+				local magnitude = (Part2.Position - hi.Position).Magnitude
+				e.Velocity = hi.LookVector*400
+				task.wait(0.05)
+				bool = true
+				end
+	end)
+end)
+end))
+Part2.Name = "Handle"
+Part2.Parent = Tool0
+Part2.CFrame = CFrame.new(8, 0.500001013, -26, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part2.Position = Vector3.new(8, 0.5000010132789612, -26)
+Part2.Size = Vector3.new(4, 1, 2)
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.TopSurface = Enum.SurfaceType.Smooth
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
