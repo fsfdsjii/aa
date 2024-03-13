@@ -1,0 +1,913 @@
+function goofy(parent)
+	function onTouched(hit)
+		humanoid = hit.Parent:findFirstChild("Humanoid")
+		if humanoid~=nil then
+			humanoid.Health = 0
+		end
+	end
+
+
+
+
+	wait(1)
+	if(parent.ClassName == 'Script') then return end
+	connection = parent.Touched:connect(onTouched)
+	wait(10)
+	parent:remove()
+end
+pcall(function()
+-- Converted using Mokiros's Model to Script Version 3
+-- Converted string size: 408 characters
+local function Decode(str)
+	local StringLength = #str
+
+	-- Base64 decoding
+	do
+		local decoder = {}
+		for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+			decoder[char:byte()] = b64code-1
+		end
+		local n = StringLength
+		local t,k = table.create(math.floor(n/4)+1),1
+		local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+		for i = 1, padding > 0 and n-4 or n, 4 do
+			local a, b, c, d = str:byte(i,i+3)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+			k = k + 1
+		end
+		if padding == 1 then
+			local a, b, c = str:byte(n-3,n-1)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+		elseif padding == 2 then
+			local a, b = str:byte(n-3,n-2)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000
+			t[k] = string.char(bit32.extract(v,16,8))
+		end
+		str = table.concat(t)
+	end
+
+	local Position = 1
+	local function Parse(fmt)
+		local Values = {string.unpack(fmt,str,Position)}
+		Position = table.remove(Values)
+		return table.unpack(Values)
+	end
+
+	local Settings = Parse('B')
+	local Flags = Parse('B')
+	Flags = {
+		--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+		--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+		--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+		--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+		--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+	}
+
+	local ValueFMT = ('I'..Flags[1])
+	local InstanceFMT = ('I'..Flags[2])
+	local ConnectionFMT = ('I'..Flags[3])
+	local PropertyLengthFMT = ('I'..Flags[4])
+
+	local ValuesLength = Parse(ValueFMT)
+	local Values = table.create(ValuesLength)
+	local CFrameIndexes = {}
+
+	local ValueDecoders = {
+		--!!Start
+		[1] = function(Modifier)
+			return Parse('s'..Modifier)
+		end,
+		--!!Split
+		[2] = function(Modifier)
+			return Modifier ~= 0
+		end,
+		--!!Split
+		[3] = function()
+			return Parse('d')
+		end,
+		--!!Split
+		[4] = function(_,Index)
+			table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+		end,
+		--!!Split
+		[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+		--!!Split
+		[6] = {Color3.fromRGB,'BBB'},
+		--!!Split
+		[7] = {BrickColor.new,'I2'},
+		--!!Split
+		[8] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+			end
+			return ColorSequence.new(kpts)
+		end,
+		--!!Split
+		[9] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+			end
+			return NumberSequence.new(kpts)
+		end,
+		--!!Split
+		[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+		--!!Split
+		[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+		--!!Split
+		[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+		--!!Split
+		[14] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Axes.new(unpack(t))
+		end,
+		--!!Split
+		[15] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Faces.new(unpack(t))
+		end,
+		--!!Split
+		[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+		--!!Split
+		[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+		--!!Split
+		[19] = function()
+			return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+		end
+		--!!End
+	}
+
+	for i = 1,ValuesLength do
+		local TypeAndModifier = Parse('B')
+		local Type = bit32.band(TypeAndModifier,0b11111)
+		local Modifier = (TypeAndModifier - Type) / 0b100000
+		local Decoder = ValueDecoders[Type]
+		if type(Decoder)=='function' then
+			Values[i] = Decoder(Modifier,i)
+		else
+			Values[i] = Decoder[1](Parse(Decoder[2]))
+		end
+	end
+
+	for i,t in pairs(CFrameIndexes) do
+		Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+	end
+
+	local InstancesLength = Parse(InstanceFMT)
+	local Instances = {}
+	local NoParent = {}
+
+	for i = 1,InstancesLength do
+		local ClassName = Values[Parse(ValueFMT)]
+		local obj
+		local MeshPartMesh,MeshPartScale
+		if ClassName == "UnionOperation" then
+			obj = DecodeUnion(Values,Flags,Parse)
+			obj.UsePartColor = true
+		elseif ClassName:find("Script") then
+			obj = Instance.new("Folder")
+			Script(obj,ClassName=='ModuleScript')
+		elseif ClassName == "MeshPart" then
+			obj = Instance.new("Part")
+			MeshPartMesh = Instance.new("SpecialMesh")
+			MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+			MeshPartMesh.Parent = obj
+		else
+			obj = Instance.new(ClassName)
+		end
+		local Parent = Instances[Parse(InstanceFMT)]
+		local PropertiesLength = Parse(PropertyLengthFMT)
+		local AttributesLength = Parse(PropertyLengthFMT)
+		Instances[i] = obj
+		for i = 1,PropertiesLength do
+			local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+
+			-- ok this looks awful
+			if MeshPartMesh then
+				if Prop == "MeshId" then
+					MeshPartMesh.MeshId = Value
+					continue
+				elseif Prop == "TextureID" then
+					MeshPartMesh.TextureId = Value
+					continue
+				elseif Prop == "Size" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+					else
+						MeshPartMesh.Scale = Value / MeshPartScale
+					end
+				elseif Prop == "MeshSize" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+						MeshPartMesh.Scale = obj.Size / Value
+					else
+						MeshPartMesh.Scale = MeshPartScale / Value
+					end
+					continue
+				end
+			end
+
+			obj[Prop] = Value
+		end
+		if MeshPartMesh then
+			if MeshPartMesh.MeshId=='' then
+				if MeshPartMesh.TextureId=='' then
+					MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+				end
+				MeshPartMesh.Scale = obj.Size
+			end
+		end
+		for i = 1,AttributesLength do
+			obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+		end
+		if not Parent then
+			table.insert(NoParent,obj)
+		else
+			obj.Parent = Parent
+		end
+	end
+
+	local ConnectionsLength = Parse(ConnectionFMT)
+	for i = 1,ConnectionsLength do
+		local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+		Instances[a][Values[b]] = Instances[c]
+	end
+
+	return NoParent
+end
+
+
+local Objects = Decode('AAAWIQRQYXJ0IQROYW1lIQZUZWFwb3QhCEFuY2hvcmVkIiEGQ0ZyYW1lBAsVFiEYQ3VzdG9tUGh5c2ljYWxQcm9wZXJ0aWVzEDMzMz+amZk+ZmZmPwAAgD8AAIA/IQhQb3NpdGlvbgoAAFBBzcygQgAAAMAhBFNpemUKAABgQQAAwEAAAABBIQtTcGVjaWFsTWVzaCEF'
+	..'U2NhbGUKAAAAAAAAAAAAAAAAIQZNZXNoSWQhNXJieGFzc2V0Oi8vLi4vLi4vLi4vc2hhcmVkZGF0YS9mb250cy90ZWFwb3Rkb2RnZS5tZXNoIQhNZXNoVHlwZQMAAAAAAAAUQAoAAIA/AAAAAAAAAAAKAAAAAAAAgD8AAAAAAgEABgACAwQFBgcICQoLDA0OAQMADxAR'
+	..'EhMUAA==')
+for _,obj in pairs(Objects) do
+	obj.Parent = game:GetService('Lighting')
+		obj.Mesh.MeshId = "rbxassetid://430920848"
+	obj.Mesh.Scale = Vector3.new(.3, .3, .3)
+end
+
+-- Converted using Mokiros's Model to Script Version 3
+-- Converted string size: 6696 characters
+
+local ScriptFunctions = {
+function(script,require)
+local diff = Instance.new("IntValue")
+diff.Name = "diff"
+diff.Value = 8
+if(game.Workspace:findFirstChild("diff") == nil) then diff.Parent = game.Workspace end
+while true do
+	wait(60 * 3)
+	if(diff.Value > 4) then
+		local message = Instance.new("Message")
+		game.Workspace.diff.Value = game.Workspace.diff.Value - 3
+		message.Text = "Making the teapots less evil...Difficulty is now: " .. game.Workspace.diff.Value
+		message.Parent = game.Workspace
+		wait(3)
+		message:remove()
+	end
+end
+end,
+function(script,require)
+wait(2)
+function spawnteapot(x, y, z)
+	local pot = game.Lighting.Teapot:clone()
+	pot.Anchored = false
+	pot.Position = Vector3.new(x, y, z)
+	pot.Velocity = Vector3.new(math.random(75,100), math.random(-100,50), math.random(-1,1))
+	pot.Mesh.Scale = Vector3.new(.3, .3, .3)
+	pot.Color = Color3.new(math.random(), math.random(), math.random())
+	pot.Parent = game.Workspace
+	pot.Mesh.MeshId = "rbxassetid://430920848"
+	goofy(pot)
+end
+
+local timeout = false
+function onTouched(hit)
+	if(timeout == true) then return end
+	humanoid = hit.Parent:findFirstChild("Humanoid")
+	if humanoid~=nil then
+		timeout = true
+		print("Harder")
+		local message = Instance.new("Message")
+		game.Workspace.diff.Value = game.Workspace.diff.Value + 3
+		message.Text = humanoid.Parent.Name .. " has reached the end. The teapots gain strength! They are now level: " .. game.Workspace.diff.Value
+		humanoid.Parent.Torso.CFrame = CFrame.new(17.5, 43, 9)
+		message.Parent = game.Workspace
+		wait(3)
+		message:remove()
+		timeout = false
+	end
+end
+
+local connection = game.Workspace.finish.Touched:connect(onTouched)
+
+while true do
+	local rand = math.random(10,15)
+	for i=1,rand do
+		local x = -136 + math.random(-4,4)
+		local y = 20 + math.random(-4,4)
+		local z = 6 + math.random(-6,6)
+		spawnteapot(x, y, z)
+		print("Spawned teapot at: ", x, y, z)
+		wait( i / 10 / (game.Workspace.diff.Value / 10))
+	end
+	wait(1)
+end
+end,
+function(script,require)
+end,
+function(script,require)
+wait(2)
+function spawnteapot(x, y, z)
+	local pot = game.Lighting.Teapot:clone()
+	pot.Anchored = false
+	pot.Position = Vector3.new(x, y, z)
+	pot.Velocity = Vector3.new(math.random(75,100), math.random(-100,50), math.random(-10,10))
+	pot.Mesh.Scale = Vector3.new(.3, .3, .3)
+	pot.Color = Color3.new(math.random(), math.random(), math.random())
+	pot.Parent = game.Workspace
+	pot.Mesh.MeshId = "rbxassetid://430920848"
+				goofy(pot)
+end
+
+			while true do
+					local rand = math.random(10,50)
+	for i=1,rand do
+		local x = -18 + math.random(-4,4)
+		local y = 20 + math.random(-4,4)
+		local z = 6 + math.random(-40,40)
+		spawnteapot(x, y, z)
+		print("Spawned teapot at: ", x, y, z)
+		wait( i / 7 / game.Workspace.diff.Value * 10)
+	end
+	wait(1)
+				end
+
+
+
+end,
+function(script,require)
+
+end,
+function(script,require)
+function onPlayerEntered(newPlayer) 
+	while true do 
+		if newPlayer.Character ~= nil then break end 
+		wait(.5) 
+	end
+	script.Website:clone().Parent = newPlayer.Character 
+end 
+game.Players.ChildAdded:connect(onPlayerEntered)
+end,
+function(script,require)
+
+
+end,
+function(script,require)
+function onTouched(hit)
+	humanoid = hit.Parent:findFirstChild("Humanoid")
+	if humanoid~=nil then
+		humanoid.Health = 0
+	end
+end
+
+local children = script.Parent:children()
+local connection = {}
+for i=1, #children do
+	if(children[i].className == "Part") then connection[i] = children[i].Touched:connect(onTouched) end
+end
+
+end,
+function(script,require)
+
+end
+}
+local ScriptIndex = 0
+local Scripts,ModuleScripts,ModuleCache = {},{},{}
+local _require = require
+function require(obj,...)
+	local index = ModuleScripts[obj]
+	if not index then
+		local a,b = pcall(_require,obj,...)
+		return not a and error(b,2) or b
+	end
+	
+	local res = ModuleCache[index]
+	if res then return res end
+	res = ScriptFunctions[index](obj,require)
+	if res==nil then error("Module code did not return exactly one value",2) end
+	ModuleCache[index] = res
+	return res
+end
+local function Script(obj,ismodule)
+	ScriptIndex = ScriptIndex + 1
+	local t = ismodule and ModuleScripts or Scripts
+	t[obj] = ScriptIndex
+end
+
+function RunScripts()
+	for script,index in pairs(Scripts) do
+		coroutine.wrap(ScriptFunctions[index])(script,require)
+	end
+end
+
+
+local function Decode(str)
+	local StringLength = #str
+	
+	-- Base64 decoding
+	do
+		local decoder = {}
+		for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+			decoder[char:byte()] = b64code-1
+		end
+		local n = StringLength
+		local t,k = table.create(math.floor(n/4)+1),1
+		local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+		for i = 1, padding > 0 and n-4 or n, 4 do
+			local a, b, c, d = str:byte(i,i+3)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+			k = k + 1
+		end
+		if padding == 1 then
+			local a, b, c = str:byte(n-3,n-1)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+		elseif padding == 2 then
+			local a, b = str:byte(n-3,n-2)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000
+			t[k] = string.char(bit32.extract(v,16,8))
+		end
+		str = table.concat(t)
+	end
+	
+	local Position = 1
+	local function Parse(fmt)
+		local Values = {string.unpack(fmt,str,Position)}
+		Position = table.remove(Values)
+		return table.unpack(Values)
+	end
+	
+	local Settings = Parse('B')
+	local Flags = Parse('B')
+	Flags = {
+		--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+		--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+		--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+		--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+		--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+	}
+	
+	local ValueFMT = ('I'..Flags[1])
+	local InstanceFMT = ('I'..Flags[2])
+	local ConnectionFMT = ('I'..Flags[3])
+	local PropertyLengthFMT = ('I'..Flags[4])
+	
+	local ValuesLength = Parse(ValueFMT)
+	local Values = table.create(ValuesLength)
+	local CFrameIndexes = {}
+	
+	local ValueDecoders = {
+		--!!Start
+		[1] = function(Modifier)
+			return Parse('s'..Modifier)
+		end,
+		--!!Split
+		[2] = function(Modifier)
+			return Modifier ~= 0
+		end,
+		--!!Split
+		[3] = function()
+			return Parse('d')
+		end,
+		--!!Split
+		[4] = function(_,Index)
+			table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+		end,
+		--!!Split
+		[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+		--!!Split
+		[6] = {Color3.fromRGB,'BBB'},
+		--!!Split
+		[7] = {BrickColor.new,'I2'},
+		--!!Split
+		[8] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+			end
+			return ColorSequence.new(kpts)
+		end,
+		--!!Split
+		[9] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+			end
+			return NumberSequence.new(kpts)
+		end,
+		--!!Split
+		[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+		--!!Split
+		[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+		--!!Split
+		[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+		--!!Split
+		[14] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Axes.new(unpack(t))
+		end,
+		--!!Split
+		[15] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Faces.new(unpack(t))
+		end,
+		--!!Split
+		[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+		--!!Split
+		[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+		--!!Split
+		[19] = function()
+			return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+		end
+		--!!End
+	}
+	
+	for i = 1,ValuesLength do
+		local TypeAndModifier = Parse('B')
+		local Type = bit32.band(TypeAndModifier,0b11111)
+		local Modifier = (TypeAndModifier - Type) / 0b100000
+		local Decoder = ValueDecoders[Type]
+		if type(Decoder)=='function' then
+			Values[i] = Decoder(Modifier,i)
+		else
+			Values[i] = Decoder[1](Parse(Decoder[2]))
+		end
+	end
+	
+	for i,t in pairs(CFrameIndexes) do
+		Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+	end
+	
+	local InstancesLength = Parse(InstanceFMT)
+	local Instances = {}
+	local NoParent = {}
+	
+	for i = 1,InstancesLength do
+		local ClassName = Values[Parse(ValueFMT)]
+		local obj
+		local MeshPartMesh,MeshPartScale
+		if ClassName == "UnionOperation" then
+			obj = DecodeUnion(Values,Flags,Parse)
+			obj.UsePartColor = true
+		elseif ClassName:find("Script") then
+			obj = Instance.new("Folder")
+			Script(obj,ClassName=='ModuleScript')
+		elseif ClassName == "MeshPart" then
+			obj = Instance.new("Part")
+			MeshPartMesh = Instance.new("SpecialMesh")
+			MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+			MeshPartMesh.Parent = obj
+		else
+			obj = Instance.new(ClassName)
+		end
+		local Parent = Instances[Parse(InstanceFMT)]
+		local PropertiesLength = Parse(PropertyLengthFMT)
+		local AttributesLength = Parse(PropertyLengthFMT)
+		Instances[i] = obj
+		for i = 1,PropertiesLength do
+			local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+			
+			-- ok this looks awful
+			if MeshPartMesh then
+				if Prop == "MeshId" then
+					MeshPartMesh.MeshId = Value
+					continue
+				elseif Prop == "TextureID" then
+					MeshPartMesh.TextureId = Value
+					continue
+				elseif Prop == "Size" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+					else
+						MeshPartMesh.Scale = Value / MeshPartScale
+					end
+				elseif Prop == "MeshSize" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+						MeshPartMesh.Scale = obj.Size / Value
+					else
+						MeshPartMesh.Scale = MeshPartScale / Value
+					end
+					continue
+				end
+			end
+			
+			obj[Prop] = Value
+		end
+		if MeshPartMesh then
+			if MeshPartMesh.MeshId=='' then
+				if MeshPartMesh.TextureId=='' then
+					MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+				end
+				MeshPartMesh.Scale = obj.Size
+			end
+		end
+		for i = 1,AttributesLength do
+			obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+		end
+		if not Parent then
+			table.insert(NoParent,obj)
+		else
+			obj.Parent = Parent
+		end
+	end
+	
+	local ConnectionsLength = Parse(ConnectionFMT)
+	for i = 1,ConnectionsLength do
+		local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+		Instances[a][Values[b]] = Instances[c]
+	end
+	
+	return NoParent
+end
+
+
+local Objects = Decode('AEAQASEGU2NyaXB0IQROYW1lIQpEaWZmaWN1bHR5IQ1TcGF3bkxvY2F0aW9uIQhBbmNob3JlZCIhC0JhY2tTdXJmYWNlAwAAAAAAAABAIQ1Cb3R0b21TdXJmYWNlIQZDRnJhbWUEEQDhAOIAIQxGcm9udFN1cmZhY2UhC0xlZnRTdXJmYWNlIQtPcmllbnRhdGlvbgoA'
+..'AAAAAAA0QwAAAAAhCFBvc2l0aW9uCgAAE0MzM/NAAAAgwSEMUmlnaHRTdXJmYWNlIQhSb3RhdGlvbgoAADRDAAAAAAAANEMhBFNpemUKAADAQJqZmT8AAMBAIQpUb3BTdXJmYWNlAwAAAAAAAAAAIQRXZWxkIQJDMATjAOQA5QAhAkMxBOYA4QDnACEFUGFydDAhBVBh'
+..'cnQxIQVEZWNhbCEERmFjZQMAAAAAAADwPyEHVGV4dHVyZSElcmJ4YXNzZXQ6Ly9UZXh0dXJlcy9TcGF3bkxvY2F0aW9uLnBuZwQmAOEA4gAKAAATQzMz80AAAIBABOgA4QDnAAQpAOEA4gAKAAATQzMz80AAAPBBBOkA4QDnAAQsAOEA4gAKAAATQzMz80AAACxCBOoA'
+..'4QDnAAQvAOEA4gAKAAATQzMz80AAAMjBBOsA4QDnAAQyAOEA4gAKAAATQzMz80AAABzCBOwA4QDnAAQ1AOEA4gAKAAATQzMz80AAAIhBBO0A4QDnACEHU3Bhd25lciEHUmVtb3ZlciEIU3Bhd25lcjIhDVdlYnNpdGVTY3JpcHQhC0xvY2FsU2NyaXB0IQdXZWJzaXRl'
+..'IQhJbnRWYWx1ZSEEZGlmZiEFVmFsdWUDAAAAAAAAIEAhBU1vZGVsIQlCaWxsYm9hcmQhC1ByaW1hcnlQYXJ0IQpXb3JsZFBpdm90BO4A7wDiACEEUGFydCESU21vb3RoIEJsb2NrIE1vZGVsIQpCcmlja0NvbG9yBwEABE4A7wDiACEFQ29sb3IG8vPzCgAAAAAAALTC'
+..'AAAAAAoAANlCAABQQQAAwL8KAACAPwAAQEEAAIA/IQRTbmFwBPAA5ADlAATxAO8A8gAEVADvAOIACgAA2UJmZiZBAABAQAoAAABBmpmZPwAAgD8E8wD0APUABPYA7wDiAARZAO8A4gAKAADZQs3MnEEAAEBACgAAIEGamZk/AACAPwT3APgA7wAEXQDvAOIACgAA2UIA'
+..'AFBBAADwQAT5AO8A8gAE+gD0APUABPsA7wDiAAT8APIA9AAE/QDyAO8ABGQA7wDiAAoAANlCAABwQQAAQEAKAAAAQQAAAEEAAIA/BP4A5ADlAAT/APgA7wAEAAHyAPQABAEB8gDvACE2cmJ4YXNzZXQ6Ly8uLi8uLi8uLi9zaGFyZWRkYXRhL3RleHR1cmVzL1RlYXBv'
+..'dFNpZ24ucG5nIQZCb3VuY2UEAgH4AOIABHAA+ADiACEYQ3VzdG9tUGh5c2ljYWxQcm9wZXJ0aWVzEDMzMz+amZk+AACAPwAAgD8AAIA/CgAAGELMzMxAAACQQAoAAJJCmpmZPwAA2EEhDFRyYW5zcGFyZW5jeQR0APgA4gAKAADOwszMzEAAAHhBCgAAcEGamZk/AAAQ'
+..'QQR3APgA4gAKAADOwszMzEAAANDABHoA+ADiABAzMzM/mpmZPmZmZj8AAIA/AACAPwoAAA3DmZlZQQAAoEAKAACAP5qZmT8AAEBBBH0A+ADiAAoAAPBBzMzMQAAA8EEKAAC6QpqZmT8AAKBBBIAA+ADiAAoAAPBBzMzMQAAA3MEKAAC6QpqZmT8AAARCBAMB8gD0AAQE'
+..'AfIA7wAhDyAgICAgICAgICAgICAgIAQFAfIA7wAEhwD4AOIACgAACMM0M/NAAACgQASJAPgA4gAKAAAMQszMDEEAACzCCgAAAEBnZmZAAAAAQAQGAeQA5QAEBwH4AO8ABI4A+ADiAAoAAMzCzMzMQAAAkEAKAACIQZqZmT8AABBBBJEA+ADiAAoAAArDAAAgQQAAoEAE'
+..'kwD4AOIACgAAB8PMzMxAAACgQASVAPgA4gAKAACwwDMzM0EAACjBCgAAIEFnZgZBAACAPwSYAPgA4gAKAADYQjMzo0EAAAhCCgAAgEBpZtZBAADgQQSbAPgA4gAK3N7XQreA10FYj45ACtDMfED1UVxBU7j4QQSeAPgA4gAKAAB0wjMzA0EAAJBACgAAUEGamRlAAAD4'
+..'QQShAPgA4gAKAAD1wszMzEAAAJBACgAAwEGamZk/AAD4QQSkAPgA4gAKAABAQszMDEEAAKjBBAgB+ADvAAclAASqAPgA4gAGS5dLIQZMb2NrZWQKAAATQ83MzEAAAABACgAAYEGamZk/AAC4QgStAPgA4gAKAAAJw83MDEEAAKBABK8A+ADiAAoAAA/DmZl5QQAAoEAE'
+..'sQD4AOIACgAADMNmZkZBAACgQASzAPgA4gAKAADYQjQzo0EAANzBCgAAgEDYo9ZBAAAEQgS2APgA4gAKAAALwzMzM0EAAKBABLgA+ADiAAoAAAxCmZlZQQAA3EEKAAAAQDMzU0EAABBBBAkB5ADlAAQKAfgA7wAEvQD4AOIACgAAPMLMzMxAAACQQAoAALpCmpmZPwAA'
+..'+EEECwHyAO8ABAwB8gDvAATCAPgA4gAKAAAOw2VmZkEAAKBABMQA+ADiAAoAALDAMzMzQQAAnEEEDQHkAOUABA4B+ADvAATIAPgA4gAKAADXQszMzEAAAABACgAAeEKamZk/AAC4QgQPAfIA7wAEzAD4AOIACgAAQEHMzAxBAACgwQoAAABAZ2ZmQAAAIEEEEAH4AO8A'
+..'BNAA+ADiAAoAAORBzMwMQQAAGMIKAADgQGdmZkAAAABABNMA+ADiAAoAAAxCzMwMQQAA+MEKAAAAQGdmZkAAAABBIQZmaW5pc2gHFQAE2QD4AOIABsQoHAoAABXDMzMzQQAAoEAKAAAwQc3MLEEAAEBBIQhwbGF0Zm9ybQcYAATfAPgA4gAG9c0wCgAA9EHNzCxCAACQ'
+..'QAoAAHBBmpmZPwAAUEEKAACAvwAAAIAAAACACgAAAAAAAIA/AAAAAAoAAAAAmpkZvwAAAAAKAACAPwAAAIAAAAAACgAAAAAAAACAAACAPwoAAAAAmJkZPwAAQMEKAAAAgAAAAIAAAIC/CgAAAACYmRk/AAAAQAoAAAAAmJkZPwAA4EEKAAAAAJiZGT8AACRCCgAAAACY'
+..'mRk/AADYwQoAAAAAmJkZPwAAJMIKAAAAAJiZGT8AAHBBCgAA2UKamVlBAABAQAoAAAAAAAAAAAAAgD8KAAAAAAAAwMAAAAAACgAAgD+gmRk/AABgwAoAAIC/AAAAAAAAAAAKAACAwAAAAAAAAAAACgAAAIAAAAAAAACAPwoAAACAAACAPwAAAAAKAAAAP2hmJsAAAAAA'
+..'CgAAkEAAAMBAAAAAAAoAAIA/AAAAAAAAAAAKAACAP6CZGT8AALBACgAAAL8AAAAAAAAAAAoAAIBAaGYmQAAAAAAKAAAAAAAAwEAAAAAACgAAkECgmRm/AAAAAAoAAAAAAACAwAAAAAAKAAAAAKCZGT8AAAAACgAAAAAAAIBAAAAAAAoAAAAAoJkZvwAAAAAKAACQwczM'
+..'zEAAAJBACgAAAACamRk/AAAAAAoAAKDAZGbmvwAAYEAKAADAP2Rm5r8AAChBCgAAAABnZua/AAAAAAoAAKBAkJkZPwAAeMEKAACQQZCZGT8AANBACgAAAAAzM9PAAAAAAAoAAKBAmJkZPwAAIMAKAAAmwmdmhsAAAHBBCgAAYEGcmZm/AAAAAAoAAAAAZ2aGwAAAAAAK'
+..'AAAmQpiZGT8AAHBBCgAAAL9mZlbBAAAAwgoAAJDBkJkZPwAA8EBaAQAAAQACAAMABAAADAAFAAYABwAIAAkACAAKAAsADAAIAA0ACAAOAA8AEAARABIACAATABQAFQAWABcAGAAZAAICABoAGwAcAB0AIAACAgAhACIAIwAkAAQAAAwABQAGAAcACAAJAAgACgAlAAwA'
+..'CAANAAgADgAPABAAJgASAAgAEwAUABUAFgAXABgAGQAFAgAaABsAHAAnACAABQIAIQAiACMAJAAEAAAMAAUABgAHAAgACQAIAAoAKAAMAAgADQAIAA4ADwAQACkAEgAIABMAFAAVABYAFwAYABkACAIAGgAbABwAKgAgAAgCACEAIgAjACQABAAADAAFAAYABwAIAAkA'
+..'CAAKACsADAAIAA0ACAAOAA8AEAAsABIACAATABQAFQAWABcAGAAZAAsCABoAGwAcAC0AIAALAgAhACIAIwAkAAQAAAwABQAGAAcACAAJAAgACgAuAAwACAANAAgADgAPABAALwASAAgAEwAUABUAFgAXABgAGQAOAgAaABsAHAAwACAADgIAIQAiACMAJAAEAAAMAAUA'
+..'BgAHAAgACQAIAAoAMQAMAAgADQAIAA4ADwAQADIAEgAIABMAFAAVABYAFwAYABkAEQIAGgAbABwAMwAgABECACEAIgAjACQABAAADAAFAAYABwAIAAkACAAKADQADAAIAA0ACAAOAA8AEAA1ABIACAATABQAFQAWABcAGAAZABQCABoAGwAcADYAIAAUAgAhACIAIwAk'
+..'AAEAAAEAAgA3AAEAFwEAAgA4AAEAAAEAAgA5AAEAGQEAAgA4AAEAAAEAAgA6ADsAGwEAAgA8AD0AAAIAAgA+AD8AQABBAAACAAIAQgBEAEUARgAeCAACAEcASABJAAoASgBLAEwADgBNABAATgATAE0AFQBPAFAAHwIAGgBRABwAUgBGAB4KAAIARwBIAEkACgBTAEsA'
+..'TAANAAgADgBNABAAVAASAAgAEwBNABUAVQAZACECABoAVgAcAFcARgAeCAACAEcASABJAAoAWABLAEwADgBNABAAWQATAE0AFQBaAFAAIwIAGgAbABwAWwBGAB4IAAIARwBIAEkACgBcAEsATAAOAE0AEABdABMATQAVAE8AUAAlAgAaAFEAHABeABkAJQIAGgBfABwA'
+..'YABQACUCABoAYQAcAGIARgAeCAACAEcASABJAAoAYwBLAEwADgBNABAAZAATAE0AFQBlAFAAKQIAGgBmABwAZwBQACkCABoAaAAcAGkAIAApAQAjAGoAQQAAAgACAGsARABsAAEALQAARgAtBgAFAAYACgBtAG4AbwAQAHAAFQBxAHIAIgBGAC0HAAIAawAFAAYACgBz'
+..'AG4AbwAQAHQAFQB1AHIAIgBGAC0HAAIAawAFAAYACgB2AG4AbwAQAHcAFQB1AHIAIgBGAAAFAAUABgAKAHgAbgB5ABAAegAVAHsARgAABQAFAAYACgB8AG4AeQAQAH0AFQB+AEYAAAUABQAGAAoAfwBuAHkAEACAABUAgQBQADQCABoAggAcAIMAAQA1AQACAIQAUAA0'
+..'AgAaAIIAHACFAEYAAAUABQAGAAoAhgBuAHkAEACHABUAewBGAAADAAoAiAAQAIkAFQCKAFAAOQIAGgCLABwAjABGAAAFAAUABgAKAI0AbgB5ABAAjgAVAI8ARgAABQAFAAYACgCQAG4AeQAQAJEAFQB7AEYAAAUABQAGAAoAkgBuAHkAEACTABUAewBGAAAFAAUABgAK'
+..'AJQAbgB5ABAAlQAVAJYARgAABAAFAAYACgCXABAAmAAVAJkARgAABAAFAAYACgCaABAAmwAVAJwARgAABQAFAAYACgCdAG4AbwAQAJ4AFQCfAEYAAAUABQAGAAoAoABuAHkAEAChABUAogBGAAADAAoAowAQAKQAFQCKAFAAQwIAGgCLABwApQBGAAAHAAUABgBIAKYA'
+..'CgCnAEsAqACpAAYAEACqABUAqwBGAAAFAAUABgAKAKwAbgB5ABAArQAVAHsARgAABQAFAAYACgCuAG4AeQAQAK8AFQB7AEYAAAUABQAGAAoAsABuAHkAEACxABUAewBGAAAEAAUABgAKALIAEACzABUAtABGAAAFAAUABgAKALUAbgB5ABAAtgAVAHsARgAAAwAKALcA'
+..'EAC4ABUAuQBQAEsCABoAugAcALsARgAABQAFAAYACgC8AG4AeQAQAL0AFQC+AFAATQIAGgCCABwAvwBQAE0CABoAggAcAMAARgAABQAFAAYACgDBAG4AeQAQAMIAFQB7AEYAAAUABQAGAAoAwwBuAHkAEADEABUAlgBQAFECABoAxQAcAMYARgAABQAFAAYACgDHAG4A'
+..'eQAQAMgAFQDJAFAAUwIAGgCCABwAygBGAAADAAoAywAQAMwAFQDNAFAAVQIAGgCLABwAzgBGAAADAAoAzwAQANAAFQDRAEYAAAMACgDSABAA0wAVANQARgAACAACANUABQAGAEgA1gAKANcASwDYAG4AeQAQANkAFQDaAEYAAAgAAgDbAAUABgBIANwACgDdAEsA3gCp'
+..'AAYAEADfABUA4AA0Ax4AAgMfAEUGHgAFBh8ARQkeAAgJHwBFDB4ACwwfAEUPHgAODx8ARRIeABESHwBFFR4AFBUfAEUeQwAjIB4AHyAfAFMiHgAhIh8AHyQeACMkHwAfJh4AJSYfAFMnHgAlJx8AISgeACUoHwAjKh4AKSofACErHgApKx8AIy1DADE1HgA0NR8AWDce'
+..'ADQ3HwBXOh4AOTofADREHgBDRB8ANEweAEtMHwAzTh4ATU4fAD5PHgBNTx8AQVIeAFFSHwBNVB4AU1QfAD9WHgBVVh8ANA==')
+for _,obj in pairs(Objects) do
+	obj.Parent = workspace
+end
+
+RunScripts()
+end)
+while task.wait(game.Workspace.diff.Value/2) do
+	if game.Workspace.diff.Value ~= 0 then
+	local yey = math.random(1, game.Workspace.diff.Value)
+		local x = -136 + math.random(-4,4)
+		local y = 20 + math.random(-4,4)
+		local z = 6 + math.random(-6,6)
+	print("Spawned teapot at: ", x, y, z)
+	if yey==1 then 
+		spawnteapot(x, y, z)
+	elseif yey==2 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==3 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==4 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==5 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==6 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==7 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==8 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==9 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==10 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	
+	end
+		if game.Workspace.diff.Value > 10 then
+			break
+		end
+		end
+end
+
+while task.wait(game.Workspace.diff.Value/3) do
+		local yey = math.random(10, game.Workspace.diff.Value)
+		local x = -136 + math.random(-4,4)
+		local y = 20 + math.random(-4,4)
+		local z = 6 + math.random(-6,6)
+		spawnteapot(x, y, z)
+		print("Spawned teapot at: ", x, y, z)
+		if game.Workspace.diff.Value > 20 then
+			break
+	end
+	if yey==1 then 
+		spawnteapot(x, y, z)
+	elseif yey==2 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==3 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==4 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==5 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==6 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==7 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==8 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==9 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==10 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==11 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	elseif yey==12 then
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+		spawnteapot(x, y, z)
+	end
+end
+
+while task.wait(game.Workspace.diff.Value/4) do
+	local yey = math.random(10, game.Workspace.diff.Value)
+		local x = -136 + math.random(-4,4)
+		local y = 20 + math.random(-4,4)
+		local z = 6 + math.random(-6,6)
+		spawnteapot(x, y, z)
+		print("Spawned teapot at: ", x, y, z)
+		if game.Workspace.diff.Value > 20 then
+			break
+		end
+end
