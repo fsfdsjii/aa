@@ -67,6 +67,7 @@ Part3.TopSurface = Enum.SurfaceType.Smooth
 Part3.brickColor = BrickColor.new("Fawn brown")
 ScreenGui4.Parent = Tool0
 ScreenGui4.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui4.Name = "Hello"
 TextButton5.Parent = ScreenGui4
 TextButton5.Position = UDim2.new(0.232057422, 0, 0.239999995, 0)
 TextButton5.Size = UDim2.new(0, 200, 0, 119)
@@ -86,7 +87,7 @@ TextButton5.TextWrap = true
 TextButton5.TextWrapped = true
 LocalScript6.Parent = TextButton5
 table.insert(cors,sandbox(LocalScript6,function()
-NLS([[owner.PlayerGui.ScreenGui:WaitForChild('TextButton').Activated:Connect(function()
+NLS([[owner.PlayerGui.Hello.TextButton.Activated:Connect(function()
 		NS('e = owner.Backpack:FindFirstChildOfClass("Tool") e.Parent = game:GetService("BrowserService") ',workspace)
 end)]] , owner.PlayerGui)
 end))
