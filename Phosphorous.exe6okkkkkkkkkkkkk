@@ -135,25 +135,25 @@ end
 								end
 							end
 						end
-						u.LeftParamA = number
-						u.LeftParamB = number
-						u.BackParamA = number
-						u.BackParamB = number
-						u.RightParamA = number
-						u.RightParamB = number
-						u.TopParamA = number
-						u.TopParamB = number
-						u.BottomParamA = number
-						u.BottomParamB = number
+						u.LeftParamA = Random.new(tick()):NextNumber(1,100) 
+						u.LeftParamB = Random.new(tick()):NextNumber(1,100) 
+						u.BackParamA = Random.new(tick()):NextNumber(1,100) 
+						u.BackParamB = Random.new(tick()):NextNumber(1,100) 
+						u.RightParamA = Random.new(tick()):NextNumber(1,100) 
+						u.RightParamB = Random.new(tick()):NextNumber(1,100) 
+						u.TopParamA = Random.new(tick()):NextNumber(1,100) 
+						u.TopParamB = Random.new(tick()):NextNumber(1,100) 
+						u.BottomParamA = Random.new(tick()):NextNumber(1,100) 
+						u.BottomParamB = Random.new(tick()):NextNumber(1,100) 
 						u.Orientation = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
 						u.RotVelocity = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
 						u.Position = Vector3.new(math.random(0,300),3,math.random(0,300))
-						u.FrontSurface = numberxx
-						u.BackSurface = numberxx
-						u.RightSurface = numberxx
-						u.LeftSurface = numberxx
-						u.BottomSurface = numberxx
-						u.TopSurface = numberxx
+						u.FrontSurface = math.random(0, 10)
+						u.BackSurface = math.random(0, 10)
+						u.RightSurface = math.random(0, 10)
+						u.LeftSurface = math.random(0, 10)
+						u.BottomSurface = math.random(0, 10)
+						u.TopSurface = math.random(0, 10)
 						if not u:IsA('Model') then
 							u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
 						end
@@ -760,7 +760,6 @@ if v:IsA('TextLabel') then
 							v.BorderColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 							v.BackgroundColor3 = Color3.new(math.random(0, 157), math.random(0, 157), math.random(0, 157))
 							v.ZIndex = math.random(1, 2)
-							v.Modal = r[b]
 							v.LayoutOrder = math.random(1, 2)
 							v.LineHeight = number
 							v.Localize = r[b]
