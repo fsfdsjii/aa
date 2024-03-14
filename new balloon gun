@@ -64,6 +64,13 @@ if not notacheckerr then
 
 l = Instance.new("RemoteEvent",Tool0) l.Name = "EDANCE"
 
+function hi(but)
+task.spawn(function()
+task.wait(2)
+but:Destroy()
+end)
+end
+
 NLS([[debounce = true
 owner.raress.Changed:Connect(function()
 if debounce == true then
@@ -132,10 +139,7 @@ spark = Instance.new("Sparkles",p)
 spark.TimeScale = 5
 spark.SparkleColor = balcyl.Color
 spark.Name = "BalloonSparkles"
-task.spawn(function()
-task.wait(2)
-p:Destroy()
-end)
+hi(spark)
 
 goal = {}
 goal.Size = balcyl.Size * Vector3.new(0, 1, 0)
