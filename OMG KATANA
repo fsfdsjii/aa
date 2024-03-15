@@ -1,0 +1,328 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Script1 = Instance.new("Script")
+LocalScript2 = Instance.new("LocalScript")
+Part3 = Instance.new("Part")
+SpecialMesh4 = Instance.new("SpecialMesh")
+Sound5 = Instance.new("Sound")
+Sound6 = Instance.new("Sound")
+Sound7 = Instance.new("Sound")
+Sound8 = Instance.new("Sound")
+Sound9 = Instance.new("Sound")
+Sound10 = Instance.new("Sound")
+Sparkles11 = Instance.new("Sparkles")
+Sparkles12 = Instance.new("Sparkles")
+Tool0.Name = "AdminEK"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=25265469"
+Tool0.Grip = CFrame.new(0, 0, -1.70000005, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+Tool0.GripForward = Vector3.new(-1, -0, -0)
+Tool0.GripPos = Vector3.new(0, 0, -1.7000000476837158)
+Tool0.GripRight = Vector3.new(0, 1, 0)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Script1.Name = "EpicKatanaScript"
+Script1.Parent = Tool0
+table.insert(cors,sandbox(Script1,function()
+-------- OMG HAX
+
+r = game:service("RunService")
+local sword = script.Parent.Handle
+local Tool = script.Parent
+
+local damage = 100000
+local p = nil
+local humanoid = nil
+
+local slash_damage = 1000000
+local lunge_damage = 1000000
+local regularWalk = 32
+
+
+local SlashSound = Instance.new("Sound")
+SlashSound.SoundId = "rbxasset://sounds\\swordslash.wav"
+SlashSound.Parent = sword
+SlashSound.Volume = .7
+
+local UnsheathSound = Instance.new("Sound")
+UnsheathSound.SoundId = "rbxasset://sounds\\unsheath.wav"
+UnsheathSound.Parent = sword
+UnsheathSound.Volume = 1
+
+local epicLungeSound = Instance.new("Sound")
+epicLungeSound.SoundId = "http://www.roblox.com/asset/?id=25256253"
+epicLungeSound.Parent = sword
+epicLungeSound.Volume = .8
+
+sparkles1 = Instance.new("Sparkles")
+sparkles1.Name = "Sparkles1"
+sparkles1.SparkleColor = Color3.new(1,1,1)
+sparkles1.Parent = Tool.Handle
+
+sparkles2 = Instance.new("Sparkles")
+sparkles2.Name = "Sparkles1"
+sparkles2.SparkleColor = Color3.new(1,0,1)
+sparkles2.Parent = Tool.Handle
+
+function blow(hit)
+	local humanoid = hit.Parent:findFirstChild("Zombie")
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+	local hum = vCharacter:findFirstChild("Humanoid") -- non-nil if tool held by a character
+	if humanoid~=nil and humanoid ~= hum and hum ~= nil then
+		-- final check, make sure sword is in-hand
+
+		local right_arm = vCharacter:FindFirstChild("Right Arm")
+		if (right_arm ~= nil) then
+			local joint = right_arm:FindFirstChild("RightGripAttachment")
+			if (joint ~= nil and (joint.Part0 == sword or joint.Part1 == sword)) then
+				tagHumanoid(humanoid, vPlayer)
+				humanoid:TakeDamage(damage)
+				wait(1)
+				untagHumanoid(humanoid)
+			end
+		end
+
+
+	end
+end
+	sword.Touched:Connect(function(hit)
+		Humanoid = hit.Parent:FindFirstChild('Humanoid')
+		if Humanoid then
+			local vCharacter = Tool.Parent
+			local vPlayer = game:GetService('Players'):playerFromCharacter(vCharacter)
+			if humanoid.Health ~= 0 then
+				if humanoid then
+				if vPlayer then
+					if Humanoid ~= humanoid then
+			tagHumanoid(Humanoid, vPlayer)
+			end
+			Humanoid:TakeDamage(damage)
+			wait(1)
+				untagHumanoid(Humanoid)
+					end
+				end
+			end
+		end
+	end)
+
+function tagHumanoid(humanoid, player)
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = player
+	creator_tag.Name = "creator"
+	creator_tag.Parent = humanoid
+end
+
+function untagHumanoid(humanoid)
+	if humanoid ~= nil then
+		local tag = humanoid:findFirstChild("creator")
+		if tag ~= nil then
+			tag.Parent = nil
+		end
+	end
+end
+
+function changeSparkleColor()
+
+	sparkles1 = Tool.Handle:FindFirstChild("Sparkles1")
+	if sparkles1 ~= nil then
+		colorOfSparkle = Color3.new(math.random(-5,5),math.random(-10,12),math.random(0,15))
+		sparkles1.SparkleColor = colorOfSparkle
+	end
+	sparkles2 = Tool.Handle:FindFirstChild("Sparkles2")
+	if sparkles2 ~= nil then
+		colorOfSparkle = Color3.new(math.random(-21,12),math.random(-2,3),math.random(-20,15))
+		sparkles2.SparkleColor = colorOfSparkle
+	end
+
+end
+
+function attack()
+	damage = slash_damage
+	SlashSound:play()
+	local anim = Instance.new("StringValue")
+	anim.Name = "toolanim"
+	anim.Value = "Slash"
+	anim.Parent = Tool
+end
+
+function lunge()
+	damage = lunge_damage
+
+	humanoid.WalkSpeed = regularWalk + 200
+	epicLungeSound:play()
+
+	local anim = Instance.new("StringValue")
+	anim.Name = "toolanim"
+	anim.Value = "Lunge"
+	anim.Parent = Tool
+	
+	force = Instance.new("BodyVelocity")
+	force.velocity = Vector3.new(0,10,0) --Tool.Parent.Torso.CFrame.lookVector * 80
+	force.Parent = Tool.Parent.Torso
+	wait(.2)
+	swordOut()
+	wait(.2)
+	force.Parent = nil
+	wait(.4)
+	swordUp()
+
+	humanoid.WalkSpeed = regularWalk + 2
+
+	damage = slash_damage
+end
+
+function swordUp()
+	Tool.GripForward = Vector3.new(-1,0,0)
+	Tool.GripRight = Vector3.new(0,1,0)
+	Tool.GripUp = Vector3.new(0,0,1)
+end
+
+function swordOut()
+	Tool.GripForward = Vector3.new(0,0,1)
+	Tool.GripRight = Vector3.new(0,1,0)
+	Tool.GripUp = Vector3.new(1,0,0)
+end
+
+function swordAcross()
+	-- parry
+end
+
+
+Tool.Enabled = true
+local last_attack = 0
+function onActivated()
+
+	if not Tool.Enabled then
+		return
+	end
+
+	Tool.Enabled = false
+
+	local character = Tool.Parent;
+	local humanoid = character.Humanoid
+	if humanoid == nil then
+		print("Humanoid not found")
+		return 
+	end
+
+	t = r.Stepped:wait()
+
+	if (t - last_attack < .2) then
+		lunge()
+	else
+		attack()
+	end
+
+	last_attack = t
+
+	--wait(.5)
+
+	Tool.Enabled = true
+end
+
+function onEquipped()
+	
+	humanoid = Tool.Parent:FindFirstChild("Humanoid")
+	UnsheathSound:play()
+	humanoid.WalkSpeed = regularWalk + 0
+	p = game.Players:GetPlayerFromCharacter(Tool.Parent)
+
+end
+
+function empty()
+
+end
+
+function onUnequipped()
+
+	humanoid.WalkSpeed = regularWalk
+
+end
+
+Tool.Unequipped:connect(onUnequipped)
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+
+connection = sword.Touched:connect(blow)
+
+while true do
+
+	wait(3)
+	changeSparkleColor()
+	
+end
+
+end))
+LocalScript2.Name = "Local Gui"
+LocalScript2.Parent = Tool0
+LocalScript2.LinkedSource = "http://www.roblox.com/asset/?id=1014476"
+Part3.Name = "Handle"
+Part3.Parent = Tool0
+Part3.CFrame = CFrame.new(-30.3752136, 4597.59229, -94.8719177, 0.667213619, 9.48153593e-06, -0.744866431, 6.52094604e-05, 1, 7.11405082e-05, 0.744866431, -9.60382531e-05, 0.667213619)
+Part3.Orientation = Vector3.new(-0.004000000189989805, -48.14799880981445, 0.004000000189989805)
+Part3.Position = Vector3.new(-30.375213623046875, 4597.59228515625, -94.87191772460938)
+Part3.Rotation = Vector3.new(-0.006000000052154064, -48.14799880981445, -0.0010000000474974513)
+Part3.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part3.Size = Vector3.new(1, 0.800000011920929, 5)
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.BrickColor = BrickColor.new("Dark stone grey")
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Part3.brickColor = BrickColor.new("Dark stone grey")
+SpecialMesh4.Parent = Part3
+SpecialMesh4.MeshId = "http://www.roblox.com/asset/?id=11442510"
+SpecialMesh4.Scale = Vector3.new(1.7000000476837158, 1.7000000476837158, 1.7000000476837158)
+SpecialMesh4.VertexColor = Vector3.new(0, 0, 0)
+SpecialMesh4.TextureId = "http://www.roblox.com/asset/?id=11442524"
+SpecialMesh4.MeshType = Enum.MeshType.FileMesh
+Sound5.Parent = Part3
+Sound5.SoundId = "rbxasset://sounds/swordslash.wav"
+Sound5.Volume = 0.699999988079071
+Sound6.Parent = Part3
+Sound6.SoundId = "rbxasset://sounds/swordlunge.wav"
+Sound6.Volume = 0.6000000238418579
+Sound7.Parent = Part3
+Sound7.SoundId = "rbxasset://sounds/unsheath.wav"
+Sound7.Volume = 1
+Sound8.Parent = Part3
+Sound8.SoundId = "rbxasset://sounds/swordslash.wav"
+Sound8.Volume = 0.699999988079071
+Sound9.Parent = Part3
+Sound9.SoundId = "rbxasset://sounds/unsheath.wav"
+Sound9.Volume = 1
+Sound10.Parent = Part3
+Sound10.SoundId = "http://www.roblox.com/asset/?id=25256253"
+Sound10.Volume = 0.800000011920929
+Sparkles11.Name = "Sparkles1"
+Sparkles11.Parent = Part3
+Sparkles11.Color = Color3.new(0, 10.2, 1)
+Sparkles11.SparkleColor = Color3.new(0, 1, 1)
+Sparkles12.Name = "Sparkles1"
+Sparkles12.Parent = Part3
+Sparkles12.Color = Color3.new(1.77083, 0, 1)
+Sparkles12.SparkleColor = Color3.new(1, 0, 1)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
