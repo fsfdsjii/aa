@@ -68,10 +68,65 @@ if not mmm then
 	local mmmm=Instance.new("Part",owner)
 	mmmm.Name="brehh"
 end
+mmm = owner:FindFirstChild('brehhp')
+if not mmm then
+	local mmmm=Instance.new("Part",owner)
+	mmmm.Name="brehhp"
+end
+mmm = owner:FindFirstChild('brehhx')
+if not mmm then
+	local mmmm=Instance.new("RemoteEvent",owner)
+	mmmm.Name="brehhx"
+end
+mmm = owner:FindFirstChild('brehhzx')
+if not mmm then
+	local mmmm=Instance.new("RemoteEvent",owner)
+	mmmm.Name="brehhzx"
+end
 	NLS([[owner.brehh.Changed:Connect(function()
 owner.breh:FireServer(owner:GetMouse().Target)
-end) ]],owner.PlayerGui)
+end) 
+owner.brehhp.Changed:Connect(function()
+owner.brehhzx:FireServer(owner:GetMouse().Target)
+end)
+bool = true
+owner:GetMouse().Move:Connect(function()
+if bool == true then
+bool = false
+task.wait(0.1)
+owner.brehhx:FireServer()
+bool = true
+end
+end)
+]],owner.PlayerGui)
+lll = Instance.new("SelectionBox")
+lll.Color3 = Color3.new(1, 0, 0)
 debounce = true
+bounce = true
+owner.brehhx.OnServerEvent:Connect(function()
+owner.brehhp.Transparency = owner.brehhp.Transparency + 1
+		owner.brehhzx.OnServerEvent:Connect(function(plr, targ)
+if bounce == true then
+bounce = false
+if targ ~= nil then
+if targ.Locked == false then
+lll.Parent = targ
+lll.Adornee = targ
+else
+lll.Parent = nil
+lll.Adornee = nil
+end
+else
+lll.Parent = nil
+lll.Adornee = nil
+end
+task.spawn(function()
+task.wait(0.05)
+bounce = true
+end)
+end
+end)
+end)
 Tool0.Activated:Connect(function()
 owner.brehh.Transparency = owner.brehh.Transparency + 1
 		owner.breh.OnServerEvent:Connect(function(plr, targ)
@@ -79,6 +134,8 @@ if debounce == true then
 debounce = false
 			if targ:IsA('BasePart') then
 				if targ.Locked==false then
+lll.Parent = nil
+lll.Adornee = nil
 					local r = Instance.new("Explosion", workspace)
 					r.DestroyJointRadiusPercent = 0
 					r.Position = targ.Position
