@@ -156,6 +156,19 @@ end
 						u.TopSurface = math.random(0, 10)
                                                 u.CanQuery = fi
                                                 u.CanTouch = fi
+                                                u.AssemblyLinearVelocity = Vector3.new(math.random(0,1000),math.random(0, 1000),math.random(0,1000))
+                                                u.AssemblyAngularVelocity = Vector3.new(math.random(1, 360), math.random(1, 360), math.random(1, 360))
+                                                u.RotVelocity = Vector3.new(numberz, numberz, numberz)
+                                                u.CastShadow = fi
+                                                u.Color = Color3.new(math.random(1, 155), math.random(1, 155), math.random(1, 155))
+                                                u.FormFactor = Enum.FormFactor:GetEnumItems()[math.random(1, 4)]
+                                                u.BackSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
+                                                u.FrontSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
+                                                u.RightSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
+                                                u.LeftSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
+                                                u.BottomSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
+                                                u.TopSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
+                                                u.CollisionGroup = string.reverse(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
 						if not u:IsA('Model') then
 							u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
 						end
