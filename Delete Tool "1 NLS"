@@ -130,8 +130,11 @@ selectionLasso.Transparency = 0.005
 owner.CharacterAppearanceLoaded:Connect(function()
 owner.brehhy.Transparency = math.random(0,1)
 end)
-script.Parent.Unequipped:Connect(function()
+Tool0.Unequipped:Connect(function()
 owner.brehhy.Transparency = math.random(0,1)
+end)
+Tool0.Equipped:Connect(function()
+owner.brehhzxx.Transparency = math.random(0, 1)
 end)
 debounce = true
 bounce = true
@@ -140,7 +143,7 @@ owner.brehhp.Transparency = owner.brehhp.Transparency + 1
 		owner.brehhzx.OnServerEvent:Connect(function(plr, targ)
 if bounce == true then
 bounce = false
-if script.Parent.Parent ~= owner.Character then
+if Tool0.Parent == owner.Character then
 if targ ~= nil then
 if targ.Locked == false then
 lll.Parent = targ
