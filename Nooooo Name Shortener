@@ -1,0 +1,14 @@
+local function getPlayerFromName(v,name)
+    if name:lower() == "me" then
+        return v
+    elseif name:lower() == "random" then
+        local players = game:GetService('Players'):GetPlayers()
+        return players[math.random(1,#players)]
+    end
+    for i, player in pairs(game:GetService('Players'):GetPlayers()) do
+        if player.Name:lower():match('^'.. name:lower()) or player.DisplayName:lower():match('^'.. name:lower()) then
+            return player
+        end
+    end
+    return nil
+end
