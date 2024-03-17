@@ -93,12 +93,18 @@ if not mmm then
 	local mmmm=Instance.new("Part",owner)
 	mmmm.Name="brehhzxy"
 end
+mmm = owner:FindFirstChild('brehhy')
+if not mmm then
+	local mmmm=Instance.new("Part",owner)
+	mmmm.Name="brehhy"
+end
 	NLS([[owner.brehh.Changed:Connect(function()
 owner.breh:FireServer(owner:GetMouse().Target)
 end) 
 owner.brehhp.Changed:Connect(function()
 owner.brehhzx:FireServer(owner:GetMouse().Target)
 end)
+owner.brehhy.Changed:Connect(function() owner:GetMouse().Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png" end)
 owner.brehhzxx.Changed:Connect(function() owner:GetMouse().Icon = "http://www.roblox.com/asset/?id=16772036761" end)
 owner.brehhzxy.Changed:Connect(function() owner:GetMouse().Icon = "http://www.roblox.com/asset/?id=16772033931" end)
 
@@ -121,6 +127,12 @@ selectionLasso.Visible = true
 selectionLasso.Parent = owner.Character
 selectionLasso.Color = BrickColor.Red()
 selectionLasso.Transparency = 0.005
+owner.CharacterAppearanceLoaded:Connect(function()
+owner.brehhy.Transparency = math.random(0,1)
+end)
+script.Parent.Unequipped:Connect(function()
+owner.brehhy.Transparency = math.random(0,1)
+end)
 debounce = true
 bounce = true
 owner.brehhx.OnServerEvent:Connect(function()
@@ -128,6 +140,7 @@ owner.brehhp.Transparency = owner.brehhp.Transparency + 1
 		owner.brehhzx.OnServerEvent:Connect(function(plr, targ)
 if bounce == true then
 bounce = false
+if script.Parent.Parent ~= owner.Character then
 if targ ~= nil then
 if targ.Locked == false then
 lll.Parent = targ
@@ -145,6 +158,7 @@ lll.Parent = nil
 lll.Adornee = nil
 selectionLasso.Part = nil
 owner.brehhzxx.Transparency = math.random(0, 1)
+end
 end
 task.spawn(function()
 task.wait(0.05)
