@@ -130,7 +130,6 @@ owner.hello2.OnServerEvent:Connect(function(me, targ, hit)
 if bool == true then
 bool = false
 pcall(function()
-print(owner.bruvx.Value.CanCollide)
 owner.bruvx.Value.Position = hit.Position
 owner.bruvx.Value.CanCollide = false
 end)
@@ -142,6 +141,7 @@ boomboom = true
 owner.hellozzxy.OnServerEvent:Connect(function()
 if boomboom == true then
 boomboom = false
+if owner.bruvx.Value ~= nil then
 print("helloZX")
 owner.bruvx.Value.CanCollide = owner.pll.Value
 task.spawn(function()
@@ -150,6 +150,7 @@ owner.bruvx.Value.CanCollide = owner.pll.Value
 task.wait(0.05)
 owner.bruvx.Value.CanCollide = owner.pll.Value
 end)
+end
 task.wait(0.05)
 boomboom = true
 end
