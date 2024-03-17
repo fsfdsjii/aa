@@ -55,11 +55,72 @@ if not pzzz then
 		local px=Instance.new("Part",owner)
 		px.Name="hellozz"
 end
+pzzz = owner:FindFirstChild('hello1')
+if not pzzz then
+		local px=Instance.new("Part",owner)
+		px.Name="hello1"
+end
+pzz = owner:FindFirstChild('hello2')
+if not pzz then
+		local p=Instance.new("RemoteEvent",owner)
+		p.Name="hello2"
+end
+pzzz = owner:FindFirstChild('hellozzx')
+if not pzzz then
+		local px=Instance.new("RemoteEvent",owner)
+		px.Name="hellozzx"
+end
+pzzz = owner:FindFirstChild('bruvx')
+if not pzzz then
+		local px=Instance.new("ObjectValue",owner)
+		px.Name="bruvx"
+end
 NLS([[owner.hellozz.Changed:Connect(function()
 owner.helloz:FireServer(owner:GetMouse().Target, owner:GetMouse().Origin, owner:GetMouse().Hit)
+end)
+owner.hello1.Changed:Connect(function()
+owner.hello2:FireServer(owner:GetMouse().Target, owner:GetMouse().Hit)
+end)
+bool = true
+owner:GetMouse().Move:Connect(function()
+if bool == true then
+bool = false
+if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.TextInput) == false then
+if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == true then 
+yey = owner.Character:FindFirstChild('Clone')
+if yey then
+task.wait(0.1)
+owner.hellozzx:FireServer()
+end
+end
+end
+bool = true
+end
 end)]],owner.PlayerGui)
 debounce = true
 Script3.Parent = Tool0
+bool = true
+bool2 = true
+bool3 = true
+owner.hellozzx.OnServerEvent:Connect(function()
+if bool2 == true then
+bool2 = false
+owner.hello1.Transparency = math.random(0, 1)
+task.wait(0.05)
+bool2 = true
+end
+end)
+
+owner.hello2.OnServerEvent:Connect(function(me, targ, hit)
+if bool == true then
+bool = false
+pcall(function()
+owner.bruvx.Value.Position = hit.Position
+end)
+task.wait(0.05)
+bool = true
+end
+end)
 	Tool0.Activated:Connect(function()
 if debounce == true then
 debounce = false
@@ -75,12 +136,22 @@ print("hello")
 
 	
 	owner.helloz.OnServerEvent:Connect(function(plr, targ, origin, hit)
-		if targ:IsA('BasePart') then
+if bool3 == true then
+bool3 = false
+if targ ~= nil then
+if targ.Name ~= "Base" then
+if targ.Locked ~= true then
 				targ.Archivable = true
 				local n = targ:Clone()
 				n.Parent = workspace
 				n.Position = hit.Position
-				end
+                                owner.bruvx.Value = n
+end
+end
+end
+end
+task.wait(0.05)
+bool3 = true
 			end)
 task.wait(0.5)
 	Tool0.Grip = CFrame.new(0, 0, -1.5, 0, -0, 1, 1, 0, -0, 0, 1, 0)
@@ -92,7 +163,6 @@ task.wait(0.5)
 debounce = true
              end
 	end)
-
 
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
