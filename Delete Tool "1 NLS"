@@ -83,12 +83,25 @@ if not mmm then
 	local mmmm=Instance.new("RemoteEvent",owner)
 	mmmm.Name="brehhzx"
 end
+mmm = owner:FindFirstChild('brehhzxx')
+if not mmm then
+	local mmmm=Instance.new("Part",owner)
+	mmmm.Name="brehhzxx"
+end
+mmm = owner:FindFirstChild('brehhzxy')
+if not mmm then
+	local mmmm=Instance.new("Part",owner)
+	mmmm.Name="brehhzxy"
+end
 	NLS([[owner.brehh.Changed:Connect(function()
 owner.breh:FireServer(owner:GetMouse().Target)
 end) 
 owner.brehhp.Changed:Connect(function()
 owner.brehhzx:FireServer(owner:GetMouse().Target)
 end)
+owner.brehhzxx.Changed:Connect(function() owner:GetMouse().Icon = "http://www.roblox.com/asset/?id=16772036761" end)
+owner.brehhzxy.Changed:Connect(function() owner:GetMouse().Icon = "http://www.roblox.com/asset/?id=16772033931" end)
+
 bool = true
 owner:GetMouse().Move:Connect(function()
 if bool == true then
@@ -101,6 +114,13 @@ end)
 ]],owner.PlayerGui)
 lll = Instance.new("SelectionBox")
 lll.Color3 = Color3.new(1, 0, 0)
+selectionLasso = Instance.new("SelectionPartLasso")
+selectionLasso.Humanoid = owner.Character.Humanoid
+selectionLasso.archivable = false
+selectionLasso.Visible = true
+selectionLasso.Parent = owner.Character
+selectionLasso.Color = BrickColor.Red()
+selectionLasso.Transparency = 0.005
 debounce = true
 bounce = true
 owner.brehhx.OnServerEvent:Connect(function()
@@ -112,13 +132,19 @@ if targ ~= nil then
 if targ.Locked == false then
 lll.Parent = targ
 lll.Adornee = targ
+selectionLasso.Part = targ
+owner.brehhzxy.Transparency = math.random(0, 1)
 else
 lll.Parent = nil
 lll.Adornee = nil
+selectionLasso.Part = nil
+owner.brehhzxx.Transparency = math.random(0, 1)
 end
 else
 lll.Parent = nil
 lll.Adornee = nil
+selectionLasso.Part = nil
+owner.brehhzxx.Transparency = math.random(0, 1)
 end
 task.spawn(function()
 task.wait(0.05)
@@ -126,6 +152,14 @@ bounce = true
 end)
 end
 end)
+end)
+task.spawn(function()
+while task.wait() do
+if script.Parent.Parent ~= owner.Character then
+lll.Parent = nil
+selectionLasso.Part = nil
+end
+end
 end)
 Tool0.Activated:Connect(function()
 owner.brehh.Transparency = owner.brehh.Transparency + 1
@@ -136,6 +170,7 @@ debounce = false
 				if targ.Locked==false then
 lll.Parent = nil
 lll.Adornee = nil
+selectionLasso.Part = nil
 					local r = Instance.new("Explosion", workspace)
 					r.DestroyJointRadiusPercent = 0
 					r.Position = targ.Position
