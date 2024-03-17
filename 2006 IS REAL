@@ -501,7 +501,7 @@ owner:GetMouse().Button1Down:Connect(function() owner.Backpack.pzzx:FireServer()
 	end
 	print("Slingshot script loaded")
 
-	bin = script.Parent
+	bin = HopperBin0
 	VELOCITY = 85 -- constant
 
 	function fire(mouse_pos)
@@ -509,7 +509,7 @@ owner:GetMouse().Button1Down:Connect(function() owner.Backpack.pzzx:FireServer()
 
 		sound = Instance.new("Sound")
 		sound.SoundId = "rbxasset://sounds\\Rubber band sling shot.wav"
-		sound.Parent = script.Parent
+		sound.Parent = HopperBin0
 		sound:play()
 
 		-- find player's head pos
@@ -545,7 +545,7 @@ owner:GetMouse().Button1Down:Connect(function() owner.Backpack.pzzx:FireServer()
 		local vz = unit_delta.z * xz
 
 
-		local missile = script.Parent.Pellet:clone()
+		local missile = HopperBin0.Pellet:clone()
 
 
 
@@ -991,8 +991,11 @@ selectionLasso.Transparency = 0.005
 owner.CharacterAppearanceLoaded:Connect(function()
 owner.brehhy.Transparency = math.random(0,1)
 end)
-script.Parent.Unequipped:Connect(function()
+Tool0.Unequipped:Connect(function()
 owner.brehhy.Transparency = math.random(0,1)
+end)
+Tool0.Equipped:Connect(function()
+owner.brehhzxx.Transparency = math.random(0, 1)
 end)
 debounce = true
 bounce = true
@@ -1001,7 +1004,7 @@ owner.brehhp.Transparency = owner.brehhp.Transparency + 1
 		owner.brehhzx.OnServerEvent:Connect(function(plr, targ)
 if bounce == true then
 bounce = false
-if script.Parent.Parent ~= owner.Character then
+if Tool0.Parent == owner.Character then
 if targ ~= nil then
 if targ.Locked == false then
 lll.Parent = targ
@@ -1098,4 +1101,5 @@ for _,v  in next,  workspace:GetDescendants() do if v:IsA('BasePart') then v.Loc
 print("Just unlocked all parts!")
 	end
 end)
+
 
