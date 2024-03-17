@@ -85,7 +85,8 @@ if not pzzz then
 		local px=Instance.new("BoolValue",owner)
 		px.Name="pll"
 end
-NLS([[owner.hellozz.Changed:Connect(function()
+NLS([[inmense = false
+owner.hellozz.Changed:Connect(function()
 owner.helloz:FireServer(owner:GetMouse().Target, owner:GetMouse().Origin, owner:GetMouse().Hit)
 end)
 owner.hello1.Changed:Connect(function()
@@ -101,15 +102,53 @@ yey = owner.Character:FindFirstChild('Clone')
 if yey then
 task.wait(0.1)
 owner.hellozzx:FireServer()
+inmense = true
 end
 end
 end
 bool = true
 end
 end)
+imasom = true
 game:GetService('UserInputService').InputEnded:Connect(function(input, gameProcessed)
+if imasom == true then
+imasom = false
 if input.UserInputType == Enum.UserInputType.MouseButton1 then
+yey = owner.Character:FindFirstChild('Clone')
+if yey then
 owner.hellozzxy:FireServer()
+inmense = false
+end
+end
+task.wait(0.1)
+imasom = true
+end
+end)
+game:GetService('UserInputService').InputBegan:Connect(function(input, gameProcessed)
+if input.KeyCode == Enum.KeyCode.T then
+if not gameProcessed then
+yey = owner.Character:FindFirstChild('Clone')
+if yey then
+if inmense == true then
+owner.hello0:FireServer()
+end
+end
+end
+end
+end)
+
+game:GetService('UserInputService').InputBegan:Connect(function(input, gameProcessed)
+if input.KeyCode == Enum.KeyCode.R then
+if not gameProcessed then
+if inmense == true then
+yey = owner.Character:FindFirstChild('Clone')
+if yey then
+if inmense == true then
+owner.hello9:FireServer()
+end
+end
+end
+end
 end
 end)]],owner.PlayerGui)
 debounce = true
@@ -131,7 +170,7 @@ if bool == true then
 bool = false
 pcall(function()
 owner.bruvx.Value.Position = hit.Position
-owner.bruvx.Value.CanCollide = false
+owner.bruvx.Value.Anchored = true
 end)
 task.wait(0.05)
 bool = true
@@ -143,16 +182,35 @@ if boomboom == true then
 boomboom = false
 if owner.bruvx.Value ~= nil then
 print("helloZX")
-owner.bruvx.Value.CanCollide = owner.pll.Value
+owner.bruvx.Value.Anchored = owner.pll.Value
 task.spawn(function()
 task.wait(0.05)
-owner.bruvx.Value.CanCollide = owner.pll.Value
+owner.bruvx.Value.Anchored = owner.pll.Value
 task.wait(0.05)
-owner.bruvx.Value.CanCollide = owner.pll.Value
+owner.bruvx.Value.Anchored = owner.pll.Value
 end)
 end
 task.wait(0.05)
 boomboom = true
+end
+end)
+pio = true
+owner.hello0.OnServerEvent:Connect(function()
+if pio == true then
+pio = false
+owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation + Vector3.new(0, 0, 90)
+task.wait(0.05)
+pio = true
+end
+end)
+
+piox = true
+owner.hello9.OnServerEvent:Connect(function()
+if piox == true then
+piox = false
+owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation + Vector3.new(90, 0, 0)
+task.wait(0.05)
+piox = true
 end
 end)
 	Tool0.Activated:Connect(function()
@@ -180,7 +238,7 @@ if targ.Locked ~= true then
 				n.Parent = workspace
 				n.Position = hit.Position
                                 owner.bruvx.Value = n
-                                owner.pll.Value = owner.bruvx.Value.CanCollide
+                                owner.pll.Value = owner.bruvx.Value.Anchored
 end
 end
 end
