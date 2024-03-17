@@ -658,3 +658,444 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+LocalScript1 = Instance.new("LocalScript")
+Script2 = Instance.new("Script")
+RemoteEvent3 = Instance.new("RemoteEvent")
+RemoteEvent4 = Instance.new("RemoteEvent")
+Tool0.Name = "Drag"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=911011542"
+Tool0.CanBeDropped = false
+Tool0.Grip = CFrame.new(0, 0, -1.5, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+Tool0.GripForward = Vector3.new(-1, -0, -0)
+Tool0.GripPos = Vector3.new(0, 0, -1.5)
+Tool0.GripRight = Vector3.new(0, 1, 0)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Tool0.RequiresHandle = false
+LocalScript1.Name = "DragScript"
+LocalScript1.Parent = Tool0
+table.insert(cors,sandbox(LocalScript1,function()
+NLS([[debounce = false
+local vPlayer = game.Players.LocalPlayer
+local SBox = Instance.new("SelectionBox")
+SBox.LineThickness = 0.05
+SBox.Color3 = Color3.fromRGB(25,153,255)
+local Tool = script.Parent;
+local Select
+local Orig	
+local Dragger
+local Offset
+
+function onButton1Down(mouse)
+
+	local Target = mouse.Target
+
+	if Target and Target:IsA("BasePart") and not Target.Locked then
+		if debounce == false then
+		debounce = true
+	
+		Select = Target
+	
+				mouse.Icon = "rbxasset://textures/GrabRotateCursor.png"
+		
+		Select:BreakJoints()
+		script.Parent:WaitForChild("Drag"):FireServer(Select,"A")
+		Offset = mouse.Hit.p - Select.Position
+		Dragger = Instance.new("Dragger")
+		pcall(function() Dragger:MouseDown(Select, Vector3.new(0, 0, 0), {Select}) end)	
+		
+		SBox.Adornee = Select
+		wait()
+		debounce = false
+		
+	
+	end
+	end
+end
+script.Parent:WaitForChild("MoveUrBlock").OnClientEvent:Connect(function(EE,e)
+	EE:Destroy()
+	e.Parent = workspace
+end)
+function onButton1Up(mouse)
+	if Dragger then
+		Orig = nil
+		pcall(function() Dragger:MouseUp() end)
+		script.Parent:WaitForChild("Drag"):FireServer(Select,"AE",Select.Position,Select.Orientation)
+		mouse.Icon = ""
+		Select = nil
+		SBox.Adornee = nil
+		Dragger = nil
+	end
+end
+
+function onMouseMove(mouse)
+	if Dragger then
+		local pos1 = mouse.UnitRay.Origin
+		local pos2 = ((mouse.Hit.p-Offset) - workspace.CurrentCamera.CFrame.p).unit*300
+		 local 
+		ray = Ray.new(pos1,pos2)
+		pcall(function() Dragger:MouseMove(ray) end)
+		
+			script.Parent:WaitForChild("Drag"):FireServer(Select,"e",Select.Position,Select.Orientation)
+			
+	else
+		local Target = mouse.Target
+		if Target == nil or Target.Locked then
+			mouse.Icon = "http://www.roblox.com/asset/?id=13459352735"
+				return
+		else
+			mouse.Icon =  "rbxasset://textures/DragCursor.png"
+		end
+	end
+end
+function onKeyDown(key)
+	if Dragger then
+		key = key:lower()
+		if key == 'r' then
+			Dragger:AxisRotate(Enum.Axis.Z)
+		elseif key == 't' then
+			Dragger:AxisRotate(Enum.Axis.X)
+		end
+	end
+end
+
+function onEquippedLocal(mouse)
+	SBox.Parent = vPlayer.PlayerGui
+
+	mouse.Button1Down:connect(function() 
+		if mouse.Target.Locked == false then	
+	onButton1Down(mouse) 
+		else
+		return
+	end
+	end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	mouse.Move:connect(function() onMouseMove(mouse) end)
+	mouse.KeyDown:connect(onKeyDown)
+end
+
+function onUnequippedLocal(mouse)
+	if Tool:findFirstChild("PewPew") then
+		Tool.PewPew:remove()
+	end
+	if Dragger then
+		Orig = nil
+		pcall(function() Dragger:MouseUp() end)
+		script.Parent:WaitForChild("Drag"):FireServer(Select,"AE",Select.Position,Select.Orientation)
+		Select = nil
+		SBox.Adornee = nil
+		Dragger = nil
+	end
+end
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal)]],owner.PlayerGui).Parent = script.Parent
+end))
+Script2.Name = "DragScript"
+Script2.Parent = Tool0
+table.insert(cors,sandbox(Script2,function()
+local lastPos
+script.Parent.Drag.OnServerEvent:Connect(function(Player,Block,Mode,Pos,ore,e)
+
+	if Mode == "e" then
+		
+		eaaa:BreakJoints()
+		eaaa.Position = Pos
+		eaaa.Orientation = ore
+
+	
+		
+	elseif Mode == "A" then
+		Block:BreakJoints()
+			eaaa = Block:Clone()
+			Block.Parent = game.ReplicatedFirst
+			eaaa.Parent = workspace
+			script.Parent.MoveUrBlock:FireClient(Player,eaaa,Block)
+			
+	else
+		eaaa:BreakJoints()
+		eaaa:Destroy()	
+		Block.Parent = workspace
+		Block.Position = Pos
+		Block.Orientation = ore
+		Block:BreakJoints()
+		Block:MakeJoints()	
+	end
+	 
+end)
+
+end))
+RemoteEvent3.Name = "Drag"
+RemoteEvent3.Parent = Tool0
+RemoteEvent4.Name = "MoveUrBlock"
+RemoteEvent4.Parent = Tool0
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+print("Say clr-remotes then remote name in this case 'breh' then how many instances there are in the replicated storage called breh.")
+print("Say unlock-all to unlock every single part in workspace.")
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Script4 = Instance.new("Script")
+Tool0.Name = "DeleteTool"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset?id=55212908"
+Tool0.Grip = CFrame.new(0, 0, -0.5, 0, 0, 1, 1, 0, 0, 0, 1, 0)
+Tool0.GripForward = Vector3.new(-1, -0, -0)
+Tool0.GripPos = Vector3.new(0, 0, -0.5)
+Tool0.GripRight = Vector3.new(0, 1, 0)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(15.2043877, 1.5004102, -14.8055058, 0.815435171, 0.578847528, -0.000649310299, 0.000796274282, -3.93885717e-21, 0.999999642, 0.578847408, -0.81543535, -0.000460921437)
+Part1.Orientation = Vector3.new(-90, -35.369998931884766, 0)
+Part1.Position = Vector3.new(15.204387664794922, 1.5004101991653442, -14.805505752563477)
+Part1.Rotation = Vector3.new(-90.0260009765625, -0.03700000047683716, -35.369998931884766)
+Part1.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part1.Size = Vector3.new(1, 0.800000011920929, 3)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Dark stone grey")
+Part1.Locked = true
+Part1.Reflectance = 0.4000000059604645
+Part1.RotVelocity = Vector3.new(1, 1, 1)
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Dark stone grey")
+Part1.FormFactor = Enum.FormFactor.Plate
+Part1.formFactor = Enum.FormFactor.Plate
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=16198309"
+SpecialMesh2.Scale = Vector3.new(1.2000000476837158, 1.2000000476837158, 1.2000000476837158)
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=16198294"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Parent = Part1
+Sound3.SoundId = "http://www.roblox.com/Asset/?ID=12135982"
+Sound3.Volume = 0.699999988079071
+Script4.Name = "DeleteScript"
+Script4.Parent = Tool0
+table.insert(cors,sandbox(Script4,function()
+mm = owner:FindFirstChild('breh')
+if not mm then
+	local m=Instance.new("RemoteEvent",owner)
+	m.Name="breh"
+end
+mmm = owner:FindFirstChild('brehh')
+if not mmm then
+	local mmmm=Instance.new("Part",owner)
+	mmmm.Name="brehh"
+end
+mmm = owner:FindFirstChild('brehhp')
+if not mmm then
+	local mmmm=Instance.new("Part",owner)
+	mmmm.Name="brehhp"
+end
+mmm = owner:FindFirstChild('brehhx')
+if not mmm then
+	local mmmm=Instance.new("RemoteEvent",owner)
+	mmmm.Name="brehhx"
+end
+mmm = owner:FindFirstChild('brehhzx')
+if not mmm then
+	local mmmm=Instance.new("RemoteEvent",owner)
+	mmmm.Name="brehhzx"
+end
+mmm = owner:FindFirstChild('brehhzxx')
+if not mmm then
+	local mmmm=Instance.new("Part",owner)
+	mmmm.Name="brehhzxx"
+end
+mmm = owner:FindFirstChild('brehhzxy')
+if not mmm then
+	local mmmm=Instance.new("Part",owner)
+	mmmm.Name="brehhzxy"
+end
+mmm = owner:FindFirstChild('brehhy')
+if not mmm then
+	local mmmm=Instance.new("Part",owner)
+	mmmm.Name="brehhy"
+end
+	NLS([[owner.brehh.Changed:Connect(function()
+owner.breh:FireServer(owner:GetMouse().Target)
+end) 
+owner.brehhp.Changed:Connect(function()
+owner.brehhzx:FireServer(owner:GetMouse().Target)
+end)
+owner.brehhy.Changed:Connect(function() owner:GetMouse().Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png" end)
+owner.brehhzxx.Changed:Connect(function() owner:GetMouse().Icon = "http://www.roblox.com/asset/?id=16772036761" end)
+owner.brehhzxy.Changed:Connect(function() owner:GetMouse().Icon = "http://www.roblox.com/asset/?id=16772033931" end)
+
+bool = true
+owner:GetMouse().Move:Connect(function()
+if bool == true then
+bool = false
+task.wait(0.1)
+owner.brehhx:FireServer()
+bool = true
+end
+end)
+]],owner.PlayerGui)
+lll = Instance.new("SelectionBox")
+lll.Color3 = Color3.new(1, 0, 0)
+selectionLasso = Instance.new("SelectionPartLasso")
+selectionLasso.Humanoid = owner.Character.Humanoid
+selectionLasso.archivable = false
+selectionLasso.Visible = true
+selectionLasso.Parent = owner.Character
+selectionLasso.Color = BrickColor.Red()
+selectionLasso.Transparency = 0.005
+owner.CharacterAppearanceLoaded:Connect(function()
+owner.brehhy.Transparency = math.random(0,1)
+end)
+script.Parent.Unequipped:Connect(function()
+owner.brehhy.Transparency = math.random(0,1)
+end)
+debounce = true
+bounce = true
+owner.brehhx.OnServerEvent:Connect(function()
+owner.brehhp.Transparency = owner.brehhp.Transparency + 1
+		owner.brehhzx.OnServerEvent:Connect(function(plr, targ)
+if bounce == true then
+bounce = false
+if script.Parent.Parent ~= owner.Character then
+if targ ~= nil then
+if targ.Locked == false then
+lll.Parent = targ
+lll.Adornee = targ
+selectionLasso.Part = targ
+owner.brehhzxy.Transparency = math.random(0, 1)
+else
+lll.Parent = nil
+lll.Adornee = nil
+selectionLasso.Part = nil
+owner.brehhzxx.Transparency = math.random(0, 1)
+end
+else
+lll.Parent = nil
+lll.Adornee = nil
+selectionLasso.Part = nil
+owner.brehhzxx.Transparency = math.random(0, 1)
+end
+end
+task.spawn(function()
+task.wait(0.05)
+bounce = true
+end)
+end
+end)
+end)
+task.spawn(function()
+while task.wait() do
+if script.Parent.Parent ~= owner.Character then
+lll.Parent = nil
+selectionLasso.Part = nil
+end
+end
+end)
+Tool0.Activated:Connect(function()
+owner.brehh.Transparency = owner.brehh.Transparency + 1
+		owner.breh.OnServerEvent:Connect(function(plr, targ)
+if debounce == true then
+debounce = false
+			if targ:IsA('BasePart') then
+				if targ.Locked==false then
+lll.Parent = nil
+lll.Adornee = nil
+selectionLasso.Part = nil
+					local r = Instance.new("Explosion", workspace)
+					r.DestroyJointRadiusPercent = 0
+					r.Position = targ.Position
+                                        r.BlastPressure = 0
+					targ:Destroy()
+                              end
+			end
+task.wait(0.05)
+debounce = true
+		end
+	end)
+	Sound3:Play()
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+local cmd = "clr-remotes"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+		local Target=game.Workspace:FindFirstChild(TargetName)
+		local TargetName2=SplitMsg[3]
+		for  i = 1,tonumber(TargetName2) do
+                        print("Just cleared the remotes named="..tostring(TargetName))
+			game:GetService('ReplicatedStorage')[TargetName]:Destroy()
+			
+		end
+	end
+end)
+
+local cmd = "unlock-all"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg)
+	if cmd == SplitMsg[1] then
+for _,v  in next,  workspace:GetDescendants() do if v:IsA('BasePart') then v.Locked = false end end
+print("Just unlocked all parts!")
+	end
+end)
+
