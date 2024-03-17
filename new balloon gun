@@ -64,9 +64,9 @@ if not notacheckerr then
 
 l = Instance.new("RemoteEvent",Tool0) l.Name = "EDANCE"
 
-function hi(but)
+function hi(but, l)
 task.spawn(function()
-task.wait(2)
+task.wait(l)
 but:Destroy()
 end)
 end
@@ -139,18 +139,20 @@ spark = Instance.new("Sparkles",p)
 spark.TimeScale = 5
 spark.SparkleColor = balcyl.Color
 spark.Name = "BalloonSparkles"
-hi(spark)
+hi(spark, 2)
 
 goal = {}
 goal.Size = balcyl.Size * Vector3.new(0, 1, 0)
 local tweenInfo = TweenInfo.new(1)
 
 local tween = game:GetService('TweenService'):Create(balcyl, tweenInfo, goal)
-
-tween:Play()
-tween.Completed:Connect(function()
-balcyl:Destroy()
+function p(zzz)
+zzz.Completed:Connect(function()
+hi(zzz, 1)
 end)
+end
+tween:Play()
+p(tween)
 		if target.Anchored == false then
 if target.Size.Y < Vector3.new(7, 7, 7).Y or target.Size.X < Vector3.new(7, 7, 7).X or target.Size.Z < Vector3.new(7, 7, 7).Z then
         target.Anchored = true
