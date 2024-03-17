@@ -75,6 +75,16 @@ if not pzzz then
 		local px=Instance.new("ObjectValue",owner)
 		px.Name="bruvx"
 end
+pzzz = owner:FindFirstChild('hellozzxy')
+if not pzzz then
+		local px=Instance.new("RemoteEvent",owner)
+		px.Name="hellozzxy"
+end
+pzzz = owner:FindFirstChild('pll')
+if not pzzz then
+		local px=Instance.new("BoolValue",owner)
+		px.Name="pll"
+end
 NLS([[owner.hellozz.Changed:Connect(function()
 owner.helloz:FireServer(owner:GetMouse().Target, owner:GetMouse().Origin, owner:GetMouse().Hit)
 end)
@@ -96,6 +106,11 @@ end
 end
 bool = true
 end
+end)
+game:GetService('UserInputService').InputEnded:Connect(function(input, gameProcessed)
+if input.UserInputType == Enum.UserInputType.MouseButton1 then
+owner.hellozzxy:FireServer()
+end
 end)]],owner.PlayerGui)
 debounce = true
 Script3.Parent = Tool0
@@ -115,10 +130,28 @@ owner.hello2.OnServerEvent:Connect(function(me, targ, hit)
 if bool == true then
 bool = false
 pcall(function()
+print(owner.bruvx.Value.CanCollide)
 owner.bruvx.Value.Position = hit.Position
+owner.bruvx.Value.CanCollide = false
 end)
 task.wait(0.05)
 bool = true
+end
+end)
+boomboom = true
+owner.hellozzxy.OnServerEvent:Connect(function()
+if boomboom == true then
+boomboom = false
+print("helloZX")
+owner.bruvx.Value.CanCollide = owner.pll.Value
+task.spawn(function()
+task.wait(0.05)
+owner.bruvx.Value.CanCollide = owner.pll.Value
+task.wait(0.05)
+owner.bruvx.Value.CanCollide = owner.pll.Value
+end)
+task.wait(0.05)
+boomboom = true
 end
 end)
 	Tool0.Activated:Connect(function()
@@ -146,6 +179,7 @@ if targ.Locked ~= true then
 				n.Parent = workspace
 				n.Position = hit.Position
                                 owner.bruvx.Value = n
+                                owner.pll.Value = owner.bruvx.Value.CanCollide
 end
 end
 end
