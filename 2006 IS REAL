@@ -1170,6 +1170,16 @@ if not pzz then
 		local p=Instance.new("RemoteEvent",owner)
 		p.Name="hello2"
 end
+pzz = owner:FindFirstChild('hello0')
+if not pzz then
+		local p=Instance.new("RemoteEvent",owner)
+		p.Name="hello0"
+end
+pzz = owner:FindFirstChild('hello9')
+if not pzz then
+		local p=Instance.new("RemoteEvent",owner)
+		p.Name="hello9"
+end
 pzzz = owner:FindFirstChild('hellozzx')
 if not pzzz then
 		local px=Instance.new("RemoteEvent",owner)
@@ -1274,8 +1284,11 @@ owner.hello2.OnServerEvent:Connect(function(me, targ, hit)
 if bool == true then
 bool = false
 pcall(function()
+if owner.bruvx.Value ~= nil then
 owner.bruvx.Value.Position = hit.Position
 owner.bruvx.Value.Anchored = true
+owner.bruvx.Value:BreakJoints()
+end
 end)
 task.wait(0.05)
 bool = true
@@ -1286,14 +1299,23 @@ owner.hellozzxy.OnServerEvent:Connect(function()
 if boomboom == true then
 boomboom = false
 if owner.bruvx.Value ~= nil then
+if owner.pll.Value ~= nil then
 print("helloZX")
 owner.bruvx.Value.Anchored = owner.pll.Value
+owner.bruvx.Value:MakeJoints()
 task.spawn(function()
 task.wait(0.05)
 owner.bruvx.Value.Anchored = owner.pll.Value
 task.wait(0.05)
 owner.bruvx.Value.Anchored = owner.pll.Value
+task.wait(0.05)
+owner.bruvx.Value.Anchored = owner.pll.Value
+task.wait(0.05)
+owner.bruvx.Value.Anchored = owner.pll.Value
+owner.pll.Value = nil
+owner.bruvx.Value = nil
 end)
+end
 end
 task.wait(0.05)
 boomboom = true
@@ -1303,7 +1325,9 @@ pio = true
 owner.hello0.OnServerEvent:Connect(function()
 if pio == true then
 pio = false
+if owner.bruvx.Value ~= nil then
 owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation + Vector3.new(0, 0, 90)
+end
 task.wait(0.05)
 pio = true
 end
@@ -1313,7 +1337,9 @@ piox = true
 owner.hello9.OnServerEvent:Connect(function()
 if piox == true then
 piox = false
+if owner.bruvx.Value ~= nil then
 owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation + Vector3.new(90, 0, 0)
+end
 task.wait(0.05)
 piox = true
 end
@@ -1372,4 +1398,3 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
-
