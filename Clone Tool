@@ -108,11 +108,30 @@ if bool == true then
 bool = false
 if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.TextInput) == false then
 if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == true then 
-yey = owner.Character:FindFirstChild('Clone')
-if yey then
+yey = script.Parent
+if yey.Parent == owner.Character then
 task.wait(0.1)
 owner.hellozzx:FireServer()
+owner:GetMouse().Icon = "rbxasset://textures/GrabRotateCursor.png"
 inmense = true
+end
+else
+yey = script.Parent
+if yey.Parent == owner.Character then
+targ = owner:GetMouse().Target
+if owner:GetMouse().Icon ~= "rbxasset://textures/GrabRotateCursor.png" then
+if targ ~= nil then
+if targ.Locked == false then
+if targ.Name ~= "Base" then
+owner:GetMouse().Icon =  "rbxasset://textures/DragCursor.png"
+else
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+end
+else
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+end
+end
+end
 end
 end
 end
@@ -124,9 +143,18 @@ game:GetService('UserInputService').InputEnded:Connect(function(input, gameProce
 if imasom == true then
 imasom = false
 if input.UserInputType == Enum.UserInputType.MouseButton1 then
-yey = owner.Character:FindFirstChild('Clone')
-if yey then
+yey = script.Parent
+if yey.Parent == owner.Character then
 owner.hellozzxy:FireServer()
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+task.spawn(function()
+task.wait(0.05)
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+task.wait(0.05)
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+task.wait(0.05)
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+end)
 inmense = false
 end
 end
@@ -137,8 +165,8 @@ end)
 game:GetService('UserInputService').InputBegan:Connect(function(input, gameProcessed)
 if input.KeyCode == Enum.KeyCode.T then
 if not gameProcessed then
-yey = owner.Character:FindFirstChild('Clone')
-if yey then
+yey = script.Parent
+if yey.Parent == owner.Character then
 if inmense == true then
 owner.hello0:FireServer()
 end
@@ -151,8 +179,8 @@ game:GetService('UserInputService').InputBegan:Connect(function(input, gameProce
 if input.KeyCode == Enum.KeyCode.R then
 if not gameProcessed then
 if inmense == true then
-yey = owner.Character:FindFirstChild('Clone')
-if yey then
+yey = script.Parent
+if yey.Parent == owner.Character then
 if inmense == true then
 owner.hello9:FireServer()
 end
@@ -160,7 +188,7 @@ end
 end
 end
 end
-end)]],owner.PlayerGui)
+end)]],owner.PlayerGui).Parent = Tool0
 debounce = true
 Script3.Parent = Tool0
 bool = true
@@ -174,14 +202,15 @@ task.wait(0.05)
 bool2 = true
 end
 end)
-
 owner.hello2.OnServerEvent:Connect(function(me, targ, hit)
 if bool == true then
 bool = false
 pcall(function()
-owner.bruvx.Value.Position = hit.Position
-owner.bruvx.Value.Anchored = true
+if owner.bruvx.Value ~= nil then
+owner.bruvx.Value.Position = hit.Position 
 owner.bruvx.Value:BreakJoints()
+owner.bruvx.Value.Anchored = true
+end
 end)
 task.wait(0.05)
 bool = true
@@ -192,8 +221,10 @@ owner.hellozzxy.OnServerEvent:Connect(function()
 if boomboom == true then
 boomboom = false
 if owner.bruvx.Value ~= nil then
+if owner.pll.Value ~= nil then
 print("helloZX")
 owner.bruvx.Value.Anchored = owner.pll.Value
+owner.bruvx.Value:MakeJoints()
 task.spawn(function()
 task.wait(0.05)
 owner.bruvx.Value.Anchored = owner.pll.Value
@@ -203,9 +234,11 @@ task.wait(0.05)
 owner.bruvx.Value.Anchored = owner.pll.Value
 task.wait(0.05)
 owner.bruvx.Value.Anchored = owner.pll.Value
-task.wait(0.05)
-owner.bruvx.Value.Anchored = owner.pll.Value
+task.wait(0.01)
+owner.pll.Value = nil
+owner.bruvx.Value = nil
 end)
+end
 end
 task.wait(0.05)
 boomboom = true
@@ -215,7 +248,9 @@ pio = true
 owner.hello0.OnServerEvent:Connect(function()
 if pio == true then
 pio = false
-owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation + Vector3.new(0, 0, 90)
+if owner.bruvx.Value ~= nil then
+owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation - Vector3.new(0, 0, 90)
+end
 task.wait(0.05)
 pio = true
 end
@@ -225,7 +260,9 @@ piox = true
 owner.hello9.OnServerEvent:Connect(function()
 if piox == true then
 piox = false
-owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation + Vector3.new(90, 0, 0)
+if owner.bruvx.Value ~= nil then
+owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation - Vector3.new(90, 0, 0)
+end
 task.wait(0.05)
 piox = true
 end
