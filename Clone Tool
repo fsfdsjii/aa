@@ -65,6 +65,16 @@ if not pzz then
 		local p=Instance.new("RemoteEvent",owner)
 		p.Name="hello2"
 end
+pzz = owner:FindFirstChild('hello0')
+if not pzz then
+		local p=Instance.new("RemoteEvent",owner)
+		p.Name="hello0"
+end
+pzz = owner:FindFirstChild('hello9')
+if not pzz then
+		local p=Instance.new("RemoteEvent",owner)
+		p.Name="hello9"
+end
 pzzz = owner:FindFirstChild('hellozzx')
 if not pzzz then
 		local px=Instance.new("RemoteEvent",owner)
@@ -171,6 +181,7 @@ bool = false
 pcall(function()
 owner.bruvx.Value.Position = hit.Position
 owner.bruvx.Value.Anchored = true
+owner.bruvx.Value:BreakJoints()
 end)
 task.wait(0.05)
 bool = true
@@ -184,6 +195,12 @@ if owner.bruvx.Value ~= nil then
 print("helloZX")
 owner.bruvx.Value.Anchored = owner.pll.Value
 task.spawn(function()
+task.wait(0.05)
+owner.bruvx.Value.Anchored = owner.pll.Value
+task.wait(0.05)
+owner.bruvx.Value.Anchored = owner.pll.Value
+task.wait(0.05)
+owner.bruvx.Value.Anchored = owner.pll.Value
 task.wait(0.05)
 owner.bruvx.Value.Anchored = owner.pll.Value
 task.wait(0.05)
