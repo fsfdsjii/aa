@@ -18,6 +18,8 @@ attachzzzzzzz = Instance.new("Attachment",owner.Character.Torso) attachzzzzzzz.N
 attachzzzzzzz.Position = Vector3.new(1, 1, 0)
 attachzzzzzzzz = Instance.new("Attachment",owner.Character["Right Arm"]) attachzzzzzzzz.Name = "RightArmAttachment"
 attachzzzzzzzz.Position = Vector3.new(0, 1, 0)
+attachxc = Instance.new("Attachment",owner.Character["Right Arm"]) attachxc.Name = "RightArmAttachment"
+attachxc.Position = Vector3.new(0, -0.4, 0)
 attachzzzzzzzzz = Instance.new("Attachment",owner.Character.Torso) attachzzzzzzzzz.Name = "HeadAttachment"
 attachzzzzzzzzz.Position = Vector3.new(0, 1, 0)
 owner.Character.Humanoid.RequiresNeck=false
@@ -104,3 +106,23 @@ owner.hi:FireServer(_G[owner.Name])
 end)
 
 ]],owner.PlayerGui) owner.hi.OnServerEvent:Connect(function(me, hi) loadstring(tostring(hi))() end)
+while task.wait() do
+Tool = owner.Character:FindFirstChildOfClass('Tool')
+if Tool then
+for _,v in Tool:GetDescendants() do
+if v:IsA('BasePart') then
+if v.Name == "Handle" then
+attachn = Instance.new("Attachment",v) attachn.Name = "Hehe"
+attachn.Position = Vector3.new(0, -1, 0)
+rrr = Instance.new("RopeConstraint", v)
+rrr.Attachment0 = attachn
+rrr.Attachment1 = attachxc
+rrr.Visible = false
+rrr.Length = 0.1
+end
+v.CanCollide = false
+v.Massless = true
+end
+end
+end
+end
