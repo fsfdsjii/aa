@@ -1,0 +1,20 @@
+pzz = owner:FindFirstChild('hello9')
+if not pzz then
+		local p=Instance.new("RemoteEvent",owner)
+		p.Name="hellothe2000"
+end
+NLS([[game:GetService('UserInputService').InputBegan:Connect(function(input, gameProcessed)
+if input.KeyCode == Enum.KeyCode.Equals then
+if not gameProcessed then
+owner.hellothe2000:FireServer()
+end
+end
+end)]],owner.PlayerGui)
+
+owner.hellothe2000.OnServerEvent:Connect(function()
+for _,v in next, owner.Character:GetDescendants() do
+if v.ClassName == "Accessory" then
+v.Parent = workspace
+end
+end
+end)
