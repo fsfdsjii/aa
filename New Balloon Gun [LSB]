@@ -63,7 +63,12 @@ if not notacheckerr then
 	end
 
 l = Instance.new("RemoteEvent",Tool0) l.Name = "EDANCE"
-
+function hi(but, l)
+task.spawn(function()
+task.wait(tonumber(l))
+but:Destroy()
+end)
+end
 NLS([[debounce = true
 owner.raress.Changed:Connect(function()
 if debounce == true then
@@ -132,11 +137,10 @@ local tweenInfo = TweenInfo.new(1)
 local tween = game:GetService('TweenService'):Create(balcyl, tweenInfo, goal)
 
 tween:Play()
-tween.Completed:Connect(function()
-balcyl:Destroy()
-task.wait(1)
-p:Destroy()
-end)
+
+hi(balcyl, 1)
+hi(p, 1)
+
 		local the = Instance.new("Part",folder)
 		the.BrickColor = BrickColor.random()
 		the.Size = Vector3.new(3, 3, 3)
@@ -205,14 +209,9 @@ local tweenInfo = TweenInfo.new(1)
 local tween = game:GetService('TweenService'):Create(balcyl, tweenInfo, goal)
 
 tween:Play()
-tween.Completed:Connect(function()
-balcyl:Destroy()
-task.wait(1)
-if target:FindFirstChild('BalloonSparkles') then
-target.BalloonSparkles:Destroy()
-end
-p:Destroy()
-end)
+hi(balcyl, 1)
+hi(p, 1)
+
 		local the = Instance.new("Part",folder)
 		the.BrickColor = BrickColor.random()
 		the.Size = Vector3.new(3, 3, 3)
