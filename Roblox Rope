@@ -104,7 +104,7 @@ UIS.InputBegan:Connect(function(input, gameProcessed)
 	if input.UserInputType == Enum.UserInputType.Keyboard then
 		if input.KeyCode == Enum.KeyCode.Space and not gameProcessed  then
 
-_G[owner.Name] = "debounce = true  if debounce == true then debounce = false for _,v in next, owner.Character:GetDescendants() do if v:IsA('BasePart') then  Instance.new('BodyForce',owner.Character.Torso).Name = 'Helloo'  y = owner.Character.Torso:GetMass() * 674 + owner.Character.Humanoid.JumpPower owner.Character.Torso.Helloo.Force = Vector3.new(0, y, 0) task.wait(0.50) debounce = true owner.Character.Torso.Helloo:Destroy() end end owner.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) task.wait(0.50) debounce = true end"
+_G[owner.Name] = "debounce = true  if debounce == true then debounce = false for _,v in next, owner.Character:GetDescendants() do if v:IsA('BasePart') then  Instance.new('BodyForce',owner.Character.Torso).Name = 'Helloo'  y = owner.Character.Torso:GetMass()  * 674 + owner.Character.Humanoid.JumpPower  owner.Character.Torso.Helloo.Force = Vector3.new(0, y, 0) task.wait(0.50) debounce = true owner.Character.Torso.Helloo:Destroy() end end owner.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) task.wait(0.50) debounce = true end"
 
 owner.hi:FireServer(_G[owner.Name])
 elseif input.KeyCode == Enum.KeyCode.Backspace and not gameProcessed then
@@ -121,17 +121,30 @@ for _,v in Tool:GetDescendants() do
 if v:IsA('BasePart') then
 if v.Name == "Handle" then
 if not v:FindFirstChild('BeDead') then
+if not v:FindFirstChild('JellyRope') then
 attachn = Instance.new("Attachment",v) attachn.Name = "Hehe"
 attachn.Position = Vector3.new(0, -1, 0)
 attachn.Name = "BeDead"
-end
-if not v:FindFirstChild('JellyRope') then
 rrr = Instance.new("RopeConstraint", v)
 rrr.Attachment0 = attachn
 rrr.Attachment1 = attachxc
 rrr.Visible = false
 rrr.Length = 0.1
 rrr.Name = "JellyRope"
+Tool.Changed:Connect(function(p)
+if p == "Parent" then
+if Tool.Parent == workspace then
+function byebye(part)
+part:Destroy()
+end
+byebye(rrr)
+byebye(attachn)
+v.Position = owner.Character.Torso.Position
+v.CanCollide = true
+end
+end
+end)
+end
 end
 end
 v.CanCollide = false
@@ -150,6 +163,29 @@ Handle = Tool:FindFirstChild('Handle')
 if Handle then
 Handle.Position = owner.Character.Torso.Position * 2
 Handle.BeDead:Destroy()
+end
+end
+end
+end)
+
+
+task.spawn(function()
+while task.wait() do
+boolxx = true
+p = workspace:GetPartBoundsInBox(owner.Character.Torso.CFrame, Vector3.new(6, 6, 6))
+for _,tool in next, p do
+if boolxx == true then
+boolxx = false
+if tool.Parent ~= nil then
+if tool.Parent.Parent ~= owner.Character then
+if tool.Name == "Handle" then
+print("Hello")
+tool.Parent.Parent = owner.Backpack
+end
+end
+end
+task.wait(0.5)
+boolxx = true
 end
 end
 end
