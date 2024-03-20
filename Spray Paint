@@ -1,0 +1,430 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+Sound2 = Instance.new("Sound")
+SpecialMesh3 = Instance.new("SpecialMesh")
+Camera4 = Instance.new("Camera")
+Script5 = Instance.new("Script")
+Animation6 = Instance.new("Animation")
+ScreenGui7 = Instance.new("ScreenGui")
+Frame8 = Instance.new("Frame")
+Frame9 = Instance.new("Frame")
+TextBox10 = Instance.new("TextBox")
+TextLabel11 = Instance.new("TextLabel")
+ImageLabel12 = Instance.new("ImageLabel")
+Tool0.Name = "Spray"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=79155357"
+Tool0.Grip = CFrame.new(0.200000003, -0.25, -0.200000003, 0.267498881, 0, 0.963558197, 0, 1, 0, -0.963558197, 0, 0.267498881)
+Tool0.GripForward = Vector3.new(-0.9635581970214844, -0, -0.2674988806247711)
+Tool0.GripPos = Vector3.new(0.20000000298023224, -0.25, -0.20000000298023224)
+Tool0.GripRight = Vector3.new(0.2674988806247711, 0, -0.9635581970214844)
+Tool0.ToolTip = "Spray"
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(8.81749916, 0.855010986, -27.46455, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part1.Orientation = Vector3.new(0, 180, 0)
+Part1.Position = Vector3.new(8.817499160766602, 0.855010986328125, -27.464550018310547)
+Part1.Rotation = Vector3.new(180, 0, 180)
+Part1.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part1.Size = Vector3.new(0.7599978446960449, 1.7099988460540771, 0.5799999833106995)
+Part1.BrickColor = BrickColor.new("Bright red")
+Part1.Locked = true
+Part1.Reflectance = 0.3499999940395355
+Part1.brickColor = BrickColor.new("Bright red")
+Part1.FormFactor = Enum.FormFactor.Custom
+Part1.formFactor = Enum.FormFactor.Custom
+Sound2.Parent = Part1
+Sound2.SoundId = "http://www.roblox.com/asset/?id=78496487"
+Sound2.Volume = 1
+SpecialMesh3.Parent = Part1
+SpecialMesh3.MeshId = "http://www.roblox.com/asset/?id=79146128"
+SpecialMesh3.TextureId = "http://www.roblox.com/asset/?id=79146220"
+SpecialMesh3.MeshType = Enum.MeshType.FileMesh
+Camera4.Name = "ThumbnailCamera"
+Camera4.Parent = Tool0
+Camera4.CFrame = CFrame.new(0.308411211, 0.878459036, 2.20420027, 0.987136424, -0.0307806022, 0.15688926, -1.86264515e-09, 0.981292486, 0.192522883, -0.159880236, -0.190046355, 0.968669534)
+Camera4.CoordinateFrame = CFrame.new(0.308411211, 0.878459036, 2.20420027, 0.987136424, -0.0307806022, 0.15688926, -1.86264515e-09, 0.981292486, 0.192522883, -0.159880236, -0.190046355, 0.968669534)
+Camera4.Focus = CFrame.new(0, 0.499999642, 0.300000191, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera4.focus = CFrame.new(0, 0.499999642, 0.300000191, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Script5.Parent = Tool0
+table.insert(cors,sandbox(Script5,function()
+-- Converted using Mokiros's Model to Script Version 3
+-- Converted string size: 264 characters
+local function Decode(str)
+	local StringLength = #str
+
+	-- Base64 decoding
+	do
+		local decoder = {}
+		for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+			decoder[char:byte()] = b64code-1
+		end
+		local n = StringLength
+		local t,k = table.create(math.floor(n/4)+1),1
+		local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+		for i = 1, padding > 0 and n-4 or n, 4 do
+			local a, b, c, d = str:byte(i,i+3)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+			k = k + 1
+		end
+		if padding == 1 then
+			local a, b, c = str:byte(n-3,n-1)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+		elseif padding == 2 then
+			local a, b = str:byte(n-3,n-2)
+			local v = decoder[a]*0x40000 + decoder[b]*0x1000
+			t[k] = string.char(bit32.extract(v,16,8))
+		end
+		str = table.concat(t)
+	end
+
+	local Position = 1
+	local function Parse(fmt)
+		local Values = {string.unpack(fmt,str,Position)}
+		Position = table.remove(Values)
+		return table.unpack(Values)
+	end
+
+	local Settings = Parse('B')
+	local Flags = Parse('B')
+	Flags = {
+		--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+		--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+		--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+		--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+		--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+	}
+
+	local ValueFMT = ('I'..Flags[1])
+	local InstanceFMT = ('I'..Flags[2])
+	local ConnectionFMT = ('I'..Flags[3])
+	local PropertyLengthFMT = ('I'..Flags[4])
+
+	local ValuesLength = Parse(ValueFMT)
+	local Values = table.create(ValuesLength)
+	local CFrameIndexes = {}
+
+	local ValueDecoders = {
+		--!!Start
+		[1] = function(Modifier)
+			return Parse('s'..Modifier)
+		end,
+		--!!Split
+		[2] = function(Modifier)
+			return Modifier ~= 0
+		end,
+		--!!Split
+		[3] = function()
+			return Parse('d')
+		end,
+		--!!Split
+		[4] = function(_,Index)
+			table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+		end,
+		--!!Split
+		[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+		--!!Split
+		[6] = {Color3.fromRGB,'BBB'},
+		--!!Split
+		[7] = {BrickColor.new,'I2'},
+		--!!Split
+		[8] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+			end
+			return ColorSequence.new(kpts)
+		end,
+		--!!Split
+		[9] = function(Modifier)
+			local len = Parse('I'..Modifier)
+			local kpts = table.create(len)
+			for i = 1,len do
+				kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+			end
+			return NumberSequence.new(kpts)
+		end,
+		--!!Split
+		[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+		--!!Split
+		[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+		--!!Split
+		[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+		--!!Split
+		[14] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Axes.new(unpack(t))
+		end,
+		--!!Split
+		[15] = function()
+			local flags = Parse('B')
+			local ids = {"Top","Bottom","Left","Right","Front","Back"}
+			local t = {}
+			for i = 0,5 do
+				if bit32.extract(flags,i,1)==1 then
+					table.insert(t,Enum.NormalId[ids[i+1]])
+				end
+			end
+			return Faces.new(unpack(t))
+		end,
+		--!!Split
+		[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+		--!!Split
+		[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+		--!!Split
+		[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+		--!!Split
+		[19] = function()
+			return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+		end
+		--!!End
+	}
+
+	for i = 1,ValuesLength do
+		local TypeAndModifier = Parse('B')
+		local Type = bit32.band(TypeAndModifier,0b11111)
+		local Modifier = (TypeAndModifier - Type) / 0b100000
+		local Decoder = ValueDecoders[Type]
+		if type(Decoder)=='function' then
+			Values[i] = Decoder(Modifier,i)
+		else
+			Values[i] = Decoder[1](Parse(Decoder[2]))
+		end
+	end
+
+	for i,t in pairs(CFrameIndexes) do
+		Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+	end
+
+	local InstancesLength = Parse(InstanceFMT)
+	local Instances = {}
+	local NoParent = {}
+
+	for i = 1,InstancesLength do
+		local ClassName = Values[Parse(ValueFMT)]
+		local obj
+		local MeshPartMesh,MeshPartScale
+		if ClassName == "UnionOperation" then
+			obj = DecodeUnion(Values,Flags,Parse)
+			obj.UsePartColor = true
+		elseif ClassName:find("Script") then
+			obj = Instance.new("Folder")
+			Script(obj,ClassName=='ModuleScript')
+		elseif ClassName == "MeshPart" then
+			obj = Instance.new("Part")
+			MeshPartMesh = Instance.new("SpecialMesh")
+			MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+			MeshPartMesh.Parent = obj
+		else
+			obj = Instance.new(ClassName)
+		end
+		local Parent = Instances[Parse(InstanceFMT)]
+		local PropertiesLength = Parse(PropertyLengthFMT)
+		local AttributesLength = Parse(PropertyLengthFMT)
+		Instances[i] = obj
+		for i = 1,PropertiesLength do
+			local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+
+			-- ok this looks awful
+			if MeshPartMesh then
+				if Prop == "MeshId" then
+					MeshPartMesh.MeshId = Value
+					continue
+				elseif Prop == "TextureID" then
+					MeshPartMesh.TextureId = Value
+					continue
+				elseif Prop == "Size" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+					else
+						MeshPartMesh.Scale = Value / MeshPartScale
+					end
+				elseif Prop == "MeshSize" then
+					if not MeshPartScale then
+						MeshPartScale = Value
+						MeshPartMesh.Scale = obj.Size / Value
+					else
+						MeshPartMesh.Scale = MeshPartScale / Value
+					end
+					continue
+				end
+			end
+
+			obj[Prop] = Value
+		end
+		if MeshPartMesh then
+			if MeshPartMesh.MeshId=='' then
+				if MeshPartMesh.TextureId=='' then
+					MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+				end
+				MeshPartMesh.Scale = obj.Size
+			end
+		end
+		for i = 1,AttributesLength do
+			obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+		end
+		if not Parent then
+			table.insert(NoParent,obj)
+		else
+			obj.Parent = Parent
+		end
+	end
+
+	local ConnectionsLength = Parse(ConnectionFMT)
+	for i = 1,ConnectionsLength do
+		local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+		Instances[a][Values[b]] = Instances[c]
+	end
+
+	return NoParent
+end
+
+
+local Objects = Decode('AAASIQRQYXJ0IQhBbmNob3JlZCIhDUJvdHRvbVN1cmZhY2UDAAAAAAAAAAAhBkNGcmFtZQQJERIhCFBvc2l0aW9uCgAAMEERAAA/AABwwSEEU2l6ZQoAAMBAzczMPQAAwEAhClRvcFN1cmZhY2UhDFRyYW5zcGFyZW5jeQMAAAAAAADwPyEFRGVjYWwhBEZhY2UKAACA'
+	..'PwAAAAAAAAAACgAAAAAAAIA/AAAAAAIBAAcAAgMEBQYHCAkKCwwFDQ4PAQEAEA4A')
+for _,obj in pairs(Objects) do
+	p = game:GetService('ServerStorage'):FindFirstChild(owner.Name.."000")
+	if not p then
+	obj.Parent = game:GetService('ServerStorage')
+		obj.Name = owner.Name.."000"
+	else
+			p:Destroy()
+			obj.Parent = game:GetService('ServerStorage')
+			obj.Name = owner.Name.."000"
+		end
+end
+
+
+Instance.new("RemoteEvent",owner.Backpack).Name = "NoItsNot"
+Instance.new("Part",owner.Backpack).Name = "NoItsNotX"
+Instance.new("RemoteEvent",owner.Backpack).Name = "NoItsYea"
+Instance.new("Part",owner.Backpack).Name = "NoItsYes"
+script.Parent.SprayGui.Parent = owner.PlayerGui
+id = "http://www.roblox.com/asset/?id="
+NLS([[owner.Backpack.NoItsNotX.Changed:Connect(function() owner.Backpack.NoItsNot:FireServer(owner:GetMouse().Target, owner:GetMouse().Hit) end)
+owner.PlayerGui.SprayGui.Frame.Frame.TextBox.Changed:Connect(function() task.wait(0.05) owner.Backpack.NoItsYea:FireServer(owner.PlayerGui.SprayGui.Frame.Frame.TextBox.Text) end)]],owner.PlayerGui)
+bool = true
+bool2 = true
+script.Parent.Activated:Connect(function()
+	owner.Backpack.NoItsNotX.Transparency = math.random(0, 1)
+	zzz = game:GetService('ServerStorage')[owner.Name.."000"]:Clone()
+	
+	owner.Backpack.NoItsNot.OnServerEvent:Connect(function(me, targ, hit)
+		if bool2==true then
+			bool2=false
+		zzz.Position = hit.Position
+		zzz.Orientation = targ.Orientation
+		zzz.Parent = workspace
+		--owner.Character.Humanoid:PlayAnimation(script.Parent.SprayPaint)
+			task.wait(0.05)
+			bool2=true
+			end
+	end)
+	owner.Backpack.NoItsYea.OnServerEvent:Connect(function(me, text)
+		if bool==true then
+				bool = false
+				local response = game:GetService('HttpService'):GetAsync('https://rbxdecal.glitch.me/' .. tostring(text)); 
+				zzz.Decal.Texture = id..response
+			task.wait(0.05)
+				bool = true
+				return response
+			end
+	end)
+end)
+
+
+
+
+end))
+Animation6.Name = "SprayPaint"
+Animation6.Parent = Tool0
+Animation6.AnimationId = "http://www.roblox.com/Asset?ID=78494810"
+ScreenGui7.Name = "SprayGui"
+ScreenGui7.Parent = Tool0
+Frame8.Parent = ScreenGui7
+Frame8.Position = UDim2.new(1, -240, 1, -320)
+Frame8.Size = UDim2.new(0, 220, 0, 265)
+Frame8.ClipsDescendants = true
+Frame8.Draggable = true
+Frame8.Style = Enum.FrameStyle.RobloxRound
+Frame9.Parent = Frame8
+Frame9.Position = UDim2.new(0.5, -100, 0, 0)
+Frame9.Size = UDim2.new(0, 200, 0, 40)
+Frame9.ClipsDescendants = true
+Frame9.Style = Enum.FrameStyle.RobloxRound
+TextBox10.Parent = Frame9
+TextBox10.Position = UDim2.new(1, -105, 0.5, -10)
+TextBox10.Size = UDim2.new(0, 100, 0, 20)
+TextBox10.BackgroundColor = BrickColor.new("Institutional white")
+TextBox10.BackgroundColor3 = Color3.new(1, 1, 1)
+TextBox10.BorderSizePixel = 0
+TextBox10.ClipsDescendants = true
+TextBox10.ZIndex = 2
+TextBox10.Font = Enum.Font.ArialBold
+TextBox10.FontSize = Enum.FontSize.Size18
+TextBox10.Text = "324"
+TextBox10.TextColor = BrickColor.new("Really black")
+TextBox10.TextColor3 = Color3.new(0, 0, 0)
+TextBox10.TextSize = 18
+TextBox10.TextWrap = true
+TextBox10.TextWrapped = true
+TextLabel11.Parent = Frame9
+TextLabel11.Size = UDim2.new(1, 0, 1, 0)
+TextLabel11.BackgroundTransparency = 1
+TextLabel11.BorderSizePixel = 0
+TextLabel11.ClipsDescendants = true
+TextLabel11.Font = Enum.Font.ArialBold
+TextLabel11.FontSize = Enum.FontSize.Size18
+TextLabel11.Text = "Decal Id:"
+TextLabel11.TextColor = BrickColor.new("Institutional white")
+TextLabel11.TextColor3 = Color3.new(1, 1, 1)
+TextLabel11.TextSize = 18
+TextLabel11.TextXAlignment = Enum.TextXAlignment.Left
+ImageLabel12.Parent = Frame8
+ImageLabel12.Position = UDim2.new(0.5, -100, 1, -200)
+ImageLabel12.Size = UDim2.new(0, 200, 0, 200)
+ImageLabel12.BackgroundColor = BrickColor.new("Silver flip/flop")
+ImageLabel12.BackgroundColor3 = Color3.new(0.501961, 0.501961, 0.501961)
+ImageLabel12.BackgroundTransparency = 0.5
+ImageLabel12.BorderSizePixel = 0
+ImageLabel12.ClipsDescendants = true
+ImageLabel12.Image = "http://www.roblox.com/asset/?id=80373023"
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
