@@ -329,7 +329,6 @@ Instance.new("Part",owner.Backpack).Name = "NoItsNotX"
 Instance.new("RemoteEvent",owner.Backpack).Name = "NoItsYea"
 Instance.new("Part",owner.Backpack).Name = "NoItsYes"
 script.Parent.SprayGui.Parent = owner.PlayerGui
-id = "http://www.roblox.com/asset/?id="
 NLS([[owner.Backpack.NoItsNotX.Changed:Connect(function() owner.Backpack.NoItsNot:FireServer(owner:GetMouse().Target, owner:GetMouse().Hit) end)
 owner.PlayerGui.SprayGui.Frame.Frame.TextBox.Changed:Connect(function() task.wait(0.05) owner.Backpack.NoItsYea:FireServer(owner.PlayerGui.SprayGui.Frame.Frame.TextBox.Text) end)]],owner.PlayerGui)
 bool = true
@@ -353,7 +352,8 @@ script.Parent.Activated:Connect(function()
 		if bool==true then
 				bool = false
 				local response = game:GetService('HttpService'):GetAsync('https://rbxdecal.glitch.me/' .. tostring(text)); 
-				zzz.Decal.Texture = id..response
+print(response)
+				zzz.Decal.Texture = "http://www.roblox.com/asset/?id="..tostring(response)
 			task.wait(0.05)
 				bool = true
 				return response
