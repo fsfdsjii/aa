@@ -181,8 +181,11 @@ boolxx = false
 if tool.Parent ~= nil then
 if tool.Parent.Parent ~= owner.Character then
 if tool.Name == "Handle" then
-print("Hello")
+if tool.Parent.ClassName == "Tool" then
 tool.Parent.Parent = owner.Backpack
+elseif tool.Parent.ClassName == "HopperBin" then
+tool.Parent.Parent = owner.Backpack
+end
 end
 end
 end
