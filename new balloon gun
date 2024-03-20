@@ -71,6 +71,12 @@ but:Destroy()
 end)
 end
 
+function destroyBalloon(balloon, targ)
+targ.Destroying:Connect(function()
+balloon:Destroy()
+end)
+end
+
 NLS([[debounce = true
 owner.raress.Changed:Connect(function()
 if debounce == true then
@@ -115,6 +121,7 @@ if target ~= nil then
                 the.Name = "Balloon"
 		local attach = Instance.new("Attachment",the)
 		local attach2 = Instance.new("Attachment",target)
+destroyBalloon(the, target)
                 attach2.Name = owner.Name..999
 local balcyl = Instance.new("Part",folder)
 balcyl.Shape = Enum.PartType.Cylinder
