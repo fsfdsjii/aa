@@ -131,6 +131,7 @@ rrr.Attachment1 = attachxc
 rrr.Visible = false
 rrr.Length = 0.1
 rrr.Name = "JellyRope"
+Tool.RequiresHandle = false
 Tool.Changed:Connect(function(p)
 if p == "Parent" then
 if Tool.Parent == workspace then
@@ -141,6 +142,7 @@ byebye(rrr)
 byebye(attachn)
 v.Position = owner.Character.Torso.Position
 v.CanCollide = true
+Tool.RequiresHandle = true
 end
 end
 end)
