@@ -70,6 +70,12 @@ if not lzxx then
 	Lxx = Instance.new("Part",owner)
 	Lxx.Name = "Lxx"
 end
+
+lzxx = owner:FindFirstChild('Lxb')
+if not lzx then
+	Lx = Instance.new("RemoteEvent",owner)
+	Lx.Name = "Lxb"
+end
 	NLS([[ debounce = true owner.Lxx.Changed:Connect(function()  if debounce == true then debounce = false owner.Lx:FireServer(owner:GetMouse().Hit)  task.wait(0.05) debounce = true end end) ]],owner.PlayerGui)
 debounce = true
 ex.Activated:Connect(function()
@@ -101,28 +107,50 @@ UIS.InputBegan:Connect(function(input, gameProcessed)
 _G[owner.Name] = "debounce = true  if debounce == true then debounce = false for _,v in next, owner.Character:GetDescendants() do if v:IsA('BasePart') then  Instance.new('BodyForce',owner.Character.Torso).Name = 'Helloo'  y = owner.Character.Torso:GetMass() * 674 + owner.Character.Humanoid.JumpPower owner.Character.Torso.Helloo.Force = Vector3.new(0, y, 0) task.wait(0.50) debounce = true owner.Character.Torso.Helloo:Destroy() end end owner.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) task.wait(0.50) debounce = true end"
 
 owner.hi:FireServer(_G[owner.Name])
+elseif input.KeyCode == Enum.KeyCode.Backspace and not gameProcessed then
+owner.Lxb:FireServer()
       end
    end
 end)
 
 ]],owner.PlayerGui) owner.hi.OnServerEvent:Connect(function(me, hi) loadstring(tostring(hi))() end)
-while task.wait() do
+owner.Character.ChildAdded:Connect(function()
 Tool = owner.Character:FindFirstChildOfClass('Tool')
 if Tool then
 for _,v in Tool:GetDescendants() do
 if v:IsA('BasePart') then
 if v.Name == "Handle" then
+if not v:FindFirstChild('BeDead') then
 attachn = Instance.new("Attachment",v) attachn.Name = "Hehe"
 attachn.Position = Vector3.new(0, -1, 0)
+attachn.Name = "BeDead"
+end
+if not v:FindFirstChild('JellyRope') then
 rrr = Instance.new("RopeConstraint", v)
 rrr.Attachment0 = attachn
 rrr.Attachment1 = attachxc
 rrr.Visible = false
 rrr.Length = 0.1
+rrr.Name = "JellyRope"
+end
 end
 v.CanCollide = false
 v.Massless = true
 end
 end
 end
+end)
+owner.Lxb.OnServerEvent:Connect(function()
+Tool = owner.Character:FindFirstChildOfClass('Tool')
+if Tool then
+if Tool.CanBeDropped == true then
+Tool.Parent = workspace
+Tool:BreakJoints()
+Handle = Tool:FindFirstChild('Handle')
+if Handle then
+Handle.Position = owner.Character.Torso.Position * 2
+Handle.BeDead:Destroy()
 end
+end
+end
+end)
