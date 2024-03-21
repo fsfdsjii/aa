@@ -1,0 +1,498 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Script6 = Instance.new("Script")
+LocalScript7 = Instance.new("LocalScript")
+LocalScript8 = Instance.new("LocalScript")
+Camera9 = Instance.new("Camera")
+Tool0.Name = "AtomicDisintegrator3100"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=13465932"
+Tool0.Grip = CFrame.new(0, -0.100000001, -0.699999988, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Tool0.GripForward = Vector3.new(-0, 1, -0)
+Tool0.GripPos = Vector3.new(0, -0.10000000149011612, -0.699999988079071)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(0.0652410015, 41.1887283, 21.9435883, 1, -3.50902809e-08, 2.17850527e-07, -1.2923104e-07, 0.70710659, 0.707106471, -1.78855998e-07, -0.707106471, 0.70710659)
+Part1.Orientation = Vector3.new(-45, 0, 0)
+Part1.Position = Vector3.new(0.0652410015463829, 41.18872833251953, 21.943588256835938)
+Part1.Rotation = Vector3.new(-45, 0, 0)
+Part1.Size = Vector3.new(1, 2.799999952316284, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.FormFactor = Enum.FormFactor.Plate
+Part1.formFactor = Enum.FormFactor.Plate
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=13465931"
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=13465950"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "Equip"
+Sound3.Parent = Part1
+Sound3.SoundId = "http://www.roblox.com/asset/?id=10756118"
+Sound4.Name = "Hit"
+Sound4.Parent = Part1
+Sound4.SoundId = "http://www.roblox.com/asset/?id=11945266"
+Sound4.Volume = 1
+Sound5.Name = "PewPew"
+Sound5.Parent = Part1
+Sound5.SoundId = "http://www.roblox.com/asset/?id=13775494"
+Sound5.Volume = 1
+Script6.Name = "RayGun"
+Script6.Parent = Tool0
+table.insert(cors,sandbox(Script6,function()
+--Rescripted by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+Debris = game:GetService("Debris")
+
+function noway(part)
+	--Rescripted by Luckymaxer
+
+	Part = part
+
+	Players = game:GetService("Players")
+	Debris = game:GetService("Debris")
+
+	Creator = Part:WaitForChild("Creator")
+
+	Sounds = {
+		Hit = Part:WaitForChild("Hit")
+	}
+
+	Damage = 10
+
+	function IsTeamMate(Player1, Player2)
+		return (Player1 and Player2 and not Player1.Neutral and not Player2.Neutral and Player1.TeamColor == Player2.TeamColor)
+	end
+
+	function TagHumanoid(humanoid, player)
+		local Creator_Tag = Instance.new("ObjectValue")
+		Creator_Tag.Name = "creator"
+		Creator_Tag.Value = player
+		Debris:AddItem(Creator_Tag, 2)
+		Creator_Tag.Parent = humanoid
+	end
+
+	function UntagHumanoid(humanoid)
+		for i, v in pairs(humanoid:GetChildren()) do
+			if v:IsA("ObjectValue") and v.Name == "creator" then
+				v:Destroy()
+			end
+		end
+	end
+
+	function Touched(Hit)
+		if not Hit or not Hit.Parent then
+			return
+		end
+		local character = Hit.Parent
+		if character:IsA("Hat") then
+			character = character.Parent
+		end
+		local HasForceField = false
+		for i, v in pairs(character:GetChildren()) do
+			if v:IsA("ForceField") then
+				HasForceField = true
+			end
+		end
+		local humanoid = character:FindFirstChild("Humanoid")
+		if not HasForceField and humanoid and humanoid.Health > 0 then
+			local CreatorPlayer = (((Creator and Creator.Value and Creator.Value:IsA("Player")) and Creator.Value) or nil)
+			local player = Players:GetPlayerFromCharacter(character)
+			if CreatorPlayer and player and (CreatorPlayer == player or IsTeamMate(CreatorPlayer, player)) then
+				return
+			end
+			UntagHumanoid(humanoid)
+			TagHumanoid(humanoid, CreatorPlayer)
+			humanoid:TakeDamage(Damage)
+		end
+		Sounds.Hit:Play()
+		Part:Destroy()
+	end
+
+	Part.Touched:connect(Touched)
+
+	Debris:AddItem(Part, 5)
+end
+
+BasePart = Instance.new("Part")
+BasePart.Shape = Enum.PartType.Block
+BasePart.Material = Enum.Material.Plastic
+BasePart.TopSurface = Enum.SurfaceType.Smooth
+BasePart.BottomSurface = Enum.SurfaceType.Smooth
+BasePart.FormFactor = Enum.FormFactor.Custom
+BasePart.Size = Vector3.new(0.2, 0.2, 0.2)
+BasePart.CanCollide = true
+BasePart.Locked = true
+BasePart.Anchored = false
+
+BaseProjectile = BasePart:Clone()
+BaseProjectile.Name = "Projectile"
+BaseProjectile.Shape = Enum.PartType.Ball
+BaseProjectile.Size = Vector3.new(1, 1, 1)
+BaseProjectile.BrickColor = BrickColor.new("Lime green")
+BaseProjectile.Reflectance = 0.5
+BaseSpark = Instance.new("Sparkles")
+BaseSpark.Name = "Spark"
+BaseSpark.SparkleColor = Color3.new(0, 1, 0)
+BaseSpark.Enabled = true
+BaseSpark.Parent = BaseProjectile
+
+Grips = {
+	Up = CFrame.new(0, -0.100000001, -0.699999988, 1, 0, -0, -0, 0.19592391, -0.980619073, 0, 0.980619192, 0.19592388),
+	Out = CFrame.new(0, -0.100000001, -0.699999988, 1, 0, -0, 0, 0, -1, 0, 1, -0),
+}
+
+Sounds = {
+	Equip = Handle:WaitForChild("Equip"),
+	PewPew = Handle:WaitForChild("PewPew"),
+	Hit = Handle:WaitForChild("Hit"),
+}
+
+ReloadTime = 0.1
+
+ServerControl = (Tool:FindFirstChild("ServerControl") or Instance.new("RemoteFunction"))
+ServerControl.Name = "ServerControl"
+ServerControl.Parent = Tool
+
+ClientControl = (Tool:FindFirstChild("ClientControl") or Instance.new("RemoteFunction"))
+ClientControl.Name = "ClientControl"
+ClientControl.Parent = Tool
+
+ToolEquipped = false
+
+Tool.Grip = Grips.Out
+Tool.Enabled = true
+
+function Fire(Direction)
+	
+	local SpawnPos = (Handle.Position + (Direction * 10))
+	
+	local Gravity = 196.20
+	local Force = 150
+	
+	local Mass = (BaseProjectile:GetMass() * Gravity)
+
+	local Projectile = BaseProjectile:Clone()
+	Projectile.CFrame = CFrame.new(SpawnPos)
+	Projectile.Velocity = (Direction * Force)
+	local HitSound = Sounds.Hit:Clone()
+	HitSound.Parent = Projectile
+	local BodyVelocity = Instance.new("BodyVelocity")
+	BodyVelocity.maxForce = Vector3.new(Mass, Mass, Mass)	
+	BodyVelocity.velocity = (Direction * Force)
+	BodyVelocity.Parent = Projectile
+	
+	local CreatorTag = Instance.new("ObjectValue")
+	CreatorTag.Value = Player
+	CreatorTag.Name = "Creator"
+	CreatorTag.Parent = Projectile
+	
+noway(Projectile)
+	
+	Debris:AddItem(Projectile, 5)
+	Projectile.Parent = game:GetService("Workspace")
+
+	Sound5:Play()
+
+end
+
+function Activated()
+	if not Tool.Enabled or not ToolEquipped or not CheckIfAlive() then
+		return
+	end
+	
+	local TargetPos = InvokeClient("MousePosition")
+	if not TargetPos then
+		return
+	end
+	TargetPos = TargetPos.Position
+	local Direction = (TargetPos - Handle.Position).unit
+	
+	Tool.Enabled = false
+	Tool.Grip = Grips.Up
+	Fire(Direction)
+	wait(ReloadTime)
+	Tool.Grip = Grips.Out
+	wait(ReloadTime)
+	Tool.Enabled = true
+
+end
+
+function CheckIfAlive()
+	return (((Player and Player.Parent and Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0) and true) or false)
+end
+
+function Equipped()
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	if not CheckIfAlive() then
+		return
+	end
+	ToolEquipped = true
+	Sounds.Equip:Play()
+end
+
+function Unequipped()
+	Tool.Grip = Grips.Out
+	for i, v in pairs(Sounds) do
+		v:Stop()
+	end
+	ToolEquipped = false
+end
+
+function InvokeClient(Mode, Value)
+	local ClientReturn = nil
+	pcall(function()
+		ClientReturn = ClientControl:InvokeClient(Player, Mode, Value)
+	end)
+	return ClientReturn
+end
+
+ServerControl.OnServerInvoke = (function(player, Mode, Value)
+	if player ~= Player or not ToolEquipped or not CheckIfAlive() or not Mode or not Value then
+		return
+	end
+end)
+
+Tool.Activated:connect(Activated)
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+
+end))
+LocalScript7.Parent = Tool0
+table.insert(cors,sandbox(LocalScript7,function()
+NLS([[--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+RunService = game:GetService("RunService")
+UserInputService = game:GetService("UserInputService")
+
+Animations = {}
+LocalObjects = {}
+
+ServerControl = Tool:WaitForChild("ServerControl")
+ClientControl = Tool:WaitForChild("ClientControl")
+
+InputCheck = Instance.new("ScreenGui")
+InputCheck.Name = "InputCheck"
+InputButton = Instance.new("ImageButton")
+InputButton.Name = "InputButton"
+InputButton.Image = ""
+InputButton.BackgroundTransparency = 1
+InputButton.ImageTransparency = 1
+InputButton.Size = UDim2.new(1, 0, 1, 0)
+InputButton.Parent = InputCheck
+
+Rate = (1 / 60)
+
+ToolEquipped = false
+
+function SetAnimation(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+		local AnimationTrack = Humanoid:LoadAnimation(value.Animation)
+		table.insert(Animations, {Animation = value.Animation, AnimationTrack = AnimationTrack})
+		AnimationTrack:Play(value.FadeTime, value.Weight, value.Speed)
+	elseif mode == "StopAnimation" and value then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop(value.FadeTime)
+				table.remove(Animations, i)
+			end
+		end
+	end
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Player and Player.Parent) and true) or false)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	ToolEquipped = true
+	if not CheckIfAlive() then
+		return
+	end
+	Spawn(function()
+		PlayerMouse = Player:GetMouse()
+		Mouse.Button1Down:connect(function()
+			InvokeServer("Button1Click", {Down = true})
+		end)
+		Mouse.Button1Up:connect(function()
+			InvokeServer("Button1Click", {Down = false})
+		end)
+		local PlayerGui = Player:FindFirstChild("PlayerGui")
+		if PlayerGui then
+			if UserInputService.TouchEnabled then
+				InputCheckClone = InputCheck:Clone()
+				InputCheckClone.InputButton.InputBegan:connect(function()
+					InvokeServer("Button1Click", {Down = true})
+				end)
+				InputCheckClone.InputButton.InputEnded:connect(function()
+					InvokeServer("Button1Click", {Down = false})
+				end)
+				InputCheckClone.Parent = PlayerGui
+			end
+		end
+	end)
+end
+
+function Unequipped()
+	LocalObjects = {}
+	if InputCheckClone and InputCheckClone.Parent then
+		InputCheckClone:Destroy()
+	end
+	for i, v in pairs(Animations) do
+		if v and v.AnimationTrack then
+			v.AnimationTrack:Stop()
+		end
+	end
+	for i, v in pairs({ObjectLocalTransparencyModifier}) do
+		if v then
+			v:disconnect()
+		end
+	end
+	Animations = {}
+	ToolEquipped = false
+end
+
+function InvokeServer(mode, value)
+	pcall(function()
+		local ServerReturn = ServerControl:InvokeServer(mode, value)
+		return ServerReturn
+	end)
+end
+
+function OnClientInvoke(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		SetAnimation("PlayAnimation", value)
+	elseif mode == "StopAnimation" and value then
+		SetAnimation("StopAnimation", value)
+	elseif mode == "PlaySound" and value then
+		value:Play()
+	elseif mode == "StopSound" and value then
+		value:Stop()
+	elseif mode == "MousePosition" then
+		if not PlayerMouse and CheckIfAlive() then
+			PlayerMouse = Player:GetMouse()
+		end
+		return {Position = PlayerMouse.Hit.p, Target = PlayerMouse.Target}
+	elseif mode == "SetLocalTransparencyModifier" and value and ToolEquipped then
+		pcall(function()
+			local ObjectFound = false
+			for i, v in pairs(LocalObjects) do
+				if v == value then
+					ObjectFound = true
+				end
+			end
+			if not ObjectFound then
+				table.insert(LocalObjects, value)
+				if ObjectLocalTransparencyModifier then
+					ObjectLocalTransparencyModifier:disconnect()
+				end
+				ObjectLocalTransparencyModifier = RunService.RenderStepped:connect(function()
+					for i, v in pairs(LocalObjects) do
+						if v.Object and v.Object.Parent then
+							local CurrentTransparency = v.Object.LocalTransparencyModifier
+							if ((not v.AutoUpdate and (CurrentTransparency == 1 or  CurrentTransparency == 0)) or v.AutoUpdate) then
+								v.Object.LocalTransparencyModifier = v.Transparency
+							end
+						else
+							table.remove(LocalObjects, i)
+						end
+					end
+				end)
+			end
+		end)
+	end
+end
+
+ClientControl.OnClientInvoke = OnClientInvoke
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)]],owner.PlayerGui).Parent = script.Parent
+end))
+LocalScript8.Name = "MouseIcon"
+LocalScript8.Parent = Tool0
+table.insert(cors,sandbox(LocalScript8,function()
+NLS([[--Made by Luckymaxer
+
+Mouse_Icon = "rbxasset://textures/GunCursor.png"
+Reloading_Icon = "rbxasset://textures/GunWaitCursor.png"
+
+Tool = script.Parent
+
+Mouse = nil
+
+function UpdateIcon()
+	if Mouse then
+		Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
+	end
+end
+
+function OnEquipped(ToolMouse)
+	Mouse = ToolMouse
+	UpdateIcon()
+end
+
+function OnChanged(Property)
+	if Property == "Enabled" then
+		UpdateIcon()
+	end
+end
+
+Tool.Equipped:connect(OnEquipped)
+Tool.Changed:connect(OnChanged)]],owner.PlayerGui).Parent = script.Parent
+
+end))
+Camera9.Name = "ThumbnailCamera"
+Camera9.Parent = Tool0
+Camera9.CFrame = CFrame.new(1.384745, 41.6665382, 21.5834789, -0.11485488, -0.136173785, 0.984004676, 1.86264515e-09, 0.990559995, 0.137080938, -0.993382335, 0.015744416, -0.113770626)
+Camera9.CoordinateFrame = CFrame.new(1.384745, 41.6665382, 21.5834789, -0.11485488, -0.136173785, 0.984004676, 1.86264515e-09, 0.990559995, 0.137080938, -0.993382335, 0.015744416, -0.113770626)
+Camera9.Focus = CFrame.new(-1.07459962, 41.3239288, 21.8678284, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera9.focus = CFrame.new(-1.07459962, 41.3239288, 21.8678284, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
