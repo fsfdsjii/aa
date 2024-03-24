@@ -62,6 +62,13 @@ if not notacheckerr then
 	nz.Name = "raress"
 	end
 
+notacheckerr = owner:FindFirstChild('owned')
+if not notacheckerr then
+	nz = Instance.new("StringValue",owner)
+	nz.Name = "string"
+        nz.Value = "Cyan"
+	end
+
 l = Instance.new("RemoteEvent",Tool0) l.Name = "EDANCE"
 function hi(but, l)
 task.spawn(function()
@@ -118,7 +125,7 @@ balcyl.Position = ((Part1.Position + hit.Position)/2)
 balcyl.CFrame = CFrame.lookAt(balcyl.Position, hit.Position)
 balcyl.Orientation = balcyl.Orientation + Vector3.new(90, 0, 90)
 balcyl.Size = Vector3.new(magnitude, 1, 1)
-balcyl.BrickColor = BrickColor.new('Cyan')
+balcyl.BrickColor = BrickColor.new(tostring(owner.string.Value))
 balcyl.Transparency = 0.7
 balcyl.Material = Enum.Material.Neon
 balcyl.Anchored = true
@@ -191,7 +198,7 @@ balcyl.Position = ((Part1.Position + hit.Position)/2)
 balcyl.CFrame = CFrame.lookAt(balcyl.Position, hit.Position)
 balcyl.Orientation = balcyl.Orientation + Vector3.new(90, 0, 90)
 balcyl.Size = Vector3.new(magnitude, 1, 1)
-balcyl.BrickColor = BrickColor.new('Cyan')
+balcyl.BrickColor = BrickColor.new(tostring(owner.string.Value))
 balcyl.Transparency = 0.7
 balcyl.Material = Enum.Material.Neon
 balcyl.Anchored = true
@@ -338,8 +345,21 @@ owner.Chatted:Connect(function(msg)
 	end
 end)
 
+local cmd = "/defaultcolr1"
+local seperator = " "
+
+owner.Chatted:Connect(function(msg)
+	local SplitMsg = string.split(msg, seperator)
+	if cmd == SplitMsg[1] then
+		local TargetName=SplitMsg[2]
+owner.string.Value = tostring(TargetName)
+
+	end
+end)
+
 print[[Say /balloonpower then a number to indicate the power of the balloon, 'if theres an object with high mass the higher the balloon power the more it can lift it up'
 Say /clrballoons to clear your balloons
 Say /clrallballoons to clear all balloons
 Say /ropecolr1 to set the brick color of the rope, brick color name has to have 1 word
-Say /ropecolr2 to set the brick color of the rope, brick color name has to have 2 words]]
+Say /ropecolr2 to set the brick color of the rope, brick color name has to have 2 words
+Say /defaultcolr1 to set the default brick color, default brick color must have 1 word]]
