@@ -12882,7 +12882,7 @@ Aerialtude
 					game:GetService("Debris"):AddItem(bv,2.5) 
 					game:GetService("Debris"):AddItem(bg,2.5) 
 
-					local connex = game:GetService("RunService").RenderStepped:connect(function() 
+					local connex = game:GetService("RunService").Stepped:connect(function() 
 						if HRP.Velocity.y > 0 then 
 							HRP.Velocity = NV 
 						end 
@@ -13013,7 +13013,7 @@ Aerialtude
 					game:GetService("Debris"):AddItem(bv,5.5) 
 					game:GetService("Debris"):AddItem(bg,5.5) 
 
-					local connex = game:GetService("RunService").RenderStepped:connect(function() 
+					local connex = game:GetService("RunService").Stepped:connect(function() 
 						if HRP.Velocity.y > 0 then 
 							HRP.Velocity = NV 
 						end 
@@ -14535,10 +14535,10 @@ Aerialtude
 			end -- func end 
 			loltewlnaem = "blockof"
 			re(bp,loltewlnaem)
-			bin=it("HopperBin",bp) bin.Name=loltewlnaem
+			bin=it("Tool",bp) bin.Name=loltewlnaem
 			script.Parent=bin
-			bin.Selected:connect(function(mouse) mou = mouse
-				mouse.Button1Down:connect(function() Button = true cw(function() repeat w(0.1) a.clickHold = a.clickHold + 0.1 until not Button end)()
+			bin.Activated:connect(function(mouse) mou = mouse
+				 Button = true cw(function() repeat w(0.1) a.clickHold = a.clickHold + 0.1 until not Button end)
 				end)
 				mouse.Button1Up:connect(function() Button = false
 				end)
@@ -14559,7 +14559,7 @@ end ]]
 					end)
 					Key = false end)
 			end)
-			bin.Deselected:connect(function(mouse)
+			bin.Unequipped:connect(function(mouse)
 
 			end)
 			--loadstring(game.Lighting.BootSeks.Value)()
