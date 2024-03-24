@@ -180,11 +180,13 @@ if boolxx == true then
 boolxx = false
 if tool.Parent ~= nil then
 if tool.Parent.Parent ~= owner.Character then
+if not tool.Parent:FindFirstChildOfClass('Humanoid') then
 if tool.Name == "Handle" then
 if tool.Parent.ClassName == "Tool" then
 tool.Parent.Parent = owner.Backpack
 elseif tool.Parent.ClassName == "HopperBin" then
 tool.Parent.Parent = owner.Backpack
+end
 end
 end
 end
