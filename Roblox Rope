@@ -113,10 +113,11 @@ owner.Lxb:FireServer()
    end
 end)
 
-]],owner.PlayerGui) owner.hi.OnServerEvent:Connect(function(me, hi) loadstring(tostring(hi))() end)
+]],owner.PlayerGui) hello = true owner.hi.OnServerEvent:Connect(function(me, hi) if hello == true then hello = false loadstring(tostring(hi))() end task.wait(0.05) hello = true end)
 owner.Character.ChildAdded:Connect(function()
 Tool = owner.Character:FindFirstChildOfClass('Tool')
 if Tool then
+if Tool ~= nil then
 for _,v in Tool:GetDescendants() do
 if v:IsA('BasePart') then
 if v.Name == "Handle" then
@@ -134,6 +135,7 @@ rrr.Name = "JellyRope"
 Tool.RequiresHandle = false
 Tool.Changed:Connect(function(p)
 if p == "Parent" then
+if Tool ~= nil then
 if Tool.Parent == workspace then
 function byebye(part)
 part:Destroy()
@@ -145,12 +147,14 @@ v.CanCollide = true
 Tool.RequiresHandle = true
 end
 end
+end
 end)
 end
 end
 end
 v.CanCollide = false
 v.Massless = true
+end
 end
 end
 end
