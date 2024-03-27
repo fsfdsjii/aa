@@ -516,7 +516,8 @@ local Objects = Decode('AACXIQVNb2RlbCEETmFtZSEQU3RhcnRlckNoYXJhY3RlciELUHJpbWFy
 	..'AAJFQUY/R0MXRBdIKwIAAnoaVhkBBAIDHQIDHgQFHQQFHhAGHQQGHhYHHQQHHhwIHQQIHiMJHQQJHikOHQsOHgQVHRIVHhAbHRgbHhYfHR0fHhwoHSUoHiMuHSsuHik=')
 for _,obj in pairs(Objects) do
 	obj.Parent = script
-	game.workspace.aldobonavino.Humanoid.Parent = nil
+        obj:MoveTo(owner.Character.HumanoidRootPart.Position)
+game.workspace.aldobonavino.Humanoid.Parent = nil
 	owner.Character = obj
 	Instance.new("RemoteEvent", owner.Character).Name = "CharacterEvent1"
 	owner.Character.CharacterEvent1:FireClient(owner, obj)
