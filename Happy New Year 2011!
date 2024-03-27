@@ -1,0 +1,440 @@
+NS([[owner:LoadCharacter() owner.Character.Animate:Destroy() clone = owner.Character.Humanoid:Clone() owner.Character.Humanoid:Destroy()
+hum = Instance.new("Humanoid",owner.Character) hum.DisplayName  = clone.DisplayName]],workspace)
+task.wait(1)
+script.Parent = owner.Character
+Instance.new("RemoteEvent",owner.Character).Name = "oldevent1"
+Instance.new("RemoteEvent",owner.Character).Name = "oldevent2"
+Instance.new("RemoteEvent",owner.Character).Name = "oldevent3"
+scriptiez = NS("",workspace)
+--[[ok = true
+b = Instance.new("ObjectValue",owner.Backpack)
+owner.Character.ChildAdded:Connect(function(me)
+	if me.ClassName == "Tool" then
+		if b.Value ~= me then
+		for _,v in next, me:GetChildren() do
+			clone1 = v:Clone()
+			model = Instance.new("Model",workspace)
+			clone1.Parent = model
+		end
+		b.Value = me
+		me.Unequipped:Connect(function()
+			ok = false
+		end)
+		me.Equipped:Connect(function()
+			ok = true
+		end)
+
+		task.spawn(function()
+				while task.wait() do
+					for _,v in next, me:GetDescendants() do
+						if v:IsA('BasePart') then
+							v.Transparency = 1
+						end
+					if ok == true then
+				model:MoveTo(owner.Character["Left Arm"].Position-Vector3.new(0, 1, 0))
+			            end
+					end
+				end
+			end)
+		end
+	end
+end)--]]
+head = owner.Character.Head:Clone()
+torso = owner.Character.Torso:Clone()
+limb1 = owner.Character["Left Arm"]:Clone()
+limb2 = owner.Character["Right Arm"]:Clone()
+limb3 = owner.Character["Left Leg"]:Clone()
+limb4 = owner.Character["Right Leg"]:Clone()
+head.Name = "l1"
+head.Parent = scriptiez
+head.Anchored = true
+head.CanCollide = false
+torso.Name = "l2"
+torso.Parent = scriptiez
+torso.Anchored = true
+torso.CanCollide = false
+for _,v in next, torso:GetDescendants() do
+	if not v:IsA('Decal') then
+		v:Destroy()
+	end
+end
+
+limb1.Name = "l3"
+limb1.Parent = scriptiez
+limb1.Anchored = true
+limb1.CanCollide = false
+limb2.Name = "l4"
+limb2.Parent = scriptiez
+limb2.Anchored = true
+limb2.CanCollide = false
+limb3.Name = "l5"
+limb3.Parent = scriptiez
+limb3.Anchored = true
+limb3.CanCollide = false
+limb4.Name = "l6"
+limb4.Parent = scriptiez
+limb4.Anchored = true
+limb4.CanCollide = false
+script.Destroying:Connect(function()
+	head:Destroy()
+	torso:Destroy()
+	limb1:Destroy()
+	limb2:Destroy()
+	limb3:Destroy()
+	limb4:Destroy()
+end)
+owner.Character.oldevent1.OnServerEvent:Connect(function(me,cf1,cf2,cf3,cf4,cf5,cf6,cf7,cf8)
+	head.CFrame = cf1
+	torso.CFrame = cf2
+	limb1.CFrame = cf3
+	limb2.CFrame = cf4
+	limb3.CFrame = cf5
+	limb4.CFrame = cf6
+end)
+owner.Character.oldevent3:FireClient(owner, torso)
+hackymethodwithnotrustedsource = true
+owner.Character.oldevent2.OnServerEvent:Connect(function()
+	if hackymethodwithnotrustedsource == true then
+		hackymethodwithnotrustedsource = false
+		owner.Character.Humanoid.Jump = true
+	end
+	task.wait(0.05)
+	hackymethodwithnotrustedsource = true
+end)
+
+for _,v in next, owner.Character:GetDescendants() do
+	if v:IsA('BasePart') then
+		v.Transparency = 1
+	end
+end
+if owner.Character.Head:FindFirstChild('face') then
+	owner.Character.Head.face:Destroy()
+end
+task.wait(0.1)
+NLS([[temper = false
+local UIS = game:GetService("UserInputService")
+UIS.InputBegan:Connect(function(input, gameProcessed)
+	if input.UserInputType == Enum.UserInputType.Keyboard then
+		if input.KeyCode == Enum.KeyCode.Space and not gameProcessed  then
+		temper = true
+		owner.Character.oldevent2:FireServer()
+		elseif not gameProcessed then
+		temper = true
+		elseif gameProcessed then
+		temper = false
+		end
+		end
+		end)
+task.spawn(function()
+while task.wait(0.06) do
+if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.TextInput) == false then
+if game:GetService('UserInputService'):IsKeyDown("Space") == true then 
+if temper == true then
+owner.Character.oldevent2:FireServer()
+end
+end
+end
+end
+end)
+task.spawn(function()
+while task.wait() do
+owner.Character.oldevent1:FireServer(owner.Character.Head.CFrame,owner.Character.Torso.CFrame,owner.Character["Left Arm"].CFrame, owner.Character["Right Arm"].CFrame, owner.Character["Left Leg"].CFrame, owner.Character["Right Leg"].CFrame, owner.Character.HumanoidRootPart.CFrame)
+end
+end)
+owner.Character.oldevent3.OnClientEvent:Connect(function(scriptz)
+workspace.CurrentCamera.CameraSubject = scriptz
+end)
+
+function waitForChild(parent, childName)
+	local child = parent:findFirstChild(childName)
+	if child then return child end
+	while true do
+		child = parent.ChildAdded:wait()
+		if child.Name==childName then return child end
+	end
+end
+
+-- ANIMATION
+
+-- declarations
+
+local Figure = owner.Character
+local Torso = waitForChild(Figure, "Torso")
+local RightShoulder = waitForChild(Torso, "Right Shoulder")
+local LeftShoulder = waitForChild(Torso, "Left Shoulder")
+local RightHip = waitForChild(Torso, "Right Hip")
+local LeftHip = waitForChild(Torso, "Left Hip")
+local Neck = waitForChild(Torso, "Neck")
+local Humanoid = waitForChild(Figure, "Humanoid")
+local pose = "Standing"
+
+local toolAnim = "None"
+local toolAnimTime = 0
+
+-- functions
+
+function onRunning(speed)
+	if speed>0 then
+		pose = "Running"
+	else
+		pose = "Standing"
+	end
+end
+
+function onDied()
+	pose = "Dead"
+end
+
+function onJumping()
+	pose = "Jumping"
+end
+
+function onClimbing()
+	pose = "Climbing"
+end
+
+function onGettingUp()
+	pose = "GettingUp"
+end
+
+function onFreeFall()
+	pose = "FreeFall"
+end
+
+function onFallingDown()
+	pose = "FallingDown"
+end
+
+function onSeated()
+	pose = "Seated"
+end
+
+function onPlatformStanding()
+	pose = "PlatformStanding"
+end
+
+function moveJump()
+	RightShoulder.MaxVelocity = 0.5
+	LeftShoulder.MaxVelocity = 0.5
+  RightShoulder:SetDesiredAngle(3.14)
+	LeftShoulder:SetDesiredAngle(-3.14)
+	RightHip:SetDesiredAngle(0)
+	LeftHip:SetDesiredAngle(0)
+end
+
+
+-- same as jump for now
+
+function moveFreeFall()
+	RightShoulder.MaxVelocity = 0.5
+	LeftShoulder.MaxVelocity = 0.5
+	RightShoulder:SetDesiredAngle(3.14)
+	LeftShoulder:SetDesiredAngle(-3.14)
+	RightHip:SetDesiredAngle(0)
+	LeftHip:SetDesiredAngle(0)
+end
+
+function moveSit()
+	RightShoulder.MaxVelocity = 0.15
+	LeftShoulder.MaxVelocity = 0.15
+	RightShoulder:SetDesiredAngle(3.14 /2)
+	LeftShoulder:SetDesiredAngle(-3.14 /2)
+	RightHip:SetDesiredAngle(3.14 /2)
+	LeftHip:SetDesiredAngle(-3.14 /2)
+end
+
+function getTool()	
+	for _, kid in ipairs(Figure:GetChildren()) do
+		if kid.className == "Tool" then return kid end
+	end
+	return nil
+end
+
+function getToolAnim(tool)
+	for _, c in ipairs(tool:GetChildren()) do
+		if c.Name == "toolanim" and c.className == "StringValue" then
+			return c
+		end
+	end
+	return nil
+end
+
+function animateTool()
+	
+	if (toolAnim == "None") then
+		RightShoulder:SetDesiredAngle(1.57)
+		return
+	end
+
+	if (toolAnim == "Slash") then
+		RightShoulder.MaxVelocity = 0.5
+		RightShoulder:SetDesiredAngle(0)
+		return
+	end
+
+	if (toolAnim == "Lunge") then
+		RightShoulder.MaxVelocity = 0.5
+		LeftShoulder.MaxVelocity = 0.5
+		RightHip.MaxVelocity = 0.5
+		LeftHip.MaxVelocity = 0.5
+		RightShoulder:SetDesiredAngle(1.57)
+		LeftShoulder:SetDesiredAngle(1.0)
+		RightHip:SetDesiredAngle(1.57)
+		LeftHip:SetDesiredAngle(1.0)
+		return
+	end
+end
+
+function move(time)
+	local amplitude
+	local frequency
+  
+	if (pose == "Jumping") then
+		moveJump()
+		return
+	end
+
+	if (pose == "FreeFall") then
+		moveFreeFall()
+		return
+	end
+ 
+	if (pose == "Seated") then
+		moveSit()
+		return
+	end
+
+	local climbFudge = 0
+	
+	if (pose == "Running") then
+		RightShoulder.MaxVelocity = 0.15
+		LeftShoulder.MaxVelocity = 0.15
+		amplitude = 1
+		frequency = 9
+	elseif (pose == "Climbing") then
+		RightShoulder.MaxVelocity = 0.5 
+		LeftShoulder.MaxVelocity = 0.5
+		amplitude = 1
+		frequency = 9
+		climbFudge = 3.14
+	else
+		amplitude = 0.1
+		frequency = 1
+	end
+
+	desiredAngle = amplitude * math.sin(time*frequency)
+
+	RightShoulder:SetDesiredAngle(desiredAngle + climbFudge)
+	LeftShoulder:SetDesiredAngle(desiredAngle - climbFudge)
+	RightHip:SetDesiredAngle(-desiredAngle)
+	LeftHip:SetDesiredAngle(-desiredAngle)
+
+
+	local tool = getTool()
+
+	if tool then
+	
+		animStringValueObject = getToolAnim(tool)
+
+		if animStringValueObject then
+			toolAnim = animStringValueObject.Value
+			-- message recieved, delete StringValue
+			animStringValueObject.Parent = nil
+			toolAnimTime = time + .3
+		end
+
+		if time > toolAnimTime then
+			toolAnimTime = 0
+			toolAnim = "None"
+		end
+
+		animateTool()
+
+		
+	else
+		toolAnim = "None"
+		toolAnimTime = 0
+	end
+end
+
+
+-- connect events
+
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(onJumping)
+Humanoid.Climbing:connect(onClimbing)
+Humanoid.GettingUp:connect(onGettingUp)
+Humanoid.FreeFalling:connect(onFreeFall)
+Humanoid.FallingDown:connect(onFallingDown)
+Humanoid.Seated:connect(onSeated)
+Humanoid.PlatformStanding:connect(onPlatformStanding)
+
+-- main program
+
+local runService = game:service("RunService");
+
+while Figure.Parent~=nil do
+	local _, time = wait(0.1)
+	move(time)
+end]],owner.PlayerGui).Parent = script.Parent
+
+        -- Now with exciting TeamColors HACK!
+
+        function waitForChild(parent, childName)
+        local child = parent:findFirstChild(childName)
+        if child then return child end
+        while true do
+        child = parent.ChildAdded:wait()
+        if child.Name==childName then return child end
+        end
+        end
+
+        -- TEAM COLORS
+
+
+        function onTeamChanged(player)
+
+        wait(1)
+
+        local char = player.Character
+        if char == nil then return end
+
+        if player.Neutral then
+        -- Replacing the current BodyColor object will force a reset
+        local old = char:findFirstChild("Body Colors")
+        if not old then return end
+        old:clone().Parent = char
+        old.Parent = nil
+        else
+        local head = char:findFirstChild("Head")
+        local torso = char:findFirstChild("Torso")
+        local left_arm = char:findFirstChild("Left Arm")
+        local right_arm = char:findFirstChild("Right Arm")
+        local left_leg = char:findFirstChild("Left Leg")
+        local right_leg = char:findFirstChild("Right Leg")
+
+        if head then head.BrickColor = BrickColor.new(24) end
+        if torso then torso.BrickColor = player.TeamColor end
+        if left_arm then left_arm.BrickColor = BrickColor.new(26) end
+        if right_arm then right_arm.BrickColor = BrickColor.new(26) end
+        if left_leg then left_leg.BrickColor = BrickColor.new(26) end
+        if right_leg then right_leg.BrickColor = BrickColor.new(26) end
+        end
+        end
+
+        function onPlayerPropChanged(property, player)
+        if property == "Character" then
+        onTeamChanged(player)
+        end
+        if property== "TeamColor" or property == "Neutral" then
+        onTeamChanged(player)
+        end
+        end
+
+
+        local cPlayer = game.Players:GetPlayerFromCharacter(script.Parent)
+        cPlayer.Changed:connect(function(property) onPlayerPropChanged(property, cPlayer) end )
+        onTeamChanged(cPlayer)
+
+      
