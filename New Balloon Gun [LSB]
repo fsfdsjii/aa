@@ -141,6 +141,7 @@ balcyl.BrickColor = BrickColor.new(tostring(owner.string.Value))
 balcyl.Transparency = 0.7
 balcyl.Material = Enum.Material.Neon
 balcyl.Anchored = true
+balcyl.CanCollide = false
 p = Instance.new("Part",workspace)
 p.Position = hit.Position
 p.Anchored = true
@@ -154,16 +155,35 @@ spark.SparkleColor = balcyl.Color
 spark.Name = "BalloonSparkles"
 
 local goal = {}
-goal.Size = balcyl.Size * Vector3.new(0, 1, 0)
-
+goal.Size = balcyl.Size * Vector3.new(1, 2, 2)
+task.spawn(function()
+task.wait(0.1)
+balcyl.Transparency = 0.73
+task.wait(0.1)
+balcyl.Transparency = 0.75
+task.wait(0.1)
+balcyl.Transparency = 0.78
+task.wait(0.1)
+balcyl.Transparency = 0.83
+task.wait(0.1)
+balcyl.Transparency = 0.85
+task.wait(0.1)
+balcyl.Transparency = 0.88
+task.wait(0.1)
+balcyl.Transparency = 0.93
+task.wait(0.1)
+balcyl.Transparency = 0.95
+task.wait(0.1)
+balcyl.Transparency = 0.99
+end)
 local tweenInfo = TweenInfo.new(1)
 
 local tween = game:GetService('TweenService'):Create(balcyl, tweenInfo, goal)
 
 tween:Play()
 
-hi(balcyl, 1)
-hi(p, 1)
+hi(balcyl, 2)
+hi(p, 2)
 
 		local the = Instance.new("Part",folder)
 		the.BrickColor = BrickColor.random()
@@ -214,6 +234,7 @@ balcyl.BrickColor = BrickColor.new(tostring(owner.string.Value))
 balcyl.Transparency = 0.7
 balcyl.Material = Enum.Material.Neon
 balcyl.Anchored = true
+balcyl.CanCollide = false
 p = Instance.new("Part",workspace)
 p.Position = hit.Position
 p.Anchored = true
@@ -227,7 +248,27 @@ spark.SparkleColor = balcyl.Color
 spark.Name = "BalloonSparkles"
 
 local goal = {}
-goal.Size = balcyl.Size * Vector3.new(0, 1, 0)
+goal.Size = balcyl.Size * Vector3.new(1, 2, 2)
+task.spawn(function()
+task.wait(0.1)
+balcyl.Transparency = 0.73
+task.wait(0.1)
+balcyl.Transparency = 0.75
+task.wait(0.1)
+balcyl.Transparency = 0.78
+task.wait(0.1)
+balcyl.Transparency = 0.83
+task.wait(0.1)
+balcyl.Transparency = 0.85
+task.wait(0.1)
+balcyl.Transparency = 0.88
+task.wait(0.1)
+balcyl.Transparency = 0.93
+task.wait(0.1)
+balcyl.Transparency = 0.95
+task.wait(0.1)
+balcyl.Transparency = 0.99
+end)
 
 local tweenInfo = TweenInfo.new(1)
 
