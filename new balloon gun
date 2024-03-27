@@ -92,6 +92,15 @@ task.wait(0.1)
 debounce = true
 end
 end)
+bal = false
+local UIS = game:GetService("UserInputService")
+UIS.InputBegan:Connect(function(input, gameProcessed)
+if not gameProcessed then
+bal = true
+elseif gameProcessed then
+bal = false
+end
+end)
 
 task.spawn(function()
 while task.wait(0.09) do
@@ -99,7 +108,9 @@ if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.T
 if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == true then 
 yey = owner.Character:FindFirstChild('Balloon Gun')
 if yey then
+if bal == true then
 yey.EDANCE:FireServer(nil)
+end
 end
 end
 end
