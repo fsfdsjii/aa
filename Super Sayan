@@ -4123,6 +4123,7 @@ local sine = 0
 local change = 1
 local val = 0
 local ffing = false
+local jumpn = false
 -------------------------------
 game:GetService("RunService").Stepped:connect(function()
 --[[if char.Humanoid.Jump == true then
@@ -4135,6 +4136,14 @@ end]]
 			ffing = true
 		else
 			ffing = false
+		end
+	end)
+	
+	char.Humanoid.Jumping:connect(function(f)
+		if f then
+			jumpn = true
+		else
+			jumpn = false
 		end
 	end)
 	
