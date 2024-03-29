@@ -8,6 +8,7 @@ Instance.new("Part",owner.Backpack).Name = "GlockPart2"
 Instance.new("RemoteEvent",owner.Backpack).Name = "GlockEvent6"
 
 NLS([[owner:GetMouse().Button1Down:Connect(function()
+task.wait(0.06)
 owner.Backpack.GlockEvent1:FireServer()
 end)
 owner:GetMouse().Button1Up:Connect(function()
@@ -24,6 +25,7 @@ owner.Backpack.GlockEvent5:FireServer(owner:GetMouse().Hit)
 end)
 owner.Backpack.GlockEvent6.OnClientEvent:Connect(function(str, priority)
 game:GetService("RunService"):BindToRenderStep(str,priority,function()
+task.wait(0.06)
 owner.Backpack.GlockEvent6:FireServer()
 end)
 end)]],owner.PlayerGui)
