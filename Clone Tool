@@ -112,7 +112,14 @@ yey = script.Parent
 if yey.Parent == owner.Character then
 task.wait(0.1)
 owner.hellozzx:FireServer()
+targx = owner:GetMouse().Target
+if targx ~= nil then
+if targx.Locked == false then
+if targx.Name ~= "Base" then
 owner:GetMouse().Icon = "rbxasset://textures/GrabRotateCursor.png"
+end
+end
+end
 inmense = true
 end
 else
@@ -194,12 +201,22 @@ Script3.Parent = Tool0
 bool = true
 bool2 = true
 bool3 = true
+clonebox = Instance.new("SelectionBox")
+clonebox.LineThickness =  0.02
 owner.hellozzx.OnServerEvent:Connect(function()
 if bool2 == true then
 bool2 = false
 owner.hello1.Transparency = math.random(0, 1)
 task.wait(0.05)
 bool2 = true
+end
+end)
+task.spawn(function()
+while task.wait() do
+if Tool0.Parent ~= owner.Character then
+clonebox.Parent = nil
+clonebox.Adornee = nil
+end
 end
 end)
 owner.hello2.OnServerEvent:Connect(function(me, targ, hit)
@@ -225,6 +242,8 @@ if owner.pll.Value ~= nil then
 print("helloZX")
 owner.bruvx.Value.Anchored = owner.pll.Value
 owner.bruvx.Value:MakeJoints()
+clonebox.Parent = nil
+clonebox.Adornee = nil
 task.spawn(function()
 task.wait(0.05)
 owner.bruvx.Value.Anchored = owner.pll.Value
@@ -293,6 +312,8 @@ if targ.Locked ~= true then
 				n.Position = hit.Position
                                 owner.bruvx.Value = n
                                 owner.pll.Value = owner.bruvx.Value.Anchored
+                                clonebox.Parent = n
+                                clonebox.Adornee = n
 end
 end
 end
