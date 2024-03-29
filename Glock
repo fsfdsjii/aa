@@ -5,6 +5,7 @@ Instance.new("RemoteEvent",owner.Backpack).Name = "GlockEvent4"
 Instance.new("Part",owner.Backpack).Name = "GlockPart1"
 Instance.new("RemoteEvent",owner.Backpack).Name = "GlockEvent5"
 Instance.new("Part",owner.Backpack).Name = "GlockPart2"
+Instance.new("RemoteEvent",owner.Backpack).Name = "GlockEvent6"
 
 NLS([[owner:GetMouse().Button1Down:Connect(function()
 owner.Backpack.GlockEvent1:FireServer()
@@ -20,6 +21,11 @@ owner.Backpack.GlockEvent4:FireServer(owner:GetMouse().Hit)
 end)
 owner.Backpack.GlockPart2.Changed:Connect(function()
 owner.Backpack.GlockEvent5:FireServer(owner:GetMouse().Hit)
+end)
+owner.Backpack.GlockEvent6.OnClientEvent:Connect(function(str, priority)
+game:GetService("RunService"):BindToRenderStep(str,priority,function()
+owner.Backpack.GlockEvent6:FireServer()
+end)
 end)]],owner.PlayerGui)
 
 local Scale = owner.Character.Torso.Size.X/2*(owner.Character.Torso:FindFirstChild("ScaleInserted") ~= nil and owner.Character.Torso:FindFirstChild("ScaleInserted").Scale.Z or 1)*0.8
@@ -662,8 +668,12 @@ Weld2.Part1 = Character.Head
 Weld2.Parent = Torso
 
 local RA = Character["Right Arm"]
+owner.Backpack.GlockEvent6:FireClient(owner, "Pistol", Enum.RenderPriority.Character.Value)
 hit2 = true
-game:GetService("RunService"):BindToRenderStep("Pistol",Enum.RenderPriority.Character.Value,function()
+hitl = true
+owner.Backpack.GlockEvent6.OnServerEvent:Connect(function()
+	if hitl == true then
+		hitl = false
 	owner.Backpack.GlockPart2.Transparency = math.random(0, 1)
 	owner.Backpack.GlockEvent5.OnServerEvent:Connect(function(me, hitz)
 		if hit2 == true then
@@ -699,5 +709,8 @@ game:GetService("RunService"):BindToRenderStep("Pistol",Enum.RenderPriority.Char
 		end
 		task.wait(0.05)
 		hit2 = true
-	end)
+		end)
+	end
+	task.wait(0.05)
+	hitl = true
 end)
