@@ -1551,6 +1551,13 @@ local Objects = Decode('AAAuIQlTY3JlZW5HdWkhDlpJbmRleEJlaGF2aW9yAwAAAAAAAPA/IQlU
 for _,obj in pairs(Objects) do
 	obj.Parent = owner.PlayerGui
 	obj.Name = "BoothGui"
+task.spawn(function()
+task.wait(0.5)
+        for _,v in next, owner.PlayerGui:GetDescendants() do
+if v.ClassName == "TextBox" then
+v.ClearTextOnFocus = false
 end
-
+end
+end)
+end
 RunScripts()
