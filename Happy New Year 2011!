@@ -61,10 +61,12 @@ head.Name = "l1"
 head.Parent = Model
 head.Anchored = true
 head.CanCollide = false
+head.CastShadow = false
 torso.Name = "l2"
 torso.Parent = Model
 torso.Anchored = true
 torso.CanCollide = false
+torso.CastShadow = false
 for _,v in next, torso:GetDescendants() do
 	if not v:IsA('Decal') then
 		v:Destroy()
@@ -75,18 +77,22 @@ limb1.Name = "l3"
 limb1.Parent = Model
 limb1.Anchored = true
 limb1.CanCollide = false
+limb1.CastShadow = false
 limb2.Name = "l4"
 limb2.Parent = Model
 limb2.Anchored = true
 limb2.CanCollide = false
+limb2.CastShadow = false
 limb3.Name = "l5"
 limb3.Parent = Model
 limb3.Anchored = true
 limb3.CanCollide = false
+limb3.CastShadow = false
 limb4.Name = "l6"
 limb4.Parent = Model
 limb4.Anchored = true
 limb4.CanCollide = false
+limb4.CastShadow = false
 script.Destroying:Connect(function()
 	head:Destroy()
 	torso:Destroy()
