@@ -1,0 +1,254 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+RemoteEvent1 = Instance.new("RemoteEvent")
+Script2 = Instance.new("Script")
+LocalScript3 = Instance.new("LocalScript")
+Tool0.Name = "Set Property"
+Tool0.Parent = owner.Backpack
+Tool0.RequiresHandle = false
+RemoteEvent1.Name = "PropertyEvent"
+RemoteEvent1.Parent = Tool0
+Script2.Parent = Tool0
+table.insert(cors,sandbox(Script2,function()
+	-- Gui to Lua
+	-- Version: 3.2
+
+	-- Instances:
+
+	local SetPropertyGui = Instance.new("ScreenGui")
+	local TextLabel = Instance.new("TextLabel")
+	local TextBox = Instance.new("TextBox")
+	local UICorner = Instance.new("UICorner")
+	local Frame = Instance.new("Frame")
+	local Frame_2 = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local Frame_3 = Instance.new("Frame")
+	local Frame_4 = Instance.new("Frame")
+	local SetValueGui = Instance.new("ScreenGui")
+	local TextLabel_2 = Instance.new("TextLabel")
+	local TextBox_2 = Instance.new("TextBox")
+	local UICorner_3 = Instance.new("UICorner")
+	local Frame_5 = Instance.new("Frame")
+	local Frame_6 = Instance.new("Frame")
+	local UICorner_4 = Instance.new("UICorner")
+	local Frame_7 = Instance.new("Frame")
+	local Frame_8 = Instance.new("Frame")
+
+	--Properties:
+
+	SetPropertyGui.Name = "SetPropertyGui"
+	SetPropertyGui.Parent = owner.PlayerGui
+	SetPropertyGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	TextLabel.Parent = SetPropertyGui
+	TextLabel.Active = true
+	TextLabel.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextLabel.BorderSizePixel = 0
+	TextLabel.Draggable = true
+	TextLabel.Position = UDim2.new(0.239130437, 0, 0.27375567, 0)
+	TextLabel.Size = UDim2.new(0, 200, 0, 18)
+	TextLabel.Font = Enum.Font.SourceSans
+	TextLabel.Text = "Property Name"
+	TextLabel.TextColor3 = Color3.fromRGB(255, 0, 4)
+	TextLabel.TextSize = 14.000
+
+	TextBox.Parent = TextLabel
+	TextBox.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextBox.BorderSizePixel = 0
+	TextBox.Position = UDim2.new(0, 0, 1, 0)
+	TextBox.Size = UDim2.new(0, 200, 0, 50)
+	TextBox.Font = Enum.Font.SourceSans
+	TextBox.Text = ""
+	TextBox.TextColor3 = Color3.fromRGB(255, 0, 4)
+	TextBox.TextSize = 14.000
+
+	UICorner.Parent = TextBox
+
+	Frame.Parent = TextBox
+	Frame.Active = true
+	Frame.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame.BorderSizePixel = 0
+	Frame.Draggable = true
+	Frame.Position = UDim2.new(0.899999976, 0, 0.180000007, 0)
+	Frame.Size = UDim2.new(0, 20, 0, -9)
+
+	Frame_2.Parent = TextBox
+	Frame_2.Active = true
+	Frame_2.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame_2.BorderSizePixel = 0
+	Frame_2.Draggable = true
+	Frame_2.Position = UDim2.new(0, 0, 0.180000007, 0)
+	Frame_2.Size = UDim2.new(0, 20, 0, -9)
+
+	UICorner_2.Parent = TextLabel
+
+	Frame_3.Parent = TextLabel
+	Frame_3.Active = true
+	Frame_3.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame_3.BorderSizePixel = 0
+	Frame_3.Draggable = true
+	Frame_3.Position = UDim2.new(0, 0, 1, 0)
+	Frame_3.Size = UDim2.new(0, 30, 0, -9)
+
+	Frame_4.Parent = TextLabel
+	Frame_4.Active = true
+	Frame_4.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	Frame_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame_4.BorderSizePixel = 0
+	Frame_4.Draggable = true
+	Frame_4.Position = UDim2.new(0.88499999, 0, 1, 0)
+	Frame_4.Size = UDim2.new(0, 23, 0, -9)
+
+	SetValueGui.Name = "SetValueGui"
+	SetValueGui.Parent = owner.PlayerGui
+	SetValueGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	TextLabel_2.Parent = SetValueGui
+	TextLabel_2.Active = true
+	TextLabel_2.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextLabel_2.BorderSizePixel = 0
+	TextLabel_2.Draggable = true
+	TextLabel_2.Position = UDim2.new(0.52676475, 0, 0.27375567, 0)
+	TextLabel_2.Size = UDim2.new(0, 200, 0, 18)
+	TextLabel_2.Font = Enum.Font.SourceSans
+	TextLabel_2.Text = "Property Value"
+	TextLabel_2.TextColor3 = Color3.fromRGB(255, 0, 4)
+	TextLabel_2.TextSize = 14.000
+
+	TextBox_2.Parent = TextLabel_2
+	TextBox_2.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	TextBox_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextBox_2.BorderSizePixel = 0
+	TextBox_2.Position = UDim2.new(0, 0, 1, 0)
+	TextBox_2.Size = UDim2.new(0, 200, 0, 50)
+	TextBox_2.Font = Enum.Font.SourceSans
+	TextBox_2.Text = ""
+	TextBox_2.TextColor3 = Color3.fromRGB(255, 0, 4)
+	TextBox_2.TextSize = 14.000
+
+	UICorner_3.Parent = TextBox_2
+
+	Frame_5.Parent = TextBox_2
+	Frame_5.Active = true
+	Frame_5.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	Frame_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame_5.BorderSizePixel = 0
+	Frame_5.Draggable = true
+	Frame_5.Position = UDim2.new(0.899999976, 0, 0.180000007, 0)
+	Frame_5.Size = UDim2.new(0, 20, 0, -9)
+
+	Frame_6.Parent = TextBox_2
+	Frame_6.Active = true
+	Frame_6.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	Frame_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame_6.BorderSizePixel = 0
+	Frame_6.Draggable = true
+	Frame_6.Position = UDim2.new(0, 0, 0.180000007, 0)
+	Frame_6.Size = UDim2.new(0, 20, 0, -9)
+
+	UICorner_4.Parent = TextLabel_2
+
+	Frame_7.Parent = TextLabel_2
+	Frame_7.Active = true
+	Frame_7.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	Frame_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame_7.BorderSizePixel = 0
+	Frame_7.Draggable = true
+	Frame_7.Position = UDim2.new(0, 0, 1, 0)
+	Frame_7.Size = UDim2.new(0, 30, 0, -9)
+
+	Frame_8.Parent = TextLabel_2
+	Frame_8.Active = true
+	Frame_8.BackgroundColor3 = Color3.fromRGB(124, 255, 150)
+	Frame_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame_8.BorderSizePixel = 0
+	Frame_8.Draggable = true
+	Frame_8.Position = UDim2.new(0.88499999, 0, 1, 0)
+	Frame_8.Size = UDim2.new(0, 23, 0, -9)
+
+value = true
+script.Parent.PropertyEvent.OnServerEvent:Connect(function(me, targ, txt1, txt2)
+	if value == true then
+		value = false
+		targ[txt1] = txt2
+		end
+		task.wait(0.05)
+		value = true
+end)
+end))
+LocalScript3.Parent = Tool0
+table.insert(cors,sandbox(LocalScript3,function()
+	NLS([[task.wait(0.05)
+local function toVector3(String, Separator)
+    local Separator = Separator or ','
+
+    local axes = {}
+
+    for axis in String:gmatch('[^'..Separator..']+') do
+        axes[#axes + 1] = axis
+    end
+
+    return Vector3.new(axes[1], axes[2], axes[3])
+end
+
+
+local function toColor3(String, Separator)
+    local Separator = Separator or ','
+
+    local axes = {}
+
+    for axis in String:gmatch('[^'..Separator..']+') do
+        axes[#axes + 1] = axis
+    end
+
+    return Color3.new(axes[1], axes[2], axes[3])
+end
+
+local newVector = toVector3('50.00, 10.00, 20.00', ', ')
+script.Parent.Activated:Connect(function()
+task.wait(0.06)
+local seperator = ","
+txt1 = owner.PlayerGui.SetPropertyGui.TextLabel.TextBox.Text
+if txt1 ~= "Position" and txt1 ~= "Orientation" and txt1 ~= "Rotation" and txt1 ~= "Velocity" and txt1 ~= "RotVelocity" and txt1 ~= "AssemblyLinearVelocity" and txt1 ~= "AssemblyAngularVelocity" and txt1 ~= "Size" and txt1 ~= "Color" then
+	script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text)
+	elseif txt1 == "Transparency" or txt1 == "Reflectance" or  txt1 == "RootPriority" then
+	script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, tonumber(owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text))
+	elseif txt1 == "Color" then
+		script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, toColor3(owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text))
+	else
+	script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, toVector3(owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text))
+	end
+end)]],owner.PlayerGui).Parent = Tool0
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
