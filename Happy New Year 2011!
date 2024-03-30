@@ -23,7 +23,6 @@ owner.Character.ChildAdded:Connect(function(me)
 		me.Equipped:Connect(function()
 			ok = true
 		end)
-
 		task.spawn(function()
 				while task.wait() do
 					for _,v in next, me:GetDescendants() do
@@ -39,6 +38,19 @@ owner.Character.ChildAdded:Connect(function(me)
 		end
 	end
 end)--]]
+
+		task.spawn(function()
+				while task.wait(0.2) do
+					for _,v in next, owner.Character:GetDescendants() do
+						if v:IsA('BasePart') then
+							v.Transparency = 1
+						end
+					end
+				end
+			end)
+Model = Instance.new("Model",scriptiez)
+Model.Name = owner.Character.Name
+Instance.new("Humanoid",Model)
 head = owner.Character.Head:Clone()
 torso = owner.Character.Torso:Clone()
 limb1 = owner.Character["Left Arm"]:Clone()
@@ -46,11 +58,11 @@ limb2 = owner.Character["Right Arm"]:Clone()
 limb3 = owner.Character["Left Leg"]:Clone()
 limb4 = owner.Character["Right Leg"]:Clone()
 head.Name = "l1"
-head.Parent = scriptiez
+head.Parent = Model
 head.Anchored = true
 head.CanCollide = false
 torso.Name = "l2"
-torso.Parent = scriptiez
+torso.Parent = Model
 torso.Anchored = true
 torso.CanCollide = false
 for _,v in next, torso:GetDescendants() do
@@ -60,19 +72,19 @@ for _,v in next, torso:GetDescendants() do
 end
 
 limb1.Name = "l3"
-limb1.Parent = scriptiez
+limb1.Parent = Model
 limb1.Anchored = true
 limb1.CanCollide = false
 limb2.Name = "l4"
-limb2.Parent = scriptiez
+limb2.Parent = Model
 limb2.Anchored = true
 limb2.CanCollide = false
 limb3.Name = "l5"
-limb3.Parent = scriptiez
+limb3.Parent = Model
 limb3.Anchored = true
 limb3.CanCollide = false
 limb4.Name = "l6"
-limb4.Parent = scriptiez
+limb4.Parent = Model
 limb4.Anchored = true
 limb4.CanCollide = false
 script.Destroying:Connect(function()
@@ -82,6 +94,40 @@ script.Destroying:Connect(function()
 	limb2:Destroy()
 	limb3:Destroy()
 	limb4:Destroy()
+end)
+for _,v in next, owner.Character:GetDescendants() do
+if v.ClassName == "Accessory" then
+clone = v:Clone()
+clone.Parent = head
+if clone then
+handle = clone:FindFirstChildOfClass("Part")
+if handle then
+weld = handle:FindFirstChildOfClass('Weld')
+if weld then
+weld.Part1 = head
+end
+else
+clone:Destroy()
+end
+end
+end
+end
+owner.Character.ChildAdded:Connect(function(v)
+if v.ClassName == "Accessory" then
+clone = v:Clone()
+clone.Parent = head
+if clone then
+handle = clone:FindFirstChildOfClass("Part")
+if handle then
+weld = handle:FindFirstChildOfClass('Weld')
+if weld then
+weld.Part1 = head
+end
+else
+clone:Destroy()
+end
+end
+end
 end)
 owner.Character.oldevent1.OnServerEvent:Connect(function(me,cf1,cf2,cf3,cf4,cf5,cf6,cf7,cf8)
 	head.CFrame = cf1
@@ -109,6 +155,10 @@ owner.Character.oldevent2.OnServerEvent:Connect(function()
 	if hackymethodwithnotrustedsource == true then
 		hackymethodwithnotrustedsource = false
 		owner.Character.Humanoid.Jump = true
+if owner.Character.Humanoid.Sit == true then
+owner.Character.Humanoid.Sit = false
+owner.Character.Humanoid.Jump = true
+end
 	end
 	task.wait(0.05)
 	hackymethodwithnotrustedsource = true
@@ -123,9 +173,10 @@ if owner.Character.Head:FindFirstChild('face') then
 	owner.Character.Head.face:Destroy()
 end
 task.wait(0.1)
-NLS([[local RunService = game:GetService("RunService")
-local MaxFPS = 30
+NLS([[
 task.spawn(function()
+local RunService = game:GetService("RunService")
+local MaxFPS = 30
 while true do
     local t0 = tick()
     RunService.RenderStepped:Wait()
