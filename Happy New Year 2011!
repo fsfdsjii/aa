@@ -39,15 +39,7 @@ owner.Character.ChildAdded:Connect(function(me)
 	end
 end)--]]
 
-		task.spawn(function()
-				while task.wait(0.2) do
-					for _,v in next, owner.Character:GetDescendants() do
-						if v:IsA('BasePart') then
-							v.Transparency = 1
-						end
-					end
-				end
-			end)
+
 Model = Instance.new("Model",scriptiez)
 Model.Name = owner.Character.Name
 Instance.new("Humanoid",Model)
@@ -125,6 +117,7 @@ clone.Parent = head
 if clone then
 handle = clone:FindFirstChildOfClass("Part")
 if handle then
+handle.Transparency = 1
 weld = handle:FindFirstChildOfClass('Weld')
 if weld then
 weld.Part1 = head
