@@ -103,13 +103,11 @@ end)
 
 task.spawn(function()
 while task.wait(0.1) do
-if game:GetService('UserInputService'):IsKeyDown(Enum.UserInputType.TextInput) == false then
 if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == true then 
 yey = owner.Character:FindFirstChild('Balloon Gun')
 if yey then
 if nbal == true then
 yey.EDANCE:FireServer(nil)
-end
 end
 end
 end
