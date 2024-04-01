@@ -226,18 +226,35 @@ local function toColor3(String, Separator)
     return Color3.new(axes[1], axes[2], axes[3])
 end
 
+local function tobool(okok)
+if okok == "false" or okok == " false" or okok == "false " or okok == " false " then
+return false
+end
+if okok == "true" or okok == " true" or okok == "true " or okok == " true " then
+return true
+end
+if okok ~= "true" or okok ~= " true" or okok ~= "true " or okok ~= " true "  or okok ~= "false" or okok ~= " false" or okok ~= "false " or okok ~= " false " then
+return nil
+end
+end
+
 local newVector = toVector3('50.00, 10.00, 20.00', ', ')
 script.Parent.Activated:Connect(function()
 task.wait(0.06)
 local seperator = ","
 txt1 = owner.PlayerGui.SetPropertyGui.TextLabel.TextBox.Text
-if txt1 ~= "Position" and txt1 ~= "Orientation" and txt1 ~= "Rotation" and txt1 ~= "Velocity" and txt1 ~= "RotVelocity" and txt1 ~= "AssemblyLinearVelocity" and txt1 ~= "AssemblyAngularVelocity" and txt1 ~= "Size" and txt1 ~= "Color" then
+
+if txt1 == "Name" or txt1 == "Material" or txt1 == "Shape" or txt1 == "BottomSurface" or txt1 == "TopSurface" or txt1 == "RightSurface" or txt1 == "LeftSurface" or txt1 == "FrontSurface" or txt1 == "BackSurface" or txt1 == "BackSurfaceInput" or txt1 == "TopSurfaceInput"  or txt1 == "FrontSurfaceInput" or txt1 == "BottomSurfaceInput" or txt1 == "RightSurfaceInput" or txt1 == "LeftSurfaceInput"  then
 	script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text)
-	elseif txt1 == "Transparency" or txt1 == "Reflectance" or  txt1 == "RootPriority" then
+	elseif txt1 == "Transparency" or txt1 == "Reflectance" or  txt1 == "RootPriority" or  txt1 == "BackParamA" or txt1 == "FrontParamA" or txt1 == "LeftParamA" or txt1 == "RightParamA" or txt1 == "TopParamA" or txt1 == "BottomParamA" or  txt1 == "BackParamA" or txt1 == "FrontParamB" or txt1 == "LeftParamB" or txt1 == "RightParamB" or txt1 == "TopParamB" or txt1 == "BottomParamB" then
 	script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, tonumber(owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text))
 	elseif txt1 == "Color" then
 		script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, toColor3(owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text))
-	else
+       elseif txt1 == "Archivable" or txt1 == "CanCollide" or txt1 == "CanTouch" or txt1 == "CanQuery" or txt1 == "Massless" or txt1 == "Anchored" or txt1 == "CastShadow"  then
+    script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, tobool(owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text))
+       elseif txt1 == "BrickColor" or txt1 == "brickColor"  then
+    script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, BrickColor.new(owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text))
+	elseif txt1 == "Position" or txt1 ==  "Orientation" or txt1 == "Rotation" or txt1 == "Velocity" or txt1 == "RotVelocity" or txt1 == "AssemblyLinearVelocity" or txt1 == "AssemblyAngularVelocity" then
 	script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, toVector3(owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text))
 	end
 end)]],owner.PlayerGui).Parent = Tool0
