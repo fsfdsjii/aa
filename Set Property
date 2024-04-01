@@ -254,7 +254,7 @@ if txt1 == "Name" or txt1 == "Material" or txt1 == "Shape" or txt1 == "BottomSur
     script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, tobool(owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text))
        elseif txt1 == "BrickColor" or txt1 == "brickColor"  then
     script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, BrickColor.new(owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text))
-	elseif txt1 == "Position" or txt1 ==  "Orientation" or txt1 == "Rotation" or txt1 == "Velocity" or txt1 == "RotVelocity" or txt1 == "AssemblyLinearVelocity" or txt1 == "AssemblyAngularVelocity" then
+	elseif txt1 == "Position" or txt1 ==  "Orientation" or txt1 == "Rotation" or txt1 == "Velocity" or txt1 == "RotVelocity" or txt1 == "AssemblyLinearVelocity" or txt1 == "AssemblyAngularVelocity" or txt1 == "Size" then
 	script.Parent.PropertyEvent:FireServer(owner:GetMouse().Target, txt1, toVector3(owner.PlayerGui.SetValueGui.TextLabel.TextBox.Text))
 	end
 end)]],owner.PlayerGui).Parent = Tool0
