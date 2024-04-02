@@ -1,3 +1,15 @@
+function positionPartOnPart(part0, part1, orientation, direction)
+
+end
+
+function isPartInPart(part0, part1)
+	if table.find(workspace:GetPartsInPart(part0, OverlapParams.new()), part1) == nil then
+		return false
+	end
+	return true
+end
+
+
 --CLONE SCRIPT
 function sandbox(var,func)
 	local env = getfenv(func)
@@ -169,30 +181,22 @@ task.wait(0.1)
 imasom = true
 end
 end)
-game:GetService('UserInputService').InputBegan:Connect(function(input, gameProcessed)
-if input.KeyCode == Enum.KeyCode.T then
-if not gameProcessed then
+owner:GetMouse().KeyDown:Connect(function(k)
+k = k:lower()
 yey = script.Parent
 if yey.Parent == owner.Character then
 if inmense == true then
-owner.hello0:FireServer()
-end
-end
+owner.hello0:FireServer(k)
 end
 end
 end)
 
-game:GetService('UserInputService').InputBegan:Connect(function(input, gameProcessed)
-if input.KeyCode == Enum.KeyCode.R then
-if not gameProcessed then
+owner:GetMouse().KeyDown:Connect(function(k)
+k = k:lower()
 if inmense == true then
 yey = script.Parent
 if yey.Parent == owner.Character then
-if inmense == true then
-owner.hello9:FireServer()
-end
-end
-end
+owner.hello9:FireServer(k)
 end
 end
 end)]],owner.PlayerGui).Parent = Tool0
@@ -219,14 +223,17 @@ clonebox.Adornee = nil
 end
 end
 end)
+
 owner.hello2.OnServerEvent:Connect(function(me, targ, hit)
 if bool == true then
 bool = false
 pcall(function()
 if owner.bruvx.Value ~= nil then
-owner.bruvx.Value.Position = hit.Position 
+if  targ ~= owner.bruvx.Value then
+owner.bruvx.Value.Position = hit.Position
 owner.bruvx.Value:BreakJoints()
 owner.bruvx.Value.Anchored = true
+end
 end
 end)
 task.wait(0.05)
@@ -263,11 +270,12 @@ task.wait(0.05)
 boomboom = true
 end
 end)
+
 pio = true
-owner.hello0.OnServerEvent:Connect(function()
+owner.hello0.OnServerEvent:Connect(function(me,k)
 if pio == true then
 pio = false
-if owner.bruvx.Value ~= nil then
+if k == "t" then
 owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation - Vector3.new(0, 0, 90)
 end
 task.wait(0.05)
@@ -276,10 +284,10 @@ end
 end)
 
 piox = true
-owner.hello9.OnServerEvent:Connect(function()
+owner.hello9.OnServerEvent:Connect(function(me, k)
 if piox == true then
 piox = false
-if owner.bruvx.Value ~= nil then
+if k == "r" then
 owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation - Vector3.new(90, 0, 0)
 end
 task.wait(0.05)
