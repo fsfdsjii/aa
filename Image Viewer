@@ -192,28 +192,46 @@ end)
 ]],owner.PlayerGui)
 identifyy = owner.Character.HumanoidRootPart.identifyy
 identify = owner.Character.HumanoidRootPart.identify
+task.spawn(function()
+while task.wait() do
+if identifyy.Size.X > 24.9 then
+
+identify.CFrame = CFrame.new(0, identifyy.Size.X / 2, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+identifyy.CFrame = CFrame.new(0, identifyy.Size.X / 2, 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+end
+if identifyy.Size.Y > 24.9 then
+
+identify.CFrame = CFrame.new(0, identifyy.Size.Y / 2, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+identifyy.CFrame = CFrame.new(0, identifyy.Size.Y / 2, 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+end
+end
+end)
 owner.itsaremotex.OnServerEvent:Connect(function()
 if identifyy.Size.X < 150 then
 identifyy.Size = Vector2.new(identifyy.Size.X + 1, identifyy.Size.Y)
 identify.Size = Vector2.new(identify.Size.X + 1,identify.Size.Y)
+owner.hii.Value = identify.Size.X + 1
 end
 end)
 owner.itsaremotexx.OnServerEvent:Connect(function()
 if identifyy.Size.Y < 150 then
 identifyy.Size = Vector2.new(identifyy.Size.X, identifyy.Size.Y + 1)
 identify.Size = Vector2.new(identify.Size.X, identify.Size.Y + 1)
+owner.hiiz.Value = identify.Size.Y + 1
 end
 end)
 owner.itsaremotexxx.OnServerEvent:Connect(function()
 if identifyy.Size.X > 0 then
 identifyy.Size = Vector2.new(identifyy.Size.X - 1, identifyy.Size.Y)
 identify.Size = Vector2.new(identify.Size.X - 1, identify.Size.Y)
+owner.hii.Value = identify.Size.X - 1
 end
 end)
 owner.itsaremotexxxx.OnServerEvent:Connect(function()
 if identifyy.Size.Y > 0 then
 identifyy.Size = Vector2.new(identifyy.Size.X, identifyy.Size.Y - 1)
 identify.Size = Vector2.new(identify.Size.X, identify.Size.Y - 1)
+owner.hiiz.Value = identify.Size.Y - 1
 end
 end)
 TextButton.MouseButton1Click:Connect(function()
