@@ -115,9 +115,107 @@ if not checkingrn then
 	rrr = Instance.new("RemoteEvent",owner)
 	rrr.Name = "itsaremote"
 end
-NLS([[
+checkingrn = owner:FindFirstChild('itsaremotex')
+if not checkingrn then
+	rrr = Instance.new("RemoteEvent",owner)
+	rrr.Name = "itsaremotex"
+end
+checkingrn = owner:FindFirstChild('itsaremotexx')
+if not checkingrn then
+	rrr = Instance.new("RemoteEvent",owner)
+	rrr.Name = "itsaremotexx"
+end
+checkingrn = owner:FindFirstChild('itsaremotexxx')
+if not checkingrn then
+	rrr = Instance.new("RemoteEvent",owner)
+	rrr.Name = "itsaremotexxx"
+end
+checkingrn = owner:FindFirstChild('itsaremotexxxx')
+if not checkingrn then
+	rrr = Instance.new("RemoteEvent",owner)
+	rrr.Name = "itsaremotexxxx"
+end
+NLS([[local mode = true
+balx = false
+local UIS = game:GetService("UserInputService")
+UIS.InputBegan:Connect(function(input, gameProcessed)
+if not gameProcessed then
+balx = true
+elseif gameProcessed then
+balx = false
+end
+end)
+
+task.spawn(function()
+while task.wait(0.09) do
+if game:GetService('UserInputService'):IsKeyDown(Enum.KeyCode.E) == true then 
+yeyx = owner.Character.HumanoidRootPart:FindFirstChild('identify')
+yeyz = owner.Character.HumanoidRootPart:FindFirstChild('identifyy')
+if yeyx and yeyz then
+if balx == true then
+if mode == true then
+owner.itsaremotex:FireServer()
+elseif mode == false then
+owner.itsaremotexxx:FireServer()
+end
+end
+end
+end
+end
+end)
+
+task.spawn(function()
+while task.wait(0.09) do
+if game:GetService('UserInputService'):IsKeyDown(Enum.KeyCode.Q) == true then 
+yeyx = owner.Character.HumanoidRootPart:FindFirstChild('identify')
+yeyz = owner.Character.HumanoidRootPart:FindFirstChild('identifyy')
+if yeyx and yeyz then
+if balx == true then
+if mode == true then
+owner.itsaremotexx:FireServer()
+elseif mode == false then
+owner.itsaremotexxxx:FireServer()
+end
+end
+end
+end
+end
+end)
+owner:GetMouse().KeyDown:Connect(function(k)
+k = k:lower()
+if k == "f" then
+mode = not mode
+end
+end)
+
 	owner.PlayerGui.ImageGui.Frame.TextBox.Text = "Image Viewer"
 ]],owner.PlayerGui)
+identifyy = owner.Character.HumanoidRootPart.identifyy
+identify = owner.Character.HumanoidRootPart.identify
+owner.itsaremotex.OnServerEvent:Connect(function()
+if identifyy.Size.X < 150 then
+identifyy.Size = Vector2.new(identifyy.Size.X + 1, identifyy.Size.Y)
+identify.Size = Vector2.new(identify.Size.X + 1,identify.Size.Y)
+end
+end)
+owner.itsaremotexx.OnServerEvent:Connect(function()
+if identifyy.Size.Y < 150 then
+identifyy.Size = Vector2.new(identifyy.Size.X, identifyy.Size.Y + 1)
+identify.Size = Vector2.new(identify.Size.X, identify.Size.Y + 1)
+end
+end)
+owner.itsaremotexxx.OnServerEvent:Connect(function()
+if identifyy.Size.X > 0 then
+identifyy.Size = Vector2.new(identifyy.Size.X - 1, identifyy.Size.Y)
+identify.Size = Vector2.new(identify.Size.X - 1, identify.Size.Y)
+end
+end)
+owner.itsaremotexxxx.OnServerEvent:Connect(function()
+if identifyy.Size.Y > 0 then
+identifyy.Size = Vector2.new(identifyy.Size.X, identifyy.Size.Y - 1)
+identify.Size = Vector2.new(identify.Size.X, identify.Size.Y - 1)
+end
+end)
 TextButton.MouseButton1Click:Connect(function()
 checkforimage = owner.Character.HumanoidRootPart:FindFirstChild('identify')
 checkforimagee = owner.Character.HumanoidRootPart:FindFirstChild('identifyy')
@@ -159,12 +257,12 @@ debounce = true
 end            
 	end)
 end)
-print("There may be a limit to how many times you put an image, put an image id and done your image is now behind you!")
-print("Say /setimagesize then number and number to set the size of the image")
-print("Say /setimagepos then number to set the upper position of the image if your having problems with the size")
-print("Say /colorgui to color your gui ")
-print("Say /colortext to color your text ")
-print("Say /colortextstroke to color your text stroke")
+print([[There may be a limit to how many times you put an image, put an image id and done your image is now behind you!
+Say /setimagesize then number and number to set the size of the image
+Say /setimagepos then number to set the upper position of the image if your having problems with the size
+Say /colorgui to color your gui
+Say /colortext to color your text
+Say /colortextstroke to color your text stroke]])
 local cmd = "/setimagesize"
 local seperator = " "
 
