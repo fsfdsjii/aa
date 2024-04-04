@@ -1,24 +1,59 @@
 -- Converted using Mokiros's Model to Script Version 3
 -- Converted string size: 252 characters
-
-local ScriptFunctions = {
+for _,v in next, game:GetService('Players'):GetPlayers() do
+if not v:FindFirstChild('leaderstats') then
+leaderstats = Instance.new("Folder",v)
+leaderstats.Name = "leaderstats"
+meat = Instance.new("IntValue",leaderstats)
+meat.Name = "Cooked"
+else
+if not v.leaderstats:FindFirstChild('Cooked') then
+meat = Instance.new("IntValue",v.leaderstats)
+meat.Name = "Cooked"
+end
+end
+end
+ScriptFunctions = {
 function(script,require)
 script.Parent.MouseClick:Connect(function(plr)
-	if plr==owner then
-		if not plr.Backpack:FindFirstChild('Meat') then
+              if not plr.Backpack:FindFirstChild('Cooked Meat') then
+              if not plr.Backpack:FindFirstChild('Undercooked Meat') then
+		if not plr.Backpack:FindFirstChild('Meat')  then
 			tool = Instance.new("Tool",plr.Backpack)
 			tool.Name = "Meat"
 			handle = Instance.new("Part",tool)
 			handle.Name = "Handle"
-			handle.BrickColor = BrickColor.new('Burgundy')
+			handle.BrickColor = BrickColor.new('Maroon')
 				else
 					if plr.Backpack.Meat:FindFirstChild('Handle') then
 			plr.Backpack.Meat.Handle.Position = script.Parent.Parent.Position + Vector3.new(0, 2, 0)
 			plr.Backpack.Meat.Handle.Anchored = true
-			
+                        plr.Backpack.Meat.Handle.Velocity = Vector3.new()
+			plr.Backpack.Meat.Handle.RotVelocity = Vector3.new()
 			script.Parent.MaxActivationDistance = 0
 			plr.Backpack.Meat.Handle.Parent = script
 			plr.Backpack.Meat:Destroy()
+			meat = script.Handle
+			task.spawn(function()
+				task.wait(10)
+						meat.BrickColor = BrickColor.new('Burgundy')
+						tool = Instance.new("Tool",workspace)
+						tool.Name = "Undercooked Meat"
+						meat.Parent = tool
+						meat.Anchored = false
+						script.Parent.MaxActivationDistance = 32
+						end)
+					end
+                              end
+elseif plr.Backpack:FindFirstChild('Undercooked Meat') then
+					if plr.Backpack["Undercooked Meat"]:FindFirstChild('Handle') then
+			plr.Backpack["Undercooked Meat"].Handle.Position = script.Parent.Parent.Position + Vector3.new(0, 2, 0)
+			plr.Backpack["Undercooked Meat"].Handle.Anchored = true
+                        plr.Backpack["Undercooked Meat"].Handle.Velocity = Vector3.new()
+                        plr.Backpack["Undercooked Meat"].Handle.RotVelocity = Vector3.new()
+			script.Parent.MaxActivationDistance = 0
+			plr.Backpack["Undercooked Meat"].Handle.Parent = script
+			plr.Backpack["Undercooked Meat"]:Destroy()
 			meat = script.Handle
 			task.spawn(function()
 				task.wait(10)
@@ -28,10 +63,36 @@ script.Parent.MouseClick:Connect(function(plr)
 						meat.Parent = tool
 						meat.Anchored = false
 						script.Parent.MaxActivationDistance = 32
+if plr:FindFirstChild('leaderstats') then
+if plr.leaderstats:FindFirstChild('Cooked') then
+plr.leaderstats.Cooked.Value = plr.leaderstats.Cooked.Value + 1
+end
+end
 						end)
-					end
-		end
-	end
+end
+end
+elseif plr.Backpack:FindFirstChild('Cooked Meat') then
+					if plr.Backpack["Cooked Meat"]:FindFirstChild('Handle') then
+			plr.Backpack["Cooked Meat"].Handle.Position = script.Parent.Parent.Position + Vector3.new(0, 2, 0)
+			plr.Backpack["Cooked Meat"].Handle.Anchored = true
+                        plr.Backpack["Cooked Meat"].Handle.Velocity = Vector3.new()
+                        plr.Backpack["Cooked Meat"].Handle.RotVelocity = Vector3.new()
+			script.Parent.MaxActivationDistance = 0
+			plr.Backpack["Cooked Meat"].Handle.Parent = script
+			plr.Backpack["Cooked Meat"]:Destroy()
+			meat = script.Handle
+			task.spawn(function()
+				task.wait(10)
+						meat.BrickColor = BrickColor.new('Really black')
+						tool = Instance.new("Tool",workspace)
+						tool.Name = "Overcooked Meat"
+						meat.Parent = tool
+						meat.Anchored = false
+						script.Parent.MaxActivationDistance = 32
+						end)
+end
+
+end
 end)
 end
 }
