@@ -194,15 +194,21 @@ identifyy = owner.Character.HumanoidRootPart.identifyy
 identify = owner.Character.HumanoidRootPart.identify
 task.spawn(function()
 while task.wait() do
+if owner.Character.HumanoidRootPart:FindFirstChild('identifyy') then
 if identifyy.Size.X > 24.9 then
-
 identify.CFrame = CFrame.new(0, identifyy.Size.X / 2, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 identifyy.CFrame = CFrame.new(0, identifyy.Size.X / 2, 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+elseif identifyy.Size.X < 24.9 then
+identify.CFrame = CFrame.new(0, identifyy.Size.X / 3, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+identifyy.CFrame = CFrame.new(0, identifyy.Size.X / 3, 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
 end
 if identifyy.Size.Y > 24.9 then
-
 identify.CFrame = CFrame.new(0, identifyy.Size.Y / 2, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 identifyy.CFrame = CFrame.new(0, identifyy.Size.Y / 2, 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+elseif identifyy.Size.Y < 24.9 then
+identify.CFrame = CFrame.new(0, identifyy.Size.Y / 3, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+identifyy.CFrame = CFrame.new(0, identifyy.Size.Y / 3, 5, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+end
 end
 end
 end)
