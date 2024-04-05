@@ -283,10 +283,12 @@ end
 end)
 print([[There may be a limit to how many times you put an image, put an image id and done your image is now behind you!
 Say /setimagesize then number and number to set the size of the image
-Say /setimagepos then number to set the upper position of the image if your having problems with the size
 Say /colorgui to color your gui
 Say /colortext to color your text
-Say /colortextstroke to color your text stroke]])
+Say /colortextstroke to color your text stroke
+Press F to change modes between making it bigger or smaller,
+press Q to increase the size of the upper and lower side
+press E to increase the size of the right and left side]])
 local cmd = "/setimagesize"
 local seperator = " "
 
@@ -302,7 +304,7 @@ owner.hiiz.Value = tonumber(TargetName2)
 	end
 end)
 
-local cmd = "/setimagepos"
+--[[local cmd = "/setimagepos"
 local seperator = " "
 
 owner.Chatted:Connect(function(msg)
@@ -314,6 +316,7 @@ owner.Chatted:Connect(function(msg)
                 owner.hi.Value = tonumber(TargetName)
 	end
 end)
+reason of deprecation: autosize]]--
 
 local cmd = "/colorgui"
 local seperator = " "
