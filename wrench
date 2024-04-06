@@ -345,7 +345,7 @@ table.insert(cors,sandbox(Script3,function()
 					if pr.Value == false then
 						break
 					end
-					table = OverlapParams{owner["Left Arm"], owner["Left Leg"], owner["Right Arm"], owner["Right Leg"], owner.Torso, owner.Head, owner.HumanoidRootPart, obj}
+					tablez = OverlapParams.new{owner["Left Arm"], owner["Left Leg"], owner["Right Arm"], owner["Right Leg"], owner.Torso, owner.Head, owner.HumanoidRootPart, obj}
 					for _,v in next, workspace:GetPartsInPart(obj) do
 						if v ~= nil then
 							if v.Name ~= "Base" then
@@ -358,6 +358,7 @@ table.insert(cors,sandbox(Script3,function()
 														if v ~= owner.HumanoidRootPart then
 															if v ~= obj then
 																if v ~= script.Parent then
+                                                                                                                                           if v.Parent ~= nil then
 																	v.AssemblyLinearVelocity = ((v.Position + Vector3.new(0, 2, 0)) - obj.Position).Unit * 200
 																	kssz = v.Parent:FindFirstChild('Helloz')
 																	if not kssz then
@@ -374,6 +375,7 @@ table.insert(cors,sandbox(Script3,function()
 																		end
 																		task.wait(0.5)
 																		kss.Value = true
+                                                                                                                                         end
 																end
 															end
 														end
