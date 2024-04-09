@@ -1,0 +1,307 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+Sound2 = Instance.new("Sound")
+SpecialMesh3 = Instance.new("SpecialMesh")
+Script4 = Instance.new("Script")
+LocalScript5 = Instance.new("LocalScript")
+Tool0.Name = "ScatterBlaster"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=13506760"
+Tool0.Grip = CFrame.new(0, -0.349999994, -0.649999976, 1, -0, 0, 0, 0, -1, 0, 1, 0)
+Tool0.GripForward = Vector3.new(-0, 1, -0)
+Tool0.GripPos = Vector3.new(0, -0.3499999940395355, -0.6499999761581421)
+Tool0.GripUp = Vector3.new(-0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-184.104095, 0.500009239, 104.08252, 5.36441803e-06, 0.0523674488, 0.998627782, -0.999999881, 2.86102295e-06, 5.1856041e-06, -2.47359276e-06, -0.998627782, 0.052367568)
+Part1.Orientation = Vector3.new(0, 86.99800109863281, -90)
+Part1.Position = Vector3.new(-184.10409545898438, 0.5000092387199402, 104.08251953125)
+Part1.Rotation = Vector3.new(-0.006000000052154064, 86.99800109863281, -89.99400329589844)
+Part1.Velocity = Vector3.new(-0.0020407300908118486, -0.007258377969264984, 0.004086092580109835)
+Part1.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.RotVelocity = Vector3.new(-0.0036049862392246723, -0.0033135467674583197, -0.0006087876972742379)
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Sound2.Name = "EquipSound"
+Sound2.Parent = Part1
+Sound2.SoundId = "http://www.roblox.com/asset/?id=10756118"
+SpecialMesh3.Parent = Part1
+SpecialMesh3.MeshId = "http://www.roblox.com/asset/?id=13506753"
+SpecialMesh3.Scale = Vector3.new(2, 2, 1.7999999523162842)
+SpecialMesh3.VertexColor = Vector3.new(10, 0, 0)
+SpecialMesh3.TextureId = "http://www.roblox.com/asset/?id=13506786"
+SpecialMesh3.MeshType = Enum.MeshType.FileMesh
+Script4.Name = "ScatterBlast"
+Script4.Parent = Tool0
+table.insert(cors,sandbox(Script4,function()
+	Instance.new("RemoteEvent",owner.Backpack).Name = "ScaEvent1"
+	function destroywait(number, obj)
+		task.spawn(function()
+			task.wait(number)
+			obj.Parent = nil
+		end)
+	end
+function boo(hi)
+	ball = hi
+	damage = 12
+
+	HitSound = Instance.new("Sound")
+	HitSound.Name = "HitSound"
+	HitSound.SoundId = "http://www.roblox.com/asset/?id=11945266"
+	HitSound.Parent = ball
+	HitSound.Volume = 1
+	HitSound.Pitch = .8
+
+	debris = game:GetService("Debris")
+
+
+	local hits = 7
+
+	function onTouched(hit)
+
+		if (hit.Name == "ScatterShot") then return end
+
+		hits = hits - 1
+		if (hits < 0) then
+			connection:disconnect()
+			debris:AddItem(ball, .5)
+		end
+
+		local humanoid = hit.Parent:findFirstChild("Humanoid")
+
+		if humanoid ~= nil then
+			tagHumanoid(humanoid)
+			humanoid:TakeDamage(damage)
+			untagHumanoid(humanoid)
+		end
+
+		if (math.random() > .1) then
+			HitSound:Play()
+		end
+
+	end
+
+	function tagHumanoid(humanoid)
+		-- todo: make tag expire
+		local tag = ball:findFirstChild("creator")
+		if tag ~= nil then
+			local new_tag = tag:clone()
+			new_tag.Parent = humanoid
+		end
+	end
+
+
+	function untagHumanoid(humanoid)
+		if humanoid ~= nil then
+			local tag = humanoid:findFirstChild("creator")
+			if tag ~= nil then
+				tag.Parent = nil
+			end
+		end
+	end
+
+	connection = ball.Touched:connect(onTouched)
+
+end
+local Tool = script.Parent;
+
+enabled = true
+
+local spark = Instance.new("Sparkles")
+spark.Color = Color3.new(10,0,0)
+
+function fire(v)
+
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+
+	
+	
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+	
+	local PewPew = Tool.Handle:FindFirstChild("PewPew")
+
+	if (PewPew == nil) then
+		PewPew = Instance.new("Sound")
+		PewPew.Name = "PewPew"
+		PewPew.SoundId = "http://www.roblox.com/asset/?id=13775466"
+		PewPew.Parent = Tool.Handle
+		PewPew.Volume = 1
+		PewPew.Pitch = .7
+	end
+	
+
+	for dx=-1,1,1 do
+		for dy=-1,1,1 do
+			if (math.abs(dx) == 0 or math.abs(dy) == 0) then
+
+				local p = Instance.new("Part")
+				p.BrickColor = BrickColor.new("Bright red")
+				p.formFactor = 2
+				p.Size = Vector3.new(1,.4,1)
+				p.Material = Enum.Material.Ice
+				p.Friction = .05
+				p.Elasticity = .9
+				p.TopSurface = 0
+				p.BottomSurface = 0
+				p.Name = "ScatterShot"
+
+				local dv = CFrame.fromEulerAnglesXYZ(dx/4,dy/4,0) * v
+
+				local a = math.random() * 6.28
+				local d = Vector3.new(math.cos(a), 0, math.sin(a)).unit
+				p.Velocity = dv * 100
+				p.RotVelocity = d
+				p.Position = spawnPos + (dv * 10)
+
+				local force = Instance.new("BodyForce")
+				force.force = Vector3.new(0,30,0)
+				force.Parent = p
+
+				local creator_tag = Instance.new("ObjectValue")
+				creator_tag.Value = vPlayer
+				creator_tag.Name = "creator"
+				creator_tag.Parent = p
+
+					boo(p)
+					destroywait(5, p)
+
+				spark:Clone().Parent = p
+
+				p.Parent = game.Workspace
+			end
+		end
+	end
+
+	PewPew:Play()
+
+end
+
+
+
+function gunUp()
+	Tool.GripForward = Vector3.new(0,.981,-.196)
+	Tool.GripRight = Vector3.new(1,0,0)
+	Tool.GripUp = Vector3.new(0,.196,.981)
+end
+
+function gunOut()
+	Tool.GripForward = Vector3.new(0,1,0)
+	Tool.GripRight = Vector3.new(1,0,0)
+	Tool.GripUp = Vector3.new(0,0,1)
+end
+
+	owner.Backpack.ScaEvent1.OnServerEvent:Connect(function(me, hi)
+		if not enabled  then
+			return
+		end
+
+		enabled = false
+
+
+		local character = Tool.Parent;
+		local humanoid = character.Humanoid
+		if humanoid == nil then
+			print("Humanoid not found")
+			return 
+		end
+
+		local targetPos = hi.p
+		local lookAt = (targetPos - character.Head.Position).unit
+
+		local reload = .3
+		--if (isTurbo(character)) then
+		--	reload = .25
+		--	print("turbo")
+		--end
+
+		gunUp()
+		fire(lookAt)
+		wait(reload)
+		gunOut()
+		wait(reload)
+
+		enabled = true
+
+	end)
+
+function onActivated()
+	owner.Backpack.ScaEvent1.Archivable = not owner.Backpack.ScaEvent1.Archivable
+end
+
+function onEquipped()
+	Tool.Handle.EquipSound:play()
+end
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+
+end))
+LocalScript5.Name = "Local Gui"
+LocalScript5.Parent = Tool0
+table.insert(cors,sandbox(LocalScript5,function()
+	NLS([[owner.Backpack.ScaEvent1.Changed:Connect(function(why)
+	if why == "Archivable" then
+	owner.Backpack.ScaEvent1:FireServer(owner:GetMouse().Hit)
+	end
+	end)
+local Tool = script.Parent;
+
+enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(.2)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)]],owner.PlayerGui).Parent = script.Parent
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
