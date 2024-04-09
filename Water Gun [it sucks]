@@ -1,0 +1,294 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+SpecialMesh1 = Instance.new("SpecialMesh")
+SpecialMesh2 = Instance.new("SpecialMesh")
+LocalScript3 = Instance.new("LocalScript")
+Script4 = Instance.new("Script")
+Part5 = Instance.new("Part")
+SpecialMesh6 = Instance.new("SpecialMesh")
+Sound7 = Instance.new("Sound")
+Tool0.Name = "Water Gun"
+Tool0.Parent = owner.Backpack
+SpecialMesh1.Name = "Mesh1"
+SpecialMesh1.Parent = Tool0
+SpecialMesh1.Scale = Vector3.new(0.8999999761581421, 0.8999999761581421, 0.8999999761581421)
+SpecialMesh1.MeshType = Enum.MeshType.Sphere
+SpecialMesh2.Parent = Tool0
+SpecialMesh2.Scale = Vector3.new(0.30000001192092896, 0.5, 0.30000001192092896)
+LocalScript3.Name = "Local Gui"
+LocalScript3.Parent = Tool0
+table.insert(cors,sandbox(LocalScript3,function()
+	Instance.new("RemoteEvent",owner.Backpack).Name = "WaterEvent1"
+	NLS([[owner.Backpack.WaterEvent1.Changed:Connect(function(watah)
+	if watah == "Archivable" then
+	owner.Backpack.WaterEvent1:FireServer(owner:GetMouse().Hit)
+	end
+	end)
+local Tool = script.Parent;
+
+
+enabled = true
+
+function onButton1Down(mouse)
+
+	if not enabled then
+
+		return
+
+	end
+
+
+
+	enabled = false
+
+	mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430902"
+
+
+
+	wait(.2)
+
+	mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430902"
+
+	enabled = true
+
+
+
+end
+
+function onEquippedLocal(mouse)
+
+
+
+	if mouse == nil then
+
+		print("Mouse not found")
+
+		return 
+
+	end
+
+
+
+	mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430902"
+
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+
+end
+
+
+
+
+
+Tool.Equipped:connect(onEquippedLocal)]],owner.PlayerGui).Parent = script.Parent
+
+
+end))
+Script4.Name = "PaintballShooter"
+Script4.Parent = Tool0
+table.insert(cors,sandbox(Script4,function()
+function byebye(parent)
+	ball = parent
+	damage = 3
+
+
+
+	function onTouched(hit)
+		local humanoid = hit.Parent:findFirstChild("Humanoid")
+
+		if hit.Name ~= "Paintball" then
+			if humanoid ~= nil then
+				tagHumanoid(humanoid)
+				humanoid.Health = humanoid.Health - damage
+				wait(.1)
+				untagHumanoid(humanoid)
+				for i=1,3 do
+					local s = Instance.new("Part")
+					s.Shape = 1 -- block
+					s.formFactor = 2 -- plate
+					s.Size = Vector3.new(1,.4,1)
+					s.BrickColor = ball.BrickColor
+					s.Name = "Paintball"
+					local v = Vector3.new(math.random(-1,1), math.random(0,1), math.random(-1,1))
+					s.Velocity = 15 * v
+					s.CFrame = CFrame.new(ball.Position + v, v)
+					ok(s)
+					s.Parent = game.Workspace
+				end
+			end
+		end
+
+		connection:disconnect()
+		ball.Parent = nil
+	end
+
+	function tagHumanoid(humanoid)
+		-- todo: make tag expire
+		local tag = ball:findFirstChild("creator")
+		if tag ~= nil then
+			local new_tag = tag:clone()
+			new_tag.Parent = humanoid
+		end
+	end
+
+
+	function untagHumanoid(humanoid)
+		if humanoid ~= nil then
+			local tag = humanoid:findFirstChild("creator")
+			if tag ~= nil then
+				tag.Parent = nil
+			end
+		end
+	end
+
+	connection = ball.Touched:connect(onTouched)
+
+	wait(1)
+	ball.Parent = nil
+end
+-- this script removes its parent from the workspace after 24 seconds
+
+
+function ok(parent)
+	task.spawn(function()
+		wait(5)
+		parent.Parent = nil
+	end)
+end
+Tool = script.Parent
+
+
+function fire(v)
+	
+
+	Tool.Handle.Fire:play()
+
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:GetPlayerFromCharacter(Tool.Parent)
+
+	local missile = Instance.new("Part")
+		
+	local spawnPos = Tool.Handle.Position
+
+
+	spawnPos  = spawnPos + (v * 8)
+
+	missile.Position = spawnPos
+	missile.Locked = false
+	missile.Size = Vector3.new(1,1,1)
+	missile.Velocity = v * 250 + Vector3.new(math.random(-3,3),math.random(-3,3),math.random(-3,3))
+	missile.BrickColor = BrickColor.new("Pastel blue-green")
+	missile.Shape = 0
+	missile.BottomSurface = 0
+	missile.TopSurface = 0
+	missile.Name = "Paintball"
+	missile.Elasticity = 0
+	missile.Reflectance = 0
+	missile.Friction = 0
+	missile.CanCollide = true
+
+	local force = Instance.new("BodyForce")
+	force.force = Vector3.new(0,90,0)
+	force.Parent = missile
+		
+	ok(missile)
+
+	local new_mesh2 = script.Parent.Mesh1:clone()
+	new_mesh2.Parent = missile
+
+    byebye(missile)
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile
+	
+
+
+
+	missile.Parent = game.Workspace
+end
+
+
+
+	Tool.Enabled = true
+owner.Backpack.WaterEvent1.OnServerEvent:Connect(function(me, hi)
+		if not Tool.Enabled then
+			return
+		end
+
+		Tool.Enabled = false
+
+		local character = Tool.Parent;
+		local humanoid = character.Humanoid
+		if humanoid == nil then
+			print("Humanoid not found")
+			return 
+		end
+
+		local targetPos = hi.p
+		local lookAt = (targetPos - character.Head.Position).unit
+
+		fire(lookAt)
+		wait(0.08)
+		fire(lookAt)
+		wait(0.08)
+		fire(lookAt)
+		wait(0.5)
+
+
+		Tool.Enabled = true
+end)
+function onActivated()
+owner.Backpack.WaterEvent1.Archivable = not owner.Backpack.WaterEvent1.Archivable
+end
+	
+
+script.Parent.Activated:connect(onActivated)
+
+end))
+Part5.Name = "Handle"
+Part5.Parent = Tool0
+Part5.CFrame = CFrame.new(44.4414673, 7.60152197, 15.3308277, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part5.Position = Vector3.new(44.44146728515625, 7.601521968841553, 15.330827713012695)
+Part5.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part5.Size = Vector3.new(1, 0.800000011920929, 2)
+Part5.BrickColor = BrickColor.new("Bright green")
+Part5.Reflectance = 0.10000000149011612
+Part5.brickColor = BrickColor.new("Bright green")
+SpecialMesh6.Parent = Part5
+SpecialMesh6.MeshId = "http://www.roblox.com/asset/?id=3835506"
+SpecialMesh6.Scale = Vector3.new(1.7000000476837158, 1.7000000476837158, 0.800000011920929)
+SpecialMesh6.MeshType = Enum.MeshType.FileMesh
+Sound7.Name = "Fire"
+Sound7.Parent = Part5
+Sound7.Pitch = 1.600000023841858
+Sound7.PlayOnRemove = true
+Sound7.PlaybackSpeed = 1.600000023841858
+Sound7.SoundId = "rbxasset://sounds//splat.wav"
+Sound7.Volume = 1
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
