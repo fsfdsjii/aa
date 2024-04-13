@@ -1,12 +1,9 @@
-Instance.new("RemoteEvent",owner.Backpack).Name = "BanisherEvent1"
 Instance.new("RemoteEvent",owner.Backpack).Name = "BanisherEvent2"
 Instance.new("RemoteEvent",owner.Backpack).Name = "BanisherEvent3"
 Instance.new("RemoteEvent",owner.Backpack).Name = "BanisherEvent4"
 Instance.new("RemoteEvent",owner.Backpack).Name = "BanisherEvent5"
 
-NLS([[owner:GetMouse().Button1Down:Connect(function(m)
-owner.Backpack.BanisherEvent1:FireServer(m)
-end)
+NLS([[
 owner:GetMouse().Button1Up:Connect(function(m)
 owner.Backpack.BanisherEvent2:FireServer(m)
 end)
@@ -1707,10 +1704,7 @@ end
 --||	  ASSIGN THINGS TO KEYS
 --\\=================================//
 
-function MouseDown(Mouse)
-	if ATTACK == false then
-	end
-end
+
 
 function MouseUp(Mouse)
 	HOLD = false
@@ -1729,16 +1723,7 @@ function KeyDown(Key)
 	if Key == "t" and ATTACK == false then
 		Taunt()
 	end
-
-	if Key == "v" and ATTACK == false then
-	end
-
-	if Key == "x" and ATTACK == false then
-	end
 end
-owner.Backpack.BanisherEvent1.OnServerEvent:Connect(function(me, NEWKEY)
-	MouseDown(NEWKEY)
-end)
 owner.Backpack.BanisherEvent2.OnServerEvent:Connect(function(me, NEWKEY)
 	MouseUp(NEWKEY)
 end)
