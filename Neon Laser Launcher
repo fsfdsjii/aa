@@ -145,7 +145,7 @@ owner.Backpack.NeonEvent3.OnServerEvent:Connect(function(me, hi, camx)
 			v.Parent=beamm
 		end
 	end
-	a=cam.CoordinateFrame.p
+	a=camx.p
 	b=hi.p
 	mhitr=Ray.new(a,(b-a).unit*999)
 	mhit,ps=workspace:FindPartOnRayWithIgnoreList(mhitr,{char,beamm})
