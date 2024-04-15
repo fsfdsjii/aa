@@ -1,0 +1,20 @@
+
+HitValue = Instance.new("CFrameValue",owner.Backpack)
+Instance.new("RemoteEvent",owner.Backpack).Name = "AlterEvent1"
+NLS([[owner:GetMouse().Move:Connect(function()
+owner.Backpack.AlterEvent1:FireServer(owner:GetMouse().Hit)
+end)
+while task.wait(0.05) do
+if owner.Character.Humanoid.MoveDirection ~= Vector3.new(0, 0, 0) then
+owner.Backpack.AlterEvent1:FireServer(owner:GetMouse().Hit)
+elseif owner.Character.Humanoid:GetState() == Enum.HumanoidStateType.Freefall then
+owner.Backpack.AlterEvent1:FireServer(owner:GetMouse().Hit)
+elseif owner.Character.Humanoid:GetState() == Enum.HumanoidStateType.Climbing then
+owner.Backpack.AlterEvent1:FireServer(owner:GetMouse().Hit)
+end
+end
+]],owner.PlayerGui)
+
+owner.Backpack.AlterEvent1.OnServerEvent:Connect(function(me, hi)
+HitValue.Value = hi
+end)
