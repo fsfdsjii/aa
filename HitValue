@@ -10,6 +10,8 @@ if owner.Character.Humanoid.MoveDirection ~= Vector3.new(0, 0, 0) then
 owner.Backpack.AlterEvent1:FireServer(owner:GetMouse().Hit)
 elseif owner.Character.Humanoid:GetState() == Enum.HumanoidStateType.Freefall then
 owner.Backpack.AlterEvent1:FireServer(owner:GetMouse().Hit)
+elseif owner.Character.Humanoid:GetState() == Enum.HumanoidStateType.Swimming then
+owner.Backpack.AlterEvent1:FireServer(owner:GetMouse().Hit)
 elseif owner.Character.Humanoid:GetState() == Enum.HumanoidStateType.Climbing then
 owner.Backpack.AlterEvent1:FireServer(owner:GetMouse().Hit)
 end
