@@ -1039,7 +1039,7 @@ function Candy()
 		GRIP:remove()
 		HANDLE.Velocity = CF(HANDLE.Position,Torso.CFrame*CF(0,7,-15).p).lookVector*MRANDOM(45,80)
 		Debris:AddItem(CANDYMODEL,10)
-		for i=0, 0.4, 0.1 / Animation_Speed do
+		--[[for i=0, 0.4, 0.1 / Animation_Speed do
 			Swait()
 			RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 0+sick.PlaybackLoudness/800) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
 			Neck.C0 = Clerp(Neck.C0, NECKC0 * CF(0, 0, 0 + ((1+sick.PlaybackLoudness/800) - 1)) * ANGLES(RAD(-5), RAD(0), RAD(0)), 1 / Animation_Speed)
@@ -1047,7 +1047,7 @@ function Candy()
 			LeftShoulder.C0 = Clerp(LeftShoulder.C0, CF(-1.25, 0.5, 0.3) * ANGLES(RAD(0), RAD(55), RAD(-12)) * ANGLES(RAD(-45), RAD(0), RAD(0)) * LEFTSHOULDERC0, 1 / Animation_Speed)
 			RightHip.C0 = Clerp(RightHip.C0, CF(1, -1-sick.PlaybackLoudness/800, -0.01) * ANGLES(RAD(0), RAD(80), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
 			LeftHip.C0 = Clerp(LeftHip.C0, CF(-1, -1-sick.PlaybackLoudness/800, -0.01) * ANGLES(RAD(0), RAD(-80), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
-		end
+		end]]
 	end
 	ATTACK = false
 	Rooted = false
@@ -1338,13 +1338,20 @@ end
 --\\=================================//
 
 local JUMPED = false
-
+debounce = true
 Humanoid.Changed:connect(function(Jump)
+	if debounce == true then
+		debounce = false
 	if Jump == "Jump" and (Disable_Jump == true) then
 		Humanoid.Jump = false
 	elseif Jump == "Jump" and Disable_Jump == false and JUMPED == false then
 		JUMPED = true
 		CreateSound(158309736, Torso, 10, 1, false)
+		end
+		task.spawn(function()
+			task.wait(0.2)
+			debounce = true
+		end)
 	end
 end)
 
