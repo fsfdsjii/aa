@@ -1,5 +1,5 @@
 NS([[owner:LoadCharacter() owner.Character.Animate:Destroy() clone = owner.Character.Humanoid:Clone() owner.Character.Humanoid:Destroy()
-hum = Instance.new("Humanoid",owner.Character) hum.DisplayName  = clone.DisplayName]],workspace)
+hum = Instance.new("Humanoid",owner.Character) hum.DisplayName  = clone.DisplayName clone:Destroy()]],workspace)
 task.wait(1)
 script.Parent = owner.Character
 Instance.new("RemoteEvent",owner.Character).Name = "oldevent1"
