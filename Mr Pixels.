@@ -8,6 +8,9 @@ p.Value = owner.Character.Humanoid.WalkSpeed
 owner.Character.Humanoid.WalkSpeed = 0
 wait(0.2)
 owner.Character.Humanoid.WalkSpeed = p.Value
+if owner.Character:FindFirstChildOfClass('ShirtGraphic') then
+	owner.Character:FindFirstChildOfClass('ShirtGraphic'):Destroy()
+end
 p:Destroy()
 Instance.new("RemoteEvent",owner.Backpack).Name = "PixelEvent1"
 Instance.new("RemoteEvent",owner.Backpack).Name = "PixelEvent2"
