@@ -3,8 +3,12 @@
 --//====================================================\\--
 --||			   CREATED BY SHACKLUSTER
 --\\====================================================//--
-
+p = Instance.new("NumberValue")
+p.Value = owner.Character.Humanoid.WalkSpeed
+owner.Character.Humanoid.WalkSpeed = 0
 wait(0.2)
+owner.Character.Humanoid.WalkSpeed = p.Value
+p:Destroy()
 Instance.new("RemoteEvent",owner.Backpack).Name = "PixelEvent1"
 Instance.new("RemoteEvent",owner.Backpack).Name = "PixelEvent2"
 BValue = Instance.new("CFrameValue",owner.Backpack)
@@ -1007,12 +1011,12 @@ function Candy()
 		end
 		for i=0, 1, 0.1 / Animation_Speed do
 			Swait()
-			RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 0+sick.PlaybackLoudness/800) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
+			--[[RootJoint.C0 = Clerp(RootJoint.C0,ROOTC0 * CF(0, 0, 0+sick.PlaybackLoudness/800) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
 			Neck.C0 = Clerp(Neck.C0, NECKC0 * CF(0, 0, 0 + ((1+sick.PlaybackLoudness/800) - 1)) * ANGLES(RAD(-5), RAD(0), RAD(0)), 1 / Animation_Speed)
 			RightShoulder.C0 = Clerp(RightShoulder.C0, CF(1.5, 0.5+sick.PlaybackLoudness/1200, 0) * ANGLES(RAD(160), RAD(15), RAD(-2+sick.PlaybackLoudness/45)) * RIGHTSHOULDERC0, 1 / Animation_Speed)
 			LeftShoulder.C0 = Clerp(LeftShoulder.C0, CF(-1.25, 0.5, 0.3) * ANGLES(RAD(0), RAD(55), RAD(-12)) * ANGLES(RAD(-45), RAD(0), RAD(0)) * LEFTSHOULDERC0, 1 / Animation_Speed)
 			RightHip.C0 = Clerp(RightHip.C0, CF(1, -1-sick.PlaybackLoudness/800, -0.01) * ANGLES(RAD(0), RAD(80), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
-			LeftHip.C0 = Clerp(LeftHip.C0, CF(-1, -1-sick.PlaybackLoudness/800, -0.01) * ANGLES(RAD(0), RAD(-80), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)
+			LeftHip.C0 = Clerp(LeftHip.C0, CF(-1, -1-sick.PlaybackLoudness/800, -0.01) * ANGLES(RAD(0), RAD(-80), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 1 / Animation_Speed)--]]
 		end
 		for i=0, 0.05, 0.1 / Animation_Speed do
 			Swait()
