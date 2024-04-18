@@ -6,6 +6,8 @@ Instance.new("RemoteEvent",owner.Backpack).Name = "BanEvent6"
 Instance.new("RemoteEvent",owner.Backpack).Name = "BanEvent7"
 Instance.new("RemoteEvent",owner.Backpack).Name = "BanEvent8"
 Instance.new("RemoteEvent",owner.Backpack).Name = "BanEvent9"
+sc = Instance.new("ScreenGui",owner.PlayerGui)
+sc.ResetOnSpawn = false
 NLS([[owner.Backpack.BanEvent1.OnClientEvent:Connect(function(b, o)
 game:GetService('RunService'):BindToRenderStep(b, o, function()
 owner.Backpack.BanEvent1:FireServer()
@@ -36,7 +38,7 @@ end)
 owner:GetMouse().KeyUp:Connect(function(MOG)
 owner.Backpack.BanEvent8:FireServer(MOG)
 end)
-]],owner.PlayerGui)
+]],sc)
 local Player = owner
 local Mouse,mouse,UserInputService,ContextActionService
 do
