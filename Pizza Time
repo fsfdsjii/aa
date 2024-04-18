@@ -1,0 +1,3138 @@
+
+Instance.new("RemoteEvent",owner.Backpack).Name = "PizzaEvent1"
+NLS([[owner:GetMouse().KeyDown:Connect(function(k)
+owner.Backpack.PizzaEvent1:FireServer("J1", k)
+end)
+owner:GetMouse().KeyUp:Connect(function(k)
+owner.Backpack.PizzaEvent1:FireServer("J2", k)
+end)
+owner:GetMouse().Button1Down:Connect(function(k)
+owner.Backpack.PizzaEvent1:FireServer("J3", k)
+end)
+owner.Backpack.PizzaEvent1.Changed:Connect(function(z)
+if z == "Archivable" then
+owner.Backpack.PizzaEvent1:FireServer("J4", owner:GetMouse().Hit)
+end
+end)]],owner.PlayerGui)
+local plrs = game:GetService("Players")
+local plr = owner
+local Mouse = nil
+local char = plr.Character
+local tweenserv = game:GetService("TweenService")
+local lighting = game:GetService("Lighting")
+local hum = char:FindFirstChildOfClass("Humanoid")
+local tor = char:FindFirstChild("Torso") or char:FindFirstChild("UpperTorso")
+local root = char:FindFirstChild("HumanoidRootPart")
+local head = char:FindFirstChild("Head")
+local face = head:FindFirstChildOfClass("Decal")
+local larm = char:FindFirstChild("Left Arm") or char:FindFirstChild("LeftUpperArm")
+local rarm = char:FindFirstChild("Right Arm") or char:FindFirstChild("RightUpperArm")
+local rleg = char:FindFirstChild("Right Leg") or char:FindFirstChild("RightUpperLeg")
+local lleg = char:FindFirstChild("Left Leg") or char:FindFirstChild("LeftUpperLeg")
+local neck = tor:FindFirstChild("Neck")
+local rootj = root:FindFirstChild("RootJoint")
+local LS = tor:FindFirstChild("Left Shoulder")
+local RS = tor:FindFirstChild("Right Shoulder")
+local LH = tor:FindFirstChild("Left Hip")
+local RH = tor:FindFirstChild("Right Hip")
+local bp = plr:FindFirstChild("Backpack")
+
+hum:ClearAllChildren()
+char.Animate:remove()
+
+
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Part2 = Instance.new("Part")
+Decal3 = Instance.new("Decal")
+Model4 = Instance.new("Model")
+Part5 = Instance.new("Part")
+ManualWeld6 = Instance.new("ManualWeld")
+ManualWeld7 = Instance.new("ManualWeld")
+Part8 = Instance.new("Part")
+ManualWeld9 = Instance.new("ManualWeld")
+Part10 = Instance.new("Part")
+ManualWeld11 = Instance.new("ManualWeld")
+Part12 = Instance.new("Part")
+ManualWeld13 = Instance.new("ManualWeld")
+Part14 = Instance.new("Part")
+Part15 = Instance.new("Part")
+ManualWeld16 = Instance.new("ManualWeld")
+Part17 = Instance.new("Part")
+ManualWeld18 = Instance.new("ManualWeld")
+WedgePart19 = Instance.new("WedgePart")
+ManualWeld20 = Instance.new("ManualWeld")
+WedgePart21 = Instance.new("WedgePart")
+ManualWeld22 = Instance.new("ManualWeld")
+Model23 = Instance.new("Model")
+Part24 = Instance.new("Part")
+ManualWeld25 = Instance.new("ManualWeld")
+ManualWeld26 = Instance.new("ManualWeld")
+Part27 = Instance.new("Part")
+Part28 = Instance.new("Part")
+ManualWeld29 = Instance.new("ManualWeld")
+Part30 = Instance.new("Part")
+ManualWeld31 = Instance.new("ManualWeld")
+Part32 = Instance.new("Part")
+ManualWeld33 = Instance.new("ManualWeld")
+Part34 = Instance.new("Part")
+ManualWeld35 = Instance.new("ManualWeld")
+Part36 = Instance.new("Part")
+ManualWeld37 = Instance.new("ManualWeld")
+WedgePart38 = Instance.new("WedgePart")
+ManualWeld39 = Instance.new("ManualWeld")
+WedgePart40 = Instance.new("WedgePart")
+ManualWeld41 = Instance.new("ManualWeld")
+Model42 = Instance.new("Model")
+Part43 = Instance.new("Part")
+ManualWeld44 = Instance.new("ManualWeld")
+ManualWeld45 = Instance.new("ManualWeld")
+Part46 = Instance.new("Part")
+Part47 = Instance.new("Part")
+ManualWeld48 = Instance.new("ManualWeld")
+Part49 = Instance.new("Part")
+ManualWeld50 = Instance.new("ManualWeld")
+Part51 = Instance.new("Part")
+ManualWeld52 = Instance.new("ManualWeld")
+Part53 = Instance.new("Part")
+ManualWeld54 = Instance.new("ManualWeld")
+Part55 = Instance.new("Part")
+ManualWeld56 = Instance.new("ManualWeld")
+WedgePart57 = Instance.new("WedgePart")
+ManualWeld58 = Instance.new("ManualWeld")
+WedgePart59 = Instance.new("WedgePart")
+ManualWeld60 = Instance.new("ManualWeld")
+Model61 = Instance.new("Model")
+Part62 = Instance.new("Part")
+ManualWeld63 = Instance.new("ManualWeld")
+ManualWeld64 = Instance.new("ManualWeld")
+Part65 = Instance.new("Part")
+ManualWeld66 = Instance.new("ManualWeld")
+Part67 = Instance.new("Part")
+ManualWeld68 = Instance.new("ManualWeld")
+Part69 = Instance.new("Part")
+Part70 = Instance.new("Part")
+ManualWeld71 = Instance.new("ManualWeld")
+Part72 = Instance.new("Part")
+ManualWeld73 = Instance.new("ManualWeld")
+Part74 = Instance.new("Part")
+ManualWeld75 = Instance.new("ManualWeld")
+WedgePart76 = Instance.new("WedgePart")
+ManualWeld77 = Instance.new("ManualWeld")
+WedgePart78 = Instance.new("WedgePart")
+ManualWeld79 = Instance.new("ManualWeld")
+Model80 = Instance.new("Model")
+Part81 = Instance.new("Part")
+ManualWeld82 = Instance.new("ManualWeld")
+ManualWeld83 = Instance.new("ManualWeld")
+Part84 = Instance.new("Part")
+ManualWeld85 = Instance.new("ManualWeld")
+Part86 = Instance.new("Part")
+Part87 = Instance.new("Part")
+ManualWeld88 = Instance.new("ManualWeld")
+Part89 = Instance.new("Part")
+ManualWeld90 = Instance.new("ManualWeld")
+Part91 = Instance.new("Part")
+ManualWeld92 = Instance.new("ManualWeld")
+Part93 = Instance.new("Part")
+ManualWeld94 = Instance.new("ManualWeld")
+WedgePart95 = Instance.new("WedgePart")
+ManualWeld96 = Instance.new("ManualWeld")
+WedgePart97 = Instance.new("WedgePart")
+ManualWeld98 = Instance.new("ManualWeld")
+Model99 = Instance.new("Model")
+Part100 = Instance.new("Part")
+ManualWeld101 = Instance.new("ManualWeld")
+ManualWeld102 = Instance.new("ManualWeld")
+Part103 = Instance.new("Part")
+Part104 = Instance.new("Part")
+ManualWeld105 = Instance.new("ManualWeld")
+Part106 = Instance.new("Part")
+ManualWeld107 = Instance.new("ManualWeld")
+Part108 = Instance.new("Part")
+ManualWeld109 = Instance.new("ManualWeld")
+Part110 = Instance.new("Part")
+ManualWeld111 = Instance.new("ManualWeld")
+Part112 = Instance.new("Part")
+ManualWeld113 = Instance.new("ManualWeld")
+WedgePart114 = Instance.new("WedgePart")
+ManualWeld115 = Instance.new("ManualWeld")
+WedgePart116 = Instance.new("WedgePart")
+ManualWeld117 = Instance.new("ManualWeld")
+Model118 = Instance.new("Model")
+Part119 = Instance.new("Part")
+ManualWeld120 = Instance.new("ManualWeld")
+ManualWeld121 = Instance.new("ManualWeld")
+Part122 = Instance.new("Part")
+ManualWeld123 = Instance.new("ManualWeld")
+Part124 = Instance.new("Part")
+Part125 = Instance.new("Part")
+ManualWeld126 = Instance.new("ManualWeld")
+Part127 = Instance.new("Part")
+ManualWeld128 = Instance.new("ManualWeld")
+Part129 = Instance.new("Part")
+ManualWeld130 = Instance.new("ManualWeld")
+Part131 = Instance.new("Part")
+ManualWeld132 = Instance.new("ManualWeld")
+WedgePart133 = Instance.new("WedgePart")
+ManualWeld134 = Instance.new("ManualWeld")
+WedgePart135 = Instance.new("WedgePart")
+ManualWeld136 = Instance.new("ManualWeld")
+Model137 = Instance.new("Model")
+Part138 = Instance.new("Part")
+ManualWeld139 = Instance.new("ManualWeld")
+ManualWeld140 = Instance.new("ManualWeld")
+Part141 = Instance.new("Part")
+ManualWeld142 = Instance.new("ManualWeld")
+Part143 = Instance.new("Part")
+ManualWeld144 = Instance.new("ManualWeld")
+Part145 = Instance.new("Part")
+ManualWeld146 = Instance.new("ManualWeld")
+Part147 = Instance.new("Part")
+ManualWeld148 = Instance.new("ManualWeld")
+Part149 = Instance.new("Part")
+Part150 = Instance.new("Part")
+ManualWeld151 = Instance.new("ManualWeld")
+WedgePart152 = Instance.new("WedgePart")
+ManualWeld153 = Instance.new("ManualWeld")
+WedgePart154 = Instance.new("WedgePart")
+ManualWeld155 = Instance.new("ManualWeld")
+Model156 = Instance.new("Model")
+Part157 = Instance.new("Part")
+ManualWeld158 = Instance.new("ManualWeld")
+ManualWeld159 = Instance.new("ManualWeld")
+Part160 = Instance.new("Part")
+Part161 = Instance.new("Part")
+ManualWeld162 = Instance.new("ManualWeld")
+Part163 = Instance.new("Part")
+ManualWeld164 = Instance.new("ManualWeld")
+Part165 = Instance.new("Part")
+ManualWeld166 = Instance.new("ManualWeld")
+Part167 = Instance.new("Part")
+ManualWeld168 = Instance.new("ManualWeld")
+Part169 = Instance.new("Part")
+ManualWeld170 = Instance.new("ManualWeld")
+WedgePart171 = Instance.new("WedgePart")
+ManualWeld172 = Instance.new("ManualWeld")
+WedgePart173 = Instance.new("WedgePart")
+ManualWeld174 = Instance.new("ManualWeld")
+Model175 = Instance.new("Model")
+Part176 = Instance.new("Part")
+ManualWeld177 = Instance.new("ManualWeld")
+ManualWeld178 = Instance.new("ManualWeld")
+Part179 = Instance.new("Part")
+Part180 = Instance.new("Part")
+ManualWeld181 = Instance.new("ManualWeld")
+Part182 = Instance.new("Part")
+ManualWeld183 = Instance.new("ManualWeld")
+Part184 = Instance.new("Part")
+ManualWeld185 = Instance.new("ManualWeld")
+Part186 = Instance.new("Part")
+ManualWeld187 = Instance.new("ManualWeld")
+Part188 = Instance.new("Part")
+ManualWeld189 = Instance.new("ManualWeld")
+WedgePart190 = Instance.new("WedgePart")
+ManualWeld191 = Instance.new("ManualWeld")
+WedgePart192 = Instance.new("WedgePart")
+ManualWeld193 = Instance.new("ManualWeld")
+Part194 = Instance.new("Part")
+ManualWeld195 = Instance.new("ManualWeld")
+ManualWeld196 = Instance.new("ManualWeld")
+Model0.Name = "PIZZABOX"
+Model0.Parent = mas
+Part1.Name = "pizzaboxbase"
+Part1.Parent = Model0
+Part1.Material = Enum.Material.SmoothPlastic
+Part1.BrickColor = BrickColor.new("Institutional white")
+Part1.CanCollide = false
+Part1.Size = Vector3.new(2.5, 0.200000003, 2.5)
+Part1.CFrame = CFrame.new(-206.813606, 117.199997, -50.76017, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part1.Position = Vector3.new(-106.813606, 117.199997, -50.76017)
+Part1.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part2.Name = "pizzaboxtop"
+Part2.Parent = Model0
+Part2.Material = Enum.Material.SmoothPlastic
+Part2.BrickColor = BrickColor.new("Institutional white")
+Part2.CanCollide = false
+Part2.Size = Vector3.new(2.5, 0.200000003, 2.5)
+Part2.CFrame = CFrame.new(-106.813606, 117.399994, -50.76017, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part2.Position = Vector3.new(-106.813606, 117.399994, -50.76017)
+Part2.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Decal3.Parent = Part2
+Decal3.Texture = "rbxassetid://5002898"
+Decal3.Face = Enum.NormalId.Top
+Model4.Name = "pizza1"
+Model4.Parent = Model0
+Part5.Name = "crust"
+Part5.Parent = Model4
+Part5.Material = Enum.Material.Sand
+Part5.BrickColor = BrickColor.new("Gold")
+Part5.Rotation = Vector3.new(0, -89.9399948, 0)
+Part5.CanCollide = false
+Part5.Shape = Enum.PartType.Cylinder
+Part5.Size = Vector3.new(0.599999964, 0.200000003, 0.200000003)
+Part5.CFrame = CFrame.new(-107.713593, 117.399994, -50.76017, 1.19248735e-08, 0, -0.999999404, 1.4220275e-16, 1, -8.8817842e-16, 1, 8.46892511e-24, 1.19248806e-08)
+Part5.BottomSurface = Enum.SurfaceType.Smooth
+Part5.TopSurface = Enum.SurfaceType.Smooth
+Part5.Color = Color3.new(0.937255, 0.721569, 0.219608)
+Part5.Position = Vector3.new(-107.713593, 117.399994, -50.76017)
+Part5.Orientation = Vector3.new(0, -90, 0)
+Part5.Color = Color3.new(0.937255, 0.721569, 0.219608)
+ManualWeld6.Name = "Weld"
+ManualWeld6.Parent = Part5
+ManualWeld6.C0 = CFrame.new(0, 0, 0, 1.19248806e-08, 0, 1, 0, 1, 0, -1, 0, 1.19248806e-08)
+ManualWeld6.C1 = CFrame.new(7.62939453e-06, 0.100002289, 0.400009155, 1.19248762e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.999999702, -1.19248806e-08, -5.21253064e-16)
+ManualWeld6.Part0 = Part5
+ManualWeld6.Part1 = Part14
+ManualWeld7.Name = "Weld"
+ManualWeld7.Parent = Part5
+ManualWeld7.C0 = CFrame.new(0, 0, 0, 1.19248735e-08, 1.4220275e-16, 1, 0, 1, 8.46892511e-24, -0.999999404, -8.8817842e-16, 1.19248806e-08)
+ManualWeld7.C1 = CFrame.new(-0.899986267, 0.199996948, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld7.Part0 = Part5
+ManualWeld7.Part1 = Part1
+Part8.Parent = Model4
+Part8.Material = Enum.Material.Sand
+Part8.BrickColor = BrickColor.new("Maroon")
+Part8.Rotation = Vector3.new(90, -89.9199982, 0)
+Part8.CanCollide = false
+Part8.Shape = Enum.PartType.Cylinder
+Part8.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part8.CFrame = CFrame.new(-107.363586, 117.400002, -50.6601715, 1.19248673e-08, 0, -0.999998987, -1, -4.37113883e-08, -1.19248815e-08, -4.37113883e-08, 1, -8.88178367e-16)
+Part8.BottomSurface = Enum.SurfaceType.Smooth
+Part8.TopSurface = Enum.SurfaceType.Smooth
+Part8.Color = Color3.new(0.458824, 0, 0)
+Part8.Position = Vector3.new(-107.363586, 117.400002, -50.6601715)
+Part8.Orientation = Vector3.new(0, -90, -90)
+Part8.Color = Color3.new(0.458824, 0, 0)
+ManualWeld9.Name = "Weld"
+ManualWeld9.Parent = Part8
+ManualWeld9.C0 = CFrame.new(0, 0, 0, 1.19248798e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.99999994, -1.19248806e-08, -5.21253064e-16)
+ManualWeld9.C1 = CFrame.new(0, 0.200000763, 0.0500030518, 1.19248798e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.99999994, -1.19248806e-08, -5.21253064e-16)
+ManualWeld9.Part0 = Part8
+ManualWeld9.Part1 = Part14
+Part10.Parent = Model4
+Part10.Material = Enum.Material.Sand
+Part10.BrickColor = BrickColor.new("Maroon")
+Part10.Rotation = Vector3.new(90, -89.909996, 0)
+Part10.CanCollide = false
+Part10.Shape = Enum.PartType.Cylinder
+Part10.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part10.CFrame = CFrame.new(-107.163589, 117.400002, -50.76017, 1.19248647e-08, 0, -0.999998748, -1, -4.37113883e-08, -1.19248824e-08, -4.37113883e-08, 1, -8.88178314e-16)
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.TopSurface = Enum.SurfaceType.Smooth
+Part10.Color = Color3.new(0.458824, 0, 0)
+Part10.Position = Vector3.new(-107.163589, 117.400002, -50.76017)
+Part10.Orientation = Vector3.new(0, -90, -90)
+Part10.Color = Color3.new(0.458824, 0, 0)
+ManualWeld11.Name = "Weld"
+ManualWeld11.Parent = Part10
+ManualWeld11.C0 = CFrame.new(0, 0, 0, 1.19248798e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.99999994, -1.19248806e-08, -5.21253064e-16)
+ManualWeld11.C1 = CFrame.new(0, 0.100002289, -0.149993896, 1.19248762e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.999999702, -1.19248806e-08, -5.21253064e-16)
+ManualWeld11.Part0 = Part10
+ManualWeld11.Part1 = Part14
+Part12.Parent = Model4
+Part12.Material = Enum.Material.Sand
+Part12.BrickColor = BrickColor.new("Maroon")
+Part12.Rotation = Vector3.new(90, -89.909996, 0)
+Part12.CanCollide = false
+Part12.Shape = Enum.PartType.Cylinder
+Part12.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part12.CFrame = CFrame.new(-107.463585, 117.400002, -50.8601723, 1.19248664e-08, 0, -0.999998868, -1, -4.37113883e-08, -1.19248824e-08, -4.37113883e-08, 1, -8.88178367e-16)
+Part12.BottomSurface = Enum.SurfaceType.Smooth
+Part12.TopSurface = Enum.SurfaceType.Smooth
+Part12.Color = Color3.new(0.458824, 0, 0)
+Part12.Position = Vector3.new(-107.463585, 117.400002, -50.8601723)
+Part12.Orientation = Vector3.new(0, -90, -90)
+Part12.Color = Color3.new(0.458824, 0, 0)
+ManualWeld13.Name = "Weld"
+ManualWeld13.Parent = Part12
+ManualWeld13.C0 = CFrame.new(0, 0, 0, 1.19248798e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.99999994, -1.19248806e-08, -5.21253064e-16)
+ManualWeld13.C1 = CFrame.new(0, 0, 0.150001526, 1.1924878e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.999999821, -1.19248806e-08, -5.21253064e-16)
+ManualWeld13.Part0 = Part12
+ManualWeld13.Part1 = Part14
+Part14.Parent = Model4
+Part14.Material = Enum.Material.Glass
+Part14.BrickColor = BrickColor.new("Really black")
+Part14.Rotation = Vector3.new(90, -89.9199982, 0)
+Part14.CanCollide = false
+Part14.Shape = Enum.PartType.Cylinder
+Part14.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part14.CFrame = CFrame.new(-107.313583, 117.400002, -50.8601723, 1.19248691e-08, 0, -0.999999106, -1, -4.37113883e-08, -1.19248815e-08, -4.37113883e-08, 1, -8.8817842e-16)
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Part14.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part14.Position = Vector3.new(-107.313583, 117.400002, -50.8601723)
+Part14.Orientation = Vector3.new(0, -90, -90)
+Part14.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part15.Parent = Model4
+Part15.Material = Enum.Material.Glass
+Part15.BrickColor = BrickColor.new("Really black")
+Part15.Rotation = Vector3.new(90, -89.909996, 0)
+Part15.CanCollide = false
+Part15.Shape = Enum.PartType.Cylinder
+Part15.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part15.CFrame = CFrame.new(-107.51358, 117.400002, -50.6601753, 1.19248647e-08, 0, -0.999998748, -1, -4.37113883e-08, -1.19248824e-08, -4.37113883e-08, 1, -8.88178314e-16)
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part15.Position = Vector3.new(-107.51358, 117.400002, -50.6601753)
+Part15.Orientation = Vector3.new(0, -90, -90)
+Part15.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld16.Name = "Weld"
+ManualWeld16.Parent = Part15
+ManualWeld16.C0 = CFrame.new(0, 0, 0, 1.19248798e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.99999994, -1.19248806e-08, -5.21253064e-16)
+ManualWeld16.C1 = CFrame.new(0, 0.199996948, 0.199996948, 1.19248762e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.999999702, -1.19248806e-08, -5.21253064e-16)
+ManualWeld16.Part0 = Part15
+ManualWeld16.Part1 = Part14
+Part17.Parent = Model4
+Part17.Material = Enum.Material.Glass
+Part17.BrickColor = BrickColor.new("Really black")
+Part17.Rotation = Vector3.new(90, -89.909996, 0)
+Part17.CanCollide = false
+Part17.Shape = Enum.PartType.Cylinder
+Part17.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part17.CFrame = CFrame.new(-107.01358, 117.400002, -50.7601738, 1.19248647e-08, 3.66925038e-16, -0.999998748, -1, -4.37113883e-08, -1.19248824e-08, -4.37113883e-08, 1, -8.88178314e-16)
+Part17.BottomSurface = Enum.SurfaceType.Smooth
+Part17.TopSurface = Enum.SurfaceType.Smooth
+Part17.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part17.Position = Vector3.new(-107.01358, 117.400002, -50.7601738)
+Part17.Orientation = Vector3.new(0, -90, -90)
+Part17.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld18.Name = "Weld"
+ManualWeld18.Parent = Part17
+ManualWeld18.C0 = CFrame.new(0, 0, 0, 1.19248798e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.99999994, -1.19248806e-08, -5.21253064e-16)
+ManualWeld18.C1 = CFrame.new(0, 0.0999984741, -0.300003052, 1.19248762e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.999999702, -1.19248806e-08, -8.8817842e-16)
+ManualWeld18.Part0 = Part17
+ManualWeld18.Part1 = Part14
+WedgePart19.Parent = Model4
+WedgePart19.Material = Enum.Material.Slate
+WedgePart19.BrickColor = BrickColor.new("Deep orange")
+WedgePart19.Rotation = Vector3.new(0, 0, -90)
+WedgePart19.CanCollide = false
+WedgePart19.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart19.CFrame = CFrame.new(-107.213608, 117.349991, -50.9101715, 1.19248655e-08, 0.999998808, 1.8893631e-16, -1, 1.19248815e-08, 8.4689259e-24, -3.15544362e-30, 1.88936258e-16, 1)
+WedgePart19.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart19.Color = Color3.new(1, 0.690196, 0)
+WedgePart19.Position = Vector3.new(-107.213608, 117.349991, -50.9101715)
+WedgePart19.Orientation = Vector3.new(0, 0, -90)
+WedgePart19.Color = Color3.new(1, 0.690196, 0)
+ManualWeld20.Name = "Weld"
+ManualWeld20.Parent = WedgePart19
+ManualWeld20.C0 = CFrame.new(0, 0, 0, 1.19248806e-08, -1, 0, 1, 1.19248806e-08, 0, 0, 0, 1)
+ManualWeld20.C1 = CFrame.new(0.0500106812, -0.0499992371, -0.0999755859, 1.19248771e-08, -1, -4.37113883e-08, -1.77988992e-16, -4.37113883e-08, 1, -0.999999702, -1.19248806e-08, -7.10189534e-16)
+ManualWeld20.Part0 = WedgePart19
+ManualWeld20.Part1 = Part14
+WedgePart21.Parent = Model4
+WedgePart21.Material = Enum.Material.Slate
+WedgePart21.BrickColor = BrickColor.new("Deep orange")
+WedgePart21.Rotation = Vector3.new(180, 0, -90)
+WedgePart21.CanCollide = false
+WedgePart21.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart21.CFrame = CFrame.new(-107.213608, 117.349991, -50.6101723, 1.19248673e-08, 0.999998808, -3.66924985e-16, 1, -1.19248798e-08, -1.98419059e-09, -1.98419059e-09, 2.12597488e-16, -1)
+WedgePart21.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart21.Color = Color3.new(1, 0.690196, 0)
+WedgePart21.Position = Vector3.new(-107.213608, 117.349991, -50.6101723)
+WedgePart21.Orientation = Vector3.new(0, -180, 90)
+WedgePart21.Color = Color3.new(1, 0.690196, 0)
+ManualWeld22.Name = "Weld"
+ManualWeld22.Parent = WedgePart21
+ManualWeld22.C0 = CFrame.new(0, 0, 0, 1.19248806e-08, 1, -1.98419059e-09, 1, -1.19248806e-08, -1.54327709e-16, 0, -1.98419059e-09, -1)
+ManualWeld22.C1 = CFrame.new(0.0500106812, 0.25, -0.0999755859, 1.19248762e-08, -1, -4.37113883e-08, 0, -4.37113883e-08, 1, -0.999999702, -1.19248806e-08, -8.8817842e-16)
+ManualWeld22.Part0 = WedgePart21
+ManualWeld22.Part1 = Part14
+Model23.Name = "pizza5"
+Model23.Parent = Model0
+Part24.Name = "crust"
+Part24.Parent = Model23
+Part24.Material = Enum.Material.Sand
+Part24.BrickColor = BrickColor.new("Gold")
+Part24.Rotation = Vector3.new(0, 56, 0)
+Part24.CanCollide = false
+Part24.Shape = Enum.PartType.Cylinder
+Part24.Size = Vector3.new(0.599999964, 0.200000003, 0.200000003)
+Part24.CFrame = CFrame.new(-105.98745, 117.399963, -50.2229347, 0.559193969, 0, 0.82903868, 0, 1, 0, -0.82903868, 0, 0.559193969)
+Part24.BottomSurface = Enum.SurfaceType.Smooth
+Part24.TopSurface = Enum.SurfaceType.Smooth
+Part24.Color = Color3.new(0.937255, 0.721569, 0.219608)
+Part24.Position = Vector3.new(-105.98745, 117.399963, -50.2229347)
+Part24.Orientation = Vector3.new(0, 56, 0)
+Part24.Color = Color3.new(0.937255, 0.721569, 0.219608)
+ManualWeld25.Name = "Weld"
+ManualWeld25.Parent = Part24
+ManualWeld25.C0 = CFrame.new(0, 0, 0, 0.559193254, 0, -0.829037428, 0, 1, 0, 0.829037428, 0, 0.559193254)
+ManualWeld25.C1 = CFrame.new(0, -0.100017548, 0.349967957, 0, -1, 0, 0.559193432, 0, -0.829037726, 0.829037726, 0, 0.559193432)
+ManualWeld25.Part0 = Part24
+ManualWeld25.Part1 = Part27
+ManualWeld26.Name = "Weld"
+ManualWeld26.Parent = Part24
+ManualWeld26.C0 = CFrame.new(0, 0, 0, 0.559193969, 0, -0.82903868, 0, 1, 0, 0.82903868, 0, 0.559193969)
+ManualWeld26.C1 = CFrame.new(0.826156616, 0.199966431, 0.53723526, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld26.Part0 = Part24
+ManualWeld26.Part1 = Part1
+Part27.Parent = Model23
+Part27.Material = Enum.Material.Sand
+Part27.BrickColor = BrickColor.new("Maroon")
+Part27.Rotation = Vector3.new(0, 56, -90)
+Part27.CanCollide = false
+Part27.Shape = Enum.PartType.Cylinder
+Part27.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part27.CFrame = CFrame.new(-106.221657, 117.399963, -50.5015526, 0, 0.559194207, 0.829039097, -1, 0, 0, 0, -0.829039097, 0.559194207)
+Part27.BottomSurface = Enum.SurfaceType.Smooth
+Part27.TopSurface = Enum.SurfaceType.Smooth
+Part27.Color = Color3.new(0.458824, 0, 0)
+Part27.Position = Vector3.new(-106.221657, 117.399963, -50.5015526)
+Part27.Orientation = Vector3.new(0, 56, -90)
+Part27.Color = Color3.new(0.458824, 0, 0)
+Part28.Parent = Model23
+Part28.Material = Enum.Material.Sand
+Part28.BrickColor = BrickColor.new("Maroon")
+Part28.Rotation = Vector3.new(0, 56, -90)
+Part28.CanCollide = false
+Part28.Shape = Enum.PartType.Cylinder
+Part28.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part28.CFrame = CFrame.new(-106.443398, 117.399963, -50.5304909, 0, 0.559194267, 0.829039216, -1, 0, 0, 0, -0.829039216, 0.559194267)
+Part28.BottomSurface = Enum.SurfaceType.Smooth
+Part28.TopSurface = Enum.SurfaceType.Smooth
+Part28.Color = Color3.new(0.458824, 0, 0)
+Part28.Position = Vector3.new(-106.443398, 117.399963, -50.5304909)
+Part28.Orientation = Vector3.new(0, 56, -90)
+Part28.Color = Color3.new(0.458824, 0, 0)
+ManualWeld29.Name = "Weld"
+ManualWeld29.Parent = Part28
+ManualWeld29.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.559193254, 0, -0.829037428, 0.829037428, 0, 0.559193254)
+ManualWeld29.C1 = CFrame.new(0, -0.100006104, -0.200012207, 0, -1, 0, 0.559193254, 0, -0.829037428, 0.829037428, 0, 0.559193254)
+ManualWeld29.Part0 = Part28
+ManualWeld29.Part1 = Part27
+Part30.Parent = Model23
+Part30.Material = Enum.Material.Sand
+Part30.BrickColor = BrickColor.new("Maroon")
+Part30.Rotation = Vector3.new(0, 56, -90)
+Part30.CanCollide = false
+Part30.Shape = Enum.PartType.Cylinder
+Part30.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part30.CFrame = CFrame.new(-106.250664, 117.399963, -50.2798347, 0, 0.559194386, 0.829039395, -1, 0, 0, 0, -0.829039395, 0.559194386)
+Part30.BottomSurface = Enum.SurfaceType.Smooth
+Part30.TopSurface = Enum.SurfaceType.Smooth
+Part30.Color = Color3.new(0.458824, 0, 0)
+Part30.Position = Vector3.new(-106.250664, 117.399963, -50.2798347)
+Part30.Orientation = Vector3.new(0, 56, -90)
+Part30.Color = Color3.new(0.458824, 0, 0)
+ManualWeld31.Name = "Weld"
+ManualWeld31.Parent = Part30
+ManualWeld31.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.559193254, 0, -0.829037428, 0.829037428, 0, 0.559193254)
+ManualWeld31.C1 = CFrame.new(0, -0.200031281, 0.099937439, 0, -1, 0, 0.559193313, 0, -0.829037547, 0.829037547, 0, 0.559193313)
+ManualWeld31.Part0 = Part30
+ManualWeld31.Part1 = Part27
+Part32.Parent = Model23
+Part32.Material = Enum.Material.Glass
+Part32.BrickColor = BrickColor.new("Really black")
+Part32.Rotation = Vector3.new(0, 56, -90)
+Part32.CanCollide = false
+Part32.Shape = Enum.PartType.Cylinder
+Part32.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part32.CFrame = CFrame.new(-106.374992, 117.399963, -50.3637123, 0, 0.559194446, 0.829039514, -1, 0, 0, 0, -0.829039514, 0.559194446)
+Part32.BottomSurface = Enum.SurfaceType.Smooth
+Part32.TopSurface = Enum.SurfaceType.Smooth
+Part32.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part32.Position = Vector3.new(-106.374992, 117.399963, -50.3637123)
+Part32.Orientation = Vector3.new(0, 56, -90)
+Part32.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld33.Name = "Weld"
+ManualWeld33.Parent = Part32
+ManualWeld33.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.559193254, 0, -0.829037428, 0.829037428, 0, 0.559193254)
+ManualWeld33.C1 = CFrame.new(0, -0.200019836, -0.0500411987, 0, -1, 0, 0.559193432, 0, -0.829037726, 0.829037726, 0, 0.559193432)
+ManualWeld33.Part0 = Part32
+ManualWeld33.Part1 = Part27
+Part34.Parent = Model23
+Part34.Material = Enum.Material.Glass
+Part34.BrickColor = BrickColor.new("Really black")
+Part34.Rotation = Vector3.new(0, 56, -90)
+Part34.CanCollide = false
+Part34.Shape = Enum.PartType.Cylinder
+Part34.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part34.CFrame = CFrame.new(-106.097313, 117.399963, -50.4176826, 0, 0.559194446, 0.829039514, -1, 0, 0, 0, -0.829039514, 0.559194446)
+Part34.BottomSurface = Enum.SurfaceType.Smooth
+Part34.TopSurface = Enum.SurfaceType.Smooth
+Part34.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part34.Position = Vector3.new(-106.097313, 117.399963, -50.4176826)
+Part34.Orientation = Vector3.new(0, 56, -90)
+Part34.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld35.Name = "Weld"
+ManualWeld35.Parent = Part34
+ManualWeld35.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.559193254, 0, -0.829037428, 0.829037428, 0, 0.559193254)
+ManualWeld35.C1 = CFrame.new(0, 0, 0.149986267, 0, -1, 0, 0.559193432, 0, -0.829037726, 0.829037726, 0, 0.559193432)
+ManualWeld35.Part0 = Part34
+ManualWeld35.Part1 = Part27
+Part36.Parent = Model23
+Part36.Material = Enum.Material.Glass
+Part36.BrickColor = BrickColor.new("Really black")
+Part36.Rotation = Vector3.new(0, 56, -90)
+Part36.CanCollide = false
+Part36.Shape = Enum.PartType.Cylinder
+Part36.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part36.CFrame = CFrame.new(-106.56778, 117.399963, -50.6143684, 0, 0.559194446, 0.829039514, -1, 0, 0, 0, -0.829039514, 0.559194446)
+Part36.BottomSurface = Enum.SurfaceType.Smooth
+Part36.TopSurface = Enum.SurfaceType.Smooth
+Part36.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part36.Position = Vector3.new(-106.56778, 117.399963, -50.6143684)
+Part36.Orientation = Vector3.new(0, 56, -90)
+Part36.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld37.Name = "Weld"
+ManualWeld37.Parent = Part36
+ManualWeld37.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.559193254, 0, -0.829037428, 0.829037428, 0, 0.559193254)
+ManualWeld37.C1 = CFrame.new(0, -0.100021362, -0.350036621, 0, -1, 0, 0.559193432, 0, -0.829037726, 0.829037726, 0, 0.559193432)
+ManualWeld37.Part0 = Part36
+ManualWeld37.Part1 = Part27
+WedgePart38.Parent = Model23
+WedgePart38.Material = Enum.Material.Slate
+WedgePart38.BrickColor = BrickColor.new("Deep orange")
+WedgePart38.Rotation = Vector3.new(-180, 34, 90)
+WedgePart38.CanCollide = false
+WedgePart38.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart38.CFrame = CFrame.new(-106.485817, 117.349953, -50.3781624, 0, -0.829039633, 0.559194684, -1, 0, 0, 0, -0.559194684, -0.829039633)
+WedgePart38.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart38.Color = Color3.new(1, 0.690196, 0)
+WedgePart38.Position = Vector3.new(-106.485817, 117.349953, -50.3781624)
+WedgePart38.Orientation = Vector3.new(0, 146, -90)
+WedgePart38.Color = Color3.new(1, 0.690196, 0)
+ManualWeld39.Name = "Weld"
+ManualWeld39.Parent = WedgePart38
+ManualWeld39.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.829037428, 0, -0.559193254, 0.559193254, 0, -0.829037428)
+ManualWeld39.C1 = CFrame.new(0.0500106812, -0.250011444, -0.150001526, 0, -1, 0, 0.559193492, 0, -0.829037845, 0.829037845, 0, 0.559193492)
+ManualWeld39.Part0 = WedgePart38
+ManualWeld39.Part1 = Part27
+WedgePart40.Parent = Model23
+WedgePart40.Material = Enum.Material.Slate
+WedgePart40.BrickColor = BrickColor.new("Deep orange")
+WedgePart40.Rotation = Vector3.new(0, -34, 90)
+WedgePart40.CanCollide = false
+WedgePart40.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart40.CFrame = CFrame.new(-106.318077, 117.349953, -50.6268692, 0, -0.829039812, -0.559194803, 1, 0, -0, 0, -0.559194803, 0.829039812)
+WedgePart40.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart40.Color = Color3.new(1, 0.690196, 0)
+WedgePart40.Position = Vector3.new(-106.318077, 117.349953, -50.6268692)
+WedgePart40.Orientation = Vector3.new(0, -34, 90)
+WedgePart40.Color = Color3.new(1, 0.690196, 0)
+ManualWeld41.Name = "Weld"
+ManualWeld41.Parent = WedgePart40
+ManualWeld41.C0 = CFrame.new(0, 0, 0, 0, 1, 0, -0.829037428, 0, -0.559193254, -0.559193254, 0, 0.829037428)
+ManualWeld41.C1 = CFrame.new(0.0500106812, 0.0499763489, -0.150009155, 0, -1, 0, 0.559193611, 0, -0.829038084, 0.829038084, 0, 0.559193611)
+ManualWeld41.Part0 = WedgePart40
+ManualWeld41.Part1 = Part27
+Model42.Name = "pizza6"
+Model42.Parent = Model0
+Part43.Name = "crust"
+Part43.Parent = Model42
+Part43.Material = Enum.Material.Sand
+Part43.BrickColor = BrickColor.new("Gold")
+Part43.Rotation = Vector3.new(-180, 88, -180)
+Part43.CanCollide = false
+Part43.Shape = Enum.PartType.Cylinder
+Part43.Size = Vector3.new(0.599999964, 0.200000003, 0.200000003)
+Part43.CFrame = CFrame.new(-105.826599, 117.399223, -50.7877426, -0.0349009819, 0, 0.999390781, 0, 1, 0, -0.999390781, 0, -0.034901008)
+Part43.BottomSurface = Enum.SurfaceType.Smooth
+Part43.TopSurface = Enum.SurfaceType.Smooth
+Part43.Color = Color3.new(0.937255, 0.721569, 0.219608)
+Part43.Position = Vector3.new(-105.826599, 117.399223, -50.7877426)
+Part43.Orientation = Vector3.new(0, 92, 0)
+Part43.Color = Color3.new(0.937255, 0.721569, 0.219608)
+ManualWeld44.Name = "Weld"
+ManualWeld44.Parent = Part43
+ManualWeld44.C0 = CFrame.new(0, 0, 0, -0.0349009931, 0, -0.999390781, 0, 1, 0, 0.999390781, 0, -0.0349009968)
+ManualWeld44.C1 = CFrame.new(0, -0.100028992, 0.350021362, 0, -1, 0, -0.0349009894, 0, -0.999390781, 0.999390781, 0, -0.0349010006)
+ManualWeld44.Part0 = Part43
+ManualWeld44.Part1 = Part46
+ManualWeld45.Name = "Weld"
+ManualWeld45.Parent = Part43
+ManualWeld45.C0 = CFrame.new(0, 0, 0, -0.0349009819, 0, -0.999390781, 0, 1, 0, 0.999390781, 0, -0.034901008)
+ManualWeld45.C1 = CFrame.new(0.987007141, 0.199226379, -0.0275726318, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld45.Part0 = Part43
+ManualWeld45.Part1 = Part1
+Part46.Parent = Model42
+Part46.Material = Enum.Material.Sand
+Part46.BrickColor = BrickColor.new("Maroon")
+Part46.Rotation = Vector3.new(-180, 88, 90)
+Part46.CanCollide = false
+Part46.Shape = Enum.PartType.Cylinder
+Part46.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part46.CFrame = CFrame.new(-106.179901, 117.399223, -50.8754959, 0, -0.0349009745, 0.999390781, -1, 0, 0, 0, -0.999390781, -0.0349010155)
+Part46.BottomSurface = Enum.SurfaceType.Smooth
+Part46.TopSurface = Enum.SurfaceType.Smooth
+Part46.Color = Color3.new(0.458824, 0, 0)
+Part46.Position = Vector3.new(-106.179901, 117.399223, -50.8754959)
+Part46.Orientation = Vector3.new(0, 92, -90)
+Part46.Color = Color3.new(0.458824, 0, 0)
+Part47.Parent = Model42
+Part47.Material = Enum.Material.Sand
+Part47.BrickColor = BrickColor.new("Maroon")
+Part47.Rotation = Vector3.new(-180, 88, 90)
+Part47.CanCollide = false
+Part47.Shape = Enum.PartType.Cylinder
+Part47.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part47.CFrame = CFrame.new(-106.376282, 117.399223, -50.7685394, 0, -0.034900967, 0.999390781, -1, 0, 0, 0, -0.999390781, -0.0349010229)
+Part47.BottomSurface = Enum.SurfaceType.Smooth
+Part47.TopSurface = Enum.SurfaceType.Smooth
+Part47.Color = Color3.new(0.458824, 0, 0)
+Part47.Position = Vector3.new(-106.376282, 117.399223, -50.7685394)
+Part47.Orientation = Vector3.new(0, 92, -90)
+Part47.Color = Color3.new(0.458824, 0, 0)
+ManualWeld48.Name = "Weld"
+ManualWeld48.Parent = Part47
+ManualWeld48.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.0349009931, 0, -0.999390781, 0.999390781, 0, -0.0349009968)
+ManualWeld48.C1 = CFrame.new(0, -0.100036621, -0.199996948, 0, -1, 0, -0.0349009894, 0, -0.999390781, 0.999390781, 0, -0.0349010006)
+ManualWeld48.Part0 = Part47
+ManualWeld48.Part1 = Part46
+Part49.Parent = Model42
+Part49.Material = Enum.Material.Sand
+Part49.BrickColor = BrickColor.new("Maroon")
+Part49.Rotation = Vector3.new(-180, 88, 90)
+Part49.CanCollide = false
+Part49.Shape = Enum.PartType.Cylinder
+Part49.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part49.CFrame = CFrame.new(-106.072975, 117.399223, -50.6790924, 0, -0.0349009708, 0.999390781, -1, 0, 0, 0, -0.999390781, -0.0349010192)
+Part49.BottomSurface = Enum.SurfaceType.Smooth
+Part49.TopSurface = Enum.SurfaceType.Smooth
+Part49.Color = Color3.new(0.458824, 0, 0)
+Part49.Position = Vector3.new(-106.072975, 117.399223, -50.6790924)
+Part49.Orientation = Vector3.new(0, 92, -90)
+Part49.Color = Color3.new(0.458824, 0, 0)
+ManualWeld50.Name = "Weld"
+ManualWeld50.Parent = Part49
+ManualWeld50.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.0349009931, 0, -0.999390781, 0.999390781, 0, -0.0349009968)
+ManualWeld50.C1 = CFrame.new(0, -0.200016022, 0.100006104, 0, -1, 0, -0.0349009931, 0, -0.999390781, 0.999390781, 0, -0.0349009968)
+ManualWeld50.Part0 = Part49
+ManualWeld50.Part1 = Part46
+Part51.Parent = Model42
+Part51.Material = Enum.Material.Glass
+Part51.BrickColor = BrickColor.new("Really black")
+Part51.Rotation = Vector3.new(-180, 88, 90)
+Part51.CanCollide = false
+Part51.Shape = Enum.PartType.Cylinder
+Part51.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part51.CFrame = CFrame.new(-106.222885, 117.399223, -50.6738472, 0, -0.034900967, 0.999390781, -1, 0, 0, 0, -0.999390781, -0.0349010229)
+Part51.BottomSurface = Enum.SurfaceType.Smooth
+Part51.TopSurface = Enum.SurfaceType.Smooth
+Part51.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part51.Position = Vector3.new(-106.222885, 117.399223, -50.6738472)
+Part51.Orientation = Vector3.new(0, 92, -90)
+Part51.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld52.Name = "Weld"
+ManualWeld52.Parent = Part51
+ManualWeld52.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.0349009931, 0, -0.999390781, 0.999390781, 0, -0.0349009968)
+ManualWeld52.C1 = CFrame.new(0, -0.200027466, -0.0499954224, 0, -1, 0, -0.0349009894, 0, -0.999390781, 0.999390781, 0, -0.0349010006)
+ManualWeld52.Part0 = Part51
+ManualWeld52.Part1 = Part46
+Part53.Parent = Model42
+Part53.Material = Enum.Material.Glass
+Part53.BrickColor = BrickColor.new("Really black")
+Part53.Rotation = Vector3.new(-180, 88, 90)
+Part53.CanCollide = false
+Part53.Shape = Enum.PartType.Cylinder
+Part53.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part53.CFrame = CFrame.new(-106.029938, 117.399223, -50.8806839, 0, -0.034900967, 0.999390781, -1, 0, 0, 0, -0.999390781, -0.0349010229)
+Part53.BottomSurface = Enum.SurfaceType.Smooth
+Part53.TopSurface = Enum.SurfaceType.Smooth
+Part53.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part53.Position = Vector3.new(-106.029938, 117.399223, -50.8806839)
+Part53.Orientation = Vector3.new(0, 92, -90)
+Part53.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld54.Name = "Weld"
+ManualWeld54.Parent = Part53
+ManualWeld54.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.0349009931, 0, -0.999390781, 0.999390781, 0, -0.0349009968)
+ManualWeld54.C1 = CFrame.new(0, -4.95910645e-05, 0.150054932, 0, -1, 0, -0.0349009894, 0, -0.999390781, 0.999390781, 0, -0.0349010006)
+ManualWeld54.Part0 = Part53
+ManualWeld54.Part1 = Part46
+Part55.Parent = Model42
+Part55.Material = Enum.Material.Glass
+Part55.BrickColor = BrickColor.new("Really black")
+Part55.Rotation = Vector3.new(-180, 88, 90)
+Part55.CanCollide = false
+Part55.Shape = Enum.PartType.Cylinder
+Part55.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part55.CFrame = CFrame.new(-106.526176, 117.399223, -50.7633133, 0, -0.034900967, 0.999390781, -1, 0, 0, 0, -0.999390781, -0.0349010229)
+Part55.BottomSurface = Enum.SurfaceType.Smooth
+Part55.TopSurface = Enum.SurfaceType.Smooth
+Part55.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part55.Position = Vector3.new(-106.526176, 117.399223, -50.7633133)
+Part55.Orientation = Vector3.new(0, 92, -90)
+Part55.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld56.Name = "Weld"
+ManualWeld56.Parent = Part55
+ManualWeld56.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.0349009931, 0, -0.999390781, 0.999390781, 0, -0.0349009968)
+ManualWeld56.C1 = CFrame.new(0, -0.100028992, -0.349983215, 0, -1, 0, -0.0349009894, 0, -0.999390781, 0.999390781, 0, -0.0349010006)
+ManualWeld56.Part0 = Part55
+ManualWeld56.Part1 = Part46
+WedgePart57.Parent = Model42
+WedgePart57.Material = Enum.Material.Slate
+WedgePart57.BrickColor = BrickColor.new("Deep orange")
+WedgePart57.Rotation = Vector3.new(-180, -2, 90)
+WedgePart57.CanCollide = false
+WedgePart57.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart57.CFrame = CFrame.new(-106.321022, 117.349258, -50.6203804, 0, -0.999390781, -0.0349009708, -1, -0, 0, 0, 0.0349010192, -0.999390781)
+WedgePart57.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart57.Color = Color3.new(1, 0.690196, 0)
+WedgePart57.Position = Vector3.new(-106.321022, 117.349258, -50.6203804)
+WedgePart57.Orientation = Vector3.new(0, -178, -90)
+WedgePart57.Color = Color3.new(1, 0.690196, 0)
+ManualWeld58.Name = "Weld"
+ManualWeld58.Parent = WedgePart57
+ManualWeld58.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.999390781, 0, 0.0349009931, -0.0349009968, 0, -0.999390781)
+ManualWeld58.C1 = CFrame.new(0.0499649048, -0.250034332, -0.149940491, 0, -1, 0, -0.0349009894, 0, -0.999390781, 0.999390781, 0, -0.0349010006)
+ManualWeld58.Part0 = WedgePart57
+ManualWeld58.Part1 = Part46
+WedgePart59.Parent = Model42
+WedgePart59.Material = Enum.Material.Slate
+WedgePart59.BrickColor = BrickColor.new("Deep orange")
+WedgePart59.Rotation = Vector3.new(0, 2, 90)
+WedgePart59.CanCollide = false
+WedgePart59.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart59.CFrame = CFrame.new(-106.331512, 117.349258, -50.9202232, 0, -0.999390781, 0.034900967, 1, -0, -0, -0, 0.0349010229, 0.999390781)
+WedgePart59.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart59.Color = Color3.new(1, 0.690196, 0)
+WedgePart59.Position = Vector3.new(-106.331512, 117.349258, -50.9202232)
+WedgePart59.Orientation = Vector3.new(0, 2, 90)
+WedgePart59.Color = Color3.new(1, 0.690196, 0)
+ManualWeld60.Name = "Weld"
+ManualWeld60.Parent = WedgePart59
+ManualWeld60.C0 = CFrame.new(0, 0, 0, 0, 1, 0, -0.999390781, 0, 0.0349009931, 0.0349009968, 0, 0.999390781)
+ManualWeld60.C1 = CFrame.new(0.0499649048, 0.0499916077, -0.14995575, 0, -1, 0, -0.0349009857, 0, -0.999390781, 0.999390781, 0, -0.0349010043)
+ManualWeld60.Part0 = WedgePart59
+ManualWeld60.Part1 = Part46
+Model61.Name = "pizza3"
+Model61.Parent = Model0
+Part62.Name = "crust"
+Part62.Parent = Model61
+Part62.Material = Enum.Material.Sand
+Part62.BrickColor = BrickColor.new("Gold")
+Part62.Rotation = Vector3.new(0, -17, 0)
+Part62.CanCollide = false
+Part62.Shape = Enum.PartType.Cylinder
+Part62.Size = Vector3.new(0.599999964, 0.200000003, 0.200000003)
+Part62.CFrame = CFrame.new(-107.039063, 117.400047, -49.8592834, 0.956304371, 0, -0.292371809, 0, 1, 0, 0.292371809, 0, 0.956304371)
+Part62.BottomSurface = Enum.SurfaceType.Smooth
+Part62.TopSurface = Enum.SurfaceType.Smooth
+Part62.Color = Color3.new(0.937255, 0.721569, 0.219608)
+Part62.Position = Vector3.new(-107.039063, 117.400047, -49.8592834)
+Part62.Orientation = Vector3.new(0, -17, 0)
+Part62.Color = Color3.new(0.937255, 0.721569, 0.219608)
+ManualWeld63.Name = "Weld"
+ManualWeld63.Parent = Part62
+ManualWeld63.C0 = CFrame.new(0, 0, 0, 0.956304669, 0, 0.292371869, 0, 1, 0, -0.292371869, 0, 0.956304669)
+ManualWeld63.C1 = CFrame.new(0, 0.0999755859, 0.250007629, 0, -1, 0, 0.956304669, 0, 0.292371869, -0.292371869, 0, 0.956304669)
+ManualWeld63.Part0 = Part62
+ManualWeld63.Part1 = Part69
+ManualWeld64.Name = "Weld"
+ManualWeld64.Parent = Part62
+ManualWeld64.C0 = CFrame.new(0, 0, 0, 0.956304371, 0, 0.292371809, 0, 1, 0, -0.292371809, 0, 0.956304371)
+ManualWeld64.C1 = CFrame.new(-0.225456238, 0.200050354, 0.900886536, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld64.Part0 = Part62
+ManualWeld64.Part1 = Part1
+Part65.Parent = Model61
+Part65.Material = Enum.Material.Sand
+Part65.BrickColor = BrickColor.new("Maroon")
+Part65.Rotation = Vector3.new(0, -17, -90)
+Part65.CanCollide = false
+Part65.Shape = Enum.PartType.Cylinder
+Part65.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part65.CFrame = CFrame.new(-106.841072, 117.400047, -50.1647644, 0, 0.956304133, -0.29237175, -1, 0, 0, 0, 0.29237175, 0.956304133)
+Part65.BottomSurface = Enum.SurfaceType.Smooth
+Part65.TopSurface = Enum.SurfaceType.Smooth
+Part65.Color = Color3.new(0.458824, 0, 0)
+Part65.Position = Vector3.new(-106.841072, 117.400047, -50.1647644)
+Part65.Orientation = Vector3.new(0, -17, -90)
+Part65.Color = Color3.new(0.458824, 0, 0)
+ManualWeld66.Name = "Weld"
+ManualWeld66.Parent = Part65
+ManualWeld66.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.956304669, 0, 0.292371869, -0.292371869, 0, 0.956304669)
+ManualWeld66.C1 = CFrame.new(0, 0.200004578, -0.100013733, 0, -1, 0, 0.956304669, 0, 0.292371869, -0.292371869, 0, 0.956304669)
+ManualWeld66.Part0 = Part65
+ManualWeld66.Part1 = Part69
+Part67.Parent = Model61
+Part67.Material = Enum.Material.Sand
+Part67.BrickColor = BrickColor.new("Maroon")
+Part67.Rotation = Vector3.new(0, -17, -90)
+Part67.CanCollide = false
+Part67.Shape = Enum.PartType.Cylinder
+Part67.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part67.CFrame = CFrame.new(-106.87825, 117.400047, -50.3852501, 0, 0.956304133, -0.29237175, -1, 0, 0, 0, 0.29237175, 0.956304133)
+Part67.BottomSurface = Enum.SurfaceType.Smooth
+Part67.TopSurface = Enum.SurfaceType.Smooth
+Part67.Color = Color3.new(0.458824, 0, 0)
+Part67.Position = Vector3.new(-106.87825, 117.400047, -50.3852501)
+Part67.Orientation = Vector3.new(0, -17, -90)
+Part67.Color = Color3.new(0.458824, 0, 0)
+ManualWeld68.Name = "Weld"
+ManualWeld68.Parent = Part67
+ManualWeld68.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.956304669, 0, 0.292371869, -0.292371869, 0, 0.956304669)
+ManualWeld68.C1 = CFrame.new(0, 0.0999832153, -0.299991608, 0, -1, 0, 0.956304669, 0, 0.292371869, -0.292371869, 0, 0.956304669)
+ManualWeld68.Part0 = Part67
+ManualWeld68.Part1 = Part69
+Part69.Parent = Model61
+Part69.Material = Enum.Material.Sand
+Part69.BrickColor = BrickColor.new("Maroon")
+Part69.Rotation = Vector3.new(0, -17, -90)
+Part69.CanCollide = false
+Part69.Shape = Enum.PartType.Cylinder
+Part69.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part69.CFrame = CFrame.new(-107.061577, 117.400047, -50.1275978, 0, 0.956304252, -0.29237178, -1, 0, 0, 0, 0.29237178, 0.956304252)
+Part69.BottomSurface = Enum.SurfaceType.Smooth
+Part69.TopSurface = Enum.SurfaceType.Smooth
+Part69.Color = Color3.new(0.458824, 0, 0)
+Part69.Position = Vector3.new(-107.061577, 117.400047, -50.1275978)
+Part69.Orientation = Vector3.new(0, -17, -90)
+Part69.Color = Color3.new(0.458824, 0, 0)
+Part70.Parent = Model61
+Part70.Material = Enum.Material.Glass
+Part70.BrickColor = BrickColor.new("Really black")
+Part70.Rotation = Vector3.new(0, -17, -90)
+Part70.CanCollide = false
+Part70.Shape = Enum.PartType.Cylinder
+Part70.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part70.CFrame = CFrame.new(-107.017754, 117.400047, -50.2710533, 0, 0.956304133, -0.29237175, -1, 0, 0, 0, 0.29237175, 0.956304133)
+Part70.BottomSurface = Enum.SurfaceType.Smooth
+Part70.TopSurface = Enum.SurfaceType.Smooth
+Part70.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part70.Position = Vector3.new(-107.017754, 117.400047, -50.2710533)
+Part70.Orientation = Vector3.new(0, -17, -90)
+Part70.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld71.Name = "Weld"
+ManualWeld71.Parent = Part70
+ManualWeld71.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.956304669, 0, 0.292371869, -0.292371869, 0, 0.956304669)
+ManualWeld71.C1 = CFrame.new(0, -3.05175781e-05, -0.149999619, 0, -1, 0, 0.956304669, 0, 0.292371869, -0.292371869, 0, 0.956304669)
+ManualWeld71.Part0 = Part70
+ManualWeld71.Part1 = Part69
+Part72.Parent = Model61
+Part72.Material = Enum.Material.Glass
+Part72.BrickColor = BrickColor.new("Really black")
+Part72.Rotation = Vector3.new(0, -17, -90)
+Part72.CanCollide = false
+Part72.Shape = Enum.PartType.Cylinder
+Part72.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part72.CFrame = CFrame.new(-106.884956, 117.400047, -50.0212936, 0, 0.956304133, -0.29237175, -1, 0, 0, 0, 0.29237175, 0.956304133)
+Part72.BottomSurface = Enum.SurfaceType.Smooth
+Part72.TopSurface = Enum.SurfaceType.Smooth
+Part72.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part72.Position = Vector3.new(-106.884956, 117.400047, -50.0212936)
+Part72.Orientation = Vector3.new(0, -17, -90)
+Part72.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld73.Name = "Weld"
+ManualWeld73.Parent = Part72
+ManualWeld73.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.956304669, 0, 0.292371869, -0.292371869, 0, 0.956304669)
+ManualWeld73.C1 = CFrame.new(0, 0.199981689, 0.0500202179, 0, -1, 0, 0.956304669, 0, 0.292371869, -0.292371869, 0, 0.956304669)
+ManualWeld73.Part0 = Part72
+ManualWeld73.Part1 = Part69
+Part74.Parent = Model61
+Part74.Material = Enum.Material.Glass
+Part74.BrickColor = BrickColor.new("Really black")
+Part74.Rotation = Vector3.new(0, -17, -90)
+Part74.CanCollide = false
+Part74.Shape = Enum.PartType.Cylinder
+Part74.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part74.CFrame = CFrame.new(-106.834373, 117.400047, -50.5286903, 0, 0.956304133, -0.29237175, -1, 0, 0, 0, 0.29237175, 0.956304133)
+Part74.BottomSurface = Enum.SurfaceType.Smooth
+Part74.TopSurface = Enum.SurfaceType.Smooth
+Part74.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part74.Position = Vector3.new(-106.834373, 117.400047, -50.5286903)
+Part74.Orientation = Vector3.new(0, -17, -90)
+Part74.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld75.Name = "Weld"
+ManualWeld75.Parent = Part74
+ManualWeld75.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.956304669, 0, 0.292371869, -0.292371869, 0, 0.956304669)
+ManualWeld75.C1 = CFrame.new(0, 0.100006104, -0.449995041, 0, -1, 0, 0.956304669, 0, 0.292371869, -0.292371869, 0, 0.956304669)
+ManualWeld75.Part0 = Part74
+ManualWeld75.Part1 = Part69
+WedgePart76.Parent = Model61
+WedgePart76.Material = Enum.Material.Slate
+WedgePart76.BrickColor = BrickColor.new("Deep orange")
+WedgePart76.Rotation = Vector3.new(0, 73, -90)
+WedgePart76.CanCollide = false
+WedgePart76.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart76.CFrame = CFrame.new(-107.036301, 117.350082, -50.3812752, 0, 0.29237169, 0.956304014, -1, -0, 0, 0, -0.956304014, 0.29237169)
+WedgePart76.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart76.Color = Color3.new(1, 0.690196, 0)
+WedgePart76.Position = Vector3.new(-107.036301, 117.350082, -50.3812752)
+WedgePart76.Orientation = Vector3.new(0, 73, -90)
+WedgePart76.Color = Color3.new(1, 0.690196, 0)
+ManualWeld77.Name = "Weld"
+ManualWeld77.Parent = WedgePart76
+ManualWeld77.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.292371869, 0, -0.956304669, 0.956304669, 0, 0.292371869)
+ManualWeld77.C1 = CFrame.new(0.0499649048, -0.0499954224, -0.249982834, 0, -1, 0, 0.956304491, 0, 0.292371839, -0.292371839, 0, 0.956304491)
+ManualWeld77.Part0 = WedgePart76
+ManualWeld77.Part1 = Part69
+WedgePart78.Parent = Model61
+WedgePart78.Material = Enum.Material.Slate
+WedgePart78.BrickColor = BrickColor.new("Deep orange")
+WedgePart78.Rotation = Vector3.new(-180, -73, -90)
+WedgePart78.CanCollide = false
+WedgePart78.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart78.CFrame = CFrame.new(-106.749428, 117.350082, -50.2935753, 0, 0.29237169, -0.956304073, 1, -0, 0, 0, -0.956304073, -0.29237169)
+WedgePart78.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart78.Color = Color3.new(1, 0.690196, 0)
+WedgePart78.Position = Vector3.new(-106.749428, 117.350082, -50.2935753)
+WedgePart78.Orientation = Vector3.new(0, -107, 90)
+WedgePart78.Color = Color3.new(1, 0.690196, 0)
+ManualWeld79.Name = "Weld"
+ManualWeld79.Parent = WedgePart78
+ManualWeld79.C0 = CFrame.new(0, 0, 0, 0, 1, 0, 0.292371869, 0, -0.956304669, -0.956304669, 0, -0.292371869)
+ManualWeld79.C1 = CFrame.new(0.0499649048, 0.249984741, -0.249990463, 0, -1, 0, 0.95630455, 0, 0.292371839, -0.292371839, 0, 0.95630455)
+ManualWeld79.Part0 = WedgePart78
+ManualWeld79.Part1 = Part69
+Model80.Name = "pizza2"
+Model80.Parent = Model0
+Part81.Name = "crust"
+Part81.Parent = Model80
+Part81.Material = Enum.Material.Sand
+Part81.BrickColor = BrickColor.new("Gold")
+Part81.Rotation = Vector3.new(0, -54, 0)
+Part81.CanCollide = false
+Part81.Shape = Enum.PartType.Cylinder
+Part81.Size = Vector3.new(0.599999964, 0.200000003, 0.200000003)
+Part81.CFrame = CFrame.new(-107.531097, 117.399269, -50.201973, 0.5877859, 0, -0.809016764, 0, 1, 0, 0.809016526, 0, 0.587785482)
+Part81.BottomSurface = Enum.SurfaceType.Smooth
+Part81.TopSurface = Enum.SurfaceType.Smooth
+Part81.Color = Color3.new(0.937255, 0.721569, 0.219608)
+Part81.Position = Vector3.new(-107.531097, 117.399269, -50.201973)
+Part81.Orientation = Vector3.new(0, -54, 0)
+Part81.Color = Color3.new(0.937255, 0.721569, 0.219608)
+ManualWeld82.Name = "Weld"
+ManualWeld82.Parent = Part81
+ManualWeld82.C0 = CFrame.new(0, 0, 0, 0.587785721, 0, 0.809016645, 0, 1, 0, -0.809016705, 0, 0.587785661)
+ManualWeld82.C1 = CFrame.new(0, 1.52587891e-05, 0.550006866, 0, -1, 0, 0.58778578, 0, 0.809016585, -0.809016764, 0, 0.587785602)
+ManualWeld82.Part0 = Part81
+ManualWeld82.Part1 = Part86
+ManualWeld83.Name = "Weld"
+ManualWeld83.Parent = Part81
+ManualWeld83.C0 = CFrame.new(0, 0, 0, 0.5877859, 0, 0.809016526, 0, 1, 0, -0.809016764, 0, 0.587785482)
+ManualWeld83.C1 = CFrame.new(-0.71749115, 0.199272156, 0.558197021, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld83.Part0 = Part81
+ManualWeld83.Part1 = Part1
+Part84.Parent = Model80
+Part84.Material = Enum.Material.Sand
+Part84.BrickColor = BrickColor.new("Maroon")
+Part84.Rotation = Vector3.new(0, -54, -90)
+Part84.CanCollide = false
+Part84.Shape = Enum.PartType.Cylinder
+Part84.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part84.CFrame = CFrame.new(-107.189117, 117.399269, -50.3267975, 0, 0.587786138, -0.809016943, -1, 0, 0, 0, 0.809016347, 0.587785244)
+Part84.BottomSurface = Enum.SurfaceType.Smooth
+Part84.TopSurface = Enum.SurfaceType.Smooth
+Part84.Color = Color3.new(0.458824, 0, 0)
+Part84.Position = Vector3.new(-107.189117, 117.399269, -50.3267975)
+Part84.Orientation = Vector3.new(0, -54, -90)
+Part84.Color = Color3.new(0.458824, 0, 0)
+ManualWeld85.Name = "Weld"
+ManualWeld85.Parent = Part84
+ManualWeld85.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.587785721, 0, 0.809016645, -0.809016705, 0, 0.587785661)
+ManualWeld85.C1 = CFrame.new(0, 0.10004425, 0.199966431, 0, -1, 0, 0.58778578, 0, 0.809016585, -0.809016764, 0, 0.587785602)
+ManualWeld85.Part0 = Part84
+ManualWeld85.Part1 = Part86
+Part86.Parent = Model80
+Part86.Material = Enum.Material.Sand
+Part86.BrickColor = BrickColor.new("Maroon")
+Part86.Rotation = Vector3.new(0, -54, -90)
+Part86.CanCollide = false
+Part86.Shape = Enum.PartType.Cylinder
+Part86.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part86.CFrame = CFrame.new(-107.086143, 117.399269, -50.5252724, 0, 0.587786019, -0.809016883, -1, 0, 0, 0, 0.809016466, 0.587785363)
+Part86.BottomSurface = Enum.SurfaceType.Smooth
+Part86.TopSurface = Enum.SurfaceType.Smooth
+Part86.Color = Color3.new(0.458824, 0, 0)
+Part86.Position = Vector3.new(-107.086143, 117.399269, -50.5252724)
+Part86.Orientation = Vector3.new(0, -54, -90)
+Part86.Color = Color3.new(0.458824, 0, 0)
+Part87.Parent = Model80
+Part87.Material = Enum.Material.Sand
+Part87.BrickColor = BrickColor.new("Maroon")
+Part87.Rotation = Vector3.new(0, -54, -90)
+Part87.CanCollide = false
+Part87.Shape = Enum.PartType.Cylinder
+Part87.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part87.CFrame = CFrame.new(-107.387604, 117.399269, -50.4298248, 0, 0.587786078, -0.809016943, -1, 0, 0, 0, 0.809016407, 0.587785304)
+Part87.BottomSurface = Enum.SurfaceType.Smooth
+Part87.TopSurface = Enum.SurfaceType.Smooth
+Part87.Color = Color3.new(0.458824, 0, 0)
+Part87.Position = Vector3.new(-107.387604, 117.399269, -50.4298248)
+Part87.Orientation = Vector3.new(0, -54, -90)
+Part87.Color = Color3.new(0.458824, 0, 0)
+ManualWeld88.Name = "Weld"
+ManualWeld88.Parent = Part87
+ManualWeld88.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.587785721, 0, 0.809016645, -0.809016705, 0, 0.587785661)
+ManualWeld88.C1 = CFrame.new(0, -0.0999755859, 0.299991608, 0, -1, 0, 0.587785721, 0, 0.809016645, -0.809016705, 0, 0.587785661)
+ManualWeld88.Part0 = Part87
+ManualWeld88.Part1 = Part86
+Part89.Parent = Model80
+Part89.Material = Enum.Material.Glass
+Part89.BrickColor = BrickColor.new("Really black")
+Part89.Rotation = Vector3.new(0, -54, -90)
+Part89.CanCollide = false
+Part89.Shape = Enum.PartType.Cylinder
+Part89.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part89.CFrame = CFrame.new(-107.266258, 117.399269, -50.5179863, 0, 0.587786138, -0.809016943, -1, 0, 0, 0, 0.809016347, 0.587785244)
+Part89.BottomSurface = Enum.SurfaceType.Smooth
+Part89.TopSurface = Enum.SurfaceType.Smooth
+Part89.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part89.Position = Vector3.new(-107.266258, 117.399269, -50.5179863)
+Part89.Orientation = Vector3.new(0, -54, -90)
+Part89.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld90.Name = "Weld"
+ManualWeld90.Parent = Part89
+ManualWeld90.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.587785721, 0, 0.809016645, -0.809016705, 0, 0.587785661)
+ManualWeld90.C1 = CFrame.new(0, -0.0999755859, 0.150001526, 0, -1, 0, 0.58778578, 0, 0.809016585, -0.809016764, 0, 0.587785602)
+ManualWeld90.Part0 = Part89
+ManualWeld90.Part1 = Part86
+Part91.Parent = Model80
+Part91.Material = Enum.Material.Glass
+Part91.BrickColor = BrickColor.new("Really black")
+Part91.Rotation = Vector3.new(0, -54, -90)
+Part91.CanCollide = false
+Part91.Shape = Enum.PartType.Cylinder
+Part91.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part91.CFrame = CFrame.new(-107.310539, 117.399269, -50.2386322, 0, 0.587786138, -0.809016943, -1, 0, 0, 0, 0.809016347, 0.587785244)
+Part91.BottomSurface = Enum.SurfaceType.Smooth
+Part91.TopSurface = Enum.SurfaceType.Smooth
+Part91.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part91.Position = Vector3.new(-107.310539, 117.399269, -50.2386322)
+Part91.Orientation = Vector3.new(0, -54, -90)
+Part91.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld92.Name = "Weld"
+ManualWeld92.Parent = Part91
+ManualWeld92.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.587785721, 0, 0.809016645, -0.809016705, 0, 0.587785661)
+ManualWeld92.C1 = CFrame.new(0, 0.0999984741, 0.350025177, 0, -1, 0, 0.58778578, 0, 0.809016585, -0.809016764, 0, 0.587785602)
+ManualWeld92.Part0 = Part91
+ManualWeld92.Part1 = Part86
+Part93.Parent = Model80
+Part93.Material = Enum.Material.Glass
+Part93.BrickColor = BrickColor.new("Really black")
+Part93.Rotation = Vector3.new(0, -54, -90)
+Part93.CanCollide = false
+Part93.Shape = Enum.PartType.Cylinder
+Part93.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part93.CFrame = CFrame.new(-106.96476, 117.399269, -50.6134415, 0, 0.587786138, -0.809016943, -1, 0, 0, 0, 0.809016347, 0.587785244)
+Part93.BottomSurface = Enum.SurfaceType.Smooth
+Part93.TopSurface = Enum.SurfaceType.Smooth
+Part93.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part93.Position = Vector3.new(-106.96476, 117.399269, -50.6134415)
+Part93.Orientation = Vector3.new(0, -54, -90)
+Part93.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld94.Name = "Weld"
+ManualWeld94.Parent = Part93
+ManualWeld94.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.587785721, 0, 0.809016645, -0.809016705, 0, 0.587785661)
+ManualWeld94.C1 = CFrame.new(0, 1.52587891e-05, -0.150024414, 0, -1, 0, 0.58778578, 0, 0.809016585, -0.809016764, 0, 0.587785602)
+ManualWeld94.Part0 = Part93
+ManualWeld94.Part1 = Part86
+WedgePart95.Parent = Model80
+WedgePart95.Material = Enum.Material.Slate
+WedgePart95.BrickColor = BrickColor.new("Deep orange")
+WedgePart95.Rotation = Vector3.new(0, 36, -90)
+WedgePart95.CanCollide = false
+WedgePart95.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart95.CFrame = CFrame.new(-107.21476, 117.349297, -50.6172104, 0, 0.809016943, 0.587786078, -1, 0, 0, 0, -0.587785304, 0.809016407)
+WedgePart95.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart95.Color = Color3.new(1, 0.690196, 0)
+WedgePart95.Position = Vector3.new(-107.21476, 117.349297, -50.6172104)
+WedgePart95.Orientation = Vector3.new(0, 36, -90)
+WedgePart95.Color = Color3.new(1, 0.690196, 0)
+ManualWeld96.Name = "Weld"
+ManualWeld96.Parent = WedgePart95
+ManualWeld96.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.809016645, 0, -0.587785721, 0.587785661, 0, 0.809016705)
+ManualWeld96.C1 = CFrame.new(0.0499725342, -0.149978638, 0.0500106812, 0, -1, 0, 0.58778578, 0, 0.809016645, -0.809016705, 0, 0.587785602)
+ManualWeld96.Part0 = WedgePart95
+ManualWeld96.Part1 = Part86
+WedgePart97.Parent = Model80
+WedgePart97.Material = Enum.Material.Slate
+WedgePart97.BrickColor = BrickColor.new("Deep orange")
+WedgePart97.Rotation = Vector3.new(-180, -36, -90)
+WedgePart97.CanCollide = false
+WedgePart97.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart97.CFrame = CFrame.new(-107.038414, 117.349297, -50.3745003, 0, 0.809016943, -0.587786138, 1, 0, 0, 0, -0.587785244, -0.809016407)
+WedgePart97.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart97.Color = Color3.new(1, 0.690196, 0)
+WedgePart97.Position = Vector3.new(-107.038414, 117.349297, -50.3745003)
+WedgePart97.Orientation = Vector3.new(0, -144, 90)
+WedgePart97.Color = Color3.new(1, 0.690196, 0)
+ManualWeld98.Name = "Weld"
+ManualWeld98.Parent = WedgePart97
+ManualWeld98.C0 = CFrame.new(0, 0, 0, 0, 1, 0, 0.809016645, 0, -0.587785721, -0.587785661, 0, -0.809016705)
+ManualWeld98.C1 = CFrame.new(0.0499725342, 0.150032043, 0.0500106812, 0, -1, 0, 0.58778584, 0, 0.809016585, -0.809016824, 0, 0.587785542)
+ManualWeld98.Part0 = WedgePart97
+ManualWeld98.Part1 = Part86
+Model99.Name = "pizza7"
+Model99.Parent = Model0
+Part100.Name = "crust"
+Part100.Parent = Model99
+Part100.Material = Enum.Material.Sand
+Part100.BrickColor = BrickColor.new("Gold")
+Part100.Rotation = Vector3.new(-180, 51, -180)
+Part100.CanCollide = false
+Part100.Shape = Enum.PartType.Cylinder
+Part100.Size = Vector3.new(0.599999964, 0.200000003, 0.200000003)
+Part100.CFrame = CFrame.new(-106.042892, 117.400009, -51.3470192, -0.629320681, 0, 0.777146697, 0, 1, 0, -0.777146697, 0, -0.629320681)
+Part100.BottomSurface = Enum.SurfaceType.Smooth
+Part100.TopSurface = Enum.SurfaceType.Smooth
+Part100.Color = Color3.new(0.937255, 0.721569, 0.219608)
+Part100.Position = Vector3.new(-106.042892, 117.400009, -51.3470192)
+Part100.Orientation = Vector3.new(0, 129, 0)
+Part100.Color = Color3.new(0.937255, 0.721569, 0.219608)
+ManualWeld101.Name = "Weld"
+ManualWeld101.Parent = Part100
+ManualWeld101.C0 = CFrame.new(0, 0, 0, -0.629320204, 0, -0.777146161, 0, 1, 0, 0.777146161, 0, -0.629320204)
+ManualWeld101.C1 = CFrame.new(0, -0.100021362, 0.350009918, 0, -1, 0, -0.629320264, 0, -0.77714628, 0.77714628, 0, -0.629320264)
+ManualWeld101.Part0 = Part100
+ManualWeld101.Part1 = Part103
+ManualWeld102.Name = "Weld"
+ManualWeld102.Parent = Part100
+ManualWeld102.C0 = CFrame.new(0, 0, 0, -0.629320681, 0, -0.777146697, 0, 1, 0, 0.777146697, 0, -0.629320681)
+ManualWeld102.C1 = CFrame.new(0.770713806, 0.200012207, -0.586849213, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld102.Part0 = Part100
+ManualWeld102.Part1 = Part1
+Part103.Parent = Model99
+Part103.Material = Enum.Material.Sand
+Part103.BrickColor = BrickColor.new("Maroon")
+Part103.Rotation = Vector3.new(-180, 51, 90)
+Part103.CanCollide = false
+Part103.Shape = Enum.PartType.Cylinder
+Part103.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part103.CFrame = CFrame.new(-106.377846, 117.400009, -51.204483, 0, -0.62932086, 0.777146876, -1, 0, 0, 0, -0.777146876, -0.62932086)
+Part103.BottomSurface = Enum.SurfaceType.Smooth
+Part103.TopSurface = Enum.SurfaceType.Smooth
+Part103.Color = Color3.new(0.458824, 0, 0)
+Part103.Position = Vector3.new(-106.377846, 117.400009, -51.204483)
+Part103.Orientation = Vector3.new(0, 129, -90)
+Part103.Color = Color3.new(0.458824, 0, 0)
+Part104.Parent = Model99
+Part104.Material = Enum.Material.Sand
+Part104.BrickColor = BrickColor.new("Maroon")
+Part104.Rotation = Vector3.new(-180, 51, 90)
+Part104.CanCollide = false
+Part104.Shape = Enum.PartType.Cylinder
+Part104.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part104.CFrame = CFrame.new(-106.470306, 117.400009, -51.000885, 0, -0.629321039, 0.777147055, -1, 0, 0, 0, -0.777147055, -0.629321039)
+Part104.BottomSurface = Enum.SurfaceType.Smooth
+Part104.TopSurface = Enum.SurfaceType.Smooth
+Part104.Color = Color3.new(0.458824, 0, 0)
+Part104.Position = Vector3.new(-106.470306, 117.400009, -51.000885)
+Part104.Orientation = Vector3.new(0, 129, -90)
+Part104.Color = Color3.new(0.458824, 0, 0)
+ManualWeld105.Name = "Weld"
+ManualWeld105.Parent = Part104
+ManualWeld105.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.629320204, 0, -0.777146161, 0.777146161, 0, -0.629320204)
+ManualWeld105.C1 = CFrame.new(0, -0.100036621, -0.199985504, 0, -1, 0, -0.629320264, 0, -0.77714628, 0.77714628, 0, -0.629320264)
+ManualWeld105.Part0 = Part104
+ManualWeld105.Part1 = Part103
+Part106.Parent = Model99
+Part106.Material = Enum.Material.Sand
+Part106.BrickColor = BrickColor.new("Maroon")
+Part106.Rotation = Vector3.new(-180, 51, 90)
+Part106.CanCollide = false
+Part106.Shape = Enum.PartType.Cylinder
+Part106.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part106.CFrame = CFrame.new(-106.17424, 117.400009, -51.1119957, 0, -0.62932092, 0.777146995, -1, 0, 0, 0, -0.777146995, -0.62932092)
+Part106.BottomSurface = Enum.SurfaceType.Smooth
+Part106.TopSurface = Enum.SurfaceType.Smooth
+Part106.Color = Color3.new(0.458824, 0, 0)
+Part106.Position = Vector3.new(-106.17424, 117.400009, -51.1119957)
+Part106.Orientation = Vector3.new(0, 129, -90)
+Part106.Color = Color3.new(0.458824, 0, 0)
+ManualWeld107.Name = "Weld"
+ManualWeld107.Parent = Part106
+ManualWeld107.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.629320204, 0, -0.777146161, 0.777146161, 0, -0.629320204)
+ManualWeld107.C1 = CFrame.new(0, -0.200012207, 0.100028992, 0, -1, 0, -0.629320204, 0, -0.777146161, 0.777146161, 0, -0.629320204)
+ManualWeld107.Part0 = Part106
+ManualWeld107.Part1 = Part103
+Part108.Parent = Model99
+Part108.Material = Enum.Material.Glass
+Part108.BrickColor = BrickColor.new("Really black")
+Part108.Rotation = Vector3.new(-180, 51, 90)
+Part108.CanCollide = false
+Part108.Shape = Enum.PartType.Cylinder
+Part108.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part108.CFrame = CFrame.new(-106.290802, 117.400009, -51.0175629, 0, -0.629321039, 0.777147055, -1, 0, 0, 0, -0.777147055, -0.629321039)
+Part108.BottomSurface = Enum.SurfaceType.Smooth
+Part108.TopSurface = Enum.SurfaceType.Smooth
+Part108.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part108.Position = Vector3.new(-106.290802, 117.400009, -51.0175629)
+Part108.Orientation = Vector3.new(0, 129, -90)
+Part108.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld109.Name = "Weld"
+ManualWeld109.Parent = Part108
+ManualWeld109.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.629320204, 0, -0.777146161, 0.777146161, 0, -0.629320204)
+ManualWeld109.C1 = CFrame.new(0, -0.200042725, -0.049987793, 0, -1, 0, -0.629320264, 0, -0.77714628, 0.77714628, 0, -0.629320264)
+ManualWeld109.Part0 = Part108
+ManualWeld109.Part1 = Part103
+Part110.Parent = Model99
+Part110.Material = Enum.Material.Glass
+Part110.BrickColor = BrickColor.new("Really black")
+Part110.Rotation = Vector3.new(-180, 51, 90)
+Part110.CanCollide = false
+Part110.Shape = Enum.PartType.Cylinder
+Part110.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part110.CFrame = CFrame.new(-106.261238, 117.400009, -51.2988853, 0, -0.629321039, 0.777147055, -1, 0, 0, 0, -0.777147055, -0.629321039)
+Part110.BottomSurface = Enum.SurfaceType.Smooth
+Part110.TopSurface = Enum.SurfaceType.Smooth
+Part110.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part110.Position = Vector3.new(-106.261238, 117.400009, -51.2988853)
+Part110.Orientation = Vector3.new(0, 129, -90)
+Part110.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld111.Name = "Weld"
+ManualWeld111.Parent = Part110
+ManualWeld111.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.629320204, 0, -0.777146161, 0.777146161, 0, -0.629320204)
+ManualWeld111.C1 = CFrame.new(0, -2.28881836e-05, 0.150032043, 0, -1, 0, -0.629320264, 0, -0.77714628, 0.77714628, 0, -0.629320264)
+ManualWeld111.Part0 = Part110
+ManualWeld111.Part1 = Part103
+Part112.Parent = Model99
+Part112.Material = Enum.Material.Glass
+Part112.BrickColor = BrickColor.new("Really black")
+Part112.Rotation = Vector3.new(-180, 51, 90)
+Part112.CanCollide = false
+Part112.Shape = Enum.PartType.Cylinder
+Part112.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part112.CFrame = CFrame.new(-106.586922, 117.400009, -50.9065132, 0, -0.629321039, 0.777147055, -1, 0, 0, 0, -0.777147055, -0.629321039)
+Part112.BottomSurface = Enum.SurfaceType.Smooth
+Part112.TopSurface = Enum.SurfaceType.Smooth
+Part112.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part112.Position = Vector3.new(-106.586922, 117.400009, -50.9065132)
+Part112.Orientation = Vector3.new(0, 129, -90)
+Part112.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld113.Name = "Weld"
+ManualWeld113.Parent = Part112
+ManualWeld113.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.629320204, 0, -0.777146161, 0.777146161, 0, -0.629320204)
+ManualWeld113.C1 = CFrame.new(0, -0.0999908447, -0.349998474, 0, -1, 0, -0.629320264, 0, -0.77714628, 0.77714628, 0, -0.629320264)
+ManualWeld113.Part0 = Part112
+ManualWeld113.Part1 = Part103
+WedgePart114.Parent = Model99
+WedgePart114.Material = Enum.Material.Slate
+WedgePart114.BrickColor = BrickColor.new("Deep orange")
+WedgePart114.Rotation = Vector3.new(-180, -39, 90)
+WedgePart114.CanCollide = false
+WedgePart114.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart114.CFrame = CFrame.new(-106.337082, 117.350029, -50.915802, 0, -0.777147174, -0.629321098, -1, 0, 0, 0, 0.629321098, -0.777147174)
+WedgePart114.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart114.Color = Color3.new(1, 0.690196, 0)
+WedgePart114.Position = Vector3.new(-106.337082, 117.350029, -50.915802)
+WedgePart114.Orientation = Vector3.new(0, -141, -90)
+WedgePart114.Color = Color3.new(1, 0.690196, 0)
+ManualWeld115.Name = "Weld"
+ManualWeld115.Parent = WedgePart114
+ManualWeld115.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.777146161, 0, 0.629320204, -0.629320204, 0, -0.777146161)
+ManualWeld115.C1 = CFrame.new(0.0499801636, -0.25, -0.149993896, 0, -1, 0, -0.629320383, 0, -0.777146339, 0.777146339, 0, -0.629320383)
+ManualWeld115.Part0 = WedgePart114
+ManualWeld115.Part1 = Part103
+WedgePart116.Parent = Model99
+WedgePart116.Material = Enum.Material.Slate
+WedgePart116.BrickColor = BrickColor.new("Deep orange")
+WedgePart116.Rotation = Vector3.new(0, 39, 90)
+WedgePart116.CanCollide = false
+WedgePart116.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart116.CFrame = CFrame.new(-106.525848, 117.350029, -51.1489143, 0, -0.777147233, 0.629321158, 1, 0, 0, -0, 0.629321158, 0.777147233)
+WedgePart116.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart116.Color = Color3.new(1, 0.690196, 0)
+WedgePart116.Position = Vector3.new(-106.525848, 117.350029, -51.1489143)
+WedgePart116.Orientation = Vector3.new(0, 39, 90)
+WedgePart116.Color = Color3.new(1, 0.690196, 0)
+ManualWeld117.Name = "Weld"
+ManualWeld117.Parent = WedgePart116
+ManualWeld117.C0 = CFrame.new(0, 0, 0, 0, 1, 0, -0.777146161, 0, 0.629320204, 0.629320204, 0, 0.777146161)
+ManualWeld117.C1 = CFrame.new(0.0499801636, 0.0499572754, -0.149990082, 0, -1, 0, -0.629320443, 0, -0.777146459, 0.777146459, 0, -0.629320443)
+ManualWeld117.Part0 = WedgePart116
+ManualWeld117.Part1 = Part103
+Model118.Name = "pizza4"
+Model118.Parent = Model0
+Part119.Name = "crust"
+Part119.Parent = Model118
+Part119.Material = Enum.Material.Sand
+Part119.BrickColor = BrickColor.new("Gold")
+Part119.Rotation = Vector3.new(0, 19, 0)
+Part119.CanCollide = false
+Part119.Shape = Enum.PartType.Cylinder
+Part119.Size = Vector3.new(0.599999964, 0.200000003, 0.200000003)
+Part119.CFrame = CFrame.new(-106.451851, 117.399315, -49.8706093, 0.945519447, 0, 0.32556814, 0, 1, 0, -0.32556814, 0, 0.945519447)
+Part119.BottomSurface = Enum.SurfaceType.Smooth
+Part119.TopSurface = Enum.SurfaceType.Smooth
+Part119.Color = Color3.new(0.937255, 0.721569, 0.219608)
+Part119.Position = Vector3.new(-106.451851, 117.399315, -49.8706093)
+Part119.Orientation = Vector3.new(0, 19, 0)
+Part119.Color = Color3.new(0.937255, 0.721569, 0.219608)
+ManualWeld120.Name = "Weld"
+ManualWeld120.Parent = Part119
+ManualWeld120.C0 = CFrame.new(0, 0, 0, 0.945518732, 0, -0.325567901, 0, 1, 0, 0.325567901, 0, 0.945518732)
+ManualWeld120.C1 = CFrame.new(0, 6.86645508e-05, 0.550018311, 0, -1, 0, 0.945518851, 0, -0.325567931, 0.325567931, 0, 0.945518851)
+ManualWeld120.Part0 = Part119
+ManualWeld120.Part1 = Part124
+ManualWeld121.Name = "Weld"
+ManualWeld121.Parent = Part119
+ManualWeld121.C0 = CFrame.new(0, 0, 0, 0.945519447, 0, -0.32556814, 0, 1, 0, 0.32556814, 0, 0.945519447)
+ManualWeld121.C1 = CFrame.new(0.361755371, 0.199317932, 0.889560699, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld121.Part0 = Part119
+ManualWeld121.Part1 = Part1
+Part122.Parent = Model118
+Part122.Material = Enum.Material.Sand
+Part122.BrickColor = BrickColor.new("Maroon")
+Part122.Rotation = Vector3.new(0, 19, -90)
+Part122.CanCollide = false
+Part122.Shape = Enum.PartType.Cylinder
+Part122.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part122.CFrame = CFrame.new(-106.471298, 117.399315, -50.2341347, 0, 0.945519924, 0.325568318, -1, 0, 0, 0, -0.325568318, 0.945519924)
+Part122.BottomSurface = Enum.SurfaceType.Smooth
+Part122.TopSurface = Enum.SurfaceType.Smooth
+Part122.Color = Color3.new(0.458824, 0, 0)
+Part122.Position = Vector3.new(-106.471298, 117.399315, -50.2341347)
+Part122.Orientation = Vector3.new(0, 19, -90)
+Part122.Color = Color3.new(0.458824, 0, 0)
+ManualWeld123.Name = "Weld"
+ManualWeld123.Parent = Part122
+ManualWeld123.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.945518732, 0, -0.325567901, 0.325567901, 0, 0.945518732)
+ManualWeld123.C1 = CFrame.new(0, 0.100028992, 0.199966431, 0, -1, 0, 0.945518851, 0, -0.325567931, 0.325567931, 0, 0.945518851)
+ManualWeld123.Part0 = Part122
+ManualWeld123.Part1 = Part124
+Part124.Parent = Model118
+Part124.Material = Enum.Material.Sand
+Part124.BrickColor = BrickColor.new("Maroon")
+Part124.Rotation = Vector3.new(0, 19, -90)
+Part124.CanCollide = false
+Part124.Shape = Enum.PartType.Cylinder
+Part124.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part124.CFrame = CFrame.new(-106.630981, 117.399315, -50.3906403, 0, 0.945519686, 0.325568199, -1, 0, 0, 0, -0.325568199, 0.945519686)
+Part124.BottomSurface = Enum.SurfaceType.Smooth
+Part124.TopSurface = Enum.SurfaceType.Smooth
+Part124.Color = Color3.new(0.458824, 0, 0)
+Part124.Position = Vector3.new(-106.630981, 117.399315, -50.3906403)
+Part124.Orientation = Vector3.new(0, 19, -90)
+Part124.Color = Color3.new(0.458824, 0, 0)
+Part125.Parent = Model118
+Part125.Material = Enum.Material.Sand
+Part125.BrickColor = BrickColor.new("Maroon")
+Part125.Rotation = Vector3.new(0, 19, -90)
+Part125.CanCollide = false
+Part125.Shape = Enum.PartType.Cylinder
+Part125.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part125.CFrame = CFrame.new(-106.627838, 117.399315, -50.0744171, 0, 0.945519805, 0.325568229, -1, 0, 0, 0, -0.325568229, 0.945519805)
+Part125.BottomSurface = Enum.SurfaceType.Smooth
+Part125.TopSurface = Enum.SurfaceType.Smooth
+Part125.Color = Color3.new(0.458824, 0, 0)
+Part125.Position = Vector3.new(-106.627838, 117.399315, -50.0744171)
+Part125.Orientation = Vector3.new(0, 19, -90)
+Part125.Color = Color3.new(0.458824, 0, 0)
+ManualWeld126.Name = "Weld"
+ManualWeld126.Parent = Part125
+ManualWeld126.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.945518732, 0, -0.325567901, 0.325567901, 0, 0.945518732)
+ManualWeld126.C1 = CFrame.new(0, -0.0999832153, 0.300018311, 0, -1, 0, 0.945518732, 0, -0.325567901, 0.325567901, 0, 0.945518732)
+ManualWeld126.Part0 = Part125
+ManualWeld126.Part1 = Part124
+Part127.Parent = Model118
+Part127.Material = Enum.Material.Glass
+Part127.BrickColor = BrickColor.new("Really black")
+Part127.Rotation = Vector3.new(0, 19, -90)
+Part127.CanCollide = false
+Part127.Shape = Enum.PartType.Cylinder
+Part127.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part127.CFrame = CFrame.new(-106.676643, 117.399315, -50.216217, 0, 0.945519924, 0.325568318, -1, 0, 0, 0, -0.325568318, 0.945519924)
+Part127.BottomSurface = Enum.SurfaceType.Smooth
+Part127.TopSurface = Enum.SurfaceType.Smooth
+Part127.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part127.Position = Vector3.new(-106.676643, 117.399315, -50.216217)
+Part127.Orientation = Vector3.new(0, 19, -90)
+Part127.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld128.Name = "Weld"
+ManualWeld128.Parent = Part127
+ManualWeld128.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.945518732, 0, -0.325567901, 0.325567901, 0, 0.945518732)
+ManualWeld128.C1 = CFrame.new(0, -0.0999603271, 0.150054932, 0, -1, 0, 0.945518851, 0, -0.325567931, 0.325567931, 0, 0.945518851)
+ManualWeld128.Part0 = Part127
+ManualWeld128.Part1 = Part124
+Part129.Parent = Model118
+Part129.Material = Enum.Material.Glass
+Part129.BrickColor = BrickColor.new("Really black")
+Part129.Rotation = Vector3.new(0, 19, -90)
+Part129.CanCollide = false
+Part129.Shape = Enum.PartType.Cylinder
+Part129.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part129.CFrame = CFrame.new(-106.42247, 117.399315, -50.0922318, 0, 0.945519924, 0.325568318, -1, 0, 0, 0, -0.325568318, 0.945519924)
+Part129.BottomSurface = Enum.SurfaceType.Smooth
+Part129.TopSurface = Enum.SurfaceType.Smooth
+Part129.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part129.Position = Vector3.new(-106.42247, 117.399315, -50.0922318)
+Part129.Orientation = Vector3.new(0, 19, -90)
+Part129.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld130.Name = "Weld"
+ManualWeld130.Parent = Part129
+ManualWeld130.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.945518732, 0, -0.325567901, 0.325567901, 0, 0.945518732)
+ManualWeld130.C1 = CFrame.new(0, 0.0999984741, 0.350036621, 0, -1, 0, 0.945518851, 0, -0.325567931, 0.325567931, 0, 0.945518851)
+ManualWeld130.Part0 = Part129
+ManualWeld130.Part1 = Part124
+Part131.Parent = Model118
+Part131.Material = Enum.Material.Glass
+Part131.BrickColor = BrickColor.new("Really black")
+Part131.Rotation = Vector3.new(0, 19, -90)
+Part131.CanCollide = false
+Part131.Shape = Enum.PartType.Cylinder
+Part131.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part131.CFrame = CFrame.new(-106.679802, 117.399315, -50.5324669, 0, 0.945519924, 0.325568318, -1, 0, 0, 0, -0.325568318, 0.945519924)
+Part131.BottomSurface = Enum.SurfaceType.Smooth
+Part131.TopSurface = Enum.SurfaceType.Smooth
+Part131.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part131.Position = Vector3.new(-106.679802, 117.399315, -50.5324669)
+Part131.Orientation = Vector3.new(0, 19, -90)
+Part131.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld132.Name = "Weld"
+ManualWeld132.Parent = Part131
+ManualWeld132.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.945518732, 0, -0.325567901, 0.325567901, 0, 0.945518732)
+ManualWeld132.C1 = CFrame.new(0, 1.52587891e-05, -0.149993896, 0, -1, 0, 0.945518851, 0, -0.325567931, 0.325567931, 0, 0.945518851)
+ManualWeld132.Part0 = Part131
+ManualWeld132.Part1 = Part124
+WedgePart133.Parent = Model118
+WedgePart133.Material = Enum.Material.Slate
+WedgePart133.BrickColor = BrickColor.new("Deep orange")
+WedgePart133.Rotation = Vector3.new(-180, 71, 90)
+WedgePart133.CanCollide = false
+WedgePart133.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart133.CFrame = CFrame.new(-106.756477, 117.34938, -50.294487, 0, -0.325568348, 0.945520043, -1, 0, 0, 0, -0.945520043, -0.325568348)
+WedgePart133.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart133.Color = Color3.new(1, 0.690196, 0)
+WedgePart133.Position = Vector3.new(-106.756477, 117.34938, -50.294487)
+WedgePart133.Orientation = Vector3.new(0, 109, -90)
+WedgePart133.Color = Color3.new(1, 0.690196, 0)
+ManualWeld134.Name = "Weld"
+ManualWeld134.Parent = WedgePart133
+ManualWeld134.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.325567901, 0, -0.945518732, 0.945518732, 0, -0.325567901)
+ManualWeld134.C1 = CFrame.new(0.0499343872, -0.149963379, 0.0500564575, 0, -1, 0, 0.94551897, 0, -0.325567961, 0.325567961, 0, 0.94551897)
+ManualWeld134.Part0 = WedgePart133
+ManualWeld134.Part1 = Part124
+WedgePart135.Parent = Model118
+WedgePart135.Material = Enum.Material.Slate
+WedgePart135.BrickColor = BrickColor.new("Deep orange")
+WedgePart135.Rotation = Vector3.new(0, -71, 90)
+WedgePart135.CanCollide = false
+WedgePart135.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart135.CFrame = CFrame.new(-106.472771, 117.34938, -50.3921661, 0, -0.325568378, -0.945520163, 1, 0, 0, 0, -0.945520163, 0.325568378)
+WedgePart135.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart135.Color = Color3.new(1, 0.690196, 0)
+WedgePart135.Position = Vector3.new(-106.472771, 117.34938, -50.3921661)
+WedgePart135.Orientation = Vector3.new(0, -71, 90)
+WedgePart135.Color = Color3.new(1, 0.690196, 0)
+ManualWeld136.Name = "Weld"
+ManualWeld136.Parent = WedgePart135
+ManualWeld136.C0 = CFrame.new(0, 0, 0, 0, 1, 0, -0.325567901, 0, -0.945518732, -0.945518732, 0, 0.325567901)
+ManualWeld136.C1 = CFrame.new(0.0499343872, 0.150085449, 0.0500640869, 0, -1, 0, 0.94551909, 0, -0.325567991, 0.325567991, 0, 0.94551909)
+ManualWeld136.Part0 = WedgePart135
+ManualWeld136.Part1 = Part124
+Model137.Name = "pizza9"
+Model137.Parent = Model0
+Part138.Name = "crust"
+Part138.Parent = Model137
+Part138.Material = Enum.Material.Sand
+Part138.BrickColor = BrickColor.new("Gold")
+Part138.Rotation = Vector3.new(-180, -19, -180)
+Part138.CanCollide = false
+Part138.Shape = Enum.PartType.Cylinder
+Part138.Size = Vector3.new(0.599999964, 0.200000003, 0.200000003)
+Part138.CFrame = CFrame.new(-107.088394, 117.400063, -51.6453171, -0.94551897, 0, -0.325567007, 0, 1, 0, 0.325567007, 0, -0.94551897)
+Part138.BottomSurface = Enum.SurfaceType.Smooth
+Part138.TopSurface = Enum.SurfaceType.Smooth
+Part138.Color = Color3.new(0.937255, 0.721569, 0.219608)
+Part138.Position = Vector3.new(-107.088394, 117.400063, -51.6453171)
+Part138.Orientation = Vector3.new(0, -161, 0)
+Part138.Color = Color3.new(0.937255, 0.721569, 0.219608)
+ManualWeld139.Name = "Weld"
+ManualWeld139.Parent = Part138
+ManualWeld139.C0 = CFrame.new(0, 0, 0, -0.94551897, 0, 0.325567007, 0, 1, 0, -0.325567007, 0, -0.94551897)
+ManualWeld139.C1 = CFrame.new(0, -0.0999221802, 0.199890137, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld139.Part0 = Part138
+ManualWeld139.Part1 = Part149
+ManualWeld140.Name = "NOUNOOB"
+ManualWeld140.Parent = Part138
+ManualWeld140.C0 = CFrame.new(0, 0, 0, -0.94551897, 0, 0.325567007, 0, 1, 0, -0.325567007, 0, -0.94551897)
+ManualWeld140.C1 = CFrame.new(-0.274787903, 0.200065613, -0.885147095, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld140.Part0 = Part138
+ManualWeld140.Part1 = Part1
+Part141.Parent = Model137
+Part141.Material = Enum.Material.Sand
+Part141.BrickColor = BrickColor.new("Maroon")
+Part141.Rotation = Vector3.new(-180, -19, 90)
+Part141.CanCollide = false
+Part141.Shape = Enum.PartType.Cylinder
+Part141.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part141.CFrame = CFrame.new(-107.069008, 117.400063, -51.2818527, 0, -0.94551897, -0.325567007, -1, 0, 0, 0, 0.325567007, -0.94551897)
+Part141.BottomSurface = Enum.SurfaceType.Smooth
+Part141.TopSurface = Enum.SurfaceType.Smooth
+Part141.Color = Color3.new(0.458824, 0, 0)
+Part141.Position = Vector3.new(-107.069008, 117.400063, -51.2818527)
+Part141.Orientation = Vector3.new(0, -161, -90)
+Part141.Color = Color3.new(0.458824, 0, 0)
+ManualWeld142.Name = "Weld"
+ManualWeld142.Parent = Part141
+ManualWeld142.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld142.C1 = CFrame.new(0, 7.62939453e-05, -0.150085449, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld142.Part0 = Part141
+ManualWeld142.Part1 = Part149
+Part143.Parent = Model137
+Part143.Material = Enum.Material.Sand
+Part143.BrickColor = BrickColor.new("Maroon")
+Part143.Rotation = Vector3.new(-180, -19, 90)
+Part143.CanCollide = false
+Part143.Shape = Enum.PartType.Cylinder
+Part143.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part143.CFrame = CFrame.new(-106.909256, 117.400063, -51.1252899, 0, -0.94551897, -0.325567007, -1, 0, 0, 0, 0.325567007, -0.94551897)
+Part143.BottomSurface = Enum.SurfaceType.Smooth
+Part143.TopSurface = Enum.SurfaceType.Smooth
+Part143.Color = Color3.new(0.458824, 0, 0)
+Part143.Position = Vector3.new(-106.909256, 117.400063, -51.1252899)
+Part143.Orientation = Vector3.new(0, -161, -90)
+Part143.Color = Color3.new(0.458824, 0, 0)
+ManualWeld144.Name = "Weld"
+ManualWeld144.Parent = Part143
+ManualWeld144.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld144.C1 = CFrame.new(0, -0.0999984741, -0.350128174, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld144.Part0 = Part143
+ManualWeld144.Part1 = Part149
+Part145.Parent = Model137
+Part145.Material = Enum.Material.Sand
+Part145.BrickColor = BrickColor.new("Maroon")
+Part145.Rotation = Vector3.new(-180, -19, 90)
+Part145.CanCollide = false
+Part145.Shape = Enum.PartType.Cylinder
+Part145.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part145.CFrame = CFrame.new(-106.912437, 117.400063, -51.4414902, 0, -0.94551897, -0.325567007, -1, 0, 0, 0, 0.325567007, -0.94551897)
+Part145.BottomSurface = Enum.SurfaceType.Smooth
+Part145.TopSurface = Enum.SurfaceType.Smooth
+Part145.Color = Color3.new(0.458824, 0, 0)
+Part145.Position = Vector3.new(-106.912437, 117.400063, -51.4414902)
+Part145.Orientation = Vector3.new(0, -161, -90)
+Part145.Color = Color3.new(0.458824, 0, 0)
+ManualWeld146.Name = "Weld"
+ManualWeld146.Parent = Part145
+ManualWeld146.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld146.C1 = CFrame.new(0, -0.199935913, -0.0501174927, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld146.Part0 = Part145
+ManualWeld146.Part1 = Part149
+Part147.Parent = Model137
+Part147.Material = Enum.Material.Glass
+Part147.BrickColor = BrickColor.new("Really black")
+Part147.Rotation = Vector3.new(-180, -19, 90)
+Part147.CanCollide = false
+Part147.Shape = Enum.PartType.Cylinder
+Part147.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part147.CFrame = CFrame.new(-106.863625, 117.400063, -51.2997284, 0, -0.94551897, -0.325567007, -1, 0, 0, 0, 0.325567007, -0.94551897)
+Part147.BottomSurface = Enum.SurfaceType.Smooth
+Part147.TopSurface = Enum.SurfaceType.Smooth
+Part147.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part147.Position = Vector3.new(-106.863625, 117.400063, -51.2997284)
+Part147.Orientation = Vector3.new(0, -161, -90)
+Part147.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld148.Name = "Weld"
+ManualWeld148.Parent = Part147
+ManualWeld148.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld148.C1 = CFrame.new(0, -0.199935913, -0.200050354, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld148.Part0 = Part147
+ManualWeld148.Part1 = Part149
+Part149.Parent = Model137
+Part149.Material = Enum.Material.Glass
+Part149.BrickColor = BrickColor.new("Really black")
+Part149.Rotation = Vector3.new(-180, -19, 90)
+Part149.CanCollide = false
+Part149.Shape = Enum.PartType.Cylinder
+Part149.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part149.CFrame = CFrame.new(-107.117798, 117.400063, -51.4237862, 0, -0.94551897, -0.325567007, -1, 0, 0, 0, 0.325567007, -0.94551897)
+Part149.BottomSurface = Enum.SurfaceType.Smooth
+Part149.TopSurface = Enum.SurfaceType.Smooth
+Part149.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part149.Position = Vector3.new(-107.117798, 117.400063, -51.4237862)
+Part149.Orientation = Vector3.new(0, -161, -90)
+Part149.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part150.Parent = Model137
+Part150.Material = Enum.Material.Glass
+Part150.BrickColor = BrickColor.new("Really black")
+Part150.Rotation = Vector3.new(-180, -19, 90)
+Part150.CanCollide = false
+Part150.Shape = Enum.PartType.Cylinder
+Part150.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part150.CFrame = CFrame.new(-106.860435, 117.400063, -50.9835129, 0, -0.94551897, -0.325567007, -1, 0, 0, 0, 0.325567007, -0.94551897)
+Part150.BottomSurface = Enum.SurfaceType.Smooth
+Part150.TopSurface = Enum.SurfaceType.Smooth
+Part150.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part150.Position = Vector3.new(-106.860435, 117.400063, -50.9835129)
+Part150.Orientation = Vector3.new(0, -161, -90)
+Part150.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld151.Name = "Weld"
+ManualWeld151.Parent = Part150
+ManualWeld151.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld151.C1 = CFrame.new(0, -0.100006104, -0.500076294, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld151.Part0 = Part150
+ManualWeld151.Part1 = Part149
+WedgePart152.Parent = Model137
+WedgePart152.Material = Enum.Material.Slate
+WedgePart152.Name = "SlicePart"
+WedgePart152.BrickColor = BrickColor.new("Deep orange")
+WedgePart152.Rotation = Vector3.new(0, -71, -90)
+WedgePart152.CanCollide = false
+WedgePart152.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart152.CFrame = CFrame.new(-106.783669, 117.35006, -51.2214813, 0, 0.325567007, -0.94551897, -1, 0, 0, 0, 0.94551897, 0.325567007)
+WedgePart152.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart152.Color = Color3.new(1, 0.690196, 0)
+WedgePart152.Position = Vector3.new(-106.783669, 117.35006, -51.2214813)
+WedgePart152.Orientation = Vector3.new(0, -71, -90)
+WedgePart152.Color = Color3.new(1, 0.690196, 0)
+ManualWeld153.Name = "Weld"
+ManualWeld153.Parent = WedgePart152
+ManualWeld153.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.325567007, 0, 0.94551897, -0.94551897, 0, 0.325567007)
+ManualWeld153.C1 = CFrame.new(0.0500030518, -0.250061035, -0.300064087, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld153.Part0 = WedgePart152
+ManualWeld153.Part1 = Part149
+WedgePart154.Parent = Model137
+WedgePart154.Material = Enum.Material.Slate
+WedgePart154.BrickColor = BrickColor.new("Deep orange")
+WedgePart154.Rotation = Vector3.new(-180, 71, -90)
+WedgePart154.CanCollide = false
+WedgePart154.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart154.CFrame = CFrame.new(-107.067345, 117.35006, -51.1237335, -0, 0.325567007, 0.94551897, 1, 0, 0, 0, 0.94551897, -0.325567007)
+WedgePart154.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart154.Color = Color3.new(1, 0.690196, 0)
+WedgePart154.Position = Vector3.new(-107.067345, 117.35006, -51.1237335)
+WedgePart154.Orientation = Vector3.new(0, 109, 90)
+WedgePart154.Color = Color3.new(1, 0.690196, 0)
+ManualWeld155.Name = "Weld"
+ManualWeld155.Parent = WedgePart154
+ManualWeld155.C0 = CFrame.new(0, 0, 0, 0, 1, 0, 0.325567007, 0, 0.94551897, 0.94551897, 0, -0.325567007)
+ManualWeld155.C1 = CFrame.new(0.0500030518, 0.0499801636, -0.300132751, 0, -1, 0, -0.94551897, 0, 0.325567007, -0.325567007, 0, -0.94551897)
+ManualWeld155.Part0 = WedgePart154
+ManualWeld155.Part1 = Part149
+Model156.Name = "pizza8"
+Model156.Parent = Model0
+Part157.Name = "crust"
+Part157.Parent = Model156
+Part157.Material = Enum.Material.Sand
+Part157.BrickColor = BrickColor.new("Gold")
+Part157.Rotation = Vector3.new(-180, 15, -180)
+Part157.CanCollide = false
+Part157.Shape = Enum.PartType.Cylinder
+Part157.Size = Vector3.new(0.599999964, 0.200000003, 0.200000003)
+Part157.CFrame = CFrame.new(-106.536034, 117.399269, -51.6659584, -0.965925634, 0, 0.258819908, 0, 1, 0, -0.258819908, 0, -0.965925634)
+Part157.BottomSurface = Enum.SurfaceType.Smooth
+Part157.TopSurface = Enum.SurfaceType.Smooth
+Part157.Color = Color3.new(0.937255, 0.721569, 0.219608)
+Part157.Position = Vector3.new(-106.536034, 117.399269, -51.6659584)
+Part157.Orientation = Vector3.new(0, 165, 0)
+Part157.Color = Color3.new(0.937255, 0.721569, 0.219608)
+ManualWeld158.Name = "Weld"
+ManualWeld158.Parent = Part157
+ManualWeld158.C0 = CFrame.new(0, 0, 0, -0.965925634, 0, -0.258819908, 0, 1, 0, 0.258819908, 0, -0.965925634)
+ManualWeld158.C1 = CFrame.new(0, -0.100006104, 0.35005188, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld158.Part0 = Part157
+ManualWeld158.Part1 = Part160
+ManualWeld159.Name = "Weld"
+ManualWeld159.Parent = Part157
+ManualWeld159.C0 = CFrame.new(0, 0, 0, -0.965925634, 0, -0.258819908, 0, 1, 0, 0.258819908, 0, -0.965925634)
+ManualWeld159.C1 = CFrame.new(0.277572632, 0.199272156, -0.905788422, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld159.Part0 = Part157
+ManualWeld159.Part1 = Part1
+Part160.Parent = Model156
+Part160.Material = Enum.Material.Sand
+Part160.BrickColor = BrickColor.new("Maroon")
+Part160.Rotation = Vector3.new(-180, 15, 90)
+Part160.CanCollide = false
+Part160.Shape = Enum.PartType.Cylinder
+Part160.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part160.CFrame = CFrame.new(-106.723236, 117.399269, -51.3537178, 0, -0.965925634, 0.258819908, -1, 0, 0, 0, -0.258819908, -0.965925634)
+Part160.BottomSurface = Enum.SurfaceType.Smooth
+Part160.TopSurface = Enum.SurfaceType.Smooth
+Part160.Color = Color3.new(0.458824, 0, 0)
+Part160.Position = Vector3.new(-106.723236, 117.399269, -51.3537178)
+Part160.Orientation = Vector3.new(0, 165, -90)
+Part160.Color = Color3.new(0.458824, 0, 0)
+Part161.Parent = Model156
+Part161.Material = Enum.Material.Sand
+Part161.BrickColor = BrickColor.new("Maroon")
+Part161.Rotation = Vector3.new(-180, 15, 90)
+Part161.CanCollide = false
+Part161.Shape = Enum.PartType.Cylinder
+Part161.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part161.CFrame = CFrame.new(-106.678337, 117.399269, -51.1346588, 0, -0.965925634, 0.258819908, -1, 0, 0, 0, -0.258819908, -0.965925634)
+Part161.BottomSurface = Enum.SurfaceType.Smooth
+Part161.TopSurface = Enum.SurfaceType.Smooth
+Part161.Color = Color3.new(0.458824, 0, 0)
+Part161.Position = Vector3.new(-106.678337, 117.399269, -51.1346588)
+Part161.Orientation = Vector3.new(0, 165, -90)
+Part161.Color = Color3.new(0.458824, 0, 0)
+ManualWeld162.Name = "Weld"
+ManualWeld162.Parent = Part161
+ManualWeld162.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld162.C1 = CFrame.new(0, -0.100067139, -0.199972153, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld162.Part0 = Part161
+ManualWeld162.Part1 = Part160
+Part163.Parent = Model156
+Part163.Material = Enum.Material.Sand
+Part163.BrickColor = BrickColor.new("Maroon")
+Part163.Rotation = Vector3.new(-180, 15, 90)
+Part163.CanCollide = false
+Part163.Shape = Enum.PartType.Cylinder
+Part163.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part163.CFrame = CFrame.new(-106.504143, 117.399269, -51.3985863, 0, -0.965925634, 0.258819908, -1, 0, 0, 0, -0.258819908, -0.965925634)
+Part163.BottomSurface = Enum.SurfaceType.Smooth
+Part163.TopSurface = Enum.SurfaceType.Smooth
+Part163.Color = Color3.new(0.458824, 0, 0)
+Part163.Position = Vector3.new(-106.504143, 117.399269, -51.3985863)
+Part163.Orientation = Vector3.new(0, 165, -90)
+Part163.Color = Color3.new(0.458824, 0, 0)
+ManualWeld164.Name = "Weld"
+ManualWeld164.Parent = Part163
+ManualWeld164.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld164.C1 = CFrame.new(0, -0.200012207, 0.100046158, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld164.Part0 = Part163
+ManualWeld164.Part1 = Part160
+Part165.Parent = Model156
+Part165.Material = Enum.Material.Glass
+Part165.BrickColor = BrickColor.new("Really black")
+Part165.Rotation = Vector3.new(-180, 15, 90)
+Part165.CanCollide = false
+Part165.Shape = Enum.PartType.Cylinder
+Part165.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part165.CFrame = CFrame.new(-106.542931, 117.399269, -51.2537346, 0, -0.965925634, 0.258819908, -1, 0, 0, 0, -0.258819908, -0.965925634)
+Part165.BottomSurface = Enum.SurfaceType.Smooth
+Part165.TopSurface = Enum.SurfaceType.Smooth
+Part165.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part165.Position = Vector3.new(-106.542931, 117.399269, -51.2537346)
+Part165.Orientation = Vector3.new(0, 165, -90)
+Part165.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld166.Name = "Weld"
+ManualWeld166.Parent = Part165
+ManualWeld166.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld166.C1 = CFrame.new(0, -0.200042725, -0.0499095917, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld166.Part0 = Part165
+ManualWeld166.Part1 = Part160
+Part167.Parent = Model156
+Part167.Material = Enum.Material.Glass
+Part167.BrickColor = BrickColor.new("Really black")
+Part167.Rotation = Vector3.new(-180, 15, 90)
+Part167.CanCollide = false
+Part167.Shape = Enum.PartType.Cylinder
+Part167.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part167.CFrame = CFrame.new(-106.684288, 117.399269, -51.498661, 0, -0.965925634, 0.258819908, -1, 0, 0, 0, -0.258819908, -0.965925634)
+Part167.BottomSurface = Enum.SurfaceType.Smooth
+Part167.TopSurface = Enum.SurfaceType.Smooth
+Part167.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part167.Position = Vector3.new(-106.684288, 117.399269, -51.498661)
+Part167.Orientation = Vector3.new(0, 165, -90)
+Part167.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld168.Name = "Weld"
+ManualWeld168.Parent = Part167
+ManualWeld168.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld168.C1 = CFrame.new(0, -0.000106811523, 0.150085449, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld168.Part0 = Part167
+ManualWeld168.Part1 = Part160
+Part169.Parent = Model156
+Part169.Material = Enum.Material.Glass
+Part169.BrickColor = BrickColor.new("Really black")
+Part169.Rotation = Vector3.new(-180, 15, 90)
+Part169.CanCollide = false
+Part169.Shape = Enum.PartType.Cylinder
+Part169.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part169.CFrame = CFrame.new(-106.717194, 117.399269, -50.9897957, 0, -0.965925634, 0.258819908, -1, 0, 0, 0, -0.258819908, -0.965925634)
+Part169.BottomSurface = Enum.SurfaceType.Smooth
+Part169.TopSurface = Enum.SurfaceType.Smooth
+Part169.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part169.Position = Vector3.new(-106.717194, 117.399269, -50.9897957)
+Part169.Orientation = Vector3.new(0, 165, -90)
+Part169.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld170.Name = "Weld"
+ManualWeld170.Parent = Part169
+ManualWeld170.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld170.C1 = CFrame.new(0, -0.100028992, -0.349956512, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld170.Part0 = Part169
+ManualWeld170.Part1 = Part160
+WedgePart171.Parent = Model156
+WedgePart171.Material = Enum.Material.Slate
+WedgePart171.BrickColor = BrickColor.new("Deep orange")
+WedgePart171.Rotation = Vector3.new(-180, -75, 90)
+WedgePart171.CanCollide = false
+WedgePart171.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart171.CFrame = CFrame.new(-106.520523, 117.349358, -51.1442108, 0, -0.258819908, -0.965925634, -1, 0, 0, 0, 0.965925634, -0.258819908)
+WedgePart171.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart171.Color = Color3.new(1, 0.690196, 0)
+WedgePart171.Position = Vector3.new(-106.520523, 117.349358, -51.1442108)
+WedgePart171.Orientation = Vector3.new(0, -105, -90)
+WedgePart171.Color = Color3.new(1, 0.690196, 0)
+ManualWeld172.Name = "Weld"
+ManualWeld172.Parent = WedgePart171
+ManualWeld172.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.258819908, 0, 0.965925634, -0.965925634, 0, -0.258819908)
+ManualWeld172.C1 = CFrame.new(0.049911499, -0.250030518, -0.149902344, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld172.Part0 = WedgePart171
+ManualWeld172.Part1 = Part160
+WedgePart173.Parent = Model156
+WedgePart173.Material = Enum.Material.Slate
+WedgePart173.BrickColor = BrickColor.new("Deep orange")
+WedgePart173.Rotation = Vector3.new(0, 75, 90)
+WedgePart173.CanCollide = false
+WedgePart173.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart173.CFrame = CFrame.new(-106.810349, 117.349358, -51.2218857, 0, -0.258819908, 0.965925634, 1, 0, 0, -0, 0.965925634, 0.258819908)
+WedgePart173.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart173.Color = Color3.new(1, 0.690196, 0)
+WedgePart173.Position = Vector3.new(-106.810349, 117.349358, -51.2218857)
+WedgePart173.Orientation = Vector3.new(0, 75, 90)
+WedgePart173.Color = Color3.new(1, 0.690196, 0)
+ManualWeld174.Name = "Weld"
+ManualWeld174.Parent = WedgePart173
+ManualWeld174.C0 = CFrame.new(0, 0, 0, 0, 1, 0, -0.258819908, 0, 0.965925634, 0.965925634, 0, 0.258819908)
+ManualWeld174.C1 = CFrame.new(0.049911499, 0.0500259399, -0.149887085, 0, -1, 0, -0.965925634, 0, -0.258819908, 0.258819908, 0, -0.965925634)
+ManualWeld174.Part0 = WedgePart173
+ManualWeld174.Part1 = Part160
+Model175.Name = "pizza10"
+Model175.Parent = Model0
+Part176.Name = "crust"
+Part176.Parent = Model175
+Part176.Material = Enum.Material.Sand
+Part176.BrickColor = BrickColor.new("Gold")
+Part176.Rotation = Vector3.new(-180, -55, -180)
+Part176.CanCollide = false
+Part176.Shape = Enum.PartType.Cylinder
+Part176.Size = Vector3.new(0.599999964, 0.200000003, 0.200000003)
+Part176.CFrame = CFrame.new(-107.556732, 117.399246, -51.29105, -0.573577583, 0, -0.819151819, 0, 1, 0, 0.819151819, 0, -0.573577583)
+Part176.BottomSurface = Enum.SurfaceType.Smooth
+Part176.TopSurface = Enum.SurfaceType.Smooth
+Part176.Color = Color3.new(0.937255, 0.721569, 0.219608)
+Part176.Position = Vector3.new(-107.556732, 117.399246, -51.29105)
+Part176.Orientation = Vector3.new(0, -125, 0)
+Part176.Color = Color3.new(0.937255, 0.721569, 0.219608)
+ManualWeld177.Name = "Weld"
+ManualWeld177.Parent = Part176
+ManualWeld177.C0 = CFrame.new(0, 0, 0, -0.573577344, 0, 0.819151461, 0, 1, 0, -0.819151461, 0, -0.573577344)
+ManualWeld177.C1 = CFrame.new(0, -0.0999908447, 0.350021362, 0, -1, 0, -0.573577464, 0, 0.81915164, -0.81915164, 0, -0.573577464)
+ManualWeld177.Part0 = Part176
+ManualWeld177.Part1 = Part179
+ManualWeld178.Name = "Weld"
+ManualWeld178.Parent = Part176
+ManualWeld178.C0 = CFrame.new(0, 0, 0, -0.573577583, 0, 0.819151819, 0, 1, 0, -0.819151819, 0, -0.573577583)
+ManualWeld178.C1 = CFrame.new(-0.743125916, 0.199249268, -0.530879974, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld178.Part0 = Part176
+ManualWeld178.Part1 = Part1
+Part179.Parent = Model175
+Part179.Material = Enum.Material.Sand
+Part179.BrickColor = BrickColor.new("Maroon")
+Part179.Rotation = Vector3.new(-180, -55, 90)
+Part179.CanCollide = false
+Part179.Shape = Enum.PartType.Cylinder
+Part179.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part179.CFrame = CFrame.new(-107.327362, 117.399246, -51.0083771, 0, -0.573577702, -0.819151998, -1, 0, 0, 0, 0.819151998, -0.573577702)
+Part179.BottomSurface = Enum.SurfaceType.Smooth
+Part179.TopSurface = Enum.SurfaceType.Smooth
+Part179.Color = Color3.new(0.458824, 0, 0)
+Part179.Position = Vector3.new(-107.327362, 117.399246, -51.0083771)
+Part179.Orientation = Vector3.new(0, -125, -90)
+Part179.Color = Color3.new(0.458824, 0, 0)
+Part180.Parent = Model175
+Part180.Material = Enum.Material.Sand
+Part180.BrickColor = BrickColor.new("Maroon")
+Part180.Rotation = Vector3.new(-180, -55, 90)
+Part180.CanCollide = false
+Part180.Shape = Enum.PartType.Cylinder
+Part180.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part180.CFrame = CFrame.new(-107.106102, 117.399246, -50.9755821, 0, -0.573577762, -0.819152117, -1, 0, 0, 0, 0.819152117, -0.573577762)
+Part180.BottomSurface = Enum.SurfaceType.Smooth
+Part180.TopSurface = Enum.SurfaceType.Smooth
+Part180.Color = Color3.new(0.458824, 0, 0)
+Part180.Position = Vector3.new(-107.106102, 117.399246, -50.9755821)
+Part180.Orientation = Vector3.new(0, -125, -90)
+Part180.Color = Color3.new(0.458824, 0, 0)
+ManualWeld181.Name = "Weld"
+ManualWeld181.Parent = Part180
+ManualWeld181.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.573577344, 0, 0.819151461, -0.819151461, 0, -0.573577344)
+ManualWeld181.C1 = CFrame.new(0, -0.100048065, -0.200057983, 0, -1, 0, -0.573577344, 0, 0.819151461, -0.819151461, 0, -0.573577344)
+ManualWeld181.Part0 = Part180
+ManualWeld181.Part1 = Part179
+Part182.Parent = Model175
+Part182.Material = Enum.Material.Sand
+Part182.BrickColor = BrickColor.new("Maroon")
+Part182.Rotation = Vector3.new(-180, -55, 90)
+Part182.CanCollide = false
+Part182.Shape = Enum.PartType.Cylinder
+Part182.Size = Vector3.new(0.0500000007, 0.150000006, 0.150000006)
+Part182.CFrame = CFrame.new(-107.294495, 117.399246, -51.229538, 0, -0.573577821, -0.819152176, -1, 0, 0, 0, 0.819152176, -0.573577821)
+Part182.BottomSurface = Enum.SurfaceType.Smooth
+Part182.TopSurface = Enum.SurfaceType.Smooth
+Part182.Color = Color3.new(0.458824, 0, 0)
+Part182.Position = Vector3.new(-107.294495, 117.399246, -51.229538)
+Part182.Orientation = Vector3.new(0, -125, -90)
+Part182.Color = Color3.new(0.458824, 0, 0)
+ManualWeld183.Name = "Weld"
+ManualWeld183.Parent = Part182
+ManualWeld183.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.573577344, 0, 0.819151461, -0.819151461, 0, -0.573577344)
+ManualWeld183.C1 = CFrame.new(0, -0.200016022, 0.0999298096, 0, -1, 0, -0.573577404, 0, 0.81915158, -0.81915158, 0, -0.573577404)
+ManualWeld183.Part0 = Part182
+ManualWeld183.Part1 = Part179
+Part184.Parent = Model175
+Part184.Material = Enum.Material.Glass
+Part184.BrickColor = BrickColor.new("Really black")
+Part184.Rotation = Vector3.new(-180, -55, 90)
+Part184.CanCollide = false
+Part184.Shape = Enum.PartType.Cylinder
+Part184.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part184.CFrame = CFrame.new(-107.171722, 117.399246, -51.1435738, 0, -0.573577821, -0.819152176, -1, 0, 0, 0, 0.819152176, -0.573577821)
+Part184.BottomSurface = Enum.SurfaceType.Smooth
+Part184.TopSurface = Enum.SurfaceType.Smooth
+Part184.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part184.Position = Vector3.new(-107.171722, 117.399246, -51.1435738)
+Part184.Orientation = Vector3.new(0, -125, -90)
+Part184.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld185.Name = "Weld"
+ManualWeld185.Parent = Part184
+ManualWeld185.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.573577344, 0, 0.819151461, -0.819151461, 0, -0.573577344)
+ManualWeld185.C1 = CFrame.new(0, -0.200019836, -0.049949646, 0, -1, 0, -0.573577464, 0, 0.81915164, -0.81915164, 0, -0.573577464)
+ManualWeld185.Part0 = Part184
+ManualWeld185.Part1 = Part179
+Part186.Parent = Model175
+Part186.Material = Enum.Material.Glass
+Part186.BrickColor = BrickColor.new("Really black")
+Part186.Rotation = Vector3.new(-180, -55, 90)
+Part186.CanCollide = false
+Part186.Shape = Enum.PartType.Cylinder
+Part186.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part186.CFrame = CFrame.new(-107.450165, 117.399246, -51.0945206, 0, -0.573577821, -0.819152176, -1, 0, 0, 0, 0.819152176, -0.573577821)
+Part186.BottomSurface = Enum.SurfaceType.Smooth
+Part186.TopSurface = Enum.SurfaceType.Smooth
+Part186.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part186.Position = Vector3.new(-107.450165, 117.399246, -51.0945206)
+Part186.Orientation = Vector3.new(0, -125, -90)
+Part186.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld187.Name = "Weld"
+ManualWeld187.Parent = Part186
+ManualWeld187.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.573577344, 0, 0.819151461, -0.819151461, 0, -0.573577344)
+ManualWeld187.C1 = CFrame.new(0, -0.000129699707, 0.150001526, 0, -1, 0, -0.573577464, 0, 0.81915164, -0.81915164, 0, -0.573577464)
+ManualWeld187.Part0 = Part186
+ManualWeld187.Part1 = Part179
+Part188.Parent = Model175
+Part188.Material = Enum.Material.Glass
+Part188.BrickColor = BrickColor.new("Really black")
+Part188.Rotation = Vector3.new(-180, -55, 90)
+Part188.CanCollide = false
+Part188.Shape = Enum.PartType.Cylinder
+Part188.Size = Vector3.new(0.0500000007, 0.100000001, 0.100000001)
+Part188.CFrame = CFrame.new(-106.983238, 117.399246, -50.8895531, 0, -0.573577821, -0.819152176, -1, 0, 0, 0, 0.819152176, -0.573577821)
+Part188.BottomSurface = Enum.SurfaceType.Smooth
+Part188.TopSurface = Enum.SurfaceType.Smooth
+Part188.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part188.Position = Vector3.new(-106.983238, 117.399246, -50.8895531)
+Part188.Orientation = Vector3.new(0, -125, -90)
+Part188.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ManualWeld189.Name = "Weld"
+ManualWeld189.Parent = Part188
+ManualWeld189.C0 = CFrame.new(0, 0, 0, 0, -1, 0, -0.573577344, 0, 0.819151461, -0.819151461, 0, -0.573577344)
+ManualWeld189.C1 = CFrame.new(0, -0.100048065, -0.35004425, 0, -1, 0, -0.573577464, 0, 0.81915164, -0.81915164, 0, -0.573577464)
+ManualWeld189.Part0 = Part188
+ManualWeld189.Part1 = Part179
+WedgePart190.Parent = Model175
+WedgePart190.Material = Enum.Material.Slate
+WedgePart190.BrickColor = BrickColor.new("Deep orange")
+WedgePart190.Rotation = Vector3.new(0, -35, -90)
+WedgePart190.CanCollide = false
+WedgePart190.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart190.CFrame = CFrame.new(-107.061127, 117.349403, -51.1271858, 0, 0.819152176, -0.573577821, -1, 0, 0, 0, 0.573577821, 0.819152176)
+WedgePart190.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart190.Color = Color3.new(1, 0.690196, 0)
+WedgePart190.Position = Vector3.new(-107.061127, 117.349403, -51.1271858)
+WedgePart190.Orientation = Vector3.new(0, -35, -90)
+WedgePart190.Color = Color3.new(1, 0.690196, 0)
+ManualWeld191.Name = "Weld"
+ManualWeld191.Parent = WedgePart190
+ManualWeld191.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0.819151461, 0, 0.573577344, -0.573577344, 0, 0.819151461)
+ManualWeld191.C1 = CFrame.new(0.0498428345, -0.250026703, -0.149940491, 0, -1, 0, -0.573577464, 0, 0.81915164, -0.81915164, 0, -0.573577464)
+ManualWeld191.Part0 = WedgePart190
+ManualWeld191.Part1 = Part179
+WedgePart192.Parent = Model175
+WedgePart192.Material = Enum.Material.Slate
+WedgePart192.BrickColor = BrickColor.new("Deep orange")
+WedgePart192.Rotation = Vector3.new(-180, 35, -90)
+WedgePart192.CanCollide = false
+WedgePart192.Size = Vector3.new(0.0999999046, 0.900000036, 0.299999982)
+WedgePart192.CFrame = CFrame.new(-107.233231, 117.349403, -50.881382, -0, 0.819152176, 0.573577821, 1, 0, 0, 0, 0.573577821, -0.819152176)
+WedgePart192.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart192.Color = Color3.new(1, 0.690196, 0)
+WedgePart192.Position = Vector3.new(-107.233231, 117.349403, -50.881382)
+WedgePart192.Orientation = Vector3.new(0, 145, 90)
+WedgePart192.Color = Color3.new(1, 0.690196, 0)
+ManualWeld193.Name = "Weld"
+ManualWeld193.Parent = WedgePart192
+ManualWeld193.C0 = CFrame.new(0, 0, 0, 0, 1, 0, 0.819151461, 0, 0.573577344, 0.573577344, 0, -0.819151461)
+ManualWeld193.C1 = CFrame.new(0.0498428345, 0.050037384, -0.14994812, 0, -1, 0, -0.573577464, 0, 0.81915164, -0.81915164, 0, -0.573577464)
+ManualWeld193.Part0 = WedgePart192
+ManualWeld193.Part1 = Part179
+Part194.Name = "pizzaboxconstraint"
+Part194.Parent = Model0
+Part194.Transparency = 1
+Part194.CanCollide = false
+Part194.Shape = Enum.PartType.Cylinder
+Part194.Size = Vector3.new(2.5, 0.400000006, 0.400000006)
+Part194.CFrame = CFrame.new(-106.814522, 117.299988, -49.5357475, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part194.BottomSurface = Enum.SurfaceType.Smooth
+Part194.TopSurface = Enum.SurfaceType.Smooth
+Part194.Position = Vector3.new(-106.814522, 117.299988, -49.5357475)
+ManualWeld195.Name = "Weld"
+ManualWeld195.Parent = Part194
+ManualWeld195.C1 = CFrame.new(-0.000915527344, 0.0999908447, 1.22442245, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld195.Part0 = Part194
+ManualWeld195.Part1 = Part1
+ManualWeld196.Name = "Weld"
+ManualWeld196.Parent = Part194
+ManualWeld196.C1 = CFrame.new(-0.000915527344, -0.100006104, 1.22442245, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ManualWeld196.Part0 = Part194
+ManualWeld196.Part1 = Part2
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = char
+	pizzabox = v
+	boxconstraint = ManualWeld195
+	top = Part2
+	bottom = Part1
+	piz9 = Model137
+	breakitup = WedgePart152
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+
+local rootj0 = rootj.C0
+local neck0 = neck.C0
+local LS0 = LS.C0
+local RS0 = RS.C0
+local LH0 = LH.C0
+local RH0 = RH.C0
+local rootj1 = rootj.C1
+local neck1 = neck.C1
+local LS1 = LS.C1
+local RS1 = RS.C1
+local LH1 = LH.C1
+local RH1 = RH.C1
+
+-----------------------------------------------------------------------------------
+
+local CFn = CFrame.new
+local CFa = CFrame.Angles
+local Rad = math.rad
+local Sin = math.sin
+local Cos = math.cos
+local sine = 1
+
+local boxweld = Instance.new("Weld", bottom)
+boxweld.Part0 = rarm
+boxweld.Part1 = bottom
+boxweld.C1 = CFn(0.5, -0.5, 1.5) * CFa(Rad(90), 0, 0)
+
+local boxweld0 = boxweld.C0
+local boxweld1 = boxweld.C1
+
+local closedframe = boxconstraint.C0
+local bc0 = boxconstraint.C0
+local bc1 = boxconstraint.C1
+
+local OMFG_PIZZA = Instance.new("Sound", tor)
+OMFG_PIZZA.SoundId = "rbxassetid://916855205"
+OMFG_PIZZA.Name = "OMFG_PIZZADUDE"
+OMFG_PIZZA.Volume = 1.5
+OMFG_PIZZA.Looped = true
+OMFG_PIZZA:Play()
+local thepos = OMFG_PIZZA.TimePosition
+
+local SCOOTER = Instance.new("Sound", tor)
+SCOOTER.SoundId = "rbxassetid://210237012"
+SCOOTER.Name = "SCOOTERDUDE"
+SCOOTER.Volume = 1.5
+SCOOTER.Looped = true
+local thepos2 = SCOOTER.TimePosition
+
+local PIZZA_TIME = Instance.new("Sound", head)
+PIZZA_TIME.Name = "PIZZA_TIME_BRUTHA"
+PIZZA_TIME.SoundId = "rbxassetid://749833201"
+PIZZA_TIME.Volume = 2
+
+local MAMAMIA_47 = Instance.new("Sound", head)
+MAMAMIA_47.Name = "MAMAMIA_47"
+MAMAMIA_47.SoundId = "rbxassetid://1205895814"
+MAMAMIA_47.Volume = 2
+
+local SMACKA = Instance.new("Sound", bottom)
+SMACKA.Name = "SMACKA"
+SMACKA.SoundId = "rbxassetid://145486953"
+SMACKA.Volume = 2
+
+local RINGRINGRING = Instance.new("Sound", larm)
+RINGRINGRING.Name = "RINGRINGRINGPICKUPTHEPHONE"
+RINGRINGRING.SoundId = "rbxassetid://1414945022"
+RINGRINGRING.Volume = 2
+
+local SOOOSH = Instance.new("Sound", breakitup)
+SOOOSH.Name = "SOOOSH"
+SOOOSH.SoundId = "rbxassetid://158037267"
+SOOOSH.Volume = 2
+
+honk = Instance.new("Sound", tor)
+honk.SoundId = "rbxassetid://972340421"
+honk.Name = "HONKHONKGWETOUTOFTHEWAY"
+honk.Looped = true
+honk.Volume = 3
+
+-----------------------------------------------------------------------------------
+
+local ws = hum.WalkSpeed
+local jp = hum.JumpPower
+local nws = ws
+local njp = jp
+local opened = false
+local attacking = false
+local Taunting = false
+local Smacking = false
+local boom = false
+local bam = false
+local Scooting = false
+local Boosting = false
+local Giving = false
+
+-----------------------------------------------------------------------------------
+
+ArtificialHB = Instance.new("BindableEvent", script)
+ArtificialHB.Name = "Heartbeat"
+script:WaitForChild("Heartbeat")
+
+frame = 1 / 60
+tf = 0
+allowframeloss = false
+tossremainder = false
+
+
+lastframe = tick()
+script.Heartbeat:Fire()
+
+
+game:GetService("RunService").Heartbeat:connect(function(s, p)
+	tf = tf + s
+	if tf >= frame then
+		if allowframeloss then
+			script.Heartbeat:Fire()
+			lastframe = tick()
+		else
+			for i = 1, math.floor(tf / frame) do
+				script.Heartbeat:Fire()
+			end
+			lastframe = tick()
+		end
+		if tossremainder then
+			tf = 0
+		else
+			tf = tf - frame * math.floor(tf / frame)
+		end
+	end
+end)
+
+function swait(num)
+	if num == 0 or num == nil then
+		game:service("RunService").Stepped:wait(0)
+	else
+		for i = 0, num do
+			game:service("RunService").Stepped:wait(0)
+		end
+	end
+end
+
+function clerp(a, b, t)
+	return a:lerp(b, t)
+end
+
+function Open_Close()
+	if opened == true and attacking == false then
+		opened = false
+		bc0 = closedframe
+	elseif opened == false and attacking == false then
+		opened = true
+		bc0 = closedframe * CFa(Rad(-110), 0, 0)
+	end
+end
+
+function ClassicExplo(pos, range, start_size, end_size, color, rate, length, parent)
+	for i = 1,rate do
+		local ranAng = math.random(-360, 360)
+		local ranPos = math.random(-range, range)
+		local ranPos2 = math.random(-range, range)
+		local ranPos3 = math.random(-range, range)
+		local B_Effect = Instance.new("Part", parent)
+		B_Effect.Material = "Neon"
+		B_Effect.BrickColor = BrickColor.new(color)
+		B_Effect.CanCollide = false
+		B_Effect.Size = Vector3.new(start_size, start_size, start_size)
+		B_Effect.Anchored = true
+		B_Effect.CFrame = pos
+		local tweeninfo = TweenInfo.new(length, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+		local partprop = {CFrame = pos * CFn(ranPos, ranPos2, ranPos3) * CFa(ranAng, ranAng, ranAng); Size = Vector3.new(end_size, end_size, end_size)}
+		local tween = tweenserv:Create(B_Effect, tweeninfo, partprop)
+		tween:Play()
+		game:GetService("Debris"):AddItem(B_Effect, length)
+	end
+end
+
+function ZapExplo(pos, start_size, bend_size, zend_size, color, duration, parent)
+	local beam1explo = Instance.new("Part", parent)
+	beam1explo.Material = "Neon"
+	beam1explo.Shape = "Ball"
+	beam1explo.Name = "beamexploHI"
+	beam1explo.BrickColor = BrickColor.new(color)
+	beam1explo.Size = Vector3.new(start_size, start_size, start_size)
+	beam1explo.Anchored = true
+	beam1explo.CanCollide = false
+	beam1explo.CFrame = pos
+	beam2explo = Instance.new("Part", parent)
+	beam2explo.Material = "Neon"
+	beam2explo.Name = "beamexploHI"
+	beam2explo.BrickColor = BrickColor.new(color)
+	beam2explo.Size = Vector3.new(start_size, start_size, start_size)
+	beam2explo.Anchored = true
+	beam2explo.CanCollide = false
+	beam2explo.CFrame = pos
+	beam3explo = Instance.new("Part", parent)
+	beam3explo.Material = "Neon"
+	beam3explo.Name = "beamexploHI"
+	beam3explo.BrickColor = BrickColor.new(color)
+	beam3explo.Size = Vector3.new(start_size, start_size, start_size)
+	beam3explo.Anchored = true
+	beam3explo.CanCollide = false
+	beam3explo.CFrame = pos
+	local tweeninfo = TweenInfo.new(duration, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+	local partprop = {Transparency = 1; Size = Vector3.new(bend_size, bend_size, bend_size)}
+	local tween = game:GetService("TweenService"):Create(beam1explo, tweeninfo, partprop)
+	local tweeninfo2 = TweenInfo.new(duration, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
+	local partprop2 = {Transparency = 1; Size = Vector3.new(zend_size, zend_size, zend_size)}
+	local tween2 = game:GetService("TweenService"):Create(beam2explo, tweeninfo2, partprop2)
+	local tween3 = game:GetService("TweenService"):Create(beam3explo, tweeninfo2, partprop2)
+	tween:Play()
+	tween2:Play()
+	tween3:Play()
+	game:GetService("Debris"):AddItem(beam1explo, duration)
+	game:GetService("Debris"):AddItem(beam2explo, duration)
+	game:GetService("Debris"):AddItem(beam3explo, duration)
+	coroutine.resume(coroutine.create(function()
+		for i = 1,math.huge do
+			if beam2explo then
+				local ranAng2 = math.random(-360, 360)
+				beam2explo.CFrame = beam2explo.CFrame * CFrame.Angles(math.rad(ranAng2), math.rad(ranAng2), math.rad(ranAng2))
+			end
+			if beam3explo then
+				local ranAng3 = math.random(-360, 360)
+				beam3explo.CFrame = beam3explo.CFrame * CFrame.Angles(math.rad(ranAng3), math.rad(ranAng3), math.rad(ranAng3))
+			end
+			if not beam2explo or not beam3explo then
+				break
+			end
+			wait()
+		end
+	end))
+end
+
+function Taunt()
+	if attacking == false and Taunting == false and opened == false then
+		attacking = true
+		Taunting = true
+		hum.WalkSpeed = 2
+		hum.JumpPower = 5
+		for i = 0,1,.1 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(0.2, 0, -0.3) * CFa(Rad(-40), 0, 0), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(10), 0, Rad(-20)), i)
+			rootj.C1 = clerp(rootj.C1, rootj1, i)
+			LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-170)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(Rad(-10), 0, Rad(10)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		for i = 0,1,.1 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(0.2, 0, -0.3) * CFa(Rad(-40), 0, 0), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(10), 0, Rad(-20)), i)
+			rootj.C1 = clerp(rootj.C1, rootj1 * CFa(Rad(-20), 0, 0), i)
+			LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), Rad(20)), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), Rad(-20)), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-130)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(Rad(-20), 0, Rad(30)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		if not larm:FindFirstChild("RINGRINGRINGPICKUPTHEPHONE") then
+			RINGRINGRING = Instance.new("Sound", larm)
+			RINGRINGRING.Name = "RINGRINGRINGPICKUPTHEPHONE"
+			RINGRINGRING.SoundId = "rbxassetid://1414945022"
+			RINGRINGRING.Volume = 2
+			RINGRINGRING:Play()
+		else
+			RINGRINGRING = larm:FindFirstChild("RINGRINGRINGPICKUPTHEPHONE")
+			RINGRINGRING:Play()
+		end
+		for i = 0,1,.05 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(0.2, 0, -0.3) * CFa(Rad(-40), 0, 0), i)
+			neck.C1 = clerp(neck.C1, neck1, i)
+			rootj.C1 = clerp(rootj.C1, rootj1, i)
+			LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-170)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(Rad(-10), 0, Rad(10)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		for i = 0,1,.15 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(0.2, 0, -0.3) * CFa(Rad(-40), 0, 0), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-5), 0, 0), i)
+			rootj.C1 = clerp(rootj.C1, rootj1, i)
+			LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2) * CFa(Rad(-20), 0, 0), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-80)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(30)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		if not head:FindFirstChild("PIZZA_TIME_BRUTHA") then
+			PIZZA_TIME = Instance.new("Sound", head)
+			PIZZA_TIME.Name = "PIZZA_TIME_BRUTHA"
+			PIZZA_TIME.SoundId = "rbxassetid://749833201"
+			PIZZA_TIME.Volume = 2
+			PIZZA_TIME:Play()
+		else
+			PIZZA_TIME = head:FindFirstChild("PIZZA_TIME_BRUTHA")
+			PIZZA_TIME:Play()
+		end
+		for i = 0,1,.05 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0 * CFa(Rad(-40), 0, 0), i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(0.2, 0, -0.3) * CFa(Rad(-40), 0, 0), i)
+			neck.C1 = clerp(neck.C1, neck1, i)
+			rootj.C1 = clerp(rootj.C1, rootj1, i)
+			LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2) * CFa(Rad(-20), 0, 0), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-120)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(50)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		for i = 0,1,.15 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(0.2, 0, -0.3) * CFa(Rad(-40), 0, 0), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-5), 0, 0), i)
+			rootj.C1 = clerp(rootj.C1, rootj1, i)
+			LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2) * CFa(Rad(-20), 0, 0), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-80)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(50)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		hum.WalkSpeed = nws
+		hum.JumpPower = njp
+		attacking = false
+		Taunting = false
+	elseif attacking == false and Taunting == false and opened == true then
+		attacking = true
+		Taunting = true
+		hum.WalkSpeed = 2
+		hum.JumpPower = 5
+		for i = 0,1,.1 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(-2, -2, 0) * CFa(Rad(30), 0, Rad(130)), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-5), 0, 0), i)
+			rootj.C1 = clerp(rootj.C1, rootj1, i)
+			LS.C1 = clerp(LS.C1, LS1 * CFa(Rad(-5), 0, 0), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-130)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(60)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		for i = 0,1,.1 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(-2, -2, 0) * CFa(Rad(30), 0, Rad(130)), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-20), 0, 0), i)
+			rootj.C1 = clerp(rootj.C1, rootj1, i)
+			LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2) * CFa(Rad(-50), 0, 0), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-100)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(65)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		local piz = piz9:Clone()
+		for i,v in pairs(piz9:GetChildren()) do
+			if v:IsA("BasePart") then
+				v.Transparency = 1
+			end
+		end
+		local CRUSTYY = piz:FindFirstChild("crust")
+		local GETOFFNOOB = CRUSTYY:FindFirstChild("NOUNOOB")
+		GETOFFNOOB:Destroy()
+		piz.Parent = pizzabox
+		local neww = Instance.new("Weld", CRUSTYY)
+		neww.Part0 = larm
+		neww.Part1 = CRUSTYY
+		neww.C1 = CFn(1, 0.3, -0.2) * CFa(Rad(90), Rad(30), Rad(-110))
+		if not head:FindFirstChild("MAMAMIA_47") then
+			MAMAMIA_47 = Instance.new("Sound", head)
+			MAMAMIA_47.Name = "MAMAMIA_47"
+			MAMAMIA_47.SoundId = "rbxassetid://1205895814"
+			MAMAMIA_47.Volume = 2
+			MAMAMIA_47:Play()
+		else
+			MAMAMIA_47 = head:FindFirstChild("MAMAMIA_47")
+			MAMAMIA_47:Play()
+		end
+		for i = 0,1,.1 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(-2, -2, 0) * CFa(Rad(30), 0, Rad(130)), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-5), 0, 0), i)
+			rootj.C1 = clerp(rootj.C1, rootj1, i)
+			LS.C1 = clerp(LS.C1, LS1 * CFa(Rad(-70), 0, 0), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-120)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(60)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		hum.Health = hum.Health + 15
+		for i = 0,1,.1 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(-2, -2, 0) * CFa(Rad(30), 0, Rad(130)), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(15), 0, 0), i)
+			rootj.C1 = clerp(rootj.C1, rootj1, i)
+			LS.C1 = clerp(LS.C1, LS1 * CFa(Rad(65), 0, 0), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-120)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(60)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		piz:Destroy()
+		for i,v in pairs(piz9:GetChildren()) do
+			if v:IsA("BasePart") then
+				v.Transparency = 0
+			end
+		end
+		hum.WalkSpeed = nws
+		hum.JumpPower = njp
+		Taunting = false
+		attacking = false
+	elseif attacking == true and Scooting == true then
+		if not tor:FindFirstChild("HONKHONKGWETOUTOFTHEWAY") then
+			honk = Instance.new("Sound", tor)
+			honk.Name = "HONKHONKGWETOUTOFTHEWAY"
+			honk.SoundId = "rbxassetid://972340421"
+			honk.Volume = 3
+			honk.Looped = true
+			honk:Play()
+		else
+			honk = tor:FindFirstChild("HONKHONKGWETOUTOFTHEWAY")
+			honk:Play()
+		end
+	end
+end
+
+function Smack()
+	if attacking == false and Smacking == false and opened == false then
+		attacking = true
+		Smacking = true
+		boom = false
+		hum.WalkSpeed = 2
+		hum.JumpPower = 5
+		local bye = bottom.Touched:connect(function(hit)
+			if not hit:IsDescendantOf(char) and hit.Parent:FindFirstChildOfClass("Humanoid") and boom == false then
+				local theman = hit.Parent
+				local thehum = theman:FindFirstChildOfClass("Humanoid")
+				thehum.Health = thehum.Health - 20
+				if not bottom:FindFirstChild("SMACKA") then
+					SMACKA = Instance.new("Sound", bottom)
+					SMACKA.Name = "SMACKA"
+					SMACKA.SoundId = "rbxassetid://145486953"
+					SMACKA.Volume = 2
+					SMACKA:Play()
+				else
+					SMACKA = bottom:FindFirstChild("SMACKA")
+					SMACKA:Play()
+				end
+				boom = true
+			elseif not hit:IsDescendantOf(char) and hit.Parent.Parent:FindFirstChildOfClass("Humanoid") and boom == false then
+				local theman = hit.Parent.Parent
+				local thehum = theman:FindFirstChildOfClass("Humanoid")
+				thehum.Health = thehum.Health - 20
+				boom = true
+			end
+		end)
+		for i = 0,1,.15 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(1, 0, 0), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(30), 0, 0), i)
+			rootj.C1 = clerp(rootj.C1, rootj1 * CFa(Rad(20), 0, 0), i)
+			LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), Rad(30)), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), Rad(15)), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-150)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(150)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		for i = 0,1,.2 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(1, 0, 0), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-20), 0, 0), i)
+			rootj.C1 = clerp(rootj.C1, rootj1 * CFa(Rad(-10), 0, 0), i)
+			LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), Rad(-35)), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), Rad(-12)), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-10)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(10)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		bye:disconnect()
+		boom = false
+		hum.WalkSpeed = nws
+		hum.JumpPower = njp
+		Smacking = false
+		attacking = false
+	elseif attacking == false and Smacking == false and opened == true then
+		attacking = true
+		Smacking = true
+		boom = false
+		for i = 0,1,.15 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(-2, -2, 0) * CFa(Rad(30), 0, Rad(130)), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-20), 0, Rad(10)), i)
+			rootj.C1 = clerp(rootj.C1, rootj1, i)
+			LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2) * CFa(Rad(-50), 0, 0), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-100)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(65)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		local piz = piz9:Clone()
+		for i,v in pairs(piz9:GetChildren()) do
+			if v:IsA("BasePart") then
+				v.Transparency = 1
+			end
+		end
+		local CRUSTYY = piz:FindFirstChild("crust")
+		local GETOFFNOOB = CRUSTYY:FindFirstChild("NOUNOOB")
+		local HEYHEYBREAKITUP = piz:FindFirstChild("SlicePart")
+		GETOFFNOOB:Destroy()
+		piz.Parent = pizzabox
+		local neww = Instance.new("Weld", CRUSTYY)
+		neww.Part0 = larm
+		neww.Part1 = CRUSTYY
+		neww.C1 = CFn(0, 0, 1) * CFa(Rad(90), 0, 0)
+		local hey = HEYHEYBREAKITUP.Touched:connect(function(hit)
+			if not hit:IsDescendantOf(char) and hit.Parent:FindFirstChildOfClass("Humanoid") and boom == false then
+				local theman = hit.Parent
+				local thehum = theman:FindFirstChildOfClass("Humanoid")
+				thehum.Health = thehum.Health - 10
+				boom = true
+			elseif not hit:IsDescendantOf(char) and hit.Parent.Parent:FindFirstChildOfClass("Humanoid") and boom == false then
+				local theman = hit.Parent.Parent
+				local thehum = theman:FindFirstChildOfClass("Humanoid")
+				thehum.Health = thehum.Health - 10
+				boom = true
+			end
+		end)
+		if not HEYHEYBREAKITUP:FindFirstChild("SOOOSH") then
+			SOOOSH = Instance.new("Sound", HEYHEYBREAKITUP)
+			SOOOSH.Name = "SOOOSH"
+			SOOOSH.SoundId = "rbxassetid://158037267"
+			SOOOSH.Volume = 2
+			SOOOSH:Play()
+		else
+			SOOOSH = HEYHEYBREAKITUP:FindFirstChild("SOOOSH")
+			SOOOSH:Play()
+		end
+		for i = 0,1,.2 do
+			boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+			boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+			boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(-2, -2, 0) * CFa(Rad(30), 0, Rad(130)), i)
+			neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-20), 0, Rad(-20)), i)
+			rootj.C1 = clerp(rootj.C1, rootj1, i)
+			LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2) * CFa(Rad(110), 0, 0), i)
+			RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(30), 0, 0), i)
+			LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+			RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+			LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-100)), i)
+			RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(65)), i)
+			LH.C0 = clerp(LH.C0, LH0, i)
+			RH.C0 = clerp(RH.C0, RH0, i)
+			swait()
+		end
+		hey:disconnect()
+		boom = false
+		piz:Destroy()
+		for i,v in pairs(piz9:GetChildren()) do
+			if v:IsA("BasePart") then
+				v.Transparency = 0
+			end
+		end
+		hum.WalkSpeed = nws
+		hum.JumpPower = njp
+		Smacking = false
+		attacking = false
+	end
+end
+
+function Scooter()
+	if attacking == false and Scooting == false then
+		attacking = true
+		Scooting = true
+		hum.JumpPower = 25
+		hum.WalkSpeed = nws + 20
+		OMFG_PIZZA:Stop()
+		SCOOTER:Play()
+		scoota = Instance.new("Part", char)
+		scoota.Size = Vector3.new(0.5, 4, 6)
+		scoota.CanCollide = false
+		local scootam = Instance.new("SpecialMesh", scoota)
+		scootam.Scale = Vector3.new(1.25, 1.25, 1.25)
+		scootam.TextureId = "rbxassetid://168119260"
+		scootam.MeshType = "FileMesh"
+		scootam.MeshId = "rbxassetid://168119231"
+		local scootaw = Instance.new("Weld", scoota)
+		scootaw.Part0 = tor
+		scootaw.Part1 = scoota
+		scootaw.C1 = CFn(0, 1, 0.5)
+		local fire = Instance.new("Part", char)
+		fire.Size = Vector3.new(1, 1, 1)
+		fire.CanCollide = false
+		fire.Transparency = 1
+		local firew = Instance.new("Weld", fire)
+		firew.Part0 = scoota
+		firew.Part1 = fire
+		firew.C1 = CFn(0, 2, 2)
+		fireem = Instance.new("ParticleEmitter", fire)
+		fireem.EmissionDirection = "Back"
+		fireem.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(162, 162, 162)), ColorSequenceKeypoint.new(1, Color3.fromRGB(139, 139, 139))})
+		fireem.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.1, 0), NumberSequenceKeypoint.new(1, 0.813, 0)})
+		fireem.Texture = "rbxassetid://290833005"
+		fireem.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(1, 0.8, 0)})
+		fireem.Lifetime = NumberRange.new(0.7)
+		fireem.Rate = 200
+		fireem.LockedToPart = true
+		fireem.Rotation = NumberRange.new(1, 360)
+		fireem.RotSpeed = NumberRange.new(360)
+		fireem.Speed = NumberRange.new(4)
+		fireem.SpreadAngle = Vector2.new(30, 5)
+		fireem.Enabled = false
+	elseif attacking == true and Scooting == true then
+		SCOOTER:Stop()
+		OMFG_PIZZA:Play()
+		scoota:Destroy()
+		hum.JumpPower = njp
+		hum.WalkSpeed = nws
+		Scooting = false
+		attacking = false
+	end
+end
+
+function scootahit()
+	if scoota and Boosting == true and Scooting == true and attacking == true then
+		asd = scoota.Touched:connect(function(hit)
+			if not hit:IsDescendantOf(char) and hit.Parent:FindFirstChildOfClass("Humanoid") and bam == false then
+				local hithum = hit.Parent:FindFirstChildOfClass("Humanoid")
+				hithum.Health = hithum.Health - 15
+				bam = true
+				wait(0.5)
+				bam = false
+			end
+		end)
+	end
+end
+
+owner.Backpack.PizzaEvent1.OnServerEvent:Connect(function(me, str, hi)
+	if str == "J4" then
+	if attacking == false and Giving == false then
+		attacking = true
+		Giving = true
+		hum.WalkSpeed = 2
+		hum.JumpPower = 5
+		if opened == true then
+			for i = 0,1,.1 do
+				boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+				boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+				boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(-2, -2, 0) * CFa(Rad(30), 0, Rad(130)), i)
+				neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-5), 0, 0), i)
+				rootj.C1 = clerp(rootj.C1, rootj1, i)
+				LS.C1 = clerp(LS.C1, LS1 * CFa(Rad(-5), 0, 0), i)
+				RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+				LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+				RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+				LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-130)), i)
+				RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(60)), i)
+				LH.C0 = clerp(LH.C0, LH0, i)
+				RH.C0 = clerp(RH.C0, RH0, i)
+				swait()
+			end
+			for i = 0,1,.1 do
+				boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+				boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+				boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(-2, -2, 0) * CFa(Rad(30), 0, Rad(130)), i)
+				neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-20), 0, 0), i)
+				rootj.C1 = clerp(rootj.C1, rootj1, i)
+				LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.3, 0.2) * CFa(Rad(-50), 0, 0), i)
+				RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+				LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+				RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+				LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-100)), i)
+				RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(65)), i)
+				LH.C0 = clerp(LH.C0, LH0, i)
+				RH.C0 = clerp(RH.C0, RH0, i)
+				swait()
+			end
+			local piz = piz9:Clone()
+			for i,v in pairs(piz9:GetChildren()) do
+				if v:IsA("BasePart") then
+					v.Transparency = 1
+				end
+			end
+			local CRUSTYY = piz:FindFirstChild("crust")
+			local GETOFFNOOB = CRUSTYY:FindFirstChild("NOUNOOB")
+			GETOFFNOOB:Destroy()
+			piz.Parent = pizzabox
+			local neww = Instance.new("Weld", CRUSTYY)
+			neww.Part0 = larm
+			neww.Part1 = CRUSTYY
+			neww.C1 = CFn(0, 0, 1) * CFa(Rad(90), 0, 0)
+			for i = 0,1,.1 do
+				boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+				boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+				boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(-2, -2, 0) * CFa(Rad(30), 0, Rad(130)), i)
+				neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-5), 0, 0), i)
+				rootj.C1 = clerp(rootj.C1, rootj1, i)
+				LS.C1 = clerp(LS.C1, LS1 * CFa(Rad(5), 0, 0), i)
+				RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+				LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+				RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+				LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(30)), i)
+				RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(60)), i)
+				LH.C0 = clerp(LH.C0, LH0, i)
+				RH.C0 = clerp(RH.C0, RH0, i)
+				swait()
+			end
+			for i = 0,1,.1 do
+				boxconstraint.C1 = clerp(boxconstraint.C1, bc1, i)
+				boxconstraint.C0 = clerp(boxconstraint.C0, bc0, i)
+				boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(-2, -2, 0) * CFa(Rad(30), 0, Rad(130)), i)
+				neck.C1 = clerp(neck.C1, neck1, i)
+				rootj.C1 = clerp(rootj.C1, rootj1, i)
+				LS.C1 = clerp(LS.C1, LS1, i)
+				RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, 0), i)
+				LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), 0), i)
+				RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), 0), i)
+				LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-30)), i)
+				RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(60)), i)
+				LH.C0 = clerp(LH.C0, LH0, i)
+				RH.C0 = clerp(RH.C0, RH0, i)
+				swait()
+			end
+			neww:Destroy()
+			local dis2 = (CRUSTYY.Position - hi.p).unit * -1
+			CRUSTYY.Velocity = dis2 * 70 + Vector3.new(0, 2, 0)
+			local CRUSTYYbf = Instance.new("BodyForce", CRUSTYY)
+			CRUSTYYbf.force = Vector3.new(0, CRUSTYY:GetMass() * 70, 0)
+			for i,v in pairs(piz:GetChildren()) do
+				if v:IsA("BasePart") then
+					v.CanCollide = true
+				end
+			end
+			for i,v in pairs(piz9:GetChildren()) do
+				if v:IsA("BasePart") then
+					v.Transparency = 0
+				end
+			end
+			coroutine.resume(coroutine.create(function()
+				wait(1.5)
+				ClassicExplo(CRUSTYY.CFrame, 30, 5, 0.05, "Deep orange", 20, 1, workspace)
+				ZapExplo(CRUSTYY.CFrame, 0.1, 40, 20, "Deep orange", 1, workspace)
+				local explo = Instance.new("Explosion", workspace)
+				explo.Position = CRUSTYY.Position
+				explo.Visible = false
+				piz:Destroy()
+			end))
+		end
+		hum.WalkSpeed = nws
+		hum.JumpPower = njp
+		Giving = false
+		attacking = false
+		end
+	end
+end)
+
+function PizzaGive()
+	owner.Backpack.PizzaEvent1.Archivable = not owner.Backpack.PizzaEvent1.Archivable
+end
+
+-----------------------------------------------------------------------------------
+
+function kdown(k)
+	if k == "q" then
+		Open_Close()
+	elseif k == "t" then
+		Taunt()
+	elseif string.byte(k) == 50 then
+		Scooter()
+	elseif string.byte(k) == 48 then
+		if attacking == true and Scooting == true and Boosting == false then
+			hum.WalkSpeed = nws + 45
+			Boosting = true
+			fireem.Enabled = true
+			if scoota then
+				scootahit()
+			end
+		end
+	elseif k == "r" then
+		PizzaGive()
+	end
+end
+
+function kup(k)
+	if k == "t" then
+		honk:Stop()
+	elseif string.byte(k) == 48 then
+		if Scooting == true and attacking == true and Boosting == true then
+			hum.WalkSpeed = nws + 20
+			asd:disconnect()
+			fireem.Enabled = false
+			bam = false
+			Boosting = false
+		end
+	end
+end
+
+function lmdown()
+	Smack()
+end
+
+owner.Backpack.PizzaEvent1.OnServerEvent:Connect(function(me, str, k) if str == "J1" then kdown(k) end end)
+owner.Backpack.PizzaEvent1.OnServerEvent:Connect(function(me, str, k) if str == "J2" then kup(k) end end)
+owner.Backpack.PizzaEvent1.OnServerEvent:Connect(function(me, str, k) if str == "J3" then lmdown(k) end end)
+
+-----------------------------------------------------------------------------------
+
+warn([[
+	
+	
+	Pizza Guy.
+	
+	A boy who lost both of their parents when he was 5.
+	The parents said: "Son, always eat pizzas and be hap--GAH".
+	The boy cried, for weeks.
+	One day, the boy got over the fact that his parents were murdered and thought of what they said before they died.
+	"I will beat the murderer's butt with my pizza!", he said.
+	He decided to work at DOMINO'S PIZZA, and now he lives a happy life with two children.
+	
+	His name is Ben.
+	
+	last updated: 2018/7/2, 18:31 JST.
+	]])
+
+while true do
+	swait()
+	sine = sine + 1
+	local torvel = (root.Velocity * Vector3.new(1, 0, 1)).magnitude
+	if Taunting == true then
+		state = "Taunting"
+	elseif Smacking == true then
+		state = "Smacking"
+	elseif Giving == true then
+		state = "Giving"
+	elseif 1 < root.Velocity.y and Scooting == false then
+		state = "Jump"
+	elseif -1 > root.Velocity.y and Scooting == false then
+		state = "Fall"
+	elseif torvel < 1 and Scooting == false then
+		state = "Idle"
+	elseif tor.Velocity.magnitude < 60 and Scooting == false then
+		state = "Walk"
+	elseif torvel < 1 and Scooting == true then
+		state = "SIdle"
+	elseif tor.Velocity.magnitude < 60 and Scooting == true then
+		state = "SWalk"
+	end
+	if state == "Jump" then
+		boxconstraint.C1 = clerp(boxconstraint.C1, bc1, 0.15)
+		boxconstraint.C0 = clerp(boxconstraint.C0, bc0, 0.15)
+		boxweld.C1 = clerp(boxweld.C1, boxweld1, 0.15)
+		neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-2), 0, 0), 0.15)
+		rootj.C1 = clerp(rootj.C1, rootj1 * CFa(Rad(-15), 0, 0), 0.15)
+		LS.C1 = clerp(LS.C1, LS1 * CFa(Rad(-60), 0, Rad(3)), 0.15)
+		RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, Rad(-3)), 0.15)
+		LH.C1 = clerp(LH.C1, LH1 * CFn(0, -0.2, 0) * CFa(Rad(2), 0, Rad(-15)), 0.15)
+		RH.C1 = clerp(RH.C1, RH1 * CFn(0, -0.5, 0) * CFa(Rad(2), 0, Rad(25)), 0.15)
+		LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-90)), 0.15)
+		RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(80)), 0.15)
+		LH.C0 = clerp(LH.C0, LH0 * CFn(-0.2, 0, 0), 0.15)
+		RH.C0 = clerp(RH.C0, RH0 * CFn(0.5, 0, 0), 0.15)
+	elseif state == "Fall" then
+		boxconstraint.C1 = clerp(boxconstraint.C1, bc1, 0.15)
+		boxconstraint.C0 = clerp(boxconstraint.C0, bc0, 0.15)
+		boxweld.C1 = clerp(boxweld.C1, boxweld1, 0.15)
+		neck.C1 = clerp(neck.C1, neck1 * CFa(0, 0, 0), 0.15)
+		rootj.C1 = clerp(rootj.C1, rootj1 * CFa(Rad(15), 0, 0), 0.15)
+		LS.C1 = clerp(LS.C1, LS1 * CFa(Rad(-60), 0, Rad(3)), 0.15)
+		RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, Rad(-3)), 0.15)
+		LH.C1 = clerp(LH.C1, LH1 * CFn(0.2, -0.2, -0.1) * CFa(Rad(15), 0, Rad(80)), 0.15)
+		RH.C1 = clerp(RH.C1, RH1 * CFn(-0.2, -0.2, -0.1) * CFa(Rad(15), 0, Rad(-80)), 0.15)
+		LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-140)), 0.15)
+		RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(130)), 0.15)
+		LH.C0 = clerp(LH.C0, LH0 * CFa(0, 0, Rad(-20)), 0.15)
+		RH.C0 = clerp(RH.C0, RH0 * CFa(0, 0, Rad(20)), 0.15)
+	elseif state == "Idle" then
+		boxconstraint.C1 = clerp(boxconstraint.C1, bc1, 0.15)
+		boxconstraint.C0 = clerp(boxconstraint.C0, bc0, 0.15)
+		boxweld.C1 = clerp(boxweld.C1, boxweld1, 0.15)
+		neck.C1 = clerp(neck.C1, neck1 * CFa(Rad(-15 * Cos(sine / 15)), 0, 0), 0.15)
+		rootj.C1 = clerp(rootj.C1, rootj1 * CFn(0, 0, 0.025 * Cos(sine / 15)), 0.15)
+		LS.C1 = clerp(LS.C1, LS1 * CFa(Rad(-60), 0, Rad(3 * Cos(sine / 15))), 0.15)
+		RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, Rad(-3 * Cos(sine / 15))), 0.15)
+		LH.C1 = clerp(LH.C1, LH1 * CFn(0, -0.025 * Cos(sine / 15), 0) * CFa(Rad(5), Rad(-5), 0), 0.15)
+		RH.C1 = clerp(RH.C1, RH1 * CFn(0, -0.025 * Cos(sine / 15), 0) * CFa(Rad(5), Rad(5), 0), 0.15)
+		LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-80)), 0.15)
+		RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(60)), 0.15)
+		LH.C0 = clerp(LH.C0, LH0, 0.15)
+		RH.C0 = clerp(RH.C0, RH0, 0.15)
+	elseif state == "Walk" then
+		boxconstraint.C1 = clerp(boxconstraint.C1, bc1, 0.15)
+		boxconstraint.C0 = clerp(boxconstraint.C0, bc0, 0.15)
+		boxweld.C1 = clerp(boxweld.C1, boxweld1, 0.15)
+		neck.C1 = clerp(neck.C1, neck1 *  CFa(Rad(-5), 0, 0), 0.15)
+		rootj.C1 = clerp(rootj.C1, rootj1 * CFn(0, 0.1 * Cos(sine /3), 0.1 * Cos(sine /3)) * CFa(Rad(-5), 0, Rad(5 * Cos(sine / 6))), 0.15)
+		LS.C1 = clerp(LS.C1, LS1 * CFa(Rad(-60), 0, Rad(3 * Cos(sine / 6))), 0.15)
+		RS.C1 = clerp(RS.C1, RS1 * CFa(Rad(2), 0, Rad(-3 * Cos(sine / 6))), 0.15)
+		LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), Rad(-5), Rad(50 * Cos(sine / 6))), 0.15)
+		RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), Rad(5), Rad(50 * Cos(sine / 6))), 0.15)
+		LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-100)), 0.15)
+		RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(80)), 0.15)
+		LH.C0 = clerp(LH.C0, LH0, 0.15)
+		RH.C0 = clerp(RH.C0, RH0, 0.15)
+	elseif state == "SIdle" then
+		boxconstraint.C1 = clerp(boxconstraint.C1, bc1, 0.15)
+		boxconstraint.C0 = clerp(boxconstraint.C0, bc0, 0.15)
+		boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(1, -4.5, -0.5), 0.15)
+		neck.C1 = clerp(neck.C1, neck1 * CFa(0, Rad(-10 * Cos(sine / 10)), 0), 0.15)
+		rootj.C1 = clerp(rootj.C1, rootj1 * CFn(0, 0, -0.25), 0.15)
+		LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.4, 0) * CFa(Rad(2), 0, 0), 0.15)
+		RS.C1 = clerp(RS.C1, RS1 * CFn(0, 0.4, 0) * CFa(Rad(2), 0, 0), 0.15)
+		LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(5), Rad(-5), Rad(85)), 0.15)
+		RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(5), Rad(5), Rad(-85)), 0.15)
+		LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-90)), 0.15)
+		RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(90)), 0.15)
+		LH.C0 = clerp(LH.C0, LH0 * CFa(0, 0, Rad(10 * Cos(sine / 10))), 0.15)
+		RH.C0 = clerp(RH.C0, RH0 * CFa(0, 0, Rad(10 * Cos(sine / 10))), 0.15)
+	elseif state == "SWalk" then
+		boxconstraint.C1 = clerp(boxconstraint.C1, bc1, 0.15)
+		boxconstraint.C0 = clerp(boxconstraint.C0, bc0, 0.15)
+		boxweld.C1 = clerp(boxweld.C1, boxweld1 * CFn(1, -4.5, -0.5), 0.15)
+		neck.C1 = clerp(neck.C1, neck1 *  CFa(Rad(-5), 0, 0), 0.15)
+		if Boosting == true then
+			rootj.C1 = clerp(rootj.C1, rootj1 * CFn(0, 0, -0.85) * CFa(Rad(-15), 0, 0), 0.15)
+		else
+			rootj.C1 = clerp(rootj.C1, rootj1 * CFn(0, 0, -0.5) * CFa(Rad(-7), 0, 0), 0.15)
+		end
+		LS.C1 = clerp(LS.C1, LS1 * CFn(0, 0.4, 0) * CFa(Rad(2), 0, 0), 0.15)
+		RS.C1 = clerp(RS.C1, RS1 * CFn(0, 0.4, 0) * CFa(Rad(2), 0, 0), 0.15)
+		LH.C1 = clerp(LH.C1, LH1 * CFa(Rad(2), 0, Rad(85)), 0.15)
+		RH.C1 = clerp(RH.C1, RH1 * CFa(Rad(2), 0, Rad(-85)), 0.15)
+		LS.C0 = clerp(LS.C0, LS0 * CFa(0, 0, Rad(-90)), 0.15)
+		RS.C0 = clerp(RS.C0, RS0 * CFa(0, 0, Rad(90)), 0.15)
+		LH.C0 = clerp(LH.C0, LH0 * CFa(0, 0, Rad(10 * Cos(sine / 10))), 0.15)
+		RH.C0 = clerp(RH.C0, RH0 * CFa(0, 0, Rad(10 * Cos(sine / 10))), 0.15)
+	end
+	if not tor:FindFirstChild("OMFG_PIZZADUDE") and Scooting == false then
+		OMFG_PIZZA = Instance.new("Sound", tor)
+		OMFG_PIZZA.SoundId = "rbxassetid://916855205"
+		OMFG_PIZZA.Name = "OMFG_PIZZADUDE"
+		OMFG_PIZZA.Volume = 1.5
+		OMFG_PIZZA.TimePosition = thepos
+		OMFG_PIZZA.Looped = true
+		OMFG_PIZZA:Play()
+	end
+	if not tor:FindFirstChild("SCOOTERDUDE") and Scooting == true then
+		SCOOTER = Instance.new("Sound", tor)
+		SCOOTER.SoundId = "rbxassetid://210237012"
+		SCOOTER.Name = "SCOOTERDUDE"
+		SCOOTER.Volume = 1.5
+		SCOOTER.TimePosition = thepos2
+		SCOOTER.Looped = true
+		SCOOTER:Play()
+	end
+	thepos = OMFG_PIZZA.TimePosition
+	thepos2 = SCOOTER.TimePosition
+end
