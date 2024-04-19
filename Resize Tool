@@ -1,0 +1,262 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+LocalScript3 = Instance.new("LocalScript")
+Script4 = Instance.new("Script")
+Tool0.Name = "BuildResize"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "rbxasset://icons/resize.png"
+Tool0.Grip = CFrame.new(0.400000006, -0.300000012, 0.100000001, 1, 0, 0, 0, 0, -1, -0, 1, -0)
+Tool0.GripForward = Vector3.new(-0, 1, 0)
+Tool0.GripPos = Vector3.new(0.4000000059604645, -0.30000001192092896, 0.10000000149011612)
+Tool0.GripUp = Vector3.new(0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(0.5, 8.19999981, -45, 0, 0, -1, 0, 1, -0, 1, 0, -0)
+Part1.Orientation = Vector3.new(0, -90, 0)
+Part1.Position = Vector3.new(0.5, 8.199999809265137, -45)
+Part1.Rotation = Vector3.new(0, -90, 0)
+Part1.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part1.Size = Vector3.new(2, 1.2000000476837158, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Dark stone grey")
+Part1.Locked = true
+Part1.Reflectance = 0.4000000059604645
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Dark stone grey")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=15954259"
+SpecialMesh2.Scale = Vector3.new(0.4000000059604645, 0.4000000059604645, 0.4000000059604645)
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=15958837"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+LocalScript3.Name = "Resize Local"
+LocalScript3.Parent = Tool0
+table.insert(cors,sandbox(LocalScript3,function()
+local Tool = script.Parent
+size = Instance.new("RemoteEvent",script.Parent)
+size.Name = "SizeEvent1"
+
+NLS([[size = script.Parent.SizeEvent1
+size.Changed:Connect(function(z)
+if z == "Archivable" then
+size:FireServer(owner:GetMouse().Target, "hell")
+end
+end)
+bool = true
+size.OnClientEvent:Connect(function(handles)
+handles.Parent = owner.PlayerGui
+if bool == true then
+bool = false
+	handles.MouseDrag:connect(function(k, z)
+	size:FireServer("heaven", k, z)
+	end)
+	handles.MouseButton1Down:connect(function(z)
+	size:FireServer("earth", z)
+	end)
+end
+task.wait(0.2)
+	bool = true
+end)]],owner.PlayerGui).Parent = script.Parent
+
+enabled = true
+local origTexture = 	Tool.TextureId
+game:GetService("ContentProvider"):Preload("rbxasset://icons/resize_sel.png")
+
+local selectionBox
+local selectionLasso
+local handles
+
+local previousDistance
+
+function onHandlesDown(normal)
+	print("handlesDown")
+	previousDistance = 0
+end
+function onHandlesDrag(normal, distance)
+	if handles.Adornee then
+		local delta = distance - previousDistance 
+		if math.abs(delta) >= handles.Adornee.ResizeIncrement then
+				local sizeDelta = math.floor(delta / handles.Adornee.ResizeIncrement + 0.5) * handles.Adornee.ResizeIncrement
+				if handles.Adornee:Resize(normal, sizeDelta) then
+				previousDistance = distance
+			end
+		end
+	end
+end
+
+size.OnServerEvent:Connect(function(me, tar, z)
+		if z == "hell" then
+	print("3DButtonDown")
+	if tar == nil or tar.Locked then
+		selectionBox.Adornee = nil
+		selectionLasso.Part = nil
+		handles.Adornee = nil
+	else
+		selectionBox.Adornee = tar
+		selectionLasso.Part = tar
+		handles.Adornee = tar
+		handles.Faces = tar.ResizeableFaces
+		end
+	end
+end)
+
+function onButton1Down(mouse)
+	size.Archivable = not size.Archivable
+end
+
+script.Parent.Activated:connect(function() onButton1Down(nil) end)
+
+function onEquippedLocal(mouse)
+	Tool.TextureId = "rbxasset://icons/resize_sel.png"
+
+	mouse.Icon ="rbxasset://textures\\DragCursor.png"
+
+	local character = script.Parent.Parent
+	local player = game.Players:GetPlayerFromCharacter(character)
+	
+	selectionBox = Instance.new("SelectionBox")
+	selectionBox.Color = BrickColor.Blue()
+	selectionBox.Adornee = nil
+	selectionBox.Parent = player.PlayerGui
+
+	selectionLasso = Instance.new("SelectionPartLasso")
+	selectionLasso.Name = "Model Delete Lasso"
+	selectionLasso.Humanoid = character.Humanoid
+	selectionLasso.Parent = game.workspace
+	selectionLasso.Part = nil
+	selectionLasso.Visible = true
+	selectionLasso.archivable = false
+	selectionLasso.Color = BrickColor.Red()
+
+	handles = Instance.new("Handles",owner.PlayerGui)
+	handles.Color = BrickColor.Blue()
+	handles.Adornee = nil
+	size:FireClient(owner, handles)
+		size.OnServerEvent:Connect(function(me, str, z)
+			if str == "earth" then
+				onHandlesDown(z)
+			end
+		end)
+		size.OnServerEvent:Connect(function(me, str, z, y)
+			if str == "heaven" then
+				onHandlesDrag(z, y)
+			end
+		end)
+end
+
+function onUnequippedLocal()
+	Tool.TextureId = origTexture
+	selectionBox:Remove()
+	selectionLasso:Remove()
+	handles:Remove()
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal)
+
+end))
+Script4.Name = "SwordScript"
+Script4.Parent = Tool0
+table.insert(cors,sandbox(Script4,function()
+-------- OMG HAX
+
+r = game:service("RunService")
+
+
+local damage = 0
+
+
+local slash_damage = 0
+
+
+sword = script.Parent.Handle
+Tool = script.Parent
+
+
+
+function attack()
+	local anim = Instance.new("StringValue")
+	anim.Name = "toolanim"
+	anim.Value = "Slash"
+	anim.Parent = Tool
+end
+
+
+function swordUp()
+	Tool.GripForward = Vector3.new(-1,0,0)
+	Tool.GripRight = Vector3.new(0,1,0)
+	Tool.GripUp = Vector3.new(0,0,1)
+end
+
+function swordOut()
+	Tool.GripForward = Vector3.new(0,0,1)
+	Tool.GripRight = Vector3.new(0,-1,0)
+	Tool.GripUp = Vector3.new(-1,0,0)
+end
+
+
+
+Tool.Enabled = true
+
+function onActivated()
+
+	if not Tool.Enabled then
+		return
+	end
+
+	Tool.Enabled = false
+
+	local character = Tool.Parent;
+	local humanoid = character.Humanoid
+	if humanoid == nil then
+		print("Humanoid not found")
+		return 
+	end
+
+	
+
+	attack()
+
+	wait(1)
+
+	Tool.Enabled = true
+end
+
+
+function onEquipped()
+end
+
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Equipped:connect(onEquipped)
+
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
