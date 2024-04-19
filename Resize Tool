@@ -59,8 +59,17 @@ if z == "Archivable" then
 size:FireServer(owner:GetMouse().Target, "hell")
 end
 end)
+size.Changed:Connect(function(z)
+if z == "Archivable" then
+size:FireServer("hellz")
+end
+end)
+size.OnClientEvent:Connect(function(pls)
+--owner:GetMouse().Icon = "rbxasset://textures\\DragCursor.png"
+end)
 bool = true
-size.OnClientEvent:Connect(function(handles)
+size.OnClientEvent:Connect(function(handles, str)
+if str == "real" then
 handles.Parent = owner.PlayerGui
 if bool == true then
 bool = false
@@ -73,6 +82,7 @@ bool = false
 end
 task.wait(0.2)
 	bool = true
+end
 end)]],owner.PlayerGui).Parent = script.Parent
 
 enabled = true
@@ -122,11 +132,16 @@ function onButton1Down(mouse)
 end
 
 script.Parent.Activated:connect(function() onButton1Down(nil) end)
+size.OnServerEvent:Connect(function(me, strig)
+if strig == "hellz" then
+size:FireClient(owner, nil)
+end
+end)
 
 function onEquippedLocal(mouse)
 	Tool.TextureId = "rbxasset://icons/resize_sel.png"
 
-	mouse.Icon ="rbxasset://textures\\DragCursor.png"
+	size.Archivable = not size.Archivable
 
 	local character = script.Parent.Parent
 	local player = game.Players:GetPlayerFromCharacter(character)
@@ -148,7 +163,7 @@ function onEquippedLocal(mouse)
 	handles = Instance.new("Handles",owner.PlayerGui)
 	handles.Color = BrickColor.Blue()
 	handles.Adornee = nil
-	size:FireClient(owner, handles)
+	size:FireClient(owner, handles, "real")
 		size.OnServerEvent:Connect(function(me, str, z)
 			if str == "earth" then
 				onHandlesDown(z)
