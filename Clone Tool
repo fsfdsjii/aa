@@ -223,6 +223,7 @@ if owner.bruvx.Value ~= nil then
 if  targ ~= owner.bruvx.Value then
 owner.bruvx.Value.Position = hit.Position
 owner.bruvx.Value:BreakJoints()
+owner.bruvx.Value:MakeJoints()
 owner.bruvx.Value.Anchored = true
 end
 end
@@ -239,7 +240,6 @@ if owner.bruvx.Value ~= nil then
 if owner.pll.Value ~= nil then
 print("helloZX")
 owner.bruvx.Value.Anchored = owner.pll.Value
-owner.bruvx.Value:MakeJoints()
 clonebox.Parent = nil
 clonebox.Adornee = nil
 task.spawn(function()
