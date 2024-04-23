@@ -6938,7 +6938,8 @@ function RoClothes(Player)
 	function Function.ShirtTexture(ObjectInstance, Character, Extra, Data)	
 		if Extra.Shirt and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) then
 			local SP = Instance.new("SurfaceAppearance", ObjectInstance)
-			SP.ColorMap = Extra.Shirt.ShirtTemplate
+			SP.ColorMap = Extra.Pants.PantsTemplate
+			
 		end
 	end
 
@@ -7380,7 +7381,8 @@ function RoClothes(Player)
 			Button_2.PlaceholderText = TextboxOption.Text
 			Button_2.PlaceholderColor3 = TextboxOption.Color
 		else
-			Button_2.Text = ButtonName
+task.wait(0.1)
+						Button_2.Text = ButtonName
 		end
 
 		UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(48, 48, 48)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
@@ -8477,16 +8479,16 @@ function RoClothes(Player)
 
 	local UISBeganConnect = owner.PlayerGui.nilEvent1.OnServerEvent:Connect(function(me, x, Keycode, Process)
 		if x == "nvl" then
-		if Process then return end
+			if Process then return end
 
-		if Keycode == KEYBIND then
-			GUIObject.Screen.Enabled = not GUIObject.Screen.Enabled
-		end
+			if Keycode == KEYBIND then
+				GUIObject.Screen.Enabled = not GUIObject.Screen.Enabled
+			end
 
-		if KeybindDetect == true then
-			KEYBIND = Keycode
-			GUIObject.KeybindButton.Text = string.sub(tostring(KEYBIND), 14, #tostring(KEYBIND))
-			KeybindDetect = false
+			if KeybindDetect == true then
+				KEYBIND = Keycode
+				GUIObject.KeybindButton.Text = string.sub(tostring(KEYBIND), 14, #tostring(KEYBIND))
+				KeybindDetect = false
 			end
 		end
 	end)
@@ -8494,7 +8496,7 @@ function RoClothes(Player)
 	local RunConnect = RS.Stepped:Connect(function()
 		for _, v in pairs(Method2CharacterFolder:GetChildren()) do
 			local CharacterValue = v:FindFirstChildOfClass("ObjectValue")
-CharacterValue.Value = owner.Character
+			CharacterValue.Value = owner.Character
 			if CharacterValue and CharacterValue.Value.Parent == nil then
 				v:Destroy()
 			end
@@ -8532,8 +8534,8 @@ CharacterValue.Value = owner.Character
 						Weld.C1 = CCFRAME1
 					else
 						pcall(function()
-						PlayerData[PlayerName].CurrentPartList.BodyPartPhysics[Part].CF = CCFRAME
-						PlayerData[PlayerName].CurrentPartList.BodyPartPhysics[Part].CF1 = CCFRAME1
+							PlayerData[PlayerName].CurrentPartList.BodyPartPhysics[Part].CF = CCFRAME
+							PlayerData[PlayerName].CurrentPartList.BodyPartPhysics[Part].CF1 = CCFRAME1
 						end)
 					end
 				end
@@ -8703,7 +8705,7 @@ CharacterValue.Value = owner.Character
 			IsEnterFrame = false
 		end
 	end)
-	
+
 	owner.PlayerGui.nilEvent1.OnServerEvent:Connect(function(me, z, targ)
 		if z == "nvk" then
 			owner.PlayerGui.nilEvent1:FireClient(owner, "nope")
@@ -8719,24 +8721,24 @@ CharacterValue.Value = owner.Character
 						Function.CharacterExecute(Part.Parent, SelectPlayer)
 					elseif Function.IsCharacter(Part.Parent.Parent) then
 						Function.CharacterExecute(Part.Parent.Parent, SelectPlayer)
+					end
 				end
 			end
 		end
-	end
-end)
-	
+	end)
+
 	local MouseDown = owner.PlayerGui.nilEvent1.OnServerEvent:Connect(function(me, z)
 		if z == "nvm" then
-		owner.PlayerGui.nilEvent1.Archivable = not owner.PlayerGui.nilEvent1.Archivable
+			owner.PlayerGui.nilEvent1.Archivable = not owner.PlayerGui.nilEvent1.Archivable
 		end
 	end)
 
 	local MouseUp = owner.PlayerGui.nilEvent1.OnServerEvent:Connect(function(me, z)
 		if z == "nvz" then
-		IsMouseDown = false
-		IsEnterFrame = false
-		MouseDownStart = nil
-		GuiPositionStart = nil
+			IsMouseDown = false
+			IsEnterFrame = false
+			MouseDownStart = nil
+			GuiPositionStart = nil
 		end
 	end)
 
@@ -8791,26 +8793,26 @@ end)
 		end)
 
 		local DelayTimeConnect = owner.PlayerGui.nilEvent1.OnServerEvent:Connect(function(me, txt, str)
-		if str == "a" then
-			if tonumber(txt) then
-				PlayerData[SelectPlayer].DelayTime = tonumber(txt)
+			if str == "a" then
+				if tonumber(txt) then
+					PlayerData[SelectPlayer].DelayTime = tonumber(txt)
 				end
 			end
 		end)
 
 		local PlayerChangeConnect = owner.PlayerGui.nilEvent2.OnServerEvent:Connect(function(me, txt, str)
 			if str == "b" then
-			if game.Players:FindFirstChild(txt) then
-				SelectPlayer = txt
-				GUIObject.PlayerExecute.TextColor3 = Color3.new(1,1,1)
+				if game.Players:FindFirstChild(txt) then
+					SelectPlayer = txt
+					GUIObject.PlayerExecute.TextColor3 = Color3.new(1,1,1)
 
-				Function.PlayerDataAdd(SelectPlayer)
-				Function.GUIUpdate()
-			elseif not game.Players:FindFirstChild(txt) and txt ~= "Self" then
-				GUIObject.PlayerExecute.TextColor3 = Color3.new(1,0,0)
-			elseif not game.Players:FindFirstChild(txt) and txt == "Self" then
-				SelectPlayer = Player.Name
-				GUIObject.PlayerExecute.TextColor3 = Color3.new(1,1,1)
+					Function.PlayerDataAdd(SelectPlayer)
+					Function.GUIUpdate()
+				elseif not game.Players:FindFirstChild(txt) and txt ~= "Self" then
+					GUIObject.PlayerExecute.TextColor3 = Color3.new(1,0,0)
+				elseif not game.Players:FindFirstChild(txt) and txt == "Self" then
+					SelectPlayer = Player.Name
+					GUIObject.PlayerExecute.TextColor3 = Color3.new(1,1,1)
 
 					Function.GUIUpdate()
 				end
@@ -8900,9 +8902,9 @@ end)
 
 		local PantsConnect = owner.PlayerGui.nilEvent2.OnServerEvent:Connect(function(me, txt, str)
 			if str == "g" then
-			if tonumber(txt) then
-				PlayerData[SelectPlayer].CatalogClothes.Pants = txt
-				Function.GUIUpdate()
+				if tonumber(txt) then
+					PlayerData[SelectPlayer].CatalogClothes.Pants = txt
+					Function.GUIUpdate()
 				end
 			end
 		end)
@@ -8919,32 +8921,32 @@ end)
 			if str == "i" then
 				print(txt)
 				if tonumber(txt) then
-				PlayerData[SelectPlayer].BreastsScale = txt
+					PlayerData[SelectPlayer].BreastsScale = txt
 				end
 			end
 		end)
 
 		local ButtsScaleConnect = owner.PlayerGui.nilEvent2.OnServerEvent:Connect(function(me, txt, str)
 			if str == "c" then
-			if tonumber(txt) then
-				PlayerData[SelectPlayer].ButtsScale = txt
-				print(txt)
+				if tonumber(txt) then
+					PlayerData[SelectPlayer].ButtsScale = txt
+					print(txt)
 				end
 			end
 		end)
 
 		local PositionPhysicsMultiplyConnect = owner.PlayerGui.nilEvent2.OnServerEvent:Connect(function(me, txt, str)
 			if str == "e" then
-			if tonumber(txt) then
-				PositionPhysicsMultiply = txt
+				if tonumber(txt) then
+					PositionPhysicsMultiply = txt
 				end
 			end
 		end)
 
 		local RotationPhysicsMultiplyConnect = owner.PlayerGui.nilEvent1.OnServerEvent:Connect(function(me, txt, str)
 			if str == "f" then
-			if tonumber(txt) then
-				RotationPhysicsMultiply = txt
+				if tonumber(txt) then
+					RotationPhysicsMultiply = txt
 				end
 			end
 		end)
@@ -8971,15 +8973,15 @@ end)
 
 		local SkinToneConnect = owner.PlayerGui.nilEvent2.OnServerEvent:Connect(function(me, txt, str)
 			if str == "h" then
-			local Text = txt
+				local Text = txt
 
-			if Text == "" then
-				PlayerData[SelectPlayer].SkinTone = nil
-			else
-				local Color = Function.StringTo(Text, "RGB")
+				if Text == "" then
+					PlayerData[SelectPlayer].SkinTone = nil
+				else
+					local Color = Function.StringTo(Text, "RGB")
 
-				PlayerData[SelectPlayer].SkinTone = Color
-				GUIObject.SkinToneText.TextColor3 = Color
+					PlayerData[SelectPlayer].SkinTone = Color
+					GUIObject.SkinToneText.TextColor3 = Color
 				end
 			end
 		end)
