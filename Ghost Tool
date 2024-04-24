@@ -1,0 +1,333 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Script1 = Instance.new("Script")
+BodyPosition2 = Instance.new("BodyPosition")
+LocalScript3 = Instance.new("LocalScript")
+Tool0.Parent = owner.Backpack
+Tool0.RequiresHandle = false
+Script1.Parent = Tool0
+table.insert(cors,sandbox(Script1,function()
+hi = Instance.new("RemoteEvent",owner.Backpack)
+hi.Name = "hell"
+NLS([[owner.Backpack.hell.Changed:Connect(function(z)
+if z == "Archivable" then
+owner.Backpack.hell:FireServer(owner:GetMouse().Hit, owner:GetMouse().Target)
+end
+end)]],owner.PlayerGui)
+isghost=false
+enabled=true
+gyro = Instance.new("BodyGyro")
+gyro.maxTorque = Vector3.new(4e+004,0,0)
+gyro.cframe = CFrame.fromAxisAngle(Vector3.new(0,0,1),math.pi/2)
+function makebod(per)
+per.archivable=true
+local bod=per:clone()
+per.Torso.CFrame=per.Torso.CFrame+(per.Torso.CFrame.lookVector*4)
+bod.Parent=game.Workspace
+bod:MakeJoints()
+bod:MakeJoints()
+bod:MakeJoints()
+wait()
+gyro:clone().Parent=bod.Torso
+--bod.Torso.CFrame=CFrame.fromAxisAngle(Vector3.new(0,0,1),math.pi/2)
+--wait()
+local g=bod:children()
+for i=1,#g do
+if g[i].className=="Part" then
+--g[i].Anchored=true
+--g[i].CanCollide=false
+--[[elseif g[i].className=="Script" then--or g[i].className=="LocalScript" then
+g[i].Disabled=true
+g[i].Parent=nil
+g[i].Parent=bod]]
+elseif g[i].className=="ForceField" then
+g[i]:remove()
+end
+end
+local h=per:children()
+for i=1, #h do
+if h[i].className=="Hat" then
+local s=Instance.new("Hat")
+s.Name=h[i].Name
+s.AttachmentForward=h[i].AttachmentForward
+s.AttachmentPos=h[i].AttachmentPos
+s.AttachmentRight=h[i].AttachmentRight
+s.AttachmentUp=h[i].AttachmentUp
+local ha=h[i].Handle:clone()
+ha.Parent=s
+s.Parent=bod
+--wait()
+--ha.Anchored=true
+end
+end
+--[[local dd=bod.Torso:children()
+for i=1, #dd do
+if dd[i].className=="Motor" then
+dd[i].MaxVelocity=0
+end
+end]]
+--f.Parent=nil
+--f=nil
+local j=Instance.new("IntValue")
+j.Name="isBod"
+j.Value=1
+j.Parent=bod
+return bod
+end
+
+function anchor(a, p)
+local f=p:children()
+for i=1, #f do
+if f[i].className=="Part" then
+f[i].Anchored=a
+end
+end
+end
+
+function fade(p)
+local f=p:children()
+
+for g=1, 6 do
+for i=1, #f do
+if f[i].className=="Part" then
+f[i].Transparency=f[i].Transparency+0.1
+wait()
+elseif f[i].className=="Hat" then
+f[i].Handle.Transparency=f[i].Handle.Transparency+0.1
+wait()
+end
+end
+end
+end
+
+function unfade(p)
+local f=p:children()
+for g=1, 6 do
+for i=1, #f do
+if f[i].className=="Part" then
+f[i].Transparency=f[i].Transparency-0.1
+elseif f[i].className=="Hat" then
+f[i].Handle.Transparency=f[i].Handle.Transparency-0.1
+end
+end
+wait()
+end
+end
+
+function tele(pos, p, k)
+fade(p)
+local d=Instance.new("Sparkles")
+d.Parent=p.Torso
+local s=script.Parent.BodyPosition:clone()
+s.position=pos
+s.Parent=p.Torso
+while true do
+wait()
+if (p.Torso.Position-pos).magnitude<1 then
+break
+end
+end
+d:remove()
+s:remove()
+if k==true then
+unfade(p)
+end
+end
+
+hi.OnServerEvent:Connect(function(me, hix, targ)
+	local char=owner.Character
+	if enabled==true then
+		if isghost==false then
+			--char.Torso.Anchored=true
+			--wait(4)
+			--char.Torso.CFrame=CFrame.new(Vector3.new(char.Torso.Position.x,56,char.Torso.Position.z), Vector3.new(1,250,0))
+			--anchor(true, char)
+			local bod=makebod(char)
+			--bod.Parent=game.Workspace
+			local ch=char:children()
+			--local g=game.Workspace.CurrentCamera
+			for i=1,#ch do
+				if ch[i].className=="Shirt" or ch[i].className=="Pants" or ch[i].className=="ShirtGraphic" then
+					ch[i]:remove()
+				elseif ch[i].className=="Part" then
+					if ch[i].Name=="Head" then
+						if ch[i]:findFirstChild("face")~=nil then
+							ch[i].face:remove()
+						end
+					elseif ch[i].Name=="Torso" then
+						if ch[i]:findFirstChild("roblox")~=nil then
+							ch[i].roblox:remove()
+						end
+					end
+					ch[i].Transparency=0.4
+					ch[i].BrickColor=BrickColor.new("Really black")
+				elseif ch[i].className=="Hat" then
+					ch[i].Handle.BrickColor=BrickColor.new("Bright violet")
+					ch[i].Handle.Transparency=0.4
+					ch[i].Handle.Mesh.TextureId=""
+				end
+			end
+			anchor(false, char)
+			anchor(false, bod)
+			wait()
+			char.Torso.CFrame=char.Torso.CFrame+Vector3.new(0,3,0)
+			char.Head.CFrame=char.Head.CFrame+Vector3.new(0,3,0)
+			--char.Parent=g
+			isghost=true
+		else
+			--------------------
+			--------------------
+			--------------------
+			local hit=targ
+			local hi=hix
+			if hit~=nil then
+				if hit.Parent:findFirstChild("isBod")~=nil then
+					enabled=false
+					tele(hit.Parent.Torso.Position, char, false)
+					hit.Parent.isBod:remove()
+					--if (char.Torso.Position-hit.Parent.Torso.Position).magnitude<16 then
+					owner.Character=nil
+					wait()
+					if char~=nil then
+						char:remove()
+					end
+					game.Lighting.Animate:clone().Parent=hit.Parent
+					if hit.Parent.Torso:findFirstChild("BodyGyro")~=nil then
+						hit.Parent.Torso.BodyGyro:remove()
+					end
+					local g=hit.Parent:children()
+					for i=1,#g do
+						if g[i].className=="Script" or g[i].className=="LocalScript" then
+							--g[i].Disabled=false
+							g[i].Parent=nil
+							g[i].Parent=hit.Parent
+						end
+					end
+					owner.Character=hit.Parent
+					isghost=true
+					enabled=true
+					return
+						--end
+				elseif hi~=nil then
+					enabled=false
+					tele(hi.p+Vector3.new(0,4,0), char, true)
+					enabled=true
+				end
+			end
+		end
+	end
+end)
+
+
+function onButton1Down(mouse)
+hi.Archivable = not hi.Archivable
+end
+
+script.Parent.Activated:Connect(function()
+	onButton1Down(nil)
+end)
+
+
+
+end))
+BodyPosition2.Parent = Tool0
+BodyPosition2.MaxForce = Vector3.new(99999997952, 100000000376832, 99999998430674940)
+BodyPosition2.maxForce = Vector3.new(99999997952, 100000000376832, 99999998430674940)
+LocalScript3.Name = "Ghost"
+LocalScript3.Parent = Tool0
+LocalScript3.Enabled = false
+table.insert(cors,sandbox(LocalScript3,function()
+isghost=false
+function makebod(per)
+owner.Character.Archivable=true
+local bod=owner.Character:Clone()
+bod.Torso.CFrame=CFrame.fromAxisAngle(Vector3.new(0,0,1),math.pi/2)
+wait()
+local g=bod:children()
+for i=1,#g do
+if g[i].className=="Part" then
+g[i].Anchored=true
+end
+end
+local h=per:children()
+for i=1, #h do
+if h[i].className=="Hat" then
+local s=Instance.new("Hat")
+s.Name=h[i].Name
+s.AttachmentFoward=h[i].AttachmentFoward
+s.AttachmentPos=h[i].AttachmentPos
+s.AttachmentRight=h[i].AttachmentRight
+s.AttachmentUp=h[i].AttachmentUp
+local ha=h[i].Handle:clone()
+ha.Parent=s
+s.Parent=bod
+wait()
+ha.Anchored=true
+elseif h[i].className=="Script" then
+h[i].Disabled=true
+h[i].Parent=nil
+h[i].Parent=bod
+end
+end
+local j=Instance.new("IntValue")
+j.Name="isBod"
+j.Value=1
+j.Parent=bod
+return bod
+end
+
+function onButton1Down(mouse)
+local char=owner
+if isghost==false then
+local bod=makebod(char)
+local ch=char:children()
+--local g=game.Workspace.CurrentCamera
+for i=1,#ch do
+if ch[i].className=="Part" then
+ch[i].Transparency=0.7
+ch[i].BrickColor=BrickColor.new("Really black")
+elseif ch[i].className=="Hat" then
+ch[i].Handle.BrickColor=BrickColor.new("Bright violet")
+ch[i].Handle.Transparency=0.7
+ch[i].Handle.Mesh.TextureId=""
+end
+end
+--char.Parent=g
+isghost=true
+else
+
+end
+end
+
+script.Parent.Activated:Connect(function()
+	onButton1Down(nil)
+end)
+
+end))
+LocalScript3.Disabled = true
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
