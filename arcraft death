@@ -29482,31 +29482,7 @@ SpecialMesh3.MeshType = Enum.MeshType.Sphere
 end
 end
 end
-greener = game:GetService('Teams'):FindFirstChild('Green Team')
-if not greener then
-	green = Instance.new("Team",game:GetService('Teams'))
-	green.TeamColor = BrickColor.new('Bright green')
-	green.Name = "Green Team"
-end
-redder = game:GetService('Teams'):FindFirstChild('Red Team')
-if not redder then
-	red = Instance.new("Team",game:GetService('Teams'))
-	red.TeamColor = BrickColor.new('Bright red')
-	red.Name = "Red Team"
-end
-hello = math.random(0, 1)
-hi = math.random(0, 1)
-for _,v in next, game:GetService('Players'):GetPlayers() do
-	if hello == 0 then
-		v.Team = game:GetService('Teams')["Red Team"]
-	elseif hi == 0 then
-		v.Team = game:GetService('Teams')["Green Team"]
-        elseif hello == 1 then
-		v.Team = game:GetService('Teams')["Green Team"]
-        elseif hi == 1 then
-		v.Team = game:GetService('Teams')["Red Team"]
-	end
-end
+
 
 local dataStoreService = game:GetService("DataStoreService")
 local leaderstatsDataStore = dataStoreService:GetGlobalDataStore("leaderstats")
@@ -29547,6 +29523,57 @@ game.Players.PlayerRemoving:Connect(function(player)
 
 end)
 end
+
+task.spawn(function()
+greener = game:GetService('Teams'):FindFirstChild('Green Team')
+if not greener then
+	green = Instance.new("Team",game:GetService('Teams'))
+	green.TeamColor = BrickColor.new('Bright green')
+	green.Name = "Green Team"
+end
+redder = game:GetService('Teams'):FindFirstChild('Red Team')
+if not redder then
+	red = Instance.new("Team",game:GetService('Teams'))
+	red.TeamColor = BrickColor.new('Bright red')
+	red.Name = "Red Team"
+end
+--[[task.wait()
+LosPollos = nil
+for _,v in next, game:GetService('Players'):GetPlayers() do
+LosPollos = v
+end
+if math.random(0, 1) == 1 then
+if #LosPollos/2
+LosPollos.Team = game.Teams["Red Team"]
+elseif math.random(0, 1) == 1 then
+LosPollos.Team = game.Teams["Green Team"]
+end]]
+jjk = nil
+local P = game:GetService("Players"):GetPlayers()
+local Cap = #P/2
+local R = 0
+local G = 0
+for i = 1,#P do
+jjk = P[1]
+end
+
+    local Select = math.random(1,2)
+    if R >= Cap then
+        Select = 2
+     end
+    if G >= Cap then
+        Select = 1
+    end
+    jjk.Neutral = false
+    if Select == 1 then
+        R = R + 1
+       jjk.TeamColor = BrickColor.new("Bright red")
+end
+    if Select == 2 then
+        G = G + 1
+        jjk.TeamColor = BrickColor.new("Bright green")
+    end
+end)
 
 
 function sandbox(var,func)
@@ -29592,19 +29619,20 @@ Script1.Name = "Fuel"
 Script1.Parent = Tool0
 Script1.Enabled = false
 table.insert(cors,sandbox(Script1,function()
-function idk(t)
-while true do
-	wait(10)
-	t.Parent:findFirstChild("fuel").Value=t.Parent:findFirstChild("fuel").Value-1
-end
-end
+	function idk(t)
+		while true do
+			wait(10)
+			t.Parent:findFirstChild("fuel").Value=t.Parent:findFirstChild("fuel").Value-1
+		end
+	end
 end))
 Script1.Disabled = true
 Script2.Name = "PlaneFlyer"
 Script2.Parent = Tool0
 table.insert(cors,sandbox(Script2,function()
-function na(v)
-	r = game:service("RunService")
+	Tool0 = Tool0
+	function na(v)
+		r = game:service("RunService")
 
 
 
@@ -29612,37 +29640,37 @@ function na(v)
 
 
 
-	shaft = v
+		shaft = v
 
 
 
-	position = shaft.Position
+		position = shaft.Position
 
 
-	function fly()
+		function fly()
 
 
 
-		direction = -shaft.CFrame.lookVector 
+			direction = -shaft.CFrame.lookVector 
 
 
 
-		position = position + 35*direction
+			position = position + 35*direction
 
 
 
-		error = position - shaft.Position
+			error = position - shaft.Position
 
 
 
-		shaft.Velocity = 5*error
+			shaft.Velocity = 5*error
 
 
 
-	end
+		end
 
 
-	t, s = r.Stepped:wait()
+		t, s = r.Stepped:wait()
 
 
 
@@ -29654,7 +29682,7 @@ function na(v)
 
 
 
-	d = t + 4.0 - s
+		d = t + 4.0 - s
 
 
 
@@ -29663,116 +29691,118 @@ function na(v)
 
 
 
-	while t < d do
+		while t < d do
 
 
-		fly()
+			fly()
 
 
-		t = r.Stepped:wait()
+			t = r.Stepped:wait()
 
-
-	end
-
-
-
-
-
-	-- at max range
-
-
-	v.Explosion.PlayOnRemove = false
-
-
-
-
-
-	shaft:remove()
-
-
-end
-function ball(t)
-	r = game:service("RunService")
-
-
-
-	shaft = t
-
-	position = shaft.Position
-
-
-
-	function blow()
-
-		explosion = Instance.new("Explosion")
-
-		explosion.Position = shaft.Position
-
-		explosion.BlastRadius = 20
-
-
-
-		-- find instigator tag
-
-		local creator = t:findFirstChild("creator")
-
-		if creator ~= nil then
-
-			explosion.Hit:connect(function(part, distance)  onPlayerBlownUp(part, distance, creator) end)
 
 		end
 
 
 
-		explosion.Parent = game.Workspace
 
-		connection:disconnect()
 
-		wait(.1)
+		-- at max range
+
+
+		v.Explosion.PlayOnRemove = false
+
+
+
+
 
 		shaft:remove()
 
+
 	end
+	function ball(t)
+		r = game:service("RunService")
 
 
 
-	function onTouch(hit)
+		shaft = t
 
-		if hit.Name == "safe"  or hit.Name == "Door" or hit.Name == "Deck" or hit.Name=="Fog" or hit.Name=="Water"
-
-			or hit.Name == "Sheild" then
+		position = shaft.Position
 
 
+
+		function blow()
+
+			explosion = Instance.new("Explosion")
+
+			explosion.Position = shaft.Position
+
+			explosion.BlastRadius = 20
+
+
+
+			-- find instigator tag
+
+			local creator = t:findFirstChild("creator")
+
+			if creator ~= nil then
+
+				explosion.Hit:connect(function(part, distance)  onPlayerBlownUp(part, distance, creator) end)
+
+			end
+
+
+
+			explosion.Parent = game.Workspace
+
+			connection:disconnect()
+
+			wait(.1)
 
 			shaft:remove()
 
-			return end
+		end
 
 
 
-		local parent = hit.Parent.Parent
+		function onTouch(hit)
 
-		local owner = shaft.Owner
+			if hit.Name == "safe"  or hit.Name == "Door" or hit.Name == "Deck" or hit.Name=="Fog" or hit.Name=="Water"
 
-		if owner ~= nil then
+				or hit.Name == "Sheild" then
 
-			if parent ~= nil and owner.Value ~= nil then
 
-				if parent ~= owner.Value then
 
-					local stunt = parent:FindFirstChild("Stunt")
+				shaft:remove()
 
-					if stunt ~= nil then
+				return end
 
-						if stunt.Value ~= 1 then
+
+
+			local parent = hit.Parent.Parent
+
+			local owner = shaft.Owner
+
+			if owner ~= nil then
+
+				if parent ~= nil and owner.Value ~= nil then
+
+					if parent ~= owner.Value then
+
+						local stunt = parent:FindFirstChild("Stunt")
+
+						if stunt ~= nil then
+
+							if stunt.Value ~= 1 then
+
+								blow()
+
+							end
+
+						else
 
 							blow()
 
 						end
-
-					else
-
-						blow()
 
 					end
 
@@ -29782,133 +29812,131 @@ function ball(t)
 
 		end
 
-	end
 
 
+		function onPlayerBlownUp(part, distance, creator)
 
-	function onPlayerBlownUp(part, distance, creator)
+			if part.Name == "Head" then
 
-		if part.Name == "Head" then
+				local humanoid = part.Parent:findFirstChild("Humanoid")
 
-			local humanoid = part.Parent:findFirstChild("Humanoid")
-
-			tagHumanoid(humanoid, creator)
-
-		end
-
-	end
-
-
-
-	function tagHumanoid(humanoid, creator)
-
-		if creator ~= nil then
-
-			local new_tag = creator:clone()
-
-			new_tag.Parent = humanoid
-
-		end
-
-	end
-
-
-
-	function untagHumanoid(humanoid)
-
-		if humanoid ~= nil then
-
-			local tag = humanoid:findFirstChild("creator")
-
-			if tag ~= nil then
-
-				tag.Parent = nil
+				tagHumanoid(humanoid, creator)
 
 			end
 
 		end
 
+
+
+		function tagHumanoid(humanoid, creator)
+
+			if creator ~= nil then
+
+				local new_tag = creator:clone()
+
+				new_tag.Parent = humanoid
+
+			end
+
+		end
+
+
+
+		function untagHumanoid(humanoid)
+
+			if humanoid ~= nil then
+
+				local tag = humanoid:findFirstChild("creator")
+
+				if tag ~= nil then
+
+					tag.Parent = nil
+
+				end
+
+			end
+
+		end
+
+
+
+		t, s = r.Stepped:wait()
+
+
+
+
+
+		d = t + 4.0 - s
+
+		connection = shaft.Touched:connect(onTouch)
+
+
+
+		while t < d do
+
+			t = r.Stepped:wait()
+
+		end
+
+
+
+		-- at max range
+
+		t.Explosion.PlayOnRemove = false
+
+
+
+		shaft:remove()
+
 	end
+	function idk(t)
+		while true do
+			wait(10)
+			t.Parent:findFirstChild("fuel").Value=t.Parent:findFirstChild("fuel").Value-1
+		end
+	end
+	function hell(x)
+		local engine = x.Parent.Engine
+
+
+		local spd = 3
+
+
+		local position = engine.Position
 
 
 
-	t, s = r.Stepped:wait()
 
 
+		while true do
 
 
-
-	d = t + 4.0 - s
-
-	connection = shaft.Touched:connect(onTouch)
+			wait(.1)
 
 
+			direction = engine.CFrame.lookVector 
 
-	while t < d do
 
-		t = r.Stepped:wait()
+			position = position + spd*3*direction
+
+
+			error = position - engine.Position
+
+
+			engine.Velocity = spd*error
+
+
+			engine.RotVelocity = Vector3.new(0, 0, 0)
+
+
+		end 
+
 
 	end
-
-
-
-	-- at max range
-
-	script.Parent.Explosion.PlayOnRemove = false
-
-
-
-	shaft:remove()
-
-end
-function idk(t)
-	while true do
-		wait(10)
-		t.Parent:findFirstChild("fuel").Value=t.Parent:findFirstChild("fuel").Value-1
-	end
-end
-function hell(x)
-	local engine = x.Parent.Engine
-
-
-	local spd = 3
-
-
-	local position = engine.Position
-
-
-
-
-
-	while true do
-
-
-		wait(.1)
-
-
-		direction = engine.CFrame.lookVector 
-
-
-		position = position + spd*3*direction
-
-
-		error = position - engine.Position
-
-
-		engine.Velocity = spd*error
-
-
-		engine.RotVelocity = Vector3.new(0, 0, 0)
-
-
-	end 
-
-
-end
-Instance.new("RemoteEvent",owner.Backpack).Name = "PlaneEvent1"
-pl = owner.Backpack.PlaneEvent1
-equip = false
-NLS([[pl = owner.Backpack.PlaneEvent1
+	Instance.new("RemoteEvent",owner.Backpack).Name = "PlaneEvent1"
+	pl = owner.Backpack.PlaneEvent1
+	equip = false
+	NLS([[pl = owner.Backpack.PlaneEvent1
 owner:GetMouse().KeyDown:Connect(function(k)
 pl:FireServer("f10", k)
 end)
@@ -29918,250 +29946,252 @@ pl:FireServer("f11", owner:GetMouse().Hit)
 end
 end)]],owner.PlayerGui)
 
-bin =script.Parent
+	bin =Tool0
 
-plane=nil
+	plane=nil
 
-hold=false
+	hold=false
 
-local debounce = false
+	local debounce = false
 
-local planedebounce = false
+	local planedebounce = false
 
-local stuntdebounce = false
+	local stuntdebounce = false
 
-local controlling = false
+	local controlling = false
 
-function variables()
-	if plane:findFirstChild("fuel")==nil then
-		fuel=Instance.new("IntValue")
-		fuel.Name = "fuel"
-		fuel.Parent =plane
-		fuel.Value=owner.MaxFuel.Value
+	function variables()
+		if plane:findFirstChild("fuel")==nil then
+			fuel=Instance.new("IntValue")
+			fuel.Name = "fuel"
+			fuel.Parent =plane
+			fuel.Value=owner.MaxFuel.Value
+		end
+		if plane.Parent:findFirstChild("Humanoid")~=nil then
+			plane.Parent.Humanoid.MaxHealth=owner.MaxHealth.Value
+		end
+		if plane:findFirstChild("health")==nil then
+			health=Instance.new("IntValue")
+			health.Name = "health"
+			health.Parent =plane
+			health.Value=owner.MaxHealth.Value
+		end
+		script.Rocket.power.Value = owner.power.Value
+		script.Rocket.Owner.Value = owner.Name
+		script.Rocket.TeamColor.Value = owner.TeamColor
 	end
-	if plane.Parent:findFirstChild("Humanoid")~=nil then
-		plane.Parent.Humanoid.MaxHealth=owner.MaxHealth.Value
+	function fire(pln,spn)
+
+		local missile = script.Rocket:clone()
+
+		missile.CFrame = spn.CFrame * CFrame.new(0, 0, -35)
+
+		ball(missile)
+		missile.Parent = game.Workspace
+
+		local creator_tag = Instance.new("ObjectValue")
+
+		creator_tag.Value = owner
+
+		creator_tag.Name = "creator"
+
+		creator_tag.Parent = missile
 	end
-	if plane:findFirstChild("health")==nil then
-		health=Instance.new("IntValue")
-		health.Name = "health"
-		health.Parent =plane
-		health.Value=owner.MaxHealth.Value
+
+	function rev(pln,spn)
+
+		local missile = script.Rocket:clone()
+
+		missile.CFrame = spn.CFrame * CFrame.new(0, 0, 0)
+		missile.power.Value=missile.power.Value/2
+		na(missile)
+		missile.Parent = game.Workspace
+
+		local creator_tag = Instance.new("ObjectValue")
+
+		creator_tag.Value = owner
+
+		creator_tag.Name = "creator"
+
+		creator_tag.Parent = missile
 	end
-	bin.Rocket.power.Value = owner.power.Value
-	bin.Rocket.Owner.Value = owner.Name
-	bin.Rocket.TeamColor.Value = owner.TeamColor
-end
-function fire(pln,spn)
 
-	local missile = bin.Rocket:clone()
+	function bomb(pln,spn)
 
-	missile.CFrame = spn.CFrame * CFrame.new(0, 0, -35)
+		local missile = script.Bomb:clone()
 
-	ball(missile)
-	missile.Parent = game.Workspace
+		missile.CFrame = spn.CFrame * CFrame.new(0, -10, 0)
 
-	local creator_tag = Instance.new("ObjectValue")
+		ball(missile)
 
-	creator_tag.Value = owner
+		missile.Parent = game.Workspace
 
-	creator_tag.Name = "creator"
+		local creator_tag = Instance.new("ObjectValue")
 
-	creator_tag.Parent = missile
-end
+		creator_tag.Value = owner
 
-function rev(pln,spn)
+		creator_tag.Name = "creator"
 
-	local missile = bin.Rocket:clone()
+		creator_tag.Parent = missile
 
-	missile.CFrame = spn.CFrame * CFrame.new(0, 0, 0)
-	missile.power.Value=missile.power.Value/2
-	na(missile)
-	missile.Parent = game.Workspace
+		missile.Owner.Value = pln
 
-	local creator_tag = Instance.new("ObjectValue")
-
-	creator_tag.Value = owner
-
-	creator_tag.Name = "creator"
-
-	creator_tag.Parent = missile
-end
-
-function bomb(pln,spn)
-
-	local missile = bin.Bomb:clone()
-
-	missile.CFrame = spn.CFrame * CFrame.new(0, -10, 0)
-
-	ball(missile)
-
-	missile.Parent = game.Workspace
-
-	local creator_tag = Instance.new("ObjectValue")
-
-	creator_tag.Value = owner
-
-	creator_tag.Name = "creator"
-
-	creator_tag.Parent = missile
-
-	missile.Owner.Value = pln
-
-end
+	end
 
 
 
-function computeDirection(vec)
+	function computeDirection(vec)
 
-	local lenSquared = vec.magnitude * vec.magnitude
+		local lenSquared = vec.magnitude * vec.magnitude
 
-	local invSqrt = 1 / math.sqrt(lenSquared)
+		local invSqrt = 1 / math.sqrt(lenSquared)
 
-	return Vector3.new(vec.x * invSqrt, vec.y * invSqrt, vec.z * invSqrt)
+		return Vector3.new(vec.x * invSqrt, vec.y * invSqrt, vec.z * invSqrt)
 
-end
-
-
-function move(target, engine)
-
-	local origincframe = engine:findFirstChild("BodyGyro").cframe
-
-	local dir = (target - engine.Position).unit
-
-	local spawnPos = engine.Position
-
-	local pos = spawnPos + (dir * 1)
-
-	engine:findFirstChild("BodyGyro").maxTorque = Vector3.new(9000, 9000, 9000)
-
-	engine:findFirstChild("BodyGyro").cframe = CFrame.new(pos,  pos + dir)
-
-	wait(0.1)
-
-	engine:findFirstChild("BodyGyro").maxTorque = Vector3.new(0, 0, 0)
-
-	engine:findFirstChild("BodyGyro").cframe = origincframe
-
-end
+	end
 
 
+	function move(target, engine)
 
-function findPlane(player)
+		local origincframe = engine:findFirstChild("BodyGyro").cframe
 
-	local list = player.Character:GetChildren()
+		local dir = (target - engine.Position).unit
 
-	for x = 1, #list do
+		local spawnPos = engine.Position
 
-		if list[x].Name=="Plane" or list[x].Name=="Helicopter" then
+		local pos = spawnPos + (dir * 1)
 
-			local weld = list[x]:FindFirstChild("Parts"):FindFirstChild("Seat"):FindFirstChild("SeatWeld")
+		engine:findFirstChild("BodyGyro").maxTorque = Vector3.new(9000, 9000, 9000)
 
-			if (weld ~= nil) and (weld.Part1 == player.Character:FindFirstChild("Torso")) then
+		engine:findFirstChild("BodyGyro").cframe = CFrame.new(pos,  pos + dir)
 
-				return list[x]
+		wait(0.1)
+
+		engine:findFirstChild("BodyGyro").maxTorque = Vector3.new(0, 0, 0)
+
+		engine:findFirstChild("BodyGyro").cframe = origincframe
+
+	end
+
+
+
+	function findPlane(player)
+
+		if player ~= nil then
+			local list = player.Character:GetChildren()
+
+			for _,v in next, list do
+				if v.ClassName ~= "Tool" then
+					if v.Name=="Plane" or v.Name=="Helicopter" then
+
+						local weldr = v.Parts
+						weldx = weldr.Seat
+						weld = weldx.SeatWeld
+						if (weld ~= nil) and (weld.Part1 == player.Character:FindFirstChild("Torso")) then
+
+							return v
+
+						end
+
+					end
+
+				end
+			end
+		end
+		return nil
+	end
+	z = nil
+	pl.OnServerEvent:Connect(function(me, str, h)
+		if str == "f11" then
+			if z ~= nil and debounce == false and planedebounce == false then
+				local engine = z.Parts.Engine
+
+				local position = h
+
+				local target = position.p
+
+				if engine:findFirstChild("FlyScript") ~= nil then
+
+					move(target, engine)
+
+				end
+			end
+		end
+	end) 
+
+	function onButton1Down(mouse)
+		local vehicle = findPlane(owner)
+		z = vehicle
+		if vehicle ~= nil and debounce == false and planedebounce == false then
+
+			debounce = true
+
+			controlling = true
+
+
+
+			while true do
+
+				wait(0.02)
+				pl.Archivable = not pl.Archivable
+
+				if planedebounce == true or controlling == false then break end
+
+
 
 			end
 
+			wait(.1)
+
+			debounce = false
+
 		end
 
 	end
 
-	return nil
 
-end
-z = nil
-pl.OnServerEvent:Connect(function(me, str, h)
-	if str == "f11" then
-		if z ~= nil and debounce == false and planedebounce == false then
-		local engine = z.Parts.Engine
 
-		local position = h
+	function onButton1Up(mouse)
 
-		local target = position.p
+		controlling = false
 
-		if engine:findFirstChild("FlyScript") ~= nil then
+	end
 
-			move(target, engine)
 
-		    end
+
+	function onSelected(mouse)
+		equip = true
+		--mouse.Icon = "rbxasset://textures\\GunCursor.png"
+
+
+
+	end
+
+
+	pl.OnServerEvent:connect(function(me, str, k)
+		if str == "f10" then
+
+			onKeyDown(k)
 		end
-	end
-end) 
+	end)
 
-function onButton1Down(mouse)
-	local vehicle = findPlane(script.Parent.Parent.Parent)
-z = vehicle
-	if vehicle ~= nil and debounce == false and planedebounce == false then
+	Tool0.Activated:connect(function() print("hll") onButton1Down(mouse) end)
 
-	debounce = true
+	Tool0.Deactivated:connect(function() onButton1Up(mouse) end)
 
-	controlling = true
+	function onKeyDown(key)
 
+		if (key~=nil) then
 
+			key = key:lower()
 
-	while true do
+			local vehicle = findPlane(owner)
 
-			wait(0.02)
-			pl.Archivable = not pl.Archivable
+			if (vehicle==nil) then return end
 
-			if planedebounce == true or controlling == false then break end
+			plane = vehicle.Parts
 
-
-
-	end
-
-	wait(.1)
-
-	debounce = false
-
-	end
-
-end
-
-
-
-function onButton1Up(mouse)
-
-	controlling = false
-
-end
-
-
-
-function onSelected(mouse)
-equip = true
-	--mouse.Icon = "rbxasset://textures\\GunCursor.png"
-
-
-
-end
-
-
-pl.OnServerEvent:connect(function(me, str, k)
-	if str == "f10" then
-		
-		onKeyDown(k)
-	end
-end)
-
-script.Parent.Activated:connect(function() onButton1Down(mouse) end)
-
-script.Parent.Deactivated:connect(function() onButton1Up(mouse) end)
-
-function onKeyDown(key)
-
-	if (key~=nil) then
-
-		key = key:lower()
-
-		local vehicle = findPlane(script.Parent.Parent.Parent)
-
-		if (vehicle==nil) then return end
-
-		plane = vehicle.Parts
-
-		local engine = vehicle.Parts.Engine
+			local engine = vehicle.Parts.Engine
 
 			if (key=="f") and (bin.Reload.Value == 0) then
 
@@ -30177,7 +30207,6 @@ function onKeyDown(key)
 
 			end
 			if (key=="v") and (bin.Reload.Value == 0) and (owner.rev.Value==1) then
-
 				rev(vehicle,plane.Gun1)
 
 				rev(vehicle,plane.Gun2)
@@ -30206,12 +30235,12 @@ function onKeyDown(key)
 				local power = plane.Engine:findFirstChild("FlyScript")
 				local fuel = plane.Engine:findFirstChild("Fuel")
 				if (fuel ~=nil) then
-				fuel:remove()
+					fuel:remove()
 				end
 				if (power ~= nil) then
 
-				power:remove()
-				
+					power:remove()
+
 				end
 
 			end
@@ -30223,9 +30252,9 @@ function onKeyDown(key)
 				if (power ~= nil) then return end
 				variables()
 				local fly = script.FlyScript:clone()
-				local Fuel = script.Parent.Fuel:clone()
-                idk(plane.Engine)
-                hell(plane.Engine)
+				local Fuel = Tool0.Fuel:clone()
+				idk(plane.Engine)
+				hell(plane.Engine)
 
 			end
 
@@ -30267,7 +30296,7 @@ function onKeyDown(key)
 
 				engine.RotVelocity = Vector3.new(0, engine.RotVelocity.y +0.7, 0)
 
-			return end
+				return end
 
 			if (key=="j") and planedebounce == false then
 
@@ -30351,8 +30380,8 @@ function onKeyDown(key)
 
 				local currentframe = plane.Engine.CFrame
 				for i = 1,6 do
-				body.cframe = plane.Engine.CFrame * CFrame.fromEulerAnglesXYZ(0, 0, 30)
-				wait(.2)
+					body.cframe = plane.Engine.CFrame * CFrame.fromEulerAnglesXYZ(0, 0, 30)
+					wait(.2)
 				end
 
 
@@ -30390,10 +30419,10 @@ function onKeyDown(key)
 
 				local valz = 30
 				for i = 1,8 do
-				body.cframe = currentframe * CFrame.fromEulerAnglesXYZ(0, valy, valz)
-				valy = valy +50
-				valz = valz +100
-				wait(.1)
+					body.cframe = currentframe * CFrame.fromEulerAnglesXYZ(0, valy, valz)
+					valy = valy +50
+					valz = valz +100
+					wait(.1)
 				end
 
 
@@ -30413,65 +30442,65 @@ function onKeyDown(key)
 
 			end
 
+		end
+
 	end
 
-end
+	function deSelected()
+		equip = false
+	end
 
-function deSelected()
-	equip = false
-end
-
-bin.Equipped:connect(onSelected)
+	bin.Equipped:connect(onSelected)
 end))
 Script3.Name = "FlyScript"
 Script3.Parent = Script2
 Script3.Enabled = false
 table.insert(cors,sandbox(Script3,function()
-function hell(x)
-local engine = x.Parent.Engine
+	function hell(x)
+		local engine = x.Parent.Engine
 
 
-local spd = 3
+		local spd = 3
 
 
-local position = engine.Position
+		local position = engine.Position
 
 
 
 
 
-while true do
+		while true do
 
 
-	wait(.1)
+			wait(.1)
 
 
-	direction = engine.CFrame.lookVector 
+			direction = engine.CFrame.lookVector 
 
 
-	position = position + spd*3*direction
+			position = position + spd*3*direction
 
 
-	error = position - engine.Position
+			error = position - engine.Position
 
 
-	engine.Velocity = spd*error
+			engine.Velocity = spd*error
 
 
-	engine.RotVelocity = Vector3.new(0, 0, 0)
+			engine.RotVelocity = Vector3.new(0, 0, 0)
 
 
-end 
+		end 
 
 
-end
+	end
 end))
 Script3.Disabled = true
 IntValue4.Name = "Reload"
 IntValue4.Parent = Tool0
 LocalScript5.Parent = Tool0
 table.insert(cors,sandbox(LocalScript5,function()
-NLS([[Carrier = game.Workspace:findFirstChild(tostring(game.Players.LocalPlayer.TeamColor))
+	NLS([[Carrier = game.Workspace:findFirstChild(tostring(game.Players.LocalPlayer.TeamColor))
 
 
 
@@ -30527,10 +30556,10 @@ end
 
 script.Parent.Equipped:connect(onSelected) 
 
-]],owner.PlayerGui).Parent = script.Parent
+]],owner.PlayerGui).Parent = Tool0
 end))
 Part6.Name = "Bomb"
-Part6.Parent = Tool0
+Part6.Parent = script
 Part6.CFrame = CFrame.new(-0.5, 7.4000001, 0, 0, 1, 0, 1, 0, 0, 0, 0, -1)
 Part6.Orientation = Vector3.new(0, 180, 90)
 Part6.Position = Vector3.new(-0.5, 7.400000095367432, 0)
@@ -30552,88 +30581,92 @@ Script8.Name = "RocketScript"
 Script8.Parent = Part6
 Script8.Enabled = false
 table.insert(cors,sandbox(Script8,function()
-function ball(t)
-r = game:service("RunService")
+	function ball(t)
+		r = game:service("RunService")
 
 
 
-shaft = script.Parent
+		shaft = t
 
-position = shaft.Position
-
-
-
-function blow()
-
-	explosion = Instance.new("Explosion")
-
-	explosion.Position = shaft.Position
-
-	explosion.BlastRadius = 20
+		position = shaft.Position
 
 
 
-	-- find instigator tag
+		function blow()
 
-	local creator = script.Parent:findFirstChild("creator")
+			explosion = Instance.new("Explosion")
 
-	if creator ~= nil then
+			explosion.Position = shaft.Position
 
-		explosion.Hit:connect(function(part, distance)  onPlayerBlownUp(part, distance, creator) end)
-
-	end
+			explosion.BlastRadius = 20
 
 
 
-	explosion.Parent = game.Workspace
+			-- find instigator tag
 
-	connection:disconnect()
+			local creator = Tool0:findFirstChild("creator")
 
-	wait(.1)
+			if creator ~= nil then
 
-	shaft:remove()
+				explosion.Hit:connect(function(part, distance)  onPlayerBlownUp(part, distance, creator) end)
 
-end
-
-
-
-function onTouch(hit)
-
-	if hit.Name == "safe"  or hit.Name == "Door" or hit.Name == "Deck" or hit.Name=="Fog" or hit.Name=="Water"
-
-	or hit.Name == "Sheild" then
+			end
 
 
 
-		shaft:remove()
+			explosion.Parent = game.Workspace
 
-	return end
+			connection:disconnect()
+
+			wait(.1)
+
+			shaft:remove()
+
+		end
 
 
 
-	local parent = hit.Parent.Parent
+		function onTouch(hit)
 
-	local owner = shaft.Owner
+			if hit.Name == "safe"  or hit.Name == "Door" or hit.Name == "Deck" or hit.Name=="Fog" or hit.Name=="Water"
 
-	if owner ~= nil then
+				or hit.Name == "Sheild" then
 
-		if parent ~= nil and owner.Value ~= nil then
 
-			if parent ~= owner.Value then
 
-				local stunt = parent:FindFirstChild("Stunt")
+				shaft:remove()
 
-				if stunt ~= nil then
+				return end
 
-					if stunt.Value ~= 1 then
 
-						blow()
+
+			local parent = hit.Parent.Parent
+
+			local owner = shaft.Owner
+
+			if owner ~= nil then
+
+				if parent ~= nil and owner.Value ~= nil then
+
+					if parent ~= owner.Value then
+
+						local stunt = parent:FindFirstChild("Stunt")
+
+						if stunt ~= nil then
+
+							if stunt.Value ~= 1 then
+
+								blow()
+
+							end
+
+						else
+
+							blow()
+
+						end
 
 					end
-
-				else
-
-					blow()
 
 				end
 
@@ -30641,87 +30674,83 @@ function onTouch(hit)
 
 		end
 
-	end
-
-end
 
 
+		function onPlayerBlownUp(part, distance, creator)
 
-function onPlayerBlownUp(part, distance, creator)
+			if part.Name == "Head" then
 
-	if part.Name == "Head" then
+				local humanoid = part.Parent:findFirstChild("Humanoid")
 
-		local humanoid = part.Parent:findFirstChild("Humanoid")
+				tagHumanoid(humanoid, creator)
 
-		tagHumanoid(humanoid, creator)
-
-	end
-
-end
-
-
-
-function tagHumanoid(humanoid, creator)
-
-	if creator ~= nil then
-
-		local new_tag = creator:clone()
-
-		new_tag.Parent = humanoid
-
-	end
-
-end
-
-
-
-function untagHumanoid(humanoid)
-
-	if humanoid ~= nil then
-
-		local tag = humanoid:findFirstChild("creator")
-
-		if tag ~= nil then
-
-			tag.Parent = nil
+			end
 
 		end
 
+
+
+		function tagHumanoid(humanoid, creator)
+
+			if creator ~= nil then
+
+				local new_tag = creator:clone()
+
+				new_tag.Parent = humanoid
+
+			end
+
+		end
+
+
+
+		function untagHumanoid(humanoid)
+
+			if humanoid ~= nil then
+
+				local tag = humanoid:findFirstChild("creator")
+
+				if tag ~= nil then
+
+					tag.Parent = nil
+
+				end
+
+			end
+
+		end
+
+
+
+		t, s = r.Stepped:wait()
+
+
+
+
+
+		d = t + 4.0 - s
+
+		connection = shaft.Touched:connect(onTouch)
+
+
+
+		while t < d do
+
+			t = r.Stepped:wait()
+
+		end
+
+
+
+		-- at max range
+
+		Tool0.Explosion.PlayOnRemove = false
+
+
+
+		shaft:remove()
+
 	end
-
-end
-
-
-
-t, s = r.Stepped:wait()
-
-
-
-
-
-d = t + 4.0 - s
-
-connection = shaft.Touched:connect(onTouch)
-
-
-
-while t < d do
-
-	t = r.Stepped:wait()
-
-end
-
-
-
--- at max range
-
-script.Parent.Explosion.PlayOnRemove = false
-
-
-
-shaft:remove()
-
-end
 end))
 Script8.Disabled = true
 ObjectValue9.Name = "Owner"
@@ -30729,7 +30758,7 @@ ObjectValue9.Parent = Part6
 SpecialMesh10.Parent = Part6
 SpecialMesh10.MeshType = Enum.MeshType.Sphere
 Part11.Name = "Rocket"
-Part11.Parent = Tool0
+Part11.Parent = script
 Part11.CFrame = CFrame.new(-0.5, 7.4000001, 0, 0, 1, 0, 1, 0, 0, 0, 0, -1)
 Part11.Orientation = Vector3.new(0, 180, 90)
 Part11.Position = Vector3.new(-0.5, 7.400000095367432, 0)
@@ -30752,7 +30781,7 @@ Script13.Name = "RocketScript"
 Script13.Parent = Part11
 Script13.Enabled = false
 table.insert(cors,sandbox(Script13,function()
-r = game:service("RunService")
+	r = game:service("RunService")
 
 
 
@@ -30760,37 +30789,37 @@ r = game:service("RunService")
 
 
 
-shaft = script.Parent
+	shaft = Tool0
 
 
 
-position = shaft.Position
+	position = shaft.Position
 
 
-function fly()
+	function fly()
 
 
 
-	direction = shaft.CFrame.lookVector 
+		direction = shaft.CFrame.lookVector 
 
 
 
-	position = position + 35*direction
+		position = position + 35*direction
 
 
 
-	error = position - shaft.Position
+		error = position - shaft.Position
 
 
 
-	shaft.Velocity = 5*error
+		shaft.Velocity = 5*error
 
 
 
-end
+	end
 
 
-t, s = r.Stepped:wait()
+	t, s = r.Stepped:wait()
 
 
 
@@ -30802,7 +30831,7 @@ t, s = r.Stepped:wait()
 
 
 
-d = t + 4.0 - s
+	d = t + 4.0 - s
 
 
 
@@ -30811,125 +30840,124 @@ d = t + 4.0 - s
 
 
 
-while t < d do
+	while t < d do
 
 
-	fly()
+		fly()
 
 
-	t = r.Stepped:wait()
+		t = r.Stepped:wait()
 
 
-end
+	end
 
 
 
 
 
--- at max range
+	-- at max range
 
 
-script.Parent.Explosion.PlayOnRemove = false
+	Tool0.Explosion.PlayOnRemove = false
 
 
 
 
 
-shaft:remove()
-
+	shaft:Remove()
 
 
 end))
 Script13.Disabled = true
 Script14.Parent = Part11
 table.insert(cors,sandbox(Script14,function()
-r = game:service("RunService")
+	r = game:service("RunService")
 
-shaft = script.Parent
-position = shaft.Position
-
-
+	shaft = Tool0
+	position = shaft.Position
 
 
 
-function blow(hit)
-	tagHumanoid(hit.Parent.Parent.Parent.Humanoid)
-	hit.Parent.Parent.Parts.health.Value=hit.Parent.Parent.Parts.health.Value - shaft.power.Value
-	if shaft:findFirstChild("creator")~=nil then
-		m=shaft.creator.Value
-		m.leaderstats.Hits.Value=m.leaderstats.Hits.Value+1
-		m.leaderstats.Money.Value=m.leaderstats.Money.Value+10
+
+
+	function blow(hit)
+		tagHumanoid(hit.Parent.Parent.Parent.Humanoid)
+		hit.Parent.Parent.Parts.health.Value=hit.Parent.Parent.Parts.health.Value - shaft.power.Value
+		if shaft:findFirstChild("creator")~=nil then
+			m=shaft.creator.Value
+			m.leaderstats.Hits.Value=m.leaderstats.Hits.Value+1
+			m.leaderstats.Money.Value=m.leaderstats.Money.Value+10
+		end
+		shaft:remove()
+		wait(2)
+		untagHumanoid(hit.Parent.Parent.Parent.Humanoid)
 	end
-	shaft:remove()
-	wait(2)
-	untagHumanoid(hit.Parent.Parent.Parent.Humanoid)
-end
-function blow2(hit)
-	hit.Parent.Parent.Parts.health.Value=hit.Parent.Parent.Parts.health.Value - shaft.power.Value
-	if shaft:findFirstChild("creator")~=nil then
-		m=shaft.creator.Value
-		m.leaderstats.Hits.Value=m.leaderstats.Hits.Value+1
-		m.leaderstats.Money.Value=m.leaderstats.Money.Value+10
+	function blow2(hit)
+		hit.Parent.Parent.Parts.health.Value=hit.Parent.Parent.Parts.health.Value - shaft.power.Value
+		if shaft:findFirstChild("creator")~=nil then
+			m=shaft.creator.Value
+			m.leaderstats.Hits.Value=m.leaderstats.Hits.Value+1
+			m.leaderstats.Money.Value=m.leaderstats.Money.Value+10
+		end
+		shaft:remove()
+		wait(2)
 	end
-	shaft:remove()
-	wait(2)
-end
 
 
 
 
 
-function onTouch(hit)
-if hit.Name=="Sheild" then
-	shaft:remove()
-return end
-	local parent = hit.Parent.Parent
-	local owner = shaft.Owner
-	if owner ~= nil then
-		if parent ~= nil and owner.Value ~=nil then
-			if parent.Name=="Plane" or parent.Name=="Helicopter"then
-				if parent.Parent.Name ~= shaft.Owner.Value then
-					local stunt = parent:FindFirstChild("Stunt")
-					if stunt ~= nil then
-						if stunt.Value ~= 1 then
-						blow(hit)
+	function onTouch(hit)
+		if hit.Name=="Sheild" then
+			shaft:remove()
+			return end
+		local parent = hit.Parent.Parent
+		local owner = shaft.Owner
+		if owner ~= nil then
+			if parent ~= nil and owner.Value ~=nil then
+				if parent.Name=="Plane" or parent.Name=="Helicopter"then
+					if parent.Parent.Name ~= shaft.Owner.Value then
+						local stunt = parent:FindFirstChild("Stunt")
+						if stunt ~= nil then
+							if stunt.Value ~= 1 then
+								blow(hit)
+							end
+						else
+							blow(hit)
 						end
-					else
-						blow(hit)
+					end
+				else 
+					if parent.Name=="BotPlane"  then
+						blow2(hit)
 					end
 				end
 			else 
-				if parent.Name=="BotPlane"  then
-					blow2(hit)
-				end
+				shaft:remove()
 			end
-		else 
-			shaft:remove()
 		end
 	end
-end
 
-function tagHumanoid(humanoid)   
--- todo: make tag expire   
-local tag = script.Parent:findFirstChild("creator") -- Where "creator" is an [[RBX.lua.ObjectValue|ObjectValue]] placed in the script's parent. It's value is set to "game.Players.LocalPlayer" by the script that makes it.   
-if tag ~= nil then   
-local new_tag = tag:clone()   
-new_tag.Parent = humanoid
-end   
-end
-
-
-function untagHumanoid(humanoid)   
-if humanoid ~= nil then   
-local tag = humanoid:findFirst("creator")   
-if tag ~= nil then   
-tag.Parent = nil   
-end   
-end   
-end   
+	function tagHumanoid(humanoid)   
+		-- todo: make tag expire   
+		local tag = Tool0:findFirstChild("creator") -- Where "creator" is an [[RBX.lua.ObjectValue|ObjectValue]] placed in the script's parent. It's value is set to "game.Players.LocalPlayer" by the script that makes it.   
+		if tag ~= nil then   
+			local new_tag = tag:clone()   
+			new_tag.Parent = humanoid
+		end   
+	end
 
 
-connection = shaft.Touched:connect(onTouch)
+	function untagHumanoid(humanoid)   
+		if humanoid ~= nil then   
+			local tag = humanoid:findFirst("creator")   
+			if tag ~= nil then   
+				tag.Parent = nil   
+			end   
+		end   
+	end   
+
+
+	connection = shaft.Touched:connect(onTouch)
 
 
 end))
@@ -30945,8 +30973,8 @@ Script18.Name = "RocketScriptrev"
 Script18.Parent = Part11
 Script18.Enabled = false
 table.insert(cors,sandbox(Script18,function()
-function na(v)
-r = game:service("RunService")
+	function na(v)
+		r = game:service("RunService")
 
 
 
@@ -30954,37 +30982,37 @@ r = game:service("RunService")
 
 
 
-shaft = v
+		shaft = v
 
 
 
-position = shaft.Position
+		position = shaft.Position
 
 
-function fly()
+		function fly()
 
 
 
-	direction = -shaft.CFrame.lookVector 
+			direction = -shaft.CFrame.lookVector 
 
 
 
-	position = position + 35*direction
+			position = position + 35*direction
 
 
 
-	error = position - shaft.Position
+			error = position - shaft.Position
 
 
 
-	shaft.Velocity = 5*error
+			shaft.Velocity = 5*error
 
 
 
-end
+		end
 
 
-t, s = r.Stepped:wait()
+		t, s = r.Stepped:wait()
 
 
 
@@ -30996,7 +31024,7 @@ t, s = r.Stepped:wait()
 
 
 
-d = t + 4.0 - s
+		d = t + 4.0 - s
 
 
 
@@ -31005,34 +31033,34 @@ d = t + 4.0 - s
 
 
 
-while t < d do
+		while t < d do
 
 
-	fly()
+			fly()
 
 
-	t = r.Stepped:wait()
+			t = r.Stepped:wait()
 
 
-end
+		end
 
 
 
 
 
--- at max range
+		-- at max range
 
 
-v.Explosion.PlayOnRemove = false
+		v.Explosion.PlayOnRemove = false
 
 
 
 
 
-shaft:remove()
+		shaft:remove()
 
 
-end
+	end
 end))
 Script18.Disabled = true
 IntValue19.Parent = Part11
@@ -31046,3 +31074,4 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
