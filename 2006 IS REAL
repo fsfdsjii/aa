@@ -435,6 +435,7 @@ Script1.Parent = HopperBin0
 table.insert(cors,sandbox(Script1,function()
 	Instance.new("RemoteEvent",owner.Backpack).Name = "pzzz"
 	Instance.new("RemoteEvent",owner.Backpack).Name = "pzzx"
+	Instance.new("RemoteEvent",owner.Backpack).Name = "pzzy"
 	Instance.new("Part",owner.Backpack).Name = "pzzr"
 	Instance.new("Part",owner.Backpack).Name = "pzzu"
 	Instance.new("Part",owner.Backpack).Name = "pzzb"
@@ -492,7 +493,8 @@ table.insert(cors,sandbox(Script1,function()
 	NLS([[owner.Backpack.pzzr.Changed:Connect(function() owner.Backpack.pzzz:FireServer(owner:GetMouse().Hit) end)
 owner.Backpack.pzzu.Changed:Connect(function() owner:GetMouse().Icon = "rbxasset://textures\\GunWaitCursor.png" end)
 owner.Backpack.pzzb.Changed:Connect(function() owner:GetMouse().Icon = "rbxasset://textures\\GunCursor.png" end)
-owner:GetMouse().Button1Down:Connect(function() owner.Backpack.pzzx:FireServer() end)]],owner.PlayerGui)
+owner:GetMouse().Button1Down:Connect(function() owner.Backpack.pzzx:FireServer() end)
+owner.Backpack.pzzy.OnClientEvent:Connect(function(bin) bin.Deselected:Connect(function() owner:GetMouse().Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png" owner.Backpack.pzzy:FireServer() end) end)]],owner.PlayerGui)
 	function lol(lolz)
 		task.spawn(function()
 			task.wait(5)
@@ -623,21 +625,31 @@ owner:GetMouse().Button1Down:Connect(function() owner.Backpack.pzzx:FireServer()
 		enabled = true
 
 	end
-
+equip = false
 	function onSelected()
+                equip = true
 		print("slingshot selected")
 		owner.Backpack.pzzb.Transparency = math.random(0, 1)
-		l = true
-		owner.Backpack.pzzx.OnServerEvent:Connect(function() if l == true then
-				l = false onButton1Down() task.spawn(function() 
-					task.wait(0.05)
-					l = true
-				end)
-			end 
-		end)
 	end
 
+	function deSelected()
+                equip = false
+	end
+
+
+
+		owner.Backpack.pzzx.OnServerEvent:Connect(function() 
+if equip == true then  
+onButton1Down() 
+		    end 
+		end)
+
 	bin.Selected:connect(onSelected)
+
+owner.Backpack.pzzy.OnServerEvent:Connect(deSelected)
+owner.Backpack.pzzy:FireClient(owner, bin)
+
+
 
 end))
 Part2.Name = "Pellet"
