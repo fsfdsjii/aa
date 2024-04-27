@@ -37,10 +37,7 @@ end)
 
 Player = owner
 Char = Player.Character
-animate = Char:findFirstChild("Animate")
-if animate then
-	animate:Destroy()
-end
+
 Name = "Artillery Beacon"
 selected = false
 Button1Down = false
@@ -71,7 +68,7 @@ function makeParts(format)
 	if format == "hand" then
 		w.Part1 = Player.Character:FindFirstChild("Right Arm")
 		w.C0 = CFrame.new(-1.2, 0, 0) * CFrame.fromEulerAnglesXYZ(math.rad(90), 0, math.rad(90))
-		w.C1 = CFrame.new()
+	    w.C1 = CFrame.new()
 	elseif format == "holster" then
 		w.Part1 = Player.Character:FindFirstChild("Torso")
 		w.C0 = CFrame.new(0.7, 0.25, 0.6)
