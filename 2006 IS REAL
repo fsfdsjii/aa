@@ -1264,11 +1264,37 @@ if bool == true then
 bool = false
 if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.TextInput) == false then
 if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == true then 
-yey = owner.Character:FindFirstChild('Clone')
-if yey then
+yey = script.Parent
+if yey.Parent == owner.Character then
 task.wait(0.1)
 owner.hellozzx:FireServer()
+targx = owner:GetMouse().Target
+if targx ~= nil then
+if targx.Locked == false then
+if targx.Name ~= "Base" then
+owner:GetMouse().Icon = "rbxasset://textures/GrabRotateCursor.png"
+end
+end
+end
 inmense = true
+end
+else
+yey = script.Parent
+if yey.Parent == owner.Character then
+targ = owner:GetMouse().Target
+if owner:GetMouse().Icon ~= "rbxasset://textures/GrabRotateCursor.png" then
+if targ ~= nil then
+if targ.Locked == false then
+if targ.Name ~= "Base" then
+owner:GetMouse().Icon =  "rbxasset://textures/DragCursor.png"
+else
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+end
+else
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+end
+end
+end
 end
 end
 end
@@ -1280,9 +1306,18 @@ game:GetService('UserInputService').InputEnded:Connect(function(input, gameProce
 if imasom == true then
 imasom = false
 if input.UserInputType == Enum.UserInputType.MouseButton1 then
-yey = owner.Character:FindFirstChild('Clone')
-if yey then
+yey = script.Parent
+if yey.Parent == owner.Character then
 owner.hellozzxy:FireServer()
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+task.spawn(function()
+task.wait(0.05)
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+task.wait(0.05)
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+task.wait(0.05)
+owner:GetMouse().Icon =  "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+end)
 inmense = false
 end
 end
@@ -1290,38 +1325,32 @@ task.wait(0.1)
 imasom = true
 end
 end)
-game:GetService('UserInputService').InputBegan:Connect(function(input, gameProcessed)
-if input.KeyCode == Enum.KeyCode.T then
-if not gameProcessed then
-yey = owner.Character:FindFirstChild('Clone')
-if yey then
+owner:GetMouse().KeyDown:Connect(function(k)
+k = k:lower()
+yey = script.Parent
+if yey.Parent == owner.Character then
 if inmense == true then
-owner.hello0:FireServer()
-end
-end
+owner.hello0:FireServer(k)
 end
 end
 end)
 
-game:GetService('UserInputService').InputBegan:Connect(function(input, gameProcessed)
-if input.KeyCode == Enum.KeyCode.R then
-if not gameProcessed then
+owner:GetMouse().KeyDown:Connect(function(k)
+k = k:lower()
 if inmense == true then
-yey = owner.Character:FindFirstChild('Clone')
-if yey then
-if inmense == true then
-owner.hello9:FireServer()
+yey = script.Parent
+if yey.Parent == owner.Character then
+owner.hello9:FireServer(k)
 end
 end
-end
-end
-end
-end)]],owner.PlayerGui)
+end)]],owner.PlayerGui).Parent = Tool0
 debounce = true
 Script3.Parent = Tool0
 bool = true
 bool2 = true
 bool3 = true
+clonebox = Instance.new("SelectionBox")
+clonebox.LineThickness =  0.02
 owner.hellozzx.OnServerEvent:Connect(function()
 if bool2 == true then
 bool2 = false
@@ -1330,15 +1359,26 @@ task.wait(0.05)
 bool2 = true
 end
 end)
+task.spawn(function()
+while task.wait() do
+if Tool0.Parent ~= owner.Character then
+clonebox.Parent = nil
+clonebox.Adornee = nil
+end
+end
+end)
 
 owner.hello2.OnServerEvent:Connect(function(me, targ, hit)
 if bool == true then
 bool = false
 pcall(function()
 if owner.bruvx.Value ~= nil then
+if  targ ~= owner.bruvx.Value then
 owner.bruvx.Value.Position = hit.Position
-owner.bruvx.Value.Anchored = true
 owner.bruvx.Value:BreakJoints()
+owner.bruvx.Value:MakeJoints()
+owner.bruvx.Value.Anchored = true
+end
 end
 end)
 task.wait(0.05)
@@ -1353,7 +1393,8 @@ if owner.bruvx.Value ~= nil then
 if owner.pll.Value ~= nil then
 print("helloZX")
 owner.bruvx.Value.Anchored = owner.pll.Value
-owner.bruvx.Value:MakeJoints()
+clonebox.Parent = nil
+clonebox.Adornee = nil
 task.spawn(function()
 task.wait(0.05)
 owner.bruvx.Value.Anchored = owner.pll.Value
@@ -1363,6 +1404,7 @@ task.wait(0.05)
 owner.bruvx.Value.Anchored = owner.pll.Value
 task.wait(0.05)
 owner.bruvx.Value.Anchored = owner.pll.Value
+task.wait(0.01)
 owner.pll.Value = nil
 owner.bruvx.Value = nil
 end)
@@ -1372,12 +1414,13 @@ task.wait(0.05)
 boomboom = true
 end
 end)
+
 pio = true
-owner.hello0.OnServerEvent:Connect(function()
+owner.hello0.OnServerEvent:Connect(function(me,k)
 if pio == true then
 pio = false
-if owner.bruvx.Value ~= nil then
-owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation + Vector3.new(0, 0, 90)
+if k == "t" then
+owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation - Vector3.new(0, 0, 90)
 end
 task.wait(0.05)
 pio = true
@@ -1385,11 +1428,11 @@ end
 end)
 
 piox = true
-owner.hello9.OnServerEvent:Connect(function()
+owner.hello9.OnServerEvent:Connect(function(me, k)
 if piox == true then
 piox = false
-if owner.bruvx.Value ~= nil then
-owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation + Vector3.new(90, 0, 0)
+if k == "r" then
+owner.bruvx.Value.Orientation = owner.bruvx.Value.Orientation - Vector3.new(90, 0, 0)
 end
 task.wait(0.05)
 piox = true
@@ -1421,6 +1464,8 @@ if targ.Locked ~= true then
 				n.Position = hit.Position
                                 owner.bruvx.Value = n
                                 owner.pll.Value = owner.bruvx.Value.Anchored
+                                clonebox.Parent = n
+                                clonebox.Adornee = n
 end
 end
 end
