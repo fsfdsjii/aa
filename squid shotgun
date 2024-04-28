@@ -4290,6 +4290,12 @@ Sound663.Volume = 0.6399999856948853
 Script664.Name = "PaintballShooter"
 Script664.Parent = Tool0
 table.insert(cors,sandbox(Script664,function()
+	Instance.new("RemoteEvent",owner.Backpack).Name = "SquidEvent"
+	NLS([[sq = owner.Backpack.SquidEvent
+	sq.OnClientEvent:Connect(function()
+	sq:FireServer(owner:GetMouse().Hit)
+	end)]],owner.PlayerGui)
+	sq = owner.Backpack.SquidEvent
 	function clean(k)
 		wait(1)
 		k.Parent = nil
@@ -4373,7 +4379,7 @@ table.insert(cors,sandbox(Script664,function()
 
 		missile.Position = spawnPos
 		missile.Size = Vector3.new(1,1,1)
-		missile.Velocity = v * 100
+		missile.Velocity = v * 500
 		missile.BrickColor = BrickColor.new(colors[math.random(1, #colors)])
 		missile.Shape = 1
 		missile.BottomSurface = 0
@@ -4644,50 +4650,50 @@ table.insert(cors,sandbox(Script664,function()
 
 
 	Tool.Enabled = true
+	
+	sq.OnServerEvent:Connect(function(me, hi)
+		if me == owner then
 
+			if not Tool.Enabled then
+
+				return
+
+			end
+
+			Tool.Enabled = false
+
+			local character = Tool.Parent;
+
+			local humanoid = character.Humanoid
+
+			if humanoid == nil then
+
+				print("Humanoid not found")
+
+				return 
+
+			end
+
+			local targetPos = hi
+
+			local lookAt = (targetPos - character.Head.Position).unit
+
+
+
+			fire(lookAt)
+
+
+
+			wait(.7)
+
+
+
+			Tool.Enabled = true
+		end
+	end)
+	
 	function onActivated()
-
-
-
-		if not Tool.Enabled then
-
-			return
-
-		end
-
-
-
-		Tool.Enabled = false
-
-		local character = Tool.Parent;
-
-		local humanoid = character.Humanoid
-
-		if humanoid == nil then
-
-			print("Humanoid not found")
-
-			return 
-
-		end
-
-
-
-		local targetPos = humanoid.TargetPoint
-
-		local lookAt = (targetPos - character.Head.Position).unit
-
-
-
-		fire(lookAt)
-
-
-
-		wait(.7)
-
-
-
-		Tool.Enabled = true
+sq:FireClient(owner, nil)
 	end
 	script.Parent.Activated:connect(onActivated)
 
