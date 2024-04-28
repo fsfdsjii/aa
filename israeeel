@@ -1,302 +1,27 @@
 -- Converted using Mokiros's Model to Script Version 3
--- Converted string size: 2932 characters
+-- Converted string size: 1220 characters
 
 local ScriptFunctions = {
 function(script,require)
-local MaxLookDistance = 1000
-local MovementSpeed = 4
+-- lol don't enable this. this is system of the star
+local glitch = script.Parent.ATTACK
+local loud = glitch.Parent.EAR
+local ts = game:GetService("TweenService")
 
-local RunService = game:GetService("RunService")
-local Players = game:GetService("Players")
-local Chat = game:GetService("Chat")
-local Debris = game:GetService("Debris")
-local Cheeky = script.Parent
-local DefaultCFrame = Cheeky.CFrame
-
-local function getNearestPlayer()
-	local part = nil
-	local dist = MaxLookDistance
-	for i,v in ipairs(Players:GetPlayers()) do
-		local character = v.Character
-		if character then
-			local root = character:FindFirstChild("Head")
-			if root then
-				local thisDist = (root.Position-Cheeky.Position).Magnitude
-				if thisDist < dist then
-					dist = thisDist
-					part = root
-				end
-			end
+script.Parent.Touched:Connect(function(hit)
+	
+	if hit.Name == 'Torso' or 'Left Leg' or 'Right Leg' then
+		if game.Players:GetPlayerFromCharacter(hit.Parent) then
+			hit.Parent.Humanoid.WalkSpeed = 0
+			loud:Play()
+			ts:Create(hit.Parent.Humanoid, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.In, 0, false, 1), {Health = 0}):Play()
+			ts:Create(script.Parent, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1, true, 1), {Transparency = 1}):Play()
+			glitch.Parent = game.Lighting
+			ts:Create(glitch, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.In, 0, false, 1), {Contrast = 5}):Play()
+			script.Disabled = true
 		end
 	end
-	return part
-end
-
-local focusedPart = nil
-local lastCheck = 0
-
-RunService.Heartbeat:Connect(function(delta)
-	if focusedPart then
-		local cf = CFrame.lookAt(
-			DefaultCFrame.Position,
-			focusedPart.Position
-		)
-		Cheeky.CFrame = Cheeky.CFrame:Lerp(cf, delta * MovementSpeed)
-	else
-		Cheeky.CFrame = Cheeky.CFrame:Lerp(
-			DefaultCFrame,
-			delta * MovementSpeed
-		)
-	end
-	if time() > lastCheck then
-		lastCheck = time() + 1
-		focusedPart = getNearestPlayer()
-	end
 end)
-
-local Parts = {Cheeky, Cheeky.Face, Cheeky.ChatBubble}
-local CFData = {}
-
-local BubbleOffset = Cheeky.Size.Y/2
-
-RunService.Heartbeat:Connect(function(delta)
-	local cf = nil
-	
-	table.clear(CFData)
-	
-	if focusedPart then
-		cf = CFrame.lookAt(
-			DefaultCFrame.Position,
-			focusedPart.Position
-		)
-	else
-		cf = DefaultCFrame
-	end
-	
-	local NewCF = Cheeky.CFrame:Lerp(cf, delta * MovementSpeed)
-	CFData[1] = NewCF
-	CFData[2] = NewCF
-	CFData[3] = NewCF * CFrame.new(0,BubbleOffset,0)
-	workspace:BulkMoveTo(Parts, CFData, Enum.BulkMoveMode.FireCFrameChanged)
-end)
-
-Cheeky.Anchored = true
-end,
-function(script,require)
-local MaxLookDistance = 1000
-local MovementSpeed = 4
-
-local RunService = game:GetService("RunService")
-local Players = game:GetService("Players")
-local Chat = game:GetService("Chat")
-local Debris = game:GetService("Debris")
-local Cheeky = script.Parent
-local DefaultCFrame = Cheeky.CFrame
-
-local function getNearestPlayer()
-	local part = nil
-	local dist = MaxLookDistance
-	for i,v in ipairs(Players:GetPlayers()) do
-		local character = v.Character
-		if character then
-			local root = character:FindFirstChild("Head")
-			if root then
-				local thisDist = (root.Position-Cheeky.Position).Magnitude
-				if thisDist < dist then
-					dist = thisDist
-					part = root
-				end
-			end
-		end
-	end
-	return part
-end
-
-local focusedPart = nil
-local lastCheck = 0
-
-RunService.Heartbeat:Connect(function(delta)
-	if focusedPart then
-		local cf = CFrame.lookAt(
-			DefaultCFrame.Position,
-			focusedPart.Position
-		)
-		Cheeky.CFrame = Cheeky.CFrame:Lerp(cf, delta * MovementSpeed)
-	else
-		Cheeky.CFrame = Cheeky.CFrame:Lerp(
-			DefaultCFrame,
-			delta * MovementSpeed
-		)
-	end
-	if time() > lastCheck then
-		lastCheck = time() + 1
-		focusedPart = getNearestPlayer()
-	end
-end)
-
-local Parts = {Cheeky, Cheeky.Face, Cheeky.ChatBubble}
-local CFData = {}
-
-local BubbleOffset = Cheeky.Size.Y/2
-
-RunService.Heartbeat:Connect(function(delta)
-	local cf = nil
-	
-	table.clear(CFData)
-	
-	if focusedPart then
-		cf = CFrame.lookAt(
-			DefaultCFrame.Position,
-			focusedPart.Position
-		)
-	else
-		cf = DefaultCFrame
-	end
-	
-	local NewCF = Cheeky.CFrame:Lerp(cf, delta * MovementSpeed)
-	CFData[1] = NewCF
-	CFData[2] = NewCF
-	CFData[3] = NewCF * CFrame.new(0,BubbleOffset,0)
-	workspace:BulkMoveTo(Parts, CFData, Enum.BulkMoveMode.FireCFrameChanged)
-end)
-
-Cheeky.Anchored = true
-end,
-function(script,require)
-bin = script.Parent
-
-function move(target)
-	local dir = (target.Position - bin.Position).unit
-	local spawnPos = bin.Position
-	local pos = spawnPos + (dir * 1)
-	bin:findFirstChild("BodyGyro").cframe = CFrame.new(pos,  pos + dir)
-	bin:findFirstChild("BodyGyro").maxTorque = Vector3.new(9000,9000,9000)
-end
-
-function moveTo(target)
-	bin.BodyPosition.position = target.Position
-	bin.BodyPosition.maxForce = Vector3.new(10000,10000,10000) * bin.Speed.Value
-end
-
-function findNearestTorso(pos)
-	local list = game.Workspace:GetChildren()
-	local torso = nil
-	local dist = 1000
-	local temp = nil
-	local human = nil
-	local temp2 = nil
-	for x = 1, #list do
-		temp2 = list[x]
-		if (temp2.className == "Model") and (temp2 ~= script.Parent) then
-			temp = temp2:findFirstChild("Head")
-			human = temp2:findFirstChild("Humanoid")
-			if (temp ~= nil) and (human ~= nil) and (human.Health > 0)  then
-				if (temp.Position - pos).magnitude < dist then
-					torso = temp
-					dist = (temp.Position - pos).magnitude
-				end
-			end
-		end
-	end
-	return torso
-end
-
-while true do
-	local torso = findNearestTorso(bin.Position)
-	if torso~=nil then
-		move(torso)
-		moveTo(torso)
-	end
-	wait()
-end
-
-end,
-function(script,require)
-
-laugh = script.Parent.Laugh
-
-function kill(t) 
-	local h = t.Parent:FindFirstChild("Humanoid")
-	if h then
-		laugh:Stop()
-		laugh.PlaybackSpeed = math.random(90,110)/100
-		laugh:Play()
-		h.PlatformStand = true
-		wait(2)
-		h.PlatformStand = false
-	end
-end 
-
-script.Parent.Touched:connect(kill)
-
-end,
-function(script,require)
-bin = script.Parent
-
-function move(target)
-	local dir = (target.Position - bin.Position).unit
-	local spawnPos = bin.Position
-	local pos = spawnPos + (dir * 1)
-	bin:findFirstChild("BodyGyro").cframe = CFrame.new(pos,  pos + dir)
-	bin:findFirstChild("BodyGyro").maxTorque = Vector3.new(9000,9000,9000)
-end
-
-function moveTo(target)
-	bin.BodyPosition.position = target.Position
-	bin.BodyPosition.maxForce = Vector3.new(10000,10000,10000) * bin.Speed.Value
-end
-
-function findNearestTorso(pos)
-	local list = game.Workspace:GetChildren()
-	local torso = nil
-	local dist = 1000
-	local temp = nil
-	local human = nil
-	local temp2 = nil
-	for x = 1, #list do
-		temp2 = list[x]
-		if (temp2.className == "Model") and (temp2 ~= script.Parent) then
-			temp = temp2:findFirstChild("Head")
-			human = temp2:findFirstChild("Humanoid")
-			if (temp ~= nil) and (human ~= nil) and (human.Health > 0)  then
-				if (temp.Position - pos).magnitude < dist then
-					torso = temp
-					dist = (temp.Position - pos).magnitude
-				end
-			end
-		end
-	end
-	return torso
-end
-
-while true do
-	local torso = findNearestTorso(bin.Position)
-	if torso~=nil then
-		move(torso)
-		moveTo(torso)
-	end
-	wait()
-end
-
-end,
-function(script,require)
-
-laugh = script.Parent.Laugh
-
-function kill(t) 
-	local h = t.Parent:FindFirstChild("Humanoid")
-	if h then
-		laugh:Stop()
-		laugh.PlaybackSpeed = math.random(90,110)/100
-		laugh:Play()
-		h.PlatformStand = true
-		wait(2)
-		h.PlatformStand = false
-	end
-end 
-
-script.Parent.Touched:connect(kill)
-
 end
 }
 local ScriptIndex = 0
@@ -328,6 +53,54 @@ function RunScripts()
 	end
 end
 
+
+local function DecodeUnion(Values,Flags,Parse,data)
+	local m = Instance.new("Folder")
+	m.Name = "UnionCache ["..tostring(math.random(1,9999)).."]"
+	m.Archivable = false
+	m.Parent = game:GetService("ServerStorage")
+	local Union,Subtract = {},{}
+	if not data then
+		data = Parse('B')
+	end
+	local ByteLength = (data % 4) + 1
+	local Length = Parse('I'..ByteLength)
+	local ValueFMT = ('I'..Flags[1])
+	for i = 1,Length do
+		local data = Parse('B')
+		local part
+		local isNegate = bit32.band(data,0b10000000) > 0
+		local isUnion =  bit32.band(data,0b01000000) > 0
+		if isUnion then
+			part = DecodeUnion(Values,Flags,Parse,data)
+		else
+			local isMesh = data % 2 == 1
+			local ClassName = Values[Parse(ValueFMT)]
+			part = Instance.new(ClassName)
+			part.Size = Values[Parse(ValueFMT)]
+			part.Position = Values[Parse(ValueFMT)]
+			part.Orientation = Values[Parse(ValueFMT)]
+			if isMesh then
+				local mesh = Instance.new("SpecialMesh")
+				mesh.MeshType = Values[Parse(ValueFMT)]
+				mesh.Scale = Values[Parse(ValueFMT)]
+				mesh.Offset = Values[Parse(ValueFMT)]
+				mesh.Parent = part
+			end
+		end
+		part.Parent = m
+		table.insert(isNegate and Subtract or Union,part)
+	end
+	local first = table.remove(Union,1)
+	if #Union>0 then
+		first = first:UnionAsync(Union)
+	end
+	if #Subtract>0 then
+		first = first:SubtractAsync(Subtract)
+	end
+	m:Destroy()
+	return first
+end
 
 local function Decode(str)
 	local StringLength = #str
@@ -571,23 +344,15 @@ local function Decode(str)
 end
 
 
-local Objects = Decode('AACQIQVNb2RlbCEETmFtZSEFSm9lc3UhCldvcmxkUGl2b3QEhYaHIQRQYXJ0IQhBbmNob3JlZCIhDUJvdHRvbVN1cmZhY2UDAAAAAAAAAAAhCkJyaWNrQ29sb3IHNgEhBkNGcmFtZQQUhochBUNvbG9yBluaTCEITWF0ZXJpYWwDAAAAAAAAiUAhCFBvc2l0aW9uChC1'
-..'ScJohchAypglwyEEU2l6ZQqnHS1Bpx0tQacdLUEhClRvcFN1cmZhY2UhBVNoYXBlIQVEZWNhbCEGQ29sb3IzBgcHByEHVGV4dHVyZSEqaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD03OTkzNDcyMTY5IQZTY3JpcHQhBVRyYWNrIQlTYW50YSBIYXQEJoiH'
-..'IQpDYW5Db2xsaWRlAiELT3JpZW50YXRpb24KAAAAAARW5kAAAAAACnSMSMKkiipBeIokwyEIUm90YXRpb24K0LnZQOpZnkBRERxBIQtTcGVjaWFsTWVzaCEFU2NhbGUKfDqFQXo6hUF7OoVBIQZNZXNoSWQhKmh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9'
-..'MTkxMDk3MzMzICEJVGV4dHVyZUlkISpodHRwOi8vd3d3LnJvYmxveC5jb20vYXNzZXQvP2lkPTE5NDM2NjQwNSAhCE1lc2hUeXBlAwAAAAAAABRAAwAAAAAAAIpAIQxUcmFuc3BhcmVuY3kDAAAAAAAA4D8hBlBJTExBUgSJhochBEhlYWQH/AMEPYaHBgD/ACEYQ3Vz'
-..'dG9tUGh5c2ljYWxQcm9wZXJ0aWVzEAAAAECamZk+AAAAPwAAgD8AAIA/CkJvlsJAacZA67IlwwpnXihBZ14oQWdeKEEhCkF0dGFjaG1lbnQEQoqGCgAAAIAAAACAAAC0wgoAAAAAZl6owAAAAAAhC051bWJlclZhbHVlIQVTcGVlZCEFVmFsdWUDmpmZmZmZyT8hCEJv'
-..'ZHlHeXJvBIuMjSEJTWF4VG9ycXVlCgCgDEYAoAxGAKAMRiEMQm9keVBvc2l0aW9uIQhNYXhGb3JjZQoAAPpEAAD6RAAA+kQKCPavwh9wU0AYOj9EIQNBaW0hBENoYXQhDldlbGRDb25zdHJhaW50IQVQYXJ0MCEFUGFydDEGAAAAISpodHRwOi8vd3d3LnJvYmxveC5j'
-..'b20vYXNzZXQvP2lkPTcxNjc2MDI5MzMhBFRyaXAhBkFuY2hvcgRZhocKQm+WwlRb8D7rsiXDCu5PcEDuT3A/7k9wQAMAAAAAAADwPyEUQmFsbFNvY2tldENvbnN0cmFpbnQhC0F0dGFjaG1lbnQwIQtBdHRhY2htZW50MQRhh44KAAAAAAAAAAAAALRCCgAAAADuT/A+'
-..'AAAAAARjhocKQm+WwuG5LEHrsiXDCu5P8D/uT3A/7k/wPyEOVMOhdm9saSBMw6F0w7MEj4aHB+sDBGqGhwYREREKZsx/wphoxkDrsiXDBv8ABCEqaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD03MTY2NDQxNzM2IQxTdXJmYWNlTGlnaHQhCkJyaWdodG5l'
-..'c3MDAAAAYI/CNEAG/wcHIQtPYmplY3RWYWx1ZSEAB+wDBHeGhwb/AAADAAAAAACAiEAKZsx/wtRQ8D7rsiXDIQdSZWJsaW5kBHqGhwoabIDCAMfeQN51K8MKAADAQAAA4EAAAIA/IQbDgUxMw5MEkIaHBH+GhwpsjK7CmGjGQOuyJcMhKmh0dHA6Ly93d3cucm9ibG94'
-..'LmNvbS9hc3NldC8/aWQ9NzE2NzU3MTY3NQSChocKbIyuwtRQ8D7rsiXDBISGhwpsjK7CjbksQeuyJcMKELVJwvLU30AuJCXDCgAAgD8AAAAAAAAAAAoAAAAAAACAPwAAAAAKfft9PwAAAAAiTwC+CkJvlsIyZLdA67IlwwoAAAAAAACAvwAAAAAKoNmlwtvFqkD+WT9E'
-..'CpcDyT1Fkn4wj8N+vwooT72+xaxtP3BeFb0KAACAvwAAAAAAAAAACmbMf8KKY7dA67IlwwpsjK7CimO3QOuyJcMyAQACAAIDBAUGAQoABwgJCgsMDQ4PEBESExQVFhcKGAoZAgIAGhscHR4CAQACHwYBCgACIAcICQoNISIjJCUTJiclFSgXCikFBAAqKywtLi8wMQYB'
-..'CwAHCAkKCwwNDg8QETITFBUWFwozNBgKGQcCABobHB0eBwEAAh8BAAIAAjUENgYKCwACNwkKCzgNOQ86OzwREhM9FT4XChgKPwsDAA1AJEETQkMLAgACREVGRwsCAA1ISUpLCwIATE0TTh4LAQACT1ELAAAZCwIAGlQcVR4LAQACVgYKDAACVwcICQoLOA1YIiMPOhES'
-..'E1kVWhcKM1tcFAAAPxQDAA1fJGATYQYKCwACUAkKCzgNYiIjDzoREhNjFWQXCjNbAQACAAJlBGYGGAwAAjcHCAkKC2cNaA9pOzwREhNqFT4XChgKPxkDAA1AJEETQkcZAgANSElKSxkCAExNE05RGQAAGRkCABprHGxtGQIAbm8PcHEZAQACcgYYDAACVwcICQoLcw10'
-..'IiMPdRF2E3cVWhcKM1tcIQAAPyEDAA1fJGATYQYYCAACeAcICQoNeRN6FXsXCjNbAQACAAJ8BH0GJQsAAjcJCgtzDX4PdTs8ERITfxU+FwoYCj8mAwANQCRBE0JDJgIAAkRFRkcmAgANSElKSyYCAExNE04eJgEAAk9RJgAAGSYCABpUHIAeJgEAAlYGJQwAAlcHCAkK'
-..'C3MNgSIjD3UREhOCFVoXCjNbXC8AAD8vAwANXyRgE2EGJQsAAlAJCgtzDYMiIw91ERIThBVkFwozWw0RUgsRUxcVXRYVXgwdUhkdUyQgRSQiXSMiXhosUiYsUzIwXTEwXic=')
+local Objects = Decode('AABFIQVNb2RlbCEETmFtZSECb28hCldvcmxkUGl2b3QEQ0RFIQ5Vbmlvbk9wZXJhdGlvbiEHYmRkeT4/QSEIQW5jaG9yZWQiIQpCcmlja0NvbG9yB9kAIQZDRnJhbWUEFURFIQVDb2xvcgZ8XEYhCE1hdGVyaWFsAwAAAAAAgJhAIQtPcmllbnRhdGlvbgoAAAAAAAA0'
+..'QwAANEMhCFBvc2l0aW9uCjFDicI0tD1BLfoowyELUmVmbGVjdGFuY2UDAAAAAAAA8D8hCFJvdGF0aW9uCgAANEMAAAAAAAAAACEEU2l6ZQrYceo/Z8e9Qexhh0EhCVdlZGdlUGFydArOceo/zHFqQDL+8UAKMUOJwtxcIEEWTSTDCjFDicK8CVtBFk0kwwoAAAAAAAA0'
+..'QwAAAAAKznHqP8xxakDeSxw/CjFDicJP+VpBNWMowwoAAAAAAAAAAAAAAAAKMUOJwtxcIEE0YyjDCgAAAAAAAAAAAAA0QwoxQ4nC3FwgQUSnLcMKMUOJwrwJW0FEpy3DCjFDicJP+VpBJZEpwwoxQ4nC3FwgQSaRKcMKznHqP8txakAz/vFACjFDicIs9XFAxiQnwwoA'
+..'ALTCAAA0QwAAAAAKMUOJwiz1cUCUzyrDCgAAtMIAAAAAAAAAAArOceo/y3FqQN5LHD8KMUOJwmy++0CNzirDCgAAtEIAADRDAAAAAAoxQ4nCaL77QMYkJ8MKAAC0QgAAAAAAAAAACjFDicKldJ9BxiQnwwoxQ4nCpXSfQZTPKsMKMUOJwmCHfUGNzirDCjFDicJih31B'
+..'xiQnwyEFU291bmQhA0VBUiEGTG9vcGVkIQ1QbGF5YmFja1NwZWVkAwAAAAAAAPg/IQdTb3VuZElkIRdyYnhhc3NldGlkOi8vNTI4MjgzODQxMiEVQ29sb3JDb3JyZWN0aW9uRWZmZWN0IQZBVFRBQ0shBlNjcmlwdCEDYnJrCjFDicI4tD1BLfoowwoAAIA/AAAAAAAA'
+..'AAAKAAAAAAAAgL8AAAAABQEAAgACAwQFBkAEQAQAHB0eEwAcHR8gABwhIiMAHCEkJUAEABwdJiUAHB0nIwAcISggABwhKRNABAAcKissABwqLS4AHC8wMQAcLzIzQAQAHCo0MwAcKjUxABwvNi4AHC83LAELAAIHCAkKCwwNDg8QERITFBUWFxgZGhs4AgQAAjk6CTs8'
+..'PT4/AgEAAkBBAgEAAkIA')
 for _,obj in pairs(Objects) do
-	obj.Parent = workspace
+	obj.Parent = script or workspace
 end
 
 RunScripts()
