@@ -1,0 +1,113 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+Script2 = Instance.new("Script")
+Decal3 = Instance.new("Decal")
+Humanoid4 = Instance.new("Humanoid")
+Model0.Name = " "
+Model0.Parent = mas
+Part1.Name = "Head"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(8.81752014, 20.9944229, -27.4645271, -0.99999994, 0, 0, 0, 0.984808028, 0.173648328, 0, 0.173648328, -0.984807968)
+Part1.Orientation = Vector3.new(-10, 180, 0)
+Part1.Position = Vector3.new(8.817520141601562, 20.994422912597656, -27.464527130126953)
+Part1.Rotation = Vector3.new(-170, 0, 180)
+Part1.Color = Color3.new(0.929412, 0.917647, 0.917647)
+Part1.Size = Vector3.new(41.988792419433594, 41.988792419433594, 41.988792419433594)
+Part1.Anchored = true
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Lily white")
+Part1.Reflectance = 1
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Lily white")
+Part1.Shape = Enum.PartType.Ball
+Script2.Name = "Track"
+Script2.Parent = Part1
+table.insert(cors,sandbox(Script2,function()
+local MaxLookDistance = 275
+local MovementSpeed = 4
+
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+local Chat = game:GetService("Chat")
+local Debris = game:GetService("Debris")
+local Cheeky = script.Parent
+local DefaultCFrame = Cheeky.CFrame
+
+local function getNearestPlayer()
+	local part = nil
+	local dist = MaxLookDistance
+	for i,v in ipairs(Players:GetPlayers()) do
+		local character = v.Character
+		if character then
+			local root = character:FindFirstChild("HumanoidRootPart")
+			if root then
+				local thisDist = (root.Position-Cheeky.Position).Magnitude
+				if thisDist < dist then
+					dist = thisDist
+					part = root
+				end
+			end
+		end
+	end
+	return part
+end
+
+local focusedPart = nil
+local lastCheck = 0
+
+RunService.Heartbeat:Connect(function(delta)
+	if focusedPart then
+		local cf = CFrame.lookAt(
+			DefaultCFrame.Position,
+			focusedPart.Position
+		)
+		Cheeky.CFrame = Cheeky.CFrame:Lerp(cf, delta * MovementSpeed)
+	else
+		Cheeky.CFrame = Cheeky.CFrame:Lerp(
+			DefaultCFrame,
+			delta * MovementSpeed
+		)
+	end
+	if time() > lastCheck then
+		lastCheck = time() + 1
+		focusedPart = getNearestPlayer()
+	end
+end)
+
+Cheeky.Anchored = true
+end))
+Decal3.Name = "Classic Smile Face"
+Decal3.Parent = Part1
+Decal3.Texture = "http://www.roblox.com/asset/?id=7156832143"
+Humanoid4.Parent = Model0
+Humanoid4.HealthDisplayDistance = 550.1154174804688
+Humanoid4.JumpPower = 275.0577087402344
+Humanoid4.NameDisplayDistance = 550.1154174804688
+Humanoid4.WalkSpeed = 88.01847076416016
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
