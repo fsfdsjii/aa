@@ -1,0 +1,504 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+LocalScript3 = Instance.new("LocalScript")
+Script4 = Instance.new("Script")
+Script5 = Instance.new("Script")
+SpecialMesh6 = Instance.new("SpecialMesh")
+LocalScript7 = Instance.new("LocalScript")
+Tool0.Name = "Grapple"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(-0.800000012, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Tool0.GripForward = Vector3.new(-0, -0, 1)
+Tool0.GripPos = Vector3.new(-0.800000011920929, 0, 0)
+Tool0.GripRight = Vector3.new(-1, 0, 0)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-14.1001148, 26.3731461, 32.4039307, 0.48487395, -0.8745839, -0.000429010601, 0.000180799645, -0.00039020952, 0.999999821, -0.87458396, -0.484873891, -3.10283067e-05)
+Part1.Orientation = Vector3.new(-90, 60.99599838256836, 0)
+Part1.Position = Vector3.new(-14.100114822387695, 26.373146057128906, 32.4039306640625)
+Part1.Rotation = Vector3.new(-90.00199890136719, -0.02500000037252903, 60.99599838256836)
+Part1.Color = Color3.new(0.486275, 0.360784, 0.27451)
+Part1.Size = Vector3.new(1, 1, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Brown")
+Part1.Locked = true
+Part1.Reflectance = 0.30000001192092896
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Brown")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.Scale = Vector3.new(1.5, 1.5, 1.5)
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+LocalScript3.Name = "Local Gui"
+LocalScript3.Parent = Tool0
+table.insert(cors,sandbox(LocalScript3,function()
+NLS([[local Tool = script.Parent;
+
+enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(10)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+end
+
+
+
+Tool.Equipped:connect(onEquippedLocal)]],owner.PlayerGui).Parent = script.Parent
+
+end))
+Script4.Name = "Slingshot"
+Script4.Parent = Tool0
+table.insert(cors,sandbox(Script4,function()
+Instance.new("RemoteEvent",owner.Backpack).Name = "GrappleEvent"
+gra = owner.Backpack.GrappleEvent
+NLS([[owner.Backpack.GrappleEvent.OnClientEvent:Connect(function(str)
+if str == "hellz" then
+owner.Backpack.GrappleEvent:FireServer(owner:GetMouse().Hit)
+end
+end)]],owner.PlayerGui)
+function weld(t)
+	pellet = t
+	welded = false
+	waiting = false
+
+	function stick(hit) 
+		welded = true
+		local weld = Instance.new("Weld") 
+
+		weld.Part0 = pellet 
+		weld.Part1 = hit 
+
+		local HitPos = pellet.Position + (pellet.CFrame.lookVector * .5) 
+
+		local CJ = CFrame.new(HitPos) 
+		local C0 = pellet.CFrame:inverse() *CJ 
+		local C1 = hit.CFrame:inverse() * CJ 
+
+		weld.C0 = C0 
+		weld.C1 = C1 
+
+		weld.Parent = pellet 
+		local character = pellet.creator.Value.Character
+		local torso = character:findFirstChild("Torso")
+		if torso ~= nil then
+			prop = Instance.new("RocketPropulsion")
+			prop.Target = pellet
+			prop.Parent = torso
+			prop.MaxSpeed = 60
+			prop.MaxThrust = 4e+004
+			prop:Fire()
+
+
+		end
+	end
+	function stick2(hit) 
+		welded = true
+		local weld = Instance.new("Weld") 
+
+		weld.Part0 = pellet 
+		weld.Part1 = hit 
+
+		local HitPos = pellet.Position + (pellet.CFrame.lookVector * .1) 
+
+		local CJ = CFrame.new(HitPos) 
+		local C0 = pellet.CFrame:inverse() *CJ 
+		local C1 = hit.CFrame:inverse() * CJ 
+
+		weld.C0 = C0 
+		weld.C1 = C1 
+
+			weld.Parent = pellet 
+		pellet.creator.Value = owner
+		local character = pellet.creator.Value.Character
+		local torso = character:findFirstChild("Torso")
+		if torso ~= nil then
+			prop = Instance.new("RocketPropulsion")
+			prop.Name = "haha"
+			prop.Parent = pellet
+			prop.Target = torso
+			prop.MaxSpeed = 60
+			prop.MaxThrust = 4e+004
+			prop:Fire()
+			waiting = true
+			wait(5)
+			waiting = false
+			if prop.Parent ~= nil then
+				prop:Abort()
+				prop:remove()
+			end
+		end
+	end
+	function onTouched(hit)
+		print(hit)
+		moo = hit.Parent:findFirstChild("Humanoid")
+		if welded == false then 
+			if hit.Name ~= "bring" and hit.Name ~= "Handle" and moo == nil then
+					stick(hit)
+			end
+			if hit.Name == "bring" or hit.Name == "Engine" or hit.Name == "l1" or hit.Name == "l2" or hit.Name == "r1" or hit.Name == "r2" then
+				hit:breakJoints()
+					stick2(hit)
+			end
+			if hit.Name == "Handle" then
+				hit.Parent.Parent = game.Workspace
+					stick2(hit)
+			end
+			if moo ~= nil then
+					stick2(hit)
+					
+				end
+		else
+			local torso = hit.Parent:findFirstChild("Torso")
+			if torso ~= nil then
+				local propulse = torso:findFirstChild("RocketPropulsion")
+				if propulse ~= nil then 
+				end
+			end
+		end
+	end
+
+		pellet.Touched:connect(function(hit)
+			
+			onTouched(hit)
+		end)
+
+	wait(1)
+	if welded then 
+			wait(1)
+		task.spawn(function()
+		while waiting do 
+			wait(0.5)
+				end
+			end)
+	end
+	pellet:remove()
+end
+Tool = script.Parent
+VELOCITY = 450-- constant
+
+local Pellet = Instance.new("Part")
+Pellet.Name = "Arrow"
+Pellet.Locked = true
+Pellet.BackSurface = 0
+Pellet.BottomSurface = 0
+Pellet.FrontSurface = 0
+Pellet.LeftSurface = 0
+Pellet.RightSurface = 0
+Pellet.TopSurface = 0
+Pellet.Reflectance = .3
+Pellet.BrickColor = BrickColor.new(217)
+Pellet.Shape = "Block"
+Pellet.Size = Vector3.new(1,1.2,1)
+local mesh = Instance.new("SpecialMesh")
+mesh = Tool.Arrow:clone()
+mesh.Scale = Vector3.new(1,1,1)
+mesh.Parent = Pellet
+
+function fire(mouse_pos, offset)
+
+
+
+-- find player's head pos
+
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+
+	local head = vCharacter:findFirstChild("Head")
+	if head == nil then return end
+
+	local dir = mouse_pos - head.Position
+	dir = computeDirection(dir)
+	local pelletCF = CFrame.new(head.Position,  head.Position + dir)
+	local missile = Pellet:clone()
+	missile.CFrame = pelletCF * offset
+
+	local delta = mouse_pos - missile.CFrame.p
+	
+	local dy = delta.y
+	
+	local new_delta = Vector3.new(delta.x, 0, delta.z)
+	delta = new_delta
+
+	local dx = delta.magnitude
+	local unit_delta = delta.unit
+	
+	-- acceleration due to gravity in RBX units
+	local g = (1 * 20)
+
+	local theta = computeLaunchAngle( dx, dy, g)
+
+	local vy = math.sin(theta)
+	local xz = math.cos(theta)
+	local vx = unit_delta.x * xz
+	local vz = unit_delta.z * xz
+        
+	missile.Velocity = Vector3.new(vx,vy,vz) * VELOCITY * 1.3
+
+		weld(missile)
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile
+	
+	missile.Parent = game.Workspace
+
+end
+
+
+function computeLaunchAngle(dx,dy,grav)
+	-- arcane
+	-- http://en.wikipedia.org/wiki/Trajectory_of_a_projectile
+	
+	local g = math.abs(grav)
+	local inRoot = (VELOCITY*VELOCITY*VELOCITY*VELOCITY) - (g * ((g*dx*dx) + (2*dy*VELOCITY*VELOCITY)))
+	if inRoot <= 0 then
+		return .25 * math.pi
+	end
+	local root = math.sqrt(inRoot)
+	local inATan1 = ((VELOCITY*VELOCITY) + root) / (g*dx)
+
+	local inATan2 = ((VELOCITY*VELOCITY) - root) / (g*dx)
+	local answer1 = math.atan(inATan1)
+	local answer2 = math.atan(inATan2)
+	if answer1 < answer2 then return answer1 end
+	return answer2
+end
+
+function computeDirection(vec)
+	local lenSquared = vec.magnitude * vec.magnitude
+	local invSqrt = 1 / math.sqrt(lenSquared)
+	return Vector3.new(vec.x * invSqrt, vec.y * invSqrt, vec.z * invSqrt)
+end
+
+
+gra.OnServerEvent:Connect(function(me, hi)
+
+	if not Tool.Enabled then
+		return
+	end
+
+	Tool.Enabled = false
+
+	local character = Tool.Parent;
+	local humanoid = character.Humanoid
+	if humanoid == nil then
+		print("Humanoid not found")
+		return 
+	end
+
+	local targetPos = hi.p
+
+	for i=1,1 do
+		for j=1,1 do
+			fire(targetPos, CFrame.new(i,j,0))
+		end
+	end
+
+	wait(1)
+
+	Tool.Enabled = true
+end)
+
+Tool.Enabled = true
+function onActivated()
+	gra:FireClient(owner, "hellz")
+end
+
+script.Parent.Activated:connect(onActivated)
+
+
+
+end))
+Script5.Name = "PelletScript"
+Script5.Parent = Tool0
+Script5.Enabled = false
+table.insert(cors,sandbox(Script5,function()
+function weld(t)
+pellet = t
+welded = false
+waiting = false
+
+function stick(hit) 
+	welded = true
+	local weld = Instance.new("Weld") 
+
+	weld.Part0 = pellet 
+	weld.Part1 = hit 
+
+	local HitPos = pellet.Position + (pellet.CFrame.lookVector * .5) 
+
+	local CJ = CFrame.new(HitPos) 
+	local C0 = pellet.CFrame:inverse() *CJ 
+	local C1 = hit.CFrame:inverse() * CJ 
+
+	weld.C0 = C0 
+	weld.C1 = C1 
+
+	weld.Parent = pellet 
+	local character = pellet.creator.Value.Character
+	local torso = character:findFirstChild("Torso")
+	if torso ~= nil then
+		prop = Instance.new("RocketPropulsion")
+		prop.Target = pellet
+		prop.Parent = torso
+		prop.MaxSpeed = 60
+		prop.MaxThrust = 4e+004
+		prop:Fire()
+		
+		
+	end
+end
+function stick2(hit) 
+	welded = true
+	local weld = Instance.new("Weld") 
+
+	weld.Part0 = pellet 
+	weld.Part1 = hit 
+
+	local HitPos = pellet.Position + (pellet.CFrame.lookVector * .1) 
+
+	local CJ = CFrame.new(HitPos) 
+	local C0 = pellet.CFrame:inverse() *CJ 
+	local C1 = hit.CFrame:inverse() * CJ 
+
+	weld.C0 = C0 
+	weld.C1 = C1 
+
+	weld.Parent = pellet 
+	local character = pellet.creator.Value.Character
+	local torso = character:findFirstChild("Torso")
+	if torso ~= nil then
+		prop = Instance.new("RocketPropulsion")
+		prop.Name = "haha"
+		prop.Parent = pellet
+		prop.Target = torso
+		prop.MaxSpeed = 60
+		prop.MaxThrust = 4e+004
+		prop:Fire()
+		waiting = true
+		wait(5)
+		waiting = false
+		if prop.Parent ~= nil then
+			prop:Abort()
+			prop:remove()
+		end
+	end
+end
+function onTouched(hit)
+	print(hit)
+	moo = hit.Parent:findFirstChild("Humanoid")
+	if welded == false then 
+	if hit.Name ~= "bring" and hit.Name ~= "Handle" and moo == nil then
+		stick(hit) 
+	end
+		if hit.Name == "bring" or hit.Name == "Engine" or hit.Name == "l1" or hit.Name == "l2" or hit.Name == "r1" or hit.Name == "r2" then
+		hit:breakJoints()
+		stick2(hit) 
+	end
+	if hit.Name == "Handle" then
+	hit.Parent.Parent = game.Workspace
+	stick2(hit)
+	end
+	if moo ~= nil then
+	stick2(hit)
+	end
+	else
+		local torso = hit.Parent:findFirstChild("Torso")
+		if torso ~= nil then
+			local propulse = torso:findFirstChild("RocketPropulsion")
+			if propulse ~= nil then 
+			end
+		end
+	end
+end
+
+pellet.Touched:connect(onTouched)
+task.spawn(function()
+wait(1)
+if welded then 
+	wait(1)
+	while waiting do 
+		wait(0.5)
+	end
+	end
+end)
+	pellet:remove()
+		end
+end))
+Script5.Disabled = true
+SpecialMesh6.Name = "Arrow"
+SpecialMesh6.Parent = Tool0
+SpecialMesh6.MeshId = "http://www.roblox.com/asset/?id=1029622"
+LocalScript7.Parent = Tool0
+table.insert(cors,sandbox(LocalScript7,function()
+NLS([[a=false
+cam=nil
+
+
+
+function onEquipped(mouse2)
+	mouse2.KeyDown:connect(onkeyDown)
+	mouse = mouse2
+end
+function onkeyDown(key) 
+	if key == "q" then
+	moo = script.Parent.Parent.Torso:findFirstChild("RocketPropulsion")
+	if moo ~= nil then 
+		moo:remove()
+	end
+end 
+end
+
+
+
+
+script.Parent.Equipped:connect(onEquipped)]],owner.PlayerGui).Parent = script.Parent
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
