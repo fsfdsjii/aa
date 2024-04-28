@@ -1,5 +1,427 @@
 -- Converted using Mokiros's Model to Script Version 3
--- Converted string size: 3252 characters
+-- Converted string size: 8944 characters
+
+local ScriptFunctions = {
+function(script,require)
+-- util
+
+function waitForChild(parent, childName)
+	local child = parent:findFirstChild(childName)
+	if child then return child end
+	while true do
+		child = parent.ChildAdded:wait()
+		if child.Name==childName then return child end
+	end
+end
+
+function newSound(id)
+	local sound = Instance.new("Sound")
+	sound.SoundId = id
+	sound.archivable = false
+	sound.Parent = script.Parent.Head
+	return sound
+end
+
+-- declarations
+
+local sDied = newSound("rbxasset://sounds/uuhhh.wav")
+local sFallingDown = newSound("rbxasset://sounds/splat.wav")
+local sFreeFalling = newSound("rbxasset://sounds/swoosh.wav")
+local sGettingUp = newSound("rbxasset://sounds/hit.wav")
+local sJumping = newSound("rbxasset://sounds/button.wav")
+local sRunning = newSound("rbxasset://sounds/bfsl-minifigfoots1.mp3")
+sRunning.Looped = true
+
+local Figure = script.Parent
+local Head = waitForChild(Figure, "Head")
+local Humanoid = waitForChild(Figure, "Humanoid")
+
+-- functions
+
+function onDied()
+	sDied:Play()
+end
+
+function onState(state, sound)
+	if state then
+		sound:Play()
+	else
+		sound:Pause()
+	end
+end
+
+function onRunning(speed)
+	if speed>0 then
+		sRunning:Play()
+	else
+		sRunning:Pause()
+	end
+end
+
+-- connect up
+
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(function(state) onState(state, sJumping) end)
+Humanoid.GettingUp:connect(function(state) onState(state, sGettingUp) end)
+Humanoid.FreeFalling:connect(function(state) onState(state, sFreeFalling) end)
+Humanoid.FallingDown:connect(function(state) onState(state, sFallingDown) end)
+
+end,
+function(script,require)
+function waitForChild(parent, childName)
+	local child = parent:findFirstChild(childName)
+	if child then return child end
+	while true do
+		child = parent.ChildAdded:wait()
+		if child.Name==childName then return child end
+	end
+end
+
+-- declarations
+
+local Figure = script.Parent
+local Head = waitForChild(Figure, "Head")
+local Humanoid = waitForChild(Figure, "Humanoid")
+
+-- regeneration
+while true do
+	local s = wait(1)
+	local health = Humanoid.Health
+	if health > 0 and health < Humanoid.MaxHealth then
+		health = health + 0.01 * s * Humanoid.MaxHealth
+		if health * 1.05 < Humanoid.MaxHealth then
+			Humanoid.Health = health
+		else
+			Humanoid.Health = Humanoid.MaxHealth
+		end
+	end
+end
+
+end,
+function(script,require)
+function waitForChild(parent, childName)
+	local child = parent:findFirstChild(childName)
+	if child then return child end
+	while true do
+		child = parent.ChildAdded:wait()
+		if child.Name==childName then return child end
+	end
+end
+
+-- ANIMATION
+
+-- declarations
+
+local Figure = script.Parent
+local Torso = waitForChild(Figure, "Torso")
+local RightShoulder = waitForChild(Torso, "Right Shoulder")
+local LeftShoulder = waitForChild(Torso, "Left Shoulder")
+local RightHip = waitForChild(Torso, "Right Hip")
+local LeftHip = waitForChild(Torso, "Left Hip")
+local Neck = waitForChild(Torso, "Neck")
+local Humanoid = waitForChild(Figure, "Humanoid")
+local pose = "Standing"
+
+local toolAnim = "None"
+local toolAnimTime = 0
+
+-- functions
+
+function onRunning(speed)
+	if speed>0 then
+		pose = "Running"
+	else
+		pose = "Standing"
+	end
+end
+
+function onDied()
+	pose = "Dead"
+end
+
+function onJumping()
+	pose = "Jumping"
+end
+
+function onClimbing()
+	pose = "Climbing"
+end
+
+function onGettingUp()
+	pose = "GettingUp"
+end
+
+function onFreeFall()
+	pose = "FreeFall"
+end
+
+function onFallingDown()
+	pose = "FallingDown"
+end
+
+function onSeated()
+	pose = "Seated"
+end
+
+function moveJump()
+	RightShoulder.MaxVelocity = 0.5
+	LeftShoulder.MaxVelocity = 0.5
+	RightShoulder.DesiredAngle = 3.14
+	LeftShoulder.DesiredAngle = -3.14
+	RightHip.DesiredAngle = 0
+	LeftHip.DesiredAngle = 0
+end
+
+
+-- same as jump for now
+
+function moveFreeFall()
+	RightShoulder.MaxVelocity = 0.5
+	LeftShoulder.MaxVelocity = 0.5
+	RightShoulder.DesiredAngle = 3.14
+	LeftShoulder.DesiredAngle = -3.14
+	RightHip.DesiredAngle = 0
+	LeftHip.DesiredAngle = 0
+end
+
+function moveSit()
+	RightShoulder.MaxVelocity = 0.15
+	LeftShoulder.MaxVelocity = 0.15
+	RightShoulder.DesiredAngle = 3.14 /2
+	LeftShoulder.DesiredAngle = -3.14 /2
+	RightHip.DesiredAngle = 3.14 /2
+	LeftHip.DesiredAngle = -3.14 /2
+end
+
+function getTool()	
+	for _, kid in ipairs(Figure:GetChildren()) do
+		if kid.className == "Tool" then return kid end
+	end
+	return nil
+end
+
+function getToolAnim(tool)
+	for _, c in ipairs(tool:GetChildren()) do
+		if c.Name == "toolanim" and c.className == "StringValue" then
+			return c
+		end
+	end
+	return nil
+end
+
+function animateTool()
+	
+	if (toolAnim == "None") then
+		RightShoulder.DesiredAngle = 1.57
+		return
+	end
+
+	if (toolAnim == "Slash") then
+		RightShoulder.MaxVelocity = 0.5
+		RightShoulder.DesiredAngle = 0
+		return
+	end
+
+	if (toolAnim == "Lunge") then
+		RightShoulder.MaxVelocity = 0.5
+		LeftShoulder.MaxVelocity = 0.5
+		RightHip.MaxVelocity = 0.5
+		LeftHip.MaxVelocity = 0.5
+		RightShoulder.DesiredAngle = 1.57
+		LeftShoulder.DesiredAngle = 1.0
+		RightHip.DesiredAngle = 1.57
+		LeftHip.DesiredAngle = 1.0
+		return
+	end
+end
+
+function move(time)
+	local amplitude
+	local frequency
+  
+	if (pose == "Jumping") then
+		moveJump()
+		return
+	end
+
+	if (pose == "FreeFall") then
+		moveFreeFall()
+		return
+	end
+ 
+	if (pose == "Seated") then
+		moveSit()
+		return
+	end
+
+	local climbFudge = 0
+	
+	if (pose == "Running") then
+		RightShoulder.MaxVelocity = 0.15
+		LeftShoulder.MaxVelocity = 0.15
+		amplitude = 1
+		frequency = 9
+	elseif (pose == "Climbing") then
+		RightShoulder.MaxVelocity = 0.5 
+		LeftShoulder.MaxVelocity = 0.5
+		amplitude = 1
+		frequency = 9
+		climbFudge = 3.14
+	else
+		amplitude = 0.1
+		frequency = 1
+	end
+
+	desiredAngle = amplitude * math.sin(time*frequency)
+
+	RightShoulder.DesiredAngle = desiredAngle + climbFudge
+	LeftShoulder.DesiredAngle = desiredAngle - climbFudge
+	RightHip.DesiredAngle = -desiredAngle
+	LeftHip.DesiredAngle = -desiredAngle
+
+
+	local tool = getTool()
+
+	if tool then
+	
+		animStringValueObject = getToolAnim(tool)
+
+		if animStringValueObject then
+			toolAnim = animStringValueObject.Value
+			-- message recieved, delete StringValue
+			animStringValueObject.Parent = nil
+			toolAnimTime = time + .3
+		end
+
+		if time > toolAnimTime then
+			toolAnimTime = 0
+			toolAnim = "None"
+		end
+
+		animateTool()
+
+		
+	else
+		toolAnim = "None"
+		toolAnimTime = 0
+	end
+end
+
+
+-- connect events
+
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(onJumping)
+Humanoid.Climbing:connect(onClimbing)
+Humanoid.GettingUp:connect(onGettingUp)
+Humanoid.FreeFalling:connect(onFreeFall)
+Humanoid.FallingDown:connect(onFallingDown)
+Humanoid.Seated:connect(onSeated)
+
+-- main program
+
+local runService = game:service("RunService");
+
+while Figure.Parent~=nil do
+	local _, time = wait(0.1)
+	move(time)
+end
+
+end,
+function(script,require)
+-- Now with exciting TeamColors HACK!
+
+        function waitForChild(parent, childName)
+        local child = parent:findFirstChild(childName)
+        if child then return child end
+        while true do
+        child = parent.ChildAdded:wait()
+        if child.Name==childName then return child end
+        end
+        end
+
+        -- TEAM COLORS
+
+
+        function onTeamChanged(player)
+
+        wait(1)
+
+        local char = player.Character
+        if char == nil then return end
+
+        if player.Neutral then
+        -- Replacing the current BodyColor object will force a reset
+        local old = char:findFirstChild("Body Colors")
+        if not old then return end
+        old:clone().Parent = char
+        old.Parent = nil
+        else
+        local head = char:findFirstChild("Head")
+        local torso = char:findFirstChild("Torso")
+        local left_arm = char:findFirstChild("Left Arm")
+        local right_arm = char:findFirstChild("Right Arm")
+        local left_leg = char:findFirstChild("Left Leg")
+        local right_leg = char:findFirstChild("Right Leg")
+
+        if head then head.BrickColor = BrickColor.new(24) end
+        if torso then torso.BrickColor = player.TeamColor end
+        if left_arm then left_arm.BrickColor = BrickColor.new(26) end
+        if right_arm then right_arm.BrickColor = BrickColor.new(26) end
+        if left_leg then left_leg.BrickColor = BrickColor.new(26) end
+        if right_leg then right_leg.BrickColor = BrickColor.new(26) end
+        end
+        end
+
+        function onPlayerPropChanged(property, player)
+        if property == "Character" then
+        onTeamChanged(player)
+        end
+        if property== "TeamColor" or property == "Neutral" then
+        onTeamChanged(player)
+        end
+        end
+
+
+        local cPlayer = game.Players:GetPlayerFromCharacter(script.Parent)
+        cPlayer.Changed:connect(function(property) onPlayerPropChanged(property, cPlayer) end )
+        onTeamChanged(cPlayer)
+
+      
+end
+}
+local ScriptIndex = 0
+local Scripts,ModuleScripts,ModuleCache = {},{},{}
+local _require = require
+function require(obj,...)
+	local index = ModuleScripts[obj]
+	if not index then
+		local a,b = pcall(_require,obj,...)
+		return not a and error(b,2) or b
+	end
+	
+	local res = ModuleCache[index]
+	if res then return res end
+	res = ScriptFunctions[index](obj,require)
+	if res==nil then error("Module code did not return exactly one value",2) end
+	ModuleCache[index] = res
+	return res
+end
+local function Script(obj,ismodule)
+	ScriptIndex = ScriptIndex + 1
+	local t = ismodule and ModuleScripts or Scripts
+	t[obj] = ScriptIndex
+end
+
+function RunScripts()
+	for script,index in pairs(Scripts) do
+		coroutine.wrap(ScriptFunctions[index])(script,require)
+	end
+end
+
+
 local function DecodeUnion(Values,Flags,Parse,data)
 	local m = Instance.new("Folder")
 	m.Name = "UnionCache ["..tostring(math.random(1,9999)).."]"
@@ -290,23 +712,53 @@ local function Decode(str)
 end
 
 
-local Objects = Decode('AACkIQVNb2RlbCEETmFtZSEFU3R1ZmYhCldvcmxkUGl2b3QEjY6PIQRGb2xvBJCRkiEESGVhZASTkZIhBFBhcnQhBlNwaGVyZSEIQW5jaG9yZWQiIQ1Cb3R0b21TdXJmYWNlAwAAAAAAAAAAIQpCcmlja0NvbG9yB+kDIQZDRnJhbWUEHZGSIQVDb2xvcgb4+PghGEN1'
-..'c3RvbVBoeXNpY2FsUHJvcGVydGllcxAAAMhCzczMPs3MTD4AAIA/AACAPyEITWF0ZXJpYWwDAAAAAAAAckAhC09yaWVudGF0aW9uCgAAAAAAADRDAAAAACEIUG9zaXRpb24KiN/pQJjXn0AQAj5CIQhSb3RhdGlvbgoAADRDAAAAAAAANEMhBFNpemUKAAAAQQAAAEEA'
-..'AABBIQpUb3BTdXJmYWNlIQVTaGFwZSEOVW5pb25PcGVyYXRpb24HPwEEKZGSBrnEsQMAAAAAAACJQAqI3+lAmNefQGDvPUIKAAAgQQAAIEF9ah9BCgAAIEEAACBBAAAgQQMAAAAAAAAIQAoAAIA/AACAPwAAgD8KAAAAAAAAAAAAAAAACgAAgEAAAIA/AABAQArIAPFA'
-..'xOHOQFgdT0IKAAAAAAAAAAAAALRCIQlXZWRnZVBhcnQKKzkHQQB8LECoqEpCCgAAAAAAALTCAAA0Qwq+2NRA/ntMQKeoSkIKAABwQQAAtEIAAAAAIQlMZWZ0IGhhbmQElJWSBDuWkgoAAAAAAAC0wgAAAAAKlC5wQTDiIkCY1UxCCgAAAEDLzGxAy8xsQAMAAAAAAAAA'
-..'QCEITWVzaFBhcnQhGU1lc2hlcy9DbGVuY2hlZCBMZWZ0IEZpc3QEQZWSCjwhbEHwdz5A1KVXQgrrJapA1Mi+QDZW50AhBk1lc2hJZCEXcmJ4YXNzZXRpZDovLzI2ODYwMjUzMzghCE1lc2hTaXplCpZ4HD/Wci8/ur1UPyEKUmlnaHQgSGFuZASXmJIhGk1lc2hlcy9D'
-..'bGVuY2hlZCBSaWdodCBGaXN0BEuYkgoAupW98Hc+QMjUV0IhF3JieGFzc2V0aWQ6Ly8yNjg2MDI1NDMzBE6WkgoAx5O+MOIiQJzVTEIhCURlYWQgZm9sbwSZjpoEm5ydBFScnQoAAAAAAAAAAAAANMIKTwgvQvB3PkDUpVdCBFeWnQoAADTCAAC0wgAAAAAKm4cuQlCA'
-..'H0CY1UxCCgAAtMIAADTCAAC0wgRdjpoH6wMGERERCgAA8EEAADRDAAA0QgqN1RBCmNefQBACPkIKAAAWQwAAAAAAAAfDCv7/H0EAACBB/v8fQQqN1RBCl9efQBACPkIKRZ8VQka1/EAaD0tCCgAA8MEAAAAAAAC0QgpFnxVCR7X8QBoPS0IKAADwwQAAAAAAAAAACuz+'
-..'CkKq5cJABRZKQgpECxdCcb19QpHtHMIKOawOQpfTlUC1Vk1CCilcQsKc5ALDnOQCwyEKUmlnaHQgaGFuZASen6AEbZ+gCgAAAAAAADRDAAA0wgpJaudB8Hc+QMjUV0IKAAA0QwAAAAAAAAdDBHGWoAoAADRCAAC0wgAAAAAKWqLoQbA1IUCc1UxCCgAAtEIAADTCAAC0'
-..'QiEITWFkIGZvbG8EoZGSBKKRkgfsAwR5kZIG/wAACuKnjsGY159AEAI+QgR7kZIK5qeOwZjXn0Bg7z1CCgIAIEEAACBBfGofQQrmp47BmNefQBACPkIKlt+MwcThzkBYHU9CCpjpk8H+e0xAp6hKQgoAAHDBAAC0QgAAAAAKMoOFwQB8LECoqEpCCgAAcMEAALTCAAA0'
-..'QwSjlZIEhZaSCmzRH8Ew4iJAnNVMQgSHlZIKxN4jwfB3PkDUpVdCBKSYkgSKmJIKvpXIwfB3PkDI1FdCBIyWkgoeT8rBMOIiQJjVTEIK84xwQhAmBkA47FNDCvMENb9xxBw/+gS1vgr2BDU/b8QcP/cEtb4KxZJtQll7oUArGFNDCgEAgL8AAACzAAAAAAoAAAAAAACA'
-..'PwAAgLMKHnBtQmB7oUCCilBDCi2ehUKov0FAv+xWQwoBAIA/AAAAMwAAAAAKAAAAAAAAALMBAIA/Ci7pT0K4v0FAnvJWQwr7/3+/AAAAswAAAAAKY8mwQpUDBkAG+1RDCvcENT9wxBw/9wS1vgpOCC9C0Hc+QGx4V0IK9AQ1P/YENb8AAIAzCvcENT/yBDU/AACAswpH'
-..'audB8Hc+QOSPV0IK8AQ1v/AENb8AAAAzCvQENb/0BDU/AACAswrDkglCXHuhQCsYU0MK+t8IQnB7oUCCilBDClk8J0K4v0FAv+xWQwpc0tdBmr9BQJ7yVkMfAQACAAIDBAUBAQIAAgYEBwECAgACCAQJCgMOAAILDA0ODxAREhMUFRYXGBkaGxwdHh8gISIPIw8kQANA'
-..'AwEKKx0bLC0ugAovMDGACi8wLoAyLzM0gDIvNTYDCgAMDRAlEiYUJxYXGCgaGxwpHh8gKgECAgACNwQ4CgYMAAwNDg8QJRI5FCcYKBo6HDseOiA8Ig8jPT4GCgACPwwNECUSQBQnGCgcQSBCQ0RFRgECAgACRwRIPgkMAAJJDA0QJRJKFCcYKBobHEseHyBCQ0xFRgoJ'
-..'DAAMDQ4PECUSTRQnGCgaOhxOHjogPCIPIz0BAQIAAk8EUAEMAgACNwRRPg0MAAI/DA0QJRJSFCcYKBpTHFQeUyBCQ0RFRgoNDAAMDQ4PECUSVRQnGCgaVhxXHlggPCIPIz0BDAIAAggEWQoQDgACCwwNDg8QWhJZFFsWFxgZGlwcXR5eICEiDyMPJEADQAMBCitgXCwt'
-..'LoAKL2FigAovY2SAMi9lZoAyL2doEAoADA0QJRJZFCcWFxgoGlwcXR5eIF8BDAIAAmkEaj4TDAACSQwNECUSaxQnGCgabBxtHm4gQkNMRUYKEwwADA0ODxAlEm8UJxgoGnAccR5yIDwiDyM9AQECAAJzBHQBFgIAAggEdQoXDgACCwwNDg8QdhJ3FHgWFxgZGhsceR4f'
-..'ICEiDyMPJEADQAMBCit9GywtLoAKL34xgAovfi6AMi9/gIAyL4GCFwoADA0QJRJ6FCcWFxgoGhscex4fIHwBFgIAAjcEgwoaDAAMDQ4PECUShBQnGCgaOhyFHjogPCIPIz0+GgoAAj8MDRAlEoYUJxgoHIcgQkNERUYBFgIAAmkEiD4dDAACSQwNECUSiRQnGCgaGxyK'
-..'Hh8gQkNMRUYKHQwADA0ODxAlEosUJxgoGjocjB46IDwiDyM9AA==')
+local Objects = Decode('AEBtASEFTW9kZWwhBE5hbWUhGk11Z2VuIE5pZ2h0IEZ1bmsgLSBQb2NrZXRzIQtQcmltYXJ5UGFydCEKV29ybGRQaXZvdAQ2ATcBOAEhASAEOQE3ATgBIQRQYXJ0IQVUb3JzbyEIQW5jaG9yZWQiIQ1Cb3R0b21TdXJmYWNlAwAAAAAAAAAAIQZDRnJhbWUEFAA3ATgB'
+..'IQtPcmllbnRhdGlvbgoAAAAAAAA0QwAAAAAhCFBvc2l0aW9uCqBDxEJAAEBA9a/uQiELUmVmbGVjdGFuY2UDAAAAAAAA8D8hCFJvdGF0aW9uCgAANEMAAAAAAAA0QyEEU2l6ZQoAAABAAAAAQAAAgD8hClRvcFN1cmZhY2UhB01vdG9yNkQhCExlZnQgSGlwIQJDMAQ6'
+..'ATsBPAEhAkMxBD0BOwE8ASEFUGFydDAhBVBhcnQxIQtNYXhWZWxvY2l0eQMAAACgmZm5PyEJUmlnaHQgSGlwBD4BPwE8AQRAAUEBPAEhCExlZnQgTGVnBC0ANwFCASEKQ2FuQ29sbGlkZQIKoEPFQooAgD/1r+5CCgAAgD8AAABAAACAPyEJUmlnaHQgTGVnBDEANwFC'
+..'AQqgQ8NCigCAP/Wv7kIhCExlZnQgQXJtBDUAQwFEAQoAAAAAAAA0QwAAQMEKoEPHQkAAQED1r+5CCgAANEMAAAAAAAAoQyEESGVhZAQ6ADcBRQEKAADAQAAANEMAAAAACqBDxEIbAJBA9a/uQgMAAAAAAAAAQAoAAC5DAAAAAAAANEMKAAAAQAAAgD8AAIA/IQtTcGVj'
+..'aWFsTWVzaCEFU2NhbGUKAACgPwAAoD8AAKA/IQVEZWNhbCEEZmFjZSEHVGV4dHVyZSEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMzg0Mzc5NDQhCEh1bWFub2lkIQlSaWdodCBBcm0ESQA3AUYBCgAAh0IAADRDAAAAAAqgQ8FCQABgQPWv70IKAADh'
+..'QgAAAAAAADRDIQpNaWNyb3Bob25lBEcBSAFJASEKQnJpY2tDb2xvcgfrAwRVAEgBSQEhBUNvbG9yBhERESEITWF0ZXJpYWwDAAAAAAAAkUAKAAAAAAAAtMIAAOHCCjyLwUJIiV5AbYvxQgoAAOFCAAC0wgAAAAAKtbTmPy4tCT9qafk+IQVTaGFwZQfHAARcAEgBSQEG'
+..'Y19iCjx+wUJDoYpAwUDyQgoAAFQ/AABUPwAAVD8hBEZhY2UhKWh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9Mzc5NjE2Nzg5AwAAAAAAAAhAAwAAAAAAABBAIQhGTkYgSmVzdQRKAUsBOAEhCFNwZWFrZXJzBEwBSwE4ASEMTGVmdCBTcGVha2VyBE0BTgE4'
+..'ASEOVW5pb25PcGVyYXRpb24hB1NwZWFrZXIEbgBOATgBBgMDBAMAAAAAAABxQAoAAAAABgGgwgAAAAAKILK2Qg4HuT+VtvNCCgAAAACDAKDCAAAAAApQizRAl0MTQACoxj0K8NK9P+Oliz+476c9Cuu1tkIOB7k/6bXzQgpDizRAlkMTQLjvpz0KW662Qg4HuT9At/NC'
+..'IQRCb2R5BxoABHkATgE4AQYoKC0KLiazQojZMkCHc/RCCpyZeUAY2bJAVuNlQAeVAAR+AE4BOAEGGRkdCiCytkIL+IVAlbbzQgpQizRAlkMTQACoxj0KW662Qgv4hUBAt/NCCuu1tkIL+IVA6bXzQiENUmlnaHQgU3BlYWtlcgRPAVABOAEEhgBQATgBCgAAAACJAcjC'
+..'AAAAAAoAvLZCDge5P4K8B0MKAAA0Q/T9n8IAADRDCkCLNECWQxNAAKzGPQo5uLZCDAe5Pyy8B0MKyL+2QgwHuT/XvAdDBIwAUAE4AQouJrNCiNkyQAR6B0MEjgBQATgBCgC8tkIL+IVAgrwHQwpAizRAlEMTQACsxj0KyL+2Qgv4hUDXvAdDCjm4tkIL+IVALLwHQyEO'
+..'TWlkZGxlIFNwZWFrZXIEUQFLATgBBJYASwE4AQoAAAAAAAC0wgAAAAAKIHmxQnMOj0DI3wBDCgAAAACoxrPCAAAAAApIYAdBWA4PQUCDzEAKKDGIPicxiD4BzUw9CmvQt0LAGG4+BbP5QgpCYAdBVw4PQeJ6zEAK33ixQnMOj0DI3wBDCmvQt0LAGG4+QuQEQwpr0LdC'
+..'mkELQULkBEMKa9C3QppBC0EFs/lCIRFPdXRzaWRlU3BlYWtlUGFydASjAEsBOAEGKyswCmjkt0I4sNRAPOgAQwog3dBAIlpsQAD0pz0KtvPBQKubTEDu+6k+Cpist0I4sNRAPOgAQwov3dBAIlpsQLjvpz0KZ+S3Qjiw1EA86ABDBKoASwE4AQos0LdCOLDUQDzoAEMK'
+..'sPPBQKqbTEAAqMY9Ct0kLkD0JuE/uO+nPQoD1LdCNrDUQDzoAEMKtvPBQKubTEC476c9ClXMt0I2sNRAPOgAQwSxAEsBOAEKpM63QkBUF0A86ABDCrDzwUCrm0xAAKzGPQp70rdCQFQXQDzoAEMKzcq3QkBUF0A86ABDBLYASwE4AQrw5bdCQFQXQDzoAEMKIN3QQCNa'
+..'bEAA9Kc9Cu/lt0JCVBdAPOgAQwogrrdCQlQXQDzoAEMhBGplc3UEUgFTAVQBIQlqZXN1c2ZhY2UHkgAExABTAVQBBpSTlSEYQ3VzdG9tUGh5c2ljYWxQcm9wZXJ0aWVzEAAAAECamZk+AAAAPwAAgD8AAIA/AwAAAAAAAIlACjEI7L6iBZjCaJFBwQryrrFCiuJoQaZ+'
+..'AEMKWDn0v4kBmMIzM1/BCipcM0EqXDNBKlwzQSEGQ29sb3IzBgAAACEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMTg3NzU5NDchDFRyYW5zcGFyZW5jeQMAAABgZmbmPyEGRGVjYWxsIRZyYnhhc3NldGlkOi8vNjg1MzE0NDQxAwAAAGBmZtY/IQEh'
+..'IQFsB+kDBvj4+BAK1yM8AAAAAAAAAD8AAIA/AACAPwMAAAAAAACKQAoUrjNBFK4zQRSuM0EhAUkG////AwAAAAAAAHJAIQdEaWduaXR5BFUBVgFXAQRYAVYBVwEHBQAE3wBWAVcBBtfFmgru7cNC0/aQQHeLCkMhJ2h0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/'
+..'aWQ9NzA3NjA1MwTjAFYBVwEhC0xlZnRTdXJmYWNlCu7tw0LY7UFAd4sKQyEMUmlnaHRTdXJmYWNlIQZyb2Jsb3ghBU1vdG9yBD4BWQE4AQRAAVkBOAEEOgFaATgBBD0BWgE4ASEEU25hcCEETmVjawQ4ATcBWgEEWwE3AVoBBPEAXAFdAQq+n8xBeenWwNv5jcEK7u3A'
+..'QugBQkB+ggpDCiPbzUGPwsHAQmBtwQT1AF4BXwEK16OAwAAAAAD0/bNBCvDtxkL4AUJAcJQKQwT4AFYBYAEK16OAwAAAAAAAAAAACu7twkJqLIQ/ap0KQwT7AFYBYQEK16OAQAAAAAAAAAAACu/txEJqLIQ/hHkKQyEGU2NyaXB0IQVTb3VuZCEGSGVhbHRoIQtMb2Nh'
+..'bFNjcmlwdCEHQW5pbWF0ZSEKUm9ibG94VGVhbSEFUGFudHMhDVBhbnRzVGVtcGxhdGUhJ2h0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MjE1Nzc5NiEFU2hpcnQhDVNoaXJ0VGVtcGxhdGUhJ2h0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9OTg2'
+..'NTI4NCEKQm9keUNvbG9ycyEJSGVhZENvbG9yIQpIZWFkQ29sb3IzBtfFmiEMTGVmdEFybUNvbG9yIQ1MZWZ0QXJtQ29sb3IzIQxMZWZ0TGVnQ29sb3IhDUxlZnRMZWdDb2xvcjMhDVJpZ2h0QXJtQ29sb3IhDlJpZ2h0QXJtQ29sb3IzIQ1SaWdodExlZ0NvbG9yIQ5S'
+..'aWdodExlZ0NvbG9yMyEKVG9yc29Db2xvciELVG9yc29Db2xvcjMhBkhhbmRsZQQYAVYBVwEK7u3DQkhdn0B3iwpDCgAAgD/NzMw+AACAPwpmZiY/ZmYmP2ZmJj8hBk1lc2hJZCEnaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMTI1NDc4IQlUZXh0dXJl'
+..'SWQhJ2h0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MTEyNTQ3OSEITWVzaFR5cGUDAAAAAAAAFEAhBkNhbWVyYSEPVGh1bWJuYWlsQ2FtZXJhBGIBYwFkASETRGlhZ29uYWxGaWVsZE9mVmlldwMAAABA0K09QCELRmllbGRPZlZpZXcDAAAAAAAAREAhBUZv'
+..'Y3VzBGUBZgE4ASESTWF4QXhpc0ZpZWxkT2ZWaWV3BGcBaAFpAQQuAWgBaQEK+FN/wbCyscLJdtXBCix6wELQ4iJAhqIJQwpG9qvCBgGUwgYB4cIEMQFoAWkBCqqfwEKQ6DxAbM4IQwRqAWsBbAEDAAAAgOoEVEADAAAAoJl5UEAEbQFmATgBCv0lB8M9pQdCqLVrQgoA'
+..'AIC/AAAAAAAAAAAKAAAAAAAAgD8AAAAACtNKvcK9lSFAHb9EQgoAAIC/AACAvwAAAAAKLr07swAAAAAAAIA/CgAAAAD//38/AAAAAAoAAAC/AACAPwAAAAAKAACAPwAAgL8AAAAACi69O7MAAACAAACAvwoAAAA/AACAPwAAAAAKLr07swAAAAAAAIC/CgAAAAD+/38/'
+..'AAAAAArqZ3q/WeRUvgAAAAAKSOVUvq9nej8AAAAACgAAAAAFmX4/ChPWvQoAAAAAKO/DPmuDbL8KpELAwud+a0AhYUdCCo4MLa5hg2y/F+/DvgpdGVgvF+/DvmGDbD8K7hHQwrQjKkEIXGdCCgAAAAAAAAAA4P9/PwrlONDCWg6PQAhcZ0IK0YrOwlLZMkDd1UxCCqrJ'
+..'MT4AAAAAjhx8PwrPis7CUtkyQArxgEIKC+AxvgAAAACOG3w/CuU40MJaDo9Ai3NnQgruEdDCheJoQQLvZUIK+F1wPpGcVr7u/nI/CrPSbj1YTno/cU1OPgp0xL3CksMlQNqhhUIKHgCAPxYA3JMAAAAAChYA3JMAAIA/EACgEgp0xL3CksMlQDD/hkIKAAAAAAAAAAAA'
+..'AIC/CgAAAAAAAAAAAACAPwoAAAAAAAAAvwAAAAAKsxV2P2HEjL5RQZ68Cthegj447Fs/D1fjPgq2g2w/BXLDPuzH27wKce3Dvrfuaz+2qIS9ChkAALDAXn8/LZSPvQoZAAAwwF5/Py2Ujz0K17S+QsDQWEBq1LRCCv0OCr8BAICyI5VXPwqNpIu+pjNyP5HaMr4Kt+TB'
+..'Qt4igUDm3rZCCgAAgD8AAAAAAAAAAApcR8HCPGQpQP7ahEIKCgfYvawN3b6aU2U/Cqlegj5A7Fs/EFfjPgpXSJHC2+ClQNYAaEIK9MQHuwAAAIDc/3+/Cqi02T2sjH4/putmuQqJQpXCga6sQA4FaEJQAQAAAgACAAMABQAGAAEAAQIAAgAHAAUACAAJAAIKAAIACgAL'
+..'AAwADQAOAA8AEAARABIAEwAUABUAFgAXABgAGQAaABsADgAcAAMEAAIAHQAeAB8AIAAhACQAJQAcAAMEAAIAJgAeACcAIAAoACQAJQAJAAILAAIAKQALAAwADQAOAA8AKgArACwAEQASABMALQAVABYAFwAYABkALgAbAA4ACQACCwACAC8ACwAMAA0ADgAPADAAKwAs'
+..'ABEAEgATADEAFQAWABcAGAAZAC4AGwAOAAkAAgsAAgAyAAsADAANAA4ADwAzACsALAARADQAEwA1ABUAFgAXADYAGQAuABsADgAJAAIKAAIANwALAAwADQAOAA8AOAARADkAEwA6ABUAOwAXADwAGQA9ABsADgA+AAkBAD8AQABBAAkCAAIAQgBDAEQARQACAAAJAAIL'
+..'AAIARgALAAwADQAOAA8ARwArACwAEQBIABMASQAVABYAFwBKABkALgAbAA4AAQACAgACAEsABQBMAAkADgwACwAMAA0ADgBNAE4ADwBPAFAAUQBSAFMAEQBUABMAVQAXAFYAGQBXABsADgBYADsACQAODAALAAwADQAOAE0AWQAPAFoAUABbAFIAUwARAFQAEwBcABcA'
+..'VgAZAF0AGwAOAFgADgBBABACAF4AFgBDAF8AQQAQAQBDAF8AQQAQAgBeAGAAQwBfAEEAEAIAXgA7AEMAXwBBABACAF4AYQBDAF8AQQAQAgBeAA4AQwBfAAEAAQIAAgBiAAUAYwABABcCAAIAZAAFAGUAAQAYAgACAGYABQBnAGgAQAIACQBxAHIAbQAACQBzAHQAbQAZ'
+..'CgACAGkACwAMAE0ATgAPAGoAUABrAFIAbAARAG0AEwBuABcAbwAZAHAACQAZDAACAHUACwAMAA0ADgBNAHYADwB3AFAAeABSAGwAEQBtABMAeQAXAG8AGQB6ABsADgBoAEACAAkAcwCAAG0AAAkAcQCBAG0AGQoAAgBpAAsADABNAHsADwB8AFAAfQBSAGwAEQBtABMA'
+..'fgAXAG8AGQB/AAEAGAIAAgCCAAUAgwBoAEACAAkAcwCJAIUAAAkAcQCKAIUAHQoAAgBpAAsADABNAHsADwCEAFAAfQBSAGwAEQCFABMAhgAXAIcAGQCIAAkAHQwAAgB1AAsADAANAA4ATQB2AA8AiwBQAHgAUgBsABEAhQATAIwAFwCHABkAegAbAA4AaABAAgAJAHEA'
+..'kACFAAAJAHMAkQCFAB0KAAIAaQALAAwATQBOAA8AjQBQAGsAUgBsABEAhQATAI4AFwCHABkAjwABABgCAAIAkgAFAJMAaABABQAJAJkAmgCVAAAJAJsAnACVAAAJAJkAnQCVAAAJAJkAngCVAAAJAJkAnwCVACEKAAIAdQALAAwATQB7AA8AlABQAH0AUgBsABEAlQAT'
+..'AJYAFwCXABkAmABoAEACgAkApQCmAJUAAAkApwCoAJUAIQoAAgCgAAsADABNAHYADwChAFAAogBSAGwAEQCVABMAowAXAJcAGQCkAGgAQAIACQCsAK0AlQAACQCuAK8AlQAhCgACAGkACwAMAE0ATgAPAKkAUABrAFIAbAARAJUAEwCqABcAlwAZAKsAaABAAgAJAKwA'
+..'swCVAAAJAK4AtACVACEKAAIAaQALAAwATQBOAA8AsABQAGsAUgBsABEAlQATALEAFwCXABkAsgBoAEACAAkApwC4AJUAgAkApQC5AJUAIQoAAgCgAAsADABNAHYADwC1AFAAogBSAGwAEQCVABMAtgAXAJcAGQC3AAEAFwIAAgC6AAUAuwAJACcPAAIAvAALAAwADQAO'
+..'AE0AvQAPAL4AUAC/AMAAwQBSAMIAEQDDABMAxAAVABYAFwDFABkAxgAbAA4AWAAOAEEAKAQAXgAOAMcAyABDAMkAygDLAEEAKAQAAgDMAMcAyABDAM0AygDOAEEAKAMAAgDPAEMAzQDKABYACQAnEQACANAACwAMAA0ADgBNANEADwC+ACsALABQANIAwADTAFIA1AAR'
+..'AMMAEwDEABUAFgAXAMUAGQDVABsADgDKAMsAWAAOAAkAJxEAAgDWAAsADAANAA4ATQDRAA8AvgArACwAUADXAMAA0wBSANgAEQDDABMAxAAVABYAFwDFABkA1QAbAA4AygAWAFgADgABAAECAAIA2QAFANoAAQAuAgACAAcABQDbAAkALwkAAgA3AAsADABNANwADwDd'
+..'ACsALABQAN4AEwDfABkAPQAbAA4APgAwAQA/AEAAQQAwAgACAEIAQwDgAAkALwkAAgAKAAsADABNANwADwDhAFAA3gDiADsAEwDjAOQAOwAZABoAQQAzAQACAOUA5gAzBAACACYAHgDnACAA6AAkACUA5gAzBAACAB0AHgDpACAA6gAkACUA6wAzAwACAOwAHgDtACAA'
+..'7gAJAC8KAAIAMgALAAwATQDcAA8A7wArACwAUADeABEA8AATAPEAFwDyABkALgAJAC8KAAIARgALAAwATQDcAA8A8wArACwAUADeABEA9AATAPUAFwD0ABkALgAJAC8LAAIAKQALAAwADQAOAE0ATgAPAPYAKwAsAFAAUQARAPcAEwD4ABcA9wAZAC4ACQAvCwACAC8A'
+..'CwAMAA0ADgBNAE4ADwD5ACsALABQAFEAEQD6ABMA+wAXAPoAGQAuAEUALwAA/AAvAQACAP0A/AAvAQACAP4A/wAvAQACAAAB/AAvAQACAAEBAgEvAgACAAIBAwEEAQUBLwIAAgAFAQYBBwEIAS8MAAkB3AAKAQsBDAHcAA0BCwEOAU4ADwFRABAB3AARAQsBEgFOABMB'
+..'UQAUAdwAFQELAQkALwgAAgAWAQsADAANAA4ADwAXASsALAATABgBGQAZARsADgA+AEQEAD8AGgEbARwBHQEeAR8BIAEhAS8GAAIAIgEPACMBJAElASYBJwEoASkBKgEnAQEALgIAAgBLAAUAKwEJAEcMAAsADAANAA4ATQBOAA8ALAFQAFEAUgBTABEALQETAC4BFwAv'
+..'ARkAVwAbAA4AWAA7AAkARwwACwAMAA0ADgBNAFkADwAwAVAAWwBSAFMAEQAtARMAMQEXAC8BGQBdABsADgBYAA4AQQBJAgBeABYAQwBfAEEASQEAQwBfAEEASQIAXgBgAEMAXwBBAEkCAF4AOwBDAF8AQQBJAgBeAGEAQwBfAEEASQIAXgAOAEMAXwAhAQEGAAIAIgEP'
+..'ADIBJAEzASYBNAEoATUBKgE0ARYBBAADAgQAAwQiAAMEIwAGBSIAAwUjAAcOBAAPFwQAIhgEACIZBAAcHQQAICEEACInBAAtLgQAMC8EADA1IgAzNSMAOzYiADM2IwA6NyIAMzcjADBHBABI')
 for _,obj in pairs(Objects) do
 	obj.Parent = workspace
 end
+
+RunScripts()
