@@ -1,53 +1,5 @@
 -- Converted using Mokiros's Model to Script Version 3
--- Converted string size: 1320 characters
-local function DecodeUnion(Values,Flags,Parse,data)
-	local m = Instance.new("Folder")
-	m.Name = "UnionCache ["..tostring(math.random(1,9999)).."]"
-	m.Archivable = false
-	m.Parent = game:GetService("ServerStorage")
-	local Union,Subtract = {},{}
-	if not data then
-		data = Parse('B')
-	end
-	local ByteLength = (data % 4) + 1
-	local Length = Parse('I'..ByteLength)
-	local ValueFMT = ('I'..Flags[1])
-	for i = 1,Length do
-		local data = Parse('B')
-		local part
-		local isNegate = bit32.band(data,0b10000000) > 0
-		local isUnion =  bit32.band(data,0b01000000) > 0
-		if isUnion then
-			part = DecodeUnion(Values,Flags,Parse,data)
-		else
-			local isMesh = data % 2 == 1
-			local ClassName = Values[Parse(ValueFMT)]
-			part = Instance.new(ClassName)
-			part.Size = Values[Parse(ValueFMT)]
-			part.Position = Values[Parse(ValueFMT)]
-			part.Orientation = Values[Parse(ValueFMT)]
-			if isMesh then
-				local mesh = Instance.new("SpecialMesh")
-				mesh.MeshType = Values[Parse(ValueFMT)]
-				mesh.Scale = Values[Parse(ValueFMT)]
-				mesh.Offset = Values[Parse(ValueFMT)]
-				mesh.Parent = part
-			end
-		end
-		part.Parent = m
-		table.insert(isNegate and Subtract or Union,part)
-	end
-	local first = table.remove(Union,1)
-	if #Union>0 then
-		first = first:UnionAsync(Union)
-	end
-	if #Subtract>0 then
-		first = first:SubtractAsync(Subtract)
-	end
-	m:Destroy()
-	return first
-end
-
+-- Converted string size: 332 characters
 local function Decode(str)
 	local StringLength = #str
 	
@@ -290,13 +242,8 @@ local function Decode(str)
 end
 
 
-local Objects = Decode('AABLIQVNb2RlbCEETmFtZSEGYm9zc2VzIQpXb3JsZFBpdm90BERFRiEEUGFydCEIQW5jaG9yZWQiIQ1Cb3R0b21TdXJmYWNlAwAAAAAAAAAAIQpCcmlja0NvbG9yB+kDIQZDRnJhbWUEEkVHIQVDb2xvcgb4+PghCFBvc2l0aW9uCspynEIbAKBADnnpwiELUmVmbGVj'
-..'dGFuY2UDAAAAAAAA8D8hBFNpemUKAAAgQQAAIEEAACBBIQpUb3BTdXJmYWNlIQVTaGFwZQfsAwQcRUcG/wAACspyhEIbAKBADnnpwgMAAACgmZnJPyEFRGVjYWwhBEZhY2UhBkNvbG9yMwYAAAAhB1RleHR1cmUhGHJieGFzc2V0aWQ6Ly8xMDUxMDQzODYyNwQpSEch'
-..'C09yaWVudGF0aW9uCgAAAAAAAPDBAAAAACELUGl2b3RPZmZzZXQESUpHCpTlYEI+AEBAD3nxwiEIUm90YXRpb24KAAAAQAAAAEAAAABAIRhyYnhhc3NldGlkOi8vMTI5MjA2MzIxMzYELkVHCpTlWEJAAEBADnnzwgQxS0cKAAAAAAAAcEEAAAAACpTlUEI8AEBADnnx'
-..'wgQzRUcKlOVYQh4AsEAOefHCCgAAQEAAAEBAAABAQCEOVW5pb25PcGVyYXRpb24hBHBhcnQEO0VGIQhNYXRlcmlhbAMAAAAAAACAQAoAAPBBAAAAAAAAAAAKlOVYQnfls0BtoOvCCvz/H0EWqx9BzHVHQQoAAIA/AAAAQAAAoEAKlOVeQgBf+kB1tPHCCpTlUkL+XvpA'
-..'dbTxwgqU5VhCGwCgQA556cIKAAAAAAAAAAAAAAAAAwAAAAAAAAhACgAAgD8AAIA/AACAPwrKcoRCIyylQGII6sIKAACAPwAAAAAAAAAACgAAAADXs10/AAAAPwoAAAAAAACAPwAAAAAK47NdPwAAAAD9//8+CgAAgLYAAAAAAACANgrZs10/AAAAAAEAAD8K6UZ3PwAA'
-..'AAD0g4S+DQEAAgACAwQFBgEKAAcICQoLDA0ODxAREhMUFRYXChgKBgEKAAcICQoLGQ0aDxsRHBMdFRYXChgKHgMDAB8UICEiIwYBDAAHCAkKCwwNJA8QJSYnKBEpKiYVKxcKGAoeBQEAIiwGAQkABwgJCgsMDS0PEBEuFSsXChgKHgcBACIsBgELAAcICQoLDA0vDxAl'
-..'MBExKjAVKxcKGAoeCQEAIiwGAQkABwgJCgsMDTIPEBEzFTQXChgKHgsBACIsNUADAAY9PjoABj0/OgEGFkBBQkNBAQkAAjYHCA03DxA4OSU6ETsqOhU8AA==')
+local Objects = Decode('AAATIQRQYXJ0IQhBbmNob3JlZCIhDUJvdHRvbVN1cmZhY2UDAAAAAAAAAAAhBkNGcmFtZQQJEhMhCFBvc2l0aW9uCgEArMIAAOtCAACuwiEEU2l6ZQoAAJJDAABrQwAAAEAhClRvcFN1cmZhY2UhBURlY2FsIQROYW1lIRFWZXN6dGVzZWcgaWNlYmVyZyEHVGV4dHVy'
+..'ZSEqaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD02Mjg5ODg4NTQ4CgAAgD8AAAAAAAAAAAoAAAAAAACAPwAAAAACAQAGAAIDBAUGBwgJCgsMBQ0BAgAODxARAA==')
 for _,obj in pairs(Objects) do
-	obj.Parent = script or workspace
+	obj.Parent = workspace
 end
