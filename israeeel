@@ -1,764 +1,102 @@
--- Converted using Mokiros's Model to Script Version 3
--- Converted string size: 8944 characters
+-- Gui to Lua
+-- Version: 3.2
 
-local ScriptFunctions = {
-function(script,require)
--- util
+-- Instances:
 
-function waitForChild(parent, childName)
-	local child = parent:findFirstChild(childName)
-	if child then return child end
+local AUVGui = Instance.new("ScreenGui")
+local Quad1 = Instance.new("Frame")
+local Quad2 = Instance.new("Frame")
+local Quad3 = Instance.new("Frame")
+local Quad4 = Instance.new("Frame")
+
+--Properties:
+
+AUVGui.Name = "AUVGui"
+AUVGui.Parent = game.Players.lbonavi45:WaitForChild("PlayerGui")
+AUVGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Quad1.Name = "Quad1"
+Quad1.Parent = AUVGui
+Quad1.BackgroundColor3 = Color3.fromRGB(27, 42, 53)
+Quad1.BackgroundTransparency = 0.500
+Quad1.BorderColor3 = Color3.fromRGB(17, 17, 17)
+Quad1.Position = UDim2.new(0, 0, 0, 460)
+Quad1.Size = UDim2.new(0, 64, 0, 64)
+
+Quad2.Name = "Quad2"
+Quad2.Parent = AUVGui
+Quad2.BackgroundColor3 = Color3.fromRGB(27, 42, 53)
+Quad2.BackgroundTransparency = 0.500
+Quad2.BorderColor3 = Color3.fromRGB(17, 17, 17)
+Quad2.Position = UDim2.new(0, 64, 0, 460)
+Quad2.Size = UDim2.new(0, 64, 0, 64)
+
+Quad3.Name = "Quad3"
+Quad3.Parent = AUVGui
+Quad3.BackgroundColor3 = Color3.fromRGB(27, 42, 53)
+Quad3.BackgroundTransparency = 0.500
+Quad3.BorderColor3 = Color3.fromRGB(17, 17, 17)
+Quad3.Position = UDim2.new(0, 0, 0, 524)
+Quad3.Size = UDim2.new(0, 64, 0, 64)
+
+Quad4.Name = "Quad4"
+Quad4.Parent = AUVGui
+Quad4.BackgroundColor3 = Color3.fromRGB(27, 42, 53)
+Quad4.BackgroundTransparency = 0.500
+Quad4.BorderColor3 = Color3.fromRGB(17, 17, 17)
+Quad4.Position = UDim2.new(0, 64, 0, 524)
+Quad4.Size = UDim2.new(0, 64, 0, 64)
+
+-- Scripts:
+
+local function AJEVQAC_fake_script() -- Quad4.Map_Script 
+	local script = Instance.new('Script', Quad4)
+
 	while true do
-		child = parent.ChildAdded:wait()
-		if child.Name==childName then return child end
-	end
-end
-
-function newSound(id)
-	local sound = Instance.new("Sound")
-	sound.SoundId = id
-	sound.archivable = false
-	sound.Parent = script.Parent.Head
-	return sound
-end
-
--- declarations
-
-local sDied = newSound("rbxasset://sounds/uuhhh.wav")
-local sFallingDown = newSound("rbxasset://sounds/splat.wav")
-local sFreeFalling = newSound("rbxasset://sounds/swoosh.wav")
-local sGettingUp = newSound("rbxasset://sounds/hit.wav")
-local sJumping = newSound("rbxasset://sounds/button.wav")
-local sRunning = newSound("rbxasset://sounds/bfsl-minifigfoots1.mp3")
-sRunning.Looped = true
-
-local Figure = script.Parent
-local Head = waitForChild(Figure, "Head")
-local Humanoid = waitForChild(Figure, "Humanoid")
-
--- functions
-
-function onDied()
-	sDied:Play()
-end
-
-function onState(state, sound)
-	if state then
-		sound:Play()
-	else
-		sound:Pause()
-	end
-end
-
-function onRunning(speed)
-	if speed>0 then
-		sRunning:Play()
-	else
-		sRunning:Pause()
-	end
-end
-
--- connect up
-
-Humanoid.Died:connect(onDied)
-Humanoid.Running:connect(onRunning)
-Humanoid.Jumping:connect(function(state) onState(state, sJumping) end)
-Humanoid.GettingUp:connect(function(state) onState(state, sGettingUp) end)
-Humanoid.FreeFalling:connect(function(state) onState(state, sFreeFalling) end)
-Humanoid.FallingDown:connect(function(state) onState(state, sFallingDown) end)
-
-end,
-function(script,require)
-function waitForChild(parent, childName)
-	local child = parent:findFirstChild(childName)
-	if child then return child end
-	while true do
-		child = parent.ChildAdded:wait()
-		if child.Name==childName then return child end
-	end
-end
-
--- declarations
-
-local Figure = script.Parent
-local Head = waitForChild(Figure, "Head")
-local Humanoid = waitForChild(Figure, "Humanoid")
-
--- regeneration
-while true do
-	local s = wait(1)
-	local health = Humanoid.Health
-	if health > 0 and health < Humanoid.MaxHealth then
-		health = health + 0.01 * s * Humanoid.MaxHealth
-		if health * 1.05 < Humanoid.MaxHealth then
-			Humanoid.Health = health
-		else
-			Humanoid.Health = Humanoid.MaxHealth
-		end
-	end
-end
-
-end,
-function(script,require)
-function waitForChild(parent, childName)
-	local child = parent:findFirstChild(childName)
-	if child then return child end
-	while true do
-		child = parent.ChildAdded:wait()
-		if child.Name==childName then return child end
-	end
-end
-
--- ANIMATION
-
--- declarations
-
-local Figure = script.Parent
-local Torso = waitForChild(Figure, "Torso")
-local RightShoulder = waitForChild(Torso, "Right Shoulder")
-local LeftShoulder = waitForChild(Torso, "Left Shoulder")
-local RightHip = waitForChild(Torso, "Right Hip")
-local LeftHip = waitForChild(Torso, "Left Hip")
-local Neck = waitForChild(Torso, "Neck")
-local Humanoid = waitForChild(Figure, "Humanoid")
-local pose = "Standing"
-
-local toolAnim = "None"
-local toolAnimTime = 0
-
--- functions
-
-function onRunning(speed)
-	if speed>0 then
-		pose = "Running"
-	else
-		pose = "Standing"
-	end
-end
-
-function onDied()
-	pose = "Dead"
-end
-
-function onJumping()
-	pose = "Jumping"
-end
-
-function onClimbing()
-	pose = "Climbing"
-end
-
-function onGettingUp()
-	pose = "GettingUp"
-end
-
-function onFreeFall()
-	pose = "FreeFall"
-end
-
-function onFallingDown()
-	pose = "FallingDown"
-end
-
-function onSeated()
-	pose = "Seated"
-end
-
-function moveJump()
-	RightShoulder.MaxVelocity = 0.5
-	LeftShoulder.MaxVelocity = 0.5
-	RightShoulder.DesiredAngle = 3.14
-	LeftShoulder.DesiredAngle = -3.14
-	RightHip.DesiredAngle = 0
-	LeftHip.DesiredAngle = 0
-end
-
-
--- same as jump for now
-
-function moveFreeFall()
-	RightShoulder.MaxVelocity = 0.5
-	LeftShoulder.MaxVelocity = 0.5
-	RightShoulder.DesiredAngle = 3.14
-	LeftShoulder.DesiredAngle = -3.14
-	RightHip.DesiredAngle = 0
-	LeftHip.DesiredAngle = 0
-end
-
-function moveSit()
-	RightShoulder.MaxVelocity = 0.15
-	LeftShoulder.MaxVelocity = 0.15
-	RightShoulder.DesiredAngle = 3.14 /2
-	LeftShoulder.DesiredAngle = -3.14 /2
-	RightHip.DesiredAngle = 3.14 /2
-	LeftHip.DesiredAngle = -3.14 /2
-end
-
-function getTool()	
-	for _, kid in ipairs(Figure:GetChildren()) do
-		if kid.className == "Tool" then return kid end
-	end
-	return nil
-end
-
-function getToolAnim(tool)
-	for _, c in ipairs(tool:GetChildren()) do
-		if c.Name == "toolanim" and c.className == "StringValue" then
-			return c
-		end
-	end
-	return nil
-end
-
-function animateTool()
-	
-	if (toolAnim == "None") then
-		RightShoulder.DesiredAngle = 1.57
-		return
-	end
-
-	if (toolAnim == "Slash") then
-		RightShoulder.MaxVelocity = 0.5
-		RightShoulder.DesiredAngle = 0
-		return
-	end
-
-	if (toolAnim == "Lunge") then
-		RightShoulder.MaxVelocity = 0.5
-		LeftShoulder.MaxVelocity = 0.5
-		RightHip.MaxVelocity = 0.5
-		LeftHip.MaxVelocity = 0.5
-		RightShoulder.DesiredAngle = 1.57
-		LeftShoulder.DesiredAngle = 1.0
-		RightHip.DesiredAngle = 1.57
-		LeftHip.DesiredAngle = 1.0
-		return
-	end
-end
-
-function move(time)
-	local amplitude
-	local frequency
-  
-	if (pose == "Jumping") then
-		moveJump()
-		return
-	end
-
-	if (pose == "FreeFall") then
-		moveFreeFall()
-		return
-	end
- 
-	if (pose == "Seated") then
-		moveSit()
-		return
-	end
-
-	local climbFudge = 0
-	
-	if (pose == "Running") then
-		RightShoulder.MaxVelocity = 0.15
-		LeftShoulder.MaxVelocity = 0.15
-		amplitude = 1
-		frequency = 9
-	elseif (pose == "Climbing") then
-		RightShoulder.MaxVelocity = 0.5 
-		LeftShoulder.MaxVelocity = 0.5
-		amplitude = 1
-		frequency = 9
-		climbFudge = 3.14
-	else
-		amplitude = 0.1
-		frequency = 1
-	end
-
-	desiredAngle = amplitude * math.sin(time*frequency)
-
-	RightShoulder.DesiredAngle = desiredAngle + climbFudge
-	LeftShoulder.DesiredAngle = desiredAngle - climbFudge
-	RightHip.DesiredAngle = -desiredAngle
-	LeftHip.DesiredAngle = -desiredAngle
-
-
-	local tool = getTool()
-
-	if tool then
-	
-		animStringValueObject = getToolAnim(tool)
-
-		if animStringValueObject then
-			toolAnim = animStringValueObject.Value
-			-- message recieved, delete StringValue
-			animStringValueObject.Parent = nil
-			toolAnimTime = time + .3
-		end
-
-		if time > toolAnimTime then
-			toolAnimTime = 0
-			toolAnim = "None"
-		end
-
-		animateTool()
-
-		
-	else
-		toolAnim = "None"
-		toolAnimTime = 0
-	end
-end
-
-
--- connect events
-
-Humanoid.Died:connect(onDied)
-Humanoid.Running:connect(onRunning)
-Humanoid.Jumping:connect(onJumping)
-Humanoid.Climbing:connect(onClimbing)
-Humanoid.GettingUp:connect(onGettingUp)
-Humanoid.FreeFalling:connect(onFreeFall)
-Humanoid.FallingDown:connect(onFallingDown)
-Humanoid.Seated:connect(onSeated)
-
--- main program
-
-local runService = game:service("RunService");
-
-while Figure.Parent~=nil do
-	local _, time = wait(0.1)
-	move(time)
-end
-
-end,
-function(script,require)
--- Now with exciting TeamColors HACK!
-
-        function waitForChild(parent, childName)
-        local child = parent:findFirstChild(childName)
-        if child then return child end
-        while true do
-        child = parent.ChildAdded:wait()
-        if child.Name==childName then return child end
-        end
-        end
-
-        -- TEAM COLORS
-
-
-        function onTeamChanged(player)
-
-        wait(1)
-
-        local char = player.Character
-        if char == nil then return end
-
-        if player.Neutral then
-        -- Replacing the current BodyColor object will force a reset
-        local old = char:findFirstChild("Body Colors")
-        if not old then return end
-        old:clone().Parent = char
-        old.Parent = nil
-        else
-        local head = char:findFirstChild("Head")
-        local torso = char:findFirstChild("Torso")
-        local left_arm = char:findFirstChild("Left Arm")
-        local right_arm = char:findFirstChild("Right Arm")
-        local left_leg = char:findFirstChild("Left Leg")
-        local right_leg = char:findFirstChild("Right Leg")
-
-        if head then head.BrickColor = BrickColor.new(24) end
-        if torso then torso.BrickColor = player.TeamColor end
-        if left_arm then left_arm.BrickColor = BrickColor.new(26) end
-        if right_arm then right_arm.BrickColor = BrickColor.new(26) end
-        if left_leg then left_leg.BrickColor = BrickColor.new(26) end
-        if right_leg then right_leg.BrickColor = BrickColor.new(26) end
-        end
-        end
-
-        function onPlayerPropChanged(property, player)
-        if property == "Character" then
-        onTeamChanged(player)
-        end
-        if property== "TeamColor" or property == "Neutral" then
-        onTeamChanged(player)
-        end
-        end
-
-
-        local cPlayer = game.Players:GetPlayerFromCharacter(script.Parent)
-        cPlayer.Changed:connect(function(property) onPlayerPropChanged(property, cPlayer) end )
-        onTeamChanged(cPlayer)
-
-      
-end
-}
-local ScriptIndex = 0
-local Scripts,ModuleScripts,ModuleCache = {},{},{}
-local _require = require
-function require(obj,...)
-	local index = ModuleScripts[obj]
-	if not index then
-		local a,b = pcall(_require,obj,...)
-		return not a and error(b,2) or b
-	end
-	
-	local res = ModuleCache[index]
-	if res then return res end
-	res = ScriptFunctions[index](obj,require)
-	if res==nil then error("Module code did not return exactly one value",2) end
-	ModuleCache[index] = res
-	return res
-end
-local function Script(obj,ismodule)
-	ScriptIndex = ScriptIndex + 1
-	local t = ismodule and ModuleScripts or Scripts
-	t[obj] = ScriptIndex
-end
-
-function RunScripts()
-	for script,index in pairs(Scripts) do
-		coroutine.wrap(ScriptFunctions[index])(script,require)
-	end
-end
-
-
-local function DecodeUnion(Values,Flags,Parse,data)
-	local m = Instance.new("Folder")
-	m.Name = "UnionCache ["..tostring(math.random(1,9999)).."]"
-	m.Archivable = false
-	m.Parent = game:GetService("ServerStorage")
-	local Union,Subtract = {},{}
-	if not data then
-		data = Parse('B')
-	end
-	local ByteLength = (data % 4) + 1
-	local Length = Parse('I'..ByteLength)
-	local ValueFMT = ('I'..Flags[1])
-	for i = 1,Length do
-		local data = Parse('B')
-		local part
-		local isNegate = bit32.band(data,0b10000000) > 0
-		local isUnion =  bit32.band(data,0b01000000) > 0
-		if isUnion then
-			part = DecodeUnion(Values,Flags,Parse,data)
-		else
-			local isMesh = data % 2 == 1
-			local ClassName = Values[Parse(ValueFMT)]
-			part = Instance.new(ClassName)
-			part.Size = Values[Parse(ValueFMT)]
-			part.Position = Values[Parse(ValueFMT)]
-			part.Orientation = Values[Parse(ValueFMT)]
-			if isMesh then
-				local mesh = Instance.new("SpecialMesh")
-				mesh.MeshType = Values[Parse(ValueFMT)]
-				mesh.Scale = Values[Parse(ValueFMT)]
-				mesh.Offset = Values[Parse(ValueFMT)]
-				mesh.Parent = part
+		task.wait()
+		local p = game.Players:getChildren()
+		for i = 1, #p do
+			if p[i].Character.Torso ~= nil then
+				local s = Instance.new("ImageLabel")
+				s.Name = p[i].Name
+				s.Parent = script.Parent
+				if p[i].Name == script.Parent.Parent.Parent.Parent.Name then
+					s.BorderColor = BrickColor.new("Bright blue")
+				elseif p[i].TeamColor == script.Parent.Parent.Parent.Parent.TeamColor and script.Parent.Parent.Parent.Parent.Neutral == false then
+					s.BorderColor = BrickColor.new("Bright green")
+				elseif p[i].TeamColor ~= script.Parent.Parent.Parent.Parent.TeamColor and script.Parent.Parent.Parent.Parent.Neutral == false then
+					s.BorderColor = BrickColor.new("Bright red")
+				elseif p[i].TeamColor == script.Parent.Parent.Parent.Parent.TeamColor and script.Parent.Parent.Parent.Parent.Neutral == true then
+					s.BorderColor = BrickColor.new("Bright red")
+				elseif p[i].TeamColor ~= script.Parent.Parent.Parent.Parent.TeamColor and script.Parent.Parent.Parent.Parent.Neutral == true then
+					s.BorderColor = BrickColor.new("Bright red")
+				end
+				s.Size = UDim2.new(0, 1, 0, 1)
+				s.Position =  UDim2.new(0, p[i].Character.Torso.Position.x/4, 0, p[i].Character.Torso.Position.z/4)
 			end
 		end
-		part.Parent = m
-		table.insert(isNegate and Subtract or Union,part)
-	end
-	local first = table.remove(Union,1)
-	if #Union>0 then
-		first = first:UnionAsync(Union)
-	end
-	if #Subtract>0 then
-		first = first:SubtractAsync(Subtract)
-	end
-	m:Destroy()
-	return first
-end
-
-local function Decode(str)
-	local StringLength = #str
-	
-	-- Base64 decoding
-	do
-		local decoder = {}
-		for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
-			decoder[char:byte()] = b64code-1
-		end
-		local n = StringLength
-		local t,k = table.create(math.floor(n/4)+1),1
-		local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
-		for i = 1, padding > 0 and n-4 or n, 4 do
-			local a, b, c, d = str:byte(i,i+3)
-			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
-			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
-			k = k + 1
-		end
-		if padding == 1 then
-			local a, b, c = str:byte(n-3,n-1)
-			local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
-			t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
-		elseif padding == 2 then
-			local a, b = str:byte(n-3,n-2)
-			local v = decoder[a]*0x40000 + decoder[b]*0x1000
-			t[k] = string.char(bit32.extract(v,16,8))
-		end
-		str = table.concat(t)
-	end
-	
-	local Position = 1
-	local function Parse(fmt)
-		local Values = {string.unpack(fmt,str,Position)}
-		Position = table.remove(Values)
-		return table.unpack(Values)
-	end
-	
-	local Settings = Parse('B')
-	local Flags = Parse('B')
-	Flags = {
-		--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
-		--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
-		--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
-		--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
-		--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
-	}
-	
-	local ValueFMT = ('I'..Flags[1])
-	local InstanceFMT = ('I'..Flags[2])
-	local ConnectionFMT = ('I'..Flags[3])
-	local PropertyLengthFMT = ('I'..Flags[4])
-	
-	local ValuesLength = Parse(ValueFMT)
-	local Values = table.create(ValuesLength)
-	local CFrameIndexes = {}
-	
-	local ValueDecoders = {
-		--!!Start
-		[1] = function(Modifier)
-			return Parse('s'..Modifier)
-		end,
-		--!!Split
-		[2] = function(Modifier)
-			return Modifier ~= 0
-		end,
-		--!!Split
-		[3] = function()
-			return Parse('d')
-		end,
-		--!!Split
-		[4] = function(_,Index)
-			table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
-		end,
-		--!!Split
-		[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
-		--!!Split
-		[6] = {Color3.fromRGB,'BBB'},
-		--!!Split
-		[7] = {BrickColor.new,'I2'},
-		--!!Split
-		[8] = function(Modifier)
-			local len = Parse('I'..Modifier)
-			local kpts = table.create(len)
-			for i = 1,len do
-				kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
-			end
-			return ColorSequence.new(kpts)
-		end,
-		--!!Split
-		[9] = function(Modifier)
-			local len = Parse('I'..Modifier)
-			local kpts = table.create(len)
-			for i = 1,len do
-				kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
-			end
-			return NumberSequence.new(kpts)
-		end,
-		--!!Split
-		[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
-		--!!Split
-		[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
-		--!!Split
-		[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
-		--!!Split
-		[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
-		--!!Split
-		[14] = function()
-			local flags = Parse('B')
-			local ids = {"Top","Bottom","Left","Right","Front","Back"}
-			local t = {}
-			for i = 0,5 do
-				if bit32.extract(flags,i,1)==1 then
-					table.insert(t,Enum.NormalId[ids[i+1]])
+		local e = game.Workspace:getChildren()
+		if e ~= nil then
+			for i = 1, #e do
+				if e[i].Name == "Zombie" or e[i].Name == "Fohite Soldier" then
+					local s = Instance.new("ImageLabel")
+					s.Name = e[i].Name
+					s.Parent = script.Parent
+					s.BorderColor = BrickColor.new("Bright red")
+					s.Size = UDim2.new(0, 1, 0, 1)
+					s.Position =  UDim2.new(0, e[i].Torso.Position.x/4, 0, e[i].Torso.Position.z/4)
 				end
 			end
-			return Axes.new(unpack(t))
-		end,
-		--!!Split
-		[15] = function()
-			local flags = Parse('B')
-			local ids = {"Top","Bottom","Left","Right","Front","Back"}
-			local t = {}
-			for i = 0,5 do
-				if bit32.extract(flags,i,1)==1 then
-					table.insert(t,Enum.NormalId[ids[i+1]])
-				end
-			end
-			return Faces.new(unpack(t))
-		end,
-		--!!Split
-		[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
-		--!!Split
-		[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
-		--!!Split
-		[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
-		--!!Split
-		[19] = function()
-			return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
 		end
-		--!!End
-	}
-	
-	for i = 1,ValuesLength do
-		local TypeAndModifier = Parse('B')
-		local Type = bit32.band(TypeAndModifier,0b11111)
-		local Modifier = (TypeAndModifier - Type) / 0b100000
-		local Decoder = ValueDecoders[Type]
-		if type(Decoder)=='function' then
-			Values[i] = Decoder(Modifier,i)
-		else
-			Values[i] = Decoder[1](Parse(Decoder[2]))
-		end
-	end
-	
-	for i,t in pairs(CFrameIndexes) do
-		Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
-	end
-	
-	local InstancesLength = Parse(InstanceFMT)
-	local Instances = {}
-	local NoParent = {}
-	
-	for i = 1,InstancesLength do
-		local ClassName = Values[Parse(ValueFMT)]
-		local obj
-		local MeshPartMesh,MeshPartScale
-		if ClassName == "UnionOperation" then
-			obj = DecodeUnion(Values,Flags,Parse)
-			obj.UsePartColor = true
-		elseif ClassName:find("Script") then
-			obj = Instance.new("Folder")
-			Script(obj,ClassName=='ModuleScript')
-		elseif ClassName == "MeshPart" then
-			obj = Instance.new("Part")
-			MeshPartMesh = Instance.new("SpecialMesh")
-			MeshPartMesh.MeshType = Enum.MeshType.FileMesh
-			MeshPartMesh.Parent = obj
-		else
-			obj = Instance.new(ClassName)
-		end
-		local Parent = Instances[Parse(InstanceFMT)]
-		local PropertiesLength = Parse(PropertyLengthFMT)
-		local AttributesLength = Parse(PropertyLengthFMT)
-		Instances[i] = obj
-		for i = 1,PropertiesLength do
-			local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
-			
-			-- ok this looks awful
-			if MeshPartMesh then
-				if Prop == "MeshId" then
-					MeshPartMesh.MeshId = Value
-					continue
-				elseif Prop == "TextureID" then
-					MeshPartMesh.TextureId = Value
-					continue
-				elseif Prop == "Size" then
-					if not MeshPartScale then
-						MeshPartScale = Value
-					else
-						MeshPartMesh.Scale = Value / MeshPartScale
-					end
-				elseif Prop == "MeshSize" then
-					if not MeshPartScale then
-						MeshPartScale = Value
-						MeshPartMesh.Scale = obj.Size / Value
-					else
-						MeshPartMesh.Scale = MeshPartScale / Value
-					end
-					continue
-				end
-			end
-			
-			obj[Prop] = Value
-		end
-		if MeshPartMesh then
-			if MeshPartMesh.MeshId=='' then
-				if MeshPartMesh.TextureId=='' then
-					MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
-				end
-				MeshPartMesh.Scale = obj.Size
+		wait(0.5)
+		local scans = script.Parent:getChildren()
+		for i = 1, #scans do
+			if scans[i] == script then
+			else
+				scans[i]:Remove()
 			end
 		end
-		for i = 1,AttributesLength do
-			obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
-		end
-		if not Parent then
-			table.insert(NoParent,obj)
-		else
-			obj.Parent = Parent
-		end
 	end
 	
-	local ConnectionsLength = Parse(ConnectionFMT)
-	for i = 1,ConnectionsLength do
-		local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
-		Instances[a][Values[b]] = Instances[c]
-	end
-	
-	return NoParent
 end
-
-
-local Objects = Decode('AEBtASEFTW9kZWwhBE5hbWUhGk11Z2VuIE5pZ2h0IEZ1bmsgLSBQb2NrZXRzIQtQcmltYXJ5UGFydCEKV29ybGRQaXZvdAQ2ATcBOAEhASAEOQE3ATgBIQRQYXJ0IQVUb3JzbyEIQW5jaG9yZWQiIQ1Cb3R0b21TdXJmYWNlAwAAAAAAAAAAIQZDRnJhbWUEFAA3ATgB'
-..'IQtPcmllbnRhdGlvbgoAAAAAAAA0QwAAAAAhCFBvc2l0aW9uCqBDxEJAAEBA9a/uQiELUmVmbGVjdGFuY2UDAAAAAAAA8D8hCFJvdGF0aW9uCgAANEMAAAAAAAA0QyEEU2l6ZQoAAABAAAAAQAAAgD8hClRvcFN1cmZhY2UhB01vdG9yNkQhCExlZnQgSGlwIQJDMAQ6'
-..'ATsBPAEhAkMxBD0BOwE8ASEFUGFydDAhBVBhcnQxIQtNYXhWZWxvY2l0eQMAAACgmZm5PyEJUmlnaHQgSGlwBD4BPwE8AQRAAUEBPAEhCExlZnQgTGVnBC0ANwFCASEKQ2FuQ29sbGlkZQIKoEPFQooAgD/1r+5CCgAAgD8AAABAAACAPyEJUmlnaHQgTGVnBDEANwFC'
-..'AQqgQ8NCigCAP/Wv7kIhCExlZnQgQXJtBDUAQwFEAQoAAAAAAAA0QwAAQMEKoEPHQkAAQED1r+5CCgAANEMAAAAAAAAoQyEESGVhZAQ6ADcBRQEKAADAQAAANEMAAAAACqBDxEIbAJBA9a/uQgMAAAAAAAAAQAoAAC5DAAAAAAAANEMKAAAAQAAAgD8AAIA/IQtTcGVj'
-..'aWFsTWVzaCEFU2NhbGUKAACgPwAAoD8AAKA/IQVEZWNhbCEEZmFjZSEHVGV4dHVyZSEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMzg0Mzc5NDQhCEh1bWFub2lkIQlSaWdodCBBcm0ESQA3AUYBCgAAh0IAADRDAAAAAAqgQ8FCQABgQPWv70IKAADh'
-..'QgAAAAAAADRDIQpNaWNyb3Bob25lBEcBSAFJASEKQnJpY2tDb2xvcgfrAwRVAEgBSQEhBUNvbG9yBhERESEITWF0ZXJpYWwDAAAAAAAAkUAKAAAAAAAAtMIAAOHCCjyLwUJIiV5AbYvxQgoAAOFCAAC0wgAAAAAKtbTmPy4tCT9qafk+IQVTaGFwZQfHAARcAEgBSQEG'
-..'Y19iCjx+wUJDoYpAwUDyQgoAAFQ/AABUPwAAVD8hBEZhY2UhKWh0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9Mzc5NjE2Nzg5AwAAAAAAAAhAAwAAAAAAABBAIQhGTkYgSmVzdQRKAUsBOAEhCFNwZWFrZXJzBEwBSwE4ASEMTGVmdCBTcGVha2VyBE0BTgE4'
-..'ASEOVW5pb25PcGVyYXRpb24hB1NwZWFrZXIEbgBOATgBBgMDBAMAAAAAAABxQAoAAAAABgGgwgAAAAAKILK2Qg4HuT+VtvNCCgAAAACDAKDCAAAAAApQizRAl0MTQACoxj0K8NK9P+Oliz+476c9Cuu1tkIOB7k/6bXzQgpDizRAlkMTQLjvpz0KW662Qg4HuT9At/NC'
-..'IQRCb2R5BxoABHkATgE4AQYoKC0KLiazQojZMkCHc/RCCpyZeUAY2bJAVuNlQAeVAAR+AE4BOAEGGRkdCiCytkIL+IVAlbbzQgpQizRAlkMTQACoxj0KW662Qgv4hUBAt/NCCuu1tkIL+IVA6bXzQiENUmlnaHQgU3BlYWtlcgRPAVABOAEEhgBQATgBCgAAAACJAcjC'
-..'AAAAAAoAvLZCDge5P4K8B0MKAAA0Q/T9n8IAADRDCkCLNECWQxNAAKzGPQo5uLZCDAe5Pyy8B0MKyL+2QgwHuT/XvAdDBIwAUAE4AQouJrNCiNkyQAR6B0MEjgBQATgBCgC8tkIL+IVAgrwHQwpAizRAlEMTQACsxj0KyL+2Qgv4hUDXvAdDCjm4tkIL+IVALLwHQyEO'
-..'TWlkZGxlIFNwZWFrZXIEUQFLATgBBJYASwE4AQoAAAAAAAC0wgAAAAAKIHmxQnMOj0DI3wBDCgAAAACoxrPCAAAAAApIYAdBWA4PQUCDzEAKKDGIPicxiD4BzUw9CmvQt0LAGG4+BbP5QgpCYAdBVw4PQeJ6zEAK33ixQnMOj0DI3wBDCmvQt0LAGG4+QuQEQwpr0LdC'
-..'mkELQULkBEMKa9C3QppBC0EFs/lCIRFPdXRzaWRlU3BlYWtlUGFydASjAEsBOAEGKyswCmjkt0I4sNRAPOgAQwog3dBAIlpsQAD0pz0KtvPBQKubTEDu+6k+Cpist0I4sNRAPOgAQwov3dBAIlpsQLjvpz0KZ+S3Qjiw1EA86ABDBKoASwE4AQos0LdCOLDUQDzoAEMK'
-..'sPPBQKqbTEAAqMY9Ct0kLkD0JuE/uO+nPQoD1LdCNrDUQDzoAEMKtvPBQKubTEC476c9ClXMt0I2sNRAPOgAQwSxAEsBOAEKpM63QkBUF0A86ABDCrDzwUCrm0xAAKzGPQp70rdCQFQXQDzoAEMKzcq3QkBUF0A86ABDBLYASwE4AQrw5bdCQFQXQDzoAEMKIN3QQCNa'
-..'bEAA9Kc9Cu/lt0JCVBdAPOgAQwogrrdCQlQXQDzoAEMhBGplc3UEUgFTAVQBIQlqZXN1c2ZhY2UHkgAExABTAVQBBpSTlSEYQ3VzdG9tUGh5c2ljYWxQcm9wZXJ0aWVzEAAAAECamZk+AAAAPwAAgD8AAIA/AwAAAAAAAIlACjEI7L6iBZjCaJFBwQryrrFCiuJoQaZ+'
-..'AEMKWDn0v4kBmMIzM1/BCipcM0EqXDNBKlwzQSEGQ29sb3IzBgAAACEpaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMTg3NzU5NDchDFRyYW5zcGFyZW5jeQMAAABgZmbmPyEGRGVjYWxsIRZyYnhhc3NldGlkOi8vNjg1MzE0NDQxAwAAAGBmZtY/IQEh'
-..'IQFsB+kDBvj4+BAK1yM8AAAAAAAAAD8AAIA/AACAPwMAAAAAAACKQAoUrjNBFK4zQRSuM0EhAUkG////AwAAAAAAAHJAIQdEaWduaXR5BFUBVgFXAQRYAVYBVwEHBQAE3wBWAVcBBtfFmgru7cNC0/aQQHeLCkMhJ2h0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/'
-..'aWQ9NzA3NjA1MwTjAFYBVwEhC0xlZnRTdXJmYWNlCu7tw0LY7UFAd4sKQyEMUmlnaHRTdXJmYWNlIQZyb2Jsb3ghBU1vdG9yBD4BWQE4AQRAAVkBOAEEOgFaATgBBD0BWgE4ASEEU25hcCEETmVjawQ4ATcBWgEEWwE3AVoBBPEAXAFdAQq+n8xBeenWwNv5jcEK7u3A'
-..'QugBQkB+ggpDCiPbzUGPwsHAQmBtwQT1AF4BXwEK16OAwAAAAAD0/bNBCvDtxkL4AUJAcJQKQwT4AFYBYAEK16OAwAAAAAAAAAAACu7twkJqLIQ/ap0KQwT7AFYBYQEK16OAQAAAAAAAAAAACu/txEJqLIQ/hHkKQyEGU2NyaXB0IQVTb3VuZCEGSGVhbHRoIQtMb2Nh'
-..'bFNjcmlwdCEHQW5pbWF0ZSEKUm9ibG94VGVhbSEFUGFudHMhDVBhbnRzVGVtcGxhdGUhJ2h0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MjE1Nzc5NiEFU2hpcnQhDVNoaXJ0VGVtcGxhdGUhJ2h0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9OTg2'
-..'NTI4NCEKQm9keUNvbG9ycyEJSGVhZENvbG9yIQpIZWFkQ29sb3IzBtfFmiEMTGVmdEFybUNvbG9yIQ1MZWZ0QXJtQ29sb3IzIQxMZWZ0TGVnQ29sb3IhDUxlZnRMZWdDb2xvcjMhDVJpZ2h0QXJtQ29sb3IhDlJpZ2h0QXJtQ29sb3IzIQ1SaWdodExlZ0NvbG9yIQ5S'
-..'aWdodExlZ0NvbG9yMyEKVG9yc29Db2xvciELVG9yc29Db2xvcjMhBkhhbmRsZQQYAVYBVwEK7u3DQkhdn0B3iwpDCgAAgD/NzMw+AACAPwpmZiY/ZmYmP2ZmJj8hBk1lc2hJZCEnaHR0cDovL3d3dy5yb2Jsb3guY29tL2Fzc2V0Lz9pZD0xMTI1NDc4IQlUZXh0dXJl'
-..'SWQhJ2h0dHA6Ly93d3cucm9ibG94LmNvbS9hc3NldC8/aWQ9MTEyNTQ3OSEITWVzaFR5cGUDAAAAAAAAFEAhBkNhbWVyYSEPVGh1bWJuYWlsQ2FtZXJhBGIBYwFkASETRGlhZ29uYWxGaWVsZE9mVmlldwMAAABA0K09QCELRmllbGRPZlZpZXcDAAAAAAAAREAhBUZv'
-..'Y3VzBGUBZgE4ASESTWF4QXhpc0ZpZWxkT2ZWaWV3BGcBaAFpAQQuAWgBaQEK+FN/wbCyscLJdtXBCix6wELQ4iJAhqIJQwpG9qvCBgGUwgYB4cIEMQFoAWkBCqqfwEKQ6DxAbM4IQwRqAWsBbAEDAAAAgOoEVEADAAAAoJl5UEAEbQFmATgBCv0lB8M9pQdCqLVrQgoA'
-..'AIC/AAAAAAAAAAAKAAAAAAAAgD8AAAAACtNKvcK9lSFAHb9EQgoAAIC/AACAvwAAAAAKLr07swAAAAAAAIA/CgAAAAD//38/AAAAAAoAAAC/AACAPwAAAAAKAACAPwAAgL8AAAAACi69O7MAAACAAACAvwoAAAA/AACAPwAAAAAKLr07swAAAAAAAIC/CgAAAAD+/38/'
-..'AAAAAArqZ3q/WeRUvgAAAAAKSOVUvq9nej8AAAAACgAAAAAFmX4/ChPWvQoAAAAAKO/DPmuDbL8KpELAwud+a0AhYUdCCo4MLa5hg2y/F+/DvgpdGVgvF+/DvmGDbD8K7hHQwrQjKkEIXGdCCgAAAAAAAAAA4P9/PwrlONDCWg6PQAhcZ0IK0YrOwlLZMkDd1UxCCqrJ'
-..'MT4AAAAAjhx8PwrPis7CUtkyQArxgEIKC+AxvgAAAACOG3w/CuU40MJaDo9Ai3NnQgruEdDCheJoQQLvZUIK+F1wPpGcVr7u/nI/CrPSbj1YTno/cU1OPgp0xL3CksMlQNqhhUIKHgCAPxYA3JMAAAAAChYA3JMAAIA/EACgEgp0xL3CksMlQDD/hkIKAAAAAAAAAAAA'
-..'AIC/CgAAAAAAAAAAAACAPwoAAAAAAAAAvwAAAAAKsxV2P2HEjL5RQZ68Cthegj447Fs/D1fjPgq2g2w/BXLDPuzH27wKce3Dvrfuaz+2qIS9ChkAALDAXn8/LZSPvQoZAAAwwF5/Py2Ujz0K17S+QsDQWEBq1LRCCv0OCr8BAICyI5VXPwqNpIu+pjNyP5HaMr4Kt+TB'
-..'Qt4igUDm3rZCCgAAgD8AAAAAAAAAAApcR8HCPGQpQP7ahEIKCgfYvawN3b6aU2U/Cqlegj5A7Fs/EFfjPgpXSJHC2+ClQNYAaEIK9MQHuwAAAIDc/3+/Cqi02T2sjH4/putmuQqJQpXCga6sQA4FaEJQAQAAAgACAAMABQAGAAEAAQIAAgAHAAUACAAJAAIKAAIACgAL'
-..'AAwADQAOAA8AEAARABIAEwAUABUAFgAXABgAGQAaABsADgAcAAMEAAIAHQAeAB8AIAAhACQAJQAcAAMEAAIAJgAeACcAIAAoACQAJQAJAAILAAIAKQALAAwADQAOAA8AKgArACwAEQASABMALQAVABYAFwAYABkALgAbAA4ACQACCwACAC8ACwAMAA0ADgAPADAAKwAs'
-..'ABEAEgATADEAFQAWABcAGAAZAC4AGwAOAAkAAgsAAgAyAAsADAANAA4ADwAzACsALAARADQAEwA1ABUAFgAXADYAGQAuABsADgAJAAIKAAIANwALAAwADQAOAA8AOAARADkAEwA6ABUAOwAXADwAGQA9ABsADgA+AAkBAD8AQABBAAkCAAIAQgBDAEQARQACAAAJAAIL'
-..'AAIARgALAAwADQAOAA8ARwArACwAEQBIABMASQAVABYAFwBKABkALgAbAA4AAQACAgACAEsABQBMAAkADgwACwAMAA0ADgBNAE4ADwBPAFAAUQBSAFMAEQBUABMAVQAXAFYAGQBXABsADgBYADsACQAODAALAAwADQAOAE0AWQAPAFoAUABbAFIAUwARAFQAEwBcABcA'
-..'VgAZAF0AGwAOAFgADgBBABACAF4AFgBDAF8AQQAQAQBDAF8AQQAQAgBeAGAAQwBfAEEAEAIAXgA7AEMAXwBBABACAF4AYQBDAF8AQQAQAgBeAA4AQwBfAAEAAQIAAgBiAAUAYwABABcCAAIAZAAFAGUAAQAYAgACAGYABQBnAGgAQAIACQBxAHIAbQAACQBzAHQAbQAZ'
-..'CgACAGkACwAMAE0ATgAPAGoAUABrAFIAbAARAG0AEwBuABcAbwAZAHAACQAZDAACAHUACwAMAA0ADgBNAHYADwB3AFAAeABSAGwAEQBtABMAeQAXAG8AGQB6ABsADgBoAEACAAkAcwCAAG0AAAkAcQCBAG0AGQoAAgBpAAsADABNAHsADwB8AFAAfQBSAGwAEQBtABMA'
-..'fgAXAG8AGQB/AAEAGAIAAgCCAAUAgwBoAEACAAkAcwCJAIUAAAkAcQCKAIUAHQoAAgBpAAsADABNAHsADwCEAFAAfQBSAGwAEQCFABMAhgAXAIcAGQCIAAkAHQwAAgB1AAsADAANAA4ATQB2AA8AiwBQAHgAUgBsABEAhQATAIwAFwCHABkAegAbAA4AaABAAgAJAHEA'
-..'kACFAAAJAHMAkQCFAB0KAAIAaQALAAwATQBOAA8AjQBQAGsAUgBsABEAhQATAI4AFwCHABkAjwABABgCAAIAkgAFAJMAaABABQAJAJkAmgCVAAAJAJsAnACVAAAJAJkAnQCVAAAJAJkAngCVAAAJAJkAnwCVACEKAAIAdQALAAwATQB7AA8AlABQAH0AUgBsABEAlQAT'
-..'AJYAFwCXABkAmABoAEACgAkApQCmAJUAAAkApwCoAJUAIQoAAgCgAAsADABNAHYADwChAFAAogBSAGwAEQCVABMAowAXAJcAGQCkAGgAQAIACQCsAK0AlQAACQCuAK8AlQAhCgACAGkACwAMAE0ATgAPAKkAUABrAFIAbAARAJUAEwCqABcAlwAZAKsAaABAAgAJAKwA'
-..'swCVAAAJAK4AtACVACEKAAIAaQALAAwATQBOAA8AsABQAGsAUgBsABEAlQATALEAFwCXABkAsgBoAEACAAkApwC4AJUAgAkApQC5AJUAIQoAAgCgAAsADABNAHYADwC1AFAAogBSAGwAEQCVABMAtgAXAJcAGQC3AAEAFwIAAgC6AAUAuwAJACcPAAIAvAALAAwADQAO'
-..'AE0AvQAPAL4AUAC/AMAAwQBSAMIAEQDDABMAxAAVABYAFwDFABkAxgAbAA4AWAAOAEEAKAQAXgAOAMcAyABDAMkAygDLAEEAKAQAAgDMAMcAyABDAM0AygDOAEEAKAMAAgDPAEMAzQDKABYACQAnEQACANAACwAMAA0ADgBNANEADwC+ACsALABQANIAwADTAFIA1AAR'
-..'AMMAEwDEABUAFgAXAMUAGQDVABsADgDKAMsAWAAOAAkAJxEAAgDWAAsADAANAA4ATQDRAA8AvgArACwAUADXAMAA0wBSANgAEQDDABMAxAAVABYAFwDFABkA1QAbAA4AygAWAFgADgABAAECAAIA2QAFANoAAQAuAgACAAcABQDbAAkALwkAAgA3AAsADABNANwADwDd'
-..'ACsALABQAN4AEwDfABkAPQAbAA4APgAwAQA/AEAAQQAwAgACAEIAQwDgAAkALwkAAgAKAAsADABNANwADwDhAFAA3gDiADsAEwDjAOQAOwAZABoAQQAzAQACAOUA5gAzBAACACYAHgDnACAA6AAkACUA5gAzBAACAB0AHgDpACAA6gAkACUA6wAzAwACAOwAHgDtACAA'
-..'7gAJAC8KAAIAMgALAAwATQDcAA8A7wArACwAUADeABEA8AATAPEAFwDyABkALgAJAC8KAAIARgALAAwATQDcAA8A8wArACwAUADeABEA9AATAPUAFwD0ABkALgAJAC8LAAIAKQALAAwADQAOAE0ATgAPAPYAKwAsAFAAUQARAPcAEwD4ABcA9wAZAC4ACQAvCwACAC8A'
-..'CwAMAA0ADgBNAE4ADwD5ACsALABQAFEAEQD6ABMA+wAXAPoAGQAuAEUALwAA/AAvAQACAP0A/AAvAQACAP4A/wAvAQACAAAB/AAvAQACAAEBAgEvAgACAAIBAwEEAQUBLwIAAgAFAQYBBwEIAS8MAAkB3AAKAQsBDAHcAA0BCwEOAU4ADwFRABAB3AARAQsBEgFOABMB'
-..'UQAUAdwAFQELAQkALwgAAgAWAQsADAANAA4ADwAXASsALAATABgBGQAZARsADgA+AEQEAD8AGgEbARwBHQEeAR8BIAEhAS8GAAIAIgEPACMBJAElASYBJwEoASkBKgEnAQEALgIAAgBLAAUAKwEJAEcMAAsADAANAA4ATQBOAA8ALAFQAFEAUgBTABEALQETAC4BFwAv'
-..'ARkAVwAbAA4AWAA7AAkARwwACwAMAA0ADgBNAFkADwAwAVAAWwBSAFMAEQAtARMAMQEXAC8BGQBdABsADgBYAA4AQQBJAgBeABYAQwBfAEEASQEAQwBfAEEASQIAXgBgAEMAXwBBAEkCAF4AOwBDAF8AQQBJAgBeAGEAQwBfAEEASQIAXgAOAEMAXwAhAQEGAAIAIgEP'
-..'ADIBJAEzASYBNAEoATUBKgE0ARYBBAADAgQAAwQiAAMEIwAGBSIAAwUjAAcOBAAPFwQAIhgEACIZBAAcHQQAICEEACInBAAtLgQAMC8EADA1IgAzNSMAOzYiADM2IwA6NyIAMzcjADBHBABI')
-for _,obj in pairs(Objects) do
-	obj.Parent = workspace
-end
-
-RunScripts()
+coroutine.wrap(AJEVQAC_fake_script)()
