@@ -17,90 +17,113 @@ cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
 Model0 = Instance.new("Model")
 Part1 = Instance.new("Part")
-Script2 = Instance.new("Script")
+Part2 = Instance.new("Part")
 Decal3 = Instance.new("Decal")
-Humanoid4 = Instance.new("Humanoid")
-Model0.Name = " "
+Part4 = Instance.new("Part")
+Decal5 = Instance.new("Decal")
+Part6 = Instance.new("Part")
+Decal7 = Instance.new("Decal")
+Part8 = Instance.new("Part")
+Decal9 = Instance.new("Decal")
+Part10 = Instance.new("Part")
+Decal11 = Instance.new("Decal")
+UnionOperation12 = Instance.new("UnionOperation")
+Model0.Name = "bosses"
 Model0.Parent = mas
-Part1.Name = "Head"
 Part1.Parent = Model0
-Part1.CFrame = CFrame.new(8.81752014, 20.9944229, -27.4645271, -0.99999994, 0, 0, 0, 0.984808028, 0.173648328, 0, 0.173648328, -0.984807968)
-Part1.Orientation = Vector3.new(-10, 180, 0)
-Part1.Position = Vector3.new(8.817520141601562, 20.994422912597656, -27.464527130126953)
-Part1.Rotation = Vector3.new(-170, 0, 180)
-Part1.Color = Color3.new(0.929412, 0.917647, 0.917647)
-Part1.Size = Vector3.new(41.988792419433594, 41.988792419433594, 41.988792419433594)
+Part1.CFrame = CFrame.new(78.2241974, 5.00001287, -116.736435, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(78.22419738769531, 5.0000128746032715, -116.73643493652344)
+Part1.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part1.Size = Vector3.new(10, 10, 10)
 Part1.Anchored = true
 Part1.BottomSurface = Enum.SurfaceType.Smooth
-Part1.BrickColor = BrickColor.new("Lily white")
+Part1.BrickColor = BrickColor.new("Institutional white")
 Part1.Reflectance = 1
 Part1.TopSurface = Enum.SurfaceType.Smooth
-Part1.brickColor = BrickColor.new("Lily white")
+Part1.brickColor = BrickColor.new("Institutional white")
 Part1.Shape = Enum.PartType.Ball
-Script2.Name = "Track"
-Script2.Parent = Part1
-table.insert(cors,sandbox(Script2,function()
-local MaxLookDistance = 275
-local MovementSpeed = 4
-
-local RunService = game:GetService("RunService")
-local Players = game:GetService("Players")
-local Chat = game:GetService("Chat")
-local Debris = game:GetService("Debris")
-local Cheeky = script.Parent
-local DefaultCFrame = Cheeky.CFrame
-
-local function getNearestPlayer()
-	local part = nil
-	local dist = MaxLookDistance
-	for i,v in ipairs(Players:GetPlayers()) do
-		local character = v.Character
-		if character then
-			local root = character:FindFirstChild("HumanoidRootPart")
-			if root then
-				local thisDist = (root.Position-Cheeky.Position).Magnitude
-				if thisDist < dist then
-					dist = thisDist
-					part = root
-				end
-			end
-		end
-	end
-	return part
-end
-
-local focusedPart = nil
-local lastCheck = 0
-
-RunService.Heartbeat:Connect(function(delta)
-	if focusedPart then
-		local cf = CFrame.lookAt(
-			DefaultCFrame.Position,
-			focusedPart.Position
-		)
-		Cheeky.CFrame = Cheeky.CFrame:Lerp(cf, delta * MovementSpeed)
-	else
-		Cheeky.CFrame = Cheeky.CFrame:Lerp(
-			DefaultCFrame,
-			delta * MovementSpeed
-		)
-	end
-	if time() > lastCheck then
-		lastCheck = time() + 1
-		focusedPart = getNearestPlayer()
-	end
-end)
-
-Cheeky.Anchored = true
-end))
-Decal3.Name = "Classic Smile Face"
-Decal3.Parent = Part1
-Decal3.Texture = "http://www.roblox.com/asset/?id=7156832143"
-Humanoid4.Parent = Model0
-Humanoid4.HealthDisplayDistance = 550.1154174804688
-Humanoid4.JumpPower = 275.0577087402344
-Humanoid4.NameDisplayDistance = 550.1154174804688
-Humanoid4.WalkSpeed = 88.01847076416016
+Part2.Parent = Model0
+Part2.CFrame = CFrame.new(66.2241974, 5.00001287, -116.736435, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part2.Position = Vector3.new(66.22419738769531, 5.0000128746032715, -116.73643493652344)
+Part2.Color = Color3.new(1, 0, 0)
+Part2.Size = Vector3.new(10, 10, 10)
+Part2.Anchored = true
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.BrickColor = BrickColor.new("Really red")
+Part2.Reflectance = 0.20000000298023224
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.brickColor = BrickColor.new("Really red")
+Part2.Shape = Enum.PartType.Ball
+Decal3.Parent = Part2
+Decal3.Texture = "rbxassetid://10510438627"
+Decal3.Face = Enum.NormalId.Top
+Decal3.Color3 = Color3.new(0, 0, 0)
+Part4.Parent = Model0
+Part4.CFrame = CFrame.new(56.2241974, 3.00001478, -120.736443, 0.866026103, 0, -0.499999911, 0, 1, 0, 0.499999911, 0, 0.866026103)
+Part4.Orientation = Vector3.new(0, -30, 0)
+Part4.Position = Vector3.new(56.22419738769531, 3.0000147819519043, -120.73644256591797)
+Part4.Rotation = Vector3.new(0, -30, 0)
+Part4.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part4.Size = Vector3.new(2, 2, 2)
+Part4.Anchored = true
+Part4.BottomSurface = Enum.SurfaceType.Smooth
+Part4.BrickColor = BrickColor.new("Institutional white")
+Part4.TopSurface = Enum.SurfaceType.Smooth
+Part4.brickColor = BrickColor.new("Institutional white")
+Part4.Shape = Enum.PartType.Ball
+Decal5.Parent = Part4
+Decal5.Texture = "rbxassetid://12920632136"
+Part6.Parent = Model0
+Part6.CFrame = CFrame.new(54.2241974, 3.00001526, -121.736435, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part6.Position = Vector3.new(54.22419738769531, 3.0000152587890625, -121.73643493652344)
+Part6.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part6.Size = Vector3.new(2, 2, 2)
+Part6.Anchored = true
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.BrickColor = BrickColor.new("Institutional white")
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part6.brickColor = BrickColor.new("Institutional white")
+Part6.Shape = Enum.PartType.Ball
+Decal7.Parent = Part6
+Decal7.Texture = "rbxassetid://12920632136"
+Part8.Parent = Model0
+Part8.CFrame = CFrame.new(52.2241974, 3.00001431, -120.736435, 0.965925753, 0, 0.258819222, 0, 1, 0, -0.258819222, 0, 0.965925753)
+Part8.Orientation = Vector3.new(0, 15, 0)
+Part8.Position = Vector3.new(52.22419738769531, 3.000014305114746, -120.73643493652344)
+Part8.Rotation = Vector3.new(0, 15, 0)
+Part8.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part8.Size = Vector3.new(2, 2, 2)
+Part8.Anchored = true
+Part8.BottomSurface = Enum.SurfaceType.Smooth
+Part8.BrickColor = BrickColor.new("Institutional white")
+Part8.TopSurface = Enum.SurfaceType.Smooth
+Part8.brickColor = BrickColor.new("Institutional white")
+Part8.Shape = Enum.PartType.Ball
+Decal9.Parent = Part8
+Decal9.Texture = "rbxassetid://12920632136"
+Part10.Parent = Model0
+Part10.CFrame = CFrame.new(54.2241974, 5.50001431, -120.736435, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part10.Position = Vector3.new(54.22419738769531, 5.500014305114746, -120.73643493652344)
+Part10.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part10.Size = Vector3.new(3, 3, 3)
+Part10.Anchored = true
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.BrickColor = BrickColor.new("Institutional white")
+Part10.TopSurface = Enum.SurfaceType.Smooth
+Part10.brickColor = BrickColor.new("Institutional white")
+Part10.Shape = Enum.PartType.Ball
+Decal11.Parent = Part10
+Decal11.Texture = "rbxassetid://12920632136"
+UnionOperation12.Name = "part"
+UnionOperation12.Parent = Model0
+UnionOperation12.CFrame = CFrame.new(54.2241974, 5.62176085, -117.813332, 1, 0, 0, 0, 0.866025388, -0.5, 0, 0.5, 0.866025388)
+UnionOperation12.Orientation = Vector3.new(30, 0, 0)
+UnionOperation12.Position = Vector3.new(54.22419738769531, 5.621760845184326, -117.8133316040039)
+UnionOperation12.Rotation = Vector3.new(30, 0, 0)
+UnionOperation12.Color = Color3.new(0.972549, 0.972549, 0.972549)
+UnionOperation12.Size = Vector3.new(9.999996185302734, 9.979269027709961, 12.466259002685547)
+UnionOperation12.Anchored = true
+UnionOperation12.Material = Enum.Material.Wood
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
