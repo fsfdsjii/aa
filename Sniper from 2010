@@ -1,0 +1,2564 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+LocalScript1 = Instance.new("LocalScript")
+Script2 = Instance.new("Script")
+Script3 = Instance.new("Script")
+SpecialMesh4 = Instance.new("SpecialMesh")
+Script5 = Instance.new("Script")
+Script6 = Instance.new("Script")
+Script7 = Instance.new("Script")
+Part8 = Instance.new("Part")
+BlockMesh9 = Instance.new("BlockMesh")
+Sound10 = Instance.new("Sound")
+Weld11 = Instance.new("Weld")
+Weld12 = Instance.new("Weld")
+Weld13 = Instance.new("Weld")
+Weld14 = Instance.new("Weld")
+Weld15 = Instance.new("Weld")
+Weld16 = Instance.new("Weld")
+Weld17 = Instance.new("Weld")
+Weld18 = Instance.new("Weld")
+Weld19 = Instance.new("Weld")
+Weld20 = Instance.new("Weld")
+Weld21 = Instance.new("Weld")
+Weld22 = Instance.new("Weld")
+Weld23 = Instance.new("Weld")
+Weld24 = Instance.new("Weld")
+Weld25 = Instance.new("Weld")
+Weld26 = Instance.new("Weld")
+Weld27 = Instance.new("Weld")
+Weld28 = Instance.new("Weld")
+Weld29 = Instance.new("Weld")
+Weld30 = Instance.new("Weld")
+Weld31 = Instance.new("Weld")
+Weld32 = Instance.new("Weld")
+Weld33 = Instance.new("Weld")
+Weld34 = Instance.new("Weld")
+Weld35 = Instance.new("Weld")
+Weld36 = Instance.new("Weld")
+Weld37 = Instance.new("Weld")
+Weld38 = Instance.new("Weld")
+Weld39 = Instance.new("Weld")
+Weld40 = Instance.new("Weld")
+Weld41 = Instance.new("Weld")
+Weld42 = Instance.new("Weld")
+Weld43 = Instance.new("Weld")
+Weld44 = Instance.new("Weld")
+Weld45 = Instance.new("Weld")
+Weld46 = Instance.new("Weld")
+Weld47 = Instance.new("Weld")
+Weld48 = Instance.new("Weld")
+Weld49 = Instance.new("Weld")
+Weld50 = Instance.new("Weld")
+Weld51 = Instance.new("Weld")
+Weld52 = Instance.new("Weld")
+Weld53 = Instance.new("Weld")
+Weld54 = Instance.new("Weld")
+Weld55 = Instance.new("Weld")
+Weld56 = Instance.new("Weld")
+Weld57 = Instance.new("Weld")
+Weld58 = Instance.new("Weld")
+Weld59 = Instance.new("Weld")
+Weld60 = Instance.new("Weld")
+Weld61 = Instance.new("Weld")
+Weld62 = Instance.new("Weld")
+Weld63 = Instance.new("Weld")
+Weld64 = Instance.new("Weld")
+Weld65 = Instance.new("Weld")
+Weld66 = Instance.new("Weld")
+Weld67 = Instance.new("Weld")
+Weld68 = Instance.new("Weld")
+Weld69 = Instance.new("Weld")
+Weld70 = Instance.new("Weld")
+Weld71 = Instance.new("Weld")
+Weld72 = Instance.new("Weld")
+Weld73 = Instance.new("Weld")
+Weld74 = Instance.new("Weld")
+Weld75 = Instance.new("Weld")
+Weld76 = Instance.new("Weld")
+Weld77 = Instance.new("Weld")
+Weld78 = Instance.new("Weld")
+Weld79 = Instance.new("Weld")
+Weld80 = Instance.new("Weld")
+Weld81 = Instance.new("Weld")
+Weld82 = Instance.new("Weld")
+Weld83 = Instance.new("Weld")
+Weld84 = Instance.new("Weld")
+Weld85 = Instance.new("Weld")
+Weld86 = Instance.new("Weld")
+Weld87 = Instance.new("Weld")
+Weld88 = Instance.new("Weld")
+Weld89 = Instance.new("Weld")
+Weld90 = Instance.new("Weld")
+Weld91 = Instance.new("Weld")
+Weld92 = Instance.new("Weld")
+Weld93 = Instance.new("Weld")
+Weld94 = Instance.new("Weld")
+Weld95 = Instance.new("Weld")
+Weld96 = Instance.new("Weld")
+Weld97 = Instance.new("Weld")
+Weld98 = Instance.new("Weld")
+Weld99 = Instance.new("Weld")
+Weld100 = Instance.new("Weld")
+Weld101 = Instance.new("Weld")
+Weld102 = Instance.new("Weld")
+Weld103 = Instance.new("Weld")
+Weld104 = Instance.new("Weld")
+Weld105 = Instance.new("Weld")
+Weld106 = Instance.new("Weld")
+Weld107 = Instance.new("Weld")
+Weld108 = Instance.new("Weld")
+Weld109 = Instance.new("Weld")
+Weld110 = Instance.new("Weld")
+Weld111 = Instance.new("Weld")
+Weld112 = Instance.new("Weld")
+Weld113 = Instance.new("Weld")
+Weld114 = Instance.new("Weld")
+Weld115 = Instance.new("Weld")
+Weld116 = Instance.new("Weld")
+Weld117 = Instance.new("Weld")
+Weld118 = Instance.new("Weld")
+Weld119 = Instance.new("Weld")
+Weld120 = Instance.new("Weld")
+Weld121 = Instance.new("Weld")
+Weld122 = Instance.new("Weld")
+Weld123 = Instance.new("Weld")
+Weld124 = Instance.new("Weld")
+Weld125 = Instance.new("Weld")
+Weld126 = Instance.new("Weld")
+Weld127 = Instance.new("Weld")
+Weld128 = Instance.new("Weld")
+Weld129 = Instance.new("Weld")
+Weld130 = Instance.new("Weld")
+Weld131 = Instance.new("Weld")
+Weld132 = Instance.new("Weld")
+Weld133 = Instance.new("Weld")
+Weld134 = Instance.new("Weld")
+Weld135 = Instance.new("Weld")
+Weld136 = Instance.new("Weld")
+Weld137 = Instance.new("Weld")
+Weld138 = Instance.new("Weld")
+Weld139 = Instance.new("Weld")
+Weld140 = Instance.new("Weld")
+Weld141 = Instance.new("Weld")
+Weld142 = Instance.new("Weld")
+Weld143 = Instance.new("Weld")
+Weld144 = Instance.new("Weld")
+Weld145 = Instance.new("Weld")
+Weld146 = Instance.new("Weld")
+Weld147 = Instance.new("Weld")
+Weld148 = Instance.new("Weld")
+Weld149 = Instance.new("Weld")
+Weld150 = Instance.new("Weld")
+Weld151 = Instance.new("Weld")
+Weld152 = Instance.new("Weld")
+Weld153 = Instance.new("Weld")
+Weld154 = Instance.new("Weld")
+Weld155 = Instance.new("Weld")
+Weld156 = Instance.new("Weld")
+Weld157 = Instance.new("Weld")
+Weld158 = Instance.new("Weld")
+Weld159 = Instance.new("Weld")
+Weld160 = Instance.new("Weld")
+Weld161 = Instance.new("Weld")
+Weld162 = Instance.new("Weld")
+Weld163 = Instance.new("Weld")
+Weld164 = Instance.new("Weld")
+Weld165 = Instance.new("Weld")
+Weld166 = Instance.new("Weld")
+Weld167 = Instance.new("Weld")
+Weld168 = Instance.new("Weld")
+Part169 = Instance.new("Part")
+CylinderMesh170 = Instance.new("CylinderMesh")
+Part171 = Instance.new("Part")
+BlockMesh172 = Instance.new("BlockMesh")
+Part173 = Instance.new("Part")
+SpecialMesh174 = Instance.new("SpecialMesh")
+Part175 = Instance.new("Part")
+SpecialMesh176 = Instance.new("SpecialMesh")
+Part177 = Instance.new("Part")
+SpecialMesh178 = Instance.new("SpecialMesh")
+Part179 = Instance.new("Part")
+CylinderMesh180 = Instance.new("CylinderMesh")
+Part181 = Instance.new("Part")
+SpecialMesh182 = Instance.new("SpecialMesh")
+Part183 = Instance.new("Part")
+CylinderMesh184 = Instance.new("CylinderMesh")
+Part185 = Instance.new("Part")
+CylinderMesh186 = Instance.new("CylinderMesh")
+Part187 = Instance.new("Part")
+CylinderMesh188 = Instance.new("CylinderMesh")
+Part189 = Instance.new("Part")
+CylinderMesh190 = Instance.new("CylinderMesh")
+Part191 = Instance.new("Part")
+CylinderMesh192 = Instance.new("CylinderMesh")
+Part193 = Instance.new("Part")
+CylinderMesh194 = Instance.new("CylinderMesh")
+Part195 = Instance.new("Part")
+CylinderMesh196 = Instance.new("CylinderMesh")
+Part197 = Instance.new("Part")
+BlockMesh198 = Instance.new("BlockMesh")
+Part199 = Instance.new("Part")
+BlockMesh200 = Instance.new("BlockMesh")
+Part201 = Instance.new("Part")
+SpecialMesh202 = Instance.new("SpecialMesh")
+Part203 = Instance.new("Part")
+BlockMesh204 = Instance.new("BlockMesh")
+Part205 = Instance.new("Part")
+CylinderMesh206 = Instance.new("CylinderMesh")
+Part207 = Instance.new("Part")
+CylinderMesh208 = Instance.new("CylinderMesh")
+Part209 = Instance.new("Part")
+SpecialMesh210 = Instance.new("SpecialMesh")
+Part211 = Instance.new("Part")
+BlockMesh212 = Instance.new("BlockMesh")
+Part213 = Instance.new("Part")
+SpecialMesh214 = Instance.new("SpecialMesh")
+Part215 = Instance.new("Part")
+SpecialMesh216 = Instance.new("SpecialMesh")
+Part217 = Instance.new("Part")
+SpecialMesh218 = Instance.new("SpecialMesh")
+LocalScript219 = Instance.new("LocalScript")
+Sound220 = Instance.new("Sound")
+LocalScript221 = Instance.new("LocalScript")
+BoolValue222 = Instance.new("BoolValue")
+LocalScript223 = Instance.new("LocalScript")
+IntValue224 = Instance.new("IntValue")
+IntValue225 = Instance.new("IntValue")
+Script226 = Instance.new("Script")
+LocalScript227 = Instance.new("LocalScript")
+Tool0.Name = "Sniper"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0, 0, 0, -0.0050099371, 0, 0.999987423, 0, 1, 0, -0.999987423, 0, -0.0050099371)
+Tool0.GripForward = Vector3.new(-0.9999874234199524, -0, 0.005009937100112438)
+Tool0.GripRight = Vector3.new(-0.005009937100112438, 0, -0.9999874234199524)
+LocalScript1.Name = "Local Gui"
+LocalScript1.Parent = Tool0
+table.insert(cors,sandbox(LocalScript1,function()
+NLS([[local Tool = script.Parent;
+
+enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = true
+	mouse.Icon = "http://www.roblox.com/asset/?id=2966012"
+
+	--wait(.8)
+	--mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	--enabled = true
+	--mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+
+end
+
+
+function onButton1Up(mouse)
+enabled = false
+Tool.Enabled = false
+mouse.Icon = "http://www.roblox.com/asset/?id=2966012"
+
+wait(.8)
+
+mouse.Icon = "http://www.roblox.com/asset/?id=2966012"
+enabled = true
+Tool.Enabled = true
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "http://www.roblox.com/asset/?id=2966012"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)	
+	mouse.Button1Up:connect(function() onButton1Up(mouse)end)
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)]],owner.PlayerGui).Parent = script.Parent
+
+end))
+Script2.Name = "Welding"
+Script2.Parent = Tool0
+table.insert(cors,sandbox(Script2,function()
+function Weld(x,y)
+	local W = Instance.new("Weld")
+	W.Part0 = x
+	W.Part1 = y
+	local CJ = CFrame.new(x.Position)
+	local C0 = x.CFrame:inverse()*CJ
+	local C1 = y.CFrame:inverse()*CJ
+	W.C0 = C0
+	W.C1 = C1
+	W.Parent = x
+end
+
+function Get(A)
+	if A.className == "Part" then
+		Weld(script.Parent.Handle, A)
+		A.Anchored = false
+	else
+		local C = A:GetChildren()
+		for i=1, #C do
+		Get(C[i])
+		end
+	end
+end
+
+function Finale()
+	Get(script.Parent)
+end
+
+script.Parent.Equipped:connect(Finale)
+script.Parent.Unequipped:connect(Finale)
+Finale()
+end))
+Script3.Name = "BrickCleanup"
+Script3.Parent = Tool0
+Script3.Enabled = false
+table.insert(cors,sandbox(Script3,function()
+-- this script removes its parent from the workspace after 24 seconds
+function clean(up)
+
+
+wait(11)
+
+up:Destroy()
+end
+end))
+Script3.Disabled = true
+SpecialMesh4.Name = "Bullet"
+SpecialMesh4.Parent = Tool0
+SpecialMesh4.Scale = Vector3.new(0.15000000596046448, 0.15000000596046448, 0.15000000596046448)
+SpecialMesh4.MeshType = Enum.MeshType.Sphere
+Script5.Name = "Paintball"
+Script5.Parent = Tool0
+Script5.Enabled = false
+table.insert(cors,sandbox(Script5,function()
+function painte(t)
+ball = t
+damage = 90
+
+
+function onTouched(hit)
+	local humanoid = hit.Parent:findFirstChild("Humanoid")
+	hit:BreakJoints()
+
+	if humanoid ~= nil then
+		tagHumanoid(humanoid)
+		humanoid.Health = humanoid.Health - damage
+		wait(.5)
+		untagHumanoid(humanoid)
+	end
+
+	connection:disconnect()
+	ball.Parent = nil
+end
+
+function tagHumanoid(humanoid)
+	-- todo: make tag expire
+	local tag = ball:findFirstChild("creator")
+	if tag ~= nil then
+		local new_tag = tag:clone()
+		new_tag.Parent = humanoid
+	end
+end
+
+
+function untagHumanoid(humanoid)
+	if humanoid ~= nil then
+		local tag = humanoid:findFirstChild("creator")
+		if tag ~= nil then
+			tag.Parent = nil
+		end
+	end
+end
+
+connection = ball.Touched:connect(onTouched)
+
+wait(2)
+ball.Parent = nil
+end
+end))
+Script5.Disabled = true
+Script6.Name = "PaintballShooter"
+Script6.Parent = Tool0
+BoolValue222.Name = "melee"
+BoolValue222.Parent = Script6
+table.insert(cors,sandbox(Script6,function()
+function painte(t)
+	ball = t
+	damage = 90
+
+
+	function onTouched(hit)
+		local humanoid = hit.Parent:findFirstChild("Humanoid")
+		hit:BreakJoints()
+
+		if humanoid ~= nil then
+			tagHumanoid(humanoid)
+			humanoid.Health = humanoid.Health - damage
+			wait(.5)
+			untagHumanoid(humanoid)
+		end
+
+		connection:disconnect()
+		ball.Parent = nil
+	end
+
+	function tagHumanoid(humanoid)
+		-- todo: make tag expire
+		local tag = ball:findFirstChild("creator")
+		if tag ~= nil then
+			local new_tag = tag:clone()
+			new_tag.Parent = humanoid
+		end
+	end
+
+
+	function untagHumanoid(humanoid)
+		if humanoid ~= nil then
+			local tag = humanoid:findFirstChild("creator")
+			if tag ~= nil then
+				tag.Parent = nil
+			end
+		end
+	end
+
+	connection = ball.Touched:connect(onTouched)
+
+	wait(0)
+	ball.Parent = nil
+end
+Instance.new("RemoteEvent",owner.Backpack).Name = "PaintEvent"
+pa = owner.Backpack.PaintEvent
+NLS([[owner.Backpack.PaintEvent.OnClientEvent:Connect(function(me)
+if me == owner then
+owner.Backpack.PaintEvent:FireServer(owner:GetMouse().Hit.p, "hm1")
+end
+end)
+owner:GetMouse().KeyDown:Connect(function(k)
+owner.Backpack.PaintEvent:FireServer(k, "hm2")
+end)
+owner:GetMouse().KeyDown:Connect(function(k)
+owner.Backpack.PaintEvent:FireServer(k, "hm3")
+end)]],owner.PlayerGui)
+
+Tool = script.Parent
+
+
+
+colors = {26,}
+
+-- this script removes its parent from the workspace after 24 seconds
+function clean(up)
+
+task.spawn(function()
+	wait(11)
+
+		up.Parent = nil
+	end)
+end
+function fire(v)
+		if   Tool.Enabled then
+
+
+
+		Tool.Enabled = false
+if (script.Parent.AmmoScript.Clip.Value == 0) then return 
+end 
+	script.Parent.AmmoScript.Clip.Value = script.Parent.AmmoScript.Clip.Value - 1
+
+
+
+	Tool.Handle.Fire:play()
+Tool.Parent.Torso:findFirstChild("Right Shoulder").CurrentAngle = 2
+	
+
+
+
+	local vCharacter = Tool.Parent
+
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+
+
+
+	local missile = Instance.new("Part")
+
+
+
+
+        
+
+
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+
+	
+
+
+
+
+
+	spawnPos  = spawnPos + (v * 8)
+
+
+
+	missile.Position = spawnPos
+
+	missile.Size = Vector3.new(1,1,1)
+
+	missile.Velocity = v * 900 + Vector3.new(math.random(-1,0),math.random(-1,0),math.random(-1,0))
+
+	missile.BrickColor = BrickColor.new(colors[math.random(1, #colors)])
+
+	missile.Shape = 0.5
+
+	missile.BottomSurface = 0
+
+	missile.TopSurface = 0
+
+	missile.Name = "Paintball"
+
+	missile.Elasticity = 0
+
+	missile.Reflectance = .1
+
+	missile.Friction = .3
+
+
+
+
+	local force = Instance.new("BodyForce")
+
+	force.force = Vector3.new(0,100,0)
+
+	force.Parent = missile
+
+	
+
+	clean(missile)
+
+local new_mesh = script.Parent.Bullet:clone()
+	new_mesh.Parent = missile
+
+
+painte(missile)
+
+	local creator_tag = Instance.new("ObjectValue")
+
+	creator_tag.Value = vPlayer
+
+	creator_tag.Name = "creator"
+
+	creator_tag.Parent = missile
+
+	
+
+
+
+
+
+	missile.Parent = game.Workspace
+end
+		wait(2)
+
+
+
+		Tool.Enabled = true	
+
+end
+
+
+
+
+
+
+
+Tool.Enabled = true
+
+	pa.OnServerEvent:Connect(function(me, targp, str)
+		if str == "hm1" then
+
+		
+
+
+
+	local character = Tool.Parent;
+
+	local humanoid = character.Humanoid
+
+	if humanoid == nil then
+
+		print("Humanoid not found")
+
+		return 
+
+	end
+
+
+
+	local targetPos = targp
+
+	local lookAt = (targetPos - character.Head.Position).unit
+
+
+
+				fire(lookAt)
+			wait(2)
+
+
+
+			Tool.Enabled = true	
+
+			
+end
+end)
+Tool.Enabled = true
+function onActivated()
+
+		
+		pa:FireClient(owner, owner)
+
+
+
+end
+
+
+
+
+
+script.Parent.Activated:connect(onActivated)
+
+
+
+on = 0
+Tool = script.Parent
+welds = {}
+sh = {}
+arms = nil
+torso = nil
+f = nil
+x = nil
+function Crouch(ison)
+	if arms == nil and torso == nil then
+		arms = {Tool.Parent:FindFirstChild("Left Leg"), Tool.Parent:FindFirstChild("Right Leg")}
+		torso = Tool.Parent:FindFirstChild("Torso")
+	end
+	if arms ~= nil and torso ~= nil then
+		sh = {torso:FindFirstChild("Left Hip"), torso:FindFirstChild("Right Hip")}
+		if sh ~= nil then
+			local yes = true
+			if yes then
+				yes = false
+				if ison == 1 then
+					sh[1].Part1 = nil
+					sh[2].Part1 = nil
+					local weld1 = Instance.new("Weld")
+					weld1.Part0 = torso
+					weld1.Parent = torso
+					weld1.Part1 = arms[1]
+					weld1.C1 = CFrame.new(-0.5, 0.75, 1)
+					arms[1].Name = "LDave"
+					arms[1].CanCollide = true
+					welds[1] = weld1
+					-------------------------------------------
+					local weld2 = Instance.new("Weld")
+					weld2.Part0 = torso
+					weld2.Parent = torso
+					weld2.Part1 = arms[2]
+					weld2.C1 = CFrame.new(0.5,0.495,1.25) * CFrame.fromEulerAnglesXYZ(math.rad(90),0,0)
+					arms[2].Name = "RDave"
+					arms[2].CanCollide = true
+					welds[2] = weld2
+					---------------------------------
+					local force = Instance.new("BodyForce")
+					force.Parent = torso
+					f = force
+					wait(0.01)
+				elseif ison == 0 then
+					if arms then
+						sh[1].Part1 = arms[1]
+						sh[2].Part1 = arms[2]
+						f.Parent = nil
+						arms[2].Name = "Right Leg"
+						arms[1].Name = "Left Leg"
+						welds[1].Parent = nil
+						welds[2].Parent = nil
+						owner.Character.Humanoid.HipHeight = -50	
+					end
+				end
+				--
+			end
+		else
+			print("sh")
+		end
+	else
+		print("arms")
+	end
+end
+function Key(key)
+	if key then
+		key = string.lower(key)
+		if (key=="c") then
+			if on == 1 then
+				on = 0
+			elseif on == 0 then
+				on = 1
+			end
+			Crouch(on)
+		end
+	end
+end
+equip = false
+pa.OnServerEvent:connect(function(m, c, str)
+	if str == "hm2" then
+		if equip == true then
+			Key(c)
+		end
+	end
+end)
+function Equip(mouse)
+	equip = true
+end
+function Unequip(mouse)
+	equip = false
+end
+script.Parent.Equipped:connect(Equip)
+script.Parent.Unequipped:connect(Unequip)
+
+--[[
+
+Dax,
+
+See the MeleeScript.
+
+]]
+
+local canmelee = true;
+local tool = script.Parent;
+
+function onKeyDown(key)
+	key:lower();
+	if key == "v" then
+		if canmelee == false then
+			return;
+		end
+
+		tool.Melee:play()
+
+		canmelee = false;
+
+		local rgrip = tool.Parent["Right Arm"].RightGrip;
+
+		script.melee.Value = true;
+
+		for i = 1,6 do
+			rgrip.C1 = rgrip.C1 * CFrame.fromEulerAnglesXYZ(-0.55,0,0);
+			wait();
+		end
+
+		wait(0.25);
+
+		for i = 1, 6 do
+			rgrip.C1 = rgrip.C1 * CFrame.fromEulerAnglesXYZ(0.55,0,0);
+			wait();
+		end
+
+		script.melee.Value = false;
+
+		wait(0.5);
+
+		canmelee = true;
+	end
+end
+equip = false
+function onSelect(mouse)
+	equip = true
+end
+
+pa.OnServerEvent:Connect(function(m, k, str)
+	if str == "hm3" then
+		if equip == true then
+			onKeyDown(k)
+		end
+	end
+end)
+
+function deSelect(mouse)
+	equip = false
+end
+
+
+function blow(hit)
+	local humanoid = hit.Parent:findFirstChild("Humanoid")
+	if not humanoid then return end
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+	local hum = vCharacter:findFirstChild("Humanoid") -- non-nil if tool held by a character
+	if humanoid ~= hum and hum ~= nil and game.Players:playerFromCharacter(humanoid.Parent) and game.Players:playerFromCharacter(humanoid.Parent).TeamColor~=cc then
+		tagHumanoid(humanoid, vPlayer)
+		humanoid:TakeDamage(300)
+		wait(1)
+		untagHumanoid(humanoid)
+	end
+end
+
+
+tool.Equipped:connect(onSelect);
+end))
+Script7.Name = "WeldArm"
+Script7.Parent = Tool0
+table.insert(cors,sandbox(Script7,function()
+Tool = script.Parent;
+local arms = nil
+local torso = nil
+local welds = {}
+
+function Equip(mouse)
+wait(0.01)
+arms = {Tool.Parent:FindFirstChild("Left Arm"), Tool.Parent:FindFirstChild("Right Arm")}
+torso = Tool.Parent:FindFirstChild("Torso")
+if arms ~= nil and torso ~= nil then
+local sh = {torso:FindFirstChild("Left Shoulder"), torso:FindFirstChild("Right Shoulder")}
+if sh ~= nil then
+local yes = true
+if yes then
+yes = false
+sh[1].Part1 = nil
+sh[2].Part1 = nil
+local weld1 = Instance.new("Weld")
+weld1.Part0 = torso
+weld1.Parent = torso
+weld1.Part1 = arms[1]
+weld1.C1 = CFrame.new(-0.249, 1.35, 0.6) * CFrame.fromEulerAnglesXYZ(math.rad(290), 0, math.rad(-90))
+welds[1] = weld1
+local weld2 = Instance.new("Weld")
+weld2.Part0 = torso
+weld2.Parent = torso
+weld2.Part1 = arms[2]
+weld2.C1 = CFrame.new(-1, -0.2, 0.35) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)
+welds[2] = weld2
+end
+else
+print("sh")
+end
+else
+print("arms")
+end
+end
+
+function Unequip(mouse)
+if arms ~= nil and torso ~= nil then
+local sh = {torso:FindFirstChild("Left Shoulder"), torso:FindFirstChild("Right Shoulder")}
+if sh ~= nil then
+local yes = true
+if yes then
+yes = false
+sh[1].Part1 = arms[1]
+sh[2].Part1 = arms[2]
+welds[1].Parent = nil
+welds[2].Parent = nil
+end
+else
+print("sh")
+end
+else
+print("arms")
+end
+end
+Tool.Equipped:connect(Equip)
+Tool.Unequipped:connect(Unequip)
+
+end))
+Part8.Name = "Handle"
+Part8.Parent = Tool0
+Part8.CFrame = CFrame.new(8.17417049, 4.62469482, -27.4541454, 4.22390585e-05, 0.999999821, 4.61343516e-05, 0.999999821, -4.24472892e-05, -1.13228216e-05, -1.1531466e-05, 4.63724318e-05, -0.999999762)
+Part8.Orientation = Vector3.new(0.0010000000474974513, 179.9969940185547, 90.00199890136719)
+Part8.Position = Vector3.new(8.17417049407959, 4.62469482421875, -27.454145431518555)
+Part8.Rotation = Vector3.new(179.99899291992188, 0.003000000026077032, -89.99800109863281)
+Part8.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part8.Transparency = 1
+Part8.Velocity = Vector3.new(0.03174698352813721, -0.007805196102708578, 0.0011486909352242947)
+Part8.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part8.BottomSurface = Enum.SurfaceType.Smooth
+Part8.BrickColor = BrickColor.new("Black")
+Part8.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part8.TopSurface = Enum.SurfaceType.Smooth
+Part8.brickColor = BrickColor.new("Black")
+BlockMesh9.Parent = Part8
+BlockMesh9.Scale = Vector3.new(0.125, 0.0833333358168602, 0.125)
+Sound10.Name = "Fire"
+Sound10.Parent = Part8
+Sound10.Volume = 1
+Weld11.Parent = Part8
+Weld11.C0 = CFrame.new(5.36583116e-08, 2.0791866e-09, -1.70607348e-06, -8.82146287e-06, 2.07168287e-05, 1, -3.21861648e-06, 1, -2.07168578e-05, -1, -3.21879929e-06, -8.82139648e-06)
+Weld11.C1 = CFrame.new(5.36583116e-08, 2.0791866e-09, -1.70607348e-06, -8.82146287e-06, 2.07168287e-05, 1, -3.21861648e-06, 1, -2.07168578e-05, -1, -3.21879929e-06, -8.82139648e-06)
+Weld11.Part0 = Part8
+Weld11.Part1 = Part8
+Weld11.part1 = Part8
+Weld12.Parent = Part8
+Weld12.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld12.C1 = CFrame.new(0.0208276734, -0.320830464, 0.987011611, -1.4922869e-05, 0.000133043533, 1, -0.999997497, 0.00226169126, -1.52237335e-05, -0.00226169336, -0.999997497, 0.000133009438)
+Weld12.Part0 = Part8
+Weld12.Part1 = Part169
+Weld12.part1 = Part169
+Weld13.Parent = Part8
+Weld13.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld13.C1 = CFrame.new(0.0208124146, 0.820791185, -3.60398698, -1.49229809e-05, 0.000133044523, 1, -0.00226165913, -0.999997437, 0.000133010428, 0.999997437, -0.00226165703, 1.52238445e-05)
+Weld13.Part0 = Part8
+Weld13.Part1 = Part171
+Weld13.part1 = Part171
+Weld14.Parent = Part8
+Weld14.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld14.C1 = CFrame.new(-0.0208276734, 0.274976701, -1.39576888, 1.49229809e-05, -0.000133044523, -1, -0.00226165913, -0.999997437, 0.000133010428, -0.999997437, 0.00226165703, -1.52238445e-05)
+Weld14.Part0 = Part8
+Weld14.Part1 = Part173
+Weld14.part1 = Part173
+Weld15.Parent = Part8
+Weld15.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld15.C1 = CFrame.new(-0.0208276734, 0.57946682, -0.717567146, 1.49229809e-05, -0.000133044523, -1, 0.365986764, -0.930620074, 0.000129275519, -0.930620074, -0.365986794, 3.4804907e-05)
+Weld15.Part0 = Part8
+Weld15.Part1 = Part175
+Weld15.part1 = Part175
+Weld16.Parent = Part8
+Weld16.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld16.C1 = CFrame.new(-0.0208124146, 0.404134721, -1.06245589, 1.49229809e-05, -0.000133044523, -1, -0.00226165913, -0.999997437, 0.000133010428, -0.999997437, 0.00226165703, -1.52238445e-05)
+Weld16.Part0 = Part8
+Weld16.Part1 = Part177
+Weld16.part1 = Part177
+Weld17.Parent = Part8
+Weld17.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld17.C1 = CFrame.new(-0.766622484, -0.0208276734, -0.145799413, 0.00226165913, 0.999997437, -0.000133010428, 1.49229809e-05, -0.000133044523, -1, -0.999997437, 0.00226165703, -1.52238445e-05)
+Weld17.Part0 = Part8
+Weld17.Part1 = Part179
+Weld17.part1 = Part179
+Weld18.Parent = Part8
+Weld18.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld18.C1 = CFrame.new(-0.0208276734, -0.704126298, 0.31248644, 1.49229809e-05, -0.000133044523, -1, 0.00226165913, 0.999997437, -0.000133010428, 0.999997437, -0.00226165703, 1.52238445e-05)
+Weld18.Part0 = Part8
+Weld18.Part1 = Part181
+Weld18.part1 = Part181
+Weld19.Parent = Part8
+Weld19.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld19.C1 = CFrame.new(0.0208276734, -0.166655645, 0.982845962, -1.4922869e-05, 0.000133043533, 1, -0.999997497, 0.00226169126, -1.52237335e-05, -0.00226169336, -0.999997497, 0.000133009438)
+Weld19.Part0 = Part8
+Weld19.Part1 = Part183
+Weld19.part1 = Part183
+Weld20.Parent = Part8
+Weld20.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld20.C1 = CFrame.new(-0.658292711, -4.12483025, -0.0208276734, 0.00226165913, 0.999997437, -0.000133010428, 0.999997437, -0.00226165703, 1.52238445e-05, 1.49229809e-05, -0.000133044523, -1)
+Weld20.Part0 = Part8
+Weld20.Part1 = Part185
+Weld20.part1 = Part185
+Weld21.Parent = Part8
+Weld21.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld21.C1 = CFrame.new(-0.654123247, -3.249861, -0.0208276734, 0.00226165913, 0.999997437, -0.000133010428, 0.999997437, -0.00226165703, 1.52238445e-05, 1.49229809e-05, -0.000133044523, -1)
+Weld21.Part0 = Part8
+Weld21.Part1 = Part187
+Weld21.part1 = Part187
+Weld22.Parent = Part8
+Weld22.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld22.C1 = CFrame.new(-0.529130876, -2.72904801, -0.0208276734, 0.00226165913, 0.999997437, -0.000133010428, 0.999997437, -0.00226165703, 1.52238445e-05, 1.49229809e-05, -0.000133044523, -1)
+Weld22.Part0 = Part8
+Weld22.Part1 = Part189
+Weld22.part1 = Part189
+Weld23.Parent = Part8
+Weld23.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld23.C1 = CFrame.new(0.0208276734, 0.395827681, 0.986986876, -1.49229809e-05, 0.000133044523, 1, -0.999997437, 0.00226169126, -1.5223849e-05, -0.00226169336, -0.999997437, 0.000133010428)
+Weld23.Part0 = Part8
+Weld23.Part1 = Part191
+Weld23.part1 = Part191
+Weld24.Parent = Part8
+Weld24.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld24.C1 = CFrame.new(0.0208276734, 1.12497032, 0.982849777, -1.4922869e-05, 0.000133043533, 1, -0.999997497, 0.00226169126, -1.52237335e-05, -0.00226169336, -0.999997497, 0.000133009438)
+Weld24.Part0 = Part8
+Weld24.Part1 = Part193
+Weld24.part1 = Part193
+Weld25.Parent = Part8
+Weld25.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld25.C1 = CFrame.new(0.0208276734, 1.44575441, 0.982825041, -1.49229809e-05, 0.000133044523, 1, -0.999997437, 0.00226169126, -1.5223849e-05, -0.00226169336, -0.999997437, 0.000133010428)
+Weld25.Part0 = Part8
+Weld25.Part1 = Part195
+Weld25.part1 = Part195
+Weld26.Parent = Part8
+Weld26.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld26.C1 = CFrame.new(0.0208124146, 0.662454545, -0.166639552, -1.49229809e-05, 0.000133044523, 1, -0.00226165913, -0.999997437, 0.000133010428, 0.999997437, -0.00226165703, 1.52238445e-05)
+Weld26.Part0 = Part8
+Weld26.Part1 = Part197
+Weld26.part1 = Part197
+Weld27.Parent = Part8
+Weld27.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld27.C1 = CFrame.new(0.0208276734, 0.704126298, -1.52076554, -1.49229809e-05, 0.000133044523, 1, -0.00226165913, -0.999997437, 0.000133010428, 0.999997437, -0.00226165703, 1.52238445e-05)
+Weld27.Part0 = Part8
+Weld27.Part1 = Part199
+Weld27.part1 = Part199
+Weld28.Parent = Part8
+Weld28.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld28.C1 = CFrame.new(-0.0208276734, -0.699960649, -0.0625135675, 1.49229809e-05, -0.000133044523, -1, 0.00226165913, 0.999997437, -0.000133010428, 0.999997437, -0.00226165703, 1.52238445e-05)
+Weld28.Part0 = Part8
+Weld28.Part1 = Part201
+Weld28.part1 = Part201
+Weld29.Parent = Part8
+Weld29.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld29.C1 = CFrame.new(0.0208276734, 0.537477374, -1.04167283, -1.49227562e-05, 0.000133042515, 1, -0.00226165913, -0.999997437, 0.000133008391, 0.999997437, -0.00226165703, 1.5254368e-05)
+Weld29.Part0 = Part8
+Weld29.Part1 = Part203
+Weld29.part1 = Part203
+Weld30.Parent = Part8
+Weld30.C0 = CFrame.new(-1.18682137e-05, 1.2889717e-07, -5.49507695e-06, -0.999997437, 0.00228240713, -2.40171994e-05, 0.00228241039, 0.999997437, -0.000136227754, 2.37062086e-05, -0.000136282222, -1)
+Weld30.C1 = CFrame.new(-0.0208319556, -0.799955368, -0.229174197, 1.48922272e-05, -0.000133044479, -1, 0.00226165913, 0.999997437, -0.000133010457, 0.999997437, -0.00226165703, 1.51930917e-05)
+Weld30.Part0 = Part8
+Weld30.Part1 = Part205
+Weld30.part1 = Part205
+Weld31.Parent = Part8
+Weld31.C0 = CFrame.new(-1.18682137e-05, 1.2889717e-07, -5.49507695e-06, -0.999997437, 0.00228240713, -2.40171994e-05, 0.00228241039, 0.999997437, -0.000136227754, 2.37062086e-05, -0.000136282222, -1)
+Weld31.C1 = CFrame.new(-0.0208319556, -0.833284378, -0.645800173, 1.48922272e-05, -0.000133044479, -1, 0.00226165913, 0.999997437, -0.000133010457, 0.999997437, -0.00226165703, 1.51930917e-05)
+Weld31.Part0 = Part8
+Weld31.Part1 = Part207
+Weld31.part1 = Part207
+Weld32.Parent = Part8
+Weld32.C0 = CFrame.new(-1.18682137e-05, 1.2889717e-07, -5.49507695e-06, -0.999997437, 0.00228240713, -2.40171994e-05, 0.00228241039, 0.999997437, -0.000136227754, 2.37062086e-05, -0.000136282222, -1)
+Weld32.C1 = CFrame.new(0.0208319556, -1.02080023, -0.370801896, -1.48922272e-05, 0.000133044479, 1, 0.999997437, -0.00226165703, 1.51930917e-05, 0.00226165913, 0.999997437, -0.000133010442)
+Weld32.Part0 = Part8
+Weld32.Part1 = Part209
+Weld32.part1 = Part209
+Weld33.Parent = Part8
+Weld33.C0 = CFrame.new(-1.18682137e-05, 1.2889717e-07, -5.49507695e-06, -0.999997437, 0.00228240713, -2.40171994e-05, 0.00228241039, 0.999997437, -0.000136227754, 2.37062086e-05, -0.000136282222, -1)
+Weld33.C1 = CFrame.new(0.0208319556, 0.370805711, -0.166674197, -1.48922272e-05, 0.000133044479, 1, -0.00226165913, -0.999997437, 0.000133010457, 0.999997437, -0.00226165703, 1.51930917e-05)
+Weld33.Part0 = Part8
+Weld33.Part1 = Part211
+Weld33.part1 = Part211
+Weld34.Parent = Part8
+Weld34.C0 = CFrame.new(-1.18682137e-05, 1.2889717e-07, -5.49507695e-06, -0.999997437, 0.00228240713, -2.40171994e-05, 0.00228241039, 0.999997437, -0.000136227754, 2.37062086e-05, -0.000136282222, -1)
+Weld34.C1 = CFrame.new(0.0208319556, 0.112246446, -0.228905395, -1.48921154e-05, 0.00013304349, 1, 0.998169243, 0.0604836792, 6.81789243e-06, -0.0604836755, 0.998169243, -0.000133700625)
+Weld34.Part0 = Part8
+Weld34.Part1 = Part213
+Weld34.part1 = Part213
+Weld35.Parent = Part8
+Weld35.C0 = CFrame.new(-1.18682137e-05, 1.2889717e-07, -5.49507695e-06, -0.999997437, 0.00228240713, -2.40171994e-05, 0.00228241039, 0.999997437, -0.000136227754, 2.37062086e-05, -0.000136282222, -1)
+Weld35.C1 = CFrame.new(-0.495753735, 0.0124941831, 0.0914801285, 0.998169243, 0.0604836233, 6.81795245e-06, -1.48922281e-05, 0.000133044494, 1, 0.0604836196, -0.998169243, 0.000133701644)
+Weld35.Part0 = Part8
+Weld35.Part1 = Part215
+Weld35.part1 = Part215
+Weld36.Parent = Part8
+Weld36.C0 = CFrame.new(-1.18682137e-05, 1.2889717e-07, -5.49507695e-06, -0.999997437, 0.00228240713, -2.40171994e-05, 0.00228241039, 0.999997437, -0.000136227754, 2.37062086e-05, -0.000136282222, -1)
+Weld36.C1 = CFrame.new(-0.0208365228, -0.10832984, -0.0833303109, 1.81162504e-05, -0.000130667628, -1, 0.00227700779, 0.999997497, -0.000130626024, 0.999997497, -0.00227700523, 1.84137316e-05)
+Weld36.Part0 = Part8
+Weld36.Part1 = Part217
+Weld36.part1 = Part217
+Weld37.Parent = Part8
+Weld37.C0 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld37.C1 = CFrame.new(1.4513641e-05, 1.32811024e-07, -1.21361404e-06, -0.999997437, 0.00228240713, -2.40479549e-05, 0.00228241039, 0.999997437, -0.000136227725, 2.37369641e-05, -0.000136282266, -1)
+Weld37.Part0 = Part8
+Weld37.Part1 = Part8
+Weld37.part1 = Part8
+Weld38.Parent = Part8
+Weld38.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld38.C1 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld38.Part0 = Part8
+Weld38.Part1 = Part8
+Weld38.part1 = Part8
+Weld39.Parent = Part8
+Weld39.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld39.C1 = CFrame.new(0.020828452, -0.320834786, 0.986981571, 9.01154272e-06, -3.20644131e-06, 1, -1, -2.07242665e-05, 9.01147632e-06, 2.07242392e-05, -1, -3.20662798e-06)
+Weld39.Part0 = Part8
+Weld39.Part1 = Part169
+Weld39.part1 = Part169
+Weld40.Parent = Part8
+Weld40.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld40.C1 = CFrame.new(0.0208093785, 0.820760131, -3.60383248, 9.01154272e-06, -3.20644131e-06, 1, 2.07397188e-05, -1, -3.20662821e-06, 1, 2.07397461e-05, -9.01147632e-06)
+Weld40.Part0 = Part8
+Weld40.Part1 = Part171
+Weld40.part1 = Part171
+Weld41.Parent = Part8
+Weld41.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld41.C1 = CFrame.new(-0.0208246373, 0.274966329, -1.39573264, -9.01154272e-06, 3.20644131e-06, -1, 2.07397188e-05, -1, -3.20662821e-06, -1, -2.07397461e-05, 9.01147632e-06)
+Weld41.Part0 = Part8
+Weld41.Part1 = Part173
+Weld41.part1 = Part173
+Weld42.Parent = Part8
+Weld42.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld42.C1 = CFrame.new(-0.0208246373, 0.579450548, -0.717552423, -9.01154272e-06, 3.20644131e-06, -1, 0.368109882, -0.929782271, -6.29853002e-06, -0.929782331, -0.368109882, 7.19845002e-06)
+Weld42.Part0 = Part8
+Weld42.Part1 = Part175
+Weld42.part1 = Part175
+Weld43.Parent = Part8
+Weld43.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld43.C1 = CFrame.new(-0.0208131932, 0.404119343, -1.0624311, -9.01154272e-06, 3.20644131e-06, -1, 2.07397188e-05, -1, -3.20662821e-06, -1, -2.07397461e-05, 9.01147632e-06)
+Weld43.Part0 = Part8
+Weld43.Part1 = Part177
+Weld43.part1 = Part177
+Weld44.Parent = Part8
+Weld44.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld44.C1 = CFrame.new(-0.766593456, -0.0208284128, -0.14580889, -2.07397188e-05, 1, 3.23098652e-06, -9.01154363e-06, 3.23079962e-06, -1, -1, -2.07397479e-05, 9.01147632e-06)
+Weld44.Part0 = Part8
+Weld44.Part1 = Part179
+Weld44.part1 = Part179
+Weld45.Parent = Part8
+Weld45.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld45.C1 = CFrame.new(-0.0208246373, -0.704099774, 0.312488258, -9.01154272e-06, 3.20644131e-06, -1, -2.07397188e-05, 1, 3.20662821e-06, 1, 2.07397461e-05, -9.01147632e-06)
+Weld45.Part0 = Part8
+Weld45.Part1 = Part181
+Weld45.part1 = Part181
+Weld46.Parent = Part8
+Weld46.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld46.C1 = CFrame.new(0.0208246373, -0.166667625, 0.98281616, 9.01154272e-06, -3.20644131e-06, 1, -1, -2.07242665e-05, 9.01147632e-06, 2.07242392e-05, -1, -3.20662798e-06)
+Weld46.Part0 = Part8
+Weld46.Part1 = Part183
+Weld46.part1 = Part183
+Weld47.Parent = Part8
+Weld47.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld47.C1 = CFrame.new(-0.658267736, -4.12466002, -0.0208236985, -2.07397188e-05, 1, 3.23098652e-06, 1, 2.07397461e-05, -8.63126752e-06, -8.63133482e-06, 3.23080758e-06, -1)
+Weld47.Part0 = Part8
+Weld47.Part1 = Part185
+Weld47.part1 = Part185
+Weld48.Parent = Part8
+Weld48.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld48.C1 = CFrame.new(-0.654098511, -3.24972463, -0.0208236985, -2.07397188e-05, 1, 3.23098652e-06, 1, 2.07397461e-05, -8.63126752e-06, -8.63133482e-06, 3.23080758e-06, -1)
+Weld48.Part0 = Part8
+Weld48.Part1 = Part187
+Weld48.part1 = Part187
+Weld49.Parent = Part8
+Weld49.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld49.C1 = CFrame.new(-0.529110909, -2.72893071, -0.0208236985, -2.07397188e-05, 1, 3.23098652e-06, 1, 2.07397461e-05, -8.63126752e-06, -8.63133482e-06, 3.23080758e-06, -1)
+Weld49.Part0 = Part8
+Weld49.Part1 = Part189
+Weld49.part1 = Part189
+Weld50.Parent = Part8
+Weld50.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld50.C1 = CFrame.new(0.020828452, 0.395798057, 0.986949384, 9.01154272e-06, -3.20644131e-06, 1, -1, -2.07243775e-05, 9.01147632e-06, 2.07243502e-05, -1, -3.20662798e-06)
+Weld50.Part0 = Part8
+Weld50.Part1 = Part191
+Weld50.part1 = Part191
+Weld51.Parent = Part8
+Weld51.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld51.C1 = CFrame.new(0.0208246373, 1.12492025, 0.982819974, 9.01154272e-06, -3.20644131e-06, 1, -1, -2.07242665e-05, 9.01147632e-06, 2.07242392e-05, -1, -3.20662798e-06)
+Weld51.Part0 = Part8
+Weld51.Part1 = Part193
+Weld51.part1 = Part193
+Weld52.Parent = Part8
+Weld52.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld52.C1 = CFrame.new(0.0208246373, 1.44568288, 0.982787788, 9.01154272e-06, -3.20644131e-06, 1, -1, -2.07243775e-05, 9.01147632e-06, 2.07243502e-05, -1, -3.20662798e-06)
+Weld52.Part0 = Part8
+Weld52.Part1 = Part195
+Weld52.part1 = Part195
+Weld53.Parent = Part8
+Weld53.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld53.C1 = CFrame.new(0.0208093785, 0.662429452, -0.16661863, 9.01154272e-06, -3.20644131e-06, 1, 2.07397188e-05, -1, -3.20662821e-06, 1, 2.07397461e-05, -9.01147632e-06)
+Weld53.Part0 = Part8
+Weld53.Part1 = Part197
+Weld53.part1 = Part197
+Weld54.Parent = Part8
+Weld54.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld54.C1 = CFrame.new(0.0208246373, 0.704099774, -1.52069497, 9.01154272e-06, -3.20644131e-06, 1, 2.07397188e-05, -1, -3.20662821e-06, 1, 2.07397461e-05, -9.01147632e-06)
+Weld54.Part0 = Part8
+Weld54.Part1 = Part199
+Weld54.part1 = Part199
+Weld55.Parent = Part8
+Weld55.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld55.C1 = CFrame.new(-0.0208246373, -0.699934125, -0.0624964759, -9.01154272e-06, 3.20644131e-06, -1, -2.07397188e-05, 1, 3.20662821e-06, 1, 2.07397461e-05, -9.01147632e-06)
+Weld55.Part0 = Part8
+Weld55.Part1 = Part201
+Weld55.part1 = Part201
+Weld56.Parent = Part8
+Weld56.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld56.C1 = CFrame.new(0.0208239015, 0.537469149, -1.04164255, 8.9501018e-06, -3.20652748e-06, 1, 2.07397752e-05, -1, -3.20671325e-06, 1, 2.07398043e-05, -8.95003541e-06)
+Weld56.Part0 = Part8
+Weld56.Part1 = Part203
+Weld56.part1 = Part203
+Weld57.Parent = Part8
+Weld57.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld57.C1 = CFrame.new(-0.0208234377, -0.799925208, -0.229177862, -9.07304911e-06, 3.2063856e-06, -1, -2.07397225e-05, 1, 3.20657364e-06, 1, 2.07397497e-05, -9.07298272e-06)
+Weld57.Part0 = Part8
+Weld57.Part1 = Part205
+Weld57.part1 = Part205
+Weld58.Parent = Part8
+Weld58.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld58.C1 = CFrame.new(-0.0208234377, -0.833253026, -0.64578855, -9.07304911e-06, 3.2063856e-06, -1, -2.07397225e-05, 1, 3.20657364e-06, 1, 2.07397497e-05, -9.07298272e-06)
+Weld58.Part0 = Part8
+Weld58.Part1 = Part207
+Weld58.part1 = Part207
+Weld59.Parent = Part8
+Weld59.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld59.C1 = CFrame.new(0.0208272524, -1.02077329, -0.370787919, 9.07304911e-06, -3.2063856e-06, 1, 1, 2.07585981e-05, -9.07298272e-06, -2.07585708e-05, 1, 3.20657387e-06)
+Weld59.Part0 = Part8
+Weld59.Part1 = Part209
+Weld59.part1 = Part209
+Weld60.Parent = Part8
+Weld60.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld60.C1 = CFrame.new(0.0208272524, 0.370791763, -0.166677862, 9.07304911e-06, -3.2063856e-06, 1, 2.07397225e-05, -1, -3.20657364e-06, 1, 2.07397497e-05, -9.07298272e-06)
+Weld60.Part0 = Part8
+Weld60.Part1 = Part211
+Weld60.part1 = Part211
+Weld61.Parent = Part8
+Weld61.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld61.C1 = CFrame.new(0.0208272524, 0.112232864, -0.228897855, 9.07304911e-06, -3.2063856e-06, 1, 0.998028517, 0.0627617538, -8.85392365e-06, -0.0627617463, 0.998028517, 3.76950493e-06)
+Weld61.Part0 = Part8
+Weld61.Part1 = Part213
+Weld61.part1 = Part213
+Weld62.Parent = Part8
+Weld62.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld62.C1 = CFrame.new(-0.495748758, 0.0124897938, 0.0914759338, 0.998028517, 0.0627616867, -8.35015726e-06, 8.5702759e-06, -3.23800805e-06, 1, 0.0627616942, -0.998028517, -3.76950948e-06)
+Weld62.Part0 = Part8
+Weld62.Part1 = Part215
+Weld62.part1 = Part215
+Weld63.Parent = Part8
+Weld63.C0 = CFrame.new(-1.38115126e-06, -4.17426662e-08, -8.31004286e-07, -1, -7.44051531e-09, -1.59506016e-07, -7.44051709e-09, 1, 1.2113504e-08, 1.59506016e-07, 1.21135049e-08, -1)
+Weld63.C1 = CFrame.new(-0.020831611, -0.108325824, -0.0833420455, -5.85458338e-06, 5.59052023e-06, -1, -5.39113898e-06, 1, 5.59055161e-06, 1, 5.39117127e-06, -5.85455336e-06)
+Weld63.Part0 = Part8
+Weld63.Part1 = Part217
+Weld63.part1 = Part217
+Weld64.Parent = Part8
+Weld64.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld64.C1 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld64.Part0 = Part8
+Weld64.Part1 = Part8
+Weld64.part1 = Part8
+Weld65.Parent = Part8
+Weld65.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld65.C1 = CFrame.new(0.0208319295, -0.320828527, 0.986966252, -0.000646592176, -7.96680615e-05, 0.999999881, -0.990660906, 0.136347339, -0.000629691174, -0.136347264, -0.990661085, -0.000167085149)
+Weld65.Part0 = Part8
+Weld65.Part1 = Part169
+Weld65.part1 = Part169
+Weld66.Parent = Part8
+Weld66.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld66.C1 = CFrame.new(0.0208099, 0.820760071, -3.60383844, -0.000646911329, -7.96486274e-05, 0.999999881, -0.136347219, -0.990661204, -0.000167109378, 0.990660965, -0.136347309, 0.000630010036)
+Weld66.Part0 = Part8
+Weld66.Part1 = Part171
+Weld66.part1 = Part171
+Weld67.Parent = Part8
+Weld67.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld67.C1 = CFrame.new(-0.0208243001, 0.274961412, -1.39571428, 0.000646592176, 7.96680615e-05, -0.999999881, -0.136347249, -0.990661085, -0.000167085149, -0.990660965, 0.136347324, -0.000629691174)
+Weld67.Part0 = Part8
+Weld67.Part1 = Part173
+Weld67.part1 = Part173
+Weld68.Parent = Part8
+Weld68.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld68.C1 = CFrame.new(-0.0208251588, 0.579450548, -0.717548788, 0.000646911329, 7.96486274e-05, -0.999999881, 0.237878665, -0.97129488, 7.6524113e-05, -0.971294701, -0.237878665, -0.00064728834)
+Weld68.Part0 = Part8
+Weld68.Part1 = Part175
+Weld68.part1 = Part175
+Weld69.Parent = Part8
+Weld69.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld69.C1 = CFrame.new(-0.0208166707, 0.40411371, -1.06240892, 0.000646592176, 7.96680615e-05, -0.999999881, -0.136347249, -0.990661085, -0.000167085149, -0.990660965, 0.136347324, -0.000629691174)
+Weld69.Part0 = Part8
+Weld69.Part1 = Part177
+Weld69.part1 = Part177
+Weld70.Parent = Part8
+Weld70.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld70.C1 = CFrame.new(-0.766593277, -0.0208251588, -0.145810649, 0.136347219, 0.990661204, 0.000167109436, 0.000646911329, 7.96486784e-05, -0.999999881, -0.990660965, 0.136347309, -0.000630010036)
+Weld70.Part0 = Part8
+Weld70.Part1 = Part179
+Weld70.part1 = Part179
+Weld71.Parent = Part8
+Weld71.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld71.C1 = CFrame.new(-0.0208243001, -0.704088151, 0.312485188, 0.000646592176, 7.96680615e-05, -0.999999881, 0.136347249, 0.990661085, 0.000167085149, 0.990660965, -0.136347324, 0.000629691174)
+Weld71.Part0 = Part8
+Weld71.Part1 = Part181
+Weld71.part1 = Part181
+Weld72.Parent = Part8
+Weld72.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld72.C1 = CFrame.new(0.0208251588, -0.166666165, 0.982816458, -0.000646911329, -7.96486202e-05, 0.999999881, -0.990660906, 0.136347339, -0.000630010036, -0.136347264, -0.990661085, -0.000167109421)
+Weld72.Part0 = Part8
+Weld72.Part1 = Part183
+Weld72.part1 = Part183
+Weld73.Parent = Part8
+Weld73.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld73.C1 = CFrame.new(-0.658257127, -4.1245966, -0.0208220575, 0.136347249, 0.990661085, 0.000167109509, 0.990660965, -0.136347324, 0.000630071387, 0.000646972156, 7.96403474e-05, -0.999999881)
+Weld73.Part0 = Part8
+Weld73.Part1 = Part185
+Weld73.part1 = Part185
+Weld74.Parent = Part8
+Weld74.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld74.C1 = CFrame.new(-0.654097855, -3.2497189, -0.0208296962, 0.136347219, 0.990661204, 0.000167109421, 0.990660965, -0.136347309, 0.000630071503, 0.000646972272, 7.96402892e-05, -0.999999881)
+Weld74.Part0 = Part8
+Weld74.Part1 = Part187
+Weld74.part1 = Part187
+Weld75.Parent = Part8
+Weld75.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld75.C1 = CFrame.new(-0.529102921, -2.72889066, -0.0208220575, 0.136347249, 0.990661085, 0.000167109509, 0.990660965, -0.136347324, 0.000630071387, 0.000646972156, 7.96403474e-05, -0.999999881)
+Weld75.Part0 = Part8
+Weld75.Part1 = Part189
+Weld75.part1 = Part189
+Weld76.Parent = Part8
+Weld76.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld76.C1 = CFrame.new(0.0208251588, 0.395795673, 0.986949682, -0.000646911329, -7.96486202e-05, 0.999999881, -0.990660906, 0.136347339, -0.000630010036, -0.136347264, -0.990661085, -0.000167109421)
+Weld76.Part0 = Part8
+Weld76.Part1 = Part191
+Weld76.part1 = Part191
+Weld77.Parent = Part8
+Weld77.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld77.C1 = CFrame.new(0.0208243001, 1.12491119, 0.982805371, -0.000646592176, -7.96680615e-05, 0.999999881, -0.990660906, 0.136347339, -0.000629691174, -0.136347264, -0.990661085, -0.000167085149)
+Weld77.Part0 = Part8
+Weld77.Part1 = Part193
+Weld77.part1 = Part193
+Weld78.Parent = Part8
+Weld78.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld78.C1 = CFrame.new(0.0208251588, 1.44568431, 0.982787848, -0.000646911329, -7.96486202e-05, 0.999999881, -0.990660906, 0.136347339, -0.000630010036, -0.136347264, -0.990661085, -0.000167109421)
+Weld78.Part0 = Part8
+Weld78.Part1 = Part195
+Weld78.part1 = Part195
+Weld79.Parent = Part8
+Weld79.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld79.C1 = CFrame.new(0.0208090413, 0.66241926, -0.166617915, -0.000646592176, -7.96680615e-05, 0.999999881, -0.136347249, -0.990661085, -0.000167085149, 0.990660965, -0.136347324, 0.000629691174)
+Weld79.Part0 = Part8
+Weld79.Part1 = Part197
+Weld79.part1 = Part197
+Weld80.Parent = Part8
+Weld80.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld80.C1 = CFrame.new(0.0208166707, 0.704089105, -1.52067518, -0.000646592176, -7.96680615e-05, 0.999999881, -0.136347249, -0.990661085, -0.000167085149, 0.990660965, -0.136347324, 0.000629691174)
+Weld80.Part0 = Part8
+Weld80.Part1 = Part199
+Weld80.part1 = Part199
+Weld81.Parent = Part8
+Weld81.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld81.C1 = CFrame.new(-0.0208243001, -0.699923456, -0.0624995679, 0.000646592176, 7.96680615e-05, -0.999999881, 0.136347249, 0.990661085, 0.000167085149, 0.990660965, -0.136347324, 0.000629691174)
+Weld81.Part0 = Part8
+Weld81.Part1 = Part201
+Weld81.part1 = Part201
+Weld82.Parent = Part8
+Weld82.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld82.C1 = CFrame.new(0.0208296962, 0.537477434, -1.04165721, -0.000646967324, -7.96396853e-05, 0.999999762, -0.136347219, -0.990661025, -0.00016711466, 0.990660846, -0.136347294, 0.00063012453)
+Weld82.Part0 = Part8
+Weld82.Part1 = Part203
+Weld82.part1 = Part203
+Weld83.Parent = Part8
+Weld83.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld83.C1 = CFrame.new(-0.0208273903, -0.799913347, -0.229180142, 0.000646531233, 7.96763998e-05, -0.999999881, 0.136347249, 0.990661085, 0.000167085105, 0.990660965, -0.136347324, 0.000629629707)
+Weld83.Part0 = Part8
+Weld83.Part1 = Part205
+Weld83.part1 = Part205
+Weld84.Parent = Part8
+Weld84.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld84.C1 = CFrame.new(-0.0208273903, -0.833240449, -0.645783246, 0.000646531233, 7.96763998e-05, -0.999999881, 0.136347249, 0.990661085, 0.000167085105, 0.990660965, -0.136347324, 0.000629629707)
+Weld84.Part0 = Part8
+Weld84.Part1 = Part207
+Weld84.part1 = Part207
+Weld85.Parent = Part8
+Weld85.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld85.C1 = CFrame.new(0.0208206195, -1.02077842, -0.370788842, -0.000646850385, -7.96569511e-05, 0.999999881, 0.990660965, -0.136347294, 0.00062994851, 0.136347219, 0.990661085, 0.000167109334)
+Weld85.Part0 = Part8
+Weld85.Part1 = Part209
+Weld85.part1 = Part209
+Weld86.Parent = Part8
+Weld86.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld86.C1 = CFrame.new(0.0208273903, 0.370785654, -0.166680142, -0.000646531233, -7.96763998e-05, 0.999999881, -0.136347249, -0.990661085, -0.000167085105, 0.990660965, -0.136347324, 0.000629629707)
+Weld86.Part0 = Part8
+Weld86.Part1 = Part211
+Weld86.part1 = Part211
+Weld87.Parent = Part8
+Weld87.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld87.C1 = CFrame.new(0.0208273903, 0.112228423, -0.228894323, -0.000646531233, -7.96763998e-05, 0.999999881, 0.99726373, -0.0739235803, 0.000638872327, 0.0739235058, 0.997264028, 0.000127252279)
+Weld87.Part0 = Part8
+Weld87.Part1 = Part213
+Weld87.part1 = Part213
+Weld88.Parent = Part8
+Weld88.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld88.C1 = CFrame.new(-0.495742053, 0.0124877011, 0.0914742127, 0.99726373, -0.0739236325, 0.000639376056, -0.000647033623, -7.9639176e-05, 0.999999881, -0.073923558, -0.997264028, -0.000127252322)
+Weld88.Part0 = Part8
+Weld88.Part1 = Part215
+Weld88.part1 = Part215
+Weld89.Parent = Part8
+Weld89.C0 = CFrame.new(-3.01750902e-07, 1.986744e-07, -2.12819123e-06, -0.990658104, 0.136367857, -0.000638858823, 0.136367783, 0.990658283, 0.000163903882, 0.000655241951, 7.52529377e-05, -0.999999881)
+Weld89.C1 = CFrame.new(-0.0208275616, -0.108324163, -0.0833432227, 0.000650044763, 8.15993626e-05, -0.999999881, 0.136362448, 0.990659118, 0.000169478866, 0.99065882, -0.136362553, 0.000632845622)
+Weld89.Part0 = Part8
+Weld89.Part1 = Part217
+Weld89.part1 = Part217
+Weld90.Parent = Part8
+Weld90.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld90.C1 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld90.Part0 = Part8
+Weld90.Part1 = Part8
+Weld90.part1 = Part8
+Weld91.Parent = Part8
+Weld91.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld91.C1 = CFrame.new(0.0208282471, -0.320835114, 0.98698163, -0.0042458009, 0.000487013749, 0.99999094, -0.9907251, 0.135814667, -0.0042726039, -0.135815516, -0.99073416, -9.41453036e-05)
+Weld91.Part0 = Part8
+Weld91.Part1 = Part169
+Weld91.part1 = Part169
+Weld92.Parent = Part8
+Weld92.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld92.C1 = CFrame.new(0.0208053589, 0.820760071, -3.60383701, -0.0042458009, 0.000487013662, 0.99999094, -0.135815471, -0.99073416, -9.41451799e-05, 0.9907251, -0.135814622, 0.0042726039)
+Weld92.Part0 = Part8
+Weld92.Part1 = Part171
+Weld92.part1 = Part171
+Weld93.Parent = Part8
+Weld93.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld93.C1 = CFrame.new(-0.0208206177, 0.2749663, -1.39573097, 0.0042458009, -0.000487013662, -0.99999094, -0.135815471, -0.99073416, -9.41451799e-05, -0.9907251, 0.135814622, -0.0042726039)
+Weld93.Part0 = Part8
+Weld93.Part1 = Part173
+Weld93.part1 = Part173
+Weld94.Parent = Part8
+Weld94.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld94.C1 = CFrame.new(-0.0208206177, 0.579450369, -0.717554092, 0.0042458009, -0.000487013662, -0.99999094, 0.238396689, -0.97116679, 0.00148516998, -0.971158624, -0.238400832, -0.00400727848)
+Weld94.Part0 = Part8
+Weld94.Part1 = Part175
+Weld94.part1 = Part175
+Weld95.Parent = Part8
+Weld95.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld95.C1 = CFrame.new(-0.0208129883, 0.404119432, -1.06243134, 0.0042458009, -0.000487013662, -0.99999094, -0.135815471, -0.99073416, -9.41451799e-05, -0.9907251, 0.135814622, -0.0042726039)
+Weld95.Part0 = Part8
+Weld95.Part1 = Part177
+Weld95.part1 = Part177
+Weld96.Parent = Part8
+Weld96.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld96.C1 = CFrame.new(-0.766593277, -0.0208282471, -0.14580822, 0.135815471, 0.99073416, 9.41452381e-05, 0.0042458009, -0.000487013604, -0.99999094, -0.9907251, 0.135814622, -0.0042726039)
+Weld96.Part0 = Part8
+Weld96.Part1 = Part179
+Weld96.part1 = Part179
+Weld97.Parent = Part8
+Weld97.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld97.C1 = CFrame.new(-0.0208206177, -0.704099536, 0.312488556, 0.0042458009, -0.000487013662, -0.99999094, 0.135815471, 0.99073416, 9.41451799e-05, 0.9907251, -0.135814622, 0.0042726039)
+Weld97.Part0 = Part8
+Weld97.Part1 = Part181
+Weld97.part1 = Part181
+Weld98.Parent = Part8
+Weld98.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld98.C1 = CFrame.new(0.0208206177, -0.166665077, 0.982815981, -0.0042458009, 0.000487013749, 0.99999094, -0.9907251, 0.135814667, -0.0042726039, -0.135815516, -0.99073416, -9.41453036e-05)
+Weld98.Part0 = Part8
+Weld98.Part1 = Part183
+Weld98.part1 = Part183
+Weld99.Parent = Part8
+Weld99.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld99.C1 = CFrame.new(-0.658267736, -4.12465954, -0.0208282471, 0.135815471, 0.99073416, 9.41452381e-05, 0.9907251, -0.135814622, 0.00427266536, 0.0042458619, -0.000487021985, -0.99999094)
+Weld99.Part0 = Part8
+Weld99.Part1 = Part185
+Weld99.part1 = Part185
+Weld100.Parent = Part8
+Weld100.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld100.C1 = CFrame.new(-0.65409857, -3.24972343, -0.0208282471, 0.135815471, 0.99073416, 9.41452381e-05, 0.9907251, -0.135814622, 0.00427266536, 0.0042458619, -0.000487021985, -0.99999094)
+Weld100.Part0 = Part8
+Weld100.Part1 = Part187
+Weld100.part1 = Part187
+Weld101.Parent = Part8
+Weld101.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld101.C1 = CFrame.new(-0.529102743, -2.72889137, -0.0208206177, 0.135815501, 0.99073416, 9.414534e-05, 0.9907251, -0.135814652, 0.00427266536, 0.0042458619, -0.000487021985, -0.99999094)
+Weld101.Part0 = Part8
+Weld101.Part1 = Part189
+Weld101.part1 = Part189
+Weld102.Parent = Part8
+Weld102.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld102.C1 = CFrame.new(0.0208282471, 0.395793915, 0.986934125, -0.00424548192, 0.000486994482, 0.99999094, -0.9907251, 0.135814667, -0.00427228538, -0.135815516, -0.99073416, -9.41210383e-05)
+Weld102.Part0 = Part8
+Weld102.Part1 = Part191
+Weld102.part1 = Part191
+Weld103.Parent = Part8
+Weld103.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld103.C1 = CFrame.new(0.0208206177, 1.12490368, 0.982804656, -0.00424548192, 0.000486994482, 0.99999094, -0.9907251, 0.135814667, -0.00427228538, -0.135815516, -0.99073416, -9.41210383e-05)
+Weld103.Part0 = Part8
+Weld103.Part1 = Part193
+Weld103.part1 = Part193
+Weld104.Parent = Part8
+Weld104.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld104.C1 = CFrame.new(0.0208282471, 1.4456625, 0.982772708, -0.00424548192, 0.000486994482, 0.99999094, -0.9907251, 0.135814667, -0.00427228538, -0.135815516, -0.99073416, -9.41210383e-05)
+Weld104.Part0 = Part8
+Weld104.Part1 = Part195
+Weld104.part1 = Part195
+Weld105.Parent = Part8
+Weld105.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld105.C1 = CFrame.new(0.0208053589, 0.662419021, -0.166617393, -0.00424548192, 0.000486994482, 0.99999094, -0.135815501, -0.99073416, -9.41210092e-05, 0.9907251, -0.135814652, 0.00427228538)
+Weld105.Part0 = Part8
+Weld105.Part1 = Part197
+Weld105.part1 = Part197
+Weld106.Parent = Part8
+Weld106.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld106.C1 = CFrame.new(0.0208206177, 0.704088807, -1.5206728, -0.00424548192, 0.000486994482, 0.99999094, -0.135815501, -0.99073416, -9.41210092e-05, 0.9907251, -0.135814652, 0.00427228538)
+Weld106.Part0 = Part8
+Weld106.Part1 = Part199
+Weld106.part1 = Part199
+Weld107.Parent = Part8
+Weld107.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld107.C1 = CFrame.new(-0.0208282471, -0.699923277, -0.062497139, 0.00424548192, -0.000486994482, -0.99999094, 0.135815501, 0.99073416, 9.41210092e-05, 0.9907251, -0.135814652, 0.00427228538)
+Weld107.Part0 = Part8
+Weld107.Part1 = Part201
+Weld107.part1 = Part201
+Weld108.Parent = Part8
+Weld108.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld108.C1 = CFrame.new(0.0208206177, 0.537469089, -1.04164505, -0.00424576877, 0.000487010053, 0.99999088, -0.135815486, -0.99073416, -9.41413382e-05, 0.9907251, -0.135814652, 0.00427251915)
+Weld108.Part0 = Part8
+Weld108.Part1 = Part203
+Weld108.part1 = Part203
+Weld109.Parent = Part8
+Weld109.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld109.C1 = CFrame.new(-0.0208282471, -0.79992497, -0.229177475, 0.00424574036, -0.000487005367, -0.99999094, 0.135815471, 0.99073416, 9.41451945e-05, 0.9907251, -0.135814622, 0.00427254289)
+Weld109.Part0 = Part8
+Weld109.Part1 = Part205
+Weld109.part1 = Part205
+Weld110.Parent = Part8
+Weld110.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld110.C1 = CFrame.new(-0.0208206177, -0.833240092, -0.64577961, 0.00424542092, -0.000486986159, -0.99999094, 0.135815501, 0.99073416, 9.41210164e-05, 0.9907251, -0.135814652, 0.00427222392)
+Weld110.Part0 = Part8
+Weld110.Part1 = Part207
+Weld110.part1 = Part207
+Weld111.Parent = Part8
+Weld111.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld111.C1 = CFrame.new(0.0208206177, -1.02077389, -0.370787799, -0.00424574036, 0.000487005367, 0.99999094, 0.9907251, -0.135814622, 0.00427254289, 0.135815471, 0.99073416, 9.41451945e-05)
+Weld111.Part0 = Part8
+Weld111.Part1 = Part209
+Weld111.part1 = Part209
+Weld112.Parent = Part8
+Weld112.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld112.C1 = CFrame.new(0.0208282471, 0.370791614, -0.166680336, -0.00424574036, 0.000487005367, 0.99999094, -0.135815471, -0.99073416, -9.41451945e-05, 0.9907251, -0.135814622, 0.00427254289)
+Weld112.Part0 = Part8
+Weld112.Part1 = Part211
+Weld112.part1 = Part211
+Weld113.Parent = Part8
+Weld113.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld113.C1 = CFrame.new(0.0208282471, 0.112231255, -0.22889778, -0.00424574036, 0.000487005454, 0.99999094, 0.997294426, -0.0733873472, 0.00427003158, 0.0733887702, 0.997303426, -0.000174104222)
+Weld113.Part0 = Part8
+Weld113.Part1 = Part213
+Weld113.part1 = Part213
+Weld114.Parent = Part8
+Weld114.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld114.C1 = CFrame.new(-0.495746613, 0.0124969482, 0.0914760455, 0.997294486, -0.0733874142, 0.00427021598, -0.0042459243, 0.000487018959, 0.99999094, -0.0733888373, -0.997303426, 0.000174103901)
+Weld114.Part0 = Part8
+Weld114.Part1 = Part215
+Weld114.part1 = Part215
+Weld115.Parent = Part8
+Weld115.C0 = CFrame.new(0, 0, 0, -0.990722239, 0.135835201, -0.00428145472, 0.13583605, 0.990731359, 9.10153394e-05, 0.00425413391, -0.000491404964, -0.99999088)
+Weld115.C1 = CFrame.new(-0.0208282471, -0.108325839, -0.0833406448, 0.00424925284, -0.000485080585, -0.99999088, 0.135830671, 0.990732074, 9.6594842e-05, 0.990723014, -0.135829851, 0.00427575968)
+Weld115.Part0 = Part8
+Weld115.Part1 = Part217
+Weld115.part1 = Part217
+Weld116.Parent = Part8
+Weld116.C0 = CFrame.new(0, 0, 0, -0.99066925, 0.136004761, -0.00878396351, 0.136011317, 0.990707338, -0.000150802851, 0.00868182629, -0.00134411419, -0.999961436)
+Weld116.C1 = CFrame.new(0, 0, 0, -0.99066925, 0.136004761, -0.00878396351, 0.136011317, 0.990707338, -0.000150802851, 0.00868182629, -0.00134411419, -0.999961436)
+Weld116.Part0 = Part8
+Weld116.Part1 = Part8
+Weld116.part1 = Part8
+Weld117.Parent = Part8
+Weld117.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld117.C1 = CFrame.new(0.0208282471, -0.32083559, 0.986968994, 8.94140385e-07, -1.87946375e-06, 1, -8.52003068e-05, 1, 1.87953992e-06, -1, -8.52003068e-05, 8.93980257e-07)
+Weld117.Part0 = Part8
+Weld117.Part1 = Part169
+Weld117.part1 = Part169
+Weld118.Parent = Part8
+Weld118.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld118.C1 = CFrame.new(0.0208129883, 0.820739746, -3.60383606, 8.94140385e-07, -1.87946375e-06, 1, -1, -8.52344892e-05, 8.939802e-07, 8.52344892e-05, -1, -1.87953992e-06)
+Weld118.Part0 = Part8
+Weld118.Part1 = Part171
+Weld118.part1 = Part171
+Weld119.Parent = Part8
+Weld119.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld119.C1 = CFrame.new(-0.0208206177, 0.274963379, -1.3957305, -8.94140385e-07, 1.87946375e-06, -1, -1, -8.52344892e-05, 8.939802e-07, -8.52344892e-05, 1, 1.87953992e-06)
+Weld119.Part0 = Part8
+Weld119.Part1 = Part173
+Weld119.part1 = Part173
+Weld120.Parent = Part8
+Weld120.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld120.C1 = CFrame.new(-0.0208282471, 0.579452515, -0.717559814, -8.94140385e-07, 1.87946375e-06, -1, -0.929758608, -0.368169874, 1.39372759e-07, -0.368169874, 0.929758608, 2.07664289e-06)
+Weld120.Part0 = Part8
+Weld120.Part1 = Part175
+Weld120.part1 = Part175
+Weld121.Parent = Part8
+Weld121.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld121.C1 = CFrame.new(-0.0208129883, 0.404129028, -1.06243038, -8.94140385e-07, 1.87946375e-06, -1, -1, -8.52344892e-05, 8.939802e-07, -8.52344892e-05, 1, 1.87953992e-06)
+Weld121.Part0 = Part8
+Weld121.Part1 = Part177
+Weld121.part1 = Part177
+Weld122.Parent = Part8
+Weld122.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld122.C1 = CFrame.new(-0.766601562, -0.0208282471, -0.145808697, 1, 8.52344892e-05, -8.93930746e-07, -8.94090931e-07, 1.87946375e-06, -1, -8.52344892e-05, 1, 1.87953992e-06)
+Weld122.Part0 = Part8
+Weld122.Part1 = Part179
+Weld122.part1 = Part179
+Weld123.Parent = Part8
+Weld123.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld123.C1 = CFrame.new(-0.0208282471, -0.704071045, 0.312489033, -8.94140385e-07, 1.87946375e-06, -1, 1, 8.52344892e-05, -8.939802e-07, 8.52344892e-05, -1, -1.87953992e-06)
+Weld123.Part0 = Part8
+Weld123.Part1 = Part181
+Weld123.part1 = Part181
+Weld124.Parent = Part8
+Weld124.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld124.C1 = CFrame.new(0.0208282471, -0.166665077, 0.982818604, 8.94140385e-07, -1.87946375e-06, 1, -8.52003068e-05, 1, 1.87953992e-06, -1, -8.52003068e-05, 8.93980257e-07)
+Weld124.Part0 = Part8
+Weld124.Part1 = Part183
+Weld124.part1 = Part183
+Weld125.Parent = Part8
+Weld125.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld125.C1 = CFrame.new(-0.65826416, -4.12466049, -0.0208206177, 1, 8.52344965e-05, -8.93930633e-07, 8.52344965e-05, -1, -1.81803125e-06, -8.94085588e-07, 1.81795508e-06, -1)
+Weld125.Part0 = Part8
+Weld125.Part1 = Part185
+Weld125.part1 = Part185
+Weld126.Parent = Part8
+Weld126.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld126.C1 = CFrame.new(-0.654083252, -3.24972367, -0.0208282471, 1, 8.52344965e-05, -8.93930633e-07, 8.52344965e-05, -1, -1.81803125e-06, -8.94085588e-07, 1.81795508e-06, -1)
+Weld126.Part0 = Part8
+Weld126.Part1 = Part187
+Weld126.part1 = Part187
+Weld127.Parent = Part8
+Weld127.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld127.C1 = CFrame.new(-0.529098511, -2.72893023, -0.0208206177, 1, 8.52344965e-05, -8.93930633e-07, 8.52344965e-05, -1, -1.81803125e-06, -8.94085588e-07, 1.81795508e-06, -1)
+Weld127.Part0 = Part8
+Weld127.Part1 = Part189
+Weld127.part1 = Part189
+Weld128.Parent = Part8
+Weld128.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld128.C1 = CFrame.new(0.0208206177, 0.395797729, 0.986938477, 8.94140385e-07, -1.87946375e-06, 1, -8.5200234e-05, 1, 1.87953992e-06, -1, -8.5200234e-05, 8.93980257e-07)
+Weld128.Part0 = Part8
+Weld128.Part1 = Part191
+Weld128.part1 = Part191
+Weld129.Parent = Part8
+Weld129.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld129.C1 = CFrame.new(0.0208206177, 1.1249218, 0.982788086, 8.94140385e-07, -1.87946375e-06, 1, -8.52003068e-05, 1, 1.87953992e-06, -1, -8.52003068e-05, 8.93980257e-07)
+Weld129.Part0 = Part8
+Weld129.Part1 = Part193
+Weld129.part1 = Part193
+Weld130.Parent = Part8
+Weld130.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld130.C1 = CFrame.new(0.0208206177, 1.44568491, 0.982757568, 8.94140385e-07, -1.87946375e-06, 1, -8.5200234e-05, 1, 1.87953992e-06, -1, -8.5200234e-05, 8.93980257e-07)
+Weld130.Part0 = Part8
+Weld130.Part1 = Part195
+Weld130.part1 = Part195
+Weld131.Parent = Part8
+Weld131.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld131.C1 = CFrame.new(0.0208053589, 0.662414551, -0.166618824, 8.94140385e-07, -1.87946375e-06, 1, -1, -8.52344892e-05, 8.939802e-07, 8.52344892e-05, -1, -1.87953992e-06)
+Weld131.Part0 = Part8
+Weld131.Part1 = Part197
+Weld131.part1 = Part197
+Weld132.Parent = Part8
+Weld132.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld132.C1 = CFrame.new(0.0208206177, 0.704071045, -1.5206933, 8.94140385e-07, -1.87946375e-06, 1, -1, -8.52344892e-05, 8.939802e-07, 8.52344892e-05, -1, -1.87953992e-06)
+Weld132.Part0 = Part8
+Weld132.Part1 = Part199
+Weld132.part1 = Part199
+Weld133.Parent = Part8
+Weld133.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld133.C1 = CFrame.new(-0.0208282471, -0.699920654, -0.0624966621, -8.94140385e-07, 1.87946375e-06, -1, 1, 8.52344892e-05, -8.939802e-07, 8.52344892e-05, -1, -1.87953992e-06)
+Weld133.Part0 = Part8
+Weld133.Part1 = Part201
+Weld133.part1 = Part201
+Weld134.Parent = Part8
+Weld134.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld134.C1 = CFrame.new(0.0208282471, 0.537475586, -1.0416584, 8.94069672e-07, -1.81794167e-06, 1, -1, -8.5234642e-05, 8.64267349e-07, 8.5234642e-05, -1, -1.90734863e-06)
+Weld134.Part0 = Part8
+Weld134.Part1 = Part203
+Weld134.part1 = Part203
+Weld135.Parent = Part8
+Weld135.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld135.C1 = CFrame.new(-0.0208282471, -0.799926758, -0.229176998, -8.94202685e-07, 1.94097152e-06, -1, 1, 8.52344892e-05, -8.94037271e-07, 8.52344892e-05, -1, -1.94104769e-06)
+Weld135.Part0 = Part8
+Weld135.Part1 = Part205
+Weld135.part1 = Part205
+Weld136.Parent = Part8
+Weld136.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld136.C1 = CFrame.new(-0.0208206177, -0.833251953, -0.645787239, -8.94202685e-07, 1.94097152e-06, -1, 1, 8.52344892e-05, -8.94037271e-07, 8.52344892e-05, -1, -1.94104769e-06)
+Weld136.Part0 = Part8
+Weld136.Part1 = Part207
+Weld136.part1 = Part207
+Weld137.Parent = Part8
+Weld137.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld137.C1 = CFrame.new(0.0208206177, -1.02077341, -0.370788574, 8.94202685e-07, -1.94097152e-06, 1, 8.52344601e-05, -1, -1.94104769e-06, 1, 8.52344601e-05, -8.94037271e-07)
+Weld137.Part0 = Part8
+Weld137.Part1 = Part209
+Weld137.part1 = Part209
+Weld138.Parent = Part8
+Weld138.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld138.C1 = CFrame.new(0.0208282471, 0.370788574, -0.166679859, 8.94202685e-07, -1.94097152e-06, 1, -1, -8.52344892e-05, 8.94037271e-07, 8.52344892e-05, -1, -1.94104769e-06)
+Weld138.Part0 = Part8
+Weld138.Part1 = Part211
+Weld138.part1 = Part211
+Weld139.Parent = Part8
+Weld139.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld139.C1 = CFrame.new(0.0208282471, 0.112230301, -0.228881836, 8.94202685e-07, -1.94097174e-06, 1, 0.0628261119, -0.998024583, -1.99331657e-06, 0.998024523, 0.0628261119, -7.7049242e-07)
+Weld139.Part0 = Part8
+Weld139.Part1 = Part213
+Weld139.part1 = Part213
+Weld140.Parent = Part8
+Weld140.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld140.C1 = CFrame.new(-0.495746613, 0.0124893188, 0.0914611816, 0.0628260523, -0.998024583, -1.80914435e-06, 8.82631014e-07, -1.75716355e-06, 1, -0.998024523, -0.0628260523, 7.70491738e-07)
+Weld140.Part0 = Part8
+Weld140.Part1 = Part215
+Weld140.part1 = Part215
+Weld141.Parent = Part8
+Weld141.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld141.C1 = CFrame.new(-0.0208282471, -0.108337402, -0.0833387375, 1.49017615e-06, -1.27738872e-06, -1, 1, 6.98861913e-05, 1.4900869e-06, 6.98861913e-05, -1, 1.27749286e-06)
+Weld141.Part0 = Part8
+Weld141.Part1 = Part217
+Weld141.part1 = Part217
+Weld142.Parent = Part8
+Weld142.C0 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld142.C1 = CFrame.new(0, 0, 0, -6.44834654e-05, 1, -6.97269616e-06, 1, 6.44834436e-05, -4.11261226e-06, -4.11216251e-06, -6.97296127e-06, -1)
+Weld142.Part0 = Part8
+Weld142.Part1 = Part8
+Weld142.part1 = Part8
+Weld143.Parent = Part8
+Weld143.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld143.C1 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld143.Part0 = Part8
+Weld143.Part1 = Part8
+Weld143.part1 = Part8
+Weld144.Parent = Part8
+Weld144.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld144.C1 = CFrame.new(0.0208282471, -0.320835114, 0.986968994, 4.76847936e-06, -4.08485266e-06, 1, -0.000191624436, 1, 4.08576625e-06, -1, -0.000191624466, 4.76769628e-06)
+Weld144.Part0 = Part8
+Weld144.Part1 = Part169
+Weld144.part1 = Part169
+Weld145.Parent = Part8
+Weld145.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld145.C1 = CFrame.new(0.0208129883, 0.820739746, -3.60383511, 4.76847936e-06, -4.08485266e-06, 1, -1, -0.000191658648, 4.76769628e-06, 0.000191658619, -1, -4.08576625e-06)
+Weld145.Part0 = Part8
+Weld145.Part1 = Part171
+Weld145.part1 = Part171
+Weld146.Parent = Part8
+Weld146.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld146.C1 = CFrame.new(-0.0208282471, 0.274978638, -1.3957305, -4.76847936e-06, 4.08485266e-06, -1, -1, -0.000191658648, 4.76769628e-06, -0.000191658619, 1, 4.08576625e-06)
+Weld146.Part0 = Part8
+Weld146.Part1 = Part173
+Weld146.part1 = Part173
+Weld147.Parent = Part8
+Weld147.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld147.C1 = CFrame.new(-0.0208282471, 0.579452515, -0.717552185, -4.76847936e-06, 4.08485266e-06, -1, -0.929719448, -0.368268818, 2.92902359e-06, -0.368268818, 0.929719388, 5.5538485e-06)
+Weld147.Part0 = Part8
+Weld147.Part1 = Part175
+Weld147.part1 = Part175
+Weld148.Parent = Part8
+Weld148.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld148.C1 = CFrame.new(-0.0208129883, 0.40411377, -1.0624299, -4.76847936e-06, 4.08485266e-06, -1, -1, -0.000191658648, 4.76769628e-06, -0.000191658619, 1, 4.08576625e-06)
+Weld148.Part0 = Part8
+Weld148.Part1 = Part177
+Weld148.part1 = Part177
+Weld149.Parent = Part8
+Weld149.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld149.C1 = CFrame.new(-0.766601562, -0.0208206177, -0.14580822, 1, 0.000191658648, -4.76764671e-06, -4.76842979e-06, 4.08485312e-06, -1, -0.000191658619, 1, 4.0857667e-06)
+Weld149.Part0 = Part8
+Weld149.Part1 = Part179
+Weld149.part1 = Part179
+Weld150.Parent = Part8
+Weld150.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld150.C1 = CFrame.new(-0.0208282471, -0.704101562, 0.312489033, -4.76847936e-06, 4.08485266e-06, -1, 1, 0.000191658648, -4.76769628e-06, 0.000191658619, -1, -4.08576625e-06)
+Weld150.Part0 = Part8
+Weld150.Part1 = Part181
+Weld150.part1 = Part181
+Weld151.Parent = Part8
+Weld151.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld151.C1 = CFrame.new(0.0208282471, -0.166665077, 0.982818604, 4.76847936e-06, -4.08485266e-06, 1, -0.000191624436, 1, 4.08576625e-06, -1, -0.000191624466, 4.76769628e-06)
+Weld151.Part0 = Part8
+Weld151.Part1 = Part183
+Weld151.part1 = Part183
+Weld152.Parent = Part8
+Weld152.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld152.C1 = CFrame.new(-0.65826416, -4.12465858, -0.0208206177, 1, 0.000191658648, -4.76764626e-06, 0.000191658619, -1, -4.02425803e-06, -4.76841751e-06, 4.02334445e-06, -1)
+Weld152.Part0 = Part8
+Weld152.Part1 = Part185
+Weld152.part1 = Part185
+Weld153.Parent = Part8
+Weld153.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld153.C1 = CFrame.new(-0.65411377, -3.24972272, -0.0208282471, 1, 0.000191658648, -4.76764626e-06, 0.000191658619, -1, -4.02425803e-06, -4.76841751e-06, 4.02334445e-06, -1)
+Weld153.Part0 = Part8
+Weld153.Part1 = Part187
+Weld153.part1 = Part187
+Weld154.Parent = Part8
+Weld154.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld154.C1 = CFrame.new(-0.52911377, -2.72892928, -0.0208206177, 1, 0.000191658648, -4.76764626e-06, 0.000191658619, -1, -4.02425803e-06, -4.76841751e-06, 4.02334445e-06, -1)
+Weld154.Part0 = Part8
+Weld154.Part1 = Part189
+Weld154.part1 = Part189
+Weld155.Parent = Part8
+Weld155.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld155.C1 = CFrame.new(0.0208358765, 0.395798206, 0.986968994, 4.76847936e-06, -4.08485266e-06, 1, -0.000191624364, 1, 4.08576625e-06, -1, -0.000191624393, 4.76769628e-06)
+Weld155.Part0 = Part8
+Weld155.Part1 = Part191
+Weld155.part1 = Part191
+Weld156.Parent = Part8
+Weld156.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld156.C1 = CFrame.new(0.0208358765, 1.12492132, 0.982818604, 4.76847936e-06, -4.08485266e-06, 1, -0.000191624436, 1, 4.08576625e-06, -1, -0.000191624466, 4.76769628e-06)
+Weld156.Part0 = Part8
+Weld156.Part1 = Part193
+Weld156.part1 = Part193
+Weld157.Parent = Part8
+Weld157.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld157.C1 = CFrame.new(0.0208358765, 1.44568491, 0.982788086, 4.76847936e-06, -4.08485266e-06, 1, -0.000191624364, 1, 4.08576625e-06, -1, -0.000191624393, 4.76769628e-06)
+Weld157.Part0 = Part8
+Weld157.Part1 = Part195
+Weld157.part1 = Part195
+Weld158.Parent = Part8
+Weld158.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld158.C1 = CFrame.new(0.0208129883, 0.662414551, -0.166618347, 4.76847936e-06, -4.08485266e-06, 1, -1, -0.000191658648, 4.76769628e-06, 0.000191658619, -1, -4.08576625e-06)
+Weld158.Part0 = Part8
+Weld158.Part1 = Part197
+Weld158.part1 = Part197
+Weld159.Parent = Part8
+Weld159.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld159.C1 = CFrame.new(0.0208358765, 0.704071045, -1.5206933, 4.76847936e-06, -4.08485266e-06, 1, -1, -0.000191658648, 4.76769628e-06, 0.000191658619, -1, -4.08576625e-06)
+Weld159.Part0 = Part8
+Weld159.Part1 = Part199
+Weld159.part1 = Part199
+Weld160.Parent = Part8
+Weld160.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld160.C1 = CFrame.new(-0.0208282471, -0.699951172, -0.0624966621, -4.76847936e-06, 4.08485266e-06, -1, 1, 0.000191658648, -4.76769628e-06, 0.000191658619, -1, -4.08576625e-06)
+Weld160.Part0 = Part8
+Weld160.Part1 = Part201
+Weld160.part1 = Part201
+Weld161.Parent = Part8
+Weld161.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld161.C1 = CFrame.new(0.0208358765, 0.537475586, -1.04165792, 4.76837158e-06, -4.02331352e-06, 0.999999881, -0.999999881, -0.000191569328, 4.64916229e-06, 0.000191658735, -0.999999881, -3.93390656e-06)
+Weld161.Part0 = Part8
+Weld161.Part1 = Part203
+Weld161.part1 = Part203
+Weld162.Parent = Part8
+Weld162.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld162.C1 = CFrame.new(-0.0208282471, -0.799926758, -0.229177475, -4.76854757e-06, 4.14636042e-06, -1, 1, 0.000191658648, -4.76775267e-06, 0.000191658619, -1, -4.14727401e-06)
+Weld162.Part0 = Part8
+Weld162.Part1 = Part205
+Weld162.part1 = Part205
+Weld163.Parent = Part8
+Weld163.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld163.C1 = CFrame.new(-0.0208358765, -0.833251953, -0.645788193, -4.76854757e-06, 4.14636042e-06, -1, 1, 0.000191658648, -4.76775267e-06, 0.000191658619, -1, -4.14727401e-06)
+Weld163.Part0 = Part8
+Weld163.Part1 = Part207
+Weld163.part1 = Part207
+Weld164.Parent = Part8
+Weld164.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld164.C1 = CFrame.new(0.0208358765, -1.02077389, -0.370788574, 4.76854757e-06, -4.14636042e-06, 1, 0.00019165859, -1, -4.14727401e-06, 1, 0.000191658619, -4.76775267e-06)
+Weld164.Part0 = Part8
+Weld164.Part1 = Part209
+Weld164.part1 = Part209
+Weld165.Parent = Part8
+Weld165.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld165.C1 = CFrame.new(0.0208282471, 0.370788574, -0.166679859, 4.76854757e-06, -4.14636042e-06, 1, -1, -0.000191658648, 4.76775267e-06, 0.000191658619, -1, -4.14727401e-06)
+Weld165.Part0 = Part8
+Weld165.Part1 = Part211
+Weld165.part1 = Part211
+Weld166.Parent = Part8
+Weld166.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld166.C1 = CFrame.new(0.0208282471, 0.112230301, -0.228897095, 4.76854757e-06, -4.14636088e-06, 1, 0.0629323199, -0.998017907, -4.43823728e-06, 0.998017848, 0.0629323199, -4.49815479e-06)
+Weld166.Part0 = Part8
+Weld166.Part1 = Part213
+Weld166.part1 = Part213
+Weld167.Parent = Part8
+Weld167.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld167.C1 = CFrame.new(-0.49574852, 0.0124893188, 0.0914764404, 0.0629322603, -0.998017907, -4.25406461e-06, 4.75695606e-06, -3.96255382e-06, 1, -0.998017848, -0.0629322603, 4.49815434e-06)
+Weld167.Part0 = Part8
+Weld167.Part1 = Part215
+Weld167.part1 = Part215
+Weld168.Parent = Part8
+Weld168.C0 = CFrame.new(0, 0, 0, -0.000170907617, 1, -4.76655032e-06, 1, 0.000170907588, -7.98637302e-06, -7.98555902e-06, -4.76791547e-06, -1)
+Weld168.C1 = CFrame.new(-0.0208282471, -0.108322144, -0.0833396912, -2.38382631e-06, 9.2825411e-07, -1, 1, 0.00017631035, -2.3836626e-06, 0.000176310336, -1, -9.2867441e-07)
+Weld168.Part0 = Part8
+Weld168.Part1 = Part217
+Weld168.part1 = Part217
+Part169.Parent = Tool0
+Part169.CFrame = CFrame.new(9.16114712, 4.94550848, -27.474926, -4.93533153e-05, 2.15217715e-05, -0.999999821, 2.4707424e-06, 0.999999821, 2.17303859e-05, 0.999999762, -2.68027634e-06, -4.95909662e-05)
+Part169.Orientation = Vector3.new(-0.0010000000474974513, -90.00299835205078, 0)
+Part169.Position = Vector3.new(9.161147117614746, 4.9455084800720215, -27.474925994873047)
+Part169.Rotation = Vector3.new(0, -90, 0)
+Part169.Color = Color3.new(0.501961, 0.733333, 0.858824)
+Part169.Velocity = Vector3.new(0.03318158909678459, -0.012279706075787544, 0.0002072621718980372)
+Part169.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part169.BottomSurface = Enum.SurfaceType.Smooth
+Part169.BrickColor = BrickColor.new("Pastel Blue")
+Part169.Reflectance = 0.30000001192092896
+Part169.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part169.TopSurface = Enum.SurfaceType.Smooth
+Part169.brickColor = BrickColor.new("Pastel Blue")
+CylinderMesh170.Parent = Part169
+CylinderMesh170.Scale = Vector3.new(0.2750000059604645, 0.0416666679084301, 0.18333333730697632)
+Part171.Parent = Tool0
+Part171.CFrame = CFrame.new(8.99483395, 1.02084231, -27.4749088, -4.93533153e-05, -0.999999821, -2.1487589e-05, 2.4707424e-06, 2.16962035e-05, -0.999999821, 0.999999762, -4.95909662e-05, 2.68027907e-06)
+Part171.Orientation = Vector3.new(90, -90.00299835205078, 0)
+Part171.Position = Vector3.new(8.994833946228027, 1.0208423137664795, -27.47490882873535)
+Part171.Rotation = Vector3.new(90, -0.0010000000474974513, 90.00299835205078)
+Part171.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part171.Velocity = Vector3.new(0.015393432229757309, -0.01152590662240982, 0.0005770606803707778)
+Part171.Size = Vector3.new(1, 1, 1)
+Part171.BottomSurface = Enum.SurfaceType.Smooth
+Part171.BrickColor = BrickColor.new("Really black")
+Part171.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part171.TopSurface = Enum.SurfaceType.Smooth
+Part171.brickColor = BrickColor.new("Really black")
+BlockMesh172.Parent = Part171
+BlockMesh172.Scale = Vector3.new(0.0833333358168602, 0.2083333283662796, 0.0833333358168602)
+Part173.Parent = Tool0
+Part173.CFrame = CFrame.new(8.44917965, 6.02041912, -27.4749641, 4.93533153e-05, -0.999999821, 2.1487589e-05, -2.4707424e-06, 2.16962035e-05, 0.999999821, -0.999999762, -4.95909662e-05, -2.68027907e-06)
+Part173.Orientation = Vector3.new(-90, 89.99700164794922, 0)
+Part173.Position = Vector3.new(8.449179649353027, 6.020419120788574, -27.474964141845703)
+Part173.Rotation = Vector3.new(-90, 0.0010000000474974513, 89.99700164794922)
+Part173.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part173.Velocity = Vector3.new(0.0380534827709198, -0.00905278418213129, 0.0008151062647812068)
+Part173.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part173.BottomSurface = Enum.SurfaceType.Smooth
+Part173.BrickColor = BrickColor.new("Really black")
+Part173.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part173.TopSurface = Enum.SurfaceType.Smooth
+Part173.brickColor = BrickColor.new("Really black")
+SpecialMesh174.Parent = Part173
+SpecialMesh174.Scale = Vector3.new(0.2475000023841858, 0.9966666102409363, 0.6633333563804626)
+SpecialMesh174.MeshType = Enum.MeshType.Brick
+Part175.Parent = Tool0
+Part175.CFrame = CFrame.new(8.44883537, 5.5051527, -27.4749622, 4.93533153e-05, -0.929797769, -0.368070573, -2.4707424e-06, -0.368070394, 0.929797769, -0.999999762, -4.51226006e-05, -2.07460689e-05)
+Part175.Orientation = Vector3.new(-68.40299987792969, -90.00299835205078, 180)
+Part175.Position = Vector3.new(8.448835372924805, 5.505152702331543, -27.47496223449707)
+Part175.Rotation = Vector3.new(-90.0009994506836, -21.597000122070312, 89.99700164794922)
+Part175.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part175.Velocity = Vector3.new(0.03571808710694313, -0.00905122421681881, 0.0008435388444922864)
+Part175.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part175.BottomSurface = Enum.SurfaceType.Smooth
+Part175.BrickColor = BrickColor.new("Really black")
+Part175.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part175.TopSurface = Enum.SurfaceType.Smooth
+Part175.brickColor = BrickColor.new("Really black")
+SpecialMesh176.Parent = Part175
+SpecialMesh176.Scale = Vector3.new(0.2475000023841858, 0.6229166388511658, 1.7412500381469727)
+SpecialMesh176.MeshType = Enum.MeshType.Brick
+Part177.Parent = Tool0
+Part177.CFrame = CFrame.new(8.57830811, 5.68711567, -27.4749413, 4.93533153e-05, -0.999999821, 2.1487589e-05, -2.4707424e-06, 2.16962035e-05, 0.999999821, -0.999999762, -4.95909662e-05, -2.68027907e-06)
+Part177.Orientation = Vector3.new(-90, 89.99700164794922, 0)
+Part177.Position = Vector3.new(8.57830810546875, 5.687115669250488, -27.47494125366211)
+Part177.Rotation = Vector3.new(-90, 0.0010000000474974513, 89.99700164794922)
+Part177.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part177.Velocity = Vector3.new(0.03654283657670021, -0.009638044983148575, 0.0007124100811779499)
+Part177.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part177.BottomSurface = Enum.SurfaceType.Smooth
+Part177.BrickColor = BrickColor.new("Really black")
+Part177.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part177.TopSurface = Enum.SurfaceType.Smooth
+Part177.brickColor = BrickColor.new("Really black")
+SpecialMesh178.Parent = Part177
+SpecialMesh178.Scale = Vector3.new(0.2475000023841858, 0.3737500011920929, 1.3266667127609253)
+SpecialMesh178.MeshType = Enum.MeshType.Brick
+Part179.Parent = Tool0
+Part179.CFrame = CFrame.new(8.94077587, 4.77048635, -27.4749279, 0.999999821, 4.93533662e-05, 2.1487589e-05, -2.16962035e-05, -2.47074149e-06, 0.999999821, 4.95910172e-05, -0.999999762, -2.68027816e-06)
+Part179.Orientation = Vector3.new(-90, -0.003000000026077032, 0)
+Part179.Position = Vector3.new(8.940775871276855, 4.770486354827881, -27.47492790222168)
+Part179.Rotation = Vector3.new(-90, 0.0010000000474974513, -0.003000000026077032)
+Part179.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part179.Velocity = Vector3.new(0.032388314604759216, -0.011280895210802555, 0.00042310403659939766)
+Part179.Size = Vector3.new(1, 1, 1)
+Part179.BottomSurface = Enum.SurfaceType.Smooth
+Part179.BrickColor = BrickColor.new("Black")
+Part179.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part179.TopSurface = Enum.SurfaceType.Smooth
+Part179.brickColor = BrickColor.new("Black")
+CylinderMesh180.Parent = Part179
+CylinderMesh180.Scale = Vector3.new(0.1666666716337204, 0.25, 0.1666666716337204)
+Part181.Parent = Tool0
+Part181.CFrame = CFrame.new(8.87827969, 4.9371686, -27.4749393, 4.93533153e-05, 0.999999821, -2.1487589e-05, -2.4707424e-06, -2.16962035e-05, -0.999999821, -0.999999762, 4.95909662e-05, 2.68027907e-06)
+Part181.Orientation = Vector3.new(90, 89.99700164794922, 0)
+Part181.Position = Vector3.new(8.878279685974121, 4.937168598175049, -27.474939346313477)
+Part181.Rotation = Vector3.new(90, -0.0010000000474974513, -89.99700164794922)
+Part181.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part181.Velocity = Vector3.new(0.033143773674964905, -0.01099763810634613, 0.00047251448268070817)
+Part181.Size = Vector3.new(1, 1, 1)
+Part181.BottomSurface = Enum.SurfaceType.Smooth
+Part181.BrickColor = BrickColor.new("Really black")
+Part181.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part181.TopSurface = Enum.SurfaceType.Smooth
+Part181.brickColor = BrickColor.new("Really black")
+SpecialMesh182.Parent = Part181
+SpecialMesh182.Scale = Vector3.new(0.25, 0.125, 0.1666666716337204)
+SpecialMesh182.MeshType = Enum.MeshType.Wedge
+Part183.Parent = Tool0
+Part183.CFrame = CFrame.new(9.15699387, 4.79133844, -27.474926, -4.93533153e-05, 2.15217715e-05, -0.999999821, 2.4707424e-06, 0.999999821, 2.17303859e-05, 0.999999762, -2.68027634e-06, -4.95909662e-05)
+Part183.Orientation = Vector3.new(-0.0010000000474974513, -90.00299835205078, 0)
+Part183.Position = Vector3.new(9.156993865966797, 4.7913384437561035, -27.474925994873047)
+Part183.Rotation = Vector3.new(0, -90, 0)
+Part183.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part183.Velocity = Vector3.new(0.032482825219631195, -0.012260882183909416, 0.0002195608103647828)
+Part183.Size = Vector3.new(1, 1, 1)
+Part183.BottomSurface = Enum.SurfaceType.Smooth
+Part183.BrickColor = BrickColor.new("Really black")
+Part183.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part183.TopSurface = Enum.SurfaceType.Smooth
+Part183.brickColor = BrickColor.new("Really black")
+CylinderMesh184.Parent = Part183
+CylinderMesh184.Scale = Vector3.new(0.2750000059604645, 0.2916666567325592, 0.2291666716337204)
+Part185.Parent = Tool0
+Part185.CFrame = CFrame.new(8.83234692, 0.500022888, -27.4749222, 0.999999821, -2.14875927e-05, 4.93533662e-05, -2.16962035e-05, -0.999999821, -2.53224971e-06, 4.95910172e-05, 2.74178728e-06, -0.999999762)
+Part185.Orientation = Vector3.new(0, 179.9969940185547, -179.99899291992188)
+Part185.Position = Vector3.new(8.83234691619873, 0.5000228881835938, -27.47492218017578)
+Part185.Rotation = Vector3.new(180, 0.003000000026077032, 0.0010000000474974513)
+Part185.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part185.Velocity = Vector3.new(0.013032855466008186, -0.010789450258016586, 0.000757580972276628)
+Part185.Size = Vector3.new(1, 1, 1)
+Part185.BottomSurface = Enum.SurfaceType.Smooth
+Part185.BrickColor = BrickColor.new("Black")
+Part185.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part185.TopSurface = Enum.SurfaceType.Smooth
+Part185.brickColor = BrickColor.new("Black")
+CylinderMesh186.Parent = Part185
+CylinderMesh186.Scale = Vector3.new(0.1666666716337204, 0.2083333283662796, 0.25)
+Part187.Parent = Tool0
+Part187.CFrame = CFrame.new(8.8282156, 1.37495828, -27.4749317, 0.999999821, -2.14875927e-05, 4.93533662e-05, -2.16962035e-05, -0.999999821, -2.53224971e-06, 4.95910172e-05, 2.74178728e-06, -0.999999762)
+Part187.Orientation = Vector3.new(0, 179.9969940185547, -179.99899291992188)
+Part187.Position = Vector3.new(8.828215599060059, 1.3749582767486572, -27.474931716918945)
+Part187.Rotation = Vector3.new(180, 0.003000000026077032, 0.0010000000474974513)
+Part187.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part187.Velocity = Vector3.new(0.016998406499624252, -0.010770726948976517, 0.0007137163775041699)
+Part187.Size = Vector3.new(1, 2, 1)
+Part187.BottomSurface = Enum.SurfaceType.Smooth
+Part187.BrickColor = BrickColor.new("Really black")
+Part187.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part187.TopSurface = Enum.SurfaceType.Smooth
+Part187.brickColor = BrickColor.new("Really black")
+CylinderMesh188.Parent = Part187
+CylinderMesh188.Scale = Vector3.new(0.125, 0.7708333134651184, 0.25)
+Part189.Parent = Tool0
+Part189.CFrame = CFrame.new(8.70322609, 1.8957541, -27.4749317, 0.999999821, -2.14875927e-05, 4.93533662e-05, -2.16962035e-05, -0.999999821, -2.53224971e-06, 4.95910172e-05, 2.74178728e-06, -0.999999762)
+Part189.Orientation = Vector3.new(0, 179.9969940185547, -179.99899291992188)
+Part189.Position = Vector3.new(8.703226089477539, 1.895754098892212, -27.474931716918945)
+Part189.Rotation = Vector3.new(180, 0.003000000026077032, 0.0010000000474974513)
+Part189.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part189.Velocity = Vector3.new(0.019358864054083824, -0.010204223915934563, 0.000802309368737042)
+Part189.Size = Vector3.new(1, 1, 1)
+Part189.BottomSurface = Enum.SurfaceType.Smooth
+Part189.BrickColor = BrickColor.new("Black")
+Part189.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part189.TopSurface = Enum.SurfaceType.Smooth
+Part189.brickColor = BrickColor.new("Black")
+CylinderMesh190.Parent = Part189
+CylinderMesh190.Scale = Vector3.new(0.125, 0.5, 0.25)
+Part191.Parent = Tool0
+Part191.CFrame = CFrame.new(9.16113186, 4.22887516, -27.4749317, -4.93533153e-05, 2.15218442e-05, -0.999999821, 2.4707424e-06, 0.999999821, 2.17304587e-05, 0.999999762, -2.68027634e-06, -4.95909662e-05)
+Part191.Orientation = Vector3.new(-0.0010000000474974513, -90.00299835205078, 0)
+Part191.Position = Vector3.new(9.161131858825684, 4.228875160217285, -27.474931716918945)
+Part191.Rotation = Vector3.new(0, -90, 0)
+Part191.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part191.Velocity = Vector3.new(0.029933510348200798, -0.012279637157917023, 0.0002463722485117614)
+Part191.Size = Vector3.new(1, 1, 1)
+Part191.BottomSurface = Enum.SurfaceType.Smooth
+Part191.BrickColor = BrickColor.new("Really black")
+Part191.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part191.TopSurface = Enum.SurfaceType.Smooth
+Part191.brickColor = BrickColor.new("Really black")
+CylinderMesh192.Parent = Part191
+CylinderMesh192.Scale = Vector3.new(0.2750000059604645, 0.8333333134651184, 0.18333333730697632)
+Part193.Parent = Tool0
+Part193.CFrame = CFrame.new(9.15696621, 3.49975252, -27.4749298, -4.93533153e-05, 2.15217715e-05, -0.999999821, 2.4707424e-06, 0.999999821, 2.17303859e-05, 0.999999762, -2.68027634e-06, -4.95909662e-05)
+Part193.Orientation = Vector3.new(-0.0010000000474974513, -90.00299835205078, 0)
+Part193.Position = Vector3.new(9.156966209411621, 3.4997525215148926, -27.474929809570312)
+Part193.Rotation = Vector3.new(0, -90, 0)
+Part193.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part193.Velocity = Vector3.new(0.026628833264112473, -0.012260757386684418, 0.00029004900716245174)
+Part193.Size = Vector3.new(1, 1, 1)
+Part193.BottomSurface = Enum.SurfaceType.Smooth
+Part193.BrickColor = BrickColor.new("Really black")
+Part193.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part193.TopSurface = Enum.SurfaceType.Smooth
+Part193.brickColor = BrickColor.new("Really black")
+CylinderMesh194.Parent = Part193
+CylinderMesh194.Scale = Vector3.new(0.30000001192092896, 0.625, 0.25)
+Part195.Parent = Tool0
+Part195.CFrame = CFrame.new(9.15692806, 3.17898893, -27.4749279, -4.93533153e-05, 2.15218442e-05, -0.999999821, 2.4707424e-06, 0.999999821, 2.17304587e-05, 0.999999762, -2.68027634e-06, -4.95909662e-05)
+Part195.Orientation = Vector3.new(-0.0010000000474974513, -90.00299835205078, 0)
+Part195.Position = Vector3.new(9.156928062438965, 3.1789889335632324, -27.47492790222168)
+Part195.Rotation = Vector3.new(0, -90, 0)
+Part195.Color = Color3.new(0.501961, 0.733333, 0.858824)
+Part195.Velocity = Vector3.new(0.025175005197525024, -0.01226058416068554, 0.000307583948597312)
+Part195.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part195.BottomSurface = Enum.SurfaceType.Smooth
+Part195.BrickColor = BrickColor.new("Pastel Blue")
+Part195.Reflectance = 0.30000001192092896
+Part195.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part195.TopSurface = Enum.SurfaceType.Smooth
+Part195.brickColor = BrickColor.new("Pastel Blue")
+CylinderMesh196.Parent = Part195
+CylinderMesh196.Scale = Vector3.new(0.2750000059604645, 0.0416666679084301, 0.2291666716337204)
+Part197.Parent = Tool0
+Part197.CFrame = CFrame.new(8.83658218, 4.45806217, -27.474926, -4.93533153e-05, -0.999999821, -2.1487589e-05, 2.4707424e-06, 2.16962035e-05, -0.999999821, 0.999999762, -4.95909662e-05, 2.68027907e-06)
+Part197.Orientation = Vector3.new(90, -90.00299835205078, 0)
+Part197.Position = Vector3.new(8.83658218383789, 4.458062171936035, -27.474925994873047)
+Part197.Rotation = Vector3.new(90, -0.0010000000474974513, 90.00299835205078)
+Part197.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part197.Velocity = Vector3.new(0.030972283333539963, -0.01080864667892456, 0.0005376859335228801)
+Part197.Size = Vector3.new(1, 1, 1)
+Part197.BottomSurface = Enum.SurfaceType.Smooth
+Part197.BrickColor = BrickColor.new("Black")
+Part197.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part197.TopSurface = Enum.SurfaceType.Smooth
+Part197.brickColor = BrickColor.new("Black")
+BlockMesh198.Parent = Part197
+BlockMesh198.Scale = Vector3.new(0.25, 0.0416666679084301, 0.7916666865348816)
+Part199.Parent = Tool0
+Part199.CFrame = CFrame.new(8.87821007, 3.10398626, -27.4749432, -4.93533153e-05, -0.999999821, -2.1487589e-05, 2.4707424e-06, 2.16962035e-05, -0.999999821, 0.999999762, -4.95909662e-05, 2.68027907e-06)
+Part199.Orientation = Vector3.new(90, -90.00299835205078, 0)
+Part199.Position = Vector3.new(8.878210067749023, 3.1039862632751465, -27.474943161010742)
+Part199.Rotation = Vector3.new(90, -0.0010000000474974513, 90.00299835205078)
+Part199.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part199.Velocity = Vector3.new(0.024835050106048584, -0.010997322387993336, 0.0005725887604057789)
+Part199.Size = Vector3.new(1, 1, 2)
+Part199.BottomSurface = Enum.SurfaceType.Smooth
+Part199.BrickColor = BrickColor.new("Really black")
+Part199.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part199.TopSurface = Enum.SurfaceType.Smooth
+Part199.brickColor = BrickColor.new("Really black")
+BlockMesh200.Parent = Part199
+BlockMesh200.Scale = Vector3.new(0.25, 0.125, 0.9583333134651184)
+Part201.Parent = Tool0
+Part201.CFrame = CFrame.new(8.87412167, 4.5621829, -27.4749393, 4.93533153e-05, 0.999999821, -2.1487589e-05, -2.4707424e-06, -2.16962035e-05, -0.999999821, -0.999999762, 4.95909662e-05, 2.68027907e-06)
+Part201.Orientation = Vector3.new(90, 89.99700164794922, 0)
+Part201.Position = Vector3.new(8.87412166595459, 4.562182903289795, -27.474939346313477)
+Part201.Rotation = Vector3.new(90, -0.0010000000474974513, -89.99700164794922)
+Part201.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part201.Velocity = Vector3.new(0.031444188207387924, -0.010978791862726212, 0.0004968642024323344)
+Part201.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part201.BottomSurface = Enum.SurfaceType.Smooth
+Part201.BrickColor = BrickColor.new("Black")
+Part201.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part201.TopSurface = Enum.SurfaceType.Smooth
+Part201.brickColor = BrickColor.new("Black")
+SpecialMesh202.Parent = Part201
+SpecialMesh202.Scale = Vector3.new(0.2475000023841858, 0.24916665256023407, 0.4975000321865082)
+SpecialMesh202.MeshType = Enum.MeshType.Brick
+Part203.Parent = Tool0
+Part203.CFrame = CFrame.new(8.71162415, 3.58302546, -27.4749527, -4.94718552e-05, -0.999999881, -2.15768814e-05, 2.62260437e-06, 2.16960907e-05, -0.999999881, 0.999999881, -4.95910645e-05, 2.74181366e-06)
+Part203.Orientation = Vector3.new(90, -90.00299835205078, 0)
+Part203.Position = Vector3.new(8.711624145507812, 3.5830254554748535, -27.474952697753906)
+Part203.Rotation = Vector3.new(90, -0.0010000000474974513, 90.00299835205078)
+Part203.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part203.Velocity = Vector3.new(0.0270062405616045, -0.010242288000881672, 0.0007023988873697817)
+Part203.Size = Vector3.new(1, 1, 3)
+Part203.BottomSurface = Enum.SurfaceType.Smooth
+Part203.BrickColor = BrickColor.new("Really black")
+Part203.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part203.TopSurface = Enum.SurfaceType.Smooth
+Part203.brickColor = BrickColor.new("Really black")
+BlockMesh204.Parent = Part203
+BlockMesh204.Scale = Vector3.new(0.25, 0.2083333283662796, 0.9583333134651184)
+Part205.Parent = Tool0
+Part205.CFrame = CFrame.new(8.97409344, 4.39550018, -27.4749336, 4.93532607e-05, 0.999999821, -2.14875872e-05, -2.40923418e-06, -2.16962035e-05, -0.999999821, -0.999999762, 4.95909117e-05, 2.61877085e-06)
+Part205.Orientation = Vector3.new(90, 89.99700164794922, 0)
+Part205.Position = Vector3.new(8.974093437194824, 4.395500183105469, -27.474933624267578)
+Part205.Rotation = Vector3.new(90, -0.0010000000474974513, -89.99700164794922)
+Part205.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part205.Velocity = Vector3.new(0.03068871982395649, -0.011431904509663582, 0.00041237217374145985)
+Part205.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part205.BottomSurface = Enum.SurfaceType.Smooth
+Part205.BrickColor = BrickColor.new("Black")
+Part205.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part205.TopSurface = Enum.SurfaceType.Smooth
+Part205.brickColor = BrickColor.new("Black")
+CylinderMesh206.Parent = Part205
+CylinderMesh206.Scale = Vector3.new(0.0833333358168602, 0.5, 0.0833333358168602)
+Part207.Parent = Tool0
+Part207.CFrame = CFrame.new(9.0074091, 3.97888851, -27.4749374, 4.93532607e-05, 0.999999821, -2.14875872e-05, -2.40923418e-06, -2.16962035e-05, -0.999999821, -0.999999762, 4.95909117e-05, 2.61877085e-06)
+Part207.Orientation = Vector3.new(90, 89.99700164794922, 0)
+Part207.Position = Vector3.new(9.00740909576416, 3.978888511657715, -27.474937438964844)
+Part207.Rotation = Vector3.new(90, -0.0010000000474974513, -89.99700164794922)
+Part207.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part207.Velocity = Vector3.new(0.028800465166568756, -0.011582904495298862, 0.00040391297079622746)
+Part207.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part207.BottomSurface = Enum.SurfaceType.Smooth
+Part207.BrickColor = BrickColor.new("Black")
+Part207.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part207.TopSurface = Enum.SurfaceType.Smooth
+Part207.brickColor = BrickColor.new("Black")
+CylinderMesh208.Parent = Part207
+CylinderMesh208.Scale = Vector3.new(0.0833333358168602, 0.3333333432674408, 0.0833333358168602)
+Part209.Parent = Tool0
+Part209.CFrame = CFrame.new(8.54493809, 3.60391307, -27.4749603, -4.93532607e-05, -2.14876163e-05, 0.999999821, 2.40923418e-06, -0.999999821, -2.16962326e-05, 0.999999762, 2.61877085e-06, 4.95909117e-05)
+Part209.Orientation = Vector3.new(0.0010000000474974513, 89.99700164794922, 180)
+Part209.Position = Vector3.new(8.544938087463379, 3.6039130687713623, -27.474960327148438)
+Part209.Rotation = Vector3.new(180, 90, 0)
+Part209.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part209.Velocity = Vector3.new(0.027100903913378716, -0.00948680005967617, 0.0008572972728870809)
+Part209.Size = Vector3.new(1, 1, 1)
+Part209.BottomSurface = Enum.SurfaceType.Smooth
+Part209.BrickColor = BrickColor.new("Really black")
+Part209.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part209.TopSurface = Enum.SurfaceType.Smooth
+Part209.brickColor = BrickColor.new("Really black")
+SpecialMesh210.Parent = Part209
+SpecialMesh210.Scale = Vector3.new(0.25, 0.5833333134651184, 0.125)
+SpecialMesh210.MeshType = Enum.MeshType.Wedge
+Part211.Parent = Tool0
+Part211.CFrame = CFrame.new(8.54495621, 4.45800686, -27.4749546, -4.93532607e-05, -0.999999821, -2.14875872e-05, 2.40923418e-06, 2.16962035e-05, -0.999999821, 0.999999762, -4.95909117e-05, 2.61877085e-06)
+Part211.Orientation = Vector3.new(90, -90.00299835205078, 0)
+Part211.Position = Vector3.new(8.54495620727539, 4.458006858825684, -27.47495460510254)
+Part211.Rotation = Vector3.new(90, -0.0010000000474974513, 90.00299835205078)
+Part211.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part211.Velocity = Vector3.new(0.030972005799412727, -0.009486882016062737, 0.0008106853347271681)
+Part211.Size = Vector3.new(1, 1, 1)
+Part211.BottomSurface = Enum.SurfaceType.Smooth
+Part211.BrickColor = BrickColor.new("Really black")
+Part211.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part211.TopSurface = Enum.SurfaceType.Smooth
+Part211.brickColor = BrickColor.new("Really black")
+BlockMesh212.Parent = Part211
+BlockMesh212.Scale = Vector3.new(0.25, 0.125, 1.125)
+Part213.Parent = Tool0
+Part213.CFrame = CFrame.new(8.39557934, 4.75106049, -27.4749622, -4.93532607e-05, 0.0627195835, 0.99803102, 2.40923328e-06, -0.998031139, 0.0627193749, 0.999999762, 5.72499721e-06, 4.93289081e-05)
+Part213.Orientation = Vector3.new(-3.5959999561309814, 89.99700164794922, 180)
+Part213.Position = Vector3.new(8.39557933807373, 4.751060485839844, -27.47496223449707)
+Part213.Rotation = Vector3.new(-89.95500183105469, 86.40399932861328, -90.04499816894531)
+Part213.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part213.Velocity = Vector3.new(0.03230023756623268, -0.008809845894575119, 0.000934532203245908)
+Part213.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part213.BottomSurface = Enum.SurfaceType.Smooth
+Part213.BrickColor = BrickColor.new("Black")
+Part213.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part213.TopSurface = Enum.SurfaceType.Smooth
+Part213.brickColor = BrickColor.new("Black")
+SpecialMesh214.Parent = Part213
+SpecialMesh214.Scale = Vector3.new(0.16500000655651093, 0.12458332628011703, 0.2487500160932541)
+SpecialMesh214.MeshType = Enum.MeshType.Brick
+Part215.Parent = Tool0
+Part215.CFrame = CFrame.new(8.29656029, 4.13565969, -27.4666271, 0.0627195239, -4.93648149e-05, -0.99803102, -0.998031139, 2.59304306e-06, -0.0627193153, 5.90916716e-06, 0.999999762, -4.93289081e-05)
+Part215.Orientation = Vector3.new(3.5959999561309814, -90.00299835205078, -90)
+Part215.Position = Vector3.new(8.296560287475586, 4.135659694671631, -27.46662712097168)
+Part215.Rotation = Vector3.new(90.04499816894531, -86.40399932861328, 0.04500000178813934)
+Part215.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part215.Velocity = Vector3.new(0.029518794268369675, -0.008360597304999828, 0.0010607988806441426)
+Part215.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part215.BottomSurface = Enum.SurfaceType.Smooth
+Part215.BrickColor = BrickColor.new("Black")
+Part215.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part215.TopSurface = Enum.SurfaceType.Smooth
+Part215.brickColor = BrickColor.new("Black")
+SpecialMesh216.Parent = Part215
+SpecialMesh216.Scale = Vector3.new(0.4124999940395355, 0.49833330512046814, 0.4975000321865082)
+SpecialMesh216.MeshType = Enum.MeshType.Brick
+Part217.Parent = Tool0
+Part217.CFrame = CFrame.new(8.28249073, 4.54135084, -27.474968, 5.17372973e-05, 0.999999821, -3.68360415e-05, -5.62784862e-06, -3.70444832e-05, -0.999999821, -0.999999762, 5.19751047e-05, 5.83653537e-06)
+Part217.Orientation = Vector3.new(90, 89.99700164794922, 0)
+Part217.Position = Vector3.new(8.282490730285645, 4.541350841522217, -27.47496795654297)
+Part217.Rotation = Vector3.new(90, -0.0020000000949949026, -89.99700164794922)
+Part217.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part217.Velocity = Vector3.new(0.03134974092245102, -0.008297283202409744, 0.0010518372291699052)
+Part217.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part217.BottomSurface = Enum.SurfaceType.Smooth
+Part217.BrickColor = BrickColor.new("Black")
+Part217.RotVelocity = Vector3.new(-0.00005455488644656725, 0.0009361182455904782, -0.004532403778284788)
+Part217.TopSurface = Enum.SurfaceType.Smooth
+Part217.brickColor = BrickColor.new("Black")
+SpecialMesh218.Parent = Part217
+SpecialMesh218.Scale = Vector3.new(0.16500000655651093, 0.12458332628011703, 0.41458332538604736)
+SpecialMesh218.MeshType = Enum.MeshType.Brick
+LocalScript219.Name = "Crouch"
+LocalScript219.Parent = Tool0
+table.insert(cors,sandbox(LocalScript219,function()
+--[[
+
+on = 0
+Tool = script.Parent
+welds = {}
+sh = {}
+arms = nil
+torso = nil
+f = nil
+function Crouch(ison)
+if arms == nil and torso == nil then
+arms = {Tool.Parent:FindFirstChild("Left Leg"), Tool.Parent:FindFirstChild("Right Leg")}
+torso = Tool.Parent:FindFirstChild("Torso")
+end
+if arms ~= nil and torso ~= nil then
+sh = {torso:FindFirstChild("Left Hip"), torso:FindFirstChild("Right Hip")}
+if sh ~= nil then
+local yes = true
+if yes then
+yes = false
+if ison == 1 then
+sh[1].Part1 = nil
+sh[2].Part1 = nil
+local weld1 = Instance.new("Weld")
+weld1.Part0 = torso
+weld1.Parent = torso
+weld1.Part1 = arms[1]
+weld1.C1 = CFrame.new(-0.5, 0.75, 1)
+arms[1].Name = "LDave"
+arms[1].CanCollide = true
+welds[1] = weld1
+-------------------------------------------
+local weld2 = Instance.new("Weld")
+weld2.Part0 = torso
+weld2.Parent = torso
+weld2.Part1 = arms[2]
+weld2.C1 = CFrame.new(0.5,0.495,1.25) * CFrame.fromEulerAnglesXYZ(math.rad(90),0,0)
+arms[2].Name = "RDave"
+arms[2].CanCollide = true
+welds[2] = weld2
+---------------------------------
+local force = Instance.new("BodyForce")
+force.Parent = torso
+f = force
+wait(0.01)
+elseif ison == 0 then
+if arms then
+sh[1].Part1 = arms[1]
+sh[2].Part1 = arms[2]
+f.Parent = nil
+arms[2].Name = "Right Leg"
+arms[1].Name = "Left Leg"
+welds[1].Parent = nil
+welds[2].Parent = nil
+end
+end
+--
+end
+else
+print("sh")
+end
+else
+print("arms")
+end
+end
+function Key(key)
+if key then
+key = string.lower(key)
+if (key=="c") then
+if on == 1 then
+on = 0
+elseif on == 0 then
+on = 1
+end
+Crouch(on)
+end
+end
+end
+function Equip(mouse)
+mouse.KeyDown:connect(Key)
+end
+script.Parent.Equipped:connect(Equip)]]
+
+
+end))
+Sound220.Name = "Melee"
+Sound220.Parent = Tool0
+Sound220.Volume = 1
+LocalScript221.Name = "LocalMelee"
+LocalScript221.Parent = Tool0
+table.insert(cors,sandbox(LocalScript221,function()
+--[[
+
+Dax,
+
+See the MeleeScript.
+
+
+
+local canmelee = true;
+local tool = script.Parent;
+
+function onKeyDown(key)
+	key:lower();
+	if key == "v" then
+		if canmelee == false then
+			return;
+		end
+
+		tool.Melee:play()
+
+		canmelee = false;
+
+		local rgrip = tool.Parent["Right Arm"].RightGrip;
+
+		script.melee.Value = true;
+
+		for i = 1,6 do
+			rgrip.C1 = rgrip.C1 * CFrame.fromEulerAnglesXYZ(-0.55,0,0);
+			wait();
+		end
+
+		wait(0.25);
+
+		for i = 1, 6 do
+			rgrip.C1 = rgrip.C1 * CFrame.fromEulerAnglesXYZ(0.55,0,0);
+			wait();
+		end
+
+		script.melee.Value = false;
+
+		wait(0.5);
+
+		canmelee = true;
+	end
+end
+
+function onSelect(mouse)
+	mouse.KeyDown:connect(onKeyDown);
+end
+
+
+function blow(hit)
+	local humanoid = hit.Parent:findFirstChild("Humanoid")
+	if not humanoid then return end
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+	local hum = vCharacter:findFirstChild("Humanoid") -- non-nil if tool held by a character
+	if humanoid ~= hum and hum ~= nil and game.Players:playerFromCharacter(humanoid.Parent) and game.Players:playerFromCharacter(humanoid.Parent).TeamColor~=cc then
+		tagHumanoid(humanoid, vPlayer)
+		humanoid:TakeDamage(300)
+		wait(1)
+		untagHumanoid(humanoid)
+	end
+end
+
+
+tool.Equipped:connect(onSelect);]]
+end))
+LocalScript223.Name = "AmmoScript"
+LocalScript223.Parent = Tool0
+
+table.insert(cors,sandbox(LocalScript223,function()
+	b = NLS([[
+	IntValue225 = Instance.new("IntValue")
+	IntValue225.Name = "Clip"
+	IntValue225.Parent = script
+	IntValue225.Value = 30
+	wait(0.5)
+	Tool = script.Parent 
+function equip()
+	--print("Equipped")
+	if game.Players.LocalPlayer ~= nil then
+		local m = Instance.new("Message")
+		m.Parent = game.Players.LocalPlayer
+		m.Name = "AmmoStats"
+		while m ~= nil do
+			wait(0.1)
+			m.Text = "Ammo: "..script.Ammo.Value.."  Clip: "..script.Clip.Value
+		end
+	end
+end
+
+function unequip()
+--	print("Unequipped")
+	if game.Players.LocalPlayer ~= nil then
+		--print("localplayer found")
+		local m = game.Players.LocalPlayer:FindFirstChild("AmmoStats")
+		if m ~= nil then
+			m:remove()
+		end
+	end
+end
+
+script.Parent.Equipped:connect(equip)
+script.Parent.Unequipped:connect(unequip)]],owner.PlayerGui)
+	b.Parent = script.Parent
+	b.Name = "AmmoScript"
+	IntValue224.Name = "Ammo"
+	IntValue224.Parent = b
+	IntValue224.Value = 2147483647
+	IntValue225.Name = "Clip"
+	IntValue225.Parent = b
+	IntValue225.Value = 30
+	IntValue225.Name = "Clip"
+	IntValue225.Parent = LocalScript223
+	IntValue225.Value = 30
+
+end))
+Script226.Name = "Reload"
+Script226.Parent = IntValue225
+table.insert(cors,sandbox(Script226,function()
+	print("Clip Loaded")
+
+	while true do
+		if (script.Parent.Value == 0) and (script.Parent.Parent.Ammo.Value >= 30) then
+			wait(2)
+			script.Parent.Value = 30
+			script.Parent.Parent.Ammo.Value = script.Parent.Parent.Ammo.Value - 30
+		end
+		if (script.Parent.Value == 0) and (script.Parent.Parent.Ammo.Value <= 30) then
+			wait(3)
+			script.Parent.Value = script.Parent.Parent.Ammo.Value
+			script.Parent.Parent.Ammo.Value = 0
+		end
+		wait(0)
+	end
+
+end))
+LocalScript227.Name = "Zoom"
+LocalScript227.Parent = Tool0
+table.insert(cors,sandbox(LocalScript227,function()
+	NLS([[local Tool = script.Parent;
+local zoom = false
+local cam = ""
+local dot = Instance.new("Part")
+dot.Locked = true
+dot.Anchored = true
+dot.CanCollide = false
+dot.Transparency = 1
+dot.TopSurface = 0
+dot.BottomSurface = 0
+dot.Name = "Dot"
+dot.Shape = 0
+dot.Size = Vector3.new(1,1,1)
+local user = ""
+
+
+
+function onEquippedLocal(mouse2)
+
+
+	local human = script.Parent.Parent
+	local player = game.Players:GetPlayerFromCharacter(human)
+	if player ~= nil then
+		user = player
+	end
+	if mouse2 == nil then
+
+		print("Mouse not found")
+
+		return 
+
+	end
+	mouse2.KeyDown:connect(onKeyDown)
+end
+function onKeyDown(key)
+	key:lower()
+	if key == "q" then
+		if not zoom then
+			zoom = true
+			cam = workspace.CurrentCamera:Clone()
+			cam.Parent = workspace
+			dot.Parent = workspace
+			local targ = owner:GetMouse().Hit.p - user.Character.Head.Position
+			local dir = targ / targ.magnitude
+			local mag = targ.magnitude
+			if mag > 150 then
+				mag = 140
+			elseif mag < 25 then
+				mag = mag
+			else
+				mag = mag - 10
+			end
+			local startpos = user.Character.Head.Position
+			local dotpos = startpos + (dir * mag)
+			dot.CFrame = CFrame.new(dotpos)
+			workspace.CurrentCamera.CameraSubject = dot
+			workspace.CurrentCamera.CameraType = 4
+		else
+			zoom = false
+			workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+			workspace.CurrentCamera:Remove()
+			workspace.CurrentCamera = cam
+			dot.Parent = nil
+		end
+	end
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)]],owner.PlayerGui).Parent = script.Parent
+
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
