@@ -1,0 +1,983 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Weld4 = Instance.new("Weld")
+Weld5 = Instance.new("Weld")
+Weld6 = Instance.new("Weld")
+Weld7 = Instance.new("Weld")
+Weld8 = Instance.new("Weld")
+Weld9 = Instance.new("Weld")
+Weld10 = Instance.new("Weld")
+Weld11 = Instance.new("Weld")
+Weld12 = Instance.new("Weld")
+Weld13 = Instance.new("Weld")
+Weld14 = Instance.new("Weld")
+Weld15 = Instance.new("Weld")
+Weld16 = Instance.new("Weld")
+Weld17 = Instance.new("Weld")
+Weld18 = Instance.new("Weld")
+Weld19 = Instance.new("Weld")
+Weld20 = Instance.new("Weld")
+Weld21 = Instance.new("Weld")
+Weld22 = Instance.new("Weld")
+Weld23 = Instance.new("Weld")
+Weld24 = Instance.new("Weld")
+Weld25 = Instance.new("Weld")
+Weld26 = Instance.new("Weld")
+Weld27 = Instance.new("Weld")
+Weld28 = Instance.new("Weld")
+Weld29 = Instance.new("Weld")
+Weld30 = Instance.new("Weld")
+Weld31 = Instance.new("Weld")
+Weld32 = Instance.new("Weld")
+Weld33 = Instance.new("Weld")
+Weld34 = Instance.new("Weld")
+Weld35 = Instance.new("Weld")
+Weld36 = Instance.new("Weld")
+Weld37 = Instance.new("Weld")
+Weld38 = Instance.new("Weld")
+Weld39 = Instance.new("Weld")
+Weld40 = Instance.new("Weld")
+Weld41 = Instance.new("Weld")
+Weld42 = Instance.new("Weld")
+Weld43 = Instance.new("Weld")
+Weld44 = Instance.new("Weld")
+Weld45 = Instance.new("Weld")
+Weld46 = Instance.new("Weld")
+Weld47 = Instance.new("Weld")
+Weld48 = Instance.new("Weld")
+Weld49 = Instance.new("Weld")
+Weld50 = Instance.new("Weld")
+Weld51 = Instance.new("Weld")
+Weld52 = Instance.new("Weld")
+Weld53 = Instance.new("Weld")
+Weld54 = Instance.new("Weld")
+Weld55 = Instance.new("Weld")
+Weld56 = Instance.new("Weld")
+Weld57 = Instance.new("Weld")
+Weld58 = Instance.new("Weld")
+Weld59 = Instance.new("Weld")
+SpecialMesh60 = Instance.new("SpecialMesh")
+Script61 = Instance.new("Script")
+Script62 = Instance.new("Script")
+LocalScript63 = Instance.new("LocalScript")
+Script64 = Instance.new("Script")
+Script65 = Instance.new("Script")
+Script66 = Instance.new("Script")
+Tool0.Name = "magmaRay"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=35235570"
+Tool0.Grip = CFrame.new(0.300000012, 0, -1.5, 0, -1, -0, -1, 0, -0, 0, 0, -1)
+Tool0.GripForward = Vector3.new(0, 0, 1)
+Tool0.GripPos = Vector3.new(0.30000001192092896, 0, -1.5)
+Tool0.GripRight = Vector3.new(0, -1, 0)
+Tool0.GripUp = Vector3.new(-1, 0, 0)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(14.7692642, 0.5, -37.655365, 0, -1, 0, -1, 0, 0, 0, 0, -1)
+Part1.Orientation = Vector3.new(0, 180, -90)
+Part1.Position = Vector3.new(14.769264221191406, 0.5, -37.655364990234375)
+Part1.Rotation = Vector3.new(180, 0, 90)
+Part1.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part1.Size = Vector3.new(1, 0.800000011920929, 3)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Dark stone grey")
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Dark stone grey")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=25973368"
+SpecialMesh2.Scale = Vector3.new(0.5, 0.5, 0.5)
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=25973054"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "Fire"
+Sound3.Parent = Part1
+Sound3.Pitch = 0.699999988079071
+Sound3.PlaybackSpeed = 0.699999988079071
+Sound3.SoundId = "http://www.roblox.com/asset/?id=25605447"
+Sound3.Volume = 1
+Weld4.Parent = Part1
+Weld4.C0 = CFrame.new(0, 0, 0, 0, -1, 0, 0, 0, -1, 1, 0, 0)
+Weld4.C1 = CFrame.new(0, 0, 0, 0, -1, 0, 0, 0, -1, 1, 0, 0)
+Weld4.Part0 = Part1
+Weld4.Part1 = Part1
+Weld4.part1 = Part1
+Weld5.Parent = Part1
+Weld5.C0 = CFrame.new(0, 0, 0, 0.623769999, -0.752039492, 0.212950245, -0.323083669, 2.98365259e-21, 0.94637084, -0.711708248, -0.659117937, -0.242971674)
+Weld5.C1 = CFrame.new(0, 0, 0, 0.623769999, -0.752039492, 0.212950245, -0.323083669, 2.98365259e-21, 0.94637084, -0.711708248, -0.659117937, -0.242971674)
+Weld5.Part0 = Part1
+Weld5.Part1 = Part1
+Weld5.part1 = Part1
+Weld6.Parent = Part1
+Weld6.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld6.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld6.Part0 = Part1
+Weld6.Part1 = Part1
+Weld6.part1 = Part1
+Weld7.Parent = Part1
+Weld7.C0 = CFrame.new(0, 0, 0, -0.935998857, -0.0753194317, -0.343850851, 0.344830334, 2.98365259e-21, -0.938665152, 0.070699729, -0.997159481, 0.0259724241)
+Weld7.C1 = CFrame.new(0, 0, 0, -0.935998857, -0.0753194317, -0.343850851, 0.344830334, 2.98365259e-21, -0.938665152, 0.070699729, -0.997159481, 0.0259724241)
+Weld7.Part0 = Part1
+Weld7.Part1 = Part1
+Weld7.part1 = Part1
+Weld8.Parent = Part1
+Weld8.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld8.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld8.Part0 = Part1
+Weld8.Part1 = Part1
+Weld8.part1 = Part1
+Weld9.Parent = Part1
+Weld9.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld9.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld9.Part0 = Part1
+Weld9.Part1 = Part1
+Weld9.part1 = Part1
+Weld10.Parent = Part1
+Weld10.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld10.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld10.Part0 = Part1
+Weld10.Part1 = Part1
+Weld10.part1 = Part1
+Weld11.Parent = Part1
+Weld11.C0 = CFrame.new(0, 0, 0, 0.000104427338, -0.999999881, 0.000387489796, 0.981523037, 0.000176668167, 0.191343606, -0.191343665, 0.000360347331, 0.981523037)
+Weld11.C1 = CFrame.new(0, 0, 0, 0.000104427338, -0.999999881, 0.000387489796, 0.981523037, 0.000176668167, 0.191343606, -0.191343665, 0.000360347331, 0.981523037)
+Weld11.Part0 = Part1
+Weld11.Part1 = Part1
+Weld11.part1 = Part1
+Weld12.Parent = Part1
+Weld12.C0 = CFrame.new(0, 0, 0, -0.82064718, 0.379867941, 0.426894695, -0.461487472, 2.98365259e-21, -0.887147069, -0.336998731, -0.925040722, 0.175304294)
+Weld12.C1 = CFrame.new(0, 0, 0, -0.82064718, 0.379867941, 0.426894695, -0.461487472, 2.98365259e-21, -0.887147069, -0.336998731, -0.925040722, 0.175304294)
+Weld12.Part0 = Part1
+Weld12.Part1 = Part1
+Weld12.part1 = Part1
+Weld13.Parent = Part1
+Weld13.C0 = CFrame.new(0, 0, 0, -1.06284297e-08, -1, -2.11471693e-08, -0.0100249145, -2.10395559e-08, 0.999949634, -0.999949634, 1.08398908e-08, -0.0100249145)
+Weld13.C1 = CFrame.new(0, 0, 0, -1.06284297e-08, -1, -2.11471693e-08, -0.0100249145, -2.10395559e-08, 0.999949634, -0.999949634, 1.08398908e-08, -0.0100249145)
+Weld13.Part0 = Part1
+Weld13.Part1 = Part1
+Weld13.part1 = Part1
+Weld14.Parent = Part1
+Weld14.C0 = CFrame.new(0, 0, 0, -1.06284297e-08, -1, -2.11471693e-08, -0.0100249145, -2.10395559e-08, 0.999949634, -0.999949634, 1.08398908e-08, -0.0100249145)
+Weld14.C1 = CFrame.new(0, 0, 0, -1.06284297e-08, -1, -2.11471693e-08, -0.0100249145, -2.10395559e-08, 0.999949634, -0.999949634, 1.08398908e-08, -0.0100249145)
+Weld14.Part0 = Part1
+Weld14.Part1 = Part1
+Weld14.part1 = Part1
+Weld15.Parent = Part1
+Weld15.C0 = CFrame.new(0, 0, 0, -1.06284297e-08, -1, -2.11471693e-08, -0.0100249145, -2.10395559e-08, 0.999949634, -0.999949634, 1.08398908e-08, -0.0100249145)
+Weld15.C1 = CFrame.new(0, 0, 0, -1.06284297e-08, -1, -2.11471693e-08, -0.0100249145, -2.10395559e-08, 0.999949634, -0.999949634, 1.08398908e-08, -0.0100249145)
+Weld15.Part0 = Part1
+Weld15.Part1 = Part1
+Weld15.part1 = Part1
+Weld16.Parent = Part1
+Weld16.C0 = CFrame.new(0, 0, 0, 0.99747175, -0.070355162, 0.0100000706, -0.0100249145, -2.10395559e-08, 0.999949634, -0.0703516155, -0.997521996, -0.000705325452)
+Weld16.C1 = CFrame.new(0, 0, 0, 0.99747175, -0.070355162, 0.0100000706, -0.0100249145, -2.10395559e-08, 0.999949634, -0.0703516155, -0.997521996, -0.000705325452)
+Weld16.Part0 = Part1
+Weld16.Part1 = Part1
+Weld16.part1 = Part1
+Weld17.Parent = Part1
+Weld17.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld17.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld17.Part0 = Part1
+Weld17.Part1 = Part1
+Weld17.part1 = Part1
+Weld18.Parent = Part1
+Weld18.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld18.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld18.Part0 = Part1
+Weld18.Part1 = Part1
+Weld18.part1 = Part1
+Weld19.Parent = Part1
+Weld19.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld19.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld19.Part0 = Part1
+Weld19.Part1 = Part1
+Weld19.part1 = Part1
+Weld20.Parent = Part1
+Weld20.C0 = CFrame.new(0, 0, 0, 4.57763672e-05, -0.99999994, 1.17719173e-05, 0.98332423, 4.7147274e-05, 0.181860656, -0.18186067, 3.27080488e-06, 0.983324289)
+Weld20.C1 = CFrame.new(0, 0, 0, 4.57763672e-05, -0.99999994, 1.17719173e-05, 0.98332423, 4.7147274e-05, 0.181860656, -0.18186067, 3.27080488e-06, 0.983324289)
+Weld20.Part0 = Part1
+Weld20.Part1 = Part1
+Weld20.part1 = Part1
+Weld21.Parent = Part1
+Weld21.C0 = CFrame.new(0, 0, 0, 0.697205961, 0.213711366, 0.684274197, -0.700456917, -2.10395559e-08, 0.713694513, 0.15252465, -0.976896882, 0.149695605)
+Weld21.C1 = CFrame.new(0, 0, 0, 0.697205961, 0.213711366, 0.684274197, -0.700456917, -2.10395559e-08, 0.713694513, 0.15252465, -0.976896882, 0.149695605)
+Weld21.Part0 = Part1
+Weld21.Part1 = Part1
+Weld21.part1 = Part1
+Weld22.Parent = Part1
+Weld22.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld22.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld22.Part0 = Part1
+Weld22.Part1 = Part1
+Weld22.part1 = Part1
+Weld23.Parent = Part1
+Weld23.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld23.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld23.Part0 = Part1
+Weld23.Part1 = Part1
+Weld23.part1 = Part1
+Weld24.Parent = Part1
+Weld24.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld24.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld24.Part0 = Part1
+Weld24.Part1 = Part1
+Weld24.part1 = Part1
+Weld25.Parent = Part1
+Weld25.C0 = CFrame.new(0, 0, 0, 0.466324091, 0.00120553828, -0.884613156, 0.000586106558, -0.999999285, -0.00105381873, -0.884613752, -2.70566088e-05, -0.466324449)
+Weld25.C1 = CFrame.new(0, 0, 0, 0.466324091, 0.00120553828, -0.884613156, 0.000586106558, -0.999999285, -0.00105381873, -0.884613752, -2.70566088e-05, -0.466324449)
+Weld25.Part0 = Part1
+Weld25.Part1 = Part1
+Weld25.part1 = Part1
+Weld26.Parent = Part1
+Weld26.C0 = CFrame.new(0, 0, 0, -0.894690275, -0.388147652, -0.221067876, 0.239874735, 1.71281467e-09, -0.970804036, 0.376815319, -0.921597183, 0.0931068137)
+Weld26.C1 = CFrame.new(0, 0, 0, -0.894690275, -0.388147652, -0.221067876, 0.239874735, 1.71281467e-09, -0.970804036, 0.376815319, -0.921597183, 0.0931068137)
+Weld26.Part0 = Part1
+Weld26.Part1 = Part1
+Weld26.part1 = Part1
+Weld27.Parent = Part1
+Weld27.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld27.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld27.Part0 = Part1
+Weld27.Part1 = Part1
+Weld27.part1 = Part1
+Weld28.Parent = Part1
+Weld28.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld28.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld28.Part0 = Part1
+Weld28.Part1 = Part1
+Weld28.part1 = Part1
+Weld29.Parent = Part1
+Weld29.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld29.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld29.Part0 = Part1
+Weld29.Part1 = Part1
+Weld29.part1 = Part1
+Weld30.Parent = Part1
+Weld30.C0 = CFrame.new(0, 0, 0, 0.476653159, 0.000595548307, -0.879091203, -0.000195128174, 0.999999821, 0.000571658195, 0.879091442, -0.000100947262, 0.476653218)
+Weld30.C1 = CFrame.new(0, 0, 0, 0.476653159, 0.000595548307, -0.879091203, -0.000195128174, 0.999999821, 0.000571658195, 0.879091442, -0.000100947262, 0.476653218)
+Weld30.Part0 = Part1
+Weld30.Part1 = Part1
+Weld30.part1 = Part1
+Weld31.Parent = Part1
+Weld31.C0 = CFrame.new(0, 0, 0, 0.851040304, -0.516301274, 0.0957215354, -0.111770988, 1.71292541e-07, 0.993733585, -0.513065994, -0.856406987, -0.0577073582)
+Weld31.C1 = CFrame.new(0, 0, 0, 0.851040304, -0.516301274, 0.0957215354, -0.111770988, 1.71292541e-07, 0.993733585, -0.513065994, -0.856406987, -0.0577073582)
+Weld31.Part0 = Part1
+Weld31.Part1 = Part1
+Weld31.part1 = Part1
+Weld32.Parent = Part1
+Weld32.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld32.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld32.Part0 = Part1
+Weld32.Part1 = Part1
+Weld32.part1 = Part1
+Weld33.Parent = Part1
+Weld33.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld33.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld33.Part0 = Part1
+Weld33.Part1 = Part1
+Weld33.part1 = Part1
+Weld34.Parent = Part1
+Weld34.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld34.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld34.Part0 = Part1
+Weld34.Part1 = Part1
+Weld34.part1 = Part1
+Weld35.Parent = Part1
+Weld35.C0 = CFrame.new(0, 0, 0, 0.476653159, 0.000595548307, -0.879091203, -0.000195128174, 0.999999821, 0.000571658195, 0.879091442, -0.000100947262, 0.476653218)
+Weld35.C1 = CFrame.new(0, 0, 0, 0.476653159, 0.000595548307, -0.879091203, -0.000195128174, 0.999999821, 0.000571658195, 0.879091442, -0.000100947262, 0.476653218)
+Weld35.Part0 = Part1
+Weld35.Part1 = Part1
+Weld35.part1 = Part1
+Weld36.Parent = Part1
+Weld36.C0 = CFrame.new(0, 0, 0, 0.20946078, -0.514179647, -0.831712246, 0.969720483, 1.71292541e-07, 0.244217068, -0.125571311, -0.857682526, 0.498610586)
+Weld36.C1 = CFrame.new(0, 0, 0, 0.20946078, -0.514179647, -0.831712246, 0.969720483, 1.71292541e-07, 0.244217068, -0.125571311, -0.857682526, 0.498610586)
+Weld36.Part0 = Part1
+Weld36.Part1 = Part1
+Weld36.part1 = Part1
+Weld37.Parent = Part1
+Weld37.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld37.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld37.Part0 = Part1
+Weld37.Part1 = Part1
+Weld37.part1 = Part1
+Weld38.Parent = Part1
+Weld38.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld38.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld38.Part0 = Part1
+Weld38.Part1 = Part1
+Weld38.part1 = Part1
+Weld39.Parent = Part1
+Weld39.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld39.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 0, 0, 1, -1, -0, -0)
+Weld39.Part0 = Part1
+Weld39.Part1 = Part1
+Weld39.part1 = Part1
+Weld40.Parent = Part1
+Weld40.C0 = CFrame.new(0, 0, 0, 0.93766135, 0.000270702469, 0.347550124, 0.000239749454, -1, 0.000132063418, 0.347550124, -4.05058126e-05, -0.937661409)
+Weld40.C1 = CFrame.new(0, 0, 0, 0.93766135, 0.000270702469, 0.347550124, 0.000239749454, -1, 0.000132063418, 0.347550124, -4.05058126e-05, -0.937661409)
+Weld40.Part0 = Part1
+Weld40.Part1 = Part1
+Weld40.part1 = Part1
+Weld41.Parent = Part1
+Weld41.C0 = CFrame.new(0, 0, 0, 0.898105562, 0.439371586, 0.0189391039, -0.0210840777, 1.90348896e-06, 0.999777496, 0.439273775, -0.898305416, 0.00926545355)
+Weld41.C1 = CFrame.new(0, 0, 0, 0.898105562, 0.439371586, 0.0189391039, -0.0210840777, 1.90348896e-06, 0.999777496, 0.439273775, -0.898305416, 0.00926545355)
+Weld41.Part0 = Part1
+Weld41.Part1 = Part1
+Weld41.part1 = Part1
+Weld42.Parent = Part1
+Weld42.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld42.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld42.Part0 = Part1
+Weld42.Part1 = Part1
+Weld42.part1 = Part1
+Weld43.Parent = Part1
+Weld43.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld43.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld43.Part0 = Part1
+Weld43.Part1 = Part1
+Weld43.part1 = Part1
+Weld44.Parent = Part1
+Weld44.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld44.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -0, -0, -1, 1, 0, 0)
+Weld44.Part0 = Part1
+Weld44.Part1 = Part1
+Weld44.part1 = Part1
+Weld45.Parent = Part1
+Weld45.C0 = CFrame.new(0, 0, 0, 0.4705351, -0.000405233674, -0.882381201, -0.000314256031, -0.999999881, 0.000291671138, -0.882381201, 0.0001400521, -0.470535159)
+Weld45.C1 = CFrame.new(0, 0, 0, 0.4705351, -0.000405233674, -0.882381201, -0.000314256031, -0.999999881, 0.000291671138, -0.882381201, 0.0001400521, -0.470535159)
+Weld45.Part0 = Part1
+Weld45.Part1 = Part1
+Weld45.part1 = Part1
+Weld46.Parent = Part1
+Weld46.C0 = CFrame.new(0, 0, 0, -0.22112985, -0.434249967, 0.873228848, -0.969400764, -3.63603224e-14, -0.245483696, 0.10660129, -0.90079242, -0.420962244)
+Weld46.C1 = CFrame.new(0, 0, 0, -0.22112985, -0.434249967, 0.873228848, -0.969400764, -3.63603224e-14, -0.245483696, 0.10660129, -0.90079242, -0.420962244)
+Weld46.Part0 = Part1
+Weld46.Part1 = Part1
+Weld46.part1 = Part1
+Weld47.Parent = Part1
+Weld47.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld47.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld47.Part0 = Part1
+Weld47.Part1 = Part1
+Weld47.part1 = Part1
+Weld48.Parent = Part1
+Weld48.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld48.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld48.Part0 = Part1
+Weld48.Part1 = Part1
+Weld48.part1 = Part1
+Weld49.Parent = Part1
+Weld49.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld49.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld49.Part0 = Part1
+Weld49.Part1 = Part1
+Weld49.part1 = Part1
+Weld50.Parent = Part1
+Weld50.C0 = CFrame.new(0, 0, 0, 4.57763672e-05, -0.99999994, 1.17719173e-05, 0.98332423, 4.7147274e-05, 0.181860656, -0.18186067, 3.27080488e-06, 0.983324289)
+Weld50.C1 = CFrame.new(0, 0, 0, 4.57763672e-05, -0.99999994, 1.17719173e-05, 0.98332423, 4.7147274e-05, 0.181860656, -0.18186067, 3.27080488e-06, 0.983324289)
+Weld50.Part0 = Part1
+Weld50.Part1 = Part1
+Weld50.part1 = Part1
+Weld51.Parent = Part1
+Weld51.C0 = CFrame.new(0, 0, 0, 0.115227565, -0.666518092, 0.736529648, -0.987982154, 1.43814283e-09, 0.154566452, -0.103021339, -0.745488822, -0.658508003)
+Weld51.C1 = CFrame.new(0, 0, 0, 0.115227565, -0.666518092, 0.736529648, -0.987982154, 1.43814283e-09, 0.154566452, -0.103021339, -0.745488822, -0.658508003)
+Weld51.Part0 = Part1
+Weld51.Part1 = Part1
+Weld51.part1 = Part1
+Weld52.Parent = Part1
+Weld52.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld52.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld52.Part0 = Part1
+Weld52.Part1 = Part1
+Weld52.part1 = Part1
+Weld53.Parent = Part1
+Weld53.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld53.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld53.Part0 = Part1
+Weld53.Part1 = Part1
+Weld53.part1 = Part1
+Weld54.Parent = Part1
+Weld54.C0 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld54.C1 = CFrame.new(0, 0, 0, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Weld54.Part0 = Part1
+Weld54.Part1 = Part1
+Weld54.part1 = Part1
+Weld55.Parent = Part1
+Weld55.C0 = CFrame.new(0, 0, 0, 4.57763672e-05, -0.99999994, 1.17719173e-05, 0.98332423, 4.7147274e-05, 0.181860656, -0.18186067, 3.27080488e-06, 0.983324289)
+Weld55.C1 = CFrame.new(0, 0, 0, 4.57763672e-05, -0.99999994, 1.17719173e-05, 0.98332423, 4.7147274e-05, 0.181860656, -0.18186067, 3.27080488e-06, 0.983324289)
+Weld55.Part0 = Part1
+Weld55.Part1 = Part1
+Weld55.part1 = Part1
+Weld56.Parent = Part1
+Weld56.C0 = CFrame.new(0, 0, 0, 0.691660643, 0.501395524, 0.519815028, -0.600790679, 1.43814283e-09, 0.799406052, 0.400818616, -0.865218163, 0.301233768)
+Weld56.C1 = CFrame.new(0, 0, 0, 0.691660643, 0.501395524, 0.519815028, -0.600790679, 1.43814283e-09, 0.799406052, 0.400818616, -0.865218163, 0.301233768)
+Weld56.Part0 = Part1
+Weld56.Part1 = Part1
+Weld56.part1 = Part1
+Weld57.Parent = Part1
+Weld57.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 1, 0, 0, 0, 0, 1)
+Weld57.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 1, 0, 0, 0, 0, 1)
+Weld57.Part0 = Part1
+Weld57.Part1 = Part1
+Weld57.part1 = Part1
+Weld58.Parent = Part1
+Weld58.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 1, 0, 0, 0, 0, 1)
+Weld58.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 1, 0, 0, 0, 0, 1)
+Weld58.Part0 = Part1
+Weld58.Part1 = Part1
+Weld58.part1 = Part1
+Weld59.Parent = Part1
+Weld59.C0 = CFrame.new(0, 0, 0, -0, -1, -0, 1, 0, 0, 0, 0, 1)
+Weld59.C1 = CFrame.new(0, 0, 0, -0, -1, -0, 1, 0, 0, 0, 0, 1)
+Weld59.Part0 = Part1
+Weld59.Part1 = Part1
+Weld59.part1 = Part1
+SpecialMesh60.Parent = Part1
+SpecialMesh60.MeshId = "http://www.roblox.com/asset/?id=25973368"
+SpecialMesh60.Scale = Vector3.new(0.5, 0.5, 0.5)
+SpecialMesh60.TextureId = "http://www.roblox.com/asset/?id=35908170"
+SpecialMesh60.MeshType = Enum.MeshType.FileMesh
+Script61.Name = "SnowballLauncher"
+Script61.Parent = Tool0
+table.insert(cors,sandbox(Script61,function()
+Instance.new("RemoteEvent",owner.PlayerGui).Name = "PATCH"
+NLS([[local Tool = script.Parent;
+local enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(.2)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+end
+
+function onUnequippedLocal()
+
+
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal)
+while task.wait(0.02) do owner.PlayerGui.PATCH:FireServer(owner:GetMouse().Hit.p) end]],owner.PlayerGui).Parent = script.Parent
+owner.PlayerGui.PATCH.OnServerEvent:Connect(function(me, hiz)
+	owner.Character.Humanoid.TargetPoint = hiz
+end)
+function rotz(b)
+	arrow = b
+
+
+	debris = game:GetService("Debris")
+
+
+
+	local HitSound = Instance.new("Sound")
+	HitSound.SoundId = "http://www.roblox.com/asset/?id=25605551"
+	HitSound.Parent = arrow
+	HitSound.Volume = 1
+
+	function Snowface(h)
+
+		local torso = h.Parent:FindFirstChild("Torso")
+
+		if torso ~= nil then
+
+			local iceCube = Instance.new("Part")
+
+			local smoke = Instance.new("Smoke")
+			smoke.Parent = iceCube
+
+			iceCube.Name = "Ice Cube"
+			iceCube.Velocity = arrow.Velocity
+			iceCube.Position = torso.Position
+			iceCube.Size = Vector3.new(torso.Size.x + 4, torso.Size.y + 4, torso.Size.z + 4)
+			iceCube.BrickColor = BrickColor.new("Really black")
+			iceCube.Material = Enum.Material.Concrete
+			iceCube.TopSurface = 0
+			iceCube.BottomSurface = 0
+			iceCube.Transparency = 0
+			iceCube.Reflectance = 0
+			iceCube.Shape = 1
+			iceCube.Locked = true
+			iceCube.CanCollide = true
+			iceCube.Anchored = true
+			iceCube.Parent = game.Workspace
+
+			weld = Instance.new("Weld")
+			weld.Part0 = iceCube
+			weld.Part1 = torso
+			weld.Parent = game.Workspace
+		end
+
+
+	end
+
+	function Explode()
+
+		local count = 5
+
+
+		for i=1,count do
+
+			debris:AddItem(p, 60)
+		end
+
+	end
+
+
+
+
+	function onTouched(hit)
+
+		connection:disconnect()
+
+		if hit.Parent ~= nil then
+			humanoid = hit.Parent:findFirstChild("Humanoid")
+			if humanoid~=nil then
+				arrow.Transparency = 1
+				HitSound:Play()
+				Snowface(humanoid)
+			end
+		end
+
+		Explode()
+
+		arrow:Remove()
+
+
+	end
+
+
+
+	connection = arrow.Touched:connect(onTouched)
+task.spawn(function()
+	wait(10)
+
+	arrow.Parent = nil
+	end)
+	end
+Tool = script.Parent
+VELOCITY = 50 -- constant
+loaded=false
+
+local Pellet = Instance.new("Part")
+Pellet.Size = Vector3.new(1,1,4)
+Pellet.Shape = 1
+Pellet.BrickColor = BrickColor.new("Really red")
+Pellet.Material = Enum.Material.Ice
+Pellet.Locked = true
+Pellet.TopSurface = 0
+Pellet.Transparency = 0.2
+Pellet.BottomSurface = 0
+
+script.Parent.SnowballScript:clone().Parent = Pellet
+
+
+
+
+
+function fire(v, shootDirect)
+
+
+-- find player's head pos
+
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+
+	local head = vCharacter:findFirstChild("Head")
+	if head == nil then return end
+
+	Tool.Handle.Fire:Play()
+	local launch = head.Position + 10 * v
+
+	local missile = Pellet:clone()
+	missile.CFrame = CFrame.new(launch,shootDirect)
+	missile.Position = launch
+	missile.Velocity = v * 60
+--942
+	local force = Instance.new("BodyForce")
+	force.force = Vector3.new(0,900,0)
+	force.Parent = missile
+
+	rotz(missile)
+
+
+	missile.Parent = game.Workspace
+
+end
+
+function gunUp()
+	Tool.GripPos =  Vector3.new(0.3,0,-1.5)
+end
+
+function gunOut()
+	Tool.GripPos = Vector3.new(0.3,0,-1.5)
+end
+
+function onEquipped()
+
+	Tool.Handle.Fire:Stop()
+
+end
+
+function onUnequipped()
+
+	Tool.Handle.Fire:Stop()
+
+end
+
+Tool.Equipped:connect(onEquipped)
+Tool.Unequipped:connect(onUnequipped)
+
+
+enabled = true
+function onActivated()
+	if not enabled  then
+		return
+	end
+
+	enabled = false
+
+
+	local character = Tool.Parent;
+	local humanoid = character.Humanoid
+	if humanoid == nil then
+		print("Humanoid not found")
+		return 
+	end
+
+	local targetPos = humanoid.TargetPoint
+	local lookAt = (targetPos - character.Head.Position).unit
+	shootDirect = targetPos
+
+	local reload = 0.1
+
+
+	gunUp()
+	fire(lookAt, shootDirect)
+	wait(0.1)
+	gunOut()
+	wait(reload)
+	wait(reload)
+
+	enabled = true
+
+end
+
+script.Parent.Activated:connect(onActivated)
+
+end))
+Script62.Name = "SnowballScript"
+Script62.Parent = Tool0
+Script62.Enabled = false
+table.insert(cors,sandbox(Script62,function()
+function rotz(b)
+arrow = b
+
+
+debris = game:GetService("Debris")
+
+
+
+local HitSound = Instance.new("Sound")
+HitSound.SoundId = "http://www.roblox.com/asset/?id=25605551"
+HitSound.Parent = arrow
+HitSound.Volume = 1
+
+function Snowface(h)
+	
+	local torso = h.Parent:FindFirstChild("Torso")
+	
+	if torso ~= nil then
+		
+		local iceCube = Instance.new("Part")
+
+		local smoke = Instance.new("Smoke")
+		smoke.Parent = iceCube
+
+		iceCube.Name = "Ice Cube"
+		iceCube.Velocity = arrow.Velocity
+		iceCube.Position = torso.Position
+		iceCube.Size = Vector3.new(torso.Size.x + 4, torso.Size.y + 4, torso.Size.z + 4)
+		iceCube.BrickColor = BrickColor.new("Really black")
+		iceCube.Material = Enum.Material.Concrete
+		iceCube.TopSurface = 0
+		iceCube.BottomSurface = 0
+		iceCube.Transparency = 0
+		iceCube.Reflectance = 0
+		iceCube.Shape = 1
+		iceCube.Locked = true
+		iceCube.CanCollide = true
+		iceCube.Anchored = true
+		iceCube.Parent = game.Workspace
+
+		weld = Instance.new("Weld")
+		weld.Part0 = iceCube
+		weld.Part1 = torso
+		weld.Parent = game.Workspace
+	end
+	
+
+end
+
+function Explode()
+
+	local count = 5
+
+
+	for i=1,count do
+
+		debris:AddItem(p, 60)
+	end
+
+end
+
+
+
+
+function onTouched(hit)
+
+	connection:disconnect()
+
+	if hit.Parent ~= nil then
+		humanoid = hit.Parent:findFirstChild("Humanoid")
+		if humanoid~=nil then
+			arrow.Transparency = 1
+			HitSound:Play()
+			Snowface(humanoid)
+		end
+	end
+
+	Explode()
+
+	arrow:Remove()
+
+	
+end
+
+
+
+connection = arrow.Touched:connect(onTouched)
+
+wait(10)
+
+arrow.Parent = nil
+end
+end))
+Script62.Disabled = true
+LocalScript63.Name = "Local Gui"
+LocalScript63.Parent = Tool0
+table.insert(cors,sandbox(LocalScript63,function()
+--[[local Tool = script.Parent;
+local enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(.2)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+end
+
+function onUnequippedLocal()
+
+
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal)]]
+end))
+Script64.Name = "WeldArm"
+Script64.Parent = Tool0
+table.insert(cors,sandbox(Script64,function()
+Tool = script.Parent;
+local arms = nil
+local torso = nil
+local welds = {}
+
+function Equip(mouse)
+wait(0.01)
+arms = {Tool.Parent:FindFirstChild("Left Arm"), Tool.Parent:FindFirstChild("Right Arm")}
+torso = Tool.Parent:FindFirstChild("Torso")
+if arms ~= nil and torso ~= nil then
+local sh = {torso:FindFirstChild("Left Shoulder"), torso:FindFirstChild("Right Shoulder")}
+if sh ~= nil then
+local yes = true
+if yes then
+yes = false
+sh[1].Part1 = nil
+sh[2].Part1 = nil
+local weld1 = Instance.new("Weld")
+weld1.Part0 = torso
+weld1.Parent = torso
+weld1.Part1 = arms[1]
+weld1.C1 = CFrame.new(-0.5,0.5, 1.1) * CFrame.fromEulerAnglesXYZ(math.rad(330), 0, math.rad(-90))
+welds[1] = weld1
+local weld2 = Instance.new("Weld")
+weld2.Part0 = torso
+weld2.Parent = torso
+weld2.Part1 = arms[2]
+weld2.C1 = CFrame.new(-1.5, 0.5, 0.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), 0, 0)
+welds[2] = weld2
+end
+else
+print("sh")
+end
+else
+print("arms")
+end
+end
+
+function Unequip(mouse)
+if arms ~= nil and torso ~= nil then
+local sh = {torso:FindFirstChild("Left Shoulder"), torso:FindFirstChild("Right Shoulder")}
+if sh ~= nil then
+local yes = true
+if yes then
+yes = false
+sh[1].Part1 = arms[1]
+sh[2].Part1 = arms[2]
+welds[1].Parent = nil
+welds[2].Parent = nil
+end
+else
+print("sh")
+end
+else
+print("arms")
+end
+end
+Tool.Equipped:connect(Equip)
+Tool.Unequipped:connect(Unequip)
+
+end))
+Script65.Name = "WeldScript"
+Script65.Parent = Tool0
+table.insert(cors,sandbox(Script65,function()
+t = script.Parent
+
+function stick(x, y)
+	weld = Instance.new("Weld") 
+	weld.Part0 = x
+	weld.Part1 = y
+	local HitPos = x.Position
+	local CJ = CFrame.new(HitPos) 
+	local C0 = x.CFrame:inverse() *CJ 
+	local C1 = y.CFrame:inverse() * CJ 
+	weld.C0 = C0 
+	weld.C1 = C1 
+	weld.Parent = x
+end
+
+function Weldnow()
+	c = t:children()
+	for n = 1, #c do
+		if (c[n].className == "Part") then
+			if (c[n].Name ~= "Handle") then
+				c[n].CFrame = t.Handle.CFrame
+				stick(c[n], t.Handle)
+			end
+		end
+	end
+end
+
+script.Parent.Equipped:connect(Weldnow)
+script.Parent.Unequipped:connect(Weldnow)
+Weldnow()
+end))
+Script66.Name = "Welding"
+Script66.Parent = Tool0
+table.insert(cors,sandbox(Script66,function()
+function Weld(x,y)
+	local W = Instance.new("Weld")
+	W.Part0 = x
+	W.Part1 = y
+	local CJ = CFrame.new(x.Position)
+	local C0 = x.CFrame:inverse()*CJ
+	local C1 = y.CFrame:inverse()*CJ
+	W.C0 = C0
+	W.C1 = C1
+	W.Parent = x
+end
+
+function Get(A)
+	if A.className == "Part" then
+		Weld(script.Parent.Handle, A)
+		A.Anchored = false
+	else
+		local C = A:GetChildren()
+		for i=1, #C do
+		Get(C[i])
+		end
+	end
+end
+
+function Finale()
+	Get(script.Parent)
+end
+
+script.Parent.Equipped:connect(Finale)
+script.Parent.Unequipped:connect(Finale)
+Finale()
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
