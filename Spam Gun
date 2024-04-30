@@ -1,0 +1,340 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Script4 = Instance.new("Script")
+LocalScript5 = Instance.new("LocalScript")
+Camera6 = Instance.new("Camera")
+IntValue7 = Instance.new("IntValue")
+Tool0.Name = "SpamGun"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=65536920 "
+Tool0.Grip = CFrame.new(0, -0.5, -0.800000012, 1, -0, 0, 0, 0, -1, 0, 1, 0)
+Tool0.GripForward = Vector3.new(-0, 1, -0)
+Tool0.GripPos = Vector3.new(0, -0.5, -0.800000011920929)
+Tool0.GripUp = Vector3.new(-0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(4.84415627, 2.89503145, -30.5462093, 1, 0, 0, 0, 0, 1, 0, -1, 0)
+Part1.Orientation = Vector3.new(-90, 0, 0)
+Part1.Position = Vector3.new(4.844156265258789, 2.895031452178955, -30.54620933532715)
+Part1.Rotation = Vector3.new(-90, 0, 0)
+Part1.Color = Color3.new(0.803922, 0.803922, 0.803922)
+Part1.Size = Vector3.new(0.5699998736381531, 1.959999680519104, 0.8500000238418579)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Mid gray")
+Part1.Locked = true
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Mid gray")
+Part1.FormFactor = Enum.FormFactor.Custom
+Part1.formFactor = Enum.FormFactor.Custom
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=65536847 "
+SpecialMesh2.Scale = Vector3.new(0.6499999761581421, 0.6499999761581421, 0.6499999761581421)
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=65536891 "
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "GunSound"
+Sound3.Parent = Part1
+Sound3.SoundId = "http://www.roblox.com/asset/?id=65069831 "
+Script4.Name = "SpamGunScript"
+Script4.Parent = Tool0
+table.insert(cors,sandbox(Script4,function()
+Instance.new("RemoteEvent",owner.Backpack).Name = "SpamEvent"
+sp = owner.Backpack.SpamEvent
+NLS([[sp = owner.Backpack.SpamEvent
+sp.OnClientEvent:Connect(function()
+sp:FireServer(owner:GetMouse().Hit.p)
+end)
+
+Tool = script.Parent
+
+local stillEquipped = false
+
+function onEquippedLocal(mouse)
+	stillEquipped = true
+	if mouse == nil then 
+		print("Mouse not found")
+		return
+	end
+	while stillEquipped do 
+		--print("Setting Mouse to go")
+		mouse.Icon = "rbxasset://textures\\GunCursor.png"
+		while Tool.Enabled and stillEquipped do 
+			wait(0.01)
+		end
+		--print("Setting Mouse to wait")
+		mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+		while not Tool.Enabled and stillEquipped do 
+			wait(0.01)
+		end	
+	end
+end
+
+
+function onUnequippedLocal()
+	stillEquipped = false
+end
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal)]],owner.PlayerGui).Parent = script.Parent
+function gh(bn)
+	local playerGui = bn
+	if playerGui ~= nil then
+		local player = playerGui.Parent
+
+		local spamAssets = {65545966, 65545985, 65546005, 65546027} 
+
+		tick()
+
+		local spamGui
+
+		local spamImg = Instance.new("ImageLabel")
+		spamImg.Active = true 
+		spamImg.Image = "http://www.roblox.com/asset/?id=" .. spamAssets[math.random(1, #spamAssets)]
+		spamImg.BackgroundTransparency = 1.0
+		spamImg.Size = UDim2.new(0, 750, 0, 200)
+		spamImg.Position = UDim2.new(0.5, -275, 0.5, -100)
+
+		local tImage = Instance.new("ImageLabel")
+		tImage.Active = true 
+		tImage.Image = "http://www.roblox.com/Thumbs/Avatar.ashx?x=250&y=250&Format=Png&username=" .. player.Name
+		tImage.Size = UDim2.new(0, 250, 0, 250)
+		tImage.Position = UDim2.new(0.5, -500, 0.5, -100)
+		tImage.BackgroundTransparency = 1.0
+
+		local textBtn = Instance.new("TextButton")
+		textBtn.Active = true 
+		textBtn.Text = "Delete Comment"
+		textBtn.Font = Enum.Font.Arial
+		textBtn.FontSize = Enum.FontSize.Size18
+		textBtn.TextColor3 = Color3.new(0, 0, 255/255) 
+		textBtn.BackgroundTransparency = 1.0
+		textBtn.Size = UDim2.new(0, 150, 0, 40)
+		textBtn.Position = UDim2.new(0.5, 325, 0.5, 65)
+
+		if playerGui:FindFirstChild("SpamGui") and #playerGui.SpamGui:GetChildren() < 1 then 
+			spamGui = playerGui.SpamGui
+			spamImg.Parent = spamGui
+			tImage.Parent = spamGui
+			textBtn.Parent = spamGui
+		else 
+			spamGui = Instance.new("ScreenGui")
+			spamGui.Name = "SpamGui"
+			spamGui.Parent = playerGui	
+			spamImg.Parent = spamGui
+			tImage.Parent = spamGui
+			textBtn.Parent = spamGui
+		end
+
+		textBtn.MouseButton1Click:connect(function()
+			if textBtn then textBtn:Remove() end 
+			if spamImg then spamImg:Remove() end
+			if tImage then tImage:Remove() end
+			if spamGui then spamGui:Remove() end
+		end)
+
+	end
+
+end
+local Tool = script.Parent 
+local Gun = Tool.Handle 
+
+Tool.Enabled = true 
+
+local minRange = 2 
+local maxRange = 800 
+
+local gunSound 
+
+local ray = Instance.new("Part") 
+ray.FormFactor = 3 
+ray.Shape = "Ball" 
+ray.Size = Vector3.new(0.4, 0.4, 0.4) 
+ray.CanCollide = false 
+ray.Transparency = 0.0 
+
+local bullet = Instance.new("SpecialMesh") 
+bullet.MeshId = "http://www.roblox.com/asset/?id=65020210" 
+bullet.TextureId = "http://www.roblox.com/asset/?id=65020347" 
+bullet.Parent = ray 
+bullet.Scale = Vector3.new(0.02, 0.02, 0.02) 
+
+local vCharacter 
+local vPlayer 
+local myTorso
+local myHumanoid
+
+local debris = game:GetService("Debris") 
+
+function tagHumanoid(humanoid, player) 
+	if humanoid ~= nil then 
+		local creatorTag = Instance.new("ObjectValue") 
+		creatorTag.Value = player 
+		creatorTag.Name = "creator" 
+		creatorTag.Parent = humanoid 
+		debris:AddItem(creatorTag, 1) 
+	end 
+end 
+
+function shoot(pos, target) 
+	vCharacter = Tool.Parent 
+	vPlayer = game.Players:GetPlayerFromCharacter(vCharacter) 
+	myTorso = vCharacter:FindFirstChild("Torso") 
+	if vPlayer == nil or myTorso == nil then 
+		return 
+	end 
+
+	spawnPos = myTorso.Position 
+	spawnPos = spawnPos + pos.unit * 5.0 
+
+	local rayC = ray:Clone() 
+	rayC.CFrame = CFrame.new(spawnPos, spawnPos + pos) 
+	rayC.Parent = game.Workspace 
+
+	bodyForce = Instance.new("BodyForce") 
+	bodyForce.force = Vector3.new(0.0, rayC:GetMass() * 196.1, 0.0) 
+	bodyForce.Parent = rayC 
+
+	rayC.Velocity = pos.unit * 450.0      
+
+	local hit, destination = game.Workspace:FindPartOnRay(Ray.new(Gun.Position + pos*minRange, pos*maxRange), vCharacter) 
+
+	if hit and hit.Parent then                     
+		local humanoid = hit.Parent:FindFirstChild("Humanoid")			
+		if hit.Parent.className == "Hat" and hit.Parent.Parent then 
+			humanoid = hit.Parent.Parent:FindFirstChild("Humanoid")
+		end
+		if humanoid then 
+			local character = humanoid.Parent 
+			local player = game.Players:GetPlayerFromCharacter(character)
+			if player then 
+				local playerGui = player:FindFirstChild("PlayerGui")
+				if playerGui and playerGui:FindFirstChild("SpamScript") == nil then 
+Tool.SpamScript:Clone().Parent = playerGui
+gh(playerGui)
+				end
+			end 
+		end		
+	end 	
+	debris:AddItem(rayC, 2) 
+end 
+
+sp.OnServerEvent:Connect(function(me, tap)
+	if me == owner then
+	target = tap
+	direction = (target - Gun.Position).unit 
+
+	gunSound = Gun:FindFirstChild("GunSound") 
+	if gunSound then gunSound:Play() end     
+
+		shoot(direction, target) 
+	end
+end)
+
+function onActivated() 
+	if Tool.Enabled == false then 
+		return 
+	end 
+
+	Tool.Enabled = false 
+
+	vCharacter = Tool.Parent 
+	myTorso = vCharacter:FindFirstChild("Torso") 
+	if not myTorso then 
+		return 
+	end 
+
+	myHumanoid = vCharacter:FindFirstChild("Humanoid") 
+	if not myHumanoid then 
+		return       
+	end 
+sp:FireClient(owner, nil)
+	wait(2.4) 
+	Tool.Enabled = true 
+end 
+
+function onEquipped() 
+	vCharacter = Tool.Parent 
+	myTorso = vCharacter:FindFirstChild("Torso")
+	myHumanoid = vCharacter:FindFirstChild("Humanoid")
+end 
+
+function onUnequipped() 
+	if gunSound then gunSound:Stop() end 
+end 
+
+Tool.Activated:connect(onActivated) 
+Tool.Equipped:connect(onEquipped) 
+Tool.Unequipped:connect(onUnequipped) 
+
+end))
+LocalScript5.Name = "Local Gui"
+LocalScript5.Parent = Tool0
+table.insert(cors,sandbox(LocalScript5,function()
+--[[Tool = script.Parent
+
+local stillEquipped = false
+
+function onEquippedLocal(mouse)
+	stillEquipped = true
+	if mouse == nil then 
+		print("Mouse not found")
+		return
+	end
+	while stillEquipped do 
+		print("Setting Mouse to go")
+		mouse.Icon = "rbxasset://textures\\GunCursor.png"
+		while Tool.Enabled and stillEquipped do 
+			wait(0.01)
+		end
+		print("Setting Mouse to wait")
+		mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+		while not Tool.Enabled and stillEquipped do 
+			wait(0.01)
+		end	
+	end
+end
+
+
+function onUnequippedLocal()
+	stillEquipped = false
+end
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal)]]
+end))
+Camera6.Name = "ThumbnailCamera"
+Camera6.Parent = Tool0
+Camera6.CFrame = CFrame.new(-1.25668478, 8.58790302, -7.39543295, -0.932323396, 0.14708671, -0.330361396, 1.49011612e-08, 0.913545132, 0.406737387, 0.361625701, 0.37921077, -0.851719499)
+Camera6.CoordinateFrame = CFrame.new(-1.25668478, 8.58790302, -7.39543295, -0.932323396, 0.14708671, -0.330361396, 1.49011612e-08, 0.913545132, 0.406737387, 0.361625701, 0.37921077, -0.851719499)
+Camera6.Focus = CFrame.new(1.07931447, 5.71184635, -1.37288904, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera6.focus = CFrame.new(1.07931447, 5.71184635, -1.37288904, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+IntValue7.Name = "SpamScript"
+IntValue7.Parent = Tool0
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
