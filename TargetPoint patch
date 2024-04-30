@@ -1,0 +1,5 @@
+Instance.new("RemoteEvent",owner.PlayerGui).Name = "PATCH"
+NLS([[while task.wait(0.02) do owner.PlayerGui.PATCH:FireServer(owner:GetMouse().Hit.p) end ]],owner.PlayerGui)
+owner.PlayerGui.PATCH.OnServerEvent:Connect(function(me, hiz)
+owner.Character.Humanoid.TargetPoint = hiz
+end)
