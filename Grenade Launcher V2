@@ -1,0 +1,574 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Sound6 = Instance.new("Sound")
+Sound7 = Instance.new("Sound")
+Script8 = Instance.new("Script")
+LocalScript9 = Instance.new("LocalScript")
+ScreenGui10 = Instance.new("ScreenGui")
+Frame11 = Instance.new("Frame")
+ImageLabel12 = Instance.new("ImageLabel")
+NumberValue13 = Instance.new("NumberValue")
+NumberValue14 = Instance.new("NumberValue")
+Script15 = Instance.new("Script")
+Script16 = Instance.new("Script")
+Tool0.Name = "GrenadeLauncher"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0, -1.10000002, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(0, -1.100000023841858, 2)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(8.81751823, 1, -27.4645271, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(8.81751823425293, 1, -27.464527130126953)
+Part1.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part1.Size = Vector3.new(2, 2, 6)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Dark stone grey")
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Dark stone grey")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=29456213"
+SpecialMesh2.Scale = Vector3.new(1.5, 1.5, 1.5)
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=29612686"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "Four"
+Sound3.Parent = Part1
+Sound3.Pitch = 0.6000000238418579
+Sound3.PlaybackSpeed = 0.6000000238418579
+Sound3.SoundId = "http://www.roblox.com/asset/?id=29445378"
+Sound3.Volume = 0
+Sound4.Name = "One"
+Sound4.Parent = Part1
+Sound4.Pitch = 0.6000000238418579
+Sound4.PlaybackSpeed = 0.6000000238418579
+Sound4.SoundId = "http://www.roblox.com/asset/?id=29445305"
+Sound4.Volume = 0
+Sound5.Name = "Three"
+Sound5.Parent = Part1
+Sound5.Pitch = 0.6000000238418579
+Sound5.PlaybackSpeed = 0.6000000238418579
+Sound5.SoundId = "http://www.roblox.com/asset/?id=29445358"
+Sound5.Volume = 0
+Sound6.Name = "Two"
+Sound6.Parent = Part1
+Sound6.Pitch = 0.6000000238418579
+Sound6.PlaybackSpeed = 0.6000000238418579
+Sound6.SoundId = "http://www.roblox.com/asset/?id=29445339"
+Sound6.Volume = 0
+Sound7.Name = "Rel"
+Sound7.Parent = Part1
+Sound7.SoundId = "http://www.roblox.com/asset/?id=1753007"
+Sound7.Volume = 0
+Script8.Name = "RayGun"
+Script8.Parent = Tool0
+table.insert(cors,sandbox(Script8,function()
+Instance.new("RemoteEvent",owner.Backpack).Name = "RotEvent"
+Instance.new("RemoteEvent",owner.Backpack).Name = "RotEvent2"
+ro = owner.Backpack.RotEvent
+ro2 = owner.Backpack.RotEvent2
+NLS([[ro = owner.Backpack.RotEvent
+ro2 = owner.Backpack.RotEvent2
+local Tool = script.Parent;
+local con = nil
+local enabled = true
+local mouser = owner:GetMouse()
+
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(.2)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouser = mouse
+	con = mouse.Move:connect(changeValues)
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+end
+
+function onUnequippedLocal()
+
+	mouser = nil
+	con:disconnect()
+
+end
+
+function changeValues()
+ro2:FireServer("bl1", mouser.X, mouser.Y)
+	Tool.X.Value = mouser.X
+	Tool.Y.Value = mouser.Y
+
+end
+
+ro.OnClientEvent:Connect(function(str)
+if str == "b" then
+ro:FireServer("bl2", mouser.Hit.p)
+end
+end)
+
+ro.OnClientEvent:Connect(function(str)
+if str == "c" then
+ro:FireServer("bl3", mouser.Hit.p)
+end
+end)
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal)]],owner.PlayerGui).Parent = script.Parent
+ro2.OnServerEvent:Connect(function(me, str, mx, my)
+	if str == "bl1" then
+		Tool = script.Parent
+		Tool.X.Value = mx
+		Tool.Y.Value = my
+    end
+end)
+	--print("x")
+function blow(nn)
+	local debouncify = false
+
+	function Blow()
+		if not debouncify then
+			debouncify = true
+			wait(1.3)
+			w = Instance.new("Explosion")
+			w.Parent = nn
+			w.Position = nn.Position
+			w.BlastPressure = 1e+010
+			w.BlastRadius = 18
+			wait(0.1)
+			nn.Parent = nil
+			debouncify = false
+		end
+	end 
+
+
+	nn.Touched:connect(Blow)
+end
+	function ok(v)
+		task.spawn(function()
+	while wait() do 
+		v.CFrame = v.CFrame * CFrame.fromEulerAnglesXYZ(0,0.1,0)
+			end 
+		end)
+end
+local Tool = script.Parent
+local enabled = true
+local humanoid = nil
+local equipped = false
+
+local debris = game:GetService("Debris")
+
+local reloadSound = Instance.new("Sound")
+reloadSound.Name = "reloadSound"
+reloadSound.SoundId = "http://www.roblox.com/asset/?id=25299064"
+reloadSound.Parent = Tool.Handle
+reloadSound.Volume = 0.5
+reloadSound.Pitch = 1.3
+
+local pbLeft = 4
+
+local targetPart = Instance.new("Part")
+targetPart.CanCollide = false
+targetPart.Anchored = true
+targetPart.formFactor = 2
+targetPart.Transparency = 1
+targetPart.Size = Vector3.new(3,0.4,3)
+
+ok(targetPart)
+
+local decal = Instance.new("Decal")
+decal.Texture = "http://www.roblox.com/asset/?id=29613127"
+decal.Face = 1
+decal.Parent = targetPart
+
+local lastX = 0
+local lastY = 0
+
+	function fire(v, targetPos)
+		if not enabled  then
+			return
+		end
+
+		enabled = false
+
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+
+	local missile = Instance.new("Part")
+	missile.Locked = true
+	missile.Shape = 1
+	missile.formFactor = 0
+	missile.Size = Vector3.new(1,1,1)
+	missile.CFrame = CFrame.new(missile.Position,v)
+	missile.BrickColor = BrickColor.new("Dark stone grey")
+
+	local mesh = Instance.new("SpecialMesh")
+	mesh.MeshId = "http://www.roblox.com/asset/?id=29932049"
+	mesh.Scale = Vector3.new(1.6,1.6,1.6)
+	mesh.Parent = missile
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+	
+	local PewPew = Tool.Handle:FindFirstChild("PewPew")
+
+	if (PewPew == nil) then
+		PewPew = Instance.new("Sound")
+		PewPew.Name = "PewPew"
+		PewPew.SoundId = "http://www.roblox.com/asset/?id=29504625"
+		PewPew.Parent = Tool.Handle
+		PewPew.Pitch = 1
+		PewPew.Volume = 0.5
+	end
+	
+
+	spawnPos  = spawnPos + (v * 10)
+
+	
+	missile.Position = spawnPos
+	missile.BottomSurface = 0
+	missile.Elasticity = 0.2
+	missile.TopSurface = 0
+	missile.Name = "PBJar"
+
+	local bodyPos = Instance.new("BodyPosition")
+	bodyPos.position = targetPos
+	bodyPos.P = 200
+	bodyPos.D = 100
+	bodyPos.maxForce = Vector3.new(bodyPos.P,0,bodyPos.P)
+	bodyPos.Parent = missile
+
+	debris:AddItem(bodyPos,1.5)
+
+	local force = Instance.new("BodyForce")
+	force.Name = "BulletFloat"
+	force.force = Vector3.new(0,720,0)
+	force.Parent = missile
+
+	debris:AddItem(force, 0.2)
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile
+	
+blow(missile)
+	
+	missile.Parent = game.Workspace
+
+	PewPew:Play()
+
+	pbLeft = pbLeft - 1
+
+	if pbLeft == 3 then
+		Tool.Handle.Four.Volume = 0
+		Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=29458281"
+		Tool.Handle.Three.Volume = 1
+		Tool.Handle.Three:Play()
+	elseif pbLeft == 2 then
+		Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=29458298"
+		Tool.Handle.Three.Volume = 0
+		Tool.Handle.Two.Volume = 1
+		Tool.Handle.Two:Play()
+	elseif pbLeft == 1 then
+		Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=29458313"
+		Tool.Handle.Two.Volume = 0
+		Tool.Handle.One.Volume = 1
+		Tool.Handle.One:Play()
+	elseif pbLeft == 0 then
+		Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=29458345"
+		reloadingGui()
+		Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=29456213"
+		pbLeft = 4
+	end
+
+		enabled = true
+
+end
+
+function reloadingGui()
+
+	if humanoid == nil then
+		humanoid = script.Parent.Parent:FindFirstChild("Humanoid")
+	end
+	local reloader = Tool.ReloadingGui:clone()
+	local player = game.Players:GetPlayerFromCharacter(humanoid.Parent)
+	reloader.Parent = player.PlayerGui
+	Tool.Handle.Rel.Volume = 1
+	Tool.Handle.Rel:Play()
+	debris:AddItem(reloader,10)
+
+	for i = 1, 100 do
+		wait(0.05)
+		if equipped then
+			reloader.Frame.Visible = true
+		else
+			reloader.Frame.Visible = false
+		end
+		reloader.Frame.Size = UDim2.new(0,reloader.Frame.Size.X.Offset - 3,0,40)
+	end
+
+	if reloader ~= nil then
+		reloader.Parent = nil
+		reloader:remove()
+		Tool.Handle.Four.Volume = 1
+		Tool.Handle.Four:Play()
+		Tool.Handle.Rel.Volume = 0
+	end
+
+end
+
+
+function gunUp()
+
+end
+
+function gunOut()
+
+end
+
+function isTurbo(character)
+	return character:FindFirstChild("BoltHelm") ~= nil
+end
+
+ro.OnServerEvent:Connect(function(me, str, tp)
+	if str == "bl2" then
+		local character = Tool.Parent;
+		local humanoid = character.Humanoid
+		if humanoid == nil then
+			print("Humanoid not found")
+			return 
+		end
+
+		local targetPos = tp
+		local lookAt = (targetPos - character.Head.Position).unit
+
+		local reload = .1
+
+		gunUp()
+			fire(lookAt, targetPos)
+		--print("zxc")
+
+		wait(reload)
+		gunOut()
+		wait(reload)
+	end
+end)
+
+function onActivated()
+
+	ro:FireClient(owner, "b")
+
+end
+
+function onEquipped()
+	humanoid = Tool.Parent:FindFirstChild("Humanoid")
+
+	-- load in meshes for faster switching
+	for pbLeft = 4, 0, -1 do
+		if pbLeft == 3 then
+			Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=29458281"
+		elseif pbLeft == 2 then
+			Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=29458298"
+		elseif pbLeft == 1 then
+			Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=29458313"
+		elseif pbLeft == 0 then
+			Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=29458345"
+			wait(0.1)
+			Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=29456213"
+			pbLeft = 4
+		end
+		wait()
+	end
+	
+	equipped = true
+	checkLaunchPos()
+end
+
+function onUnequipped()
+	equipped = false
+	targetPart.Parent = nil
+
+end
+	
+	ro.OnServerEvent:Connect(function(me, str, hi)
+		if str == "bl3" then
+			targetPart.Parent = game.Workspace
+			task.spawn(function()
+				while equipped do
+					if lastX ~= Tool.X.Value and lastY ~= Tool.Y.Value then
+						targetPart.Position = hi
+					end
+					lastX = Tool.X.Value
+					lastY = Tool.Y.Value
+					wait()
+				end
+			end)
+		end
+	end)
+	
+function checkLaunchPos()
+		ro:FireClient(owner, "c")
+end
+
+script.Parent.Activated:connect(onActivated)
+script.Parent.Unequipped:connect(onUnequipped)
+script.Parent.Equipped:connect(onEquipped)
+
+end))
+LocalScript9.Name = "Local Gui"
+LocalScript9.Parent = Tool0
+table.insert(cors,sandbox(LocalScript9,function()
+--[[
+NLS([[local Tool = script.Parent;
+local con = nil
+local enabled = true
+local mouser = nil
+
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(.2)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouser = mouse
+	con = mouse.Move:connect(changeValues)
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+end
+
+function onUnequippedLocal()
+
+	mouser = nil
+	con:disconnect()
+
+end
+
+function changeValues()
+
+	Tool.X.Value = mouser.X
+	Tool.Y.Value = mouser.Y
+
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)
+Tool.Unequipped:connect(onUnequippedLocal)]]--,owner.PlayerGui).Parent = script.Parent
+
+
+end))
+ScreenGui10.Name = "ReloadingGui"
+ScreenGui10.Parent = Tool0
+Frame11.Parent = ScreenGui10
+Frame11.Position = UDim2.new(0.5, -150, 0.800000012, -20)
+Frame11.Size = UDim2.new(0, 300, 0, 40)
+Frame11.BackgroundColor = BrickColor.new("Really red")
+Frame11.BackgroundColor3 = Color3.new(0.87451, 0, 0)
+ImageLabel12.Name = "Reloading"
+ImageLabel12.Parent = Frame11
+ImageLabel12.Size = UDim2.new(0, 300, 0, 40)
+ImageLabel12.BackgroundColor = BrickColor.new("Oyster")
+ImageLabel12.BackgroundColor3 = Color3.new(0.713726, 0.709804, 0.721569)
+ImageLabel12.BackgroundTransparency = 1
+ImageLabel12.Image = "http://www.roblox.com/asset/?id=29460072"
+NumberValue13.Name = "X"
+NumberValue13.Parent = Tool0
+NumberValue14.Name = "Y"
+NumberValue14.Parent = Tool0
+Script15.Name = "Blow"
+Script15.Parent = Tool0
+Script15.Enabled = false
+table.insert(cors,sandbox(Script15,function()
+function blow(nn)
+local debouncify = false
+
+function Blow()
+	if not debouncify then
+debouncify = true
+wait(1.3)
+w = Instance.new("Explosion")
+w.Parent = nn
+w.Position = nn.Position
+w.BlastPressure = 1e+010
+w.BlastRadius = 18
+wait(0.1)
+nn.Parent = nil
+debouncify = false
+end
+end 
+
+
+	nn.Touched:connect(Blow)
+end
+end))
+Script15.Disabled = true
+Script16.Name = "Rot"
+Script16.Parent = Tool0
+Script16.Enabled = false
+table.insert(cors,sandbox(Script16,function()
+function ok(v)
+while wait() do 
+v.CFrame = v.CFrame * CFrame.fromEulerAnglesXYZ(0,0.1,0)
+	end 
+end
+end))
+Script16.Disabled = true
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
