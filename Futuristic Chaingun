@@ -1,1 +1,744 @@
 
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+Sound2 = Instance.new("Sound")
+SpecialMesh3 = Instance.new("SpecialMesh")
+Sound4 = Instance.new("Sound")
+LocalScript5 = Instance.new("LocalScript")
+Script6 = Instance.new("Script")
+Script7 = Instance.new("Script")
+Script8 = Instance.new("Script")
+Tool0.Name = "Chaingun"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=4992599"
+Tool0.Grip = CFrame.new(0, -0.200000003, -0.5, 1, 0, 0, 0, 1, -6.00000021e-05, -0, 6.00000021e-05, 1)
+Tool0.GripForward = Vector3.new(-0, 0.00006000000212225132, -1)
+Tool0.GripPos = Vector3.new(0, -0.20000000298023224, -0.5)
+Tool0.GripUp = Vector3.new(0, 1, 0.00006000000212225132)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(10.3140774, 0.502609253, -29.0582047, 0.637003481, 0.000802270079, 0.770860553, -3.38095385e-11, 0.999999464, -0.00104074529, -0.77086097, 0.000662958482, 0.637003124)
+Part1.Orientation = Vector3.new(0.05999999865889549, 50.430999755859375, 0)
+Part1.Position = Vector3.new(10.314077377319336, 0.5026092529296875, -29.058204650878906)
+Part1.Rotation = Vector3.new(0.09399999678134918, 50.430999755859375, -0.07199999690055847)
+Part1.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part1.Size = Vector3.new(1, 1, 5)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Dark stone grey")
+Part1.Reflectance = 10
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Dark stone grey")
+Sound2.Name = "Fire"
+Sound2.Parent = Part1
+Sound2.SoundId = "http://www.roblox.com/asset/?id=2692806"
+Sound2.Volume = 1
+SpecialMesh3.Parent = Part1
+SpecialMesh3.MeshId = "http://www.roblox.com/asset/?id=2806162"
+SpecialMesh3.MeshType = Enum.MeshType.FileMesh
+Sound4.Name = "Reload"
+Sound4.Parent = Part1
+Sound4.SoundId = "http://www.roblox.com/asset/?id=2692801"
+LocalScript5.Name = "Local Gui"
+LocalScript5.Parent = Tool0
+table.insert(cors,sandbox(LocalScript5,function()
+--[[local Tool = script.Parent;
+
+enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = true
+	mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430902"
+
+	--wait(.5)
+	--mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430902"
+	--enabled = true
+	--mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+
+end
+
+
+function onButton1Up(mouse)
+enabled = false
+Tool.Enabled = false
+mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430902"
+wait(0.5)
+mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430902"
+enabled = true
+Tool.Enabled = true
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430900"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)	
+	mouse.Button1Up:connect(function() onButton1Up(mouse)end)
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)
+]]
+end))
+Script6.Name = "PaintballShooter"
+Script6.Parent = Tool0
+table.insert(cors,sandbox(Script6,function()
+function BYE(b)
+	task.spawn(function()
+	task.wait(10)
+	b:Destroy()
+	end)
+end
+function hello(b)
+	ball = b
+	damage = 1
+
+
+
+	function onTouched(hit)
+		local humanoid = hit.Parent:findFirstChild("Humanoid")
+		-- make a splat
+		--for i=1,3 do
+		--	local s = Instance.new("Part")
+		--	s.Shape = 1 -- block
+		--	s.formFactor = 2 -- plate
+		--	s.Size = Vector3.new(1,.4,1)
+		--	s.BrickColor = ball.BrickColor
+		--	local v = Vector3.new(math.random(-1,1), math.random(0,1), math.random(-1,1))
+		--	s.Velocity = 15 * v--15
+		--	s.CFrame = CFrame.new(ball.Position + v, v)
+		---	ball.BrickCleanup:clone().Parent = s
+		--	s.BrickCleanup.Disabled = false
+		--	s.Parent = game.Workspace
+		--	
+		--end
+
+
+		if humanoid ~= nil then
+			tagHumanoid(humanoid)
+			humanoid.Health = humanoid.Health - damage
+			wait(2)
+			untagHumanoid(humanoid)
+		end
+
+		connection:disconnect()
+		ball.Parent = nil
+	end
+
+	function tagHumanoid(humanoid)
+		-- todo: make tag expire
+		local tag = ball:findFirstChild("creator")
+		if tag ~= nil then
+			local new_tag = tag:clone()
+			new_tag.Parent = humanoid
+		end
+	end
+
+
+	function untagHumanoid(humanoid)
+		if humanoid ~= nil then
+			local tag = humanoid:findFirstChild("creator")
+			if tag ~= nil then
+				tag.Parent = nil
+			end
+		end
+	end
+
+	connection = ball.Touched:connect(onTouched)
+
+	wait(0.8)
+	ball.Parent = nil
+end
+Instance.new("RemoteEvent",owner.PlayerGui).Name = "PATCH"
+NLS([[local Tool = script.Parent;
+
+enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = true
+	mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430902"
+
+	--wait(.5)
+	--mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430902"
+	--enabled = true
+	--mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+
+end
+
+
+function onButton1Up(mouse)
+enabled = false
+Tool.Enabled = false
+mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430902"
+wait(0.5)
+mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430902"
+enabled = true
+Tool.Enabled = true
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "http://www.roblox.com/asset/?version=1&id=1430900"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)	
+	mouse.Button1Up:connect(function() onButton1Up(mouse)end)
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)
+while task.wait(0.02) do owner.PlayerGui.PATCH:FireServer(owner:GetMouse().Hit.p) end]],owner.PlayerGui).Parent = script.Parent
+	owner.PlayerGui.PATCH.OnServerEvent:Connect(function(me, hiz)
+		owner.Character.Humanoid.TargetPoint = hiz
+	end)
+Tool = script.Parent
+
+colors = {11}
+
+function fire(v)
+
+	Tool.Handle.Fire:play()
+	
+
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+
+	local missile = Instance.new("Part")
+
+        
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+	
+
+
+	spawnPos  = spawnPos + (v * 8)
+
+	missile.Position = spawnPos
+	missile.Size = Vector3.new(1,1,1)
+	missile.Velocity = v * 600
+	missile.BrickColor = BrickColor.new(colors[math.random(1, #colors)])
+	missile.Shape = 1
+	missile.BottomSurface = 0
+	missile.TopSurface = 0
+	missile.Name = "Paintball"
+	missile.Elasticity = 0
+	missile.Reflectance = 0.2
+	missile.Friction = 1
+
+	local force = Instance.new("BodyForce")
+	force.force = Vector3.new(0,220,0)
+	force.Parent = missile
+	
+	BYE(missile)
+
+hello(missile)
+
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile
+	
+
+
+	missile.Parent = game.Workspace
+	--wait(0.01)
+	--fire(
+	
+
+	local missile2 = Instance.new("Part")
+
+        
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+	
+
+
+	spawnPos  = spawnPos + (v * 13)
+
+	missile2.Position = spawnPos
+	missile2.Size = Vector3.new(1,1,1)
+	missile2.Velocity = v * 600
+	missile2.BrickColor = BrickColor.new(colors[math.random(1, #colors)])
+	missile2.Shape = 1
+	missile2.BottomSurface = 0
+	missile2.TopSurface = 0
+	missile2.Name = "Paintball2"
+	missile2.Elasticity = 0
+	missile2.Reflectance = 0.2
+	missile2.Friction = 1
+
+	local force = Instance.new("BodyForce")
+	force.force = Vector3.new(10,220,0)
+	force.Parent = missile2
+	
+BYE(missile2)
+
+	hello(missile2)
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile2
+	
+
+
+	missile2.Parent = game.Workspace
+	--wait(0.01)
+	--fire(
+	
+
+	local missile3 = Instance.new("Part")
+
+        
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+	
+
+
+	spawnPos  = spawnPos + (v * 9)
+
+	missile3.Position = spawnPos
+	missile3.Size = Vector3.new(1,1,1)
+	missile3.Velocity = v * 600
+	missile3.BrickColor = BrickColor.new(colors[math.random(1, #colors)])
+	missile3.Shape = 1
+	missile3.BottomSurface = 0
+	missile3.TopSurface = 0
+	missile3.Name = "Paintball3"
+	missile3.Elasticity = 0
+	missile3.Reflectance = 0.2
+	missile3.Friction = 1
+
+	local force = Instance.new("BodyForce")
+	force.force = Vector3.new(0,220,10)
+	force.Parent = missile3
+	
+	BYE(missile3)
+
+	hello(missile3)
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile3
+	
+
+
+	missile3.Parent = game.Workspace
+	--wait(0.01)
+	--fire(
+	
+
+	local missile4 = Instance.new("Part")
+
+        
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+	
+
+
+	spawnPos  = spawnPos + (v * 10.5)
+
+	missile4.Position = spawnPos
+	missile4.Size = Vector3.new(1,1,1)
+	missile4.Velocity = v * 600
+	missile4.BrickColor = BrickColor.new(colors[math.random(1, #colors)])
+	missile4.Shape = 1
+	missile4.BottomSurface = 0
+	missile4.TopSurface = 0
+	missile4.Name = "Paintball4"
+	missile4.Elasticity = 0
+	missile4.Reflectance = 0.2
+	missile4.Friction = 1
+
+	local force = Instance.new("BodyForce")
+	force.force = Vector3.new(0,220,5)
+	force.Parent = missile4
+	
+	BYE(missile4)
+
+	hello(missile4)
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile4
+	
+
+
+	missile4.Parent = game.Workspace
+	--wait(0.01)
+	--fire(
+	
+
+	local missile5 = Instance.new("Part")
+
+        
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+	
+
+
+	spawnPos  = spawnPos + (v * 15)
+
+	missile5.Position = spawnPos
+	missile5.Size = Vector3.new(1,1,1)
+	missile5.Velocity = v * 600
+	missile5.BrickColor = BrickColor.new(colors[math.random(1, #colors)])
+	missile5.Shape = 1
+	missile5.BottomSurface = 0
+	missile5.TopSurface = 0
+	missile5.Name = "Paintball5"
+	missile5.Elasticity = 0
+	missile5.Reflectance = 0.2
+	missile5.Friction = 1
+
+	local force = Instance.new("BodyForce")
+	force.force = Vector3.new(5,220,0)
+	force.Parent = missile5
+	
+	BYE(missile5)
+
+	hello(missile5)
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile5
+	
+
+
+	missile5.Parent = game.Workspace
+	--wait(0.01)
+	--fire(
+	
+
+	local missile6 = Instance.new("Part")
+
+        
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+	
+
+
+	spawnPos  = spawnPos + (v * 17)
+
+	missile6.Position = spawnPos
+	missile6.Size = Vector3.new(1,1,1)
+	missile6.Velocity = v * 600
+	missile6.BrickColor = BrickColor.new(colors[math.random(1, #colors)])
+	missile6.Shape = 1
+	missile6.BottomSurface = 0
+	missile6.TopSurface = 0
+	missile6.Name = "Paintball6"
+	missile6.Elasticity = 0
+	missile6.Reflectance = 0.2
+	missile6.Friction = 1
+
+	local force = Instance.new("BodyForce")
+	force.force = Vector3.new(0,220,6)
+	force.Parent = missile6
+	
+	BYE(missile6)
+
+	hello(missile6)
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile6
+	
+
+
+	missile6.Parent = game.Workspace
+	--wait(0.01)
+	--fire(
+	
+
+	local missile7 = Instance.new("Part")
+
+        
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+	
+
+
+	spawnPos  = spawnPos + (v * 19)
+
+	missile7.Position = spawnPos
+	missile7.Size = Vector3.new(1,1,1)
+	missile7.Velocity = v * 600
+	missile7.BrickColor = BrickColor.new(colors[math.random(1, #colors)])
+	missile7.Shape = 1
+	missile7.BottomSurface = 0
+	missile7.TopSurface = 0
+	missile7.Name = "Paintball7"
+	missile7.Elasticity = 0
+	missile7.Reflectance = 0.2
+	missile7.Friction = 1
+
+	local force = Instance.new("BodyForce")
+	force.force = Vector3.new(7,220,0)
+	force.Parent = missile7
+	
+	BYE(missile7)
+
+	hello(missile7)
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile7
+	
+
+
+	missile7.Parent = game.Workspace
+	--wait(0.01)
+	--fire(
+	
+
+	local missile8 = Instance.new("Part")
+
+        
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+	
+
+
+	spawnPos  = spawnPos + (v * 21)
+
+	missile8.Position = spawnPos
+	missile8.Size = Vector3.new(1,1,1)
+	missile8.Velocity = v * 600
+	missile8.BrickColor = BrickColor.new(colors[math.random(1, #colors)])
+	missile8.Shape = 1
+	missile8.BottomSurface = 0
+	missile8.TopSurface = 0
+	missile8.Name = "Paintball8"
+	missile8.Elasticity = 0
+	missile8.Reflectance = 0.2
+	missile8.Friction = 1
+
+	local force = Instance.new("BodyForce")
+	force.force = Vector3.new(0,220,7)
+	force.Parent = missile8
+	
+	BYE(missile8)
+
+	hello(missile8)
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile8
+	
+
+
+	missile8.Parent = game.Workspace
+	--wait(0.01)
+	--fire(
+	
+
+	local missile9 = Instance.new("Part")
+
+        
+
+	local spawnPos = vCharacter.PrimaryPart.Position
+	
+
+
+	spawnPos  = spawnPos + (v * 23)
+
+	missile9.Position = spawnPos
+	missile9.Size = Vector3.new(1,1,1)
+	missile9.Velocity = v * 600
+	missile9.BrickColor = BrickColor.new(colors[math.random(1, #colors)])
+	missile9.Shape = 1
+	missile9.BottomSurface = 0
+	missile9.TopSurface = 0
+	missile9.Name = "Paintball9"
+	missile9.Elasticity = 0
+	missile9.Reflectance = 0.2
+	missile9.Friction = 1
+
+	local force = Instance.new("BodyForce")
+	force.force = Vector3.new(0,220,15)
+	force.Parent = missile9
+	
+	BYE(missile9)
+
+	hello(missile9)
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = missile9
+	
+
+
+	missile9.Parent = game.Workspace
+	--wait(0.01)
+	--fire(
+	
+
+end
+
+
+
+function check(en)
+---------------------------------------Function start here.
+if (Tool.Enabled == false) then
+return false
+end--end for if!
+-------------------------------
+if (Tool.Enabled == true) then
+return true
+end
+---------------------------------------Function end here.
+end
+
+
+Tool.Enabled = true
+function onActivated()
+
+	if not Tool.Enabled then
+		return
+	end
+
+	--Tool.Enabled = false
+
+	local character = Tool.Parent;
+	local humanoid = character.Humanoid
+	if humanoid == nil then
+		print("Humanoid not found")
+		return 
+	end
+
+	local targetPos = humanoid.TargetPoint
+	local lookAt = (targetPos - character.Head.Position).unit
+	--print(humanoid.TargetPoint)
+	if (check()) then
+	fire(lookAt)
+--	wait(0.1)
+	--onActivated()
+	end
+		--Tool.Enabled = true
+	return
+
+end
+
+
+script.Parent.Activated:connect(onActivated)
+
+end))
+Script7.Name = "Paintball"
+Script7.Parent = Tool0
+table.insert(cors,sandbox(Script7,function()
+function hello(b)
+ball = b
+damage = 1
+
+
+
+function onTouched(hit)
+	local humanoid = hit.Parent:findFirstChild("Humanoid")
+	-- make a splat
+	--for i=1,3 do
+	--	local s = Instance.new("Part")
+	--	s.Shape = 1 -- block
+	--	s.formFactor = 2 -- plate
+	--	s.Size = Vector3.new(1,.4,1)
+	--	s.BrickColor = ball.BrickColor
+	--	local v = Vector3.new(math.random(-1,1), math.random(0,1), math.random(-1,1))
+	--	s.Velocity = 15 * v--15
+	--	s.CFrame = CFrame.new(ball.Position + v, v)
+	---	ball.BrickCleanup:clone().Parent = s
+	--	s.BrickCleanup.Disabled = false
+	--	s.Parent = game.Workspace
+	--	
+	--end
+	
+
+	if humanoid ~= nil then
+		tagHumanoid(humanoid)
+		humanoid.Health = humanoid.Health - damage
+		wait(2)
+		untagHumanoid(humanoid)
+	end
+
+	connection:disconnect()
+	ball.Parent = nil
+end
+
+function tagHumanoid(humanoid)
+	-- todo: make tag expire
+	local tag = ball:findFirstChild("creator")
+	if tag ~= nil then
+		local new_tag = tag:clone()
+		new_tag.Parent = humanoid
+	end
+end
+
+
+function untagHumanoid(humanoid)
+	if humanoid ~= nil then
+		local tag = humanoid:findFirstChild("creator")
+		if tag ~= nil then
+			tag.Parent = nil
+		end
+	end
+end
+
+connection = ball.Touched:connect(onTouched)
+
+wait(0.8)
+ball.Parent = nil
+end
+end))
+Script8.Parent = Tool0
+table.insert(cors,sandbox(Script8,function()
+function BYE(b)
+	task.wait(10)
+	b.Parent = nil
+end
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
