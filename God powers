@@ -937,7 +937,8 @@ end)]], usr:FindFirstChildOfClass('PlayerGui'))
 	end
 end
 SHAKE3=function(CHAR)
-	if game.Players:GetPlayerFromCharacter(CHAR)~=nil then
+		if game.Players:GetPlayerFromCharacter(CHAR)~=nil then
+		   if usr ~= nil then
 		if usr:FindFirstChildOfClass('PlayerGui') then
 			if usr:FindFirstChildOfClass('Backpack') then
 			if not usr.Backpack:FindFirstChild('GodEvent4') then
@@ -947,9 +948,7 @@ SHAKE3=function(CHAR)
 		gd4.OnClientEvent:Connect(function(me, cf, str)
 if str == "cam2" then
 workspace.CurrentCamera.CoordinateFrame = cf
-end
-if str == "cam3" then
-workspace.CurrentCamera.CoordinateFrame = cf
+script:Destroy()
 end
 end)]], usr:FindFirstChildOfClass('PlayerGui'))
 			gd4:FireClient(usr, cm*CFrame.fromEulerAnglesXYZ(0,math.random(-5,5)*2,math.random(-5,5)*3), "cam2")
@@ -960,18 +959,18 @@ end)]], usr:FindFirstChildOfClass('PlayerGui'))
 		gd4.OnClientEvent:Connect(function(me, cf, str)
 if str == "cam2" then
 workspace.CurrentCamera.CoordinateFrame = cf
-end
-if str == "cam3" then
-workspace.CurrentCamera.CoordinateFrame = cf
+script:Destroy()
 end
 end)]], usr:FindFirstChildOfClass('PlayerGui'))
 					gd4:FireClient(usr, cm*CFrame.fromEulerAnglesXYZ(0,math.random(-5,5)*2,math.random(-5,5)*3), "cam2")
 					gd4:FireClient(usr, cm*CFrame.new(math.random(-5,5)*5,math.random(-5,5)*5,math.random(-5,5)*5), "cam2")
+					end
 				end
 			end
 		end
 	end
 end
+
 
 DCContact=function(hit,Tors)
 	if hit.Parent==nil then
