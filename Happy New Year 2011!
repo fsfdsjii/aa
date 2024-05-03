@@ -148,6 +148,66 @@ owner.Character.oldevent1.OnServerEvent:Connect(function(me,cf1,cf2,cf3,cf4,cf5,
 	limb3.Size = owner.Character["Left Leg"].Size
 	limb4.Size = owner.Character["Right Leg"].Size
 end)
+owner.Character.Head.Changed:Connect(function(k)
+if k == "Transparency" then
+if owner.Character.Head[k]  ~= 1 then
+head[k] = owner.Character.Head[k]
+owner.Character.Head[k] = 1
+--else
+--head[k] = 0
+end
+end
+end)
+owner.Character.Torso.Changed:Connect(function(k)
+if k == "Transparency" then
+if owner.Character.Torso[k]  ~= 1 then
+torso[k] = owner.Character.Torso[k]
+owner.Character.Torso[k] = 1
+--else
+--torso[k] = 0
+end
+end
+end)
+owner.Character["Left Arm"].Changed:Connect(function(k)
+if k == "Transparency" then
+if owner.Character["Left Arm"][k]  ~= 1 then
+limb1[k] = owner.Character["Left Arm"][k]
+owner.Character["Left Arm"][k] = 1
+--else
+--limb1[k] = 0
+end
+end
+end)
+owner.Character["Right Arm"].Changed:Connect(function(k)
+if k == "Transparency" then
+if owner.Character["Right Arm"][k]  ~= 1 then
+limb2[k] = owner.Character["Right Arm"][k]
+owner.Character["Right Arm"][k] = 1
+--else
+--limb2[k] = 0
+end
+end
+end)
+owner.Character["Left Leg"].Changed:Connect(function(k)
+if k == "Transparency" then
+if owner.Character["Left Leg"][k]  ~= 1 then
+limb3[k] = owner.Character["Left Leg"][k]
+owner.Character["Left Leg"][k] = 1
+--else
+--limb3[k] = 0
+end
+end
+end)
+owner.Character["Right Leg"].Changed:Connect(function(k)
+if k == "Transparency" then
+if owner.Character["Right Leg"][k]  ~= 1 then
+limb4[k] = owner.Character["Right Leg"][k]
+owner.Character["Right Leg"][k] = 1
+--else
+--limb4[k] = 0
+end
+end
+end)
 owner.Character.oldevent3:FireClient(owner, torso)
 hackymethodwithnotrustedsource = true
 owner.Character.oldevent2.OnServerEvent:Connect(function()
