@@ -1,0 +1,67 @@
+jjk = Instance.new("Tool",owner.Backpack)
+jjk.Name = "Laser"
+jjk.CanBeDropped = falsw
+Instance.new("RemoteEvent",owner.Backpack).Name = "LaEvent1"
+NLS([[owner.Backpack.LaEvent1.OnClientEvent:Connect(function()
+owner.Backpack.LaEvent1:FireServer(owner:GetMouse().Hit, owner:GetMouse().Target)
+end)]],owner.PlayerGui)
+jjk.RequiresHandle = false
+en = false
+jjk.Activated:Connect(function()
+	en = true
+end)
+jjk.Deactivated:Connect(function()
+	en = false
+end)
+
+
+lazuh = Instance.new("Part",owner)
+owner.Backpack.LaEvent1.OnServerEvent:Connect(function(me, hit, targ)
+if targ ~= lazuh then
+	if en == true then
+		for _,v in next, workspace:GetPartsInPart(lazuh) do
+			if v ~= nil then
+				hum = v.Parent:FindFirstChildOfClass('Humanoid')
+				hum2 = v.Parent.Parent:FindFirstChildOfClass('Humanoid')
+				if hum then
+					if hum.Parent ~= owner.Character then
+						pcall(function()
+							hum:TakeDamage(999999)
+						end)
+					end
+				end
+				
+					if hum2 then
+					if hum2.Parent ~= owner.Character then
+						pcall(function()
+							hum:TakeDamage(999999)
+						end)
+						end
+					end
+				end
+			end
+			lazuh.Parent = script
+			Part1 = owner.Character.Torso
+		lazuh.Shape = Enum.PartType.Cylinder
+		hitp = hit.Position
+			local magnitude = (Part1.Position - hitp).Magnitude
+			lazuh.Position = ((Part1.Position + hitp)/2)
+			lazuh.CFrame = CFrame.lookAt(lazuh.Position, hitp)
+		lazuh.Orientation = lazuh.Orientation + Vector3.new(90, 0, 90)
+			lazuh.Size = Vector3.new(magnitude, 1, 1)
+			lazuh.BrickColor = BrickColor.new("Really red")
+			lazuh.CanCollide = false
+			lazuh.Transparency = 0
+			lazuh.Material = Enum.Material.Neon
+			lazuh.Anchored = true
+	else
+		lazuh.Transparency = 1
+		end
+	end
+end)
+
+
+
+while task.wait(0.02) do
+	owner.Backpack.LaEvent1:FireClient(owner,nil)
+end
