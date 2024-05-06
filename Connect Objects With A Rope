@@ -1,0 +1,135 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+ObjectValue2 = Instance.new("ObjectValue")
+ObjectValue3 = Instance.new("ObjectValue")
+Script4 = Instance.new("Script")
+RemoteEvent5 = Instance.new("RemoteEvent")
+ObjectValue6 = Instance.new("ObjectValue")
+Tool0.Name = "Rope"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0, 0, 0, 0.806873381, -0.590724409, 0, 0.590724409, 0.806873381, 0, 0, 0, 1)
+Tool0.GripRight = Vector3.new(0.8068733811378479, 0.5907244086265564, 0)
+Tool0.GripUp = Vector3.new(-0.5907244086265564, 0.8068733811378479, 0)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-84, 0.500007987, 703, 0.866025388, -0.5, 0, 0.5, 0.866025388, 0, 0, 0, 1)
+Part1.Orientation = Vector3.new(0, 0, 30)
+Part1.Position = Vector3.new(-84, 0.5000079870223999, 703)
+Part1.Rotation = Vector3.new(0, 0, 30)
+Part1.Color = Color3.new(0.415686, 0.223529, 0.0352941)
+Part1.Size = Vector3.new(4, 0.5, 2)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Burnt Sienna")
+Part1.Material = Enum.Material.Fabric
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Burnt Sienna")
+Part1.Shape = Enum.PartType.Cylinder
+ObjectValue2.Name = "OBJ1"
+ObjectValue2.Parent = Tool0
+ObjectValue3.Name = "OBJ3"
+ObjectValue3.Parent = Tool0
+Script4.Parent = Tool0
+table.insert(cors,sandbox(Script4,function()
+OBJ1 = script.Parent.OBJ1
+OBJ2 = script.Parent.OBJ2
+OBJ3 = script.Parent.OBJ3
+Handle = script.Parent.Handle
+ROPEE = script.Parent.RopeEvent
+
+NLS([[ROPEE = script.Parent.RopeEvent
+ROPEE.OnClientEvent:Connect(function()
+ROPEE:FireServer(owner:GetMouse().Target, owner:GetMouse().Hit)
+end)]],owner.PlayerGui).Parent = script.Parent
+
+value = true
+function sw(e)
+	value = e
+end
+uhhh = true
+	l=Instance.new("RopeConstraint")
+		ROPEE.OnServerEvent:Connect(function(me, targ, hit)
+		--print(value)
+	if value == true then
+		sw(false)
+		OBJ1.Value = targ
+		rope = l:Clone()
+		rope.Parent = targ
+		rope.Name = "Rope"
+		rope.Visible = true
+		attach1 = Instance.new("Attachment",targ)
+		--attach1.CFrame = targ.CFrame
+		rope.Attachment0 = attach1
+			OBJ3.Value = rope
+			targ.Destroying:Connect(function()
+				rope:Destroy()
+				attach1:Destroy()
+				OBJ1.Value = nil
+				OBJ3.Value = nil
+			end)
+	elseif value == false then
+			sw(true)
+if OBJ3.Value ~= nil then
+		OBJ2.Value = targ
+		attach2 = Instance.new("Attachment",targ)
+		--attach2.CFrame = targ.CFrame
+		OBJ3.Value.Attachment1 = attach2
+		if uhhh then
+		rope.Length = rope.CurrentDistance
+		end
+		end
+	end
+end)
+	
+
+
+script.Parent.Activated:Connect(function()
+	ROPEE:FireClient(owner, nil)
+	end)
+	print("Say /ropelength then a number to set the length of the rope")
+	owner.Chatted:Connect(function(z)
+		if z == "/locklength" then
+			uhhh = not uhhh
+		end
+	end)
+	local cmd = "/ropelength"
+	local seperator = " "
+
+	owner.Chatted:Connect(function(msg)
+		local SplitMsg = string.split(msg, seperator)
+		if cmd == SplitMsg[1] then
+			local TargetName=SplitMsg[2]
+			l.Length = tonumber(TargetName)
+		end
+	end)
+end))
+RemoteEvent5.Name = "RopeEvent"
+RemoteEvent5.Parent = Tool0
+ObjectValue6.Name = "OBJ2"
+ObjectValue6.Parent = Tool0
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
