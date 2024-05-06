@@ -16,6 +16,13 @@ end)
 
 
 lazuh = Instance.new("Part",owner)
+part = Instance.new("Part",owner)
+part.Size = Vector3.new(0.1, 0.1, 0.1)
+part.Transparency = 1
+part.CanCollide = false
+part.Anchored = true
+fir = Instance.new("Fire",part)
+fir.Size = 10
 owner.Backpack.LaEvent1.OnServerEvent:Connect(function(me, hit, targ)
 if targ ~= lazuh then
 	if en == true then
@@ -44,6 +51,9 @@ if targ ~= lazuh then
 			Part1 = owner.Character.Torso
 		lazuh.Shape = Enum.PartType.Cylinder
 		hitp = hit.Position
+                        part.Parent = script
+                        part.Position = hitp
+                        fir.Enabled = true
 			local magnitude = (Part1.Position - hitp).Magnitude
 			lazuh.Position = ((Part1.Position + hitp)/2)
 			lazuh.CFrame = CFrame.lookAt(lazuh.Position, hitp)
@@ -54,8 +64,11 @@ if targ ~= lazuh then
 			lazuh.Transparency = 0
 			lazuh.Material = Enum.Material.Neon
 			lazuh.Anchored = true
+                        --print(part.Position)
+                        
 	else
 		lazuh.Transparency = 1
+                fir.Enabled = false
 		end
 	end
 end)
