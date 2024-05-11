@@ -98,6 +98,7 @@ pz = owner:FindFirstChild("hi")
 if not pz then
 Instance.new("RemoteEvent",owner).Name = "hi"
 end
+Instance.new("RemoteEvent",owner.PlayerGui).Name = "PATCH"
 NLS([[
 local UIS = game:GetService("UserInputService")
 UIS.InputBegan:Connect(function(input, gameProcessed)
@@ -112,8 +113,10 @@ owner.Lxb:FireServer()
       end
    end
 end)
-
-]],owner.PlayerGui) hello = true owner.hi.OnServerEvent:Connect(function(me, hi) if hello == true then hello = false loadstring(tostring(hi))() end task.wait(0.05) hello = true end)
+while task.wait(0.02) do owner.PlayerGui.PATCH:FireServer(owner:GetMouse().Hit.p) end
+]],owner.PlayerGui) owner.PlayerGui.PATCH.OnServerEvent:Connect(function(me, hiz)
+owner.Character.Humanoid.TargetPoint = hiz
+end) hello = true owner.hi.OnServerEvent:Connect(function(me, hi) if hello == true then hello = false loadstring(tostring(hi))() end task.wait(0.05) hello = true end)
 tr = true
 owner.Character.ChildAdded:Connect(function()
 if tr == true then
