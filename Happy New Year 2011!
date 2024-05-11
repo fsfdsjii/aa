@@ -232,7 +232,12 @@ if owner.Character.Head:FindFirstChild('face') then
 	owner.Character.Head.face:Destroy()
 end
 task.wait(0.1)
-NLS([[
+Instance.new("RemoteEvent",owner.PlayerGui).Name = "PATCH"
+owner.PlayerGui.PATCH.OnServerEvent:Connect(function(me, hiz)
+owner.Character.Humanoid.TargetPoint = hiz
+end)
+NLS([[task.spawn(function()
+while task.wait(0.02) do owner.PlayerGui.PATCH:FireServer(owner:GetMouse().Hit.p) end end)
 task.spawn(function()
 local RunService = game:GetService("RunService")
 local MaxFPS = 30
