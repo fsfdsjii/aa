@@ -273,6 +273,9 @@ local response = game:GetService('HttpService'):GetAsync('https://rbxdecal.glitc
 owner.Character.HumanoidRootPart.identify.Image = "http://www.roblox.com/asset/?id="..tostring(response)
 owner.Character.HumanoidRootPart.identifyy.Image = "http://www.roblox.com/asset/?id="..tostring(response)
 return response
+elseif info.AssetTypeId == 1 then
+owner.Character.HumanoidRootPart.identify.Image = "http://www.roblox.com/asset/?id="..tostring(text)
+owner.Character.HumanoidRootPart.identifyy.Image = "http://www.roblox.com/asset/?id="..tostring(text)
 else
 warn("id is not a valid decal id")
 end
