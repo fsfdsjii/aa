@@ -1,0 +1,232 @@
+owner.Character:BreakJoints()
+attach = Instance.new("Attachment",owner.Character.Head) attach.Name = "NeckAttachment"
+attach.Position = Vector3.new(-0, -0.546, 0)
+attach.Orientation = Vector3.new(0, -0, 0)
+attachz = Instance.new("Attachment",owner.Character.Torso) attachz.Name = "RightLegAttachment"
+attachz.Position = Vector3.new(0.55, -0.89, 0)
+attachzz = Instance.new("Attachment",owner.Character.Torso) attachzz.Name = "LeftLegAttachment"
+attachzz.Position = Vector3.new(-0.55, -0.89, 0)
+attachzzz = Instance.new("Attachment",owner.Character["Right Leg"]) attachzzz.Name = "RightLegAttachment"
+attachzzz.Position = Vector3.new(0, 1, 0)
+attachzzzz = Instance.new("Attachment",owner.Character["Left Leg"]) attachzzzz.Name = "LeftLegAttachment"
+attachzzzz.Position = Vector3.new(0, 1, 0)
+attachzzzzz = Instance.new("Attachment",owner.Character.Torso) attachzzzzz.Name = "LeftTorsoAttachment"
+attachzzzzz.Position = Vector3.new(-1, 1, 0)
+attachzzzzzz = Instance.new("Attachment",owner.Character["Left Arm"]) attachzzzzzz.Name = "LeftArmAttachment"
+attachzzzzzz.Position = Vector3.new(0, 1, 0)
+attachzzzzzzz = Instance.new("Attachment",owner.Character.Torso) attachzzzzzzz.Name = "RightTorsoAttachment"
+attachzzzzzzz.Position = Vector3.new(1, 1, 0)
+attachzzzzzzzz = Instance.new("Attachment",owner.Character["Right Arm"]) attachzzzzzzzz.Name = "RightArmAttachment"
+attachzzzzzzzz.Position = Vector3.new(0, 1, 0)
+attachxc = Instance.new("Attachment",owner.Character["Right Arm"]) attachxc.Name = "RightArmAttachment"
+attachxc.Position = Vector3.new(0, -0.4, 0)
+attachzzzzzzzzz = Instance.new("Attachment",owner.Character.Torso) attachzzzzzzzzz.Name = "HeadAttachment"
+attachzzzzzzzzz.Position = Vector3.new(0, 1, 0)
+owner.Character.Humanoid.RequiresNeck=false
+rrr = Instance.new("RopeConstraint", owner.Character.Head)
+rrr.Attachment0 = attach
+rrr.Attachment1 = attachzzzzzzzzz
+rrr.Visible = false
+rrr.Length = 0.01
+
+rrr = Instance.new("RopeConstraint", owner.Character.Torso)
+rrr.Attachment0 = attachzzzzz
+rrr.Attachment1 = attachzzzzzz
+rrr.Visible = false
+rrr.Length = 0.1
+
+rrr = Instance.new("RopeConstraint", owner.Character.Torso)
+rrr.Attachment0 = attachzzzzzzz
+rrr.Attachment1 = attachzzzzzzzz
+rrr.Visible = false
+rrr.Length = 0.1
+
+rrr = Instance.new("RopeConstraint", owner.Character.Torso)
+rrr.Attachment0 = attachzz
+rrr.Attachment1 = attachzzzz
+rrr.Visible = false
+rrr.Length = 0.1
+
+rrr = Instance.new("RopeConstraint", owner.Character.Torso)
+rrr.Attachment0 = attachz
+rrr.Attachment1 = attachzzz
+rrr.Visible = false
+rrr.Length = 0.1
+
+for i,v in owner.Character:GetDescendants() do if v:IsA('Motor6D')  then v:Destroy() end end
+
+ex = Instance.new("Tool",owner.Backpack)
+ex.Name = "TP"
+ex.RequiresHandle = false
+
+lzxx = owner:FindFirstChild('Lx')
+if not lzx then
+	Lx = Instance.new("RemoteEvent",owner)
+	Lx.Name = "Lx"
+end
+
+lzxx = owner:FindFirstChild('Lxx')
+if not lzxx then
+	Lxx = Instance.new("Part",owner)
+	Lxx.Name = "Lxx"
+end
+
+lzxx = owner:FindFirstChild('Lxb')
+if not lzx then
+	Lx = Instance.new("RemoteEvent",owner)
+	Lx.Name = "Lxb"
+end
+	NLS([[ debounce = true owner.Lxx.Changed:Connect(function()  if debounce == true then debounce = false owner.Lx:FireServer(owner:GetMouse().Hit)  task.wait(0.05) debounce = true end end) ]],owner.PlayerGui)
+debounce = true
+ex.Activated:Connect(function()
+owner.Lxx.Transparency = math.random(0, 1)
+	owner.Lx.OnServerEvent:Connect(function(plr, hit)
+	if debounce == true then
+debounce = false	
+for i,v in owner.Character:GetDescendants() do
+if v:IsA('BasePart') then
+			v.Position = hit.Position + Vector3.new(1, 3, 1)
+end
+end
+			task.wait(0.05)
+debounce = true
+end
+    end)
+end)
+
+pz = owner:FindFirstChild("hi")
+if not pz then
+Instance.new("RemoteEvent",owner).Name = "hi"
+end
+NLS([[
+local UIS = game:GetService("UserInputService")
+UIS.InputBegan:Connect(function(input, gameProcessed)
+	if input.UserInputType == Enum.UserInputType.Keyboard then
+		if input.KeyCode == Enum.KeyCode.Space and not gameProcessed  then
+
+_G[owner.Name] = "debounce = true  if debounce == true then debounce = false for _,v in next, owner.Character:GetDescendants() do if v:IsA('BasePart') then  Instance.new('BodyForce',owner.Character.Torso).Name = 'Helloo'  y = owner.Character.Torso:GetMass()  * 674 + owner.Character.Humanoid.JumpPower  owner.Character.Torso.Helloo.Force = Vector3.new(0, y, 0) task.wait(0.50) debounce = true owner.Character.Torso.Helloo:Destroy() end end owner.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) task.wait(0.50) debounce = true end"
+
+owner.hi:FireServer(_G[owner.Name])
+elseif input.KeyCode == Enum.KeyCode.Backspace and not gameProcessed then
+owner.Lxb:FireServer()
+      end
+   end
+end)
+
+]],owner.PlayerGui) hello = true owner.hi.OnServerEvent:Connect(function(me, hi) if hello == true then hello = false loadstring(tostring(hi))() end task.wait(0.05) hello = true end)
+tr = true
+owner.Character.ChildAdded:Connect(function()
+if tr == true then
+tr = false
+Tool = owner.Character:FindFirstChildOfClass('Tool')
+if Tool then
+if Tool ~= nil then
+if Tool:FindFirstChild('Handle') then
+toolz = Tool.Handle:Clone()
+end
+for _,v in Tool:GetDescendants() do
+if v:IsA('BasePart') then
+if v.Name == "Handle" then
+if not v:FindFirstChild('BeDead') then
+if not v:FindFirstChild('JellyRope') then
+toolz.Parent = owner.Character
+toolz.Transparency = 1
+toolz.CanCollide = false
+attachn = Instance.new("Attachment",toolz) attachn.Name = "Hehe"
+attachn.Position = Vector3.new(0, -1, 0)
+attachn.Name = "BeDead"
+rrr = Instance.new("RopeConstraint", v)
+rrr.Attachment0 = attachn
+rrr.Attachment1 = attachxc
+rrr.Visible = false
+rrr.Length = 0.1
+rrr.Name = "JellyRope"
+Tool.RequiresHandle = false
+pl = Tool.Changed:Connect(function(p)
+if p == "Parent" then
+if Tool ~= nil then
+if Tool.Parent == owner.Backpack then
+if toolz then
+toolz:Destroy()
+end
+end
+if Tool.Parent == owner.Character then
+pl:Disconnect()
+toolz:Destroy()
+end
+if Tool.Parent == workspace then
+function byebye(part)
+part:Destroy()
+end
+byebye(rrr)
+byebye(attachn)
+v.Position = owner.Character.Torso.Position
+v.CanCollide = true
+Tool.RequiresHandle = true
+end
+end
+end
+end)
+end
+end
+end
+v.CanCollide = false
+v.Massless = true
+end
+end
+end
+end
+end
+task.wait(0.05)
+tr = true
+end)
+owner.Lxb.OnServerEvent:Connect(function()
+Tool = owner.Character:FindFirstChildOfClass('Tool')
+if Tool then
+if Tool.CanBeDropped == true then
+Tool.Parent = workspace
+Tool:BreakJoints()
+Handle = Tool:FindFirstChild('Handle')
+if Handle then
+Handle.CanCollide = true
+task.spawn(function()
+task.wait(0.4)
+Handle.CanCollide = true
+end)
+Handle.Transparency = 0
+Handle.Position = owner.Character.Torso.Position * 2
+Handle.BeDead:Destroy()
+end
+end
+end
+end)
+
+
+task.spawn(function()
+while task.wait() do
+boolxx = true
+p = workspace:GetPartBoundsInBox(owner.Character.Torso.CFrame, Vector3.new(6, 6, 6))
+for _,tool in next, p do
+if boolxx == true then
+boolxx = false
+if tool.Parent ~= nil then
+if tool.Parent.Parent ~= owner.Character then
+if not tool.Parent:FindFirstChildOfClass('Humanoid') then
+if tool.Name == "Handle" then
+if tool.Parent.ClassName == "Tool" then
+tool.Parent.Parent = owner.Backpack
+tool.CanCollide = true
+tool.Transparency = 0
+elseif tool.Parent.ClassName == "HopperBin" then
+tool.Parent.Parent = owner.Backpack
+end
+end
+end
+end
+end
+task.wait(0.5)
+boolxx = true
+end
+end
+end
+end)
