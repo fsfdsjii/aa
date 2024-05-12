@@ -1,0 +1,1413 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+local TextButton_2 = Instance.new("TextButton")
+local TextButton_3 = Instance.new("TextButton")
+local TextButton_4 = Instance.new("TextButton")
+local TextButton_5 = Instance.new("TextButton")
+local TextButton_6 = Instance.new("TextButton")
+local TextButton_7 = Instance.new("TextButton")
+local TextButton_8 = Instance.new("TextButton")
+local TextButton_9 = Instance.new("TextButton")
+local TextButton_10 = Instance.new("TextButton")
+local TextButton_11 = Instance.new("TextButton")
+local TextButton_12 = Instance.new("TextButton")
+local TextButton_13 = Instance.new("TextButton")
+local TextButton_14 = Instance.new("TextButton")
+local TextButton_15 = Instance.new("TextButton")
+local TextButton_16 = Instance.new("TextButton")
+local TextButton_17 = Instance.new("TextButton")
+local TextButton_18 = Instance.new("TextButton")
+local TextButton_19 = Instance.new("TextButton")
+local TextButton_20 = Instance.new("TextButton")
+local TextButton_21 = Instance.new("TextButton")
+local TextButton_22 = Instance.new("TextButton")
+local TextButton_23 = Instance.new("TextButton")
+local TextButton_24 = Instance.new("TextButton")
+local TextButton_25 = Instance.new("TextButton")
+local TextButton_26 = Instance.new("TextButton")
+local TextButton_27 = Instance.new("TextButton")
+local TextButton_28 = Instance.new("TextButton")
+local TextButton_29 = Instance.new("TextButton")
+local TextButton_30 = Instance.new("TextButton")
+local TextButton_31 = Instance.new("TextButton")
+local TextButton_32 = Instance.new("TextButton")
+local TextButton_33 = Instance.new("TextButton")
+local TextButton_34 = Instance.new("TextButton")
+local TextButton_35 = Instance.new("TextButton")
+local TextButton_36 = Instance.new("TextButton")
+local TextButton_37 = Instance.new("TextButton")
+local TextButton_38 = Instance.new("TextButton")
+local TextButton_39 = Instance.new("TextButton")
+local TextButton_40 = Instance.new("TextButton")
+local Frame = Instance.new("Frame")
+local Frame_2 = Instance.new("Frame")
+local Frame_3 = Instance.new("Frame")
+local Frame_4 = Instance.new("Frame")
+Instance.new("RemoteEvent",owner.PlayerGui).Name = "Backpack"
+--Properties:
+nls = NLS([[
+--game:GetService('StarterGui'):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+owner:GetMouse().KeyDown:Connect(function(k)
+if k:byte() == 96 then
+--print("r")
+owner.PlayerGui.Backpack:FireServer()
+end
+end)
+local UserInputService = game:GetService("UserInputService")
+
+        local gui = script.Parent
+
+        local dragging
+        local dragInput
+        local dragStart
+        local startPos
+
+        local function update(input)
+        	local delta = input.Position - dragStart
+        	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
+
+        gui.InputBegan:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        		dragging = true
+        		dragStart = input.Position
+        		startPos = gui.Position
+        		
+        		input.Changed:Connect(function()
+        			if input.UserInputState == Enum.UserInputState.End then
+        				dragging = false
+        			end
+        		end)
+        	end
+        end)
+
+        gui.InputChanged:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        		dragInput = input
+        	end
+        end)
+
+        UserInputService.InputChanged:Connect(function(input)
+        	if input == dragInput and dragging then
+        		update(input)
+        	end
+        end)]],owner.PlayerGui)
+ScreenGui.Parent = owner.PlayerGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = ScreenGui
+--TextLabel.Active = true
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+--TextLabel.Draggable = true
+TextLabel.Position = UDim2.new(0.166318312, -15, 0.174416274, -2)
+--TextLabel.Selectable = true
+TextLabel.Size = UDim2.new(0, 399, 0, 30)
+TextLabel.Font = Enum.Font.RobotoMono
+TextLabel.Text = "Roblox Inventory!"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 16.000
+TextLabel.Visible = false
+owner.PlayerGui.Backpack.OnServerEvent:Connect(function()
+	TextLabel.Visible = not TextLabel.Visible
+end)
+nls.Parent = TextLabel
+TextButton.Parent = TextLabel
+TextButton.Active = false
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.Position = UDim2.new(-0.00100000005, 0, 0.989000022, 0)
+TextButton.Selectable = false
+TextButton.Size = UDim2.new(0, 50, 0, 54)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = ""
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+
+TextButton_2.Parent = TextButton
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.Position = UDim2.new(0.989000022, 0, -0.00100000005, 0)
+TextButton_2.Size = UDim2.new(0, 50, 0, 54)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = ""
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextSize = 8.000
+
+TextButton_3.Parent = TextButton
+TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_3.Position = UDim2.new(1.98899996, 0, -0.00100001588, 0)
+TextButton_3.Size = UDim2.new(0, 50, 0, 54)
+TextButton_3.Font = Enum.Font.SourceSans
+TextButton_3.Text = ""
+TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_3.TextSize = 8.000
+
+TextButton_4.Parent = TextButton
+TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_4.Position = UDim2.new(2.98900032, 0, -0.00100001588, 0)
+TextButton_4.Size = UDim2.new(0, 50, 0, 54)
+TextButton_4.Font = Enum.Font.SourceSans
+TextButton_4.Text = ""
+TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_4.TextSize = 8.000
+
+TextButton_5.Parent = TextButton
+TextButton_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_5.Position = UDim2.new(3.98900032, 0, -0.00100001588, 0)
+TextButton_5.Size = UDim2.new(0, 50, 0, 54)
+TextButton_5.Font = Enum.Font.SourceSans
+TextButton_5.Text = ""
+TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_5.TextSize = 8.000
+
+TextButton_6.Parent = TextButton
+TextButton_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_6.Position = UDim2.new(4.98900032, 0, -0.00100001588, 0)
+TextButton_6.Size = UDim2.new(0, 50, 0, 54)
+TextButton_6.Font = Enum.Font.SourceSans
+TextButton_6.Text = ""
+TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_6.TextSize = 8.000
+
+TextButton_7.Parent = TextButton
+TextButton_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_7.Position = UDim2.new(5.98900032, 0, -0.00100001588, 0)
+TextButton_7.Size = UDim2.new(0, 50, 0, 54)
+TextButton_7.Font = Enum.Font.SourceSans
+TextButton_7.Text = ""
+TextButton_7.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_7.TextSize = 8.000
+
+TextButton_8.Parent = TextButton
+TextButton_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_8.Position = UDim2.new(6.98900032, 0, -0.00100001588, 0)
+TextButton_8.Size = UDim2.new(0, 50, 0, 54)
+TextButton_8.Font = Enum.Font.SourceSans
+TextButton_8.Text = ""
+TextButton_8.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_8.TextSize = 8.000
+
+TextButton_9.Parent = TextButton
+TextButton_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_9.Position = UDim2.new(6.98899984, 0, 1.00999999, 0)
+TextButton_9.Size = UDim2.new(0, 50, 0, 54)
+TextButton_9.Font = Enum.Font.SourceSans
+TextButton_9.Text = ""
+TextButton_9.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_9.TextSize = 8.000
+
+TextButton_10.Parent = TextButton
+TextButton_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_10.Position = UDim2.new(5.98900032, 0, 1.01000011, 0)
+TextButton_10.Size = UDim2.new(0, 49, 0, 54)
+TextButton_10.Font = Enum.Font.SourceSans
+TextButton_10.Text = ""
+TextButton_10.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_10.TextSize = 8.000
+
+TextButton_11.Parent = TextButton
+TextButton_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_11.Position = UDim2.new(4.98900032, 0, 1.01000011, 0)
+TextButton_11.Size = UDim2.new(0, 49, 0, 54)
+TextButton_11.Font = Enum.Font.SourceSans
+TextButton_11.Text = ""
+TextButton_11.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_11.TextSize = 8.000
+
+TextButton_12.Parent = TextButton
+TextButton_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_12.Position = UDim2.new(3.98900032, 0, 1.01000011, 0)
+TextButton_12.Size = UDim2.new(0, 49, 0, 54)
+TextButton_12.Font = Enum.Font.SourceSans
+TextButton_12.Text = ""
+TextButton_12.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_12.TextSize = 8.000
+
+TextButton_13.Parent = TextButton
+TextButton_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_13.Position = UDim2.new(1.9890002, 0, 1.01000011, 0)
+TextButton_13.Size = UDim2.new(0, 49, 0, 54)
+TextButton_13.Font = Enum.Font.SourceSans
+TextButton_13.Text = ""
+TextButton_13.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_13.TextSize = 8.000
+
+TextButton_14.Parent = TextButton
+TextButton_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_14.Position = UDim2.new(0.989000261, 0, 1.01000011, 0)
+TextButton_14.Size = UDim2.new(0, 49, 0, 54)
+TextButton_14.Font = Enum.Font.SourceSans
+TextButton_14.Text = ""
+TextButton_14.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_14.TextSize = 8.000
+
+TextButton_15.Parent = TextButton
+TextButton_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_15.Position = UDim2.new(0, 0, 1.01000011, 0)
+TextButton_15.Size = UDim2.new(0, 48, 0, 54)
+TextButton_15.Font = Enum.Font.SourceSans
+TextButton_15.Text = ""
+TextButton_15.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_15.TextSize = 8.000
+
+TextButton_16.Parent = TextButton
+TextButton_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_16.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_16.Position = UDim2.new(2.98900032, 0, 1.01000011, 0)
+TextButton_16.Size = UDim2.new(0, 49, 0, 54)
+TextButton_16.Font = Enum.Font.SourceSans
+TextButton_16.Text = ""
+TextButton_16.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_16.TextSize = 8.000
+
+TextButton_17.Parent = TextButton
+TextButton_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_17.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_17.Position = UDim2.new(2.98900032, 0, 2.01000023, 0)
+TextButton_17.Size = UDim2.new(0, 49, 0, 54)
+TextButton_17.Font = Enum.Font.SourceSans
+TextButton_17.Text = ""
+TextButton_17.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_17.TextSize = 8.000
+
+TextButton_18.Parent = TextButton
+TextButton_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_18.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_18.Position = UDim2.new(0, 0, 2.01000023, 0)
+TextButton_18.Size = UDim2.new(0, 48, 0, 54)
+TextButton_18.Font = Enum.Font.SourceSans
+TextButton_18.Text = ""
+TextButton_18.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_18.TextSize = 8.000
+
+TextButton_19.Parent = TextButton
+TextButton_19.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_19.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_19.Position = UDim2.new(0.989000261, 0, 2.01000023, 0)
+TextButton_19.Size = UDim2.new(0, 49, 0, 54)
+TextButton_19.Font = Enum.Font.SourceSans
+TextButton_19.Text = ""
+TextButton_19.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_19.TextSize = 8.000
+
+TextButton_20.Parent = TextButton
+TextButton_20.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_20.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_20.Position = UDim2.new(1.9890002, 0, 2.01000023, 0)
+TextButton_20.Size = UDim2.new(0, 49, 0, 54)
+TextButton_20.Font = Enum.Font.SourceSans
+TextButton_20.Text = ""
+TextButton_20.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_20.TextSize = 7.000
+TextButton_20.Font = Enum.Font.Ubuntu
+
+TextButton_21.Parent = TextButton
+TextButton_21.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_21.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_21.Position = UDim2.new(3.98900032, 0, 2.01000023, 0)
+TextButton_21.Size = UDim2.new(0, 49, 0, 54)
+TextButton_21.Font = Enum.Font.SourceSans
+TextButton_21.Text = ""
+TextButton_21.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_21.TextSize = 7.000
+TextButton_21.Font = Enum.Font.Ubuntu
+
+TextButton_22.Parent = TextButton
+TextButton_22.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_22.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_22.Position = UDim2.new(4.98900032, 0, 2.01000023, 0)
+TextButton_22.Size = UDim2.new(0, 49, 0, 54)
+TextButton_22.Font = Enum.Font.SourceSans
+TextButton_22.Text = ""
+TextButton_22.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_22.TextSize = 7.000
+TextButton_22.Font = Enum.Font.Ubuntu
+
+TextButton_23.Parent = TextButton
+TextButton_23.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_23.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_23.Position = UDim2.new(5.98900032, 0, 2.01000023, 0)
+TextButton_23.Size = UDim2.new(0, 49, 0, 54)
+TextButton_23.Font = Enum.Font.SourceSans
+TextButton_23.Text = ""
+TextButton_23.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_23.TextSize = 7.000
+TextButton_23.Font = Enum.Font.Ubuntu
+
+TextButton_24.Parent = TextButton
+TextButton_24.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_24.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_24.Position = UDim2.new(6.98899984, 0, 2.01000023, 0)
+TextButton_24.Size = UDim2.new(0, 50, 0, 54)
+TextButton_24.Font = Enum.Font.SourceSans
+TextButton_24.Text = ""
+TextButton_24.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_24.TextSize = 7.000
+TextButton_24.Font = Enum.Font.Ubuntu
+
+TextButton_25.Parent = TextButton
+TextButton_25.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_25.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_25.Position = UDim2.new(5.98900032, 0, 3.01000023, 0)
+TextButton_25.Size = UDim2.new(0, 49, 0, 54)
+TextButton_25.Font = Enum.Font.SourceSans
+TextButton_25.Text = ""
+TextButton_25.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_25.TextSize = 7.000
+TextButton_25.Font = Enum.Font.Ubuntu
+
+TextButton_26.Parent = TextButton
+TextButton_26.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_26.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_26.Position = UDim2.new(4.98900032, 0, 3.01000023, 0)
+TextButton_26.Size = UDim2.new(0, 49, 0, 54)
+TextButton_26.Font = Enum.Font.SourceSans
+TextButton_26.Text = ""
+TextButton_26.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_26.TextSize = 7.000
+TextButton_26.Font = Enum.Font.Ubuntu
+
+TextButton_27.Parent = TextButton
+TextButton_27.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_27.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_27.Position = UDim2.new(6.98899984, 0, 3.01000023, 0)
+TextButton_27.Size = UDim2.new(0, 50, 0, 54)
+TextButton_27.Font = Enum.Font.SourceSans
+TextButton_27.Text = ""
+TextButton_27.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_27.TextSize = 7.000
+TextButton_27.Font = Enum.Font.Ubuntu
+
+TextButton_28.Parent = TextButton
+TextButton_28.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_28.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_28.Position = UDim2.new(3.98900032, 0, 3.01000023, 0)
+TextButton_28.Size = UDim2.new(0, 49, 0, 54)
+TextButton_28.Font = Enum.Font.SourceSans
+TextButton_28.Text = ""
+TextButton_28.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_28.TextSize = 7.000
+TextButton_28.Font = Enum.Font.Ubuntu
+
+TextButton_29.Parent = TextButton
+TextButton_29.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_29.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_29.Position = UDim2.new(1.9890002, 0, 3.01000023, 0)
+TextButton_29.Size = UDim2.new(0, 49, 0, 54)
+TextButton_29.Font = Enum.Font.SourceSans
+TextButton_29.Text = ""
+TextButton_29.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_29.TextSize = 7.000
+TextButton_29.Font = Enum.Font.Ubuntu
+
+TextButton_30.Parent = TextButton
+TextButton_30.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_30.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_30.Position = UDim2.new(0.989000261, 0, 3.01000023, 0)
+TextButton_30.Size = UDim2.new(0, 49, 0, 54)
+TextButton_30.Font = Enum.Font.SourceSans
+TextButton_30.Text = ""
+TextButton_30.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_30.TextSize = 7.000
+TextButton_30.Font = Enum.Font.Ubuntu
+
+TextButton_31.Parent = TextButton
+TextButton_31.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_31.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_31.Position = UDim2.new(0, 0, 3.01000023, 0)
+TextButton_31.Size = UDim2.new(0, 48, 0, 54)
+TextButton_31.Font = Enum.Font.SourceSans
+TextButton_31.Text = ""
+TextButton_31.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_31.TextSize = 7.000
+TextButton_31.Font = Enum.Font.Ubuntu
+
+TextButton_32.Parent = TextButton
+TextButton_32.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_32.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_32.Position = UDim2.new(2.98900032, 0, 3.01000023, 0)
+TextButton_32.Size = UDim2.new(0, 49, 0, 54)
+TextButton_32.Font = Enum.Font.SourceSans
+TextButton_32.Text = ""
+TextButton_32.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_32.TextSize = 7.000
+TextButton_32.Font = Enum.Font.Ubuntu
+
+TextButton_33.Parent = TextButton
+TextButton_33.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_33.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_33.Position = UDim2.new(2.98900032, 0, 4.01000023, 0)
+TextButton_33.Size = UDim2.new(0, 49, 0, 54)
+TextButton_33.Font = Enum.Font.SourceSans
+TextButton_33.Text = ""
+TextButton_33.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_33.TextSize = 7.000
+TextButton_33.Font = Enum.Font.Ubuntu
+
+TextButton_34.Parent = TextButton
+TextButton_34.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_34.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_34.Position = UDim2.new(1.9890002, 0, 4.01000023, 0)
+TextButton_34.Size = UDim2.new(0, 49, 0, 54)
+TextButton_34.Font = Enum.Font.SourceSans
+TextButton_34.Text = ""
+TextButton_34.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_34.TextSize = 7.000
+TextButton_34.Font = Enum.Font.Ubuntu
+
+TextButton_35.Parent = TextButton
+TextButton_35.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_35.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_35.Position = UDim2.new(4.98900032, 0, 4.01000023, 0)
+TextButton_35.Size = UDim2.new(0, 49, 0, 54)
+TextButton_35.Font = Enum.Font.SourceSans
+TextButton_35.Text = ""
+TextButton_35.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_35.TextSize = 7.000
+TextButton_35.Font = Enum.Font.Ubuntu
+
+TextButton_36.Parent = TextButton
+TextButton_36.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_36.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_36.Position = UDim2.new(0.989000261, 0, 4.01000023, 0)
+TextButton_36.Size = UDim2.new(0, 49, 0, 54)
+TextButton_36.Font = Enum.Font.SourceSans
+TextButton_36.Text = ""
+TextButton_36.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_36.TextSize = 7.000
+TextButton_36.Font = Enum.Font.Ubuntu
+
+TextButton_37.Parent = TextButton
+TextButton_37.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_37.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_37.Position = UDim2.new(6.98899984, 0, 4.01000023, 0)
+TextButton_37.Size = UDim2.new(0, 50, 0, 54)
+TextButton_37.Font = Enum.Font.SourceSans
+TextButton_37.Text = ""
+TextButton_37.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_37.TextSize = 7.000
+TextButton_37.Font = Enum.Font.Ubuntu
+
+TextButton_38.Parent = TextButton
+TextButton_38.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_38.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_38.Position = UDim2.new(0, 0, 4.01000023, 0)
+TextButton_38.Size = UDim2.new(0, 48, 0, 54)
+TextButton_38.Font = Enum.Font.SourceSans
+TextButton_38.Text = ""
+TextButton_38.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_38.TextSize = 7.000
+TextButton_38.Font = Enum.Font.Ubuntu
+
+TextButton_39.Parent = TextButton
+TextButton_39.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_39.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_39.Position = UDim2.new(3.98900032, 0, 4.01000023, 0)
+TextButton_39.Size = UDim2.new(0, 49, 0, 54)
+TextButton_39.Font = Enum.Font.SourceSans
+TextButton_39.Text = ""
+TextButton_39.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_39.TextSize = 7.000
+TextButton_39.Font = Enum.Font.Ubuntu
+
+TextButton_40.Parent = TextButton
+TextButton_40.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_40.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_40.Position = UDim2.new(5.98900032, 0, 4.01000023, 0)
+TextButton_40.Size = UDim2.new(0, 49, 0, 54)
+TextButton_40.Font = Enum.Font.SourceSans
+TextButton_40.Text = ""
+TextButton_40.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_40.TextSize = 7.000
+TextButton_40.Font = Enum.Font.Ubuntu
+
+Frame.Parent = TextButton
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, -0.581481636, 0)
+Frame.Size = UDim2.new(0, 400, 0, 1)
+
+Frame_2.Parent = TextButton
+Frame_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(8, 0, -0.583999932, 0)
+Frame_2.Size = UDim2.new(0, 1, 0, 304)
+
+Frame_3.Parent = TextButton
+Frame_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_3.BorderSizePixel = 0
+Frame_3.Position = UDim2.new(-0.0399999991, 0, -0.584000766, 0)
+Frame_3.Size = UDim2.new(0, 2, 0, 304)
+
+Frame_4.Parent = TextButton
+Frame_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_4.BorderSizePixel = 0
+Frame_4.Position = UDim2.new(-0.0199996941, 0, 5.02962971, 0)
+Frame_4.Size = UDim2.new(0, 401, 0, 1)
+
+-- Scripts:
+
+local function TFSEIUY_fake_script() -- TextButton.Script 
+	local script = Instance.new('Script', TextButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(TFSEIUY_fake_script)()
+local function EXCORGZ_fake_script() -- TextButton_2.Script 
+	local script = Instance.new('Script', TextButton_2)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(EXCORGZ_fake_script)()
+local function BOPAGTF_fake_script() -- TextButton_3.Script 
+	local script = Instance.new('Script', TextButton_3)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(BOPAGTF_fake_script)()
+local function SUQJ_fake_script() -- TextButton_4.Script 
+	local script = Instance.new('Script', TextButton_4)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(SUQJ_fake_script)()
+local function UVIKNOJ_fake_script() -- TextButton_5.Script 
+	local script = Instance.new('Script', TextButton_5)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(UVIKNOJ_fake_script)()
+local function RRBWPAA_fake_script() -- TextButton_6.Script 
+	local script = Instance.new('Script', TextButton_6)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(RRBWPAA_fake_script)()
+local function FQZKL_fake_script() -- TextButton_7.Script 
+	local script = Instance.new('Script', TextButton_7)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(FQZKL_fake_script)()
+local function OHMWNEP_fake_script() -- TextButton_8.Script 
+	local script = Instance.new('Script', TextButton_8)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(OHMWNEP_fake_script)()
+local function MXIGWZN_fake_script() -- TextButton_9.Script 
+	local script = Instance.new('Script', TextButton_9)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(MXIGWZN_fake_script)()
+local function FHIXGIY_fake_script() -- TextButton_10.Script 
+	local script = Instance.new('Script', TextButton_10)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(FHIXGIY_fake_script)()
+local function CUDQAFC_fake_script() -- TextButton_11.Script 
+	local script = Instance.new('Script', TextButton_11)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(CUDQAFC_fake_script)()
+local function JFPISH_fake_script() -- TextButton_12.Script 
+	local script = Instance.new('Script', TextButton_12)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(JFPISH_fake_script)()
+local function OXAJ_fake_script() -- TextButton_13.Script 
+	local script = Instance.new('Script', TextButton_13)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(OXAJ_fake_script)()
+local function IANW_fake_script() -- TextButton_14.Script 
+	local script = Instance.new('Script', TextButton_14)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(IANW_fake_script)()
+local function AGWM_fake_script() -- TextButton_15.Script 
+	local script = Instance.new('Script', TextButton_15)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(AGWM_fake_script)()
+local function YXATITK_fake_script() -- TextButton_16.Script 
+	local script = Instance.new('Script', TextButton_16)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(YXATITK_fake_script)()
+local function LUHZT_fake_script() -- TextButton_17.Script 
+	local script = Instance.new('Script', TextButton_17)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(LUHZT_fake_script)()
+local function AWRNWR_fake_script() -- TextButton_18.Script 
+	local script = Instance.new('Script', TextButton_18)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(AWRNWR_fake_script)()
+local function XTPYLFO_fake_script() -- TextButton_19.Script 
+	local script = Instance.new('Script', TextButton_19)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(XTPYLFO_fake_script)()
+local function AGXTV_fake_script() -- TextButton_20.Script 
+	local script = Instance.new('Script', TextButton_20)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(AGXTV_fake_script)()
+local function PFVH_fake_script() -- TextButton_21.Script 
+	local script = Instance.new('Script', TextButton_21)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(PFVH_fake_script)()
+local function KEOWOQ_fake_script() -- TextButton_22.Script 
+	local script = Instance.new('Script', TextButton_22)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(KEOWOQ_fake_script)()
+local function LYIHD_fake_script() -- TextButton_23.Script 
+	local script = Instance.new('Script', TextButton_23)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(LYIHD_fake_script)()
+local function PVLBWH_fake_script() -- TextButton_24.Script 
+	local script = Instance.new('Script', TextButton_24)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(PVLBWH_fake_script)()
+local function SXIBJJN_fake_script() -- TextButton_25.Script 
+	local script = Instance.new('Script', TextButton_25)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(SXIBJJN_fake_script)()
+local function QZFAOIP_fake_script() -- TextButton_26.Script 
+	local script = Instance.new('Script', TextButton_26)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(QZFAOIP_fake_script)()
+local function MREC_fake_script() -- TextButton_27.Script 
+	local script = Instance.new('Script', TextButton_27)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(MREC_fake_script)()
+local function IOMTMVR_fake_script() -- TextButton_28.Script 
+	local script = Instance.new('Script', TextButton_28)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(IOMTMVR_fake_script)()
+local function XRRN_fake_script() -- TextButton_29.Script 
+	local script = Instance.new('Script', TextButton_29)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(XRRN_fake_script)()
+local function HMBWWO_fake_script() -- TextButton_30.Script 
+	local script = Instance.new('Script', TextButton_30)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(HMBWWO_fake_script)()
+local function MUPPE_fake_script() -- TextButton_31.Script 
+	local script = Instance.new('Script', TextButton_31)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(MUPPE_fake_script)()
+local function KCAA_fake_script() -- TextButton_32.Script 
+	local script = Instance.new('Script', TextButton_32)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(KCAA_fake_script)()
+local function BOJS_fake_script() -- TextButton_33.Script 
+	local script = Instance.new('Script', TextButton_33)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(BOJS_fake_script)()
+local function OSKIS_fake_script() -- TextButton_34.Script 
+	local script = Instance.new('Script', TextButton_34)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(OSKIS_fake_script)()
+local function FWCPCC_fake_script() -- TextButton_35.Script 
+	local script = Instance.new('Script', TextButton_35)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(FWCPCC_fake_script)()
+local function HYGET_fake_script() -- TextButton_36.Script 
+	local script = Instance.new('Script', TextButton_36)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(HYGET_fake_script)()
+local function WLMT_fake_script() -- TextButton_37.Script 
+	local script = Instance.new('Script', TextButton_37)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(WLMT_fake_script)()
+local function OEEWMX_fake_script() -- TextButton_38.Script 
+	local script = Instance.new('Script', TextButton_38)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(OEEWMX_fake_script)()
+local function DVDG_fake_script() -- TextButton_39.Script 
+	local script = Instance.new('Script', TextButton_39)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(DVDG_fake_script)()
+local function UHGYCJ_fake_script() -- TextButton_40.Script 
+	local script = Instance.new('Script', TextButton_40)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+				tool2.Parent = owner.Character
+				script.Parent.Text = ""		end
+		end
+		if tool then
+			if not tool2 then
+				print(tool2)
+				tool.Parent = script.Parent
+				script.Parent.Text = tool.Name
+			end
+		end
+	end)
+end
+coroutine.wrap(UHGYCJ_fake_script)()
