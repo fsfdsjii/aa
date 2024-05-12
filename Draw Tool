@@ -57,6 +57,7 @@ while task.wait(0.1) do
 	if owner.PZZR.Value == true then
 		owner.PZZ.Transparency = math.random(0, 1)
 		owner.PZ.OnServerEvent:Connect(function(me, hit, targ)
+                        if targ then
 			if targ.Name ~= "Hii" then
 if debounce == true then
 debounce = false
@@ -76,6 +77,7 @@ task.wait(0.005)
 debounce = true
                                 end
 			end
+                     end
 		end)
 	end
-end
+     end
