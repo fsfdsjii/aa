@@ -1,0 +1,59 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local TextButton = Instance.new("TextButton")
+local ImageLabel = Instance.new("ImageLabel")
+
+--Properties:
+
+ScreenGui.Parent = owner.PlayerGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextButton.Parent = ScreenGui
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.14882943, 0, 0.156108603, 0)
+TextButton.Size = UDim2.new(0, 107, 0, 101)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Equip Tool Then Save Here."
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+
+ImageLabel.Parent = TextButton
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.588785052, 0, 0, 0)
+ImageLabel.Size = UDim2.new(0, 44, 0, 39)
+ImageLabel.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+-- Scripts:
+
+local function QHJW_fake_script() -- TextButton.Script 
+	local script = Instance.new('Script', TextButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		tool = owner.Character:FindFirstChildOfClass('Tool')
+		tool2 = script.Parent:FindFirstChildOfClass('Tool')
+		if tool2 then
+			if not tool then
+			tool2.Parent = owner.Character
+			script.Parent.Text = "Equip Tool Then Save Here."
+			script.Parent.ImageLabel.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+			end
+		end
+		if tool then
+		if not tool2 then
+			print(tool2)
+			tool.Parent = script.Parent
+			script.Parent.Text = tool.Name
+			script.Parent.ImageLabel.Image = tool.TextureId
+			end
+		end
+	end)
+end
+coroutine.wrap(QHJW_fake_script)()
