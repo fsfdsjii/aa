@@ -1,0 +1,108 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Script3 = Instance.new("Script")
+Tool0.Name = "Grab"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0, -0.750730515, 0.286657333, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(0, -0.7507305145263672, 0.28665733337402344)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-7.74179935, 42.2615051, -47.8951111, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(-7.741799354553223, 42.261505126953125, -47.895111083984375)
+Part1.Color = Color3.new(0.0156863, 0.67451, 0.541176)
+Part1.Size = Vector3.new(1, 1, 1)
+Part1.BrickColor = BrickColor.new("Bright bluish green")
+Part1.brickColor = BrickColor.new("Bright bluish green")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxassetid://10109600266"
+SpecialMesh2.Scale = Vector3.new(0.10000000149011612, 0.10000000149011612, 0.10000000149011612)
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Script3.Parent = Tool0
+grabp = Instance.new("RemoteEvent",Tool0)
+grabp.Name = "grabp"
+table.insert(cors,sandbox(Script3,function()
+	joke = Instance.new("ObjectValue")
+	joke.Value = nil 
+	NLS([[grabp=script.Parent.grabp
+
+grabp.OnClientEvent:Connect(function(me)
+grabp:FireServer(owner:GetMouse().Target)
+end)]],owner.PlayerGui).Parent = script.Parent
+	ra = owner.Character:FindFirstChild('Right Arm')
+	rh = owner.Character.Parent:FindFirstChild('RightHand')
+	if ra then
+		script.Parent.Handle.Color = ra.Color
+	elseif rh then
+		script.Parent.Handle.Color = rh.Color
+	end
+	--print("ee")
+	grabp.OnServerEvent:Connect(function(me, targ)
+		--print("ee")
+		if joke.Value == nil then
+			if targ.Parent.Parent.ClassName ~= "Model" and targ.Parent.ClassName ~= "Model"  then
+				--print("r")
+				targ.CFrame = script.Parent.Handle.CFrame
+			elseif targ.Parent.ClassName == "Model" and targ.Parent.Parent.ClassName ~= "Model" then
+				task.wait(0.05)
+				if not game:GetService('Players'):GetPlayerFromCharacter(targ.Parent) then
+					targ.Parent:PivotTo(script.Parent.Handle:GetPivot())
+				else
+					targ.CFrame = script.Parent.Handle.CFrame
+					targ.Parent:MoveTo(script.Parent.Handle.Position)
+				end
+			elseif targ.Parent.Parent.ClassName == "Model"  then
+				task.wait(0.05)
+				targ.Parent.Parent:PivotTo(script.Parent.Handle:GetPivot())
+				end
+		weldc = Instance.new("WeldConstraint",script.Parent.Handle)
+		weldc.Part0 = script.Parent.Handle
+		weldc.Part1 = targ
+			if targ.Anchored == true then
+				targ.Anchored = false
+				joke.Name = owner.Name
+			end
+		joke.Value = weldc
+		elseif joke.Value ~= nil then
+			if joke.Name == owner.Name then
+				joke.Value.Part1.Anchored = true
+				joke.Value.Part1.Velocity = Vector3.new()
+				joke.Value.Part1.RotVelocity = Vector3.new()
+				joke.Name = "Value"
+			end
+			joke.Value:Destroy()
+			joke.Value = nil
+		end
+	end)
+	script.Parent.Activated:Connect(function()
+		grabp:FireClient(owner)
+	end)
+	
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
