@@ -55,22 +55,25 @@ end)]],owner.PlayerGui).Parent = script.Parent
 	end
 	--print("ee")
 	grabp.OnServerEvent:Connect(function(me, targ)
+ch = script.Parent.Handle.CFrame+Vector3.new(0,0.5,0)
+cv3 = script.Parent.Handle.Position+Vector3.new(0,0.5,0)
+ct=script.Parent.Handle:GetPivot()+Vector3.new(0,0.5,0)
 		--print("ee")
 		if joke.Value == nil then
 			if targ.Parent.Parent.ClassName ~= "Model" and targ.Parent.ClassName ~= "Model"  then
 				--print("r")
-				targ.CFrame = script.Parent.Handle.CFrame
+				targ.CFrame = ch
 			elseif targ.Parent.ClassName == "Model" and targ.Parent.Parent.ClassName ~= "Model" then
 				task.wait(0.05)
 				if not game:GetService('Players'):GetPlayerFromCharacter(targ.Parent) then
-					targ.Parent:PivotTo(script.Parent.Handle:GetPivot())
+					targ.Parent:PivotTo(ct)
 				else
-					targ.CFrame = script.Parent.Handle.CFrame
-					targ.Parent:MoveTo(script.Parent.Handle.Position)
+					targ.CFrame = ch
+					targ.Parent:MoveTo(cv3)
 				end
 			elseif targ.Parent.Parent.ClassName == "Model"  then
 				task.wait(0.05)
-				targ.Parent.Parent:PivotTo(script.Parent.Handle:GetPivot())
+				targ.Parent.Parent:PivotTo(ct)
 				end
 		weldc = Instance.new("WeldConstraint",script.Parent.Handle)
 		weldc.Part0 = script.Parent.Handle
