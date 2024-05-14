@@ -1,0 +1,144 @@
+tool = Instance.new("Tool",owner.Backpack)
+tool.Name = "Place Camera"
+tool.RequiresHandle = false
+mode = 1
+mhit = false
+Instance.new("RemoteEvent",tool).Name = "came"
+came = tool.came
+nok = Instance.new("ObjectValue")
+kgh = Instance.new("Vector3Value")
+lkj = Instance.new("Vector3Value")
+--lkj2 = Instance.new("StringValue")
+NLS([[tool = script.Parent
+came = tool.came
+
+came.OnClientEvent:Connect(function(v,p,t)
+if t == 1 then
+workspace.CurrentCamera[v] = p
+elseif v == 2 then
+came:FireServer(workspace.CurrentCamera.CFrame)
+elseif v == 3 then
+came:FireServer("l",owner:GetMouse().Hit, owner:GetMouse().TargetSurface)
+end
+end)
+]],owner.PlayerGui).Parent = tool
+came.OnServerEvent:Connect(function(me, cframex, hi, ts)
+	if me ~= owner then
+		script:Destroy()
+	end
+	if cframex == "l" then
+		--print(cframex)
+		if ts == Enum.NormalId.Top then
+		halfh = (nok.Value.Size/2).Y
+			lkj.Value = hi.Position+Vector3.new(0, halfh+2.5, 0)
+			nok.Value.Position = hi.Position
+		elseif  ts == Enum.NormalId.Left or ts == Enum.NormalId.Right or ts == Enum.NormalId.Back or ts == Enum.NormalId.Front then
+			for t,v in next, workspace:GetPartBoundsInBox(nok.Value.CFrame, nok.Value.Size/1.5) do
+				if t == 2 or t > 2 then
+				if v ~= nil then
+					halfh = (nok.Value.Size/2).Y
+					lkj.Value = hi.Position+Vector3.new(0, halfh+2.5, 0)
+				else
+					lkj.Value = hi.Position
+					end
+				end
+			end
+		end
+		
+		
+	end
+	if mode == 2 then
+		if cframex.Rotation ~= nil then
+			for i = 1,5 do 
+				nok.Value.CFrame = cframex.Rotation
+			end
+			end
+		if  cframex ~=  "l" then
+			if mhit == false then
+				nok.Value.Position = kgh.Value	
+			else
+				nok.Value.Position = lkj.Value
+			end
+		end
+	end
+end)
+game:GetService('RunService').Heartbeat:Connect(function()
+	if nok.Value ~= nil then
+		if mode == 2 then
+			for i = 1,10 do 
+				came:FireClient(owner, 2)
+			end
+		end
+	end
+end)
+tool.Activated:Connect(function()
+	if mode == 1 then
+		mode = 2
+		kgh.Value = owner.Character.HumanoidRootPart.Position
+		came:FireClient(owner, 2)
+		function sandbox(var,func)
+			local env = getfenv(func)
+			local newenv = setmetatable({},{
+				__index = function(self,k)
+					if k=="script" then
+						return var
+					else
+						return env[k]
+					end
+				end,
+			})
+			setfenv(func,newenv)
+			return func
+		end
+		cors = {}
+		mas = Instance.new("Model",game:GetService("Lighting"))
+		Model0 = Instance.new("Model")
+		Part1 = Instance.new("Part")
+		SpecialMesh2 = Instance.new("SpecialMesh")
+		Model0.Parent = mas
+		Part1.Name = "Meshes/camera"
+		Part1.Parent = Model0
+		Part1.Anchored = true
+		nok.Value = Part1
+		--Part1.CFrame = cframe.Rotation
+		if mhit == false then
+			Part1.Position = owner.Character.HumanoidRootPart.Position
+		elseif mhit == true then
+			for i = 1,10 do
+				came:FireClient(owner, 3)
+			end
+		--	print(lkj.Value)
+				Part1.Position = lkj.Value
+		end
+		Part1.Size = Vector3.new(3.25, 3.25, 3.25)
+		SpecialMesh2.Parent = Part1
+		SpecialMesh2.MeshId = "rbxassetid://6318473385"
+		SpecialMesh2.Scale = Vector3.new(0.23100000619888306, 0.18000000596046448, 0.125)
+		SpecialMesh2.TextureId = "rbxassetid://6318473492"
+		SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+		for i,v in pairs(mas:GetChildren()) do
+			v.Parent = script
+			pcall(function() v:MakeJoints() end)
+		end
+		mas:Destroy()
+		for i,v in pairs(cors) do
+			spawn(function()
+				pcall(v)
+			end)
+		end
+		came:FireClient(owner, "CameraSubject", Part1,1)
+	elseif mode == 2 then
+		mode = 1
+		nok.Value:Destroy()
+		came:FireClient(owner, "CameraSubject", owner.Character.Humanoid,1)
+	end
+end)
+
+owner.Chatted:Connect(function(t)
+	if t == "-togglehit" then
+		mhit = not mhit
+	end
+end)
+
+print([[Say -togglehit to toggle
+if the camera spawns on mouse hit or not]])
