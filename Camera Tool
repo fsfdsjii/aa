@@ -64,12 +64,13 @@ came.OnServerEvent:Connect(function(me, cframex, hi, ts)
 		end
 	end
 end)
-game:GetService('RunService').Heartbeat:Connect(function()
-task.wait(0.01)
+task.spawn(function()
+while task.wait(0.02) do
 	if nok.Value ~= nil then
 		if mode == 2 then
 			for i = 1,10 do 
 				came:FireClient(owner, 2)
+                               end
 			end
 		end
 	end
