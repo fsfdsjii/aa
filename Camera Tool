@@ -33,7 +33,8 @@ came.OnServerEvent:Connect(function(me, cframex, hi, ts)
 			lkj.Value = hi.Position+Vector3.new(0, halfh+2.5, 0)
 			nok.Value.Position = hi.Position
 		elseif  ts == Enum.NormalId.Left or ts == Enum.NormalId.Right or ts == Enum.NormalId.Back or ts == Enum.NormalId.Front then
-			for t,v in next, workspace:GetPartBoundsInBox(nok.Value.CFrame, nok.Value.Size/1.5) do
+			for t,v in next, workspace:GetPartBoundsInBox(nok.Value.CFrame, nok.Value.Size/1.25) do
+--print(t)
 				if t == 2 or t > 2 then
 				if v ~= nil then
 					halfh = (nok.Value.Size/2).Y
@@ -41,10 +42,11 @@ came.OnServerEvent:Connect(function(me, cframex, hi, ts)
 				else
 					lkj.Value = hi.Position
 					end
-				end
-			end
+                       else
+			lkj.Value = hi.Position
+                        end
+                      end
 		end
-		
 		
 	end
 	if mode == 2 then
@@ -63,6 +65,7 @@ came.OnServerEvent:Connect(function(me, cframex, hi, ts)
 	end
 end)
 game:GetService('RunService').Heartbeat:Connect(function()
+task.wait(0.01)
 	if nok.Value ~= nil then
 		if mode == 2 then
 			for i = 1,10 do 
