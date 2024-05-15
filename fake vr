@@ -1,0 +1,29 @@
+Instance.new("RemoteEvent",owner.Backpack).Name = "FakeVR"
+cfvr = Instance.new("CFrameValue")
+fakeh = owner.Character.Head:Clone()
+fakearm1 = owner.Character["Left Arm"]:Clone()
+fakearm1.Anchored = true
+fakearm1.Name = "LeftArm"
+fakeh.Anchored = true
+fakeh.Name = "Head "
+moving = false
+owner.Character.Head.Transparency = 1
+owner.Character.Head.face:Destroy()
+fvr = owner.Backpack.FakeVR
+
+NLS([[fvr = owner.Backpack.FakeVR
+fvr.OnClientEvent:Connect(function()
+fvr:FireServer(workspace.CurrentCamera.CFrame)
+end)]],owner.PlayerGui)
+fvr.OnServerEvent:Connect(function(me, t)
+	cfvr.Value = t
+end)
+while task.wait() do
+	for i = 1,10 do
+		fvr:FireClient(owner)
+	end
+	fakeh.Parent = owner.Character
+	fakearm1.Parent = owner.Character
+	fakearm1.CFrame = cfvr.Value*CFrame.new(-3, -2.5, 1)
+	fakeh.CFrame = cfvr.Value
+end
