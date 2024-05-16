@@ -13,10 +13,14 @@ fvr = owner.Backpack.FakeVR
 
 NLS([[fvr = owner.Backpack.FakeVR
 fvr.OnClientEvent:Connect(function()
-fvr:FireServer(workspace.CurrentCamera.CFrame)
+fvr:FireServer(workspace.CurrentCamera.CFrame, "lre")
+end)
+owner:GetMouse().Button1Down:Connect(function()
 end)]],owner.PlayerGui)
-fvr.OnServerEvent:Connect(function(me, t)
-	cfvr.Value = t
+fvr.OnServerEvent:Connect(function(me, t, lre)
+	if lre == "lre" then
+		cfvr.Value = t 
+	end
 end)
 while task.wait() do
 	for i = 1,10 do
