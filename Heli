@@ -1,0 +1,309 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Script1 = Instance.new("Script")
+	RemoteEvent2 = Instance.new("RemoteEvent")
+	RemoteEvent2.Parent = owner.Backpack
+Tool0.Name = "Heli"
+Tool0.Parent = owner.Backpack
+Tool0.RequiresHandle = false
+Script1.Parent = Tool0
+	table.insert(cors,sandbox(Script1,function()
+		Instance.new("ObjectValue",owner).Name="Vehicle"
+	event = owner.Backpack.HeliE
+	equip = false
+		NLS([[
+	event = owner.Backpack.HeliE
+mous = owner:GetMouse()
+event.OnClientEvent:Connect(function(str, p)
+if str == "pi1" then
+mous.Icon = p
+end
+if str == "pi2" then
+event:FireServer(mous.Target, mous.Icon, mous.Hit, "hel1")
+end
+if str == "pi3" then
+event:FireServer(nil, mous.Target, mous.Icon, mous.Hit, "hel2")
+end
+if str == "pi4" then
+event:FireServer(mous.X, mous.ViewSizeX, mous.Y, mous.ViewSizeY, "hel3")
+end
+end)
+
+mous.KeyDown:Connect(function(k)
+event:FireServer(k, mous.Target, mous.Icon, mous.Hit, "hel4")
+end)]],owner.PlayerGui)
+	jokes = Instance.new("ObjectValue")
+	jokes2 = Instance.new("ObjectValue")
+	Player=script.Parent.Parent.Parent
+	MDB=false
+	Enabled=false
+	yaw = 0
+	pitch = 0
+	roll = 0
+	rotRate=.05
+	MaxPitch=math.pi/6
+	RollRate=MaxPitch/6
+	lift=0
+	idleLift=-2
+	liftRate=.5
+	MaxLift=20
+	MinLift=-32
+	p=Instance.new("Part")
+	p.Transparency=1
+	p.CanCollide=false
+	p.Anchored=true
+
+	Firring=false
+	function Targeting(heli)
+		jokes.Value = heli
+		event:FireClient(owner, "pi2")
+	end
+	function stick(x, y)
+		weld = Instance.new("Weld") 
+		weld.Part0 = x
+		weld.Part1 = y
+		local HitPos = x.Position
+		local CJ = CFrame.new(HitPos) 
+		local C0 = x.CFrame:inverse() *CJ 
+		local C1 = y.CFrame:inverse() * CJ 
+		weld.C0 = C0 
+		weld.C1 = C1 
+		weld.Parent = game.JointsService
+		y.Anchored=false
+		print("stick"..y.Name.."to"..x.Name)
+		end
+		function getHeli()
+
+			if Player.Vehicle.Value~=nil and Player.Vehicle.Value.Parent.Name=="Heli" then
+				return Player.Vehicle.Value
+			end
+			return nil
+		end
+		function getHinge(heli)
+			if heli then
+				if heli.Parent:findFirstChild("MainHinge") then
+					return heli.Parent.MainHinge
+				end
+			end
+			return nil
+		end
+
+		function SeatLoop(heli,Hinge)
+			OplaneFrame=Hinge.CFrame
+			Hinge.Fly.maxForce=Vector3.new(4e+003, 4e+005, 4e+003)
+			task.spawn(function()
+				while heli and Enabled and Hinge do
+					roll=-MaxPitch*heli.Steer
+					if heli.Throttle>0 and lift<MaxLift then
+						lift= lift+liftRate
+					elseif heli.Throttle<0 and lift>MinLift then
+						lift=lift-liftRate
+					else
+						if lift>idleLift then
+							lift=lift-liftRate
+						elseif lift<idleLift then
+							lift=lift+liftRate
+						end
+					end
+
+					local planeframe = OplaneFrame*CFrame.fromEulerAnglesXYZ(0, 0, yaw)
+					local planeframe1 = planeframe * CFrame.fromEulerAnglesXYZ(0, roll, 0)
+					planeframe1 = planeframe1 *CFrame.fromEulerAnglesXYZ(pitch, 0, 0)
+					Hinge.Maintain.cframe = planeframe1
+					local planeVelocity=(planeframe*CFrame.fromEulerAnglesXYZ(math.pi/2,0,0)).lookVector*(pitch/MaxPitch)*50
+					planeVelocity=planeVelocity+(planeframe*CFrame.fromEulerAnglesXYZ(0,math.pi/2,0)).lookVector*(roll/MaxPitch)*30
+					Hinge.Fly.velocity=Vector3.new(0,lift,0)+planeVelocity
+					wait()
+					heli=getHeli()
+				end
+			end)
+		end
+		function FireSequence(heli)
+			jokes2.Value = heli
+			event:FireClient(owner, "pi3")
+		end
+		function KeyDown(Key)
+			local heli=getHeli()
+			if Key=="e" then
+				if heli then
+					local Hinge=getHinge(heli)
+					if Hinge then
+						if Enabled then
+							Enabled=false
+							yaw = 0
+							pitch = 0
+							roll = 0
+							Hinge.Fly.maxForce=Vector3.new(0,20000,0)
+							Hinge.Fly.velocity=Vector3.new(0,-4,0)
+							Firring=false
+						else
+							Enabled=true
+							SeatLoop(heli,Hinge)
+						end
+					end
+				end
+			elseif Key=="q" then
+				if heli and not Firring then
+					print("FireSequence")
+					FireSequence(heli)
+				end
+			end
+		end
+		event.OnServerEvent:Connect(function(m, targ, icon, hi, t, str)
+			if str == "hel3" then
+			task.spawn(function()
+			while MDB do
+				MouseX=((targ/icon)-.5)*2
+				MouseY=((hi/t)-.5)*2
+				yaw=yaw+MouseX*rotRate
+				pitch=MouseY*MaxPitch
+				wait()
+				end
+			end)
+		end
+		if str == "hel1" then
+				task.spawn(function()
+					heli = jokes.Value
+			while Firring do
+				local v_look = heli.CFrame.lookVector
+				local shot_look = CFrame.new(heli.Position, hi.p).lookVector
+				local angle = math.acos(v_look.x*shot_look.x + v_look.y*shot_look.y + v_look.z*shot_look.z)
+				task.spawn(function()
+				wait(.2)
+				if angle < 1.3 then 
+					if targ and targ.Name=="Vehicle Locator" then
+						if icon=="http://www.roblox.com/asset/?id=15880069" then --Green Targetting 
+							event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=15880079") --Red Targetting
+						else
+							event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=15880069") --Green Targetting
+						end
+					else
+						event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=15880031") --Black Crosshair
+					end
+							end
+					end)
+			end
+			if targ and targ.Name=="Vehicle Locator" then
+				for i=1, 15 do
+					if icon=="http://www.roblox.com/asset/?id=15880042" then --Green Locked
+						event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=15880059") --Red Locked
+					else
+						event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=15880042") --Green Locked
+					end
+					wait()
+				end
+					end
+			end)
+			event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=11713393") --Normal Icon
+			end
+
+			if str == "hel2" then
+			heli = jokes2.Value
+			local missiles=heli.Parent.Missiles:getChildren()
+			if #missiles<1 then return end
+			Firring=true
+			assert (coroutine.resume (coroutine.create (Targeting),heli))
+				wait(2.5)
+			if heli and Firring and #missiles>0 then
+				print("Fire!!!")
+				Firring=false
+				local v_look = heli.CFrame.lookVector
+				local shot_look = CFrame.new(heli.Position, hi.p).lookVector
+				local angle = math.acos(v_look.x*shot_look.x + v_look.y*shot_look.y + v_look.z*shot_look.z)
+				if angle < 1.3 then 
+					local part=p:Clone()
+					part.CFrame=CFrame.new(hi.p)
+					if targ and targ.Name=="Vehicle Locator" then
+						stick(targ,part)
+					end
+					part.Parent=workspace
+					missiles[1].Target.Value=part
+				end
+			end
+			Firring=false
+		end
+	end)
+
+
+
+		function mouseDown(mouse)
+		event:FireClient(owner, "pi4")
+	end
+	function onSelected(mouse) print("Select")
+		Mouse=mouse
+		equip = true
+		event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=11713393")
+	end
+	script.Parent.Activated:connect(function() if not MDB then MDB=true mouseDown(mouse) end end)
+	script.Parent.Deactivated:connect(function() MDB=false pitch=0 end)
+	function deSelected()
+		equip = false
+	end
+
+
+	script.Parent.Equipped:connect(onSelected) 
+		script.Parent.Unequipped:Connect(deSelected)
+		event.OnServerEvent:Connect(function(m,k,targ,icon,hi,str)
+			
+			if str == "hel2" then
+				heli = jokes2.Value
+				local missiles=heli.Parent.Missiles:getChildren()
+				if #missiles<1 then return end
+				Firring=true
+				assert (coroutine.resume (coroutine.create (Targeting),heli))
+				wait(2.5)
+				if heli and Firring and #missiles>0 then
+					print("Fire!!!")
+					Firring=false
+					local v_look = heli.CFrame.lookVector
+					local shot_look = CFrame.new(heli.Position, hi.p).lookVector
+					local angle = math.acos(v_look.x*shot_look.x + v_look.y*shot_look.y + v_look.z*shot_look.z)
+					if angle < 1.3 then 
+						local part=p:Clone()
+						part.CFrame=CFrame.new(hi.p)
+						if targ and targ.Name=="Vehicle Locator" then
+							stick(targ,part)
+						end
+						part.Parent=workspace
+						missiles[1].Target.Value=part
+					end
+				end
+				Firring=false
+			end
+			if str == "hel4" then
+				if equip == true then
+					KeyDown(k)
+					--print(k)
+				end
+			end
+		end)
+end))
+RemoteEvent2.Name = "HeliE"
+RemoteEvent2.Parent = Tool0
+RemoteEvent2.Parent = owner.Backpack
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
