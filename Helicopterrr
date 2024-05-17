@@ -1,0 +1,1103 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Model3 = Instance.new("Model")
+Part4 = Instance.new("Part")
+Part5 = Instance.new("Part")
+Part6 = Instance.new("Part")
+Part7 = Instance.new("Part")
+Part8 = Instance.new("Part")
+Part9 = Instance.new("Part")
+Part10 = Instance.new("Part")
+Part11 = Instance.new("Part")
+Part12 = Instance.new("Part")
+Part13 = Instance.new("Part")
+Part14 = Instance.new("Part")
+Part15 = Instance.new("Part")
+Part16 = Instance.new("Part")
+Part17 = Instance.new("Part")
+Part18 = Instance.new("Part")
+Part19 = Instance.new("Part")
+Part20 = Instance.new("Part")
+SpecialMesh21 = Instance.new("SpecialMesh")
+Part22 = Instance.new("Part")
+SpecialMesh23 = Instance.new("SpecialMesh")
+Part24 = Instance.new("Part")
+BodyVelocity25 = Instance.new("BodyVelocity")
+BodyGyro26 = Instance.new("BodyGyro")
+VehicleSeat27 = Instance.new("VehicleSeat")
+Script28 = Instance.new("Script")
+Script29 = Instance.new("Script")
+Part30 = Instance.new("Part")
+Script31 = Instance.new("Script")
+SpecialMesh32 = Instance.new("SpecialMesh")
+Part33 = Instance.new("Part")
+Model34 = Instance.new("Model")
+Part35 = Instance.new("Part")
+BodyVelocity36 = Instance.new("BodyVelocity")
+BodyGyro37 = Instance.new("BodyGyro")
+ObjectValue38 = Instance.new("ObjectValue")
+SpecialMesh39 = Instance.new("SpecialMesh")
+Sound40 = Instance.new("Sound")
+Sound41 = Instance.new("Sound")
+Script42 = Instance.new("Script")
+Part43 = Instance.new("Part")
+BodyVelocity44 = Instance.new("BodyVelocity")
+BodyGyro45 = Instance.new("BodyGyro")
+ObjectValue46 = Instance.new("ObjectValue")
+SpecialMesh47 = Instance.new("SpecialMesh")
+Sound48 = Instance.new("Sound")
+Script49 = Instance.new("Script")
+Sound50 = Instance.new("Sound")
+Part51 = Instance.new("Part")
+BodyVelocity52 = Instance.new("BodyVelocity")
+BodyGyro53 = Instance.new("BodyGyro")
+ObjectValue54 = Instance.new("ObjectValue")
+SpecialMesh55 = Instance.new("SpecialMesh")
+Sound56 = Instance.new("Sound")
+Script57 = Instance.new("Script")
+Sound58 = Instance.new("Sound")
+Model0.Name = "Heli"
+Model0.Parent = mas
+Part1.Name = "Windows"
+Part1.Parent = Model0
+Part1.CFrame = CFrame.new(24.5, 4.5, -382.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(24.5, 4.5, -382.5)
+Part1.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part1.Transparency = 0.4000000059604645
+Part1.Size = Vector3.new(1, 1, 1)
+Part1.Anchored = true
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Bright blue")
+Part1.CanCollide = false
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Bright blue")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/Asset/?ID=12120890"
+SpecialMesh2.Scale = Vector3.new(10, 10, 10)
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Model3.Name = "CollisionFrame"
+Model3.Parent = Model0
+Part4.Name = "Debris"
+Part4.Parent = Model3
+Part4.CFrame = CFrame.new(24.5, 6.40010643, -391.500061, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994)
+Part4.Position = Vector3.new(24.5, 6.400106430053711, -391.50006103515625)
+Part4.Transparency = 1
+Part4.Size = Vector3.new(6, 6, 6)
+Part4.Anchored = true
+Part4.BottomSurface = Enum.SurfaceType.Smooth
+Part4.TopSurface = Enum.SurfaceType.Smooth
+Part4.Shape = Enum.PartType.Ball
+Part5.Name = "Debris"
+Part5.Parent = Model3
+Part5.CFrame = CFrame.new(24.5, 6.40006924, -394.500061, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994)
+Part5.Position = Vector3.new(24.5, 6.400069236755371, -394.50006103515625)
+Part5.Transparency = 1
+Part5.Size = Vector3.new(3, 2, 2)
+Part5.Anchored = true
+Part5.BottomSurface = Enum.SurfaceType.Smooth
+Part5.TopSurface = Enum.SurfaceType.Smooth
+Part6.Name = "Debris"
+Part6.Parent = Model3
+Part6.CFrame = CFrame.new(24.5, 9.70017624, -401.000061, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994)
+Part6.Position = Vector3.new(24.5, 9.700176239013672, -401.00006103515625)
+Part6.Transparency = 1
+Part6.Size = Vector3.new(1, 1, 15)
+Part6.Anchored = true
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part7.Name = "Debris"
+Part7.Parent = Model3
+Part7.CFrame = CFrame.new(24.5, 10.7001667, -390.500061, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994)
+Part7.Position = Vector3.new(24.5, 10.700166702270508, -390.50006103515625)
+Part7.Transparency = 1
+Part7.Size = Vector3.new(2, 2, 4)
+Part7.Anchored = true
+Part7.BottomSurface = Enum.SurfaceType.Smooth
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Part8.Name = "Debris"
+Part8.Parent = Model3
+Part8.CFrame = CFrame.new(21.4330139, 2.16600323, -387.75, 0.49999994, -0.663413942, -0.556670368, 1.69189995e-08, 0.642787576, -0.766044378, 0.866025388, 0.383022189, 0.321393728)
+Part8.Orientation = Vector3.new(50, -60, 0)
+Part8.Position = Vector3.new(21.433013916015625, 2.1660032272338867, -387.75)
+Part8.Rotation = Vector3.new(67.23999786376953, -33.82600021362305, 52.99599838256836)
+Part8.Transparency = 1
+Part8.Size = Vector3.new(1, 0.4000000059604645, 4)
+Part8.Anchored = true
+Part8.BottomSurface = Enum.SurfaceType.Smooth
+Part8.TopSurface = Enum.SurfaceType.Smooth
+Part9.Name = "Debris"
+Part9.Parent = Model3
+Part9.CFrame = CFrame.new(22, 6.90009689, -387.000061, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994)
+Part9.Position = Vector3.new(22, 6.900096893310547, -387.00006103515625)
+Part9.Transparency = 1
+Part9.Size = Vector3.new(1, 6, 5)
+Part9.Anchored = true
+Part9.BottomSurface = Enum.SurfaceType.Smooth
+Part9.TopSurface = Enum.SurfaceType.Smooth
+Part10.Name = "Debris"
+Part10.Parent = Model3
+Part10.CFrame = CFrame.new(27, 6.90009689, -387.000061, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994)
+Part10.Position = Vector3.new(27, 6.900096893310547, -387.00006103515625)
+Part10.Transparency = 1
+Part10.Size = Vector3.new(1, 6, 5)
+Part10.Anchored = true
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.TopSurface = Enum.SurfaceType.Smooth
+Part11.Name = "Debris"
+Part11.Parent = Model3
+Part11.CFrame = CFrame.new(24.5, 5.23393726, -379.5, 1, 0, 0, 0, 0.49999997, 0.866025388, 0, -0.866025388, 0.49999997)
+Part11.Orientation = Vector3.new(-60, 0, 0)
+Part11.Position = Vector3.new(24.5, 5.2339372634887695, -379.5)
+Part11.Rotation = Vector3.new(-60, 0, 0)
+Part11.Transparency = 1
+Part11.Size = Vector3.new(6, 0.4000000059604645, 3)
+Part11.Anchored = true
+Part11.BottomSurface = Enum.SurfaceType.Smooth
+Part11.TopSurface = Enum.SurfaceType.Smooth
+Part12.Name = "Debris"
+Part12.Parent = Model3
+Part12.CFrame = CFrame.new(24.5, 3.69998288, -385, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994)
+Part12.Position = Vector3.new(24.5, 3.6999828815460205, -385)
+Part12.Transparency = 1
+Part12.Size = Vector3.new(6, 0.4000000059604645, 9)
+Part12.Anchored = true
+Part12.BottomSurface = Enum.SurfaceType.Smooth
+Part12.TopSurface = Enum.SurfaceType.Smooth
+Part13.Name = "Debris"
+Part13.Parent = Model3
+Part13.CFrame = CFrame.new(29, 0.699991405, -383, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994)
+Part13.Position = Vector3.new(29, 0.6999914050102234, -383)
+Part13.Transparency = 1
+Part13.Size = Vector3.new(1, 0.4000000059604645, 11)
+Part13.Anchored = true
+Part13.BottomSurface = Enum.SurfaceType.Smooth
+Part13.TopSurface = Enum.SurfaceType.Smooth
+Part14.Name = "Debris"
+Part14.Parent = Model3
+Part14.CFrame = CFrame.new(20, 0.699991405, -383, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994)
+Part14.Position = Vector3.new(20, 0.6999914050102234, -383)
+Part14.Transparency = 1
+Part14.Size = Vector3.new(1, 0.4000000059604645, 11)
+Part14.Anchored = true
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Part15.Name = "Debris"
+Part15.Parent = Model3
+Part15.CFrame = CFrame.new(24.5, 7.60003948, -379, 1, -0, 0, 0, -0.49999997, 0.866025388, 0, -0.866025388, -0.49999997)
+Part15.Orientation = Vector3.new(-60, 180, 180)
+Part15.Position = Vector3.new(24.5, 7.600039482116699, -379)
+Part15.Rotation = Vector3.new(-120, 0, 0)
+Part15.Transparency = 1
+Part15.Size = Vector3.new(4, 0.4000000059604645, 3)
+Part15.Anchored = true
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part16.Name = "Debris"
+Part16.Parent = Model3
+Part16.CFrame = CFrame.new(28, 2.16996956, -381.700012, -0.345993668, -0.797658682, 0.493992746, 0.266746849, -0.588413954, -0.763292074, 0.899518907, -0.132323235, 0.416360468)
+Part16.Orientation = Vector3.new(49.755001068115234, 49.874000549316406, 155.61399841308594)
+Part16.Position = Vector3.new(28, 2.1699695587158203, -381.70001220703125)
+Part16.Rotation = Vector3.new(61.38800048828125, 29.60300064086914, 113.4489974975586)
+Part16.Transparency = 1
+Part16.Size = Vector3.new(1, 0.4000000059604645, 4)
+Part16.Anchored = true
+Part16.BottomSurface = Enum.SurfaceType.Smooth
+Part16.TopSurface = Enum.SurfaceType.Smooth
+Part17.Name = "Debris"
+Part17.Parent = Model3
+Part17.CFrame = CFrame.new(21.4300003, 2.16997433, -382.100006, 0.49999994, -0.663413942, -0.556670368, 1.69189995e-08, 0.642787576, -0.766044378, 0.866025388, 0.383022189, 0.321393728)
+Part17.Orientation = Vector3.new(50, -60, 0)
+Part17.Position = Vector3.new(21.43000030517578, 2.1699743270874023, -382.1000061035156)
+Part17.Rotation = Vector3.new(67.23999786376953, -33.82600021362305, 52.99599838256836)
+Part17.Transparency = 1
+Part17.Size = Vector3.new(1, 0.4000000059604645, 4)
+Part17.Anchored = true
+Part17.BottomSurface = Enum.SurfaceType.Smooth
+Part17.TopSurface = Enum.SurfaceType.Smooth
+Part18.Name = "Debris"
+Part18.Parent = Model3
+Part18.CFrame = CFrame.new(28, 2.16998291, -387.700012, -0.345993668, -0.797658682, 0.493992746, 0.266746849, -0.588413954, -0.763292074, 0.899518907, -0.132323235, 0.416360468)
+Part18.Orientation = Vector3.new(49.755001068115234, 49.874000549316406, 155.61399841308594)
+Part18.Position = Vector3.new(28, 2.16998291015625, -387.70001220703125)
+Part18.Rotation = Vector3.new(61.38800048828125, 29.60300064086914, 113.4489974975586)
+Part18.Transparency = 1
+Part18.Size = Vector3.new(1, 0.4000000059604645, 4)
+Part18.Anchored = true
+Part18.BottomSurface = Enum.SurfaceType.Smooth
+Part18.TopSurface = Enum.SurfaceType.Smooth
+Part19.Name = "TailHinge"
+Part19.Parent = Model0
+Part19.CFrame = CFrame.new(24, 9.80013275, -409.000061, 0, -0, -1, 0.99999994, -0, 0, 0, -0.99999994, 0)
+Part19.Orientation = Vector3.new(0, -90, 90)
+Part19.Position = Vector3.new(24, 9.800132751464844, -409.00006103515625)
+Part19.Rotation = Vector3.new(-90, -90, 0)
+Part19.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part19.Transparency = 1
+Part19.Size = Vector3.new(1, 1, 1)
+Part19.Anchored = true
+Part19.BottomSurface = Enum.SurfaceType.Smooth
+Part19.BrickColor = BrickColor.new("Bright yellow")
+Part19.CanCollide = false
+Part19.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 0, 0, 1, 1)
+Part19.Elasticity = 0
+Part19.Friction = 0
+Part19.TopSurface = Enum.SurfaceType.Smooth
+Part19.brickColor = BrickColor.new("Bright yellow")
+Part20.Name = "TailRotor"
+Part20.Parent = Model0
+Part20.CFrame = CFrame.new(25.2000008, 9.80019379, -409.000031, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994)
+Part20.Position = Vector3.new(25.200000762939453, 9.800193786621094, -409.0000305175781)
+Part20.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part20.Size = Vector3.new(1, 1, 1)
+Part20.Anchored = true
+Part20.BottomSurface = Enum.SurfaceType.Smooth
+Part20.BrickColor = BrickColor.new("Bright yellow")
+Part20.CanCollide = false
+Part20.CustomPhysicalProperties = PhysicalProperties.new(0.699999988, 0, 0, 1, 1)
+Part20.Elasticity = 0
+Part20.Friction = 0
+Part20.TopSurface = Enum.SurfaceType.Smooth
+Part20.brickColor = BrickColor.new("Bright yellow")
+SpecialMesh21.Parent = Part20
+SpecialMesh21.MeshId = "http://www.roblox.com/Asset/?ID=12120940"
+SpecialMesh21.Scale = Vector3.new(10, 10, 10)
+SpecialMesh21.MeshType = Enum.MeshType.FileMesh
+Part22.Name = "Rotor"
+Part22.Parent = Model0
+Part22.CFrame = CFrame.new(24.5, 11.600214, -386.500061, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994)
+Part22.Position = Vector3.new(24.5, 11.600214004516602, -386.50006103515625)
+Part22.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part22.Size = Vector3.new(1, 1, 1)
+Part22.Anchored = true
+Part22.BottomSurface = Enum.SurfaceType.Smooth
+Part22.BrickColor = BrickColor.new("Black")
+Part22.CanCollide = false
+Part22.TopSurface = Enum.SurfaceType.Smooth
+Part22.brickColor = BrickColor.new("Black")
+SpecialMesh23.Parent = Part22
+SpecialMesh23.MeshId = "http://www.roblox.com/Asset/?ID=12120937"
+SpecialMesh23.Offset = Vector3.new(0, 10000, 0)
+SpecialMesh23.Scale = Vector3.new(10, 10, 10)
+SpecialMesh23.MeshType = Enum.MeshType.FileMesh
+Part24.Name = "MainHinge"
+Part24.Parent = Model0
+Part24.CFrame = CFrame.new(24.5, 10.600174, -387.000061, -1, 4.37113989e-08, 4.37113741e-08, -4.37113812e-08, -1.84659726e-07, -0.999999881, -4.37113776e-08, -0.999999881, 1.84659726e-07)
+Part24.Orientation = Vector3.new(90, 180, 0)
+Part24.Position = Vector3.new(24.5, 10.600173950195312, -387.00006103515625)
+Part24.Rotation = Vector3.new(90, 0, 180)
+Part24.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part24.Size = Vector3.new(1, 1, 1)
+Part24.Anchored = true
+Part24.BottomSurface = Enum.SurfaceType.Smooth
+Part24.BrickColor = BrickColor.new("Black")
+Part24.CanCollide = false
+Part24.TopSurface = Enum.SurfaceType.Smooth
+Part24.brickColor = BrickColor.new("Black")
+BodyVelocity25.Name = "Fly"
+BodyVelocity25.Parent = Part24
+BodyVelocity25.MaxForce = Vector3.new(4000, 400000, 4000)
+BodyVelocity25.maxForce = Vector3.new(4000, 400000, 4000)
+BodyVelocity25.Velocity = Vector3.new(0, 0, 0)
+BodyVelocity25.velocity = Vector3.new(0, 0, 0)
+BodyGyro26.Name = "Maintain"
+BodyGyro26.Parent = Part24
+BodyGyro26.MaxTorque = Vector3.new(400000, 400000, 400000)
+BodyGyro26.maxTorque = Vector3.new(400000, 400000, 400000)
+VehicleSeat27.Name = "DriversSeat"
+VehicleSeat27.Parent = Model0
+VehicleSeat27.CFrame = CFrame.new(26.5, 4.49998474, -382.5, -1, 0, -0, 0, 0.99999994, -0, 0, 0, -0.99999994)
+VehicleSeat27.Orientation = Vector3.new(0, 180, 0)
+VehicleSeat27.Position = Vector3.new(26.5, 4.4999847412109375, -382.5)
+VehicleSeat27.Rotation = Vector3.new(180, 0, 180)
+VehicleSeat27.Color = Color3.new(0.294118, 0.592157, 0.294118)
+VehicleSeat27.Size = Vector3.new(2, 1, 2)
+VehicleSeat27.Anchored = true
+VehicleSeat27.BottomSurface = Enum.SurfaceType.Smooth
+VehicleSeat27.BrickColor = BrickColor.new("Bright green")
+VehicleSeat27.TopSurface = Enum.SurfaceType.Smooth
+VehicleSeat27.brickColor = BrickColor.new("Bright green")
+Script28.Name = "SeatScript"
+Script28.Parent = VehicleSeat27
+table.insert(cors,sandbox(Script28,function()
+function added(part)  
+	if (part.Name == "SeatWeld") then  
+	local player = game.Players:GetPlayerFromCharacter(part.Part1.Parent) 
+		if (player~=nil) then  
+		player.Vehicle.Value = script.Parent 
+		end 
+	end 
+end 
+ 
+function removed(part)  
+	if part.Name == "SeatWeld" then  
+	local player = game.Players:GetPlayerFromCharacter(part.Part1.Parent) 
+		if (player~=nil) then  
+		player.Vehicle.Value = nil 
+		end 
+	end 
+end 
+ 
+script.Parent.ChildAdded:connect(added) 
+script.Parent.ChildRemoved:connect(removed)
+end))
+Script29.Parent = VehicleSeat27
+table.insert(cors,sandbox(Script29,function()
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Script1 = Instance.new("Script")
+	RemoteEvent2 = Instance.new("RemoteEvent")
+	RemoteEvent2.Parent = owner.Backpack
+Tool0.Name = "Heli"
+Tool0.Parent = owner.Backpack
+Tool0.RequiresHandle = false
+Script1.Parent = Tool0
+	table.insert(cors,sandbox(Script1,function()
+		Instance.new("ObjectValue",owner).Name="Vehicle"
+	event = owner.Backpack.HeliE
+	equip = false
+		NLS([[
+	event = owner.Backpack.HeliE
+mous = owner:GetMouse()
+event.OnClientEvent:Connect(function(str, p)
+if str == "pi1" then
+mous.Icon = p
+end
+if str == "pi2" then
+event:FireServer(mous.Target, mous.Icon, mous.Hit, "hel1")
+end
+if str == "pi3" then
+event:FireServer(nil, mous.Target, mous.Icon, mous.Hit, "hel2")
+end
+if str == "pi4" then
+event:FireServer(mous.X, mous.ViewSizeX, mous.Y, mous.ViewSizeY, "hel3")
+end
+end)
+
+mous.KeyDown:Connect(function(k)
+event:FireServer(k, mous.Target, mous.Icon, mous.Hit, "hel4")
+end)]],owner.PlayerGui)
+	jokes = Instance.new("ObjectValue")
+	jokes2 = Instance.new("ObjectValue")
+	Player=script.Parent.Parent.Parent
+	MDB=false
+	Enabled=false
+	yaw = 0
+	pitch = 0
+	roll = 0
+	rotRate=.05
+	MaxPitch=math.pi/6
+	RollRate=MaxPitch/6
+	lift=0
+	idleLift=-2
+	liftRate=.5
+	MaxLift=20
+	MinLift=-32
+	p=Instance.new("Part")
+	p.Transparency=1
+	p.CanCollide=false
+	p.Anchored=true
+
+	Firring=false
+	function Targeting(heli)
+		jokes.Value = heli
+		event:FireClient(owner, "pi2")
+	end
+	function stick(x, y)
+		weld = Instance.new("Weld") 
+		weld.Part0 = x
+		weld.Part1 = y
+		local HitPos = x.Position
+		local CJ = CFrame.new(HitPos) 
+		local C0 = x.CFrame:inverse() *CJ 
+		local C1 = y.CFrame:inverse() * CJ 
+		weld.C0 = C0 
+		weld.C1 = C1 
+		weld.Parent = game.JointsService
+		y.Anchored=false
+		print("stick"..y.Name.."to"..x.Name)
+		end
+		function getHeli()
+
+			if Player.Vehicle.Value~=nil and Player.Vehicle.Value.Parent.Name=="Heli" then
+				return Player.Vehicle.Value
+			end
+			return nil
+		end
+		function getHinge(heli)
+			if heli then
+				if heli.Parent:findFirstChild("MainHinge") then
+					return heli.Parent.MainHinge
+				end
+			end
+			return nil
+		end
+
+		function SeatLoop(heli,Hinge)
+			OplaneFrame=Hinge.CFrame
+			Hinge.Fly.maxForce=Vector3.new(4e+003, 4e+005, 4e+003)
+			task.spawn(function()
+				while heli and Enabled and Hinge do
+					roll=-MaxPitch*heli.Steer
+					if heli.Throttle>0 and lift<MaxLift then
+						lift= lift+liftRate
+					elseif heli.Throttle<0 and lift>MinLift then
+						lift=lift-liftRate
+					else
+						if lift>idleLift then
+							lift=lift-liftRate
+						elseif lift<idleLift then
+							lift=lift+liftRate
+						end
+					end
+
+					local planeframe = OplaneFrame*CFrame.fromEulerAnglesXYZ(0, 0, yaw)
+					local planeframe1 = planeframe * CFrame.fromEulerAnglesXYZ(0, roll, 0)
+					planeframe1 = planeframe1 *CFrame.fromEulerAnglesXYZ(pitch, 0, 0)
+					Hinge.Maintain.cframe = planeframe1
+					local planeVelocity=(planeframe*CFrame.fromEulerAnglesXYZ(math.pi/2,0,0)).lookVector*(pitch/MaxPitch)*50
+					planeVelocity=planeVelocity+(planeframe*CFrame.fromEulerAnglesXYZ(0,math.pi/2,0)).lookVector*(roll/MaxPitch)*30
+					Hinge.Fly.velocity=Vector3.new(0,lift,0)+planeVelocity
+					wait()
+					heli=getHeli()
+				end
+			end)
+		end
+		function FireSequence(heli)
+			jokes2.Value = heli
+			event:FireClient(owner, "pi3")
+		end
+		function KeyDown(Key)
+			local heli=getHeli()
+			if Key=="e" then
+				if heli then
+					local Hinge=getHinge(heli)
+					if Hinge then
+						if Enabled then
+							Enabled=false
+							yaw = 0
+							pitch = 0
+							roll = 0
+							Hinge.Fly.maxForce=Vector3.new(0,20000,0)
+							Hinge.Fly.velocity=Vector3.new(0,-4,0)
+							Firring=false
+						else
+							Enabled=true
+							SeatLoop(heli,Hinge)
+						end
+					end
+				end
+			elseif Key=="q" then
+				if heli and not Firring then
+					print("FireSequence")
+					FireSequence(heli)
+				end
+			end
+		end
+		event.OnServerEvent:Connect(function(m, targ, icon, hi, t, str)
+			if str == "hel3" then
+			task.spawn(function()
+			while MDB do
+				MouseX=((targ/icon)-.5)*2
+				MouseY=((hi/t)-.5)*2
+				yaw=yaw+MouseX*rotRate
+				pitch=MouseY*MaxPitch
+				wait()
+				end
+			end)
+		end
+		if str == "hel1" then
+				task.spawn(function()
+					heli = jokes.Value
+			while Firring do
+				local v_look = heli.CFrame.lookVector
+				local shot_look = CFrame.new(heli.Position, hi.p).lookVector
+				local angle = math.acos(v_look.x*shot_look.x + v_look.y*shot_look.y + v_look.z*shot_look.z)
+				task.spawn(function()
+				wait(.2)
+				if angle < 1.3 then 
+					if targ and targ.Name=="Vehicle Locator" then
+						if icon=="http://www.roblox.com/asset/?id=15880069" then --Green Targetting 
+							event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=15880079") --Red Targetting
+						else
+							event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=15880069") --Green Targetting
+						end
+					else
+						event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=15880031") --Black Crosshair
+					end
+							end
+					end)
+			end
+			if targ and targ.Name=="Vehicle Locator" then
+				for i=1, 15 do
+					if icon=="http://www.roblox.com/asset/?id=15880042" then --Green Locked
+						event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=15880059") --Red Locked
+					else
+						event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=15880042") --Green Locked
+					end
+					wait()
+				end
+					end
+			end)
+			event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=11713393") --Normal Icon
+			end
+
+			if str == "hel2" then
+			heli = jokes2.Value
+			local missiles=heli.Parent.Missiles:getChildren()
+			if #missiles<1 then return end
+			Firring=true
+			assert (coroutine.resume (coroutine.create (Targeting),heli))
+				wait(2.5)
+			if heli and Firring and #missiles>0 then
+				print("Fire!!!")
+				Firring=false
+				local v_look = heli.CFrame.lookVector
+				local shot_look = CFrame.new(heli.Position, hi.p).lookVector
+				local angle = math.acos(v_look.x*shot_look.x + v_look.y*shot_look.y + v_look.z*shot_look.z)
+				if angle < 1.3 then 
+					local part=p:Clone()
+					part.CFrame=CFrame.new(hi.p)
+					if targ and targ.Name=="Vehicle Locator" then
+						stick(targ,part)
+					end
+					part.Parent=workspace
+					missiles[1].Target.Value=part
+				end
+			end
+			Firring=false
+		end
+	end)
+
+
+
+		function mouseDown(mouse)
+		event:FireClient(owner, "pi4")
+	end
+	function onSelected(mouse) print("Select")
+		Mouse=mouse
+		equip = true
+		event:FireClient(owner, "pi1","http://www.roblox.com/asset/?id=11713393")
+	end
+	script.Parent.Activated:connect(function() if not MDB then MDB=true mouseDown(mouse) end end)
+	script.Parent.Deactivated:connect(function() MDB=false pitch=0 end)
+	function deSelected()
+		equip = false
+	end
+
+
+	script.Parent.Equipped:connect(onSelected) 
+		script.Parent.Unequipped:Connect(deSelected)
+		event.OnServerEvent:Connect(function(m,k,targ,icon,hi,str)
+			
+			if str == "hel2" then
+				heli = jokes2.Value
+				local missiles=heli.Parent.Missiles:getChildren()
+				if #missiles<1 then return end
+				Firring=true
+				assert (coroutine.resume (coroutine.create (Targeting),heli))
+				wait(2.5)
+				if heli and Firring and #missiles>0 then
+					print("Fire!!!")
+					Firring=false
+					local v_look = heli.CFrame.lookVector
+					local shot_look = CFrame.new(heli.Position, hi.p).lookVector
+					local angle = math.acos(v_look.x*shot_look.x + v_look.y*shot_look.y + v_look.z*shot_look.z)
+					if angle < 1.3 then 
+						local part=p:Clone()
+						part.CFrame=CFrame.new(hi.p)
+						if targ and targ.Name=="Vehicle Locator" then
+							stick(targ,part)
+						end
+						part.Parent=workspace
+						missiles[1].Target.Value=part
+					end
+				end
+				Firring=false
+			end
+			if str == "hel4" then
+				if equip == true then
+					KeyDown(k)
+					--print(k)
+				end
+			end
+		end)
+end))
+RemoteEvent2.Name = "HeliE"
+RemoteEvent2.Parent = Tool0
+RemoteEvent2.Parent = owner.Backpack
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+end))
+Part30.Name = "Main"
+Part30.Parent = Model0
+Part30.CFrame = CFrame.new(24.5, 4.5, -382.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part30.Position = Vector3.new(24.5, 4.5, -382.5)
+Part30.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part30.Size = Vector3.new(1, 1, 1)
+Part30.Anchored = true
+Part30.BottomSurface = Enum.SurfaceType.Smooth
+Part30.BrickColor = BrickColor.new("Bright green")
+Part30.CanCollide = false
+Part30.TopSurface = Enum.SurfaceType.Smooth
+Part30.brickColor = BrickColor.new("Bright green")
+Script31.Name = "Weld"
+Script31.Parent = Part30
+table.insert(cors,sandbox(Script31,function()
+Heli=script.Parent.Parent
+Heli.MainHinge.Maintain.cframe=Heli.MainHinge.CFrame
+m=1280
+mm=-1280
+function stick(x, y, loc)
+	weld = Instance.new("Weld") 
+	weld.Part0 = x
+	weld.Part1 = y
+	local HitPos = x.Position
+	local CJ = CFrame.new(HitPos) 
+	local C0 = x.CFrame:inverse() *CJ 
+	local C1 = y.CFrame:inverse() * CJ 
+	weld.C0 = C0 
+	weld.C1 = C1 
+	weld.Parent = loc
+	y.Anchored=false
+end
+
+function connect(list)
+for x = 1, #list do 
+if (list[x].className == "Part" or list[x].className == "VehicleSeat" or list[x].className == "Seat")and list[x].Name~="Main" then 
+stick(script.Parent, list[x], game.JointsService) 
+end
+end
+end
+connect({Heli.MainHinge,Heli.TailHinge, Heli.Windows, Heli.DriversSeat, Heli.DriverCam})
+connect(script.Parent.Parent.CollisionFrame:GetChildren())
+script.Parent.Anchored=false
+--
+rotate=Instance.new("Motor")
+rotate.Part0=script.Parent.Parent.MainHinge
+rotate.Part1=script.Parent.Parent.Rotor
+local CJ = rotate.Part0.CFrame
+local C0 = rotate.Part0.CFrame:inverse() *CJ 
+local C1 = rotate.Part1.CFrame:inverse() * CJ 
+rotate.C0 = C0 
+rotate.C1 = C1 
+rotate.Name="MainRotor"
+rotate.Parent=script.Parent
+rotate.Part1.Anchored=false
+rotate.MaxVelocity=.2
+rotate.DesiredAngle=9e+100
+--
+rotate=Instance.new("Motor")
+rotate.Part0=script.Parent.Parent.TailHinge
+rotate.Part1=script.Parent.Parent.TailRotor
+local CJ = rotate.Part0.CFrame
+local C0 = rotate.Part0.CFrame:inverse() *CJ 
+local C1 = rotate.Part1.CFrame:inverse() * CJ 
+rotate.C0 = C0 
+rotate.C1 = C1 
+rotate.Name="TailRotor"
+rotate.Parent=script.Parent
+rotate.Part1.Anchored=false
+rotate.MaxVelocity=.2
+rotate.DesiredAngle=9e+100
+--
+y=Instance.new("Part")
+y.Shape=0
+y.Transparency=1
+y.Size=Vector3.new(28,28,28)
+y.Anchored=true
+y.CFrame=script.Parent.CFrame
+y.CanCollide=false
+y.Name="Vehicle Locator"
+y.Parent=script.Parent.Parent
+b=Instance.new("BodyForce")
+b.force=Vector3.new(0,y:getMass()*196.3,0)
+b.Parent=y
+stick(script.Parent, y, script.Parent)
+--
+for i, v in ipairs(Heli.Missiles:getChildren()) do
+	stick(v, script.Parent, v)
+	v.Anchored=false
+end
+
+end))
+SpecialMesh32.Parent = Part30
+SpecialMesh32.MeshId = "http://www.roblox.com/Asset/?ID=12120483"
+SpecialMesh32.Scale = Vector3.new(10, 10, 10)
+SpecialMesh32.MeshType = Enum.MeshType.FileMesh
+Part33.Name = "DriverCam"
+Part33.Parent = Model0
+Part33.CFrame = CFrame.new(24.5, 8.69999981, -383.5, -1, 0, -0, -0, 1, -0, -0, 0, -1)
+Part33.Orientation = Vector3.new(0, 180, 0)
+Part33.Position = Vector3.new(24.5, 8.699999809265137, -383.5)
+Part33.Rotation = Vector3.new(180, 0, 180)
+Part33.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part33.Transparency = 1
+Part33.Size = Vector3.new(1, 1, 1)
+Part33.Anchored = true
+Part33.BottomSurface = Enum.SurfaceType.Smooth
+Part33.BrickColor = BrickColor.new("Bright blue")
+Part33.CanCollide = false
+Part33.TopSurface = Enum.SurfaceType.Smooth
+Part33.brickColor = BrickColor.new("Bright blue")
+Model34.Name = "Missiles"
+Model34.Parent = Model0
+Part35.Name = "Hellfire Missile"
+Part35.Parent = Model34
+Part35.CFrame = CFrame.new(24.5, 2.30000329, -385, 0, -1, -0, -0.99999994, 0, -0, 0, 0, -0.99999994)
+Part35.Orientation = Vector3.new(0, 180, -90)
+Part35.Position = Vector3.new(24.5, 2.3000032901763916, -385)
+Part35.Rotation = Vector3.new(180, 0, 90)
+Part35.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part35.Size = Vector3.new(1, 1, 13)
+Part35.Anchored = true
+Part35.BottomSurface = Enum.SurfaceType.Weld
+Part35.BrickColor = BrickColor.new("Black")
+Part35.TopSurface = Enum.SurfaceType.Smooth
+Part35.brickColor = BrickColor.new("Black")
+BodyVelocity36.Parent = Part35
+BodyVelocity36.MaxForce = Vector3.new(0, 0, 0)
+BodyVelocity36.maxForce = Vector3.new(0, 0, 0)
+BodyVelocity36.Velocity = Vector3.new(0, 0, 0)
+BodyVelocity36.velocity = Vector3.new(0, 0, 0)
+BodyGyro37.Parent = Part35
+BodyGyro37.MaxTorque = Vector3.new(0, 0, 0)
+BodyGyro37.maxTorque = Vector3.new(0, 0, 0)
+ObjectValue38.Name = "Target"
+ObjectValue38.Parent = Part35
+SpecialMesh39.Parent = Part35
+SpecialMesh39.MeshId = "http://roblox.com/asset/?id=2251534"
+SpecialMesh39.Scale = Vector3.new(1, 0.800000011920929, 1)
+SpecialMesh39.MeshType = Enum.MeshType.FileMesh
+Sound40.Name = "Swoosh"
+Sound40.Parent = Part35
+Sound40.Looped = true
+Sound40.SoundId = "rbxasset://sounds/Rocket whoosh 01.wav"
+Sound40.Volume = 0.699999988079071
+Sound41.Name = "Explosion"
+Sound41.Parent = Part35
+Sound41.SoundId = "rbxasset://sounds/collide.wav"
+Sound41.Volume = 1
+Script42.Name = "Fly"
+Script42.Parent = Part35
+table.insert(cors,sandbox(Script42,function()
+r = game:service("RunService")
+shaft = script.Parent
+swoosh = script.Parent.Swoosh
+
+	function fly()
+	pcall(function()
+	da=script.Parent.CFrame.lookVector --the following 3 lines make the bludger move forward.
+	dest=script.Parent.Position+da*150
+	script.Parent.BodyVelocity.velocity=(dest-script.Parent.Position)
+	dir=(CFrame.new(pos).p-script.Parent.Position).unit --direction we WANT to go
+	pos1=script.Parent.Position
+	pos2=script.Parent.Position+dir
+	script.Parent.BodyGyro.cframe=CFrame.new(pos1, pos2)
+	end)
+end
+
+function blow(hit)
+	if hit and hit.Name=="Vehicle Locator" then return end
+	swoosh:stop()
+	explosion = Instance.new("Explosion")
+	explosion.Position = shaft.Position
+	explosion.BlastRadius=28
+
+
+
+	explosion.Parent = game.Workspace
+	connection:disconnect()
+	wait(.1)
+	Target:Remove()
+	shaft:remove()
+end
+
+function timer(time)
+	wait(time)
+	if connection then
+		blow()
+	end
+end
+
+shaft.Target.Changed:connect(function(val)
+	script.Parent.Weld:Remove()
+	script.Parent.Parent=workspace
+	wait(.2)
+	swoosh:play()
+	shaft.BodyVelocity.maxForce=Vector3.new(4e+003, 4e+003, 4e+003)
+	shaft.BodyGyro.maxTorque=Vector3.new(8e+005, 8e+005, 8e+005)
+	Target=val
+	
+	script.Parent.Explosion.PlayOnRemove = true -- play explosion sound when projectile removed from game
+	assert (coroutine.resume (coroutine.create (timer), 15))
+		t=0
+		
+	while t<10 do
+		if t>1.5 and connection==nil then connection = shaft.Touched:connect(blow) end
+		if Target==nil then blow() break end
+		if (Target.Position-shaft.Position).magnitude<30 then
+			assert (coroutine.resume (coroutine.create (timer), .5))
+		end
+		pos=Target.Position
+		fly()
+		t=t+wait() --time limit
+	end
+end)
+end))
+Part43.Name = "Hellfire Missile"
+Part43.Parent = Model34
+Part43.CFrame = CFrame.new(21.5, 1.89999998, -385.5, -0, -1, -0, -1, -0, -0, -0, -0, -1)
+Part43.Orientation = Vector3.new(0, 180, -90)
+Part43.Position = Vector3.new(21.5, 1.899999976158142, -385.5)
+Part43.Rotation = Vector3.new(180, 0, 90)
+Part43.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part43.Size = Vector3.new(1, 1, 13)
+Part43.Anchored = true
+Part43.BottomSurface = Enum.SurfaceType.Weld
+Part43.BrickColor = BrickColor.new("Black")
+Part43.TopSurface = Enum.SurfaceType.Smooth
+Part43.brickColor = BrickColor.new("Black")
+BodyVelocity44.Parent = Part43
+BodyVelocity44.MaxForce = Vector3.new(0, 0, 0)
+BodyVelocity44.maxForce = Vector3.new(0, 0, 0)
+BodyVelocity44.Velocity = Vector3.new(0, 0, 0)
+BodyVelocity44.velocity = Vector3.new(0, 0, 0)
+BodyGyro45.Parent = Part43
+BodyGyro45.MaxTorque = Vector3.new(0, 0, 0)
+BodyGyro45.maxTorque = Vector3.new(0, 0, 0)
+ObjectValue46.Name = "Target"
+ObjectValue46.Parent = Part43
+SpecialMesh47.Parent = Part43
+SpecialMesh47.MeshId = "http://roblox.com/asset/?id=2251534"
+SpecialMesh47.Scale = Vector3.new(1, 0.800000011920929, 1)
+SpecialMesh47.MeshType = Enum.MeshType.FileMesh
+Sound48.Name = "Swoosh"
+Sound48.Parent = Part43
+Sound48.Looped = true
+Sound48.SoundId = "rbxasset://sounds/Rocket whoosh 01.wav"
+Sound48.Volume = 0.699999988079071
+Script49.Name = "Fly"
+Script49.Parent = Part43
+table.insert(cors,sandbox(Script49,function()
+r = game:service("RunService")
+shaft = script.Parent
+swoosh = script.Parent.Swoosh
+
+function fly()
+	pcall(function()
+	da=script.Parent.CFrame.lookVector --the following 3 lines make the bludger move forward.
+	dest=script.Parent.Position+da*150
+	script.Parent.BodyVelocity.velocity=(dest-script.Parent.Position)
+	dir=(CFrame.new(pos).p-script.Parent.Position).unit --direction we WANT to go
+	pos1=script.Parent.Position
+	pos2=script.Parent.Position+dir
+	script.Parent.BodyGyro.cframe=CFrame.new(pos1, pos2)
+	end)
+end
+
+function blow(hit)
+	if hit and hit.Name=="Vehicle Locator" then return end
+	swoosh:stop()
+	explosion = Instance.new("Explosion")
+	explosion.Position = shaft.Position
+	explosion.BlastRadius=28
+
+
+
+	explosion.Parent = game.Workspace
+	connection:disconnect()
+	wait(.1)
+	Target:Remove()
+	shaft:remove()
+end
+
+function timer(time)
+	wait(time)
+	if connection then
+		blow()
+	end
+end
+
+shaft.Target.Changed:connect(function(val)
+	script.Parent.Weld:Remove()
+	script.Parent.Parent=workspace
+	wait(.2)
+	swoosh:play()
+	shaft.BodyVelocity.maxForce=Vector3.new(4e+003, 4e+003, 4e+003)
+	shaft.BodyGyro.maxTorque=Vector3.new(8e+005, 8e+005, 8e+005)
+	Target=val
+	
+	script.Parent.Explosion.PlayOnRemove = true -- play explosion sound when projectile removed from game
+	assert (coroutine.resume (coroutine.create (timer), 15))
+	t=0
+	while t<10 do
+		if t>1.5 and connection==nil then connection = shaft.Touched:connect(blow) end
+		if Target==nil then blow() break end
+		if (Target.Position-shaft.Position).magnitude<30 then
+			assert (coroutine.resume (coroutine.create (timer), .5))
+		end
+		pos=Target.Position
+		fly()
+		t=t+wait() --time limit
+	end
+end)
+end))
+Sound50.Name = "Explosion"
+Sound50.Parent = Part43
+Sound50.SoundId = "rbxasset://sounds/collide.wav"
+Sound50.Volume = 1
+Part51.Name = "Hellfire Missile"
+Part51.Parent = Model34
+Part51.CFrame = CFrame.new(27.5, 1.90000319, -385, 0, -1, -0, -0.99999994, 0, -0, 0, 0, -0.99999994)
+Part51.Orientation = Vector3.new(0, 180, -90)
+Part51.Position = Vector3.new(27.5, 1.90000319480896, -385)
+Part51.Rotation = Vector3.new(180, 0, 90)
+Part51.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part51.Size = Vector3.new(1, 1, 13)
+Part51.Anchored = true
+Part51.BottomSurface = Enum.SurfaceType.Weld
+Part51.BrickColor = BrickColor.new("Black")
+Part51.TopSurface = Enum.SurfaceType.Smooth
+Part51.brickColor = BrickColor.new("Black")
+BodyVelocity52.Parent = Part51
+BodyVelocity52.MaxForce = Vector3.new(0, 0, 0)
+BodyVelocity52.maxForce = Vector3.new(0, 0, 0)
+BodyVelocity52.Velocity = Vector3.new(0, 0, 0)
+BodyVelocity52.velocity = Vector3.new(0, 0, 0)
+BodyGyro53.Parent = Part51
+BodyGyro53.MaxTorque = Vector3.new(0, 0, 0)
+BodyGyro53.maxTorque = Vector3.new(0, 0, 0)
+ObjectValue54.Name = "Target"
+ObjectValue54.Parent = Part51
+SpecialMesh55.Parent = Part51
+SpecialMesh55.MeshId = "http://roblox.com/asset/?id=2251534"
+SpecialMesh55.Scale = Vector3.new(1, 0.800000011920929, 1)
+SpecialMesh55.MeshType = Enum.MeshType.FileMesh
+Sound56.Name = "Swoosh"
+Sound56.Parent = Part51
+Sound56.Looped = true
+Sound56.SoundId = "rbxasset://sounds/Rocket whoosh 01.wav"
+Sound56.Volume = 0.699999988079071
+Script57.Name = "Fly"
+Script57.Parent = Part51
+table.insert(cors,sandbox(Script57,function()
+r = game:service("RunService")
+shaft = script.Parent
+swoosh = script.Parent.Swoosh
+
+	function fly()
+	pcall(function()
+	da=script.Parent.CFrame.lookVector --the following 3 lines make the bludger move forward.
+	dest=script.Parent.Position+da*150
+	script.Parent.BodyVelocity.velocity=(dest-script.Parent.Position)
+	dir=(CFrame.new(pos).p-script.Parent.Position).unit --direction we WANT to go
+	pos1=script.Parent.Position
+	pos2=script.Parent.Position+dir
+	script.Parent.BodyGyro.cframe=CFrame.new(pos1, pos2)
+    end)
+end
+
+function blow(hit)
+	if hit and hit.Name=="Vehicle Locator" then return end
+	swoosh:stop()
+	explosion = Instance.new("Explosion")
+	explosion.Position = shaft.Position
+	explosion.BlastRadius=28
+
+
+
+	explosion.Parent = game.Workspace
+	connection:disconnect()
+	wait(.1)
+	Target:Remove()
+	shaft:remove()
+end
+
+function timer(time)
+	wait(time)
+	if connection then
+		blow()
+	end
+end
+
+shaft.Target.Changed:connect(function(val)
+	script.Parent.Weld:Remove()
+	script.Parent.Parent=workspace
+	wait(.2)
+	swoosh:play()
+	shaft.BodyVelocity.maxForce=Vector3.new(4e+003, 4e+003, 4e+003)
+	shaft.BodyGyro.maxTorque=Vector3.new(8e+005, 8e+005, 8e+005)
+	Target=val
+	
+	script.Parent.Explosion.PlayOnRemove = true -- play explosion sound when projectile removed from game
+	assert (coroutine.resume (coroutine.create (timer), 15))
+	t=0
+	while t<10 do
+		if t>1.5 and connection==nil then connection = shaft.Touched:connect(blow) end
+		if Target==nil then blow() break end
+		if (Target.Position-shaft.Position).magnitude<30 then
+			assert (coroutine.resume (coroutine.create (timer), .5))
+		end
+		pos=Target.Position
+		fly()
+		t=t+wait() --time limit
+	end
+end)
+end))
+Sound58.Name = "Explosion"
+Sound58.Parent = Part51
+Sound58.SoundId = "rbxasset://sounds/collide.wav"
+Sound58.Volume = 1
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
