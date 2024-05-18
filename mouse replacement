@@ -1,0 +1,155 @@
+Instance.new("RemoteEvent",owner.PlayerGui).Name = "client"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "client2"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "client3"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "client4"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "client5"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "client6"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "client7"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "client8"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "client9"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "client10"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "client11"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "client12"
+client = owner.PlayerGui.client
+client2 = owner.PlayerGui.client2
+client3 = owner.PlayerGui.client3
+client4 = owner.PlayerGui.client4
+client5 = owner.PlayerGui.client5
+client6 = owner.PlayerGui.client6
+client7 = owner.PlayerGui.client7
+client8 = owner.PlayerGui.client8
+client9 = owner.PlayerGui.client9
+client10 = owner.PlayerGui.client10
+client11 = owner.PlayerGui.client11
+client12 = owner.PlayerGui.client12
+mouse1 = {Hit = nil,
+	Target = nil,
+	TargetSurface = nil,
+	Icon = nil,
+	Y = nil,
+	X = nil,
+	ViewSizeX = nil,
+	ViewSizeY = nil,
+	UnitRay = nil,
+	Origin = nil,
+	TargetFilter = nil,
+	hit = nil,
+	target = nil,
+	Button1Down = client2.Event,
+	Button1Up = client3.Event,
+	Button2Down = client4.Event,
+	Button2Up = client5.Event,
+	Idle = client6.Event,
+	KeyDown = client7.Event,
+	KeyUp = client8.Event,
+	Move = client9.Event,
+	WheelBackward = client10.Event,
+	WheelForward = client11.Event,
+	keyDown = client12.Event
+}
+
+--Replace all "mouse = user:GetMouse()" with "mouse = mouse1".
+--Replace all game.Players.LocalPlayer with "owner"
+NLS([[client = owner.PlayerGui.client
+mouse = owner:GetMouse()
+mouse.Button1Down:Connect(function()
+client:FireServer("pk3")
+end)
+mouse.Button1Up:Connect(function()
+client:FireServer("pk4")
+end)
+mouse.Button2Down:Connect(function()
+client:FireServer("pk5")
+end)
+mouse.Button2Up:Connect(function()
+client:FireServer("pk6")
+end)
+mouse.Idle:Connect(function()
+client:FireServer("pk7")
+end)
+mouse.KeyDown:Connect(function(k)
+client:FireServer("pk8",k)
+end)
+mouse.KeyUp:Connect(function(k)
+client:FireServer("pk9",k)
+end)
+mouse.Move:Connect(function()
+client:FireServer("pk10")
+end)
+mouse.WheelBackward:Connect(function()
+client:FireServer("pk11")
+end)
+mouse.WheelForward:Connect(function()
+client:FireServer("pk12")
+end)
+mouse.keyDown:Connect(function(k)
+client:FireServer("pk13",k)
+end)
+client.OnClientEvent:Connect(function(tf,icon)
+mouse.Icon = icon
+mouse.TargetFilter = tf
+end)
+mouse.Changed:Connect(function(p)
+if p == "Icon" or p == "TargetFilter" then
+client:FireServer("pk2",mouse.Icon,mouse.TargetFilter)
+end
+end)
+while task.wait(0.02) do
+client:FireServer("pk1", mouse.Hit, mouse.Target, mouse.TargetSurface, mouse.Y, mouse.X, mouse.ViewSizeY, mouse.ViewSizeX, mouse.UnitRay, mouse.Origin)
+end]],owner.PlayerGui)
+mouse1.Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+client.OnServerEvent:Connect(function(m, str, hit, target, targets,y,x,vy,vx,ur,ori)
+	if str == "pk1" then
+	mouse1.Hit = hit
+	mouse1.Target = target
+	mouse1.TargetSurface = targets
+--  mouse1.Icon = icon
+	mouse1.Y = y
+	mouse1.X = x
+	mouse1.ViewSizeY = vy
+	mouse1.ViewSizeX = vx
+	mouse1.UnitRay = ur
+	mouse1.Origin = ori
+--	mouse1.TargetFilter = tf
+	mouse1.hit = hit
+	mouse1.target = target
+	client:FireClient(owner,mouse1.TargetFilter, mouse1.Icon)
+	end
+	if str == "pk2" then
+		mouse1.Icon = hit
+		mouse1.TargetFilter = target
+	end
+	if str == "pk3" then
+		client2:Fire()
+	end
+	if str == "pk4" then
+		client3:Fire()
+	end
+	if str == "pk5" then
+		client4:Fire()
+	end
+	if str == "pk6" then
+		client5:Fire()
+	end
+	if str == "pk7" then
+		client6:Fire()
+	end
+	if str == "pk8" then
+		client7:Fire(hit)
+	end
+	if str == "pk9" then
+		client8:Fire(hit)
+	end
+	if str == "pk10" then
+		client9:Fire()
+	end
+	if str == "pk11" then
+		client10:Fire()
+	end
+	if str == "pk12" then
+		client11:Fire()
+	end
+	if str == "pk13" then
+		client12:Fire(hit)
+	end
+end)
