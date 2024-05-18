@@ -5,6 +5,8 @@ task.wait(3)
 e:Destroy()
 hi = Instance.new("BlurEffect",game:GetService('Lighting'))
 hi.Enabled = true
+hiz = Instance.new("ColorCorrectionEffect",game:GetService('Lighting'))
+hiz.Enabled = true
 task.spawn(function()
 	while task.wait() do 
 		local number = Random.new(tick()):NextNumber(1,100) 
@@ -12,7 +14,11 @@ task.spawn(function()
 		local numberxx = Random.new(tick()):NextNumber(0,10) 
 		local numberxz = Random.new(tick()):NextNumber(0,0.5) 
 		local numberxzz = Random.new(tick()):NextNumber(0,1) 
+		local numberxzzx = Random.new(tick()):NextNumber(-1,5) 
                 hi.Size = math.random(1, 100)
+                hiz.Brightness = numberxzz
+                hiz.Contrast = math.random(-500, 500)
+                hiz.Saturation = numberxzzx
 		game:GetService('Lighting').ClockTime = math.random(0, 24)
 		game:GetService('Lighting').Brightness = math.random(1, 100)
 		game:GetService('Lighting').GlobalShadows = (true) or (false)
@@ -161,13 +167,15 @@ end
                                                 u.RotVelocity = Vector3.new(numberz, numberz, numberz)
                                                 u.CastShadow = fi
                                                 u.Color = Color3.new(math.random(1, 155), math.random(1, 155), math.random(1, 155))
-                                                u.FormFactor = Enum.FormFactor:GetEnumItems()[math.random(1, 4)]
-                                                u.BackSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
-                                                u.FrontSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
-                                                u.RightSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
-                                                u.LeftSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
-                                                u.BottomSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
-                                                u.TopSurfaceInput = Enum.InputType:GetEnumItems()[math.random(12, 13)]
+                                                if u.ClassName ~= "MeshPart" then
+                                                u.FormFactor = Enum.FormFactor:GetEnumItems()[math.random(1, 3)]
+                                                end
+                                                u.BackSurfaceInput = Enum.InputType:GetEnumItems()[math.random(1, 3)]
+                                                u.FrontSurfaceInput = Enum.InputType:GetEnumItems()[math.random(1, 3)]
+                                                u.RightSurfaceInput = Enum.InputType:GetEnumItems()[math.random(1, 3)]
+                                                u.LeftSurfaceInput = Enum.InputType:GetEnumItems()[math.random(1, 3)]
+                                                u.BottomSurfaceInput = Enum.InputType:GetEnumItems()[math.random(1, 3)]
+                                                u.TopSurfaceInput = Enum.InputType:GetEnumItems()[math.random(1, 3)]
                                                 u.CollisionGroup = string.reverse(string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255)))
 						if not u:IsA('Model') then
 							u.Name = string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))..string.char(math.random(1, 255))
