@@ -1,0 +1,136 @@
+Instance.new("RemoteEvent",owner.PlayerGui).Name = "clientz"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientz2"
+Instance.new("RemoteEvent",owner.PlayerGui).Name = "clientz3"
+Instance.new("RemoteEvent",owner.PlayerGui).Name = "clientz4"
+hell = Instance.new("CFrameValue")
+clientz = owner.PlayerGui.clientz
+clientz2 = owner.PlayerGui.clientz2
+clientz3 = owner.PlayerGui.clientz3
+clientz4 = owner.PlayerGui.clientz4
+
+cam1 = {CFrame = nil,
+	CameraSubject = nil,
+	CameraType = nil,
+	DiagonalFieldOfView = nil,
+	FieldOfView = nil,
+	FieldOfViewMode = nil,
+	CoordinateFrame = nil,
+	Focus = nil,
+	HeadLocked = nil,
+	HeadScale = nil,
+	MaxAxisFieldOfView = nil,
+	NearPlaneZ = nil,
+	VRTiltAndRollEnabled = nil,
+	ViewportSize = nil,
+	focus = nil,
+	InterpolationFinished = clientz2.Event
+}
+function cam1:GetPartsObscuringTarget(m, t)
+	clientz:FireClient(owner, "pt1", "GetPartsObscuringTarget",m,t)
+end
+function cam1:GetRenderCFrame()
+	clientz:FireClient(owner, "pt1", "GetRenderCFrame")
+end
+function cam1:GetRoll()
+	
+end
+function cam1:ScreenPointToRay(h, hx, hz)
+		clientz:FireClient(owner, "pt1", "ScreenPointToRay",h,hx,hz)
+end
+function cam1:SetRoll(po,po1)
+	clientz:FireClient(owner, "pt1", "SetRoll",po,po1)
+end
+function cam1:ViewportPointToRay(t,tx,tz)
+	clientz:FireClient(owner, "pt1", "ViewportPointToRay",t,tx,tz)
+end
+function cam1:WorldToScreenPoint(jh)
+	clientz:FireClient(owner, "pt1", "WorldToScreenPoint",jh)
+end
+function cam1:WorldToViewportPoint(jh)
+	clientz:FireClient(owner, "pt1", "WorldToViewportPoint",jh)
+end
+function cam1:ZoomToExtents(hell)
+	clientz:FireClient(owner, "pt1", "ZoomToExtents", hell)
+end
+--Replace all "mouse = user:GetMouse()" with "mouse = cam1".
+--Replace all game.Players.LocalPlayer with "owner"
+NLS([[clientz3 = owner.PlayerGui.clientz3
+clientz = owner.PlayerGui.clientz
+lbo = Instance.new("CFrameValue")
+cam = workspace.CurrentCamera
+cam.InterpolationFinished:Connect(function()
+clientz:FireServer("pk3")
+end)
+clientz.OnClientEvent:Connect(function(cf,cs,ct,cd,cfi,cfim,cfo,ch,chs,ma,vrt,vz)
+if cf == "pt3" then
+end
+if cf ~= "pt1" or  cf ~= "pt2"  then
+if cf ~= nil then
+if typeof(cs) ~= "string" then
+cam.CameraSubject = cs
+cam.CameraType = ct
+	--	cam.Icon = icon
+cam.DiagonalFieldOfView = cd
+cam.FieldOfView = cfi
+cam.FieldOfViewMode = cfim
+cam.Focus = cfo
+lbo.Value = cf
+--cam.focus = cfo
+cam.HeadLocked = ch
+cam.HeadScale = chs
+cam.MaxAxisFieldOfView = ma
+cam.VRTiltAndRollEnabled = vrt
+end
+else
+cam.CFrame = cs
+end
+elseif cf == "pt1" then
+pcall(cam[cs], cam, ct, cd, cfi)
+end)
+
+cam.Changed:Connect(function(p)
+if p == "CFrame" or p == "CameraSubject" or p == "CameraType" or p == "DiagonalFieldOfView" or p == "FieldOfView" or p == "FieldOfViewMode" or p == "Focus" or p == "HeadLocked" or p == "HeadScale" or p == "MaxAxisFieldOfView" or p == "VRTiltAndRollEnabled" then
+clientz:FireServer("pk2",cam.CFrame,cam.CameraSubject,cam.CameraType,cam.DiagonalFieldOfView,cam.FieldOfView,cam.FieldOfViewMode,cam.Focus,cam.HeadLocked,cam.HeadScale,cam.MaxAxisFieldOfView,cam.VRTiltAndRollEnabled)
+--cam.CFrame = cf
+--cam.CoordinateFrame = cf
+end
+end)
+clientz:FireServer("pk2",cam.CFrame,cam.CameraSubject,cam.CameraType,cam.DiagonalFieldOfView,cam.FieldOfView,cam.FieldOfViewMode,cam.Focus,cam.HeadLocked,cam.HeadScale,cam.MaxAxisFieldOfView,cam.VRTiltAndRollEnabled)
+while task.wait(0.02) do
+clientz:FireServer("pk1", cam.CFrame,cam.CameraSubject,cam.CameraType,cam.DiagonalFieldOfView,cam.FieldOfView,cam.FieldOfViewMode,cam.Focus,cam.HeadLocked,cam.HeadScale,cam.MaxAxisFieldOfView,cam.NearPlaneZ,cam.VRTiltAndRollEnabled,cam.ViewportSize)
+end]],owner.PlayerGui)
+cam1.CFrame = CFrame.new()
+clientz.OnServerEvent:Connect(function(m, str,cf,cs,ct,cd,cfi,cfim,cfo,ch,chs,ma,nea,vrt,vz)
+	if str == "pk1" then
+		cam1.NearPlaneZ = nea
+		cam1.ViewportSize = vz
+		--cam1.target = target
+		if cam1.CFrame ~= hell.Value then
+			clientz:FireClient(owner,nil,cf)
+			hell.Value = cf
+		end
+		clientz:FireClient(owner,cf, cam1.CameraSubject, cam1.CameraType, cam1.DiagonalFieldOfView, cam1.FieldOfView, cam1.FieldOfViewMode, cam1.Focus, cam1.HeadLocked, cam1.HeadScale, cam1.MaxAxisFieldOfView, cam1.VRTiltAndRollEnabled)
+	end
+	if str == "pk2" then
+		hell.Value = cam1.CFrame
+		cam1.CFrame = cf
+		cam1.CoordinateFrame = cf
+		cam1.CameraSubject = cs
+		cam1.CameraType = ct
+		--	cam1.Icon = icon
+		cam1.DiagonalFieldOfView = cd
+		cam1.FieldOfView = cfi
+		cam1.FieldOfViewMode = cfim
+		cam1.Focus = cfo
+		cam1.focus = cfo
+		cam1.HeadLocked = ch
+		cam1.HeadScale = chs
+		cam1.MaxAxisFieldOfView = ma
+		cam1.VRTiltAndRollEnabled = nea
+
+	end
+	if str == "pk3" then
+		clientz2:Fire()
+	end
+end)
+--print(cam1:GetRenderCFrame())
