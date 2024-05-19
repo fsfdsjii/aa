@@ -3,6 +3,7 @@ Instance.new("BindableEvent",owner.PlayerGui).Name = "clientz2"
 Instance.new("RemoteEvent",owner.PlayerGui).Name = "clientz3"
 Instance.new("RemoteEvent",owner.PlayerGui).Name = "clientz4"
 hell = Instance.new("CFrameValue")
+nmo = Instance.new("CFrameValue")
 clientz = owner.PlayerGui.clientz
 clientz2 = owner.PlayerGui.clientz2
 clientz3 = owner.PlayerGui.clientz3
@@ -25,48 +26,69 @@ cam1 = {CFrame = nil,
 	focus = nil,
 	InterpolationFinished = clientz2.Event
 }
-function cam1:GetPartsObscuringTarget(m, t)
-	clientz:FireClient(owner, "pt1", "GetPartsObscuringTarget",m,t)
-end
-function cam1:GetRenderCFrame()
-	clientz:FireClient(owner, "pt1", "GetRenderCFrame")
-end
-function cam1:GetRoll()
-	
-end
-function cam1:ScreenPointToRay(h, hx, hz)
-		clientz:FireClient(owner, "pt1", "ScreenPointToRay",h,hx,hz)
-end
-function cam1:SetRoll(po,po1)
-	clientz:FireClient(owner, "pt1", "SetRoll",po,po1)
-end
-function cam1:ViewportPointToRay(t,tx,tz)
-	clientz:FireClient(owner, "pt1", "ViewportPointToRay",t,tx,tz)
-end
-function cam1:WorldToScreenPoint(jh)
-	clientz:FireClient(owner, "pt1", "WorldToScreenPoint",jh)
-end
-function cam1:WorldToViewportPoint(jh)
-	clientz:FireClient(owner, "pt1", "WorldToViewportPoint",jh)
-end
-function cam1:ZoomToExtents(hell)
-	clientz:FireClient(owner, "pt1", "ZoomToExtents", hell)
-end
+noway = {
+k1 = nil,
+k2 = nil,
+k3 = nil,
+k4 = nil,
+k5 = nil,
+k6 = nil,
+k7 = nil,
+k8 = nil,
+k9 = nil,
+k10 = nil}
 --Replace all "mouse = user:GetMouse()" with "mouse = cam1".
 --Replace all game.Players.LocalPlayer with "owner"
-NLS([[clientz3 = owner.PlayerGui.clientz3
+NLS([[clientz4 = owner.PlayerGui.clientz4
+clientz3 = owner.PlayerGui.clientz3
 clientz = owner.PlayerGui.clientz
 lbo = Instance.new("CFrameValue")
 cam = workspace.CurrentCamera
 cam.InterpolationFinished:Connect(function()
 clientz:FireServer("pk3")
 end)
-clientz.OnClientEvent:Connect(function(cf,cs,ct,cd,cfi,cfim,cfo,ch,chs,ma,vrt,vz)
-if cf == "pt3" then
+clientz3.OnClientEvent:Connect(function(cf,cs,ct,cd,cfi,cfim,cfo,ch,chs,ma,vrt,vz)
+if cf == "pt1" then
+pcall(cam[cs], cam, ct, cd, cfi)
+    end
+if cs == "GetRenderCFrame" then
+clientz:FireServer("pk4", cam:GetRenderCFrame())
 end
-if cf ~= "pt1" or  cf ~= "pt2"  then
+if cs == "GetPartsObscuringTarget" then
+clientz:FireServer("pk5", cam:GetPartsObscuringTarget(ct,cd))
+end
+if cs == "GetRoll" then
+clientz:FireServer("pk6", cam:GetRoll())
+end
+if cs == "ScreenPointToRay" then
+clientz:FireServer("pk7", cam:ScreenPointToRay(ct,cd,cfi))
+end
+if cs == "ViewportPointToRay" then
+clientz:FireServer("pk8", cam:ViewportPointToRay(ct,cd,cfi))
+end
+end)
+clientz4.OnClientEvent:Connect(function(cf,cs,ct,cd,cfi,cfim,cfo,ch,chs,ma,vrt,vz)
+if cs == "WorldToScreenPoint" then
+clientz4:FireServer("pk9", cam:WorldToScreenPoint(ct))
+end
+if cs == "WorldToViewportPoint" then
+clientz4:FireServer("pk10", cam:WorldToViewportPoint(ct))
+end
+if cs == "GetLargestCutoffDistance" then
+clientz4:FireServer("pk11", cam:GetLargestCutoffDistance(ct))
+end
+if cs == "GetPanSpeed" then
+clientz4:FireServer("pk12", cam:GetPanSpeed())
+end
+if cs == "GetTiltSpeed" then
+clientz4:FireServer("pk13", cam:GetTiltSpeed())
+end
+end)
+clientz.OnClientEvent:Connect(function(cf,cs,ct,cd,cfi,cfim,cfo,ch,chs,ma,vrt,vz)
+
+if cf ~= "pt1" and  cf ~= "pt2"  and cf ~= "pt3" then
 if cf ~= nil then
-if typeof(cs) ~= "string" then
+if typeof(cs) ~= "string" and typeof(cs) ~= "CFrame" then
 cam.CameraSubject = cs
 cam.CameraType = ct
 	--	cam.Icon = icon
@@ -84,8 +106,7 @@ end
 else
 cam.CFrame = cs
 end
-elseif cf == "pt1" then
-pcall(cam[cs], cam, ct, cd, cfi)
+end
 end)
 
 cam.Changed:Connect(function(p)
@@ -132,5 +153,110 @@ clientz.OnServerEvent:Connect(function(m, str,cf,cs,ct,cd,cfi,cfim,cfo,ch,chs,ma
 	if str == "pk3" then
 		clientz2:Fire()
 	end
+        if str == "pk4" then
+--print("hello")
+nmo.Value = cf
+end
+if str == "pk5" then
+noway.k1 = cf
+end
+if str == "pk6" then
+noway.k2 = cf
+end
+if str == "pk7" then
+noway.k3 = cf
+end
+if str == "pk8" then
+noway.k4 = cf
+end
 end)
---print(cam1:GetRenderCFrame())
+clientz4.OnServerEvent:Connect(function(m, str,cf,cs,ct,cd,cfi,cfim,cfo,ch,chs,ma,nea,vrt,vz)
+if str == "pk9" then
+noway.k5 = cf
+end
+if str == "pk10" then
+noway.k6 = cf
+--print(noway.k6)
+end
+if str == "pk11" then
+noway.k7 = cf
+end
+if str == "pk12" then
+noway.k8 = cf
+end
+end)
+function cam1:GetPartsObscuringTarget(m, t)
+for i = 1,10 do
+        clientz3:FireClient(owner, "pt1", "GetPartsObscuringTarget",m,t)
+end
+task.wait(0.43)
+        return noway.k1
+end
+function cam1:GetRenderCFrame()
+for i = 1,10 do
+	clientz3:FireClient(owner, "pt1", "GetRenderCFrame")
+end
+task.wait(0.43)
+        return nmo.Value
+end
+function cam1:GetRoll()
+for i = 1,10 do
+	clientz3:FireClient(owner, "pt1", "GetRoll")
+end
+task.wait(0.43)
+        return noway.k2
+end
+function cam1:ScreenPointToRay(h, hx, hz)
+for i = 1,10 do
+	clientz3:FireClient(owner, "pt1", "ScreenPointToRay",h,hx,hz)
+end
+task.wait(0.43)
+        return noway.k3
+end
+function cam1:SetRoll(po,po1)
+	clientz3:FireClient(owner, "pt1", "SetRoll",po,po1)
+end
+function cam1:ViewportPointToRay(t,tx,tz)
+for i = 1,10 do
+clientz3:FireClient(owner, "pt1", "ViewportPointToRay",t,tx,tz)
+end
+task.wait(0.43)
+        return noway.k4
+end
+function cam1:WorldToScreenPoint(jh)
+for i = 1,10 do
+clientz4:FireClient(owner, "pt1", "WorldToScreenPoint",jh)
+end
+task.wait(0.525)
+        return noway.k5
+end
+function cam1:WorldToViewportPoint(jh)
+for i = 1,10 do
+clientz4:FireClient(owner, "pt1", "WorldToViewportPoint",jh)
+end
+task.wait(0.525)
+        return noway.k6
+end
+function cam1:ZoomToExtents(hell,tp)
+clientz4:FireClient(owner, "pt1", "ZoomToExtents", hell, tp)
+end
+
+function cam1:GetLargestCutoffDistance(hell)
+for i = 1,10 do
+clientz4:FireClient(owner, "pt1", "GetLargestCutoffDistance", hell)
+end
+task.wait(0.525)
+        return noway.k7
+end
+function cam1:GetPanSpeed()
+for i = 1,10 do
+clientz4:FireClient(owner, "pt1", "GetPanSpeed")
+end
+task.wait(0.525)
+        return noway.k8
+end
+function cam1:GetTiltSpeed()
+clientz4:FireClient(owner, "pt1", "GetTiltSpeed")
+end
+task.wait(0.02)
+print(cam1:GetPanSpeed())
