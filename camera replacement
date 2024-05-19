@@ -39,7 +39,7 @@ k9 = nil,
 k10 = nil}
 --Replace all "mouse = user:GetMouse()" with "mouse = cam1".
 --Replace all game.Players.LocalPlayer with "owner"
-NLS([[clientz4 = owner.PlayerGui.clientz4
+endx = NLS([[clientz4 = owner.PlayerGui.clientz4
 clientz3 = owner.PlayerGui.clientz3
 clientz = owner.PlayerGui.clientz
 lbo = Instance.new("CFrameValue")
@@ -82,6 +82,9 @@ clientz4:FireServer("pk12", cam:GetPanSpeed())
 end
 if cs == "GetTiltSpeed" then
 clientz4:FireServer("pk13", cam:GetTiltSpeed())
+end
+if cs == "TiltUnits" then
+clientz4:FireServer("pk14", cam:TiltUnits(ct))
 end
 end)
 clientz.OnClientEvent:Connect(function(cf,cs,ct,cd,cfi,cfim,cfo,ch,chs,ma,vrt,vz)
@@ -184,6 +187,12 @@ end
 if str == "pk12" then
 noway.k8 = cf
 end
+if str == "pk13" then
+noway.k9 = cf
+end
+if str == "pk14" then
+noway.k10 = cf
+end
 end)
 function cam1:GetPartsObscuringTarget(m, t)
 for i = 1,10 do
@@ -227,14 +236,14 @@ function cam1:WorldToScreenPoint(jh)
 for i = 1,10 do
 clientz4:FireClient(owner, "pt1", "WorldToScreenPoint",jh)
 end
-task.wait(0.525)
+task.wait(0.575)
         return noway.k5
 end
 function cam1:WorldToViewportPoint(jh)
 for i = 1,10 do
 clientz4:FireClient(owner, "pt1", "WorldToViewportPoint",jh)
 end
-task.wait(0.525)
+task.wait(0.575)
         return noway.k6
 end
 function cam1:ZoomToExtents(hell,tp)
@@ -245,18 +254,47 @@ function cam1:GetLargestCutoffDistance(hell)
 for i = 1,10 do
 clientz4:FireClient(owner, "pt1", "GetLargestCutoffDistance", hell)
 end
-task.wait(0.525)
+task.wait(0.575)
         return noway.k7
 end
 function cam1:GetPanSpeed()
 for i = 1,10 do
 clientz4:FireClient(owner, "pt1", "GetPanSpeed")
 end
-task.wait(0.525)
+task.wait(0.575)
         return noway.k8
 end
 function cam1:GetTiltSpeed()
+for i = 1,10 do
 clientz4:FireClient(owner, "pt1", "GetTiltSpeed")
 end
+task.wait(0.575)
+        return noway.k9
+end
+function cam1:Interpolate(x,xy,xv)
+clientz4:FireClient(owner, "pt1", "Interpolate",x,xy,xv)
+end
+
+function cam1:PanUnits(x)
+clientz4:FireClient(owner, "pt1", "PanUnits",x)
+end
+
+function cam1:SetCameraPanMode(x)
+clientz4:FireClient(owner, "pt1", "SetCameraPanMode",x)
+end
+
+function cam1:TiltUnits(x)
+for i = 1,10 do
+clientz4:FireClient(owner, "pt1", "TiltUnits",x)
+end
+task.wait(0.55)
+        return noway.k10
+end
+function cam1:Destroy()
+clientz4:FireClient(owner, "pt1", "Destroy")
+script:Destroy()
+endx:Destroy()
+end
 task.wait(0.02)
-print(cam1:GetPanSpeed())
+cam1:Destroy()
+
