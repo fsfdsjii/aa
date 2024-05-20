@@ -131,7 +131,9 @@ clientz.OnServerEvent:Connect(function(m, str,cf,cs,ct,cd,cfi,cfim,cfo,ch,chs,ma
 		cam1.ViewportSize = vz
 		--cam1.target = target
 		if cam1.CFrame ~= hell.Value then
+for i = 1,10 do
 			clientz:FireClient(owner,nil,cf)
+end
 			hell.Value = cf
 		end
 		clientz:FireClient(owner,cf, cam1.CameraSubject, cam1.CameraType, cam1.DiagonalFieldOfView, cam1.FieldOfView, cam1.FieldOfViewMode, cam1.Focus, cam1.HeadLocked, cam1.HeadScale, cam1.MaxAxisFieldOfView, cam1.VRTiltAndRollEnabled)
