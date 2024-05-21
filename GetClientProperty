@@ -1,12 +1,15 @@
 hello = Instance.new("RemoteEvent",owner.PlayerGui)
 NLS([[script.Parent.OnClientEvent:Connect(function(lk, tl)
+pcall(function()
 script.Parent:FireServer(lk[tl])
+end)
 end)]],owner.PlayerGui).Parent = hello
 
-function GetClientProperty(lk, tl)
+ function GetClientProperty(Object : Instance, Property: string) : any
+	
 hellox = 
 		{hello = nil}
-	hello:FireClient(owner, lk, tl)
+	hello:FireClient(owner, Object, Property)
 	hello.OnServerEvent:Once(function(me, p)
 		hellox.hello = p
 	end)
