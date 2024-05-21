@@ -45,13 +45,16 @@ mouse1 = {Hit = nil,
 	Move = client9.Event,
 	WheelBackward = client10.Event,
 	WheelForward = client11.Event,
-	keyDown = client12.Event
+	keyDown = client12.Event,
+        Name = nil
 }
 
 --Replace all "mouse = user:GetMouse()" with "mouse = mouse1".
 --Replace all game.Players.LocalPlayer with "owner"
-NLS([[client = owner.PlayerGui.client
+NLS([[
+client = owner.PlayerGui.client
 mouse = owner:GetMouse()
+
 mouse.Button1Down:Connect(function()
 client:FireServer("pk3")
 end)
@@ -85,9 +88,13 @@ end)
 mouse.keyDown:Connect(function(k)
 client:FireServer("pk13",k)
 end)
-client.OnClientEvent:Connect(function(tf,icon)
+client.OnClientEvent:Connect(function(tf,icon,p)
+if p == nil then
 mouse.Icon = icon
 mouse.TargetFilter = tf
+else
+mouse.Name = tf
+end
 end)
 mouse.Changed:Connect(function(p)
 if p == "Icon" or p == "TargetFilter" then
@@ -153,3 +160,7 @@ client.OnServerEvent:Connect(function(m, str, hit, target, targets,y,x,vy,vx,ur,
 		client12:Fire(hit)
 	end
 end)
+mouse1.Name = "Instance"
+while task.wait(0.1) do
+client:FireClient(owner,mouse1.Name,nil,"p")
+end
