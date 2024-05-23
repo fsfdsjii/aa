@@ -1,4 +1,5 @@
 
+hello = {k = nil}
 pl1 = Instance.new("RemoteEvent",owner.PlayerGui)
 pl2x = Instance.new("BindableEvent",owner.Character)
 pl3x = Instance.new("BindableEvent",owner.Character)
@@ -19,7 +20,16 @@ pcall(Cont[prop], Cont,p1,p2,p3,p4,p5,p6)
 function action()
 p5:FireServer(prop,p1)
 end
+function action2()
+p6:FireServer(prop,p1)
+end
 if prop == "BindAction" then
+Cont:BindAction(p1,action,p3,p4)
+end
+if prop == "BindActionAtPriority" then
+Cont:BindAction(p1,action2,p3,p4,p5)
+end
+if prop == "BindActionToInputTypes" then
 Cont:BindAction(p1,action,p3,p4)
 end
 if prop == "GetAllBoundActionInfo" then
@@ -50,176 +60,33 @@ pl1.OnServerEvent:Connect(function(me, str, value)
 		pl3x:Fire(value)
 	end
 end)
-
 function ContextActionService:BindAction(actionName: string, functionToBind: func, createTouchButton: boolean, inputTypes: "Tuple")
-nowayy = Instance.new("RemoteEvent",owner.Character)
-	pl1:FireClient(owner, "BindAction",actionName,functionToBind,createTouchButton,inputTypes,nowayy)
-       nowayy.OnServerEvent:Connect(function(m,prop,t)
+l = Instance.new("RemoteEvent",owner.Character)
+	pl1:FireClient(owner, "BindAction",actionName,functionToBind,createTouchButton,inputTypes,l)
+      l.OnServerEvent:Connect(function(m,prop,t)
+--if owner.Character:FindFirstChild(t) then
+--owner.Character:FindFirstChild(t):Destroy()
+--end
+l.Name = t
 functionToBind()
 end)
 end
 function ContextActionService:BindActionAtPriority(actionName: string, functionToBind: func, createTouchButton: boolean, priorityLevel: number, inputTypes: "Tuple")
-	pl1:FireClient(owner, "BindActionAtPriority",actionName,functionToBind,createTouchButton,priorityLevel,inputTypes)
-end
-function ContextActionService:BindActionToInputTypes(actionName: string, functionToBind: func, createTouchButton: boolean, inputTypes: "Tuple")
-	pl1:FireClient(owner, "BindActionToInputTypes",actionName,functionToBind,createTouchButton,inputTypes)
-end
-
-function ContextActionService:BindActivate(userInputTypeForActivation: Enum.UserInputType, keyCodesForActivation : "Tuple")
-	pl1:FireClient(owner, "BindActivate",userInputTypeForActivation,keyCodesForActivation)
-end
-function ContextActionService:GetAllBoundActionInfo() : "Dictionary"
-	pl1:FireClient(owner, "GetAllBoundActionInfo")
-	tablez = {l = nil}
-	pl2.OnServerEvent:Once(function(m, prop, value)
-		if prop == "GetAllBoundActionInfo" then
-			tablez.l = value
-		end
-	end)
-	repeat task.wait() until tablez.l ~= nil
-	return tablez.l
-end
-function ContextActionService:GetBoundActionInfo(actionName: string) : "Dictionary"
-	pl1:FireClient(owner, "GetBoundActionInfo", actionName)
-	tablez = {l = nil}
-	pl2.OnServerEvent:Once(function(m, prop, value)
-		if prop == "GetBoundActionInfo" then
-			tablez.l = value
-		end
-	end)
-	repeat task.wait() until tablez.l ~= nil
-	return tablez.l
-end
-function ContextActionService:GetCurrentLocalToolIcon() : string
-	pl1:FireClient(owner, "GetCurrentLocalToolIcon")
-	tablez = {l = nil}
-	pl2.OnServerEvent:Once(function(m, prop, value)
-		if prop == "GetCurrentLocalToolIcon" then
-			tablez.l = value
-		end
-	end)
-	repeat task.wait() until tablez.l ~= nil
-	return tablez.l
-end
-function ContextActionService:SetDescription(actionName: string, description: string)
-	pl1:FireClient(owner, "SetDescription",actionName,description)
-end
-function ContextActionService:SetImage(actionName: string, image: string)
-	pl1:FireClient(owner, "SetImage",actionName,image)
-end
-function ContextActionService:SetPosition(actionName: string, position: UDim2)
-	pl1:FireClient(owner, "SetPosition",actionName,position)
-end
-function ContextActionService:SetTitle(actionName: string, title: string)
-	pl1:FireClient(owner, "SetTitle",actionName,title)
-end
-function ContextActionService:UnbindAction(actionName: string)
-	pl1:FireClient(owner, "UnbindAction",actionName)
-end
-function ContextActionService:UnbindActivate(userInputTypeForActivation : Enum.UserInputType,keyCodeForActivation : Enum.KeyCode)
-	pl1:FireClient(owner, "UnbindActivate",userInputTypeForActivation,keyCodeForActivation)
-end
-function ContextActionService:UnbindAllActions()
-	pl1:FireClient(owner, "UnbindAllActions")
-end
-function ContextActionService:GetButton(actionName: string) : Instance
-	pl1:FireClient(owner, "GetButton", actionName)
-	tablez = {l = nil}
-	pl2.OnServerEvent:Once(function(m, prop, value)
-		if prop == "GetButton" then
-			tablez.l = value
-		end
-	end)
-	repeat task.wait() until tablez.l ~= nil
-	return tablez.l
-end
-task.spawn(function()
-while task.wait(0.5) do
-pl1:FireClient(owner, "Name", ContextActionService.Name)
-end
-end)
-
-local Part=game.Workspace.Part
-
-local function onButtonPress()
-    Part.BrickColor=BrickColor.new("New Yeller")
-end
-
-ContextActionService:BindAction("turnbrickyellow", onButtonPress, true, Enum.KeyCode.T)
-
-local Part=game.Workspace.Part
-
-local function onButtonPresxs()
-    Part.BrickColor=BrickColor.new("Really red")
-end
-
-ContextActionService:BindAction("turnbrickyellowx", onButtonPresxs, true, Enum.KeyCode.E)
-
-hello = {k = nil}
-pl1 = Instance.new("RemoteEvent",owner.PlayerGui)
-pl2x = Instance.new("BindableEvent",owner.Character)
-pl3x = Instance.new("BindableEvent",owner.Character)
-pl2 = Instance.new("RemoteEvent",pl1)
-pl3 = Instance.new("RemoteEvent",pl1)
-pl3.Name = "k"
-ContextActionService = {
-	LocalToolEquipped = pl2x.Event,
-	LocalToolUnequipped = pl3x.Event,
-  Name = "ContextActionService"
-}
-NLS([[Cont = game:GetService('ContextActionService')
-pl1 = script.Parent
-pl2 = script.Parent.RemoteEvent
-pl3 = script.Parent.k
-pl1.OnClientEvent:Connect(function(prop,p1,p2,p3,p4,p5,p6)
-pcall(Cont[prop], Cont,p1,p2,p3,p4,p5,p6)
-function action()
-p5:FireServer(prop,p1)
-end
-if prop == "BindAction" then
-Cont:BindAction(p1,action,p3,p4)
-end
-if prop == "GetAllBoundActionInfo" then
-pl2:FireServer(prop, Cont:GetAllBoundActionInfo())
-end
-if prop == "GetBoundActionInfo" then
-pl2:FireServer(prop, Cont:GetBoundActionInfo(p1))
-end
-if prop == "GetCurrentLocalToolIcon" then
-pl2:FireServer(prop, Cont:GetCurrentLocalToolIcon())
-end
-if prop == "GetButton" then
-pl2:FireServer(prop, Cont:GetButton(p1))
-end
-end)
-Cont.LocalToolEquipped:Connect(function(tool)
-pl1:FireServer("pt1", tool)
-end)
-Cont.LocalToolUnequipped:Connect(function(tool)
-pl1:FireServer("pt2", tool)
-end)]],owner.PlayerGui).Parent = pl1
-
-pl1.OnServerEvent:Connect(function(me, str, value)
-	if str == "pt1" then
-		pl2x:Fire(value)
-	end
-	if str == "pt2" then
-		pl3x:Fire(value)
-	end
-end)
-hello = {k = nil}
-function ContextActionService:BindAction(actionName: string, functionToBind: func, createTouchButton: boolean, inputTypes: "Tuple")
 l = Instance.new("RemoteEvent",owner.Character)
-	pl1:FireClient(owner, "BindAction",actionName,functionToBind,createTouchButton,inputTypes,l)
-       l.OnServerEvent:Connect(function(m,prop,t)
-
+	pl1:FireClient(owner, "BindActionAtPriority",actionName,functionToBind,createTouchButton,priorityLevel,inputTypes,l)
+          l.OnServerEvent:Connect(function(m,prop,t)
+l.Name = t
+functionToBind()
 end)
-end
-function ContextActionService:BindActionAtPriority(actionName: string, functionToBind: func, createTouchButton: boolean, priorityLevel: number, inputTypes: "Tuple")
-	pl1:FireClient(owner, "BindActionAtPriority",actionName,functionToBind,createTouchButton,priorityLevel,inputTypes)
+
 end
 function ContextActionService:BindActionToInputTypes(actionName: string, functionToBind: func, createTouchButton: boolean, inputTypes: "Tuple")
-	pl1:FireClient(owner, "BindActionToInputTypes",actionName,functionToBind,createTouchButton,inputTypes)
+l = Instance.new("RemoteEvent",owner.Character)
+	pl1:FireClient(owner, "BindActionToInputTypes",actionName,functionToBind,createTouchButton,inputTypes,l)
+l.OnServerEvent:Connect(function(m,prop,t)
+l.Name = t
+functionToBind()
+end)
 end
 
 function ContextActionService:BindActivate(userInputTypeForActivation: Enum.UserInputType, keyCodesForActivation : "Tuple")
@@ -272,12 +139,22 @@ function ContextActionService:SetTitle(actionName: string, title: string)
 end
 function ContextActionService:UnbindAction(actionName: string)
 	pl1:FireClient(owner, "UnbindAction",actionName)
+        for _,v in next, owner.Character:GetChildren() do
+        if v.Name == actionName then
+        v:Destroy()
+        end
+        end
 end
 function ContextActionService:UnbindActivate(userInputTypeForActivation : Enum.UserInputType,keyCodeForActivation : Enum.KeyCode)
 	pl1:FireClient(owner, "UnbindActivate",userInputTypeForActivation,keyCodeForActivation)
 end
 function ContextActionService:UnbindAllActions()
 	pl1:FireClient(owner, "UnbindAllActions")
+        for _,v in next, owner.Character:GetChildren() do
+        if v.Name == actionName then
+        v:Destroy()
+        end
+        end
 end
 function ContextActionService:GetButton(actionName: string) : Instance
 	pl1:FireClient(owner, "GetButton", actionName)
@@ -307,6 +184,7 @@ ContextActionService:BindAction("turnbrickyellow", onButtonPress, true, Enum.Key
 local Part=game.Workspace.Part
 
 local function onButtonPresxs()
+print("why")
     Part.BrickColor=BrickColor.new("Really red")
 end
 
