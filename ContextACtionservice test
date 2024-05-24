@@ -60,17 +60,18 @@ pl1.OnServerEvent:Connect(function(me, str, value)
 		pl3x:Fire(value)
 	end
 end)
+arr = Instance.new("BindableEvent",owner.Character)
 function ContextActionService:BindAction(actionName: string, functionToBind: func, createTouchButton: boolean, inputTypes: "Tuple")
 l = Instance.new("RemoteEvent",owner.Character)
 	pl1:FireClient(owner, "BindAction",actionName,functionToBind,createTouchButton,inputTypes,l)
-      l.OnServerEvent:Connect(function(m,prop,t)
---if owner.Character:FindFirstChild(t) then
---owner.Character:FindFirstChild(t):Destroy()
---end
+  hello =  l.OnServerEvent:Connect(function(m,prop,t)
+if l.Name ~= t then
 l.Name = t
+end
 functionToBind()
 end)
 end
+
 function ContextActionService:BindActionAtPriority(actionName: string, functionToBind: func, createTouchButton: boolean, priorityLevel: number, inputTypes: "Tuple")
 l = Instance.new("RemoteEvent",owner.Character)
 	pl1:FireClient(owner, "BindActionAtPriority",actionName,functionToBind,createTouchButton,priorityLevel,inputTypes,l)
@@ -82,6 +83,7 @@ end)
 end
 function ContextActionService:BindActionToInputTypes(actionName: string, functionToBind: func, createTouchButton: boolean, inputTypes: "Tuple")
 l = Instance.new("RemoteEvent",owner.Character)
+Instance.new("IntValue",l).Name = "identified"
 	pl1:FireClient(owner, "BindActionToInputTypes",actionName,functionToBind,createTouchButton,inputTypes,l)
 l.OnServerEvent:Connect(function(m,prop,t)
 l.Name = t
@@ -151,8 +153,10 @@ end
 function ContextActionService:UnbindAllActions()
 	pl1:FireClient(owner, "UnbindAllActions")
         for _,v in next, owner.Character:GetChildren() do
-        if v.Name == actionName then
+        if v:FindFirstChild('identified') then
+        if v.ClassName == "RemoteEvent" then
         v:Destroy()
+        end
         end
         end
 end
@@ -184,7 +188,7 @@ ContextActionService:BindAction("turnbrickyellow", onButtonPress, true, Enum.Key
 local Part=game.Workspace.Part
 
 local function onButtonPresxs()
-print("why")
+print("hello")
     Part.BrickColor=BrickColor.new("Really red")
 end
 
