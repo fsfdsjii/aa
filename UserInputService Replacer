@@ -1,0 +1,417 @@
+jks = Instance.new("RemoteEvent",owner.Backpack)
+jks.Name = "DONTCHECK"
+jkz = Instance.new("RemoteEvent",jks)
+jkzr = Instance.new("RemoteEvent",jks)
+jkzr.Name = "bye"
+t1 = Instance.new("BindableEvent",jks)
+t2 = Instance.new("BindableEvent",jks)
+t3 = Instance.new("BindableEvent",jks)
+t4 = Instance.new("BindableEvent",jks)
+t5 = Instance.new("BindableEvent",jks)
+t6 = Instance.new("BindableEvent",jks)
+t7 = Instance.new("BindableEvent",jks)
+t8 = Instance.new("BindableEvent",jks)
+t9 = Instance.new("BindableEvent",jks)
+t10 = Instance.new("BindableEvent",jks)
+t11 = Instance.new("BindableEvent",jks)
+t12 = Instance.new("BindableEvent",jks)
+t13 = Instance.new("BindableEvent",jks)
+t14 = Instance.new("BindableEvent",jks)
+t15 = Instance.new("BindableEvent",jks)
+t16 = Instance.new("BindableEvent",jks)
+t17 = Instance.new("BindableEvent",jks)
+t18 = Instance.new("BindableEvent",jks)
+t19 = Instance.new("BindableEvent",jks)
+t20 = Instance.new("BindableEvent",jks)
+t21 = Instance.new("BindableEvent",jks)
+t22 = Instance.new("BindableEvent",jks)
+t23 = Instance.new("BindableEvent",jks)
+t24 = Instance.new("BindableEvent",jks)
+t25 = Instance.new("BindableEvent",jks)
+UserInputService = {AccelerometerEnabled = nil,
+	GamepadEnabled = nil,
+	GyroscopeEnabled = nil,
+	KeyboardEnabled = nil,
+	ModalEnabled = nil,
+	MouseBehavior = nil,
+	MouseDeltaSensitivity = nil,
+	MouseEnabled = nil,
+	MouseIcon = nil,
+	MouseIconEnabled = nil,
+	OnScreenKeyboardPosition = nil,
+	OnScreenKeyboardSize = nil,
+	OnScreenKeyboardVisible = nil,
+	TouchEnabled = nil,
+	UserHeadCFrame = nil,
+	VREnabled = nil,
+	DeviceAccelerationChanged = t1.Event,
+	DeviceGravityChanged = t2.Event,
+	DeviceRotationChanged = t3.Event,
+	GamepadConnected = t4.Event,
+	GamepadDisconnected = t5.Event,
+	InputBegan = t6.Event,
+	InputChanged = t7.Event,
+	InputEnded = t8.Event,
+	JumpRequest = t9.Event,
+	LastInputTypeChanged = t10.Event,
+	PointerAction = t11.Event,
+	TextBoxFocusReleased = t12.Event,
+	TextBoxFocused = t13.Event,
+	TouchEnded = t14.Event,
+	TouchLongPress = t15.Event,
+	TouchMoved = t16.Event,
+	TouchPan = t17.Event,
+	TouchPinch = t18.Event,
+	TouchRotate = t19.Event,
+	TouchStarted = t20.Event,
+	TouchSwipe = t21.Event,
+	TouchTap = t22.Event,
+	TouchTapInWorld = t23.Event,
+	WindowFocusReleased = t24.Event,
+	WindowFocused = t25.Event
+}
+function UserInputService:GamepadSupports(t,t2)
+	l = {t = nil}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GamepadSupports" then
+			l.t = v
+		end
+	end)
+	repeat task.wait() until l.t ~= nil
+end
+function UserInputService:GetConnectedGamepads()
+	l = {t = nil}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetConnectedGamepads" then
+			l.t = v
+		end
+	end)
+	repeat task.wait() until l.t ~= nil
+end
+function UserInputService:GetDeviceAcceleration()
+	l = {t = nil}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetDeviceAcceleration" then
+			l.t = v
+		end
+	end)
+	repeat task.wait() until l.t ~= nil
+end
+function UserInputService:GetDeviceGravity()
+	
+end
+function UserInputService:GetDeviceRotation()
+	
+end
+function UserInputService:GetFocusedTextBox()
+	
+end
+function UserInputService:GetGamepadConnected(t)
+	
+end
+function UserInputService:GetGamepadState(t)
+	
+end
+function UserInputService:GetImageForKeyCode(k)
+	
+end
+function UserInputService:GetKeysPressed()
+	
+end
+function UserInputService:GetLastInputType()
+	
+end
+function UserInputService:GetMouseButtonsPressed()
+
+end
+function UserInputService:GetMouseDelta()
+
+end
+function UserInputService:GetMouseLocation()
+
+end
+function UserInputService:GetNavigationGamepads()
+
+end
+function UserInputService:GetStringForKeyCode(k)
+
+end
+function UserInputService:GetSupportedGamepadKeyCodes(k)
+
+end
+function UserInputService:GetUserCFrame(k)
+
+end
+function UserInputService:IsGamepadButtonDown(k)
+
+end
+function UserInputService:IsKeyDown(k)
+
+end
+function UserInputService:IsMouseButtonPressed(k)
+
+end
+function UserInputService:IsNavigationGamepad(k)
+end
+function UserInputService:RecenterUserHeadCFrame()
+jkzr:FireClient(owner, "RecenterUserHeadCFrame")
+end
+function UserInputService:SetNavigationGamepad(t,t2)
+jkzr:FireClient(owner, "SetNavigationGamepad",t,t2)
+end
+NLS([[jks = script.Parent
+jkz = jks.RemoteEvent
+jkzr = jks.bye
+UIS = game:GetService('UserInputService')
+jkzr.OnClientEvent:Connect(function(t, o1, o2, o3, o4, o5, o6, o7)
+pcall(UIS[t] , UIS,o1,o2,o3,o4,o5,o6,o7)
+if t == "GamepadSupports" then
+jkzr:FireServer(t, UIS:GamepadSupports(o1, o2))
+end
+if t == "GetConnectedGamepads" then
+jkzr:FireServer(t, UIS:GamepadSupports())
+end
+if t == "GetDeviceAcceleration" then
+jkzr:FireServer(t, UIS:GetDeviceAcceleration())
+end
+end)
+jks.OnClientEvent:Connect(function(k, t, o1, o2, o3, o4, o5, o6, o7)
+if k == "nt1" then
+pcall(UIS[t] , UIS,o1,o2,o3,o4,o5,o6,o7)
+end
+end)
+UIS.DeviceAccelerationChanged:Connect(function(input)
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+jkz:FireServer("DeviceAccelerationChanged",input2)
+end)
+UIS.DeviceGravityChanged:Connect(function(input)
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+jkz:FireServer("DeviceGravityChanged",input2)
+end)
+UIS.DeviceRotationChanged:Connect(function(input,cframe)
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+jkz:FireServer("DeviceRotationChanged",input2,cframe)
+end)
+UIS.GamepadConnected:Connect(function(t)
+jkz:FireServer("GamepadConnected",t)
+end)
+UIS.GamepadDisconnected:Connect(function(t)
+jkz:FireServer("GamepadDisconnected",t)
+end)
+UIS.InputBegan:Connect(function(input, gamepro)
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+jkz:FireServer("InputBegan",input2,gamepro)
+end)
+UIS.InputChanged:Connect(function(input, gamepro)
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+jkz:FireServer("InputChanged",input2,gamepro)
+end)
+UIS.InputEnded:Connect(function(input, gamepro)
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+jkz:FireServer("InputEnded",input2,gamepro)
+end)
+UIS.JumpRequest:Connect(function()
+jkz:FireServer("JumpRequest")
+end)
+UIS.LastInputTypeChanged:Connect(function(inpu)
+jkz:FireServer("LastInputTypeChanged",inpu)
+end)
+UIS.PointerAction:Connect(function(q,w,e,r)
+jkz:FireServer("PointerAction",q,w,e,r)
+end)
+UIS.TextBoxFocusReleased:Connect(function(txt)
+jkz:FireServer("TextBoxFocusReleased",txt)
+end)
+UIS.TextBoxFocused:Connect(function(txt)
+jkz:FireServer("TextBoxFocused",txt)
+end)
+UIS.TouchEnded:Connect(function(input, gamepro)
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+jkz:FireServer("TouchEnded",input2,gamepro)
+end)
+UIS.TouchLongPress:Connect(function(g,a,m)
+jkz:FireServer("TouchLongPress",g,a,m)
+end)
+UIS.TouchMoved:Connect(function(input, gamepro)
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+jkz:FireServer("TouchMoved",input2,gamepro)
+end)
+UIS.TouchPan:Connect(function(g,a,m,e,s)
+jkz:FireServer("TouchPan",g,a,m,e,s)
+end)
+UIS.TouchPinch:Connect(function(g,a,m,e,s)
+jkz:FireServer("TouchPinch",g,a,m,e,s)
+end)
+UIS.TouchRotate:Connect(function(g,a,m,e,s)
+jkz:FireServer("TouchRotate",g,a,m,e,s)
+end)
+UIS.TouchStarted:Connect(function(input, gamepro)
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+jkz:FireServer("TouchStarted",input2,gamepro)
+end)
+UIS.TouchSwipe:Connect(function(f,a,m)
+jkz:FireServer("TouchSwipe",f,a,m)
+end)
+UIS.TouchTap:Connect(function(f,a)
+jkz:FireServer("TouchTap",f,a)
+end)
+UIS.TouchTapInWorld:Connect(function(po,t)
+jkz:FireServer("TouchTapInWorld",po,t)
+end)
+UIS.UserCFrameChanged:Connect(function(po,t)
+jkz:FireServer("UserCFrameChanged",po,t)
+end)
+UIS.WindowFocusReleased:Connect(function()
+jkz:FireServer("WindowFocusReleased")
+end)
+UIS.WindowFocused:Connect(function()
+jkz:FireServer("WindowFocused")
+end)
+	while task.wait(0.025) do
+		jks:FireServer(UIS.AccelerometerEnabled, UIS.GamepadEnabled, UIS.GyroscopeEnabled, UIS.KeyboardEnabled, UIS.MouseEnabled, UIS.OnScreenKeyboardPosition, UIS.OnScreenKeyboardSize, UIS.OnScreenKeyboardVisible, UIS.TouchEnabled, UIS.UserHeadCFrame, UIS.VREnabled)
+	end]],owner.PlayerGui).Parent = jks
+jkz.OnServerEvent:Connect(function(m,t,p1,p2,p3,p4,p5)
+	if t == "DeviceAccelerationChanged" then
+		t1:Fire(p1)
+	end
+	if t == "DeviceGravityChanged" then
+		t2:Fire(p1)
+	end
+	if t == "DeviceRotationChanged" then
+		t3:Fire(p1,p2)
+	end
+	if t == "GamepadConnected" then
+		t4:Fire(p1)
+	end
+	if t == "GamepadDisconnected" then
+		t5:Fire(p1)
+	end
+	if t == "InputBegan" then
+		t6:Fire(p1,p2)
+	end
+	if t == "InputChanged" then
+		t7:Fire(p1,p2)
+	end
+	if t == "InputEnded" then
+		t8:Fire(p1,p2)
+	end
+	if t == "JumpRequest" then
+		t9:Fire()
+	end
+	if t == "PointerAction" then
+		t10:Fire(p1,p2,p3,p4)
+	end
+	if t == "TextBoxFocusReleased" then
+		t11:Fire(p1)
+	end
+	if t == "TextBoxFocused" then
+		t12:Fire(p1)
+	end
+	if t == "TouchEnded" then
+		t13:Fire(p1,p2)
+	end
+	if t == "TouchLongPress" then
+		t14:Fire(p1,p2,p3)
+	end
+	if t == "TouchMoved" then
+		t15:Fire(p1,p2)
+	end
+	if t == "TouchPan" then
+		t16:Fire(p1,p2,p3,p4,p5)
+	end
+	if t == "TouchPinch" then
+		t17:Fire(p1,p2,p3,p4,p5)
+	end
+	if t == "TouchRotate" then
+		t18:Fire(p1,p2,p3,p4,p5)
+	end
+	if t == "TouchStarted" then
+		t19:Fire(p1,p2)
+	end
+	if t == "TouchSwipe" then
+		t20:Fire(p1,p2,p3)
+	end
+	if t == "TouchTap" then
+		t21:Fire(p1,p2)
+	end
+	if t == "TouchTapInWorld" then
+		t22:Fire(p1,p2)
+	end
+	if t == "UserCFrameChanged" then
+		t23:Fire(p1,p2)
+	end
+	if t == "WindowFocusReleased" then
+		t24:Fire()
+	end
+	if t == "WindowFocused" then
+		t25:Fire()
+	end
+end)
+jks.OnServerEvent:Connect(function(UISA,UISG,UISGY,UISK,UISME,UISOSKP,UISOSKS,UISOSKV,UISTE,UISUH,UISVE)
+	UserInputService.AccelerometerEnabled = UISA
+	UserInputService.GamepadEnabled = UISG
+	UserInputService.GyroscopeEnabled = UISGY
+	UserInputService.KeyboardEnabled = UISK
+	UserInputService.MouseEnabled = UISME
+	UserInputService.OnScreenKeyboardPosition = UISOSKP
+	UserInputService.OnScreenKeyboardSize = UISOSKS
+	UserInputService.OnScreenKeyboardVisible = UISOSKV
+	UserInputService.TouchEnabled = UISTE
+	UserInputService.UserHeadCFrame = UISUH
+	UserInputService.VREnabled = UISVE
+end)
+UserInputService:RecenterUserHeadCFrame()
