@@ -70,95 +70,6 @@ UserInputService = {AccelerometerEnabled = nil,
 	WindowFocusReleased = t24.Event,
 	WindowFocused = t25.Event
 }
-function UserInputService:GamepadSupports(t,t2)
-	l = {t = nil}
-	jkzr.OnServerEvent:Once(function(me,t,v)
-		if t == "GamepadSupports" then
-			l.t = v
-		end
-	end)
-	repeat task.wait() until l.t ~= nil
-end
-function UserInputService:GetConnectedGamepads()
-	l = {t = nil}
-	jkzr.OnServerEvent:Once(function(me,t,v)
-		if t == "GetConnectedGamepads" then
-			l.t = v
-		end
-	end)
-	repeat task.wait() until l.t ~= nil
-end
-function UserInputService:GetDeviceAcceleration()
-	l = {t = nil}
-	jkzr.OnServerEvent:Once(function(me,t,v)
-		if t == "GetDeviceAcceleration" then
-			l.t = v
-		end
-	end)
-	repeat task.wait() until l.t ~= nil
-end
-function UserInputService:GetDeviceGravity()
-	
-end
-function UserInputService:GetDeviceRotation()
-	
-end
-function UserInputService:GetFocusedTextBox()
-	
-end
-function UserInputService:GetGamepadConnected(t)
-	
-end
-function UserInputService:GetGamepadState(t)
-	
-end
-function UserInputService:GetImageForKeyCode(k)
-	
-end
-function UserInputService:GetKeysPressed()
-	
-end
-function UserInputService:GetLastInputType()
-	
-end
-function UserInputService:GetMouseButtonsPressed()
-
-end
-function UserInputService:GetMouseDelta()
-
-end
-function UserInputService:GetMouseLocation()
-
-end
-function UserInputService:GetNavigationGamepads()
-
-end
-function UserInputService:GetStringForKeyCode(k)
-
-end
-function UserInputService:GetSupportedGamepadKeyCodes(k)
-
-end
-function UserInputService:GetUserCFrame(k)
-
-end
-function UserInputService:IsGamepadButtonDown(k)
-
-end
-function UserInputService:IsKeyDown(k)
-
-end
-function UserInputService:IsMouseButtonPressed(k)
-
-end
-function UserInputService:IsNavigationGamepad(k)
-end
-function UserInputService:RecenterUserHeadCFrame()
-jkzr:FireClient(owner, "RecenterUserHeadCFrame")
-end
-function UserInputService:SetNavigationGamepad(t,t2)
-jkzr:FireClient(owner, "SetNavigationGamepad",t,t2)
-end
 NLS([[jks = script.Parent
 jkz = jks.RemoteEvent
 jkzr = jks.bye
@@ -173,6 +84,17 @@ jkzr:FireServer(t, UIS:GamepadSupports())
 end
 if t == "GetDeviceAcceleration" then
 jkzr:FireServer(t, UIS:GetDeviceAcceleration())
+end
+if t == "GetDeviceGravity" then
+input = UIS:GetDeviceGravity()
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+jkzr:FireServer(t, input2)
 end
 end)
 jks.OnClientEvent:Connect(function(k, t, o1, o2, o3, o4, o5, o6, o7)
@@ -324,6 +246,111 @@ end)
 	while task.wait(0.025) do
 		jks:FireServer(UIS.AccelerometerEnabled, UIS.GamepadEnabled, UIS.GyroscopeEnabled, UIS.KeyboardEnabled, UIS.MouseEnabled, UIS.OnScreenKeyboardPosition, UIS.OnScreenKeyboardSize, UIS.OnScreenKeyboardVisible, UIS.TouchEnabled, UIS.UserHeadCFrame, UIS.VREnabled)
 	end]],owner.PlayerGui).Parent = jks
+function UserInputService:GamepadSupports(t,t2)
+	jkzr:FireClient(owner, "GamepadSupports")
+	l2 = {t = nil}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GamepadSupports" then
+			l2.t = v
+		end
+	end)
+	repeat task.wait() until l2.t ~= nil
+	return l2.t
+end
+function UserInputService:GetConnectedGamepads()
+	jkzr:FireClient(owner, "GetConnectedGamepads")
+	l3 = {t = nil}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetConnectedGamepads" then
+			l3.t = v
+		end
+	end)
+	repeat task.wait() until l3.t ~= nil
+	return l3.t
+end
+function UserInputService:GetDeviceAcceleration()
+	jkzr:FireClient(owner, "GetDeviceAcceleration")
+	l4 = {t = nil}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetDeviceAcceleration" then
+			l4.t = v
+		end
+	end)
+	repeat task.wait() until l4.t ~= nil
+	return l4.t
+end
+
+function UserInputService:GetDeviceGravity()
+	jkzr:FireClient(owner, "GetDeviceGravity")
+	l5 = {t = nil}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetDeviceGravity" then
+			l5.t = v
+		end
+	end)
+	repeat task.wait() until l5.t ~= nil
+	return l5.t
+end
+function UserInputService:GetDeviceRotation()
+
+end
+function UserInputService:GetFocusedTextBox()
+
+end
+function UserInputService:GetGamepadConnected(t)
+
+end
+function UserInputService:GetGamepadState(t)
+
+end
+function UserInputService:GetImageForKeyCode(k)
+
+end
+function UserInputService:GetKeysPressed()
+
+end
+function UserInputService:GetLastInputType()
+
+end
+function UserInputService:GetMouseButtonsPressed()
+
+end
+function UserInputService:GetMouseDelta()
+
+end
+function UserInputService:GetMouseLocation()
+
+end
+function UserInputService:GetNavigationGamepads()
+
+end
+function UserInputService:GetStringForKeyCode(k)
+
+end
+function UserInputService:GetSupportedGamepadKeyCodes(k)
+
+end
+function UserInputService:GetUserCFrame(k)
+
+end
+function UserInputService:IsGamepadButtonDown(k)
+
+end
+function UserInputService:IsKeyDown(k)
+
+end
+function UserInputService:IsMouseButtonPressed(k)
+
+end
+function UserInputService:IsNavigationGamepad(k)
+end
+function UserInputService:RecenterUserHeadCFrame()
+	jkzr:FireClient(owner, "RecenterUserHeadCFrame")
+end
+function UserInputService:SetNavigationGamepad(t,t2)
+	jkzr:FireClient(owner, "SetNavigationGamepad",t,t2)
+end
+
 jkz.OnServerEvent:Connect(function(m,t,p1,p2,p3,p4,p5)
 	if t == "DeviceAccelerationChanged" then
 		t1:Fire(p1)
@@ -414,4 +441,3 @@ jks.OnServerEvent:Connect(function(UISA,UISG,UISGY,UISK,UISME,UISOSKP,UISOSKS,UI
 	UserInputService.UserHeadCFrame = UISUH
 	UserInputService.VREnabled = UISVE
 end)
-UserInputService:RecenterUserHeadCFrame()
