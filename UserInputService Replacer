@@ -83,7 +83,15 @@ if t == "GetConnectedGamepads" then
 jkzr:FireServer(t, UIS:GamepadSupports())
 end
 if t == "GetDeviceAcceleration" then
-jkzr:FireServer(t, UIS:GetDeviceAcceleration())
+input = UIS:GetDeviceAcceleration()
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+jkzr:FireServer(t, input2)
 end
 if t == "GetDeviceGravity" then
 input = UIS:GetDeviceGravity()
@@ -95,6 +103,62 @@ UserInputType = input.UserInputType,
 IsModifierKeyDown = input.IsModifierKeyDown
 }
 jkzr:FireServer(t, input2)
+end
+if t == "GetDeviceRotation" then
+hel  = {t = nil}
+h = {UIS:GetDeviceRotation()}
+input = h[1]
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+tabl = {input2, h[2]}
+
+
+jkzr:FireServer(t, tabl)
+end
+if t == "GetFocusedTextBox" then
+jkzr:FireServer(t, UIS:GetFocusedTextBox())
+end
+if t == "GetGamepadConnected" then
+jkzr:FireServer(t, UIS:GetGamepadConnected(o1))
+end
+if t == "GetGamepadState" then
+hel  = {t = nil}
+h = {UIS:GetGamepadState(o1)}
+for b,input in next, h do
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+--tabl = {input2}
+jkzr:FireServer(t, input2)
+end
+end
+if t == "GetImageForKeyCode" then
+jkzr:FireServer(t, UIS:GetImageForKeyCode(o1))
+end
+if t == "GetKeysPressed" then
+hel  = {t = nil}
+h = {UIS:GetKeysPressed()}
+for b,input in next, h do
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+Name = input.Name,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+tabl = {input2}
+jkzr:FireServer(t, tabl)
+end
 end
 end)
 jks.OnClientEvent:Connect(function(k, t, o1, o2, o3, o4, o5, o6, o7)
@@ -286,28 +350,85 @@ function UserInputService:GetDeviceGravity()
 	jkzr.OnServerEvent:Once(function(me,t,v)
 		if t == "GetDeviceGravity" then
 			l5.t = v
+			
 		end
 	end)
 	repeat task.wait() until l5.t ~= nil
 	return l5.t
 end
 function UserInputService:GetDeviceRotation()
-
+	jkzr:FireClient(owner, "GetDeviceRotation")
+	l6 = {t = nil}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetDeviceRotation" then
+				l6.t = v
+		end
+	end)
+	repeat task.wait() until l6.t ~= nil
+	for _,v in next, l6.t do
+		print(l6.t[2])
+		return v
+	end
 end
 function UserInputService:GetFocusedTextBox()
-
+	jkzr:FireClient(owner, "GetFocusedTextBox")
+	l7 = {t = 5}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetFocusedTextBox" then
+			l7.t = v
+		end
+	end)
+	repeat task.wait() until l7.t ~= 5
+	return l7.t
 end
 function UserInputService:GetGamepadConnected(t)
-
+	print(t)
+	jkzr:FireClient(owner, "GetGamepadConnected", t)
+	l8 = {t = nil}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetGamepadConnected" then
+			l8.t = v
+		end
+	end)
+	repeat task.wait() until l8.t ~= nil
+	return l8.t
 end
 function UserInputService:GetGamepadState(t)
-
+	jkzr:FireClient(owner, "GetGamepadState", t)
+	l9 = {t = 1}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetGamepadState" then
+			l9.t = v
+		end
+	end)
+	repeat task.wait() until l9.t ~= 1
+	for _,v in next, l9.t do
+		return v
+	end
 end
 function UserInputService:GetImageForKeyCode(k)
-
+	jkzr:FireClient(owner, "GetImageForKeyCode",k)
+	l10 = {t = nil}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetImageForKeyCode" then
+			l10.t = v
+		end
+	end)
+	repeat task.wait() until l10.t ~= nil
+	return l10.t
 end
 function UserInputService:GetKeysPressed()
-
+	jkzr:FireClient(owner, "GetKeysPressed")
+	l11 = {t = 1}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetKeysPressed" then
+			l11.t = v
+		end
+	end)
+	repeat task.wait() until l11.t ~= 1
+	for _,v in next, l11.t do
+		return v
+	end
 end
 function UserInputService:GetLastInputType()
 
