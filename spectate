@@ -1,9 +1,53 @@
 jh = Instance.new("Tool",owner.Backpack)
 jh.Name = "Spectate"
 jh.RequiresHandle = false
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local TextBox = Instance.new("TextBox")
+local UICorner = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextBox.Parent = ScreenGui
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Draggable = true
+TextBox.Position = UDim2.new(0.308383226, 28, 0.622911692, 5)
+TextBox.Size = UDim2.new(0, 200, 0, 50)
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font.SourceSans
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 14.000
+TextBox.Visible = false
+
+UICorner.Parent = TextBox
+
+-- Scripts:
+
+local function XMBNQMM_fake_script() -- TextBox.LocalScript 
+	local script = Instance.new('LocalScript', TextBox)
+
+	script.Parent.Text = [[You are currently viewing:
+	]]..owner.Name.."."
+end
+coroutine.wrap(XMBNQMM_fake_script)()
 
 lo = {ho = 0}
-
+jh.Equipped:Connect(function()
+TextBox.Visible = true
+end)
+jh.Unequipped:Connect(function()
+workspace.CurrentCamera.CameraSubject = owner.Character.Humanoid
+TextBox.Visible = false
+end)
 jh.Activated:Connect(function()
 
 lo.ho = lo.ho + 1
@@ -13,6 +57,8 @@ lo.ho = 1
 end
 plr = plrs:GetPlayers()[lo.ho]
 plrc = plr.Character
+	TextBox.Text = [[You are currently viewing:
+	]]..plr.Name.."."
 if plrc:FindFirstChildOfClass('Humanoid') then
 workspace.CurrentCamera.CameraSubject = plrc:FindFirstChildOfClass('Humanoid')
 else
