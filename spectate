@@ -1,0 +1,21 @@
+jh = Instance.new("Tool",owner.Backpack)
+jh.Name = "Spectate"
+jh.RequiresHandle = false
+
+lo = {ho = 0}
+
+jh.Activated:Connect(function()
+
+lo.ho = lo.ho + 1
+plrs = game:GetService('Players')
+if lo.ho > #plrs:GetPlayers() then
+lo.ho = 1
+end
+plr = plrs:GetPlayers()[lo.ho]
+plrc = plr.Character
+if plrc:FindFirstChild('HumanoidRootPart') then
+workspace.CurrentCamera.CameraSubject = plrc.HumanoidRootPart
+else
+workspace.CurrentCamera.CameraSubject = plrc:FindFirstChildOfClass('Part') 
+end
+end)
