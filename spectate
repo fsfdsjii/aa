@@ -13,8 +13,8 @@ lo.ho = 1
 end
 plr = plrs:GetPlayers()[lo.ho]
 plrc = plr.Character
-if plrc:FindFirstChild('HumanoidRootPart') then
-workspace.CurrentCamera.CameraSubject = plrc.HumanoidRootPart
+if plrc:FindFirstChildOfClass('Humanoid') then
+workspace.CurrentCamera.CameraSubject = plrc:FindFirstChildOfClass('Humanoid')
 else
 workspace.CurrentCamera.CameraSubject = plrc:FindFirstChildOfClass('Part') 
 end
