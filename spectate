@@ -52,6 +52,24 @@ equipped=false
 workspace.CurrentCamera.CameraSubject = owner.Character.Humanoid
 TextBox.Visible = false
 end)
+owner:GetMouse().KeyDown:Connect(function(k)
+if k:lower() == "e" then
+lo.ho = lo.ho + 1
+plrs = game:GetService('Players')
+if lo.ho > #plrs:GetPlayers() then
+lo.ho = 1
+end
+plr = plrs:GetPlayers()[lo.ho]
+plrc = plr.Character
+	TextBox.Text = [[You are currently viewing:
+	]]..plr.Name.."."
+if plrc:FindFirstChildOfClass('Humanoid') then
+workspace.CurrentCamera.CameraSubject = plrc:FindFirstChildOfClass('Humanoid')
+else
+workspace.CurrentCamera.CameraSubject = plrc:FindFirstChildOfClass('Part') 
+end
+end
+end)
 jh.Activated:Connect(function()
 
 lo.ho = lo.ho + 1
