@@ -1,3 +1,4 @@
+equipped=false
 jh = Instance.new("Tool",owner.Backpack)
 jh.Name = "Spectate"
 jh.RequiresHandle = false
@@ -43,9 +44,11 @@ coroutine.wrap(XMBNQMM_fake_script)()
 
 lo = {ho = 0}
 jh.Equipped:Connect(function()
+equipped=true
 TextBox.Visible = true
 end)
 jh.Unequipped:Connect(function()
+equipped=false
 workspace.CurrentCamera.CameraSubject = owner.Character.Humanoid
 TextBox.Visible = false
 end)
