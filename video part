@@ -1,0 +1,110 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Instance.new("RemoteEvent",Tool0).Name = "TextEvent"
+Part1 = Instance.new("Part")
+SurfaceGui2 = Instance.new("SurfaceGui")
+VideoFrame = Instance.new("VideoFrame")
+ScreenGui3 = Instance.new("ScreenGui")
+TextBox4 = Instance.new("TextBox")
+TextButton5 = Instance.new("TextButton")
+LocalScript6 = Instance.new("LocalScript")
+Script8 = Instance.new("Script")
+Tool0.Parent = owner.Backpack
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-50.5, 2.50000095, -11.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part1.Position = Vector3.new(-50.5, 2.5000009536743164, -11.5)
+Part1.Size = Vector3.new(5, 5, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+SurfaceGui2.Parent = Part1
+SurfaceGui2.LightInfluence = 1
+SurfaceGui2.ClipsDescendants = true
+SurfaceGui2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui2.MaxDistance = 1000
+VideoFrame.Parent = SurfaceGui2
+VideoFrame.Size = UDim2.new(1, 0, 1,  0)
+ScreenGui3.Parent = Part1
+ScreenGui3.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextBox4.Parent = ScreenGui3
+TextBox4.Position = UDim2.new(0.0194610786, 0, 0.023866348, 0)
+TextBox4.Size = UDim2.new(0, 190, 0, 50)
+TextBox4.BackgroundColor = BrickColor.new("Institutional white")
+TextBox4.BackgroundColor3 = Color3.new(1, 1, 1)
+TextBox4.BorderColor = BrickColor.new("Really black")
+TextBox4.BorderColor3 = Color3.new(0, 0, 0)
+TextBox4.BorderSizePixel = 0
+TextBox4.Font = Enum.Font.Unknown
+TextBox4.FontSize = Enum.FontSize.Size14
+TextBox4.Font = Enum.Font.Arimo
+TextBox4.Text = ""
+TextBox4.TextColor = BrickColor.new("Really black")
+TextBox4.TextColor3 = Color3.new(0, 0, 0)
+TextBox4.TextSize = 14
+TextButton5.Parent = TextBox4
+TextButton5.Position = UDim2.new(0, 0, 1, 0)
+TextButton5.Size = UDim2.new(0, 190, 0, 18)
+TextButton5.BackgroundColor = BrickColor.new("Institutional white")
+TextButton5.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton5.BorderColor = BrickColor.new("Really black")
+TextButton5.BorderColor3 = Color3.new(0, 0, 0)
+TextButton5.BorderSizePixel = 0
+TextButton5.Font = Enum.Font.Arimo
+
+TextButton5.FontSize = Enum.FontSize.Size14
+TextButton5.Text = "Set Video"
+TextButton5.TextColor = BrickColor.new("Really black")
+TextButton5.TextColor3 = Color3.new(0, 0, 0)
+TextButton5.TextSize = 14
+LocalScript6.Parent = TextBox4
+table.insert(cors,sandbox(LocalScript6,function()
+	NLS([[tool = script.Parent.Parent.Parent.Parent
+	rem = tool.TextEvent
+txb = script.Parent.TextButton
+txb.MouseButton1Down:Connect(function()
+rem:FireServer(script.Parent.Text)
+end)
+]],owner.PlayerGui).Parent = script.Parent
+end))
+Script8.Parent = Tool0
+table.insert(cors,sandbox(Script8,function()
+tool = script.Parent
+gui = tool.Handle.ScreenGui
+tool.Equipped:Connect(function()
+	gui.Parent = owner.PlayerGui
+end)
+tool.Unequipped:Connect(function()
+	gui.Parent = tool.Handle
+	end)
+	rem = tool.TextEvent
+	rem.OnServerEvent:Connect(function(m, txt)
+		VideoFrame.Video = "rbxassetid://"..tostring(txt)
+		VideoFrame:Play()
+	end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
