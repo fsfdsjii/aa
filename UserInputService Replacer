@@ -144,6 +144,28 @@ end
 if t == "GetImageForKeyCode" then
 jkzr:FireServer(t, UIS:GetImageForKeyCode(o1))
 end
+if t == "GetLastInputType" then
+jkzr:FireServer(t, UIS:GetLastInputType())
+end
+if t == "GetMouseDelta" then
+jkzr:FireServer(t, UIS:GetMouseDelta())
+end
+if t == "GetMouseButtonsPressed" then
+hel  = {t = nil}
+h = {UIS:GetMouseButtonsPressed()}
+for b,input in next, h do
+input2 = {Delta = input.Delta,
+KeyCode = input.KeyCode,
+Position = input.Position,
+UserInputState = input.UserInputState,
+UserInputType = input.UserInputType,
+Name = input.Name,
+IsModifierKeyDown = input.IsModifierKeyDown
+}
+tabl = {input2}
+jkzr:FireServer(t, tabl)
+end
+end
 if t == "GetKeysPressed" then
 hel  = {t = nil}
 h = {UIS:GetKeysPressed()}
@@ -350,7 +372,7 @@ function UserInputService:GetDeviceGravity()
 	jkzr.OnServerEvent:Once(function(me,t,v)
 		if t == "GetDeviceGravity" then
 			l5.t = v
-			
+
 		end
 	end)
 	repeat task.wait() until l5.t ~= nil
@@ -361,7 +383,7 @@ function UserInputService:GetDeviceRotation()
 	l6 = {t = nil}
 	jkzr.OnServerEvent:Once(function(me,t,v)
 		if t == "GetDeviceRotation" then
-				l6.t = v
+			l6.t = v
 		end
 	end)
 	repeat task.wait() until l6.t ~= nil
@@ -431,13 +453,39 @@ function UserInputService:GetKeysPressed()
 	end
 end
 function UserInputService:GetLastInputType()
-
+	jkzr:FireClient(owner, "GetLastInputType")
+	l12 = {t = 1}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetLastInputType" then
+			l12.t = v
+		end
+	end)
+	repeat task.wait() until l12.t ~= 1
+	return l12.t
 end
 function UserInputService:GetMouseButtonsPressed()
-
+	jkzr:FireClient(owner, "GetMouseButtonsPressed")
+	l13 = {t = 1}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetMouseButtonsPressed" then
+			l13.t = v
+		end
+	end)
+	repeat task.wait() until l13.t ~= 1
+	for _,v in next, l13.t do
+		return v
+	end
 end
 function UserInputService:GetMouseDelta()
-
+	jkzr:FireClient(owner, "GetMouseDelta")
+	l14 = {t = 1}
+	jkzr.OnServerEvent:Once(function(me,t,v)
+		if t == "GetMouseDelta" then
+			l14.t = v
+		end
+	end)
+	repeat task.wait() until l14.t ~= 1
+	return l14.t
 end
 function UserInputService:GetMouseLocation()
 
@@ -562,3 +610,4 @@ jks.OnServerEvent:Connect(function(UISA,UISG,UISGY,UISK,UISME,UISOSKP,UISOSKS,UI
 	UserInputService.UserHeadCFrame = UISUH
 	UserInputService.VREnabled = UISVE
 end)
+
