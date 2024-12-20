@@ -161,6 +161,8 @@ client.OnServerEvent:Connect(function(m, str, hit, target, targets,y,x,vy,vx,ur,
 	end
 end)
 mouse1.Name = "Instance"
+task.spawn(function()
 while task.wait(0.1) do
 client:FireClient(owner,mouse1.Name,nil,"p")
 end
+end)
