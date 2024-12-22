@@ -21,60 +21,60 @@ Part2 = Instance.new("Part")
 Tool0.Parent = owner.Backpack
 Script1.Parent = Tool0
 table.insert(cors,sandbox(Script1,function()
-Instance.new("RemoteEvent",owner.PlayerGui).Name = "client"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client2"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client3"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client4"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client5"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client6"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client7"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client8"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client9"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client10"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client11"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client12"
-client = owner.PlayerGui.client
-client2 = owner.PlayerGui.client2
-client3 = owner.PlayerGui.client3
-client4 = owner.PlayerGui.client4
-client5 = owner.PlayerGui.client5
-client6 = owner.PlayerGui.client6
-client7 = owner.PlayerGui.client7
-client8 = owner.PlayerGui.client8
-client9 = owner.PlayerGui.client9
-client10 = owner.PlayerGui.client10
-client11 = owner.PlayerGui.client11
-client12 = owner.PlayerGui.client12
-mouse1 = {Hit = nil,
-	Target = nil,
-	TargetSurface = nil,
-	Icon = nil,
-	Y = nil,
-	X = nil,
-	ViewSizeX = nil,
-	ViewSizeY = nil,
-	UnitRay = nil,
-	Origin = nil,
-	TargetFilter = nil,
-	hit = nil,
-	target = nil,
-	Button1Down = client2.Event,
-	Button1Up = client3.Event,
-	Button2Down = client4.Event,
-	Button2Up = client5.Event,
-	Idle = client6.Event,
-	KeyDown = client7.Event,
-	KeyUp = client8.Event,
-	Move = client9.Event,
-	WheelBackward = client10.Event,
-	WheelForward = client11.Event,
-	keyDown = client12.Event,
-	Name = nil
-}
+	Instance.new("RemoteEvent",owner.PlayerGui).Name = "client"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client2"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client3"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client4"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client5"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client6"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client7"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client8"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client9"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client10"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client11"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client12"
+	client = owner.PlayerGui.client
+	client2 = owner.PlayerGui.client2
+	client3 = owner.PlayerGui.client3
+	client4 = owner.PlayerGui.client4
+	client5 = owner.PlayerGui.client5
+	client6 = owner.PlayerGui.client6
+	client7 = owner.PlayerGui.client7
+	client8 = owner.PlayerGui.client8
+	client9 = owner.PlayerGui.client9
+	client10 = owner.PlayerGui.client10
+	client11 = owner.PlayerGui.client11
+	client12 = owner.PlayerGui.client12
+	mouse1 = {Hit = nil,
+		Target = nil,
+		TargetSurface = nil,
+		Icon = nil,
+		Y = nil,
+		X = nil,
+		ViewSizeX = nil,
+		ViewSizeY = nil,
+		UnitRay = nil,
+		Origin = nil,
+		TargetFilter = nil,
+		hit = nil,
+		target = nil,
+		Button1Down = client2.Event,
+		Button1Up = client3.Event,
+		Button2Down = client4.Event,
+		Button2Up = client5.Event,
+		Idle = client6.Event,
+		KeyDown = client7.Event,
+		KeyUp = client8.Event,
+		Move = client9.Event,
+		WheelBackward = client10.Event,
+		WheelForward = client11.Event,
+		keyDown = client12.Event,
+		Name = nil
+	}
 
---Replace all "mouse = user:GetMouse()" with "mouse = mouse1".
---Replace all game.Players.LocalPlayer with "owner"
-NLS([[
+	--Replace all "mouse = user:GetMouse()" with "mouse = mouse1".
+	--Replace all game.Players.LocalPlayer with "owner"
+	NLS([[
 client = owner.PlayerGui.client
 mouse = owner:GetMouse()
 
@@ -127,139 +127,146 @@ end)
 while task.wait(0.02) do
 client:FireServer("pk1", mouse.Hit, mouse.Target, mouse.TargetSurface, mouse.Y, mouse.X, mouse.ViewSizeY, mouse.ViewSizeX, mouse.UnitRay, mouse.Origin)
 end]],owner.PlayerGui)
-mouse1.Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
-client.OnServerEvent:Connect(function(m, str, hit, target, targets,y,x,vy,vx,ur,ori)
-	if str == "pk1" then
-		mouse1.Hit = hit
-		mouse1.Target = target
-		mouse1.TargetSurface = targets
-		--  mouse1.Icon = icon
-		mouse1.Y = y
-		mouse1.X = x
-		mouse1.ViewSizeY = vy
-		mouse1.ViewSizeX = vx
-		mouse1.UnitRay = ur
-		mouse1.Origin = ori
-		--	mouse1.TargetFilter = tf
-		mouse1.hit = hit
-		mouse1.target = target
-		--client:FireClient(owner,mouse1.TargetFilter, mouse1.Icon)
-	end
-	if str == "pk2" then
-		mouse1.Icon = hit
-		mouse1.TargetFilter = target
-	end
-	if str == "pk3" then
-		client2:Fire()
-	end
-	if str == "pk4" then
-		client3:Fire()
-	end
-	if str == "pk5" then
-		client4:Fire()
-	end
-	if str == "pk6" then
-		client5:Fire()
-	end
-	if str == "pk7" then
-		client6:Fire()
-	end
-	if str == "pk8" then
-		client7:Fire(hit)
-	end
-	if str == "pk9" then
-		client8:Fire(hit)
-	end
-	if str == "pk10" then
-		client9:Fire()
-	end
-	if str == "pk11" then
-		client10:Fire()
-	end
-	if str == "pk12" then
-		client11:Fire()
-	end
-	if str == "pk13" then
-		client12:Fire(hit)
-	end
-end)
-mouse1.Name = "Instance"
-task.wait(0.25)
-print(mouse1.Hit)
-task.spawn(function()
-	while task.wait(0.1) do
-		client:FireClient(owner,mouse1.Name,nil,"p")
-	end
-end)
-	Models = {290069528,  47613, 187789986, 47433, 47637, 175696937, 47586, 47532, 94251705, 41324903, 59524622, 162741606, 286794498, 59524676, 28454, 50514, 53604463, 23153947, 67625712, 124120704, 59524699, 59524162, 59524044, 10479801, 28472, 41324902, 59524102, 23153972, 47620, 47582, 246270069, 50482, 28233, 18717544, 67572272,28232,41324904,28451,56445997, 59524124, 59524006}
-num = 1
+	mouse1.Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+	client.OnServerEvent:Connect(function(m, str, hit, target, targets,y,x,vy,vx,ur,ori)
+		if str == "pk1" then
+			mouse1.Hit = hit
+			mouse1.Target = target
+			mouse1.TargetSurface = targets
+			--  mouse1.Icon = icon
+			mouse1.Y = y
+			mouse1.X = x
+			mouse1.ViewSizeY = vy
+			mouse1.ViewSizeX = vx
+			mouse1.UnitRay = ur
+			mouse1.Origin = ori
+			--	mouse1.TargetFilter = tf
+			mouse1.hit = hit
+			mouse1.target = target
+			--client:FireClient(owner,mouse1.TargetFilter, mouse1.Icon)
+		end
+		if str == "pk2" then
+			mouse1.Icon = hit
+			mouse1.TargetFilter = target
+		end
+		if str == "pk3" then
+			client2:Fire()
+		end
+		if str == "pk4" then
+			client3:Fire()
+		end
+		if str == "pk5" then
+			client4:Fire()
+		end
+		if str == "pk6" then
+			client5:Fire()
+		end
+		if str == "pk7" then
+			client6:Fire()
+		end
+		if str == "pk8" then
+			client7:Fire(hit)
+		end
+		if str == "pk9" then
+			client8:Fire(hit)
+		end
+		if str == "pk10" then
+			client9:Fire()
+		end
+		if str == "pk11" then
+			client10:Fire()
+		end
+		if str == "pk12" then
+			client11:Fire()
+		end
+		if str == "pk13" then
+			client12:Fire(hit)
+		end
+	end)
+	mouse1.Name = "Instance"
+	task.wait(0.25)
+	print(mouse1.Hit)
+	task.spawn(function()
+		while task.wait(0.1) do
+			client:FireClient(owner,mouse1.Name,nil,"p")
+		end
+	end)
+	Models = {290069528,  47613, 187789986, 47433, 47637, 175696937, 47586, 47532, 94251705, 41324903, 59524622, 162741606, 286794498, 59524676, 28454, 50514, 53604463, 23153947, 67625712, 124120704, 59524699, 59524162, 59524044, 10479801, 28472, 41324902, 59524102, 23153972, 47620, 47582, 246270069, 50482, 28233, 18717544, 67572272,28232,41324904,28451,56445997, 59524124, 59524006, 3924232032, 56446583, 67572210, 33743813,63132445,23153925,28456,28704,56446186,56448011,228153674}
+	num = 1
 	usedmodel = Models[num]
 	print(usedmodel)
-equipped = false
-currentlyused = {e = nil}
+	equipped = false
+	currentlyused = {e = nil}
 	script.Parent.Equipped:Connect(function()
 		equipped = true
 	end)
-function hi()
-	local e = game:GetService('InsertService'):LoadAsset(usedmodel)
-	e.Parent = script
-	currentlyused.e = e
+	function hi()
+		local e = game:GetService('InsertService'):LoadAsset(usedmodel)
+		e.Parent = script
+		currentlyused.e = e
 		print(currentlyused.e)
-	for _,v in next, e:GetDescendants() do
-		if v:isA('BasePart') then
-			v.Transparency = 0.5
-			v.Anchored = true
+		for _,v in next, e:GetDescendants() do
+			if v:isA('BasePart') then
+				v.Transparency = 0.5
+				v.Anchored = true
+			end
 		end
 	end
-end
-hi()
-mouse1.KeyDown:Connect(function(m)
-	if m:lower() == "e" then
-		if equipped == true then
+	hi()
+	mouse1.KeyDown:Connect(function(m)
+		if m:lower() == "e" then
+			if equipped == true then
 				num = num+1
 				print(num)
 				usedmodel = Models[num]
 				currentlyused.e:Destroy()
-		end 
-	elseif m:lower() == "q" then
+			end 
+		elseif m:lower() == "q" then
 			if equipped == true then
 				num = num-1
 				usedmodel = Models[num]
-			print(num)
+				print(num)
 				currentlyused.e:Destroy()
-		end 
-	end
-end)
-script.Parent.Unequipped:Connect(function()
+			end 
+		end
+	end)
+	script.Parent.Unequipped:Connect(function()
 		currentlyused.e:Destroy()
 		equipped = false
-end)
-currentlyused.e.Destroying:Connect(function()
+	end)
+	currentlyused.e.Destroying:Connect(function()
 		if script.Parent.Parent == owner.Character then
 			hi()
-		task.spawn(function()
-			while task.wait() do
-				if currentlyused.e ~= nil then
-					currentlyused.e:MoveTo(mouse1.Hit.p)
-				else 
-					break
+			task.spawn(function()
+				while task.wait() do
+					if currentlyused.e ~= nil then
+						currentlyused.e:MoveTo(mouse1.Hit.p)
+					else 
+						break
+					end
 				end
-			end
-		end)
-	end
-end)
+			end)
+		end
+	end)
 
-script.Parent.Activated:Connect(function()
+	script.Parent.Activated:Connect(function()
 		currentlyused.e:Destroy()
 		if usedmodel ~= 10479801 then
 			local me = game:GetService('InsertService'):LoadAsset(usedmodel)
+			for _,v in next, me:GetDescendants() do
+				if v:IsA('BasePart') then
+					if v:CanSetNetworkOwnership() == true then
+						v:SetNetworkOwner(nil)
+					end
+				end
+			end
 			if num == 5 then
 				for _,v in next, me:GetDescendants() do
 					if v:IsA('BasePart') then
 						v.CanCollide = true
 					end
 				end
-			elseif num == 10 or num == 11 or num == 16 or num == 20 or num == 21 or num == 25 or num == 26 or num == 32 or num == 33 or num == 36 then
+			elseif num == 10 or num == 11 or num == 16 or num == 20 or num == 21 or num == 25 or num == 26 or num == 32 or num == 33 or num == 36 or num == 49 then
 				yoo = me:FindFirstChildOfClass('Model'):FindFirstChildOfClass('Part')
 				for _,v in next, yoo:GetChildren() do
 					if v:IsA('Weld') then
@@ -273,9 +280,21 @@ script.Parent.Activated:Connect(function()
 						weld.Part1 = v
 					end
 				end
+			elseif num == 44 then
+				me.ConfigPortrait.Picture.Configuration["Player Name"].Value = owner.Name
+				for _,v in next, me:GetDescendants() do
+					if v:IsA('BasePart') then
+						v.Massless = true
+					end
+				end
 			end
+			if num ~= 40 then
 			me.Parent = workspace
-			me:MoveTo(mouse1.Hit.p)
+				me:MoveTo(mouse1.Hit.p)
+			else
+				me.Parent = workspace
+				me:MoveTo(mouse1.Hit.p + Vector3.new(0, 2, 0))
+			end
 		else
 			-- Converted using Mokiros's Model to Script Version 3
 			-- Converted string size: 1912 characters
@@ -535,21 +554,21 @@ script.Parent.Activated:Connect(function()
 				obj.Parent = workspace
 				obj:MoveTo(mouse1.Hit.p)
 			end
-			end
-end)
-
-task.spawn(function()
-	while task.wait() do
-		repeat task.wait() until   script.Parent.Parent == owner.Backpack
-		if currentlyused.e ~= nil then
-			if mouse1.Hit ~= nil then
-				currentlyused.e:MoveTo(mouse1.Hit.p)
-			end
-		else 
-			break
 		end
-	end
-end)
+	end)
+
+	task.spawn(function()
+		while task.wait() do
+			repeat task.wait() until   script.Parent.Parent == owner.Backpack
+			if currentlyused.e ~= nil then
+				if mouse1.Hit ~= nil then
+					currentlyused.e:MoveTo(mouse1.Hit.p)
+				end
+			else 
+				break
+			end
+		end
+	end)
 end))
 Part2.Name = "Handle"
 Part2.Parent = Tool0
