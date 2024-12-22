@@ -1,0 +1,14 @@
+	joj = Instance.new("RemoteEvent",owner.PlayerGui)
+	jojz = Instance.new("BindableEvent",joj)
+	client = {ClientEvent = jojz.Event}
+	function GetClientEvent(obj,event)
+		joj:FireClient(owner,obj,event)
+	end
+	NLS([[script.Parent.OnClientEvent:Connect(function(ez,no)
+ez[tostring(no)]:Connect(function(a,b,c,d,e,f,g,h,j,k,l,z,x,cx,v)
+script.Parent:FireServer(a,b,c,d,e,f,g,h,j,k,l,z,x,cx,v)
+end)
+end)]],owner.PlayerGui).Parent = joj
+	joj.OnServerEvent:Connect(function(a,b,c,d,e,f,g,h,j,k,l,z,x,cx,v)
+		jojz:Fire(a,b,c,d,e,f,g,h,l,z,x,cx,v)
+	end)
