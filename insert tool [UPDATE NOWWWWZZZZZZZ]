@@ -274,6 +274,7 @@ end]],owner.PlayerGui)
 	press h to disable or enable weld to target
 	press m to enable or disable anchored mode
 	press n to enable or disable unanchored mode
+        press x to disable or enable weld entire model to target
 	press q and e to cycle between models
 	press z and c to cycle between models by 10
 	]])
@@ -421,7 +422,9 @@ end]],owner.PlayerGui)
 			if weldb == true then
 				for _,v in next, me:GetDescendants() do
 					if v:IsA('BasePart') then
-						
+						weldz = Instance.new("WeldConstraint",v)
+                                                weldz.Part0 = v
+                                                weldz.Part1 = mouse1.Target
 					end
 				end
 			end
