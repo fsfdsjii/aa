@@ -616,7 +616,7 @@ end
 
 function onState(state, sound)
 	if state then
-		sound:Play()
+		sound:Resume()
 	else
 		sound:Pause()
 	end
@@ -624,7 +624,7 @@ end
 
 function onRunning(speed)
 	if speed>0 then
-		sRunning:Play()
+		sRunning:Resume()
 	else
 		sRunning:Pause()
 	end
