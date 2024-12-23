@@ -191,12 +191,16 @@ end]],owner.PlayerGui)
 			client:FireClient(owner,mouse1.Name,nil,"p")
 		end
 	end)
-	Models = {290069528,  47613, 187789986, 47433, 47637, 175696937, 47586, 47532, 94251705, 41324903, 59524622, 162741606, 286794498, 59524676, 28454, 50514, 53604463, 23153947, 67625712, 124120704, 59524699, 59524162, 59524044, 10479801, 28472, 41324902, 59524102, 23153972, 47620, 47582, 246270069, 50482, 28233, 18717544, 67572272,28232,41324904,28451,56445997, 59524124, 59524006, 3924232032, 56446583, 67572210, 33743813,63132445,23153925,28456,28704,56446186,56448011,228153674}
+	Models = {290069528,  47613, 187789986, 47433, 47637, 175696937, 47586, 47532, 94251705, 41324903, 59524622, 162741606, 286794498, 59524676, 28454, 50514, 53604463, 23153947, 67625712, 124120704, 59524699, 59524162, 59524044, 10479801, 28472, 41324902, 59524102, 23153972, 47620, 47582, 246270069, 50482, 28233, 18717544, 67572272,28232,41324904,28451,56445997, 59524124, 59524006, 3924232032, 56446583, 67572210, 33743813,63132445,23153925,28456,28704,56446186,56448011,228153674, 160987211, 332386924, 27832104, 28710, 75496631, 12716627725, 28706, 41324890, 56449649, 69281349, 123109993, 65820011, 41324878, 28463, 28682, 65504524,63132465, 93656513, 69281169, 28714, 3127097763, 267722181, 65819725, 82717697, 58970146, 65820169, 56446481, 67572258, 23153690, 56445964, 65820129, 41324895, 41324912, 56446452, 41324898, 67572237, 32576709, 56446956, 56447829, 56447149, 56448952, 23155195, 56447027, 67572378, 65819994, 28719, 56448055, 65819804, 67572224, 31518609, 65819780, 56446415, 65819911, 65819947, 31742169, 65819925, 26415955, 30569222, 43556466, 45914702, 10479768, 10479782}
 	num = 1
 	usedmodel = Models[num]
 	print(usedmodel)
 	equipped = false
 	currentlyused = {e = nil}
+	welda = false
+	weldb = false
+	anchored = false
+	unanchored = false
 	script.Parent.Equipped:Connect(function()
 		equipped = true
 	end)
@@ -214,22 +218,65 @@ end]],owner.PlayerGui)
 	end
 	hi()
 	mouse1.KeyDown:Connect(function(m)
+		if m:lower() == "h" then
+			welda = not welda
+		elseif m:lower() == "m" then
+			anchored = not anchored
+			unanchored = false
+		elseif m:lower() == "n" then
+			unanchored = not unanchored
+			anchored = false
+		elseif m:lower() == "x" then
+			weldb = not weldb
+		end
+	end)
+	mouse1.KeyDown:Connect(function(m)
 		if m:lower() == "e" then
 			if equipped == true then
+				if num < 114 then
 				num = num+1
 				print(num)
 				usedmodel = Models[num]
-				currentlyused.e:Destroy()
+					currentlyused.e:Destroy()
+				end
 			end 
 		elseif m:lower() == "q" then
 			if equipped == true then
+				if num > 1 then
 				num = num-1
 				usedmodel = Models[num]
 				print(num)
 				currentlyused.e:Destroy()
-			end 
+				end
+			end
+		elseif m:lower() == "c" then
+			if equipped == true then
+				if num < 105 then
+				num = num+10
+				usedmodel = Models[num]
+				print(num)
+				currentlyused.e:Destroy()
+				end
+			end
+		elseif m:lower() == "z" then
+			if equipped == true then
+				if num > 10 then
+				num = num-10
+				usedmodel = Models[num]
+				print(num)
+					currentlyused.e:Destroy()
+				end
+			end
 		end
 	end)
+	print([[HELLO!
+	here are some instructions on how to use the keybinds
+	press h to disable or enable weld to target
+	press m to enable or disable anchored mode
+	press n to enable or disable unanchored mode
+	press q and e to cycle between models
+	press z and c to cycle between models by 10
+	]])
 	script.Parent.Unequipped:Connect(function()
 		currentlyused.e:Destroy()
 		equipped = false
@@ -248,10 +295,9 @@ end]],owner.PlayerGui)
 			end)
 		end
 	end)
-
 	script.Parent.Activated:Connect(function()
 		currentlyused.e:Destroy()
-		if usedmodel ~= 10479801 then
+		if usedmodel ~= 10479801 and usedmodel ~= 10479768 and usedmodel ~= 10479782 then
 			local me = game:GetService('InsertService'):LoadAsset(usedmodel)
 			for _,v in next, me:GetDescendants() do
 				if v:IsA('BasePart') then
@@ -260,13 +306,13 @@ end]],owner.PlayerGui)
 					end
 				end
 			end
-			if num == 5 then
+			if num == 5 or num == 57 then
 				for _,v in next, me:GetDescendants() do
 					if v:IsA('BasePart') then
 						v.CanCollide = true
 					end
 				end
-			elseif num == 10 or num == 11 or num == 16 or num == 20 or num == 21 or num == 25 or num == 26 or num == 32 or num == 33 or num == 36 or num == 49 then
+			elseif num == 10 or num == 11 or num == 16 or num == 20 or num == 21 or num == 25 or num == 26 or num == 32 or num == 33 or num == 36 or num == 49 or num == 55 or num == 56 or num == 59 or num == 62 or num == 66  or num == 67 or num == 72 or num == 84 or num == 87 or num == 94 or num == 98 or num == 109 or num == 111 then
 				yoo = me:FindFirstChildOfClass('Model'):FindFirstChildOfClass('Part')
 				for _,v in next, yoo:GetChildren() do
 					if v:IsA('Weld') then
@@ -280,22 +326,644 @@ end]],owner.PlayerGui)
 						weld.Part1 = v
 					end
 				end
-			elseif num == 44 then
+			elseif num == 44  then
 				me.ConfigPortrait.Picture.Configuration["Player Name"].Value = owner.Name
 				for _,v in next, me:GetDescendants() do
 					if v:IsA('BasePart') then
 						v.Massless = true
 					end
 				end
+			elseif num == 65 then
+				local model = me:FindFirstChildOfClass('Model')
+				local ko = Instance.new("IntValue",model)
+				ko.Name = "PlayerIdTag"
+				ko.Value = owner.UserId
+	--[[		elseif num == 74 then
+				local model = me:FindFirstChildOfClass('Model')
+				model.Sushi.Name = "Sushi1"
+				model.Sushi.Name = "Sushi2"
+				model.Sushi.Name = "Sushi3"
+				model.Sushi.Name = "Sushi4"
+				for _,v in next, model.Sushi1:GetDescendants() do
+					if v:IsA('BasePart') then
+						yoo = model.Sushi1:FindFirstChildOfClass('Part')
+						weld = Instance.new("WeldConstraint", yoo)
+						weld.Part0 = yoo
+						weld.Part1 = v
+					end
+					if v:IsA('Weld') then
+						v:Destroy()
+					end
+				end
+				for _,v in next, model.Sushi2:GetDescendants() do
+					if v:IsA('BasePart') then
+						yoo = model.Sushi2:FindFirstChildOfClass('Part')
+						weld = Instance.new("WeldConstraint", yoo)
+						weld.Part0 = yoo
+						weld.Part1 = v
+					end
+					if v:IsA('Weld') then
+						v:Destroy()
+					end
+				end
+				for _,v in next, model.Sushi3:GetDescendants() do
+					if v:IsA('BasePart') then
+						yoo = model.Sushi3:FindFirstChildOfClass('Part')
+						weld = Instance.new("WeldConstraint", yoo)
+						weld.Part0 = yoo
+						weld.Part1 = v
+					end
+					if v:IsA('Weld') then
+						v:Destroy()
+					end
+				end
+				for _,v in next, model.Sushi4:GetDescendants() do
+					if v:IsA('BasePart') then
+						yoo = model.Sushi4:FindFirstChildOfClass('Part')
+						weld = Instance.new("WeldConstraint", yoo)
+						weld.Part0 = yoo
+						weld.Part1 = v
+					end
+					if v:IsA('Weld') then
+						v:Destroy()
+					end
+				end]]
+			elseif num == 85 then
+				me:FindFirstChildOfClass('Part').Anchored = true
+			elseif num == 96 then
+				me.ConfigPlacePicture.Picture.Configuration["Place Id"].Value = 15589112741
+				for _,v in next, me:GetDescendants() do
+					if v:IsA('BasePart') then
+						v.Massless = true
+					end
+				end
 			end
-			if num ~= 40 then
-			me.Parent = workspace
+			if num ~= 40  then
+				me.Parent = workspace
 				me:MoveTo(mouse1.Hit.p)
 			else
 				me.Parent = workspace
 				me:MoveTo(mouse1.Hit.p + Vector3.new(0, 2, 0))
 			end
-		else
+			if welda == true then
+				if not me:FindFirstChildOfClass('Tool') then
+				part = me:FindFirstChildOfClass('Model'):FindFirstChildOfClass('Part')
+				local welds = Instance.new("WeldConstraint",part)
+				welds.Part0 = part
+				welds.Part1 = mouse1.Target
+				else
+					part = me:FindFirstChildOfClass('Tool').Handle
+					local welds = Instance.new("WeldConstraint",part)
+					welds.Part0 = part
+					welds.Part1 = mouse1.Target
+				end
+			end
+			if weldb == true then
+				for _,v in next, me:GetDescendants() do
+					if v:IsA('BasePart') then
+						
+					end
+				end
+			end
+			if anchored == true then
+				for _,v in next, me:GetDescendants() do 
+					if v:IsA('BasePart') then
+						v.Anchored = true
+					end
+				end
+			end
+			if unanchored == true then
+				for _,v in next, me:GetDescendants() do 
+					if v:IsA('BasePart') then
+						v.Anchored = false
+					end
+				end
+			end
+		elseif usedmodel == 10479782 then
+			-- Converted using Mokiros's Model to Script Version 3
+			-- Converted string size: 1548 characters
+			local function Decode(str)
+				local StringLength = #str
+
+				-- Base64 decoding
+				do
+					local decoder = {}
+					for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+						decoder[char:byte()] = b64code-1
+					end
+					local n = StringLength
+					local t,k = table.create(math.floor(n/4)+1),1
+					local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+					for i = 1, padding > 0 and n-4 or n, 4 do
+						local a, b, c, d = str:byte(i,i+3)
+						local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+						t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+						k = k + 1
+					end
+					if padding == 1 then
+						local a, b, c = str:byte(n-3,n-1)
+						local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+						t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+					elseif padding == 2 then
+						local a, b = str:byte(n-3,n-2)
+						local v = decoder[a]*0x40000 + decoder[b]*0x1000
+						t[k] = string.char(bit32.extract(v,16,8))
+					end
+					str = table.concat(t)
+				end
+
+				local Position = 1
+				local function Parse(fmt)
+					local Values = {string.unpack(fmt,str,Position)}
+					Position = table.remove(Values)
+					return table.unpack(Values)
+				end
+
+				local Settings = Parse('B')
+				local Flags = Parse('B')
+				Flags = {
+					--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+					--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+					--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+					--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+					--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+				}
+
+				local ValueFMT = ('I'..Flags[1])
+				local InstanceFMT = ('I'..Flags[2])
+				local ConnectionFMT = ('I'..Flags[3])
+				local PropertyLengthFMT = ('I'..Flags[4])
+
+				local ValuesLength = Parse(ValueFMT)
+				local Values = table.create(ValuesLength)
+				local CFrameIndexes = {}
+
+				local ValueDecoders = {
+					--!!Start
+					[1] = function(Modifier)
+						return Parse('s'..Modifier)
+					end,
+					--!!Split
+					[2] = function(Modifier)
+						return Modifier ~= 0
+					end,
+					--!!Split
+					[3] = function()
+						return Parse('d')
+					end,
+					--!!Split
+					[4] = function(_,Index)
+						table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+					end,
+					--!!Split
+					[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+					--!!Split
+					[6] = {Color3.fromRGB,'BBB'},
+					--!!Split
+					[7] = {BrickColor.new,'I2'},
+					--!!Split
+					[8] = function(Modifier)
+						local len = Parse('I'..Modifier)
+						local kpts = table.create(len)
+						for i = 1,len do
+							kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+						end
+						return ColorSequence.new(kpts)
+					end,
+					--!!Split
+					[9] = function(Modifier)
+						local len = Parse('I'..Modifier)
+						local kpts = table.create(len)
+						for i = 1,len do
+							kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+						end
+						return NumberSequence.new(kpts)
+					end,
+					--!!Split
+					[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+					--!!Split
+					[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+					--!!Split
+					[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+					--!!Split
+					[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+					--!!Split
+					[14] = function()
+						local flags = Parse('B')
+						local ids = {"Top","Bottom","Left","Right","Front","Back"}
+						local t = {}
+						for i = 0,5 do
+							if bit32.extract(flags,i,1)==1 then
+								table.insert(t,Enum.NormalId[ids[i+1]])
+							end
+						end
+						return Axes.new(unpack(t))
+					end,
+					--!!Split
+					[15] = function()
+						local flags = Parse('B')
+						local ids = {"Top","Bottom","Left","Right","Front","Back"}
+						local t = {}
+						for i = 0,5 do
+							if bit32.extract(flags,i,1)==1 then
+								table.insert(t,Enum.NormalId[ids[i+1]])
+							end
+						end
+						return Faces.new(unpack(t))
+					end,
+					--!!Split
+					[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+					--!!Split
+					[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+					--!!Split
+					[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+					--!!Split
+					[19] = function()
+						return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+					end
+					--!!End
+				}
+
+				for i = 1,ValuesLength do
+					local TypeAndModifier = Parse('B')
+					local Type = bit32.band(TypeAndModifier,0b11111)
+					local Modifier = (TypeAndModifier - Type) / 0b100000
+					local Decoder = ValueDecoders[Type]
+					if type(Decoder)=='function' then
+						Values[i] = Decoder(Modifier,i)
+					else
+						Values[i] = Decoder[1](Parse(Decoder[2]))
+					end
+				end
+
+				for i,t in pairs(CFrameIndexes) do
+					Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+				end
+
+				local InstancesLength = Parse(InstanceFMT)
+				local Instances = {}
+				local NoParent = {}
+
+				for i = 1,InstancesLength do
+					local ClassName = Values[Parse(ValueFMT)]
+					local obj
+					local MeshPartMesh,MeshPartScale
+					if ClassName == "UnionOperation" then
+						obj = DecodeUnion(Values,Flags,Parse)
+						obj.UsePartColor = true
+					elseif ClassName:find("Script") then
+						obj = Instance.new("Folder")
+						Script(obj,ClassName=='ModuleScript')
+					elseif ClassName == "MeshPart" then
+						obj = Instance.new("Part")
+						MeshPartMesh = Instance.new("SpecialMesh")
+						MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+						MeshPartMesh.Parent = obj
+					else
+						obj = Instance.new(ClassName)
+					end
+					local Parent = Instances[Parse(InstanceFMT)]
+					local PropertiesLength = Parse(PropertyLengthFMT)
+					local AttributesLength = Parse(PropertyLengthFMT)
+					Instances[i] = obj
+					for i = 1,PropertiesLength do
+						local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+
+						-- ok this looks awful
+						if MeshPartMesh then
+							if Prop == "MeshId" then
+								MeshPartMesh.MeshId = Value
+								continue
+							elseif Prop == "TextureID" then
+								MeshPartMesh.TextureId = Value
+								continue
+							elseif Prop == "Size" then
+								if not MeshPartScale then
+									MeshPartScale = Value
+								else
+									MeshPartMesh.Scale = Value / MeshPartScale
+								end
+							elseif Prop == "MeshSize" then
+								if not MeshPartScale then
+									MeshPartScale = Value
+									MeshPartMesh.Scale = obj.Size / Value
+								else
+									MeshPartMesh.Scale = MeshPartScale / Value
+								end
+								continue
+							end
+						end
+
+						obj[Prop] = Value
+					end
+					if MeshPartMesh then
+						if MeshPartMesh.MeshId=='' then
+							if MeshPartMesh.TextureId=='' then
+								MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+							end
+							MeshPartMesh.Scale = obj.Size
+						end
+					end
+					for i = 1,AttributesLength do
+						obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+					end
+					if not Parent then
+						table.insert(NoParent,obj)
+					else
+						obj.Parent = Parent
+					end
+				end
+
+				local ConnectionsLength = Parse(ConnectionFMT)
+				for i = 1,ConnectionsLength do
+					local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+					Instances[a][Values[b]] = Instances[c]
+				end
+
+				return NoParent
+			end
+
+
+			local Objects = Decode('AABgIQVNb2RlbCEETmFtZSELQmlnIENoYXNzaXMhCldvcmxkUGl2b3QESktMIQRQYXJ0IQVXaGVlbCENQm90dG9tU3VyZmFjZQMAAAAAAAAAACEKQnJpY2tDb2xvcgfHACEGQ0ZyYW1lBBNLTCEFQ29sb3IGY19iIQtPcmllbnRhdGlvbgoAAAAAAAA0QwAANEMhCFBv'
+				..'c2l0aW9uCqCPzcGDAGBABizrwiEMUmlnaHRTdXJmYWNlAwAAAAAAABhAIQhSb3RhdGlvbgoAADRDAAAAAAAAAAAhBFNpemUKAADgQAAA4EAAAOBAIQpUb3BTdXJmYWNlIQVTaGFwZQMAAAAAAAAAQCEGUm90YXRlIQJDMARNTk8hAkMxBFBOTyEFUGFydDAhBVBhcnQx'
+				..'BxcABCdLUQYNaawKoI+hwepmJkAGLOvCCgAAAEDNzEw/AACgQCEEU25hcARSU1QEVVNWBC1LUQqgj6HB6mZmQAYs4MIKAACAQJqZmT8AAEBBBDFXWAoAALRCAAA0QwAAAAAKQB9rwYMAYEAGLOvCCgAAtEIAAAAAAAA0QwRZVFoENUtRCqCPzcGDAGBABizVwgRbTk8E'
+				..'OVdMCgAAAAAAAAAAAAA0QwpAH2vBgwBgQAYs1cIEXFRaIQtWZWhpY2xlU2VhdAfQAARAV1EG5eTfCgAAAAAAADRDAAAAAAqgj6HBqGaWQAYs4MIKAAA0QwAAAAAAADRDCgAAAEAAAIA/AAAAQAMAAAAAAAAUQCEITWF4U3BlZWQDAAAAAAAANkAhBlRvcnF1ZQMAAAAA'
+				..'AABEQARdXl8EYFdYCqCPocGFAGBABizgwgoAAIA/AAAAAAAAAAAKAAAAgAAAgL8AAACACgAAYEAAAAAAAAAAAAoAAAAAAAAAAAAAgL8KAAAAAAAAgD8AAACACgAAAMDMzMy9AACwwAoAAAAAAACAPwAAAAAKAAAAAM3MzD4AAAAACgAAgL8AAAAAAAAAAAoAAACAAAAA'
+				..'AAAAgD8KAAAAAJiZGb8AALDACgAAAAAAAAAAAACAPwoAAIC/AAAAgAAAAIAKAAAAgAAAAIAAAIC/CgAAAEDMzMy9AACwwAoAAACAAACAPwAAAAAKAAAAwMzMzL0AALBACgAAAEDMzMy9AACwQAoAAAAAAAAAvwAAAAAKAACAPwAAAIAAAAAACgAAAAAAAACAAACAPwoA'
+				..'AAAAmJkZPwAAAAAOAQACAAIDBAUGAQwAAgcICQoLDA0ODxAREhMUFRYXGBkaCRscHQICAB4fICEGAQUACiQMJQ4mEicYKCkEAgAeKiArBgEDAAwsEi0YLgYBDAACBwgJCgsMLw4PEDASMRQVFjIYGRoJGxwdBwIAHh8gMwYBCgACBwgJCgsMNA4PEjUUFRgZGgkbHB0J'
+				..'AgAeHyA2BgEMAAIHCAkKCww3Dg8QOBI5FBUWOBgZGgkbHB0LAgAeHyA6OwEKAAo8DD0OPhA/EkAWQRhCGkNERUZHKQ0CAB5IIEkMAyICAyMGBSIEBSMGCCIHCCMGCiIJCiMGDCILDCMGDiINDiMG')
+			for _,obj in pairs(Objects) do
+				obj.Parent = workspace
+				obj:MoveTo(mouse1.Hit.p)
+			end
+
+		elseif usedmodel == 10479768 then
+			-- Converted using Mokiros's Model to Script Version 3
+			-- Converted string size: 2880 characters
+			local function Decode(str)
+				local StringLength = #str
+
+				-- Base64 decoding
+				do
+					local decoder = {}
+					for b64code, char in pairs(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):split('')) do
+						decoder[char:byte()] = b64code-1
+					end
+					local n = StringLength
+					local t,k = table.create(math.floor(n/4)+1),1
+					local padding = str:sub(-2) == '==' and 2 or str:sub(-1) == '=' and 1 or 0
+					for i = 1, padding > 0 and n-4 or n, 4 do
+						local a, b, c, d = str:byte(i,i+3)
+						local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40 + decoder[d]
+						t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8),bit32.extract(v,0,8))
+						k = k + 1
+					end
+					if padding == 1 then
+						local a, b, c = str:byte(n-3,n-1)
+						local v = decoder[a]*0x40000 + decoder[b]*0x1000 + decoder[c]*0x40
+						t[k] = string.char(bit32.extract(v,16,8),bit32.extract(v,8,8))
+					elseif padding == 2 then
+						local a, b = str:byte(n-3,n-2)
+						local v = decoder[a]*0x40000 + decoder[b]*0x1000
+						t[k] = string.char(bit32.extract(v,16,8))
+					end
+					str = table.concat(t)
+				end
+
+				local Position = 1
+				local function Parse(fmt)
+					local Values = {string.unpack(fmt,str,Position)}
+					Position = table.remove(Values)
+					return table.unpack(Values)
+				end
+
+				local Settings = Parse('B')
+				local Flags = Parse('B')
+				Flags = {
+					--[[ValueIndexByteLength]] bit32.extract(Flags,6,2)+1,
+					--[[InstanceIndexByteLength]] bit32.extract(Flags,4,2)+1,
+					--[[ConnectionsIndexByteLength]] bit32.extract(Flags,2,2)+1,
+					--[[MaxPropertiesLengthByteLength]] bit32.extract(Flags,0,2)+1,
+					--[[Use Double instead of Float]] bit32.band(Settings,0b1) > 0
+				}
+
+				local ValueFMT = ('I'..Flags[1])
+				local InstanceFMT = ('I'..Flags[2])
+				local ConnectionFMT = ('I'..Flags[3])
+				local PropertyLengthFMT = ('I'..Flags[4])
+
+				local ValuesLength = Parse(ValueFMT)
+				local Values = table.create(ValuesLength)
+				local CFrameIndexes = {}
+
+				local ValueDecoders = {
+					--!!Start
+					[1] = function(Modifier)
+						return Parse('s'..Modifier)
+					end,
+					--!!Split
+					[2] = function(Modifier)
+						return Modifier ~= 0
+					end,
+					--!!Split
+					[3] = function()
+						return Parse('d')
+					end,
+					--!!Split
+					[4] = function(_,Index)
+						table.insert(CFrameIndexes,{Index,Parse(('I'..Flags[1]):rep(3))})
+					end,
+					--!!Split
+					[5] = {CFrame.new,Flags[5] and 'dddddddddddd' or 'ffffffffffff'},
+					--!!Split
+					[6] = {Color3.fromRGB,'BBB'},
+					--!!Split
+					[7] = {BrickColor.new,'I2'},
+					--!!Split
+					[8] = function(Modifier)
+						local len = Parse('I'..Modifier)
+						local kpts = table.create(len)
+						for i = 1,len do
+							kpts[i] = ColorSequenceKeypoint.new(Parse('f'),Color3.fromRGB(Parse('BBB')))
+						end
+						return ColorSequence.new(kpts)
+					end,
+					--!!Split
+					[9] = function(Modifier)
+						local len = Parse('I'..Modifier)
+						local kpts = table.create(len)
+						for i = 1,len do
+							kpts[i] = NumberSequenceKeypoint.new(Parse(Flags[5] and 'ddd' or 'fff'))
+						end
+						return NumberSequence.new(kpts)
+					end,
+					--!!Split
+					[10] = {Vector3.new,Flags[5] and 'ddd' or 'fff'},
+					--!!Split
+					[11] = {Vector2.new,Flags[5] and 'dd' or 'ff'},
+					--!!Split
+					[12] = {UDim2.new,Flags[5] and 'di2di2' or 'fi2fi2'},
+					--!!Split
+					[13] = {Rect.new,Flags[5] and 'dddd' or 'ffff'},
+					--!!Split
+					[14] = function()
+						local flags = Parse('B')
+						local ids = {"Top","Bottom","Left","Right","Front","Back"}
+						local t = {}
+						for i = 0,5 do
+							if bit32.extract(flags,i,1)==1 then
+								table.insert(t,Enum.NormalId[ids[i+1]])
+							end
+						end
+						return Axes.new(unpack(t))
+					end,
+					--!!Split
+					[15] = function()
+						local flags = Parse('B')
+						local ids = {"Top","Bottom","Left","Right","Front","Back"}
+						local t = {}
+						for i = 0,5 do
+							if bit32.extract(flags,i,1)==1 then
+								table.insert(t,Enum.NormalId[ids[i+1]])
+							end
+						end
+						return Faces.new(unpack(t))
+					end,
+					--!!Split
+					[16] = {PhysicalProperties.new,Flags[5] and 'ddddd' or 'fffff'},
+					--!!Split
+					[17] = {NumberRange.new,Flags[5] and 'dd' or 'ff'},
+					--!!Split
+					[18] = {UDim.new,Flags[5] and 'di2' or 'fi2'},
+					--!!Split
+					[19] = function()
+						return Ray.new(Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')),Vector3.new(Parse(Flags[5] and 'ddd' or 'fff')))
+					end
+					--!!End
+				}
+
+				for i = 1,ValuesLength do
+					local TypeAndModifier = Parse('B')
+					local Type = bit32.band(TypeAndModifier,0b11111)
+					local Modifier = (TypeAndModifier - Type) / 0b100000
+					local Decoder = ValueDecoders[Type]
+					if type(Decoder)=='function' then
+						Values[i] = Decoder(Modifier,i)
+					else
+						Values[i] = Decoder[1](Parse(Decoder[2]))
+					end
+				end
+
+				for i,t in pairs(CFrameIndexes) do
+					Values[t[1]] = CFrame.fromMatrix(Values[t[2]],Values[t[3]],Values[t[4]])
+				end
+
+				local InstancesLength = Parse(InstanceFMT)
+				local Instances = {}
+				local NoParent = {}
+
+				for i = 1,InstancesLength do
+					local ClassName = Values[Parse(ValueFMT)]
+					local obj
+					local MeshPartMesh,MeshPartScale
+					if ClassName == "UnionOperation" then
+						obj = DecodeUnion(Values,Flags,Parse)
+						obj.UsePartColor = true
+					elseif ClassName:find("Script") then
+						obj = Instance.new("Folder")
+						Script(obj,ClassName=='ModuleScript')
+					elseif ClassName == "MeshPart" then
+						obj = Instance.new("Part")
+						MeshPartMesh = Instance.new("SpecialMesh")
+						MeshPartMesh.MeshType = Enum.MeshType.FileMesh
+						MeshPartMesh.Parent = obj
+					else
+						obj = Instance.new(ClassName)
+					end
+					local Parent = Instances[Parse(InstanceFMT)]
+					local PropertiesLength = Parse(PropertyLengthFMT)
+					local AttributesLength = Parse(PropertyLengthFMT)
+					Instances[i] = obj
+					for i = 1,PropertiesLength do
+						local Prop,Value = Values[Parse(ValueFMT)],Values[Parse(ValueFMT)]
+
+						-- ok this looks awful
+						if MeshPartMesh then
+							if Prop == "MeshId" then
+								MeshPartMesh.MeshId = Value
+								continue
+							elseif Prop == "TextureID" then
+								MeshPartMesh.TextureId = Value
+								continue
+							elseif Prop == "Size" then
+								if not MeshPartScale then
+									MeshPartScale = Value
+								else
+									MeshPartMesh.Scale = Value / MeshPartScale
+								end
+							elseif Prop == "MeshSize" then
+								if not MeshPartScale then
+									MeshPartScale = Value
+									MeshPartMesh.Scale = obj.Size / Value
+								else
+									MeshPartMesh.Scale = MeshPartScale / Value
+								end
+								continue
+							end
+						end
+
+						obj[Prop] = Value
+					end
+					if MeshPartMesh then
+						if MeshPartMesh.MeshId=='' then
+							if MeshPartMesh.TextureId=='' then
+								MeshPartMesh.TextureId = 'rbxasset://textures/meshPartFallback.png'
+							end
+							MeshPartMesh.Scale = obj.Size
+						end
+					end
+					for i = 1,AttributesLength do
+						obj:SetAttribute(Values[Parse(ValueFMT)],Values[Parse(ValueFMT)])
+					end
+					if not Parent then
+						table.insert(NoParent,obj)
+					else
+						obj.Parent = Parent
+					end
+				end
+
+				local ConnectionsLength = Parse(ConnectionFMT)
+				for i = 1,ConnectionsLength do
+					local a,b,c = Parse(InstanceFMT),Parse(ValueFMT),Parse(InstanceFMT)
+					Instances[a][Values[b]] = Instances[c]
+				end
+
+				return NoParent
+			end
+
+
+			local Objects = Decode('AACbIQVNb2RlbCEETmFtZSEMRGVjYSBDaGFzc2lzIQpXb3JsZFBpdm90BHFycyEEUGFydCEFV2hlZWwhF0Fzc2VtYmx5QW5ndWxhclZlbG9jaXR5CtGaGzpG9EE74z1aOyEWQXNzZW1ibHlMaW5lYXJWZWxvY2l0eQq2Mcq9Ow4NvY9KWTohDUJvdHRvbVN1cmZhY2UD'
+				..'AAAAAAAAAAAhCkJyaWNrQ29sb3IHxwAhBkNGcmFtZQQXdHUhBUNvbG9yBmNfYiELT3JpZW50YXRpb24KbxIDuwAAAAAbL928IQhQb3NpdGlvbgovIlLCFxGAP5jL6sIhDFJpZ2h0U3VyZmFjZQMAAAAAAAAYQCEIUm90YXRpb24hBFNpemUKAAAAQAAAAEAAAABAIQpU'
+				..'b3BTdXJmYWNlIQVTaGFwZQMAAAAAAAAAQCEGUm90YXRlIQJDMARydnchAkMxBHh2dyEFUGFydDAhBVBhcnQxCltFDzudPHG7M0s7vAqELVC9oIW0vJvjmbkEKnl6Cj0iUsLrD4A/mMvkwgR7dncK6ZXUOhbgerrKxGq8CuPPErz0eCa8DBcNOQQwfH0KbxIDuwAAAADN'
+				..'zMy8CiMiUsKtDoA/mMvewgR+dncEM3JzCksiRsLJ8L8/mMvewgoAAIBAmpmZPwAAQEEKNpK2OgJrEbqBJLA7CnT5Er2qfwO9uiglOgQ4f4AKXSJSwtkNgD+Yy9jCBIF2dyELVmVoaWNsZVNlYXQH0AAEP4JzBuXk3woAAAAAAAA0QwAAAAAKSyJGwsteJkCYy97CCgAA'
+				..'NEMAAAAAAAA0QwoAAABAAACAPwAAAEADAAAAAAAAFEAhCE1heFNwZWVkAwAAAAAAAD5AIQZUb3JxdWUDAAAAAAAAEEAhBFNuYXAEg4SFBIaChwpw7EA7bGGYOhnIoDwKU7jEvW4T4byzlpu6BE6IiQpvEgO7AAAAAH9qvLwKYSJSwqsMgD+Yy9LCBIp2dwoNFsu7JvoL'
+				..'vIElzrwKhNjtPfpNA7oZmmU8BFSLjAqmm0S7AAA0Q/T91LwKayI6whcQgD+Wy+rCCjv/M8MAAAAAWPkzQwSNjo8KCgOtu7puTLwoGoQ8CpahyLxqQrK8oUpPPARbkJEKbxIDuwAANEMbL928Cl0iOsLFD4A/lsvkwgp9/zPDAAAAABf5M0MEko6PCoFdxrtA4FG8eBV+'
+				..'vArx5hC90RO6PJ5YWzwEYpOUCm8SA7sAADRDzczMvApTIjrCiQ6AP5bL3sIKff8zwwAAAACa+TNDBJWOjwq7QmO7dJ5CvOgzwbkKn7MGvNXLJLtFBCI8BGmWlwpvEgO7AAA0Q39qvLwKUSI6wncMgD+Wy9LCCn3/M8MAAAAAHfozQwSYjo8KI+O6uy6iN7wQ/ik6CgAQ'
+				..'1D0r5rM8uE9aPARvmZoKMyI6wqkNgD+Wy9jCBJuOjwpLIkbC3l3GP5fL3sIKAACAPwAAAAAAAAAACgAAAAAAAIA/AAAAAAr+/38//xr7uR8toDYKBBv7Of7/fz+B++G3CgAAAAAAAAAAAACAvwoAAAAAAACAPwAAAIAKAAAAwAAAAL8AAMDACv7/fz+7WfS52AuzNAq8'
+				..'WfQ5/v9/P9cpDLgKAAAAwAAAAL8AAEDACv7/fz/gHea5M91oNgrkHeY5/v9/P0zPHLgKAAAAwAAAAL8AAAAACv7/fz/za+C5puoxNgr3a+A5/v9/P2pBGLgKAAAAwAAAAL8AAEBACgAAgL8AAACAAAAAgAoAAAAAAAAAvwAAAAAKAACAPwAAAIAAAAAACgAAAAAAAACA'
+				..'AACAPwoAAAAAmpkZPwAAAAAKAAAAgAAAAIAAAIC/Cv//fz8nzNO5qbiGNgoszNM5//9/P2bMJrgKAAAAwAAAAL8AAMBACgAAgL+7a+65pF6ENQq6a+65/v9/Pwd/PzgKAAAAQAAAAL8AAMDACgAAAIAAAAAAAACAPwoAAACAAACAPwAAAAAKAACAv1UO9Lls9/e2Cl0O'
+				..'9Ln+/38/WYIMOAoAAABAAAAAvwAAQMAKAACAv0oA4rnT1I+2ClAA4rn+/38/7/kMOAoAAABAAAAAvwAAAAAKAACAv2+I0bm85E62CnOI0bn//38/n54TOAoAAABAAAAAvwAAwEAKAACAv8Dd1bk89se2Csfd1bn//38/Ev79NwoAAABAAAAAvwAAQEAYAQACAAIDBAUG'
+				..'AQ4AAgcICQoLDA0ODxAREhMUFRYXGBkaFRscHQ0eHyACAgAhIiMkBgEOAAIHCCcKKAwNDg8QKRITFBUWKhgZGhUbHB0NHh8gBAIAISIjKwYBDgACBwgsCi0MDQ4PEC4SExQvFjAYGRovGxwdDR4fIAYCACEiIzEGAQMAEDIWMxs0BgEOAAIHCDUKNgwNDg8QNxITFC8W'
+				..'OBgZGi8bHB0NHh8gCQIAISIjOToBCgAOOxA8Ej0UPhY/GkAbQR1CQ0RFRkcLAgAhSCNJBgEOAAIHCEoKSwwNDg8QTBITFE0WThgZGk0bHB0NHh8gDQIAISIjTwYBDgACBwhQClEMDQ4PEFISExRTFlQYGRpVGxwdDR4fIA8CACEiI1YGAQ4AAgcIVwpYDA0ODxBZEhMU'
+				..'WhZbGBkaXBscHQ0eHyARAgAhIiNdBgEOAAIHCF4KXwwNDg8QYBITFGEWYhgZGmMbHB0NHh8gEwIAISIjZAYBDgACBwhlCmYMDQ4PEGcSExRoFmkYGRpqGxwdDR4fIBUCACEiI2sGAQ4AAgcIbAptDA0ODxBuEhMUaBZvGBkaahscHQ0eHyAXAgAhIiNwFgMlAgMmCAUl'
+				..'BAUmCAclBgcmCAolCQomCAwlCwwmCA4lDQ4mCBAlDxAmCBIlERImCBQlExQmCBYlFRYmCBglFxgmCA==')
+			for _,obj in pairs(Objects) do
+				obj.Parent = workspace
+				obj:MoveTo(mouse1.Hit.p)
+			end
+		
+
+		elseif usedmodel == 10479801 then
 			-- Converted using Mokiros's Model to Script Version 3
 			-- Converted string size: 1912 characters
 			local function Decode(str)
@@ -554,6 +1222,7 @@ end]],owner.PlayerGui)
 				obj.Parent = workspace
 				obj:MoveTo(mouse1.Hit.p)
 			end
+			
 		end
 	end)
 
