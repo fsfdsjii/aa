@@ -1,4 +1,5 @@
-NS([[owner:LoadCharacter() owner.Character.Animate:Destroy() clone = owner.Character.Humanoid:Clone() owner.Character.Humanoid:Destroy()
+NS([[
+owner:LoadCharacter() owner.Character.Animate:Destroy() clone = owner.Character.Humanoid:Clone() owner.Character.Humanoid:Destroy()
 hum = Instance.new("Humanoid",owner.Character) hum.DisplayName  = clone.DisplayName clone:Destroy()]],workspace)
 task.wait(1)
 script.Parent = owner.Character
@@ -598,7 +599,7 @@ end
 
 local sDied = newSound("rbxasset://sounds/uuhhh.wav")
 local sFallingDown = newSound("rbxasset://sounds/splat.wav")
-local sFreeFalling = newSound("rbxasset://sounds/swoosh.wav")
+local sFreeFalling = newSound("rbxassetid://12222200")
 local sGettingUp = newSound("rbxasset://sounds/hit.wav")
 local sJumping = newSound("rbxasset://sounds/button.wav")
 local sRunning = newSound("rbxasset://sounds/bfsl-minifigfoots1.mp3")
@@ -615,6 +616,7 @@ function onDied()
 end
 
 function onState(state, sound)
+		sRunning:Pause()
 	if state then
 		sound:Resume()
 	else
