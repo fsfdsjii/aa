@@ -201,6 +201,7 @@ end]],owner.PlayerGui)
 	weldb = false
 	anchored = false
 	unanchored = false
+	rotation = CFrame.Angles(0,0,0)
 	script.Parent.Equipped:Connect(function()
 		equipped = true
 	end)
@@ -217,9 +218,41 @@ end]],owner.PlayerGui)
 		end
 	end
 	hi()
+	st0 = true
+	st1 = false
+	st2 = false
+	st3 = false
+	st4 = false
+	mouse1.KeyDown:Connect(function(m)
+		if m:lower() == "r" then
+			if st0 == true then
+				rotation = CFrame.Angles(0,0,0)
+				st1 = true
+				st0 = false
+			elseif st1 == true then
+				rotation = CFrame.Angles(0,90,0)
+				st2 = true
+				st1 = false
+			elseif st2 == true then
+				rotation = CFrame.Angles(0,180,0)
+				st2 = false
+				st3 = true
+			elseif st3 == true then
+				rotation = CFrame.Angles(0,-90,0)
+				st3 = false
+				st4 = true
+			elseif st4 == true then
+				rotation = CFrame.Angles(0,-180,0)
+				st4 = false
+				st0 = true
+			end
+
+		end
+	end)
 	mouse1.KeyDown:Connect(function(m)
 		if m:lower() == "h" then
 			welda = not welda
+			weldb = false
 		elseif m:lower() == "m" then
 			anchored = not anchored
 			unanchored = false
@@ -228,42 +261,43 @@ end]],owner.PlayerGui)
 			anchored = false
 		elseif m:lower() == "x" then
 			weldb = not weldb
+			welda = false
 		end
 	end)
 	mouse1.KeyDown:Connect(function(m)
 		if m:lower() == "e" then
 			if equipped == true then
 				if num < 114 then
-				num = num+1
-				print(num)
-				usedmodel = Models[num]
+					num = num+1
+					print(num)
+					usedmodel = Models[num]
 					currentlyused.e:Destroy()
 				end
 			end 
 		elseif m:lower() == "q" then
 			if equipped == true then
 				if num > 1 then
-				num = num-1
-				usedmodel = Models[num]
-				print(num)
-				currentlyused.e:Destroy()
+					num = num-1
+					usedmodel = Models[num]
+					print(num)
+					currentlyused.e:Destroy()
 				end
 			end
 		elseif m:lower() == "c" then
 			if equipped == true then
 				if num < 105 then
-				num = num+10
-				usedmodel = Models[num]
-				print(num)
-				currentlyused.e:Destroy()
+					num = num+10
+					usedmodel = Models[num]
+					print(num)
+					currentlyused.e:Destroy()
 				end
 			end
 		elseif m:lower() == "z" then
 			if equipped == true then
 				if num > 10 then
-				num = num-10
-				usedmodel = Models[num]
-				print(num)
+					num = num-10
+					usedmodel = Models[num]
+					print(num)
 					currentlyused.e:Destroy()
 				end
 			end
@@ -401,6 +435,8 @@ end]],owner.PlayerGui)
 			end
 			if num ~= 40  then
 				me.Parent = workspace
+				me:PivotTo(me:GetPivot()*rotation)
+				--me:PivotTo(CFrame.new(mouse1.Hit.p, rotation))
 				me:MoveTo(mouse1.Hit.p)
 			else
 				me.Parent = workspace
@@ -408,10 +444,10 @@ end]],owner.PlayerGui)
 			end
 			if welda == true then
 				if not me:FindFirstChildOfClass('Tool') then
-				part = me:FindFirstChildOfClass('Model'):FindFirstChildOfClass('Part')
-				local welds = Instance.new("WeldConstraint",part)
-				welds.Part0 = part
-				welds.Part1 = mouse1.Target
+					part = me:FindFirstChildOfClass('Model'):FindFirstChildOfClass('Part')
+					local welds = Instance.new("WeldConstraint",part)
+					welds.Part0 = part
+					welds.Part1 = mouse1.Target
 				else
 					part = me:FindFirstChildOfClass('Tool').Handle
 					local welds = Instance.new("WeldConstraint",part)
@@ -423,8 +459,8 @@ end]],owner.PlayerGui)
 				for _,v in next, me:GetDescendants() do
 					if v:IsA('BasePart') then
 						weldz = Instance.new("WeldConstraint",v)
-                                                weldz.Part0 = v
-                                                weldz.Part1 = mouse1.Target
+						weldz.Part0 = v
+						weldz.Part1 = mouse1.Target
 					end
 				end
 			end
@@ -964,7 +1000,7 @@ end]],owner.PlayerGui)
 				obj.Parent = workspace
 				obj:MoveTo(mouse1.Hit.p)
 			end
-		
+
 
 		elseif usedmodel == 10479801 then
 			-- Converted using Mokiros's Model to Script Version 3
@@ -1225,7 +1261,7 @@ end]],owner.PlayerGui)
 				obj.Parent = workspace
 				obj:MoveTo(mouse1.Hit.p)
 			end
-			
+
 		end
 	end)
 
