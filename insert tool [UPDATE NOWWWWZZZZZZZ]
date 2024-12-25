@@ -219,34 +219,100 @@ end]],owner.PlayerGui)
 	end
 	hi()
 	st0 = true
-	st1 = false
+        st05 = true
+	st1 = false	
+        st15 = false
 	st2 = false
+	st25 = false
 	st3 = false
+	st35 = false
 	st4 = false
+	stz0 = true
+        stz05 = true
+	stz1 = false	
+        stz15 = false
+	stz2 = false
+	stz25 = false
+	stz3 = false
+	stz35 = false
+	stz4 = false
 	mouse1.KeyDown:Connect(function(m)
 		if m:lower() == "r" then
 			if st0 == true then
 				rotation = CFrame.Angles(0,0,0)
-				st1 = true
+				st05 = true
 				st0 = false
+                        elseif st05 == true then
+                        	rotation = CFrame.Angles(0,45,0)
+				st1 = true
+				st05 = false
 			elseif st1 == true then
 				rotation = CFrame.Angles(0,90,0)
-				st2 = true
+				st15 = true
 				st1 = false
+                        elseif st15 == true then
+                        	rotation = CFrame.Angles(0,135,0)
+				st2 = true
+				st15 = false
 			elseif st2 == true then
 				rotation = CFrame.Angles(0,180,0)
 				st2 = false
+				st25 = true
+                        elseif st25 == true then
+                        	rotation = CFrame.Angles(0,-45,0)
 				st3 = true
+				st25 = false
 			elseif st3 == true then
 				rotation = CFrame.Angles(0,-90,0)
 				st3 = false
 				st4 = true
+                        elseif st35 == true then
+                        	rotation = CFrame.Angles(0,-135,0)
+				st4 = true
+				st35 = false
 			elseif st4 == true then
 				rotation = CFrame.Angles(0,-180,0)
 				st4 = false
 				st0 = true
 			end
-
+elseif m:lower() == "t" then
+			if stz0 == true then
+				rotation = CFrame.Angles(0,0,0)
+				stz05 = true
+				stz0 = false
+                        elseif stz05 == true then
+                        	rotation = CFrame.Angles(45,0,0)
+				stz1 = true
+				stz05 = false
+			elseif stz1 == true then
+				rotation = CFrame.Angles(90,0,0)
+				stz15 = true
+				stz1 = false
+                        elseif stz15 == true then
+                        	rotation = CFrame.Angles(135,0,0)
+				stz2 = true
+				stz15 = false
+			elseif stz2 == true then
+				rotation = CFrame.Angles(180,0,0)
+				stz2 = false
+				stz25 = true
+                        elseif stz25 == true then
+                        	rotation = CFrame.Angles(-45,0,0)
+				stz3 = true
+				stz25 = false
+			elseif stz3 == true then
+				rotation = CFrame.Angles(-90,0,0)
+				stz3 = false
+				stz4 = true
+                        elseif stz35 == true then
+                        	rotation = CFrame.Angles(-135,0,0)
+				stz4 = true
+				stz35 = false
+			elseif stz4 == true then
+				rotation = CFrame.Angles(-180,0,0)
+				stz4 = false
+				stz0 = true
+			end
 		end
 	end)
 	mouse1.KeyDown:Connect(function(m)
