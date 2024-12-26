@@ -1,0 +1,105 @@
+
+--[[function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end]]
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Script1 = Instance.new("Script")
+Tool0.Name = "JetBoots"
+Tool0.Parent = owner.Backpack
+Tool0.RequiresHandle = false
+Script1.Name = "Jetboots"
+Script1.Parent = Tool0
+script.Parent = Tool0
+print("Jet Boots loaded")
+
+bin = script.Parent
+
+walking = false
+
+local thrust = Instance.new("BodyVelocity")
+local velocity = 0
+local max_velocity = 35
+
+
+
+function onStart()
+	--print("start walking")
+	walking = true
+	
+	thrust.Parent = owner.Character.PrimaryPart
+	
+	thrust.velocity = Vector3.new(0,velocity,0)
+	thrust.maxForce = Vector3.new(0,math.huge,0)   
+	
+	local sound = owner.Character.PrimaryPart:findFirstChild("JetbootSound")
+	if sound == nil then 
+		sound = Instance.new("Sound")
+		sound.Name = "JetbootSound"
+		sound.SoundId = "rbxasset://sounds\\Rocket whoosh 01.wav"
+		sound.Looped = true
+		sound.Parent = owner.Character.PrimaryPart
+	end
+	sound:play()
+
+end
+
+function onEnd()
+	--print("stop walking")
+	walking = false
+	thrust.Parent = nil
+	local sound = owner.Character.PrimaryPart:findFirstChild("JetbootSound")
+	if sound ~= nil then sound:stop() end
+end
+
+function onButton1Down(mouse)
+	if walking == true then return end
+	
+	onStart()
+	
+	while walking == true do
+		--onWalk()
+		wait(.2)
+		velocity = max_velocity + 3 
+		thrust.velocity = Vector3.new(0,velocity,0)
+	end
+end
+
+function onButton1Up(mouse)
+	onEnd()
+end
+script.Parent.Activated:Connect(function()
+	onButton1Down(nil)
+end)
+script.Parent.Deactivated:Connect(function()
+	onButton1Up(nil)
+end)
+script.Parent.Equipped:Connect(function()
+	print("ghostwalker selected")
+end)
+--[[function onSelected(mouse)
+	print("ghostwalker selected")
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+end]]
+
+--bin.Selected:connect(onSelected)
+
+
+
+
+
+
