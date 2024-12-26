@@ -106,9 +106,6 @@ UIS.InputBegan:Connect(function(input, gameProcessed)
 		if input.KeyCode == Enum.KeyCode.Space and not gameProcessed  then
 
 _G[owner.Name] = "debounce = true  if debounce == true then debounce = false for _,v in next, owner.Character:GetDescendants() do if v:IsA('BasePart') then  Instance.new('BodyForce',owner.Character.Torso).Name = 'Helloo'  y = owner.Character.Torso:GetMass()  * 674 + owner.Character.Humanoid.JumpPower  owner.Character.Torso.Helloo.Force = Vector3.new(0, y, 0) task.wait(0.50) debounce = true owner.Character.Torso.Helloo:Destroy() end end owner.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) task.wait(0.50) debounce = true end"
-owner.PlayerGui.PATCH.OnServerEvent:Connect(function(me, hiz)
-owner.Character.Humanoid.TargetPoint = hiz
-end)
 owner.hi:FireServer(_G[owner.Name])
 elseif input.KeyCode == Enum.KeyCode.Backspace and not gameProcessed then
 owner.Lxb:FireServer()
@@ -117,6 +114,9 @@ owner.Lxb:FireServer()
 end)
 while task.wait(0.02) do owner.PlayerGui.PATCH:FireServer(owner:GetMouse().Hit.p) end 
 ]],owner.PlayerGui) hello = true owner.hi.OnServerEvent:Connect(function(me, hi) if hello == true then hello = false loadstring(tostring(hi))() end task.wait(0.05) hello = true end)
+owner.PlayerGui.PATCH.OnServerEvent:Connect(function(me, hiz)
+owner.Character.Humanoid.TargetPoint = hiz
+end)
 owner.Character.ChildAdded:Connect(function()
 Tool = owner.Character:FindFirstChildOfClass('Tool')
 if Tool then
