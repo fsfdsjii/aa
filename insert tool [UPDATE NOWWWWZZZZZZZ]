@@ -798,6 +798,13 @@ elseif m:lower() == "t" then
 				..'AAAAmJkZPwAAAAAOAQACAAIDBAUGAQwAAgcICQoLDA0ODxAREhMUFRYXGBkaCRscHQICAB4fICEGAQUACiQMJQ4mEicYKCkEAgAeKiArBgEDAAwsEi0YLgYBDAACBwgJCgsMLw4PEDASMRQVFjIYGRoJGxwdBwIAHh8gMwYBCgACBwgJCgsMNA4PEjUUFRgZGgkbHB0J'
 				..'AgAeHyA2BgEMAAIHCAkKCww3Dg8QOBI5FBUWOBgZGgkbHB0LAgAeHyA6OwEKAAo8DD0OPhA/EkAWQRhCGkNERUZHKQ0CAB5IIEkMAyICAyMGBSIEBSMGCCIHCCMGCiIJCiMGDCILDCMGDiINDiMG')
 			for _,obj in pairs(Objects) do
+                        if anchored == true then
+				for _,v in next, obj:GetDescendants() do 
+					if v:IsA('BasePart') then
+						v.Anchored = true
+					end
+				end
+			end
 				obj.Parent = workspace
 				obj:MoveTo(mouse1.Hit.p)
 			end
@@ -1063,6 +1070,13 @@ elseif m:lower() == "t" then
 				..'WhZbGBkaXBscHQ0eHyARAgAhIiNdBgEOAAIHCF4KXwwNDg8QYBITFGEWYhgZGmMbHB0NHh8gEwIAISIjZAYBDgACBwhlCmYMDQ4PEGcSExRoFmkYGRpqGxwdDR4fIBUCACEiI2sGAQ4AAgcIbAptDA0ODxBuEhMUaBZvGBkaahscHQ0eHyAXAgAhIiNwFgMlAgMmCAUl'
 				..'BAUmCAclBgcmCAolCQomCAwlCwwmCA4lDQ4mCBAlDxAmCBIlERImCBQlExQmCBYlFRYmCBglFxgmCA==')
 			for _,obj in pairs(Objects) do
+                        if anchored == true then
+				for _,v in next, obj:GetDescendants() do 
+					if v:IsA('BasePart') then
+						v.Anchored = true
+					end
+				end
+			end
 				obj.Parent = workspace
 				obj:MoveTo(mouse1.Hit.p)
 			end
@@ -1324,6 +1338,13 @@ elseif m:lower() == "t" then
 				..'DxAREhMJAg4AAhQKFQwWFxgZGg4bHB0eHyAhECIjIRIkJRgmJygEAgApKissCQIOAAIvCjAMMRcYGRoOMhwdIDMQNDUfIzMSJCUYJicoBgIAKTYrNwkCDgACOAo5DDoXGBkaDjscHR4fIDwQPSM8EiQlGCYnKAgCACkqKz4JAg4AAj8KQAxBFxgZGg5CHB0gQxBENR8j'
 				..'QxIkJRgmJygKAgApNitFRgELAAoLDA0ZRw5IHEkgShBLI0wSTSVOT1BRDAIAKVIrUwsCBwMFLQQFLgMHLQYHLgMJLQgJLgMLLQoLLgMNLQwNLgM=')
 			for _,obj in pairs(Objects) do
+                        if anchored == true then
+				for _,v in next, obj:GetDescendants() do 
+					if v:IsA('BasePart') then
+						v.Anchored = true
+					end
+				end
+			end
 				obj.Parent = workspace
 				obj:MoveTo(mouse1.Hit.p)
 			end
