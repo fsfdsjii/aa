@@ -192,6 +192,7 @@ Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
 Script8 = Instance.new("Script")
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Name = "Blue"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -357,6 +358,7 @@ Script4 = Instance.new("Script")
 Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Name = "Evil"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -499,6 +501,7 @@ Script4 = Instance.new("Script")
 Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Name = "Good"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -641,6 +644,7 @@ ObjectValue4 = Instance.new("ObjectValue")
 Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Name = "Red"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -782,6 +786,7 @@ ObjectValue3 = Instance.new("ObjectValue")
 Part4 = Instance.new("Part")
 Script5 = Instance.new("Script")
 Script6 = Instance.new("Script")
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Name = "Revive"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -905,6 +910,7 @@ Script4 = Instance.new("Script")
 Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Name = "Special"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -1048,6 +1054,7 @@ Script4 = Instance.new("Script")
 Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Name = "Speed"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -1190,6 +1197,7 @@ Part4 = Instance.new("Part")
 Script5 = Instance.new("Script")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Name = "Yel."
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -1401,7 +1409,48 @@ for _,v in next, game:GetService('Players'):GetPlayers() do
 end
 game:GetService('Players').PlayerAdded:connect(onPlayerEntered)
 
+owner.Character.Humanoid.Died:Connect(function()
+for _,v in next, owner.Backpack:GetChildren() do
+if v:FindFirstChild('recognizedM') then
+v.Parent = nil
+owner.CharacterAdded:Once(function()
+v.Parent = owner.Backpack
+death()
+end)
+end
+end
+end)
 
+function death()
+owner.Character.Humanoid.Died:Connect(function()
+for _,v in next, owner.Backpack:GetChildren() do
+if v:FindFirstChild('recognizedM') then
+v.Parent = nil
+owner.CharacterAdded:Once(function()
+v.Parent = owner.Backpack
+death2()
+end)
+end
+end
+end)
+end
+--end
+function death2()
+owner.Character.Humanoid.Died:Connect(function()
+for _,v in next, owner.Backpack:GetChildren() do
+if v:FindFirstChild('recognizedM') then
+v.Parent = nil
+owner.CharacterAdded:Once(function()
+v.Parent = owner.Backpack
+death()
+end)
+end
+end
+end)
+end
+owner.CharacterAdded:Connect(function()
+
+end)
 print("hello")
 joke = Instance.new("BloomEffect")
 joke.Parent = game:GetService('Lighting')
