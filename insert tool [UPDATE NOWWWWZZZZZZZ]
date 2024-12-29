@@ -388,6 +388,9 @@ elseif m:lower() == "t" then
 			task.spawn(function()
 				while task.wait() do
 					if currentlyused.e ~= nil then
+                                                for _,v in next, currentlyused:GetDescendants() do
+                                               v.Anchored = true
+                                                end
 						currentlyused.e:MoveTo(mouse1.Hit.p)
 					else 
 						break
