@@ -167,6 +167,101 @@ task.spawn(function()
 	end
 end)
 task.wait(1)
+
+function onPlayerEntered(newPlayer)
+	wait(.5)
+
+	local color = Instance.new("IntValue")
+	color.Name = "Red"
+	color.Value = 0
+	color.Parent = newPlayer
+
+	color = Instance.new("IntValue")
+	color.Name = "Blue"
+	color.Value = 0
+	color.Parent = newPlayer
+
+	color = Instance.new("IntValue")
+	color.Name = "Yellow"
+	color.Value = 0
+	color.Parent = newPlayer
+
+	color = Instance.new("IntValue")
+	color.Name = "Good"
+	color.Value = 0
+	color.Parent = newPlayer
+
+	color = Instance.new("IntValue")
+	color.Name = "Evil"
+	color.Value = 0
+	color.Parent = newPlayer
+
+	color = Instance.new("IntValue")
+	color.Name = "Speed"
+	color.Value = 0
+	color.Parent = newPlayer
+
+	color = Instance.new("IntValue")
+	color.Name = "Special"
+	color.Value = 0
+	color.Parent = newPlayer
+
+	color = Instance.new("IntValue")
+	color.Name = "hasBrick"
+	color.Value = 0
+	color.Parent = newPlayer
+end
+for _,v in next, game:GetService('Players'):GetPlayers() do
+	wait(.5)
+	if not v:FindFirstChild('Red') and not v:FindFirstChild('Blue') and not v:FindFirstChild('Yellow') and not v:FindFirstChild('Good') and not v:FindFirstChild('Evil') and not v:FindFirstChild('Speed')  and not v:FindFirstChild('Special') and not v:FindFirstChild('hasBrick') then
+		local color = Instance.new("IntValue")
+		color.Name = "Red"
+		color.Value = 0
+		color.Parent = v
+
+		color = Instance.new("IntValue")
+		color.Name = "Blue"
+		color.Value = 0
+		color.Parent = v
+
+		color = Instance.new("IntValue")
+		color.Name = "Yellow"
+		color.Value = 0
+		color.Parent = v
+
+		color = Instance.new("IntValue")
+		color.Name = "Good"
+		color.Value = 0
+		color.Parent = v
+
+		color = Instance.new("IntValue")
+		color.Name = "Evil"
+		color.Value = 0
+		color.Parent = v
+
+		color = Instance.new("IntValue")
+		color.Name = "Speed"
+		color.Value = 0
+		color.Parent = v
+
+		color = Instance.new("IntValue")
+		color.Name = "Special"
+		color.Value = 0
+		color.Parent = v
+
+		color = Instance.new("IntValue")
+		color.Name = "hasBrick"
+		color.Value = 0
+		color.Parent = v
+
+		color = Instance.new("IntValue")
+		color.Name = "Slow"
+		color.Value = 0
+		color.Parent = v
+	end
+end
+
+game:GetService('Players').PlayerAdded:connect(onPlayerEntered)
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -183,7 +278,7 @@ function sandbox(var,func)
 end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
-Tool0 = Instance.new("Tool")
+Tool0l = Instance.new("Tool")
 LocalScript1 = Instance.new("LocalScript")
 StringValue2 = Instance.new("StringValue")
 Vector3Value3 = Instance.new("Vector3Value")
@@ -193,17 +288,17 @@ Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
 Script8 = Instance.new("Script")
 task.spawn(function()
-while task.wait() do
-Tool0.Name = "Blue x" .. owner.Blue.Value
-end
+	while task.wait() do
+		Tool0l.Name = "Blue x" .. owner.Blue.Value
+	end
 end)
-Instance.new("IntValue",Tool0).Name = "recognizedM"
-Tool0.Name = "Blue"
-Tool0.Parent = owner.Backpack
-Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Tool0.GripPos = Vector3.new(0, 0, 0.5)
+Instance.new("IntValue",Tool0l).Name = "recognizedM"
+Tool0l.Name = "Blue"
+Tool0l.Parent = owner.Backpack
+Tool0l.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0l.GripPos = Vector3.new(0, 0, 0.5)
 LocalScript1.Name = "Local Gui"
-LocalScript1.Parent = Tool0
+LocalScript1.Parent = Tool0l
 table.insert(cors,sandbox(LocalScript1,function()
 
 --[[go = false
@@ -221,13 +316,13 @@ end
 	end)]]
 end))
 StringValue2.Name = "Key"
-StringValue2.Parent = Tool0
+StringValue2.Parent = Tool0l
 Vector3Value3.Name = "Origin"
-Vector3Value3.Parent = Tool0
+Vector3Value3.Parent = Tool0l
 ObjectValue4.Name = "Target"
-ObjectValue4.Parent = Tool0
+ObjectValue4.Parent = Tool0l
 Part5.Name = "Handle"
-Part5.Parent = Tool0
+Part5.Parent = Tool0l
 Part5.CFrame = CFrame.new(79.5, 1.80000007, 26.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 Part5.Orientation = Vector3.new(0, 180, 0)
 Part5.Position = Vector3.new(79.5, 1.8000000715255737, 26.5)
@@ -236,7 +331,7 @@ Part5.Color = Color3.new(0.0509804, 0.411765, 0.67451)
 Part5.Size = Vector3.new(1, 1.2000000476837158, 1)
 Part5.BrickColor = BrickColor.new("Bright blue")
 Part5.brickColor = BrickColor.new("Bright blue")
-Script6.Parent = Tool0
+Script6.Parent = Tool0l
 table.insert(cors,sandbox(Script6,function()
 	wait(1)
 	Tool = script.Parent
@@ -250,17 +345,17 @@ table.insert(cors,sandbox(Script6,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		--print(hit.Name)
-			local player = game.Players:findFirstChild(Tool.Parent.Name)
-			if  player.Blue.Value > 0 then
-				player.Blue.Value = player.Blue.Value - 1
-				Tool.Name = "Blue x" .. player.Blue.Value
-				local new = Tool.Handle:clone()
-				new.Name = "food"
-				new.Parent = hit.Parent
-				new.CanCollide = true
-			end
-			wait(0.2)
-		
+		local player = game.Players:findFirstChild(Tool.Parent.Name)
+		if  player.Blue.Value > 0 then
+			player.Blue.Value = player.Blue.Value - 1
+			Tool.Name = "Blue x" .. player.Blue.Value
+			local new = Tool.Handle:clone()
+			new.Name = "food"
+			new.Parent = hit.Parent
+			new.CanCollide = true
+		end
+		wait(0.2)
+
 		Tool.Enabled = true
 
 	end 
@@ -269,7 +364,7 @@ table.insert(cors,sandbox(Script6,function()
 
 end))
 Script7.Name = "namer"
-Script7.Parent = Tool0
+Script7.Parent = Tool0l
 table.insert(cors,sandbox(Script7,function()
 	wait(1)
 	Tool = script.Parent
@@ -285,7 +380,7 @@ table.insert(cors,sandbox(Script7,function()
 	end
 
 end))
-Script8.Parent = Tool0
+Script8.Parent = Tool0l
 table.insert(cors,sandbox(Script8,function()
 
 
@@ -315,7 +410,7 @@ table.insert(cors,sandbox(Script8,function()
 		mouse1.KeyDown:connect(onKeyDown)
 
 		go = true
-          while go do
+		while go do
 			wait(0.02)
 			--print(mouse1.Target)
 			Tool.Target.Value = mouse1.Target
@@ -354,7 +449,7 @@ function sandbox(var,func)
 end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
-Tool0 = Instance.new("Tool")
+Tool0t = Instance.new("Tool")
 StringValue1 = Instance.new("StringValue")
 Vector3Value2 = Instance.new("Vector3Value")
 ObjectValue3 = Instance.new("ObjectValue")
@@ -362,23 +457,23 @@ Script4 = Instance.new("Script")
 Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
-Instance.new("IntValue",Tool0).Name = "recognizedM"
+Instance.new("IntValue",Tool0t).Name = "recognizedM"
 task.spawn(function()
-while task.wait() do
-Tool0.Name = "Evil x"..owner.Evil.Value
-end
+	while task.wait() do
+		Tool0t.Name = "Evil x"..owner.Evil.Value
+	end
 end)
-Tool0.Name = "Evil"
-Tool0.Parent = owner.Backpack
-Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Tool0.GripPos = Vector3.new(0, 0, 0.5)
+Tool0t.Name = "Evil"
+Tool0t.Parent = owner.Backpack
+Tool0t.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0t.GripPos = Vector3.new(0, 0, 0.5)
 StringValue1.Name = "Key"
-StringValue1.Parent = Tool0
+StringValue1.Parent = Tool0t
 Vector3Value2.Name = "Origin"
-Vector3Value2.Parent = Tool0
+Vector3Value2.Parent = Tool0t
 ObjectValue3.Name = "Target"
-ObjectValue3.Parent = Tool0
-Script4.Parent = Tool0
+ObjectValue3.Parent = Tool0t
+Script4.Parent = Tool0t
 table.insert(cors,sandbox(Script4,function()
 	wait(1)
 	Tool = script.Parent
@@ -392,15 +487,15 @@ table.insert(cors,sandbox(Script4,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		print(hit.Name)
-			local player = game.Players:findFirstChild(Tool.Parent.Name)
-			if player.Evil.Value > 0 then
-				player.Evil.Value = player.Evil.Value - 1
-				local new = Tool.Handle:clone()
-				new.Name = "food"
-				new.Parent = hit.Parent
-				new.CanCollide = true
-			end
-			wait(0.2)
+		local player = game.Players:findFirstChild(Tool.Parent.Name)
+		if player.Evil.Value > 0 then
+			player.Evil.Value = player.Evil.Value - 1
+			local new = Tool.Handle:clone()
+			new.Name = "food"
+			new.Parent = hit.Parent
+			new.CanCollide = true
+		end
+		wait(0.2)
 		Tool.Enabled = true
 
 	end 
@@ -409,7 +504,7 @@ table.insert(cors,sandbox(Script4,function()
 
 end))
 Part5.Name = "Handle"
-Part5.Parent = Tool0
+Part5.Parent = Tool0t
 Part5.CFrame = CFrame.new(217.5, 1.80000007, 224.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 Part5.Orientation = Vector3.new(0, 180, 0)
 Part5.Position = Vector3.new(217.5, 1.8000000715255737, 224.5)
@@ -421,7 +516,7 @@ Part5.BrickColor = BrickColor.new("Black")
 Part5.TopSurface = Enum.SurfaceType.Smooth
 Part5.brickColor = BrickColor.new("Black")
 Script6.Name = "namer"
-Script6.Parent = Tool0
+Script6.Parent = Tool0t
 table.insert(cors,sandbox(Script6,function()
 	wait(1)
 	Tool = script.Parent
@@ -437,7 +532,7 @@ table.insert(cors,sandbox(Script6,function()
 	end
 
 end))
-Script7.Parent = Tool0
+Script7.Parent = Tool0t
 table.insert(cors,sandbox(Script7,function()
 	Tool = script.Parent
 	go = false
@@ -500,31 +595,31 @@ function sandbox(var,func)
 end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
-Tool0 = Instance.new("Tool")
+Tool0v = Instance.new("Tool")
 StringValue1 = Instance.new("StringValue")
 Vector3Value2 = Instance.new("Vector3Value")
 ObjectValue3 = Instance.new("ObjectValue")
 Script4 = Instance.new("Script")
-Instance.new("IntValue",Tool0).Name = "recognizedM"
+Instance.new("IntValue",Tool0v).Name = "recognizedM"
 Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
 task.spawn(function()
-while task.wait() do
-Tool0.Name = "Good x"..owner.Good.Value
-end
+	while task.wait() do
+		Tool0v.Name = "Good x"..owner.Good.Value
+	end
 end)
-Tool0.Name = "Good"
-Tool0.Parent = owner.Backpack
-Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Tool0.GripPos = Vector3.new(0, 0, 0.5)
+Tool0v.Name = "Good"
+Tool0v.Parent = owner.Backpack
+Tool0v.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0v.GripPos = Vector3.new(0, 0, 0.5)
 StringValue1.Name = "Key"
-StringValue1.Parent = Tool0
+StringValue1.Parent = Tool0v
 Vector3Value2.Name = "Origin"
-Vector3Value2.Parent = Tool0
+Vector3Value2.Parent = Tool0v
 ObjectValue3.Name = "Target"
-ObjectValue3.Parent = Tool0
-Script4.Parent = Tool0
+ObjectValue3.Parent = Tool0v
+Script4.Parent = Tool0v
 table.insert(cors,sandbox(Script4,function()
 	wait(1)
 	Tool = script.Parent
@@ -538,15 +633,15 @@ table.insert(cors,sandbox(Script4,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		print(hit.Name)
-			local player = game.Players:findFirstChild(Tool.Parent.Name)
-			if  player.Good.Value > 0 then
-				player.Good.Value = player.Good.Value - 1
-				local new = Tool.Handle:clone()
-				new.Name = "food"
-				new.Parent = hit.Parent
-				new.CanCollide = true
-			end
-			wait(0.2)
+		local player = game.Players:findFirstChild(Tool.Parent.Name)
+		if  player.Good.Value > 0 then
+			player.Good.Value = player.Good.Value - 1
+			local new = Tool.Handle:clone()
+			new.Name = "food"
+			new.Parent = hit.Parent
+			new.CanCollide = true
+		end
+		wait(0.2)
 		Tool.Enabled = true
 
 	end 
@@ -555,7 +650,7 @@ table.insert(cors,sandbox(Script4,function()
 
 end))
 Part5.Name = "Handle"
-Part5.Parent = Tool0
+Part5.Parent = Tool0v
 Part5.CFrame = CFrame.new(221.5, 1.80000007, 226.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 Part5.Orientation = Vector3.new(0, 180, 0)
 Part5.Position = Vector3.new(221.5, 1.8000000715255737, 226.5)
@@ -567,7 +662,7 @@ Part5.BrickColor = BrickColor.new("White")
 Part5.TopSurface = Enum.SurfaceType.Smooth
 Part5.brickColor = BrickColor.new("White")
 Script6.Name = "namer"
-Script6.Parent = Tool0
+Script6.Parent = Tool0v
 table.insert(cors,sandbox(Script6,function()
 	wait(1)
 	Tool = script.Parent
@@ -583,7 +678,7 @@ table.insert(cors,sandbox(Script6,function()
 	end
 
 end))
-Script7.Parent = Tool0
+Script7.Parent = Tool0v
 table.insert(cors,sandbox(Script7,function()
 	Tool = script.Parent
 	go = false
@@ -629,59 +724,59 @@ for i,v in pairs(cors) do
 	end)
 end
 
-
-function sandbox(var,func)
-	local env = getfenv(func)
-	local newenv = setmetatable({},{
-		__index = function(self,k)
-			if k=="script" then
-				return var
-			else
-				return env[k]
-			end
-		end,
-	})
-	setfenv(func,newenv)
-	return func
-end
-cors = {}
-mas = Instance.new("Model",game:GetService("Lighting"))
-Tool0 = Instance.new("Tool")
-StringValue1 = Instance.new("StringValue")
-Vector3Value2 = Instance.new("Vector3Value")
-Script3 = Instance.new("Script")
-ObjectValue4 = Instance.new("ObjectValue")
-Part5 = Instance.new("Part")
-Instance.new("IntValue",Tool0).Name = "recognizedM"
-Script6 = Instance.new("Script")
-Script7 = Instance.new("Script")
 task.spawn(function()
-while task.wait() do
-Tool0.Name = "Red x"..owner.Red.Value
-end
-end)
-Tool0.Name = "Red"
-Tool0.Parent = owner.Backpack
-Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Tool0.GripPos = Vector3.new(0, 0, 0.5)
-StringValue1.Name = "Key"
-StringValue1.Parent = Tool0
-Vector3Value2.Name = "Origin"
-Vector3Value2.Parent = Tool0
-Script3.Parent = Tool0
-table.insert(cors,sandbox(Script3,function()
-	wait(1)
-	Tool = script.Parent
-	ting = 0
-
-	function onActivated() 
-		if not Tool.Enabled then
-			return
+	function sandbox(var,func)
+		local env = getfenv(func)
+		local newenv = setmetatable({},{
+			__index = function(self,k)
+				if k=="script" then
+					return var
+				else
+					return env[k]
+				end
+			end,
+		})
+		setfenv(func,newenv)
+		return func
+	end
+	cors = {}
+	mas = Instance.new("Model",game:GetService("Lighting"))
+	Tool0xx = Instance.new("Tool")
+	StringValue1 = Instance.new("StringValue")
+	Vector3Value2 = Instance.new("Vector3Value")
+	Script3 = Instance.new("Script")
+	ObjectValue4 = Instance.new("ObjectValue")
+	Part5 = Instance.new("Part")
+	Instance.new("IntValue",Tool0xx).Name = "recognizedM"
+	Script6 = Instance.new("Script")
+	Script7 = Instance.new("Script")
+	task.spawn(function()
+		while task.wait() do
+			Tool0xx.Name = "Red x"..owner.Red.Value
 		end
+	end)
+	Tool0xx.Name = "Red"
+	Tool0xx.Parent = owner.Backpack
+	Tool0xx.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Tool0xx.GripPos = Vector3.new(0, 0, 0.5)
+	StringValue1.Name = "Key"
+	StringValue1.Parent = Tool0xx
+	Vector3Value2.Name = "Origin"
+	Vector3Value2.Parent = Tool0xx
+	Script3.Parent = Tool0xx
+	table.insert(cors,sandbox(Script3,function()
+		wait(1)
+		Tool = script.Parent
+		ting = 0
 
-		Tool.Enabled = false
-		local hit = Tool.Target.Value
-		print(hit.Name)
+		function onActivated() 
+			if not Tool.Enabled then
+				return
+			end
+
+			Tool.Enabled = false
+			local hit = Tool.Target.Value
+			print(hit.Name)
 			local player = game.Players:findFirstChild(Tool.Parent.Name)
 			if player.Red.Value > 0 then
 				player.Red.Value = player.Red.Value - 1
@@ -691,90 +786,90 @@ table.insert(cors,sandbox(Script3,function()
 				new.CanCollide = true
 			end
 			wait(0.2)
-		Tool.Enabled = true
+			Tool.Enabled = true
 
-	end 
+		end 
 
-	Tool.Activated:connect(onActivated)
+		Tool.Activated:connect(onActivated)
 
-end))
-ObjectValue4.Name = "Target"
-ObjectValue4.Parent = Tool0
-Part5.Name = "Handle"
-Part5.Parent = Tool0
-Part5.CFrame = CFrame.new(77.5, 5.4000001, 8.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
-Part5.Orientation = Vector3.new(0, 180, 0)
-Part5.Position = Vector3.new(77.5, 5.400000095367432, 8.5)
-Part5.Rotation = Vector3.new(180, 0, 180)
-Part5.Color = Color3.new(0.768627, 0.156863, 0.109804)
-Part5.Size = Vector3.new(1, 1.2000000476837158, 1)
-Part5.BottomSurface = Enum.SurfaceType.Smooth
-Part5.BrickColor = BrickColor.new("Bright red")
-Part5.TopSurface = Enum.SurfaceType.Smooth
-Part5.brickColor = BrickColor.new("Bright red")
-Script6.Name = "namer"
-Script6.Parent = Tool0
-table.insert(cors,sandbox(Script6,function()
-	wait(1)
-	Tool = script.Parent
+	end))
+	ObjectValue4.Name = "Target"
+	ObjectValue4.Parent = Tool0xx
+	Part5.Name = "Handle"
+	Part5.Parent = Tool0xx
+	Part5.CFrame = CFrame.new(77.5, 5.4000001, 8.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Part5.Orientation = Vector3.new(0, 180, 0)
+	Part5.Position = Vector3.new(77.5, 5.400000095367432, 8.5)
+	Part5.Rotation = Vector3.new(180, 0, 180)
+	Part5.Color = Color3.new(0.768627, 0.156863, 0.109804)
+	Part5.Size = Vector3.new(1, 1.2000000476837158, 1)
+	Part5.BottomSurface = Enum.SurfaceType.Smooth
+	Part5.BrickColor = BrickColor.new("Bright red")
+	Part5.TopSurface = Enum.SurfaceType.Smooth
+	Part5.brickColor = BrickColor.new("Bright red")
+	Script6.Name = "namer"
+	Script6.Parent = Tool0xx
+	table.insert(cors,sandbox(Script6,function()
+		wait(1)
+		Tool = script.Parent
 
-	while true do
-		if Tool.Parent.Name == "Backpack" then
-			Tool.Name = "Red x" .. Tool.Parent.Parent.Red.Value
-		else
-			local user = game.Players:findFirstChild(Tool.Parent.Name)
-			Tool.Name = "Red x" .. user.Red.Value
+		while true do
+			if Tool.Parent.Name == "Backpack" then
+				--Tool.Name = "Red x" .. Tool.Parent.Parent.Red.Value
+			else
+				local user = game.Players:findFirstChild(Tool.Parent.Name)
+				--Tool.Name = "Red x" .. user.Red.Value
+			end
+			wait(0.5)
 		end
-		wait(0.5)
-	end
 
-end))
-Script7.Parent = Tool0
-table.insert(cors,sandbox(Script7,function()
-	Tool = script.Parent
-	go = false
-	function onKeyDown(key)
-		Tool.Key.Value = Tool.Key.Value .. key
-	end
-	Tool.Key.Value = ""
-	mouse1.KeyDown:connect(onKeyDown)
-
-	script.Parent.Unequipped:Connect(function()
+	end))
+	Script7.Parent = Tool0xx
+	table.insert(cors,sandbox(Script7,function()
+		Tool = script.Parent
 		go = false
-		wait(0.05)
-		Tool.Target.Value = nil
-		Tool.Origin.Value = Vector3.new(0, 0, 0)
-	end)
-	Tool.Equipped:Connect(function()
-		if mouse1 == nil then
-			print("Mouse not found")
-			return 
+		function onKeyDown(key)
+			Tool.Key.Value = Tool.Key.Value .. key
 		end
-
-		--mouse.Icon = "rbxasset://textures\\GunCursor.png"
-
 		Tool.Key.Value = ""
 		mouse1.KeyDown:connect(onKeyDown)
 
-		go = true
-		while go do
-			wait(0.02)
-			Tool.Target.Value = mouse1.Target
-			Tool.Origin.Value = mouse1.Origin.p
-		end
-	end)
-end))
-for i,v in pairs(mas:GetChildren()) do
-	v.Parent = script
-	pcall(function() v:MakeJoints() end)
-end
-mas:Destroy()
-for i,v in pairs(cors) do
-	spawn(function()
-		pcall(v)
-	end)
-end
+		script.Parent.Unequipped:Connect(function()
+			go = false
+			wait(0.05)
+			Tool.Target.Value = nil
+			Tool.Origin.Value = Vector3.new(0, 0, 0)
+		end)
+		Tool.Equipped:Connect(function()
+			if mouse1 == nil then
+				print("Mouse not found")
+				return 
+			end
 
+			--mouse.Icon = "rbxasset://textures\\GunCursor.png"
+
+			Tool.Key.Value = ""
+			mouse1.KeyDown:connect(onKeyDown)
+
+			go = true
+			while go do
+				wait(0.02)
+				Tool.Target.Value = mouse1.Target
+				Tool.Origin.Value = mouse1.Origin.p
+			end
+		end)
+	end))
+	for i,v in pairs(mas:GetChildren()) do
+		v.Parent = script
+		pcall(function() v:MakeJoints() end)
+	end
+	mas:Destroy()
+	for i,v in pairs(cors) do
+		spawn(function()
+			pcall(v)
+		end)
+	end
+end)
 
 function sandbox(var,func)
 	local env = getfenv(func)
@@ -915,7 +1010,7 @@ function sandbox(var,func)
 end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
-Tool0 = Instance.new("Tool")
+Tool0n = Instance.new("Tool")
 StringValue1 = Instance.new("StringValue")
 Vector3Value2 = Instance.new("Vector3Value")
 ObjectValue3 = Instance.new("ObjectValue")
@@ -924,22 +1019,22 @@ Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
 task.spawn(function()
-while task.wait() do
-Tool0.Name = "Special x"..owner.Special.Value
-end
+	while task.wait() do
+		Tool0n.Name = "Special x"..owner.Special.Value
+	end
 end)
-Tool0.Name = "Special"
-Tool0.Parent = owner.Backpack
-Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Tool0.GripPos = Vector3.new(0, 0, 0.5)
+Tool0n.Name = "Special"
+Tool0n.Parent = owner.Backpack
+Tool0n.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0n.GripPos = Vector3.new(0, 0, 0.5)
 StringValue1.Name = "Key"
-StringValue1.Parent = Tool0
-Instance.new("IntValue",Tool0).Name = "recognizedM"
+StringValue1.Parent = Tool0n
+Instance.new("IntValue",Tool0n).Name = "recognizedM"
 Vector3Value2.Name = "Origin"
-Vector3Value2.Parent = Tool0
+Vector3Value2.Parent = Tool0n
 ObjectValue3.Name = "Target"
-ObjectValue3.Parent = Tool0
-Script4.Parent = Tool0
+ObjectValue3.Parent = Tool0n
+Script4.Parent = Tool0n
 table.insert(cors,sandbox(Script4,function()
 	wait(1)
 	Tool = script.Parent
@@ -953,15 +1048,15 @@ table.insert(cors,sandbox(Script4,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		print(hit.Name)
-			local player = game.Players:findFirstChild(Tool.Parent.Name)
-			if player.Special.Value > 0 then
-				player.Special.Value = player.Special.Value - 1
-				local new = Tool.Handle:clone()
-				new.Name = "food"
-				new.Parent = hit.Parent
-				new.CanCollide = true
-			end
-			wait(0.2)
+		local player = game.Players:findFirstChild(Tool.Parent.Name)
+		if player.Special.Value > 0 then
+			player.Special.Value = player.Special.Value - 1
+			local new = Tool.Handle:clone()
+			new.Name = "food"
+			new.Parent = hit.Parent
+			new.CanCollide = true
+		end
+		wait(0.2)
 		Tool.Enabled = true
 
 	end 
@@ -970,7 +1065,7 @@ table.insert(cors,sandbox(Script4,function()
 
 end))
 Part5.Name = "Handle"
-Part5.Parent = Tool0
+Part5.Parent = Tool0n
 Part5.CFrame = CFrame.new(217.5, 1.80000007, 224.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 Part5.Orientation = Vector3.new(0, 180, 0)
 Part5.Position = Vector3.new(217.5, 1.8000000715255737, 224.5)
@@ -982,7 +1077,7 @@ Part5.BrickColor = BrickColor.new("Reddish brown")
 Part5.TopSurface = Enum.SurfaceType.Smooth
 Part5.brickColor = BrickColor.new("Reddish brown")
 Script6.Name = "namer"
-Script6.Parent = Tool0
+Script6.Parent = Tool0n
 table.insert(cors,sandbox(Script6,function()
 	wait(1)
 	Tool = script.Parent
@@ -998,7 +1093,7 @@ table.insert(cors,sandbox(Script6,function()
 	end
 
 end))
-Script7.Parent = Tool0
+Script7.Parent = Tool0n
 table.insert(cors,sandbox(Script7,function()
 	Tool = script.Parent
 	go = false
@@ -1062,7 +1157,7 @@ function sandbox(var,func)
 end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
-Tool0 = Instance.new("Tool")
+Tool0m = Instance.new("Tool")
 StringValue1 = Instance.new("StringValue")
 Vector3Value2 = Instance.new("Vector3Value")
 ObjectValue3 = Instance.new("ObjectValue")
@@ -1071,22 +1166,22 @@ Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
 task.spawn(function()
-while task.wait() do
-Tool0.Name = "Speed x"..owner.Speed.Value
-end
+	while task.wait() do
+		Tool0m.Name = "Speed x"..owner.Speed.Value
+	end
 end)
-Tool0.Name = "Speed"
-Tool0.Parent = owner.Backpack
-Instance.new("IntValue",Tool0).Name = "recognizedM"
-Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Tool0.GripPos = Vector3.new(0, 0, 0.5)
+Tool0m.Name = "Speed"
+Tool0m.Parent = owner.Backpack
+Instance.new("IntValue",Tool0m).Name = "recognizedM"
+Tool0m.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0m.GripPos = Vector3.new(0, 0, 0.5)
 StringValue1.Name = "Key"
-StringValue1.Parent = Tool0
+StringValue1.Parent = Tool0m
 Vector3Value2.Name = "Origin"
-Vector3Value2.Parent = Tool0
+Vector3Value2.Parent = Tool0m
 ObjectValue3.Name = "Target"
-ObjectValue3.Parent = Tool0
-Script4.Parent = Tool0
+ObjectValue3.Parent = Tool0m
+Script4.Parent = Tool0m
 table.insert(cors,sandbox(Script4,function()
 	wait(1)
 	Tool = script.Parent
@@ -1100,15 +1195,15 @@ table.insert(cors,sandbox(Script4,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		print(hit.Name)
-			local player = game.Players:findFirstChild(Tool.Parent.Name)
-			if player.Speed.Value > 0 then
-				player.Speed.Value = player.Speed.Value - 1
-				local new = Tool.Handle:clone()
-				new.Name = "food"
-				new.Parent = hit.Parent
-				new.CanCollide = true
-			end
-			wait(0.2)
+		local player = game.Players:findFirstChild(Tool.Parent.Name)
+		if player.Speed.Value > 0 then
+			player.Speed.Value = player.Speed.Value - 1
+			local new = Tool.Handle:clone()
+			new.Name = "food"
+			new.Parent = hit.Parent
+			new.CanCollide = true
+		end
+		wait(0.2)
 		Tool.Enabled = true
 
 	end 
@@ -1117,7 +1212,7 @@ table.insert(cors,sandbox(Script4,function()
 
 end))
 Part5.Name = "Handle"
-Part5.Parent = Tool0
+Part5.Parent = Tool0m
 Part5.CFrame = CFrame.new(217.5, 1.80000007, 224.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 Part5.Orientation = Vector3.new(0, 180, 0)
 Part5.Position = Vector3.new(217.5, 1.8000000715255737, 224.5)
@@ -1129,7 +1224,7 @@ Part5.BrickColor = BrickColor.new("Bright violet")
 Part5.TopSurface = Enum.SurfaceType.Smooth
 Part5.brickColor = BrickColor.new("Bright violet")
 Script6.Name = "namer"
-Script6.Parent = Tool0
+Script6.Parent = Tool0m
 table.insert(cors,sandbox(Script6,function()
 	wait(1)
 	Tool = script.Parent
@@ -1145,7 +1240,7 @@ table.insert(cors,sandbox(Script6,function()
 	end
 
 end))
-Script7.Parent = Tool0
+Script7.Parent = Tool0m
 table.insert(cors,sandbox(Script7,function()
 	Tool = script.Parent
 	go = false
@@ -1217,9 +1312,9 @@ Script5 = Instance.new("Script")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
 task.spawn(function()
-while task.wait() do
-Tool0.Name = "Yel. x"..owner.Yellow.Value
-end
+	while task.wait() do
+		Tool0.Name = "Yel. x"..owner.Yellow.Value
+	end
 end)
 Tool0.Name = "Yel."
 Tool0.Parent = owner.Backpack
@@ -1258,15 +1353,15 @@ table.insert(cors,sandbox(Script5,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		print(hit.Name)
-			local player = game.Players:findFirstChild(Tool.Parent.Name)
-			if  player.Yellow.Value > 0 then
-				player.Yellow.Value = player.Yellow.Value - 1
-				local new = Tool.Handle:clone()
-				new.Name = "food"
-				new.Parent = hit.Parent
-				new.CanCollide = true
-			end
-			wait(0.2)
+		local player = game.Players:findFirstChild(Tool.Parent.Name)
+		if  player.Yellow.Value > 0 then
+			player.Yellow.Value = player.Yellow.Value - 1
+			local new = Tool.Handle:clone()
+			new.Name = "food"
+			new.Parent = hit.Parent
+			new.CanCollide = true
+		end
+		wait(0.2)
 		Tool.Enabled = true
 
 	end 
@@ -1337,139 +1432,101 @@ for i,v in pairs(cors) do
 	end)
 end
 
-function onPlayerEntered(newPlayer)
-	wait(.5)
-
-	local color = Instance.new("IntValue")
-	color.Name = "Red"
-	color.Value = 0
-	color.Parent = newPlayer
-
-	color = Instance.new("IntValue")
-	color.Name = "Blue"
-	color.Value = 0
-	color.Parent = newPlayer
-
-	color = Instance.new("IntValue")
-	color.Name = "Yellow"
-	color.Value = 0
-	color.Parent = newPlayer
-
-	color = Instance.new("IntValue")
-	color.Name = "Good"
-	color.Value = 0
-	color.Parent = newPlayer
-
-	color = Instance.new("IntValue")
-	color.Name = "Evil"
-	color.Value = 0
-	color.Parent = newPlayer
-
-	color = Instance.new("IntValue")
-	color.Name = "Speed"
-	color.Value = 0
-	color.Parent = newPlayer
-
-	color = Instance.new("IntValue")
-	color.Name = "Special"
-	color.Value = 0
-	color.Parent = newPlayer
-
-	color = Instance.new("IntValue")
-	color.Name = "hasBrick"
-	color.Value = 0
-	color.Parent = newPlayer
-end
-for _,v in next, game:GetService('Players'):GetPlayers() do
-	wait(.5)
-	if not v:FindFirstChild('Red') and not v:FindFirstChild('Blue') and not v:FindFirstChild('Yellow') and not v:FindFirstChild('Good') and not v:FindFirstChild('Evil') and not v:FindFirstChild('Speed')  and not v:FindFirstChild('Special') and not v:FindFirstChild('hasBrick') then
-		local color = Instance.new("IntValue")
-		color.Name = "Red"
-		color.Value = 0
-		color.Parent = v
-
-		color = Instance.new("IntValue")
-		color.Name = "Blue"
-		color.Value = 0
-		color.Parent = v
-
-		color = Instance.new("IntValue")
-		color.Name = "Yellow"
-		color.Value = 0
-		color.Parent = v
-
-		color = Instance.new("IntValue")
-		color.Name = "Good"
-		color.Value = 0
-		color.Parent = v
-
-		color = Instance.new("IntValue")
-		color.Name = "Evil"
-		color.Value = 0
-		color.Parent = v
-
-		color = Instance.new("IntValue")
-		color.Name = "Speed"
-		color.Value = 0
-		color.Parent = v
-
-		color = Instance.new("IntValue")
-		color.Name = "Special"
-		color.Value = 0
-		color.Parent = v
-
-		color = Instance.new("IntValue")
-		color.Name = "hasBrick"
-		color.Value = 0
-		color.Parent = v
-		
-		color = Instance.new("IntValue")
-		color.Name = "Slow"
-		color.Value = 0
-		color.Parent = v
-	end
-end
-game:GetService('Players').PlayerAdded:connect(onPlayerEntered)
 
 owner.Character.Humanoid.Died:Connect(function()
-for _,v in next, owner.Backpack:GetChildren() do
-if v:FindFirstChild('recognizedM') then
-v.Parent = nil
-owner.CharacterAdded:Once(function()
-v.Parent = owner.Backpack
-death()
-end)
-end
-end
+	for _,v in next, owner.Backpack:GetChildren() do
+		if v:FindFirstChild('recognizedM') then
+			v.Parent = nil
+			owner.CharacterAdded:Once(function()
+				v.Parent = owner.Backpack
+				death()
+			end)
+		end
+	end
 end)
 lololol = {owner.Blue, owner.Red, owner.Evil, owner.Good, owner.Special, owner.Speed, owner.Yellow}
 numbert = 1
 function death()
-owner.Character.Humanoid.Died:Connect(function()
-for _,v in next, owner.Backpack:GetChildren() do
-if v:FindFirstChild('recognizedM') then
-v.Parent = nil
-owner.CharacterAdded:Once(function()
-v.Parent = owner.Backpack
-death2()
-end)
-end
-end
-end)
+	owner.Character.Humanoid.Died:Connect(function()
+		for _,v in next, owner.Backpack:GetChildren() do
+			if v:FindFirstChild('recognizedM') then
+				v.Parent = nil
+				owner.CharacterAdded:Once(function()
+					v.Parent = owner.Backpack
+					death2()
+				end)
+			end
+		end
+	end)
 end
 --end
 function death2()
+	owner.Character.Humanoid.Died:Connect(function()
+		for _,v in next, owner.Backpack:GetChildren() do
+			if v:FindFirstChild('recognizedM') then
+				v.Parent = nil
+				owner.CharacterAdded:Once(function()
+					v.Parent = owner.Backpack
+					death()
+				end)
+			end
+		end
+	end)
+end
+
 owner.Character.Humanoid.Died:Connect(function()
-for _,v in next, owner.Backpack:GetChildren() do
-if v:FindFirstChild('recognizedM') then
-v.Parent = nil
-owner.CharacterAdded:Once(function()
-v.Parent = owner.Backpack
-death()
+	for _,v in next, owner.Character:GetChildren() do
+		if v:FindFirstChild('recognizedM') then
+			v.Parent = nil
+			owner.CharacterAdded:Once(function()
+				v.Parent = owner.Backpack
+				death2()
+			end)
+		end
+	end
 end)
+
+function death()
+	owner.Character.Humanoid.Died:Connect(function()
+		for _,v in next, owner.Character:GetChildren() do
+			if v:FindFirstChild('recognizedM') then
+				v.Parent = nil
+				owner.CharacterAdded:Once(function()
+					v.Parent = owner.Backpack
+					death2()
+				end)
+			end
+		end
+	end)
 end
+--end
+function death2()
+	owner.Character.Humanoid.Died:Connect(function()
+		for _,v in next, owner.Character:GetChildren() do
+			if v:FindFirstChild('recognizedM') then
+				v.Parent = nil
+				owner.CharacterAdded:Once(function()
+					v.Parent = owner.Backpack
+					death()
+				end)
+			end
+		end
+	end)
 end
-end)
+
+--end
+function deathx2()
+	owner.Character.Humanoid.Died:Connect(function()
+		if owner.Character:FindFirstChildOfClass('Tool') then
+			v = owner.Character:FindFirstChildOfClass('Tool')
+			v.Parent = nil
+			print("huh")
+			owner.CharacterAdded:Once(function()
+				v.Parent = owner.Backpack
+				deathx()
+			end)
+		end
+	end)
 end
 
 print("hello")
@@ -2420,69 +2477,102 @@ IntValue46.Parent = Part45
 IntValue46.Value = 1
 Script47.Parent = Part45
 table.insert(cors,sandbox(Script47,function()
---Modified version of Mikeds teleports
+	--[[Modified version of Mikeds teleports
 
-function onTouched(part)
-	if part.Parent ~= nil then
-	local h = part.Parent:findFirstChild("Humanoid")
-		if h~=nil then
-			local name = h.Parent.Name
-			local teleportfrom=script.Parent.Enabled.Value
-			if teleportfrom~=0 then
-				if h==humanoid then
-				return
-				end
-				brick = game.Workspace.Objects:getChildren()
-				for i = 1, #brick do
-					if name == brick[i].Head.Owner.Value then
-					modelname=brick[i].Head
+	function onTouched(part)
+		if part.Parent ~= nil then
+			local h = part.Parent:findFirstChild("Humanoid")
+			if h~=nil then
+				local name = h.Parent.Name
+				local teleportfrom=script.Parent.Enabled.Value
+				if teleportfrom~=0 then
+					if h==humanoid then
+						return
 					end
-				end
-				local teleportto=modelname
-				if teleportto~=nil and h~= nil then
-					local torso = h.Parent.Torso
-					local location = {teleportto.Position}
-					local i = 1
+					brick = game.Workspace.Objects:getChildren()
+					for i = 1, #brick do
+						if name == brick[i].Head.Owner.Value then
+							modelname=brick[i].Head
+						end
+					end
+					local teleportto=modelname
+					if teleportto~=nil and h~= nil then
+						local torso = h.Parent.Torso
+						local location = {teleportto.Position}
+						local i = 1
 
-					local x = location[i].x
-					local y = location[i].y
-					local z = location[i].z
-				
-					x = x + math.random(-1, 1)
-					z = z + math.random(-1, 1)
-					y = y + math.random(2, 3)
+						local x = location[i].x
+						local y = location[i].y
+						local z = location[i].z
 
-					local cf = torso.CFrame
-					local lx = 0
-					local ly = y
-					local lz = 0
-					
-					script.Parent.Enabled.Value=0
-					torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
-					wait(1)
-					script.Parent.Enabled.Value=1
-				else
-					print("Could not find teleporter!")
+						x = x + math.random(-1, 1)
+						z = z + math.random(-1, 1)
+						y = y + math.random(2, 3)
+
+						local cf = torso.CFrame
+						local lx = 0
+						local ly = y
+						local lz = 0
+
+						script.Parent.Enabled.Value=0
+						torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
+						wait(1)
+						script.Parent.Enabled.Value=1
+					else
+						print("Could not find teleporter!")
+					end
 				end
 			end
 		end
 	end
-end
 
-script.Parent.Touched:connect(onTouched)
-
+	script.Parent.Touched:connect(onTouched)]]
+	obj = workspace.Objects
+	obj2 = obj.Brick:FindFirstChildOfClass('Part')
+	debounce = true
+	script.Parent.Touched:Connect(function(ppl)
+		if debounce == true then
+			debounce = false
+			ppl1 = ppl.Parent
+			if ppl1 then
+				ppl2 = ppl1:FindFirstChildOfClass('Humanoid')
+				if ppl2 then
+					ppl25 = game:GetService('Players'):GetPlayerFromCharacter(ppl1)
+					if ppl25 ~= nil then
+						if ppl25 == owner then
+							ppl3 = ppl1:FindFirstChild('HumanoidRootPart')
+							if ppl3 then
+								if obj2 then
+									ppl3.Position = obj2.Position
+									task.spawn(function()
+										obj2.Anchored = true
+										task.wait(0.1)
+										obj2.Anchored = false
+									end)
+								else
+									print("Brick not found.")
+								end
+							end
+						end
+					end
+				end
+			end
+			task.wait(0.1)
+			debounce = true
+		end
+	end)
 end))
 Script48.Parent = Model43
 table.insert(cors,sandbox(Script48,function()
-wait(0.5)
-par = script.Parent.Head
-while true do
-wait(60)
-new = par.Script:clone()
-par.Enabled.Value = 1
-par.Script:remove()
-new.Parent = par
-end
+	wait(0.5)
+	par = script.Parent.Head
+	while true do
+		wait(60)
+		new = par.Script:clone()
+		par.Enabled.Value = 1
+		par.Script:remove()
+		new.Parent = par
+	end
 
 end))
 Part49.Name = "Smooth Block Model"
@@ -2521,69 +2611,103 @@ IntValue53.Parent = Part52
 IntValue53.Value = 1
 Script54.Parent = Part52
 table.insert(cors,sandbox(Script54,function()
---Modified version of Mikeds teleports
+	--[[Modified version of Mikeds teleports
 
-function onTouched(part)
-	if part.Parent ~= nil then
-	local h = part.Parent:findFirstChild("Humanoid")
-		if h~=nil then
-			local name = h.Parent.Name
-			local teleportfrom=script.Parent.Enabled.Value
-			if teleportfrom~=0 then
-				if h==humanoid then
-				return
-				end
-				brick = game.Workspace.Objects:getChildren()
-				for i = 1, #brick do
-					if name == brick[i].Head.Owner.Value then
-					modelname=brick[i].Head
+	function onTouched(part)
+		if part.Parent ~= nil then
+			local h = part.Parent:findFirstChild("Humanoid")
+			if h~=nil then
+				local name = h.Parent.Name
+				local teleportfrom=script.Parent.Enabled.Value
+				if teleportfrom~=0 then
+					if h==humanoid then
+						return
 					end
-				end
-				local teleportto=modelname
-				if teleportto~=nil and h~= nil then
-					local torso = h.Parent.Torso
-					local location = {teleportto.Position}
-					local i = 1
+					brick = game.Workspace.Objects:getChildren()
+					for i = 1, #brick do
+						if name == brick[i].Head.Owner.Value then
+							modelname=brick[i].Head
+						end
+					end
+					local teleportto=modelname
+					if teleportto~=nil and h~= nil then
+						local torso = h.Parent.Torso
+						local location = {teleportto.Position}
+						local i = 1
 
-					local x = location[i].x
-					local y = location[i].y
-					local z = location[i].z
-				
-					x = x + math.random(-1, 1)
-					z = z + math.random(-1, 1)
-					y = y + math.random(2, 3)
+						local x = location[i].x
+						local y = location[i].y
+						local z = location[i].z
 
-					local cf = torso.CFrame
-					local lx = 0
-					local ly = y
-					local lz = 0
-					
-					script.Parent.Enabled.Value=0
-					torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
-					wait(1)
-					script.Parent.Enabled.Value=1
-				else
-					print("Could not find teleporter!")
+						x = x + math.random(-1, 1)
+						z = z + math.random(-1, 1)
+						y = y + math.random(2, 3)
+
+						local cf = torso.CFrame
+						local lx = 0
+						local ly = y
+						local lz = 0
+
+						script.Parent.Enabled.Value=0
+						torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
+						wait(1)
+						script.Parent.Enabled.Value=1
+					else
+						print("Could not find teleporter!")
+					end
 				end
 			end
 		end
 	end
-end
 
-script.Parent.Touched:connect(onTouched)
+	script.Parent.Touched:connect(onTouched)]]
+	obj = workspace.Objects
+	obj2 = obj.Brick:FindFirstChildOfClass('Part')
+	debounce = true
+	script.Parent.Touched:Connect(function(ppl)
+		if debounce == true then
+			debounce = false
+			ppl1 = ppl.Parent
+			if ppl1 then
+				ppl2 = ppl1:FindFirstChildOfClass('Humanoid')
+				if ppl2 then
+					ppl25 = game:GetService('Players'):GetPlayerFromCharacter(ppl1)
+					if ppl25 ~= nil then
+						if ppl25 == owner then
+							ppl3 = ppl1:FindFirstChild('HumanoidRootPart')
+							if ppl3 then
+								if obj2 then
+									ppl3.Position = obj2.Position
+									task.spawn(function()
+										obj2.Anchored = true
+										task.wait(0.1)
+										obj2.Anchored = false
+									end)
+								else
+									print("Brick not found.")
+								end
+							end
+						end
+					end
+				end
+			end
+			task.wait(0.1)
+			debounce = true
+		end
+	end)
 
 end))
 Script55.Parent = Model50
 table.insert(cors,sandbox(Script55,function()
-wait(0.5)
-par = script.Parent.Head
-while true do
-wait(60)
-new = par.Script:clone()
-par.Enabled.Value = 1
-par.Script:remove()
-new.Parent = par
-end
+	wait(0.5)
+	par = script.Parent.Head
+	while true do
+		wait(60)
+		new = par.Script:clone()
+		par.Enabled.Value = 1
+		par.Script:remove()
+		new.Parent = par
+	end
 
 end))
 Part56.Name = "Smooth Block Model"
@@ -2747,47 +2871,47 @@ Part69.brickColor = BrickColor.new("Bright green")
 Script70.Name = "fruitgrowth"
 Script70.Parent = Model59
 table.insert(cors,sandbox(Script70,function()
-wait(1)
-tree = script.Parent
+	wait(1)
+	tree = script.Parent
 
-while true do
-c = tree.fruits:getChildren()
-for i = 1, #c do
-if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
-	local col = math.random(1,3)
-	if col == 1 then c[i].BrickColor = BrickColor.new(21) end
-	if col == 2 then c[i].BrickColor = BrickColor.new(23) end
-	if col == 3 then c[i].BrickColor = BrickColor.new(24) end
-	col = math.random(1,20)
-	if col == 8 then c[i].BrickColor = BrickColor.new(26) end
-	if col == 18 then c[i].BrickColor = BrickColor.new(1) end
-	col = math.random(1,60)
-	if col == 10 then c[i].BrickColor = BrickColor.new(104) end
-	col = math.random(1,100)
-	if col == 50 then c[i].BrickColor = BrickColor.new(28) end
-	if col == 60 then c[i].BrickColor = BrickColor.new(192) end
-	col = math.random(1,5000)
-	if col == 500 then 
-	c[i].BrickColor = BrickColor.new(11) 
-	c[i].Reflectance = 0.5
-	end
-else
-	if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
-	local new = c[i]:clone()
-	c[i].Anchored = false
-	c[i].CanCollide = true
-	c[i].Parent = tree
-	wait(3)
-	new.Parent = tree.fruits
-	new.BrickColor = BrickColor.new(151)
-	new.Reflectance = 0
-	rizzle(c[i])
-	end
-end
-end
+	while true do
+		c = tree.fruits:getChildren()
+		for i = 1, #c do
+			if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
+				local col = math.random(1,3)
+				if col == 1 then c[i].BrickColor = BrickColor.new(21) end
+				if col == 2 then c[i].BrickColor = BrickColor.new(23) end
+				if col == 3 then c[i].BrickColor = BrickColor.new(24) end
+				col = math.random(1,20)
+				if col == 8 then c[i].BrickColor = BrickColor.new(26) end
+				if col == 18 then c[i].BrickColor = BrickColor.new(1) end
+				col = math.random(1,60)
+				if col == 10 then c[i].BrickColor = BrickColor.new(104) end
+				col = math.random(1,100)
+				if col == 50 then c[i].BrickColor = BrickColor.new(28) end
+				if col == 60 then c[i].BrickColor = BrickColor.new(192) end
+				col = math.random(1,5000)
+				if col == 500 then 
+					c[i].BrickColor = BrickColor.new(11) 
+					c[i].Reflectance = 0.5
+				end
+			else
+				if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
+					local new = c[i]:clone()
+					c[i].Anchored = false
+					c[i].CanCollide = true
+					c[i].Parent = tree
+					wait(3)
+					new.Parent = tree.fruits
+					new.BrickColor = BrickColor.new(151)
+					new.Reflectance = 0
+					rizzle(c[i])
+				end
+			end
+		end
 
-wait(math.random(10,20))
-end
+		wait(math.random(10,20))
+	end
 
 end))
 Model71.Name = "fruits"
@@ -2870,54 +2994,54 @@ Send me requests and ideas - miked.
 --]]
 
 
---Enter the name of the model you want to go to here.
-------------------------------------
-modelname="teleporter1b"
-------------------------------------
+	--Enter the name of the model you want to go to here.
+	------------------------------------
+	modelname="teleporter1b"
+	------------------------------------
 
-function onTouched(part)
-	if part.Parent ~= nil then
-	local h = part.Parent:findFirstChild("Humanoid")
-		if h~=nil then
-			local teleportfrom=script.Parent.Enabled.Value
-			if teleportfrom~=0 then
-				if h==humanoid then
-				return
-				end
-				local teleportto=script.Parent.Parent:findFirstChild(modelname)
-				if teleportto~=nil then
-					local torso = h.Parent.Torso
-					local location = {teleportto.Position}
-					local i = 1
+	function onTouched(part)
+		if part.Parent ~= nil then
+			local h = part.Parent:findFirstChild("Humanoid")
+			if h~=nil then
+				local teleportfrom=script.Parent.Enabled.Value
+				if teleportfrom~=0 then
+					if h==humanoid then
+						return
+					end
+					local teleportto=script.Parent.Parent:findFirstChild(modelname)
+					if teleportto~=nil then
+						local torso = h.Parent.Torso
+						local location = {teleportto.Position}
+						local i = 1
 
-					local x = location[i].x
-					local y = location[i].y
-					local z = location[i].z
-				
-					x = x + math.random(-1, 1)
-					z = z + math.random(-1, 1)
-					y = y + math.random(2, 3)
+						local x = location[i].x
+						local y = location[i].y
+						local z = location[i].z
 
-					local cf = torso.CFrame
-					local lx = 0
-					local ly = y
-					local lz = 0
-					
-					script.Parent.Enabled.Value=0
-					teleportto.Enabled.Value=0
-					torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
-					wait(3)
-					script.Parent.Enabled.Value=1
-					teleportto.Enabled.Value=1
-				else
-					print("Could not find teleporter!")
+						x = x + math.random(-1, 1)
+						z = z + math.random(-1, 1)
+						y = y + math.random(2, 3)
+
+						local cf = torso.CFrame
+						local lx = 0
+						local ly = y
+						local lz = 0
+
+						script.Parent.Enabled.Value=0
+						teleportto.Enabled.Value=0
+						torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
+						wait(3)
+						script.Parent.Enabled.Value=1
+						teleportto.Enabled.Value=1
+					else
+						print("Could not find teleporter!")
+					end
 				end
 			end
 		end
 	end
-end
 
-script.Parent.Touched:connect(onTouched)
+	script.Parent.Touched:connect(onTouched)
 
 end))
 IntValue79.Name = "Enabled"
@@ -2955,54 +3079,54 @@ Send me requests and ideas - miked.
 --]]
 
 
---Enter the name of the model you want to go to here.
-------------------------------------
-modelname="teleporter1a"
-------------------------------------
+	--Enter the name of the model you want to go to here.
+	------------------------------------
+	modelname="teleporter1a"
+	------------------------------------
 
-function onTouched(part)
-	if part.Parent ~= nil then
-	local h = part.Parent:findFirstChild("Humanoid")
-		if h~=nil then
-			local teleportfrom=script.Parent.Enabled.Value
-			if teleportfrom~=0 then
-				if h==humanoid then
-				return
-				end
-				local teleportto=script.Parent.Parent:findFirstChild(modelname)
-				if teleportto~=nil then
-					local torso = h.Parent.Torso
-					local location = {teleportto.Position}
-					local i = 1
+	function onTouched(part)
+		if part.Parent ~= nil then
+			local h = part.Parent:findFirstChild("Humanoid")
+			if h~=nil then
+				local teleportfrom=script.Parent.Enabled.Value
+				if teleportfrom~=0 then
+					if h==humanoid then
+						return
+					end
+					local teleportto=script.Parent.Parent:findFirstChild(modelname)
+					if teleportto~=nil then
+						local torso = h.Parent.Torso
+						local location = {teleportto.Position}
+						local i = 1
 
-					local x = location[i].x
-					local y = location[i].y
-					local z = location[i].z
-				
-					x = x + math.random(-1, 1)
-					z = z + math.random(-1, 1)
-					y = y + math.random(2, 3)
+						local x = location[i].x
+						local y = location[i].y
+						local z = location[i].z
 
-					local cf = torso.CFrame
-					local lx = 0
-					local ly = y
-					local lz = 0
-					
-					script.Parent.Enabled.Value=0
-					teleportto.Enabled.Value=0
-					torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
-					wait(3)
-					script.Parent.Enabled.Value=1
-					teleportto.Enabled.Value=1
-				else
-					print("Could not find teleporter!")
+						x = x + math.random(-1, 1)
+						z = z + math.random(-1, 1)
+						y = y + math.random(2, 3)
+
+						local cf = torso.CFrame
+						local lx = 0
+						local ly = y
+						local lz = 0
+
+						script.Parent.Enabled.Value=0
+						teleportto.Enabled.Value=0
+						torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
+						wait(3)
+						script.Parent.Enabled.Value=1
+						teleportto.Enabled.Value=1
+					else
+						print("Could not find teleporter!")
+					end
 				end
 			end
 		end
 	end
-end
 
-script.Parent.Touched:connect(onTouched)
+	script.Parent.Touched:connect(onTouched)
 
 end))
 IntValue83.Name = "Enabled"
@@ -3144,47 +3268,47 @@ Part95.brickColor = BrickColor.new("Bright green")
 Script96.Name = "fruitgrowth"
 Script96.Parent = Model85
 table.insert(cors,sandbox(Script96,function()
-wait(1)
-tree = script.Parent
+	wait(1)
+	tree = script.Parent
 
-while true do
-c = tree.fruits:getChildren()
-for i = 1, #c do
-if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
-	local col = math.random(1,3)
-	if col == 1 then c[i].BrickColor = BrickColor.new(21) end
-	if col == 2 then c[i].BrickColor = BrickColor.new(23) end
-	if col == 3 then c[i].BrickColor = BrickColor.new(24) end
-	col = math.random(1,20)
-	if col == 8 then c[i].BrickColor = BrickColor.new(26) end
-	if col == 18 then c[i].BrickColor = BrickColor.new(1) end
-	col = math.random(1,60)
-	if col == 10 then c[i].BrickColor = BrickColor.new(104) end
-	col = math.random(1,100)
-	if col == 50 then c[i].BrickColor = BrickColor.new(28) end
-	if col == 60 then c[i].BrickColor = BrickColor.new(192) end
-	col = math.random(1,5000)
-	if col == 500 then 
-	c[i].BrickColor = BrickColor.new(11) 
-	c[i].Reflectance = 0.5
-	end
-else
-	if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
-	local new = c[i]:clone()
-	c[i].Anchored = false
-	c[i].CanCollide = true
-	c[i].Parent = tree
-	wait(3)
-	new.Parent = tree.fruits
-	new.BrickColor = BrickColor.new(151)
-	new.Reflectance = 0
-	rizzle(c[i])
-	end
-end
-end
+	while true do
+		c = tree.fruits:getChildren()
+		for i = 1, #c do
+			if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
+				local col = math.random(1,3)
+				if col == 1 then c[i].BrickColor = BrickColor.new(21) end
+				if col == 2 then c[i].BrickColor = BrickColor.new(23) end
+				if col == 3 then c[i].BrickColor = BrickColor.new(24) end
+				col = math.random(1,20)
+				if col == 8 then c[i].BrickColor = BrickColor.new(26) end
+				if col == 18 then c[i].BrickColor = BrickColor.new(1) end
+				col = math.random(1,60)
+				if col == 10 then c[i].BrickColor = BrickColor.new(104) end
+				col = math.random(1,100)
+				if col == 50 then c[i].BrickColor = BrickColor.new(28) end
+				if col == 60 then c[i].BrickColor = BrickColor.new(192) end
+				col = math.random(1,5000)
+				if col == 500 then 
+					c[i].BrickColor = BrickColor.new(11) 
+					c[i].Reflectance = 0.5
+				end
+			else
+				if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
+					local new = c[i]:clone()
+					c[i].Anchored = false
+					c[i].CanCollide = true
+					c[i].Parent = tree
+					wait(3)
+					new.Parent = tree.fruits
+					new.BrickColor = BrickColor.new(151)
+					new.Reflectance = 0
+					rizzle(c[i])
+				end
+			end
+		end
 
-wait(math.random(10,20))
-end
+		wait(math.random(10,20))
+	end
 
 end))
 Model97.Name = "fruits"
@@ -3267,54 +3391,54 @@ Send me requests and ideas - miked.
 --]]
 
 
---Enter the name of the model you want to go to here.
-------------------------------------
-modelname="teleporter1b"
-------------------------------------
+	--Enter the name of the model you want to go to here.
+	------------------------------------
+	modelname="teleporter1b"
+	------------------------------------
 
-function onTouched(part)
-	if part.Parent ~= nil then
-	local h = part.Parent:findFirstChild("Humanoid")
-		if h~=nil then
-			local teleportfrom=script.Parent.Enabled.Value
-			if teleportfrom~=0 then
-				if h==humanoid then
-				return
-				end
-				local teleportto=script.Parent.Parent:findFirstChild(modelname)
-				if teleportto~=nil then
-					local torso = h.Parent.Torso
-					local location = {teleportto.Position}
-					local i = 1
+	function onTouched(part)
+		if part.Parent ~= nil then
+			local h = part.Parent:findFirstChild("Humanoid")
+			if h~=nil then
+				local teleportfrom=script.Parent.Enabled.Value
+				if teleportfrom~=0 then
+					if h==humanoid then
+						return
+					end
+					local teleportto=script.Parent.Parent:findFirstChild(modelname)
+					if teleportto~=nil then
+						local torso = h.Parent.Torso
+						local location = {teleportto.Position}
+						local i = 1
 
-					local x = location[i].x
-					local y = location[i].y
-					local z = location[i].z
-				
-					x = x + math.random(-1, 1)
-					z = z + math.random(-1, 1)
-					y = y + math.random(2, 3)
+						local x = location[i].x
+						local y = location[i].y
+						local z = location[i].z
 
-					local cf = torso.CFrame
-					local lx = 0
-					local ly = y
-					local lz = 0
-					
-					script.Parent.Enabled.Value=0
-					teleportto.Enabled.Value=0
-					torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
-					wait(3)
-					script.Parent.Enabled.Value=1
-					teleportto.Enabled.Value=1
-				else
-					print("Could not find teleporter!")
+						x = x + math.random(-1, 1)
+						z = z + math.random(-1, 1)
+						y = y + math.random(2, 3)
+
+						local cf = torso.CFrame
+						local lx = 0
+						local ly = y
+						local lz = 0
+
+						script.Parent.Enabled.Value=0
+						teleportto.Enabled.Value=0
+						torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
+						wait(3)
+						script.Parent.Enabled.Value=1
+						teleportto.Enabled.Value=1
+					else
+						print("Could not find teleporter!")
+					end
 				end
 			end
 		end
 	end
-end
 
-script.Parent.Touched:connect(onTouched)
+	script.Parent.Touched:connect(onTouched)
 
 end))
 IntValue105.Name = "Enabled"
@@ -3352,54 +3476,54 @@ Send me requests and ideas - miked.
 --]]
 
 
---Enter the name of the model you want to go to here.
-------------------------------------
-modelname="teleporter1a"
-------------------------------------
+	--Enter the name of the model you want to go to here.
+	------------------------------------
+	modelname="teleporter1a"
+	------------------------------------
 
-function onTouched(part)
-	if part.Parent ~= nil then
-	local h = part.Parent:findFirstChild("Humanoid")
-		if h~=nil then
-			local teleportfrom=script.Parent.Enabled.Value
-			if teleportfrom~=0 then
-				if h==humanoid then
-				return
-				end
-				local teleportto=script.Parent.Parent:findFirstChild(modelname)
-				if teleportto~=nil then
-					local torso = h.Parent.Torso
-					local location = {teleportto.Position}
-					local i = 1
+	function onTouched(part)
+		if part.Parent ~= nil then
+			local h = part.Parent:findFirstChild("Humanoid")
+			if h~=nil then
+				local teleportfrom=script.Parent.Enabled.Value
+				if teleportfrom~=0 then
+					if h==humanoid then
+						return
+					end
+					local teleportto=script.Parent.Parent:findFirstChild(modelname)
+					if teleportto~=nil then
+						local torso = h.Parent.Torso
+						local location = {teleportto.Position}
+						local i = 1
 
-					local x = location[i].x
-					local y = location[i].y
-					local z = location[i].z
-				
-					x = x + math.random(-1, 1)
-					z = z + math.random(-1, 1)
-					y = y + math.random(2, 3)
+						local x = location[i].x
+						local y = location[i].y
+						local z = location[i].z
 
-					local cf = torso.CFrame
-					local lx = 0
-					local ly = y
-					local lz = 0
-					
-					script.Parent.Enabled.Value=0
-					teleportto.Enabled.Value=0
-					torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
-					wait(3)
-					script.Parent.Enabled.Value=1
-					teleportto.Enabled.Value=1
-				else
-					print("Could not find teleporter!")
+						x = x + math.random(-1, 1)
+						z = z + math.random(-1, 1)
+						y = y + math.random(2, 3)
+
+						local cf = torso.CFrame
+						local lx = 0
+						local ly = y
+						local lz = 0
+
+						script.Parent.Enabled.Value=0
+						teleportto.Enabled.Value=0
+						torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
+						wait(3)
+						script.Parent.Enabled.Value=1
+						teleportto.Enabled.Value=1
+					else
+						print("Could not find teleporter!")
+					end
 				end
 			end
 		end
 	end
-end
 
-script.Parent.Touched:connect(onTouched)
+	script.Parent.Touched:connect(onTouched)
 
 end))
 IntValue109.Name = "Enabled"
@@ -3440,54 +3564,54 @@ Send me requests and ideas - miked.
 --]]
 
 
---Enter the name of the model you want to go to here.
-------------------------------------
-modelname="teleporter1b"
-------------------------------------
+	--Enter the name of the model you want to go to here.
+	------------------------------------
+	modelname="teleporter1b"
+	------------------------------------
 
-function onTouched(part)
-	if part.Parent ~= nil then
-	local h = part.Parent:findFirstChild("Humanoid")
-		if h~=nil then
-			local teleportfrom=script.Parent.Enabled.Value
-			if teleportfrom~=0 then
-				if h==humanoid then
-				return
-				end
-				local teleportto=script.Parent.Parent:findFirstChild(modelname)
-				if teleportto~=nil then
-					local torso = h.Parent.Torso
-					local location = {teleportto.Position}
-					local i = 1
+	function onTouched(part)
+		if part.Parent ~= nil then
+			local h = part.Parent:findFirstChild("Humanoid")
+			if h~=nil then
+				local teleportfrom=script.Parent.Enabled.Value
+				if teleportfrom~=0 then
+					if h==humanoid then
+						return
+					end
+					local teleportto=script.Parent.Parent:findFirstChild(modelname)
+					if teleportto~=nil then
+						local torso = h.Parent.Torso
+						local location = {teleportto.Position}
+						local i = 1
 
-					local x = location[i].x
-					local y = location[i].y
-					local z = location[i].z
-				
-					x = x + math.random(-1, 1)
-					z = z + math.random(-1, 1)
-					y = y + math.random(2, 3)
+						local x = location[i].x
+						local y = location[i].y
+						local z = location[i].z
 
-					local cf = torso.CFrame
-					local lx = 0
-					local ly = y
-					local lz = 0
-					
-					script.Parent.Enabled.Value=0
-					teleportto.Enabled.Value=0
-					torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
-					wait(3)
-					script.Parent.Enabled.Value=1
-					teleportto.Enabled.Value=1
-				else
-					print("Could not find teleporter!")
+						x = x + math.random(-1, 1)
+						z = z + math.random(-1, 1)
+						y = y + math.random(2, 3)
+
+						local cf = torso.CFrame
+						local lx = 0
+						local ly = y
+						local lz = 0
+
+						script.Parent.Enabled.Value=0
+						teleportto.Enabled.Value=0
+						torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
+						wait(3)
+						script.Parent.Enabled.Value=1
+						teleportto.Enabled.Value=1
+					else
+						print("Could not find teleporter!")
+					end
 				end
 			end
 		end
 	end
-end
 
-script.Parent.Touched:connect(onTouched)
+	script.Parent.Touched:connect(onTouched)
 
 end))
 IntValue114.Name = "Enabled"
@@ -3525,54 +3649,54 @@ Send me requests and ideas - miked.
 --]]
 
 
---Enter the name of the model you want to go to here.
-------------------------------------
-modelname="teleporter1a"
-------------------------------------
+	--Enter the name of the model you want to go to here.
+	------------------------------------
+	modelname="teleporter1a"
+	------------------------------------
 
-function onTouched(part)
-	if part.Parent ~= nil then
-	local h = part.Parent:findFirstChild("Humanoid")
-		if h~=nil then
-			local teleportfrom=script.Parent.Enabled.Value
-			if teleportfrom~=0 then
-				if h==humanoid then
-				return
-				end
-				local teleportto=script.Parent.Parent:findFirstChild(modelname)
-				if teleportto~=nil then
-					local torso = h.Parent.Torso
-					local location = {teleportto.Position}
-					local i = 1
+	function onTouched(part)
+		if part.Parent ~= nil then
+			local h = part.Parent:findFirstChild("Humanoid")
+			if h~=nil then
+				local teleportfrom=script.Parent.Enabled.Value
+				if teleportfrom~=0 then
+					if h==humanoid then
+						return
+					end
+					local teleportto=script.Parent.Parent:findFirstChild(modelname)
+					if teleportto~=nil then
+						local torso = h.Parent.Torso
+						local location = {teleportto.Position}
+						local i = 1
 
-					local x = location[i].x
-					local y = location[i].y
-					local z = location[i].z
-				
-					x = x + math.random(-1, 1)
-					z = z + math.random(-1, 1)
-					y = y + math.random(2, 3)
+						local x = location[i].x
+						local y = location[i].y
+						local z = location[i].z
 
-					local cf = torso.CFrame
-					local lx = 0
-					local ly = y
-					local lz = 0
-					
-					script.Parent.Enabled.Value=0
-					teleportto.Enabled.Value=0
-					torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
-					wait(3)
-					script.Parent.Enabled.Value=1
-					teleportto.Enabled.Value=1
-				else
-					print("Could not find teleporter!")
+						x = x + math.random(-1, 1)
+						z = z + math.random(-1, 1)
+						y = y + math.random(2, 3)
+
+						local cf = torso.CFrame
+						local lx = 0
+						local ly = y
+						local lz = 0
+
+						script.Parent.Enabled.Value=0
+						teleportto.Enabled.Value=0
+						torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
+						wait(3)
+						script.Parent.Enabled.Value=1
+						teleportto.Enabled.Value=1
+					else
+						print("Could not find teleporter!")
+					end
 				end
 			end
 		end
 	end
-end
 
-script.Parent.Touched:connect(onTouched)
+	script.Parent.Touched:connect(onTouched)
 
 end))
 IntValue118.Name = "Enabled"
@@ -3613,54 +3737,54 @@ Send me requests and ideas - miked.
 --]]
 
 
---Enter the name of the model you want to go to here.
-------------------------------------
-modelname="teleporter1b"
-------------------------------------
+	--Enter the name of the model you want to go to here.
+	------------------------------------
+	modelname="teleporter1b"
+	------------------------------------
 
-function onTouched(part)
-	if part.Parent ~= nil then
-	local h = part.Parent:findFirstChild("Humanoid")
-		if h~=nil then
-			local teleportfrom=script.Parent.Enabled.Value
-			if teleportfrom~=0 then
-				if h==humanoid then
-				return
-				end
-				local teleportto=script.Parent.Parent:findFirstChild(modelname)
-				if teleportto~=nil then
-					local torso = h.Parent.Torso
-					local location = {teleportto.Position}
-					local i = 1
+	function onTouched(part)
+		if part.Parent ~= nil then
+			local h = part.Parent:findFirstChild("Humanoid")
+			if h~=nil then
+				local teleportfrom=script.Parent.Enabled.Value
+				if teleportfrom~=0 then
+					if h==humanoid then
+						return
+					end
+					local teleportto=script.Parent.Parent:findFirstChild(modelname)
+					if teleportto~=nil then
+						local torso = h.Parent.Torso
+						local location = {teleportto.Position}
+						local i = 1
 
-					local x = location[i].x
-					local y = location[i].y
-					local z = location[i].z
-				
-					x = x + math.random(-1, 1)
-					z = z + math.random(-1, 1)
-					y = y + math.random(2, 3)
+						local x = location[i].x
+						local y = location[i].y
+						local z = location[i].z
 
-					local cf = torso.CFrame
-					local lx = 0
-					local ly = y
-					local lz = 0
-					
-					script.Parent.Enabled.Value=0
-					teleportto.Enabled.Value=0
-					torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
-					wait(3)
-					script.Parent.Enabled.Value=1
-					teleportto.Enabled.Value=1
-				else
-					print("Could not find teleporter!")
+						x = x + math.random(-1, 1)
+						z = z + math.random(-1, 1)
+						y = y + math.random(2, 3)
+
+						local cf = torso.CFrame
+						local lx = 0
+						local ly = y
+						local lz = 0
+
+						script.Parent.Enabled.Value=0
+						teleportto.Enabled.Value=0
+						torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
+						wait(3)
+						script.Parent.Enabled.Value=1
+						teleportto.Enabled.Value=1
+					else
+						print("Could not find teleporter!")
+					end
 				end
 			end
 		end
 	end
-end
 
-script.Parent.Touched:connect(onTouched)
+	script.Parent.Touched:connect(onTouched)
 
 end))
 IntValue123.Name = "Enabled"
@@ -3698,54 +3822,54 @@ Send me requests and ideas - miked.
 --]]
 
 
---Enter the name of the model you want to go to here.
-------------------------------------
-modelname="teleporter1a"
-------------------------------------
+	--Enter the name of the model you want to go to here.
+	------------------------------------
+	modelname="teleporter1a"
+	------------------------------------
 
-function onTouched(part)
-	if part.Parent ~= nil then
-	local h = part.Parent:findFirstChild("Humanoid")
-		if h~=nil then
-			local teleportfrom=script.Parent.Enabled.Value
-			if teleportfrom~=0 then
-				if h==humanoid then
-				return
-				end
-				local teleportto=script.Parent.Parent:findFirstChild(modelname)
-				if teleportto~=nil then
-					local torso = h.Parent.Torso
-					local location = {teleportto.Position}
-					local i = 1
+	function onTouched(part)
+		if part.Parent ~= nil then
+			local h = part.Parent:findFirstChild("Humanoid")
+			if h~=nil then
+				local teleportfrom=script.Parent.Enabled.Value
+				if teleportfrom~=0 then
+					if h==humanoid then
+						return
+					end
+					local teleportto=script.Parent.Parent:findFirstChild(modelname)
+					if teleportto~=nil then
+						local torso = h.Parent.Torso
+						local location = {teleportto.Position}
+						local i = 1
 
-					local x = location[i].x
-					local y = location[i].y
-					local z = location[i].z
-				
-					x = x + math.random(-1, 1)
-					z = z + math.random(-1, 1)
-					y = y + math.random(2, 3)
+						local x = location[i].x
+						local y = location[i].y
+						local z = location[i].z
 
-					local cf = torso.CFrame
-					local lx = 0
-					local ly = y
-					local lz = 0
-					
-					script.Parent.Enabled.Value=0
-					teleportto.Enabled.Value=0
-					torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
-					wait(3)
-					script.Parent.Enabled.Value=1
-					teleportto.Enabled.Value=1
-				else
-					print("Could not find teleporter!")
+						x = x + math.random(-1, 1)
+						z = z + math.random(-1, 1)
+						y = y + math.random(2, 3)
+
+						local cf = torso.CFrame
+						local lx = 0
+						local ly = y
+						local lz = 0
+
+						script.Parent.Enabled.Value=0
+						teleportto.Enabled.Value=0
+						torso.CFrame = CFrame.new(Vector3.new(x,y,z), Vector3.new(lx,ly,lz))
+						wait(3)
+						script.Parent.Enabled.Value=1
+						teleportto.Enabled.Value=1
+					else
+						print("Could not find teleporter!")
+					end
 				end
 			end
 		end
 	end
-end
 
-script.Parent.Touched:connect(onTouched)
+	script.Parent.Touched:connect(onTouched)
 
 end))
 IntValue127.Name = "Enabled"
@@ -3903,47 +4027,47 @@ Part139.brickColor = BrickColor.new("Bright green")
 Script140.Name = "fruitgrowth"
 Script140.Parent = Model129
 table.insert(cors,sandbox(Script140,function()
-wait(1)
-tree = script.Parent
+	wait(1)
+	tree = script.Parent
 
-while true do
-c = tree.fruits:getChildren()
-for i = 1, #c do
-if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
-	local col = math.random(1,3)
-	if col == 1 then c[i].BrickColor = BrickColor.new(21) end
-	if col == 2 then c[i].BrickColor = BrickColor.new(23) end
-	if col == 3 then c[i].BrickColor = BrickColor.new(24) end
-	col = math.random(1,20)
-	if col == 8 then c[i].BrickColor = BrickColor.new(26) end
-	if col == 18 then c[i].BrickColor = BrickColor.new(1) end
-	col = math.random(1,60)
-	if col == 10 then c[i].BrickColor = BrickColor.new(104) end
-	col = math.random(1,100)
-	if col == 50 then c[i].BrickColor = BrickColor.new(28) end
-	if col == 60 then c[i].BrickColor = BrickColor.new(192) end
-	col = math.random(1,5000)
-	if col == 500 then 
-	c[i].BrickColor = BrickColor.new(11) 
-	c[i].Reflectance = 0.5
-	end
-else
-	if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
-	local new = c[i]:clone()
-	c[i].Anchored = false
-	c[i].CanCollide = true
-	c[i].Parent = tree
-	wait(3)
-	new.Parent = tree.fruits
-	new.BrickColor = BrickColor.new(151)
-	new.Reflectance = 0
-	rizzle(c[i])
-	end
-end
-end
+	while true do
+		c = tree.fruits:getChildren()
+		for i = 1, #c do
+			if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
+				local col = math.random(1,3)
+				if col == 1 then c[i].BrickColor = BrickColor.new(21) end
+				if col == 2 then c[i].BrickColor = BrickColor.new(23) end
+				if col == 3 then c[i].BrickColor = BrickColor.new(24) end
+				col = math.random(1,20)
+				if col == 8 then c[i].BrickColor = BrickColor.new(26) end
+				if col == 18 then c[i].BrickColor = BrickColor.new(1) end
+				col = math.random(1,60)
+				if col == 10 then c[i].BrickColor = BrickColor.new(104) end
+				col = math.random(1,100)
+				if col == 50 then c[i].BrickColor = BrickColor.new(28) end
+				if col == 60 then c[i].BrickColor = BrickColor.new(192) end
+				col = math.random(1,5000)
+				if col == 500 then 
+					c[i].BrickColor = BrickColor.new(11) 
+					c[i].Reflectance = 0.5
+				end
+			else
+				if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
+					local new = c[i]:clone()
+					c[i].Anchored = false
+					c[i].CanCollide = true
+					c[i].Parent = tree
+					wait(3)
+					new.Parent = tree.fruits
+					new.BrickColor = BrickColor.new(151)
+					new.Reflectance = 0
+					rizzle(c[i])
+				end
+			end
+		end
 
-wait(math.random(10,20))
-end
+		wait(math.random(10,20))
+	end
 
 end))
 Model141.Name = "fruits"
@@ -4151,47 +4275,47 @@ Part156.brickColor = BrickColor.new("Bright green")
 Script157.Name = "fruitgrowth"
 Script157.Parent = Model146
 table.insert(cors,sandbox(Script157,function()
-wait(1)
-tree = script.Parent
+	wait(1)
+	tree = script.Parent
 
-while true do
-c = tree.fruits:getChildren()
-for i = 1, #c do
-if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
-	local col = math.random(1,3)
-	if col == 1 then c[i].BrickColor = BrickColor.new(21) end
-	if col == 2 then c[i].BrickColor = BrickColor.new(23) end
-	if col == 3 then c[i].BrickColor = BrickColor.new(24) end
-	col = math.random(1,20)
-	if col == 8 then c[i].BrickColor = BrickColor.new(26) end
-	if col == 18 then c[i].BrickColor = BrickColor.new(1) end
-	col = math.random(1,60)
-	if col == 10 then c[i].BrickColor = BrickColor.new(104) end
-	col = math.random(1,100)
-	if col == 50 then c[i].BrickColor = BrickColor.new(28) end
-	if col == 60 then c[i].BrickColor = BrickColor.new(192) end
-	col = math.random(1,5000)
-	if col == 500 then 
-	c[i].BrickColor = BrickColor.new(11) 
-	c[i].Reflectance = 0.5
-	end
-else
-	if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
-	local new = c[i]:clone()
-	c[i].Anchored = false
-	c[i].CanCollide = true
-	c[i].Parent = tree
-	wait(3)
-	new.Parent = tree.fruits
-	new.BrickColor = BrickColor.new(151)
-	new.Reflectance = 0
-	rizzle(c[i])
-	end
-end
-end
+	while true do
+		c = tree.fruits:getChildren()
+		for i = 1, #c do
+			if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
+				local col = math.random(1,3)
+				if col == 1 then c[i].BrickColor = BrickColor.new(21) end
+				if col == 2 then c[i].BrickColor = BrickColor.new(23) end
+				if col == 3 then c[i].BrickColor = BrickColor.new(24) end
+				col = math.random(1,20)
+				if col == 8 then c[i].BrickColor = BrickColor.new(26) end
+				if col == 18 then c[i].BrickColor = BrickColor.new(1) end
+				col = math.random(1,60)
+				if col == 10 then c[i].BrickColor = BrickColor.new(104) end
+				col = math.random(1,100)
+				if col == 50 then c[i].BrickColor = BrickColor.new(28) end
+				if col == 60 then c[i].BrickColor = BrickColor.new(192) end
+				col = math.random(1,5000)
+				if col == 500 then 
+					c[i].BrickColor = BrickColor.new(11) 
+					c[i].Reflectance = 0.5
+				end
+			else
+				if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
+					local new = c[i]:clone()
+					c[i].Anchored = false
+					c[i].CanCollide = true
+					c[i].Parent = tree
+					wait(3)
+					new.Parent = tree.fruits
+					new.BrickColor = BrickColor.new(151)
+					new.Reflectance = 0
+					rizzle(c[i])
+				end
+			end
+		end
 
-wait(math.random(10,20))
-end
+		wait(math.random(10,20))
+	end
 
 end))
 Model158.Name = "fruits"
@@ -4399,47 +4523,47 @@ Part173.brickColor = BrickColor.new("Bright green")
 Script174.Name = "fruitgrowth"
 Script174.Parent = Model163
 table.insert(cors,sandbox(Script174,function()
-wait(1)
-tree = script.Parent
+	wait(1)
+	tree = script.Parent
 
-while true do
-c = tree.fruits:getChildren()
-for i = 1, #c do
-if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
-	local col = math.random(1,3)
-	if col == 1 then c[i].BrickColor = BrickColor.new(21) end
-	if col == 2 then c[i].BrickColor = BrickColor.new(23) end
-	if col == 3 then c[i].BrickColor = BrickColor.new(24) end
-	col = math.random(1,20)
-	if col == 8 then c[i].BrickColor = BrickColor.new(26) end
-	if col == 18 then c[i].BrickColor = BrickColor.new(1) end
-	col = math.random(1,60)
-	if col == 10 then c[i].BrickColor = BrickColor.new(104) end
-	col = math.random(1,100)
-	if col == 50 then c[i].BrickColor = BrickColor.new(28) end
-	if col == 60 then c[i].BrickColor = BrickColor.new(192) end
-	col = math.random(1,5000)
-	if col == 500 then 
-	c[i].BrickColor = BrickColor.new(11) 
-	c[i].Reflectance = 0.5
-	end
-else
-	if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
-	local new = c[i]:clone()
-	c[i].Anchored = false
-	c[i].CanCollide = true
-	c[i].Parent = tree
-	wait(3)
-	new.Parent = tree.fruits
-	new.BrickColor = BrickColor.new(151)
-	new.Reflectance = 0
-	rizzle(c[i])
-	end
-end
-end
+	while true do
+		c = tree.fruits:getChildren()
+		for i = 1, #c do
+			if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
+				local col = math.random(1,3)
+				if col == 1 then c[i].BrickColor = BrickColor.new(21) end
+				if col == 2 then c[i].BrickColor = BrickColor.new(23) end
+				if col == 3 then c[i].BrickColor = BrickColor.new(24) end
+				col = math.random(1,20)
+				if col == 8 then c[i].BrickColor = BrickColor.new(26) end
+				if col == 18 then c[i].BrickColor = BrickColor.new(1) end
+				col = math.random(1,60)
+				if col == 10 then c[i].BrickColor = BrickColor.new(104) end
+				col = math.random(1,100)
+				if col == 50 then c[i].BrickColor = BrickColor.new(28) end
+				if col == 60 then c[i].BrickColor = BrickColor.new(192) end
+				col = math.random(1,5000)
+				if col == 500 then 
+					c[i].BrickColor = BrickColor.new(11) 
+					c[i].Reflectance = 0.5
+				end
+			else
+				if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
+					local new = c[i]:clone()
+					c[i].Anchored = false
+					c[i].CanCollide = true
+					c[i].Parent = tree
+					wait(3)
+					new.Parent = tree.fruits
+					new.BrickColor = BrickColor.new(151)
+					new.Reflectance = 0
+					rizzle(c[i])
+				end
+			end
+		end
 
-wait(math.random(10,20))
-end
+		wait(math.random(10,20))
+	end
 
 end))
 Model175.Name = "fruits"
@@ -4647,47 +4771,47 @@ Part190.brickColor = BrickColor.new("Bright green")
 Script191.Name = "fruitgrowth"
 Script191.Parent = Model180
 table.insert(cors,sandbox(Script191,function()
-wait(1)
-tree = script.Parent
+	wait(1)
+	tree = script.Parent
 
-while true do
-c = tree.fruits:getChildren()
-for i = 1, #c do
-if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
-	local col = math.random(1,3)
-	if col == 1 then c[i].BrickColor = BrickColor.new(21) end
-	if col == 2 then c[i].BrickColor = BrickColor.new(23) end
-	if col == 3 then c[i].BrickColor = BrickColor.new(24) end
-	col = math.random(1,20)
-	if col == 8 then c[i].BrickColor = BrickColor.new(26) end
-	if col == 18 then c[i].BrickColor = BrickColor.new(1) end
-	col = math.random(1,60)
-	if col == 10 then c[i].BrickColor = BrickColor.new(104) end
-	col = math.random(1,100)
-	if col == 50 then c[i].BrickColor = BrickColor.new(28) end
-	if col == 60 then c[i].BrickColor = BrickColor.new(192) end
-	col = math.random(1,5000)
-	if col == 500 then 
-	c[i].BrickColor = BrickColor.new(11) 
-	c[i].Reflectance = 0.5
-	end
-else
-	if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
-	local new = c[i]:clone()
-	c[i].Anchored = false
-	c[i].CanCollide = true
-	c[i].Parent = tree
-	wait(3)
-	new.Parent = tree.fruits
-	new.BrickColor = BrickColor.new(151)
-	new.Reflectance = 0
-	rizzle(c[i])
-	end
-end
-end
+	while true do
+		c = tree.fruits:getChildren()
+		for i = 1, #c do
+			if c[i].BrickColor == BrickColor.new(151) and math.random(1,2) == 1 then
+				local col = math.random(1,3)
+				if col == 1 then c[i].BrickColor = BrickColor.new(21) end
+				if col == 2 then c[i].BrickColor = BrickColor.new(23) end
+				if col == 3 then c[i].BrickColor = BrickColor.new(24) end
+				col = math.random(1,20)
+				if col == 8 then c[i].BrickColor = BrickColor.new(26) end
+				if col == 18 then c[i].BrickColor = BrickColor.new(1) end
+				col = math.random(1,60)
+				if col == 10 then c[i].BrickColor = BrickColor.new(104) end
+				col = math.random(1,100)
+				if col == 50 then c[i].BrickColor = BrickColor.new(28) end
+				if col == 60 then c[i].BrickColor = BrickColor.new(192) end
+				col = math.random(1,5000)
+				if col == 500 then 
+					c[i].BrickColor = BrickColor.new(11) 
+					c[i].Reflectance = 0.5
+				end
+			else
+				if math.random(1,4) == 2 and c[i].BrickColor ~= BrickColor.new(151) then
+					local new = c[i]:clone()
+					c[i].Anchored = false
+					c[i].CanCollide = true
+					c[i].Parent = tree
+					wait(3)
+					new.Parent = tree.fruits
+					new.BrickColor = BrickColor.new(151)
+					new.Reflectance = 0
+					rizzle(c[i])
+				end
+			end
+		end
 
-wait(math.random(10,20))
-end
+		wait(math.random(10,20))
+	end
 
 end))
 Model192.Name = "fruits"
@@ -7140,24 +7264,24 @@ temppp:remove()
 
 
 task.spawn(function()
-while task.wait() do
+	while task.wait() do
 
-	players = game:GetService('Players'):getChildren()
-	for i = 1, #players do
-		if players[i]:findFirstChild("hasBrick") ~= nil then
-			if players[i] ~= nil and players[i].hasBrick.Value ~= 1 then
-				wait(3)
-				local name = players[i].Name
-				local newbrick = clon:clone()
-				newbrick.Parent = obj
-				newbrick.Head.Owner.Value = name
-				players[i].hasBrick.Value = 1
+		players = game:GetService('Players'):getChildren()
+		for i = 1, #players do
+			if players[i]:findFirstChild("hasBrick") ~= nil then
+				if players[i] ~= nil and players[i].hasBrick.Value ~= 1 then
+					wait(3)
+					local name = players[i].Name
+					local newbrick = clon:clone()
+					newbrick.Parent = obj
+					newbrick.Head.Owner.Value = name
+					players[i].hasBrick.Value = 1
+				end
 			end
 		end
-	end
-	players = nil
+		players = nil
 
-	wait(1)
+		wait(1)
 	end
 end)
 
