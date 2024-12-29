@@ -192,6 +192,12 @@ Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
 Script8 = Instance.new("Script")
+task.spawn(function()
+while task.wait() do
+Tool0.Name = "Blue x" .. owner.Blue.Value
+end
+end)
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Name = "Blue"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -243,7 +249,7 @@ table.insert(cors,sandbox(Script6,function()
 
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
-		print(hit.Name)
+		--print(hit.Name)
 			local player = game.Players:findFirstChild(Tool.Parent.Name)
 			if  player.Blue.Value > 0 then
 				player.Blue.Value = player.Blue.Value - 1
@@ -356,6 +362,12 @@ Script4 = Instance.new("Script")
 Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+Instance.new("IntValue",Tool0).Name = "recognizedM"
+task.spawn(function()
+while task.wait() do
+Tool0.Name = "Evil x"..owner.Evil.Value
+end
+end)
 Tool0.Name = "Evil"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -493,9 +505,15 @@ StringValue1 = Instance.new("StringValue")
 Vector3Value2 = Instance.new("Vector3Value")
 ObjectValue3 = Instance.new("ObjectValue")
 Script4 = Instance.new("Script")
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+task.spawn(function()
+while task.wait() do
+Tool0.Name = "Good x"..owner.Good.Value
+end
+end)
 Tool0.Name = "Good"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -634,8 +652,14 @@ Vector3Value2 = Instance.new("Vector3Value")
 Script3 = Instance.new("Script")
 ObjectValue4 = Instance.new("ObjectValue")
 Part5 = Instance.new("Part")
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+task.spawn(function()
+while task.wait() do
+Tool0.Name = "Red x"..owner.Red.Value
+end
+end)
 Tool0.Name = "Red"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -780,6 +804,7 @@ Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0.GripPos = Vector3.new(0, 0, 0.5)
 StringValue1.Name = "Key"
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 StringValue1.Parent = Tool0
 Vector3Value2.Name = "Origin"
 Vector3Value2.Parent = Tool0
@@ -898,12 +923,18 @@ Script4 = Instance.new("Script")
 Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+task.spawn(function()
+while task.wait() do
+Tool0.Name = "Special x"..owner.Special.Value
+end
+end)
 Tool0.Name = "Special"
 Tool0.Parent = owner.Backpack
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0.GripPos = Vector3.new(0, 0, 0.5)
 StringValue1.Name = "Key"
 StringValue1.Parent = Tool0
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Vector3Value2.Name = "Origin"
 Vector3Value2.Parent = Tool0
 ObjectValue3.Name = "Target"
@@ -1039,8 +1070,14 @@ Script4 = Instance.new("Script")
 Part5 = Instance.new("Part")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+task.spawn(function()
+while task.wait() do
+Tool0.Name = "Speed x"..owner.Speed.Value
+end
+end)
 Tool0.Name = "Speed"
 Tool0.Parent = owner.Backpack
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0.GripPos = Vector3.new(0, 0, 0.5)
 StringValue1.Name = "Key"
@@ -1179,8 +1216,14 @@ Part4 = Instance.new("Part")
 Script5 = Instance.new("Script")
 Script6 = Instance.new("Script")
 Script7 = Instance.new("Script")
+task.spawn(function()
+while task.wait() do
+Tool0.Name = "Yel. x"..owner.Yellow.Value
+end
+end)
 Tool0.Name = "Yel."
 Tool0.Parent = owner.Backpack
+Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0.GripPos = Vector3.new(0, 0, 0.5)
 StringValue1.Name = "Key"
@@ -1388,6 +1431,46 @@ for _,v in next, game:GetService('Players'):GetPlayers() do
 end
 game:GetService('Players').PlayerAdded:connect(onPlayerEntered)
 
+owner.Character.Humanoid.Died:Connect(function()
+for _,v in next, owner.Backpack:GetChildren() do
+if v:FindFirstChild('recognizedM') then
+v.Parent = nil
+owner.CharacterAdded:Once(function()
+v.Parent = owner.Backpack
+death()
+end)
+end
+end
+end)
+lololol = {owner.Blue, owner.Red, owner.Evil, owner.Good, owner.Special, owner.Speed, owner.Yellow}
+numbert = 1
+function death()
+owner.Character.Humanoid.Died:Connect(function()
+for _,v in next, owner.Backpack:GetChildren() do
+if v:FindFirstChild('recognizedM') then
+v.Parent = nil
+owner.CharacterAdded:Once(function()
+v.Parent = owner.Backpack
+death2()
+end)
+end
+end
+end)
+end
+--end
+function death2()
+owner.Character.Humanoid.Died:Connect(function()
+for _,v in next, owner.Backpack:GetChildren() do
+if v:FindFirstChild('recognizedM') then
+v.Parent = nil
+owner.CharacterAdded:Once(function()
+v.Parent = owner.Backpack
+death()
+end)
+end
+end
+end)
+end
 
 print("hello")
 joke = Instance.new("BloomEffect")
