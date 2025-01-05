@@ -1,27 +1,27 @@
-Instance.new("RemoteEvent",owner.PlayerGui).Name = "client"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client2"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client3"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client4"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client5"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client6"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client7"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client8"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client9"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client10"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client11"
-Instance.new("BindableEvent",owner.PlayerGui).Name = "client12"
-client = owner.PlayerGui.client
-client2 = owner.PlayerGui.client2
-client3 = owner.PlayerGui.client3
-client4 = owner.PlayerGui.client4
-client5 = owner.PlayerGui.client5
-client6 = owner.PlayerGui.client6
-client7 = owner.PlayerGui.client7
-client8 = owner.PlayerGui.client8
-client9 = owner.PlayerGui.client9
-client10 = owner.PlayerGui.client10
-client11 = owner.PlayerGui.client11
-client12 = owner.PlayerGui.client12
+Instance.new("RemoteEvent",owner.PlayerGui).Name = "clientr"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientr2"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientr3"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientr4"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientr5"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientr6"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientr7"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientr8"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientr9"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientr10"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientr11"
+Instance.new("BindableEvent",owner.PlayerGui).Name = "clientr12"
+clientr = owner.PlayerGui.clientr
+clientr2 = owner.PlayerGui.clientr2
+clientr3 = owner.PlayerGui.clientr3
+clientr4 = owner.PlayerGui.clientr4
+clientr5 = owner.PlayerGui.clientr5
+clientr6 = owner.PlayerGui.clientr6
+clientr7 = owner.PlayerGui.clientr7
+clientr8 = owner.PlayerGui.clientr8
+clientr9 = owner.PlayerGui.clientr9
+clientr10 = owner.PlayerGui.clientr10
+clientr11 = owner.PlayerGui.clientr11
+clientr12 = owner.PlayerGui.clientr12
 mouse1 = {Hit = nil,
 	Target = nil,
 	TargetSurface = nil,
@@ -35,60 +35,60 @@ mouse1 = {Hit = nil,
 	TargetFilter = nil,
 	hit = nil,
 	target = nil,
-	Button1Down = client2.Event,
-	Button1Up = client3.Event,
-	Button2Down = client4.Event,
-	Button2Up = client5.Event,
-	Idle = client6.Event,
-	KeyDown = client7.Event,
-	KeyUp = client8.Event,
-	Move = client9.Event,
-	WheelBackward = client10.Event,
-	WheelForward = client11.Event,
-	keyDown = client12.Event,
+	Button1Down = clientr2.Event,
+	Button1Up = clientr3.Event,
+	Button2Down = clientr4.Event,
+	Button2Up = clientr5.Event,
+	Idle = clientr6.Event,
+	KeyDown = clientr7.Event,
+	KeyUp = clientr8.Event,
+	Move = clientr9.Event,
+	WheelBackward = clientr10.Event,
+	WheelForward = clientr11.Event,
+	keyDown = clientr12.Event,
 	Name = nil
 }
 
 --Replace all "mouse = user:GetMouse()" with "mouse = mouse1".
 --Replace all game.Players.LocalPlayer with "owner"
 NLS([[
-client = owner.PlayerGui.client
+clientr = owner.PlayerGui.clientr
 mouse = owner:GetMouse()
 
 mouse.Button1Down:Connect(function()
-client:FireServer("pk3")
+clientr:FireServer("pk3")
 end)
 mouse.Button1Up:Connect(function()
-client:FireServer("pk4")
+clientr:FireServer("pk4")
 end)
 mouse.Button2Down:Connect(function()
-client:FireServer("pk5")
+clientr:FireServer("pk5")
 end)
 mouse.Button2Up:Connect(function()
-client:FireServer("pk6")
+clientr:FireServer("pk6")
 end)
 mouse.Idle:Connect(function()
-client:FireServer("pk7")
+clientr:FireServer("pk7")
 end)
 mouse.KeyDown:Connect(function(k)
-client:FireServer("pk8",k)
+clientr:FireServer("pk8",k)
 end)
 mouse.KeyUp:Connect(function(k)
-client:FireServer("pk9",k)
+clientr:FireServer("pk9",k)
 end)
 mouse.Move:Connect(function()
-client:FireServer("pk10")
+clientr:FireServer("pk10")
 end)
 mouse.WheelBackward:Connect(function()
-client:FireServer("pk11")
+clientr:FireServer("pk11")
 end)
 mouse.WheelForward:Connect(function()
-client:FireServer("pk12")
+clientr:FireServer("pk12")
 end)
 mouse.keyDown:Connect(function(k)
-client:FireServer("pk13",k)
+clientr:FireServer("pk13",k)
 end)
-client.OnClientEvent:Connect(function(tf,icon,p)
+clientr.OnClientEvent:Connect(function(tf,icon,p)
 if p == nil then
 mouse.Icon = icon
 mouse.TargetFilter = tf
@@ -98,14 +98,14 @@ end
 end)
 mouse.Changed:Connect(function(p)
 if p == "Icon" or p == "TargetFilter" then
-client:FireServer("pk2",mouse.Icon,mouse.TargetFilter)
+clientr:FireServer("pk2",mouse.Icon,mouse.TargetFilter)
 end
 end)
 while task.wait(0.02) do
-client:FireServer("pk1", mouse.Hit, mouse.Target, mouse.TargetSurface, mouse.Y, mouse.X, mouse.ViewSizeY, mouse.ViewSizeX, mouse.UnitRay, mouse.Origin)
+clientr:FireServer("pk1", mouse.Hit, mouse.Target, mouse.TargetSurface, mouse.Y, mouse.X, mouse.ViewSizeY, mouse.ViewSizeX, mouse.UnitRay, mouse.Origin)
 end]],owner.PlayerGui)
 mouse1.Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
-client.OnServerEvent:Connect(function(m, str, hit, target, targets,y,x,vy,vx,ur,ori)
+clientr.OnServerEvent:Connect(function(m, str, hit, target, targets,y,x,vy,vx,ur,ori)
 	if str == "pk1" then
 		mouse1.Hit = hit
 		mouse1.Target = target
@@ -120,53 +120,54 @@ client.OnServerEvent:Connect(function(m, str, hit, target, targets,y,x,vy,vx,ur,
 		--	mouse1.TargetFilter = tf
 		mouse1.hit = hit
 		mouse1.target = target
-		--client:FireClient(owner,mouse1.TargetFilter, mouse1.Icon)
+		--clientr:FireClient(owner,mouse1.TargetFilter, mouse1.Icon)
 	end
 	if str == "pk2" then
 		mouse1.Icon = hit
 		mouse1.TargetFilter = target
 	end
 	if str == "pk3" then
-		client2:Fire()
+		clientr2:Fire()
 	end
 	if str == "pk4" then
-		client3:Fire()
+		clientr3:Fire()
 	end
 	if str == "pk5" then
-		client4:Fire()
+		clientr4:Fire()
 	end
 	if str == "pk6" then
-		client5:Fire()
+		clientr5:Fire()
 	end
 	if str == "pk7" then
-		client6:Fire()
+		clientr6:Fire()
 	end
 	if str == "pk8" then
-		client7:Fire(hit)
+		clientr7:Fire(hit)
 	end
 	if str == "pk9" then
-		client8:Fire(hit)
+		clientr8:Fire(hit)
 	end
 	if str == "pk10" then
-		client9:Fire()
+		clientr9:Fire()
 	end
 	if str == "pk11" then
-		client10:Fire()
+		clientr10:Fire()
 	end
 	if str == "pk12" then
-		client11:Fire()
+		clientr11:Fire()
 	end
 	if str == "pk13" then
-		client12:Fire(hit)
+		clientr12:Fire(hit)
 	end
 end)
 mouse1.Name = "Instance"
 task.spawn(function()
 	while task.wait(0.1) do
-		client:FireClient(owner,mouse1.Name,nil,"p")
+		clientr:FireClient(owner,mouse1.Name,nil,"p")
 	end
 end)
-task.wait(1)
+task.wait(1.5)
+
 
 function onPlayerEntered(newPlayer)
 	wait(.5)
@@ -260,7 +261,7 @@ for _,v in next, game:GetService('Players'):GetPlayers() do
 		color.Parent = v
 	end
 end
-
+jome = Instance.new("ObjectValue")
 game:GetService('Players').PlayerAdded:connect(onPlayerEntered)
 function sandbox(var,func)
 	local env = getfenv(func)
@@ -932,10 +933,286 @@ table.insert(cors,sandbox(Script5,function()
 		if hit.Name == "Head" and hit:findFirstChild("Owner")~=nil then
 			local player = game.Players:findFirstChild(Tool.Parent.Name)
 			if hit.Owner.Value == Tool.Parent.Name then
-				local new = hit.Move:clone()
-				hit.Move:remove()
+				local new = NS([[amj = script.Parent
+	wait(0.1)
+	amj.Parent.Name = amj.Owner.Value .. "s Brick"
+	brick = amj
+	maxspd = brick.maxSpeed
+	group = brick.Parent.Parent
+	behaviour = brick.Behaviour
+	behaviour.Value = 0
+	poosize = brick.poosize
+	local ting = 0
+
+	function onBrickAttack(hit)
+		if ting == 0 then
+			ting = 1
+			if hit ~= nil then
+				if hit.Name == "Head" and hit.Parent.Parent.Name == "Objects" then
+					local s = { hit.Size }
+					local x = s[1].x + (math.random(0,2) * -1)
+					local y = s[1].y + (math.random(0,2) * -1)
+					local z = s[1].z + (math.random(0,2) * -1)
+					hit.Size = Vector3.new(x,y,z)
+					behaviour.Value = 0
+					wait(0.1)
+				end
+			end
+			ting = 0
+		end
+	end
+
+	function onPlayerAttack(hit)
+		if ting == 0 then
+			ting = 1
+			local check = game.Players:findFirstChild(hit.Parent.Name)
+			if check ~= nil then
+				hit.Parent.Humanoid.Health = hit.Parent.Humanoid.Health - (brick.alignment.Value * 2)
+				behaviour.Value = 0
+				wait(0.1)
+			end
+			ting = 0
+		end
+	end
+
+	while true do
+
+		--Figure out what the brick should do (last items are topmost priority)
+		if behaviour.Value == 0 then
+			brick.Velocity = Vector3.new(0,20,0)
+			wait(math.random(1,5))
+
+			--determine random movement
+			if math.random(1,5) == 5 then
+				behaviour.Value = 1
+			end
+
+			--determine follow owner
+			if math.random(1,6) == 4 then
+				local test = game.Players:findFirstChild(brick.Owner.Value)
+				if test ~= nil then
+					behaviour.Value = 4
+				else
+					brick.CanCollide = false
+					wait(0.5)
+					brick.Parent:remove()
+				end
+			end
+
+			--determine eating players if evil
+			if brick.alignment.Value < -14 then
+				if math.random(1,brick.alignment.Value * -1) > 15 then
+					behaviour.Value = 5
+				end
+			end
+
+			--determine attacking other evil bricks if good
+			if brick.alignment.Value > 14 then
+				if math.random(1,brick.alignment.Value) > 15 then
+					behaviour.Value = 6
+				end
+			end
+
+			--determine pooping
+			local siz = {brick.Size}
+			local x = siz[1].x
+			local y = siz[1].y
+			local z = siz[1].z
+			if x > 10 or (y > 10 or z > 10) then
+				if math.random(1,100) > 90 then
+					behaviour.Value = 3
+				end
+			end
+
+			--determine feeding
+			food = brick.Parent:findFirstChild("food")
+			if food ~= nil then
+				behaviour.Value = 2
+			end
+		end
+
+		--Random movement
+		if behaviour.Value == 1 then 
+			if math.random(1,10) ~= 1 then
+				local y = math.random(-1,1)*0.1
+				local i
+				for i = 0, math.random(1,15) do
+					brick.BodyGyro.cframe=brick.BodyGyro.cframe * CFrame.fromEulerAnglesXYZ(0, y, 0)
+					wait(0.1)
+					if behaviour.Value ~= 1 then break end
+				end
+			end
+			wait(0.5)
+			if math.random(1,2) == 1 then
+				for i = 0, math.random(1,5) do
+					brick.Velocity = brick.CFrame.lookVector * math.random(13,13 + maxspd.Value)
+					if behaviour.Value ~= 1 then break end
+				end
+			end
+			behaviour.Value = 0
+		end
+
+		--Get food
+		if behaviour.Value == 2 then
+			brick.BodyGyro.cframe=CFrame.new(brick.Position, food.Position)
+			wait(1.5)
+			local counter = 0
+			while food.Parent ~= nil and behaviour.Value == 2 do
+				local foodpos = {food.Position}
+				local fx = foodpos[1].x
+				local fz = foodpos[1].z
+				local brickpos = {brick.Position}
+				local by = brickpos[1].y
+				brick.BodyGyro.cframe=CFrame.new(brick.Position, Vector3.new(fx,by,fz))
+				brick.Velocity = brick.CFrame.lookVector * (13 + maxspd.Value)
+				counter = counter + 1
+				wait(0.1)
+				if counter > 200 then
+					break --in case of eternal food-chasing (brick may miss food and circle it forever)
+				end
+			end
+			brick.BodyGyro.cframe=CFrame.new(brick.Position)
+			behaviour.Value = 0
+		end
+
+		--Poop
+		if behaviour.Value == 3 then
+			brick.BodyGyro.cframe=CFrame.new(brick.Position)
+			local i
+			local poo = 0
+			for i = 0, math.random(20,50) do
+				brick.Velocity = Vector3.new(5,5,5)
+				wait(0.1)
+				brick.Velocity = Vector3.new(-5, 5,-5)
+				wait(0.1)
+				if behaviour.Value ~= 3 then break end
+			end
+			local siz = {brick.Position}
+			local x = siz[1].x
+			local y = siz[1].y
+			local z = siz[1].z
+			local siz = {brick.Size}
+			local xx = siz[1].x
+			local yy = siz[1].y
+			local zz = siz[1].z
+			local poop = Instance.new("Part")
+			poop.Size = Vector3.new(xx/poosize.Value,yy/poosize.Value,zz/poosize.Value)
+			poop.Parent = game.Workspace
+			poop.Position = Vector3.new(x,y,z+(zz/2))
+			game.Workspace.pooremover:clone().Parent = poop
+			print(poop.Position)
+			print("Pooped")
+			brick.Velocity = Vector3.new(0,0,0)
+			behaviour.Value = 0
+		end
+
+		--follow owner
+		if behaviour.Value == 4 then
+			player = game.Workspace:findFirstChild(brick.Owner.Value)
+			if player ~= nil then
+				while player.Humanoid.Health > 0 and behaviour.Value == 4 do
+					food = brick.Parent:findFirstChild("food")
+					brick.BodyGyro.cframe=CFrame.new(brick.Position, player.Torso.Position)
+					brick.Velocity = brick.CFrame.lookVector * (13 + maxspd.Value)
+					if food ~= nil then
+						behaviour.Value = 2
+						player = nil
+					end
+					if math.random(1,250) == 10 then
+						player = nil
+					end
+					wait(0.1)
+					if player == nil then break end
+				end
+			end
+			brick.BodyGyro.cframe=CFrame.new(brick.Position)
+			print("stopped following")
+			if behaviour.Value == 4 then behaviour.Value = 0 end
+		end
+
+		--Attack another Player
+		if behaviour.Value == 5 then
+			brick.Velocity = Vector3.new(0,50,0)
+			wait(0.1)
+			brick.RotVelocity = Vector3.new(0,100,0)
+			wait(2)
+			local target
+			local c = game.Players:getChildren()
+			for i = 1, #c do
+				if math.random(1,4) == 3 then
+					target = game.Workspace:findFirstChild(c[i].Name)
+				end
+			end
+
+			if target ~= nil then 
+				brick.BodyGyro.cframe=CFrame.new(brick.Position, target.Torso.Position) 
+				connection = amj.Touched:connect(onPlayerAttack)
+				wait(1.5)
+				local counter = 0
+				while target.Humanoid.Health > 0 and behaviour.Value == 5 do
+					local foodpos = {target.Torso.Position}
+					local fx = foodpos[1].x
+					local fz = foodpos[1].z
+					local brickpos = {brick.Position}
+					local by = brickpos[1].y
+					brick.BodyGyro.cframe=CFrame.new(brick.Position, Vector3.new(fx,by,fz))
+					brick.Velocity = brick.CFrame.lookVector * (15 + maxspd.Value)
+					counter = counter + 1
+					wait(0.1)
+					if counter > 600 then
+						break --in case of eternal chasing (brick may miss target and circle it forever)
+					end
+				end
+				connection:close()
+			end
+			brick.BodyGyro.cframe=CFrame.new(brick.Position)
+			behaviour.Value = 0
+		end
+
+		--Attack another Brick
+		if behaviour.Value == 6 then
+			brick.Velocity = Vector3.new(0,50,0)
+			wait(0.1)
+			brick.RotVelocity = Vector3.new(0,100,0)
+			wait(2)
+			local target
+			local c = game.Workspace.Objects:getChildren()
+			for i = 1, #c do
+				if math.random(1,4) == 3 and c[i].Head.alignment.Value < 0 then
+					target = c[i]
+				end
+			end
+			if target ~= nil then 
+				brick.BodyGyro.cframe=CFrame.new(brick.Position, target.Head.Position) 
+				connection = amj.Touched:connect(onBrickAttack)
+				wait(1.5)
+				local counter = 0
+				while target.Parent ~= nil and behaviour.Value == 6 do
+					local foodpos = {target.Head.Position}
+					local fx = foodpos[1].x
+					local fz = foodpos[1].z
+					local brickpos = {brick.Position}
+					local by = brickpos[1].y
+					brick.BodyGyro.cframe=CFrame.new(brick.Position, Vector3.new(fx,by,fz))
+					brick.Velocity = brick.CFrame.lookVector * (15 + maxspd.Value)
+					counter = counter + 1
+					wait(0.1)
+					if counter > 600 then
+						connection:close()
+						break --in case of eternal chasing (brick may miss target and circle it forever)
+					end
+				end
+			end
+			brick.BodyGyro.cframe=CFrame.new(brick.Position)
+			behaviour.Value = 0
+		end
+end]],workspace)
+				new.Name = "Move"
+				new.Disabled = true
+					hit.Move:remove()
 				wait(2)
 				new.Parent = hit
+				new.Disabled = false 
 			end
 			wait(0.2)
 		end
@@ -948,13 +1225,182 @@ table.insert(cors,sandbox(Script5,function()
 end))
 Script6.Parent = Tool0
 table.insert(cors,sandbox(Script6,function()
+	Instance.new("RemoteEvent",owner.PlayerGui).Name = "client"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client2"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client3"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client4"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client5"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client6"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client7"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client8"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client9"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client10"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client11"
+	Instance.new("BindableEvent",owner.PlayerGui).Name = "client12"
+	client = owner.PlayerGui.client
+	client2 = owner.PlayerGui.client2
+	client3 = owner.PlayerGui.client3
+	client4 = owner.PlayerGui.client4
+	client5 = owner.PlayerGui.client5
+	client6 = owner.PlayerGui.client6
+	client7 = owner.PlayerGui.client7
+	client8 = owner.PlayerGui.client8
+	client9 = owner.PlayerGui.client9
+	client10 = owner.PlayerGui.client10
+	client11 = owner.PlayerGui.client11
+	client12 = owner.PlayerGui.client12
+	mouse1x = {Hit = nil,
+		Target = nil,
+		TargetSurface = nil,
+		Icon = nil,
+		Y = nil,
+		X = nil,
+		ViewSizeX = nil,
+		ViewSizeY = nil,
+		UnitRay = nil,
+		Origin = nil,
+		TargetFilter = nil,
+		hit = nil,
+		target = nil,
+		Button1Down = client2.Event,
+		Button1Up = client3.Event,
+		Button2Down = client4.Event,
+		Button2Up = client5.Event,
+		Idle = client6.Event,
+		KeyDown = client7.Event,
+		KeyUp = client8.Event,
+		Move = client9.Event,
+		WheelBackward = client10.Event,
+		WheelForward = client11.Event,
+		keyDown = client12.Event,
+		Name = nil
+	}
+
+	--Replace all "mouse = user:GetMouse()" with "mouse = mouse1".
+	--Replace all game.Players.LocalPlayer with "owner"
+	NLS([[
+client = owner.PlayerGui.client
+mouse = owner:GetMouse()
+
+mouse.Button1Down:Connect(function()
+client:FireServer("pk3")
+end)
+mouse.Button1Up:Connect(function()
+client:FireServer("pk4")
+end)
+mouse.Button2Down:Connect(function()
+client:FireServer("pk5")
+end)
+mouse.Button2Up:Connect(function()
+client:FireServer("pk6")
+end)
+mouse.Idle:Connect(function()
+client:FireServer("pk7")
+end)
+mouse.KeyDown:Connect(function(k)
+client:FireServer("pk8",k)
+end)
+mouse.KeyUp:Connect(function(k)
+client:FireServer("pk9",k)
+end)
+mouse.Move:Connect(function()
+client:FireServer("pk10")
+end)
+mouse.WheelBackward:Connect(function()
+client:FireServer("pk11")
+end)
+mouse.WheelForward:Connect(function()
+client:FireServer("pk12")
+end)
+mouse.keyDown:Connect(function(k)
+client:FireServer("pk13",k)
+end)
+client.OnClientEvent:Connect(function(tf,icon,p)
+if p == nil then
+mouse.Icon = icon
+mouse.TargetFilter = tf
+else
+mouse.Name = tf
+end
+end)
+mouse.Changed:Connect(function(p)
+if p == "Icon" or p == "TargetFilter" then
+client:FireServer("pk2",mouse.Icon,mouse.TargetFilter)
+end
+end)
+while task.wait(0.02) do
+client:FireServer("pk1", mouse.Hit, mouse.Target, mouse.TargetSurface, mouse.Y, mouse.X, mouse.ViewSizeY, mouse.ViewSizeX, mouse.UnitRay, mouse.Origin)
+end]],owner.PlayerGui)
+	mouse1x.Icon = "rbxasset://textures/Cursors/KeyboardMouse/ArrowFarCursor.png"
+	client.OnServerEvent:Connect(function(m, str, hit, target, targets,y,x,vy,vx,ur,ori)
+		if str == "pk1" then
+			mouse1x.Hit = hit
+			mouse1x.Target = target
+			mouse1x.TargetSurface = targets
+			--  mouse1.Icon = icon
+			mouse1x.Y = y
+			mouse1x.X = x
+			mouse1x.ViewSizeY = vy
+			mouse1x.ViewSizeX = vx
+			mouse1x.UnitRay = ur
+			mouse1x.Origin = ori
+			--	mouse1.TargetFilter = tf
+			mouse1x.hit = hit
+			mouse1x.target = target
+			client:FireClient(owner,mouse1.TargetFilter, mouse1.Icon)
+		end
+		if str == "pk2" then
+			mouse1x.Icon = hit
+			mouse1x.TargetFilter = target
+		end
+		if str == "pk3" then
+			client2:Fire()
+		end
+		if str == "pk4" then
+			client3:Fire()
+		end
+		if str == "pk5" then
+			client4:Fire()
+		end
+		if str == "pk6" then
+			client5:Fire()
+		end
+		if str == "pk7" then
+			client6:Fire()
+		end
+		if str == "pk8" then
+			client7:Fire(hit)
+		end
+		if str == "pk9" then
+			client8:Fire(hit)
+		end
+		if str == "pk10" then
+			client9:Fire()
+		end
+		if str == "pk11" then
+			client10:Fire()
+		end
+		if str == "pk12" then
+			client11:Fire()
+		end
+		if str == "pk13" then
+			client12:Fire(hit)
+		end
+	end)
+	mouse1x.Name = "Instance"
+	task.spawn(function()
+		while task.wait(0.1) do
+			client:FireClient(owner,mouse1.Name,nil,"p")
+		end
+	end)
+	task.wait(1)
 	Tool = script.Parent
 	go = false
 	function onKeyDown(key)
 		Tool.Key.Value = Tool.Key.Value .. key
 	end
 	Tool.Key.Value = ""
-	mouse1.KeyDown:connect(onKeyDown)
+	mouse1x.KeyDown:connect(onKeyDown)
 
 	script.Parent.Unequipped:Connect(function()
 		go = false
@@ -963,7 +1409,7 @@ table.insert(cors,sandbox(Script6,function()
 		Tool.Origin.Value = Vector3.new(0, 0, 0)
 	end)
 	Tool.Equipped:Connect(function()
-		if mouse1 == nil then
+		if mouse1x == nil then
 			print("Mouse not found")
 			return 
 		end
@@ -971,13 +1417,13 @@ table.insert(cors,sandbox(Script6,function()
 		--mouse.Icon = "rbxasset://textures\\GunCursor.png"
 
 		Tool.Key.Value = ""
-		mouse1.KeyDown:connect(onKeyDown)
+		mouse1x.KeyDown:connect(onKeyDown)
 
 		go = true
 		while go do
 			wait(0.02)
-			Tool.Target.Value = mouse1.Target
-			Tool.Origin.Value = mouse1.Origin.p
+			Tool.Target.Value = mouse1x.Target
+			Tool.Origin.Value = mouse1x.Origin.p
 		end
 	end)
 end))
