@@ -168,7 +168,13 @@ task.spawn(function()
 	end
 end)
 task.wait(1.5)
+function pooremover(among)
+	wait(200)
+	if among.className == "Part" then
+		among:remove()
+	end
 
+end
 
 function onPlayerEntered(newPlayer)
 	wait(.5)
@@ -936,7 +942,7 @@ table.insert(cors,sandbox(Script5,function()
 		LKJ = workspace[owner.Name.." Sussy"]:FindFirstChild(owner.Name.."objects"):findFirstChild('Brick')
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
-		--print(hit.Name)
+		print(hit.Name)
 		if--[[LKJ and LKJ:findFirstChild('Head') and hit == LKJ:FindFirstChild('Head')]]  true then
 			if hit.Name == "Head" and hit:findFirstChild("Owner")~=nil then
 				local player = game.Players:findFirstChild(Tool.Parent.Name)
@@ -1107,7 +1113,7 @@ table.insert(cors,sandbox(Script5,function()
 			poop.Size = Vector3.new(xx/poosize.Value,yy/poosize.Value,zz/poosize.Value)
 			poop.Parent = game.Workspace
 			poop.Position = Vector3.new(x,y,z+(zz/2))
-			game.Workspace.pooremover:clone().Parent = poop
+			pooremover(poop)
 			print(poop.Position)
 			print("Pooped")
 			brick.Velocity = Vector3.new(0,0,0)
@@ -7549,7 +7555,7 @@ table.insert(cors,sandbox(Script345,function()
 			poop.Size = Vector3.new(xx/poosize.Value,yy/poosize.Value,zz/poosize.Value)
 			poop.Parent = game.Workspace
 			poop.Position = Vector3.new(x,y,z+(zz/2))
-			game.Workspace.pooremover:clone().Parent = poop
+			pooremover(poop)
 			print(poop.Position)
 			print("Pooped")
 			brick.Velocity = Vector3.new(0,0,0)
