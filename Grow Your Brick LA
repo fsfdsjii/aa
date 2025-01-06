@@ -296,6 +296,7 @@ end)
 Instance.new("IntValue",Tool0l).Name = "recognizedM"
 Tool0l.Name = "Blue"
 Tool0l.Parent = owner.Backpack
+Tool0l.CanBeDropped = false
 Tool0l.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0l.GripPos = Vector3.new(0, 0, 0.5)
 LocalScript1.Name = "Local Gui"
@@ -346,7 +347,7 @@ table.insert(cors,sandbox(Script6,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		--print(hit.Name)
-		local player = game.Players:findFirstChild(Tool.Parent.Name)
+		local player = owner
 		if  player.Blue.Value > 0 then
 			player.Blue.Value = player.Blue.Value - 1
 			Tool.Name = "Blue x" .. player.Blue.Value
@@ -466,6 +467,7 @@ task.spawn(function()
 end)
 Tool0t.Name = "Evil"
 Tool0t.Parent = owner.Backpack
+Tool0t.CanBeDropped = false
 Tool0t.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0t.GripPos = Vector3.new(0, 0, 0.5)
 StringValue1.Name = "Key"
@@ -488,7 +490,7 @@ table.insert(cors,sandbox(Script4,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		print(hit.Name)
-		local player = game.Players:findFirstChild(Tool.Parent.Name)
+		local player = owner
 		if player.Evil.Value > 0 then
 			player.Evil.Value = player.Evil.Value - 1
 			local new = Tool.Handle:clone()
@@ -612,6 +614,7 @@ task.spawn(function()
 end)
 Tool0v.Name = "Good"
 Tool0v.Parent = owner.Backpack
+Tool0v.CanBeDropped = false
 Tool0v.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0v.GripPos = Vector3.new(0, 0, 0.5)
 StringValue1.Name = "Key"
@@ -758,6 +761,7 @@ task.spawn(function()
 	end)
 	Tool0xx.Name = "Red"
 	Tool0xx.Parent = owner.Backpack
+        Tool0xx.CanBeDropped = false
 	Tool0xx.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 	Tool0xx.GripPos = Vector3.new(0, 0, 0.5)
 	StringValue1.Name = "Key"
@@ -778,7 +782,7 @@ task.spawn(function()
 			Tool.Enabled = false
 			local hit = Tool.Target.Value
 			print(hit.Name)
-			local player = game.Players:findFirstChild(Tool.Parent.Name)
+			local player = owner
 			if player.Red.Value > 0 then
 				player.Red.Value = player.Red.Value - 1
 				local new = Tool.Handle:clone()
@@ -930,6 +934,8 @@ table.insert(cors,sandbox(Script5,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		print(hit.Name)
+LKJ = workspace.Objects:findFirstChild('Brick')
+           if LKJ and LKJ:findFirstChild('Head') and hit == LKJ:FindFirstChild('Head') then
 		if hit.Name == "Head" and hit:findFirstChild("Owner")~=nil then
 			local player = game.Players:findFirstChild(Tool.Parent.Name)
 			if hit.Owner.Value == Tool.Parent.Name then
@@ -1214,6 +1220,7 @@ end]],workspace)
 				new.Parent = hit
 				new.Disabled = false 
 			end
+end
 			wait(0.2)
 		end
 		Tool.Enabled = true
@@ -1471,6 +1478,7 @@ task.spawn(function()
 end)
 Tool0n.Name = "Special"
 Tool0n.Parent = owner.Backpack
+Tool0n.CanBeDropped = false
 Tool0n.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0n.GripPos = Vector3.new(0, 0, 0.5)
 StringValue1.Name = "Key"
@@ -1494,7 +1502,7 @@ table.insert(cors,sandbox(Script4,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		print(hit.Name)
-		local player = game.Players:findFirstChild(Tool.Parent.Name)
+		local player = owner
 		if player.Special.Value > 0 then
 			player.Special.Value = player.Special.Value - 1
 			local new = Tool.Handle:clone()
@@ -1618,6 +1626,7 @@ task.spawn(function()
 end)
 Tool0m.Name = "Speed"
 Tool0m.Parent = owner.Backpack
+Tool0m.CanBeDropped = false
 Instance.new("IntValue",Tool0m).Name = "recognizedM"
 Tool0m.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0m.GripPos = Vector3.new(0, 0, 0.5)
@@ -1641,7 +1650,7 @@ table.insert(cors,sandbox(Script4,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		print(hit.Name)
-		local player = game.Players:findFirstChild(Tool.Parent.Name)
+		local player = owner
 		if player.Speed.Value > 0 then
 			player.Speed.Value = player.Speed.Value - 1
 			local new = Tool.Handle:clone()
@@ -1764,6 +1773,7 @@ task.spawn(function()
 end)
 Tool0.Name = "Yel."
 Tool0.Parent = owner.Backpack
+Tool0.CanBeDropped = false
 Instance.new("IntValue",Tool0).Name = "recognizedM"
 Tool0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0.GripPos = Vector3.new(0, 0, 0.5)
@@ -1799,7 +1809,7 @@ table.insert(cors,sandbox(Script5,function()
 		Tool.Enabled = false
 		local hit = Tool.Target.Value
 		print(hit.Name)
-		local player = game.Players:findFirstChild(Tool.Parent.Name)
+		local player = owner
 		if  player.Yellow.Value > 0 then
 			player.Yellow.Value = player.Yellow.Value - 1
 			local new = Tool.Handle:clone()
@@ -2943,7 +2953,7 @@ table.insert(cors,sandbox(Script47,function()
 					end
 					local teleportto=modelname
 					if teleportto~=nil and h~= nil then
-						local torso = h.Parent.Torso
+						local torso = h.Parent.Humanoid.RootPart
 						local location = {teleportto.Position}
 						local i = 1
 
@@ -3077,7 +3087,7 @@ table.insert(cors,sandbox(Script54,function()
 					end
 					local teleportto=modelname
 					if teleportto~=nil and h~= nil then
-						local torso = h.Parent.Torso
+						local torso = h.Parent.Humanoid.RootPart
 						local location = {teleportto.Position}
 						local i = 1
 
@@ -3456,7 +3466,7 @@ Send me requests and ideas - miked.
 					end
 					local teleportto=script.Parent.Parent:findFirstChild(modelname)
 					if teleportto~=nil then
-						local torso = h.Parent.Torso
+						local torso = h.Parent.Humanoid.RootPart
 						local location = {teleportto.Position}
 						local i = 1
 
@@ -3541,7 +3551,7 @@ Send me requests and ideas - miked.
 					end
 					local teleportto=script.Parent.Parent:findFirstChild(modelname)
 					if teleportto~=nil then
-						local torso = h.Parent.Torso
+						local torso = h.Parent.Humanoid.RootPart
 						local location = {teleportto.Position}
 						local i = 1
 
@@ -3853,7 +3863,7 @@ Send me requests and ideas - miked.
 					end
 					local teleportto=script.Parent.Parent:findFirstChild(modelname)
 					if teleportto~=nil then
-						local torso = h.Parent.Torso
+						local torso = h.Parent.Humanoid.RootPart
 						local location = {teleportto.Position}
 						local i = 1
 
@@ -3938,7 +3948,7 @@ Send me requests and ideas - miked.
 					end
 					local teleportto=script.Parent.Parent:findFirstChild(modelname)
 					if teleportto~=nil then
-						local torso = h.Parent.Torso
+						local torso = h.Parent.Humanoid.RootPart
 						local location = {teleportto.Position}
 						local i = 1
 
@@ -4026,7 +4036,7 @@ Send me requests and ideas - miked.
 					end
 					local teleportto=script.Parent.Parent:findFirstChild(modelname)
 					if teleportto~=nil then
-						local torso = h.Parent.Torso
+						local torso = h.Parent.Humanoid.RootPart
 						local location = {teleportto.Position}
 						local i = 1
 
@@ -4111,7 +4121,7 @@ Send me requests and ideas - miked.
 					end
 					local teleportto=script.Parent.Parent:findFirstChild(modelname)
 					if teleportto~=nil then
-						local torso = h.Parent.Torso
+						local torso = h.Parent.Humanoid.RootPart
 						local location = {teleportto.Position}
 						local i = 1
 
@@ -4199,7 +4209,7 @@ Send me requests and ideas - miked.
 					end
 					local teleportto=script.Parent.Parent:findFirstChild(modelname)
 					if teleportto~=nil then
-						local torso = h.Parent.Torso
+						local torso = h.Parent.Humanoid.RootPart
 						local location = {teleportto.Position}
 						local i = 1
 
@@ -4284,7 +4294,7 @@ Send me requests and ideas - miked.
 					end
 					local teleportto=script.Parent.Parent:findFirstChild(modelname)
 					if teleportto~=nil then
-						local torso = h.Parent.Torso
+						local torso = h.Parent.Humanoid.RootPart
 						local location = {teleportto.Position}
 						local i = 1
 
