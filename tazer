@@ -1,0 +1,353 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+FlangeSoundEffect4 = Instance.new("FlangeSoundEffect")
+Sound5 = Instance.new("Sound")
+Script6 = Instance.new("Script")
+Tool0.Name = "Taser"
+Tool0.Parent = owner.Backpack
+Tool0.Grip = CFrame.new(0, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Tool0.GripForward = Vector3.new(1, -0, -0)
+Tool0.GripRight = Vector3.new(0, 0, 1)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-8501.76855, 462.606323, -195.894653, 0.152027637, -0.454833627, -0.877504945, 1.38640985e-07, 0.887824535, -0.460182667, 0.988376021, 0.069960326, 0.134974062)
+Part1.Orientation = Vector3.new(27.39900016784668, -81.25599670410156, 0)
+Part1.Position = Vector3.new(-8501.7685546875, 462.6063232421875, -195.8946533203125)
+Part1.Rotation = Vector3.new(73.65299987792969, -61.34299850463867, 71.51799774169922)
+Part1.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part1.Size = Vector3.new(0.39999985694885254, 0.7180001735687256, 1.6679993867874146)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Black")
+Part1.Locked = true
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Black")
+Part1.FormFactor = Enum.FormFactor.Custom
+Part1.formFactor = Enum.FormFactor.Custom
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=82337638"
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=82337709"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "Use"
+Sound3.Parent = Part1
+Sound3.SoundId = "rbxassetid://3382281516"
+FlangeSoundEffect4.Parent = Sound3
+FlangeSoundEffect4.Rate = 1
+FlangeSoundEffect4.Depth = 1
+FlangeSoundEffect4.Mix = 1
+Sound5.Name = "Swoosh"
+Sound5.Parent = Part1
+Sound5.Pitch = 1.5
+Sound5.PlaybackSpeed = 1.5
+Sound5.SoundId = "rbxassetid://1489706716"
+Script6.Parent = Tool0
+table.insert(cors,sandbox(Script6,function()
+--By Rufus14
+canattack = true
+cananimate = false
+equipped = false
+runservice = game:GetService("RunService")
+tool = script.Parent
+handle = tool.Handle
+swoosh = handle.Swoosh
+zap = handle.Use
+anim = "idle"
+local owner
+local character
+function gettasedbro(WHO)
+	local WHOhum = WHO:findFirstChildOfClass("Humanoid")
+	local WHOhead = WHO:findFirstChild("Head")
+	if WHOhum and WHOhead then
+		--print("bzzbzbzbzbzbzbzbzbzzz")
+		WHOhum.PlatformStand = true
+		WHOhead.CFrame = WHOhead.CFrame * CFrame.new(0,-2,0)
+		if math.random(1,2) == 1 then
+			WHOhead.CFrame = WHOhead.CFrame * CFrame.fromEulerAnglesXYZ(math.pi/2,0,0)
+		else
+			WHOhead.CFrame = WHOhead.CFrame * CFrame.fromEulerAnglesXYZ(-math.pi/2,0,0)
+		end
+		local bzbzing = true
+		coroutine.wrap(function()
+			local thetazedbro = game:GetService("Players"):GetPlayerFromCharacter(WHO)
+			while runservice.Stepped:wait() and bzbzing and thetazedbro do
+				if thetazedbro.Character:findFirstChildOfClass("Tool") then
+					thetazedbro.Character:findFirstChildOfClass("Tool").Parent = thetazedbro:findFirstChildOfClass("Backpack")
+				end
+			end
+		end)()
+		coroutine.wrap(function()
+			for i = 1,35 do
+				local pointli = Instance.new("PointLight", WHOhead)
+				game.Debris:AddItem(pointli, 0.05)
+				WHOhum.PlatformStand = true
+				WHOhead.CFrame = WHOhead.CFrame * CFrame.fromEulerAnglesXYZ(math.random(-10,10)/100,math.random(-10,10)/100,math.random(-10,10)/100)
+				wait(0.15)
+			end
+			bzbzing = false
+			WHOhum.PlatformStand = false
+		end)()
+	end
+end
+tool.Activated:connect(function()
+	if canattack then
+		canattack = false
+		cananimate = false
+		local charhum = character:findFirstChildOfClass("Humanoid")
+		local lastws = charhum.WalkSpeed
+		local lastjp = charhum.JumpPower
+		charhum.WalkSpeed = 0
+		charhum.JumpPower = 0
+		local grip = character["Right Arm"]:WaitForChild("RightGrip")
+		local rightarmweld = character.Torso:findFirstChild("RightArmWeldtaser")
+		local leftarmweld = character.Torso:findFirstChild("LeftArmWeldtaser")
+		local rightlegweld = character.Torso:findFirstChild("RightLegWeldtaser")
+		local leftlegweld = character.Torso:findFirstChild("LeftLegWeldtaser")
+		local headweld = character.Torso:findFirstChild("HeadWeldtaser")
+		local rootpart = character.HumanoidRootPart
+		local rootweld = character.HumanoidRootPart:findFirstChild("HumanoidRootPartWeldtaser")
+		for i = 0,1 , 0.06 do
+			rightarmweld.C0 = rightarmweld.C0:lerp(CFrame.new(1.55502224, 0.124655247, 0.225976944, 0.586992025, -0.523052156, -0.617945373, 0.0230990332, 0.773788929, -0.63302207, 0.809263051, 0.35730505, 0.466289997),i)
+			leftarmweld.C0 = leftarmweld.C0:lerp(CFrame.new(-1.57922792, 0.094420433, 0, 0.98480773, 0.173648164, 0, -0.173648164, 0.98480767, 0, 0, -1.86264515e-09, 0.99999994),i)
+			leftlegweld.C0 = leftlegweld.C0:lerp(CFrame.new(-0.881243706, -2.07163167, 0, 0.98480773, 0.173648164, 0, -0.173648164, 0.98480767, 0, 0, -1.86264515e-09, 0.99999994),i)
+			rightlegweld.C0 = rightlegweld.C0:lerp(CFrame.new(0.881244421, -2.07163167, 0, 0.98480773, -0.173648164, 0, 0.173648164, 0.98480767, 0, 0, 1.86264515e-09, 0.99999994),i)
+			rootweld.C0 = rootweld.C0:lerp(CFrame.new(0, 0, 0, 0.173648223, 0, -0.98480773, 0, 1, 0, 0.98480773, 0, 0.173648223),i)
+			headweld.C0 = headweld.C0:lerp(CFrame.new(0, 1.5, 0, 0.173648208, 0, 0.98480767, 0, 1, 0, -0.98480767, 0, 0.173648208),i)
+			runservice.Stepped:wait()
+		end
+		swoosh:Play()
+		coroutine.wrap(function()
+			for i = 0,1 , 0.14 do
+				if not cananimate then
+					rightarmweld.C0 = rightarmweld.C0:lerp(CFrame.new(1.89609933, 0.630064964, 0.00938415527, 0.110008851, -0.983443081, 0.144003883, -0.0606550612, -0.151255667, -0.986631811, 0.992077947, 0.0998035818, -0.0762902573),i)
+					leftarmweld.C0 = leftarmweld.C0:lerp(CFrame.new(-1.70441556, 0.561628342, 0, 0.642787576, 0.766044259, 0, -0.766044319, 0.642787576, 0, 0, 0, 0.999999881),i)
+					leftlegweld.C0 = leftlegweld.C0:lerp(CFrame.new(-0.875211716, -2.14543176, 0, 0.939692378, 0.342020035, 0, -0.342020094, 0.939692378, 0, 0, 0, 0.999999881),i)
+					rightlegweld.C0 = rightlegweld.C0:lerp(CFrame.new(1.12330461, -1.66642118, 0, 0.939692318, -0.342020094, 0, 0.342020035, 0.939692438, 0, 0, 0, 0.999999881),i)
+					rootweld.C0 = rootweld.C0:lerp(CFrame.new(0, -0.231691122, -0.162231922, 0, 0, 0.99999994, -0.173648179, 0.98480773, 0, -0.98480767, -0.173648164, 0),i)
+					headweld.C0 = headweld.C0:lerp(CFrame.new(4.76837158e-07, 1.5, 0, 0.642787576, -1.49011612e-08, -0.76604414, -1.49011612e-08, 0.99999994, 1.49011612e-08, 0.76604414, 0, 0.642787576),i)
+					runservice.Stepped:wait()
+				end
+			end
+		end)()
+		local hitsomeone = false
+		for i = 1,15 do
+			if not hitsomeone and runservice.Stepped:wait() then
+				rootpart.CFrame = rootpart.CFrame * CFrame.new(0,0,-0.35)
+				local ray = Ray.new(handle.Position, rootpart.CFrame.lookVector * 0.35)
+				local hit, position = workspace:FindPartOnRay(ray)
+				if hit ~= nil then
+					if hit.Parent:findFirstChildOfClass("Humanoid") then
+						--print("tazed")
+						hitsomeone = true
+						gettasedbro(hit.Parent)
+						local zapclone = zap:Clone()
+						zapclone.Parent = hit
+						zapclone:Play()
+						game.Debris:AddItem(zapclone,zapclone.TimeLength)
+					elseif hit.Parent.Parent:findFirstChildOfClass("Humanoid") then
+						--print("tazed through hat")
+						gettasedbro(hit.Parent.Parent)
+						hitsomeone = true
+						local zapclone = zap:Clone()
+						zapclone.Parent = hit
+						zapclone:Play()
+						game.Debris:AddItem(zapclone,zapclone.TimeLength)
+					end
+				end
+			end
+		end
+		charhum.WalkSpeed = lastws
+		charhum.JumpPower = lastjp
+		cananimate = true
+		canattack = true
+	end
+end)
+tool.Unequipped:connect(function()
+	equipped = false
+	cananimate = false
+	if character.Torso:findFirstChild("LeftArmWeldtaser") then
+		character.Torso:findFirstChild("LeftArmWeldtaser"):destroy()
+	end
+	if character.Torso:findFirstChild("RightArmWeldtaser") then
+		character.Torso:findFirstChild("RightArmWeldtaser"):destroy()
+	end
+	if character.Torso:findFirstChild("LeftLegWeldtaser") then
+		character.Torso:findFirstChild("LeftLegWeldtaser"):destroy()
+	end
+	if character.Torso:findFirstChild("RightLegWeldtaser") then
+		character.Torso:findFirstChild("RightLegWeldtaser"):destroy()
+	end
+	if character.Torso:findFirstChild("HeadWeldtaser") then
+		character.Torso:findFirstChild("HeadWeldtaser"):destroy()
+	end
+	if character:findFirstChild("HumanoidRootPart") then
+		if character.HumanoidRootPart:findFirstChild("HumanoidRootPartWeldtaser") then
+			character.HumanoidRootPart:findFirstChild("HumanoidRootPartWeldtaser"):destroy()
+		end
+	end
+end)
+tool.Equipped:connect(function()
+	equipped = true
+	cananimate = true
+	owner = game:GetService("Players"):GetPlayerFromCharacter(tool.Parent)
+	character = owner.Character
+	local grip = character["Right Arm"]:WaitForChild("RightGrip")
+	grip.C0 = CFrame.new(-0.0220470428, -0.865621328, -0.352151394, 0.999763012, 0.0217338428, 0.00124904688, -0.00107799959, -0.00787999574, 0.999968231, 0.0217429996, -0.999732733, -0.00785470288) * CFrame.fromEulerAnglesXYZ(0,-math.pi/2,0)
+	local rightarm = Instance.new("Weld", character.Torso)
+	rightarm.Part0 = character.Torso
+	rightarm.Part1 = character["Right Arm"]
+	rightarm.C0 = CFrame.new(1.5,0,0)
+	rightarm.Name = "RightArmWeldtaser"
+	local leftarm = Instance.new("Weld", character.Torso)
+	leftarm.Part0 = character.Torso
+	leftarm.Part1 = character["Left Arm"]
+	leftarm.C0 = CFrame.new(-1.5,0,0)
+	leftarm.Name = "LeftArmWeldtaser"
+	local leftleg = Instance.new("Weld", character.Torso)
+	leftleg.Part0 = character.Torso
+	leftleg.Part1 = character["Left Leg"]
+	leftleg.C0 = CFrame.new(-0.5,-2,0)
+	leftleg.Name = "LeftLegWeldtaser"
+	local rightleg = Instance.new("Weld", character.Torso)
+	rightleg.Part0 = character.Torso
+	rightleg.Part1 = character["Right Leg"]
+	rightleg.C0 = CFrame.new(0.5,-2,0)
+	rightleg.Name = "RightLegWeldtaser"
+	local head = Instance.new("Weld", character.Torso)
+	head.Part0 = character.Torso
+	head.Part1 = character.Head
+	head.C0 = CFrame.new(0,1.5,0)
+	head.Name = "HeadWeldtaser"
+	local humanoidrootpart = Instance.new("Weld", character.HumanoidRootPart)
+	humanoidrootpart.Part0 = character.HumanoidRootPart
+	humanoidrootpart.Part1 = character.Torso
+	humanoidrootpart.Name = "HumanoidRootPartWeldtaser"
+	local rootpart = character.HumanoidRootPart
+	local humanoid = character:findFirstChildOfClass("Humanoid")
+	coroutine.wrap(function()
+		while equipped and runservice.Stepped:wait() do
+			if rootpart.Velocity.x >= 2 or rootpart.Velocity.x <= -2 or rootpart.Velocity.z >= 2 or rootpart.Velocity.z <= -2 then
+				if humanoid.FloorMaterial == Enum.Material.Air then
+					if rootpart.Velocity.x >= 18 or rootpart.Velocity.x <= -18 or rootpart.Velocity.z >= 18 or rootpart.Velocity.z <= -18 then
+						if rootpart.Velocity.y >= 3 then
+							anim = "jumprun"
+							--print("jumping (running)")
+						elseif rootpart.Velocity.y <= -3 then
+							anim = "fallrun"
+							--("falling (running)")
+						end
+					else
+						if rootpart.Velocity.y >= 3 then
+							anim = "jump"
+							--print("jumping (walking)")
+						elseif rootpart.Velocity.y <= -3 then
+							anim = "fall"
+							--print("falling (walking)")
+						end
+					end
+				else
+					if rootpart.Velocity.x >= 18 or rootpart.Velocity.x <= -18 or rootpart.Velocity.z >= 18 or rootpart.Velocity.z <= -18 then
+						anim = "walk"
+						--print("running")
+					else
+						anim = "walk"
+						--print("walking")
+					end
+				end
+			elseif rootpart.Velocity.x <= 2 or rootpart.Velocity.x >= -2 or rootpart.Velocity.z <= 2 or rootpart.Velocity.z >= -2 then
+				if humanoid.FloorMaterial == Enum.Material.Air then
+					if rootpart.Velocity.y >= 3 then
+						anim = "jump"
+						--print("jumping (standing)")
+					elseif rootpart.Velocity.y < -3 then
+						anim = "fall"
+						--print("falling (standing)")
+					end
+				else
+					anim = "idle"
+					--print("standing")
+				end
+			end
+			if cananimate then
+				local absvel = rootpart.CFrame:vectorToObjectSpace(rootpart.Velocity)
+				if anim == "idle" then
+					rightleg.C0 = rightleg.C0:lerp(CFrame.new(0.5,-1,0) * CFrame.new(0,-math.sin(tick())/20,0) * CFrame.fromEulerAnglesXYZ(math.rad(2),0,0) * CFrame.new(0,-1,0),1.5)
+					leftleg.C0 = leftleg.C0:lerp(CFrame.new(-0.5,-1,0) * CFrame.new(0,-math.sin(tick())/20,0) * CFrame.fromEulerAnglesXYZ(math.rad(-2),0,0) * CFrame.new(0,-1,0),1.5)
+					grip.C0 = grip.C0:lerp(CFrame.new(-0.0220470428, -0.865621328, -0.352151394, 0.999763012, 0.0217338428, 0.00124904688, -0.00107799959, -0.00787999574, 0.999968231, 0.0217429996, -0.999732733, -0.00785470288) * CFrame.fromEulerAnglesXYZ(0,-math.pi/2,0),0.15)
+					rightarm.C0 = rightarm.C0:lerp(CFrame.new(1.5,0.5,0) * CFrame.fromEulerAnglesXYZ((math.pi - math.rad(15)) + math.sin(tick())/20,0,0) * CFrame.new(0,-0.5,0),0.15)
+					leftarm.C0 = leftarm.C0:lerp(CFrame.new(-1.5,0.5,0) * CFrame.fromEulerAnglesXYZ(0,0,math.rad(-5) + math.sin(tick())/20) * CFrame.new(0,-0.5,0),0.15)
+					head.C0 = head.C0:lerp(CFrame.new(0, 1.5, 0) * CFrame.fromEulerAnglesXYZ(0,math.rad(30),0),0.15)
+					humanoidrootpart.C0 = humanoidrootpart.C0:lerp(CFrame.new(0,math.sin(tick())/20,0) * CFrame.fromEulerAnglesXYZ(0,math.rad(-30),0),0.15)
+				elseif anim == "walk" then
+					rightleg.C0 = rightleg.C0:lerp(CFrame.new(0.5,-1-math.cos(tick()*9.5)/2.5,math.cos(tick()*9.5)/1.5) * CFrame.fromEulerAnglesXYZ((absvel.z/20)*math.sin(tick()*9.5),0,(-absvel.x/20)*math.sin(tick()*9.5)) * CFrame.fromEulerAnglesXYZ(math.rad(2),0,0) * CFrame.new(0,-1,0),0.3)
+					leftleg.C0 = leftleg.C0:lerp(CFrame.new(-0.5,-1+math.cos(tick()*9.5)/2.5,-math.cos(tick()*9.5)/1.5) * CFrame.fromEulerAnglesXYZ((absvel.z/20)*-math.sin(tick()*9.5),0,(-absvel.x/20)*-math.sin(tick()*9.5)) * CFrame.fromEulerAnglesXYZ(math.rad(-2),0,0) * CFrame.new(0,-1,0),0.3)
+					grip.C0 = grip.C0:lerp(CFrame.new(-0.0220470428, -0.865621328, -0.352151394, 0.999763012, 0.0217338428, 0.00124904688, -0.00107799959, -0.00787999574, 0.999968231, 0.0217429996, -0.999732733, -0.00785470288) * CFrame.fromEulerAnglesXYZ(0,-math.pi/2,0),0.3)
+					rightarm.C0 = rightarm.C0:lerp(CFrame.new(1.5,0.5,0) * CFrame.fromEulerAnglesXYZ((-absvel.z/15)*math.sin(tick()*9.5),0,math.rad(5) + (absvel.x/30)*math.sin(tick()*9.5)) * CFrame.new(0,-0.5,0),0.3)
+					leftarm.C0 = leftarm.C0:lerp(CFrame.new(-1.5,0.5,0) * CFrame.fromEulerAnglesXYZ((-absvel.z/15)*-math.sin(tick()*9.5),0,math.rad(-5) + (-absvel.x/30)*math.sin(tick()*9.5)) * CFrame.new(0,-0.5,0),0.3)
+					head.C0 = head.C0:lerp(CFrame.new(0, 1.5, 0) * CFrame.fromEulerAnglesXYZ(-absvel.z/60,0,absvel.x/120),0.3)
+					humanoidrootpart.C0 = humanoidrootpart.C0:lerp(CFrame.new(0,math.sin(tick()*19)/12,0) * CFrame.fromEulerAnglesXYZ(absvel.z/60,0,(math.sin(tick()*9.5)/17)+(-absvel.x/60)),0.3)
+				elseif anim == "jump" then
+					head.C0 = head.C0:lerp(CFrame.new(0,1.5,0), 0.3)
+					grip.C0 = grip.C0:lerp(CFrame.new(-0.0220470428, -0.865621328, -0.352151394, 0.999763012, 0.0217338428, 0.00124904688, -0.00107799959, -0.00787999574, 0.999968231, 0.0217429996, -0.999732733, -0.00785470288) * CFrame.fromEulerAnglesXYZ(0,-math.pi/2,0),0.3)
+					humanoidrootpart.C0 = humanoidrootpart.C0:lerp(CFrame.new(),0.3)
+					leftarm.C0 = leftarm.C0:lerp(CFrame.new(-1.5,0.5,0) * CFrame.fromEulerAnglesXYZ(0,0,math.rad(-5)) * CFrame.new(0,-0.5,0),0.3)
+					rightarm.C0 = rightarm.C0:lerp(CFrame.new(1.5,0.5,0) * CFrame.fromEulerAnglesXYZ(0,0,math.rad(5)) * CFrame.new(0,-0.5,0),0.3)
+					leftleg.C0 = leftleg.C0:lerp(CFrame.new(-0.5, -2, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 1),0.3)
+					rightleg.C0 = rightleg.C0:lerp(CFrame.new(0.5, -1.19999981, -0.600000024, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 1),0.3)
+				elseif anim == "fall" then
+					head.C0 = head.C0:lerp(CFrame.new(0,1,0) * CFrame.fromEulerAnglesXYZ(math.rad(-15),0,0) * CFrame.new(0,0.5,0), 0.3)
+					grip.C0 = grip.C0:lerp(CFrame.new(-0.0220470428, -0.865621328, -0.352151394, 0.999763012, 0.0217338428, 0.00124904688, -0.00107799959, -0.00787999574, 0.999968231, 0.0217429996, -0.999732733, -0.00785470288) * CFrame.fromEulerAnglesXYZ(0,-math.pi/2,0),0.15)
+					humanoidrootpart.C0 = humanoidrootpart.C0:lerp(CFrame.new(),0.15)
+					leftarm.C0 = leftarm.C0:lerp(CFrame.new(-1.5,0.5,0) * CFrame.fromEulerAnglesXYZ(0,0,math.rad(-40)) * CFrame.new(0,-0.5,0),0.15)
+					rightarm.C0 = rightarm.C0:lerp(CFrame.new(1.5,0.5,0) * CFrame.fromEulerAnglesXYZ(0,0,math.rad(40)) * CFrame.new(0,-0.5,0),0.15)
+					leftleg.C0 = leftleg.C0:lerp(CFrame.new(-0.5, -1.19999981, -0.600000024, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 1),0.15)
+					rightleg.C0 = rightleg.C0:lerp(CFrame.new(0.5, -2, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 1),0.15)
+				elseif anim == "jumprun" then
+					head.C0 = head.C0:lerp(CFrame.new(0,1.5,0), 0.3)
+					grip.C0 = grip.C0:lerp(CFrame.new(-0.0220470428, -0.865621328, -0.352151394, 0.999763012, 0.0217338428, 0.00124904688, -0.00107799959, -0.00787999574, 0.999968231, 0.0217429996, -0.999732733, -0.00785470288) * CFrame.fromEulerAnglesXYZ(0,-math.pi/2,0),0.3)
+					humanoidrootpart.C0 = humanoidrootpart.C0:lerp(CFrame.Angles(math.rad(-20),0,0),0.3)
+					leftarm.C0 = leftarm.C0:lerp(CFrame.new(-1.5,0.5,0) * CFrame.fromEulerAnglesXYZ(0,0,math.rad(-5)) * CFrame.new(0,-0.5,0),0.3)
+					rightarm.C0 = rightarm.C0:lerp(CFrame.new(1.5,0.5,0) * CFrame.fromEulerAnglesXYZ(0,0,math.rad(5)) * CFrame.new(0,-0.5,0),0.3)
+					leftleg.C0 = leftleg.C0:lerp(CFrame.new(-0.5, -2, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 1),0.3)
+					rightleg.C0 = rightleg.C0:lerp(CFrame.new(0.5, -1.19999981, -0.600000024, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 1),0.3)
+				elseif anim == "fallrun" then
+					head.C0 = head.C0:lerp(CFrame.new(0,1,0) * CFrame.fromEulerAnglesXYZ(math.rad(-15),0,0) * CFrame.new(0,0.5,0), 0.3)
+					grip.C0 = grip.C0:lerp(CFrame.new(-0.0220470428, -0.865621328, -0.352151394, 0.999763012, 0.0217338428, 0.00124904688, -0.00107799959, -0.00787999574, 0.999968231, 0.0217429996, -0.999732733, -0.00785470288) * CFrame.fromEulerAnglesXYZ(0,-math.pi/2,0),0.15)
+					humanoidrootpart.C0 = humanoidrootpart.C0:lerp(CFrame.Angles(math.rad(-10),0,0),0.15)
+					leftarm.C0 = leftarm.C0:lerp(CFrame.new(-1.5,0.5,0) * CFrame.fromEulerAnglesXYZ(0,0,math.rad(-40)) * CFrame.new(0,-0.5,0),0.15)
+					rightarm.C0 = rightarm.C0:lerp(CFrame.new(1.5,0.5,0) * CFrame.fromEulerAnglesXYZ(0,0,math.rad(40)) * CFrame.new(0,-0.5,0),0.15)
+					leftleg.C0 = leftleg.C0:lerp(CFrame.new(-0.5, -1.19999981, -0.600000024, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 1),0.15)
+					rightleg.C0 = rightleg.C0:lerp(CFrame.new(0.5, -2, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0, 1),0.15)
+				end
+			end
+		end
+	end)()
+end)
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
