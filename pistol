@@ -1,0 +1,812 @@
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Sound6 = Instance.new("Sound")
+Sound7 = Instance.new("Sound")
+Sound8 = Instance.new("Sound")
+Sound9 = Instance.new("Sound")
+Sound10 = Instance.new("Sound")
+RemoteEvent11 = Instance.new("RemoteEvent")
+LocalScript12 = Instance.new("LocalScript")
+Script13 = Instance.new("Script")
+Tool0.Name = "Pistol"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "rbxassetid://168510890"
+Tool0.Grip = CFrame.new(-0.0662693828, -0.275076389, -0.4518933, -0.998969376, 0, 0.0453881398, 0, 1, 0, -0.0453881398, 0, -0.998969376)
+Tool0.GripForward = Vector3.new(-0.04538813978433609, -0, 0.9989693760871887)
+Tool0.GripPos = Vector3.new(-0.06626938283443451, -0.27507638931274414, -0.45189329981803894)
+Tool0.GripRight = Vector3.new(-0.9989693760871887, 0, -0.04538813978433609)
+Tool0.ToolTip = "Gun to kill ppl."
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-8545.87598, 461.965485, -158.016663, 1, 0, 0, 0, 0.965925872, 0.258818984, 0, -0.258818984, 0.965925872)
+Part1.Orientation = Vector3.new(-15, 0, 0)
+Part1.Position = Vector3.new(-8545.8759765625, 461.9654846191406, -158.01666259765625)
+Part1.Rotation = Vector3.new(-15, 0, 0)
+Part1.Size = Vector3.new(0.23000019788742065, 0.05000000074505806, 0.2900005280971527)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "rbxassetid://436697873"
+SpecialMesh2.Scale = Vector3.new(0.029999999329447746, 0.029999999329447746, 0.029999999329447746)
+SpecialMesh2.VertexColor = Vector3.new(2, 2, 2)
+SpecialMesh2.TextureId = "rbxassetid://436697889"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "shatter"
+Sound3.Parent = Part1
+Sound3.Pitch = 2
+Sound3.PlaybackSpeed = 2
+Sound3.SoundId = "rbxassetid://2978605361"
+Sound4.Name = "gunshot"
+Sound4.Parent = Part1
+Sound4.Pitch = 1.2000000476837158
+Sound4.PlaybackSpeed = 1.2000000476837158
+Sound4.SoundId = "rbxassetid://2400424487"
+Sound5.Name = "empty"
+Sound5.Parent = Part1
+Sound5.SoundId = "rbxassetid://1347142405"
+Sound6.Name = "equip"
+Sound6.Parent = Part1
+Sound6.SoundId = "rbxassetid://291256829"
+Sound7.Name = "unequip"
+Sound7.Parent = Part1
+Sound7.SoundId = "rbxassetid://769464514"
+Sound8.Name = "supersonic bullet crack"
+Sound8.Parent = Part1
+Sound8.EmitterSize = 1
+Sound8.MinDistance = 1
+Sound8.Pitch = 1.5
+Sound8.PlaybackSpeed = 1.5
+Sound8.SoundId = "rbxassetid://259586543"
+Sound8.Volume = 1
+Sound9.Name = "bullethitflesh"
+Sound9.Parent = Part1
+Sound9.SoundId = "rbxassetid://3092866899"
+Sound10.Name = "bullethit"
+Sound10.Parent = Part1
+Sound10.SoundId = "rbxassetid://1489924400"
+RemoteEvent11.Name = "GunEvent"
+RemoteEvent11.Parent = Tool0
+LocalScript12.Name = "ShootLocal"
+LocalScript12.Parent = Tool0
+table.insert(cors,sandbox(LocalScript12,function()
+NLS([[--By Rufus14
+tool = script.Parent
+playermouse = game:GetService("Players").LocalPlayer:GetMouse()
+runservice = game:GetService("RunService").RenderStepped
+gunevent = tool.GunEvent
+function onpress()
+	gunevent:FireServer("shoot", playermouse.Hit.p, playermouse.Origin.p)
+end
+tool.Activated:connect(onpress)
+function removearms()
+	if game:GetService("Players").LocalPlayer.Character.Torso:findFirstChild("RightArmWeld") then
+		game:GetService("Players").LocalPlayer.Character.Torso:findFirstChild("RightArmWeld"):destroy()
+	end
+	if game:GetService("Players").LocalPlayer.Character.Torso:findFirstChild("HeadWeld") then
+		game:GetService("Players").LocalPlayer.Character.Torso:findFirstChild("HeadWeld"):destroy()
+	end
+	if game:GetService("Players").LocalPlayer.Character.Torso:findFirstChild("LeftArmWeld") then
+		game:GetService("Players").LocalPlayer.Character.Torso:findFirstChild("LeftArmWeld"):destroy()
+	end
+	if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:findFirstChild("HumanoidRootPartWeld") then
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:findFirstChild("HumanoidRootPartWeld"):destroy()
+	end
+end
+tool.Unequipped:connect(removearms)
+while runservice:wait() do
+	if tool.Parent == game:GetService("Players").LocalPlayer.Character then
+		if (workspace.CurrentCamera.CFrame.p - game:GetService("Players").LocalPlayer.Character.Head.Position).magnitude < 1.3 then
+			if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:findFirstChild("HumanoidRootPartWeld") then
+				gunevent:FireServer("point", playermouse.Hit.p, playermouse.Origin.p)
+				game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.HumanoidRootPartWeld.C0 = CFrame.fromEulerAnglesXYZ(0,math.pi/3,0)
+			else
+				local humanoidrootpart = Instance.new("Weld", game:GetService("Players").LocalPlayer.Character.HumanoidRootPart)
+				humanoidrootpart.Part0 = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+				humanoidrootpart.Part1 = game:GetService("Players").LocalPlayer.Character.Torso
+				humanoidrootpart.Name = "HumanoidRootPartWeld"
+			end
+		else
+			if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:findFirstChild("HumanoidRootPartWeld") then
+				game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:findFirstChild("HumanoidRootPartWeld"):destroy()
+			end
+			gunevent:FireServer("point", playermouse.Hit.p, playermouse.Origin.p)
+			if not game:GetService("Players").LocalPlayer.Character:findFirstChildOfClass("Humanoid").Sit then
+				game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position,Vector3.new(playermouse.Hit.p.x,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.y,playermouse.Hit.p.z)) * CFrame.fromEulerAnglesXYZ(0,math.pi/3,0)
+			end
+		end
+	end
+end]],owner.PlayerGui).Parent = script.Parent
+end))
+Script13.Name = "ShootScript"
+Script13.Parent = Tool0
+table.insert(cors,sandbox(Script13,function()
+--By Rufus14
+canuse = true
+heartbeat = game:GetService("RunService").Heartbeat
+tool = script.Parent
+handle = tool.Handle
+shoot = handle.gunshot
+shattersound = handle.shatter
+empty = handle.empty
+shootevent = tool.GunEvent
+equip = handle.equip
+unequip = handle.unequip
+bullethitflesh = handle.bullethitflesh
+bullethit = handle.bullethit
+bulletcrack = handle["supersonic bullet crack"]
+function positiongun()
+	equip:Play()
+end
+function resetgun()
+	unequip:Play()
+end
+tool.Unequipped:connect(resetgun)
+tool.Equipped:connect(positiongun)
+function dosomething(plr, whataction, pos, origin)
+	if whataction == "shoot" then
+		if canuse then
+			canuse = false
+			shoot:Play()
+			for i = 1,10 do
+				plr.Character.Torso:findFirstChild("RightArmWeld").C1 = plr.Character.Torso:findFirstChild("RightArmWeld").C1 * CFrame.fromEulerAnglesXYZ(-0.055,0,0)
+			end
+			local light = Instance.new("PointLight", handle)
+			light.Brightness = 10
+			local ray = Ray.new(handle.Position, (pos - handle.Position).unit * 400)
+			local hit, position = workspace:FindPartOnRayWithIgnoreList(ray, {handle, tool.Parent["Right Arm"]})
+			local part = Instance.new("Part", handle)
+			part.Anchored = true
+			part.CanCollide = false
+			part.Material = "Neon"
+			part.Size = Vector3.new(0,0,(handle.Position - position).magnitude/4)
+			part.CFrame = CFrame.new(handle.Position, position) * CFrame.new(0,0,-(handle.Position - position).magnitude/2)
+			local function hide()
+				bulletcrack.Parent = part
+				bulletcrack:Play()
+				bulletcrack.MaxDistance = part.Size.z
+				wait(0.01)
+				part.Transparency = 1
+				wait(bulletcrack.TimeLength - 0.01)
+				bulletcrack.Parent = handle
+				part:destroy()
+			end
+			spawn(hide)
+			game.Debris:AddItem(light, 0.04)
+			local function makewound(hitt)
+				local ball = Instance.new("Part", hitt.Parent)
+				ball.Shape = "Ball"
+				ball.Name = "ouchwound"
+				ball.Transparency = hitt.Transparency
+				ball.CanCollide = false
+				ball.Size = Vector3.new(0.25,0.25,0.25)
+				ball.CFrame = CFrame.new(position.x,position.y,position.z)
+				local hitweld = Instance.new("Weld", hitt)
+				ball.CFrame = CFrame.new(ball.Position, handle.Position)
+				hitweld.C0 = hitt.CFrame:toObjectSpace(ball.CFrame)
+				hitweld.Part0 = hitt
+				hitweld.Part1 = ball
+				hitweld.Name = "ouch_weld"
+				hitweld.C0 = hitweld.C0 * CFrame.new(0,0,0.1)
+				bullethit.Parent = ball
+				if hitt.Name == "ouchwound" then
+					ball.Transparency = 1
+					local function waittoremove()
+						wait(3)
+						ball:destroy()
+					end
+					spawn(waittoremove)
+				end
+				bullethit:Play()
+				bullethit.MaxDistance = 10
+				if hitt.Parent:findFirstChildOfClass("Humanoid") then
+					bullethitflesh.Parent = ball
+					bullethitflesh:Play()
+					bullethitflesh.MaxDistance = 10
+					local randomdamage = math.random(40,80)
+					if hitt.Parent:findFirstChildOfClass("Humanoid").Health > 500 then
+						hitt.Parent:findFirstChildOfClass("Humanoid").MaxHealth = 500
+						hitt.Parent:findFirstChildOfClass("Humanoid").Health = 500
+					end
+					if hitt.Parent:findFirstChildOfClass("Humanoid").Health <= randomdamage then
+						local velocity = Instance.new("BodyVelocity", hit)
+						velocity.MaxForce = Vector3.new(math.huge,0,math.huge)
+						velocity.Velocity = handle.CFrame.lookVector * -math.random(15,25)
+						game.Debris:AddItem(velocity, 0.1)
+						hitt.Parent:findFirstChildOfClass("Humanoid").Health = 0
+						local function searchforweld(wot)
+							for i,v in pairs(wot:GetChildren()) do
+								searchforweld(v)
+								if v.ClassName == "Weld" or v.ClassName == "Motor6D" and v.Name ~= "ouch_weld" then
+									v:destroy()
+								end
+							end
+						end
+						searchforweld(hitt.Parent)
+						ragdollkill(hitt.Parent)
+					else
+						if hitt.Name ~= "Head" then
+							hitt.Parent:findFirstChildOfClass("Humanoid").Health = hitt.Parent:findFirstChildOfClass("Humanoid").Health - randomdamage
+							local velocity = Instance.new("BodyVelocity", hit)
+							velocity.MaxForce = Vector3.new(math.huge,0,math.huge)
+							velocity.Velocity = handle.CFrame.lookVector * -math.random(15,25)
+							game.Debris:AddItem(velocity, 0.1)
+						else
+							hitt.Parent:findFirstChildOfClass("Humanoid").Health = 0
+							local function searchforweld(wot)
+								for i,v in pairs(wot:GetChildren()) do
+									searchforweld(v)
+									if v.ClassName == "Weld" or v.ClassName == "Motor6D" and v.Name ~= "ouch_weld" then
+										v:destroy()
+									end
+								end
+							end
+							searchforweld(hitt.Parent)
+							ragdollkill(hitt.Parent)
+						end
+					end
+					local function bbb()
+						wait(bullethitflesh.TimeLength)
+						bullethitflesh.Parent = handle
+					end
+					spawn(bbb)
+					ball.BrickColor = BrickColor.new("Maroon")
+					ball.Material = "Pebble"
+				else
+					if not hitt.Parent:findFirstChildOfClass("Humanoid") and hitt.Parent.ClassName == "Model" then
+						hitt:BreakJoints()
+						local velocity = Instance.new("BodyVelocity", hitt)
+						velocity.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+						velocity.Velocity = handle.CFrame.lookVector * -math.random(10,30)
+						local function cancollide()
+							wait(0.1)
+							hitt.CanCollide = true
+							velocity:destroy()
+						end
+						spawn(cancollide)
+					end
+					ball.BrickColor = hitt.BrickColor
+					ball.Material = "Cobblestone"
+					local function fadeaway()
+						wait(20)
+						for i = 1,100 do
+							ball.Transparency = ball.Transparency + 0.01
+							wait()
+						end
+						ball:destroy()
+					end
+				end
+				local function aaa()
+					wait(bullethit.TimeLength)
+					bullethit.Parent = handle
+				end
+				spawn(aaa)
+			end
+			if hit ~= nil then
+				if hit.Parent ~= nil then
+					if not hit.Parent:findFirstChildOfClass("Humanoid") and not hit:findFirstChild("shattered") and hit.Name ~= "HumanoidRootPart" and hit.Transparency > 0.1 or hit.Material == "Glass" then
+						if hit.Size.z < hit.Size.x then
+							if hit.Size.z < 1.5 then
+								local sha = Instance.new("BoolValue", hit)
+								sha.Name = "shattered"
+								local shatter = Instance.new("Part", workspace)
+								shatter.Transparency = hit.Transparency
+								shatter.Material = hit.Material
+								shatter.BrickColor = hit.BrickColor
+								shatter.Size = Vector3.new(hit.Size.x/2,hit.Size.y/2,hit.Size.z)
+								shatter.CanCollide = hit.CanCollide
+								shatter.CFrame = hit.CFrame * CFrame.new(shatter.Size.x/2,shatter.Size.y/2,0)
+								shatter:BreakJoints()
+								shatter.Velocity = handle.CFrame.lookVector * -20
+								game.Debris:AddItem(shatter, 15)
+								--
+								local shatter = Instance.new("Part", workspace)
+								shatter.Transparency = hit.Transparency
+								shatter.Material = hit.Material
+								shatter.BrickColor = hit.BrickColor
+								shatter.Size = Vector3.new(hit.Size.x/2,hit.Size.y/2,hit.Size.z)
+								shatter.CanCollide = hit.CanCollide
+								shatter.CFrame = hit.CFrame * CFrame.new(-shatter.Size.x/2,shatter.Size.y/2,0)
+								shatter:BreakJoints()
+								shatter.Velocity = handle.CFrame.lookVector * -20
+								game.Debris:AddItem(shatter, 15)
+								--
+								local shatter = Instance.new("Part", workspace)
+								shatter.Transparency = hit.Transparency
+								shatter.Material = hit.Material
+								shatter.BrickColor = hit.BrickColor
+								shatter.Size = Vector3.new(hit.Size.x/2,hit.Size.y/2,hit.Size.z)
+								shatter.CanCollide = hit.CanCollide
+								shatter.CFrame = hit.CFrame * CFrame.new(shatter.Size.x/2,-shatter.Size.y/2,0)
+								shatter:BreakJoints()
+								shatter.Velocity = handle.CFrame.lookVector * -20
+								game.Debris:AddItem(shatter, 15)
+								--
+								local shatter = Instance.new("Part", workspace)
+								shatter.Transparency = hit.Transparency
+								shatter.Material = hit.Material
+								shatter.BrickColor = hit.BrickColor
+								shatter.Size = Vector3.new(hit.Size.x/2,hit.Size.y/2,hit.Size.z)
+								shatter.CanCollide = hit.CanCollide
+								shatter.CFrame = hit.CFrame * CFrame.new(-shatter.Size.x/2,-shatter.Size.y/2,0)
+								shatter:BreakJoints()
+								shatter.Velocity = handle.CFrame.lookVector * -20
+								game.Debris:AddItem(shatter, 15)
+								--
+								hit.Anchored = true
+								hit.Transparency = 1
+								hit.CanCollide = false
+								local function stopshattering()
+									shattersound.Parent = hit
+									shattersound:Play()
+									shattersound.MaxDistance = 30
+									wait(shattersound.TimeLength/2)
+									shattersound.Parent = handle
+									hit:destroy()
+								end
+								spawn(stopshattering)
+							end
+						elseif hit.Size.x < hit.Size.z then
+							if hit.Size.x < 1.5 then
+								local sha = Instance.new("BoolValue", hit)
+								sha.Name = "shattered"
+								local shatter = Instance.new("Part", workspace)
+								shatter.Transparency = hit.Transparency
+								shatter.Material = hit.Material
+								shatter.BrickColor = hit.BrickColor
+								shatter.Size = Vector3.new(hit.Size.x,hit.Size.y/2,hit.Size.z/2)
+								shatter.CanCollide = hit.CanCollide
+								shatter.CFrame = hit.CFrame * CFrame.new(0,shatter.Size.y/2,shatter.Size.z/2)
+								shatter:BreakJoints()
+								shatter.Velocity = handle.CFrame.lookVector * -20
+								game.Debris:AddItem(shatter, 15)
+								--
+								local shatter = Instance.new("Part", workspace)
+								shatter.Transparency = hit.Transparency
+								shatter.Material = hit.Material
+								shatter.BrickColor = hit.BrickColor
+								shatter.Size = Vector3.new(hit.Size.x,hit.Size.y/2,hit.Size.z/2)
+								shatter:BreakJoints()
+								shatter.CanCollide = hit.CanCollide
+								shatter.CFrame = hit.CFrame * CFrame.new(0,-shatter.Size.y/2,shatter.Size.z/2)
+								shatter.Velocity = handle.CFrame.lookVector * -20
+								game.Debris:AddItem(shatter, 15)
+								--
+								local shatter = Instance.new("Part", workspace)
+								shatter.Transparency = hit.Transparency
+								shatter.Material = hit.Material
+								shatter.BrickColor = hit.BrickColor
+								shatter.Size = Vector3.new(hit.Size.x,hit.Size.y/2,hit.Size.z/2)
+								shatter.CanCollide = hit.CanCollide
+								shatter.CFrame = hit.CFrame * CFrame.new(0,shatter.Size.y/2,-shatter.Size.z/2)
+								shatter:BreakJoints()
+								shatter.Velocity = handle.CFrame.lookVector * -20
+								game.Debris:AddItem(shatter, 15)
+								--
+								local shatter = Instance.new("Part", workspace)
+								shatter.Transparency = hit.Transparency
+								shatter.Material = hit.Material
+								shatter.BrickColor = hit.BrickColor
+								shatter.Size = Vector3.new(hit.Size.x,hit.Size.y/2,hit.Size.z/2)
+								shatter.CanCollide = hit.CanCollide
+								shatter.CFrame = hit.CFrame * CFrame.new(0,-shatter.Size.y/2,-shatter.Size.z/2)
+								shatter:BreakJoints()
+								shatter.Velocity = handle.CFrame.lookVector * -20
+								game.Debris:AddItem(shatter, 15)
+								--
+								hit.Anchored = true
+								hit.Transparency = 1
+								hit.CanCollide = false
+								local function stopshattering()
+									shattersound.Parent = hit
+									shattersound:Play()
+									shattersound.MaxDistance = 30
+									wait(shattersound.TimeLength/2)
+									shattersound.Parent = handle
+									hit:destroy()
+								end
+								spawn(stopshattering)
+							end
+						end
+					end
+				end
+				if hit.Parent.ClassName == "Accessory" or hit.Parent.ClassName == "Hat" then
+					for i,v in pairs(hit:GetChildren()) do
+						if v.ClassName == "Attachment" or v.ClassName == "Weld" or v.ClassName == "Motor6D" then
+							v:destroy()
+						end
+					end
+					hit.Parent.Parent = workspace
+					hit.CanCollide = false
+					local velocity = Instance.new("BodyVelocity", hit)
+					velocity.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+					velocity.Velocity = handle.CFrame.lookVector * -math.random(10,30)
+					local function cancollide()
+						wait(0.1)
+						hit.CanCollide = true
+						velocity:destroy()
+					end
+					spawn(cancollide)
+				else
+					makewound(hit)
+				end
+			end
+			for i = 1,10 do
+				if plr.Character.Torso:findFirstChild("RightArmWeld") then
+					plr.Character.Torso:findFirstChild("RightArmWeld").C1 = plr.Character.Torso:findFirstChild("RightArmWeld").C1 * CFrame.fromEulerAnglesXYZ(0.055,0,0)
+					heartbeat:wait()
+				end
+			end
+			canuse = true
+		end
+	elseif whataction == "point" then
+		if plr.Character:findFirstChild("Torso") then
+			if not plr.Character.Torso:findFirstChild("HeadWeld") then
+				local head = Instance.new("Weld", plr.Character.Torso)
+				head.Part0 = plr.Character.Torso
+				head.Part1 = plr.Character.Head
+				head.C0 = CFrame.new(0,1.5,0)
+				head.C1 = CFrame.new(0,-0.5,0)
+				head.Name = "HeadWeld"
+			end
+			if not plr.Character.Torso:findFirstChild("RightArmWeld") then
+				local rightarm = Instance.new("Weld", plr.Character.Torso)
+				rightarm.Part0 = plr.Character.Torso
+				rightarm.Part1 = plr.Character["Right Arm"]
+				rightarm.C0 = CFrame.new(1.5,0,0)
+				rightarm.C1 = CFrame.new(0,0.5,0)
+				rightarm.Name = "RightArmWeld"
+			end
+			if not plr.Character.Torso:findFirstChild("LeftArmWeld") then
+				local leftarm = Instance.new("Weld", plr.Character.Torso)
+				leftarm.Part0 = plr.Character.Torso
+				leftarm.Part1 = plr.Character["Left Arm"]
+				leftarm.C0 = CFrame.new(-1.5,0,0)
+				leftarm.C1 = CFrame.new(0,0.5,0)
+				leftarm.Name = "LeftArmWeld"
+			end
+			if plr.Character.Torso:findFirstChild("RightArmWeld") then
+				plr.Character.Torso:findFirstChild("RightArmWeld").C0 = CFrame.new(1.5,0.5,0) * CFrame.fromEulerAnglesXYZ(math.pi/2,0,math.pi/3) * CFrame.fromEulerAnglesXYZ(math.asin((pos-origin).unit.y),0,0)
+			end
+			if plr.Character.Torso:findFirstChild("HeadWeld") then
+				plr.Character.Torso:findFirstChild("HeadWeld").C0 = CFrame.new(0,1,0) * CFrame.fromEulerAnglesXYZ(math.asin((pos-origin).unit.y),-math.pi/3,0)
+			end
+			if plr.Character.Torso:findFirstChild("LeftArmWeld") then
+				plr.Character.Torso:findFirstChild("LeftArmWeld").C0 = CFrame.new(-1.5,0.5,0) * CFrame.fromEulerAnglesXYZ(math.asin((pos-origin).unit.y)/2,0,0)
+			end
+		end
+	end
+end
+shootevent.OnServerEvent:connect(dosomething)
+function ragdollkill(character)
+	local victimshumanoid = character:findFirstChildOfClass("Humanoid")
+	if not character:findFirstChild("UpperTorso") then
+		character.Archivable = true
+		for i,v in pairs(character:GetChildren()) do
+			if v.ClassName == "Sound" then
+				v:remove()
+			end
+			for q,w in pairs(v:GetChildren()) do
+				if w.ClassName == "Sound" then
+					w:remove()
+				end
+			end
+		end
+		local ragdoll = character:Clone()
+		ragdoll:findFirstChildOfClass("Humanoid").Health = 0
+		if ragdoll:findFirstChild("Health") then
+			if ragdoll:findFirstChild("Health").ClassName == "Script" then
+				ragdoll:findFirstChild("Health").Disabled = true
+			end
+		end
+		for i,v in pairs(character:GetChildren()) do
+			if v.ClassName == "Part" or v.ClassName == "ForceField" or v.ClassName == "Accessory" or v.ClassName == "Hat" then
+				v:destroy()
+			end
+		end
+		for i,v in pairs(character:GetChildren()) do
+			if v.ClassName == "Accessory" then
+				local attachment1 = v.Handle:findFirstChildOfClass("Attachment")
+				if attachment1 then
+					for q,w in pairs(character:GetChildren()) do
+						if w.ClassName == "Part" then
+							local attachment2 = w:findFirstChild(attachment1.Name)
+							if attachment2 then
+								local hinge = Instance.new("HingeConstraint", v.Handle)
+								hinge.Attachment0 = attachment1
+								hinge.Attachment1 = attachment2
+								hinge.LimitsEnabled = true
+								hinge.LowerAngle = 0
+								hinge.UpperAngle = 0
+							end
+						end
+					end
+				end
+			end
+		end
+		ragdoll.Parent = workspace
+		if ragdoll:findFirstChild("Right Arm") then
+			local glue = Instance.new("Glue", ragdoll.Torso)
+			glue.Part0 = ragdoll.Torso
+			glue.Part1 = ragdoll:findFirstChild("Right Arm")
+			glue.C0 = CFrame.new(1.5, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+			glue.C1 = CFrame.new(0, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+			local limbcollider = Instance.new("Part", ragdoll:findFirstChild("Right Arm"))
+			limbcollider.Size = Vector3.new(1.4,1,1)
+			limbcollider.Shape = "Cylinder"
+			limbcollider.Transparency = 1
+			limbcollider.Name = "LimbCollider"
+			local limbcolliderweld = Instance.new("Weld", limbcollider)
+			limbcolliderweld.Part0 = ragdoll:findFirstChild("Right Arm")
+			limbcolliderweld.Part1 = limbcollider
+			limbcolliderweld.C0 = CFrame.fromEulerAnglesXYZ(0,0,math.pi/2) * CFrame.new(-0.3,0,0)
+		end
+		if ragdoll:findFirstChild("Left Arm") then
+			local glue = Instance.new("Glue", ragdoll.Torso)
+			glue.Part0 = ragdoll.Torso
+			glue.Part1 = ragdoll:findFirstChild("Left Arm")
+			glue.C0 = CFrame.new(-1.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+			glue.C1 = CFrame.new(0, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+			local limbcollider = Instance.new("Part", ragdoll:findFirstChild("Left Arm"))
+			limbcollider.Size = Vector3.new(1.4,1,1)
+			limbcollider.Shape = "Cylinder"
+			limbcollider.Name = "LimbCollider"
+			limbcollider.Transparency = 1
+			local limbcolliderweld = Instance.new("Weld", limbcollider)
+			limbcolliderweld.Part0 = ragdoll:findFirstChild("Left Arm")
+			limbcolliderweld.Part1 = limbcollider
+			limbcolliderweld.C0 = CFrame.fromEulerAnglesXYZ(0,0,math.pi/2) * CFrame.new(-0.3,0,0)
+		end
+		if ragdoll:findFirstChild("Left Leg") then
+			local glue = Instance.new("Glue", ragdoll.Torso)
+			glue.Part0 = ragdoll.Torso
+			glue.Part1 = ragdoll:findFirstChild("Left Leg")
+			glue.C0 = CFrame.new(-0.5, -1, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+			glue.C1 = CFrame.new(-0, 1, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+			local limbcollider = Instance.new("Part", ragdoll:findFirstChild("Left Leg"))
+			limbcollider.Size = Vector3.new(1.4,1,1)
+			limbcollider.Shape = "Cylinder"
+			limbcollider.Name = "LimbCollider"
+			limbcollider.Transparency = 1
+			local limbcolliderweld = Instance.new("Weld", limbcollider)
+			limbcolliderweld.Part0 = ragdoll:findFirstChild("Left Leg")
+			limbcolliderweld.Part1 = limbcollider
+			limbcolliderweld.C0 = CFrame.fromEulerAnglesXYZ(0,0,math.pi/2) * CFrame.new(-0.3,0,0)
+		end
+		if ragdoll:findFirstChild("Right Leg") then
+			local glue = Instance.new("Glue", ragdoll.Torso)
+			glue.Part0 = ragdoll.Torso
+			glue.Part1 = ragdoll:findFirstChild("Right Leg")
+			glue.C0 = CFrame.new(0.5, -1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+			glue.C1 = CFrame.new(0, 1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+			local limbcollider = Instance.new("Part", ragdoll:findFirstChild("Right Leg"))
+			limbcollider.Size = Vector3.new(1.4,1,1)
+			limbcollider.Shape = "Cylinder"
+			limbcollider.Name = "LimbCollider"
+			limbcollider.Transparency = 1
+			local limbcolliderweld = Instance.new("Weld", limbcollider)
+			limbcolliderweld.Part0 = ragdoll:findFirstChild("Right Leg")
+			limbcolliderweld.Part1 = limbcollider
+			limbcolliderweld.C0 = CFrame.fromEulerAnglesXYZ(0,0,math.pi/2) * CFrame.new(-0.3,0,0)
+		end
+		if ragdoll:findFirstChild("Head") and ragdoll.Torso:findFirstChild("NeckAttachment") then
+			local HeadAttachment = Instance.new("Attachment", ragdoll["Head"])
+			HeadAttachment.Position = Vector3.new(0, -0.5, 0)
+			local connection = Instance.new('HingeConstraint', ragdoll["Head"])
+			connection.LimitsEnabled = true
+			connection.Attachment0 = ragdoll.Torso.NeckAttachment
+			connection.Attachment1 = HeadAttachment
+			connection.UpperAngle = 60
+			connection.LowerAngle = -60
+		elseif ragdoll:findFirstChild("Head") and not ragdoll.Torso:findFirstChild("NeckAttachment") then
+			local hedweld = Instance.new("Weld", ragdoll.Torso)
+			hedweld.Part0 = ragdoll.Torso
+			hedweld.Part1 = ragdoll.Head
+			hedweld.C0 = CFrame.new(0,1.5,0)
+		end
+		game.Debris:AddItem(ragdoll, 30)
+		local function aaaalol()
+			wait(0.2)
+			local function searchforvelocity(wot)
+				for i,v in pairs(wot:GetChildren()) do
+					searchforvelocity(v)
+					if v.ClassName == "BodyPosition" or v.ClassName == "BodyVelocity" then
+						v:destroy()
+					end
+				end
+			end
+			searchforvelocity(ragdoll)
+			wait(0.5)
+			if ragdoll:findFirstChildOfClass("Humanoid") then
+				ragdoll:findFirstChildOfClass("Humanoid").PlatformStand = true
+			end
+			if ragdoll:findFirstChild("HumanoidRootPart") then
+				ragdoll:findFirstChild("HumanoidRootPart"):destroy()
+			end
+		end
+		spawn(aaaalol)
+	elseif character:findFirstChild("UpperTorso") then
+		character.Archivable = true
+		for i,v in pairs(character:GetChildren()) do
+			if v.ClassName == "Sound" then
+				v:remove()
+			end
+			for q,w in pairs(v:GetChildren()) do
+				if w.ClassName == "Sound" then
+					w:remove()
+				end
+			end
+		end
+		local ragdoll = character:Clone()
+		ragdoll:findFirstChildOfClass("Humanoid").Health = 0
+		if ragdoll:findFirstChild("Health") then
+			if ragdoll:findFirstChild("Health").ClassName == "Script" then
+				ragdoll:findFirstChild("Health").Disabled = true
+			end
+		end
+		for i,v in pairs(character:GetChildren()) do
+			if v.ClassName == "Part" or v.ClassName == "ForceField" or v.ClassName == "Accessory" or v.ClassName == "Hat" or v.ClassName == "MeshPart" then
+				v:destroy()
+			end
+		end
+		for i,v in pairs(character:GetChildren()) do
+			if v.ClassName == "Accessory" then
+				local attachment1 = v.Handle:findFirstChildOfClass("Attachment")
+				if attachment1 then
+					for q,w in pairs(character:GetChildren()) do
+						if w.ClassName == "Part" or w.ClassName == "MeshPart" then
+							local attachment2 = w:findFirstChild(attachment1.Name)
+							if attachment2 then
+								local hinge = Instance.new("HingeConstraint", v.Handle)
+								hinge.Attachment0 = attachment1
+								hinge.Attachment1 = attachment2
+								hinge.LimitsEnabled = true
+								hinge.LowerAngle = 0
+								hinge.UpperAngle = 0
+							end
+						end
+					end
+				end
+			end
+		end
+		ragdoll.Parent = workspace
+		local Humanoid = ragdoll:findFirstChildOfClass("Humanoid")
+		Humanoid.PlatformStand = true
+		local function makeballconnections(limb, attachementone, attachmenttwo, twistlower, twistupper)
+			local connection = Instance.new('BallSocketConstraint', limb)
+			connection.LimitsEnabled = true
+			connection.Attachment0 = attachementone
+			connection.Attachment1 = attachmenttwo
+			connection.TwistLimitsEnabled = true
+			connection.TwistLowerAngle = twistlower
+			connection.TwistUpperAngle = twistupper
+			local limbcollider = Instance.new("Part", limb)
+			limbcollider.Size = Vector3.new(0.1,1,1)
+			limbcollider.Shape = "Cylinder"
+			limbcollider.Transparency = 1
+			limbcollider:BreakJoints()
+			local limbcolliderweld = Instance.new("Weld", limbcollider)
+			limbcolliderweld.Part0 = limb
+			limbcolliderweld.Part1 = limbcollider
+			limbcolliderweld.C0 = CFrame.fromEulerAnglesXYZ(0,0,math.pi/2)
+		end
+		local function makehingeconnections(limb, attachementone, attachmenttwo, lower, upper)
+			local connection = Instance.new('HingeConstraint', limb)
+			connection.LimitsEnabled = true
+			connection.Attachment0 = attachementone
+			connection.Attachment1 = attachmenttwo
+			connection.LimitsEnabled = true
+			connection.LowerAngle = lower
+			connection.UpperAngle = upper
+			local limbcollider = Instance.new("Part", limb)
+			limbcollider.Size = Vector3.new(0.1,1,1)
+			limbcollider.Shape = "Cylinder"
+			limbcollider.Transparency = 1
+			limbcollider:BreakJoints()
+			local limbcolliderweld = Instance.new("Weld", limbcollider)
+			limbcolliderweld.Part0 = limb
+			limbcolliderweld.Part1 = limbcollider
+			limbcolliderweld.C0 = CFrame.fromEulerAnglesXYZ(0,0,math.pi/2)
+		end
+		local HeadAttachment = Instance.new("Attachment", Humanoid.Parent.Head)
+		HeadAttachment.Position = Vector3.new(0, -0.5, 0)
+		if ragdoll.UpperTorso:findFirstChild("NeckAttachment") then
+			makehingeconnections(Humanoid.Parent.Head, HeadAttachment, ragdoll.UpperTorso.NeckAttachment, -50, 50)
+		end
+		makehingeconnections(Humanoid.Parent.LowerTorso, Humanoid.Parent.LowerTorso.WaistRigAttachment, Humanoid.Parent.UpperTorso.WaistRigAttachment, -50, 50)
+		makeballconnections(Humanoid.Parent.LeftUpperArm, Humanoid.Parent.LeftUpperArm.LeftShoulderRigAttachment, Humanoid.Parent.UpperTorso.LeftShoulderRigAttachment, -200, 200, 180)
+		makehingeconnections(Humanoid.Parent.LeftLowerArm, Humanoid.Parent.LeftLowerArm.LeftElbowRigAttachment, Humanoid.Parent.LeftUpperArm.LeftElbowRigAttachment, 0, -60)
+		makehingeconnections(Humanoid.Parent.LeftHand, Humanoid.Parent.LeftHand.LeftWristRigAttachment, Humanoid.Parent.LeftLowerArm.LeftWristRigAttachment, -20, 20)
+		--
+		makeballconnections(Humanoid.Parent.RightUpperArm, Humanoid.Parent.RightUpperArm.RightShoulderRigAttachment, Humanoid.Parent.UpperTorso.RightShoulderRigAttachment, -200, 200, 180)
+		makehingeconnections(Humanoid.Parent.RightLowerArm, Humanoid.Parent.RightLowerArm.RightElbowRigAttachment, Humanoid.Parent.RightUpperArm.RightElbowRigAttachment, 0, -60)
+		makehingeconnections(Humanoid.Parent.RightHand, Humanoid.Parent.RightHand.RightWristRigAttachment, Humanoid.Parent.RightLowerArm.RightWristRigAttachment, -20, 20)
+		--
+		makeballconnections(Humanoid.Parent.RightUpperLeg, Humanoid.Parent.RightUpperLeg.RightHipRigAttachment, Humanoid.Parent.LowerTorso.RightHipRigAttachment, -80, 80, 80)
+		makehingeconnections(Humanoid.Parent.RightLowerLeg, Humanoid.Parent.RightLowerLeg.RightKneeRigAttachment, Humanoid.Parent.RightUpperLeg.RightKneeRigAttachment, 0, 60)
+		makehingeconnections(Humanoid.Parent.RightFoot, Humanoid.Parent.RightFoot.RightAnkleRigAttachment, Humanoid.Parent.RightLowerLeg.RightAnkleRigAttachment, -20, 20)
+		--
+		makeballconnections(Humanoid.Parent.LeftUpperLeg, Humanoid.Parent.LeftUpperLeg.LeftHipRigAttachment, Humanoid.Parent.LowerTorso.LeftHipRigAttachment, -80, 80, 80)
+		makehingeconnections(Humanoid.Parent.LeftLowerLeg, Humanoid.Parent.LeftLowerLeg.LeftKneeRigAttachment, Humanoid.Parent.LeftUpperLeg.LeftKneeRigAttachment, 0, 60)
+		makehingeconnections(Humanoid.Parent.LeftFoot, Humanoid.Parent.LeftFoot.LeftAnkleRigAttachment, Humanoid.Parent.LeftLowerLeg.LeftAnkleRigAttachment, -20, 20)
+		for i,v in pairs(Humanoid.Parent:GetChildren()) do
+			if v.ClassName == "Accessory" then
+				local attachment1 = v.Handle:findFirstChildOfClass("Attachment")
+				if attachment1 then
+					for q,w in pairs(Humanoid.Parent:GetChildren()) do
+						if w.ClassName == "Part" then
+							local attachment2 = w:findFirstChild(attachment1.Name)
+							if attachment2 then
+								local hinge = Instance.new("HingeConstraint", v.Handle)
+								hinge.Attachment0 = attachment1
+								hinge.Attachment1 = attachment2
+								hinge.LimitsEnabled = true
+								hinge.LowerAngle = 0
+								hinge.UpperAngle = 0
+							end
+						end
+					end
+				end
+			end
+		end
+		for i,v in pairs(ragdoll:GetChildren()) do
+			for q,w in pairs(v:GetChildren()) do
+				if w.ClassName == "Motor6D"--[[ and w.Name ~= "Neck"--]] then
+					w:destroy()
+				end
+			end
+		end
+		if ragdoll:findFirstChild("HumanoidRootPart") then
+			ragdoll.HumanoidRootPart.Anchored = true
+			ragdoll.HumanoidRootPart.CanCollide = false
+		end
+		if ragdoll:findFirstChildOfClass("Humanoid") then
+			ragdoll:findFirstChildOfClass("Humanoid").PlatformStand = true
+		end
+		local function waitfordatmoment()
+			wait(0.2)
+			local function searchforvelocity(wot)
+				for i,v in pairs(wot:GetChildren()) do
+					searchforvelocity(v)
+					if v.ClassName == "BodyPosition" or v.ClassName == "BodyVelocity" then
+						v:destroy()
+					end
+				end
+			end
+			searchforvelocity(ragdoll)
+		end
+		spawn(waitfordatmoment)
+		game.Debris:AddItem(ragdoll, 30)
+	end
+end
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
