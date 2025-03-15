@@ -1,4 +1,22 @@
+function aamong(t)
+	function add(p)
+		t.ChildRemoved:connect(function()
+			local a = t.Parent.Safe:FindFirstChild("SeatWeld")
+			if a ~= nil then return end
+			t.Parent:remove()
+		end)
+	--[[for i = 1, 6 do
+		local ex = Instance.new("Explosion")
+		ex.Position = t.Position + Vector3.new(math.random(-3, 3), math.random(-3, 3), math.random(-3, 3))
+		ex.BlastRadius = 2
+		ex.BlastPressure = 1000
+		ex.Parent = game.Workspace
+		wait()
+	end--]]
+	end
 
+	t.ChildAdded:connect(add)
+end
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
@@ -7949,6 +7967,7 @@ table.insert(cors,sandbox(Script464,function()
 		if deb == true then return end
 		deb = true
 		local new = a:clone()
+    aamong(new)
 		new.Parent = script.Parent.Parent
 		new:MakeJoints()
 		script.Parent.BrickColor = BrickColor.new(21)
@@ -8796,6 +8815,7 @@ table.insert(cors,sandbox(Script546,function()
 		if deb == true then return end
 		deb = true
 		local new = a:clone()
+    aamong(new)
 		new.Parent = script.Parent.Parent
 		new:MakeJoints()
 		script.Parent.BrickColor = BrickColor.new(21)
@@ -10090,6 +10110,7 @@ table.insert(cors,sandbox(Script680,function()
 		if deb == true then return end
 		deb = true
 		local new = a:clone()
+aamong(new)
 		new.Parent = script.Parent.Parent
 		new:MakeJoints()
 		script.Parent.BrickColor = BrickColor.new(21)
@@ -13014,6 +13035,7 @@ table.insert(cors,sandbox(Script161,function()
 		if deb == true then return end
 		deb = true
 		local new = a:clone()
+ aamong(new)
 		new.Parent = script.Parent.Parent
     	function blow()
 		for i = 1, 4 do
