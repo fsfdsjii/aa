@@ -51912,3 +51912,3772 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Model1 = Instance.new("Model")
+Part2 = Instance.new("Part")
+Snap3 = Instance.new("Snap")
+Part4 = Instance.new("Part")
+Snap5 = Instance.new("Snap")
+Part6 = Instance.new("Part")
+HopperBin7 = Instance.new("HopperBin")
+LocalScript8 = Instance.new("LocalScript")
+Script9 = Instance.new("Script")
+Script10 = Instance.new("Script")
+Part11 = Instance.new("Part")
+Snap12 = Instance.new("Snap")
+Part13 = Instance.new("Part")
+Snap14 = Instance.new("Snap")
+Part15 = Instance.new("Part")
+Script16 = Instance.new("Script")
+Model17 = Instance.new("Model")
+Part18 = Instance.new("Part")
+Snap19 = Instance.new("Snap")
+Part20 = Instance.new("Part")
+Snap21 = Instance.new("Snap")
+Part22 = Instance.new("Part")
+HopperBin23 = Instance.new("HopperBin")
+Script24 = Instance.new("Script")
+LocalScript25 = Instance.new("LocalScript")
+Script26 = Instance.new("Script")
+Part27 = Instance.new("Part")
+Snap28 = Instance.new("Snap")
+Part29 = Instance.new("Part")
+Snap30 = Instance.new("Snap")
+Part31 = Instance.new("Part")
+Script32 = Instance.new("Script")
+Model33 = Instance.new("Model")
+Part34 = Instance.new("Part")
+Snap35 = Instance.new("Snap")
+Part36 = Instance.new("Part")
+Snap37 = Instance.new("Snap")
+Part38 = Instance.new("Part")
+HopperBin39 = Instance.new("HopperBin")
+Script40 = Instance.new("Script")
+LocalScript41 = Instance.new("LocalScript")
+Script42 = Instance.new("Script")
+Part43 = Instance.new("Part")
+Snap44 = Instance.new("Snap")
+Part45 = Instance.new("Part")
+Snap46 = Instance.new("Snap")
+Part47 = Instance.new("Part")
+Script48 = Instance.new("Script")
+Model49 = Instance.new("Model")
+Part50 = Instance.new("Part")
+Snap51 = Instance.new("Snap")
+Part52 = Instance.new("Part")
+Snap53 = Instance.new("Snap")
+Part54 = Instance.new("Part")
+HopperBin55 = Instance.new("HopperBin")
+Script56 = Instance.new("Script")
+LocalScript57 = Instance.new("LocalScript")
+Script58 = Instance.new("Script")
+Part59 = Instance.new("Part")
+Snap60 = Instance.new("Snap")
+Part61 = Instance.new("Part")
+Snap62 = Instance.new("Snap")
+Part63 = Instance.new("Part")
+Script64 = Instance.new("Script")
+Model65 = Instance.new("Model")
+Part66 = Instance.new("Part")
+Snap67 = Instance.new("Snap")
+Part68 = Instance.new("Part")
+Snap69 = Instance.new("Snap")
+Part70 = Instance.new("Part")
+HopperBin71 = Instance.new("HopperBin")
+Script72 = Instance.new("Script")
+LocalScript73 = Instance.new("LocalScript")
+Script74 = Instance.new("Script")
+Part75 = Instance.new("Part")
+Snap76 = Instance.new("Snap")
+Part77 = Instance.new("Part")
+Snap78 = Instance.new("Snap")
+Part79 = Instance.new("Part")
+Script80 = Instance.new("Script")
+Model81 = Instance.new("Model")
+Part82 = Instance.new("Part")
+Snap83 = Instance.new("Snap")
+Part84 = Instance.new("Part")
+Snap85 = Instance.new("Snap")
+Part86 = Instance.new("Part")
+HopperBin87 = Instance.new("HopperBin")
+LocalScript88 = Instance.new("LocalScript")
+Script89 = Instance.new("Script")
+Script90 = Instance.new("Script")
+Part91 = Instance.new("Part")
+Snap92 = Instance.new("Snap")
+Part93 = Instance.new("Part")
+Snap94 = Instance.new("Snap")
+Part95 = Instance.new("Part")
+Script96 = Instance.new("Script")
+Model97 = Instance.new("Model")
+Part98 = Instance.new("Part")
+Snap99 = Instance.new("Snap")
+Part100 = Instance.new("Part")
+Snap101 = Instance.new("Snap")
+Part102 = Instance.new("Part")
+HopperBin103 = Instance.new("HopperBin")
+Script104 = Instance.new("Script")
+LocalScript105 = Instance.new("LocalScript")
+Script106 = Instance.new("Script")
+Part107 = Instance.new("Part")
+Snap108 = Instance.new("Snap")
+Part109 = Instance.new("Part")
+Snap110 = Instance.new("Snap")
+Part111 = Instance.new("Part")
+Script112 = Instance.new("Script")
+Model113 = Instance.new("Model")
+Part114 = Instance.new("Part")
+Snap115 = Instance.new("Snap")
+Part116 = Instance.new("Part")
+Snap117 = Instance.new("Snap")
+Part118 = Instance.new("Part")
+HopperBin119 = Instance.new("HopperBin")
+LocalScript120 = Instance.new("LocalScript")
+Script121 = Instance.new("Script")
+Script122 = Instance.new("Script")
+Part123 = Instance.new("Part")
+Snap124 = Instance.new("Snap")
+Part125 = Instance.new("Part")
+Snap126 = Instance.new("Snap")
+Part127 = Instance.new("Part")
+Script128 = Instance.new("Script")
+Model129 = Instance.new("Model")
+Part130 = Instance.new("Part")
+Snap131 = Instance.new("Snap")
+Part132 = Instance.new("Part")
+Snap133 = Instance.new("Snap")
+Part134 = Instance.new("Part")
+HopperBin135 = Instance.new("HopperBin")
+Script136 = Instance.new("Script")
+LocalScript137 = Instance.new("LocalScript")
+Script138 = Instance.new("Script")
+Part139 = Instance.new("Part")
+Snap140 = Instance.new("Snap")
+Part141 = Instance.new("Part")
+Snap142 = Instance.new("Snap")
+Part143 = Instance.new("Part")
+Script144 = Instance.new("Script")
+Model145 = Instance.new("Model")
+Part146 = Instance.new("Part")
+Snap147 = Instance.new("Snap")
+Part148 = Instance.new("Part")
+Snap149 = Instance.new("Snap")
+Part150 = Instance.new("Part")
+HopperBin151 = Instance.new("HopperBin")
+LocalScript152 = Instance.new("LocalScript")
+Script153 = Instance.new("Script")
+Script154 = Instance.new("Script")
+Part155 = Instance.new("Part")
+Snap156 = Instance.new("Snap")
+Part157 = Instance.new("Part")
+Snap158 = Instance.new("Snap")
+Part159 = Instance.new("Part")
+Script160 = Instance.new("Script")
+Model161 = Instance.new("Model")
+Part162 = Instance.new("Part")
+Script163 = Instance.new("Script")
+HopperBin164 = Instance.new("HopperBin")
+Script165 = Instance.new("Script")
+Part166 = Instance.new("Part")
+Model0.Name = "tp7"
+Model0.Parent = mas
+Model1.Name = "make you're giver"
+Model1.Parent = Model0
+Part2.Name = "Smooth Block Model"
+Part2.Parent = Model1
+Part2.CFrame = CFrame.new(-1163.5, 47.4000015, 193.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part2.Orientation = Vector3.new(0, -90, 0)
+Part2.Position = Vector3.new(-1163.5, 47.400001525878906, 193.5)
+Part2.Rotation = Vector3.new(0, -90, 0)
+Part2.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part2.Transparency = 0.30000001192092896
+Part2.Size = Vector3.new(3, 6, 1)
+Part2.Anchored = true
+Part2.BrickColor = BrickColor.new("Bright yellow")
+Part2.Locked = true
+Part2.brickColor = BrickColor.new("Bright yellow")
+Snap3.Parent = Part2
+Snap3.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap3.C1 = CFrame.new(0, -0.599998474, -1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap3.Part0 = Part2
+Snap3.Part1 = Part15
+Snap3.part1 = Part15
+Part4.Name = "Smooth Block Model"
+Part4.Parent = Model1
+Part4.CFrame = CFrame.new(-1164.5, 47.3993263, 195.500122, 1, 1.26419718e-05, -1.04805094e-05, -1.26417299e-05, 1, 2.31136255e-05, 1.04808014e-05, -2.31134909e-05, 1)
+Part4.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part4.Position = Vector3.new(-1164.5, 47.39932632446289, 195.5001220703125)
+Part4.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part4.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part4.Transparency = 0.30000001192092896
+Part4.Size = Vector3.new(3, 6, 1)
+Part4.Anchored = true
+Part4.BrickColor = BrickColor.new("Bright yellow")
+Part4.Locked = true
+Part4.brickColor = BrickColor.new("Bright yellow")
+Snap5.Parent = Part4
+Snap5.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap5.C1 = CFrame.new(2.00004578, -0.600673676, -0.5, -1.04808014e-05, 1, -2.31134909e-05, 1.26417299e-05, 2.31136255e-05, 1, 1, 1.04805094e-05, -1.26419718e-05)
+Snap5.Part0 = Part4
+Snap5.Part1 = Part15
+Snap5.part1 = Part15
+Part6.Name = "PUT THE WEAPON IN THIS BRICK"
+Part6.Parent = Model1
+Part6.CFrame = CFrame.new(-1162.49976, 47.1044617, 193.498169, -1, 4.31585977e-05, 1.04847677e-05, 4.31599547e-05, 1, 0.00012947552, -1.04791798e-05, 0.000129475971, -1)
+Part6.Orientation = Vector3.new(-0.007000000216066837, 179.99899291992188, 0.0020000000949949026)
+Part6.Position = Vector3.new(-1162.499755859375, 47.104461669921875, 193.4981689453125)
+Part6.Rotation = Vector3.new(-179.9929962158203, 0.0010000000474974513, -179.9980010986328)
+Part6.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part6.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part6.Anchored = true
+Part6.BrickColor = BrickColor.new("Bright yellow")
+Part6.Locked = true
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part6.brickColor = BrickColor.new("Bright yellow")
+HopperBin7.Name = "LightningPath"
+HopperBin7.Parent = Part6
+LocalScript8.Name = "Local Gui"
+LocalScript8.Parent = HopperBin7
+table.insert(cors,sandbox(LocalScript8,function()
+bin = script.Parent
+function onKeyDown(key,mouse) 
+key:lower() 
+if key == "r" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+if e[i]:findFirstChild("creator")~=nil then
+if e[i].creator.Value == script.Parent.Parent.Parent then
+e[i]:remove()
+end
+end
+end
+end
+end
+elseif key == "n" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+e[i]:remove()
+end
+end
+end
+
+end
+end
+
+function press(mouse)
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(6,2,18)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright yellow")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+press(mouse)
+end
+end
+
+
+function onButton1Down(mouse)
+sel = true
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright yellow")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-5,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright yellow")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,15)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright yellow")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-6,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+press(mouse)
+end
+end
+
+
+function onButton1Up(mouse)
+sel = false
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	mouse.KeyDown:connect(onKeyDown) 
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+s = Instance.new("Hint")
+s.Parent = script.Parent.Parent.Parent
+s.Text = "click R to reset all your ice you made and Hold mouse to create a stream of ice"
+end
+
+function unsel(mouse)
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+end
+
+
+script.Parent.Selected:connect(onEquippedLocal) 
+script.Parent.Deselected:connect(unsel)
+end))
+Script9.Name = "CleanUp"
+Script9.Parent = LocalScript8
+Script9.Enabled = false
+table.insert(cors,sandbox(Script9,function()
+wait(5)
+script.Parent:remove()
+end))
+Script9.Disabled = true
+Script10.Name = "PUT THIS IN THE WEAPON"
+Script10.Parent = HopperBin7
+table.insert(cors,sandbox(Script10,function()
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end))
+Part11.Name = "Smooth Block Model"
+Part11.Parent = Model1
+Part11.CFrame = CFrame.new(-1166.5, 47.4000015, 193.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part11.Orientation = Vector3.new(0, -90, 0)
+Part11.Position = Vector3.new(-1166.5, 47.400001525878906, 193.5)
+Part11.Rotation = Vector3.new(0, -90, 0)
+Part11.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part11.Transparency = 0.30000001192092896
+Part11.Size = Vector3.new(5, 6, 1)
+Part11.Anchored = true
+Part11.BrickColor = BrickColor.new("Bright yellow")
+Part11.Locked = true
+Part11.brickColor = BrickColor.new("Bright yellow")
+Snap12.Parent = Part11
+Snap12.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap12.C1 = CFrame.new(0, -0.599998474, 1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap12.Part0 = Part11
+Snap12.Part1 = Part15
+Snap12.part1 = Part15
+Part13.Name = "Smooth Block Model"
+Part13.Parent = Model1
+Part13.CFrame = CFrame.new(-1164.5, 47.3992653, 191.500122, 1, 1.26419718e-05, -1.04805094e-05, -1.26417299e-05, 1, 2.31136255e-05, 1.04808014e-05, -2.31134909e-05, 1)
+Part13.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part13.Position = Vector3.new(-1164.5, 47.39926528930664, 191.5001220703125)
+Part13.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part13.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part13.Transparency = 0.30000001192092896
+Part13.Size = Vector3.new(3, 6, 1)
+Part13.Anchored = true
+Part13.BrickColor = BrickColor.new("Bright yellow")
+Part13.Locked = true
+Part13.brickColor = BrickColor.new("Bright yellow")
+Snap14.Parent = Part13
+Snap14.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap14.C1 = CFrame.new(-1.99995422, -0.600734711, -0.5, -1.04808014e-05, 1, -2.31134909e-05, 1.26417299e-05, 2.31136255e-05, 1, 1, 1.04805094e-05, -1.26419718e-05)
+Snap14.Part0 = Part13
+Snap14.Part1 = Part15
+Snap14.part1 = Part15
+Part15.Name = "Smooth Block Model"
+Part15.Parent = Model1
+Part15.CFrame = CFrame.new(-1165, 51, 193.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part15.Orientation = Vector3.new(0, -90, 0)
+Part15.Position = Vector3.new(-1165, 51, 193.5)
+Part15.Rotation = Vector3.new(0, -90, 0)
+Part15.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part15.Transparency = 0.30000001192092896
+Part15.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part15.Anchored = true
+Part15.BrickColor = BrickColor.new("Bright yellow")
+Part15.Locked = true
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.brickColor = BrickColor.new("Bright yellow")
+Script16.Name = "READ ME FOR INSTRUCTIONS"
+Script16.Parent = Model1
+table.insert(cors,sandbox(Script16,function()
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+Model17.Name = "make you're giver"
+Model17.Parent = Model0
+Part18.Name = "Smooth Block Model"
+Part18.Parent = Model17
+Part18.CFrame = CFrame.new(-1090.5, 47.7956047, 156.499969, -1, -2.31128197e-05, -1.04805176e-05, -2.31126887e-05, 1, -1.26414488e-05, 1.04808096e-05, -1.26412069e-05, -1)
+Part18.Orientation = Vector3.new(0.0010000000474974513, -179.99899291992188, -0.0010000000474974513)
+Part18.Position = Vector3.new(-1090.5, 47.79560470581055, 156.49996948242188)
+Part18.Rotation = Vector3.new(179.99899291992188, -0.0010000000474974513, 179.99899291992188)
+Part18.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part18.Transparency = 0.30000001192092896
+Part18.Size = Vector3.new(3, 6, 1)
+Part18.Anchored = true
+Part18.BrickColor = BrickColor.new("Bright yellow")
+Part18.Locked = true
+Part18.Reflectance = 0.5
+Part18.brickColor = BrickColor.new("Bright yellow")
+Snap19.Parent = Part18
+Snap19.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap19.C1 = CFrame.new(0, -0.599998474, -1.49998474, -1, 0, -1.52285129e-12, 1.52285129e-12, 0, 1, 0, 1, 0)
+Snap19.Part0 = Part18
+Snap19.Part1 = Part31
+Snap19.part1 = Part31
+Part20.Name = "Smooth Block Model"
+Part20.Parent = Model17
+Part20.CFrame = CFrame.new(-1092.5, 47.7999992, 155.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part20.Orientation = Vector3.new(0, -90, 0)
+Part20.Position = Vector3.new(-1092.5, 47.79999923706055, 155.5)
+Part20.Rotation = Vector3.new(0, -90, 0)
+Part20.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part20.Transparency = 0.30000001192092896
+Part20.Size = Vector3.new(3, 6, 1)
+Part20.Anchored = true
+Part20.BrickColor = BrickColor.new("Bright yellow")
+Part20.Locked = true
+Part20.Reflectance = 0.5
+Part20.brickColor = BrickColor.new("Bright yellow")
+Snap21.Parent = Part20
+Snap21.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap21.C1 = CFrame.new(1.99987793, -0.595542908, -0.500030518, -1.04808096e-05, 1, -2.31126887e-05, 1.26412069e-05, 2.31128197e-05, 1, 1, 1.04805176e-05, -1.26414488e-05)
+Snap21.Part0 = Part20
+Snap21.Part1 = Part31
+Snap21.part1 = Part31
+Part22.Name = "PUT THE WEAPON IN THIS BRICK"
+Part22.Parent = Model17
+Part22.CFrame = CFrame.new(-1090.49805, 47.5007439, 157.500214, -2.32567343e-09, -0.000152589942, 0.999997258, 3.05179601e-05, 1, 0.000152589972, -0.999997258, 3.05180438e-05, 2.32289099e-09)
+Part22.Orientation = Vector3.new(-0.008999999612569809, 90, 0.0020000000949949026)
+Part22.Position = Vector3.new(-1090.498046875, 47.5007438659668, 157.50021362304688)
+Part22.Rotation = Vector3.new(-89.9990005493164, 89.86599731445312, 90.0009994506836)
+Part22.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part22.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part22.Anchored = true
+Part22.BrickColor = BrickColor.new("Bright yellow")
+Part22.Locked = true
+Part22.Reflectance = 0.5
+Part22.TopSurface = Enum.SurfaceType.Smooth
+Part22.brickColor = BrickColor.new("Bright yellow")
+HopperBin23.Name = "GoldPath"
+HopperBin23.Parent = Part22
+Script24.Name = "PUT THIS IN THE WEAPON"
+Script24.Parent = HopperBin23
+table.insert(cors,sandbox(Script24,function()
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end))
+LocalScript25.Name = "Local Gui"
+LocalScript25.Parent = HopperBin23
+table.insert(cors,sandbox(LocalScript25,function()
+bin = script.Parent
+
+function onKeyDown(key,mouse) 
+key:lower() 
+if key == "r" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+if e[i]:findFirstChild("creator")~=nil then
+if e[i].creator.Value == script.Parent.Parent.Parent then
+e[i]:remove()
+end
+end
+end
+end
+end
+elseif key == "n" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+e[i]:remove()
+end
+end
+end
+
+end
+end
+
+function press(mouse)
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(6,2,18)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright yellow")
+s.Reflectance = 0.5
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+press(mouse)
+end
+end
+
+
+function onButton1Down(mouse)
+sel = true
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright yellow")
+s.Reflectance = 0.5
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-5,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright yellow")
+s.Reflectance = 0.5
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,15)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright yellow")
+s.Reflectance = 0.5
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-6,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+press(mouse)
+end
+end
+
+
+function onButton1Up(mouse)
+sel = false
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	mouse.KeyDown:connect(onKeyDown) 
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+s = Instance.new("Hint")
+s.Parent = script.Parent.Parent.Parent
+s.Text = "click R to reset all your ice you made and Hold mouse to create a stream of ice"
+end
+
+function unsel(mouse)
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+end
+
+
+script.Parent.Selected:connect(onEquippedLocal) 
+script.Parent.Deselected:connect(unsel)
+end))
+Script26.Name = "CleanUp"
+Script26.Parent = LocalScript25
+Script26.Enabled = false
+table.insert(cors,sandbox(Script26,function()
+wait(5)
+script.Parent:remove()
+end))
+Script26.Disabled = true
+Part27.Name = "Smooth Block Model"
+Part27.Parent = Model17
+Part27.CFrame = CFrame.new(-1090.5, 47.7955437, 153.5, -1, -2.31128197e-05, -1.04805176e-05, -2.31126887e-05, 1, -1.26414488e-05, 1.04808096e-05, -1.26412069e-05, -1)
+Part27.Orientation = Vector3.new(0.0010000000474974513, -179.99899291992188, -0.0010000000474974513)
+Part27.Position = Vector3.new(-1090.5, 47.7955436706543, 153.5)
+Part27.Rotation = Vector3.new(179.99899291992188, -0.0010000000474974513, 179.99899291992188)
+Part27.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part27.Transparency = 0.30000001192092896
+Part27.Size = Vector3.new(5, 6, 1)
+Part27.Anchored = true
+Part27.BrickColor = BrickColor.new("Bright yellow")
+Part27.Locked = true
+Part27.Reflectance = 0.5
+Part27.brickColor = BrickColor.new("Bright yellow")
+Snap28.Parent = Part27
+Snap28.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap28.C1 = CFrame.new(0, -0.600021362, 1.49998474, -1, 0, -1.52285129e-12, 1.52285129e-12, 0, 1, 0, 1, 0)
+Snap28.Part0 = Part27
+Snap28.Part1 = Part31
+Snap28.part1 = Part31
+Part29.Name = "Smooth Block Model"
+Part29.Parent = Model17
+Part29.CFrame = CFrame.new(-1088.5, 47.7999992, 155.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part29.Orientation = Vector3.new(0, -90, 0)
+Part29.Position = Vector3.new(-1088.5, 47.79999923706055, 155.5)
+Part29.Rotation = Vector3.new(0, -90, 0)
+Part29.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part29.Transparency = 0.30000001192092896
+Part29.Size = Vector3.new(3, 6, 1)
+Part29.Anchored = true
+Part29.BrickColor = BrickColor.new("Bright yellow")
+Part29.Locked = true
+Part29.Reflectance = 0.5
+Part29.brickColor = BrickColor.new("Bright yellow")
+Snap30.Parent = Part29
+Snap30.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap30.C1 = CFrame.new(-2.00012207, -0.59563446, -0.500061035, -1.04808096e-05, 1, -2.31126887e-05, 1.26412069e-05, 2.31128197e-05, 1, 1, 1.04805176e-05, -1.26414488e-05)
+Snap30.Part0 = Part29
+Snap30.Part1 = Part31
+Snap30.part1 = Part31
+Part31.Name = "Smooth Block Model"
+Part31.Parent = Model17
+Part31.CFrame = CFrame.new(-1090.50012, 51.3955841, 154.999939, -1, -2.31128197e-05, -1.04805176e-05, -2.31126887e-05, 1, -1.26414488e-05, 1.04808096e-05, -1.26412069e-05, -1)
+Part31.Orientation = Vector3.new(0.0010000000474974513, -179.99899291992188, -0.0010000000474974513)
+Part31.Position = Vector3.new(-1090.5001220703125, 51.39558410644531, 154.99993896484375)
+Part31.Rotation = Vector3.new(179.99899291992188, -0.0010000000474974513, 179.99899291992188)
+Part31.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part31.Transparency = 0.30000001192092896
+Part31.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part31.Anchored = true
+Part31.BrickColor = BrickColor.new("Bright yellow")
+Part31.Locked = true
+Part31.Reflectance = 0.5
+Part31.TopSurface = Enum.SurfaceType.Smooth
+Part31.brickColor = BrickColor.new("Bright yellow")
+Script32.Name = "READ ME FOR INSTRUCTIONS"
+Script32.Parent = Model17
+table.insert(cors,sandbox(Script32,function()
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+Model33.Name = "make you're giver"
+Model33.Parent = Model0
+Part34.Name = "Smooth Block Model"
+Part34.Parent = Model33
+Part34.CFrame = CFrame.new(-1100.49805, 47.7993279, 156.500214, -1, -0.000175703593, -1.04809124e-05, -0.000175703783, 1, 1.7874745e-05, 1.04777719e-05, 1.7876584e-05, -1)
+Part34.Orientation = Vector3.new(-0.0010000000474974513, -179.99899291992188, -0.009999999776482582)
+Part34.Position = Vector3.new(-1100.498046875, 47.7993278503418, 156.50021362304688)
+Part34.Rotation = Vector3.new(-179.99899291992188, -0.0010000000474974513, 179.99000549316406)
+Part34.Color = Color3.new(0.411765, 0.25098, 0.156863)
+Part34.Transparency = 0.30000001192092896
+Part34.Size = Vector3.new(3, 6, 1)
+Part34.Anchored = true
+Part34.BrickColor = BrickColor.new("Reddish brown")
+Part34.Locked = true
+Part34.Reflectance = 0.4000000059604645
+Part34.brickColor = BrickColor.new("Reddish brown")
+Snap35.Parent = Part34
+Snap35.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap35.C1 = CFrame.new(-0.000122070312, -0.599952698, -1.50001526, -1, 0, -1.86813065e-12, 1.86813065e-12, 1.8189894e-12, 1, 0, 1, 1.8189894e-12)
+Snap35.Part0 = Part34
+Snap35.Part1 = Part47
+Snap35.part1 = Part47
+Part36.Name = "Smooth Block Model"
+Part36.Parent = Model33
+Part36.CFrame = CFrame.new(-1102.49805, 47.7989616, 155.500214, 2.32567343e-09, -0.000152589942, -0.999997258, -3.05179601e-05, 1, -0.000152589972, 0.999997258, 3.05180438e-05, -2.32289099e-09)
+Part36.Orientation = Vector3.new(0.008999999612569809, -90, -0.0020000000949949026)
+Part36.Position = Vector3.new(-1102.498046875, 47.7989616394043, 155.50021362304688)
+Part36.Rotation = Vector3.new(90.0009994506836, -89.86599731445312, 89.9990005493164)
+Part36.Color = Color3.new(0.411765, 0.25098, 0.156863)
+Part36.Transparency = 0.30000001192092896
+Part36.Size = Vector3.new(3, 6, 1)
+Part36.Anchored = true
+Part36.BrickColor = BrickColor.new("Reddish brown")
+Part36.Locked = true
+Part36.Reflectance = 0.4000000059604645
+Part36.brickColor = BrickColor.new("Reddish brown")
+Snap37.Parent = Part36
+Snap37.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap37.C1 = CFrame.new(1.99987793, -0.599983215, -0.500015259, -1.04807796e-05, 0.999997258, -2.311352e-05, 1.26414252e-05, 2.31131417e-05, 1, 0.999997258, 1.04804785e-05, -1.26416999e-05)
+Snap37.Part0 = Part36
+Snap37.Part1 = Part47
+Snap37.part1 = Part47
+Part38.Name = "PUT THE WEAPON IN THIS BRICK"
+Part38.Parent = Model33
+Part38.CFrame = CFrame.new(-1100.49609, 47.504406, 157.500427, -9.30308541e-09, -0.000305179245, 1, 6.10361676e-05, 1, 0.000305179245, -1, 6.10361676e-05, 9.32388655e-09)
+Part38.Orientation = Vector3.new(-0.017000000923871994, 90, 0.003000000026077032)
+Part38.Position = Vector3.new(-1100.49609375, 47.5044059753418, 157.50042724609375)
+Part38.Rotation = Vector3.new(0.003000000026077032, 90, 0)
+Part38.Color = Color3.new(0.411765, 0.25098, 0.156863)
+Part38.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part38.Anchored = true
+Part38.BrickColor = BrickColor.new("Reddish brown")
+Part38.Locked = true
+Part38.Reflectance = 0.4000000059604645
+Part38.TopSurface = Enum.SurfaceType.Smooth
+Part38.brickColor = BrickColor.new("Reddish brown")
+HopperBin39.Name = "BronzePath"
+HopperBin39.Parent = Part38
+Script40.Name = "PUT THIS IN THE WEAPON"
+Script40.Parent = HopperBin39
+table.insert(cors,sandbox(Script40,function()
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end))
+LocalScript41.Name = "Local Gui"
+LocalScript41.Parent = HopperBin39
+table.insert(cors,sandbox(LocalScript41,function()
+bin = script.Parent
+
+function onKeyDown(key,mouse) 
+key:lower() 
+if key == "r" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+if e[i]:findFirstChild("creator")~=nil then
+if e[i].creator.Value == script.Parent.Parent.Parent then
+e[i]:remove()
+end
+end
+end
+end
+end
+elseif key == "n" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+e[i]:remove()
+end
+end
+end
+
+end
+end
+
+function press(mouse)
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(6,2,18)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Reddish brown")
+s.Reflectance = 0.3
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+press(mouse)
+end
+end
+
+
+function onButton1Down(mouse)
+sel = true
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Reddish brown")
+s.Reflectance = 0.3
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-5,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Reddish brown")
+s.Reflectance = 0.3
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,15)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Reddish brown")
+s.Reflectance = 0.3
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-6,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+press(mouse)
+end
+end
+
+
+function onButton1Up(mouse)
+sel = false
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	mouse.KeyDown:connect(onKeyDown) 
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+s = Instance.new("Hint")
+s.Parent = script.Parent.Parent.Parent
+s.Text = "click R to reset all your ice you made and Hold mouse to create a stream of ice"
+end
+
+function unsel(mouse)
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+end
+
+
+script.Parent.Selected:connect(onEquippedLocal) 
+script.Parent.Deselected:connect(unsel)
+end))
+Script42.Name = "CleanUp"
+Script42.Parent = LocalScript41
+Script42.Enabled = false
+table.insert(cors,sandbox(Script42,function()
+wait(5)
+script.Parent:remove()
+end))
+Script42.Disabled = true
+Part43.Name = "Smooth Block Model"
+Part43.Parent = Model33
+Part43.CFrame = CFrame.new(-1100.49805, 47.7993889, 153.500214, -1, -0.000175703593, -1.04809124e-05, -0.000175703783, 1, 1.7874745e-05, 1.04777719e-05, 1.7876584e-05, -1)
+Part43.Orientation = Vector3.new(-0.0010000000474974513, -179.99899291992188, -0.009999999776482582)
+Part43.Position = Vector3.new(-1100.498046875, 47.79938888549805, 153.50021362304688)
+Part43.Rotation = Vector3.new(-179.99899291992188, -0.0010000000474974513, 179.99000549316406)
+Part43.Color = Color3.new(0.411765, 0.25098, 0.156863)
+Part43.Transparency = 0.30000001192092896
+Part43.Size = Vector3.new(5, 6, 1)
+Part43.Anchored = true
+Part43.BrickColor = BrickColor.new("Reddish brown")
+Part43.Locked = true
+Part43.Reflectance = 0.4000000059604645
+Part43.brickColor = BrickColor.new("Reddish brown")
+Snap44.Parent = Part43
+Snap44.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap44.C1 = CFrame.new(-0.000122070312, -0.599945068, 1.49998474, -1, 0, -1.86813065e-12, 1.86813065e-12, 1.8189894e-12, 1, 0, 1, 1.8189894e-12)
+Snap44.Part0 = Part43
+Snap44.Part1 = Part47
+Snap44.part1 = Part47
+Part45.Name = "Smooth Block Model"
+Part45.Parent = Model33
+Part45.CFrame = CFrame.new(-1098.49805, 47.799572, 155.500214, 2.32567343e-09, -0.000152589942, -0.999997258, -3.05179601e-05, 1, -0.000152589972, 0.999997258, 3.05180438e-05, -2.32289099e-09)
+Part45.Orientation = Vector3.new(0.008999999612569809, -90, -0.0020000000949949026)
+Part45.Position = Vector3.new(-1098.498046875, 47.7995719909668, 155.50021362304688)
+Part45.Rotation = Vector3.new(90.0009994506836, -89.86599731445312, 89.9990005493164)
+Part45.Color = Color3.new(0.411765, 0.25098, 0.156863)
+Part45.Transparency = 0.30000001192092896
+Part45.Size = Vector3.new(3, 6, 1)
+Part45.Anchored = true
+Part45.BrickColor = BrickColor.new("Reddish brown")
+Part45.Locked = true
+Part45.Reflectance = 0.4000000059604645
+Part45.brickColor = BrickColor.new("Reddish brown")
+Snap46.Parent = Part45
+Snap46.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap46.C1 = CFrame.new(-2.00012207, -0.600078583, -0.500061035, -1.04807796e-05, 0.999997258, -2.311352e-05, 1.26414252e-05, 2.31131417e-05, 1, 0.999997258, 1.04804785e-05, -1.26416999e-05)
+Snap46.Part0 = Part45
+Snap46.Part1 = Part47
+Snap46.part1 = Part47
+Part47.Name = "Smooth Block Model"
+Part47.Parent = Model33
+Part47.CFrame = CFrame.new(-1100.49878, 51.3993073, 155.000275, -1, -0.000175703593, -1.04809124e-05, -0.000175703783, 1, 1.7874745e-05, 1.04777719e-05, 1.7876584e-05, -1)
+Part47.Orientation = Vector3.new(-0.0010000000474974513, -179.99899291992188, -0.009999999776482582)
+Part47.Position = Vector3.new(-1100.498779296875, 51.39930725097656, 155.00027465820312)
+Part47.Rotation = Vector3.new(-179.99899291992188, -0.0010000000474974513, 179.99000549316406)
+Part47.Color = Color3.new(0.411765, 0.25098, 0.156863)
+Part47.Transparency = 0.30000001192092896
+Part47.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part47.Anchored = true
+Part47.BrickColor = BrickColor.new("Reddish brown")
+Part47.Locked = true
+Part47.Reflectance = 0.4000000059604645
+Part47.TopSurface = Enum.SurfaceType.Smooth
+Part47.brickColor = BrickColor.new("Reddish brown")
+Script48.Name = "READ ME FOR INSTRUCTIONS"
+Script48.Parent = Model33
+table.insert(cors,sandbox(Script48,function()
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+Model49.Name = "make you're giver"
+Model49.Parent = Model0
+Part50.Name = "Smooth Block Model"
+Part50.Parent = Model49
+Part50.CFrame = CFrame.new(-1105.49805, 47.7985344, 156.500214, -0.99999696, -0.00017570323, -1.0480866e-05, -0.000175703419, 1, 1.78744322e-05, 1.04777337e-05, 1.78764258e-05, -0.99999696)
+Part50.Orientation = Vector3.new(-0.0010000000474974513, -179.99899291992188, -0.009999999776482582)
+Part50.Position = Vector3.new(-1105.498046875, 47.79853439331055, 156.50021362304688)
+Part50.Rotation = Vector3.new(-179.99899291992188, -0.0010000000474974513, 179.99000549316406)
+Part50.Color = Color3.new(0.419608, 0.196078, 0.486275)
+Part50.Transparency = 0.30000001192092896
+Part50.Size = Vector3.new(3, 6, 1)
+Part50.Anchored = true
+Part50.BrickColor = BrickColor.new("Bright violet")
+Part50.Locked = true
+Part50.brickColor = BrickColor.new("Bright violet")
+Snap51.Parent = Part50
+Snap51.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap51.C1 = CFrame.new(-0.000122070312, -0.600013733, -1.50001526, -1, 8.18550176e-12, 5.40294698e-10, 5.40294642e-10, -9.82260245e-11, 1, 8.18550176e-12, 1, 9.82260245e-11)
+Snap51.Part0 = Part50
+Snap51.Part1 = Part63
+Snap51.part1 = Part63
+Part52.Name = "Smooth Block Model"
+Part52.Parent = Model49
+Part52.CFrame = CFrame.new(-1107.49805, 47.7982292, 155.500214, 2.32567343e-09, -0.000152589942, -0.999997258, -3.05179601e-05, 1, -0.000152589972, 0.999997258, 3.05180438e-05, -2.32289099e-09)
+Part52.Orientation = Vector3.new(0.008999999612569809, -90, -0.0020000000949949026)
+Part52.Position = Vector3.new(-1107.498046875, 47.7982292175293, 155.50021362304688)
+Part52.Rotation = Vector3.new(90.0009994506836, -89.86599731445312, 89.9990005493164)
+Part52.Color = Color3.new(0.419608, 0.196078, 0.486275)
+Part52.Transparency = 0.30000001192092896
+Part52.Size = Vector3.new(3, 6, 1)
+Part52.Anchored = true
+Part52.BrickColor = BrickColor.new("Bright violet")
+Part52.Locked = true
+Part52.brickColor = BrickColor.new("Bright violet")
+Snap53.Parent = Part52
+Snap53.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap53.C1 = CFrame.new(1.99987793, -0.599983215, -0.500030518, -1.04808023e-05, 1, -2.31127797e-05, 1.26416571e-05, 2.31129125e-05, 1, 1, 1.04805104e-05, -1.2641899e-05)
+Snap53.Part0 = Part52
+Snap53.Part1 = Part63
+Snap53.part1 = Part63
+Part54.Name = "PUT THE WEAPON IN THIS BRICK"
+Part54.Parent = Model49
+Part54.CFrame = CFrame.new(-1105.49609, 47.5036736, 157.500427, -9.30886213e-09, -0.000305179536, 0.999995112, 6.10358693e-05, 1, 0.000305179652, -0.999995112, 6.10360003e-05, 9.30354815e-09)
+Part54.Orientation = Vector3.new(-0.017000000923871994, 90, 0.003000000026077032)
+Part54.Position = Vector3.new(-1105.49609375, 47.5036735534668, 157.50042724609375)
+Part54.Rotation = Vector3.new(-89.99800109863281, 89.82099914550781, 90.00199890136719)
+Part54.Color = Color3.new(0.419608, 0.196078, 0.486275)
+Part54.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part54.Anchored = true
+Part54.BrickColor = BrickColor.new("Bright violet")
+Part54.Locked = true
+Part54.TopSurface = Enum.SurfaceType.Smooth
+Part54.brickColor = BrickColor.new("Bright violet")
+HopperBin55.Name = "ShadowPath"
+HopperBin55.Parent = Part54
+Script56.Name = "PUT THIS IN THE WEAPON"
+Script56.Parent = HopperBin55
+table.insert(cors,sandbox(Script56,function()
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end))
+LocalScript57.Name = "Local Gui"
+LocalScript57.Parent = HopperBin55
+table.insert(cors,sandbox(LocalScript57,function()
+bin = script.Parent
+
+function onKeyDown(key,mouse) 
+key:lower() 
+if key == "r" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+if e[i]:findFirstChild("creator")~=nil then
+if e[i].creator.Value == script.Parent.Parent.Parent then
+e[i]:remove()
+end
+end
+end
+end
+end
+elseif key == "n" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+e[i]:remove()
+end
+end
+end
+
+end
+end
+
+function press(mouse)
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(6,2,18)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright violet")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+press(mouse)
+end
+end
+
+
+function onButton1Down(mouse)
+sel = true
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright violet")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-5,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright violet")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,15)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright violet")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-6,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+press(mouse)
+end
+end
+
+
+function onButton1Up(mouse)
+sel = false
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	mouse.KeyDown:connect(onKeyDown) 
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+s = Instance.new("Hint")
+s.Parent = script.Parent.Parent.Parent
+s.Text = "click R to reset all your ice you made and Hold mouse to create a stream of ice"
+end
+
+function unsel(mouse)
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+end
+
+
+script.Parent.Selected:connect(onEquippedLocal) 
+script.Parent.Deselected:connect(unsel)
+end))
+Script58.Name = "CleanUp"
+Script58.Parent = LocalScript57
+Script58.Enabled = false
+table.insert(cors,sandbox(Script58,function()
+wait(5)
+script.Parent:remove()
+end))
+Script58.Disabled = true
+Part59.Name = "Smooth Block Model"
+Part59.Parent = Model49
+Part59.CFrame = CFrame.new(-1105.49805, 47.7985954, 153.500214, -0.99999696, -0.00017570323, -1.0480866e-05, -0.000175703419, 1, 1.78744322e-05, 1.04777337e-05, 1.78764258e-05, -0.99999696)
+Part59.Orientation = Vector3.new(-0.0010000000474974513, -179.99899291992188, -0.009999999776482582)
+Part59.Position = Vector3.new(-1105.498046875, 47.7985954284668, 153.50021362304688)
+Part59.Rotation = Vector3.new(-179.99899291992188, -0.0010000000474974513, 179.99000549316406)
+Part59.Color = Color3.new(0.419608, 0.196078, 0.486275)
+Part59.Transparency = 0.30000001192092896
+Part59.Size = Vector3.new(5, 6, 1)
+Part59.Anchored = true
+Part59.BrickColor = BrickColor.new("Bright violet")
+Part59.Locked = true
+Part59.brickColor = BrickColor.new("Bright violet")
+Snap60.Parent = Part59
+Snap60.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap60.C1 = CFrame.new(-0.000122070312, -0.600006104, 1.49998474, -1, 8.18550176e-12, 5.40294698e-10, 5.40294642e-10, -9.82260245e-11, 1, 8.18550176e-12, 1, 9.82260245e-11)
+Snap60.Part0 = Part59
+Snap60.Part1 = Part63
+Snap60.part1 = Part63
+Part61.Name = "Smooth Block Model"
+Part61.Parent = Model49
+Part61.CFrame = CFrame.new(-1103.49805, 47.7988396, 155.500214, 2.32567343e-09, -0.000152589942, -0.999997258, -3.05179601e-05, 1, -0.000152589972, 0.999997258, 3.05180438e-05, -2.32289099e-09)
+Part61.Orientation = Vector3.new(0.008999999612569809, -90, -0.0020000000949949026)
+Part61.Position = Vector3.new(-1103.498046875, 47.7988395690918, 155.50021362304688)
+Part61.Rotation = Vector3.new(90.0009994506836, -89.86599731445312, 89.9990005493164)
+Part61.Color = Color3.new(0.419608, 0.196078, 0.486275)
+Part61.Transparency = 0.30000001192092896
+Part61.Size = Vector3.new(3, 6, 1)
+Part61.Anchored = true
+Part61.BrickColor = BrickColor.new("Bright violet")
+Part61.Locked = true
+Part61.brickColor = BrickColor.new("Bright violet")
+Snap62.Parent = Part61
+Snap62.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap62.C1 = CFrame.new(-2, -0.600074768, -0.500076294, -1.04808023e-05, 1, -2.31127797e-05, 1.26416571e-05, 2.31129125e-05, 1, 1, 1.04805104e-05, -1.2641899e-05)
+Snap62.Part0 = Part61
+Snap62.Part1 = Part63
+Snap62.part1 = Part63
+Part63.Name = "Smooth Block Model"
+Part63.Parent = Model49
+Part63.CFrame = CFrame.new(-1105.49878, 51.3985748, 155.000275, -0.99999696, -0.00017570323, -1.0480866e-05, -0.000175703419, 1, 1.78744322e-05, 1.04777337e-05, 1.78764258e-05, -0.99999696)
+Part63.Orientation = Vector3.new(-0.0010000000474974513, -179.99899291992188, -0.009999999776482582)
+Part63.Position = Vector3.new(-1105.498779296875, 51.39857482910156, 155.00027465820312)
+Part63.Rotation = Vector3.new(-179.99899291992188, -0.0010000000474974513, 179.99000549316406)
+Part63.Color = Color3.new(0.419608, 0.196078, 0.486275)
+Part63.Transparency = 0.30000001192092896
+Part63.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part63.Anchored = true
+Part63.BrickColor = BrickColor.new("Bright violet")
+Part63.Locked = true
+Part63.TopSurface = Enum.SurfaceType.Smooth
+Part63.brickColor = BrickColor.new("Bright violet")
+Script64.Name = "READ ME FOR INSTRUCTIONS"
+Script64.Parent = Model49
+table.insert(cors,sandbox(Script64,function()
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+Model65.Name = "make you're giver"
+Model65.Parent = Model0
+Part66.Name = "Smooth Block Model"
+Part66.Parent = Model65
+Part66.CFrame = CFrame.new(-1110.49805, 47.797802, 156.500214, -0.99999696, -0.00017570323, -1.0480866e-05, -0.000175703419, 1, 1.78744322e-05, 1.04777337e-05, 1.78764258e-05, -0.99999696)
+Part66.Orientation = Vector3.new(-0.0010000000474974513, -179.99899291992188, -0.009999999776482582)
+Part66.Position = Vector3.new(-1110.498046875, 47.79780197143555, 156.50021362304688)
+Part66.Rotation = Vector3.new(-179.99899291992188, -0.0010000000474974513, 179.99000549316406)
+Part66.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part66.Transparency = 0.30000001192092896
+Part66.Size = Vector3.new(3, 6, 1)
+Part66.Anchored = true
+Part66.BrickColor = BrickColor.new("White")
+Part66.Locked = true
+Part66.brickColor = BrickColor.new("White")
+Snap67.Parent = Part66
+Snap67.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap67.C1 = CFrame.new(0, -0.600013733, -1.50001526, -1, 8.18550176e-12, 5.40294698e-10, 5.40294642e-10, -9.82260245e-11, 1, 8.18550176e-12, 1, 9.82260245e-11)
+Snap67.Part0 = Part66
+Snap67.Part1 = Part79
+Snap67.part1 = Part79
+Part68.Name = "Smooth Block Model"
+Part68.Parent = Model65
+Part68.CFrame = CFrame.new(-1112.49805, 47.7974358, 155.500214, 2.32567343e-09, -0.000152589942, -0.999997258, -3.05179601e-05, 1, -0.000152589972, 0.999997258, 3.05180438e-05, -2.32289099e-09)
+Part68.Orientation = Vector3.new(0.008999999612569809, -90, -0.0020000000949949026)
+Part68.Position = Vector3.new(-1112.498046875, 47.79743576049805, 155.50021362304688)
+Part68.Rotation = Vector3.new(90.0009994506836, -89.86599731445312, 89.9990005493164)
+Part68.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part68.Transparency = 0.30000001192092896
+Part68.Size = Vector3.new(3, 6, 1)
+Part68.Anchored = true
+Part68.BrickColor = BrickColor.new("White")
+Part68.Locked = true
+Part68.brickColor = BrickColor.new("White")
+Snap69.Parent = Part68
+Snap69.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap69.C1 = CFrame.new(2, -0.60004425, -0.500015259, -1.04808023e-05, 1, -2.31127797e-05, 1.26416571e-05, 2.31129125e-05, 1, 1, 1.04805104e-05, -1.2641899e-05)
+Snap69.Part0 = Part68
+Snap69.Part1 = Part79
+Snap69.part1 = Part79
+Part70.Name = "PUT THE WEAPON IN THIS BRICK"
+Part70.Parent = Model65
+Part70.CFrame = CFrame.new(-1110.49609, 47.5029411, 157.500427, -9.30886213e-09, -0.000305179536, 0.999995112, 6.10358693e-05, 1, 0.000305179652, -0.999995112, 6.10360003e-05, 9.30354815e-09)
+Part70.Orientation = Vector3.new(-0.017000000923871994, 90, 0.003000000026077032)
+Part70.Position = Vector3.new(-1110.49609375, 47.5029411315918, 157.50042724609375)
+Part70.Rotation = Vector3.new(-89.99800109863281, 89.82099914550781, 90.00199890136719)
+Part70.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part70.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part70.Anchored = true
+Part70.BrickColor = BrickColor.new("White")
+Part70.Locked = true
+Part70.TopSurface = Enum.SurfaceType.Smooth
+Part70.brickColor = BrickColor.new("White")
+HopperBin71.Name = "LightPath"
+HopperBin71.Parent = Part70
+Script72.Name = "PUT THIS IN THE WEAPON"
+Script72.Parent = HopperBin71
+table.insert(cors,sandbox(Script72,function()
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end))
+LocalScript73.Name = "Local Gui"
+LocalScript73.Parent = HopperBin71
+table.insert(cors,sandbox(LocalScript73,function()
+bin = script.Parent
+
+function onKeyDown(key,mouse) 
+key:lower() 
+if key == "r" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+if e[i]:findFirstChild("creator")~=nil then
+if e[i].creator.Value == script.Parent.Parent.Parent then
+e[i]:remove()
+end
+end
+end
+end
+end
+elseif key == "n" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+e[i]:remove()
+end
+end
+end
+
+end
+end
+
+function press(mouse)
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(6,2,18)
+s.Anchored = true
+s.BrickColor = BrickColor.new("White")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+press(mouse)
+end
+end
+
+
+function onButton1Down(mouse)
+sel = true
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("White")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-5,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("White")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,15)
+s.Anchored = true
+s.BrickColor = BrickColor.new("White")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-6,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+press(mouse)
+end
+end
+
+
+function onButton1Up(mouse)
+sel = false
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	mouse.KeyDown:connect(onKeyDown) 
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+s = Instance.new("Hint")
+s.Parent = script.Parent.Parent.Parent
+s.Text = "click R to reset all your ice you made and Hold mouse to create a stream of ice"
+end
+
+function unsel(mouse)
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+end
+
+
+script.Parent.Selected:connect(onEquippedLocal) 
+script.Parent.Deselected:connect(unsel)
+end))
+Script74.Name = "CleanUp"
+Script74.Parent = LocalScript73
+Script74.Enabled = false
+table.insert(cors,sandbox(Script74,function()
+wait(5)
+script.Parent:remove()
+end))
+Script74.Disabled = true
+Part75.Name = "Smooth Block Model"
+Part75.Parent = Model65
+Part75.CFrame = CFrame.new(-1110.49805, 47.797863, 153.500214, -0.99999696, -0.00017570323, -1.0480866e-05, -0.000175703419, 1, 1.78744322e-05, 1.04777337e-05, 1.78764258e-05, -0.99999696)
+Part75.Orientation = Vector3.new(-0.0010000000474974513, -179.99899291992188, -0.009999999776482582)
+Part75.Position = Vector3.new(-1110.498046875, 47.7978630065918, 153.50021362304688)
+Part75.Rotation = Vector3.new(-179.99899291992188, -0.0010000000474974513, 179.99000549316406)
+Part75.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part75.Transparency = 0.30000001192092896
+Part75.Size = Vector3.new(5, 6, 1)
+Part75.Anchored = true
+Part75.BrickColor = BrickColor.new("White")
+Part75.Locked = true
+Part75.brickColor = BrickColor.new("White")
+Snap76.Parent = Part75
+Snap76.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap76.C1 = CFrame.new(0, -0.600006104, 1.49998474, -1, 8.18550176e-12, 5.40294698e-10, 5.40294642e-10, -9.82260245e-11, 1, 8.18550176e-12, 1, 9.82260245e-11)
+Snap76.Part0 = Part75
+Snap76.Part1 = Part79
+Snap76.part1 = Part79
+Part77.Name = "Smooth Block Model"
+Part77.Parent = Model65
+Part77.CFrame = CFrame.new(-1108.49805, 47.7980461, 155.500214, 2.32567343e-09, -0.000152589942, -0.999997258, -3.05179601e-05, 1, -0.000152589972, 0.999997258, 3.05180438e-05, -2.32289099e-09)
+Part77.Orientation = Vector3.new(0.008999999612569809, -90, -0.0020000000949949026)
+Part77.Position = Vector3.new(-1108.498046875, 47.79804611206055, 155.50021362304688)
+Part77.Rotation = Vector3.new(90.0009994506836, -89.86599731445312, 89.9990005493164)
+Part77.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part77.Transparency = 0.30000001192092896
+Part77.Size = Vector3.new(3, 6, 1)
+Part77.Anchored = true
+Part77.BrickColor = BrickColor.new("White")
+Part77.Locked = true
+Part77.brickColor = BrickColor.new("White")
+Snap78.Parent = Part77
+Snap78.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap78.C1 = CFrame.new(-2, -0.600135803, -0.500061035, -1.04808023e-05, 1, -2.31127797e-05, 1.26416571e-05, 2.31129125e-05, 1, 1, 1.04805104e-05, -1.2641899e-05)
+Snap78.Part0 = Part77
+Snap78.Part1 = Part79
+Snap78.part1 = Part79
+Part79.Name = "Smooth Block Model"
+Part79.Parent = Model65
+Part79.CFrame = CFrame.new(-1110.49866, 51.3978424, 155.000275, -0.99999696, -0.00017570323, -1.0480866e-05, -0.000175703419, 1, 1.78744322e-05, 1.04777337e-05, 1.78764258e-05, -0.99999696)
+Part79.Orientation = Vector3.new(-0.0010000000474974513, -179.99899291992188, -0.009999999776482582)
+Part79.Position = Vector3.new(-1110.4986572265625, 51.39784240722656, 155.00027465820312)
+Part79.Rotation = Vector3.new(-179.99899291992188, -0.0010000000474974513, 179.99000549316406)
+Part79.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part79.Transparency = 0.30000001192092896
+Part79.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part79.Anchored = true
+Part79.BrickColor = BrickColor.new("White")
+Part79.Locked = true
+Part79.TopSurface = Enum.SurfaceType.Smooth
+Part79.brickColor = BrickColor.new("White")
+Script80.Name = "READ ME FOR INSTRUCTIONS"
+Script80.Parent = Model65
+table.insert(cors,sandbox(Script80,function()
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+Model81.Name = "make you're giver"
+Model81.Parent = Model0
+Part82.Name = "Smooth Block Model"
+Part82.Parent = Model81
+Part82.CFrame = CFrame.new(-1163.5, 47.4000015, 198.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part82.Orientation = Vector3.new(0, -90, 0)
+Part82.Position = Vector3.new(-1163.5, 47.400001525878906, 198.5)
+Part82.Rotation = Vector3.new(0, -90, 0)
+Part82.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part82.Transparency = 0.30000001192092896
+Part82.Size = Vector3.new(3, 6, 1)
+Part82.Anchored = true
+Part82.BrickColor = BrickColor.new("Bright blue")
+Part82.Locked = true
+Part82.brickColor = BrickColor.new("Bright blue")
+Snap83.Parent = Part82
+Snap83.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap83.C1 = CFrame.new(0, -0.599998474, -1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap83.Part0 = Part82
+Snap83.Part1 = Part95
+Snap83.part1 = Part95
+Part84.Name = "Smooth Block Model"
+Part84.Parent = Model81
+Part84.CFrame = CFrame.new(-1164.5, 47.3993568, 200.5, 1, 1.26419718e-05, -1.04805094e-05, -1.26417299e-05, 1, 2.31136255e-05, 1.04808014e-05, -2.31134909e-05, 1)
+Part84.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part84.Position = Vector3.new(-1164.5, 47.399356842041016, 200.5)
+Part84.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part84.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part84.Transparency = 0.30000001192092896
+Part84.Size = Vector3.new(3, 6, 1)
+Part84.Anchored = true
+Part84.BrickColor = BrickColor.new("Bright blue")
+Part84.Locked = true
+Part84.brickColor = BrickColor.new("Bright blue")
+Snap85.Parent = Part84
+Snap85.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap85.C1 = CFrame.new(1.99992371, -0.600643158, -0.5, -1.04808014e-05, 1, -2.31134909e-05, 1.26417299e-05, 2.31136255e-05, 1, 1, 1.04805094e-05, -1.26419718e-05)
+Snap85.Part0 = Part84
+Snap85.Part1 = Part95
+Snap85.part1 = Part95
+Part86.Name = "PUT THE WEAPON IN THIS BRICK"
+Part86.Parent = Model81
+Part86.CFrame = CFrame.new(-1162.49976, 47.1044922, 198.498047, -1, 4.31585977e-05, 1.04847677e-05, 4.31599547e-05, 1, 0.00012947552, -1.04791798e-05, 0.000129475971, -1)
+Part86.Orientation = Vector3.new(-0.007000000216066837, 179.99899291992188, 0.0020000000949949026)
+Part86.Position = Vector3.new(-1162.499755859375, 47.1044921875, 198.498046875)
+Part86.Rotation = Vector3.new(-179.9929962158203, 0.0010000000474974513, -179.9980010986328)
+Part86.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part86.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part86.Anchored = true
+Part86.BrickColor = BrickColor.new("Bright blue")
+Part86.Locked = true
+Part86.TopSurface = Enum.SurfaceType.Smooth
+Part86.brickColor = BrickColor.new("Bright blue")
+HopperBin87.Name = "IcePath"
+HopperBin87.Parent = Part86
+LocalScript88.Name = "Local Gui"
+LocalScript88.Parent = HopperBin87
+table.insert(cors,sandbox(LocalScript88,function()
+bin = script.Parent
+
+function onKeyDown(key,mouse) 
+key:lower() 
+if key == "r" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+if e[i]:findFirstChild("creator")~=nil then
+if e[i].creator.Value == script.Parent.Parent.Parent then
+e[i]:remove()
+end
+end
+end
+end
+end
+elseif key == "n" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+e[i]:remove()
+end
+end
+end
+
+end
+end
+
+function press(mouse)
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(6,2,18)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Light blue")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+press(mouse)
+end
+end
+
+
+function onButton1Down(mouse)
+sel = true
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Light blue")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-5,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Light blue")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,15)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Light blue")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-6,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+press(mouse)
+end
+end
+
+
+function onButton1Up(mouse)
+sel = false
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	mouse.KeyDown:connect(onKeyDown) 
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+s = Instance.new("Hint")
+s.Parent = script.Parent.Parent.Parent
+s.Text = "click R to reset all your ice you made and Hold mouse to create a stream of ice"
+end
+
+function unsel(mouse)
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+end
+
+
+script.Parent.Selected:connect(onEquippedLocal) 
+script.Parent.Deselected:connect(unsel)
+end))
+Script89.Name = "CleanUp"
+Script89.Parent = LocalScript88
+Script89.Enabled = false
+table.insert(cors,sandbox(Script89,function()
+wait(5)
+script.Parent:remove()
+end))
+Script89.Disabled = true
+Script90.Name = "PUT THIS IN THE WEAPON"
+Script90.Parent = HopperBin87
+table.insert(cors,sandbox(Script90,function()
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end))
+Part91.Name = "Smooth Block Model"
+Part91.Parent = Model81
+Part91.CFrame = CFrame.new(-1166.5, 47.4000015, 198.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part91.Orientation = Vector3.new(0, -90, 0)
+Part91.Position = Vector3.new(-1166.5, 47.400001525878906, 198.5)
+Part91.Rotation = Vector3.new(0, -90, 0)
+Part91.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part91.Transparency = 0.30000001192092896
+Part91.Size = Vector3.new(5, 6, 1)
+Part91.Anchored = true
+Part91.BrickColor = BrickColor.new("Bright blue")
+Part91.Locked = true
+Part91.brickColor = BrickColor.new("Bright blue")
+Snap92.Parent = Part91
+Snap92.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap92.C1 = CFrame.new(0, -0.599998474, 1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap92.Part0 = Part91
+Snap92.Part1 = Part95
+Snap92.part1 = Part95
+Part93.Name = "Smooth Block Model"
+Part93.Parent = Model81
+Part93.CFrame = CFrame.new(-1164.5, 47.3992348, 196.500122, 1, 1.26419718e-05, -1.04805094e-05, -1.26417299e-05, 1, 2.31136255e-05, 1.04808014e-05, -2.31134909e-05, 1)
+Part93.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part93.Position = Vector3.new(-1164.5, 47.399234771728516, 196.5001220703125)
+Part93.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part93.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part93.Transparency = 0.30000001192092896
+Part93.Size = Vector3.new(3, 6, 1)
+Part93.Anchored = true
+Part93.BrickColor = BrickColor.new("Bright blue")
+Part93.Locked = true
+Part93.brickColor = BrickColor.new("Bright blue")
+Snap94.Parent = Part93
+Snap94.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap94.C1 = CFrame.new(-1.99995422, -0.600765228, -0.5, -1.04808014e-05, 1, -2.31134909e-05, 1.26417299e-05, 2.31136255e-05, 1, 1, 1.04805094e-05, -1.26419718e-05)
+Snap94.Part0 = Part93
+Snap94.Part1 = Part95
+Snap94.part1 = Part95
+Part95.Name = "Smooth Block Model"
+Part95.Parent = Model81
+Part95.CFrame = CFrame.new(-1165, 51, 198.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part95.Orientation = Vector3.new(0, -90, 0)
+Part95.Position = Vector3.new(-1165, 51, 198.5)
+Part95.Rotation = Vector3.new(0, -90, 0)
+Part95.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part95.Transparency = 0.30000001192092896
+Part95.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part95.Anchored = true
+Part95.BrickColor = BrickColor.new("Bright blue")
+Part95.Locked = true
+Part95.TopSurface = Enum.SurfaceType.Smooth
+Part95.brickColor = BrickColor.new("Bright blue")
+Script96.Name = "READ ME FOR INSTRUCTIONS"
+Script96.Parent = Model81
+table.insert(cors,sandbox(Script96,function()
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+Model97.Name = "make you're giver"
+Model97.Parent = Model0
+Part98.Name = "Smooth Block Model"
+Part98.Parent = Model97
+Part98.CFrame = CFrame.new(-1163.5, 47.4000015, 178.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part98.Orientation = Vector3.new(0, -90, 0)
+Part98.Position = Vector3.new(-1163.5, 47.400001525878906, 178.5)
+Part98.Rotation = Vector3.new(0, -90, 0)
+Part98.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part98.Transparency = 0.30000001192092896
+Part98.Size = Vector3.new(3, 6, 1)
+Part98.Anchored = true
+Part98.BrickColor = BrickColor.new("Black")
+Part98.Locked = true
+Part98.brickColor = BrickColor.new("Black")
+Snap99.Parent = Part98
+Snap99.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap99.C1 = CFrame.new(0, -0.599998474, -1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap99.Part0 = Part98
+Snap99.Part1 = Part111
+Snap99.part1 = Part111
+Part100.Name = "Smooth Block Model"
+Part100.Parent = Model97
+Part100.CFrame = CFrame.new(-1164.5, 47.3993568, 180.500122, 1, 1.26419718e-05, -1.04805094e-05, -1.26417299e-05, 1, 2.31136255e-05, 1.04808014e-05, -2.31134909e-05, 1)
+Part100.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part100.Position = Vector3.new(-1164.5, 47.399356842041016, 180.5001220703125)
+Part100.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part100.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part100.Transparency = 0.30000001192092896
+Part100.Size = Vector3.new(3, 6, 1)
+Part100.Anchored = true
+Part100.BrickColor = BrickColor.new("Black")
+Part100.Locked = true
+Part100.brickColor = BrickColor.new("Black")
+Snap101.Parent = Part100
+Snap101.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap101.C1 = CFrame.new(2.00004578, -0.600643158, -0.5, -1.04808014e-05, 1, -2.31134909e-05, 1.26417299e-05, 2.31136255e-05, 1, 1, 1.04805094e-05, -1.26419718e-05)
+Snap101.Part0 = Part100
+Snap101.Part1 = Part111
+Snap101.part1 = Part111
+Part102.Name = "PUT THE WEAPON IN THIS BRICK"
+Part102.Parent = Model97
+Part102.CFrame = CFrame.new(-1162.49976, 47.1044922, 178.498291, -1, 4.31585977e-05, 1.04847686e-05, 4.31599547e-05, 1, 0.000129475462, -1.04791807e-05, 0.000129475913, -1)
+Part102.Orientation = Vector3.new(-0.007000000216066837, 179.99899291992188, 0.0020000000949949026)
+Part102.Position = Vector3.new(-1162.499755859375, 47.1044921875, 178.498291015625)
+Part102.Rotation = Vector3.new(-179.9929962158203, 0.0010000000474974513, -179.9980010986328)
+Part102.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part102.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part102.Anchored = true
+Part102.BrickColor = BrickColor.new("Black")
+Part102.Locked = true
+Part102.TopSurface = Enum.SurfaceType.Smooth
+Part102.brickColor = BrickColor.new("Black")
+HopperBin103.Name = "DarkPath"
+HopperBin103.Parent = Part102
+Script104.Name = "PUT THIS IN THE WEAPON"
+Script104.Parent = HopperBin103
+table.insert(cors,sandbox(Script104,function()
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end))
+LocalScript105.Name = "Local Gui"
+LocalScript105.Parent = HopperBin103
+table.insert(cors,sandbox(LocalScript105,function()
+bin = script.Parent
+
+function onKeyDown(key,mouse) 
+key:lower() 
+if key == "r" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+if e[i]:findFirstChild("creator")~=nil then
+if e[i].creator.Value == script.Parent.Parent.Parent then
+e[i]:remove()
+end
+end
+end
+end
+end
+elseif key == "n" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+e[i]:remove()
+end
+end
+end
+
+end
+end
+
+function press(mouse)
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(6,2,18)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Black")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+press(mouse)
+end
+end
+
+
+function onButton1Down(mouse)
+sel = true
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Black")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-5,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Black")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,15)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Black")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-6,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+press(mouse)
+end
+end
+
+
+function onButton1Up(mouse)
+sel = false
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	mouse.KeyDown:connect(onKeyDown) 
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+s = Instance.new("Hint")
+s.Parent = script.Parent.Parent.Parent
+s.Text = "click R to reset all your ice you made and Hold mouse to create a stream of ice"
+end
+
+function unsel(mouse)
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+end
+
+
+script.Parent.Selected:connect(onEquippedLocal) 
+script.Parent.Deselected:connect(unsel)
+end))
+Script106.Name = "CleanUp"
+Script106.Parent = LocalScript105
+Script106.Enabled = false
+table.insert(cors,sandbox(Script106,function()
+wait(5)
+script.Parent:remove()
+end))
+Script106.Disabled = true
+Part107.Name = "Smooth Block Model"
+Part107.Parent = Model97
+Part107.CFrame = CFrame.new(-1166.5, 47.4000015, 178.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part107.Orientation = Vector3.new(0, -90, 0)
+Part107.Position = Vector3.new(-1166.5, 47.400001525878906, 178.5)
+Part107.Rotation = Vector3.new(0, -90, 0)
+Part107.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part107.Transparency = 0.30000001192092896
+Part107.Size = Vector3.new(5, 6, 1)
+Part107.Anchored = true
+Part107.BrickColor = BrickColor.new("Black")
+Part107.Locked = true
+Part107.brickColor = BrickColor.new("Black")
+Snap108.Parent = Part107
+Snap108.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap108.C1 = CFrame.new(0, -0.599998474, 1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap108.Part0 = Part107
+Snap108.Part1 = Part111
+Snap108.part1 = Part111
+Part109.Name = "Smooth Block Model"
+Part109.Parent = Model97
+Part109.CFrame = CFrame.new(-1164.5, 47.3992348, 176.500122, 1, 1.26419718e-05, -1.04805094e-05, -1.26417299e-05, 1, 2.31136255e-05, 1.04808014e-05, -2.31134909e-05, 1)
+Part109.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part109.Position = Vector3.new(-1164.5, 47.399234771728516, 176.5001220703125)
+Part109.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part109.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part109.Transparency = 0.30000001192092896
+Part109.Size = Vector3.new(3, 6, 1)
+Part109.Anchored = true
+Part109.BrickColor = BrickColor.new("Black")
+Part109.Locked = true
+Part109.brickColor = BrickColor.new("Black")
+Snap110.Parent = Part109
+Snap110.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap110.C1 = CFrame.new(-1.99995422, -0.600765228, -0.5, -1.04808014e-05, 1, -2.31134909e-05, 1.26417299e-05, 2.31136255e-05, 1, 1, 1.04805094e-05, -1.26419718e-05)
+Snap110.Part0 = Part109
+Snap110.Part1 = Part111
+Snap110.part1 = Part111
+Part111.Name = "Smooth Block Model"
+Part111.Parent = Model97
+Part111.CFrame = CFrame.new(-1165, 51, 178.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part111.Orientation = Vector3.new(0, -90, 0)
+Part111.Position = Vector3.new(-1165, 51, 178.5)
+Part111.Rotation = Vector3.new(0, -90, 0)
+Part111.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part111.Transparency = 0.30000001192092896
+Part111.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part111.Anchored = true
+Part111.BrickColor = BrickColor.new("Black")
+Part111.Locked = true
+Part111.TopSurface = Enum.SurfaceType.Smooth
+Part111.brickColor = BrickColor.new("Black")
+Script112.Name = "READ ME FOR INSTRUCTIONS"
+Script112.Parent = Model97
+table.insert(cors,sandbox(Script112,function()
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+Model113.Name = "make you're giver"
+Model113.Parent = Model0
+Part114.Name = "Smooth Block Model"
+Part114.Parent = Model113
+Part114.CFrame = CFrame.new(-1163.5, 47.4000015, 188.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part114.Orientation = Vector3.new(0, -90, 0)
+Part114.Position = Vector3.new(-1163.5, 47.400001525878906, 188.5)
+Part114.Rotation = Vector3.new(0, -90, 0)
+Part114.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part114.Transparency = 0.30000001192092896
+Part114.Size = Vector3.new(3, 6, 1)
+Part114.Anchored = true
+Part114.BrickColor = BrickColor.new("Dark green")
+Part114.Locked = true
+Part114.brickColor = BrickColor.new("Dark green")
+Snap115.Parent = Part114
+Snap115.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap115.C1 = CFrame.new(0, -0.599998474, -1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap115.Part0 = Part114
+Snap115.Part1 = Part127
+Snap115.part1 = Part127
+Part116.Name = "Smooth Block Model"
+Part116.Parent = Model113
+Part116.CFrame = CFrame.new(-1164.5, 47.3992958, 190.500122, 1, 1.26419718e-05, -1.04805094e-05, -1.26417299e-05, 1, 2.31136255e-05, 1.04808014e-05, -2.31134909e-05, 1)
+Part116.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part116.Position = Vector3.new(-1164.5, 47.399295806884766, 190.5001220703125)
+Part116.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part116.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part116.Transparency = 0.30000001192092896
+Part116.Size = Vector3.new(3, 6, 1)
+Part116.Anchored = true
+Part116.BrickColor = BrickColor.new("Dark green")
+Part116.Locked = true
+Part116.brickColor = BrickColor.new("Dark green")
+Snap117.Parent = Part116
+Snap117.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap117.C1 = CFrame.new(2.00004578, -0.600704193, -0.5, -1.04808014e-05, 1, -2.31134909e-05, 1.26417299e-05, 2.31136255e-05, 1, 1, 1.04805094e-05, -1.26419718e-05)
+Snap117.Part0 = Part116
+Snap117.Part1 = Part127
+Snap117.part1 = Part127
+Part118.Name = "PUT THE WEAPON IN THIS BRICK"
+Part118.Parent = Model113
+Part118.CFrame = CFrame.new(-1162.49976, 47.1044312, 188.498169, -1, 4.31585977e-05, 1.04847668e-05, 4.31599547e-05, 1, 0.000129475578, -1.04791789e-05, 0.00012947603, -1)
+Part118.Orientation = Vector3.new(-0.007000000216066837, 179.99899291992188, 0.0020000000949949026)
+Part118.Position = Vector3.new(-1162.499755859375, 47.10443115234375, 188.4981689453125)
+Part118.Rotation = Vector3.new(-179.9929962158203, 0.0010000000474974513, -179.9980010986328)
+Part118.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part118.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part118.Anchored = true
+Part118.BrickColor = BrickColor.new("Dark green")
+Part118.Locked = true
+Part118.TopSurface = Enum.SurfaceType.Smooth
+Part118.brickColor = BrickColor.new("Dark green")
+HopperBin119.Name = "GrassPath"
+HopperBin119.Parent = Part118
+LocalScript120.Name = "Local Gui"
+LocalScript120.Parent = HopperBin119
+table.insert(cors,sandbox(LocalScript120,function()
+bin = script.Parent
+function onKeyDown(key,mouse) 
+key:lower() 
+if key == "r" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+if e[i]:findFirstChild("creator")~=nil then
+if e[i].creator.Value == script.Parent.Parent.Parent then
+e[i]:remove()
+end
+end
+end
+end
+end
+elseif key == "n" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+e[i]:remove()
+end
+end
+end
+
+end
+end
+
+function press(mouse)
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(6,2,18)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright green")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+press(mouse)
+end
+end
+
+
+function onButton1Down(mouse)
+sel = true
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright green")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-5,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright green")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,15)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright green")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-6,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+press(mouse)
+end
+end
+
+
+function onButton1Up(mouse)
+sel = false
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	mouse.KeyDown:connect(onKeyDown) 
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+s = Instance.new("Hint")
+s.Parent = script.Parent.Parent.Parent
+s.Text = "click R to reset all your ice you made and Hold mouse to create a stream of ice"
+end
+
+function unsel(mouse)
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+end
+
+
+script.Parent.Selected:connect(onEquippedLocal) 
+script.Parent.Deselected:connect(unsel)
+end))
+Script121.Name = "CleanUp"
+Script121.Parent = LocalScript120
+Script121.Enabled = false
+table.insert(cors,sandbox(Script121,function()
+wait(5)
+script.Parent:remove()
+end))
+Script121.Disabled = true
+Script122.Name = "PUT THIS IN THE WEAPON"
+Script122.Parent = HopperBin119
+table.insert(cors,sandbox(Script122,function()
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end))
+Part123.Name = "Smooth Block Model"
+Part123.Parent = Model113
+Part123.CFrame = CFrame.new(-1166.5, 47.4000015, 188.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part123.Orientation = Vector3.new(0, -90, 0)
+Part123.Position = Vector3.new(-1166.5, 47.400001525878906, 188.5)
+Part123.Rotation = Vector3.new(0, -90, 0)
+Part123.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part123.Transparency = 0.30000001192092896
+Part123.Size = Vector3.new(5, 6, 1)
+Part123.Anchored = true
+Part123.BrickColor = BrickColor.new("Dark green")
+Part123.Locked = true
+Part123.brickColor = BrickColor.new("Dark green")
+Snap124.Parent = Part123
+Snap124.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap124.C1 = CFrame.new(0, -0.599998474, 1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap124.Part0 = Part123
+Snap124.Part1 = Part127
+Snap124.part1 = Part127
+Part125.Name = "Smooth Block Model"
+Part125.Parent = Model113
+Part125.CFrame = CFrame.new(-1164.5, 47.3992348, 186.500122, 1, 1.26419718e-05, -1.04805094e-05, -1.26417299e-05, 1, 2.31136255e-05, 1.04808014e-05, -2.31134909e-05, 1)
+Part125.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part125.Position = Vector3.new(-1164.5, 47.399234771728516, 186.5001220703125)
+Part125.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part125.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part125.Transparency = 0.30000001192092896
+Part125.Size = Vector3.new(3, 6, 1)
+Part125.Anchored = true
+Part125.BrickColor = BrickColor.new("Dark green")
+Part125.Locked = true
+Part125.brickColor = BrickColor.new("Dark green")
+Snap126.Parent = Part125
+Snap126.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap126.C1 = CFrame.new(-1.99995422, -0.600765228, -0.5, -1.04808014e-05, 1, -2.31134909e-05, 1.26417299e-05, 2.31136255e-05, 1, 1, 1.04805094e-05, -1.26419718e-05)
+Snap126.Part0 = Part125
+Snap126.Part1 = Part127
+Snap126.part1 = Part127
+Part127.Name = "Smooth Block Model"
+Part127.Parent = Model113
+Part127.CFrame = CFrame.new(-1165, 51, 188.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part127.Orientation = Vector3.new(0, -90, 0)
+Part127.Position = Vector3.new(-1165, 51, 188.5)
+Part127.Rotation = Vector3.new(0, -90, 0)
+Part127.Color = Color3.new(0.156863, 0.498039, 0.278431)
+Part127.Transparency = 0.30000001192092896
+Part127.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part127.Anchored = true
+Part127.BrickColor = BrickColor.new("Dark green")
+Part127.Locked = true
+Part127.TopSurface = Enum.SurfaceType.Smooth
+Part127.brickColor = BrickColor.new("Dark green")
+Script128.Name = "READ ME FOR INSTRUCTIONS"
+Script128.Parent = Model113
+table.insert(cors,sandbox(Script128,function()
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+Model129.Name = "make you're giver"
+Model129.Parent = Model0
+Part130.Name = "Smooth Block Model"
+Part130.Parent = Model129
+Part130.CFrame = CFrame.new(-1095.49805, 47.7999992, 156.500214, -0.999997258, -0.000152589942, -2.32567343e-09, -0.000152589972, 1, 3.05179601e-05, -2.32289099e-09, 3.05180438e-05, -0.999997258)
+Part130.Orientation = Vector3.new(-0.0020000000949949026, 180, -0.008999999612569809)
+Part130.Position = Vector3.new(-1095.498046875, 47.79999923706055, 156.50021362304688)
+Part130.Rotation = Vector3.new(-179.9980010986328, 0, 179.99099731445312)
+Part130.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part130.Transparency = 0.30000001192092896
+Part130.Size = Vector3.new(3, 6, 1)
+Part130.Anchored = true
+Part130.BrickColor = BrickColor.new("Dark stone grey")
+Part130.Locked = true
+Part130.Reflectance = 0.6000000238418579
+Part130.brickColor = BrickColor.new("Dark stone grey")
+Snap131.Parent = Part130
+Snap131.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap131.C1 = CFrame.new(-0.000122070312, -0.599994659, -1.49998474, -1, 8.18305493e-12, 4.51182702e-10, 4.5118273e-10, -7.38410562e-21, 1, 8.18305493e-12, 1, 3.69205362e-21)
+Snap131.Part0 = Part130
+Snap131.Part1 = Part143
+Snap131.part1 = Part143
+Part132.Name = "Smooth Block Model"
+Part132.Parent = Model129
+Part132.CFrame = CFrame.new(-1097.49805, 47.7997551, 155.500214, -1.0476545e-05, -0.000129477106, -1, -4.31612279e-05, 1, -0.000129476655, 1, 4.3159871e-05, -1.04821329e-05)
+Part132.Orientation = Vector3.new(0.007000000216066837, -90.0009994506836, -0.0020000000949949026)
+Part132.Position = Vector3.new(-1097.498046875, 47.79975509643555, 155.50021362304688)
+Part132.Rotation = Vector3.new(0.0020000000949949026, -90, 0)
+Part132.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part132.Transparency = 0.30000001192092896
+Part132.Size = Vector3.new(3, 6, 1)
+Part132.Anchored = true
+Part132.BrickColor = BrickColor.new("Dark stone grey")
+Part132.Locked = true
+Part132.Reflectance = 0.6000000238418579
+Part132.brickColor = BrickColor.new("Dark stone grey")
+Snap133.Parent = Part132
+Snap133.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap133.C1 = CFrame.new(1.99975586, -0.599964142, -0.500015259, -1.04807787e-05, 0.999997258, -2.31132144e-05, 1.26415871e-05, 2.3112967e-05, 1, 0.999997258, 1.04804785e-05, -1.26417908e-05)
+Snap133.Part0 = Part132
+Snap133.Part1 = Part143
+Snap133.part1 = Part143
+Part134.Name = "PUT THE WEAPON IN THIS BRICK"
+Part134.Parent = Model129
+Part134.CFrame = CFrame.new(-1095.49609, 47.5051384, 157.500458, 1.04702121e-05, -0.000282066729, 0.99999541, 7.36791335e-05, 1, 0.000282066118, -0.99999541, 7.36762813e-05, 1.04909805e-05)
+Part134.Orientation = Vector3.new(-0.01600000075995922, 89.9990005493164, 0.004000000189989805)
+Part134.Position = Vector3.new(-1095.49609375, 47.5051383972168, 157.50045776367188)
+Part134.Rotation = Vector3.new(-87.87000274658203, 89.82599639892578, 87.8740005493164)
+Part134.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part134.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part134.Anchored = true
+Part134.BrickColor = BrickColor.new("Dark stone grey")
+Part134.Locked = true
+Part134.Reflectance = 0.6000000238418579
+Part134.TopSurface = Enum.SurfaceType.Smooth
+Part134.brickColor = BrickColor.new("Dark stone grey")
+HopperBin135.Name = "SilverPath"
+HopperBin135.Parent = Part134
+Script136.Name = "PUT THIS IN THE WEAPON"
+Script136.Parent = HopperBin135
+table.insert(cors,sandbox(Script136,function()
+local debounce = false
+
+function getPlayer(humanoid) 
+local players = game.Players:children() 
+for i = 1, #players do 
+if players[i].Character.Humanoid == humanoid then return players[i] end 
+end 
+return nil 
+end 
+
+function onTouch(part) 
+
+local human = part.Parent:findFirstChild("Humanoid") 
+if (human ~= nil) and debounce == false then
+
+debounce = true
+
+local player = getPlayer(human) 
+
+if (player == nil) then return end 
+
+script.Parent:clone().Parent = player.Backpack
+
+wait(2)
+debounce = false
+end
+end
+
+
+script.Parent.Parent.Touched:connect(onTouch) 
+
+end))
+LocalScript137.Name = "Local Gui"
+LocalScript137.Parent = HopperBin135
+table.insert(cors,sandbox(LocalScript137,function()
+bin = script.Parent
+
+function onKeyDown(key,mouse) 
+key:lower() 
+if key == "r" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+if e[i]:findFirstChild("creator")~=nil then
+if e[i].creator.Value == script.Parent.Parent.Parent then
+e[i]:remove()
+end
+end
+end
+end
+end
+elseif key == "n" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+e[i]:remove()
+end
+end
+end
+
+end
+end
+
+function press(mouse)
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(6,2,18)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Dark stone grey")
+s.Reflectance = 0.6
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+press(mouse)
+end
+end
+
+
+function onButton1Down(mouse)
+sel = true
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Dark stone grey")
+s.Reflectance = 0.6
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-5,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Dark stone grey")
+s.Reflectance = 0.6
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,15)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Dark stone grey")
+s.Reflectance = 0.6
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-6,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+press(mouse)
+end
+end
+
+
+function onButton1Up(mouse)
+sel = false
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	mouse.KeyDown:connect(onKeyDown) 
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+s = Instance.new("Hint")
+s.Parent = script.Parent.Parent.Parent
+s.Text = "click R to reset all your ice you made and Hold mouse to create a stream of ice"
+end
+
+function unsel(mouse)
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+end
+
+
+script.Parent.Selected:connect(onEquippedLocal) 
+script.Parent.Deselected:connect(unsel)
+end))
+Script138.Name = "CleanUp"
+Script138.Parent = LocalScript137
+Script138.Enabled = false
+table.insert(cors,sandbox(Script138,function()
+wait(5)
+script.Parent:remove()
+end))
+Script138.Disabled = true
+Part139.Name = "Smooth Block Model"
+Part139.Parent = Model129
+Part139.CFrame = CFrame.new(-1095.49805, 47.8001213, 153.500244, -0.999997258, -0.000152589942, -2.32567343e-09, -0.000152589972, 1, 3.05179601e-05, -2.32289099e-09, 3.05180438e-05, -0.999997258)
+Part139.Orientation = Vector3.new(-0.0020000000949949026, 180, -0.008999999612569809)
+Part139.Position = Vector3.new(-1095.498046875, 47.80012130737305, 153.500244140625)
+Part139.Rotation = Vector3.new(-179.9980010986328, 0, 179.99099731445312)
+Part139.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part139.Transparency = 0.30000001192092896
+Part139.Size = Vector3.new(5, 6, 1)
+Part139.Anchored = true
+Part139.BrickColor = BrickColor.new("Dark stone grey")
+Part139.Locked = true
+Part139.Reflectance = 0.6000000238418579
+Part139.brickColor = BrickColor.new("Dark stone grey")
+Snap140.Parent = Part139
+Snap140.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap140.C1 = CFrame.new(-0.000122070312, -0.599964142, 1.49998474, -1, 8.18305493e-12, 4.51182702e-10, 4.5118273e-10, -7.38410562e-21, 1, 8.18305493e-12, 1, 3.69205362e-21)
+Snap140.Part0 = Part139
+Snap140.Part1 = Part143
+Snap140.part1 = Part143
+Part141.Name = "Smooth Block Model"
+Part141.Parent = Model129
+Part141.CFrame = CFrame.new(-1093.49805, 47.8002434, 155.500275, -1.0476545e-05, -0.000129477106, -1, -4.31612279e-05, 1, -0.000129476655, 1, 4.3159871e-05, -1.04821329e-05)
+Part141.Orientation = Vector3.new(0.007000000216066837, -90.0009994506836, -0.0020000000949949026)
+Part141.Position = Vector3.new(-1093.498046875, 47.80024337768555, 155.50027465820312)
+Part141.Rotation = Vector3.new(0.0020000000949949026, -90, 0)
+Part141.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part141.Transparency = 0.30000001192092896
+Part141.Size = Vector3.new(3, 6, 1)
+Part141.Anchored = true
+Part141.BrickColor = BrickColor.new("Dark stone grey")
+Part141.Locked = true
+Part141.Reflectance = 0.6000000238418579
+Part141.brickColor = BrickColor.new("Dark stone grey")
+Snap142.Parent = Part141
+Snap142.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap142.C1 = CFrame.new(-2.00024414, -0.600086212, -0.500076294, -1.04807787e-05, 0.999997258, -2.31132144e-05, 1.26415871e-05, 2.3112967e-05, 1, 0.999997258, 1.04804785e-05, -1.26417908e-05)
+Snap142.Part0 = Part141
+Snap142.Part1 = Part143
+Snap142.part1 = Part143
+Part143.Name = "Smooth Block Model"
+Part143.Parent = Model129
+Part143.CFrame = CFrame.new(-1095.49866, 51.4000397, 155.000336, -0.999997258, -0.000152589942, -2.32567343e-09, -0.000152589972, 1, 3.05179601e-05, -2.32289099e-09, 3.05180438e-05, -0.999997258)
+Part143.Orientation = Vector3.new(-0.0020000000949949026, 180, -0.008999999612569809)
+Part143.Position = Vector3.new(-1095.4986572265625, 51.40003967285156, 155.00033569335938)
+Part143.Rotation = Vector3.new(-179.9980010986328, 0, 179.99099731445312)
+Part143.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part143.Transparency = 0.30000001192092896
+Part143.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part143.Anchored = true
+Part143.BrickColor = BrickColor.new("Dark stone grey")
+Part143.Locked = true
+Part143.Reflectance = 0.6000000238418579
+Part143.TopSurface = Enum.SurfaceType.Smooth
+Part143.brickColor = BrickColor.new("Dark stone grey")
+Script144.Name = "READ ME FOR INSTRUCTIONS"
+Script144.Parent = Model129
+table.insert(cors,sandbox(Script144,function()
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+Model145.Name = "make you're giver"
+Model145.Parent = Model0
+Part146.Name = "Smooth Block Model"
+Part146.Parent = Model145
+Part146.CFrame = CFrame.new(-1163.5, 47.4000015, 183.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part146.Orientation = Vector3.new(0, -90, 0)
+Part146.Position = Vector3.new(-1163.5, 47.400001525878906, 183.5)
+Part146.Rotation = Vector3.new(0, -90, 0)
+Part146.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part146.Transparency = 0.30000001192092896
+Part146.Size = Vector3.new(3, 6, 1)
+Part146.Anchored = true
+Part146.BrickColor = BrickColor.new("Bright red")
+Part146.Locked = true
+Part146.brickColor = BrickColor.new("Bright red")
+Snap147.Parent = Part146
+Snap147.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap147.C1 = CFrame.new(0, -0.599998474, -1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap147.Part0 = Part146
+Snap147.Part1 = Part159
+Snap147.part1 = Part159
+Part148.Name = "Smooth Block Model"
+Part148.Parent = Model145
+Part148.CFrame = CFrame.new(-1164.5, 47.3993263, 185.500122, 1, 1.26419718e-05, -1.04805094e-05, -1.26417299e-05, 1, 2.31136255e-05, 1.04808014e-05, -2.31134909e-05, 1)
+Part148.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part148.Position = Vector3.new(-1164.5, 47.39932632446289, 185.5001220703125)
+Part148.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part148.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part148.Transparency = 0.30000001192092896
+Part148.Size = Vector3.new(3, 6, 1)
+Part148.Anchored = true
+Part148.BrickColor = BrickColor.new("Bright red")
+Part148.Locked = true
+Part148.brickColor = BrickColor.new("Bright red")
+Snap149.Parent = Part148
+Snap149.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap149.C1 = CFrame.new(2.00004578, -0.600673676, -0.5, -1.04808014e-05, 1, -2.31134909e-05, 1.26417299e-05, 2.31136255e-05, 1, 1, 1.04805094e-05, -1.26419718e-05)
+Snap149.Part0 = Part148
+Snap149.Part1 = Part159
+Snap149.part1 = Part159
+Part150.Name = "PUT THE WEAPON IN THIS BRICK"
+Part150.Parent = Model145
+Part150.CFrame = CFrame.new(-1162.49976, 47.1044617, 183.498291, -1, 4.31585977e-05, 1.04847668e-05, 4.31599547e-05, 1, 0.000129475578, -1.04791789e-05, 0.00012947603, -1)
+Part150.Orientation = Vector3.new(-0.007000000216066837, 179.99899291992188, 0.0020000000949949026)
+Part150.Position = Vector3.new(-1162.499755859375, 47.104461669921875, 183.498291015625)
+Part150.Rotation = Vector3.new(-179.9929962158203, 0.0010000000474974513, -179.9980010986328)
+Part150.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part150.Size = Vector3.new(1, 1.2000000476837158, 5)
+Part150.Anchored = true
+Part150.BrickColor = BrickColor.new("Bright red")
+Part150.Locked = true
+Part150.TopSurface = Enum.SurfaceType.Smooth
+Part150.brickColor = BrickColor.new("Bright red")
+HopperBin151.Name = "FirePath"
+HopperBin151.Parent = Part150
+LocalScript152.Name = "Local Gui"
+LocalScript152.Parent = HopperBin151
+table.insert(cors,sandbox(LocalScript152,function()
+bin = script.Parent
+function onKeyDown(key,mouse) 
+key:lower() 
+if key == "r" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+if e[i]:findFirstChild("creator")~=nil then
+if e[i].creator.Value == script.Parent.Parent.Parent then
+e[i]:remove()
+end
+end
+end
+end
+end
+elseif key == "n" then
+e = game.Workspace:GetChildren()
+for i=1,#e do
+if e[i].className == "Part" then
+if e[i].Name == "Ice" then
+e[i]:remove()
+end
+end
+end
+
+end
+end
+
+function press(mouse)
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(6,2,18)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright red")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+press(mouse)
+end
+end
+
+
+function onButton1Down(mouse)
+sel = true
+if sel == true then
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright red")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-5,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,17)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright red")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-4,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+wait()
+hit = mouse.Target
+local point = mouse.Hit.p
+s = Instance.new("Part")
+s.CanCollide = true 
+s.Size=Vector3.new(5,2,15)
+s.Anchored = true
+s.BrickColor = BrickColor.new("Bright red")
+s.Transparency = 0.3
+s.Name = "Ice"
+s.TopSurface = "Smooth"
+s.BottomSurface = "Smooth"
+s.Parent = game.Workspace
+c = script.CleanUp:clone()
+c.Disabled = false
+c.Parent = s
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Head.Position)
+s.CFrame = CFrame.new(script.Parent.Parent.Parent.Character.Torso.Position.x,script.Parent.Parent.Parent.Character.Torso.Position.y-6,script.Parent.Parent.Parent.Character.Torso.Position.z)
+s.CFrame = CFrame.new(s.Position,point)
+r = Instance.new("ObjectValue")
+r.Value = script.Parent.Parent.Parent
+r.Parent = s
+r.Name = "creator"
+press(mouse)
+end
+end
+
+
+function onButton1Up(mouse)
+sel = false
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+	mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	mouse.KeyDown:connect(onKeyDown) 
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+s = Instance.new("Hint")
+s.Parent = script.Parent.Parent.Parent
+s.Text = "click R to reset all your ice you made and Hold mouse to create a stream of ice"
+end
+
+function unsel(mouse)
+e = script.Parent.Parent.Parent:GetChildren()
+for i=1,#e do
+if e[i].className == "Hint" then
+e[i]:remove()
+end
+end
+end
+
+
+script.Parent.Selected:connect(onEquippedLocal) 
+script.Parent.Deselected:connect(unsel)
+end))
+Script153.Name = "CleanUp"
+Script153.Parent = LocalScript152
+Script153.Enabled = false
+table.insert(cors,sandbox(Script153,function()
+	wait(5)
+	script.Parent:remove()
+end))
+Script153.Disabled = true
+Script154.Name = "PUT THIS IN THE WEAPON"
+Script154.Parent = HopperBin151
+table.insert(cors,sandbox(Script154,function()
+	local debounce = false
+
+	function getPlayer(humanoid) 
+		local players = game.Players:children() 
+		for i = 1, #players do 
+			if players[i].Character.Humanoid == humanoid then return players[i] end 
+		end 
+		return nil 
+	end 
+
+	function onTouch(part) 
+
+		local human = part.Parent:findFirstChild("Humanoid") 
+		if (human ~= nil) and debounce == false then
+
+			debounce = true
+
+			local player = getPlayer(human) 
+
+			if (player == nil) then return end 
+
+			script.Parent:clone().Parent = player.Backpack
+
+			wait(2)
+			debounce = false
+		end
+	end
+
+
+	script.Parent.Parent.Touched:connect(onTouch) 
+
+end))
+Part155.Name = "Smooth Block Model"
+Part155.Parent = Model145
+Part155.CFrame = CFrame.new(-1166.5, 47.4000015, 183.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part155.Orientation = Vector3.new(0, -90, 0)
+Part155.Position = Vector3.new(-1166.5, 47.400001525878906, 183.5)
+Part155.Rotation = Vector3.new(0, -90, 0)
+Part155.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part155.Transparency = 0.30000001192092896
+Part155.Size = Vector3.new(5, 6, 1)
+Part155.Anchored = true
+Part155.BrickColor = BrickColor.new("Bright red")
+Part155.Locked = true
+Part155.brickColor = BrickColor.new("Bright red")
+Snap156.Parent = Part155
+Snap156.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap156.C1 = CFrame.new(0, -0.599998474, 1.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap156.Part0 = Part155
+Snap156.Part1 = Part159
+Snap156.part1 = Part159
+Part157.Name = "Smooth Block Model"
+Part157.Parent = Model145
+Part157.CFrame = CFrame.new(-1164.5, 47.3992043, 181.500122, 1, 1.26419718e-05, -1.04805094e-05, -1.26417299e-05, 1, 2.31136255e-05, 1.04808014e-05, -2.31134909e-05, 1)
+Part157.Orientation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part157.Position = Vector3.new(-1164.5, 47.39920425415039, 181.5001220703125)
+Part157.Rotation = Vector3.new(-0.0010000000474974513, -0.0010000000474974513, -0.0010000000474974513)
+Part157.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part157.Transparency = 0.30000001192092896
+Part157.Size = Vector3.new(3, 6, 1)
+Part157.Anchored = true
+Part157.BrickColor = BrickColor.new("Bright red")
+Part157.Locked = true
+Part157.brickColor = BrickColor.new("Bright red")
+Snap158.Parent = Part157
+Snap158.C0 = CFrame.new(0, 3, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap158.C1 = CFrame.new(-1.99995422, -0.600795746, -0.5, -1.04808014e-05, 1, -2.31134909e-05, 1.26417299e-05, 2.31136255e-05, 1, 1, 1.04805094e-05, -1.26419718e-05)
+Snap158.Part0 = Part157
+Snap158.Part1 = Part159
+Snap158.part1 = Part159
+Part159.Name = "Smooth Block Model"
+Part159.Parent = Model145
+Part159.CFrame = CFrame.new(-1165, 51, 183.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part159.Orientation = Vector3.new(0, -90, 0)
+Part159.Position = Vector3.new(-1165, 51, 183.5)
+Part159.Rotation = Vector3.new(0, -90, 0)
+Part159.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part159.Transparency = 0.30000001192092896
+Part159.Size = Vector3.new(5, 1.2000000476837158, 4)
+Part159.Anchored = true
+Part159.BrickColor = BrickColor.new("Bright red")
+Part159.Locked = true
+Part159.TopSurface = Enum.SurfaceType.Smooth
+Part159.brickColor = BrickColor.new("Bright red")
+Script160.Name = "READ ME FOR INSTRUCTIONS"
+Script160.Parent = Model145
+table.insert(cors,sandbox(Script160,function()
+	--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+	--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+	--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+	--IMPORTANT (OPTINAL)
+	--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+Model161.Name = "SuperJump Giver"
+Model161.Parent = Model0
+Part162.Name = "Giver"
+Part162.Parent = Model161
+Part162.CFrame = CFrame.new(-1121, 46.9000015, 235.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part162.Orientation = Vector3.new(0, -90, 0)
+Part162.Position = Vector3.new(-1121, 46.900001525878906, 235.5)
+Part162.Rotation = Vector3.new(0, -90, 0)
+Part162.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part162.Size = Vector3.new(1, 1, 4)
+Part162.Anchored = true
+Part162.BrickColor = BrickColor.new("Black")
+Part162.Locked = true
+Part162.Reflectance = 0.25
+Part162.TopSurface = Enum.SurfaceType.Smooth
+Part162.brickColor = BrickColor.new("Black")
+Part162.FormFactor = Enum.FormFactor.Symmetric
+Part162.formFactor = Enum.FormFactor.Symmetric
+Script163.Name = "PresentScript"
+Script163.Parent = Part162
+table.insert(cors,sandbox(Script163,function()
+	local debounce = false
+
+	function getPlayer(humanoid) 
+		local players = game.Players:children() 
+		for i = 1, #players do 
+			if players[i].Character.Humanoid == humanoid then return players[i] end 
+		end 
+		return nil 
+	end 
+
+	function onTouch(part) 
+
+		local human = part.Parent:findFirstChild("Humanoid") 
+		if (human ~= nil) and debounce == false then
+
+			debounce = true
+
+			local player = getPlayer(human) 
+
+			if (player == nil) then return end 
+
+			script.Parent.SuperJump:clone().Parent = player.Backpack
+
+			wait(3)
+			debounce = false
+		end
+	end
+
+
+	script.Parent.Touched:connect(onTouch) 
+
+end))
+HopperBin164.Name = "SuperJump"
+HopperBin164.Parent = Part162
+Script165.Name = "Ghostwalk"
+Script165.Parent = HopperBin164
+table.insert(cors,sandbox(Script165,function()
+	print("Ghostwalker loaded")
+
+	bin = script.Parent
+
+	walking = false
+	reloadtime = 0
+
+	local thrust = Instance.new("BodyVelocity")
+
+	function makeMeGhostly(trans)
+		local char = game.Players.LocalPlayer.Character
+
+		if char.Head ~= nil then char.Head.Transparency = trans end
+		if char.Torso ~= nil then char.Torso.Transparency = trans end
+
+		local leftleg = char:findFirstChild("Left Leg")
+		if leftleg ~= nil then leftleg.Transparency = trans end
+
+		local rightleg = char:findFirstChild("Right Leg")
+		if rightleg ~= nil then rightleg.Transparency = trans end
+
+		local leftarm = char:findFirstChild("Left Arm")
+		if leftarm ~= nil then leftarm.Transparency = trans end
+
+		local rightarm = char:findFirstChild("Right Arm")
+		if rightarm ~= nil then rightarm.Transparency = trans end
+	end
+
+	function onStart()
+		print("start walking")
+		walking = true
+		reloadtime = 0.0
+		makeMeGhostly(0)
+
+		thrust.Parent = game.Players.LocalPlayer.Character.PrimaryPart
+
+		thrust.velocity = Vector3.new(0,50,0)
+		thrust.maxForce = Vector3.new(0,4e+050,0) 
+
+
+
+	end
+
+	function onEnd()
+		print("stop walking")
+		walking = false
+		makeMeGhostly(0)
+		thrust.Parent = nil
+		wait(reloadtime)
+		reloadtime = 0
+	end
+
+	function onButton1Down(mouse)
+		if reloadtime > 0 then return end
+		if walking == true then return end
+
+		onStart()
+		mouse.Icon = "rbxasset://textures\\ArrowFarCursor.png"
+
+		local time = 0
+		while walking == true do
+			--onWalk()
+			wait(.05)
+			time = time + .05
+			if time > 0.6 then onButton1Up(mouse) end
+		end
+	end
+
+	function onButton1Up(mouse)
+		onEnd()
+		mouse.Icon = "rbxasset://textures\\ArrowCursor.png"
+	end
+
+	function onSelected(mouse)
+		print("ghostwalker selected")
+		if reloadtime > 0 then
+			mouse.Icon = "rbxasset://textures\\ArrowFarCursor.png"
+		else
+			mouse.Icon = "rbxasset://textures\\ArrowCursor.png"
+		end
+		mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+		mouse.Button1Up:connect(function() onButton1Up(mouse) end)
+	end
+
+	bin.Selected:connect(onSelected)
+
+
+
+
+
+end))
+Part166.Name = "Block"
+Part166.Parent = Model161
+Part166.CFrame = CFrame.new(-1121, 46.9000015, 238, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part166.Position = Vector3.new(-1121, 46.900001525878906, 238)
+Part166.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Part166.Transparency = 0.25
+Part166.Size = Vector3.new(4, 5, 4)
+Part166.Anchored = true
+Part166.BottomSurface = Enum.SurfaceType.Smooth
+Part166.BrickColor = BrickColor.new("White")
+Part166.Locked = true
+Part166.Reflectance = 0.25
+Part166.TopSurface = Enum.SurfaceType.Smooth
+Part166.brickColor = BrickColor.new("White")
+Part166.FormFactor = Enum.FormFactor.Symmetric
+Part166.formFactor = Enum.FormFactor.Symmetric
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
