@@ -13015,14 +13015,40 @@ table.insert(cors,sandbox(Script161,function()
 		deb = true
 		local new = a:clone()
 		new.Parent = script.Parent.Parent
+    	function blow()
+		for i = 1, 4 do
+			if script.Parent:FindFirstChild("Engine") ~= nil then
+				local ex = Instance.new("Explosion")
+				ex.Position = new.Engine.Position + Vector3.new(math.random(-3, 3), math.random(-3, 3), math.random(-3, 3))
+				ex.BlastRadius = 1
+				ex.BlastPressure = 1000
+				ex.Parent = game.Workspace
+				wait()
+			end
+		end
+		wait(1)
+		new:remove()
+	end
+
+	new.Destroying:connect(blow)
+
+	while true do
+		wait(0.1)
+		if new.CarOn.Value == true then
+			local look = script.Parent.CFrame.lookVector*new.Speed.Value
+			new.Regen.BV.velocity = Vector3.new(look.x, -15, look.z)
+		else
+			new.Regen.BV.velocity = Vector3.new(0, -5, 0)
+		end
+	end
 		new:MakeJoints()
-		script.Parent.BrickColor = BrickColor.new(21)
+		new.Regen.BrickColor = BrickColor.new(21)
 		wait(6)
-		script.Parent.BrickColor = BrickColor.new(28)
+		new.Regen.BrickColor = BrickColor.new(28)
 		deb = false
 	end
 
-	script.Parent.Click.MouseClick:connect(chng)
+	new.Regen.Click.MouseClick:connect(chng)
 
 end))
 Model162.Parent = Model0
