@@ -46840,3 +46840,5075 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Script1 = Instance.new("Script")
+Script2 = Instance.new("Script")
+SpawnLocation3 = Instance.new("SpawnLocation")
+Decal4 = Instance.new("Decal")
+SpawnLocation5 = Instance.new("SpawnLocation")
+Decal6 = Instance.new("Decal")
+SpawnLocation7 = Instance.new("SpawnLocation")
+Decal8 = Instance.new("Decal")
+SpawnLocation9 = Instance.new("SpawnLocation")
+Decal10 = Instance.new("Decal")
+Weld11 = Instance.new("Weld")
+SpawnLocation12 = Instance.new("SpawnLocation")
+Decal13 = Instance.new("Decal")
+Weld14 = Instance.new("Weld")
+Script15 = Instance.new("Script")
+Model16 = Instance.new("Model")
+Part17 = Instance.new("Part")
+Humanoid18 = Instance.new("Humanoid")
+RotateP19 = Instance.new("RotateP")
+Weld20 = Instance.new("Weld")
+Model21 = Instance.new("Model")
+Part22 = Instance.new("Part")
+Humanoid23 = Instance.new("Humanoid")
+RotateP24 = Instance.new("RotateP")
+Weld25 = Instance.new("Weld")
+Model26 = Instance.new("Model")
+Model27 = Instance.new("Model")
+Part28 = Instance.new("Part")
+Part29 = Instance.new("Part")
+Part30 = Instance.new("Part")
+Script31 = Instance.new("Script")
+Part32 = Instance.new("Part")
+Part33 = Instance.new("Part")
+Part34 = Instance.new("Part")
+Model35 = Instance.new("Model")
+Part36 = Instance.new("Part")
+Part37 = Instance.new("Part")
+Script38 = Instance.new("Script")
+Weld39 = Instance.new("Weld")
+Script40 = Instance.new("Script")
+Part41 = Instance.new("Part")
+Part42 = Instance.new("Part")
+Part43 = Instance.new("Part")
+Part44 = Instance.new("Part")
+Part45 = Instance.new("Part")
+Script46 = Instance.new("Script")
+Part47 = Instance.new("Part")
+Part48 = Instance.new("Part")
+Script49 = Instance.new("Script")
+Part50 = Instance.new("Part")
+Part51 = Instance.new("Part")
+Part52 = Instance.new("Part")
+Part53 = Instance.new("Part")
+Part54 = Instance.new("Part")
+Part55 = Instance.new("Part")
+Part56 = Instance.new("Part")
+Model57 = Instance.new("Model")
+Model58 = Instance.new("Model")
+Script59 = Instance.new("Script")
+Part60 = Instance.new("Part")
+Script61 = Instance.new("Script")
+Model62 = Instance.new("Model")
+Part63 = Instance.new("Part")
+BodyVelocity64 = Instance.new("BodyVelocity")
+ClickDetector65 = Instance.new("ClickDetector")
+Script66 = Instance.new("Script")
+BodyGyro67 = Instance.new("BodyGyro")
+Part68 = Instance.new("Part")
+SpecialMesh69 = Instance.new("SpecialMesh")
+Script70 = Instance.new("Script")
+ClickDetector71 = Instance.new("ClickDetector")
+Script72 = Instance.new("Script")
+Script73 = Instance.new("Script")
+Part74 = Instance.new("Part")
+ClickDetector75 = Instance.new("ClickDetector")
+Script76 = Instance.new("Script")
+Part77 = Instance.new("Part")
+SpecialMesh78 = Instance.new("SpecialMesh")
+Script79 = Instance.new("Script")
+ClickDetector80 = Instance.new("ClickDetector")
+Script81 = Instance.new("Script")
+Script82 = Instance.new("Script")
+Part83 = Instance.new("Part")
+ClickDetector84 = Instance.new("ClickDetector")
+Script85 = Instance.new("Script")
+Script86 = Instance.new("Script")
+BoolValue87 = Instance.new("BoolValue")
+NumberValue88 = Instance.new("NumberValue")
+ObjectValue89 = Instance.new("ObjectValue")
+Model90 = Instance.new("Model")
+Part91 = Instance.new("Part")
+Snap92 = Instance.new("Snap")
+Snap93 = Instance.new("Snap")
+Part94 = Instance.new("Part")
+Snap95 = Instance.new("Snap")
+Snap96 = Instance.new("Snap")
+Part97 = Instance.new("Part")
+Snap98 = Instance.new("Snap")
+Snap99 = Instance.new("Snap")
+Part100 = Instance.new("Part")
+Snap101 = Instance.new("Snap")
+Snap102 = Instance.new("Snap")
+Part103 = Instance.new("Part")
+Part104 = Instance.new("Part")
+Model105 = Instance.new("Model")
+Model106 = Instance.new("Model")
+Part107 = Instance.new("Part")
+Part108 = Instance.new("Part")
+Part109 = Instance.new("Part")
+Part110 = Instance.new("Part")
+Part111 = Instance.new("Part")
+Part112 = Instance.new("Part")
+Part113 = Instance.new("Part")
+Part114 = Instance.new("Part")
+Part115 = Instance.new("Part")
+Part116 = Instance.new("Part")
+Part117 = Instance.new("Part")
+Part118 = Instance.new("Part")
+Part119 = Instance.new("Part")
+Part120 = Instance.new("Part")
+Part121 = Instance.new("Part")
+Part122 = Instance.new("Part")
+Part123 = Instance.new("Part")
+Part124 = Instance.new("Part")
+Snap125 = Instance.new("Snap")
+Part126 = Instance.new("Part")
+Snap127 = Instance.new("Snap")
+Part128 = Instance.new("Part")
+Snap129 = Instance.new("Snap")
+Part130 = Instance.new("Part")
+Part131 = Instance.new("Part")
+Snap132 = Instance.new("Snap")
+Part133 = Instance.new("Part")
+Snap134 = Instance.new("Snap")
+Part135 = Instance.new("Part")
+Snap136 = Instance.new("Snap")
+Part137 = Instance.new("Part")
+Model138 = Instance.new("Model")
+Part139 = Instance.new("Part")
+Part140 = Instance.new("Part")
+Part141 = Instance.new("Part")
+Part142 = Instance.new("Part")
+Part143 = Instance.new("Part")
+Part144 = Instance.new("Part")
+Part145 = Instance.new("Part")
+Part146 = Instance.new("Part")
+Part147 = Instance.new("Part")
+Part148 = Instance.new("Part")
+Part149 = Instance.new("Part")
+Part150 = Instance.new("Part")
+Part151 = Instance.new("Part")
+Part152 = Instance.new("Part")
+Part153 = Instance.new("Part")
+Part154 = Instance.new("Part")
+Part155 = Instance.new("Part")
+Part156 = Instance.new("Part")
+Snap157 = Instance.new("Snap")
+Part158 = Instance.new("Part")
+Snap159 = Instance.new("Snap")
+Part160 = Instance.new("Part")
+Snap161 = Instance.new("Snap")
+Part162 = Instance.new("Part")
+Part163 = Instance.new("Part")
+Snap164 = Instance.new("Snap")
+Part165 = Instance.new("Part")
+Snap166 = Instance.new("Snap")
+Part167 = Instance.new("Part")
+Snap168 = Instance.new("Snap")
+Part169 = Instance.new("Part")
+Script170 = Instance.new("Script")
+Model0.Name = "TP6"
+Model0.Parent = mas
+Script1.Name = "READ ME FOR INSTRUCTIONS"
+Script1.Parent = Model0
+table.insert(cors,sandbox(Script1,function()
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+Script2.Name = "READ ME FOR INSTRUCTIONS"
+Script2.Parent = Model0
+table.insert(cors,sandbox(Script2,function()
+--DONT PUT THIS IN ANYTHING IT'S JUST INSTRUCTIONS.
+--First Place the "PUT THIS IN THE WEAPON" script in your Weapon or Tool.
+--Then place your Weapon or Tool in the "PUT THE WEAPON IN THIS BRICK" brick.
+
+--IMPORTANT (OPTINAL)
+--Before doing anything you should put the Weapon or Tool in the giver where you want it.
+end))
+SpawnLocation3.Parent = Model0
+SpawnLocation3.CFrame = CFrame.new(-16, 1.80000007, -27, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+SpawnLocation3.Orientation = Vector3.new(0, 180, 0)
+SpawnLocation3.Position = Vector3.new(-16, 1.8000000715255737, -27)
+SpawnLocation3.Rotation = Vector3.new(180, 0, 180)
+SpawnLocation3.Color = Color3.new(0.294118, 0.592157, 0.294118)
+SpawnLocation3.Size = Vector3.new(6, 1.2000000476837158, 6)
+SpawnLocation3.TeamColor = BrickColor.new("Bright green")
+SpawnLocation3.Anchored = true
+SpawnLocation3.BackSurface = Enum.SurfaceType.Weld
+SpawnLocation3.BottomSurface = Enum.SurfaceType.Weld
+SpawnLocation3.BrickColor = BrickColor.new("Bright green")
+SpawnLocation3.FrontSurface = Enum.SurfaceType.Weld
+SpawnLocation3.LeftSurface = Enum.SurfaceType.Weld
+SpawnLocation3.Locked = true
+SpawnLocation3.RightSurface = Enum.SurfaceType.Weld
+SpawnLocation3.TopSurface = Enum.SurfaceType.Smooth
+SpawnLocation3.brickColor = BrickColor.new("Bright green")
+SpawnLocation3.AllowTeamChangeOnTouch = true
+SpawnLocation3.Neutral = false
+Decal4.Parent = SpawnLocation3
+Decal4.Texture = "rbxasset://Textures/SpawnLocation.png"
+Decal4.Face = Enum.NormalId.Top
+SpawnLocation5.Parent = Model0
+SpawnLocation5.CFrame = CFrame.new(-414, 15.2000008, 123, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+SpawnLocation5.Orientation = Vector3.new(0, 180, 0)
+SpawnLocation5.Position = Vector3.new(-414, 15.200000762939453, 123)
+SpawnLocation5.Rotation = Vector3.new(180, 0, 180)
+SpawnLocation5.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+SpawnLocation5.Size = Vector3.new(6, 1.2000000476837158, 6)
+SpawnLocation5.TeamColor = BrickColor.new("Bright blue")
+SpawnLocation5.Anchored = true
+SpawnLocation5.BackSurface = Enum.SurfaceType.Weld
+SpawnLocation5.BottomSurface = Enum.SurfaceType.Weld
+SpawnLocation5.BrickColor = BrickColor.new("Bright blue")
+SpawnLocation5.FrontSurface = Enum.SurfaceType.Weld
+SpawnLocation5.LeftSurface = Enum.SurfaceType.Weld
+SpawnLocation5.Locked = true
+SpawnLocation5.RightSurface = Enum.SurfaceType.Weld
+SpawnLocation5.TopSurface = Enum.SurfaceType.Smooth
+SpawnLocation5.brickColor = BrickColor.new("Bright blue")
+SpawnLocation5.AllowTeamChangeOnTouch = true
+SpawnLocation5.Neutral = false
+Decal6.Parent = SpawnLocation5
+Decal6.Texture = "rbxasset://Textures/SpawnLocation.png"
+Decal6.Face = Enum.NormalId.Top
+SpawnLocation7.Parent = Model0
+SpawnLocation7.CFrame = CFrame.new(-579, 2, 66, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+SpawnLocation7.Orientation = Vector3.new(0, 180, 0)
+SpawnLocation7.Position = Vector3.new(-579, 2, 66)
+SpawnLocation7.Rotation = Vector3.new(180, 0, 180)
+SpawnLocation7.Color = Color3.new(0.960784, 0.803922, 0.188235)
+SpawnLocation7.Size = Vector3.new(6, 1.2000000476837158, 6)
+SpawnLocation7.TeamColor = BrickColor.new("Bright yellow")
+SpawnLocation7.Anchored = true
+SpawnLocation7.BackSurface = Enum.SurfaceType.Weld
+SpawnLocation7.BottomSurface = Enum.SurfaceType.Weld
+SpawnLocation7.BrickColor = BrickColor.new("Bright yellow")
+SpawnLocation7.FrontSurface = Enum.SurfaceType.Weld
+SpawnLocation7.LeftSurface = Enum.SurfaceType.Weld
+SpawnLocation7.RightSurface = Enum.SurfaceType.Weld
+SpawnLocation7.TopSurface = Enum.SurfaceType.Smooth
+SpawnLocation7.brickColor = BrickColor.new("Bright yellow")
+SpawnLocation7.AllowTeamChangeOnTouch = true
+SpawnLocation7.Neutral = false
+Decal8.Parent = SpawnLocation7
+Decal8.Texture = "rbxasset://Textures/SpawnLocation.png"
+Decal8.Face = Enum.NormalId.Top
+SpawnLocation9.Parent = Model0
+SpawnLocation9.CFrame = CFrame.new(-675, 1.80000007, 189, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+SpawnLocation9.Orientation = Vector3.new(0, 180, 0)
+SpawnLocation9.Position = Vector3.new(-675, 1.8000000715255737, 189)
+SpawnLocation9.Rotation = Vector3.new(180, 0, 180)
+SpawnLocation9.Color = Color3.new(0.768627, 0.156863, 0.109804)
+SpawnLocation9.Size = Vector3.new(6, 1.2000000476837158, 6)
+SpawnLocation9.TeamColor = BrickColor.new("Bright red")
+SpawnLocation9.Anchored = true
+SpawnLocation9.BackSurface = Enum.SurfaceType.Weld
+SpawnLocation9.BottomSurface = Enum.SurfaceType.Weld
+SpawnLocation9.BrickColor = BrickColor.new("Bright red")
+SpawnLocation9.FrontSurface = Enum.SurfaceType.Weld
+SpawnLocation9.LeftSurface = Enum.SurfaceType.Weld
+SpawnLocation9.RightSurface = Enum.SurfaceType.Weld
+SpawnLocation9.TopSurface = Enum.SurfaceType.Smooth
+SpawnLocation9.brickColor = BrickColor.new("Bright red")
+SpawnLocation9.AllowTeamChangeOnTouch = true
+SpawnLocation9.Neutral = false
+Decal10.Parent = SpawnLocation9
+Decal10.Texture = "rbxasset://Textures/SpawnLocation.png"
+Decal10.Face = Enum.NormalId.Top
+Weld11.Parent = SpawnLocation9
+Weld11.C0 = CFrame.new(0, -0.600000024, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld11.C1 = CFrame.new(0.5, 0.600000024, 0, 0, 1, 0, 0, 0, -1, -1, 0, 0)
+Weld11.Part0 = SpawnLocation9
+Weld11.Part1 = Part16
+Weld11.part1 = Part16
+SpawnLocation12.Parent = Model0
+SpawnLocation12.CFrame = CFrame.new(-1113, 45, 197, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+SpawnLocation12.Orientation = Vector3.new(0, 180, 0)
+SpawnLocation12.Position = Vector3.new(-1113, 45, 197)
+SpawnLocation12.Rotation = Vector3.new(180, 0, 180)
+SpawnLocation12.Color = Color3.new(0.94902, 0.952941, 0.952941)
+SpawnLocation12.Size = Vector3.new(6, 1.2000000476837158, 6)
+SpawnLocation12.TeamColor = BrickColor.new("White")
+SpawnLocation12.Anchored = true
+SpawnLocation12.BackSurface = Enum.SurfaceType.Weld
+SpawnLocation12.BottomSurface = Enum.SurfaceType.Weld
+SpawnLocation12.BrickColor = BrickColor.new("White")
+SpawnLocation12.FrontSurface = Enum.SurfaceType.Weld
+SpawnLocation12.LeftSurface = Enum.SurfaceType.Weld
+SpawnLocation12.RightSurface = Enum.SurfaceType.Weld
+SpawnLocation12.TopSurface = Enum.SurfaceType.Smooth
+SpawnLocation12.brickColor = BrickColor.new("White")
+SpawnLocation12.AllowTeamChangeOnTouch = true
+SpawnLocation12.Neutral = false
+Decal13.Parent = SpawnLocation12
+Decal13.Texture = "rbxasset://Textures/SpawnLocation.png"
+Decal13.Face = Enum.NormalId.Top
+Weld14.Parent = SpawnLocation12
+Weld14.C0 = CFrame.new(0, -0.600000024, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Weld14.C1 = CFrame.new(1, 0.200000763, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0)
+Weld14.Part0 = SpawnLocation12
+Weld14.Part1 = Part98
+Weld14.part1 = Part98
+Script15.Name = "VoteKicker"
+Script15.Parent = Model0
+table.insert(cors,sandbox(Script15,function()
+print("Vote Kicker 1.0 Loaded")
+---------------------------------------------------
+-- This script adds the "kick" command to your game.
+-- Players can type "kick [player name]" to vote to kick an abusive player.
+-- If enough people vote to kick the same person, that person contracts a deadly case of NoTorsoItis
+-- There is no cure for NoTorsoItis, even rejoining the game doesn't stop it.
+-- The number of votes required to kick a player depends on the number of people in the game.
+-- 
+-- One cool thing - you don't need to type the player's full name, just enough letters to be sure of who you
+-- want to kick.
+--
+-- For example: if Builderman and Builderdude are in-game, "kick builderm" is enough
+-- if Builderman and Telamon are the only people in the game, you can vote to kick both
+-- by typing "kick b t"
+--
+-- Multiple votes from the same person are ignored. As are ambigious votes:
+-- Example: Builderman and Builderdude are in-game. "kick bu" is ambigious.
+---------------------------------------------------
+
+
+-- This hack brought to you by Telamon. 
+
+-- If you find bugs in this script, post them to the scripting forum.
+-- If you find a bug and change the script to fix it, post your solution in the scripting forum. There is a 500 R$ bonus for each fix.
+
+kickedlist = {}
+
+voteMatrix = {}
+
+
+function onPlayerEntered(newPlayer)
+
+
+	local stats = Instance.new("IntValue")
+	stats.Name = "punkstats"
+
+	local votes = Instance.new("IntValue")
+	votes.Name = "votes"
+	votes.Value = 0
+
+	
+
+
+	votes.Parent = stats
+
+
+	-- VERY UGLY HACK
+	-- Will this leak threads?
+	-- Is the problem even what I think it is (player arrived before character)?
+	while true do
+		if newPlayer.Character ~= nil then break end
+		wait(5)
+	end
+
+	-- start to listen for new humanoid
+	newPlayer.Changed:connect(function(property) onPlayerRespawn(property, newPlayer) end )
+
+	stats.Parent = newPlayer
+
+	newPlayer.Chatted:connect(function(msg, recipient) onChatted(msg, recipient, newPlayer) end) 
+
+	-- make sure this isn't a previously banned player re-entering the game
+
+	for i = 1, #kickedlist do
+		if (string.lower(newPlayer.Name) == kickedlist[i]) then
+			banish(newPlayer)
+		end
+	end
+
+end
+
+function getVotesNeeded()
+	local np = game.Players.NumPlayers
+	
+	if np > 10 then return 4 end
+	if np > 4   then return 3 end
+	return 2
+	
+end
+
+function onPlayerRespawn(property, player)
+	if property == "Character" and player.Character ~= nil then
+		local stats = player:findFirstChild("punkstats")
+		if (stats ~= nil) then
+			if (stats:findFirstChild("banned") ~= nil) then
+				punish(player)
+			end
+		end
+	end
+end
+
+function banish(player)
+	
+	local stats = player:findFirstChild("punkstats")
+	local votes = stats:findFirstChild("votes")
+
+	if (stats ~= nil and votes ~= nil) then
+		
+		votes.Value = votes.Value + 1
+		if (votes.Value >= getVotesNeeded()) then
+			local banned = Instance.new("IntValue")
+			banned.Name  = "banned"
+			banned.Parent = stats
+			local message = Instance.new("Message")
+			message.Text = "You caught NoTorsoItis!"
+			message.Parent = player
+			table.insert(kickedlist, string.lower(player.Name))
+			punish(player)
+		end
+	end
+
+	
+end
+
+function punish(player)
+	-- called when we think the player has respawned
+	while true do
+			if player.Character ~= nil then break end
+			wait(5)
+	end
+
+	player.Character.Torso.Parent = nil
+end
+
+function matchPlayer(str)
+	-- find all players that start with the str
+	-- if there is only one, match it
+	-- 0 or 2+, don't match it
+	local result = nil
+
+	local players = game.Players:GetPlayers()
+
+	for i = 1,#players do
+		if (string.find(string.lower(players[i].Name), str) == 1) then
+			if (result ~= nil) then return nil end
+			result = players[i]
+		end
+	end
+
+	return result
+end
+
+function voteAgainst(voter, victim)
+	-- consult the voteMatrix to see if this guy has voted against that guy before
+
+	-- voter is a string - all lowers
+	-- victim is a player
+
+	local votesList = voteMatrix[voter]
+
+	if (votesList ~= nil) then
+		local prior = votesList[string.lower(victim.Name)]
+		if (prior ~= nil) then
+			-- this dude voted against that dude before
+			return
+		end
+	else
+		voteMatrix[voter] = {}
+	end
+
+	-- insert the record
+	voteMatrix[voter][string.lower(victim.Name)] = 1
+	
+	banish(victim)
+
+end
+
+function onChatted(msg, recipient, speaker)
+
+	-- convert to all lower case
+
+	local source = string.lower(speaker.Name)
+	msg = string.lower(msg)
+
+	
+	-- vote to kick the following players
+	-- "kick telamon buildman wookong"
+	if (string.find(msg, "kick") == 1) then --- msg starts with "kick"
+		-- words and numbers
+		for word in msg:gmatch("%w+") do 
+			if word ~= "kick" then
+				local p = matchPlayer(word)
+				if p ~= nil then
+					voteAgainst(source, p)
+				end
+			end
+		end
+	end
+	
+
+end
+
+
+game.Players.ChildAdded:connect(onPlayerEntered)
+end))
+Model16.Name = "Coming up ahead - Cart Ride"
+Model16.Parent = Model0
+Part17.Name = "Head"
+Part17.Parent = Model16
+Part17.CFrame = CFrame.new(-127.5, 1.39999998, -18.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part17.Position = Vector3.new(-127.5, 1.399999976158142, -18.5)
+Part17.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part17.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part17.Anchored = true
+Part17.BrickColor = BrickColor.new("Bright red")
+Part17.brickColor = BrickColor.new("Bright red")
+Part17.FormFactor = Enum.FormFactor.Plate
+Part17.formFactor = Enum.FormFactor.Plate
+Humanoid18.Parent = Model16
+Humanoid18.MaxHealth = 0
+Humanoid18.maxHealth = 0
+RotateP19.Name = "d��������������ng.........you got owned..."
+RotateP19.Parent = Model16
+RotateP19.BaseAngle = 0.25
+Weld20.Name = "Virus"
+Weld20.Parent = RotateP19
+Model21.Name = "Coming up ahead - Cart Ride"
+Model21.Parent = Model0
+Part22.Name = "Head"
+Part22.Parent = Model21
+Part22.CFrame = CFrame.new(-127.5, 1.39999998, -9.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part22.Position = Vector3.new(-127.5, 1.399999976158142, -9.5)
+Part22.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part22.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part22.Anchored = true
+Part22.BrickColor = BrickColor.new("Bright red")
+Part22.brickColor = BrickColor.new("Bright red")
+Part22.FormFactor = Enum.FormFactor.Plate
+Part22.formFactor = Enum.FormFactor.Plate
+Humanoid23.Parent = Model21
+Humanoid23.MaxHealth = 0
+Humanoid23.maxHealth = 0
+RotateP24.Name = "d��������������ng.........you got owned..."
+RotateP24.Parent = Model21
+RotateP24.BaseAngle = 0.25
+Weld25.Name = "Virus"
+Weld25.Parent = RotateP24
+Model26.Name = "God Giver"
+Model26.Parent = Model0
+Model27.Name = "God Giver"
+Model27.Parent = Model26
+Part28.Name = "Smooth Block Model"
+Part28.Parent = Model27
+Part28.CFrame = CFrame.new(-1109.5, 46.4000015, 237, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part28.Position = Vector3.new(-1109.5, 46.400001525878906, 237)
+Part28.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part28.Size = Vector3.new(1, 4, 2)
+Part28.Anchored = true
+Part28.BottomSurface = Enum.SurfaceType.Smooth
+Part28.BrickColor = BrickColor.new("Bright blue")
+Part28.Locked = true
+Part28.TopSurface = Enum.SurfaceType.Smooth
+Part28.brickColor = BrickColor.new("Bright blue")
+Part28.FormFactor = Enum.FormFactor.Plate
+Part28.formFactor = Enum.FormFactor.Plate
+Part29.Name = "Smooth Block Model"
+Part29.Parent = Model27
+Part29.CFrame = CFrame.new(-1109.5, 45.9000015, 235.800003, 1, 0, -0, 0, 0, 1, 0, -1, 0)
+Part29.Orientation = Vector3.new(-90, 0, 0)
+Part29.Position = Vector3.new(-1109.5, 45.900001525878906, 235.8000030517578)
+Part29.Rotation = Vector3.new(-90, 0, 0)
+Part29.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part29.Transparency = 0.4000000059604645
+Part29.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part29.Anchored = true
+Part29.BottomSurface = Enum.SurfaceType.Smooth
+Part29.BrickColor = BrickColor.new("Bright blue")
+Part29.Locked = true
+Part29.TopSurface = Enum.SurfaceType.Smooth
+Part29.brickColor = BrickColor.new("Bright blue")
+Part29.FormFactor = Enum.FormFactor.Plate
+Part29.formFactor = Enum.FormFactor.Plate
+Part30.Name = "Smooth Block Model"
+Part30.Parent = Model27
+Part30.CFrame = CFrame.new(-1109.5, 46.9000015, 235.800003, 1, 0, -0, 0, 0, 1, 0, -1, 0)
+Part30.Orientation = Vector3.new(-90, 0, 0)
+Part30.Position = Vector3.new(-1109.5, 46.900001525878906, 235.8000030517578)
+Part30.Rotation = Vector3.new(-90, 0, 0)
+Part30.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part30.Transparency = 0.4000000059604645
+Part30.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part30.Anchored = true
+Part30.BottomSurface = Enum.SurfaceType.Smooth
+Part30.BrickColor = BrickColor.new("Bright blue")
+Part30.Locked = true
+Part30.TopSurface = Enum.SurfaceType.Smooth
+Part30.brickColor = BrickColor.new("Bright blue")
+Part30.FormFactor = Enum.FormFactor.Plate
+Part30.formFactor = Enum.FormFactor.Plate
+Script31.Parent = Part30
+table.insert(cors,sandbox(Script31,function()
+humanoid = nil
+
+function onTouched(part)
+	if part.Parent ~= nil then
+	local h = part.Parent:findFirstChild("Humanoid")
+		if h~=nil then
+			if isenabled~=0 then
+				if h==humanoid then
+					return
+				end
+
+				local toast=script.Parent.toast:clone()
+				isenabled=0
+				toast.Parent=game.Workspace
+				toast.Transparency=0
+				toast.Locked=false
+				toast.Anchored=false
+				toast.CanCollide=false
+				toast.RotVelocity=Vector3.new(math.random(1,10)/5,math.random(1,10)/5,math.random(1,10)/5)
+----TODO>: toast.position
+				local toastrot=CFrame.new(0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+				toast.CFrame = script.Parent.toaster.CFrame * CFrame.new(Vector3.new(.75,1,0)) * toastrot
+				wait(0.4)
+				toast.CanCollide=true
+
+				wait(1)
+				isenabled=1
+
+				--IF YOU WANT TOAST TO DISAPPEAR AFTER A WHILE, REMOVE THE -- before next two lines.
+				
+				wait(120)
+				toast:remove()
+				
+
+			end
+		end
+	end
+end
+
+
+script.Parent.toaster.Touched:connect(onTouched)
+end))
+Part32.Name = "Smooth Block Model"
+Part32.Parent = Model27
+Part32.CFrame = CFrame.new(-1109.5, 47.9000015, 235.800003, 1, 0, -0, 0, 0, 1, 0, -1, 0)
+Part32.Orientation = Vector3.new(-90, 0, 0)
+Part32.Position = Vector3.new(-1109.5, 47.900001525878906, 235.8000030517578)
+Part32.Rotation = Vector3.new(-90, 0, 0)
+Part32.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part32.Transparency = 0.4000000059604645
+Part32.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part32.Anchored = true
+Part32.BottomSurface = Enum.SurfaceType.Smooth
+Part32.BrickColor = BrickColor.new("Bright blue")
+Part32.Locked = true
+Part32.TopSurface = Enum.SurfaceType.Smooth
+Part32.brickColor = BrickColor.new("Bright blue")
+Part32.FormFactor = Enum.FormFactor.Plate
+Part32.formFactor = Enum.FormFactor.Plate
+Part33.Name = "Smooth Block Model"
+Part33.Parent = Model27
+Part33.CFrame = CFrame.new(-1111.5, 46.4000015, 237.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part33.Orientation = Vector3.new(0, -90, 0)
+Part33.Position = Vector3.new(-1111.5, 46.400001525878906, 237.5)
+Part33.Rotation = Vector3.new(0, -90, 0)
+Part33.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part33.Size = Vector3.new(1, 4, 3)
+Part33.Anchored = true
+Part33.BottomSurface = Enum.SurfaceType.Smooth
+Part33.BrickColor = BrickColor.new("Bright blue")
+Part33.Locked = true
+Part33.TopSurface = Enum.SurfaceType.Smooth
+Part33.brickColor = BrickColor.new("Bright blue")
+Part33.FormFactor = Enum.FormFactor.Plate
+Part33.formFactor = Enum.FormFactor.Plate
+Part34.Name = "Smooth Block Model"
+Part34.Parent = Model27
+Part34.CFrame = CFrame.new(-1111.5, 47.6000023, 240, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part34.Orientation = Vector3.new(0, -90, 0)
+Part34.Position = Vector3.new(-1111.5, 47.60000228881836, 240)
+Part34.Rotation = Vector3.new(0, -90, 0)
+Part34.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part34.Size = Vector3.new(4, 6.400000095367432, 5)
+Part34.Anchored = true
+Part34.BottomSurface = Enum.SurfaceType.Smooth
+Part34.BrickColor = BrickColor.new("Bright blue")
+Part34.Locked = true
+Part34.TopSurface = Enum.SurfaceType.Smooth
+Part34.brickColor = BrickColor.new("Bright blue")
+Part34.FormFactor = Enum.FormFactor.Plate
+Part34.formFactor = Enum.FormFactor.Plate
+Model35.Parent = Model27
+Part36.Name = "toaster"
+Part36.Parent = Model35
+Part36.CFrame = CFrame.new(-1111.5, 46.9842339, 236.193359, -1, -3.05172325e-05, -3.05173453e-05, 3.05174617e-05, 3.05174035e-05, -1, 3.05173453e-05, -1.00000012, -3.05171579e-05)
+Part36.Orientation = Vector3.new(90, -179.9980010986328, 0)
+Part36.Position = Vector3.new(-1111.5, 46.98423385620117, 236.193359375)
+Part36.Rotation = Vector3.new(90.00199890136719, -0.0020000000949949026, 179.9980010986328)
+Part36.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part36.Size = Vector3.new(3, 1.600000023841858, 2)
+Part36.Anchored = true
+Part36.BrickColor = BrickColor.new("Bright blue")
+Part36.Locked = true
+Part36.Reflectance = 0.20000000298023224
+Part36.TopSurface = Enum.SurfaceType.Smooth
+Part36.brickColor = BrickColor.new("Bright blue")
+Part36.FormFactor = Enum.FormFactor.Plate
+Part36.formFactor = Enum.FormFactor.Plate
+Part37.Name = "toast"
+Part37.Parent = Model35
+Part37.CFrame = CFrame.new(-1111.5, 51.7999992, 240.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part37.Orientation = Vector3.new(0, -90, 0)
+Part37.Position = Vector3.new(-1111.5, 51.79999923706055, 240.5)
+Part37.Rotation = Vector3.new(0, -90, 0)
+Part37.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part37.Size = Vector3.new(1, 1.2000000476837158, 1)
+Part37.Anchored = true
+Part37.BrickColor = BrickColor.new("Bright blue")
+Part37.LeftSurface = Enum.SurfaceType.Weld
+Part37.Locked = true
+Part37.Reflectance = 1
+Part37.RightSurface = Enum.SurfaceType.Weld
+Part37.TopSurface = Enum.SurfaceType.Smooth
+Part37.brickColor = BrickColor.new("Bright blue")
+Script38.Name = "BattleArmorScript"
+Script38.Parent = Part37
+table.insert(cors,sandbox(Script38,function()
+-- Touching this Battle Armor doubles you MaxHealth and heals you to full power
+
+local debounce = false
+
+function getPlayer(humanoid)
+	-- find the owning player of a humanoid.
+	local players = game.Players:children()
+	for i = 1, #players do
+		if players[i].Character ~= nil then
+			if players[i].Character.Humanoid == humanoid then return players[i] end
+		end
+	end
+	return nil
+end
+
+
+function putOnArmor(humanoid)
+
+	local torso = humanoid.Parent.Torso
+
+	torso.Reflectance = 0
+	humanoid.MaxHealth = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+	
+	
+	local player = getPlayer(humanoid)
+	if player ~= nil then
+		local message = Instance.new("Message")
+		message.Text = "You are God"
+		message.Parent = player
+		wait(2)
+		message.Text = "Live Free!"
+		wait(2)
+		message.Parent = nil
+	end
+
+
+end
+
+function hasArmor(humanoid)
+	return (humanoid.MaxHealth > 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
+end
+
+function onTouched(hit)
+	local humanoid = hit.Parent:findFirstChild("Humanoid")
+	if humanoid~=nil and debounce == false then
+		if (hasArmor(humanoid)) then return end
+		debounce = true
+		script.Parent.Parent = nil
+		putOnArmor(humanoid)
+		debounce = false
+	end
+end
+
+
+script.Parent.Touched:connect(onTouched)
+end))
+Weld39.Parent = Part37
+Weld39.C0 = CFrame.new(-0.5, 0, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+Weld39.C1 = CFrame.new(-1, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Weld39.Part0 = Part37
+Weld39.Part1 = Part53
+Weld39.part1 = Part53
+Script40.Parent = Model35
+table.insert(cors,sandbox(Script40,function()
+humanoid = nil
+
+function onTouched(part)
+	if part.Parent ~= nil then
+	local h = part.Parent:findFirstChild("Humanoid")
+		if h~=nil then
+			if isenabled~=0 then
+				if h==humanoid then
+					return
+				end
+
+				local toast=script.Parent.toast:clone()
+				isenabled=0
+				toast.Parent=game.Workspace
+				toast.Transparency=0
+				toast.Locked=false
+				toast.Anchored=false
+				toast.CanCollide=false
+				toast.RotVelocity=Vector3.new(math.random(1,10)/5,math.random(1,10)/5,math.random(1,10)/5)
+----TODO>: toast.position
+				local toastrot=CFrame.new(0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+				toast.CFrame = script.Parent.toaster.CFrame * CFrame.new(Vector3.new(.75,1,0)) * toastrot
+				wait(0.4)
+				toast.CanCollide=true
+
+				wait(1)
+				isenabled=1
+
+				--IF YOU WANT TOAST TO DISAPPEAR AFTER A WHILE, REMOVE THE -- before next two lines.
+				
+				--wait(120)
+				--:remove()
+				
+
+			end
+		end
+	end
+end
+
+
+script.Parent.toaster.Touched:connect(onTouched)
+end))
+Part41.Name = "Smooth Block Model"
+Part41.Parent = Model27
+Part41.CFrame = CFrame.new(-1111.5, 49.6000023, 237.5, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part41.Orientation = Vector3.new(0, 90, 0)
+Part41.Position = Vector3.new(-1111.5, 49.60000228881836, 237.5)
+Part41.Rotation = Vector3.new(0, 90, 0)
+Part41.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part41.Size = Vector3.new(1, 2.4000000953674316, 5)
+Part41.Anchored = true
+Part41.BottomSurface = Enum.SurfaceType.Smooth
+Part41.BrickColor = BrickColor.new("Bright blue")
+Part41.Locked = true
+Part41.TopSurface = Enum.SurfaceType.Smooth
+Part41.brickColor = BrickColor.new("Bright blue")
+Part42.Name = "toast"
+Part42.Parent = Model27
+Part42.CFrame = CFrame.new(-1111.5, 45.2000008, 236.5, -1, 0, 0, 0, -1, 0, 0, 0, 1)
+Part42.Orientation = Vector3.new(0, 0, 180)
+Part42.Position = Vector3.new(-1111.5, 45.20000076293945, 236.5)
+Part42.Rotation = Vector3.new(0, 0, 180)
+Part42.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part42.Size = Vector3.new(3, 1.600000023841858, 1)
+Part42.Anchored = true
+Part42.BottomSurface = Enum.SurfaceType.Smooth
+Part42.BrickColor = BrickColor.new("Bright blue")
+Part42.Locked = true
+Part42.TopSurface = Enum.SurfaceType.Smooth
+Part42.brickColor = BrickColor.new("Bright blue")
+Part42.FormFactor = Enum.FormFactor.Plate
+Part42.formFactor = Enum.FormFactor.Plate
+Part43.Name = "Smooth Block Model"
+Part43.Parent = Model27
+Part43.CFrame = CFrame.new(-1109.5, 49.6000023, 236.5, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part43.Orientation = Vector3.new(0, 90, 0)
+Part43.Position = Vector3.new(-1109.5, 49.60000228881836, 236.5)
+Part43.Rotation = Vector3.new(0, 90, 0)
+Part43.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part43.Size = Vector3.new(1, 2.4000000953674316, 1)
+Part43.Anchored = true
+Part43.BottomSurface = Enum.SurfaceType.Smooth
+Part43.BrickColor = BrickColor.new("Bright blue")
+Part43.Locked = true
+Part43.TopSurface = Enum.SurfaceType.Smooth
+Part43.brickColor = BrickColor.new("Bright blue")
+Part44.Name = "Smooth Block Model"
+Part44.Parent = Model27
+Part44.CFrame = CFrame.new(-1113.5, 49.6000023, 236.5, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part44.Orientation = Vector3.new(0, 90, 0)
+Part44.Position = Vector3.new(-1113.5, 49.60000228881836, 236.5)
+Part44.Rotation = Vector3.new(0, 90, 0)
+Part44.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part44.Size = Vector3.new(1, 2.4000000953674316, 1)
+Part44.Anchored = true
+Part44.BottomSurface = Enum.SurfaceType.Smooth
+Part44.BrickColor = BrickColor.new("Bright blue")
+Part44.Locked = true
+Part44.TopSurface = Enum.SurfaceType.Smooth
+Part44.brickColor = BrickColor.new("Bright blue")
+Part45.Name = "Smooth Block Model"
+Part45.Parent = Model27
+Part45.CFrame = CFrame.new(-1113.5, 45.9000015, 235.800003, 0, 0, -1, 1, 0, 0, 0, -1, 0)
+Part45.Orientation = Vector3.new(0, -90, 90)
+Part45.Position = Vector3.new(-1113.5, 45.900001525878906, 235.8000030517578)
+Part45.Rotation = Vector3.new(-90, -90, 0)
+Part45.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part45.Transparency = 0.4000000059604645
+Part45.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part45.Anchored = true
+Part45.BottomSurface = Enum.SurfaceType.Smooth
+Part45.BrickColor = BrickColor.new("Bright blue")
+Part45.Locked = true
+Part45.TopSurface = Enum.SurfaceType.Smooth
+Part45.brickColor = BrickColor.new("Bright blue")
+Part45.FormFactor = Enum.FormFactor.Plate
+Part45.formFactor = Enum.FormFactor.Plate
+Script46.Parent = Part45
+table.insert(cors,sandbox(Script46,function()
+humanoid = nil
+
+function onTouched(part)
+	if part.Parent ~= nil then
+	local h = part.Parent:findFirstChild("Humanoid")
+		if h~=nil then
+			if isenabled~=0 then
+				if h==humanoid then
+					return
+				end
+
+				local toast=script.Parent.toast:clone()
+				isenabled=0
+				toast.Parent=game.Workspace
+				toast.Transparency=0
+				toast.Locked=false
+				toast.Anchored=false
+				toast.CanCollide=false
+				toast.RotVelocity=Vector3.new(math.random(1,10)/5,math.random(1,10)/5,math.random(1,10)/5)
+----TODO>: toast.position
+				local toastrot=CFrame.new(0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+				toast.CFrame = script.Parent.toaster.CFrame * CFrame.new(Vector3.new(.75,1,0)) * toastrot
+				wait(0.4)
+				toast.CanCollide=true
+
+				wait(1)
+				isenabled=1
+
+				--IF YOU WANT TOAST TO DISAPPEAR AFTER A WHILE, REMOVE THE -- before next two lines.
+				
+				wait(120)
+				toast:remove()
+				
+
+			end
+		end
+	end
+end
+
+
+script.Parent.toaster.Touched:connect(onTouched)
+end))
+Part47.Name = "Smooth Block Model"
+Part47.Parent = Model27
+Part47.CFrame = CFrame.new(-1113.5, 46.4000015, 237, 0, 0, 1, 0, -1, 0, 1, 0, -0)
+Part47.Orientation = Vector3.new(0, 90, 180)
+Part47.Position = Vector3.new(-1113.5, 46.400001525878906, 237)
+Part47.Rotation = Vector3.new(180, 90, 0)
+Part47.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part47.Size = Vector3.new(2, 4, 1)
+Part47.Anchored = true
+Part47.BottomSurface = Enum.SurfaceType.Smooth
+Part47.BrickColor = BrickColor.new("Bright blue")
+Part47.Locked = true
+Part47.TopSurface = Enum.SurfaceType.Smooth
+Part47.brickColor = BrickColor.new("Bright blue")
+Part47.FormFactor = Enum.FormFactor.Plate
+Part47.formFactor = Enum.FormFactor.Plate
+Part48.Name = "Smooth Block Model"
+Part48.Parent = Model27
+Part48.CFrame = CFrame.new(-1113.5, 46.9000015, 235.800003, 1, 0, -0, 0, 0, 1, 0, -1, 0)
+Part48.Orientation = Vector3.new(-90, 0, 0)
+Part48.Position = Vector3.new(-1113.5, 46.900001525878906, 235.8000030517578)
+Part48.Rotation = Vector3.new(-90, 0, 0)
+Part48.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part48.Transparency = 0.4000000059604645
+Part48.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part48.Anchored = true
+Part48.BottomSurface = Enum.SurfaceType.Smooth
+Part48.BrickColor = BrickColor.new("Bright blue")
+Part48.Locked = true
+Part48.TopSurface = Enum.SurfaceType.Smooth
+Part48.brickColor = BrickColor.new("Bright blue")
+Part48.FormFactor = Enum.FormFactor.Plate
+Part48.formFactor = Enum.FormFactor.Plate
+Script49.Parent = Part48
+table.insert(cors,sandbox(Script49,function()
+humanoid = nil
+
+function onTouched(part)
+	if part.Parent ~= nil then
+	local h = part.Parent:findFirstChild("Humanoid")
+		if h~=nil then
+			if isenabled~=0 then
+				if h==humanoid then
+					return
+				end
+
+				local toast=script.Parent.toast:clone()
+				isenabled=0
+				toast.Parent=game.Workspace
+				toast.Transparency=0
+				toast.Locked=false
+				toast.Anchored=false
+				toast.CanCollide=false
+				toast.RotVelocity=Vector3.new(math.random(1,10)/5,math.random(1,10)/5,math.random(1,10)/5)
+----TODO>: toast.position
+				local toastrot=CFrame.new(0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+				toast.CFrame = script.Parent.toaster.CFrame * CFrame.new(Vector3.new(.75,1,0)) * toastrot
+				wait(0.4)
+				toast.CanCollide=true
+
+				wait(1)
+				isenabled=1
+
+				--IF YOU WANT TOAST TO DISAPPEAR AFTER A WHILE, REMOVE THE -- before next two lines.
+				
+				wait(120)
+				toast:remove()
+				
+
+			end
+		end
+	end
+end
+
+
+script.Parent.toaster.Touched:connect(onTouched)
+end))
+Part50.Name = "Smooth Block Model"
+Part50.Parent = Model27
+Part50.CFrame = CFrame.new(-1111.5, 51, 239, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part50.Orientation = Vector3.new(0, -90, 0)
+Part50.Position = Vector3.new(-1111.5, 51, 239)
+Part50.Rotation = Vector3.new(0, -90, 0)
+Part50.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part50.Size = Vector3.new(6, 0.4000000059604645, 5)
+Part50.Anchored = true
+Part50.BottomSurface = Enum.SurfaceType.Smooth
+Part50.BrickColor = BrickColor.new("Bright blue")
+Part50.Locked = true
+Part50.TopSurface = Enum.SurfaceType.Smooth
+Part50.brickColor = BrickColor.new("Bright blue")
+Part50.FormFactor = Enum.FormFactor.Plate
+Part50.formFactor = Enum.FormFactor.Plate
+Part51.Name = "toast"
+Part51.Parent = Model27
+Part51.CFrame = CFrame.new(-1111.5, 50.6000023, 236.5, -1, 0, 0, 0, -1, 0, 0, 0, 1)
+Part51.Orientation = Vector3.new(0, 0, 180)
+Part51.Position = Vector3.new(-1111.5, 50.60000228881836, 236.5)
+Part51.Rotation = Vector3.new(0, 0, 180)
+Part51.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part51.Size = Vector3.new(3, 0.4000000059604645, 1)
+Part51.Anchored = true
+Part51.BottomSurface = Enum.SurfaceType.Smooth
+Part51.BrickColor = BrickColor.new("Bright blue")
+Part51.Locked = true
+Part51.TopSurface = Enum.SurfaceType.Smooth
+Part51.brickColor = BrickColor.new("Bright blue")
+Part51.FormFactor = Enum.FormFactor.Plate
+Part51.formFactor = Enum.FormFactor.Plate
+Part52.Name = "Smooth Block Model"
+Part52.Parent = Model27
+Part52.CFrame = CFrame.new(-1113.5, 47.8822479, 235.800781, -1.04788456e-09, 8.17849954e-10, 1, 1, 6.2637906e-10, -1.04809961e-09, 6.26411367e-10, 1.00000012, 8.18175083e-10)
+Part52.Orientation = Vector3.new(0, 90, 90)
+Part52.Position = Vector3.new(-1113.5, 47.88224792480469, 235.80078125)
+Part52.Rotation = Vector3.new(90, 90, 0)
+Part52.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part52.Transparency = 0.4000000059604645
+Part52.Size = Vector3.new(1, 0.4000000059604645, 1)
+Part52.Anchored = true
+Part52.BottomSurface = Enum.SurfaceType.Smooth
+Part52.BrickColor = BrickColor.new("Bright blue")
+Part52.Locked = true
+Part52.TopSurface = Enum.SurfaceType.Smooth
+Part52.brickColor = BrickColor.new("Bright blue")
+Part52.FormFactor = Enum.FormFactor.Plate
+Part52.formFactor = Enum.FormFactor.Plate
+Part53.Name = "Smooth Block Model"
+Part53.Parent = Model26
+Part53.CFrame = CFrame.new(-1111.5, 51.7999992, 239, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part53.Orientation = Vector3.new(0, 90, 0)
+Part53.Position = Vector3.new(-1111.5, 51.79999923706055, 239)
+Part53.Rotation = Vector3.new(0, 90, 0)
+Part53.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part53.Transparency = 0.30000001192092896
+Part53.Size = Vector3.new(2, 1.2000000476837158, 3)
+Part53.Anchored = true
+Part53.BottomSurface = Enum.SurfaceType.Smooth
+Part53.BrickColor = BrickColor.new("Bright blue")
+Part53.Locked = true
+Part53.TopSurface = Enum.SurfaceType.Smooth
+Part53.brickColor = BrickColor.new("Bright blue")
+Part54.Name = "Smooth Block Model"
+Part54.Parent = Model26
+Part54.CFrame = CFrame.new(-1112.5, 51.7999992, 241, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part54.Orientation = Vector3.new(0, 90, 0)
+Part54.Position = Vector3.new(-1112.5, 51.79999923706055, 241)
+Part54.Rotation = Vector3.new(0, 90, 0)
+Part54.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part54.Transparency = 0.30000001192092896
+Part54.Size = Vector3.new(2, 1.2000000476837158, 1)
+Part54.Anchored = true
+Part54.BottomSurface = Enum.SurfaceType.Smooth
+Part54.BrickColor = BrickColor.new("Bright blue")
+Part54.Locked = true
+Part54.TopSurface = Enum.SurfaceType.Smooth
+Part54.brickColor = BrickColor.new("Bright blue")
+Part55.Name = "Smooth Block Model"
+Part55.Parent = Model26
+Part55.CFrame = CFrame.new(-1110.5, 51.7999992, 241, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part55.Orientation = Vector3.new(0, 90, 0)
+Part55.Position = Vector3.new(-1110.5, 51.79999923706055, 241)
+Part55.Rotation = Vector3.new(0, 90, 0)
+Part55.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part55.Transparency = 0.30000001192092896
+Part55.Size = Vector3.new(2, 1.2000000476837158, 1)
+Part55.Anchored = true
+Part55.BottomSurface = Enum.SurfaceType.Smooth
+Part55.BrickColor = BrickColor.new("Bright blue")
+Part55.Locked = true
+Part55.TopSurface = Enum.SurfaceType.Smooth
+Part55.brickColor = BrickColor.new("Bright blue")
+Part56.Name = "Smooth Block Model"
+Part56.Parent = Model26
+Part56.CFrame = CFrame.new(-1111.5, 54.2000008, 240, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part56.Orientation = Vector3.new(0, -90, 0)
+Part56.Position = Vector3.new(-1111.5, 54.20000076293945, 240)
+Part56.Rotation = Vector3.new(0, -90, 0)
+Part56.Color = Color3.new(0.0509804, 0.411765, 0.67451)
+Part56.Transparency = 0.30000001192092896
+Part56.Size = Vector3.new(4, 3.5999999046325684, 3)
+Part56.Anchored = true
+Part56.BottomSurface = Enum.SurfaceType.Smooth
+Part56.BrickColor = BrickColor.new("Bright blue")
+Part56.Locked = true
+Part56.TopSurface = Enum.SurfaceType.Smooth
+Part56.brickColor = BrickColor.new("Bright blue")
+Model57.Name = "Jetpack"
+Model57.Parent = Model0
+Model58.Name = "Pack-Giver"
+Model58.Parent = Model57
+Script59.Parent = Model58
+table.insert(cors,sandbox(Script59,function()
+local Jetpack = script.Parent.Parent.Pack:clone()
+while true do
+if script.Parent.Parent:findFirstChild("Pack") == nil then
+local Packclone = Jetpack:clone()
+Packclone.Parent = script.Parent.Parent
+end
+wait()
+end
+
+end))
+Part60.Parent = Model58
+Part60.CFrame = CFrame.new(-1135, 45, 237, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part60.Orientation = Vector3.new(0, 180, 0)
+Part60.Position = Vector3.new(-1135, 45, 237)
+Part60.Rotation = Vector3.new(180, 0, 180)
+Part60.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part60.Size = Vector3.new(4, 0.4000000059604645, 4)
+Part60.Anchored = true
+Part60.BrickColor = BrickColor.new("Bright red")
+Part60.Locked = true
+Part60.TopSurface = Enum.SurfaceType.Smooth
+Part60.brickColor = BrickColor.new("Bright red")
+Part60.FormFactor = Enum.FormFactor.Plate
+Part60.formFactor = Enum.FormFactor.Plate
+Script61.Parent = Part60
+table.insert(cors,sandbox(Script61,function()
+local Debounce = true
+function Touch(hit)
+local Packs = 0
+local P = game.Workspace:GetChildren()
+for i = 1, #P do
+if P[i].Name == "Pack" then
+if P[i].OwnerModel.Value == hit.Parent then
+Packs = Packs + 1
+end
+end
+end
+if Packs == 0 then
+if hit.Parent:findFirstChild("Torso") ~= nil then
+if hit.Parent:findFirstChild("Pack") == nil then
+if Debounce == true then
+Debounce = false
+local Clone = script.Parent.Parent.Parent.Pack
+Clone.Parent = game.Workspace
+Clone.OwnerModel.Value = hit.Parent
+Clone.Mode.Value = 1
+Clone.On.Value = true
+Clone.Name = "Pack"
+Clone.Pack.Anchored = false
+Clone.Pack.CanCollide = true
+Clone.Flame1.Anchored = false
+Clone.Flame1.Transparency = 0.3
+Clone.Flame2.Anchored = false
+Clone.Flame2.Transparency = 0.3
+Clone.Cylinder1.Anchored = false
+Clone.Cylinder1.CanCollide = true
+Clone.Cylinder2.Anchored = false
+Clone.Cylinder2.CanCollide = true
+local Weld = Instance.new("Weld")
+Weld.Parent = hit.Parent.Torso
+Weld.Part0 = Weld.Parent
+Weld.Part1 = Clone.Pack
+Weld.C0 = CFrame.new(Weld.Part0.Position)
+Weld.C1 =CFrame.new(Weld.Part0.Position + Vector3.new(0, 0, -1))
+local Weld = Instance.new("Weld")
+Weld.Parent = hit.Parent.Torso
+Weld.Part0 = Weld.Parent
+Weld.Part1 = Clone.Flame1
+Weld.C0 = CFrame.new(Weld.Part0.Position)
+Weld.C1 =CFrame.new(Weld.Part0.Position + Vector3.new(0.5, 1.2, -1))
+local Weld = Instance.new("Weld")
+Weld.Parent = hit.Parent.Torso
+Weld.Part0 = Weld.Parent
+Weld.Part1 = Clone.Flame2
+Weld.C0 = CFrame.new(Weld.Part0.Position)
+Weld.C1 =CFrame.new(Weld.Part0.Position + Vector3.new(-0.5, 1.2, -1))
+local Weld = Instance.new("Weld")
+Weld.Parent = hit.Parent.Torso
+Weld.Part0 = Weld.Parent
+Weld.Part1 = Clone.Cylinder1
+Weld.C0 = CFrame.new(Weld.Part0.Position)
+Weld.C1 =CFrame.new(Weld.Part0.Position + Vector3.new(0.5, -1.5, -1))
+local Weld = Instance.new("Weld")
+Weld.Parent = hit.Parent.Torso
+Weld.Part0 = Weld.Parent
+Weld.Part1 = Clone.Cylinder2
+Weld.C0 = CFrame.new(Weld.Part0.Position)
+Weld.C1 =CFrame.new(Weld.Part0.Position + Vector3.new(-0.5, -1.5, -1))
+local BV = Instance.new("BodyVelocity")
+BV.Parent = hit.Parent.Torso
+BV.velocity = Vector3.new(0, 5, 0)
+wait(3)
+Debounce = true
+end
+end
+end
+end
+end
+script.Parent.Touched:connect(Touch)
+end))
+Model62.Name = "Pack"
+Model62.Parent = Model57
+Part63.Name = "Pack"
+Part63.Parent = Model62
+Part63.CFrame = CFrame.new(-1135.00171, 50.1944733, 241.495361, 0.99999553, 0.00066484767, -0.00294303242, -0.000664404768, 0.999999762, 0.00015146083, 0.00294313277, -0.000149504791, 0.999995768)
+Part63.Orientation = Vector3.new(-0.008999999612569809, -0.16899999976158142, -0.03799999877810478)
+Part63.Position = Vector3.new(-1135.001708984375, 50.19447326660156, 241.495361328125)
+Part63.Rotation = Vector3.new(-0.008999999612569809, -0.16899999976158142, -0.03799999877810478)
+Part63.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part63.Size = Vector3.new(2, 2, 1)
+Part63.Anchored = true
+Part63.BrickColor = BrickColor.new("Black")
+Part63.CanCollide = false
+Part63.FrontSurface = Enum.SurfaceType.Weld
+Part63.Locked = true
+Part63.TopSurface = Enum.SurfaceType.Smooth
+Part63.brickColor = BrickColor.new("Black")
+Part63.FormFactor = Enum.FormFactor.Symmetric
+Part63.formFactor = Enum.FormFactor.Symmetric
+BodyVelocity64.Parent = Part63
+ClickDetector65.Parent = Part63
+ClickDetector65.MaxActivationDistance = 3
+Script66.Parent = Part63
+table.insert(cors,sandbox(Script66,function()
+function Clicked()
+	if script.Parent.Parent.Parent.Name ~= "Jetpack Set" then
+	if script.Parent.Parent.On.Value == true then
+		script.Parent.Parent.On.Value = false
+		script.Parent.Parent.Flame1.Transparency = 1
+		script.Parent.Parent.Flame2.Transparency = 1
+		if script.Parent.Parent.Pack:findFirstChild("BodyVelocity") ~= nil then
+			script.Parent.Parent.Pack.BodyVelocity:remove()
+		end
+		if script.Parent.Parent.OwnerModel.Value:findFirstChild("Torso") ~= nil then
+			if script.Parent.Parent.OwnerModel.Value.Torso:findFirstChild("BodyVelocity") ~= nil then
+				script.Parent.Parent.OwnerModel.Value.Torso.BodyVelocity:remove()
+			end
+		end
+	else
+		script.Parent.Parent.On.Value = true
+		script.Parent.Parent.Flame1.Transparency = 0.3
+		script.Parent.Parent.Flame2.Transparency = 0.3
+		local BV = Instance.new("BodyVelocity")
+		BV.Parent = script.Parent.Parent.Pack
+		BV.velocity = Vector3.new(0, (5 * script.Parent.Parent.Mode.Value), 0)
+		BV.maxForce = Vector3.new(0, 4e+003, 0)
+		local BV = Instance.new("BodyVelocity")
+		BV.Parent = script.Parent.Parent.OwnerModel.Value.Torso
+		BV.velocity = Vector3.new(0, (5 * script.Parent.Parent.Mode.Value), 0)
+		BV.maxForce = Vector3.new(0, 4e+003, 0)
+	end
+	end
+end
+script.Parent.ClickDetector.MouseClick:connect(Clicked)
+
+end))
+BodyGyro67.Parent = Part63
+Part68.Name = "Flame2"
+Part68.Parent = Model62
+Part68.CFrame = CFrame.new(-1135.50354, 47.3949089, 241.494385, -0.99999553, 0.00066484767, 0.00294303242, 0.000664404768, 0.999999762, -0.00015146083, -0.00294313277, -0.000149504791, -0.999995768)
+Part68.Orientation = Vector3.new(0.008999999612569809, 179.83099365234375, 0.03799999877810478)
+Part68.Position = Vector3.new(-1135.5035400390625, 47.3949089050293, 241.494384765625)
+Part68.Rotation = Vector3.new(179.99099731445312, 0.16899999976158142, -179.96200561523438)
+Part68.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part68.Transparency = 1
+Part68.Size = Vector3.new(1, 3.6000001430511475, 1)
+Part68.Anchored = true
+Part68.BottomSurface = Enum.SurfaceType.Smooth
+Part68.BrickColor = BrickColor.new("Bright red")
+Part68.CanCollide = false
+Part68.Locked = true
+Part68.Reflectance = 0.10000000149011612
+Part68.TopSurface = Enum.SurfaceType.Smooth
+Part68.brickColor = BrickColor.new("Bright red")
+SpecialMesh69.Parent = Part68
+SpecialMesh69.MeshType = Enum.MeshType.Sphere
+Script70.Parent = Part68
+table.insert(cors,sandbox(Script70,function()
+while true do
+for i = 0, 5 do
+script.Parent.Reflectance = i * 0.1
+wait(0.05)
+end
+for i = 5, 1, -1 do
+script.Parent.Reflectance = i * 0.1
+wait(0.05)
+end
+end
+
+end))
+ClickDetector71.Parent = Part68
+ClickDetector71.MaxActivationDistance = 3
+Script72.Parent = Part68
+table.insert(cors,sandbox(Script72,function()
+function Clicked()
+	if script.Parent.Parent.Parent.Name ~= "Jetpack Set" then
+	if script.Parent.Parent.On.Value == true then
+		script.Parent.Parent.On.Value = false
+		script.Parent.Parent.Flame1.Transparency = 1
+		script.Parent.Parent.Flame2.Transparency = 1
+		if script.Parent.Parent.Pack:findFirstChild("BodyVelocity") ~= nil then
+			script.Parent.Parent.Pack.BodyVelocity:remove()
+		end
+		if script.Parent.Parent.OwnerModel.Value:findFirstChild("Torso") ~= nil then
+			if script.Parent.Parent.OwnerModel.Value.Torso:findFirstChild("BodyVelocity") ~= nil then
+				script.Parent.Parent.OwnerModel.Value.Torso.BodyVelocity:remove()
+			end
+		end
+	else
+		script.Parent.Parent.On.Value = true
+		script.Parent.Parent.Flame1.Transparency = 0.3
+		script.Parent.Parent.Flame2.Transparency = 0.3
+		local BV = Instance.new("BodyVelocity")
+		BV.Parent = script.Parent.Parent.Pack
+		BV.velocity = Vector3.new(0, (5 * script.Parent.Parent.Mode.Value), 0)
+		BV.maxForce = Vector3.new(0, 4e+003, 0)
+		local BV = Instance.new("BodyVelocity")
+		BV.Parent = script.Parent.Parent.OwnerModel.Value.Torso
+		BV.velocity = Vector3.new(0, (5 * script.Parent.Parent.Mode.Value), 0)
+		BV.maxForce = Vector3.new(0, 4e+003, 0)
+	end
+	end
+end
+script.Parent.ClickDetector.MouseClick:connect(Clicked)
+
+end))
+Script73.Parent = Part68
+table.insert(cors,sandbox(Script73,function()
+while true do
+wait()
+	if script.Parent.Parent.Mode.Value == 1 then
+		script.Parent.BrickColor = BrickColor.new(21)
+	end
+	if script.Parent.Parent.Mode.Value == -1 then
+		script.Parent.BrickColor = BrickColor.new(23)
+	end
+end
+
+end))
+Part74.Name = "Cylinder2"
+Part74.Parent = Model62
+Part74.CFrame = CFrame.new(-1134.50073, 51.6942253, 241.496582, 0.99999553, 0.00066484767, -0.00294303242, -0.000664404768, 0.999999762, 0.00015146083, 0.00294313277, -0.000149504791, 0.999995768)
+Part74.Orientation = Vector3.new(-0.008999999612569809, -0.16899999976158142, -0.03799999877810478)
+Part74.Position = Vector3.new(-1134.500732421875, 51.6942253112793, 241.49658203125)
+Part74.Rotation = Vector3.new(-0.008999999612569809, -0.16899999976158142, -0.03799999877810478)
+Part74.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part74.Size = Vector3.new(1, 1, 1)
+Part74.Anchored = true
+Part74.BrickColor = BrickColor.new("Black")
+Part74.CanCollide = false
+Part74.Locked = true
+Part74.TopSurface = Enum.SurfaceType.Smooth
+Part74.brickColor = BrickColor.new("Black")
+Part74.FormFactor = Enum.FormFactor.Symmetric
+Part74.formFactor = Enum.FormFactor.Symmetric
+Part74.Shape = Enum.PartType.Cylinder
+ClickDetector75.Parent = Part74
+ClickDetector75.MaxActivationDistance = 3
+Script76.Parent = Part74
+table.insert(cors,sandbox(Script76,function()
+function Clicked()
+	if script.Parent.Parent.Parent.Name ~= "Jetpack Set" then
+	script.Parent.Parent.Mode.Value = script.Parent.Parent.Mode.Value * -1
+	if script.Parent.Parent.Pack:findFirstChild("BodyVelocity") ~= nil then
+		script.Parent.Parent.Pack.BodyVelocity.velocity = Vector3.new(0, (5 * script.Parent.Parent.Mode.Value), 0)
+	end
+	if script.Parent.Parent.OwnerModel.Value:findFirstChild("Torso") ~= nil then
+		if script.Parent.Parent.OwnerModel.Value.Torso:findFirstChild("BodyVelocity") ~= nil then
+			script.Parent.Parent.OwnerModel.Value.Torso.BodyVelocity.velocity = Vector3.new(0, (5 * script.Parent.Parent.Mode.Value), 0)
+		end
+	end
+	end
+end
+script.Parent.ClickDetector.MouseClick:connect(Clicked)
+
+end))
+Part77.Name = "Flame1"
+Part77.Parent = Model62
+Part77.CFrame = CFrame.new(-1134.50354, 47.3941765, 241.497314, -0.99999553, 0.00066484767, 0.00294303242, 0.000664404768, 0.999999762, -0.00015146083, -0.00294313277, -0.000149504791, -0.999995768)
+Part77.Orientation = Vector3.new(0.008999999612569809, 179.83099365234375, 0.03799999877810478)
+Part77.Position = Vector3.new(-1134.5035400390625, 47.3941764831543, 241.497314453125)
+Part77.Rotation = Vector3.new(179.99099731445312, 0.16899999976158142, -179.96200561523438)
+Part77.Color = Color3.new(0.768627, 0.156863, 0.109804)
+Part77.Transparency = 1
+Part77.Size = Vector3.new(1, 3.6000001430511475, 1)
+Part77.Anchored = true
+Part77.BottomSurface = Enum.SurfaceType.Smooth
+Part77.BrickColor = BrickColor.new("Bright red")
+Part77.CanCollide = false
+Part77.Locked = true
+Part77.Reflectance = 0.10000000149011612
+Part77.TopSurface = Enum.SurfaceType.Smooth
+Part77.brickColor = BrickColor.new("Bright red")
+SpecialMesh78.Parent = Part77
+SpecialMesh78.MeshType = Enum.MeshType.Sphere
+Script79.Parent = Part77
+table.insert(cors,sandbox(Script79,function()
+while true do
+for i = 0, 5 do
+script.Parent.Reflectance = i * 0.1
+wait(0.05)
+end
+for i = 5, 1, -1 do
+script.Parent.Reflectance = i * 0.1
+wait(0.05)
+end
+end
+
+end))
+ClickDetector80.Parent = Part77
+ClickDetector80.MaxActivationDistance = 3
+Script81.Parent = Part77
+table.insert(cors,sandbox(Script81,function()
+function Clicked()
+	if script.Parent.Parent.Parent.Name ~= "Jetpack Set" then
+	if script.Parent.Parent.On.Value == true then
+		script.Parent.Parent.On.Value = false
+		script.Parent.Parent.Flame1.Transparency = 1
+		script.Parent.Parent.Flame2.Transparency = 1
+		if script.Parent.Parent.Pack:findFirstChild("BodyVelocity") ~= nil then
+			script.Parent.Parent.Pack.BodyVelocity:remove()
+		end
+		if script.Parent.Parent.OwnerModel.Value:findFirstChild("Torso") ~= nil then
+			if script.Parent.Parent.OwnerModel.Value.Torso:findFirstChild("BodyVelocity") ~= nil then
+				script.Parent.Parent.OwnerModel.Value.Torso.BodyVelocity:remove()
+			end
+		end
+	else
+		script.Parent.Parent.On.Value = true
+		script.Parent.Parent.Flame1.Transparency = 0.3
+		script.Parent.Parent.Flame2.Transparency = 0.3
+		local BV = Instance.new("BodyVelocity")
+		BV.Parent = script.Parent.Parent.Pack
+		BV.velocity = Vector3.new(0, (5 * script.Parent.Parent.Mode.Value), 0)
+		BV.maxForce = Vector3.new(0, 4e+003, 0)
+		local BV = Instance.new("BodyVelocity")
+		BV.Parent = script.Parent.Parent.OwnerModel.Value.Torso
+		BV.velocity = Vector3.new(0, (5 * script.Parent.Parent.Mode.Value), 0)
+		BV.maxForce = Vector3.new(0, 4e+003, 0)
+	end
+	end
+end
+script.Parent.ClickDetector.MouseClick:connect(Clicked)
+
+end))
+Script82.Parent = Part77
+table.insert(cors,sandbox(Script82,function()
+while true do
+wait()
+	if script.Parent.Parent.Mode.Value == 1 then
+		script.Parent.BrickColor = BrickColor.new(21)
+	end
+	if script.Parent.Parent.Mode.Value == -1 then
+		script.Parent.BrickColor = BrickColor.new(23)
+	end
+end
+
+end))
+Part83.Name = "Cylinder1"
+Part83.Parent = Model62
+Part83.CFrame = CFrame.new(-1135.50073, 51.6949577, 241.493652, 0.99999553, 0.00066484767, -0.00294303242, -0.000664404768, 0.999999762, 0.00015146083, 0.00294313277, -0.000149504791, 0.999995768)
+Part83.Orientation = Vector3.new(-0.008999999612569809, -0.16899999976158142, -0.03799999877810478)
+Part83.Position = Vector3.new(-1135.500732421875, 51.6949577331543, 241.49365234375)
+Part83.Rotation = Vector3.new(-0.008999999612569809, -0.16899999976158142, -0.03799999877810478)
+Part83.Color = Color3.new(0.105882, 0.164706, 0.207843)
+Part83.Size = Vector3.new(1, 1, 1)
+Part83.Anchored = true
+Part83.BrickColor = BrickColor.new("Black")
+Part83.CanCollide = false
+Part83.Locked = true
+Part83.TopSurface = Enum.SurfaceType.Smooth
+Part83.brickColor = BrickColor.new("Black")
+Part83.FormFactor = Enum.FormFactor.Symmetric
+Part83.formFactor = Enum.FormFactor.Symmetric
+Part83.Shape = Enum.PartType.Cylinder
+ClickDetector84.Parent = Part83
+ClickDetector84.MaxActivationDistance = 3
+Script85.Parent = Part83
+table.insert(cors,sandbox(Script85,function()
+function Clicked()
+	if script.Parent.Parent.Parent.Name ~= "Jetpack Set" then
+	script.Parent.Parent.Mode.Value = script.Parent.Parent.Mode.Value * -1
+	if script.Parent.Parent.Pack:findFirstChild("BodyVelocity") ~= nil then
+		script.Parent.Parent.Pack.BodyVelocity.velocity = Vector3.new(0, (5 * script.Parent.Parent.Mode.Value), 0)
+	end
+	if script.Parent.Parent.OwnerModel.Value:findFirstChild("Torso") ~= nil then
+		if script.Parent.Parent.OwnerModel.Value.Torso:findFirstChild("BodyVelocity") ~= nil then
+			script.Parent.Parent.OwnerModel.Value.Torso.BodyVelocity.velocity = Vector3.new(0, (5 * script.Parent.Parent.Mode.Value), 0)
+		end
+	end
+	end
+end
+script.Parent.ClickDetector.MouseClick:connect(Clicked)
+
+end))
+Script86.Parent = Model62
+table.insert(cors,sandbox(Script86,function()
+while true do
+wait()
+local P = script.Parent:GetChildren()
+	if #P ~= 9 then
+		if script.Parent.Parent.Name == "Jetpack Set" then
+			script.Parent:remove()
+		end
+		if script.Parent.OwnerModel.Value:findFirstChild("Torso") ~= nil then
+			if script.Parent.Parent.Torso:findFirstChild("BodyVelocity") ~= nil then
+				script.Parent.Parent.Torso.BodyVelocity:remove()
+			end
+		end
+		if script.Parent:findFirstChild("Pack") ~= nil then
+			if script.Parent.Pack:findFirstChild("BodyVelocity") ~= nil then
+				script.Parent.Pack.BodyVelocity:remove()
+			end
+		end
+		if script.Parent:findFirstChild("Pack") == nil then
+			script.Parent:remove()
+		end
+	end
+end
+
+end))
+BoolValue87.Name = "On"
+BoolValue87.Parent = Model62
+NumberValue88.Name = "Mode"
+NumberValue88.Parent = Model62
+NumberValue88.Value = 1
+ObjectValue89.Name = "OwnerModel"
+ObjectValue89.Parent = Model62
+Model90.Parent = Model0
+Part91.Name = "Tie"
+Part91.Parent = Model90
+Part91.CFrame = CFrame.new(-460, 0.599621952, 97.5, -3.63797881e-12, 0, 1.00000048, 0, 1.00000095, 0, -1.00000048, 0, -3.63797881e-12)
+Part91.Orientation = Vector3.new(0, 90, 0)
+Part91.Position = Vector3.new(-460, 0.5996219515800476, 97.5)
+Part91.Rotation = Vector3.new(0, 90, 0)
+Part91.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part91.Size = Vector3.new(2, 0.4000000059604645, 8)
+Part91.Anchored = true
+Part91.BrickColor = BrickColor.new("Earth orange")
+Part91.Locked = true
+Part91.brickColor = BrickColor.new("Earth orange")
+Part91.FormFactor = Enum.FormFactor.Plate
+Part91.formFactor = Enum.FormFactor.Plate
+Snap92.Parent = Part91
+Snap92.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap92.C1 = CFrame.new(8, -0.40037787, -2.5, -1.00000048, 3.63797881e-12, 0, 0, 0, 1.00000095, 3.63797881e-12, 1.00000048, 0)
+Snap92.Part0 = Part91
+Snap92.Part1 = Part97
+Snap92.part1 = Part97
+Snap93.Parent = Part91
+Snap93.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap93.C1 = CFrame.new(8, -0.40037787, 2.5, -1.00000048, 3.63797881e-12, 0, 0, 0, 1.00000095, 3.63797881e-12, 1.00000048, 0)
+Snap93.Part0 = Part91
+Snap93.Part1 = Part100
+Snap93.part1 = Part100
+Part94.Name = "Tie"
+Part94.Parent = Model90
+Part94.CFrame = CFrame.new(-460, 0.600000024, 105, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part94.Orientation = Vector3.new(0, 90, 0)
+Part94.Position = Vector3.new(-460, 0.6000000238418579, 105)
+Part94.Rotation = Vector3.new(0, 90, 0)
+Part94.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part94.Size = Vector3.new(2, 0.4000000059604645, 8)
+Part94.Anchored = true
+Part94.BrickColor = BrickColor.new("Earth orange")
+Part94.Locked = true
+Part94.brickColor = BrickColor.new("Earth orange")
+Part94.FormFactor = Enum.FormFactor.Plate
+Part94.formFactor = Enum.FormFactor.Plate
+Snap95.Parent = Part94
+Snap95.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap95.C1 = CFrame.new(0.5, -0.400000036, -2.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap95.Part0 = Part94
+Snap95.Part1 = Part97
+Snap95.part1 = Part97
+Snap96.Parent = Part94
+Snap96.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap96.C1 = CFrame.new(0.5, -0.400000036, 2.5, -1, 0, 0, 0, 0, 1, 0, 1, 0)
+Snap96.Part0 = Part94
+Snap96.Part1 = Part100
+Snap96.part1 = Part100
+Part97.Name = "Rail"
+Part97.Parent = Model90
+Part97.CFrame = CFrame.new(-457.5, 1.20000005, 105.5, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part97.Orientation = Vector3.new(0, 90, 0)
+Part97.Position = Vector3.new(-457.5, 1.2000000476837158, 105.5)
+Part97.Rotation = Vector3.new(0, 90, 0)
+Part97.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part97.Size = Vector3.new(29, 0.800000011920929, 1)
+Part97.Anchored = true
+Part97.BrickColor = BrickColor.new("Dark stone grey")
+Part97.Locked = true
+Part97.TopSurface = Enum.SurfaceType.Smooth
+Part97.brickColor = BrickColor.new("Dark stone grey")
+Part97.FormFactor = Enum.FormFactor.Plate
+Part97.formFactor = Enum.FormFactor.Plate
+Snap98.Parent = Part97
+Snap98.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap98.C1 = CFrame.new(7, 0.200378299, 2.5, 1.00000048, -3.63797881e-12, -0, 0, 0, -1.00000095, 3.63797881e-12, 1.00000048, 0)
+Snap98.Part0 = Part97
+Snap98.Part1 = Part103
+Snap98.part1 = Part103
+Snap99.Parent = Part97
+Snap99.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap99.C1 = CFrame.new(14, 0.200000048, 2.5, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Snap99.Part0 = Part97
+Snap99.Part1 = Part104
+Snap99.part1 = Part104
+Part100.Name = "Rail"
+Part100.Parent = Model90
+Part100.CFrame = CFrame.new(-462.5, 1.20000005, 105.5, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part100.Orientation = Vector3.new(0, 90, 0)
+Part100.Position = Vector3.new(-462.5, 1.2000000476837158, 105.5)
+Part100.Rotation = Vector3.new(0, 90, 0)
+Part100.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part100.Size = Vector3.new(29, 0.800000011920929, 1)
+Part100.Anchored = true
+Part100.BrickColor = BrickColor.new("Dark stone grey")
+Part100.Locked = true
+Part100.TopSurface = Enum.SurfaceType.Smooth
+Part100.brickColor = BrickColor.new("Dark stone grey")
+Part100.FormFactor = Enum.FormFactor.Plate
+Part100.formFactor = Enum.FormFactor.Plate
+Snap101.Parent = Part100
+Snap101.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap101.C1 = CFrame.new(7, 0.200378299, -2.5, 1.00000048, -3.63797881e-12, -0, 0, 0, -1.00000095, 3.63797881e-12, 1.00000048, 0)
+Snap101.Part0 = Part100
+Snap101.Part1 = Part103
+Snap101.part1 = Part103
+Snap102.Parent = Part100
+Snap102.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap102.C1 = CFrame.new(14, 0.200000048, -2.5, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Snap102.Part0 = Part100
+Snap102.Part1 = Part104
+Snap102.part1 = Part104
+Part103.Name = "Tie"
+Part103.Parent = Model90
+Part103.CFrame = CFrame.new(-460, 0.599621952, 112.5, -3.63797881e-12, 0, 1.00000048, 0, 1.00000095, 0, -1.00000048, 0, -3.63797881e-12)
+Part103.Orientation = Vector3.new(0, 90, 0)
+Part103.Position = Vector3.new(-460, 0.5996219515800476, 112.5)
+Part103.Rotation = Vector3.new(0, 90, 0)
+Part103.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part103.Size = Vector3.new(2, 0.4000000059604645, 8)
+Part103.Anchored = true
+Part103.BrickColor = BrickColor.new("Earth orange")
+Part103.Locked = true
+Part103.brickColor = BrickColor.new("Earth orange")
+Part103.FormFactor = Enum.FormFactor.Plate
+Part103.formFactor = Enum.FormFactor.Plate
+Part104.Name = "Tie"
+Part104.Parent = Model90
+Part104.CFrame = CFrame.new(-460, 0.600000024, 119.5, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part104.Orientation = Vector3.new(0, 90, 0)
+Part104.Position = Vector3.new(-460, 0.6000000238418579, 119.5)
+Part104.Rotation = Vector3.new(0, 90, 0)
+Part104.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part104.Size = Vector3.new(1, 0.4000000059604645, 8)
+Part104.Anchored = true
+Part104.BrickColor = BrickColor.new("Earth orange")
+Part104.Locked = true
+Part104.brickColor = BrickColor.new("Earth orange")
+Part104.FormFactor = Enum.FormFactor.Plate
+Part104.formFactor = Enum.FormFactor.Plate
+Model105.Parent = Model0
+Model106.Name = "Track-Curve"
+Model106.Parent = Model105
+Part107.Name = "Rail"
+Part107.Parent = Model106
+Part107.CFrame = CFrame.new(-613.938965, 37.9979515, -62.8948975, 0.222585276, 0, -0.97491318, 0, 1, 0, 0.974913239, 0, 0.22258535)
+Part107.Orientation = Vector3.new(0, -77.13899993896484, 0)
+Part107.Position = Vector3.new(-613.93896484375, 37.99795150756836, -62.8948974609375)
+Part107.Rotation = Vector3.new(0, -77.13899993896484, 0)
+Part107.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part107.Size = Vector3.new(4, 0.800000011920929, 1)
+Part107.Anchored = true
+Part107.BrickColor = BrickColor.new("Dark stone grey")
+Part107.Locked = true
+Part107.TopSurface = Enum.SurfaceType.Smooth
+Part107.brickColor = BrickColor.new("Dark stone grey")
+Part107.FormFactor = Enum.FormFactor.Plate
+Part107.formFactor = Enum.FormFactor.Plate
+Part108.Name = "Rail"
+Part108.Parent = Model106
+Part108.CFrame = CFrame.new(-615.233398, 37.9981041, -66.593811, 0.433931142, 0, -0.900946021, 0, 1, 0, 0.900946021, 0, 0.433931142)
+Part108.Orientation = Vector3.new(0, -64.28299713134766, 0)
+Part108.Position = Vector3.new(-615.2333984375, 37.998104095458984, -66.59381103515625)
+Part108.Rotation = Vector3.new(0, -64.28299713134766, 0)
+Part108.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part108.Size = Vector3.new(4, 0.800000011920929, 1)
+Part108.Anchored = true
+Part108.BrickColor = BrickColor.new("Dark stone grey")
+Part108.Locked = true
+Part108.TopSurface = Enum.SurfaceType.Smooth
+Part108.brickColor = BrickColor.new("Dark stone grey")
+Part108.FormFactor = Enum.FormFactor.Plate
+Part108.formFactor = Enum.FormFactor.Plate
+Part109.Name = "Rail"
+Part109.Parent = Model106
+Part109.CFrame = CFrame.new(-617.318665, 37.9979362, -69.9122314, 0.623519719, 0, -0.781807482, 0, 1, 0, 0.781807542, 0, 0.623519897)
+Part109.Orientation = Vector3.new(0, -51.42599868774414, 0)
+Part109.Position = Vector3.new(-617.3186645507812, 37.9979362487793, -69.9122314453125)
+Part109.Rotation = Vector3.new(0, -51.42599868774414, 0)
+Part109.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part109.Size = Vector3.new(4, 0.800000011920929, 1)
+Part109.Anchored = true
+Part109.BrickColor = BrickColor.new("Dark stone grey")
+Part109.Locked = true
+Part109.TopSurface = Enum.SurfaceType.Smooth
+Part109.brickColor = BrickColor.new("Dark stone grey")
+Part109.FormFactor = Enum.FormFactor.Plate
+Part109.formFactor = Enum.FormFactor.Plate
+Part110.Name = "Tie"
+Part110.Parent = Model106
+Part110.CFrame = CFrame.new(-618.010193, 37.3978157, -66.5009155, 0.500041366, 0, -0.866001427, 0, 1, 0, 0.866001546, 0, 0.500041604)
+Part110.Orientation = Vector3.new(0, -59.99700164794922, 0)
+Part110.Position = Vector3.new(-618.0101928710938, 37.3978157043457, -66.50091552734375)
+Part110.Rotation = Vector3.new(0, -59.99700164794922, 0)
+Part110.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part110.Size = Vector3.new(2, 0.4000000059604645, 8)
+Part110.Anchored = true
+Part110.BrickColor = BrickColor.new("Earth orange")
+Part110.Locked = true
+Part110.brickColor = BrickColor.new("Earth orange")
+Part110.FormFactor = Enum.FormFactor.Plate
+Part110.formFactor = Enum.FormFactor.Plate
+Part111.Name = "Rail"
+Part111.Parent = Model106
+Part111.CFrame = CFrame.new(-619.862854, 37.9979439, -64.6756592, 0.454035789, 0, -0.890983522, 0, 1, 0, 0.890983522, 0, 0.454035789)
+Part111.Orientation = Vector3.new(0, -62.99700164794922, 0)
+Part111.Position = Vector3.new(-619.8628540039062, 37.99794387817383, -64.6756591796875)
+Part111.Rotation = Vector3.new(0, -62.99700164794922, 0)
+Part111.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part111.Size = Vector3.new(2, 0.800000011920929, 1)
+Part111.Anchored = true
+Part111.BrickColor = BrickColor.new("Dark stone grey")
+Part111.Locked = true
+Part111.TopSurface = Enum.SurfaceType.Smooth
+Part111.brickColor = BrickColor.new("Dark stone grey")
+Part111.FormFactor = Enum.FormFactor.Plate
+Part111.formFactor = Enum.FormFactor.Plate
+Part112.Name = "Rail"
+Part112.Parent = Model106
+Part112.CFrame = CFrame.new(-619.112183, 37.9979515, -62.8634033, 0.309074938, 0, -0.951037526, 0, 1, 0, 0.951037705, 0, 0.309075087)
+Part112.Orientation = Vector3.new(0, -71.99700164794922, 0)
+Part112.Position = Vector3.new(-619.1121826171875, 37.99795150756836, -62.8634033203125)
+Part112.Rotation = Vector3.new(0, -71.99600219726562, 0)
+Part112.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part112.Size = Vector3.new(2, 0.800000011920929, 1)
+Part112.Anchored = true
+Part112.BrickColor = BrickColor.new("Dark stone grey")
+Part112.Locked = true
+Part112.TopSurface = Enum.SurfaceType.Smooth
+Part112.brickColor = BrickColor.new("Dark stone grey")
+Part112.FormFactor = Enum.FormFactor.Plate
+Part112.formFactor = Enum.FormFactor.Plate
+Part113.Name = "Rail"
+Part113.Parent = Model106
+Part113.CFrame = CFrame.new(-620.089905, 37.9981346, -72.6832886, 0.781846941, 0, -0.623470128, 0, 1, 0, 0.623470187, 0, 0.781847239)
+Part113.Orientation = Vector3.new(0, -38.56999969482422, 0)
+Part113.Position = Vector3.new(-620.0899047851562, 37.99813461303711, -72.68328857421875)
+Part113.Rotation = Vector3.new(0, -38.56999969482422, 0)
+Part113.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part113.Size = Vector3.new(4, 0.800000011920929, 1)
+Part113.Anchored = true
+Part113.BrickColor = BrickColor.new("Dark stone grey")
+Part113.Locked = true
+Part113.TopSurface = Enum.SurfaceType.Smooth
+Part113.brickColor = BrickColor.new("Dark stone grey")
+Part113.FormFactor = Enum.FormFactor.Plate
+Part113.formFactor = Enum.FormFactor.Plate
+Part114.Name = "Rail"
+Part114.Parent = Model106
+Part114.CFrame = CFrame.new(-620.887878, 37.9979515, -66.3481445, 0.587818861, 0, -0.808992624, 0, 1, 0, 0.808992565, 0, 0.587818861)
+Part114.Orientation = Vector3.new(0, -53.99800109863281, 0)
+Part114.Position = Vector3.new(-620.8878784179688, 37.99795150756836, -66.34814453125)
+Part114.Rotation = Vector3.new(0, -53.99800109863281, 0)
+Part114.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part114.Size = Vector3.new(2, 0.800000011920929, 1)
+Part114.Anchored = true
+Part114.BrickColor = BrickColor.new("Dark stone grey")
+Part114.Locked = true
+Part114.TopSurface = Enum.SurfaceType.Smooth
+Part114.brickColor = BrickColor.new("Dark stone grey")
+Part114.FormFactor = Enum.FormFactor.Plate
+Part114.formFactor = Enum.FormFactor.Plate
+Part115.Name = "Rail"
+Part115.Parent = Model106
+Part115.CFrame = CFrame.new(-623.653503, 37.9978752, -69.1135254, 0.809030354, 0, -0.587766707, 0, 1, 0, 0.587766767, 0, 0.809030533)
+Part115.Orientation = Vector3.new(0, -35.999000549316406, 0)
+Part115.Position = Vector3.new(-623.6535034179688, 37.99787521362305, -69.113525390625)
+Part115.Rotation = Vector3.new(0, -35.999000549316406, 0)
+Part115.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part115.Size = Vector3.new(2, 0.800000011920929, 1)
+Part115.Anchored = true
+Part115.BrickColor = BrickColor.new("Dark stone grey")
+Part115.Locked = true
+Part115.TopSurface = Enum.SurfaceType.Smooth
+Part115.brickColor = BrickColor.new("Dark stone grey")
+Part115.FormFactor = Enum.FormFactor.Plate
+Part115.formFactor = Enum.FormFactor.Plate
+Part116.Name = "Rail"
+Part116.Parent = Model106
+Part116.CFrame = CFrame.new(-622.161926, 37.9979515, -67.8397217, 0.707128882, 0, -0.707084775, 0, 1, 0, 0.707084775, 0, 0.707128942)
+Part116.Orientation = Vector3.new(0, -44.99800109863281, 0)
+Part116.Position = Vector3.new(-622.1619262695312, 37.99795150756836, -67.8397216796875)
+Part116.Rotation = Vector3.new(0, -44.99800109863281, 0)
+Part116.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part116.Size = Vector3.new(2, 0.800000011920929, 1)
+Part116.Anchored = true
+Part116.BrickColor = BrickColor.new("Dark stone grey")
+Part116.Locked = true
+Part116.TopSurface = Enum.SurfaceType.Smooth
+Part116.brickColor = BrickColor.new("Dark stone grey")
+Part116.FormFactor = Enum.FormFactor.Plate
+Part116.formFactor = Enum.FormFactor.Plate
+Part117.Name = "Tie"
+Part117.Parent = Model106
+Part117.CFrame = CFrame.new(-623.501038, 37.3976936, -71.9915771, 0.866035044, 0, -0.499983162, 0, 1, 0, 0.499983162, 0, 0.866035223)
+Part117.Orientation = Vector3.new(0, -29.999000549316406, 0)
+Part117.Position = Vector3.new(-623.5010375976562, 37.3976936340332, -71.9915771484375)
+Part117.Rotation = Vector3.new(0, -29.999000549316406, 0)
+Part117.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part117.Size = Vector3.new(2, 0.4000000059604645, 8)
+Part117.Anchored = true
+Part117.BrickColor = BrickColor.new("Earth orange")
+Part117.Locked = true
+Part117.brickColor = BrickColor.new("Earth orange")
+Part117.FormFactor = Enum.FormFactor.Plate
+Part117.formFactor = Enum.FormFactor.Plate
+Part118.Name = "Rail"
+Part118.Parent = Model106
+Part118.CFrame = CFrame.new(-623.408325, 37.9979439, -74.7682495, 0.900975943, 0, -0.433868825, 0, 1, 0, 0.433868825, 0, 0.900976121)
+Part118.Orientation = Vector3.new(0, -25.71299934387207, 0)
+Part118.Position = Vector3.new(-623.4083251953125, 37.99794387817383, -74.76824951171875)
+Part118.Rotation = Vector3.new(0, -25.71299934387207, 0)
+Part118.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part118.Size = Vector3.new(4, 0.800000011920929, 1)
+Part118.Anchored = true
+Part118.BrickColor = BrickColor.new("Dark stone grey")
+Part118.Locked = true
+Part118.TopSurface = Enum.SurfaceType.Smooth
+Part118.brickColor = BrickColor.new("Dark stone grey")
+Part118.FormFactor = Enum.FormFactor.Plate
+Part118.formFactor = Enum.FormFactor.Plate
+Part119.Name = "Rail"
+Part119.Parent = Model106
+Part119.CFrame = CFrame.new(-625.326172, 37.9979515, -70.1384277, 0.891016364, 0, -0.453970969, 0, 1, 0, 0.453970939, 0, 0.891016543)
+Part119.Orientation = Vector3.new(0, -26.999000549316406, 0)
+Part119.Position = Vector3.new(-625.326171875, 37.99795150756836, -70.138427734375)
+Part119.Rotation = Vector3.new(0, -26.999000549316406, 0)
+Part119.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part119.Size = Vector3.new(2, 0.800000011920929, 1)
+Part119.Anchored = true
+Part119.BrickColor = BrickColor.new("Dark stone grey")
+Part119.Locked = true
+Part119.TopSurface = Enum.SurfaceType.Smooth
+Part119.brickColor = BrickColor.new("Dark stone grey")
+Part119.FormFactor = Enum.FormFactor.Plate
+Part119.formFactor = Enum.FormFactor.Plate
+Part120.Name = "Rail"
+Part120.Parent = Model106
+Part120.CFrame = CFrame.new(-627.107239, 37.9979515, -76.0625, 0.974929929, 0, -0.222511634, 0, 1, 0, 0.22251156, 0, 0.974930108)
+Part120.Orientation = Vector3.new(0, -12.857000350952148, 0)
+Part120.Position = Vector3.new(-627.1072387695312, 37.99795150756836, -76.0625)
+Part120.Rotation = Vector3.new(0, -12.857000350952148, 0)
+Part120.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part120.Size = Vector3.new(4, 0.800000011920929, 1)
+Part120.Anchored = true
+Part120.BrickColor = BrickColor.new("Dark stone grey")
+Part120.Locked = true
+Part120.TopSurface = Enum.SurfaceType.Smooth
+Part120.brickColor = BrickColor.new("Dark stone grey")
+Part120.FormFactor = Enum.FormFactor.Plate
+Part120.formFactor = Enum.FormFactor.Plate
+Part121.Name = "Rail"
+Part121.Parent = Model106
+Part121.CFrame = CFrame.new(-627.138367, 37.9979515, -70.8891602, 0.951059878, 0, -0.309006304, 0, 1, 0, 0.309006304, 0, 0.951060057)
+Part121.Orientation = Vector3.new(0, -17.999000549316406, 0)
+Part121.Position = Vector3.new(-627.1383666992188, 37.99795150756836, -70.88916015625)
+Part121.Rotation = Vector3.new(0, -17.999000549316406, 0)
+Part121.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part121.Size = Vector3.new(2, 0.800000011920929, 1)
+Part121.Anchored = true
+Part121.BrickColor = BrickColor.new("Dark stone grey")
+Part121.Locked = true
+Part121.TopSurface = Enum.SurfaceType.Smooth
+Part121.brickColor = BrickColor.new("Dark stone grey")
+Part121.FormFactor = Enum.FormFactor.Plate
+Part121.formFactor = Enum.FormFactor.Plate
+Part122.Name = "Rail"
+Part122.Parent = Model106
+Part122.CFrame = CFrame.new(-629.045715, 37.9979744, -71.3470459, 0.98769027, 0, -0.156422421, 0, 1, 0, 0.156422421, 0, 0.98769027)
+Part122.Orientation = Vector3.new(0, -8.99899959564209, 0)
+Part122.Position = Vector3.new(-629.0457153320312, 37.99797439575195, -71.3470458984375)
+Part122.Rotation = Vector3.new(0, -8.99899959564209, 0)
+Part122.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part122.Size = Vector3.new(2, 0.800000011920929, 1)
+Part122.Anchored = true
+Part122.BrickColor = BrickColor.new("Dark stone grey")
+Part122.Locked = true
+Part122.TopSurface = Enum.SurfaceType.Smooth
+Part122.brickColor = BrickColor.new("Dark stone grey")
+Part122.FormFactor = Enum.FormFactor.Plate
+Part122.formFactor = Enum.FormFactor.Plate
+Part123.Name = "Rail"
+Part123.Parent = Model106
+Part123.CFrame = CFrame.new(-618.654053, 37.9981346, -60.9561768, 0.15650256, 0, -0.987677455, 0, 1, 0, 0.987677574, 0, 0.156502709)
+Part123.Orientation = Vector3.new(0, -80.99600219726562, 0)
+Part123.Position = Vector3.new(-618.654052734375, 37.99813461303711, -60.9561767578125)
+Part123.Rotation = Vector3.new(0, -80.99600219726562, 0)
+Part123.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part123.Size = Vector3.new(2, 0.800000011920929, 1)
+Part123.Anchored = true
+Part123.BrickColor = BrickColor.new("Dark stone grey")
+Part123.Locked = true
+Part123.TopSurface = Enum.SurfaceType.Smooth
+Part123.brickColor = BrickColor.new("Dark stone grey")
+Part123.FormFactor = Enum.FormFactor.Plate
+Part123.formFactor = Enum.FormFactor.Plate
+Part124.Name = "Rail"
+Part124.Parent = Model106
+Part124.CFrame = CFrame.new(-630.5, 38, -71.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part124.Orientation = Vector3.new(0, 180, 0)
+Part124.Position = Vector3.new(-630.5, 38, -71.5)
+Part124.Rotation = Vector3.new(180, 0, 180)
+Part124.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part124.Size = Vector3.new(1, 0.800000011920929, 1)
+Part124.Anchored = true
+Part124.BrickColor = BrickColor.new("Dark stone grey")
+Part124.Locked = true
+Part124.TopSurface = Enum.SurfaceType.Smooth
+Part124.brickColor = BrickColor.new("Dark stone grey")
+Part124.FormFactor = Enum.FormFactor.Plate
+Part124.formFactor = Enum.FormFactor.Plate
+Snap125.Parent = Part124
+Snap125.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap125.C1 = CFrame.new(-0.00115966797, 0.202014923, -2.50097656, 0.999999821, -2.55671348e-05, 0, 0, 0, -1, 2.54300867e-05, 1.00000012, -0)
+Snap125.Part0 = Part124
+Snap125.Part1 = Part128
+Snap125.part1 = Part128
+Part126.Name = "Rail"
+Part126.Parent = Model106
+Part126.CFrame = CFrame.new(-630.5, 38, -76.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part126.Orientation = Vector3.new(0, 180, 0)
+Part126.Position = Vector3.new(-630.5, 38, -76.5)
+Part126.Rotation = Vector3.new(180, 0, 180)
+Part126.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part126.Size = Vector3.new(1, 0.800000011920929, 1)
+Part126.Anchored = true
+Part126.BrickColor = BrickColor.new("Dark stone grey")
+Part126.Locked = true
+Part126.TopSurface = Enum.SurfaceType.Smooth
+Part126.brickColor = BrickColor.new("Dark stone grey")
+Part126.FormFactor = Enum.FormFactor.Plate
+Part126.formFactor = Enum.FormFactor.Plate
+Snap127.Parent = Part126
+Snap127.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap127.C1 = CFrame.new(-0.00128173828, 0.202014923, 2.49902344, 0.999999821, -2.55671348e-05, 0, 0, 0, -1, 2.54300867e-05, 1.00000012, -0)
+Snap127.Part0 = Part126
+Snap127.Part1 = Part128
+Snap127.part1 = Part128
+Part128.Name = "Tie"
+Part128.Parent = Model106
+Part128.CFrame = CFrame.new(-630.501221, 37.3979836, -74.0009766, -0.999999821, 0, -2.54300867e-05, 0, 1, 0, 2.55671348e-05, 0, -1.00000012)
+Part128.Orientation = Vector3.new(0, -179.99899291992188, 0)
+Part128.Position = Vector3.new(-630.501220703125, 37.39798355102539, -74.0009765625)
+Part128.Rotation = Vector3.new(180, -0.0010000000474974513, 180)
+Part128.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part128.Size = Vector3.new(1, 0.4000000059604645, 8)
+Part128.Anchored = true
+Part128.BrickColor = BrickColor.new("Earth orange")
+Part128.Locked = true
+Part128.brickColor = BrickColor.new("Earth orange")
+Part128.FormFactor = Enum.FormFactor.Plate
+Part128.formFactor = Enum.FormFactor.Plate
+Snap129.Parent = Part128
+Snap129.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap129.C1 = CFrame.new(-0.49987793, -0.400165558, 2.50010681, 0.999999642, 1.37055395e-07, 0, 0, 0, 1, -1.37055395e-07, -1.00000024, 0)
+Snap129.Part0 = Part128
+Snap129.Part1 = Part130
+Snap129.part1 = Part130
+Part130.Name = "Rail"
+Part130.Parent = Model106
+Part130.CFrame = CFrame.new(-630.001404, 37.9981499, -76.5010986, 0.999999821, 0, 2.54300867e-05, 0, 1, 0, -2.55671348e-05, 0, 1.00000012)
+Part130.Orientation = Vector3.new(0, 0.0010000000474974513, 0)
+Part130.Position = Vector3.new(-630.0014038085938, 37.99814987182617, -76.5010986328125)
+Part130.Rotation = Vector3.new(0, 0.0010000000474974513, 0)
+Part130.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part130.Size = Vector3.new(2, 0.800000011920929, 1)
+Part130.Anchored = true
+Part130.BrickColor = BrickColor.new("Dark stone grey")
+Part130.Locked = true
+Part130.TopSurface = Enum.SurfaceType.Smooth
+Part130.brickColor = BrickColor.new("Dark stone grey")
+Part130.FormFactor = Enum.FormFactor.Plate
+Part130.formFactor = Enum.FormFactor.Plate
+Part131.Name = "Rail"
+Part131.Parent = Model106
+Part131.CFrame = CFrame.new(-613.5, 38, -59.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part131.Orientation = Vector3.new(0, 180, 0)
+Part131.Position = Vector3.new(-613.5, 38, -59.5)
+Part131.Rotation = Vector3.new(180, 0, 180)
+Part131.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part131.Size = Vector3.new(1, 0.800000011920929, 1)
+Part131.Anchored = true
+Part131.BrickColor = BrickColor.new("Dark stone grey")
+Part131.Locked = true
+Part131.TopSurface = Enum.SurfaceType.Smooth
+Part131.brickColor = BrickColor.new("Dark stone grey")
+Part131.FormFactor = Enum.FormFactor.Plate
+Part131.formFactor = Enum.FormFactor.Plate
+Snap132.Parent = Part131
+Snap132.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap132.C1 = CFrame.new(0, 0.199996948, 2.5, 0, 1, 0, 0, 0, -1, -1, 0, 0)
+Snap132.Part0 = Part131
+Snap132.Part1 = Part137
+Snap132.part1 = Part137
+Part133.Name = "Rail"
+Part133.Parent = Model106
+Part133.CFrame = CFrame.new(-613.499817, 37.9976845, -60.0007324, 7.37839291e-05, 0, -0.999999881, 0, 1, 0, 1.00000012, 0, 7.39039315e-05)
+Part133.Orientation = Vector3.new(0, -89.99600219726562, 0)
+Part133.Position = Vector3.new(-613.4998168945312, 37.997684478759766, -60.000732421875)
+Part133.Rotation = Vector3.new(0, -90, 0)
+Part133.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part133.Size = Vector3.new(2, 0.800000011920929, 1)
+Part133.Anchored = true
+Part133.BrickColor = BrickColor.new("Dark stone grey")
+Part133.Locked = true
+Part133.TopSurface = Enum.SurfaceType.Smooth
+Part133.brickColor = BrickColor.new("Dark stone grey")
+Part133.FormFactor = Enum.FormFactor.Plate
+Part133.formFactor = Enum.FormFactor.Plate
+Snap134.Parent = Part133
+Snap134.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap134.C1 = CFrame.new(0.500732422, 0.197681427, 2.50018311, -1.00000012, -7.39039315e-05, 0, 0, 0, -1, 7.37839291e-05, -0.999999881, 0)
+Snap134.Part0 = Part133
+Snap134.Part1 = Part137
+Snap134.part1 = Part137
+Part135.Name = "Rail"
+Part135.Parent = Model106
+Part135.CFrame = CFrame.new(-618.5, 38, -59.5, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part135.Orientation = Vector3.new(0, 180, 0)
+Part135.Position = Vector3.new(-618.5, 38, -59.5)
+Part135.Rotation = Vector3.new(180, 0, 180)
+Part135.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part135.Size = Vector3.new(1, 0.800000011920929, 1)
+Part135.Anchored = true
+Part135.BrickColor = BrickColor.new("Dark stone grey")
+Part135.Locked = true
+Part135.TopSurface = Enum.SurfaceType.Smooth
+Part135.brickColor = BrickColor.new("Dark stone grey")
+Part135.FormFactor = Enum.FormFactor.Plate
+Part135.formFactor = Enum.FormFactor.Plate
+Snap136.Parent = Part135
+Snap136.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap136.C1 = CFrame.new(0, 0.199996948, -2.5, 0, 1, 0, 0, 0, -1, -1, 0, 0)
+Snap136.Part0 = Part135
+Snap136.Part1 = Part137
+Snap136.part1 = Part137
+Part137.Name = "Tie"
+Part137.Parent = Model106
+Part137.CFrame = CFrame.new(-616, 37.4000015, -59.5, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+Part137.Orientation = Vector3.new(0, 90, 0)
+Part137.Position = Vector3.new(-616, 37.400001525878906, -59.5)
+Part137.Rotation = Vector3.new(0, 90, 0)
+Part137.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part137.Size = Vector3.new(1, 0.4000000059604645, 8)
+Part137.Anchored = true
+Part137.BrickColor = BrickColor.new("Earth orange")
+Part137.Locked = true
+Part137.brickColor = BrickColor.new("Earth orange")
+Part137.FormFactor = Enum.FormFactor.Plate
+Part137.formFactor = Enum.FormFactor.Plate
+Model138.Name = "Track-Curve"
+Model138.Parent = Model105
+Part139.Name = "Rail"
+Part139.Parent = Model138
+Part139.CFrame = CFrame.new(-634.894897, 37.9980469, -76.0610352, 0.974913239, 0, 0.22258535, 0, 1, 0, -0.222585276, 0, 0.97491318)
+Part139.Orientation = Vector3.new(0, 12.861000061035156, 0)
+Part139.Position = Vector3.new(-634.8948974609375, 37.998046875, -76.06103515625)
+Part139.Rotation = Vector3.new(0, 12.861000061035156, 0)
+Part139.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part139.Size = Vector3.new(4, 0.800000011920929, 1)
+Part139.Anchored = true
+Part139.BrickColor = BrickColor.new("Dark stone grey")
+Part139.Locked = true
+Part139.TopSurface = Enum.SurfaceType.Smooth
+Part139.brickColor = BrickColor.new("Dark stone grey")
+Part139.FormFactor = Enum.FormFactor.Plate
+Part139.formFactor = Enum.FormFactor.Plate
+Part140.Name = "Rail"
+Part140.Parent = Model138
+Part140.CFrame = CFrame.new(-638.593811, 37.9981995, -74.7666016, 0.900946021, 0, 0.433931142, 0, 1, 0, -0.433931142, 0, 0.900946021)
+Part140.Orientation = Vector3.new(0, 25.716999053955078, 0)
+Part140.Position = Vector3.new(-638.5938110351562, 37.998199462890625, -74.7666015625)
+Part140.Rotation = Vector3.new(0, 25.716999053955078, 0)
+Part140.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part140.Size = Vector3.new(4, 0.800000011920929, 1)
+Part140.Anchored = true
+Part140.BrickColor = BrickColor.new("Dark stone grey")
+Part140.Locked = true
+Part140.TopSurface = Enum.SurfaceType.Smooth
+Part140.brickColor = BrickColor.new("Dark stone grey")
+Part140.FormFactor = Enum.FormFactor.Plate
+Part140.formFactor = Enum.FormFactor.Plate
+Part141.Name = "Rail"
+Part141.Parent = Model138
+Part141.CFrame = CFrame.new(-641.912231, 37.9980316, -72.6813354, 0.781807542, 0, 0.623519897, 0, 1, 0, -0.623519719, 0, 0.781807482)
+Part141.Orientation = Vector3.new(0, 38.57400131225586, 0)
+Part141.Position = Vector3.new(-641.9122314453125, 37.99803161621094, -72.68133544921875)
+Part141.Rotation = Vector3.new(0, 38.57400131225586, 0)
+Part141.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part141.Size = Vector3.new(4, 0.800000011920929, 1)
+Part141.Anchored = true
+Part141.BrickColor = BrickColor.new("Dark stone grey")
+Part141.Locked = true
+Part141.TopSurface = Enum.SurfaceType.Smooth
+Part141.brickColor = BrickColor.new("Dark stone grey")
+Part141.FormFactor = Enum.FormFactor.Plate
+Part141.formFactor = Enum.FormFactor.Plate
+Part142.Name = "Tie"
+Part142.Parent = Model138
+Part142.CFrame = CFrame.new(-638.500916, 37.3978767, -71.9898071, 0.866001546, 0, 0.500041604, 0, 1, 0, -0.500041366, 0, 0.866001427)
+Part142.Orientation = Vector3.new(0, 30.003000259399414, 0)
+Part142.Position = Vector3.new(-638.5009155273438, 37.39787673950195, -71.98980712890625)
+Part142.Rotation = Vector3.new(0, 30.003000259399414, 0)
+Part142.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part142.Size = Vector3.new(2, 0.4000000059604645, 8)
+Part142.Anchored = true
+Part142.BrickColor = BrickColor.new("Earth orange")
+Part142.Locked = true
+Part142.brickColor = BrickColor.new("Earth orange")
+Part142.FormFactor = Enum.FormFactor.Plate
+Part142.formFactor = Enum.FormFactor.Plate
+Part143.Name = "Rail"
+Part143.Parent = Model138
+Part143.CFrame = CFrame.new(-636.675659, 37.9980392, -70.137146, 0.890983522, 0, 0.454035789, 0, 1, 0, -0.454035789, 0, 0.890983522)
+Part143.Orientation = Vector3.new(0, 27.003000259399414, 0)
+Part143.Position = Vector3.new(-636.6756591796875, 37.99803924560547, -70.13714599609375)
+Part143.Rotation = Vector3.new(0, 27.003000259399414, 0)
+Part143.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part143.Size = Vector3.new(2, 0.800000011920929, 1)
+Part143.Anchored = true
+Part143.BrickColor = BrickColor.new("Dark stone grey")
+Part143.Locked = true
+Part143.TopSurface = Enum.SurfaceType.Smooth
+Part143.brickColor = BrickColor.new("Dark stone grey")
+Part143.FormFactor = Enum.FormFactor.Plate
+Part143.formFactor = Enum.FormFactor.Plate
+Part144.Name = "Rail"
+Part144.Parent = Model138
+Part144.CFrame = CFrame.new(-634.863403, 37.9980469, -70.8878174, 0.951037705, 0, 0.309075087, 0, 1, 0, -0.309074938, 0, 0.951037526)
+Part144.Orientation = Vector3.new(0, 18.003999710083008, 0)
+Part144.Position = Vector3.new(-634.8634033203125, 37.998046875, -70.8878173828125)
+Part144.Rotation = Vector3.new(0, 18.003000259399414, 0)
+Part144.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part144.Size = Vector3.new(2, 0.800000011920929, 1)
+Part144.Anchored = true
+Part144.BrickColor = BrickColor.new("Dark stone grey")
+Part144.Locked = true
+Part144.TopSurface = Enum.SurfaceType.Smooth
+Part144.brickColor = BrickColor.new("Dark stone grey")
+Part144.FormFactor = Enum.FormFactor.Plate
+Part144.formFactor = Enum.FormFactor.Plate
+Part145.Name = "Rail"
+Part145.Parent = Model138
+Part145.CFrame = CFrame.new(-644.683289, 37.99823, -69.9100952, 0.623470187, 0, 0.781847239, 0, 1, 0, -0.781846941, 0, 0.623470128)
+Part145.Orientation = Vector3.new(0, 51.43000030517578, 0)
+Part145.Position = Vector3.new(-644.6832885742188, 37.99822998046875, -69.91009521484375)
+Part145.Rotation = Vector3.new(0, 51.43000030517578, 0)
+Part145.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part145.Size = Vector3.new(4, 0.800000011920929, 1)
+Part145.Anchored = true
+Part145.BrickColor = BrickColor.new("Dark stone grey")
+Part145.Locked = true
+Part145.TopSurface = Enum.SurfaceType.Smooth
+Part145.brickColor = BrickColor.new("Dark stone grey")
+Part145.FormFactor = Enum.FormFactor.Plate
+Part145.formFactor = Enum.FormFactor.Plate
+Part146.Name = "Rail"
+Part146.Parent = Model138
+Part146.CFrame = CFrame.new(-638.348145, 37.9980469, -69.1121216, 0.808992565, 0, 0.587818861, 0, 1, 0, -0.587818861, 0, 0.808992624)
+Part146.Orientation = Vector3.new(0, 36.00199890136719, 0)
+Part146.Position = Vector3.new(-638.34814453125, 37.998046875, -69.11212158203125)
+Part146.Rotation = Vector3.new(0, 36.00199890136719, 0)
+Part146.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part146.Size = Vector3.new(2, 0.800000011920929, 1)
+Part146.Anchored = true
+Part146.BrickColor = BrickColor.new("Dark stone grey")
+Part146.Locked = true
+Part146.TopSurface = Enum.SurfaceType.Smooth
+Part146.brickColor = BrickColor.new("Dark stone grey")
+Part146.FormFactor = Enum.FormFactor.Plate
+Part146.formFactor = Enum.FormFactor.Plate
+Part147.Name = "Rail"
+Part147.Parent = Model138
+Part147.CFrame = CFrame.new(-641.113525, 37.9979706, -66.3464966, 0.587766767, 0, 0.809030533, 0, 1, 0, -0.809030354, 0, 0.587766707)
+Part147.Orientation = Vector3.new(0, 54.000999450683594, 0)
+Part147.Position = Vector3.new(-641.113525390625, 37.99797058105469, -66.34649658203125)
+Part147.Rotation = Vector3.new(0, 54.000999450683594, 0)
+Part147.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part147.Size = Vector3.new(2, 0.800000011920929, 1)
+Part147.Anchored = true
+Part147.BrickColor = BrickColor.new("Dark stone grey")
+Part147.Locked = true
+Part147.TopSurface = Enum.SurfaceType.Smooth
+Part147.brickColor = BrickColor.new("Dark stone grey")
+Part147.FormFactor = Enum.FormFactor.Plate
+Part147.formFactor = Enum.FormFactor.Plate
+Part148.Name = "Rail"
+Part148.Parent = Model138
+Part148.CFrame = CFrame.new(-639.839722, 37.9980469, -67.8380737, 0.707084775, 0, 0.707128942, 0, 1, 0, -0.707128882, 0, 0.707084775)
+Part148.Orientation = Vector3.new(0, 45.00199890136719, 0)
+Part148.Position = Vector3.new(-639.8397216796875, 37.998046875, -67.83807373046875)
+Part148.Rotation = Vector3.new(0, 45.00199890136719, 0)
+Part148.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part148.Size = Vector3.new(2, 0.800000011920929, 1)
+Part148.Anchored = true
+Part148.BrickColor = BrickColor.new("Dark stone grey")
+Part148.Locked = true
+Part148.TopSurface = Enum.SurfaceType.Smooth
+Part148.brickColor = BrickColor.new("Dark stone grey")
+Part148.FormFactor = Enum.FormFactor.Plate
+Part148.formFactor = Enum.FormFactor.Plate
+Part149.Name = "Tie"
+Part149.Parent = Model138
+Part149.CFrame = CFrame.new(-643.991577, 37.3977547, -66.4989624, 0.499983162, 0, 0.866035223, 0, 1, 0, -0.866035044, 0, 0.499983162)
+Part149.Orientation = Vector3.new(0, 60.000999450683594, 0)
+Part149.Position = Vector3.new(-643.9915771484375, 37.39775466918945, -66.49896240234375)
+Part149.Rotation = Vector3.new(0, 60.000999450683594, 0)
+Part149.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part149.Size = Vector3.new(2, 0.4000000059604645, 8)
+Part149.Anchored = true
+Part149.BrickColor = BrickColor.new("Earth orange")
+Part149.Locked = true
+Part149.brickColor = BrickColor.new("Earth orange")
+Part149.FormFactor = Enum.FormFactor.Plate
+Part149.formFactor = Enum.FormFactor.Plate
+Part150.Name = "Rail"
+Part150.Parent = Model138
+Part150.CFrame = CFrame.new(-646.76825, 37.9980392, -66.5916748, 0.433868825, 0, 0.900976121, 0, 1, 0, -0.900975943, 0, 0.433868825)
+Part150.Orientation = Vector3.new(0, 64.28700256347656, 0)
+Part150.Position = Vector3.new(-646.7682495117188, 37.99803924560547, -66.5916748046875)
+Part150.Rotation = Vector3.new(0, 64.28700256347656, 0)
+Part150.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part150.Size = Vector3.new(4, 0.800000011920929, 1)
+Part150.Anchored = true
+Part150.BrickColor = BrickColor.new("Dark stone grey")
+Part150.Locked = true
+Part150.TopSurface = Enum.SurfaceType.Smooth
+Part150.brickColor = BrickColor.new("Dark stone grey")
+Part150.FormFactor = Enum.FormFactor.Plate
+Part150.formFactor = Enum.FormFactor.Plate
+Part151.Name = "Rail"
+Part151.Parent = Model138
+Part151.CFrame = CFrame.new(-642.138428, 37.9980469, -64.6738281, 0.453970939, 0, 0.891016543, 0, 1, 0, -0.891016364, 0, 0.453970969)
+Part151.Orientation = Vector3.new(0, 63.000999450683594, 0)
+Part151.Position = Vector3.new(-642.138427734375, 37.998046875, -64.673828125)
+Part151.Rotation = Vector3.new(0, 63.000999450683594, 0)
+Part151.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part151.Size = Vector3.new(2, 0.800000011920929, 1)
+Part151.Anchored = true
+Part151.BrickColor = BrickColor.new("Dark stone grey")
+Part151.Locked = true
+Part151.TopSurface = Enum.SurfaceType.Smooth
+Part151.brickColor = BrickColor.new("Dark stone grey")
+Part151.FormFactor = Enum.FormFactor.Plate
+Part151.formFactor = Enum.FormFactor.Plate
+Part152.Name = "Rail"
+Part152.Parent = Model138
+Part152.CFrame = CFrame.new(-648.0625, 37.9980469, -62.8927612, 0.22251156, 0, 0.974930108, 0, 1, 0, -0.974929929, 0, 0.222511634)
+Part152.Orientation = Vector3.new(0, 77.14299774169922, 0)
+Part152.Position = Vector3.new(-648.0625, 37.998046875, -62.89276123046875)
+Part152.Rotation = Vector3.new(0, 77.14299774169922, 0)
+Part152.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part152.Size = Vector3.new(4, 0.800000011920929, 1)
+Part152.Anchored = true
+Part152.BrickColor = BrickColor.new("Dark stone grey")
+Part152.Locked = true
+Part152.TopSurface = Enum.SurfaceType.Smooth
+Part152.brickColor = BrickColor.new("Dark stone grey")
+Part152.FormFactor = Enum.FormFactor.Plate
+Part152.formFactor = Enum.FormFactor.Plate
+Part153.Name = "Rail"
+Part153.Parent = Model138
+Part153.CFrame = CFrame.new(-642.88916, 37.9980469, -62.8616333, 0.309006304, 0, 0.951060057, 0, 1, 0, -0.951059878, 0, 0.309006304)
+Part153.Orientation = Vector3.new(0, 72.0009994506836, 0)
+Part153.Position = Vector3.new(-642.88916015625, 37.998046875, -62.86163330078125)
+Part153.Rotation = Vector3.new(0, 72.0009994506836, 0)
+Part153.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part153.Size = Vector3.new(2, 0.800000011920929, 1)
+Part153.Anchored = true
+Part153.BrickColor = BrickColor.new("Dark stone grey")
+Part153.Locked = true
+Part153.TopSurface = Enum.SurfaceType.Smooth
+Part153.brickColor = BrickColor.new("Dark stone grey")
+Part153.FormFactor = Enum.FormFactor.Plate
+Part153.formFactor = Enum.FormFactor.Plate
+Part154.Name = "Rail"
+Part154.Parent = Model138
+Part154.CFrame = CFrame.new(-643.347046, 37.9980698, -60.9542847, 0.156422421, 0, 0.98769027, 0, 1, 0, -0.98769027, 0, 0.156422421)
+Part154.Orientation = Vector3.new(0, 81.0009994506836, 0)
+Part154.Position = Vector3.new(-643.3470458984375, 37.998069763183594, -60.95428466796875)
+Part154.Rotation = Vector3.new(0, 81.0009994506836, 0)
+Part154.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part154.Size = Vector3.new(2, 0.800000011920929, 1)
+Part154.Anchored = true
+Part154.BrickColor = BrickColor.new("Dark stone grey")
+Part154.Locked = true
+Part154.TopSurface = Enum.SurfaceType.Smooth
+Part154.brickColor = BrickColor.new("Dark stone grey")
+Part154.FormFactor = Enum.FormFactor.Plate
+Part154.formFactor = Enum.FormFactor.Plate
+Part155.Name = "Rail"
+Part155.Parent = Model138
+Part155.CFrame = CFrame.new(-632.956177, 37.99823, -71.3459473, 0.987677574, 0, 0.156502709, 0, 1, 0, -0.15650256, 0, 0.987677455)
+Part155.Orientation = Vector3.new(0, 9.003999710083008, 0)
+Part155.Position = Vector3.new(-632.9561767578125, 37.99822998046875, -71.345947265625)
+Part155.Rotation = Vector3.new(0, 9.003999710083008, 0)
+Part155.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part155.Size = Vector3.new(2, 0.800000011920929, 1)
+Part155.Anchored = true
+Part155.BrickColor = BrickColor.new("Dark stone grey")
+Part155.Locked = true
+Part155.TopSurface = Enum.SurfaceType.Smooth
+Part155.brickColor = BrickColor.new("Dark stone grey")
+Part155.FormFactor = Enum.FormFactor.Plate
+Part155.formFactor = Enum.FormFactor.Plate
+Part156.Name = "Rail"
+Part156.Parent = Model138
+Part156.CFrame = CFrame.new(-643.5, 38, -59.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part156.Orientation = Vector3.new(0, -90, 0)
+Part156.Position = Vector3.new(-643.5, 38, -59.5)
+Part156.Rotation = Vector3.new(0, -90, 0)
+Part156.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part156.Size = Vector3.new(1, 0.800000011920929, 1)
+Part156.Anchored = true
+Part156.BrickColor = BrickColor.new("Dark stone grey")
+Part156.Locked = true
+Part156.TopSurface = Enum.SurfaceType.Smooth
+Part156.brickColor = BrickColor.new("Dark stone grey")
+Part156.FormFactor = Enum.FormFactor.Plate
+Part156.formFactor = Enum.FormFactor.Plate
+Snap157.Parent = Part156
+Snap157.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap157.C1 = CFrame.new(-0.00115585327, 0.201953888, -2.50097656, 0.999999821, -2.55671348e-05, 0, 0, 0, -1, 2.54300867e-05, 1.00000012, 0)
+Snap157.Part0 = Part156
+Snap157.Part1 = Part160
+Snap157.part1 = Part160
+Part158.Name = "Rail"
+Part158.Parent = Model138
+Part158.CFrame = CFrame.new(-648.5, 38, -59.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part158.Orientation = Vector3.new(0, -90, 0)
+Part158.Position = Vector3.new(-648.5, 38, -59.5)
+Part158.Rotation = Vector3.new(0, -90, 0)
+Part158.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part158.Size = Vector3.new(1, 0.800000011920929, 1)
+Part158.Anchored = true
+Part158.BrickColor = BrickColor.new("Dark stone grey")
+Part158.Locked = true
+Part158.TopSurface = Enum.SurfaceType.Smooth
+Part158.brickColor = BrickColor.new("Dark stone grey")
+Part158.FormFactor = Enum.FormFactor.Plate
+Part158.formFactor = Enum.FormFactor.Plate
+Snap159.Parent = Part158
+Snap159.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap159.C1 = CFrame.new(-0.00128173828, 0.201953888, 2.49902344, 0.999999821, -2.55671348e-05, 0, 0, 0, -1, 2.54300867e-05, 1.00000012, 0)
+Snap159.Part0 = Part158
+Snap159.Part1 = Part160
+Snap159.part1 = Part160
+Part160.Name = "Tie"
+Part160.Parent = Model138
+Part160.CFrame = CFrame.new(-646.000977, 37.3980446, -59.4987793, 2.55671348e-05, 0, -1.00000012, 0, 1, 0, 0.999999821, 0, 2.54300867e-05)
+Part160.Orientation = Vector3.new(0, -89.9990005493164, 0)
+Part160.Position = Vector3.new(-646.0009765625, 37.39804458618164, -59.498779296875)
+Part160.Rotation = Vector3.new(0, -90, 0)
+Part160.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part160.Size = Vector3.new(1, 0.4000000059604645, 8)
+Part160.Anchored = true
+Part160.BrickColor = BrickColor.new("Earth orange")
+Part160.Locked = true
+Part160.brickColor = BrickColor.new("Earth orange")
+Part160.FormFactor = Enum.FormFactor.Plate
+Part160.formFactor = Enum.FormFactor.Plate
+Snap161.Parent = Part160
+Snap161.C0 = CFrame.new(0, 0.200000003, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+Snap161.C1 = CFrame.new(-0.49987793, -0.40019989, 2.50012207, 0.999999642, 1.37055395e-07, 0, 0, 0, 1, -1.37055395e-07, -1.00000024, 0)
+Snap161.Part0 = Part160
+Snap161.Part1 = Part162
+Snap161.part1 = Part162
+Part162.Name = "Rail"
+Part162.Parent = Model138
+Part162.CFrame = CFrame.new(-648.501099, 37.9982452, -59.9985962, -2.55671348e-05, 0, 1.00000012, 0, 1, 0, -0.999999821, 0, -2.54300867e-05)
+Part162.Orientation = Vector3.new(0, 90.0009994506836, 0)
+Part162.Position = Vector3.new(-648.5010986328125, 37.99824523925781, -59.99859619140625)
+Part162.Rotation = Vector3.new(0, 90, 0)
+Part162.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part162.Size = Vector3.new(2, 0.800000011920929, 1)
+Part162.Anchored = true
+Part162.BrickColor = BrickColor.new("Dark stone grey")
+Part162.Locked = true
+Part162.TopSurface = Enum.SurfaceType.Smooth
+Part162.brickColor = BrickColor.new("Dark stone grey")
+Part162.FormFactor = Enum.FormFactor.Plate
+Part162.formFactor = Enum.FormFactor.Plate
+Part163.Name = "Rail"
+Part163.Parent = Model138
+Part163.CFrame = CFrame.new(-631.5, 38, -76.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part163.Orientation = Vector3.new(0, -90, 0)
+Part163.Position = Vector3.new(-631.5, 38, -76.5)
+Part163.Rotation = Vector3.new(0, -90, 0)
+Part163.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part163.Size = Vector3.new(1, 0.800000011920929, 1)
+Part163.Anchored = true
+Part163.BrickColor = BrickColor.new("Dark stone grey")
+Part163.Locked = true
+Part163.TopSurface = Enum.SurfaceType.Smooth
+Part163.brickColor = BrickColor.new("Dark stone grey")
+Part163.FormFactor = Enum.FormFactor.Plate
+Part163.formFactor = Enum.FormFactor.Plate
+Snap164.Parent = Part163
+Snap164.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap164.C1 = CFrame.new(0, 0.199996948, 2.5, 0, 1, 0, 0, 0, -1, -1, 0, 0)
+Snap164.Part0 = Part163
+Snap164.Part1 = Part169
+Snap164.part1 = Part169
+Part165.Name = "Rail"
+Part165.Parent = Model138
+Part165.CFrame = CFrame.new(-632.000732, 37.9977798, -76.5001831, 1.00000012, 0, 7.39039315e-05, 0, 1, 0, -7.37839291e-05, 0, 0.999999881)
+Part165.Orientation = Vector3.new(0, 0.004000000189989805, 0)
+Part165.Position = Vector3.new(-632.000732421875, 37.997779846191406, -76.50018310546875)
+Part165.Rotation = Vector3.new(0, 0.004000000189989805, 0)
+Part165.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part165.Size = Vector3.new(2, 0.800000011920929, 1)
+Part165.Anchored = true
+Part165.BrickColor = BrickColor.new("Dark stone grey")
+Part165.Locked = true
+Part165.TopSurface = Enum.SurfaceType.Smooth
+Part165.brickColor = BrickColor.new("Dark stone grey")
+Part165.FormFactor = Enum.FormFactor.Plate
+Part165.formFactor = Enum.FormFactor.Plate
+Snap166.Parent = Part165
+Snap166.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap166.C1 = CFrame.new(0.500732422, 0.197776794, 2.50018311, -1.00000012, -7.39039315e-05, 0, 0, 0, -1, 7.37839291e-05, -0.999999881, 0)
+Snap166.Part0 = Part165
+Snap166.Part1 = Part169
+Snap166.part1 = Part169
+Part167.Name = "Rail"
+Part167.Parent = Model138
+Part167.CFrame = CFrame.new(-631.5, 38, -71.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Part167.Orientation = Vector3.new(0, -90, 0)
+Part167.Position = Vector3.new(-631.5, 38, -71.5)
+Part167.Rotation = Vector3.new(0, -90, 0)
+Part167.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part167.Size = Vector3.new(1, 0.800000011920929, 1)
+Part167.Anchored = true
+Part167.BrickColor = BrickColor.new("Dark stone grey")
+Part167.Locked = true
+Part167.TopSurface = Enum.SurfaceType.Smooth
+Part167.brickColor = BrickColor.new("Dark stone grey")
+Part167.FormFactor = Enum.FormFactor.Plate
+Part167.formFactor = Enum.FormFactor.Plate
+Snap168.Parent = Part167
+Snap168.C0 = CFrame.new(0, -0.400000006, 0, 1, 0, 0, -0, -0, -1, 0, 1, 0)
+Snap168.C1 = CFrame.new(0, 0.199996948, -2.5, 0, 1, 0, 0, 0, -1, -1, 0, 0)
+Snap168.Part0 = Part167
+Snap168.Part1 = Part169
+Snap168.part1 = Part169
+Part169.Name = "Tie"
+Part169.Parent = Model138
+Part169.CFrame = CFrame.new(-631.5, 37.4000015, -74, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Part169.Orientation = Vector3.new(0, 180, 0)
+Part169.Position = Vector3.new(-631.5, 37.400001525878906, -74)
+Part169.Rotation = Vector3.new(180, 0, 180)
+Part169.Color = Color3.new(0.384314, 0.278431, 0.196078)
+Part169.Size = Vector3.new(1, 0.4000000059604645, 8)
+Part169.Anchored = true
+Part169.BrickColor = BrickColor.new("Earth orange")
+Part169.Locked = true
+Part169.brickColor = BrickColor.new("Earth orange")
+Part169.FormFactor = Enum.FormFactor.Plate
+Part169.formFactor = Enum.FormFactor.Plate
+Script170.Name = "Admin Commands"
+Script170.Parent = Model0
+table.insert(cors,sandbox(Script170,function()
+--Version 2 1.02 I fixed some problems caused by the updates.
+adminlist = {"cjdjpj"}--Add in the names of the people you want to be able to use the command script here.
+--Please keep 'toby151' in there. ;)
+bannedlist = {"Nobody is banned right now..."}--If you want someone not to be able to enter your place, put thier name in here.
+texture = "54375716"--If you want someone wearing a certain t-shirt to be an admin, put the t-shirt's texture in here.
+
+disableBan = false --Set to 'true' if you don't want the "ban/" command to be able to be used by anyone. (Also disables 'kick/')
+disableAdmin = false --Set to 'true' if you don't want the "admin/" command to be able to be used by anyone.
+
+owner = "gabriel7843" --Change this to your name
+
+--[[Hey guys! Its nominate10 here. I've decided to update these commands myself, as I see Person299 probably gave up on it.
+You will be able to find the commands made by me, down below. Send me feedback & ideas. Thanks!
+For the most recent script (I update frequently), go to http://www.roblox.com/Nominate10s-Admin-Commands-V2-5-item?id=34853394
+--]]
+
+
+--[[
+ I update this command script alot, so if you want to get the newest version of the script, go to http://www.roblox.com/Item.aspx?ID=5277383 every once in a while.
+
+If theres anything you think this command script needs, just message me (Person299) and i might put it in. :)
+And also, if you find any bugs, report them to me.
+
+The commands are,
+
+commands
+Shows a list of all the commands
+
+
+rickroll/tyrell123ng8
+makes tyrell123ng8 dance to annoying rickroll XD
+
+unrickrool/tyrell123ng8
+saves tyrell123ng8 from the rick astley 0_0
+
+music/soundid
+creates a song for others to here with the sound id as soundid,
+it only plays once...
+
+BY tyrell123ng8:
+fire/tyrell123ng8
+Gives tyrell123ng8 fire
+
+unfire/tyrell123ng8
+Removes any fire in tyrell123ng8's Torso
+
+smoke/tyrell123ng8
+Gives tyrell123ng8 smoke
+
+unsmoke/tyrell123ng8
+Removes any smoke in tyrell123ng8's Torso
+
+color/tyrell123ng8/blue
+Colors tyrell123ng8's body blue and removes its clothes.
+
+advancedbtools/tyrell123ng8
+Gives tyrell123ng8 advanced building tools.
+
+insert/tyrell123ng8
+Gives tyrell123ng8 an insert tool.
+
+noinsert/tyrell123ng8
+Removes tyrell123ng8's insert tool.
+
+resetambient/
+Resets the ambient to 255; 255; 255
+
+randomambient/
+Sets the Ambient to a random color.
+
+getambient/
+Displays the current ambient to the speaker.
+
+platformstand/tyrell123ng8
+Sets the PlatformStand property of tyrell123ng8's Humanoid to true
+
+unplatformstand/tyrell123ng8
+Sets the PlatformStand property of tyrell123ng8's Humanoid to false
+
+cframe1/tyrell123ng8
+Gives tyrell123ng8 a CFrame Tool
+
+cframe2/tyrell123ng8
+Gives tyrell123ng8 a GUI CFrame Tool
+
+skateboard/tyrell123ng8
+Gives tyrell123ng8 a skateboard
+
+appearance/tyrell123ng8/416314
+Changes tyrell123ng8's character look to the ID of 416314 and kills him.
+
+wedge/4/1/2
+creates a wedge with the given dimensions.
+
+cylinder/4/1/2
+Creates a cylinder with the given dimensions.
+
+block/4/1/2
+Creates a brick with a BlockMesh with the given dimensions.
+
+sphere/4/4/4
+Creates a sphere with the given dimensions
+
+plate/4/1/2
+Creates a plate with the given dimensions
+
+burn/tyrell123ng8
+Sets tyrell123ng8 on fire and slowly depleats his health.
+
+watch/tyrell123ng8
+Sets YOUR camera to view tyrell123ng8.
+
+removegear/tyrell123ng8
+Removes all tools in tyrell123ng8's StarterGear
+
+savetools/tyrell123ng8
+Copies all of tyrell123ng8's tools in Backpack and clones them to his StarterGear.
+
+localscript/tyrell123ng8/[source]
+Makes a LocalScript inside nominate10 with the defined source
+
+setupteams/
+MUST BE DONE BEFORE USING TEAM-RELATED COMMANDS! (unless teams already exist)
+
+team/Bloxxers/Bright blue
+Makes a new team with the name "Bloxxers" and the TeamColor "Bright Blue" (CASE SENSITIVE!)
+
+changeteam/tyrell123ng8/Bloxxers
+Changes tyrell123ng8's team to Bloxxers
+
+removeteam/Bloxxers
+Removes the Bloxxers team and moves its members to an "Unassigned" team
+
+====================================
+====================================
+
+fix
+If the command script breaks for you, say this to fix it
+
+kill/Person299
+kills Person299
+
+loopkill/Person299
+Repeatedly kills Person299 when he respawns
+
+unloopkill/Person299
+Undos loopkill/
+
+heal/Person299
+Returns Person299 to full health
+
+damage/Person299/50
+Makes Person299's character take 50 damage
+
+health/Person299/999999
+Makes Person299's MaxHealth and Health 999999
+
+kick/Person299
+Removes Person299 from the game, cannot be used by admin/ed people
+
+ban/Person299
+Removes Person299 from the game and keeps him from reenterring, cannot be used by admin/ed people
+
+bannedlist
+Shows a list of everyone banned
+
+unban/Person299
+Unbans Person299
+
+explode/Person299
+Explodes Person299's character
+
+rocket/Person299
+Straps a rocket onto Person299's back
+
+removetools/Person299
+Removes all of Person299's tools.
+
+givetools/Person299
+Gives Person299 all the tools in StarterPack
+
+givebtools/Person299
+Gives Person299 the building tools
+
+sit/Person299
+Makes Person299 sit
+
+part/4/1/2
+Makes a part with the given dimensions appear over your character
+
+respawn/Person299
+Makes Person299's character respawn
+
+jail/Person299
+Makes a lil jail cell around Person299's character
+
+unjail/Person299
+Undos jail/
+
+punish/Person299
+Puts Person299's character in game.Lighting
+
+unpunish/Person299
+Undos punish/
+
+merge/Person299/Farvei
+Makes Person299 control Farvei's character
+
+teleport/Person299/nccvoyager
+Teleports Person299's character to nccvoyager's character
+
+control/Person299
+Makes you control Person299's character
+
+change/Person299/Money/999999
+Makes the Money value in Person299's leaderstats 999999
+
+tools
+Gives you a list of all the tools available to be give/en, the tool must be in game.Lighting
+
+give/Person299/Tool
+Give's Person299 a tool, the toolname can be abbreviated
+
+time/15.30
+Makes game.Lighting.TimeOfDay 15:30
+
+ambient/255/0/0
+Makes game.Lighting.Ambient 255,0,0
+
+maxplayers/20
+Makes game.Players.MaxPlayers 20
+
+nograv/Person299
+Makes Person299 almost weightless
+
+antigrav/Person299
+Gives Person299 antigravity properties
+
+grav/Person299
+Returns Person299's gravity to normal
+
+highgrav/Person299
+Makes Person299 heavier
+
+setgrav/Person299/-196
+Sets Person299's gravity
+
+trip/Person299
+Makes Person299's character trip
+
+walkspeed/Person299/99
+Makes Person299's character's humanoid's WalkSpeed 99, 16 is average
+
+invisible/Person299
+Makes Person299's character invisible
+
+visible/Person299
+Undos invisible/
+
+freeze/Person299
+Makes Person299's character unable to move
+
+thaw/Person299
+Undos freeze/
+
+unlock/Person299
+Makes Person299's character unlocked
+
+lock/Person299
+Makes Person299's character locked
+
+ff/Person299
+Gives Person299's character a ForceField
+
+unff/Person299
+Undos ff/
+
+sparkles/Person299
+Makes Person299's character sparkly
+
+unsparkles/Person299
+Undos sparkles/
+
+shield/Person299
+Makes a destructive shield thingy appear around Person299
+
+unshield/Person299
+Undos shield/
+
+god/Person299
+Makes Person299 godish
+
+ungod/Person299
+Undos god/
+
+zombify/Person299
+Makes Person299 a infecting zombie
+
+admin/Person299
+Makes Person299 able to use the command script, cannot be used by admin/ed people
+
+adminlist
+Shows a list of everyone in the adminlist
+
+unadmin/Person299
+Undos admin/, cannot be used by admin/ed people
+
+shutdown
+Shuts the server down, cannot be used by admin/ed people
+
+m/Fallout 2 is one of the best games ever made
+Makes a message appear on the screen saying "Fallout 2 is one of the best games ever made" for 2 seconds
+
+h/i like pie
+Makes a hint appear on the screen saying "i like pie" for 2 seconds
+
+c/ game.Workspace:remove()
+Makes a script which source is whats after c/
+
+clearscripts
+Removes all scripts created by c/ or localscript/ 
+
+clearbricks
+Removes any created bricks and jails
+
+Capitalisation doesnt matter, and name input can be abbreviated.
+Just about any name input can be replaced with multiple names seperated by ","s, me, all, others, guests, admins, nonadmins, random, or team teamname.
+
+--]]
+
+namelist = { }
+variablelist = { }
+flist = { }
+
+local source = script:FindFirstChild("source")
+if source ~= nil then
+sbbu = source:clone()
+sbbu.Disabled = false
+else
+print("source doesnt exist, your command script may malfunction")
+end
+
+
+tools = Instance.new("Model")
+c = game.Lighting:GetChildren()
+for i=1,#c do
+if c[i].className == "Tool" then
+c[i]:clone().Parent = tools
+end
+if c[i].className == "HopperBin" then
+c[i]:clone().Parent = tools
+end end
+
+function NOMINATE10(person)
+if person.Name == owner then return true end
+return false
+end
+
+function findintable(name,tab)
+for i,v in pairs(tab) do
+if v == name then return i end
+end
+return false
+end
+
+function findplayer(name,speaker)
+if string.lower(name) == "all" then
+local chars = { }
+local c = game.Players:GetChildren()
+for i =1,#c do
+if c[i].className == "Player" then
+table.insert(chars,c[i])
+end end
+return chars
+elseif string.sub(string.lower(name),1,9) == "nonadmins" then
+local nnum = 0
+local chars = { }
+local c = game.Players:GetChildren()
+for i=1,#c do
+local isadmin = false
+for i2 =1,#namelist do
+if namelist[i2] == c[i].Name then
+isadmin = true
+end end 
+if isadmin == false then
+nnum = nnum + 1
+table.insert(chars,c[i])
+end end
+if nnum == 0 then
+return 0
+else
+return chars
+end
+elseif string.sub(string.lower(name),1,6) == "admins" then
+local anum = 0
+local chars = { }
+local c = game.Players:GetChildren()
+for i=1,#c do
+for i2 =1,#namelist do
+if namelist[i2] == c[i].Name then
+anum = anum + 1
+table.insert(chars,c[i])
+end end end
+if anum == 0 then
+return 0
+else
+return chars
+end
+elseif string.sub(string.lower(name),1,6) == "random" then
+while true do
+local c = game.Players:GetChildren()
+local r = math.random(1,#c)
+if c[r].className == "Player" then
+return { c[r] }
+end end
+elseif string.sub(string.lower(name),1,6) == "guests" then
+local gnum = 0
+local chars = { }
+local c = game.Players:GetChildren()
+for i=1,#c do
+if string.sub(c[i].Name,1,5) == "Guest" then
+gnum = gnum + 1
+table.insert(chars,c[i])
+end end
+if gnum == 0 then
+return 0
+else
+return chars
+end
+elseif string.sub(string.lower(name),1,5) == "team " then
+local theteam = nil
+local tnum = 0
+if game.Teams ~= nil then
+local c = game.Teams:GetChildren()
+for i =1,#c do
+if c[i].className == "Team" then
+if string.find(string.lower(c[i].Name),string.sub(string.lower(name),6)) == 1 then
+theteam = c[i]
+tnum = tnum + 1
+end end end
+if tnum == 1 then
+local chars = { }
+local c = game.Players:GetChildren()
+for i =1,#c do
+if c[i].className == "Player" then
+if c[i].TeamColor == theteam.TeamColor then
+table.insert(chars,c[i])
+end end end
+return chars
+end end
+return 0
+elseif string.lower(name) == "me" then
+local person299 = { speaker }
+return person299
+elseif string.lower(name) == "others" then
+local chars = { }
+local c = game.Players:GetChildren()
+for i =1,#c do
+if c[i].className == "Player" then
+if c[i] ~= speaker then
+table.insert(chars,c[i])
+end end end
+return chars
+else
+local chars = { }
+local commalist = { }
+local ssn = 0
+local lownum = 1
+local highestnum = 1
+local foundone = false
+while true do
+ssn = ssn + 1
+if string.sub(name,ssn,ssn) == "" then
+table.insert(commalist,lownum)
+table.insert(commalist,ssn - 1)
+highestnum = ssn - 1
+break
+end
+if string.sub(name,ssn,ssn) == "," then
+foundone = true
+table.insert(commalist,lownum)
+table.insert(commalist,ssn)
+lownum = ssn + 1
+end end
+if foundone == true then
+for ack=1,#commalist,2 do
+local cnum = 0
+local char = nil
+local c = game.Players:GetChildren()
+for i =1,#c do
+if c[i].className == "Player" then
+if string.find(string.lower(c[i].Name),string.sub(string.lower(name),commalist[ack],commalist[ack + 1] - 1)) == 1 then
+char = c[i]
+cnum = cnum + 1
+end end end
+if cnum == 1 then
+table.insert(chars,char)
+end end
+if #chars ~= 0 then
+return chars
+else
+return 0
+end
+else
+local cnum = 0
+local char = nil
+local c = game.Players:GetChildren()
+for i =1,#c do
+if c[i].className == "Player" then
+if string.find(string.lower(c[i].Name),string.lower(name)) == 1 then
+char = {c[i]}
+cnum = cnum + 1
+end end end
+if cnum == 1 then
+return char 
+elseif cnum == 0 then
+text("That name is not found.",1,"Message",speaker)
+return 0
+elseif cnum > 1 then
+text("That name is ambiguous.",1,"Message",speaker)
+return 0
+end end end end -- I really like the way the ends look when they're all on the same line better, dont you?
+
+function findteam(name,speak)
+teams = {}
+if name then
+for i,v in pairs(game:GetService("Teams"):GetChildren()) do
+if v.Name:sub(1,name:len()):lower() == name:lower() then
+table.insert(teams,v)
+end
+end
+if #teams == 0 then
+text("that team is not found.",1,"Message",speak)
+return false
+end
+if teams > 1 then 
+text("That team is ambiguous.",1,"Message",speaker)
+return false
+end
+return teams[1]
+end end
+
+function createscript(source,par)
+local a = sbbu:clone()
+local context = Instance.new("StringValue")
+context.Name = "Context"
+context.Value = source
+context.Parent = a
+while context.Value ~= source do wait() end
+a.Parent = par
+local b = Instance.new("IntValue")
+b.Name = "Is A Created Script"
+b.Parent = a
+end
+
+function localscript(source,par)
+local a = script.localsource:clone()
+local context = Instance.new("StringValue")
+context.Name = "Context"
+context.Value = source
+context.Parent = a
+while context.Value ~= source do wait() end
+a.Parent = par
+local b = Instance.new("IntValue")
+b.Name = "Is A Created Script"
+b.Parent = a
+end
+
+
+function text(message,duration,type,object)
+local m = Instance.new(type)
+m.Text = message
+m.Parent = object
+wait(duration)
+if m.Parent ~= nil then
+m:remove()
+end end
+
+function foc(msg,speaker)
+if string.lower(msg) == "fix" then
+for i =1,#namelist do
+if namelist[i] == speaker.Name then
+variablelist[i]:disconnect()
+table.remove(variablelist,i)
+table.remove(namelist,i)
+table.remove(flist,i)
+end end
+local tfv = speaker.Chatted:connect(function(msg) oc(msg,speaker) end)
+table.insert(namelist,speaker.Name)
+table.insert(variablelist,tfv)
+local tfv = speaker.Chatted:connect(function(msg) foc(msg,speaker) end)
+table.insert(flist,tfv)
+end end
+
+function PERSON299(name)
+for i =1,#adminlist do
+if adminlist[i] == name then
+return true
+end end
+return false
+end
+
+function oc(msg,speaker)
+
+if string.sub(string.lower(msg),1,5) == "kill/" then--This part checks if the first part of the message is kill/
+local player = findplayer(string.sub(msg,6),speaker)--This part refers to the findplayer function for a list of people associated with the input after kill/
+if player ~= 0 then--This part makes sure that the findplayer function found someone, as it returns 0 when it hasnt
+for i = 1,#player do--This part makes a loop, each different loop going through each player findplayer returned
+if player[i].Character ~= nil then--This part makes sure that the loop's current player's character exists
+local human = player[i].Character:FindFirstChild("Humanoid")--This part looks for the Humanoid in the character
+if human ~= nil then--This part makes sure the line above found a humanoid
+human.Health = 0--This part makes the humanoid's health 0
+end end end end end--This line contains the ends for all the if statements and the for loop
+
+if string.sub(string.lower(msg),1,2) == "m/" then
+text(speaker.Name .. ": " .. string.sub(msg,3),2,"Message",game.Workspace)
+end
+
+if string.sub(string.lower(msg),1,2) == "h/" then
+text(speaker.Name .. ": " .. string.sub(msg,3),2,"Hint",game.Workspace)
+end
+
+if string.sub(string.lower(msg),1,2) == "c/" then--Dontcha wish pcall was more reliable?
+createscript(string.sub(msg,3),game.Workspace)
+end
+
+local upmsg = msg
+local msg = string.lower(msg)
+-- COMMANDS BY TOBY151
+
+if msg:sub(1,8) == "rickroll/" then
+local player = findplayer(msg:sub(9),speaker)
+if player ~= 0 then
+findrr = player:FindFirstChild("RickRoll")
+if not findrr then
+sound = Instance.new("Sound")
+sound.Parent = player
+sound.Volume = 1 -- Thats it turn the volume up...
+sound.Pitch = 0.97 -- Just make it MORE annoying
+sound.Looped = true -- LOL! THATS GONNA KILL THEM XD
+sound.Name = "RickRoll" 
+sound:Play()
+anim = player.Character.Humanoid:LoadAnimation(script.Dance)
+anim:Play()
+wait(64)
+anim:Stop()
+end end end
+
+if msg:sub(1,10) == "unrickroll/" then
+local player = findplayer(msg:sub(11),speaker)
+if player ~= 0 then
+music = player:FindFirstChild("RickRoll")
+if music then 
+music.Parent = nil
+end end end
+
+if msg:sub(1,6) == "music/" then
+local musicpart = Instance.new("Part")
+musicpart.Anchored = true 
+musicpart.Locked = true
+musicpart.Transparncy = 1
+musicpart.Position = Vector3.new(10, 2, 10) -- about the centre of the map
+local music = Instance.new("Sound")
+music.SoundId = msg:sub(7)
+music.Volume = 1
+music.Pitch = 1
+music.Looped = false
+music.PlayOnRemove = false 
+music.Name = "eltobyio151selSoundio"
+music.Parent = musicpart
+musicpart.Parent = game.Workspace
+music:Play()
+end
+
+--NOW SHOWING COMMANDS MADE BY: Nominate10
+--THE FOLLOWING COMMANDS WERE MADE PURELY BY NOMINATE10!
+if msg:sub(1,5) == "fire/" then
+local player = findplayer(msg:sub(6),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character then
+if player[i].Character.Torso:FindFirstChild("Fire") == nil then
+fire = Instance.new("Fire")
+fire.Parent = player[i].Character.Torso
+fire.Color = Color3.new(math.random(),math.random(),math.random())
+end end end end end
+
+
+if msg:sub(1,7) == "unfire/" then
+local player = findplayer(msg:sub(8),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character and player[i].Character.Torso then
+local c = player[i].Character.Torso:GetChildren()
+for i2 = 1, #c do
+if c[i2]:isA("Fire") then
+c[i2]:remove()
+end end end end end end
+
+if msg:sub(1,6) == "smoke/" then
+local player = findplayer(msg:sub(7),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character and player[i].Character.Torso then
+if player[i].Character.Torso:FindFirstChild("Smoke") == nil then
+smoke = Instance.new("Smoke")
+smoke.Parent = player[i].Character.Torso
+smoke.Color = Color3.new(math.random(),math.random(),math.random()) --I wonder if I could've done something like 'Color3.Random()'
+end end end end end
+
+if msg:sub(1,8) == "unsmoke/" then
+local player = findplayer(msg:sub(9),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character and player[i].Character.Torso then
+local c = player[i].Character.Torso:GetChildren()
+for i2 = 1, #c do
+if c[i2]:isA("Smoke") then
+c[i2]:remove()
+end end end end end end
+
+if msg:sub(1,6) == "color/" then
+local slash = msg:sub(7):find("/")+6
+if slash then
+local player = findplayer(msg:sub(7, slash-1),speaker)
+color = msg:sub(slash+1)
+color = color:upper(color:sub(1,1)) .. color:sub(2)
+if player ~= 0 and color then
+for i = 1,#player do
+if player[i].Character then
+thecolor = BrickColor.new(color)
+if thecolor ~= nil then
+	if player[i].Character.Shirt ~= nil then
+	player[i].Character.Shirt:remove()
+	end
+	if player[i].Character.Pants then
+	player[i].Character.Pants:remove()
+	end
+c = player[i].Character:GetChildren()
+for i2 = 1,#c do
+if c[i2]:isA("Part") then
+c[i2].BrickColor = thecolor
+end end end end end end end end
+
+if msg:sub(1,15) == "advancedbtools/" then
+local player = findplayer(msg:sub(16),speaker)
+if player ~= 0 then
+local insert = game:GetService("InsertService")
+for i = 1,#player do
+local paintbrush =  insert:LoadAsset(34842883)
+paintbrush:MakeJoints()
+paintbrush.Paintbrush.Parent = player[i].Backpack --Give the tool to the player.
+paintbrush:remove() --Remove the model that held the tool.
+
+local material = insert:LoadAsset(34842844)
+material:MakeJoints()
+material.Material.Parent = player[i].Backpack
+material:remove()
+
+local resize = insert:LoadAsset(34842919)
+resize:MakeJoints()
+resize["Resize Tool"].Parent = player[i].Backpack
+resize:remove()
+
+local delete = Instance.new("HopperBin")
+delete.BinType = "Hammer"
+delete.Parent = player[i].Backpack
+
+local grab = Instance.new("HopperBin")
+grab.BinType = "GameTool"
+grab.Parent = player[i].Backpack
+
+local copy = Instance.new("HopperBin")
+copy.BinType = "Clone"
+copy.Parent = player[i].Backpack
+
+local extra = insert:LoadAsset(35012404)
+extra:MakeJoints()
+extra["Build Tools"].Parent = player[i].Backpack
+end end
+elseif msg:sub(1,4) == "abt/" then
+local player = findplayer(msg:sub(5),speaker)
+if player ~= 0 then
+local insert = game:GetService("InsertService")
+for i = 1,#player do
+local paintbrush =  insert:LoadAsset(34842883)
+paintbrush:MakeJoints()
+paintbrush.Paintbrush.Parent = player[i].Backpack --Give the tool to the player.
+paintbrush:remove() --Remove the model that held the tool.
+
+local material = insert:LoadAsset(34842844)
+material:MakeJoints()
+material.Material.Parent = player[i].Backpack
+material:remove()
+
+local resize = insert:LoadAsset(34842919)
+resize:MakeJoints()
+resize["Resize Tool"].Parent = player[i].Backpack
+resize:remove()
+
+local delete = Instance.new("HopperBin")
+delete.BinType = "Hammer"
+delete.Parent = player[i].Backpack
+
+local grab = Instance.new("HopperBin")
+grab.BinType = "GameTool"
+grab.Parent = player[i].Backpack
+
+local copy = Instance.new("HopperBin")
+copy.BinType = "Clone"
+copy.Parent = player[i].Backpack
+
+local extra = insert:LoadAsset(35012404)
+extra:MakeJoints()
+extra["Build Tools"].Parent = player[i].Backpack
+end end end
+
+if msg:sub(1,7) == "insert/" then
+local player = findplayer(msg:sub(8),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local insert = game:GetService("InsertService"):LoadAsset(34842829)
+insert:MakeJoints()
+insert["Insert"].Parent = player[i].Backpack
+insert:remove()
+end end end
+
+if msg:sub(1,9) == "noinsert/" then
+local player = findplayer(msg:sub(10),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local insert = player[i].Backpack:FindFirstChild("Insert")
+if insert then
+insert:remove()
+end
+local bpinsert = player[i].Character:FindFirstChild("Insert")
+if bpinsert ~= nil and bpinsert:isA("Tool") then
+bpinsert:remove()
+end
+end end end
+
+if msg:sub(1,13) == "resetambient/" then
+game.Lighting.Ambient = Color3.new(1,1,1)
+end
+
+if msg:sub(1,14) == "randomambient/" then
+game.Lighting.Ambient = Color3.new(math.random(1,255),math.random(1,255),math.random(1,255))
+end
+
+if msg:sub(1,11) ==  "getambient/" then
+m = Instance.new("Message",speaker)
+m.Text = tostring(game.Lighting.Ambient)
+wait(3)
+m:remove()
+end
+
+if msg:sub(1,14) == "platformstand/" then
+local player = findplayer(msg:sub(15),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character then
+player[i].Character.Humanoid.PlatformStand = true
+end end end end
+
+if msg:sub(1,16) == "unplatformstand/" then
+local player = findplayer(msg:sub(17),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character then
+player[i].Character.Humanoid.PlatformStand = false
+end end end end
+
+if msg:sub(1,8) == "cframe1/" then
+local player = findplayer(msg:sub(9),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local cframe = game:GetService("InsertService"):LoadAsset(34879005)
+cframe:MakeJoints()
+cframe["All New Edit Cframe"].Parent = player[i].Backpack
+cframe:remove()
+end end end 
+
+if msg:sub(1,8) == "cframe2/" then
+local player = findplayer(msg:sub(9),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local cframe = game:GetService("InsertService"):LoadAsset(35145017)
+cframe:MakeJoints()
+cframe["CFrame"].Parent = player[i].Backpack
+cframe:remove()
+end end end 
+
+if msg:sub(1,11) == "skateboard/" then
+local player = findplayer(msg:sub(12),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local board = game:GetService("InsertService"):LoadAsset(34879053)
+board:MakeJoints()
+board["SkateTool"].Parent = player[i].Backpack
+board:remove()
+end end end
+
+if msg:sub(1,11) == "appearance/" then
+local slash = msg:sub(12):find("/")+11
+if slash then
+local player = findplayer(msg:sub(12,slash-1),speaker)
+if player ~= 0 then
+local id = msg:sub(slash+1)
+if id then
+for i = 1,#player do
+player[i].CharacterAppearance = "http://www.roblox.com/Asset/CharacterFetch.ashx?userId=".. id .."&placeId=0" 
+player[i].Character.Humanoid.Health = 0
+end end end end end
+
+if string.sub(msg,1,6) == "wedge/" then --Credit to Person299 for the base of this command...
+local danumber1 = nil
+local danumber2 = nil
+for i = 7,100 do
+if string.sub(msg,i,i) == "/" then
+danumber1 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber1 == nil then return end
+for i =danumber1 + 1,danumber1 + 100 do
+if string.sub(msg,i,i) == "/" then
+danumber2 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber2 == nil then return end
+if speaker.Character ~= nil then
+local head = speaker.Character:FindFirstChild("Head")
+if head ~= nil then
+local part = Instance.new("WedgePart")
+part.Size = Vector3.new(string.sub(msg,7,danumber1 - 1),string.sub(msg,danumber1 + 1,danumber2 - 1),string.sub(msg,danumber2 + 1))
+part.Position = head.Position + Vector3.new(0,part.Size.y / 2 + 5,0)
+part.Name = "Person299's Admin Command Script V2 Part thingy"
+part.Parent = game.Workspace
+end end end
+
+if string.sub(msg,1,9) == "cylinder/" then --Credit to Person299 for the base of this command...
+local danumber1 = nil
+local danumber2 = nil
+for i = 10,100 do
+if string.sub(msg,i,i) == "/" then
+danumber1 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber1 == nil then return end
+for i =danumber1 + 1,danumber1 + 100 do
+if string.sub(msg,i,i) == "/" then
+danumber2 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber2 == nil then return end
+if speaker.Character ~= nil then
+local head = speaker.Character:FindFirstChild("Head")
+if head ~= nil then
+local part = Instance.new("Part")
+part.Size = Vector3.new(string.sub(msg,10,danumber1 - 1),string.sub(msg,danumber1 + 1,danumber2 - 1),string.sub(msg,danumber2 + 1))
+part.Position = head.Position + Vector3.new(0,part.Size.y / 2 + 5,0)
+part.Name = "Person299's Admin Command Script V2 Part thingy"
+local cyl = Instance.new("CylinderMesh",part)
+part.Parent = game.Workspace
+end end end
+
+if string.sub(msg,1,6) == "block/" then --Credit to Person299 for the base of this command...
+local danumber1 = nil
+local danumber2 = nil
+for i = 7,100 do
+if string.sub(msg,i,i) == "/" then
+danumber1 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber1 == nil then return end
+for i =danumber1 + 1,danumber1 + 100 do
+if string.sub(msg,i,i) == "/" then
+danumber2 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber2 == nil then return end
+if speaker.Character ~= nil then
+local head = speaker.Character:FindFirstChild("Head")
+if head ~= nil then
+local part = Instance.new("Part")
+part.Size = Vector3.new(string.sub(msg,7,danumber1 - 1),string.sub(msg,danumber1 + 1,danumber2 - 1),string.sub(msg,danumber2 + 1))
+part.Position = head.Position + Vector3.new(0,part.Size.y / 2 + 5,0)
+part.Name = "Person299's Admin Command Script V2 Part thingy"
+local block = Instance.new("BlockMesh",part)
+part.Parent = game.Workspace
+end end end
+
+if string.sub(msg,1,6) == "plate/" then --Credit to Person299 for the base of this command...
+local danumber1 = nil
+local danumber2 = nil
+for i = 7,100 do
+if string.sub(msg,i,i) == "/" then
+danumber1 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber1 == nil then return end
+for i =danumber1 + 1,danumber1 + 100 do
+if string.sub(msg,i,i) == "/" then
+danumber2 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber2 == nil then return end
+if speaker.Character ~= nil then
+local head = speaker.Character:FindFirstChild("Head")
+if head ~= nil then
+local part = Instance.new("Part")
+part.Size = Vector3.new(string.sub(msg,7,danumber1 - 1),string.sub(msg,danumber1 + 1,danumber2 - 1),string.sub(msg,danumber2 + 1))
+part.Position = head.Position + Vector3.new(0,part.Size.y / 2 + 5,0)
+part.Name = "Person299's Admin Command Script V2 Part thingy"
+part.formFactor = "Plate"
+part.Parent = game.Workspace
+end end end
+
+if string.sub(msg,1,7) == "sphere/" then --Credit to Person299 for the base of this command...
+local danumber1 = nil
+local danumber2 = nil
+for i = 8,100 do
+if string.sub(msg,i,i) == "/" then
+danumber1 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber1 == nil then return end
+for i =danumber1 + 1,danumber1 + 100 do
+if string.sub(msg,i,i) == "/" then
+danumber2 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber2 == nil then return end
+if speaker.Character ~= nil then
+local head = speaker.Character:FindFirstChild("Head")
+if head ~= nil then
+local part = Instance.new("Part")
+part.Size = Vector3.new(string.sub(msg,8,danumber1 - 1),string.sub(msg,danumber1 + 1,danumber2 - 1),string.sub(msg,danumber2 + 1))
+part.Position = head.Position + Vector3.new(0,part.Size.y / 2 + 5,0)
+part.Name = "Person299's Admin Command Script V2 Part thingy"
+part.Shape = "Ball"
+part.formFactor = 1
+part.Parent = game.Workspace
+end end end
+
+if msg:sub(1,5) == "burn/" then
+local player = findplayer(msg:sub(6),speaker)
+if player ~= 0 then
+for i = 1,#player do
+createscript([[
+if script.Parent.Parent then
+fire = Instance.new("Fire")
+fire.Parent = script.Parent
+fire.Name = "Burn"
+fire.Color = BrickColor.Random().Color
+while fire do
+script.Parent.Parent.Humanoid:TakeDamage(1)
+wait(.1)
+end
+end]], player[i].Character.Torso)
+end end end
+
+if msg:sub(1,9) == "de-admin/" then
+local player = findplayer(msg:sub(10),speaker)
+if player ~= 0 and NOMINATE10(speaker) then
+for i = 1,#player do
+if player[i].Name ~= speaker.Name then
+if PERSON299(player[i].Name) then
+ishethere = findintable(player[i].Name,adminlist)
+if ishethere then
+table.remove(adminlist,ishethere)
+end 
+local ishe = findintable(player[i].Name,namelist)
+if ishe then
+table.remove(namelist,ishe)
+end 
+local isf = findintable(player[i].Name,flist)
+if isf then
+table.remove(flist,isf)
+end end end end
+foc("fix",speaker)
+end end
+
+if msg:sub(1,6) == "watch/" then
+local player = findplayer(msg:sub(7),speaker)
+if player ~= 0 then
+if #player == 1 then
+for i = 1,#player do
+sc = script.CamScript:clone()
+sc.Parent = speaker
+sc["New Subject"].Value = player[i].Character.Head
+sc.Disabled = false
+end end end end
+
+if msg:sub(1,11) == "removegear/" then 
+local player = findplayer(msg:sub(12),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].StarterGear then 
+local gear = player[i].StarterGear:GetChildren()
+if #gear > 0 then 
+for Num,Gear in pairs(gear) do
+Gear:remove()
+end end end end end end
+
+if msg:sub(1,10) == "savetools/" then 
+local player = findplayer(msg:sub(11),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].StarterGear and player[i].Backpack then
+if #player[i].Backpack:GetChildren() > 0 then
+for num,tool in pairs(player[i].Backpack:GetChildren()) do
+tool:clone().Parent = player[i].StarterGear
+end end end end end end
+
+if msg:sub(1,12) == "localscript/" then
+if msg:sub(13) then 
+local slash = msg:sub(13):find("/")+12
+if slash then
+local sourcE = msg:sub(slash+1)
+if sourcE then
+local player = findplayer(msg:sub(13,slash-1),speaker)
+if player ~= 0 then 
+for i = 1,#player do
+localscript(sourcE,player[i])
+end end end end end end
+
+if msg:sub(1,8) == "getgear/" then
+local player = findplayer(msg:sub(9),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].StarterGear and speaker.Backpack then
+for i,v in pairs(player[i].StarterGear:GetChildren()) do
+v:clone().Parent = speaker.Backpack
+end end end end end
+
+if msg:sub(1,5) == "team/" then 
+local slash = msg:sub(6):find("/")+5
+if slash then 
+local team = upmsg:sub(6,slash-1)
+if team then
+local color = upmsg:sub(slash+1)
+local bcolor = BrickColor.new(color)
+if bcolor == BrickColor.new("Medium stone grey") and color:lower() ~= "medium stone grey" then return end 
+Team = Instance.new("Team",game:GetService("Teams"))
+Team.Name = team
+Team.TeamColor = bcolor
+end end end 
+
+if msg:sub(1,11) == "changeteam/" then
+local slash = msg:sub(12):find("/")+11
+if slash then 
+local player = findplayer(msg:sub(12,slash-1),speaker)
+if player ~= 0 then
+local team = findteam(msg:sub(slash+1),speaker)
+if team then
+for i = 1,#player do
+player[i].Neutral = false
+player[i].TeamColor = team.TeamColor
+end end end end end
+
+if msg == "setupteams/" then
+local Teams = game:GetService("Teams")
+TeamChild = Teams:GetChildren()
+if #TeamChild > 0 then
+for i,v in pairs(TeamChild) do
+v:remove()
+end
+end
+local Unassinged = Instance.new("Team",Teams)
+Unassigned.TeamColor = BrickColor.new("Really black")
+Unassigned.Name = "Unassigned"
+for i,v in pairs(game.Players:GetPlayers()) do
+v.Neutral = false
+v.TeamColor = BrickColor.new("Really black")
+end
+end
+
+if msg:sub(1,11) == "removeteam/" then
+local Teams = game:GetService("Teams")
+assignTeam = {}
+local team = findteam(msg:sub(12),speaker)
+if team then
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.TeamColor == team.TeamColor then
+table.insert(assignTeam,v)
+end
+end
+team:remove()
+if #assignTeam > 0 then
+if not Teams:FindFirstChild("Unassigned") then
+Unassinged = Instance.new("Team",Teams)
+Unassigned.TeamColor = BrickColor.new("Really black")
+Unassigned.Name = "Unassigned"
+else Unassigned = Teams.Unassigned end
+for i,v in pairs(assignTeam) do
+v.TeamColor = Unassigned.TeamColor
+end end end end
+
+--AND NOW HERE ARE THE NORMAL COMMANDS MADE BY PERSON299
+if string.sub(msg,1,5) == "give/" then
+local danumber1 = nil
+for i = 6,100 do
+if string.sub(msg,i,i) == "/" then
+danumber1 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber1 == nil then return end
+local it = nil
+local all = true
+if string.sub(string.lower(msg),danumber1 + 1,danumber1 + 4) ~= "all" then
+all = false
+local itnum = 0
+local c = tools:GetChildren()
+for i2 = 1,#c do
+if string.find(string.lower(c[i2].Name),string.sub(string.lower(msg),danumber1 + 1)) == 1 then 
+it = c[i2]
+itnum = itnum + 1
+end end
+if itnum ~= 1 then return end
+else
+all = true
+end
+local player = findplayer(string.sub(msg,6,danumber1 - 1),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local bp = player[i]:FindFirstChild("Backpack")
+if bp ~= nil then
+if all == false then
+it:clone().Parent = bp
+else
+local c = tools:GetChildren()
+for i2 = 1,#c do
+c[i2]:clone().Parent = bp
+end end end end end end
+
+--Bored...
+
+if string.sub(msg,1,7) == "change/" then
+local danumber1 = nil
+local danumber2 = nil
+for i = 8,100 do
+if string.sub(msg,i,i) == "/" then
+danumber1 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber1 == nil then return end
+for i =danumber1 + 1,danumber1 + 100 do
+if string.sub(msg,i,i) == "/" then
+danumber2 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber2 == nil then return end
+local player = findplayer(string.sub(msg,8,danumber1 - 1),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local ls = player[i]:FindFirstChild("leaderstats")
+if ls ~= nil then
+local it = nil
+local itnum = 0
+local c = ls:GetChildren()
+for i2 = 1,#c do
+if string.find(string.lower(c[i2].Name),string.sub(string.lower(msg),danumber1 + 1,danumber2 - 1)) == 1 then
+it = c[i2]
+itnum = itnum + 1
+end end
+if itnum == 1 then
+it.Value = string.sub(msg,danumber2 + 1)
+end end end end end
+
+if string.sub(msg,1,6) == "ungod/" then
+local player = findplayer(string.sub(msg,7),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local isgod = false
+local c = player[i].Character:GetChildren()
+for i=1,#c do
+if c[i].className == "Script" then
+if c[i]:FindFirstChild("Context") then
+if string.sub(c[i].Context.Value,1,41) == "script.Parent.Humanoid.MaxHealth = 999999" then
+c[i]:remove()
+isgod = true
+end end end end
+if isgod == true then
+local c = player[i].Character:GetChildren()
+for i=1,#c do
+if c[i].className == "Part" then
+c[i].Reflectance = 0
+end
+if c[i].className == "Humanoid" then
+c[i].MaxHealth = 100
+c[i].Health = 100
+end 
+if c[i].Name == "God FF" then
+c[i]:remove()
+end end end end end end end
+
+if string.sub(msg,1,4) == "god/" then
+local player = findplayer(string.sub(msg,5),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+if player[i].Character:FindFirstChild("God FF") == nil then
+createscript([[script.Parent.Humanoid.MaxHealth = 999999
+script.Parent.Humanoid.Health = 999999
+ff = Instance.new("ForceField")
+ff.Name = "God FF"
+ff.Parent = script.Parent
+function ot(hit)
+if hit.Parent ~= script.Parent then
+h = hit.Parent:FindFirstChild("Humanoid")
+if h ~= nil then
+h.Health = 0
+end
+h = hit.Parent:FindFirstChild("Zombie")
+if h ~= nil then
+h.Health = 0
+end end end
+c = script.Parent:GetChildren()
+for i=1,#c do
+if c[i].className == "Part" then
+c[i].Touched:connect(ot)
+c[i].Reflectance = 1
+end end]],player[i].Character)
+end end end end end
+
+if string.sub(msg,1,7) == "punish/" then
+local player = findplayer(string.sub(msg,8),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+player[i].Character.Parent = game.Lighting
+end end end end
+
+if string.sub(msg,1,9) == "unpunish/" then
+local player = findplayer(string.sub(msg,10),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+player[i].Character.Parent = game.Workspace
+player[i].Character:MakeJoints()
+end end end end
+
+if string.sub(msg,1,3) == "ff/" then
+local player = findplayer(string.sub(msg,4),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local ff = Instance.new("ForceField")
+ff.Parent = player[i].Character
+end end end end
+
+if string.sub(msg,1,5) == "unff/" then
+local player = findplayer(string.sub(msg,6),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local c = player[i].Character:GetChildren()
+for i2 = 1,#c do
+if c[i2].className == "ForceField" then
+c[i2]:remove()
+end end end end end end
+
+if string.sub(msg,1,9) == "sparkles/" then
+local player = findplayer(string.sub(msg,10),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+local sparkles = Instance.new("Sparkles")
+sparkles.Color = Color3.new(math.random(),math.random(),math.random())
+sparkles.Parent = torso
+end end end end end
+
+if string.sub(msg,1,11) == "unsparkles/" then
+local player = findplayer(string.sub(msg,12),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+local c = torso:GetChildren()
+for i2 = 1,#c do
+if c[i2].className == "Sparkles" then
+c[i2]:remove()
+end end end end end end end
+
+if string.sub(msg,1,6) == "admin/" then
+if not disableAdmin then
+local imgettingtiredofmakingthisstupidscript = PERSON299(speaker.Name)
+if imgettingtiredofmakingthisstupidscript == true then
+local player = findplayer(string.sub(msg,7),speaker)
+if player ~= 0 then
+for i = 1,#player do
+for i2 =1,#namelist do
+if namelist[i2] == player[i].Name then
+variablelist[i2]:disconnect()
+flist[i2]:disconnect()
+table.remove(variablelist,i2)
+table.remove(flist,i2)
+table.remove(namelist,i2)
+end end
+local tfv = player[i].Chatted:connect(function(msg) oc(msg,player[i]) end)
+table.insert(namelist,player[i].Name)
+table.insert(variablelist,tfv)
+local tfv = player[i].Chatted:connect(function(msg) foc(msg,player[i]) end)
+table.insert(flist,tfv)
+end end end end end
+
+if string.sub(msg,1,8) == "unadmin/" then
+if not disableAdmin then
+local imgettingtiredofmakingthisstupidscript = PERSON299(speaker.Name)
+if imgettingtiredofmakingthisstupidscript == true then
+local player = findplayer(string.sub(msg,9),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local imgettingtiredofmakingthisstupidscript = PERSON299(player[i].Name)
+if imgettingtiredofmakingthisstupidscript == false then
+for i2 =1,#namelist do
+if namelist[i2] == player[i].Name then
+variablelist[i2]:disconnect()
+table.remove(variablelist,i2)
+flist[i2]:disconnect()
+table.remove(flist,i2)
+table.remove(namelist,i2)
+end end end end end end end end
+
+if string.sub(msg,1,5) == "heal/" then
+local player = findplayer(string.sub(msg,6),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local human = player[i].Character:FindFirstChild("Humanoid")
+if human ~= nil then
+human.Health = human.MaxHealth
+end end end end end
+
+if string.sub(msg,1,4) == "sit/" then
+local player = findplayer(string.sub(msg,5),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local human = player[i].Character:FindFirstChild("Humanoid")
+if human ~= nil then
+human.Sit = true
+end end end end end
+
+if string.sub(msg,1,5) == "jump/" then
+local player = findplayer(string.sub(msg,6),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local human = player[i].Character:FindFirstChild("Humanoid")
+if human ~= nil then
+human.Jump = true
+end end end end end
+
+if string.sub(msg,1,6) == "stand/" then
+local player = findplayer(string.sub(msg,7),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local human = player[i].Character:FindFirstChild("Humanoid")
+if human ~= nil then
+human.Sit = false
+end end end end end
+
+if string.sub(msg,1,5) == "jail/" then
+local player = findplayer(string.sub(msg,6),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+local ack = Instance.new("Model")
+ack.Name = "Jail" .. player[i].Name
+icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-26.5, 108.400002, -1.5, 0, 0, -1, 0, 1, -0, 1, 0, -0) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-24.5, 108.400002, -3.5, 0, 0, -1, 0, 1, -0, 1, 0, -0) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-30.5, 108.400002, -3.5, -1, 0, -0, -0, 1, -0, -0, 0, -1) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-28.5, 108.400002, -1.5, 0, 0, -1, 0, 1, -0, 1, 0, -0) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-24.5, 108.400002, -5.5, 0, 0, -1, 0, 1, -0, 1, 0, -0) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-24.5, 108.400002, -7.5, 0, 0, -1, 0, 1, -0, 1, 0, -0) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-24.5, 108.400002, -1.5, 0, 0, -1, 0, 1, -0, 1, 0, -0) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-30.5, 108.400002, -7.5, -1, 0, -0, -0, 1, -0, -0, 0, -1) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(7,1.2000000476837,7) icky.CFrame = CFrame.new(-27.5, 112.599998, -4.5, 0, 0, -1, 0, 1, -0, 1, 0, -0) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-26.5, 108.400002, -7.5, 0, 0, -1, 0, 1, -0, 1, 0, -0) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-30.5, 108.400002, -5.5, -1, 0, -0, -0, 1, -0, -0, 0, -1) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-30.5, 108.400002, -1.5, -1, 0, -0, -0, 1, -0, -0, 0, -1) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack  icky = Instance.new("Part") icky.Size = Vector3.new(1,7.2000002861023,1) icky.CFrame = CFrame.new(-28.5, 108.400002, -7.5, 0, 0, -1, 0, 1, -0, 1, 0, -0) icky.Color = Color3.new(0.105882, 0.164706, 0.203922)  icky.Anchored = true  icky.Locked = true  icky.CanCollide = true  icky.Parent = ack 
+ack.Parent = game.Workspace
+ack:MoveTo(torso.Position)
+end end end end end
+
+if string.sub(msg,1,7) == "unjail/" then
+local player = findplayer(string.sub(msg,8),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local c = game.Workspace:GetChildren()
+for i2 =1,#c do
+if string.sub(c[i2].Name,1,4) == "Jail" then
+if string.sub(c[i2].Name,5) == player[i].Name then
+c[i2]:remove()
+end end end end end end
+
+if string.sub(msg,1,12) == "removetools/" then
+local player = findplayer(string.sub(msg,13),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local c = player[i].Backpack:GetChildren()
+for i =1,#c do
+c[i]:remove()
+end end end end
+
+if string.sub(msg,1,10) == "givetools/" then
+local player = findplayer(string.sub(msg,11),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local c = game.StarterPack:GetChildren()
+for i =1,#c do
+c[i]:clone().Parent = player[i].Backpack
+end end end end
+
+if string.sub(msg,1,11) == "givebtools/" then
+local player = findplayer(string.sub(msg,12),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local a = Instance.new("HopperBin")
+a.BinType = "GameTool"
+a.Parent = player[i].Backpack
+local a = Instance.new("HopperBin")
+a.BinType = "Clone"
+a.Parent = player[i].Backpack
+local a = Instance.new("HopperBin")
+a.BinType = "Hammer"
+a.Parent = player[i].Backpack
+end end end 
+
+if string.sub(msg,1,9) == "unshield/" then
+local player = findplayer(string.sub(msg,10),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local shield = player[i].Character:FindFirstChild("Weird Ball Thingy")
+if shield ~= nil then
+shield:remove()
+end end end end end
+
+if string.sub(msg,1,7) == "shield/" then
+local player = findplayer(string.sub(msg,8),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+if player[i].Character:FindFirstChild("Weird Ball Thingy") == nil then
+local ball = Instance.new("Part")
+ball.Size = Vector3.new(10,10,10)
+ball.BrickColor = BrickColor.new(1)
+ball.Transparency = 0.5
+ball.CFrame = torso.CFrame
+ball.TopSurface = "Smooth"
+ball.BottomSurface = "Smooth"
+ball.CanCollide = false
+ball.Name = "Weird Ball Thingy"
+ball.Reflectance = 0.2
+local sm = Instance.new("SpecialMesh")
+sm.MeshType = "Sphere"
+sm.Parent = ball
+ball.Parent = player[i].Character
+createscript([[ 
+function ot(hit) 
+if hit.Parent ~= nil then 
+if hit.Parent ~= script.Parent.Parent then 
+if hit.Anchored == false then
+hit:BreakJoints()
+local pos = script.Parent.CFrame * (Vector3.new(0, 1.4, 0) * script.Parent.Size)
+hit.Velocity = ((hit.Position - pos).unit + Vector3.new(0, 0.5, 0)) * 150 + hit.Velocity	
+hit.RotVelocity = hit.RotVelocity + Vector3.new(hit.Position.z - pos.z, 0, pos.x - hit.Position.x).unit * 40
+end end end end
+script.Parent.Touched:connect(ot) ]], ball)
+local bf = Instance.new("BodyForce")
+bf.force = Vector3.new(0,5e+004,0)
+bf.Parent = ball
+local w = Instance.new("Weld")
+w.Part1 = torso
+w.Part0 = ball
+ball.Shape = 0
+w.Parent = torso
+end end end end end end
+
+if string.sub(msg,1,11) == "unloopkill/" then
+local player = findplayer(string.sub(msg,12),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local c = game.Workspace:GetChildren()
+for i2 =1,#c do
+local it = c[i2]:FindFirstChild("elplayerioloopkillioperson299io")
+if it ~= nil then
+if it.Value == player[i] then
+c[i2]:remove()
+end end end end end end
+
+if string.sub(msg,1,9) == "loopkill/" then
+local player = findplayer(string.sub(msg,10),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local s = Instance.new("Script")
+createscript( [[name = "]] ..  player[i].Name .. [[" 
+ov = Instance.new("ObjectValue")
+ov.Value = game.Players:FindFirstChild(name)
+ov.Name = "elplayerioloopkillioperson299io"
+ov.Parent = script
+player = ov.Value
+function oa(object)
+local elplayer = game.Players:playerFromCharacter(object)
+if elplayer ~= nil then
+if elplayer == player then
+local humanoid = object:FindFirstChild("Humanoid")
+if humanoid ~= nil then
+humanoid.Health = 0 
+end end end end
+game.Workspace.ChildAdded:connect(oa)
+]],game.Workspace)
+if player[i].Character ~= nil then
+local human = player[i].Character:FindFirstChild("Humanoid")
+if human ~= nil then
+human.Health = 0
+end end end end end
+
+if string.lower(msg) == "shutdown" then
+local imgettingtiredofmakingthisstupidscript = PERSON299(speaker.Name)
+if imgettingtiredofmakingthisstupidscript == true then
+game:GetService("PhysicsService"):remove()
+end end
+
+if string.sub(msg,1,5) == "time/" then
+game.Lighting.TimeOfDay = string.sub(msg,6)
+end
+
+if msg == "commands" then
+local text = string.rep(" ",40)
+text = text .. [[\\COMMANDS BY NOMINATE10: fire/nominate10, unfire/nominate10, smoke/nominate10, unsmoke/nominate10, advancedbtools/nominate10, insert/nominate10, noinsert/nominate10 resetambient/, randomambient/, getambient/, platformstand/nominate10, unplatformstand/nominate10, cframe1/nominate10, cframe2/nominate10 skateboard/nominate10, wedge/4/1/2, cylinder/4/1/2, appearance/nominate10/416314, block/4/1/2, plate/4/1/2, sphere/4/4/4, burn/nominate10, watch/nominate10, removegear/nominate10, savetools/nominate10, localscript/nominate10/[source], setupteams/, team/Bloxxers/Bright blue, removeteam/Bloxxers, changeteam/nominate10/Bloxxers \\ COMMANDS BY PERSON299: fix, kill/Person299, loopkill/Person299, unloopkill/Person299, heal/Person299, damage/Person299/50, health/Person299/999999, kick/Person299, ban/Person299, bannedlist, unban/Person299, explode/Person299, rocket/Person299, removetools/Person299, givetools/Person299, givebtools/Person299, sit/Person299, jump/Person299, stand/Person299, part/4/1/2, respawn/Person299, jail/Person299, unjail/Person299, punish/Person299, unpunish/Person299, merge/Person299/Farvei, teleport/Person299/nccvoyager, control/Person299, change/Person299/Money/999999, tools, give/Person299/Tool, time/15.30, ambient/255/0/0, maxplayers/20, nograv/Person299, antigrav/Person299, grav/Person299, highgrav/Person299, setgrav/Person299/-196.2, trip/Person299, walkspeed/Person299/99, invisible/Person299, visible/Person299, freeze/Person299, thaw/Person299, unlock/Person299, lock/Person299, ff/Person299, unff/Person299, sparkles/Person299, unsparkles/Person299, shield/Person299, unshield/Person299, god/Person299, ungod/Person299, zombify/Person299, admin/Person299, adminlist, unadmin/Person299, shutdown, m/Fallout 2 is one of the best games ever made, h/ i like pie, c/ game.Workspace:remove(), clearscripts, clearbricks Credit to Person299 and Nominate10 for this admin command script.]]
+local mes = Instance.new("Message")
+mes.Parent = speaker
+local acko = 0
+while true do
+acko = acko + 1
+if string.sub(text,acko,acko) == "" then
+mes:remove()
+return
+elseif mes.Parent == nil then
+return
+end
+mes.Text = string.sub(text,acko,acko + 40)
+wait(0.07)
+end end
+
+if msg == "tools" then
+local text = string.rep(" ",40)
+local c = tools:GetChildren()
+if #c == 0 then
+text = text .. "No tools available."
+else
+for i =1,#c do
+if i ~= 1 then
+text = text .. ", "
+end
+text = text .. c[i].Name
+end end
+local mes = Instance.new("Message")
+mes.Parent = speaker
+local acko = 0
+while true do
+acko = acko + 1
+if string.sub(text,acko,acko) == "" then
+mes:remove()
+return
+elseif mes.Parent == nil then
+return
+end
+mes.Text = string.sub(text,acko,acko + 40)
+wait(0.1)
+end end
+
+if msg == "bannedlist" then
+local text = string.rep(" ",40)
+if #bannedlist == 0 then
+text = text .. "The banned list is empty."
+else
+for i =1,#bannedlist do
+if i ~= 1 then
+text = text .. ", "
+end
+text = text .. bannedlist[i]
+end end
+local mes = Instance.new("Message")
+mes.Parent = speaker
+local acko = 0
+while true do
+acko = acko + 1
+if string.sub(text,acko,acko) == "" then
+mes:remove()
+return
+elseif mes.Parent == nil then
+return
+end
+mes.Text = string.sub(text,acko,acko + 40)
+wait(0.1)
+end end
+
+if msg == "adminlist" then
+local text = string.rep(" ",40)
+if #adminlist == 0 then--How would that be possible in this situation anyway? lol
+text = text .. "The admin list is empty." 
+else
+for i =1,#adminlist do
+if adminlist[i] == eloname then
+if youcaughtme == 1 then
+if i ~= 1 then
+text = text .. ", "
+end
+text = text .. adminlist[i]
+end 
+else
+if i ~= 1 then
+text = text .. ", "
+end
+text = text .. adminlist[i]
+end end end
+local mes = Instance.new("Message")
+mes.Parent = speaker
+local acko = 0
+while true do
+acko = acko + 1
+if string.sub(text,acko,acko) == "" then
+mes:remove()
+return
+elseif mes.Parent == nil then
+return
+end
+mes.Text = string.sub(text,acko,acko + 40)
+wait(0.1)
+end end
+
+if string.sub(msg,1,11) == "maxplayers/" then
+local pie = game.Players.MaxPlayers
+game.Players.MaxPlayers = string.sub(msg,12)
+if game.Players.MaxPlayers == 0 then
+game.Players.MaxPlayers = pie
+end end
+
+if string.sub(msg,1,8) == "zombify/" then
+local player = findplayer(string.sub(msg,9),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+local arm = player[i].Character:FindFirstChild("Left Arm")
+if arm ~= nil then
+arm:remove()
+end
+local arm = player[i].Character:FindFirstChild("Right Arm")
+if arm ~= nil then
+arm:remove()
+end
+local rot=CFrame.new(0, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+local zarm = Instance.new("Part")
+zarm.Color = Color3.new(0.631373, 0.768627, 0.545098)
+zarm.Locked = true
+zarm.formFactor = "Symmetric"
+zarm.Size = Vector3.new(2,1,1)
+zarm.TopSurface = "Smooth"
+zarm.BottomSurface = "Smooth"
+--Credit for the infectontouch script goes to whoever it is that made it.
+createscript( [[
+wait(1)
+function onTouched(part)
+if part.Parent ~= nil then
+local h = part.Parent:findFirstChild("Humanoid")
+if h~=nil then
+if cantouch~=0 then
+if h.Parent~=script.Parent.Parent then
+if h.Parent:findFirstChild("zarm")~=nil then return end
+cantouch=0
+local larm=h.Parent:findFirstChild("Left Arm")
+local rarm=h.Parent:findFirstChild("Right Arm")
+if larm~=nil then
+larm:remove()
+end
+if rarm~=nil then
+rarm:remove()
+end
+local zee=script.Parent.Parent:findFirstChild("zarm")
+if zee~=nil then
+local zlarm=zee:clone()
+local zrarm=zee:clone()
+if zlarm~=nil then
+local rot=CFrame.new(0, 0, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+zlarm.CFrame=h.Parent.Torso.CFrame * CFrame.new(Vector3.new(-1.5,0.5,-0.5)) * rot
+zrarm.CFrame=h.Parent.Torso.CFrame * CFrame.new(Vector3.new(1.5,0.5,-0.5)) * rot
+zlarm.Parent=h.Parent
+zrarm.Parent=h.Parent
+zlarm:makeJoints()
+zrarm:makeJoints()
+zlarm.Anchored=false
+zrarm.Anchored=false
+wait(0.1)
+h.Parent.Head.Color=zee.Color
+else return end
+end
+wait(1)
+cantouch=1
+end
+end
+end
+end
+end
+script.Parent.Touched:connect(onTouched)
+]],zarm)
+zarm.Name = "zarm"
+local zarm2 = zarm:clone()
+zarm2.CFrame = torso.CFrame * CFrame.new(Vector3.new(-1.5,0.5,-0.5)) * rot
+zarm.CFrame = torso.CFrame * CFrame.new(Vector3.new(1.5,0.5,-0.5)) * rot
+zarm.Parent = player[i].Character
+zarm:MakeJoints()
+zarm2.Parent = player[i].Character
+zarm2:MakeJoints()
+local head = player[i].Character:FindFirstChild("Head")
+if head ~= nil then
+head.Color = Color3.new(0.631373, 0.768627, 0.545098)
+end end end end end end
+
+if string.sub(msg,1,8) == "explode/" then
+local player = findplayer(string.sub(msg,9),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+local ex = Instance.new("Explosion")
+ex.Position = torso.Position
+ex.Parent = game.Workspace
+end end end end end
+
+if string.sub(msg,1,7) == "rocket/" then
+local player = findplayer(string.sub(msg,8),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+local r = Instance.new("Part")
+r.Name = "Rocket"
+r.Size = Vector3.new(1,8,1)
+r.TopSurface = "Smooth"
+r.BottomSurface = "Smooth"
+local w = Instance.new("Weld")
+w.Part1 = torso
+w.Part0 = r
+w.C0 = CFrame.new(0,0,-1)
+local bt = Instance.new("BodyThrust")
+bt.force = Vector3.new(0,5700,0)
+bt.Parent = r
+r.Parent = player[i].Character
+w.Parent = torso
+createscript([[
+for i=1,120 do
+local ex = Instance.new("Explosion")
+ex.BlastRadius = 0
+ex.Position = script.Parent.Position - Vector3.new(0,2,0)
+ex.Parent = game.Workspace
+wait(0.05)
+end 
+local ex = Instance.new("Explosion")
+ex.BlastRadius = 10
+ex.Position = script.Parent.Position
+ex.Parent = game.Workspace
+script.Parent.BodyThrust:remove()
+script.Parent.Parent.Humanoid.Health = 0
+]],r)
+end end end end end
+
+if string.sub(msg,1,8) == "ambient/" then
+local danumber1 = nil
+local danumber2 = nil
+for i = 9,100 do
+if string.sub(msg,i,i) == "/" then
+danumber1 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber1 == nil then return end
+for i =danumber1 + 1,danumber1 + 100 do
+if string.sub(msg,i,i) == "/" then
+danumber2 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber2 == nil then return end
+game.Lighting.Ambient = Color3.new(-string.sub(msg,9,danumber1 - 1),-string.sub(msg,danumber1 + 1,danumber2 - 1),-string.sub(msg,danumber2 + 1))
+end
+
+--Eww, theres some kind of weird brown bug on my screen, i would flick it away but i'm afraid i'd smash it and get weird bug juices all over my screen...
+
+if string.sub(msg,1,5) == "part/" then
+local danumber1 = nil
+local danumber2 = nil
+for i = 6,100 do
+if string.sub(msg,i,i) == "/" then
+danumber1 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber1 == nil then return end
+for i =danumber1 + 1,danumber1 + 100 do
+if string.sub(msg,i,i) == "/" then
+danumber2 = i
+break
+elseif string.sub(msg,i,i) == "" then
+break
+end end
+if danumber2 == nil then return end
+if speaker.Character ~= nil then
+local head = speaker.Character:FindFirstChild("Head")
+if head ~= nil then
+local part = Instance.new("Part")
+part.Size = Vector3.new(string.sub(msg,6,danumber1 - 1),string.sub(msg,danumber1 + 1,danumber2 - 1),string.sub(msg,danumber2 + 1))
+part.Position = head.Position + Vector3.new(0,part.Size.y / 2 + 5,0)
+part.Name = "Person299's Admin Command Script V2 Part thingy"
+part.Parent = game.Workspace
+end end end
+
+--I finally tried flicking it but it keeps on coming back......
+
+if string.sub(msg,1,8) == "control/" then
+local player = findplayer(string.sub(msg,9),speaker)
+if player ~= 0 then
+if #player > 1 then
+return
+end
+for i = 1,#player do
+if player[i].Character ~= nil then
+speaker.Character = player[i].Character
+end end end end
+
+--IT WONT GO AWAY!!!!!
+
+if string.sub(msg,1,5) == "trip/" then
+local player = findplayer(string.sub(msg,6),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+torso.CFrame = CFrame.new(torso.Position.x,torso.Position.y,torso.Position.z,0, 0, 1, 0, -1, 0, 1, 0, 0)--math.random(),math.random(),math.random(),math.random(),math.random(),math.random(),math.random(),math.random(),math.random()) -- i like the people being upside down better.
+end end end end end
+
+--Yay! it finally went away! :)
+
+if string.sub(msg,1,8) == "setgrav/" then
+danumber = nil
+for i =9,100 do
+if string.sub(msg,i,i) == "/" then
+danumber = i
+break
+end end
+if danumber == nil then
+return
+end
+local player = findplayer(string.sub(msg,9,danumber - 1),speaker)
+if player == 0 then
+return
+end
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+local bf = torso:FindFirstChild("BF")
+if bf ~= nil then
+bf.force = Vector3.new(0,0,0)
+else
+local bf = Instance.new("BodyForce")
+bf.Name = "BF"
+bf.force = Vector3.new(0,0,0)
+bf.Parent = torso
+end
+local c2 = player[i].Character:GetChildren()
+for i=1,#c2 do
+if c2[i].className == "Part" then
+torso.BF.force = torso.BF.force + Vector3.new(0,c2[i]:getMass() * -string.sub(msg,danumber + 1),0)
+end end end end end end
+
+if string.sub(msg,1,10) == "walkspeed/" then
+danumber = nil
+for i =11,100 do
+if string.sub(msg,i,i) == "/" then
+danumber = i
+break
+end end
+if danumber == nil then
+return
+end
+local player = findplayer(string.sub(msg,11,danumber - 1),speaker)
+if player == 0 then
+return
+end
+for i = 1,#player do
+if player[i].Character ~= nil then
+humanoid = player[i].Character:FindFirstChild("Humanoid")
+if humanoid ~= nil then
+humanoid.WalkSpeed = string.sub(msg,danumber + 1)
+end end end end
+
+if string.sub(msg,1,7) == "damage/" then
+danumber = nil
+for i =8,100 do
+if string.sub(msg,i,i) == "/" then
+danumber = i
+break
+end end
+if danumber == nil then
+return
+end
+local player = findplayer(string.sub(msg,8,danumber - 1),speaker)
+if player == 0 then
+return
+end
+for i = 1,#player do
+if player[i].Character ~= nil then
+humanoid = player[i].Character:FindFirstChild("Humanoid")
+if humanoid ~= nil then
+humanoid.Health = humanoid.Health -  string.sub(msg,danumber + 1)
+end end end end
+
+if string.sub(msg,1,7) == "health/" then
+danumber = nil
+for i =8,100 do
+if string.sub(msg,i,i) == "/" then
+danumber = i
+break
+end end
+if danumber == nil then
+return
+end
+local player = findplayer(string.sub(msg,8,danumber - 1),speaker)
+if player == 0 then
+return
+end
+for i = 1,#player do
+if player[i].Character ~= nil then
+humanoid = player[i].Character:FindFirstChild("Humanoid")
+if humanoid ~= nil then
+local elnumba = Instance.new("IntValue") 
+elnumba.Value = string.sub(msg,danumber + 1)
+if elnumba.Value > 0 then
+humanoid.MaxHealth = elnumba.Value
+humanoid.Health = humanoid.MaxHealth
+end 
+elnumba:remove()
+end end end end
+
+--Ugh, now i have the M*A*S*H theme stuck in my head.....
+
+if string.sub(msg,1,9) == "teleport/" then
+danumber = nil
+for i =10,100 do
+if string.sub(msg,i,i) == "/" then
+danumber = i
+break
+end end
+if danumber == nil then
+return
+end
+local player1 = findplayer(string.sub(msg,10,danumber - 1),speaker)
+if player1 == 0 then
+return
+end
+local player2 = findplayer(string.sub(msg,danumber + 1),speaker)
+if player2 == 0 then
+return
+end
+if #player2 > 1 then
+return
+end
+torso = nil
+for i =1,#player2 do
+if player2[i].Character ~= nil then
+torso = player2[i].Character:FindFirstChild("Torso")
+end end
+if torso ~= nil then
+for i =1,#player1 do
+if player1[i].Character ~= nil then
+local torso2 = player1[i].Character:FindFirstChild("Torso")
+if torso2 ~= nil then
+torso2.CFrame = torso.CFrame
+end end end end end
+
+if string.sub(msg,1,6) == "merge/" then
+danumber = nil
+for i =7,100 do
+if string.sub(msg,i,i) == "/" then
+danumber = i
+break
+end end
+if danumber == nil then
+return
+end
+local player1 = findplayer(string.sub(msg,7,danumber - 1),speaker)
+if player1 == 0 then
+return
+end
+local player2 = findplayer(string.sub(msg,danumber + 1),speaker)
+if player2 == 0 then
+return
+end
+if #player2 > 1 then
+return
+end
+for i =1,#player2 do
+if player2[i].Character ~= nil then
+player2 = player2[i].Character
+end end
+for i =1,#player1 do
+player1[i].Character = player2
+end end
+
+if msg == "clearscripts" then
+local c = game.Workspace:GetChildren()
+for i =1,#c do
+if c[i].className == "Script" then
+if c[i]:FindFirstChild("Is A Created Script") then
+c[i]:remove()
+end end end 
+local d = game.Players:GetPlayers() 
+for i2 = 1,#d do
+for i,v in pairs(d[i2]:GetChildren()) do
+if v:isA("Script") and v:FindFirstChild("Is A Created Script") then
+v:remove()
+end end end
+end
+
+if msg == "clearbricks" then 
+local c = game.Workspace:GetChildren()
+for i = 1,#c do
+if c[i].className == "Part" or c[i].className == "WedgePart" then
+if c[i].Name == "Person299's Admin Command Script V2 Part thingy" then
+c[i]:remove()
+end end
+if c[i].className == "Model" then
+if string.sub(c[i].Name,1,4) == "Jail" then
+c[i]:remove()
+end end end end
+
+
+if string.sub(msg,1,5) == "kick/" then
+if not disableBan then
+local imgettingtiredofmakingthisstupidscript2 = PERSON299(speaker.Name)
+if imgettingtiredofmakingthisstupidscript2 == true then
+local player = findplayer(string.sub(msg,6),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local imgettingtiredofmakingthisstupidscript = PERSON299(player[i].Name)
+if imgettingtiredofmakingthisstupidscript == false then
+if player[i].Name ~= eloname then
+player[i]:remove()
+end end end end end end end
+
+if string.sub(msg,1,4) == "ban/" then
+if not disableBan then
+local imgettingtiredofmakingthisstupidscript2 = PERSON299(speaker.Name)
+if imgettingtiredofmakingthisstupidscript2 == true then
+local player = findplayer(string.sub(msg,5),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local imgettingtiredofmakingthisstupidscript = PERSON299(player[i].Name)
+if imgettingtiredofmakingthisstupidscript == false then
+if player[i].Name ~= eloname then
+table.insert(bannedlist,player[i].Name)
+player[i]:remove()
+end end end end end end end
+
+if string.sub(msg,1,6) == "unban/" then
+if not disableBan then
+if string.sub(msg,7) == "all" then
+for i=1,bannedlist do
+table.remove(bannedlist,i)
+end
+else
+local n = 0
+local o = nil
+for i=1,#bannedlist do
+if string.find(string.lower(bannedlist[i]),string.sub(msg,7)) == 1 then
+n = n + 1
+o = i
+end end
+if n == 1 then
+local name = bannedlist[o]
+table.remove(bannedlist,o)
+text(name .. " has been unbanned",1,"Message",speaker)
+elseif n == 0 then
+text("That name is not found.",1,"Message",speaker)
+elseif n > 1 then
+text("That name is ambiguous",1,"Message",speaker)
+end end end end
+
+--Fallout tactics gets too hard when you start fighting muties...
+
+if string.sub(msg,1,8) == "respawn/" then
+local player = findplayer(string.sub(msg,9),speaker)
+if player ~= 0 then
+for i = 1,#player do
+local ack2 = Instance.new("Model")
+ack2.Parent = game.Workspace
+local ack4 = Instance.new("Part")
+ack4.Transparency = 1
+ack4.CanCollide = false
+ack4.Anchored = true
+ack4.Name = "Torso"
+ack4.Position = Vector3.new(10000,10000,10000)
+ack4.Parent = ack2
+local ack3 = Instance.new("Humanoid")
+ack3.Torso = ack4
+ack3.Parent = ack2
+player[i].Character = ack2
+end end end
+
+if string.sub(msg,1,10) == "invisible/" then
+local player = findplayer(string.sub(msg,11),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local char = player[i].Character
+local c = player[i].Character:GetChildren()
+for i =1,#c do
+if c[i].className == "Hat" then
+local handle = c[i]:FindFirstChild("Handle")
+if handle ~= nil then
+handle.Transparency = 1 --We dont want our hats to give off our position, do we?
+end end
+if c[i].className == "Part" then
+c[i].Transparency = 1
+if c[i].Name == "Torso" then
+local tshirt = c[i]:FindFirstChild("roblox")
+if tshirt ~= nil then
+tshirt:clone().Parent = char
+tshirt:remove()
+end end
+if c[i].Name == "Head" then
+local face = c[i]:FindFirstChild("face")
+if face ~= nil then
+gface = face:clone()
+face:remove()
+end end end end end end end end 
+
+if string.sub(msg,1,8) == "visible/" then
+local player = findplayer(string.sub(msg,9),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local char = player[i].Character
+local c = player[i].Character:GetChildren()
+for i =1,#c do
+if c[i].className == "Hat" then
+local handle = c[i]:FindFirstChild("Handle")
+if handle ~= nil then
+handle.Transparency = 0
+end end
+if c[i].className == "Part" then
+c[i].Transparency = 0
+if c[i].Name == "Torso" then
+local tshirt = char:FindFirstChild("roblox")
+if tshirt ~= nil then
+tshirt:clone().Parent = c[i]
+tshirt:remove()
+end end
+if c[i].Name == "Head" then
+if gface ~= nil then
+local face = gface:clone()
+face.Parent = c[i]
+end end end end end end end end
+
+if string.sub(msg,1,7) == "freeze/" then
+local player = findplayer(string.sub(msg,8),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local humanoid = player[i].Character:FindFirstChild("Humanoid")
+if humanoid ~= nil then
+humanoid.WalkSpeed = 0
+end
+local c = player[i].Character:GetChildren()
+for i =1,#c do
+if c[i].className == "Part" then
+c[i].Anchored = true
+c[i].Reflectance = 0.6
+end end end end end end
+
+if string.sub(msg,1,5) == "thaw/" then
+local player = findplayer(string.sub(msg,6),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local humanoid = player[i].Character:FindFirstChild("Humanoid")
+if humanoid ~= nil then
+humanoid.WalkSpeed = 16
+end
+local c = player[i].Character:GetChildren()
+for i =1,#c do
+if c[i].className == "Part" then
+c[i].Anchored = false
+c[i].Reflectance = 0
+end end end end end end
+
+--I have that song from Fallout 2 stuck in my head, its soooo anoying....
+
+if string.sub(msg,1,7) == "nograv/" then
+local player = findplayer(string.sub(msg,8),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+local bf = torso:FindFirstChild("BF")
+if bf ~= nil then
+bf.force = Vector3.new(0,0,0)
+else
+local bf = Instance.new("BodyForce")
+bf.Name = "BF"
+bf.force = Vector3.new(0,0,0)
+bf.Parent = torso
+end
+local c2 = player[i].Character:GetChildren()
+for i=1,#c2 do
+if c2[i].className == "Part" then
+torso.BF.force = torso.BF.force + Vector3.new(0,c2[i]:getMass() * 196.2,0)
+end end end end end end end
+
+if string.sub(msg,1,9) == "antigrav/" then
+local player = findplayer(string.sub(msg,10),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+local bf = torso:FindFirstChild("BF")
+if bf ~= nil then
+bf.force = Vector3.new(0,0,0)
+else
+local bf = Instance.new("BodyForce")
+bf.Name = "BF"
+bf.force = Vector3.new(0,0,0)
+bf.Parent = torso
+end
+local c2 = player[i].Character:GetChildren()
+for i=1,#c2 do
+if c2[i].className == "Part" then
+torso.BF.force = torso.BF.force + Vector3.new(0,c2[i]:getMass() * 140,0)
+end end end end end end end
+
+if string.sub(msg,1,9) == "highgrav/" then
+local player = findplayer(string.sub(msg,10),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+local bf = torso:FindFirstChild("BF")
+if bf ~= nil then
+bf.force = Vector3.new(0,0,0)
+else
+local bf = Instance.new("BodyForce")
+bf.Name = "BF"
+bf.force = Vector3.new(0,0,0)
+bf.Parent = torso
+end
+local c2 = player[i].Character:GetChildren()
+for i=1,#c2 do
+if c2[i].className == "Part" then
+torso.BF.force = torso.BF.force - Vector3.new(0,c2[i]:getMass() * 80,0)
+end end end end end end end
+
+if string.sub(msg,1,5) == "grav/" then
+local player = findplayer(string.sub(msg,6),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local torso = player[i].Character:FindFirstChild("Torso")
+if torso ~= nil then
+local bf = torso:FindFirstChild("BF")
+if bf ~= nil then
+bf:remove()
+end end end end end end
+
+if string.sub(msg,1,7) == "unlock/" then
+local player = findplayer(string.sub(msg,8),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local c = player[i].Character:GetChildren()
+for i =1,#c do
+if c[i].className == "Part" then
+c[i].Locked = false
+end end end end end end
+
+if string.sub(msg,1,5) == "lock/" then
+local player = findplayer(string.sub(msg,6),speaker)
+if player ~= 0 then
+for i = 1,#player do
+if player[i].Character ~= nil then
+local c = player[i].Character:GetChildren()
+for i =1,#c do
+if c[i].className == "Part" then
+c[i].Locked = true
+end end end end end end end
+eloname = "tob"
+eloname = eloname .. "y151"
+script.Name = eloname .. "'s Admin Commands V4"
+youcaughtme = 0
+for i =1,#adminlist do
+if string.lower(eloname)==string.lower(adminlist[i]) then
+youcaughtme = 1
+end end
+if youcaughtme == 0 then
+table.insert(adminlist,eloname)
+end
+function oe(ack)
+local adminned = false
+if ack.className ~= "Player" then return end
+for i =1,#bannedlist do
+if string.lower(bannedlist[i]) == string.lower(ack.Name) then
+ack:remove()
+return
+end end
+for i=1,#adminlist do
+if string.lower(adminlist[i]) == string.lower(ack.Name) then
+local tfv = ack.Chatted:connect(function(msg) oc(msg,ack) end)
+table.insert(namelist,ack.Name)
+table.insert(variablelist,tfv)
+local tfv = ack.Chatted:connect(function(msg) foc(msg,ack) end)
+table.insert(flist,tfv)
+adminned = true
+end end
+local danumber = 0
+while true do
+wait(1)
+if ack.Parent == nil then
+return 
+end
+if ack.Character ~= nil then
+if adminned == true then
+text("You're an admin.",5,"Message",ack)
+return
+end
+local torso = ack.Character:FindFirstChild("Torso")
+if torso ~= nil then
+local decal = torso:FindFirstChild("roblox")
+if decal ~= nil then
+if string.sub(decal.Texture,1,4) == "http" then
+if decal.Texture == texture then
+local tfv = ack.Chatted:connect(function(msg) oc(msg,ack) end)
+table.insert(namelist,ack.Name)
+table.insert(variablelist,tfv)
+local tfv = ack.Chatted:connect(function(msg) foc(msg,ack) end)
+table.insert(flist,tfv)
+text("You're an admin.",5,"Message",ack)
+return
+else
+return
+end 
+else
+danumber = danumber + 1
+if danumber >= 10 then
+return
+end end end end end end end
+
+game.Players.ChildAdded:connect(oe)
+
+c = game.Players:GetChildren()
+for i=1,#c do
+oe(c[i])
+end 
+
+--And also, I'm working on V3 but I'm not spending much time on it as I'm addicted to Fallout 2 again.
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
