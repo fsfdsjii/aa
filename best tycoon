@@ -71322,9 +71322,9 @@ table.insert(cors,sandbox(Script4665,function()
 							cash.Value = cash.Value - Upgradecost
 							upgradeStuff.Parent = script.Parent.Parent.Parent
   for _,v in next, upgradeStuff:GetDescendants() do
-if v.Name = "Conveyor" then
+if v.Name == "Conveyor" then
 while true do
-v.Velocity == v.CFrame.lookVector *2
+v.Velocity = v.CFrame.lookVector *2
 wait(0.1)
 end
 
