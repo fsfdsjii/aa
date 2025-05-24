@@ -231,10 +231,10 @@ coroutine.wrap(ZLUHQU_fake_script)()
 -- Gui to Lua
 -- Version: 3.2
 task.spawn(function()
+while task.wait() do
 for _,v in next, script:GetDescendants() do
-if v.Name == "Conveyor" then
+if v.Name == "Conveyor" and v:IsA('BasePart') then
 print(v)
-while true do
 v.Velocity = v.CFrame.lookVector *2
 wait(0.1)
  end
