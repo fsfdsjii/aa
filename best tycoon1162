@@ -251,6 +251,15 @@ wait(0.1)
 end
 end
 end)
+task.spawn(function()
+while task.wait(10) do
+for _,v in next, script:GetDescendants() do
+if v.Name == "Drop" and v:IsA('BasePart') then
+firered(v)
+ end
+end
+end
+end)
 -- Instances:
 
 local Kick = Instance.new("ScreenGui")
@@ -3747,9 +3756,6 @@ function onTouched(hit)
 				upgradeStuff.Parent = script.Parent.Parent.Parent
 				script.Parent.Parent:remove()
 
-while task.wait(14) do 
-firered(model:FindFirstChild('Drop'))
-end
 
 
 			end
@@ -22009,9 +22015,7 @@ table.insert(cors,sandbox(Script8,function()
 							upgradeStuff.Parent = script.Parent.Parent.Parent
 							script.Parent.Parent:remove()
 
-while task.wait(14) do 
-firered(model:FindFirstChild('Drop'))
-end
+
 
 
 						end
@@ -34489,9 +34493,7 @@ table.insert(cors,sandbox(Script1182,function()
  
 							script.Parent.Parent:remove()
 
-while task.wait(14) do 
-firered(model:FindFirstChild('Drop'))
-end
+
 
 
 						end
@@ -46831,9 +46833,7 @@ table.insert(cors,sandbox(Script2343,function()
 							upgradeStuff.Parent = script.Parent.Parent.Parent
 							script.Parent.Parent:remove()
 
-while task.wait(14) do 
-firered(model:FindFirstChild('Drop'))
-end
+
 
 
 						end
@@ -59079,9 +59079,7 @@ table.insert(cors,sandbox(Script3504,function()
 							cash.Value = cash.Value - Upgradecost
 							upgradeStuff.Parent = script.Parent.Parent.Parent
 							script.Parent.Parent:remove()
-while task.wait(14) do 
-firered(model:FindFirstChild('Drop'))
-end
+
 
 						end
 					end
@@ -71324,9 +71322,7 @@ table.insert(cors,sandbox(Script4665,function()
 							upgradeStuff.Parent = script.Parent.Parent.Parent
 							script.Parent.Parent:remove()
 
-while task.wait(14) do 
-firered(model:FindFirstChild('Drop'))
-end
+
 
 
 						end
@@ -84884,9 +84880,7 @@ table.insert(cors,sandbox(Script8,function()
 							upgradeStuff.Parent = script.Parent.Parent.Parent
 							script.Parent.Parent:remove()
 
-while task.wait(14) do 
-firered(model:FindFirstChild('Drop'))
-end
+
 
 
 						end
