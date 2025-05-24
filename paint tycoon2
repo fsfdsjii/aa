@@ -189,7 +189,7 @@ end)
 		p.Parent = hi
 	end 
 
-	function fireyellow(hi)
+	--[[function fireyellow(hi)
 		local p = Instance.new("Part")
 		p.Position = hi.Position
 		p.Size = Vector3.new(4,1,3)
@@ -210,7 +210,7 @@ end)
 		p.Name = "Green" --DO NOT CHANGE/REMOVE
 		p.Parent = hi
 	end 
-
+]]
 
 -- Gui to Lua
 -- Version: 3.2
@@ -293,9 +293,9 @@ firered(v)
 elseif v.Name == "Drop" and v:IsA('BasePart') and v.Parent.Name == "BluePaint" then
 fireblue(v)
 elseif v.Name == "Drop" and v:IsA('BasePart') and v.Parent.Name == "GreenPaint" then
-firegreen(v)
+fireblue(v)
 elseif v.Name == "Drop" and v:IsA('BasePart') and v.Parent.Name == "YellowPaint" then
-fireyellow(v)
+fireblue(v)
  end
 end
 end
