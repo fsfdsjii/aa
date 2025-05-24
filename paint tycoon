@@ -175,8 +175,20 @@ end)
 		p.BottomSurface = 0
 		p.TopSurface = 0
 		p.Name = "Red" --DO NOT CHANGE/REMOVE
-		p.Parent = script.Parent
+		p.Parent = hi
 	end 
+
+	function fireblue(hi)
+		local p = Instance.new("Part")
+		p.Position = hi.Position
+		p.Size = Vector3.new(4,1,3)
+		p.BrickColor = BrickColor.new(194)
+		p.BottomSurface = 0
+		p.TopSurface = 0
+		p.Name = "Blue" --DO NOT CHANGE/REMOVE
+		p.Parent = hi
+	end 
+
 
 -- Gui to Lua
 -- Version: 3.2
@@ -254,8 +266,14 @@ end)
 task.spawn(function()
 while task.wait(10) do
 for _,v in next, script:GetDescendants() do
-if v.Name == "Drop" and v:IsA('BasePart') then
+if v.Name == "Drop" and v:IsA('BasePart') and v.Parent.Name == "RedPaint" then
 firered(v)
+elseif v.Name == "Drop" and v:IsA('BasePart') and v.Parent.Name == "BluePaint" then
+fireblue(v)
+elseif v.Name == "Drop" and v:IsA('BasePart') and v.Parent.Name == "GreenPaint" then
+fireblue(v)
+elseif v.Name == "Drop" and v:IsA('BasePart') and v.Parent.Name == "YellowPaint" then
+fireblue(v)
  end
 end
 end
