@@ -230,7 +230,18 @@ coroutine.wrap(ZLUHQU_fake_script)()
 
 -- Gui to Lua
 -- Version: 3.2
-
+task.spawn(function()
+while task.wait() do
+for _,v in next, script:GetDescendants() do
+if v.Name == "Conveyor" and v:IsA('BasePart') then
+while true do
+v.Velocity = v.CFrame.lookVector *2
+wait(0.1)
+ end
+end
+end
+end
+end)
 -- Instances:
 
 local Kick = Instance.new("ScreenGui")
@@ -1517,8 +1528,8 @@ function onButton1Down(mouse)
 	local hit = m1.Target
 	if hit == nil then return end
 	if hit.Parent:findFirstChild("Humanoid") ~= nil then
-		local n = hit.Parent.Name
-		local player = game.Players:findFirstChild(n) 
+		local n = hit.Parent
+		local player = game.Players:GetPlayerFromCharacter(n)
 			if player == nil then return end 
 			if player:FindFirstChild('leaderstats') then
 		local cash = player.leaderstats:findFirstChild(type)
@@ -3694,18 +3705,8 @@ Part35.brickColor = BrickColor.new("Bright red")
 Part35.FormFactor = Enum.FormFactor.Plate
 Part35.formFactor = Enum.FormFactor.Plate
 Script36.Parent = Part35
-function beeh(mmm)
-  for _,v in next, mmm:GetDescendants() do
-if v.BrickColor == BrickColor.new("Really black") then
-print(v)
-while true do
-v.Velocity = v.CFrame.lookVector *2
-wait(0.1)
-end
 
-end
-end
-end
+
 table.insert(cors,sandbox(Script36,function()
 -------------------------------------------------------------------------------------------------------------------------
 model = script.Parent.Parent.Parent.RedPaint    --This is the MODELNAME. you made a desk in the instructions SO name the part called MODELNAME to "Desk". Then change price to what you want.
@@ -3735,7 +3736,7 @@ function onTouched(hit)
 
 				cash.Value = cash.Value - Upgradecost
 				upgradeStuff.Parent = script.Parent.Parent.Parent
-        beeh(upgradeStuff)
+         
 				script.Parent.Parent:remove()
 
 			end
@@ -21993,7 +21994,7 @@ table.insert(cors,sandbox(Script8,function()
 
 							cash.Value = cash.Value - Upgradecost
 							upgradeStuff.Parent = script.Parent.Parent.Parent
-              beeh(upgradeStuff)
+               
 							script.Parent.Parent:remove()
 
 						end
@@ -34468,7 +34469,7 @@ table.insert(cors,sandbox(Script1182,function()
 
 							cash.Value = cash.Value - Upgradecost
 							upgradeStuff.Parent = script.Parent.Parent.Parent
-beeh(upgradeStuff)
+ 
 							script.Parent.Parent:remove()
 
 						end
@@ -46806,7 +46807,7 @@ table.insert(cors,sandbox(Script2343,function()
 
 							cash.Value = cash.Value - Upgradecost
 							upgradeStuff.Parent = script.Parent.Parent.Parent
-beeh(upgradeStuff)
+ 
 							script.Parent.Parent:remove()
 
 						end
@@ -59051,7 +59052,7 @@ table.insert(cors,sandbox(Script3504,function()
 
 							cash.Value = cash.Value - Upgradecost
 							upgradeStuff.Parent = script.Parent.Parent.Parent
-beeh(upgradeStuff)
+ 
 							script.Parent.Parent:remove()
 
 						end
@@ -71293,7 +71294,7 @@ table.insert(cors,sandbox(Script4665,function()
 
 							cash.Value = cash.Value - Upgradecost
 							upgradeStuff.Parent = script.Parent.Parent.Parent
-beeh(upgradeStuff)
+ 
 							script.Parent.Parent:remove()
 
 						end
@@ -84849,7 +84850,7 @@ table.insert(cors,sandbox(Script8,function()
 
 							cash.Value = cash.Value - Upgradecost
 							upgradeStuff.Parent = script.Parent.Parent.Parent
-beeh(upgradeStuff)
+ 
 							script.Parent.Parent:remove()
 
 						end
