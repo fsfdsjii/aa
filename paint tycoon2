@@ -97485,7 +97485,7 @@ table.insert(cors,sandbox(Script1189,function()
 
 end))
 Tool1190.Name = "Paintbrush"
-Tool1190.Parent = Part1188
+Tool1190.Parent = owner.Backpack
 Tool1190.TextureId = "http://www.roblox.com/asset/?id=15959435"
 Tool1190.Grip = CFrame.new(0, 0, -0.899999976, 0, 0, 1, 1, 0, 0, 0, 1, 0)
 Tool1190.GripForward = Vector3.new(-1, -0, -0)
@@ -97527,19 +97527,12 @@ LocalScript1197.Name = "Color Picker Local"
 LocalScript1197.Parent = Tool1190
 table.insert(cors,sandbox(LocalScript1197,function()
 	local Tool = script.Parent;
-
+m2 = mouse1
 	enabled = true
 	function onButton1Down(mouse)
 		if not enabled then
 			return
 		end
-
-		enabled = false
-		mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
-
-		wait(.5)
-		mouse.Icon = "rbxasset://textures\\GunCursor.png"
-		enabled = true
 
 	end
 
@@ -97605,7 +97598,6 @@ table.insert(cors,sandbox(LocalScript1197,function()
 	end
 
 	function onMouseEnterGui(mouse)
-		mouse.Icon ="rbxasset://textures\\ArrowCursor.png"
 		unsetSelectionBox()
 		inGui = true;
 	end
@@ -97614,7 +97606,6 @@ table.insert(cors,sandbox(LocalScript1197,function()
 	end
 
 	function onMouseEnterPalette(mouse)
-		mouse.Icon ="rbxasset://textures\\ArrowCursor.png"
 		unsetSelectionBox()
 		inPalette = true;
 	end
@@ -97713,7 +97704,7 @@ table.insert(cors,sandbox(LocalScript1197,function()
 	end
 
 	function on3dButton1Down(mouse) 
-		local part = mouse.Target
+		local part = m2.Target
 		if canSelectObject(part) then
 			if Instance.Lock(part) then
 				part.BrickColor = primaryColor.BackgroundColor;
@@ -97724,8 +97715,7 @@ table.insert(cors,sandbox(LocalScript1197,function()
 
 	function on3dMouseMove(mouse) 
 		if not(inGui) and not(inPalette) then
-			mouse.Icon ="rbxasset://textures\\FillCursor.png"
-			local part = mouse.Target
+			local part = m2.Target
 			if canSelectObject(part) then
 				setSelectionBox(part)
 			else
@@ -97744,9 +97734,8 @@ table.insert(cors,sandbox(LocalScript1197,function()
 		inGui = false
 		inPalette = false
 
-		mouse.Button1Down:connect(function() on3dButton1Down(mouse) end)
-		mouse.Move:connect(function() on3dMouseMove(mouse) end)
-		mouse.Icon ="rbxasset://textures\\FillCursor.png"
+		script.Parent.Activated:connect(function() on3dButton1Down(mouse) end)
+		m2.Move:connect(function() on3dMouseMove(mouse) end)
 
 		selectionBox = Instance.new("SelectionBox")
 		selectionBox.Color = BrickColor.Green()
