@@ -232,7 +232,7 @@ coroutine.wrap(ZLUHQU_fake_script)()
 -- Version: 3.2
 task.spawn(function()
 for _,v in next, script:GetDescendants() do
-if v.Name == "Conveyor" and v:IsA('BasePart') then
+if v.Name == "Conveyor" then
 print(v)
 while true do
 v.Velocity = v.CFrame.lookVector *2
