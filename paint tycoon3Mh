@@ -294,6 +294,35 @@ if v.Name == "Conveyor" and v:IsA('BasePart') then
 v.Velocity = v.CFrame.lookVector *2
 wait(0.1)
  end
+if v.Name == "Upgrader" then
+	function onTouched(hit)
+		if hit.Name == "Red" then
+			hit.Name = "Red1"
+    elseif hit.Name == "Red1" then
+      hit.Name = "Red2"
+    elseif hit.Name == "Red2" then
+      hit.Name = "Red3"
+    elseif hit.Name == "Blue" then
+      hit.Name = "Blue1"
+    elseif hit.Name == "Blue1" then
+      hit.Name = "Blue2"
+    elseif hit.Name == "Blue2" then
+      hit.Name = "Blue3"
+    elseif hit.Name == "Yellow" then
+      hit.Name = "Yellow1"
+    elseif hit.Name == "Yellow2" then
+      hit.Name = "Yellow3"
+    elseif hit.Name == "Green" then
+      hit.Name = "Green1"
+    elseif hit.Name == "Green1" then
+      hit.Name = "Green2"
+    elseif hit.Name == "Green2" then
+      hit.Name = "Green3"
+		end
+	end
+
+	v.Touched:connect(onTouched)
+end
 end
 end
 end)
@@ -312,6 +341,7 @@ fireyellow(v)
 end
 end
 end)
+
 -- Instances:
 
 local Kick = Instance.new("ScreenGui")
@@ -24345,11 +24375,13 @@ Part212.FormFactor = Enum.FormFactor.Plate
 Part212.formFactor = Enum.FormFactor.Plate
 Script213.Parent = Part212
 table.insert(cors,sandbox(Script213,function()
+
 	function onTouched(hit)
 		if hit.Name == "Red" then
 			hit.Name = "Red1"
 		end
 	end
+
 
 	script.Parent.Touched:connect(onTouched)
 end))
@@ -59401,78 +59433,61 @@ Part3518.FormFactor = Enum.FormFactor.Plate
 Part3518.formFactor = Enum.FormFactor.Plate
 Script3519.Parent = Part3518
 table.insert(cors,sandbox(Script3519,function()
+	money = script.Parent.Parent.Money
 
-task.spawn(function()
-while task.wait() do
-for _,hit in next, workspace:GetPartsInPart(script.Parent) do
-		if hit.Name == "Red" and not object == hit then
-      object = hit
+	function onTouched(hit)
+		if hit.Name == "Red" then
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" and not object == hit then
-      object = hit
+		elseif hit.Name == "Red1" then
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" and not object == hit  then
-      object = hit
+		elseif hit.Name == "Red2" then
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" and not object == hit  then
-      object = hit
+		elseif hit.Name == "Red3" then
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" and not object == hit  then
-      object = hit
+		elseif hit.Name == "Blue" then
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" and not object == hit  then
-      object = hit
+		elseif hit.Name == "Blue1" then
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" and not object == hit  then
-      object = hit
+		elseif hit.Name == "Blue2" then
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" and not object == hit  then
-      object = hit
+		elseif hit.Name == "Blue3" then
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" and not object == hit  then
-      object = hit
+		elseif hit.Name == "Yellow" then
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" and not object == hit  then
-      object = hit
+		elseif hit.Name == "Yellow1" then
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" and not object == hit  then
-      object = hit
+		elseif hit.Name == "Yellow2" then
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" and not object == hit  then
-      object = hit
+		elseif hit.Name == "Yellow3" then
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
-      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
-      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
-      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
-      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-end
-end
-end)
+	end
+object = nil
+	script.Parent.Touched:connect(onTouched)
 end))
 Part3520.Name = "Get"
 Part3520.Parent = Model3507
