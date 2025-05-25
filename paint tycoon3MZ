@@ -97859,7 +97859,7 @@ Part1203.Locked = true
 Part1203.brickColor = BrickColor.new("Bright red")
 Script1204.Parent = Part1203
 table.insert(cors,sandbox(Script1204,function()
-	print("Hello world!")
+--	print("Hello world!")
 	function onTouched(hit)
 		local human = hit.Parent:FindFirstChild("Humanoid") 
 		--Basically this just checks to see if it is a real player touching this brick.
@@ -98131,7 +98131,7 @@ Part1224.Locked = true
 Part1224.brickColor = BrickColor.new("Bright red")
 Script1225.Parent = Part1224
 table.insert(cors,sandbox(Script1225,function()
-	print("Hello world!")
+--	print("Hello world!")
 	function onTouched(hit)
 		local human = hit.Parent:FindFirstChild("Humanoid") 
 		--Basically this just checks to see if it is a real player touching this brick.
@@ -98269,7 +98269,7 @@ Part1228.Locked = true
 Part1228.brickColor = BrickColor.new("Bright red")
 Script1229.Parent = Part1228
 table.insert(cors,sandbox(Script1229,function()
-	print("Hello world!")
+--	print("Hello world!")
 	function onTouched(hit)
 		local human = hit.Parent:FindFirstChild("Humanoid") 
 		--Basically this just checks to see if it is a real player touching this brick.
@@ -98578,7 +98578,7 @@ Part1247.Locked = true
 Part1247.brickColor = BrickColor.new("Bright red")
 Script1248.Parent = Part1247
 table.insert(cors,sandbox(Script1248,function()
-	print("Hello world!")
+	--print("Hello world!")
 	function onTouched(hit)
 		local human = hit.Parent:FindFirstChild("Humanoid") 
 		--Basically this just checks to see if it is a real player touching this brick.
@@ -99213,7 +99213,7 @@ table.insert(cors,sandbox(Script1323,function()
 		if (part.Parent:FindFirstChild("Humanoid") ~= nil) then
 			local p = game.Players:GetPlayerFromCharacter(part.Parent)
 			if (p ~= nil) then
-				print("Awarding BadgeID: " ..script.Parent.BadgeID.Value .. " to UserID: " .. p.userId)
+			--	print("Awarding BadgeID: " ..script.Parent.BadgeID.Value .. " to UserID: " .. p.userId)
 				local b = game:GetService("BadgeService")
 				b:AwardBadge(p.userId, script.Parent.BadgeID.Value)
 			end
@@ -99381,17 +99381,6 @@ Part1333.TopSurface = Enum.SurfaceType.Smooth
 Part1333.brickColor = BrickColor.new("Bright blue")
 Part1333.FormFactor = Enum.FormFactor.Plate
 Part1333.formFactor = Enum.FormFactor.Plate
-for i,v in pairs(mas:GetChildren()) do
-	v.Parent = script
-	pcall(function() v:MakeJoints() end)
-end
-mas:Destroy()
-for i,v in pairs(cors) do
-	spawn(function()
-		pcall(v)
-	end)
-end
-
 owner.CharacterAppearanceLoaded:Connect(function()
 hum = owner.Character:FindFirstChildOfClass('Humanoid')
 if hum then
@@ -99423,3 +99412,13 @@ end
 end)
 end
 end)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
