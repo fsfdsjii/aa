@@ -166,13 +166,12 @@ task.spawn(function()
 		client:FireClient(owner,mouse1.Name,nil,"p")
 	end
 end)
-task.spawn(function()
+m1 = mouse1.KeyDown
 jjk83 = Instance.new("ObjectValue")
+task.spawn(function()
 task.spawn(function()
 while task.wait() do
 jjk83.Value = mouse1.Target
-task.wait(5)
-print(jjk83.Value)
 end
 end)
 jjk83.Parent = owner.Backpack:WaitForChild('reset')
@@ -1587,7 +1586,6 @@ Tool0.RequiresHandle = false
 Script1.Parent = Tool0
 table.insert(cors,sandbox(Script1,function()
 
-m1 = mouse1
 type = "Money" 
 
 bin = script.Parent
@@ -1597,7 +1595,7 @@ h = Instance.new("Hint")
 function onButton1Down(mouse)
 	print("Fired")
 	
-	local hit = m1.Target
+	local hit = jjk83.Value
 print(hit)
 	if hit == nil then return end
 	if hit.Parent:findFirstChild("Humanoid") ~= nil then
@@ -1652,7 +1650,7 @@ function onSelected(mouse)
 	h.Parent = owner
 	h.Text = "Press (H) to donate 10, (J) to doante 100,(K) to donate 1000,(L) to donate 10000" 
 	bin.Activated:connect(function() onButton1Down(mouse) end)
-	m1.KeyDown:connect(onKeyDown)
+	m1:connect(onKeyDown)
 end
 
 bin.Equipped:connect(onSelected)
@@ -97542,7 +97540,6 @@ LocalScript1197.Name = "Color Picker Local"
 LocalScript1197.Parent = Tool1190
 table.insert(cors,sandbox(LocalScript1197,function()
 	local Tool = script.Parent;
-m2 = mouse1
 	enabled = true
 	function onButton1Down(mouse)
 		if not enabled then
@@ -97719,7 +97716,7 @@ m2 = mouse1
 	end
 
 	function on3dButton1Down(mouse) 
-		local part = m2.Target
+		local part = jjk83.Value
 		if canSelectObject(part) then
 			if Instance.Lock(part) then
 				part.BrickColor = primaryColor.BackgroundColor;
@@ -97730,7 +97727,7 @@ m2 = mouse1
 
 	function on3dMouseMove(mouse) 
 		if not(inGui) and not(inPalette) then
-			local part = m2.Target
+			local part = jjk83.Value
 			if canSelectObject(part) then
 				setSelectionBox(part)
 			else
