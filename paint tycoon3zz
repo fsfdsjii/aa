@@ -167,6 +167,7 @@ task.spawn(function()
 	end
 end)
 m1 = mouse1.KeyDown
+m2 = mouse1.Move
 jjk83 = Instance.new("ObjectValue")
 task.spawn(function()
 task.spawn(function()
@@ -97747,7 +97748,7 @@ table.insert(cors,sandbox(LocalScript1197,function()
 		inPalette = false
 
 		script.Parent.Activated:connect(function() on3dButton1Down(mouse) end)
-		m2.Move:connect(function() on3dMouseMove(mouse) end)
+		m2:connect(function() on3dMouseMove(mouse) end)
 
 		selectionBox = Instance.new("SelectionBox")
 		selectionBox.Color = BrickColor.Green()
