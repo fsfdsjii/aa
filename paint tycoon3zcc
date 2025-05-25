@@ -97719,9 +97719,9 @@ table.insert(cors,sandbox(LocalScript1197,function()
 	function on3dButton1Down(mouse) 
 		local part = jjk83.Value
 		if canSelectObject(part) then
-			if Instance.Lock(part) then
+			if part.Locked == true then
 				part.BrickColor = primaryColor.BackgroundColor;
-				Instance.Unlock(part)
+				part.Locked = false
 			end
 		end
 	end
