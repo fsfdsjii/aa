@@ -97748,7 +97748,7 @@ table.insert(cors,sandbox(LocalScript1197,function()
 		inPalette = false
 
 		script.Parent.Activated:connect(function() on3dButton1Down(mouse) end)
-		m2:connect(function() on3dMouseMove(mouse) end)
+		m2:connect(function() if Tool.Parent == owner.Character then on3dMouseMove(mouse) end end)
 
 		selectionBox = Instance.new("SelectionBox")
 		selectionBox.Color = BrickColor.Green()
