@@ -266,7 +266,7 @@ local function IMGS_fake_script() -- GuiMain.Script
 	end 
 
 	if (checkOkToLetIn(script.Parent.Parent.Parent.Name)) then 
-		print("Human passed test")  
+		--print("Human passed test")  
 	else script.Parent:remove()
 	end 
 
@@ -708,7 +708,7 @@ local function YDGAYD_fake_script() -- Kick.VIP
 	end 
 
 	if (checkOkToLetIn(script.Parent.Parent.Parent.Name)) then 
-		print("Human passed test")  
+		--print("Human passed test")  
 	else script.Parent:remove()
 	end 
 
@@ -1385,7 +1385,7 @@ local function PQIPNL_fake_script() -- ForceFieldGUI.VIP
 	end 
 
 	if (checkOkToLetIn(script.Parent.Parent.Parent.Name)) then 
-		print("Human passed test")  
+	--	print("Human passed test")  
 	else script.Parent:remove()
 	end 
 
@@ -1594,10 +1594,10 @@ donate = 0
 h = Instance.new("Hint")
 
 function onButton1Down(mouse)
-	print("Fired")
+--	print("Fired")
 	
 	local hit = jjk83.Value
-print(hit)
+--print(hit)
 	if hit == nil then return end
 	if hit.Parent:findFirstChild("Humanoid") ~= nil then
 		local n = hit.Parent
@@ -3466,7 +3466,7 @@ function OnTouch(part)
 	if (part.Parent:FindFirstChild("Humanoid") ~= nil) then
 		local p = game.Players:GetPlayerFromCharacter(part.Parent)
 		if (p ~= nil) then
-			print("Awarding BadgeID: " ..script.Parent.BadgeID.Value .. " to UserID: " .. p.userId)
+		--	print("Awarding BadgeID: " ..script.Parent.BadgeID.Value .. " to UserID: " .. p.userId)
 			local b = game:GetService("BadgeService")
 			b:AwardBadge(p.userId, script.Parent.BadgeID.Value)
 		end
@@ -3521,7 +3521,7 @@ function OnTouch(part)
 	if (part.Parent:FindFirstChild("Humanoid") ~= nil) then
 		local p = game.Players:GetPlayerFromCharacter(part.Parent)
 		if (p ~= nil) then
-			print("Awarding BadgeID: " ..script.Parent.BadgeID.Value .. " to UserID: " .. p.userId)
+		--	print("Awarding BadgeID: " ..script.Parent.BadgeID.Value .. " to UserID: " .. p.userId)
 			local b = game:GetService("BadgeService")
 			b:AwardBadge(p.userId, script.Parent.BadgeID.Value)
 		end
@@ -97720,7 +97720,7 @@ table.insert(cors,sandbox(LocalScript1197,function()
 		local part = jjk83.Value
 		if canSelectObject(part) then
 				part.BrickColor = primaryColor.BackgroundColor;
-        print(part)
+        --print(part)
 		end
 	end
 
