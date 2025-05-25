@@ -99381,6 +99381,17 @@ Part1333.TopSurface = Enum.SurfaceType.Smooth
 Part1333.brickColor = BrickColor.new("Bright blue")
 Part1333.FormFactor = Enum.FormFactor.Plate
 Part1333.formFactor = Enum.FormFactor.Plate
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
 owner.CharacterAppearanceLoaded:Connect(function()
 hum = owner.Character:FindFirstChildOfClass('Humanoid')
 if hum then
@@ -99412,13 +99423,21 @@ end
 end)
 end
 end)
-for i,v in pairs(mas:GetChildren()) do
-	v.Parent = script
-	pcall(function() v:MakeJoints() end)
+hum = owner.Character:FindFirstChildOfClass('Humanoid')
+hum.Died:Connect(function()
+if hum.Parent:FindFirstChild('reset')  then
+hum.Parent.reset.Parent = owner
+elseif owner.Backpack:FindFirstChild('reset') then
+owner.Backpack.Reset.Parent = owner
 end
-mas:Destroy()
-for i,v in pairs(cors) do
-	spawn(function()
-		pcall(v)
-	end)
+if hum.Parent:FindFirstChild('Donate') then
+hum.Parent.Donate.Parent = owner
+elseif owner.Backpack:FindFirstChild('Donate') then
+owner.Backpack.Donate.Parent = owner
 end
+if hum.Parent:FindFirstChild('Paintbrush') then
+hum.Parent.Paintbrush.Parent = owner
+elseif owner.Backpack:FindFirstChild('Paintbrush') then
+owner.Backpack.Paintbrush.Parent = owner
+end
+end)
