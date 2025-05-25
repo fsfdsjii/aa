@@ -3908,61 +3908,78 @@ Part44.FormFactor = Enum.FormFactor.Plate
 Part44.formFactor = Enum.FormFactor.Plate
 Script45.Parent = Part44
 table.insert(cors,sandbox(Script45,function()
-money = script.Parent.Parent.Money
 
-function onTouched(hit)
-	if hit.Name == "Red" then
-	hit:remove()
-	money.Value = money.Value + 50
-	elseif hit.Name == "Red1" then
-	hit:remove()
-	money.Value = money.Value + 100
-	elseif hit.Name == "Red2" then
-	hit:remove()
-	money.Value = money.Value + 150
-        elseif hit.Name == "Red3" then
-	hit:remove()
-	money.Value = money.Value + 200
-	elseif hit.Name == "Blue" then
-	hit:remove()
-	money.Value = money.Value + 250
-        elseif hit.Name == "Blue1" then
-	hit:remove()
-	money.Value = money.Value + 300
-        elseif hit.Name == "Blue2" then
-	hit:remove()
-	money.Value = money.Value + 350
-        elseif hit.Name == "Blue3" then
-	hit:remove()
-	money.Value = money.Value + 400
-        elseif hit.Name == "Yellow" then
-	hit:remove()
-	money.Value = money.Value + 450
-        elseif hit.Name == "Yellow1" then
-	hit:remove()
-	money.Value = money.Value + 500
-        elseif hit.Name == "Yellow2" then
-	hit:remove()
-	money.Value = money.Value + 550
-        elseif hit.Name == "Yellow3" then
-	hit:remove()
-	money.Value = money.Value + 600
-        elseif hit.Name == "Green" then
-	hit:remove()
-	money.Value = money.Value + 650
-        elseif hit.Name == "Green1" then
-	hit:remove()
-	money.Value = money.Value + 700
-        elseif hit.Name == "Green2" then
-	hit:remove()
-	money.Value = money.Value + 750
-        elseif hit.Name == "Green3" then
-	hit:remove()
-	money.Value = money.Value + 800
-	end
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 50
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 100
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 150
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 200
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 250
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 300
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 350
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 400
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 450
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 500
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 550
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 600
+		elseif hit.Name == "Green" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 650
+		elseif hit.Name == "Green1" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 700
+		elseif hit.Name == "Green2" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 750
+		elseif hit.Name == "Green3" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 800
+		end
 end
-
-script.Parent.Touched:connect(onTouched)
+end
+end)
 end))
 IntValue46.Name = "Money"
 IntValue46.Parent = Model39
@@ -3992,61 +4009,78 @@ Part48.FormFactor = Enum.FormFactor.Plate
 Part48.formFactor = Enum.FormFactor.Plate
 Script49.Parent = Part48
 table.insert(cors,sandbox(Script49,function()
-money = script.Parent.Parent.Money
 
-function onTouched(hit)
-	if hit.Name == "Red" then
-	hit:remove()
-	money.Value = money.Value + 50
-	elseif hit.Name == "Red1" then
-	hit:remove()
-	money.Value = money.Value + 100
-	elseif hit.Name == "Red2" then
-	hit:remove()
-	money.Value = money.Value + 150
-        elseif hit.Name == "Red3" then
-	hit:remove()
-	money.Value = money.Value + 200
-	elseif hit.Name == "Blue" then
-	hit:remove()
-	money.Value = money.Value + 250
-        elseif hit.Name == "Blue1" then
-	hit:remove()
-	money.Value = money.Value + 300
-        elseif hit.Name == "Blue2" then
-	hit:remove()
-	money.Value = money.Value + 350
-        elseif hit.Name == "Blue3" then
-	hit:remove()
-	money.Value = money.Value + 400
-        elseif hit.Name == "Yellow" then
-	hit:remove()
-	money.Value = money.Value + 450
-        elseif hit.Name == "Yellow1" then
-	hit:remove()
-	money.Value = money.Value + 500
-        elseif hit.Name == "Yellow2" then
-	hit:remove()
-	money.Value = money.Value + 550
-        elseif hit.Name == "Yellow3" then
-	hit:remove()
-	money.Value = money.Value + 600
-        elseif hit.Name == "Green" then
-	hit:remove()
-	money.Value = money.Value + 650
-        elseif hit.Name == "Green1" then
-	hit:remove()
-	money.Value = money.Value + 700
-        elseif hit.Name == "Green2" then
-	hit:remove()
-	money.Value = money.Value + 750
-        elseif hit.Name == "Green3" then
-	hit:remove()
-	money.Value = money.Value + 800
-	end
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 50
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 100
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 150
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 200
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 250
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 300
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 350
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 400
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 450
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 500
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 550
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 600
+		elseif hit.Name == "Green" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 650
+		elseif hit.Name == "Green1" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 700
+		elseif hit.Name == "Green2" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 750
+		elseif hit.Name == "Green3" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 800
+		end
 end
-
-script.Parent.Touched:connect(onTouched)
+end
+end)
 end))
 Part50.Name = "Get"
 Part50.Parent = Model39
@@ -4065,61 +4099,78 @@ Part50.FormFactor = Enum.FormFactor.Plate
 Part50.formFactor = Enum.FormFactor.Plate
 Script51.Parent = Part50
 table.insert(cors,sandbox(Script51,function()
-money = script.Parent.Parent.Money
 
-function onTouched(hit)
-	if hit.Name == "Red" then
-	hit:remove()
-	money.Value = money.Value + 50
-	elseif hit.Name == "Red1" then
-	hit:remove()
-	money.Value = money.Value + 100
-	elseif hit.Name == "Red2" then
-	hit:remove()
-	money.Value = money.Value + 150
-        elseif hit.Name == "Red3" then
-	hit:remove()
-	money.Value = money.Value + 200
-	elseif hit.Name == "Blue" then
-	hit:remove()
-	money.Value = money.Value + 250
-        elseif hit.Name == "Blue1" then
-	hit:remove()
-	money.Value = money.Value + 300
-        elseif hit.Name == "Blue2" then
-	hit:remove()
-	money.Value = money.Value + 350
-        elseif hit.Name == "Blue3" then
-	hit:remove()
-	money.Value = money.Value + 400
-        elseif hit.Name == "Yellow" then
-	hit:remove()
-	money.Value = money.Value + 450
-        elseif hit.Name == "Yellow1" then
-	hit:remove()
-	money.Value = money.Value + 500
-        elseif hit.Name == "Yellow2" then
-	hit:remove()
-	money.Value = money.Value + 550
-        elseif hit.Name == "Yellow3" then
-	hit:remove()
-	money.Value = money.Value + 600
-        elseif hit.Name == "Green" then
-	hit:remove()
-	money.Value = money.Value + 650
-        elseif hit.Name == "Green1" then
-	hit:remove()
-	money.Value = money.Value + 700
-        elseif hit.Name == "Green2" then
-	hit:remove()
-	money.Value = money.Value + 750
-        elseif hit.Name == "Green3" then
-	hit:remove()
-	money.Value = money.Value + 800
-	end
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 50
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 100
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 150
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 200
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 250
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 300
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 350
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 400
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 450
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 500
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 550
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 600
+		elseif hit.Name == "Green" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 650
+		elseif hit.Name == "Green1" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 700
+		elseif hit.Name == "Green2" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 750
+		elseif hit.Name == "Green3" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 800
+		end
 end
-
-script.Parent.Touched:connect(onTouched)
+end
+end)
 end))
 Part52.Name = "Get"
 Part52.Parent = Model39
@@ -4138,61 +4189,78 @@ Part52.FormFactor = Enum.FormFactor.Plate
 Part52.formFactor = Enum.FormFactor.Plate
 Script53.Parent = Part52
 table.insert(cors,sandbox(Script53,function()
-money = script.Parent.Parent.Money
 
-function onTouched(hit)
-	if hit.Name == "Red" then
-	hit:remove()
-	money.Value = money.Value + 50
-	elseif hit.Name == "Red1" then
-	hit:remove()
-	money.Value = money.Value + 100
-	elseif hit.Name == "Red2" then
-	hit:remove()
-	money.Value = money.Value + 150
-        elseif hit.Name == "Red3" then
-	hit:remove()
-	money.Value = money.Value + 200
-	elseif hit.Name == "Blue" then
-	hit:remove()
-	money.Value = money.Value + 250
-        elseif hit.Name == "Blue1" then
-	hit:remove()
-	money.Value = money.Value + 300
-        elseif hit.Name == "Blue2" then
-	hit:remove()
-	money.Value = money.Value + 350
-        elseif hit.Name == "Blue3" then
-	hit:remove()
-	money.Value = money.Value + 400
-        elseif hit.Name == "Yellow" then
-	hit:remove()
-	money.Value = money.Value + 450
-        elseif hit.Name == "Yellow1" then
-	hit:remove()
-	money.Value = money.Value + 500
-        elseif hit.Name == "Yellow2" then
-	hit:remove()
-	money.Value = money.Value + 550
-        elseif hit.Name == "Yellow3" then
-	hit:remove()
-	money.Value = money.Value + 600
-        elseif hit.Name == "Green" then
-	hit:remove()
-	money.Value = money.Value + 650
-        elseif hit.Name == "Green1" then
-	hit:remove()
-	money.Value = money.Value + 700
-        elseif hit.Name == "Green2" then
-	hit:remove()
-	money.Value = money.Value + 750
-        elseif hit.Name == "Green3" then
-	hit:remove()
-	money.Value = money.Value + 800
-	end
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 50
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 100
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 150
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 200
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 250
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 300
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 350
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 400
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 450
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 500
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 550
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 600
+		elseif hit.Name == "Green" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 650
+		elseif hit.Name == "Green1" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 700
+		elseif hit.Name == "Green2" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 750
+		elseif hit.Name == "Green3" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 800
+		end
 end
-
-script.Parent.Touched:connect(onTouched)
+end
+end)
 end))
 Model54.Name = "Paint Shop Owner : No One"
 Model54.Parent = Model31
@@ -22168,7 +22236,7 @@ Part16.FormFactor = Enum.FormFactor.Plate
 Part16.formFactor = Enum.FormFactor.Plate
 Script17.Parent = Part16
 table.insert(cors,sandbox(Script17,function()
-	money = script.Parent.Parent.Money
+--[[	money = script.Parent.Parent.Money
 
 	function onTouched(hit)
 		if hit.Name == "Red" then
@@ -22221,8 +22289,82 @@ table.insert(cors,sandbox(Script17,function()
 			money.Value = money.Value + 800
 		end
 	end
+object = nil
+	script.Parent.Touched:connect(onTouched)]]
 
-	script.Parent.Touched:connect(onTouched)
+
+
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 50
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 100
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 150
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 200
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 250
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 300
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 350
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 400
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 450
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 500
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 550
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 600
+		elseif hit.Name == "Green" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 650
+		elseif hit.Name == "Green1" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 700
+		elseif hit.Name == "Green2" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 750
+		elseif hit.Name == "Green3" then
+      object = hit
+			hit:remove()
+			money.Value = money.Value + 800
+		end
+end
+end
+end)
 end))
 IntValue18.Name = "Money"
 IntValue18.Parent = Model11
@@ -22252,61 +22394,78 @@ Part20.FormFactor = Enum.FormFactor.Plate
 Part20.formFactor = Enum.FormFactor.Plate
 Script21.Parent = Part20
 table.insert(cors,sandbox(Script21,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Part22.Name = "Get"
 Part22.Parent = Model11
@@ -22325,61 +22484,78 @@ Part22.FormFactor = Enum.FormFactor.Plate
 Part22.formFactor = Enum.FormFactor.Plate
 Script23.Parent = Part22
 table.insert(cors,sandbox(Script23,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Part24.Name = "Get"
 Part24.Parent = Model11
@@ -22398,61 +22574,78 @@ Part24.FormFactor = Enum.FormFactor.Plate
 Part24.formFactor = Enum.FormFactor.Plate
 Script25.Parent = Part24
 table.insert(cors,sandbox(Script25,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Model26.Name = "Paint Shop Owner : No One"
 Model26.Parent = Model3
@@ -34645,61 +34838,78 @@ Part1190.FormFactor = Enum.FormFactor.Plate
 Part1190.formFactor = Enum.FormFactor.Plate
 Script1191.Parent = Part1190
 table.insert(cors,sandbox(Script1191,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 IntValue1192.Name = "Money"
 IntValue1192.Parent = Model1185
@@ -34729,61 +34939,78 @@ Part1194.FormFactor = Enum.FormFactor.Plate
 Part1194.formFactor = Enum.FormFactor.Plate
 Script1195.Parent = Part1194
 table.insert(cors,sandbox(Script1195,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Part1196.Name = "Get"
 Part1196.Parent = Model1185
@@ -34802,61 +35029,78 @@ Part1196.FormFactor = Enum.FormFactor.Plate
 Part1196.formFactor = Enum.FormFactor.Plate
 Script1197.Parent = Part1196
 table.insert(cors,sandbox(Script1197,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Part1198.Name = "Get"
 Part1198.Parent = Model1185
@@ -34875,61 +35119,78 @@ Part1198.FormFactor = Enum.FormFactor.Plate
 Part1198.formFactor = Enum.FormFactor.Plate
 Script1199.Parent = Part1198
 table.insert(cors,sandbox(Script1199,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Model1200.Name = "Paint Shop Owner : No One"
 Model1200.Parent = Model1177
@@ -46981,61 +47242,78 @@ Part2351.FormFactor = Enum.FormFactor.Plate
 Part2351.formFactor = Enum.FormFactor.Plate
 Script2352.Parent = Part2351
 table.insert(cors,sandbox(Script2352,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 IntValue2353.Name = "Money"
 IntValue2353.Parent = Model2346
@@ -47063,61 +47341,78 @@ Part2355.FormFactor = Enum.FormFactor.Plate
 Part2355.formFactor = Enum.FormFactor.Plate
 Script2356.Parent = Part2355
 table.insert(cors,sandbox(Script2356,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Part2357.Name = "Get"
 Part2357.Parent = Model2346
@@ -47134,61 +47429,78 @@ Part2357.FormFactor = Enum.FormFactor.Plate
 Part2357.formFactor = Enum.FormFactor.Plate
 Script2358.Parent = Part2357
 table.insert(cors,sandbox(Script2358,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Part2359.Name = "Get"
 Part2359.Parent = Model2346
@@ -47205,61 +47517,78 @@ Part2359.FormFactor = Enum.FormFactor.Plate
 Part2359.formFactor = Enum.FormFactor.Plate
 Script2360.Parent = Part2359
 table.insert(cors,sandbox(Script2360,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Model2361.Name = "Paint Shop Owner : No One"
 Model2361.Parent = Model2338
@@ -59228,61 +59557,78 @@ Part3512.FormFactor = Enum.FormFactor.Plate
 Part3512.formFactor = Enum.FormFactor.Plate
 Script3513.Parent = Part3512
 table.insert(cors,sandbox(Script3513,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 IntValue3514.Name = "Money"
 IntValue3514.Parent = Model3507
@@ -59310,61 +59656,78 @@ Part3516.FormFactor = Enum.FormFactor.Plate
 Part3516.formFactor = Enum.FormFactor.Plate
 Script3517.Parent = Part3516
 table.insert(cors,sandbox(Script3517,function()
-	money = script.Parent.Parent.Money
-
-	function onTouched(hit)
-		if hit.Name == "Red" then
+	
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Part3518.Name = "Get"
 Part3518.Parent = Model3507
@@ -59381,61 +59744,78 @@ Part3518.FormFactor = Enum.FormFactor.Plate
 Part3518.formFactor = Enum.FormFactor.Plate
 Script3519.Parent = Part3518
 table.insert(cors,sandbox(Script3519,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Part3520.Name = "Get"
 Part3520.Parent = Model3507
@@ -59452,61 +59832,78 @@ Part3520.FormFactor = Enum.FormFactor.Plate
 Part3520.formFactor = Enum.FormFactor.Plate
 Script3521.Parent = Part3520
 table.insert(cors,sandbox(Script3521,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Model3522.Name = "Paint Shop Owner : No One"
 Model3522.Parent = Model3499
@@ -71476,61 +71873,78 @@ Part4673.FormFactor = Enum.FormFactor.Plate
 Part4673.formFactor = Enum.FormFactor.Plate
 Script4674.Parent = Part4673
 table.insert(cors,sandbox(Script4674,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 IntValue4675.Name = "Money"
 IntValue4675.Parent = Model4668
@@ -71560,61 +71974,78 @@ Part4677.FormFactor = Enum.FormFactor.Plate
 Part4677.formFactor = Enum.FormFactor.Plate
 Script4678.Parent = Part4677
 table.insert(cors,sandbox(Script4678,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 
 Model4683.Name = "Paint Shop Owner : No One"
@@ -85030,61 +85461,78 @@ Part16.FormFactor = Enum.FormFactor.Plate
 Part16.formFactor = Enum.FormFactor.Plate
 Script17.Parent = Part16
 table.insert(cors,sandbox(Script17,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 IntValue18.Name = "Money"
 IntValue18.Parent = Model11
@@ -85112,61 +85560,78 @@ Part20.FormFactor = Enum.FormFactor.Plate
 Part20.formFactor = Enum.FormFactor.Plate
 Script21.Parent = Part20
 table.insert(cors,sandbox(Script21,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Part22.Name = "Get"
 Part22.Parent = Model11
@@ -85183,61 +85648,78 @@ Part22.FormFactor = Enum.FormFactor.Plate
 Part22.formFactor = Enum.FormFactor.Plate
 Script23.Parent = Part22
 table.insert(cors,sandbox(Script23,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Part24.Name = "Get"
 Part24.Parent = Model11
@@ -85254,61 +85736,78 @@ Part24.FormFactor = Enum.FormFactor.Plate
 Part24.formFactor = Enum.FormFactor.Plate
 Script25.Parent = Part24
 table.insert(cors,sandbox(Script25,function()
-	money = script.Parent.Parent.Money
 
-	function onTouched(hit)
-		if hit.Name == "Red" then
+task.spawn(function()
+while task.wait() do
+for _,hit in next, workspace:GetPartsInPart(script.Parent) do
+		if hit.Name == "Red" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 50
-		elseif hit.Name == "Red1" then
+		elseif hit.Name == "Red1" and not object == hit then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 100
-		elseif hit.Name == "Red2" then
+		elseif hit.Name == "Red2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 150
-		elseif hit.Name == "Red3" then
+		elseif hit.Name == "Red3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 200
-		elseif hit.Name == "Blue" then
+		elseif hit.Name == "Blue" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 250
-		elseif hit.Name == "Blue1" then
+		elseif hit.Name == "Blue1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 300
-		elseif hit.Name == "Blue2" then
+		elseif hit.Name == "Blue2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 350
-		elseif hit.Name == "Blue3" then
+		elseif hit.Name == "Blue3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 400
-		elseif hit.Name == "Yellow" then
+		elseif hit.Name == "Yellow" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 450
-		elseif hit.Name == "Yellow1" then
+		elseif hit.Name == "Yellow1" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 500
-		elseif hit.Name == "Yellow2" then
+		elseif hit.Name == "Yellow2" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 550
-		elseif hit.Name == "Yellow3" then
+		elseif hit.Name == "Yellow3" and not object == hit  then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 600
 		elseif hit.Name == "Green" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 650
 		elseif hit.Name == "Green1" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 700
 		elseif hit.Name == "Green2" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 750
 		elseif hit.Name == "Green3" then
+      object = hit
 			hit:remove()
 			money.Value = money.Value + 800
 		end
-	end
-
-	script.Parent.Touched:connect(onTouched)
+end
+end
+end)
 end))
 Model26.Name = "Paint Shop Owner : No One"
 Model26.Parent = Model3
