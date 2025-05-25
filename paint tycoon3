@@ -218,6 +218,7 @@ end)
 -- Instances:
 
 local GuiMain = Instance.new("ScreenGui")
+GuiMain.ResetOnSpawn = false
 local _500Cash = Instance.new("TextButton")
 
 --Properties:
@@ -303,6 +304,7 @@ end)
 -- Instances:
 
 local Kick = Instance.new("ScreenGui")
+Kick.ResetOnSpawn = false
 local plist = Instance.new("Frame")
 local _1 = Instance.new("TextButton")
 local _2 = Instance.new("TextButton")
@@ -1276,6 +1278,7 @@ local Reset_2 = Instance.new("TextButton")
 
 Reset.Name = "Reset"
 Reset.Parent = owner.PlayerGui
+Reset.ResetOnSpawn = false
 
 Reset_2.Name = "Reset"
 Reset_2.Parent = Reset
@@ -1315,7 +1318,7 @@ local ForceFieldOFF = Instance.new("TextButton")
 local ForceFieldON = Instance.new("TextButton")
 
 --Properties:
-
+ForceFieldGUI.ResetOnSpawn = false
 ForceFieldGUI.Name = "ForceFieldGUI"
 ForceFieldGUI.Parent = owner.PlayerGui
 
@@ -1584,6 +1587,7 @@ function onButton1Down(mouse)
 	print("Fired")
 	
 	local hit = m1.Target
+print(hit)
 	if hit == nil then return end
 	if hit.Parent:findFirstChild("Humanoid") ~= nil then
 		local n = hit.Parent
@@ -99380,3 +99384,35 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
+owner.CharacterAppearanceLoaded:Connect(function()
+hum = owner.Character:FindFirstChildOfClass('Humanoid')
+if hum then
+if owner:FindFirstChild('reset') then
+owner.reset.Parent = owner.Backpack
+end
+if owner:FindFirstChild('Donate') then
+owner.Donate.Parent = owner.Backpack
+end
+if owner:FindFirstChild('Paintbrush') then
+owner.Paintbrush.Parent = owner.Backpack
+end
+hum.Died:Connect(function()
+if hum.Parent:FindFirstChild('reset')  then
+hum.Parent.reset.Parent = owner
+elseif owner.Backpack:FindFirstChild('reset') then
+owner.Backpack.Reset.Parent = owner
+end
+if hum.Parent:FindFirstChild('Donate') then
+hum.Parent.Donate.Parent = owner
+elseif owner.Backpack:FindFirstChild('Donate') then
+owner.Backpack.Donate.Parent = owner
+end
+if hum.Parent:FindFirstChild('Paintbrush') then
+hum.Parent.Paintbrush.Parent = owner
+elseif owner.Backpack:FindFirstChild('Paintbrush') then
+owner.Backpack.Paintbrush.Parent = owner
+end
+end)
+end
+end)
