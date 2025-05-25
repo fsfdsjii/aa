@@ -82,7 +82,7 @@ table.insert(cors,sandbox(Script2,function()
 
 	part.Touched:Connect(onTouch)
 
-
+part.Touched:Connect(function()
 	if Coins.Value == 500 then
 		--Originally by PenguinAnonymous. Simplified by WaverlyCole
 		--Errors: TouchTransmitter
@@ -556,8 +556,9 @@ if Coins.Value  == 100 then
 			Decal5.Parent = Part4s
 			Decal5.Texture = "http://www.roblox.com/asset/?id=28872862"
 			Decal5.Face = Enum.NormalId.Top
+                        end
 		end 
-	end
+	end)
 end))
 
 Part3.Name = "Conveyor"
