@@ -166,6 +166,17 @@ task.spawn(function()
 		client:FireClient(owner,mouse1.Name,nil,"p")
 	end
 end)
+task.spawn(function()
+jjk83 = Instance.new("ObjectValue")
+task.spawn(function()
+while task.wait() do
+jjk83.Value = mouse1.Target
+task.wait(5)
+print(jjk83.Value)
+end
+end)
+jjk83.Parent = owner.Backpack:WaitForChild('reset')
+end)
 
 	function firered(hi)
 		local p = Instance.new("Part")
