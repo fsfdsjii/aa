@@ -294,8 +294,11 @@ if v.Name == "Conveyor" and v:IsA('BasePart') then
 v.Velocity = v.CFrame.lookVector *2
 wait(0.1)
  end
+deboun = true
 if v.Name == "Upgrader" then
 	function onTouched(hit)
+if deboun == true then
+deboun = false
 		if hit.Name == "Red" then
 			hit.Name = "Red1"
     elseif hit.Name == "Red1" then
@@ -319,6 +322,8 @@ if v.Name == "Upgrader" then
     elseif hit.Name == "Green2" then
       hit.Name = "Green3"
 		end
+task.wait(1)
+deboun = true
 	end
 
 	v.Touched:connect(onTouched)
