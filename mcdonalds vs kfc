@@ -26,12 +26,12 @@ end
 
 function onPlayerRespawn(property, player)
 	-- need to connect to new humanoid
-	
+
 	if property == "Character" and player.Character ~= nil then
 		local humanoid = player.Character.Humanoid
-			local p = player
-			local h = humanoid
-			humanoid.Died:connect(function() onHumanoidDied(h, p) end )
+		local p = player
+		local h = humanoid
+		humanoid.Died:connect(function() onHumanoidDied(h, p) end )
 	end
 end
 
@@ -44,7 +44,7 @@ function getKillerOfHumanoidIfStillInGame(humanoid)
 
 	-- find player with name on tag
 	if tag ~= nil then
-		
+
 		local killer = tag.Value
 		if killer.Parent ~= nil then -- killer still in game
 			return killer
@@ -62,10 +62,10 @@ function handleKillCount(humanoid, player)
 			local kills = stats:findFirstChild("KOs")
 			if killer ~= player then
 				kills.Value = kills.Value + 1
-				
+
 			else
 				kills.Value = kills.Value - 1
-				
+
 			end
 		end
 	end
@@ -220,11 +220,11 @@ end
 
 function onCaptureScored(player)
 
-		local ls = player:findFirstChild("leaderstats")
-		if ls == nil then return end
-		local caps = ls:findFirstChild("Captures")
-		if caps == nil then return end
-		caps.Value = caps.Value + 1
+	local ls = player:findFirstChild("leaderstats")
+	if ls == nil then return end
+	local caps = ls:findFirstChild("Captures")
+	if caps == nil then return end
+	caps.Value = caps.Value + 1
 
 end
 
@@ -235,6 +235,255 @@ if (#stands > 0) then CTF_mode = true end
 game.Players.PlayerAdded:connect(onPlayerEntered)
 
 
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+Sound2 = Instance.new("Sound")
+SpecialMesh3 = Instance.new("SpecialMesh")
+Script4 = Instance.new("Script")
+Tool0.Name = "StaffOfSparks"
+Tool0.Parent = owner.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=10758325"
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-44.5, 4.39172411, -235.5, 1.04904175e-05, 0, -0.99999994, -0, 1, 0, 0.99999994, 0, 1.04904175e-05)
+Part1.Orientation = Vector3.new(0, -89.9990005493164, 0)
+Part1.Position = Vector3.new(-44.5, 4.391724109649658, -235.5)
+Part1.Rotation = Vector3.new(0, -90, 0)
+Part1.Size = Vector3.new(1, 5.599999904632568, 1)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Sound2.Name = "EquipSound"
+Sound2.Parent = Part1
+Sound2.SoundId = "http://www.roblox.com/asset/?id=10756118"
+SpecialMesh3.Parent = Part1
+SpecialMesh3.MeshId = "http://www.roblox.com/asset/?id=10757531"
+SpecialMesh3.TextureId = "http://www.roblox.com/asset/?id=10757814"
+SpecialMesh3.MeshType = Enum.MeshType.FileMesh
+Script4.Name = "WizardStaff"
+Script4.Parent = Tool0
+table.insert(cors,sandbox(Script4,function()
+	NLS([[local Tool = script.Parent;
+
+enabled = true
+function onButton1Down(mouse)
+	if not enabled then
+		return
+	end
+
+	enabled = false
+	mouse.Icon = "rbxasset://textures\\GunWaitCursor.png"
+
+	wait(1)
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	enabled = true
+
+end
+
+function onEquippedLocal(mouse)
+
+	if mouse == nil then
+		print("Mouse not found")
+		return 
+	end
+
+	mouse.Icon = "rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+end
+
+
+Tool.Equipped:connect(onEquippedLocal)]],owner.PlayerGui).Parent = script.Parent
+
+	function zaza(gi)
+		ball = gi
+		damage = 100
+
+
+
+		function onTouched(hit)
+			local humanoid = hit.Parent:findFirstChild("Humanoid")
+
+			if humanoid ~= nil then
+				tagHumanoid(humanoid)
+				humanoid:TakeDamage(damage)
+				wait(1)
+				untagHumanoid(humanoid)
+			end
+
+
+		end
+
+		function tagHumanoid(humanoid)
+			-- todo: make tag expire
+			local tag = ball:findFirstChild("creator")
+			if tag ~= nil then
+				local new_tag = tag:clone()
+				new_tag.Parent = humanoid
+			end
+		end
+
+
+		function untagHumanoid(humanoid)
+			if humanoid ~= nil then
+				local tag = humanoid:findFirstChild("creator")
+				if tag ~= nil then
+					tag.Parent = nil
+				end
+			end
+		end
+
+		connection = ball.Touched:connect(onTouched)
+task.spawn(function()
+		task.wait(10)
+		ball.SparkSound.Looped = false
+		ball.SparkSound:Stop()
+		ball.Parent = nil
+end)
+	end
+
+	local Tool = script.Parent;
+
+	enabled = true
+
+
+
+	function fire(v)
+
+		local vCharacter = Tool.Parent
+		local vPlayer = game.Players:playerFromCharacter(vCharacter)
+
+		local missile = Instance.new("Part")
+
+		local spark = Instance.new("Sparkles")
+
+		local SparkSound = Instance.new("Sound")
+		SparkSound.Name = "SparkSound"
+		SparkSound.SoundId = "http://www.roblox.com/asset/?id=10756104"
+		SparkSound.Parent = missile
+		SparkSound.Volume = 1
+		SparkSound.Looped = true
+
+		spark.Parent = missile
+
+		local spawnPos = vCharacter.PrimaryPart.Position
+
+
+
+		spawnPos  = spawnPos + (v * 10)
+
+		missile.Position = spawnPos
+		missile.Size = Vector3.new(1,1,1)
+		missile.Velocity = v * 50
+		missile.BrickColor = BrickColor.new(26)
+		missile.Shape = 0
+		missile.BottomSurface = 0
+		missile.TopSurface = 0
+		missile.Name = "Spark"
+		missile.Reflectance = 1
+
+
+		local force = Instance.new("BodyForce")
+		force.force = Vector3.new(0,98,0)
+		force.Parent = missile
+
+		local creator_tag = Instance.new("ObjectValue")
+		creator_tag.Value = vPlayer
+		creator_tag.Name = "creator"
+		creator_tag.Parent = missile
+
+		zaza(missile)
+
+		missile.Parent = game.Workspace
+		SparkSound:Play()
+
+	end
+
+
+
+	function staffUp()
+		Tool.GripForward = Vector3.new(0,0,-1)
+		Tool.GripRight = Vector3.new(1,0,0)
+		Tool.GripUp = Vector3.new(0,1,0)
+	end
+
+	function staffOut()
+		Tool.GripForward = Vector3.new(.0976, .00976, -.995)
+		Tool.GripRight = Vector3.new(.195, -.981, .00952)
+		Tool.GripUp = Vector3.new(.976, .195, .0976)
+	end
+
+	function isTurbo(character)
+		return character:FindFirstChild("BoltHelm") ~= nil
+	end
+
+
+	function onActivated()
+		if not enabled  then
+			return
+		end
+
+		enabled = false
+
+
+		local character = Tool.Parent;
+		local humanoid = character.Humanoid
+		if humanoid == nil then
+			print("Humanoid not found")
+			return 
+		end
+
+		local targetPos = humanoid.TargetPoint
+		local lookAt = (targetPos - character.Head.Position).unit
+
+		local reload = .5
+		if (isTurbo(character)) then
+			reload = .25
+			print("turbo")
+		end
+
+		staffOut()
+		fire(lookAt)
+		wait(reload)
+		staffUp()
+		wait(reload)
+
+		enabled = true
+
+	end
+
+	function onEquipped()
+		Tool.Handle.EquipSound:play()
+	end
+
+	script.Parent.Activated:connect(onActivated)
+	script.Parent.Equipped:connect(onEquipped)
+
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
 
 
 function sandbox(var,func)
@@ -270,21 +519,19 @@ Script1.Name = "Server Launcher"
 Script1.Parent = Tool0
 
 
-
-pcall(function()
+Sound2.Name = "Explosion"
+Sound2.Parent = Tool0
+Sound2.SoundId = "rbxasset://sounds/collide.wav"
+Sound2.Volume = 1
+Sound3.Name = "Swoosh"
+Sound3.Parent = Tool0
+Sound3.Looped = true
+Sound3.SoundId = "rbxasset://sounds/Rocket whoosh 01.wav"
+Sound3.Volume = 0.699999988079071
 function boom(hi)
 	r = game:service("RunService")
-Sound2z = Instance.new("Sound")
-Sound2z.Name = "Explosion"
-Sound2z.Parent = hi
-Sound2z.SoundId = "rbxasset://sounds/collide.wav"
-Sound2z.Volume = 1
-Sound3z = Instance.new("Sound")
-Sound3z.Name = "Swoosh"
-Sound3z.Parent = hi
-Sound3z.Looped = true
-Sound3z.SoundId = "rbxasset://sounds/Rocket whoosh 01.wav"
-Sound3z.Volume = 0.699999988079071
+	Tool0.Explosion:Clone().Parent = hi
+	Sound3:Clone().Parent = hi
 	shaft = hi
 	position = shaft.Position
 
@@ -344,7 +591,6 @@ Sound3z.Volume = 0.699999988079071
 			end
 		end
 	end
-
 	t, s = r.Stepped:wait()
 
 	swoosh = hi.Swoosh
@@ -377,6 +623,8 @@ Rocket.TopSurface = 3
 Rocket.Size = Vector3.new(1,1,4)
 Rocket.BrickColor = BrickColor.new(6)
 
+Tool.Explosion:clone().Parent = Rocket
+Tool.Swoosh:clone().Parent = Rocket
 
 
 
@@ -417,6 +665,7 @@ function fire(vTarget, offset)
 	boom(missile)
 
 	missile.Parent = game.Workspace
+	print("hello")
 end
 
 function computeDirection(vec)
@@ -451,7 +700,7 @@ Tool0.Activated:connect(function()
 	onActivated()
 	print("whyyyy")
 end)
-end)
+
 
 Part4.Name = "Handle"
 Part4.Parent = Tool0
